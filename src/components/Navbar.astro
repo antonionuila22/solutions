@@ -1,0 +1,72 @@
+---
+import Logo from "../components/Logo.astro";
+
+const menuItems = [
+    { name: "Home", link: "#", hasDropdown: false },
+    {
+        name: "Pages",
+        link: "#",
+        hasDropdown: true,
+        subItems: ["About Us", "Our Team", "Blog"],
+    },
+    {
+        name: "Service",
+        link: "#",
+        hasDropdown: true,
+        subItems: ["Web Design", "SEO", "Marketing"],
+    },
+    { name: "Contact", link: "#", hasDropdown: false },
+];
+---
+
+<div class="sticky top-0 left-0 right-0 z-50 bg-amber-900">
+    <nav class="bg-white/30 backdrop-blur-md transition-all duration-300">
+        <div
+            class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6"
+        >
+            <!-- Logo -->
+            <Logo src="../assets/codebrand.svg" size="40px" />
+
+            <!-- Menú principal -->
+            <div
+                class="hidden md:flex items-center space-x-6 bg-white/30 backdrop-blur-sm px-8 py-4 gap-3 rounded-full"
+            >
+                {
+                    menuItems.map((item) => (
+                        <div class="relative group">
+                            <a
+                                href={item.link}
+                                class="text-black text-md font-medium font-poppins flex items-center gap-2 hover:text-orange-400 transition duration-300"
+                            >
+                                {item.name}{" "}
+                                {item.hasDropdown && (
+                                    <span style="font-size: 7px;">▼</span>
+                                )}
+                            </a>
+                            {item.hasDropdown && item.subItems?.length > 0 && (
+                                <div class="absolute left-0 mt-2 w-40 bg-white backdrop-blur-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    {item.subItems?.map((subItem) => (
+                                        <a
+                                            href="#"
+                                            class="block px-4 py-2 text-sm text-black hover:text-orange-400"
+                                        >
+                                            {subItem}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- Botón de contacto con padding 20px 45px -->
+            <a
+                href="#"
+                class="bg-white text-black font-bold py-[20px] px-[45px] rounded-full shadow-md hover:bg-gray-200 transition duration-300"
+            >
+                CONTACT US
+            </a>
+        </div>
+    </nav>
+</div>
