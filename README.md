@@ -1,48 +1,41 @@
-# Astro Starter Kit: Basics
+# E-Commerce Solutions
 
-```sh
-npm create astro@latest -- --template basics
-```
+## 📌 Proyecto: solutions.codebrand.es
+Este es un proyecto de comercio electrónico desarrollado y gestionado por **CodeBrand**.  
+Está alojado en un **VPS de Hostinger**, asegurando un alto rendimiento, seguridad y escalabilidad.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Tecnologías Utilizadas
+- **Front-end:** Astro + React + TailwindCSS
+- **Back-end:** Node.js + Express (o NestJS según necesidad)
+- **Base de Datos:** PostgreSQL / MongoDB
+- **Autenticación:** JWT / OAuth2
+- **Almacenamiento de Archivos:** S3 / Cloudinary
+- **Despliegue:** Docker + Nginx + CI/CD con GitHub Actions
+- **Seguridad:** SSL, CSRF, CORS, Rate Limiting
+- **Monitorización:** Prometheus + Grafana
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌍 Configuración del VPS en Hostinger
+- **Proveedor:** Hostinger VPS
+- **Sistema Operativo:** Ubuntu 22.04
+- **Servidor Web:** Nginx (como proxy inverso)
+- **Gestor de Procesos:** PM2 / Docker
+- **Firewall:** UFW (activado)
+- **Certificados SSL:** Let's Encrypt (Certbot)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 📥 Instalación y Configuración
+Este repositorio es **privado** y solo accesible por el equipo de **CodeBrand**.  
+La configuración del entorno se gestiona de forma interna y **no se incluyen archivos sensibles** como `.env`.
 
-## 🚀 Project Structure
+## 🚀 Despliegue en VPS de Hostinger
+El despliegue se gestiona a través de procesos internos y **CI/CD automatizado**.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠 Mantenimiento y Monitorización
+- **Acceso al VPS:** Solo autorizado para el equipo de CodeBrand.
+- **Monitoreo:** Implementado con herramientas de observabilidad y seguridad.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 📄 Licencia
+Este proyecto es propiedad de **CodeBrand** y no está disponible para uso público o distribución.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Para más información, contactar con el equipo en [soporte@codebrand.es](mailto:soporte@codebrand.es).
