@@ -1,0 +1,58 @@
+---
+import SplitText from "../components/SplitText.tsx";
+import Button from "../components/Button.astro";
+
+const handleAnimationComplete = () => {
+    console.log("¡Todas las letras han terminado de animarse!");
+};
+---
+
+<section class="flex items-center justify-center flex-col mt-8">
+    <div class="container px-6 flex items-center justify-center w-full">
+        <article
+            class="relative flex w-full text-center bg-cover bg-center rounded-[20px] h-[90vh] px-[5vh] gap-8 items-center justify-center flex-col"
+            style="background-image: url('./photos/hero.webp')"
+        >
+            <div
+                class="absolute w-full h-full inset-0 bg-black/80 rounded-[20px]"
+            >
+            </div>
+
+            <h1
+                class="relative max-w-6xl text-3xl md:text-3xl lg:text-3xl text-white animate-fade-in"
+            >
+                Agencia Creativa #1 en Marketing Digital en Latinoamérica<br />
+            </h1>
+
+            <SplitText
+                text="Expertos en diseño, desarrollo web y publicidad digital."
+                className="text-white font-bold max-w-6xl text-4xl md:text-6xl lg:text-7xl h-[160px]"
+                delay={25}
+                animationFrom={{
+                    opacity: 0,
+                    transform: "translateY(40px)",
+                }}
+                animationTo={{ opacity: 1, transform: "translateY(0)" }}
+                threshold={0.2}
+                rootMargin="25px"
+                onLetterAnimationComplete={handleAnimationComplete}
+                client:visible
+            />
+
+            <p
+                class="relative text-lg text-white max-w-5xl animate-fade-in opacity-0 transition-opacity duration-700 delay-200"
+            >
+                Impulsa tu marca con soluciones digitales integrales. En Code
+                Brand combinamos diseño, desarrollo y marketing digital para
+                aumentar tus ventas, mejorar tu posicionamiento en buscadores y
+                conectar con tu audiencia.
+            </p>
+
+            <div
+                class="relative flex flex-col md:flex-row gap-7 flex-wrap justify-center"
+            >
+                <Button text="Hablemos!" href="#" />
+            </div>
+        </article>
+    </div>
+</section>

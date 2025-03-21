@@ -1,11 +1,81 @@
 ---
 import Hero from "../components/Hero.astro";
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import Banner from "../components/Banner.astro";
+import CardService from "../components/CardService.astro";
 ---
 
 <Layout>
 	<Navbar />
 	<Hero />
+	<Banner
+		subtitle="Sobre Codebrand"
+		title="Tu aliado en marketing y Desarrollo Web"
+		description="En Codebrand resolvemos desafíos de negocio combinando diseño, desarrollo y performance marketing. Nuestro fundador, Ramón Nuila, trabajó durante varios años como diseñador, programador y desarrollador web para agencias y empresas de outsourcing. Así que decidió junto con sus amigos y su esposa formar una empresa de confianza, cercana, que priorizara la calidad y la rapidez en cualquier circunstancia. "
+		imgUrl="./photos/Ramon-actual.webp"
+	/>
+	<section class="py-16 px-6">
+		<h2 class="text-5xl font-bold text-black text-center mb-8">
+			Nuestros Servicios
+		</h2>
+
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-3/4 mx-auto"
+		>
+			<CardService
+				icon="/icons/ui-ux.svg"
+				title="Diseño UX/UI"
+				description="Diseñamos experiencias digitales intuitivas y atractivas que aumentan la conversión y fidelización."
+			/>
+
+			<CardService
+				icon="/icons/web-development.svg"
+				title="Desarrollo Web y Apps"
+				description="Creamos sitios web optimizados para SEO, rápidos, escalables y adaptados a todas las plataformas. Aplicaciones para iOS y Android con interfaces fluidas y optimizadas para rendimiento."
+			/>
+
+			<CardService
+				icon="/icons/branding.svg"
+				title="Diseño Gráfico & Branding"
+				description="Construimos identidades visuales sólidas y memorables para potenciar tu marca."
+			/>
+
+			<CardService
+				icon="/icons/seo.svg"
+				title="SEO & Posicionamiento Web"
+				description="Mejoramos tu ranking en Google con estrategias de SEO técnico y contenido optimizado."
+			/>
+
+			<CardService
+				icon="/icons/social-media.svg"
+				title="Gestión de Redes Sociales"
+				description="Creamos estrategias de contenido y campañas de publicidad para hacer crecer tu comunidad."
+			/>
+
+			<CardService
+				icon="/icons/video-editing.svg"
+				title="Edición de Video"
+				description="Producción y edición de videos profesionales para publicidad y redes sociales."
+			/>
+
+			<CardService
+				icon="/icons/animation.svg"
+				title="Animación 2D & 3D"
+				description="Animaciones creativas para marketing, presentaciones y contenido interactivo."
+			/>
+
+			<CardService
+				icon="/icons/render.svg"
+				title="Renderizados 3D"
+				description="Modelado y renderizado 3D de alta calidad para arquitectura y productos."
+			/>
+
+			<CardService
+				icon="/icons/promo.svg"
+				title="Productos Promocionales"
+				description="Personalización de artículos con sublimación, impresión digital y grabado láser."
+			/>
+		</div>
+	</section>
 </Layout>
