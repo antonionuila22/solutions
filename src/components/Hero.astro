@@ -8,9 +8,9 @@ const handleAnimationComplete = () => {
 ---
 
 <section class="flex items-center justify-center flex-col mt-8">
-    <div class="container px-6 flex items-center justify-center w-full">
+    <div class="container px-8 py-8 flex items-center justify-center w-full">
         <article
-            class="relative flex w-full text-center bg-cover bg-center rounded-[20px] h-[90vh] px-[5vh] gap-8 items-center justify-center flex-col"
+            class="relative flex w-full text-center bg-cover bg-center rounded-[20px] px-[6vh] py-[9vw] gap-4 items-center justify-center flex-col"
             style="background-image: url('./photos/hero.webp')"
         >
             <div
@@ -19,14 +19,14 @@ const handleAnimationComplete = () => {
             </div>
 
             <h1
-                class="relative max-w-6xl text-3xl md:text-3xl lg:text-3xl text-white animate-fade-in"
+                class="relative max-w-6xl text-2xl lg:text-2xl sm:text-sm text-white animate-fade-in"
             >
-                Agencia Creativa #1 en Marketing Digital en Latinoamérica<br />
+                Hola! Somos Code Brand
             </h1>
 
             <SplitText
-                text="Expertos en diseño, desarrollo web y publicidad digital."
-                className="text-white font-bold max-w-6xl text-4xl md:text-6xl lg:text-7xl h-[160px]"
+                text="Expertos en diseño, desarrollo web y publicidad."
+                className="text-white font-bold max-w-6xl text-4xl lg:text-6xl md:text-5xl sm:text-4xl max-h-[630px]"
                 delay={25}
                 animationFrom={{
                     opacity: 0,
@@ -34,7 +34,7 @@ const handleAnimationComplete = () => {
                 }}
                 animationTo={{ opacity: 1, transform: "translateY(0)" }}
                 threshold={0.2}
-                rootMargin="25px"
+                rootMargin="35px"
                 onLetterAnimationComplete={handleAnimationComplete}
                 client:visible
             />
@@ -42,7 +42,7 @@ const handleAnimationComplete = () => {
             <p
                 class="relative text-lg text-white max-w-5xl animate-fade-in opacity-0 transition-opacity duration-700 delay-200"
             >
-                Impulsa tu marca con soluciones digitales integrales. En Code
+                Hacemos destacar tu marca con un equipo de expertos. En Code
                 Brand combinamos diseño, desarrollo y marketing digital para
                 aumentar tus ventas, mejorar tu posicionamiento en buscadores y
                 conectar con tu audiencia.

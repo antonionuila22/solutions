@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+    <section class="py-16 px-6">
+        <article class="flex flex-1/2 items-center justify-center">
+            <div class="text-start flex flex-col items-start gap-3">
+                <h1
+                    class="text-md bg-green-900 px-5 py-1.5 rounded-full text-white"
+                >
+                    Desarrollo Web y Aplicaciones
+                </h1>
+
+                <h2 class="text-5xl font-bold text-black">
+                    Desarrolla tus ideas con los mejores expertos
+                </h2>
+                <p>
+                    En Codebrand, llevamos tus ideas al siguiente nivel con
+                    soluciones web eficientes, a medida y orientadas a
+                    resultados.
+                </p>
+            </div>
+            <div>
+                <script
+                    src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+                    type="module"></script>
+
+                <dotlottie-player
+                    src="https://lottie.host/2997dcb6-e1cf-44d9-83fa-411838a066e3/Mz319qQtTq.json"
+                    background="transparent"
+                    speed="1"
+                    style="width: 300px; height: 300px"
+                    loop
+                    autoplay></dotlottie-player>
+            </div>
+        </article>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-3/4 mx-auto">
+            <div
+                class="flex flex-col items-center justify-center bg-white p-6 rounded-lg shadow-lg"
+            >
+                <img
+                    src="./icons/sitio-web.png"
+                    alt="Desarrollo Web y Apps"
+                    class="w-24 h-24 mb-4"
+                />
+                <h3 class="text-2xl font-bold text-black mb-4">
+                    Desarrollo Web y Apps
+                </h3>
+                <p class="text-gray-600 text-center">
+                    Creamos sitios web optimizados para SEO, rápidos, escalables
+                    y adaptados a todas las plataformas. Aplicaciones para iOS y
+                    Android con interfaces fluidas y optimizadas para
+                    rendimiento.
+                </p>
+            </div>
+        </div>
+    </section>
+</Layout>

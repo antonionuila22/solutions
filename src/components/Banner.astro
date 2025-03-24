@@ -3,18 +3,20 @@ const { title, subtitle, description, imgUrl, customCss } = Astro.props;
 ---
 
 <section>
-    <div class="mx-auto max-w-screen-xl px-4 py-28 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-screen-xl w-3/4 py-24">
         <div
             class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8"
         >
-            <div class="flex justify-center w-1/2 mx-auto md:w-full">
+            <div class="flex justify-center w-full mx-auto md:w-full">
                 <div class="flex flex-col max-w-lg md:max-w-none gap-2.5">
                     <span
                         class="text-orange-400 font-semibold text-xl uppercase"
                         >{subtitle}</span
                     >
 
-                    <h2 class="text-5xl font-bold text-gray-900">
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900"
+                    >
                         {title}
                     </h2>
 
@@ -25,7 +27,7 @@ const { title, subtitle, description, imgUrl, customCss } = Astro.props;
             </div>
 
             <div
-                class="relative flex justify-center w-3/4 mx-auto md:w-full overflow-hidden
+                class="relative flex justify-center w-full mx-auto md:w-full overflow-hidden
                    transition-transform duration-700 ease-in-out
                    hover:scale-105"
                 style="
