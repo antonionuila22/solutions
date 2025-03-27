@@ -1,7 +1,7 @@
 ---
 title: Early Existentialism
 img: learnastro.png
-readtime:
+readtime: 5
 description: An introduction to the roots of existentialism through the works of Søren Kierkegaard and Friedrich Nietzsche.
 date: 2024-09-21
 categories: [Philosophy]
