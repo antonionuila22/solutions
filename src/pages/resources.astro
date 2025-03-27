@@ -1,0 +1,48 @@
+---
+// src/pages/books.astro
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const books = await getCollection("books");
+---
+
+<Layout>
+    <main>
+        <div class="py-28 w-3/4 f">
+            <h1 class="text-5xl font-bold text-cyan-900 text-center mb-8">
+                Los mejores recursos para programadores y agencias de Marketing
+            </h1>
+            <p>
+                Si buscas recursos para programadores de cualquier nivel debes
+                saber que hay un sin fin de tecnologias que puedes utilizar en
+                el mundo de desarrollo de software, te compartiremos unos
+                recursos para que puedas aprender un poco mas de desarrollo web
+                y marketing.
+            </p>
+        </div>
+    </main>
+
+    <section aria-label="Libros para tu desarrollo profesional">
+        <div class="py-30 w-3/4 mx-auto">
+            <div class="grid gap-6 md:grid-cols-2">
+                {
+                    books.map((book) => {
+                        const { slug, data } = book;
+
+                        const { title, author, img, readtime, description } =
+                            data;
+
+                        return (
+                            <article>
+                                <a href={`/libros/${slug}`}>
+                                    <img src={`/${img}`} alt={title} />
+                                    <h3>{title}</h3>
+                                </a>
+                            </article>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

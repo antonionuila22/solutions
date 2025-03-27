@@ -1,6 +1,6 @@
 ---
 import "./src/styles/global.css";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -17,7 +17,7 @@ import Footer from "../components/Footer.astro";
 			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap"
 			rel="stylesheet"
 		/>
-		<ViewTransitions />
+		<ClientRouter />
 		<meta name="generator" content={Astro.generator} />
 		<title>Sitios Web para empresas</title>
 	</head>

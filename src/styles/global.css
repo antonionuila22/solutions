@@ -17,3 +17,21 @@
         animation: fade-in 1s ease-in-out forwards;
     }
 }
+
+/* Cambiando el color del thumb y la pista */
+::-webkit-scrollbar {
+    width: 8px;
+    /* Ancho de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #59cbe8;
+    /* Color del thumb */
+    border-radius: 4px;
+    /* Esquinas redondeadas */
+}
+
+::-webkit-scrollbar-track {
+    background: #244c5a;
+    /* Color de la pista */
+}

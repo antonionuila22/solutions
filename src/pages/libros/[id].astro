@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const books = await getCollection("books");
+
+    return books.map((book) => ({
+        params: { id: book.slug },
+        props: { book },
+    }));
+}
+
+const { book } = Astro.props;
+const { data } = book;
+const { title, description, img, readtime } = data;
+
+const { Content } = await render(book);
+---
+
+<Layout title={`${title}`}>
+    <div
+        class="max-w-5xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-black"
+    >
+        <aside class="md:col-span-1">
+            <div class="overflow-hidden rounded-2xl shadow-xl">
+                <img src={`/${img}`} alt={title} class="w-full object-cover" />
+            </div>
+        </aside>
+
+        <main class="md:col-span-2">
+            <h1 class="text-4xl font-extrabold text-orange-400 mb-4">
+                {title}
+            </h1>
+            <p class="text-cyan-900 mb-6 text-lg leading-relaxed">
+                {description}
+            </p>
+            <div class="prose prose-lg text-black mb-8">
+                <Content />
+            </div>
+            <div class="text-sm text-cyan-900 font-semibold">
+                Tiempo de lectura: {readtime} minutos
+            </div>
+        </main>
+    </div>
+</Layout>
