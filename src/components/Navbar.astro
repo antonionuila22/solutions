@@ -1,22 +1,46 @@
 ---
 import Logo from "../components/logo.astro";
 import Button from "./Button.astro";
-
 const menuItems = [
-    { name: "Home", link: "#", hasDropdown: false },
+    { name: "Inicio", link: "/", hasDropdown: false },
     {
-        name: "Pages",
+        name: "Recursos",
         link: "#",
         hasDropdown: true,
-        subItems: ["About Us", "Our Team", "Blog"],
+        subItems: [
+            { name: "Libros", link: "/libros" },
+            { name: "Blog", link: "/blog" },
+        ],
     },
     {
-        name: "Service",
-        link: "#",
+        name: "Nosotros",
+        link: "/about",
         hasDropdown: true,
-        subItems: ["Web Design", "SEO", "Marketing"],
+        subItems: [{ name: "Nuestros Especialistas", link: "/team" }],
     },
-    { name: "Contact", link: "#", hasDropdown: false },
+    {
+        name: "Servicios",
+        link: "/servicios",
+        hasDropdown: true,
+        subItems: [
+            { name: "Desarrollo Web y Apps", link: "/servicios/web-apps" },
+            { name: "Diseño UX-UI", link: "/servicios/ux-ui" },
+            { name: "SEO", link: "/servicios/seo" },
+            { name: "Diseño Grafico & Branding", link: "/servicios/branding" },
+            {
+                name: "Productos Promocionales",
+                link: "/servicios/promocionales",
+            },
+            {
+                name: "Social Media Management",
+                link: "/servicios/social-media",
+            },
+            { name: "Edición de Video", link: "/servicios/edicion-video" },
+            { name: "Animacion 2D y 3D", link: "/servicios/animacion" },
+            { name: "Renderizado 3D", link: "/servicios/renderizado" },
+        ],
+    },
+    { name: "Contact", link: "/contacto", hasDropdown: false },
 ];
 ---
 
@@ -30,7 +54,7 @@ const menuItems = [
 
             <!-- Menú principal -->
             <div
-                class="hidden md:flex items-center space-x-6 px-8 py-4 gap-3 rounded-full"
+                class="hidden md:flex items-center space-x-7 px-8 py-4 gap-3 rounded-full"
             >
                 {
                     menuItems.map((item) => (
@@ -46,13 +70,13 @@ const menuItems = [
                             </a>
                             {item.hasDropdown &&
                                 (item.subItems ?? []).length > 0 && (
-                                    <div class="absolute left-0 mt-2 w-40 bg-white backdrop-blur-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute left-0 mt-2 w-70 bg-white backdrop-blur-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         {item.subItems?.map((subItem) => (
                                             <a
-                                                href="#"
+                                                href={subItem.link}
                                                 class="block px-4 py-2 text-sm text-black hover:text-orange-400"
                                             >
-                                                {subItem}
+                                                {subItem.name}
                                             </a>
                                         ))}
                                     </div>

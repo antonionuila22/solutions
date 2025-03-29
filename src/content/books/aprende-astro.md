@@ -1,7 +1,7 @@
 ---
 title: Aprendiendo Astro 
 author: Ramon Nuila
-img: learnastro.png
+img: photos/learnastro.webp
 readtime: 5
 description: astro es un framework
 ---

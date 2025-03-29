@@ -1,7 +1,7 @@
 ---
-title: Aprendiendo Tailwind
+title: Aprendiendo SEO
 author: Ramon Nuila
-img: photos/guiatailwindcss.webp
+img: photos/guiaseo.webp
 readtime: 5
 description: astro es un framework
 ---

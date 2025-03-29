@@ -1,0 +1,90 @@
+---
+// src/pages/books.astro
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const books = await getCollection("books");
+---
+
+<Layout>
+    <main>
+        <section class="w-full flex items-center justify-center bg-white">
+            <div class="py-28 w-11/12 max-w-4xl text-center">
+                <h1
+                    class="text-5xl font-extrabold text-cyan-900 mb-6 leading-tight"
+                >
+                    Los mejores recursos para programadores y agencias de
+                    marketing
+                </h1>
+                <p class="text-lg text-black leading-relaxed">
+                    Si estás buscando recursos para mejorar tus habilidades como
+                    desarrollador o marketero, acá encontrarás libros que te
+                    ayudarán a dominar nuevas tecnologías y potenciar tus
+                    proyectos digitales.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <section
+        aria-label="Libros para tu desarrollo profesional"
+        class="bg-gradient-to-b from-white to-slate-50 py-20"
+    >
+        <div class="max-w-7xl mx-auto px-6">
+            <h2
+                class="text-4xl font-bold text-center text-cyan-900 mb-14 tracking-tight"
+            >
+                Libros para tu desarrollo profesional
+            </h2>
+
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                {
+                    books.map((book) => {
+                        const { slug, data } = book;
+                        const { title, author, img, readtime, description } =
+                            data;
+
+                        return (
+                            <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                                <a
+                                    href={`/libros/${slug}`}
+                                    class="block h-full"
+                                >
+                                    <div class="overflow-hidden rounded-t-2xl">
+                                        <img
+                                            loading="lazy"
+                                            src={`/${img}`}
+                                            alt={`Portada del libro: ${title}`}
+                                            class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+
+                                    <div class="p-5 flex flex-col gap-2 h-full">
+                                        <h3 class="text-lg font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
+                                            {title}
+                                        </h3>
+                                        <p class="text-sm text-gray-600 italic">
+                                            por {author}
+                                        </p>
+                                        <p class="text-sm text-black mt-2 line-clamp-3">
+                                            {description}
+                                        </p>
+
+                                        <div class="mt-auto pt-4 text-xs text-gray-500 flex justify-between items-center">
+                                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-medium">
+                                                {readtime} min de lectura
+                                            </span>
+                                            <span class="text-xs font-semibold text-cyan-900 group-hover:text-orange-400 transition">
+                                                Leer más →
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

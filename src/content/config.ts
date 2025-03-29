@@ -2,28 +2,18 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+// Esquema base reutilizable
 const searchable = z.object({
     title: z.string(),
-    author: z.string(),
+    author: z.string().optional(),
     img: z.string(),
-    readtime: z.number(),
+    readtime: z.number().optional(),
     description: z.string(),
 });
 
-const books = defineCollection({
-    schema: z.object({
-        title: z.string(),
-        author: z.string(),
-        img: z.string(),
-        readtime: z.number(),
-        description: z.string(),
-    }),
-});
-
-
-
+// Blog
 const blog = defineCollection({
-    loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/blog" }),
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
     schema: ({ image }) =>
         searchable.extend({
             date: z.date().optional(),
@@ -36,4 +26,34 @@ const blog = defineCollection({
         }),
 });
 
-export const collections = { books, blog };
+// Books
+const books = defineCollection({
+    schema: searchable,
+});
+
+// Country Areas
+const countryAreas = defineCollection({
+    schema: z.object({
+        name: z.string(),
+        code: z.string().max(3), // Ej: "USA", "ARG"
+        region: z.string().optional(),
+        description: z.string().optional(),
+    }),
+});
+
+// Products
+const products = defineCollection({
+    schema: searchable.extend({
+        price: z.number(),
+        inStock: z.boolean().default(true),
+        tags: z.array(z.string()).optional(),
+    }),
+});
+
+// Exportá todas las colecciones
+export const collections = {
+    blog,
+    books,
+    countryAreas,
+    products,
+};
