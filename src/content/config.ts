@@ -6,7 +6,6 @@ import { glob } from "astro/loaders";
 const searchable = z.object({
     title: z.string(),
     author: z.string().optional(),
-    img: z.string(),
     readtime: z.number().optional(),
     description: z.string(),
 });
@@ -18,6 +17,7 @@ const blog = defineCollection({
         searchable.extend({
             date: z.date().optional(),
             image: image().optional(),
+            img: z.string().optional(),
             imageAlt: z.string().default("image"),
             categories: z.array(z.string()).optional(),
             tags: z.array(z.string()).optional(),
@@ -28,11 +28,13 @@ const blog = defineCollection({
 
 // Books
 const books = defineCollection({
-    schema: searchable,
+    schema: searchable.extend({
+        img: z.string(),
+    }),
 });
 
 // Country Areas
-const countryAreas = defineCollection({
+/*const countryAreas = defineCollection({
     schema: z.object({
         name: z.string(),
         code: z.string().max(3), // Ej: "USA", "ARG"
@@ -49,11 +51,10 @@ const products = defineCollection({
         tags: z.array(z.string()).optional(),
     }),
 });
-
+*/
 // Exportá todas las colecciones
 export const collections = {
     blog,
     books,
-    countryAreas,
-    products,
+
 };

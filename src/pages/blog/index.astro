@@ -1,7 +1,75 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
 ---
 
-<Layout>
-    <main><h1 class="">hello World</h1></main>
+<Layout title="Blog">
+    <section class="w-full flex items-center justify-center bg-white">
+        <div class="py-28 w-11/12 max-w-4xl text-center">
+            <h1
+                class="text-5xl font-extrabold text-cyan-900 mb-6 leading-tight"
+            >
+                Nuestro Blog
+            </h1>
+            <p class="text-lg text-black leading-relaxed">
+                Artículos sobre desarrollo, marketing, diseño y tecnología para
+                agencias y programadores que quieren mantenerse actualizados.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                {
+                    posts.map((post) => {
+                        const { slug, data } = post;
+                        const {
+                            title,
+                            description,
+                            image,
+                            img,
+                            imageAlt,
+                            date,
+                            readtime,
+                        } = data;
+
+                        return (
+                            <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                                <a href={`/blog/${slug}`} class="block h-full">
+                                    {image && (
+                                        <div class="overflow-hidden rounded-t-2xl">
+                                            <img
+                                                src={img}
+                                                alt={imageAlt}
+                                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    )}
+
+                                    <div class="p-5 flex flex-col gap-2 h-full">
+                                        <h3 class="text-lg font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
+                                            {title}
+                                        </h3>
+                                        <div class="text-xs text-gray-500">
+                                            {date?.toLocaleDateString()} ·{" "}
+                                            {readtime ?? 5} min de lectura
+                                        </div>
+                                        <p class="text-sm text-black mt-2 line-clamp-3">
+                                            {description}
+                                        </p>
+                                        <span class="text-sm font-semibold text-cyan-900 group-hover:text-orange-400 mt-auto pt-4 transition">
+                                            Leer más →
+                                        </span>
+                                    </div>
+                                </a>
+                            </article>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
 </Layout>

@@ -1,15 +1,14 @@
 ---
-title: Early Existentialism
-img: learnastro.png
-readtime: 5
-description: An introduction to the roots of existentialism through the works of Søren Kierkegaard and Friedrich Nietzsche.
-date: 2024-09-21
-categories: [Philosophy]
-author: john-doe
-tags: [existentialism]
-hideToc: true
-
+title: "Astro es moderno"
+description: "Exploramos por qué Astro es un framework ultra rápido."
+author: "Nico Fries"
+readtime: 6
+img: ./photos/learnastro.webp
+imageAlt: "Portada Astro"
+date: 2024-03-28
 ---
+
+
 
 Existentialism, as a philosophical movement, focuses on individual freedom, meaning, and the human condition. Its roots lie in the 19th century, shaped by the provocative ideas of Søren Kierkegaard and Friedrich Nietzsche, who challenged traditional beliefs and laid the groundwork for modern existential thought.
 

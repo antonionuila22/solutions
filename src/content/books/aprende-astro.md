@@ -1,9 +1,12 @@
 ---
-title: Aprendiendo Astro 
-author: Ramon Nuila
-img: photos/learnastro.webp
-readtime: 5
-description: astro es un framework
+title: "Astro "
+description: "Exploramos por qué Astro es un framework ultra rápido."
+author: "Ramon Nuila"
+readtime: 6
+img: ./photos/learnastro.webp
+imageAlt: "Portada Astro"
+date: 2024-03-28
+
 ---
 ## 🚀 Primeros pasos con Astro.js
 
