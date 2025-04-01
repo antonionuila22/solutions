@@ -12,6 +12,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  //integracion Vercel
 
   integrations: [react()],
   adapter: vercel()
