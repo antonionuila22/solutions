@@ -29,7 +29,6 @@ const posts = await getCollection("blog");
                         const {
                             title,
                             description,
-                            image,
                             img,
                             imageAlt,
                             date,
@@ -39,7 +38,7 @@ const posts = await getCollection("blog");
                         return (
                             <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
                                 <a href={`/blog/${slug}`} class="block h-full">
-                                    {image && (
+                                    {img && (
                                         <div class="overflow-hidden rounded-t-2xl">
                                             <img
                                                 src={img}

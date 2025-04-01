@@ -2,10 +2,13 @@
 title: Desarrollo Web Full Stack – Sitios Web Modernos con WordPress, Webflow, React, Strapi y Más
 img: productfullstack.png
 readtime: 6
-description: Servicio profesional de desarrollo web completo. Creamos sitios administrables, funcionales y escalables con tecnologías como WordPress, Webflow, React, Astro, Next.js y Strapi. Precio por página.
+price: $300 - $1500
+inStock: true
+description: Servicio profesional de desarrollo web completo. Creamos sitios administrables, funcionales y escalables utilizando tecnologías como WordPress, Webflow, React, Astro, Next.js y Strapi. El precio varía según la cantidad de páginas y la complejidad del proyecto.
 date: 2025-01-01
 author: Codebrand Team
 ---
+
 
 ## Desarrollo Web Full Stack Profesional
 

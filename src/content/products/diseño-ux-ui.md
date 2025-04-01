@@ -2,7 +2,9 @@
 title: Diseño Profesional de Páginas Web UX/UI en Figma – Prototipos Modernos y Eficientes
 img: productuxui.png
 readtime: 5
-description: Servicio de diseño UX/UI profesional en Figma. Creamos prototipos modernos, funcionales y adaptados a tus objetivos. Ideal para páginas web de hasta 10 secciones por pantalla.
+price: $180 - $800
+inStock: true
+description: Servicio profesional de diseño UX/UI en Figma. Creamos prototipos modernos, funcionales y adaptados a tus objetivos. Ideal para páginas web de hasta 10 secciones por pantalla. Precios según complejidad y número de pantallas.
 date: 2025-01-01
 author: Codebrand Team
 ---

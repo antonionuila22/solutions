@@ -2,10 +2,13 @@
 title: Diseño Gráfico & Branding Profesional – Identidades Visuales Únicas y Memorables
 img: productbranding.png
 readtime: 5
-description: Servicio profesional de branding y diseño gráfico. Creamos identidades visuales sólidas que conectan con tu audiencia - logotipo, paleta de colores, tipografía, aplicaciones y más.
+price: $250 - $950
+inStock: true
+description: Servicio profesional de branding y diseño gráfico. Creamos identidades visuales sólidas y coherentes que conectan con tu audiencia logotipo, paleta de colores, tipografía, aplicaciones visuales y más. Precios según alcance del proyecto.
 date: 2025-01-01
 author: Codebrand Team
 ---
+
 
 ## Diseño Gráfico & Branding Profesional
 

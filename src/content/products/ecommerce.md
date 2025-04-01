@@ -2,10 +2,13 @@
 title: Desarrollo de Tiendas Online Full Stack – eCommerce Personalizado con WordPress, Webflow, React y Más
 img: productecommerce.png
 readtime: 6
-description: Desarrollo completo de tiendas online administrables, rápidas y seguras con tecnologías como WooCommerce, Webflow Ecommerce, Strapi, React, Next.js y más. Precio por tipo de página.
+price: $600 - $1800
+inStock: true
+description: Desarrollo completo de tiendas online administrables, rápidas y seguras utilizando tecnologías como WooCommerce, Webflow Ecommerce, Strapi, React, Next.js y más. El precio varía según el tipo de página y la funcionalidad requerida.
 date: 2025-01-01
 author: Codebrand Team
 ---
+
 
 ## Desarrollo de Tiendas Online Full Stack
 

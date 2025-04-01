@@ -2,10 +2,13 @@
 title: Renderizados 3D Profesionales – Visuales Realistas para Productos y Arquitectura
 img: productrender.png
 readtime: 5
-description: Servicio profesional de renderizado 3D para productos, espacios y conceptos. Creamos visuales hiperrealistas o estilizados, listos para campañas, ecommerce o presentaciones. Precio por imagen.
+price: $100 - $700
+inStock: true
+description: Servicio profesional de renderizado 3D para productos, espacios y conceptos. Creamos visuales hiperrealistas o estilizados, ideales para campañas publicitarias, ecommerce, presentaciones o catálogos. El precio varía por imagen y nivel de detalle.
 date: 2025-01-01
 author: Codebrand Team
 ---
+
 
 ## Renderizados 3D Profesionales
 

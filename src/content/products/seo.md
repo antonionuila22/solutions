@@ -2,10 +2,13 @@
 title: Optimización SEO Profesional – Mejora tu Visibilidad y Atrae Tráfico Orgánico
 img: productseo.png
 readtime: 5
-description: Servicio profesional de posicionamiento SEO. Optimizamos tu sitio web para mejorar su visibilidad en Google: auditoría, velocidad, estructura, contenido y más.
+price: $300 - $950
+inStock: true
+description: Servicio profesional de posicionamiento SEO. Optimizamos tu sitio web para mejorar su visibilidad en Google auditoría técnica, velocidad, estructura, contenido, keywords y más. El precio varía según el alcance del sitio y la profundidad del trabajo.
 date: 2025-01-01
 author: Codebrand Team
 ---
+
 
 ## Optimización SEO Profesional
 

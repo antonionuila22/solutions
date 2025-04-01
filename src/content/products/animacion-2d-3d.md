@@ -2,6 +2,8 @@
 title: Animación 2D & 3D Profesional – Motion Graphics e Ilustración en Movimiento
 img: productanimacion.png
 readtime: 6
+price: $480 - $1200
+inStock: true
 description: Servicio profesional de animación 2D y 3D para marcas, productos y proyectos visuales. Creamos piezas únicas que explican, impactan y venden. Precios según tipo y nivel de producción.
 date: 2025-01-01
 author: Codebrand Team
