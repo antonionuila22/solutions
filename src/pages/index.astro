@@ -5,6 +5,8 @@ import Banner from "../components/Banner.astro";
 import CardService from "../components/CardService.astro";
 import Whyus from "../components/whyus.astro";
 import Pricing from "../components/Pricing.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Bannersecond from "../components/bannersecond.astro";
 ---
 
 <Layout>
@@ -82,6 +84,15 @@ import Pricing from "../components/Pricing.astro";
 		imgUrl="./photos/Ramon-actual.webp"
 	/>
 
+	<Bannersecond
+		title="Servicios de Desarrollo Web y Marketing Digital a Medida"
+		subtitle="Impulsamos tu marca con tecnología de alto nivel"
+		description="En Codebrand, creamos experiencias digitales únicas que combinan diseño, estrategia y tecnología. Desde sitios web modernos hasta soluciones SEO y branding, ayudamos a tu empresa a destacar en línea, atraer más clientes y convertir visitas en resultados."
+		imgUrl="/photos/bannercodebrand.webp"
+		client:load
+	/>
+
 	<Whyus />
+	<Testimonial />
 	<Pricing />
 </Layout>

@@ -61,20 +61,21 @@ const menuItems = [
                         <div class="relative group">
                             <a
                                 href={item.link}
-                                class="text-black text-md font-medium font-poppins flex items-center gap-2 hover:text-orange-400 transition duration-300"
+                                class="peer text-black text-md font-medium font-poppins flex items-center gap-2 hover:text-orange-400 transition duration-300"
                             >
-                                {item.name}{" "}
+                                {item.name}
                                 {item.hasDropdown && (
                                     <span style="font-size: 7px;">▼</span>
                                 )}
                             </a>
+
                             {item.hasDropdown &&
                                 (item.subItems ?? []).length > 0 && (
-                                    <div class="absolute left-0 mt-2 w-70 bg-white backdrop-blur-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute left-0 top-2.5 mt-2 w-72 py-3 bg-white rounded-lg shadow-lg hidden group-hover:flex flex-col z-50 border border-gray-200 transition-all duration-200">
                                         {item.subItems?.map((subItem) => (
                                             <a
                                                 href={subItem.link}
-                                                class="block px-4 py-2 text-sm text-black hover:text-orange-400"
+                                                class="px-4 py-2 text-sm text-black hover:text-orange-400 transition"
                                             >
                                                 {subItem.name}
                                             </a>

@@ -40,16 +40,7 @@ const { Content } = await render(post);
 
             <p class="text-lg text-cyan-900 mb-8">{description}</p>
         </div>
-        <section
-            class="prose prose-xl max-w-none mt-16 text-gray-800 leading-loose
-          prose-headings:font-bold prose-headings:tracking-tight
-          prose-h2:text-3xl prose-h2:mt-12 prose-h2:text-orange-500
-          prose-h3:text-2xl prose-h3:mt-8 prose-h3:text-orange-400
-          prose-p:my-5 prose-ul:my-5 prose-ol:my-5 prose-li:ml-5 prose-li:marker:text-orange-400
-          prose-blockquote:my-6 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:border-l-4 prose-blockquote:border-orange-400
-          prose-img:rounded-xl prose-img:shadow-md prose-img:my-8
-          prose-a:text-orange-500 hover:prose-a:underline"
-        >
+        <section class="markdown-content">
             <Content />
         </section>
     </section>

@@ -27,6 +27,7 @@ const blog = defineCollection({
 const books = defineCollection({
     schema: searchable.extend({
         img: z.string(),
+        date: z.string(),
     }),
 });
 

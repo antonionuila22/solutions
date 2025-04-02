@@ -1,0 +1,121 @@
+---
+export interface Props {
+    title: string;
+    subtitle: string;
+    description: string;
+    imgUrl: string;
+}
+
+const { title, subtitle, description, imgUrl } = Astro.props;
+---
+
+<section
+    class="relative w-full bg-gradient-to-br from-[#0d0f1a] to-[#1a1d2e] overflow-hidden"
+>
+    <div
+        class="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-2 items-center gap-16"
+    >
+        <!-- Left: Content -->
+        <div class="z-10 space-y-6">
+            <span
+                class="text-orange-400 font-medium text-lg uppercase block opacity-0"
+                id="gsap-subtitle"
+            >
+                {subtitle}
+            </span>
+            <h1
+                class="text-white text-5xl font-extrabold leading-tight opacity-0"
+                id="gsap-title"
+            >
+                {title}
+            </h1>
+            <p class="text-gray-300 text-lg max-w-xl opacity-0" id="gsap-desc">
+                {description}
+            </p>
+            <div class="opacity-0" id="gsap-cta">
+                <a
+                    href="#contacto"
+                    class="inline-block mt-4 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-xl font-semibold shadow-xl transition"
+                >
+                    Hablemos
+                </a>
+            </div>
+        </div>
+
+        <!-- Right: Image + Floating Cards -->
+        <div class="relative">
+            <img
+                src={imgUrl}
+                alt="Hero Visual"
+                class="w-full max-w-lg rounded-3xl shadow-2xl object-cover opacity-0"
+                id="gsap-image"
+            />
+
+            <!-- Floating card top-left -->
+            <div
+                class="absolute -top-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 text-white p-4 rounded-xl shadow-md opacity-0"
+                id="card-1"
+            >
+                <p class="text-sm">Dashboard</p>
+                <div class="h-1 w-20 bg-orange-400 mt-2 rounded-full"></div>
+            </div>
+
+            <!-- Floating card bottom-right -->
+            <div
+                class="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 text-white p-4 rounded-xl shadow-md opacity-0"
+                id="card-2"
+            >
+                <p class="text-sm">Performance +320%</p>
+                <div class="h-1 w-28 bg-cyan-400 mt-2 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import gsap from "gsap";
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const tl = gsap.timeline({
+            defaults: { ease: "power3.out", duration: 1 },
+        });
+
+        tl.fromTo("#gsap-subtitle", { y: 20, opacity: 0 }, { y: 0, opacity: 1 })
+            .fromTo(
+                "#gsap-title",
+                { y: 60, opacity: 0 },
+                { y: 0, opacity: 1 },
+                "-=0.5",
+            )
+            .fromTo(
+                "#gsap-desc",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1 },
+                "-=0.4",
+            )
+            .fromTo(
+                "#gsap-cta",
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1 },
+                "-=0.4",
+            )
+            .fromTo(
+                "#gsap-image",
+                { scale: 1.05, opacity: 0 },
+                { scale: 1, opacity: 1 },
+                "-=0.8",
+            )
+            .fromTo(
+                "#card-1",
+                { y: -20, opacity: 0, scale: 0.95 },
+                { y: 0, opacity: 1, scale: 1 },
+                "-=0.6",
+            )
+            .fromTo(
+                "#card-2",
+                { y: 20, opacity: 0, scale: 0.95 },
+                { y: 0, opacity: 1, scale: 1 },
+                "-=0.6",
+            );
+    });
+</script>

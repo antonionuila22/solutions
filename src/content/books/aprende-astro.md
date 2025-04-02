@@ -5,7 +5,7 @@ author: "Ramon Nuila"
 readtime: 6
 img: ./photos/learnastro.webp
 imageAlt: "Portada Astro"
-date: 2024-03-28
+date: '2024-03-28'
 
 ---
 ## 🚀 Primeros pasos con Astro.js
@@ -30,8 +30,6 @@ npm create astro@latest
 
 Sigue las instrucciones del CLI para configurar tu proyecto. Puedes elegir una plantilla (ej. "Minimal") y opciones como TypeScript, Tailwind, etc.
 
----
-
 ## ▶️ Iniciar el servidor local
 
 ```bash
@@ -41,8 +39,6 @@ npm run dev
 ```
 
 Esto abrirá tu proyecto en `http://localhost:4321`
-
----
 
 ## 📁 Estructura básica
 
@@ -59,14 +55,9 @@ astro.config.mjs
 - `components/`: Reutiliza componentes UI (Astro, React, Vue, etc).
 - `layouts/`: Plantillas para páginas completas.
 
----
-
 ## 🧩 Crear una página básica
 
 ```astro
----
-// src/pages/index.astro
----
 
 <html>
   <head><title>Mi primer sitio Astro</title></head>
@@ -76,16 +67,12 @@ astro.config.mjs
 </html>
 ```
 
----
-
 ## 🎉 ¿Qué sigue?
 
 - Agrega tus componentes con `<MyComponent />`
 - Usa Markdown con `.md` o `.mdx`
 - Instala integraciones: `npx astro add tailwind`
 - Publica en Vercel, Netlify, etc.
-
----
 
 ## 📚 Recursos útiles
 
