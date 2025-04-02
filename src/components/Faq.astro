@@ -1,0 +1,21 @@
+---
+import Faqcomp from "../components/Faqcomp.tsx";
+import type { FAQItem } from "../components/Faqcomp.tsx";
+
+const faqs: FAQItem[] = [
+    {
+        question: "¿Qué servicios ofrece Codebrand?",
+        answer: "Ofrecemos desarrollo web, diseño UX/UI, branding, SEO, y más.",
+    },
+    {
+        question: "¿Dónde están ubicados?",
+        answer: "Tenemos presencia en España y Centroamérica, pero trabajamos globalmente.",
+    },
+    {
+        question: "¿Cómo puedo contactar al equipo?",
+        answer: "Podés escribirnos a través del formulario de contacto o por correo electrónico.",
+    },
+];
+---
+
+<Faqcomp faqs={faqs} client:load />

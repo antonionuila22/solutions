@@ -7,6 +7,8 @@ import Whyus from "../components/whyus.astro";
 import Pricing from "../components/Pricing.astro";
 import Testimonial from "../components/Testimonial.astro";
 import Bannersecond from "../components/BannerSecond.astro";
+import TabComponent from "../components/TabComp.tsx";
+import Faq from "../components/faq.astro";
 ---
 
 <Layout>
@@ -78,8 +80,8 @@ import Bannersecond from "../components/BannerSecond.astro";
 	</section>
 
 	<Banner
-		subtitle="Ramón Nuila"
-		title="Fundador de Codebrand"
+		subtitle="Sobre Nosotros"
+		title="Codebrand "
 		description="En Codebrand resolvemos desafíos de cualquier negocio combinando diseño, desarrollo y publicidad. He trabajado durante varios años como diseñador, programador y desarrollador web para agencias y empresas de outsourcing. Así que decidí formar una empresa que genere confianza, cercania, que priorizara la calidad y la satisfacción del cliente."
 		imgUrl="./photos/Ramon-actual.webp"
 	/>
@@ -92,7 +94,29 @@ import Bannersecond from "../components/BannerSecond.astro";
 		client:load
 	/>
 
+	<TabComponent
+		tabs={[
+			{
+				title: "Diseño Web",
+				description: "Creamos sitios atractivos y funcionales.",
+				image: "/images/web-design.jpg",
+			},
+			{
+				title: "SEO",
+				description: "Optimizamos tu presencia en Google.",
+				image: "/images/seo.jpg",
+			},
+			{
+				title: "Branding",
+				description: "Desarrollamos identidades memorables.",
+				image: "/images/branding.jpg",
+			},
+		]}
+		client:visible
+	/>
+
 	<Whyus />
 	<Testimonial />
 	<Pricing />
+	<Faq />
 </Layout>
