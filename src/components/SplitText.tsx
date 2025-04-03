@@ -1,104 +1,51 @@
-import { useSprings, animated } from '@react-spring/web';
-import type { SpringConfig } from '@react-spring/web';
+// SplitTextTailwind.tsx
 import { useEffect, useRef, useState } from 'react';
 
 interface SplitTextProps {
-    text?: string;
-    className?: string;
-    delay?: number;
-    animationFrom?: { opacity: number; transform: string };
-    animationTo?: { opacity: number; transform: string };
-    easing?: SpringConfig['easing'];
-    threshold?: number;
-    rootMargin?: string;
-    textAlign?: 'left' | 'right' | 'center' | 'justify' | 'start' | 'end';
-    onLetterAnimationComplete?: () => void;
+  text: string;
+  className?: string;
 }
 
-const SplitText: React.FC<SplitTextProps> = ({
-    text = '',
-    className = '',
-    delay = 100,
-    animationFrom = { opacity: 0, transform: 'translate3d(0,40px,0)' },
-    animationTo = { opacity: 1, transform: 'translate3d(0,0,0)' },
-    easing = (t: number) => t,
-    threshold = 0.1,
-    rootMargin = '-100px',
-    textAlign = 'center',
-    onLetterAnimationComplete,
-}) => {
-    const words = text.split(' ').map(word => word.split(''));
-    const letters = words.flat();
-    const [inView, setInView] = useState(false);
-    const ref = useRef<HTMLParagraphElement>(null);
-    const animatedCount = useRef(0);
+const SplitTextTailwind: React.FC<SplitTextProps> = ({ text, className = '' }) => {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const [visible, setVisible] = useState(false);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setInView(true);
-                    if (ref.current) {
-                        observer.unobserve(ref.current);
-                    }
-                }
-            },
-            { threshold, rootMargin }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
         }
-
-        return () => observer.disconnect();
-    }, [threshold, rootMargin]);
-
-    const springs = useSprings(
-        letters.length,
-        letters.map((_, i) => ({
-            from: animationFrom,
-            to: inView
-                ? async (next: (props: any) => Promise<void>) => {
-                    await next(animationTo);
-                    animatedCount.current += 1;
-                    if (animatedCount.current === letters.length && onLetterAnimationComplete) {
-                        onLetterAnimationComplete();
-                    }
-                }
-                : animationFrom,
-            delay: i * delay,
-            config: { easing },
-        }))
+      },
+      { threshold: 0.1 }
     );
 
-    return (
-        <p
-            ref={ref}
-            className={`split-parent overflow-hidden inline ${className}`}
-            style={{ textAlign, whiteSpace: 'normal', wordWrap: 'break-word' }}
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const letters = text.split('');
+
+  return (
+    <p ref={ref} className={`overflow-hidden ${className}`}>
+      {letters.map((letter, index) => (
+        <span
+          key={index}
+          className={`
+            inline-block transition-all duration-500 ease-out
+            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+          `}
+          style={{ transitionDelay: `${index * 10}ms` }}
         >
-            {words.map((word, wordIndex) => (
-                <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-                    {word.map((letter, letterIndex) => {
-                        const index = words
-                            .slice(0, wordIndex)
-                            .reduce((acc, w) => acc + w.length, 0) + letterIndex;
-
-                        return (
-                            <animated.span
-                                key={index}
-                                style={springs[index] as unknown as React.CSSProperties}
-                                className="inline-block transform transition-opacity will-change-transform"
-                            >
-                                {letter}
-                            </animated.span>
-                        );
-                    })}
-                    <span style={{ display: 'inline-block', width: '0.3em' }}>&nbsp;</span>
-                </span>
-            ))}
-        </p>
-    );
+          {letter === ' ' ? '\u00A0' : letter}
+        </span>
+      ))}
+    </p>
+  );
 };
 
-export default SplitText;
+export default SplitTextTailwind;

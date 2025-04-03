@@ -1,46 +1,50 @@
 ---
-const { title, subtitle, description, imgUrl, customCss } = Astro.props;
+const { title, subtitle, description, imgUrl } = Astro.props;
 ---
 
 <section>
-    <div class="mx-auto max-w-screen-xl w-3/4 py-24">
-        <div
-            class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8"
-        >
-            <div class="flex justify-center w-full mx-auto md:w-full">
-                <div class="flex flex-col max-w-lg md:max-w-none gap-2.5">
-                    <span
-                        class="text-orange-400 font-semibold text-xl uppercase"
-                        >{subtitle}</span
-                    >
-
-                    <h2
-                        class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-cyan-900"
-                    >
-                        {title}
-                    </h2>
-
-                    <p class="mt-4 text-gray-700 text-xl">
-                        {description}
-                    </p>
-                </div>
+    <div class="mx-auto max-w-screen-xl px-6 py-10 lg:max-w-3/4">
+        <div class="flex flex-wrap-reverse gap lg:flex-nowrap gap-16">
+            <!-- Texto -->
+            <div class="flex flex-col gap-4 w-full text-center md:text-left">
+                <span
+                    class="text-orange-400 font-semibold text-lg md:text-xl uppercase"
+                >
+                    {subtitle}
+                </span>
+                <h2
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold text-cyan-900 leading-tight"
+                >
+                    {title}
+                </h2>
+                <p
+                    class="mt-2 text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0"
+                >
+                    {description}
+                </p>
             </div>
 
-            <div
-                class="relative flex justify-center w-full mx-auto md:w-full overflow-hidden
-                   transition-transform duration-700 ease-in-out
-                   hover:scale-105"
-                style="
-                mask-image: linear-gradient(to bottom, black 66%, transparent 99%) !important;
-            "
-            >
-                <!-- Parallax Effect -->
+            <!-- Imagen con efecto 3D -->
+            <div class="relative w-full flex justify-center">
+                <!-- Imagen 3D -->
                 <img
                     src={imgUrl}
-                    alt=""
-                    class="rounded-lg shadow-lg transition-all duration-500
-                       hover:scale-105"
+                    alt="Visual de Servicio"
+                    class="z-10 w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[360px] md:h-[360px] lg:w-[400px] lg:h-[400px] object-cover rounded-[28px]
+          transform-3d rotate-x-30 rotate-y-20 rotate-z-5
+          transition-all duration-700 hover:rotate-x-0 hover:rotate-y-0 hover:rotate-z-0 hover:scale-105"
                 />
+
+                <!-- Fondo decorativo -->
+                <div
+                    class="absolute w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[360px] md:h-[360px] lg:w-[400px] lg:h-[400px] rounded-[28px]
+          bg-gradient-to-br from-white/20 to-orange-100/10 p-3 shadow-inner ring-1 ring-inset ring-cyan-900/10 backdrop-blur-md z-0"
+                >
+                    <div
+                        class="w-full h-full rounded-[20px] outline-2 outline-dashed outline-orange-200/30"
+                    >
+                    </div>
+                </div>
             </div>
         </div>
     </div>

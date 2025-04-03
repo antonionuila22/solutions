@@ -44,8 +44,8 @@ Nuestro enfoque es **modular y escalable**. Cada página se desarrolla de forma 
 |----------------------------|-----------------------------------------------------------------------------|------------|
 | **Página estándar**         | Home, servicios, nosotros, contacto, etc. Incluye contenido estático y dinámico. | $290 |
 | **Página funcional**        | Incluye formularios, integraciones o funcionalidades interactivas.         | $300       |
-| **Página dinámica CMS**     | Administrable con WordPress, Webflow o Strapi.                             | $250       |
-| **Página avanzada**         | Requiere backend personalizado, lógica compleja o conexión a APIs.         | Desde $350 |
+| **Página dinámica CMS**     | Administrable con WordPress, Webflow o Strapi.                             | $350       |
+| **Página avanzada**         | Requiere backend personalizado, lógica compleja o conexión a APIs.         | Desde $450 |
 
 > **Ejemplo**: Un sitio web con 5 páginas (home, nosotros, servicios, blog, contacto) puede costar desde $1,250 USD, dependiendo de sus funcionalidades.
 

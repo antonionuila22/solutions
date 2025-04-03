@@ -23,7 +23,9 @@ import Footer from "../components/Footer.astro";
 	</head>
 	<body>
 		<Navbar />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer />
 		<script>
 			import gsap from "gsap";

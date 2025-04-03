@@ -8,14 +8,22 @@ import Pricing from "../components/Pricing.astro";
 import Testimonial from "../components/Testimonial.astro";
 import Bannersecond from "../components/BannerSecond.astro";
 import TabComponent from "../components/TabComp.tsx";
-import Faq from "../components/faq.astro";
+import Faq from "../components/Faq.astro";
 ---
 
 <Layout>
 	<Hero />
 
-	<section class="py-20">
-		<h2 class="text-5xl font-bold text-cyan-900 text-center mb-8">
+	<Banner
+		subtitle="Agencia Creativa Digital"
+		title="Expertos en Diseño Gráfico y Desarrollo Web Personalizado"
+		description="En Codebrand transformamos ideas en experiencias digitales impactantes. Combinamos diseño estratégico, desarrollo a medida y marketing digital para resolver los desafíos de negocios modernos. Con años de experiencia como diseñador y desarrollador para agencias internacionales, fundé Codebrand para ofrecer un servicio cercano, confiable y orientado a resultados. Calidad, atención y compromiso nos definen."
+		imgUrl="./photos/section.webp"
+	/>
+
+	<!-- Services Section -->
+	<section class="py-20 flex flex-col gap-20">
+		<h2 class="text-5xl font-bold text-cyan-900 text-center">
 			Nuestros Servicios
 		</h2>
 
@@ -79,19 +87,11 @@ import Faq from "../components/faq.astro";
 		</div>
 	</section>
 
-	<Banner
-		subtitle="Sobre Nosotros"
-		title="Codebrand "
-		description="En Codebrand resolvemos desafíos de cualquier negocio combinando diseño, desarrollo y publicidad. He trabajado durante varios años como diseñador, programador y desarrollador web para agencias y empresas de outsourcing. Así que decidí formar una empresa que genere confianza, cercania, que priorizara la calidad y la satisfacción del cliente."
-		imgUrl="./photos/Ramon-actual.webp"
-	/>
-
 	<Bannersecond
-		title="Servicios de Desarrollo Web y Marketing Digital a Medida"
-		subtitle="Impulsamos tu marca con tecnología de alto nivel"
+		title="Transforma tu vision en Resultados que Venden"
+		subtitle="Impulsamos tu marca"
 		description="En Codebrand, creamos experiencias digitales únicas que combinan diseño, estrategia y tecnología. Desde sitios web modernos hasta soluciones SEO y branding, ayudamos a tu empresa a destacar en línea, atraer más clientes y convertir visitas en resultados."
 		imgUrl="/photos/bannercodebrand.webp"
-		client:load
 	/>
 
 	<TabComponent
@@ -117,6 +117,6 @@ import Faq from "../components/faq.astro";
 
 	<Whyus />
 	<Testimonial />
-	<Pricing />
 	<Faq />
+	<Pricing />
 </Layout>

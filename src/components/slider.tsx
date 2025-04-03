@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { animated, useSpring } from "@react-spring/web";
+import { animated, useSpring, SpringValue } from "@react-spring/web";
 
 type Testimonial = {
   quote: string;
@@ -44,6 +44,10 @@ export default function Slider({ testimonials, interval = 4000 }: Props) {
     testimonials[(index + 2) % testimonials.length],
   ];
 
+  const AnimatedDiv = animated.div as React.FC<
+  React.HTMLAttributes<HTMLDivElement>
+>;
+
   // Animación con react-spring
   const springProps = useSpring({
     from: { opacity: 0, transform: "translateY(30px)" },
@@ -58,8 +62,8 @@ export default function Slider({ testimonials, interval = 4000 }: Props) {
         Lo que dicen nuestros clientes
       </h2>
 
-      <animated.div
-        style={springProps}
+      <AnimatedDiv
+        style={springProps as any}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
       >
         {visibleSlides.map((testimonial, i) => (
@@ -85,7 +89,7 @@ export default function Slider({ testimonials, interval = 4000 }: Props) {
             </div>
           </div>
         ))}
-      </animated.div>
+      </AnimatedDiv>
 
       {/* Botones */}
       <div className="mt-8 flex justify-center gap-6">
