@@ -1,12 +1,11 @@
 ---
-import BannerSecondtsx from "../components/BannerSecond";
+import ReactBanner from "../components/reactBanner.tsx";
 const { title, subtitle, description, imgUrl } = Astro.props;
 ---
 
-<BannerSecondtsx
+<ReactBanner
     title={title}
     subtitle={subtitle}
     description={description}
     imgUrl={imgUrl}
-    client:visible
 />
