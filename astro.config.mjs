@@ -7,6 +7,8 @@ import react from '@astrojs/react';
 
 import vercel from '@astrojs/vercel';
 
+import netlify from '@astrojs/netlify';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -15,5 +17,7 @@ export default defineConfig({
   //integracion Vercel
 
   integrations: [react()],
-  adapter: vercel()
+  adapter: netlify({
+    edgeMiddleware: true,
+  })
 });
