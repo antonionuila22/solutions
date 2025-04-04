@@ -12,7 +12,9 @@ type Props = {
   testimonials: Testimonial[];
   interval?: number;
 };
-
+ /// Componente de Slider
+ /// que muestra testimonios de clientes
+ /// @param {Testimonial[]} testimonials - Array de testimonios
 export default function Slider({ testimonials, interval = 4000 }: Props) {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
