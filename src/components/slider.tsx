@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { animated, useSpring, SpringValue } from "@react-spring/web";
+import { animated, useSpring} from "@react-spring/web";
 
 type Testimonial = {
   quote: string;
