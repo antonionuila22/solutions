@@ -1,122 +1,175 @@
 ---
-import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import Banner from "../components/Banner.astro";
-import CardService from "../components/CardService.astro";
-import Whyus from "../components/whyus.astro";
-import Pricing from "../components/Pricing.astro";
-import Testimonial from "../components/Testimonial.astro";
-import Bannersecond from "../components/BannerSecond.astro";
-import TabComponent from "../components/TabComp.tsx";
-import Faq from "../components/Faq.astro";
 ---
 
-<Layout>
-	<Hero />
-
-	<Banner
-		subtitle="Agencia Creativa Digital"
-		title="Expertos en Diseño Gráfico y Desarrollo Web Personalizado"
-		description="En Codebrand transformamos ideas en experiencias digitales impactantes. Combinamos diseño estratégico, desarrollo a medida y marketing digital para resolver los desafíos de negocios modernos. Con años de experiencia como diseñador y desarrollador para agencias internacionales, fundé Codebrand para ofrecer un servicio cercano, confiable y orientado a resultados. Calidad, atención y compromiso nos definen."
-		imgUrl="./photos/section.webp"
-	/>
-
-	<!-- Services Section -->
-	<section class="py-20 flex flex-col gap-20">
-		<h2 class="text-5xl font-bold text-cyan-900 text-center">
-			Nuestros Servicios
-		</h2>
-
+<Layout title="Contáctanos – Codebrand">
+	<section class="relative bg-white font-poppins overflow-hidden">
 		<div
-			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-3/4 mx-auto"
+			class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
 		>
-			<CardService
-				icon="./icons/interfaz-de-usuario.png"
-				title="Diseño UX/UI"
-				description="Diseñamos experiencias digitales intuitivas y atractivas que aumentan la conversión y fidelización."
-			/>
+			<!-- Formulario -->
+			<div class="space-y-8 animate-fade-in-up">
+				<h1
+					class="text-4xl md:text-5xl font-extrabold text-cyan-900 leading-tight"
+				>
+					¿Listo para trabajar juntos?
+				</h1>
+				<p class="text-lg text-gray-600">
+					En Codebrand convertimos ideas en experiencias. Completa el
+					formulario y nuestro equipo te responderá lo antes posible.
+				</p>
 
-			<CardService
-				icon="./icons/sitio-web.png"
-				title="Desarrollo Web y Apps"
-				description="Creamos sitios web optimizados para SEO, rápidos, escalables y adaptados a todas las plataformas. Aplicaciones para iOS y Android con interfaces fluidas y optimizadas para rendimiento."
-				learnMoreUrl="./servicios/desarrollo-web"
-			/>
+				<form
+					action="#"
+					method="POST"
+					class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-2xl shadow-2xl border border-gray-100"
+				>
+					<div class="flex flex-col gap-2">
+						<label
+							for="name"
+							class="text-sm font-medium text-gray-700"
+							>Nombre</label
+						>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							required
+							placeholder="Tu nombre completo"
+							class="input-style"
+						/>
+					</div>
 
-			<CardService
-				icon="./icons/diseno-grafico.png"
-				title="Diseño Gráfico & Branding"
-				description="Construimos identidades visuales sólidas y memorables para potenciar tu marca."
-			/>
+					<div class="flex flex-col gap-2">
+						<label
+							for="email"
+							class="text-sm font-medium text-gray-700"
+							>Email</label
+						>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							required
+							placeholder="tuemail@email.com"
+							class="input-style"
+						/>
+					</div>
 
-			<CardService
-				icon="./icons/seo.png"
-				title="SEO & Posicionamiento Web"
-				description="Mejoramos tu ranking en Google con estrategias de SEO técnico y contenido optimizado."
-			/>
+					<div class="md:col-span-2 flex flex-col gap-2">
+						<label
+							for="subject"
+							class="text-sm font-medium text-gray-700"
+							>Asunto</label
+						>
+						<input
+							type="text"
+							id="subject"
+							name="subject"
+							required
+							placeholder="Sobre qué te gustaría hablar"
+							class="input-style"
+						/>
+					</div>
 
-			<CardService
-				icon="./icons/redes-sociales.png"
-				title="Gestión de Redes Sociales"
-				description="Creamos estrategias de contenido y campañas de publicidad para hacer crecer tu comunidad."
-			/>
+					<div class="md:col-span-2 flex flex-col gap-2">
+						<label
+							for="message"
+							class="text-sm font-medium text-gray-700"
+							>Mensaje</label
+						>
+						<textarea
+							id="message"
+							name="message"
+							rows="6"
+							required
+							placeholder="Cuéntanos tu idea o necesidad..."
+							class="input-style"></textarea>
+					</div>
 
-			<CardService
-				icon="./icons/edicion-de-video.png"
-				title="Edición de Video"
-				description="Producción y edición de videos profesionales para publicidad y redes sociales."
-			/>
+					<div class="md:col-span-2">
+						<button
+							type="submit"
+							class="w-full bg-orange-400 text-white font-bold text-sm py-3 rounded-lg hover:bg-orange-500 transition duration-300 shadow-md"
+						>
+							Enviar mensaje
+						</button>
+					</div>
+				</form>
+			</div>
 
-			<CardService
-				icon="./icons/animacion.png"
-				title="Animación 2D & 3D"
-				description="Animaciones creativas para marketing, presentaciones y contenido interactivo."
-			/>
+			<!-- Información de contacto -->
+			<div class="space-y-8 animate-fade-in-up delay-150">
+				<div class="space-y-2">
+					<h2
+						class="text-xl font-bold text-orange-400 uppercase tracking-wide"
+					>
+						Contacto directo
+					</h2>
+					<p class="text-gray-700">
+						También puedes escribirnos directamente o encontrarnos
+						en nuestras oficinas.
+					</p>
+				</div>
 
-			<CardService
-				icon="./icons/modelo-3d.png"
-				title="Renderizados 3D"
-				description="Modelado y renderizado 3D de alta calidad para arquitectura y productos."
-			/>
+				<ul class="space-y-4 text-gray-800 text-sm">
+					<li class="flex items-start gap-4">
+						<span class="text-orange-400 text-xl">📍</span>
+						<span>
+							San Pedro Sula, Cortés, Honduras<br />
+							Calle 4, Avenida 11, Edificio Codebrand
+						</span>
+					</li>
+					<li class="flex items-center gap-4">
+						<span class="text-orange-400 text-xl">✉️</span>
+						<a
+							href="mailto:hola@codebrand.es"
+							class="hover:underline">info@codebrand.es</a
+						>
+					</li>
+					<li class="flex items-center gap-4">
+						<span class="text-orange-400 text-xl">📞</span>
+						<a href="tel:+504-3272-2973" class="hover:underline"
+							>+504-3272-2973</a
+						>
+					</li>
+				</ul>
 
-			<CardService
-				icon="./icons/camiseta.png"
-				title="Productos Promocionales"
-				description="Personalización de artículos con sublimación, impresión digital y grabado láser."
-			/>
+				<div class="pt-6">
+					<h3 class="text-sm font-medium text-gray-500 uppercase">
+						Horario
+					</h3>
+					<p class="text-gray-700 mt-1">
+						Lunes a Viernes: 9:00 AM – 6:00 PM<br />
+						Sábados: 10:00 AM – 2:00 PM
+					</p>
+				</div>
+			</div>
 		</div>
 	</section>
-
-	<Bannersecond
-		title="Transforma tu vision en Resultados que Venden"
-		subtitle="Impulsamos tu marca"
-		description="En Codebrand, creamos experiencias digitales únicas que combinan diseño, estrategia y tecnología. Desde sitios web modernos hasta soluciones SEO y branding, ayudamos a tu empresa a destacar en línea, atraer más clientes y convertir visitas en resultados."
-		imgUrl="/photos/bannercodebrand.webp"
-	/>
-
-	<TabComponent
-		tabs={[
-			{
-				title: "Diseño Web",
-				description: "Creamos sitios atractivos y funcionales.",
-				image: "/images/web-design.jpg",
-			},
-			{
-				title: "SEO",
-				description: "Optimizamos tu presencia en Google.",
-				image: "/images/seo.jpg",
-			},
-			{
-				title: "Branding",
-				description: "Desarrollamos identidades memorables.",
-				image: "/images/branding.jpg",
-			},
-		]}
-		client:visible
-	/>
-
-	<Whyus />
-	<Testimonial />
-	<Faq />
-	<Pricing />
 </Layout>
+<style>
+	.input-style {
+		width: 100%;
+		padding: 0.75rem 1rem;
+		font-size: 0.875rem;
+		font-family: "Poppins", sans-serif;
+		border: 1px solid #d1d5db; /* gray-300 */
+		border-radius: 0.5rem;
+		background-color: #ffffff;
+		color: #111827; /* gray-900 */
+		transition:
+			border-color 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+
+	.input-style::placeholder {
+		color: #9ca3af; /* gray-400 */
+	}
+
+	.input-style:focus {
+		outline: none;
+		border-color: #fb923c; /* orange-400 */
+		box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.3);
+	}
+</style>

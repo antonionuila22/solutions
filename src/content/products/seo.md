@@ -1,6 +1,6 @@
 ---
 title: Optimización SEO Profesional – Mejora tu Visibilidad y Atrae Tráfico Orgánico
-img: productseo.png
+img: /photos/Branding.png
 readtime: 5
 price: $300 - $950
 inStock: true

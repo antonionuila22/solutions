@@ -1,6 +1,6 @@
 ---
 title: Desarrollo Web Full Stack – Sitios Web Modernos con WordPress, Webflow, React, Strapi y Más
-img: productfullstack.png
+img: /photos/diseñoweb.png
 readtime: 6
 price: $300 - $1500
 inStock: true

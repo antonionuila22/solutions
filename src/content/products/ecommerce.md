@@ -1,6 +1,6 @@
 ---
 title: Desarrollo de Tiendas Online Full Stack – eCommerce Personalizado con WordPress, Webflow, React y Más
-img: productecommerce.png
+img: /photos/section.webp
 readtime: 6
 price: $600 - $1800
 inStock: true

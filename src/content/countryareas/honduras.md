@@ -4,7 +4,7 @@ name: Honduras
 code: HN
 region: Centroamérica
 author: Ramon Nuila
-img: learnastro.png
+img: /photos/teamcode.png
 readtime: 5
 description: Agencia de diseño y desarrollo web en Honduras. Impulsamos soluciones digitales personalizadas para empresas en toda Centroamérica que buscan calidad, escalabilidad y resultados.
 ---

@@ -34,6 +34,9 @@ const books = defineCollection({
 // Country Areas
 const countryareas = defineCollection({
     schema: z.object({
+        title: z.string(),
+        img: z.string().optional(),
+        description: z.string(),
         name: z.string(),
         code: z.string(), // Ej: "USA", "ARG"
         region: z.string().optional(),

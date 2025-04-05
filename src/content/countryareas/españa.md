@@ -4,7 +4,7 @@ name: España
 code: ES
 region: Europa
 author: Ramon Nuila
-img: learnastro.png
+img: /photos/teamcode.png
 readtime: 5
 description: Agencia de diseño y desarrollo web en España. Creamos soluciones digitales personalizadas para empresas que buscan calidad, innovación y resultados reales en Europa.
 ---

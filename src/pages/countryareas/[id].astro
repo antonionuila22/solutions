@@ -9,12 +9,12 @@ export async function getStaticPaths() {
 
     return countries.map((country) => ({
         params: { id: country.slug },
-        props: { country },
+        props: { country, countries }, // Pasamos también todas las entradas
     }));
 }
 
 // 2. Props del archivo .md para ese país
-const { country } = Astro.props;
+const { country, countries } = Astro.props;
 const { data } = country;
 const { title, name, region, code, img, description } = data;
 
@@ -22,40 +22,178 @@ const { Content } = await render(country);
 ---
 
 <Layout title={title}>
-    <div class="max-w-6xl mx-auto py-20 px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-black">
+    <div
+        class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 font-poppins space-y-20"
+    >
+        <!-- Breadcrumb -->
+        <nav class="text-sm">
+            <a
+                href="/countryareas"
+                class="text-gray-600 hover:text-orange-600 transition"
+            >
+                ← Volver al listado de países
+            </a>
+        </nav>
+
+        <!-- Hero Section -->
+        <header
+            class="flex flex-col-reverse md:grid md:grid-cols-3 gap-10 items-start"
+        >
             <!-- Imagen -->
-            <aside class="md:col-span-1">
-                <div class="overflow-hidden rounded-2xl shadow-xl">
-                    <img
-                        src={`/${img}`}
-                        alt={name}
-                        class="w-full object-cover"
-                    />
-                </div>
-            </aside>
+            <div
+                class="overflow-hidden rounded-2xl shadow-md transform transition duration-300 hover:scale-105"
+            >
+                <img
+                    src={`${img}`}
+                    alt={name}
+                    class="w-full object-cover max-h-96"
+                />
+            </div>
 
-            <!-- Contenido -->
-            <main class="md:col-span-2 space-y-6">
-                <h1 class="text-4xl font-bold text-orange-500">{title}</h1>
-                <p class="text-lg text-gray-700">{description}</p>
+            <!-- Texto -->
+            <div class="md:col-span-2 space-y-5">
+                <span
+                    class="uppercase text-sm text-orange-500 tracking-widest font-semibold"
+                >
+                    Perfil geográfico
+                </span>
+                <h1 class="text-4xl font-bold text-gray-900">{title}</h1>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    {description}
+                </p>
 
-                <ul class="text-base text-cyan-900">
-                    <li><strong>Nombre:</strong> {name}</li>
-                    <li><strong>Código:</strong> {code}</li>
+                <ul class="text-base text-gray-800 space-y-1 pt-2">
+                    <li>
+                        <strong class="text-gray-600">Nombre:</strong>
+                        {name}
+                    </li>
+                    <li>
+                        <strong class="text-gray-600">Código:</strong>
+                        {code}
+                    </li>
                     {
                         region && (
                             <li>
-                                <strong>Región:</strong> {region}
+                                <strong class="text-gray-600">Región:</strong>{" "}
+                                {region}
                             </li>
                         )
                     }
                 </ul>
+            </div>
+        </header>
 
-                <div class="prose max-w-none mt-8 text-gray-800">
-                    <Content />
+        <!-- Markdown Content -->
+        <section class="markdown-content border-t pt-12">
+            <Content />
+        </section>
+
+        <!-- Recomendaciones dinámicas -->
+        <section
+            class="bg-gradient-to-b from-white to-slate-50 py-20 font-poppins"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Explorá otras áreas
+                    </h2>
+                    <p class="mt-2 text-base text-gray-600 max-w-2xl mx-auto">
+                        Descubrí más regiones con historias, datos curiosos y
+                        cultura única.
+                    </p>
                 </div>
-            </main>
-        </div>
+
+                <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    {
+                        countries
+                            .filter(({ slug }) => slug !== Astro.params.id)
+                            .slice(0, 6)
+                            .map(({ slug, data }) => {
+                                const {
+                                    title,
+                                    name,
+                                    code,
+                                    region,
+                                    description,
+                                    img,
+                                } = data;
+
+                                return (
+                                    <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                                        <a
+                                            href={`/countryareas/${slug}`}
+                                            class="block h-full"
+                                            aria-label={`Ver información de ${title}`}
+                                        >
+                                            {img && (
+                                                <div class="overflow-hidden rounded-t-2xl">
+                                                    <img
+                                                        src={`${img}`}
+                                                        alt={name}
+                                                        class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                                                    />
+                                                </div>
+                                            )}
+
+                                            <div class="p-5 flex flex-col gap-2 h-full">
+                                                <h3 class="text-lg font-semibold text-cyan-900 group-hover:text-orange-500 transition-colors">
+                                                    {title}
+                                                </h3>
+
+                                                <p class="text-sm text-gray-700 mt-1 line-clamp-3">
+                                                    {description}
+                                                </p>
+
+                                                <ul class="text-xs text-gray-500 mt-2">
+                                                    <li>
+                                                        <strong>País:</strong>{" "}
+                                                        {name}
+                                                    </li>
+                                                    <li>
+                                                        <strong>Código:</strong>{" "}
+                                                        {code}
+                                                    </li>
+                                                    {region && (
+                                                        <li>
+                                                            <strong>
+                                                                Región:
+                                                            </strong>{" "}
+                                                            {region}
+                                                        </li>
+                                                    )}
+                                                </ul>
+
+                                                <span class="text-sm font-semibold text-cyan-900 group-hover:text-orange-500 mt-auto pt-4 transition">
+                                                    Ver más →
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </article>
+                                );
+                            })
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA final -->
+        <section
+            class="bg-orange-50 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-inner mt-20"
+        >
+            <div class="space-y-2">
+                <h2 class="text-2xl font-bold text-orange-700">
+                    ¿Querés seguir explorando?
+                </h2>
+                <p class="text-gray-700">
+                    Hay muchas regiones fascinantes por descubrir.
+                </p>
+            </div>
+            <a
+                href="/countryareas"
+                class="bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-700 transition"
+            >
+                Ver todos los países
+            </a>
+        </section>
     </div>
 </Layout>
