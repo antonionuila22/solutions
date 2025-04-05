@@ -3,7 +3,7 @@ title: "Astro es moderno"
 description: "Exploramos por qué Astro es un framework ultra rápido."
 author: "Nico Fries"
 readtime: 6
-img: ./photos/learnastro.webp
+img: /photos/learnastro.webp
 imageAlt: "Portada Astro"
 date: 2024-03-28
 ---
