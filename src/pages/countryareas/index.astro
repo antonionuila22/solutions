@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const countries = await getCollection("countryareas");
+---
+
+<Layout title="Áreas de Servicio">
+    <!-- Hero Section -->
+    <section class="w-full flex items-center justify-center bg-white">
+        <div class="py-28 w-11/12 max-w-4xl text-center">
+            <h1
+                class="text-5xl font-extrabold text-cyan-900 mb-6 leading-tight"
+            >
+                Nuestras Áreas de Servicio
+            </h1>
+            <p class="text-lg text-black leading-relaxed">
+                Descubrí cómo Codebrand impulsa negocios en diferentes países.
+                Diseño, desarrollo y tecnología para empresas en toda la región.
+            </p>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                {
+                    countries.map(({ slug, data }) => {
+                        const { title, name, code, region, description, img } =
+                            data;
+
+                        return (
+                            <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                                <a
+                                    href={`/countryareas/${slug}`}
+                                    class="block h-full"
+                                >
+                                    {img && (
+                                        <div class="overflow-hidden rounded-t-2xl">
+                                            <img
+                                                src={`/${img}`}
+                                                alt={name}
+                                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    )}
+
+                                    <div class="p-5 flex flex-col gap-2 h-full">
+                                        <h3 class="text-lg font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
+                                            {title}
+                                        </h3>
+                                        <p class="text-sm text-black mt-2 line-clamp-3">
+                                            {description}
+                                        </p>
+                                        <ul class="text-xs text-gray-500">
+                                            <li>
+                                                <strong>País:</strong> {name}
+                                            </li>
+                                            <li>
+                                                <strong>Código:</strong> {code}
+                                            </li>
+                                            {region && (
+                                                <li>
+                                                    <strong>Región:</strong>{" "}
+                                                    {region}
+                                                </li>
+                                            )}
+                                        </ul>
+                                        <span class="text-sm font-semibold text-cyan-900 group-hover:text-orange-400 mt-auto pt-4 transition">
+                                            Ver más →
+                                        </span>
+                                    </div>
+                                </a>
+                            </article>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

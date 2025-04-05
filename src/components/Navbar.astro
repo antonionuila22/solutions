@@ -3,21 +3,7 @@ import Logo from "../components/logo.astro";
 import Button from "./Button.astro";
 const menuItems = [
     { name: "Inicio", link: "/", hasDropdown: false },
-    {
-        name: "Recursos",
-        link: "#",
-        hasDropdown: true,
-        subItems: [
-            { name: "Libros", link: "/libros" },
-            { name: "Blog", link: "/blog" },
-        ],
-    },
-    {
-        name: "Nosotros",
-        link: "/historia-de-codebrand",
-        hasDropdown: true,
-        subItems: [{ name: "Nuestros Especialistas", link: "/team" }],
-    },
+
     {
         name: "Servicios",
         link: "/servicios",
@@ -43,7 +29,28 @@ const menuItems = [
             { name: "Renderizado 3D", link: "/servicios/renderizado" },
         ],
     },
-    { name: "Contact", link: "/contacto", hasDropdown: false },
+    {
+        name: "Nosotros",
+        link: "/historia-de-codebrand",
+        hasDropdown: true,
+        subItems: [{ name: "Nuestros Especialistas", link: "/team" }],
+    },
+    {
+        name: "Recursos",
+        link: "#",
+        hasDropdown: true,
+        subItems: [
+            { name: "Libros", link: "/libros" },
+            { name: "Blog", link: "/blog" },
+            {
+                name: "Paises de Servicio",
+                link: "/countryareas",
+            },
+        ],
+    },
+    { name: "Productos", link: "/products", hasDropdown: false },
+
+    { name: "Contacto", link: "/contacto", hasDropdown: false },
 ];
 ---
 

@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+// 1. Generamos las rutas estáticas basadas en los slugs de cada país
+export async function getStaticPaths() {
+    const countries = await getCollection("countryareas");
+
+    return countries.map((country) => ({
+        params: { id: country.slug },
+        props: { country },
+    }));
+}
+
+// 2. Props del archivo .md para ese país
+const { country } = Astro.props;
+const { data } = country;
+const { title, name, region, code, img, description } = data;
+
+const { Content } = await render(country);
+---
+
+<Layout title={title}>
+    <div class="max-w-6xl mx-auto py-20 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-black">
+            <!-- Imagen -->
+            <aside class="md:col-span-1">
+                <div class="overflow-hidden rounded-2xl shadow-xl">
+                    <img
+                        src={`/${img}`}
+                        alt={name}
+                        class="w-full object-cover"
+                    />
+                </div>
+            </aside>
+
+            <!-- Contenido -->
+            <main class="md:col-span-2 space-y-6">
+                <h1 class="text-4xl font-bold text-orange-500">{title}</h1>
+                <p class="text-lg text-gray-700">{description}</p>
+
+                <ul class="text-base text-cyan-900">
+                    <li><strong>Nombre:</strong> {name}</li>
+                    <li><strong>Código:</strong> {code}</li>
+                    {
+                        region && (
+                            <li>
+                                <strong>Región:</strong> {region}
+                            </li>
+                        )
+                    }
+                </ul>
+
+                <div class="prose max-w-none mt-8 text-gray-800">
+                    <Content />
+                </div>
+            </main>
+        </div>
+    </div>
+</Layout>
