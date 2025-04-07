@@ -21,7 +21,7 @@ export default function TabComponent({ tabs }: Props) {
           {tabs.map((tab, i) => (
             <button
               key={i}
-              className={`px-6 py-3 text-left rounded-lg border transition-all duration-300 hover:bg-orange-500 hover:text-white ${
+              className={`px-6 py-3 text-center rounded-lg border transition-all duration-300 hover:bg-orange-500 hover:text-white ${
                 active === i
                   ? "bg-orange-500 text-white border-orange-500"
                   : "bg-white border-gray-700 text-cyan-900"
