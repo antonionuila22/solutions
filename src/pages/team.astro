@@ -22,175 +22,150 @@ import Pricing from "../components/Pricing.astro";
                 compromiso para llevar a cabo proyectos que impactan.
             </p>
         </div>
-        <section class="py-20 px-6 max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h1
-                    class="text-4xl md:text-5xl font-extrabold text-cyan-900 mb-4 animate-fade-in-up"
-                >
-                    Nuestro Equipo
-                </h1>
-                <p
-                    class="text-lg text-gray-700 max-w-3xl mx-auto animate-fade-in-up delay-200"
-                >
-                    En Codebrand creemos en el poder del talento colectivo. Cada
-                    miembro de nuestro equipo aporta su experiencia, creatividad
-                    y compromiso para llevar a cabo proyectos que impactan.
-                </p>
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 animate-fade-in-up delay-300"
+        >
+            <!-- Miembro del equipo -->
+            <div
+                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <img
+                    src="../photos/team-code/RamonNuila.png"
+                    alt="Ramon Nuila"
+                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-cyan-900">Ramon Nuila</h3>
+                    <p class="text-sm text-gray-500 mb-2">CEO y Fundador</p>
+                    <p class="text-gray-600 text-sm">
+                        Estratega digital enfocado en crecimiento, branding y
+                        campañas integradas. Coordina la visión de comunicación
+                        de Codebrand.
+                    </p>
+                </div>
             </div>
 
             <div
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 animate-fade-in-up delay-300"
+                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
-                <!-- Miembro del equipo -->
-                <div
-                    class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                >
-                    <img
-                        src="../photos/team-code/RamonNuila.png"
-                        alt="Ramon Nuila"
-                        class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan-900">
-                            Ramon Nuila
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-2">CEO y Fundador</p>
-                        <p class="text-gray-600 text-sm">
-                            Estratega digital enfocado en crecimiento, branding
-                            y campañas integradas. Coordina la visión de
-                            comunicación de Codebrand.
-                        </p>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                >
-                    <img
-                        src="../photos/team-code/Perez.png"
-                        alt="Enrique Perez"
-                        class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan-900">
-                            Enrique Pérez
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-2">
-                            Social Media Expert
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            Creadora de experiencias digitales funcionales y
-                            emocionalmente atractivas. Diseño centrado en el
-                            usuario con enfoque estratégico.
-                        </p>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                >
-                    <img
-                        src="../photos/team-code/Mariacasco.png"
-                        alt="Jorge Herrera"
-                        class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan-900">
-                            Maria Casco
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-2">
-                            Product Designer
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            Convierte ideas en plataformas robustas.
-                            Especialista en rendimiento, escalabilidad y buenas
-                            prácticas con tecnologías modernas.
-                        </p>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                >
-                    <img
-                        src="../photos/team-code/Cmorel.png"
-                        alt="Carlos Méndez"
-                        class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan-900">
-                            Larisa Lopez
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-2">Ux/UI Expert</p>
-                        <p class="text-gray-600 text-sm">
-                            Visual storyteller. Da vida a conceptos con
-                            animación 2D/3D para branding, web y presentaciones
-                            impactantes.
-                        </p>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                >
-                    <img
-                        src="/images/member-social.jpg"
-                        alt="Carlos Daniel Martinez"
-                        class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan-900">
-                            Carlos Daniel Martinez
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-2">
-                            Full Stack Developer
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            Conecta marcas con personas. Diseña estrategias que
-                            transforman perfiles en comunidades activas.
-                        </p>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                >
-                    <img
-                        src="../photos/team-code/irispaola.png"
-                        alt="Iris Gomez"
-                        class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan-900">
-                            Iris Gomez
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-2">
-                            Coordinadora de Proyectos
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            Ingeniera Civil Apasionada por la comunicación,
-                            optimizacion de tiempo y recursos. Con experiencia
-                            en gestión de proyectos y liderazgo de equipos.
-                        </p>
-                    </div>
+                <img
+                    src="../photos/team-code/Perez.png"
+                    alt="Enrique Perez"
+                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-cyan-900">
+                        Enrique Pérez
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-2">
+                        Social Media Expert
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        Creadora de experiencias digitales funcionales y
+                        emocionalmente atractivas. Diseño centrado en el usuario
+                        con enfoque estratégico.
+                    </p>
                 </div>
             </div>
 
-            <div class="mt-24 text-center animate-fade-in-up delay-500">
-                <p class="text-gray-600 text-base max-w-3xl mx-auto">
-                    Más que un equipo, somos una combinación de visión,
-                    disciplina y creatividad. Cada proyecto es un reto que
-                    enfrentamos juntos, desde la estrategia hasta la ejecución.
-                </p>
+            <div
+                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <img
+                    src="../photos/team-code/Mariacasco.png"
+                    alt="Jorge Herrera"
+                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-cyan-900">Maria Casco</h3>
+                    <p class="text-sm text-gray-500 mb-2">Product Designer</p>
+                    <p class="text-gray-600 text-sm">
+                        Convierte ideas en plataformas robustas. Especialista en
+                        rendimiento, escalabilidad y buenas prácticas con
+                        tecnologías modernas.
+                    </p>
+                </div>
             </div>
-        </section>
+
+            <div
+                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <img
+                    src="../photos/team-code/Cmorel.png"
+                    alt="Carlos Méndez"
+                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-cyan-900">
+                        Larisa Lopez
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-2">Ux/UI Expert</p>
+                    <p class="text-gray-600 text-sm">
+                        Visual storyteller. Da vida a conceptos con animación
+                        2D/3D para branding, web y presentaciones impactantes.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <img
+                    src="/images/member-social.jpg"
+                    alt="Carlos Daniel Martinez"
+                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-cyan-900">
+                        Carlos Daniel Martinez
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-2">
+                        Full Stack Developer
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        Conecta marcas con personas. Diseña estrategias que
+                        transforman perfiles en comunidades activas.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <img
+                    src="../photos/team-code/irispaola.png"
+                    alt="Iris Gomez"
+                    class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-cyan-900">Iris Gomez</h3>
+                    <p class="text-sm text-gray-500 mb-2">
+                        Coordinadora de Proyectos
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        Ingeniera Civil Apasionada por la comunicación,
+                        optimizacion de tiempo y recursos. Con experiencia en
+                        gestión de proyectos y liderazgo de equipos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-24 text-center animate-fade-in-up delay-500">
+            <p class="text-gray-600 text-base max-w-3xl mx-auto">
+                Más que un equipo, somos una combinación de visión, disciplina y
+                creatividad. Cada proyecto es un reto que enfrentamos juntos,
+                desde la estrategia hasta la ejecución.
+            </p>
+        </div>
     </section>
-
-    <div class="text-center mt-0">
-        <h2 class="text-2xl md:text-3xl font-semibold text-cyan-900 mb-6">
-            ¿Listo para trabajar con un equipo apasionado y comprometido?
-        </h2>
-        <ButtonCustom text="Hablemos" href="/contacto" />
-    </div>
-    <Whyus />
 </Layout>
+
+<div class="text-center mt-0">
+    <h2 class="text-2xl md:text-3xl font-semibold text-cyan-900 mb-6">
+        ¿Listo para trabajar con un equipo apasionado y comprometido?
+    </h2>
+    <ButtonCustom text="Hablemos" href="/contacto" />
+</div>
+<Whyus />
