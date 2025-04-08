@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import ButtonCustom from "../components/Button.astro";
 import Whyus from "../components/whyus.astro";
-import Testimonial from "../components/Testimonial.astro";
-import Pricing from "../components/Pricing.astro";
 ---
 
 <Layout>
@@ -160,12 +158,12 @@ import Pricing from "../components/Pricing.astro";
             </p>
         </div>
     </section>
-</Layout>
 
-<div class="text-center mt-0">
-    <h2 class="text-2xl md:text-3xl font-semibold text-cyan-900 mb-6">
-        ¿Listo para trabajar con un equipo apasionado y comprometido?
-    </h2>
-    <ButtonCustom text="Hablemos" href="/contacto" />
-</div>
-<Whyus />
+    <div class="text-center mt-0">
+        <h2 class="text-2xl md:text-3xl font-semibold text-cyan-900 mb-6">
+            ¿Listo para trabajar con un equipo apasionado y comprometido?
+        </h2>
+        <ButtonCustom text="Hablemos" href="/contacto" />
+    </div>
+    <Whyus />
+</Layout>
