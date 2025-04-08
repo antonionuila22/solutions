@@ -34,7 +34,7 @@ Utilizamos tecnologías de vanguardia como **WordPress, Webflow, Astro, React, N
 
 > Cotizamos **por página**, considerando la funcionalidad y complejidad técnica requerida. Cada sitio se arma en base al número de páginas y el nivel que cada una necesita.
 
-| Nivel de complejidad        | Descripción                                                                                   | Precio por página (USD) |
+| Nivel        | Descripción                                                                                   | Precio (USD) |
 |-----------------------------|-----------------------------------------------------------------------------------------------|--------------------------|
 | **Página Estándar**         | Hasta 8 secciones, diseño responsive, formulario básico                                      | Desde $300               |
 | **Página CMS Administrable**| Editable vía WordPress, Webflow o Strapi                                                     | Desde $350               |
