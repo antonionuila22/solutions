@@ -90,7 +90,7 @@ export default function Navbar() {
               </a>
 
               {item.hasDropdown && (
-                <ul className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-md py-3 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-300 ease-in-out min-w-[220px] border z-50">
+                <ul className="absolute animation delay-200 top-full left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-md py-3 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-300 ease-in-out min-w-[220px] border z-50">
                   {item.subItems?.map((sub, i) => (
                     <li key={i}>
                       <a
