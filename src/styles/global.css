@@ -240,3 +240,31 @@
 .markdown-content tr:nth-child(even) {
     background-color: #f9fafb;
 }
+
+.markdown-content .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 2rem 0;
+}
+
+/* Evita que el texto se rompa en columnas muy angostas */
+.markdown-content table {
+    min-width: 600px;
+    /* o más, dependiendo de tu tabla */
+    white-space: nowrap;
+}
+
+.markdown-content .table-wrapper {
+    position: relative;
+}
+
+.markdown-content .table-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to left, white, transparent);
+}
