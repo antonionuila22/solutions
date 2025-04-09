@@ -241,30 +241,57 @@
     background-color: #f9fafb;
 }
 
-.markdown-content .table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin: 2rem 0;
-}
+/* --- Hacer tablas responsive dentro de .markdown-content --- */
 
-/* Evita que el texto se rompa en columnas muy angostas */
+/* Envolver automáticamente todas las tablas en scroll horizontal */
 .markdown-content table {
-    min-width: 600px;
-    /* o más, dependiendo de tu tabla */
+    display: block;
+    width: 100%;
+    overflow-x: auto;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-.markdown-content .table-wrapper {
-    position: relative;
+/* Celdas */
+.markdown-content th,
+.markdown-content td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-.markdown-content .table-wrapper::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 24px;
-    height: 100%;
-    pointer-events: none;
-    background: linear-gradient(to left, white, transparent);
+/* Encabezados */
+.markdown-content th {
+    background-color: #fef3c7;
+    color: #b45309;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Alternancia de filas */
+.markdown-content tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Extra para prevenir que se vea cortado en móviles */
+.markdown-content table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.markdown-content table::-webkit-scrollbar-thumb {
+    background-color: #e2e8f0;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .markdown-content table {
+        display: block;
+    }
 }
