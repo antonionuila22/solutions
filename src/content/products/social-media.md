@@ -32,7 +32,7 @@ En **Codebrand**, transformamos tu comunicación digital con contenido gráfico 
 
 | Paquete            | Descripción                                                          | Básico   | Avanzado | Extras c/u | Entrega estimada         |
 |--------------------|----------------------------------------------------------------------|----------|----------|------------|---------------------------|
-| **Social Media 60**| 60 diseños al mes, incluye componentes visuales y servicios de apoyo | $500,00  | $700,00  | $21,00     | 2 por día (2 semanas)     |
+| **Social Media 60**| 60 diseños al mes, incluye componentes visuales y servicios de apoyo | $500,00  | $700,00  | $21,00     | 2 por día (4 semanas)     |
 | **Social Media 30**| 30 diseños al mes, incluye componentes visuales y servicios de apoyo | $320,00  | $400,00  | $21,00     | 1 por día (2 semanas)     |
 | **Social Media 10**| 10 diseños al mes, incluye componentes visuales y servicios de apoyo | $150,00  | $230,00  | $21,00     | 1 cada 3 días (2 semanas) |
 
@@ -54,8 +54,6 @@ En **Codebrand**, transformamos tu comunicación digital con contenido gráfico 
 - 📱 Piezas visuales en .PNG o .JPG listas para publicar
 - 📐 Versiones adaptadas a los formatos que necesites (feed, stories, etc.)
 - 🧾 Documentación base para feedback y aprobación
-- 🎨 Diseño personalizado o basado en plantilla de marca
-- 📁 Archivos fuente si se contratan (opcional)
 
 ---
 

@@ -3,7 +3,7 @@ import logo from "../assets/codebrand.svg";
 
 const menuItems = [
   { name: "Inicio", link: "/", hasDropdown: false },
-  {
+  /*{
     name: "Servicios",
     link: "#",
     hasDropdown: true,
@@ -18,7 +18,7 @@ const menuItems = [
       { name: "Animación 2D y 3D", link: "/servicios/animacion" },
       { name: "Renderizado 3D", link: "/servicios/renderizado" },
     ],
-  },
+  },*/
   {
     name: "Nosotros",
     link: "#",
@@ -62,7 +62,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
+    <div className={`sticky top-0 z-50 transition-all  ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <a href="/" className="flex-shrink-0">
           <img src={logo.src} alt="Codebrand" className="w-32 sm:w-36" />
@@ -90,7 +90,7 @@ export default function Navbar() {
               </a>
 
               {item.hasDropdown && (
-                <ul className="absolute animation delay-200 top-full left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-md py-3 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-300 ease-in-out min-w-[220px] border z-50">
+                <ul className="absolute animation delay-500 top-full left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-md py-3 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity  ease-in-out min-w-[220px] border z-50">
                   {item.subItems?.map((sub, i) => (
                     <li key={i}>
                       <a
@@ -110,7 +110,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href="/contacto"
-            className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-110 transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+            className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-110 transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
           >
             Hablemos!
           </a>
@@ -134,7 +134,7 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+        className={`md:hidden transition-all  overflow-hidden ${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
       >
         <div className="flex flex-col gap-3 px-6 pb-6 pt-2 bg-white border-t shadow-inner">
           {menuItems.map((item, index) => (
@@ -147,7 +147,7 @@ export default function Navbar() {
                   >
                     {item.name}
                     <svg
-                      className="w-4 h-4 transform transition-transform duration-200"
+                      className="w-4 h-4 transform transition-transform "
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -157,7 +157,7 @@ export default function Navbar() {
                     </svg>
                   </button>
 
-                  <div className={`pl-4 transition-all duration-300 ${openSubmenus.includes(index) ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
+                  <div className={`pl-4 transition-all  ${openSubmenus.includes(index) ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
                     {item.subItems?.map((subItem, subIdx) => (
                       <a
                         key={subIdx}
@@ -183,7 +183,7 @@ export default function Navbar() {
           <div className="mt-4">
             <a
               href="/contacto"
-              className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-110 transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+              className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-110 transition  ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
             >
               Hablemos!
             </a>

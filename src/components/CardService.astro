@@ -12,7 +12,7 @@ const { icon, title, description, learnMoreUrl } = Astro.props;
 <div
     class="container-card-service w-full max-w-screen-xl p-6 rounded-xl border border-gray-300
           cursor-pointer transition-all duration-300
-         bg-white hover:bg-lime-300 hover:shadow-sm hover:scale-105 flex flex-col items-start gap-4"
+         bg-white hover:bg-gradient-to-r from-[#f48200] to-[#faa732] hover:shadow-sm hover:scale-105 flex flex-col items-start gap-4 group"
 >
     <!-- Ícono -->
     <div
@@ -22,25 +22,20 @@ const { icon, title, description, learnMoreUrl } = Astro.props;
     </div>
 
     <!-- Título -->
-    <h3 class="text-lg font-bold text-black">{title}</h3>
+    <h3 class="text-lg font-bold text-black group-hover:text-white">{title}</h3>
 
     <!-- Descripción -->
-    <p class="text-gray-600 text-sm mt-2">{description}</p>
+    <p class="text-black text-sm mt-2 group-hover:text-white">{description}</p>
 
     <!-- Botón dinámico visible solo en hover -->
-    <div class="learn-more-btn opacity-0 transition-opacity duration-300">
+    <div
+        class="learn-more-btn opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+    >
         <a
             href={learnMoreUrl}
-            class="mt-4 inline-block text-black font-semibold hover:underline"
+            class="mt-4 inline-block text-black font-semibold group-hover:text-white hover:underline"
         >
             Learn More →
         </a>
     </div>
 </div>
-
-<style>
-    .container-card-service:hover .learn-more-btn {
-        opacity: 1;
-        color: black;
-    }
-</style>

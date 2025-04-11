@@ -32,11 +32,10 @@ En **Codebrand**, convertimos productos cotidianos en vehículos de marca. Desde
 
 | Producto              | Técnica disponible         | Mínimo sugerido | Precio aproximado | Tiempo de entrega     |
 |-----------------------|----------------------------|------------------|--------------------|------------------------|
-| **Camisas polo / t-shirt** | Bordado o serigrafía         | 25 unidades       | Desde $6.00 c/u     | 7 – 10 días hábiles    |
-| **Tazas personalizadas**  | Estampado sublimado         | 25 unidades       | Desde $4.50 c/u     | 7 – 10 días hábiles    |
-| **Gorras bordadas**       | Bordado frontal             | 25 unidades       | Desde $5.50 c/u     | 10 – 12 días hábiles   |
-| **Bolsos tipo tote bag**  | Serigrafía 1 a 3 tintas      | 50 unidades       | Desde $3.00 c/u     | 10 – 15 días hábiles   |
-| **Artículos especiales**  | (USB, termos, libretas...)   | Según cotización  | A partir de $100    | Según producto elegido |
+| **t-shirt**                | Sublimado y DTF             | 12 unidades       | Desde $16.00 c/u    | 2 – 5 días hábiles     |
+| **Tazas personalizadas**   | Estampado sublimado         | 12 unidades       | Desde $10.00 c/u    | 2 – 5 días hábiles     |
+| **Bolsos tipo tote bag**   | Serigrafía 1 a 3 tintas     | 12 unidades       | Desde $7.00 c/u     | 3 – 10 días hábiles    |
+| **Artículos especiales**   | (termos, libretas, alfombrillas, Stickerts)        | Según cotización  | A partir de $100    | Según producto elegido |
 
 > *Los precios varían según cantidad, técnica, diseño y tipo de producto. Consultá por combos y promociones.*
 
@@ -74,7 +73,7 @@ En **Codebrand**, convertimos productos cotidianos en vehículos de marca. Desde
 ## ¿Por qué elegirnos?
 
 Porque **tu marca merece estar presente en cada detalle**.  
-En **Codebrand**, hacemos que tus artículos promocionales no pasen desapercibidos. Creamos productos útiles, con buen diseño y excelente calidad, que generan recordación y conexión.
+En **Codebrand**, hacemos que tus artículos promocionales no pasen desapercibidos. Creamos productos útiles, con buen diseño y excelente calidad, que generan recordación y conexión. Nos efocamos en la velocidad y alta calidad para cada uno de nuestros clientes.
 
 ---
 
