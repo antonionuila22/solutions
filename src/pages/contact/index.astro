@@ -1,6 +1,56 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ContactForm from "../components/ContactForm.astro";
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import { turso } from "../../turso"; // ajusta si la ruta es distinta
+import { Resend } from "resend";
+
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
+
+if (Astro.request.method === "POST") {
+	try {
+		const data = await Astro.request.formData();
+		const name = data.get("name")?.toString();
+		const email = data.get("email")?.toString();
+		const subject = data.get("subject")?.toString();
+		const message = data.get("message")?.toString();
+
+		if (name && email && subject && message) {
+			const { rows } = await turso.execute({
+				sql: "SELECT id FROM contacts WHERE email = ?",
+				args: [email],
+			});
+			const exists = rows.length > 0;
+
+			if (!exists) {
+				await turso.execute({
+					sql: "INSERT INTO contacts (name, email, subject, message) VALUES (?, ?, ?, ?)",
+					args: [name, email, subject, message],
+				});
+
+				const htmlContent = `
+          <h2>Nuevo mensaje de contacto</h2>
+          <p><strong>Nombre:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Asunto:</strong> ${subject}</p>
+          <p><strong>Mensaje:</strong> ${message}</p>
+        `;
+
+				const response = await resend.emails.send({
+					from: "onboarding@resend.dev",
+					to: "antonionuila022@gmail.com",
+					subject: `Contacto: ${subject}`,
+					html: htmlContent,
+				});
+
+				console.log("Email enviado:", response);
+			} else {
+				console.log("Correo duplicado, no se guardó:", email);
+			}
+		}
+	} catch (error) {
+		console.error("Error procesando el formulario:", error);
+	}
+}
 ---
 
 <Layout title="Contáctanos – Codebrand">
@@ -35,7 +85,7 @@ import ContactForm from "../components/ContactForm.astro";
 					<li class="flex items-center gap-4">
 						<span class="text-orange-400 text-xl">✉️</span>
 						<a
-							href="mailto:hola@codebrand.es"
+							href="mailto:info@codebrand.es"
 							class="hover:underline">info@codebrand.es</a
 						>
 					</li>
@@ -61,28 +111,27 @@ import ContactForm from "../components/ContactForm.astro";
 		</div>
 	</section>
 </Layout>
+
 <style>
 	.input-style {
 		width: 100%;
 		padding: 0.75rem 1rem;
 		font-size: 0.875rem;
 		font-family: "Poppins", sans-serif;
-		border: 1px solid #d1d5db; /* gray-300 */
+		border: 1px solid #d1d5db;
 		border-radius: 0.5rem;
 		background-color: #ffffff;
-		color: #111827; /* gray-900 */
+		color: #111827;
 		transition:
 			border-color 0.3s ease,
 			box-shadow 0.3s ease;
 	}
-
 	.input-style::placeholder {
-		color: #9ca3af; /* gray-400 */
+		color: #9ca3af;
 	}
-
 	.input-style:focus {
 		outline: none;
-		border-color: #fb923c; /* orange-400 */
+		border-color: #fb923c;
 		box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.3);
 	}
 </style>

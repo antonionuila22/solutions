@@ -39,7 +39,7 @@ const menuItems = [
     ],
   },
   { name: "Productos", link: "/products", hasDropdown: false },
-  { name: "Contacto", link: "/contacto", hasDropdown: false },
+  { name: "Contacto", link: "/contact", hasDropdown: false },
 ];
 
 export default function Navbar() {
