@@ -16,6 +16,7 @@ export default defineConfig({
   },
 
   output: 'server',
+
   site: 'https://www.tusitio.com',
   //integracion Vercel
 
