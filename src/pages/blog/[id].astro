@@ -48,12 +48,12 @@ if (date instanceof Date && !isNaN(date.getTime())) {
 <Layout title={title}>
     <article class="font-poppins text-black">
         <!-- Hero Section -->
-        <section class="relative w-full bg-white">
+        <section class="relative w-full">
             <!-- Imagen de fondo sin opacidad -->
             {
                 img && (
                     <img
-                        src={`/${img}`}
+                        src={`${img}`}
                         alt={imageAlt || title}
                         class="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
