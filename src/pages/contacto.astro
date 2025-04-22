@@ -1,24 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import FeedBack from "../components/FeedbackForm.tsx";
-
-const errors = { username: "", email: "", password: "" };
-
-if (Astro.request.method === "POST") {
-	try {
-		const data = await Astro.request.formData();
-		const name = data.get("name");
-		const email = data.get("email");
-		const subject = data.get("subject");
-		const message = data.get("message");
-
-		// Do something with the data
-	} catch (error) {
-		if (error instanceof Error) {
-			console.error(error.message);
-		}
-	}
-}
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <Layout title="Contáctanos – Codebrand">
@@ -27,94 +9,7 @@ if (Astro.request.method === "POST") {
 			class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
 		>
 			<!-- Formulario -->
-			<div class="space-y-8 animate-fade-in-up">
-				<h1
-					class="text-4xl md:text-5xl font-extrabold text-cyan-900 leading-tight"
-				>
-					Contáctanos
-				</h1>
-				<p class="text-lg text-gray-600">
-					Nos encantaría saber de ti. Si tienes alguna pregunta, duda
-					o sugerencia, no dudes en escribirnos. Estamos aquí para
-					ayudarte y responder a todas tus inquietudes. Completa el
-					formulario a continuación y nos pondremos en contacto
-					contigo
-				</p>
-
-				<form
-					method="POST"
-					class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-2xl shadow-2xl border border-gray-100"
-				>
-					<div class="flex flex-col gap-2">
-						<label class="text-sm font-medium text-gray-700"
-							>Nombre</label
-						>
-						<input
-							type="text"
-							id="name"
-							name="name"
-							required
-							placeholder="Tu nombre completo"
-							class="input-style"
-						/>
-					</div>
-
-					<div class="flex flex-col gap-2">
-						<label class="text-sm font-medium text-gray-700"
-							>Email</label
-						>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							required
-							placeholder="email@email.com"
-							class="input-style"
-						/>
-					</div>
-
-					<div class="md:col-span-2 flex flex-col gap-2">
-						<label class="text-sm font-medium text-gray-700"
-							>Asunto</label
-						>
-						<input
-							type="text"
-							id="subject"
-							name="subject"
-							required
-							placeholder="Sobre qué te gustaría hablar"
-							class="input-style"
-						/>
-					</div>
-
-					<div class="md:col-span-2 flex flex-col gap-2">
-						<label class="text-sm font-medium text-gray-700"
-							>Mensaje</label
-						>
-						<textarea
-							id="message"
-							name="message"
-							rows="6"
-							required
-							placeholder="Cuéntanos tu idea o necesidad..."
-							class="input-style"></textarea>
-					</div>
-
-					<div class="md:col-span-2">
-						<button
-							type="submit"
-							aria-label="Enviar mensaje"
-							disabled={errors.username ||
-								errors.email ||
-								errors.password}
-							class="w-full bg-orange-400 text-white font-bold text-sm py-3 rounded-lg hover:bg-orange-500 transition duration-300 shadow-md"
-						>
-							Enviar mensaje
-						</button>
-					</div>
-				</form>
-			</div>
-
+			<ContactForm />
 			<!-- Información de contacto -->
 			<div class="space-y-8 animate-fade-in-up delay-150">
 				<div class="space-y-2">
