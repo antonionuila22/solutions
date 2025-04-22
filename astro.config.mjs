@@ -16,7 +16,7 @@ export default defineConfig({
   },
 
   output: 'server',
-  site: 'https://codebrand.netlify.app/',
+  site: 'https://www.tusitio.com',
   //integracion Vercel
 
   integrations: [react()],
