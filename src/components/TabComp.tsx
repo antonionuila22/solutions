@@ -18,7 +18,7 @@ export default function TabComponent({ tabs }: Props) {
     <section className="max-w-7xl mx-auto px-4 py-16">
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Tabs */}
-        <div className="flex lg:flex-col gap-3 lg:w-1/3 w-full sm:overflow-x-auto">
+        <div className="flex lg:flex-col gap-3 lg:w-1/3 w-full overflow-x-scroll lg:overflow-hidden md:overflow-x-hidden sm:overflow-x-scroll">
           {tabs.map((tab, i) => (
             <button
               key={i}
