@@ -55,11 +55,13 @@ export default function TabComponent({ tabs }: Props) {
           <p className="text-gray-700 text-base leading-relaxed">
             {current?.description}
           </p>
+          <div className="mt-6">
+            <button onClick={() => window.location.href = './products'} className="bg-orange-400 text-white px-4 py-2 rounded-lg shadow-sm hover:bg-orange-500 transition">
+            Get Started
+            </button>
 
-          <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-900 hover:underline">
-            Learn More
-            <span>→</span>
-          </button>
+          </div>
+
         </div>
       </div>
     </section>
