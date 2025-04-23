@@ -26,7 +26,7 @@ export default function TabComponent({ tabs }: Props) {
               className={`w-full text-left px-5 py-3 rounded-lg text-sm font-medium border transition
                 ${
                   active === i
-                    ? "bg-orange-600 text-white border-orange-500 shadow-sm"
+                    ? "bg-orange-400 text-white border-orange-500 shadow-sm"
                     : "bg-white text-cyan-800 border-gray-200 hover:bg-gray-50"
                 }`}
             >
