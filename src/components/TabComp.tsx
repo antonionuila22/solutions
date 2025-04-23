@@ -3,7 +3,7 @@ import { useState } from "react";
 interface TabItem {
   title: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
 interface Props {
@@ -12,40 +12,54 @@ interface Props {
 
 export default function TabComponent({ tabs }: Props) {
   const [active, setActive] = useState(0);
+  const current = tabs[active];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 text-white">
-      <div className="flex flex-col md:flex-row gap-10">
+    <section className="max-w-7xl mx-auto px-4 py-16">
+      <div className="flex flex-col lg:flex-row gap-10">
         {/* Tabs */}
-        <div className="flex md:flex-col gap-4 w-full md:w-1/3">
+        <div className="flex lg:flex-col gap-3 lg:w-1/3 w-full">
           {tabs.map((tab, i) => (
             <button
               key={i}
-              className={`px-6 py-3 text-center rounded-lg border transition-all duration-300 hover:bg-orange-500 hover:text-white ${
-                active === i
-                  ? "bg-orange-500 text-white border-orange-500"
-                  : "bg-white border-gray-700 text-cyan-900"
-              }`}
               onClick={() => setActive(i)}
+              className={`w-full text-left px-5 py-3 rounded-lg text-sm font-medium border transition
+                ${
+                  active === i
+                    ? "bg-orange-600 text-white border-orange-500 shadow-sm"
+                    : "bg-white text-cyan-800 border-gray-200 hover:bg-gray-50"
+                }`}
             >
               {tab.title}
             </button>
           ))}
         </div>
 
-        {/* Tab Content */}
-        <div className="flex-1 bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-xl">
-          <img
-            src={tabs[active]?.image}
-            alt={tabs[active]?.title}
-            className="w-full max-h-80 object-cover rounded-lg mb-6 shadow-lg"
-          />
-          <h3 className="text-2xl font-bold text-orange-400 mb-4">
-            {tabs[active]?.title}
+        {/* Content */}
+        <div className="w-full lg:w-2/3 bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+          {/* Optional image */}
+          {current?.image && (
+            <div className="mb-6">
+              <img
+                src={current.image}
+                alt={current.title}
+                loading="lazy"
+                className="w-full rounded-lg aspect-[16/5] object-cover shadow"
+              />
+            </div>
+          )}
+
+          <h3 className="text-xl md:text-2xl font-bold text-cyan-900 mb-4">
+            {current?.title}
           </h3>
-          <p className="text-gray-300 text-lg leading-relaxed">
-            {tabs[active]?.description}
+          <p className="text-gray-700 text-base leading-relaxed">
+            {current?.description}
           </p>
+
+          <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-900 hover:underline">
+            Learn More
+            <span>→</span>
+          </button>
         </div>
       </div>
     </section>
