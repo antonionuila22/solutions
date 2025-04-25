@@ -54,14 +54,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`sticky top-0 z-50 transition-all ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
+    <header className={`sticky top-0 z-50 transition-all bg-white ${isScrolled ? "shadow-md border-b border-zinc-100" : ""}`}>
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo */}
         <a href="/" className="flex-shrink-0">
           <img src={logo.src ?? logo} alt="Codebrand logo" className="w-32 sm:w-36" />
         </a>
 
-        {/* Desktop menu */}
         <ul className="hidden md:flex items-center gap-8 font-medium mx-auto">
           {menuItems.map((item, index) => (
             <li key={index} className="relative group">
@@ -78,7 +76,7 @@ export default function Navbar() {
               </a>
 
               {item.hasDropdown && (
-                <ul className="absolute left-1/2 -translate-x-1/2 top-full bg-white shadow-lg rounded-md py-3 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity ease-in-out min-w-[220px] border z-50">
+                <ul className="absolute left-1/2 -translate-x-1/2 top-full bg-white shadow-md rounded-lg py-3 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity ease-in-out min-w-[220px] border border-zinc-100 z-50">
                   {item.subItems?.map((sub, i) => (
                     <li key={i}>
                       <a href={sub.link} className="block text-sm text-gray-700 hover:text-orange-400 whitespace-nowrap">
@@ -92,17 +90,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA */}
         <div className="hidden md:block">
           <a
             href="/contact"
-            className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-110 transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+            className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
           >
             Hablemos!
           </a>
         </div>
 
-        {/* Mobile toggle button */}
         <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden" aria-label="Abrir menú móvil">
           <svg className="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -110,9 +106,8 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <div className={`md:hidden transition-all overflow-hidden ${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="flex flex-col gap-3 px-6 pb-6 pt-2 bg-white border-t shadow-inner">
+        <div className="flex flex-col gap-3 px-6 pb-6 pt-2 bg-white border-t border-zinc-100 shadow-inner">
           {menuItems.map((item, index) => (
             <div key={index}>
               {item.hasDropdown ? (
@@ -144,7 +139,7 @@ export default function Navbar() {
           <div className="mt-4">
             <a
               href="/contact"
-              className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-110 transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+              className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
             >
               Hablemos!
             </a>
