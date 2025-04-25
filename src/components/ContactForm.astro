@@ -61,7 +61,12 @@
             placeholder="Cuéntanos tu idea o necesidad..."
             class="input-style"></textarea>
     </div>
-
+    <div
+        class="g-recaptcha"
+        data-sitekey="6LeV6CQrAAAAAJK0t2pfvh5ziRYAOMPrrTisbmyg"
+        data-action="LOGIN"
+    >
+    </div>
     <div class="md:col-span-2">
         <button
             type="submit"
@@ -71,3 +76,10 @@
         </button>
     </div>
 </form>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript">
+    var onloadCallback = function () {
+        alert("grecaptcha is ready!");
+    };
+</script>
