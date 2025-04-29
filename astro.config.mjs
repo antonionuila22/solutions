@@ -5,7 +5,6 @@ import tailwindcss from '@tailwindcss/vite';
 
 import react from '@astrojs/react';
 
-import vercel from '@astrojs/vercel';
 
 import netlify from '@astrojs/netlify';
 
@@ -17,7 +16,7 @@ export default defineConfig({
 
   output: 'server',
 
-  site: 'https://www.tusitio.com',
+  site: 'https://solutions.codebrand.es/',
   //integracion Vercel
 
   integrations: [react()],

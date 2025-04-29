@@ -1,6 +1,7 @@
-export const prerender = false; // Not needed in 'server' mode\
+export const prerender = false;
+
 import type { APIRoute } from "astro";
-import { turso } from "../../turso"; // ajusta si la ruta es distinta
+import { turso } from "../../turso";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -34,7 +35,11 @@ export const POST: APIRoute = async ({ request }) => {
                 from: "onboarding@resend.dev",
                 to: "antonionuila022@gmail.com",
                 subject: `Contacto: ${subject}`,
-                html: `<h2>Nuevo mensaje de contacto</h2><p><strong>Nombre:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Asunto:</strong> ${subject}</p><p><strong>Mensaje:</strong> ${message}</p>`,
+                html: `<h2>Nuevo mensaje de contacto</h2>
+               <p><strong>Nombre:</strong> ${name}</p>
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Asunto:</strong> ${subject}</p>
+               <p><strong>Mensaje:</strong> ${message}</p>`,
             });
         }
 
@@ -43,4 +48,4 @@ export const POST: APIRoute = async ({ request }) => {
         console.error("Error:", err);
         return new Response("Error del servidor", { status: 500 });
     }
-}
+};
