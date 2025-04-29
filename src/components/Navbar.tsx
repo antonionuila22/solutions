@@ -65,7 +65,7 @@ export default function Navbar() {
             <li key={index} className="relative group">
               <a
                 href={item.link}
-                className="flex items-center p-4 gap-1 texzt-gray-800 hover:text-orange-400 transition"
+                className="flex items-center py-4 gap-1 texzt-gray-800 hover:text-orange-400 transition"
               >
                 {item.name}
                 {item.hasDropdown && (
