@@ -1,9 +1,11 @@
+export const prerender = false; // Not needed in 'server' mode\
+import type { APIRoute } from "astro";
 import { turso } from "../../turso"; // ajusta si la ruta es distinta
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST({ request }: { request: Request }) {
+export const POST: APIRoute = async ({ request }) => {
     try {
         const data = await request.formData();
         const name = data.get("name")?.toString();
