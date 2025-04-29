@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ContactForm from "../components/ContactForm.astro";
-import { turso } from "../turso"; // ajusta si la ruta es distinta
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import { turso } from "../../turso"; // ajusta si la ruta es distinta
 import { Resend } from "resend";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
