@@ -1,6 +1,6 @@
 ---
 title: Desarrollo Web Full Stack – Sitios Web Modernos, Administrables y Escalables
-img: /photos/diseñoweb.png
+img: /photos/webservice.png
 readtime: 6
 price: $300 - $900 (por página)
 inStock: true

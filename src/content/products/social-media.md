@@ -1,6 +1,6 @@
 ---
 title: Diseño Gráfico para Redes Sociales – Paquetes Mensuales Personalizados
-img: /photos/Branding.png
+img: /photos/socialmedia.png
 readtime: 5
 price: $150 - $700
 inStock: true

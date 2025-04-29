@@ -1,6 +1,6 @@
 ---
 title: Diseño Gráfico & Branding Profesional – Identidades Visuales Únicas y Memorables
-img: /photos/Branding.png
+img: /photos/diseñobranding.png
 readtime: 5
 price: $250 - $950
 inStock: true

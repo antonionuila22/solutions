@@ -1,6 +1,6 @@
 ---
 title: Diseño Profesional de Páginas Web UX/UI en Figma – Prototipos Modernos y Eficientes
-img: /photos/uxui.png
+img: /photos/uxservice.png
 readtime: 5
 price: $180 - $800
 inStock: true

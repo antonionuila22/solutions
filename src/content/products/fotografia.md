@@ -1,6 +1,6 @@
 ---
 title: Fotografía Profesional – Capturamos Momentos que Comunican
-img: /photos/Branding.png
+img: /photos/fotografias.png
 readtime: 4
 price: $280 - $890
 inStock: true

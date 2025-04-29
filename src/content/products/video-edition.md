@@ -1,6 +1,6 @@
 ---
 title: Edición de Video Profesional – Contenido Visual que Captura y Conecta
-img: /photos/animation.png
+img: /photos/videoedition.png
 readtime: 5
 price: $320 - $950
 inStock: true

@@ -1,6 +1,6 @@
 ---
 title: Renderizados 3D Profesionales – Visuales Realistas para Productos y Arquitectura
-img: /photos/render3d.png
+img: /photos/animacion2d.png
 readtime: 5
 price: $100 - $700
 inStock: true
