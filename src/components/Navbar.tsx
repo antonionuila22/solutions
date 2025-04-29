@@ -65,7 +65,7 @@ export default function Navbar() {
             <li key={index} className="relative group">
               <a
                 href={item.link}
-                className="flex items-center gap-1 text-gray-800 hover:text-orange-400 transition"
+                className="flex items-center p-4 gap-1 texzt-gray-800 hover:text-orange-400 transition"
               >
                 {item.name}
                 {item.hasDropdown && (
@@ -76,7 +76,7 @@ export default function Navbar() {
               </a>
 
               {item.hasDropdown && (
-                <ul className="absolute left-1/2 -translate-x-1/2 top-full bg-white shadow-md rounded-lg py-3 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity ease-in-out min-w-[220px] border border-zinc-100 z-50">
+                <ul className="absolute left-1/2 -translate-x-1/2 top-7 bg-white shadow-md rounded-lg py-4 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity ease-in-out min-w-[25z20px] border border-zinc-100 z-50">
                   {item.subItems?.map((sub, i) => (
                     <li key={i}>
                       <a href={sub.link} className="block text-sm text-gray-700 hover:text-orange-400 whitespace-nowrap">
