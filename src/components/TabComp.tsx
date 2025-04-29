@@ -44,7 +44,7 @@ export default function TabComponent({ tabs }: Props) {
                 src={current.image}
                 alt={current.title}
                 loading="lazy"
-                className="w-full rounded-lg aspect-[16/5] object-cover shadow"
+                className="w-full rounded-lg aspect-[4/3] object-cover shadow"
               />
             </div>
           )}
