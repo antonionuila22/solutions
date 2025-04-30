@@ -2,7 +2,7 @@
 title: Desarrollo Web Full Stack – Sitios Web Modernos, Administrables y Escalables
 img: /photos/webservice.png
 readtime: 6
-price: $300 - $900 (por página)
+price: $350 - $900 (por página)
 inStock: true
 description: Servicio profesional de desarrollo web full stack con precios por página según el nivel de complejidad. Creamos sitios rápidos, administrables y adaptados a tu negocio usando tecnologías como WordPress, Webflow, Astro, React, Next.js y Strapi.
 date: 2025-01-01
@@ -34,9 +34,9 @@ Utilizamos tecnologías de vanguardia como **WordPress, Webflow, Astro, React, N
 
 > Cotizamos **por página**, considerando la funcionalidad y complejidad técnica requerida. Cada sitio se arma en base al número de páginas y el nivel que cada una necesita.
 
-| Nivel        | Descripción                                                                                   | Precio (USD) |
+| Nivel        | Descripción                                                                                                  | Precio (USD) |
 |-----------------------------|-----------------------------------------------------------------------------------------------|--------------------------|
-| **Página Estándar**         | Hasta 8 secciones, diseño responsive, formulario básico                                      | Desde $300               |
+| **Página Estándar**         | Hasta 8 secciones, diseño responsive, formulario básico                                      | Desde $350               |
 | **Página CMS Administrable**| Editable vía WordPress, Webflow o Strapi                                                     | Desde $350               |
 | **Página con Integraciones**| Conexión a APIs, formularios dinámicos, filtros, manejo de datos                             | Desde $450               |
 | **Página Avanzada**         | Animaciones personalizadas, múltiples integraciones, SEO técnico, componentes React/Astro   | Desde $900               |
