@@ -36,7 +36,7 @@ export default function BannerSecond({ title, subtitle, description, imgUrl }: P
           </p>
           <div id="gsap-cta" className="opacity-0">
             <a
-              href="#contacto"
+              href="#contact"
               className="inline-block mt-4 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-xl font-semibold shadow-xl transition"
             >
               Hablemos
