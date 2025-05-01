@@ -4,24 +4,33 @@ import type { APIRoute } from "astro";
 import { turso } from "../../turso";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
     try {
         const data = await request.formData();
-        const name = data.get("name")?.toString();
-        const email = data.get("email")?.toString();
-        const subject = data.get("subject")?.toString();
-        const message = data.get("message")?.toString();
 
-        // Obtener múltiples servicios
-        const services = data.getAll("services").map((s) => s.toString());
+        // Sanitización de campos
+        const name = sanitize(data.get("name"));
+        const email = sanitize(data.get("email"));
+        const subject = sanitize(data.get("subject"));
+        const message = sanitize(data.get("message"));
+
+        // Sanitizar y procesar servicios múltiples
+        const rawServices = data.getAll("services");
+        const services = rawServices.map((s) => sanitize(s));
         const servicesString = services.join(", ");
 
+        // Validaciones
         if (!name || !email || !subject || !message || services.length === 0) {
-            return new Response("Faltan campos", { status: 400 });
+            return new Response("Faltan campos obligatorios.", { status: 400 });
         }
 
+        if (!validateEmail(email)) {
+            return new Response("Correo electrónico inválido.", { status: 400 });
+        }
+
+        // Verificar duplicados por email
         const { rows } = await turso.execute({
             sql: "SELECT id FROM contacts WHERE email = ?",
             args: [email],
@@ -30,30 +39,43 @@ export const POST: APIRoute = async ({ request }) => {
         const exists = rows.length > 0;
 
         if (!exists) {
+            // Insertar en Turso
             await turso.execute({
-                sql: `INSERT INTO contacts (name, email, subject, message, services) 
-					  VALUES (?, ?, ?, ?, ?)`,
+                sql: `INSERT INTO contacts (name, email, subject, message, services) VALUES (?, ?, ?, ?, ?)`,
                 args: [name, email, subject, message, servicesString],
-            });
-
-            await resend.emails.send({
-                from: "onboarding@resend.dev",
-                to: "antonionuila022@gmail.com",
-                subject: `Contacto: ${subject}`,
-                html: `
-          <h2>Nuevo mensaje de contacto</h2>
-          <p><strong>Nombre:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Asunto:</strong> ${subject}</p>
-          <p><strong>Servicios seleccionados:</strong> ${servicesString}</p>
-          <p><strong>Mensaje:</strong><br>${message}</p>
-        `,
             });
         }
 
-        return new Response("OK", { status: 200 });
+        // Enviar correo con Resend
+        await resend.emails.send({
+            from: "onboarding@resend.dev", // asegúrate que sea verificado
+            to: "antonionuila022@gmail.com",
+            subject: `Contacto: ${subject}`,
+            html: `
+				<h2>Nuevo mensaje de contacto</h2>
+				<p><strong>Nombre:</strong> ${name}</p>
+				<p><strong>Email:</strong> ${email}</p>
+				<p><strong>Asunto:</strong> ${subject}</p>
+				<p><strong>Servicios seleccionados:</strong> ${servicesString}</p>
+				<p><strong>Mensaje:</strong><br>${message}</p>
+			`,
+        });
+
+        return new Response("Mensaje enviado correctamente.", { status: 200 });
     } catch (err) {
-        console.error("Error:", err);
+        console.error("Error al procesar el formulario:", err);
         return new Response("Error del servidor", { status: 500 });
     }
 };
+
+// --- Funciones auxiliares de seguridad ---
+
+function sanitize(input: FormDataEntryValue | null): string {
+    if (!input) return "";
+    return input.toString().replace(/</g, "&lt;").replace(/>/g, "&gt;").trim();
+}
+
+function validateEmail(email: string): boolean {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
