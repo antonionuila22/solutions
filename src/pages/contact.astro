@@ -57,12 +57,23 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 
 			<!-- Formulario -->
+			<!-- Formulario -->
 			<form
 				name="contact"
-				data-netlify="true"
 				method="POST"
+				data-netlify="true"
 				class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-2xl shadow-2xl border border-gray-100"
 			>
+				<input type="hidden" name="form-name" value="contact" />
+				<p class="hidden">
+					<label
+						>No llenar si sos humano: <input
+							name="bot-field"
+						/></label
+					>
+				</p>
+
+				<!-- Nombre -->
 				<div class="flex flex-col gap-2">
 					<label class="text-sm font-medium text-gray-700" for="name"
 						>Nombre</label
@@ -77,6 +88,7 @@ import Layout from "../layouts/Layout.astro";
 					/>
 				</div>
 
+				<!-- Email -->
 				<div class="flex flex-col gap-2">
 					<label class="text-sm font-medium text-gray-700" for="email"
 						>Email</label
@@ -91,6 +103,7 @@ import Layout from "../layouts/Layout.astro";
 					/>
 				</div>
 
+				<!-- Asunto -->
 				<div class="md:col-span-2 flex flex-col gap-2">
 					<label
 						class="text-sm font-medium text-gray-700"
@@ -106,6 +119,7 @@ import Layout from "../layouts/Layout.astro";
 					/>
 				</div>
 
+				<!-- Mensaje -->
 				<div class="md:col-span-2 flex flex-col gap-2">
 					<label
 						class="text-sm font-medium text-gray-700"
@@ -120,6 +134,118 @@ import Layout from "../layouts/Layout.astro";
 						class="input-style"></textarea>
 				</div>
 
+				<!-- Servicios -->
+				<div class="md:col-span-2 flex flex-col gap-2">
+					<label class="text-sm font-medium text-gray-700"
+						>Servicios</label
+					>
+					<div
+						class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+					>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Animación 2D y 3D"
+							/>
+							<span class="text-sm text-gray-700"
+								>Animación 2D y 3D</span
+							>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Data Entry"
+							/>
+							<span class="text-sm text-gray-700">Data Entry</span
+							>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Desarrollo Web"
+							/>
+							<span class="text-sm text-gray-700"
+								>Desarrollo Web</span
+							>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="SEO"
+							/>
+							<span class="text-sm text-gray-700">SEO</span>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Productos Promocionales"
+							/>
+							<span class="text-sm text-gray-700"
+								>Productos Promocionales</span
+							>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Edición de Video"
+							/>
+							<span class="text-sm text-gray-700"
+								>Edición de Video</span
+							>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Redes Sociales"
+							/>
+							<span class="text-sm text-gray-700"
+								>Redes Sociales</span
+							>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Render 3D"
+							/>
+							<span class="text-sm text-gray-700">Render 3D</span>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Diseño UX"
+							/>
+							<span class="text-sm text-gray-700">Diseño UX</span>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Branding"
+							/>
+							<span class="text-sm text-gray-700">Branding</span>
+						</label>
+						<label class="flex items-center gap-2">
+							<input
+								type="checkbox"
+								name="services"
+								value="Fotografía"
+							/>
+							<span class="text-sm text-gray-700">Fotografía</span
+							>
+						</label>
+					</div>
+				</div>
+
+				<!-- Botón enviar -->
 				<div class="md:col-span-2">
 					<button
 						type="submit"

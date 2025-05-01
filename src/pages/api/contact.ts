@@ -14,7 +14,11 @@ export const POST: APIRoute = async ({ request }) => {
         const subject = data.get("subject")?.toString();
         const message = data.get("message")?.toString();
 
-        if (!name || !email || !subject || !message) {
+        // Obtener múltiples servicios
+        const services = data.getAll("services").map((s) => s.toString());
+        const servicesString = services.join(", ");
+
+        if (!name || !email || !subject || !message || services.length === 0) {
             return new Response("Faltan campos", { status: 400 });
         }
 
@@ -27,19 +31,23 @@ export const POST: APIRoute = async ({ request }) => {
 
         if (!exists) {
             await turso.execute({
-                sql: "INSERT INTO contacts (name, email, subject, message) VALUES (?, ?, ?, ?)",
-                args: [name, email, subject, message],
+                sql: `INSERT INTO contacts (name, email, subject, message, services) 
+					  VALUES (?, ?, ?, ?, ?)`,
+                args: [name, email, subject, message, servicesString],
             });
 
             await resend.emails.send({
                 from: "onboarding@resend.dev",
                 to: "antonionuila022@gmail.com",
                 subject: `Contacto: ${subject}`,
-                html: `<h2>Nuevo mensaje de contacto</h2>
-               <p><strong>Nombre:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Asunto:</strong> ${subject}</p>
-               <p><strong>Mensaje:</strong> ${message}</p>`,
+                html: `
+          <h2>Nuevo mensaje de contacto</h2>
+          <p><strong>Nombre:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Asunto:</strong> ${subject}</p>
+          <p><strong>Servicios seleccionados:</strong> ${servicesString}</p>
+          <p><strong>Mensaje:</strong><br>${message}</p>
+        `,
             });
         }
 

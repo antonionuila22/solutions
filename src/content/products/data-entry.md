@@ -32,12 +32,12 @@ En **Codebrand**, entendemos la importancia de manejar datos con exactitud y rap
 
 > Soluciones de data entry mensuales, sin sorpresas ni cargos ocultos. Solo lo que tu tienda online necesita.
 
-| Plan                     | Ideal para...                                        | Horas/mes | Precio mensual | Servicios incluidos                                                                 |
+| Plan                     | Ideal para...                                        | Horas al mes | Precio mensual | Servicios incluidos                                                                 |
 |--------------------------|------------------------------------------------------|-----------|----------------|-------------------------------------------------------------------------------------|
 | **Plan Start**           | Tiendas pequeñas con menos de 100 productos activos | 20 h      | $249           | Gestión de productos básicos, carga de imágenes, edición de descripciones y precios |
-| **Plan Grow**            | E-commerce en crecimiento con catálogo activo       | 40 h      | $449           | Todo lo anterior + actualización de inventario, categorías, SKUs y etiquetas        |
-| **Plan Scale**           | Tiendas con alta rotación o múltiples plataformas   | 60 h      | $649           | Todo lo anterior + sincronización en marketplaces, carga masiva, soporte prioritario |
-| **Plan Enterprise**      | Operaciones complejas o multilocales                | 90 h      | $899+          | Servicios personalizados, conexión API, dashboards, automatización avanzada         |
+| **Plan Grow**            | E-commerce en crecimiento con catálogo activo       | 96 h      | $549           | Todo lo anterior + actualización de inventario, categorías, SKUs y etiquetas        |
+| **Plan Scale**           | Tiendas con alta rotación o múltiples plataformas   | 192 h      | $849           | Todo lo anterior + sincronización en marketplaces, carga masiva, soporte prioritario |
+| **Plan Enterprise**      | Operaciones complejas o multilocales                | 240 h      | $1049+          | Servicios personalizados, conexión API, dashboards, automatización avanzada         |
 
 ✅ Todos los planes incluyen:
 
