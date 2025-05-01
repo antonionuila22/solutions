@@ -10,6 +10,13 @@ export const POST: APIRoute = async ({ request }) => {
     try {
         const data = await request.formData();
 
+        // Honeypot anti-spam (campo oculto que debe estar vacío)
+        const honeypot = sanitize(data.get("honey"));
+        if (honeypot) {
+            console.warn("Bot detectado por honeypot.");
+            return new Response("Bot detectado", { status: 403 });
+        }
+
         // Sanitización de campos
         const name = sanitize(data.get("name"));
         const email = sanitize(data.get("email"));
@@ -48,7 +55,7 @@ export const POST: APIRoute = async ({ request }) => {
 
         // Enviar correo con Resend
         await resend.emails.send({
-            from: "onboarding@resend.dev", // asegúrate que sea verificado
+            from: "onboarding@resend.dev", // usá un dominio verificado
             to: "antonionuila022@gmail.com",
             subject: `Contacto: ${subject}`,
             html: `
