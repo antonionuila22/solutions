@@ -5,15 +5,18 @@ import Banner from "../components/Banner.astro";
 import CardService from "../components/CardService.astro";
 import Whyus from "../components/whyus.astro";
 import Pricing from "../components/Pricing.astro";
-import Testimonial from "../components/Testimonial.astro";
 import Bannersecond from "../components/BannerSecond.astro";
 import TabComponent from "../components/TabComp.tsx";
 import Faq from "../components/Faq.astro";
+import { Globe } from "../components/magicui/globe.tsx";
+import Testimonial from "../components/testimonial.tsx";
 ---
 
 <Layout>
 	<Hero />
-
+	<section>
+		<Globe client:visible />
+	</section>
 	<!-- Services Section -->
 	<section class="py-20 flex flex-col gap-20">
 		<h2 class="text-4xl font-bold text-cyan-900 text-center">
@@ -175,20 +178,16 @@ import Faq from "../components/Faq.astro";
 			<h2 class="text-3xl font-bold text-cyan-900 mb-6">
 				Opiniones Reales de Nuestros Clientes
 			</h2>
-			<p class="text-gray-600 mb-8">
-				Conocé qué dicen quienes ya confiaron en nuestros servicios.
-				Valoramos cada reseña y trabajamos para ofrecer siempre lo
-				mejor.
-			</p>
+		</div>
 
-			<div
-				class="elfsight-app-85cc4ff3-10c2-4934-b506-0f9876965109"
-				data-elfsight-app-lazy
-			>
-			</div>
+		<div
+			class="elfsight-app-85cc4ff3-10c2-4934-b506-0f9876965109"
+			data-elfsight-app-lazy
+		>
+			<Testimonial client:load />
 		</div>
 	</section>
-
-	<Pricing />
-	<Faq />
 </Layout>
+
+<Pricing />
+<Faq />

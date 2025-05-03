@@ -16,6 +16,11 @@ export default function TabComponent({ tabs }: Props) {
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-cyan-900 mt-5 mb-14 text-center">
+        Servicios profesionales
+        <span className="text-orange-400"> para tu negocio</span>
+      </h2>
+
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Tabs */}
         <div className="flex lg:flex-col gap-3 lg:w-1/3 w-full overflow-x-scroll lg:overflow-hidden md:overflow-x-hidden sm:overflow-x-scroll">
@@ -44,7 +49,7 @@ export default function TabComponent({ tabs }: Props) {
                 src={current.image}
                 alt={current.title}
                 loading="lazy"
-                className="w-full rounded-lg aspect-[4/3] object-cover shadow"
+                className="w-full rounded-lg aspect-[4/2] object-cover shadow"
               />
             </div>
           )}
@@ -56,8 +61,12 @@ export default function TabComponent({ tabs }: Props) {
             {current?.description}
           </p>
           <div className="mt-6">
-            <button onClick={() => window.location.href = './products'} className="bg-orange-400 text-white px-4 py-2 rounded-lg shadow-sm hover:bg-orange-500 transition">
-            Get Started
+            <button onClick={() => window.location.href = './products'} className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold
+   py-[15px] px-[30px] rounded-full shadow-lg
+   hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
+   transition-all duration-300 ease-in-out
+   transform border-none text-sm lg:text-lg">
+            Mas información
             </button>
 
           </div>

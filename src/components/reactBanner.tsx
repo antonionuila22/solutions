@@ -37,7 +37,11 @@ export default function BannerSecond({ title, subtitle, description, imgUrl }: P
           <div id="gsap-cta" className="opacity-0">
             <a
               href="#contact"
-              className="inline-block mt-4 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-xl font-semibold shadow-xl transition"
+              className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold
+              py-[15px] px-[30px] rounded-full shadow-lg
+              hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
+              transition-all duration-300 ease-in-out
+              transform hover:scale-105 active:scale-95 hover:-rotate-2 border-none text-sm lg:text-lg"
             >
               Hablemos
             </a>
