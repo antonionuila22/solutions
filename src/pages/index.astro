@@ -10,6 +10,7 @@ import TabComponent from "../components/TabComp.tsx";
 import Faq from "../components/Faq.astro";
 import { Globe } from "../components/magicui/globe.tsx";
 import Testimonial from "../components/testimonial.tsx";
+import Brand from "../components/Brand.tsx";
 ---
 
 <Layout>
@@ -171,6 +172,8 @@ import Testimonial from "../components/testimonial.tsx";
 		client:visible
 	/>
 
+	<Brand client:load />
+
 	<Whyus />
 
 	<section class="py-12 px-4 md:px-8 bg-white">
@@ -187,7 +190,7 @@ import Testimonial from "../components/testimonial.tsx";
 			<Testimonial client:load />
 		</div>
 	</section>
-</Layout>
 
-<Pricing />
-<Faq />
+	<Pricing />
+	<Faq />
+</Layout>

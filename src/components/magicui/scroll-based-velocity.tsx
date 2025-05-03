@@ -101,7 +101,7 @@ function ParallaxText({
 }
 
 export function VelocityScroll({
-  defaultVelocity = 5,
+  defaultVelocity = 2,
   numRows = 2,
   children,
   className,
@@ -110,7 +110,7 @@ export function VelocityScroll({
   return (
     <div
       className={cn(
-        "relative w-full text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-[5rem]",
+        "relative w-full text-orange-400 text-4xl font-bold tracking-[0.2rem] md:text-5xl md:leading-[4rem]",
         className,
       )}
       {...props}
