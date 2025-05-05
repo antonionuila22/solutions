@@ -23,7 +23,7 @@ const { Content } = await render(product);
 
 <Layout title={title}>
     <section
-        class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 font-poppins grid grid-cols-1 lg:grid-cols-3 gap-12 text-black"
+        class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 font-poppins grid grid-cols-1 lg:grid-cols-3 gap-12 text-cyan-900"
     >
         <!-- Imagen del producto -->
         <aside class="lg:col-span-1">
@@ -40,7 +40,7 @@ const { Content } = await render(product);
         <main class="lg:col-span-2 space-y-8">
             <!-- Header -->
             <header class="space-y-4">
-                <h1 class="text-4xl font-extrabold text-gray-900 leading-tight">
+                <h1 class="text-4xl font-extrabold text-cyan-900 leading-tight">
                     {title}
                 </h1>
 
@@ -51,7 +51,7 @@ const { Content } = await render(product);
                     {readtime && <span>· {readtime} min de lectura</span>}
                 </div>
 
-                <p class="text-lg text-gray-700 leading-relaxed">
+                <p class="text-lg text-cyan-900 leading-relaxed">
                     {description}
                 </p>
 
@@ -89,7 +89,7 @@ const { Content } = await render(product);
             </header>
 
             <!-- Contenido extendido -->
-            <section class="markdown-content border-t pt-10">
+            <section class="markdown-content border-t pt-10 m-0">
                 <Content />
             </section>
         </main>

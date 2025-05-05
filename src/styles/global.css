@@ -72,7 +72,7 @@
    Markdown Content Styling
 --------------------------- */
 .markdown-content {
-    max-width: 768px;
+    max-width: 90%;
     margin: 4rem auto 6rem auto;
     font-family: 'Poppins', sans-serif;
     font-size: 1.075rem;
@@ -335,20 +335,24 @@
     --color-sidebar-ring: var(--sidebar-ring);
     --animate-marquee: marquee var(--duration) infinite linear;
     --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-  @keyframes marquee {
-  from {
-    transform: translateX(0);
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
         }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+
+        to {
+            transform: translateX(calc(-100% - var(--gap)));
         }
     }
-  @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+
+    @keyframes marquee-vertical {
+        from {
+            transform: translateY(0);
         }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+
+        to {
+            transform: translateY(calc(-100% - var(--gap)));
         }
     }
 }
@@ -423,10 +427,11 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
     }
 }
