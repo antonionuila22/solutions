@@ -27,16 +27,16 @@ const reviews = [
     img: "https://lh3.googleusercontent.com/a-/ALV-UjXNpkqXOAfCvrSpfob4SwfZNDNh3OR1xbzguKLMfZYz6YhwOJ4=s36-c-rp-mo-br100",
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Mayelin Canelas",
+    username: "Google",
+    body: "Excelente !!",
+    img: "https://lh3.googleusercontent.com/a/ACg8ocJjQnYedoXHm50JakUJ7jL3ssGWjZifjwbWTxiZmsx8vcJu7Q=s36-c-rp-mo-br100",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    name: "Jose Castro Urquia",
+    username: "Google",
+    body: "Lo mejor de lo mejor..",
+    img: "https://lh3.googleusercontent.com/a/ACg8ocJk7eS8wG8eB82XLRYFQeQl670y_-zgE2GPZFxhMtgNzShpUA=s36-c-rp-mo-br100",
   },
 ];
 
