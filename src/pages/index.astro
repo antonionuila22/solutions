@@ -176,15 +176,16 @@ import Brand from "../components/Brand.tsx";
 
 	<Whyus />
 
-	<section class="py-12 px-4 md:px-8 bg-white">
+	<section class="pt-12 px-4 md:px-8 bg-white">
 		<div class="max-w-4xl mx-auto text-center">
 			<h2 class="text-3xl font-bold text-cyan-900 mb-6">
 				Opiniones Reales de Nuestros Clientes
 			</h2>
 		</div>
-		<Testimonial client:visible />
 	</section>
-</Layout>
 
-<Pricing />
-<Faq />
+	<Testimonial client:visible />
+
+	<Pricing />
+	<Faq />
+</Layout>
