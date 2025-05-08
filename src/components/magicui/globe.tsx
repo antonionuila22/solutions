@@ -24,13 +24,13 @@ const GLOBE_CONFIG: COBEOptions = {
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
   markers: [
-    { location: [15.512371, -88.056872], size: 0.08 },
-    { location: [29.895995, -96.115851], size: 0.05 },
-    { location: [40.529273, -4.124241], size: 0.05 },
-    { location: [2.737949, -72.020143], size: 0.05 },
-    { location: [-35.289214, -70.931487], size: 0.05 },
-    { location: [2.737949, -72.020143], size: 0.05 },
-    { location: [24.708323, -98.819354], size: 0.05 },
+    { location: [15.512371, -88.056872], size: 0.06 }, // Honduras
+    { location: [29.895995, -96.115851], size: 0.08 }, // Texas
+    { location: [40.529273, -4.124241], size: 0.05 }, // Spain
+    { location: [2.737949, -72.020143], size: 0.05 }, // Colombia
+    { location: [-35.289214, -70.931487], size: 0.05 }, // Chile
+    { location: [2.737949, -72.020143], size: 0.05 }, // Colombia
+    { location: [24.708323, -98.819354], size: 0.05 }, // Mexico
   ],
 };
 
@@ -101,7 +101,7 @@ export function Globe({
   return (
     <div
       className={cn(
-        "relative mt-[-150px] inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
+        "relative mt-[-15vw] inset-0 mx-auto aspect-[1/1] w-full max-w-[1000px]",
         className,
       )}
     >
