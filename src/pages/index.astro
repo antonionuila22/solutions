@@ -13,7 +13,12 @@ import Testimonial from "../components/testimonial.tsx";
 import Brand from "../components/Brand.tsx";
 ---
 
-<Layout>
+<Layout
+	title="Codebrand - Agencia Creativa Digital"
+	description="Codebrand es una agencia creativa digital especializada en diseño gráfico, desarrollo web y marketing digital. Creamos experiencias únicas que impulsan tu marca y generan resultados."
+	keywords="diseño gráfico, desarrollo web, marketing digital, branding, SEO, diseño UX/UI, aplicaciones móviles, redes sociales"
+	image="/photos/bannercodebrand.webp"
+>
 	<Hero />
 	<section>
 		<Globe client:visible />
@@ -21,7 +26,8 @@ import Brand from "../components/Brand.tsx";
 	<!-- Services Section -->
 	<section class="py-20 flex flex-col gap-20">
 		<h2 class="text-4xl font-bold text-cyan-900 text-center">
-			Nuestros Servicios
+			Our Solutions
+			<span class="text-orange-500"> for Your Business</span>
 		</h2>
 
 		<div
@@ -29,64 +35,64 @@ import Brand from "../components/Brand.tsx";
 		>
 			<CardService
 				icon="./icons/interfaz-de-usuario.png"
-				title="Diseño UX/UI"
-				description="Diseñamos experiencias digitales intuitivas y atractivas que aumentan la conversión y fidelización."
+				title="UX/UI Design"
+				description="We design intuitive and engaging experiences that increase conversion and loyalty."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/sitio-web.png"
-				title="Desarrollo Web y Apps"
-				description="Creamos sitios web optimizados para SEO, rápidos, escalables y adaptados a todas las plataformas. Aplicaciones para iOS y Android con interfaces fluidas y optimizadas para rendimiento."
+				title="Web Development"
+				description="We create SEO-optimized, fast, scalable websites tailored to all platforms. iOS and Android applications with fluid interfaces optimized for performance."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/diseno-grafico.png"
-				title="Diseño Gráfico & Branding"
-				description="Construimos identidades visuales sólidas y memorables para potenciar tu marca."
+				title="Branding"
+				description="We create visual identities that reflect your essence and enhance your brand."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/seo.png"
-				title="SEO & Posicionamiento Web"
-				description="Mejoramos tu ranking en Google con estrategias de SEO técnico y contenido optimizado."
+				title="SEO"
+				description="We improve your visibility on Google with technical and content SEO strategies."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/redes-sociales.png"
-				title="Gestión de Redes Sociales"
-				description="Creamos estrategias de contenido y campañas de publicidad para hacer crecer tu comunidad."
+				title="Social Media"
+				description="We develop content strategies and advertising campaigns to boost your social media presence."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/edicion-de-video.png"
-				title="Edición de Video"
-				description="Producción y edición de videos profesionales para publicidad y redes sociales."
+				title="Video Editing"
+				description="We produce and edit professional videos for advertising and social media."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/animacion.png"
-				title="Animación 2D & 3D"
-				description="Animaciones creativas para marketing, presentaciones y contenido interactivo."
+				title="Animation 2D & 3D"
+				description="We create creative motion graphics for marketing, presentations and interactive content."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/modelo-3d.png"
-				title="Renderizados 3D"
-				description="Modelado y renderizado 3D de alta calidad para arquitectura y productos."
+				title="3D Rendering"
+				description="We create high-quality 3D models and renderings for architecture and products."
 				learnMoreUrl="./products"
 			/>
 
 			<CardService
 				icon="./icons/camiseta.png"
-				title="Productos Promocionales"
-				description="Personalización de artículos con sublimación, impresión digital y grabado láser."
+				title="Promotional Products"
+				description="Personalization of items with sublimation, digital printing."
 				learnMoreUrl="./products"
 			/>
 		</div>

@@ -3,10 +3,23 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
+let { title } = Astro.props;
+let { description } = Astro.props;
+let { keywords } = Astro.props;
+let { image } = Astro.props;
+
+title = title || "Codebrand - Grow Your Business with Us";
+description =
+	description ||
+	"Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.";
+keywords =
+	keywords ||
+	"graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media";
+image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -19,10 +32,28 @@ import Footer from "../components/Footer.astro";
 		/>
 		<ClientRouter />
 		<meta name="generator" content={Astro.generator} />
-		<title>Sitios Web para empresas</title>
-		<script src="https://static.elfsight.com/platform/platform.js" async
-		></script>
-	</head>
+		<title>{title} - Codebrand</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="robots" content="index, follow" /></head
+	>åå
+	<meta name="author" content="CodeBrand" />
+	<meta name="og:title" content={title} />
+	<meta name="og:description" content={description} />
+	<meta name="og:image" content={image} />
+	<meta name="og:url" content="https://solutions.codebrand.es/" />
+	<meta name="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={image} />
+	<meta name="twitter:url" content="https://solutions.codebrand.es/" />
+	<meta name="twitter:site" content="@codebrand_es" />
+	<meta name="twitter:creator" content="@codebrand_es" />
+	<meta name="theme-color" content="#ffffff" />
+	<script src="https://static.elfsight.com/platform/platform.js" async
+	></script>
+
 	<body>
 		<Navbar client:only />
 		<main>
