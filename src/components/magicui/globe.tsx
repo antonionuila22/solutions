@@ -101,7 +101,7 @@ export function Globe({
   return (
     <div
       className={cn(
-        "relative mt-[-15vw] inset-0 mx-auto aspect-[1/1] w-full max-w-[1000px]",
+        "relative mt-[-15vw] inset-0 mx-auto aspect-[1/1] w-full max-w-[800px]",
         className,
       )}
     >

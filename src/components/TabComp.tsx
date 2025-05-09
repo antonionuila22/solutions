@@ -17,8 +17,7 @@ export default function TabComponent({ tabs }: Props) {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
       <h2 className="text-3xl md:text-4xl font-bold text-cyan-900 mt-5 mb-14 text-center">
-        Servicios profesionales
-        <span className="text-orange-400"> para tu negocio</span>
+        Service for you brand
       </h2>
 
       <div className="flex flex-col lg:flex-row gap-10">
@@ -66,7 +65,7 @@ export default function TabComponent({ tabs }: Props) {
    hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
    transition-all duration-300 ease-in-out
    transform border-none text-sm lg:text-lg">
-            Mas información
+            Explore Products
             </button>
 
           </div>

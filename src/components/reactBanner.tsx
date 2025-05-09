@@ -31,7 +31,7 @@ export default function BannerSecond({ title, subtitle, description, imgUrl }: P
           <h1 id="gsap-title" className="text-white text-4xl sm:text-5xl font-bold leading-tight opacity-0">
             {title}
           </h1>
-          <p id="gsap-desc" className="text-gray-300 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0 opacity-0">
+          <p id="gsap-desc" className="text-white text-md sm:text-md max-w-xl mx-auto lg:mx-0 opacity-0">
             {description}
           </p>
           <div id="gsap-cta" className="opacity-0">
