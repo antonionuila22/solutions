@@ -14,28 +14,28 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-  { name: "Inicio", link: "/", hasDropdown: false },
+  { name: "Home", link: "/", hasDropdown: false },
   {
-    name: "Nosotros",
+    name: "About Us",
     link: "#",
     hasDropdown: true,
     subItems: [
-      { name: "Historia", link: "/historia-de-codebrand" },
-      { name: "Nuestros Especialistas", link: "/equipo" },
+      { name: "History", link: "/historia-de-codebrand" },
+      { name: "Our Specialist", link: "/equipo" },
     ],
   },
   {
-    name: "Recursos",
+    name: "Resources",
     link: "#",
     hasDropdown: true,
     subItems: [
-      { name: "Libros", link: "/libros" },
+      { name: "Books", link: "/libros" },
       { name: "Blog", link: "/blog" },
-      { name: "Países de Servicio", link: "/countryareas" },
+      { name: "Country We Serve", link: "/countryareas" },
     ],
   },
-  { name: "Productos", link: "/products", hasDropdown: false },
-  { name: "Contacto", link: "/contact", hasDropdown: false },
+  { name: "Products", link: "/products", hasDropdown: false },
+  { name: "Contact", link: "/contact", hasDropdown: false },
 ];
 
 export default function Navbar() {
