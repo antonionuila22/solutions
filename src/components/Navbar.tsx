@@ -21,7 +21,7 @@ const menuItems: MenuItem[] = [
     hasDropdown: true,
     subItems: [
       { name: "History", link: "/historia-de-codebrand" },
-      { name: "Our Specialist", link: "/equipo" },
+      { name: "Our Specialist", link: "/team" },
     ],
   },
   {
