@@ -29,7 +29,7 @@ const menuItems: MenuItem[] = [
     link: "#",
     hasDropdown: true,
     subItems: [
-      { name: "Books", link: "/libros" },
+      { name: "Books", link: "/books" },
       { name: "Blog", link: "/blog" },
       { name: "Country We Serve", link: "/countryareas" },
     ],

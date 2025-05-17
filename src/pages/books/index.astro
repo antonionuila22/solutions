@@ -13,14 +13,12 @@ const books = await getCollection("books");
                 <h1
                     class="text-4xl font-extrabold text-cyan-900 mb-6 leading-tight"
                 >
-                    Los mejores recursos para programadores y agencias de
-                    marketing
+                    The best books for developers and marketers
                 </h1>
                 <p class="text-lg text-black leading-relaxed">
-                    Si estás buscando recursos para mejorar tus habilidades como
-                    desarrollador o marketero, acá encontrarás libros que te
-                    ayudarán a dominar nuevas tecnologías y potenciar tus
-                    proyectos digitales.
+                    if you are looking for the best books to improve your
+                    skills, you are in the right place. Here you will find a
+                    selection of the best books for developers and marketers.
                 </p>
             </div>
         </section>
@@ -34,7 +32,7 @@ const books = await getCollection("books");
             <h2
                 class="text-4xl font-bold text-center text-cyan-900 mb-14 tracking-tight"
             >
-                Libros para tu desarrollo profesional
+                books for your professional development
             </h2>
 
             <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -46,10 +44,7 @@ const books = await getCollection("books");
 
                         return (
                             <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                                <a
-                                    href={`/libros/${slug}`}
-                                    class="block h-full"
-                                >
+                                <a href={`/books/${slug}`} class="block h-full">
                                     <div class="overflow-hidden rounded-t-2xl">
                                         <img
                                             loading="lazy"
