@@ -49,12 +49,12 @@ import Layout from "../layouts/Layout.astro";
 
 				<div class="pt-6">
 					<h3 class="text-sm font-medium text-gray-500 uppercase">
-						Horario
+						Hours
 					</h3>
 					<p class="text-gray-700 mt-1">
-						Lunes a Viernes: 9:00 AM – 6:00 PM<br />
-						Sábados: 10:00 AM – 2:00 PM<br />
-						Domingos y festivos: Relax
+						Mon - Fry: 9:00 AM – 6:00 PM<br />
+						Sat: 10:00 AM – 2:00 PM<br />
+						Sun: Relax/chill
 					</p>
 				</div>
 			</div>
@@ -82,14 +82,15 @@ import Layout from "../layouts/Layout.astro";
 				<!-- Nombre -->
 				<div class="flex flex-col gap-2">
 					<label for="name" class="text-sm font-medium text-gray-700"
-						>Nombre</label
+						>Name</label
 					>
 					<input
 						id="name"
 						name="name"
 						type="text"
 						required
-						placeholder="Nombre completo"
+						autocomplete="name"
+						placeholder="Name"
 						class="input-style"
 					/>
 				</div>
@@ -104,6 +105,7 @@ import Layout from "../layouts/Layout.astro";
 						name="email"
 						type="email"
 						required
+						autocomplete="email"
 						placeholder="email@email.com"
 						class="input-style"
 					/>
@@ -113,14 +115,14 @@ import Layout from "../layouts/Layout.astro";
 				<div class="md:col-span-2 flex flex-col gap-2">
 					<label
 						for="subject"
-						class="text-sm font-medium text-gray-700">Asunto</label
+						class="text-sm font-medium text-gray-700">Subject</label
 					>
 					<input
 						id="subject"
 						name="subject"
 						type="text"
 						required
-						placeholder="Sobre qué te gustaría hablar"
+						placeholder="Subject of your message"
 						class="input-style"
 					/>
 				</div>
@@ -143,24 +145,25 @@ import Layout from "../layouts/Layout.astro";
 				<!-- Servicios -->
 				<div class="md:col-span-2 flex flex-col gap-2">
 					<label class="text-sm font-medium text-gray-700"
-						>Servicios</label
+						>Services</label
 					>
 					<div
 						class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
 					>
 						{
 							[
-								"Animación 2D y 3D",
+								"Animation 2D y 3D",
 								"Data Entry",
-								"Desarrollo Web",
+								"Web Development",
 								"SEO",
-								"Productos Promocionales",
-								"Edición de Video",
-								"Redes Sociales",
-								"Render 3D",
-								"Diseño UX",
+								"Promotional Products",
+								"Video Editing",
+								"Social Media",
+								"3D Rendering",
+								"UX/UI Design",
+								"Graphic Design",
 								"Branding",
-								"Fotografía",
+								"Photography",
 							].map((service) => (
 								<label class="flex items-center gap-2">
 									<input
