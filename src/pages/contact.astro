@@ -67,23 +67,27 @@ import Layout from "../layouts/Layout.astro";
 				class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-2xl shadow-2xl border border-gray-100"
 			>
 				<input type="hidden" name="form-name" value="contact" />
-				<p class="hidden">
-					<label
-						>Validacion de informacion humana: <input
-							name="bot-field"
-						/></label
-					>
-				</p>
+
+				<!-- Honeypot -->
+				<input
+					type="text"
+					name="honey"
+					style="display:none"
+					tabindex="-1"
+					autocomplete="off"
+					aria-hidden="true"
+					class="hidden"
+				/>
 
 				<!-- Nombre -->
 				<div class="flex flex-col gap-2">
-					<label class="text-sm font-medium text-gray-700" for="name"
+					<label for="name" class="text-sm font-medium text-gray-700"
 						>Nombre</label
 					>
 					<input
-						type="text"
 						id="name"
 						name="name"
+						type="text"
 						required
 						placeholder="Nombre completo"
 						class="input-style"
@@ -92,13 +96,13 @@ import Layout from "../layouts/Layout.astro";
 
 				<!-- Email -->
 				<div class="flex flex-col gap-2">
-					<label class="text-sm font-medium text-gray-700" for="email"
+					<label for="email" class="text-sm font-medium text-gray-700"
 						>Email</label
 					>
 					<input
-						type="email"
 						id="email"
 						name="email"
+						type="email"
 						required
 						placeholder="email@email.com"
 						class="input-style"
@@ -108,13 +112,13 @@ import Layout from "../layouts/Layout.astro";
 				<!-- Asunto -->
 				<div class="md:col-span-2 flex flex-col gap-2">
 					<label
-						class="text-sm font-medium text-gray-700"
-						for="subject">Asunto</label
+						for="subject"
+						class="text-sm font-medium text-gray-700">Asunto</label
 					>
 					<input
-						type="text"
 						id="subject"
 						name="subject"
+						type="text"
 						required
 						placeholder="Sobre qué te gustaría hablar"
 						class="input-style"
@@ -124,8 +128,8 @@ import Layout from "../layouts/Layout.astro";
 				<!-- Mensaje -->
 				<div class="md:col-span-2 flex flex-col gap-2">
 					<label
-						class="text-sm font-medium text-gray-700"
-						for="message">Mensaje</label
+						for="message"
+						class="text-sm font-medium text-gray-700">Mensaje</label
 					>
 					<textarea
 						id="message"
@@ -144,131 +148,48 @@ import Layout from "../layouts/Layout.astro";
 					<div
 						class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
 					>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Animación 2D y 3D"
-							/>
-							<span class="text-sm text-gray-700"
-								>Animación 2D y 3D</span
-							>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Data Entry"
-							/>
-							<span class="text-sm text-gray-700">Data Entry</span
-							>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Desarrollo Web"
-							/>
-							<span class="text-sm text-gray-700"
-								>Desarrollo Web</span
-							>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="SEO"
-							/>
-							<span class="text-sm text-gray-700">SEO</span>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Productos Promocionales"
-							/>
-							<span class="text-sm text-gray-700"
-								>Productos Promocionales</span
-							>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Edición de Video"
-							/>
-							<span class="text-sm text-gray-700"
-								>Edición de Video</span
-							>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Redes Sociales"
-							/>
-							<span class="text-sm text-gray-700"
-								>Redes Sociales</span
-							>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Render 3D"
-							/>
-							<span class="text-sm text-gray-700">Render 3D</span>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Diseño UX"
-							/>
-							<span class="text-sm text-gray-700">Diseño UX</span>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Branding"
-							/>
-							<span class="text-sm text-gray-700">Branding</span>
-						</label>
-						<label class="flex items-center gap-2">
-							<input
-								type="checkbox"
-								name="services"
-								value="Fotografía"
-							/>
-							<span class="text-sm text-gray-700">Fotografía</span
-							>
-						</label>
+						{
+							[
+								"Animación 2D y 3D",
+								"Data Entry",
+								"Desarrollo Web",
+								"SEO",
+								"Productos Promocionales",
+								"Edición de Video",
+								"Redes Sociales",
+								"Render 3D",
+								"Diseño UX",
+								"Branding",
+								"Fotografía",
+							].map((service) => (
+								<label class="flex items-center gap-2">
+									<input
+										type="checkbox"
+										name="services"
+										value={service}
+									/>
+									<span class="text-sm text-gray-700">
+										{service}
+									</span>
+								</label>
+							))
+						}
 					</div>
 				</div>
-
-				<input
-					type="text"
-					name="honey"
-					style="display:none"
-					tabindex="-1"
-					autocomplete="off"
-				/>
 
 				<!-- Botón enviar -->
 				<div class="md:col-span-2">
 					<button
 						type="submit"
 						class="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold
-   py-[15px] px-[30px] rounded-full shadow-lg
-   hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
-   transition-all duration-300 ease-in-out
-   transform hover:scale-105 active:scale-95 hover:-rotate-2 border-none text-sm lg:text-lg"
+				py-[15px] px-[30px] rounded-full shadow-lg
+				hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
+				transition-all duration-300 ease-in-out
+				transform hover:scale-105 active:scale-95 hover:-rotate-2 border-none text-sm lg:text-lg"
 					>
 						Enviar mensaje
 					</button>
 				</div>
-				<script type="module" src="./js/contact-form.js" defer></script>
 			</form>
 		</div>
 	</section>

@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "@/components/Button.astro";
+---
+
+<Layout>
+    <section
+        class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-br from-green-50 via-white to-cyan-50 overflow-hidden"
+    >
+        <!-- Animated background shapes -->
+        <div
+            class="absolute -z-10 w-[500px] h-[500px] bg-green-100 rounded-full blur-[120px] opacity-30 top-[-100px] left-[-120px] animate-pulse"
+        >
+        </div>
+        <div
+            class="absolute -z-10 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[100px] opacity-20 bottom-[-100px] right-[-80px] animate-ping"
+        >
+        </div>
+
+        <!-- Checkmark icon -->
+        <div id="checkmark" class="text-green-600 mb-6">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-20 h-20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+
+        <!-- Title -->
+        <h1
+            id="thankTitle"
+            class="text-5xl md:text-7xl font-extrabold text-orange-400 mb-4"
+        >
+            Thank You!
+        </h1>
+
+        <!-- Message -->
+        <p
+            id="thankMessage"
+            class="text-lg md:text-xl text-gray-600 max-w-xl mb-10"
+        >
+            Your submission has been received. We'll be in touch soon.
+        </p>
+
+        <!-- Back to Home Button -->
+        <Button text="Back to Home" href="/" />
+    </section>
+
+    <!-- GSAP animations -->
+    <script type="module" is:inline>
+        import gsap from "https://cdn.skypack.dev/gsap";
+
+        gsap.from("#checkmark", {
+            scale: 0,
+            opacity: 0,
+            duration: 1,
+            ease: "back.out(1.7)",
+        });
+
+        gsap.from("#thankTitle", {
+            y: -30,
+            opacity: 0,
+            delay: 0.3,
+            duration: 1,
+            ease: "power2.out",
+        });
+
+        gsap.from("#thankMessage", {
+            y: 30,
+            opacity: 0,
+            delay: 0.5,
+            duration: 1,
+            ease: "power2.out",
+        });
+    </script>
+</Layout>

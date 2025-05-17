@@ -6,11 +6,11 @@ import { Resend } from "resend";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, redirect }) => {
     try {
         const data = await request.formData();
 
-        // Honeypot anti-spam (campo oculto que debe estar vacío)
+        // Honeypot anti-spam
         const honeypot = sanitize(data.get("honey"));
         if (honeypot) {
             console.warn("Bot detectado por honeypot.");
@@ -22,8 +22,6 @@ export const POST: APIRoute = async ({ request }) => {
         const email = sanitize(data.get("email"));
         const subject = sanitize(data.get("subject"));
         const message = sanitize(data.get("message"));
-
-        // Sanitizar y procesar servicios múltiples
         const rawServices = data.getAll("services");
         const services = rawServices.map((s) => sanitize(s));
         const servicesString = services.join(", ");
@@ -37,26 +35,23 @@ export const POST: APIRoute = async ({ request }) => {
             return new Response("Correo electrónico inválido.", { status: 400 });
         }
 
-        // Verificar duplicados por email
+        // Verificar duplicados
         const { rows } = await turso.execute({
             sql: "SELECT id FROM contacts WHERE email = ?",
             args: [email],
         });
 
-        const exists = rows.length > 0;
-
-        if (!exists) {
-            // Insertar en Turso
+        if (rows.length === 0) {
             await turso.execute({
                 sql: `INSERT INTO contacts (name, email, subject, message, services) VALUES (?, ?, ?, ?, ?)`,
                 args: [name, email, subject, message, servicesString],
             });
         }
 
-        // Enviar correo con Resend
+        // Enviar correo
         await resend.emails.send({
-            from: "onboarding@resend.dev", // usá un dominio verificado
-            to: "antonionuila022@gmail.com",
+            from: "onboarding@resend.dev",
+            to: "info@codebrand.es",
             subject: `Contacto: ${subject}`,
             html: `
 				<h2>Nuevo mensaje de contacto</h2>
@@ -68,14 +63,14 @@ export const POST: APIRoute = async ({ request }) => {
 			`,
         });
 
-        return new Response("Mensaje enviado correctamente.", { status: 200 });
+        // ✅ Redirección tras envío exitoso
+        return redirect("/thank-you", 303);
+
     } catch (err) {
         console.error("Error al procesar el formulario:", err);
         return new Response("Error del servidor", { status: 500 });
     }
 };
-
-// --- Funciones auxiliares de seguridad ---
 
 function sanitize(input: FormDataEntryValue | null): string {
     if (!input) return "";
