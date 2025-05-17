@@ -10,63 +10,74 @@ let { image } = Astro.props;
 
 title = title || "Codebrand - Grow Your Business with Us";
 description =
-	description ||
-	"Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.";
+  description ||
+  "Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.";
 keywords =
-	keywords ||
-	"graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media";
+  keywords ||
+  "graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media";
 image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="./iconcodebrand.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap"
-			rel="stylesheet"
-		/>
-		<ClientRouter />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} - Codebrand</title>
-		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
-		<meta name="robots" content="index, follow" />
-		<meta name="author" content="CodeBrand" />
-		<meta name="og:title" content={title} />
-		<meta name="og:description" content={description} />
-		<meta name="og:image" content={image} />
-		<meta name="og:url" content="https://solutions.codebrand.es/" />
-		<meta name="og:type" content="website" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={image} />
-		<meta name="twitter:url" content="https://solutions.codebrand.es/" />
-		<meta name="twitter:site" content="@codebrand_es" />
-		<meta name="twitter:creator" content="@codebrand_es" />
-		<meta name="theme-color" content="#ffffff" />
-		<script src="https://static.elfsight.com/platform/platform.js" async
-		></script>
-	</head><body>
-		<Navbar client:visible />
-		<main>
-			<slot />
-		</main>
-		<Footer />
-		<script>
-			import gsap from "gsap";
-			window.gsap = gsap;
-		</script>
-	</body>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMQNNKWD3Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PMQNNKWD3Z");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="./iconcodebrand.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <ClientRouter />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - Codebrand</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="CodeBrand" />
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
+    <meta name="og:image" content={image} />
+    <meta name="og:url" content="https://solutions.codebrand.es/" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:url" content="https://solutions.codebrand.es/" />
+    <meta name="twitter:site" content="@codebrand_es" />
+    <meta name="twitter:creator" content="@codebrand_es" />
+    <meta name="theme-color" content="#ffffff" />
+    <script src="https://static.elfsight.com/platform/platform.js" async
+    ></script>
+  </head><body>
+    <Navbar client:visible />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import gsap from "gsap";
+      window.gsap = gsap;
+    </script>
+  </body>
 </html>
 
 <style>
-	body {
-		font-family: "Poppins", sans-serif;
-	}
+  body {
+    font-family: "Poppins", sans-serif;
+  }
 </style>
