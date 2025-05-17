@@ -11,6 +11,8 @@ import Faq from "../components/Faq.astro";
 import { Globe } from "../components/magicui/globe.tsx";
 import Testimonial from "../components/testimonial.tsx";
 import Brand from "../components/Brand.tsx";
+import Beam from "../components/beam.tsx";
+import Button from "@/components/Button.astro";
 ---
 
 <Layout
@@ -22,6 +24,35 @@ import Brand from "../components/Brand.tsx";
 	<Hero />
 	<section>
 		<Globe client:visible />
+	</section>
+
+	<section class="relative bg-white py-5">
+		<div
+			class="flex flex-col items-center justify-center text-center max-w-4xl mx-auto"
+		>
+			<h2
+				class="text-4xl md:text-5xl font-extrabold text-cyan-900 leading-tight"
+			>
+				Smart Automations, Real Impact
+			</h2>
+			<p class="mt-6 text-lg md:text-xl text-gray-700">
+				We design and implement intelligent automations that save you
+				time, reduce costs, and boost your business performance. From
+				CRM systems to marketing automation flows, our team identifies
+				the best tools to streamline your operations.
+			</p>
+			<p class="mt-4 text-md text-gray-600 max-w-2xl">
+				Unlock your next level of growth with custom automation
+				strategies tailored to your business. Let's build smarter
+				systems together—starting today.
+			</p>
+			<div class="mt-8">
+				<Button text="Get a Free Consultation" href="/contact" />
+			</div>
+		</div>
+
+		<!-- Beam visual component rendered only on client side -->
+		<Beam client:visible />
 	</section>
 	<!-- Services Section -->
 	<section class="py-20 flex flex-col gap-20">

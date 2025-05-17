@@ -95,7 +95,7 @@ export default function Navbar() {
             href="/contact"
             className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
           >
-            Hablemos!
+            Talk to us!
           </a>
         </div>
 
@@ -141,7 +141,7 @@ export default function Navbar() {
               href="/contact"
               className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
             >
-              Hablemos!
+              Talk to us!
             </a>
           </div>
         </div>
