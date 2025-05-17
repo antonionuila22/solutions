@@ -13,7 +13,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-15 items-center justify-center rounded-full border-2 border-border bg-white p-4 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className,
       )}
     >
@@ -46,7 +46,7 @@ export default function AnimatedBeamMultipleOutputDemo({
       )}
       ref={containerRef}
     >
-      <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
+      <div className="flex size-full max-w-4xl flex-row items-stretch justify-between gap-10">
         <div className="flex flex-col justify-center gap-2">
           <Circle ref={div1Ref}>
             <Icons.googleDrive />
