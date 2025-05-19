@@ -24,11 +24,15 @@ const GLOBE_CONFIG: COBEOptions = {
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
   markers: [
-    { location: [15.512371, -88.056872], size: 0.06 }, // Honduras
-    { location: [29.895995, -96.115851], size: 0.08 }, // Texas
-    { location: [40.529273, -4.124241], size: 0.05 }, // Spain
-    { location: [-35.289214, -70.931487], size: 0.05 }, // Chile
-    { location: [24.708323, -98.819354], size: 0.05 }, // Mexico
+    { location: [15.512371, -88.056872], size: 0.09 }, 
+    { location: [29.895995, -96.115851], size: 0.08 }, 
+    { location: [25.841370, -80.708180], size: 0.08 }, 
+    { location: [35.939808, -118.708825], size: 0.08 },
+    { location: [40.529273, -4.124241], size: 0.05 }, 
+    { location: [50.487511, 10.572287], size: 0.05 }, 
+    { location: [54.582602, -2.273167], size: 0.05 }, 
+    { location: [-35.289214, -70.931487], size: 0.05 },
+    { location: [24.708323, -98.819354], size: 0.05 }, 
   ],
 };
 
