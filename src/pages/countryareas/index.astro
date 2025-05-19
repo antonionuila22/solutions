@@ -12,11 +12,12 @@ const countries = await getCollection("countryareas");
             <h1
                 class="text-5xl font-extrabold text-cyan-900 mb-6 leading-tight"
             >
-                Nuestras Áreas de Servicio
+                Our Service Areas
             </h1>
             <p class="text-lg text-black leading-relaxed">
-                Descubrí cómo Codebrand impulsa negocios en diferentes países.
-                Diseño, desarrollo y tecnología para empresas en toda la región.
+                Discover how Codebrand drives business growth across different
+                countries. Design, development, and technology for companies
+                throughout the region.
             </p>
         </div>
     </section>
@@ -40,7 +41,7 @@ const countries = await getCollection("countryareas");
                                         <div class="overflow-hidden rounded-t-2xl">
                                             <img
                                                 src={`${img}`}
-                                                alt={name}
+                                                alt={`Equipo de Codebrand en ${name}`}
                                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                                             />
                                         </div>
@@ -50,10 +51,11 @@ const countries = await getCollection("countryareas");
                                         <h3 class="text-lg font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
                                             {title}
                                         </h3>
-                                        <p class="text-sm text-black mt-2 line-clamp-3">
+                                        <p class="text-sm text-gray-700 mt-2 line-clamp-3">
                                             {description}
                                         </p>
-                                        <ul class="text-xs text-gray-500">
+
+                                        <ul class="text-xs text-gray-500 mt-2">
                                             <li>
                                                 <strong>País:</strong> {name}
                                             </li>
@@ -67,9 +69,12 @@ const countries = await getCollection("countryareas");
                                                 </li>
                                             )}
                                         </ul>
-                                        <span class="text-sm font-semibold text-cyan-900 group-hover:text-orange-400 mt-auto pt-4 transition">
-                                            Ver más →
-                                        </span>
+
+                                        <div class="mt-auto pt-4 border-t border-gray-100">
+                                            <p class="text-sm font-semibold text-cyan-900 group-hover:text-orange-400 transition">
+                                                Ver más →
+                                            </p>
+                                        </div>
                                     </div>
                                 </a>
                             </article>

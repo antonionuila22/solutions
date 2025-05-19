@@ -20,7 +20,7 @@ const menuItems: MenuItem[] = [
     link: "#",
     hasDropdown: true,
     subItems: [
-      { name: "History", link: "/historia-de-codebrand" },
+      { name: "History", link: "/history" },
       { name: "Our Specialist", link: "/team" },
     ],
   },
@@ -31,7 +31,7 @@ const menuItems: MenuItem[] = [
     subItems: [
       { name: "Books", link: "/books" },
       { name: "Blog", link: "/blog" },
-      { name: "Country We Serve", link: "/countryareas" },
+      { name: "Countries We Serve", link: "/countryareas" },
     ],
   },
   { name: "Products", link: "/products", hasDropdown: false },

@@ -1,0 +1,184 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ButtonCustom from "../components/Button.astro";
+---
+
+<Layout>
+    <section class="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden">
+        <div class="absolute inset-0 bg-center opacity-10 z-0"></div>
+
+        <!-- HERO -->
+        <div class="relative z-10 mb-20 text-center animate-fade-in-up">
+            <h1 class="text-5xl font-extrabold text-cyan-900 mb-4">
+                Who We Are
+            </h1>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                Codebrand was born from a bold idea: to break formulas and build
+                brands that truly connect.
+            </p>
+        </div>
+
+        <!-- SECTION 1 -->
+        <div
+            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
+        >
+            <div
+                class="transition-transform duration-700 group-hover:-translate-y-1"
+            >
+                <img
+                    src="/photos/teamcode.png"
+                    alt="Creative collaboration"
+                    class="rounded-2xl shadow-xl w-full object-cover brightness-110"
+                />
+            </div>
+            <div
+                class="text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-200"
+            >
+                <p>
+                    We didn’t set out to become just another agency. From day
+                    one, our goal was clear: deliver world-class quality with
+                    speed, strategy, and vision.
+                </p>
+                <p>
+                    We work with urgency—but never rush. Every decision is
+                    intentional. Every solution is crafted to drive results.
+                </p>
+            </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div
+            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
+        >
+            <div
+                class="order-2 md:order-1 text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-300"
+            >
+                <h2 class="text-3xl font-semibold text-orange-500">
+                    One Team. One Vision.
+                </h2>
+                <p>
+                    We’re six specialists, one purpose: to help brands grow
+                    through powerful design and technology.
+                </p>
+                <ul class="list-disc list-inside mt-3 space-y-2">
+                    <li>
+                        <strong>Branding & Graphic Design:</strong> building standout
+                        identities
+                    </li>
+                    <li>
+                        <strong>Web & App Development:</strong> crafting frictionless
+                        experiences
+                    </li>
+                    <li>
+                        <strong>3D Animation & Rendering:</strong> telling stories
+                        with impact
+                    </li>
+                    <li>
+                        <strong>Marketing & Social:</strong> creating strategic connection
+                    </li>
+                    <li>
+                        <strong>Promotional Products:</strong> translating brands
+                        into the real world
+                    </li>
+                </ul>
+            </div>
+            <div
+                class="order-1 md:order-2 transition-transform duration-700 group-hover:-translate-y-1"
+            >
+                <img
+                    src="/photos/teamcode2.png"
+                    alt="Codebrand team"
+                    class="rounded-2xl shadow-xl w-full object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div
+            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
+        >
+            <div
+                class="transition-transform duration-700 group-hover:-translate-y-1"
+            >
+                <img
+                    src="/photos/creativeprocess.jpg"
+                    alt="Creative process"
+                    class="rounded-2xl shadow-xl w-full object-cover"
+                />
+            </div>
+            <div
+                class="text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-300"
+            >
+                <h2 class="text-3xl font-semibold text-orange-500">
+                    Why Brands Choose Codebrand
+                </h2>
+                <p>
+                    Our clients don’t choose us for templates. They choose us
+                    for intention, detail, and execution.
+                </p>
+                <p>
+                    Every project starts with deep discovery and ends with a
+                    crafted solution—built to resonate and perform.
+                </p>
+            </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div
+            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
+        >
+            <div
+                class="order-2 md:order-1 text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-300"
+            >
+                <h2 class="text-3xl font-semibold text-orange-500">Our DNA</h2>
+                <p>
+                    Behind every pixel is a person who cares. We value
+                    precision, simplicity, and technology with purpose.
+                </p>
+                <p>
+                    We’re not vendors — we’re partners. Our job is to turn your
+                    vision into a system that inspires, converts, and scales.
+                </p>
+            </div>
+            <div
+                class="order-1 md:order-2 transition-transform duration-700 group-hover:-translate-y-1"
+            >
+                <img
+                    src="/photos/strategyteam.jpg"
+                    alt="Strategic session"
+                    class="rounded-2xl shadow-xl w-full object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div
+            class="text-center mt-32 relative z-10 animate-fade-in-up delay-500"
+        >
+            <div class="max-w-2xl mx-auto flex flex-col items-center">
+                <h2
+                    class="text-4xl font-semibold text-cyan-900 mb-6 leading-snug"
+                >
+                    Looking for a team that treats your brand like their own?
+                </h2>
+                <ButtonCustom text="Let's Connect" href="/contact" />
+            </div>
+        </div>
+    </section>
+</Layout>
+<style>
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up 0.5s ease-out forwards;
+    }
+</style>
