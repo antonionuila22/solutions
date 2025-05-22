@@ -1,88 +1,88 @@
 ---
-title: Animación 2D & 3D Profesional – Motion Graphics e Ilustración en Movimiento
+title: Professional 2D & 3D Animation – Motion Graphics and Animated Illustration
 img: /photos/animacion2d.png
 readtime: 6
 price: $480 - $1200
 inStock: true
-description: Servicio profesional de animación 2D y 3D para marcas, productos y proyectos visuales. Creamos piezas únicas que explican, impactan y venden. Precios según tipo y nivel de producción.
+description: Professional 2D and 3D animation services for brands, products, and visual projects. We create unique pieces that explain, impress, and sell. Pricing varies based on type and production level.
 date: 2025-01-01
 author: Codebrand Team
 ---
 
-## Animación 2D & 3D Profesional
+## Professional 2D & 3D Animation
 
-### Animamos ideas con propósito, diseño y calidad cinematográfica
+### We animate ideas with purpose, design, and cinematic quality
 
-En **Codebrand**, damos vida a tus ideas con animaciones visuales diseñadas para **explicar, emocionar y vender**. Nuestro equipo de creativos y técnicos domina tanto el **motion graphics 2D** como el **modelado y animación 3D**, ofreciendo piezas visuales de alto impacto para marcas, productos o contenidos educativos.
-
----
-
-## ¿Qué incluye este servicio?
-
-- ✅ Guión y narrativa visual (si se requiere)
-- ✅ Diseño y composición de elementos 2D o modelado 3D
-- ✅ Animación de tipografía, gráficos, personajes o productos
-- ✅ Integración de música, efectos y ritmo visual
-- ✅ Adaptación a redes, campañas o presentaciones
-- ✅ Exportación profesional en múltiples formatos
-- ✅ 1 ronda de ajustes incluida
+At **Codebrand**, we bring your ideas to life with visual animations designed to **explain, move, and sell**. Our team of creatives and technicians masters both **2D motion graphics** and **3D modeling and animation**, delivering high-impact visuals for brands, products, or educational content.
 
 ---
 
-## Tipos de animación y precios
+## What’s included in this service?
 
-| Tipo de animación              | Descripción                                                                 | Precio USD |
-|-------------------------------|-----------------------------------------------------------------------------|------------|
-| **Animación 2D básica**        | Motion graphics simple hasta 60 segundos (texto, íconos, transiciones)     | $480       |
-| **Animación 2D narrativa**     | Video explicativo o promocional (storytelling, personaje, ritmo guiado)    | Desde $650 |
-| **Animación 3D básica**        | Modelado + animación de producto o escena simple (hasta 30 seg.)           | Desde $750 |
-| **Animación 3D avanzada**      | Cámaras, texturas, luces, entorno 3D detallado (60–90 seg.)                | Desde $1,100 |
-| **Intro / Outro animado**      | Logo animado en 2D o 3D para uso en redes o presentaciones                 | $320       |
-
-> *Los precios pueden variar según el estilo, la complejidad de los gráficos y si se parte desde cero o con assets provistos por el cliente.*
+- ✅ Scriptwriting and visual storytelling (if needed)  
+- ✅ 2D design and composition or 3D modeling  
+- ✅ Typography, graphics, character, or product animation  
+- ✅ Music, sound effects, and visual rhythm integration  
+- ✅ Adaptation for social media, campaigns, or presentations  
+- ✅ Professional export in multiple formats  
+- ✅ 1 round of revisions included
 
 ---
 
-## ¿Cómo trabajamos?
+## Types of animation and pricing
 
-1. **Brief y objetivos**: entendemos lo que necesitas comunicar.
-2. **Story + estilo visual**: diseñamos la narrativa y estilo gráfico.
-3. **Animación**: llevamos cada escena a la vida con ritmo, sonido y detalle.
-4. **Entrega y revisión**: 1 ronda de ajustes incluida.
-5. **Entrega final en calidad pro lista para publicación.**
+| Animation Type              | Description                                                                 | Price USD   |
+|----------------------------|-----------------------------------------------------------------------------|-------------|
+| **Basic 2D Animation**     | Simple motion graphics up to 60 sec (text, icons, transitions)              | $480        |
+| **Narrative 2D Animation** | Explainer or promo video (storytelling, characters, guided rhythm)          | From $650   |
+| **Basic 3D Animation**     | Product modeling + animation or simple scene (up to 30 sec)                 | From $750   |
+| **Advanced 3D Animation**  | Cameras, textures, lights, detailed 3D environments (60–90 sec)             | From $1,100 |
+| **Animated Intro / Outro** | Animated logo in 2D or 3D for social media or presentations                 | $320        |
 
----
-
-## Entregables
-
-- 🎞️ Video final en .MP4 (Full HD o 4K si aplica)
-- 🖼️ Frames o versiones en imagen para reutilización
-- 🧾 Storyboard o boceto visual (si aplica)
-- 📁 Archivos fuente (After Effects, Blender, si se contrata)
-- 🎵 Música, efectos y edición sonora incluida (libre de derechos)
+> *Prices may vary depending on style, graphic complexity, and whether assets are provided or created from scratch.*
 
 ---
 
-## Beneficios de trabajar con Codebrand
+## How we work
 
-- 🎨 Estilo visual alineado a tu marca
-- 🧠 Narrativa y diseño con propósito
-- 🔥 Animaciones que destacan entre el ruido digital
-- 🧩 Adaptables a múltiples plataformas y formatos
-- 🎯 Experiencia en storytelling visual + técnica de animación
-- 🤝 Producción profesional con acompañamiento creativo
-
----
-
-## ¿Por qué elegirnos?
-
-Porque **una buena animación no solo se ve bien, se siente bien**.  
-En **Codebrand**, creamos animaciones que comunican con claridad, emocionan con ritmo y permanecen en la mente del espectador. Ya sea para explicar tu producto, lanzar tu marca o animar tu historia: lo hacemos con diseño, técnica y pasión.
+1. **Brief and goals**: we understand what you want to communicate.  
+2. **Story + visual style**: we design the narrative and visual identity.  
+3. **Animation**: we bring each scene to life with rhythm, sound, and detail.  
+4. **Delivery and review**: includes 1 round of revisions.  
+5. **Final delivery in pro-quality, ready for publishing.**
 
 ---
 
-## ¿Listo para animar tus ideas?
+## Deliverables
 
-> Escríbenos y cotiza tu animación 2D o 3D con nosotros. Creamos movimiento que conecta.
+- 🎞️ Final video in .MP4 (Full HD or 4K if applicable)  
+- 🖼️ Still frames or image versions for repurposing  
+- 🧾 Storyboard or visual sketch (if applicable)  
+- 📁 Source files (After Effects, Blender, if contracted)  
+- 🎵 Music, effects, and sound editing included (royalty-free)
+
+---
+
+## Benefits of working with Codebrand
+
+- 🎨 Visual style aligned with your brand  
+- 🧠 Purposeful storytelling and design  
+- 🔥 Animations that stand out in the digital noise  
+- 🧩 Adaptable to multiple platforms and formats  
+- 🎯 Expertise in visual storytelling + animation technique  
+- 🤝 Professional production with creative support
+
+---
+
+## Why choose us?
+
+Because **great animation doesn’t just look good — it feels good**.  
+At **Codebrand**, we create animations that communicate with clarity, engage with rhythm, and leave a lasting impression. Whether you need to explain your product, launch your brand, or animate your story — we do it with design, technique, and passion.
+
+---
+
+## Ready to bring your ideas to life?
+
+> Contact us and get a quote for your 2D or 3D animation. We create motion that connects.
 
 ---

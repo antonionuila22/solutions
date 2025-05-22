@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solutions.codebrand.es/sitemap-index.xml

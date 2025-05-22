@@ -1,83 +1,83 @@
 ---
-title: Productos Promocionales Personalizados para Empresas
+title: Custom Promotional Products for Businesses
 img: /photos/promocionales.png
 readtime: 4
 price: $100 - $1200
 inStock: true
-description: Ofrecemos productos promocionales personalizados como camisas, tazas, gorras y más. Serigrafía, bordado y estampado profesional para posicionar tu marca con estilo y coherencia. Ideal para empresas que buscan visibilidad duradera.
+description: We offer custom promotional products like shirts, mugs, hats, and more. High-quality screen printing, embroidery, and stamping to showcase your brand with style and consistency. Ideal for businesses looking for lasting visibility.
 date: 2025-04-05
 author: Codebrand Team
 ---
 
-## Productos Promocionales para Empresas
+## Custom Promotional Products for Businesses
 
-### Poné tu marca en el mapa con artículos que hablan por vos
+### Put your brand on the map with items that speak for you
 
-En **Codebrand**, convertimos productos cotidianos en vehículos de marca. Desde camisetas y tazas hasta gorras y bolsos, ofrecemos soluciones promocionales personalizadas que fortalecen tu identidad visual y dejan huella.
-
----
-
-## ¿Qué incluye nuestro servicio?
-
-- ✅ Asesoría en selección de productos ideales para tu audiencia
-- ✅ Diseño personalizado alineado a tu branding
-- ✅ Serigrafía, bordado y estampado de alta calidad
-- ✅ Muestras digitales para aprobación previa
-- ✅ Producción por lotes pequeños, medianos o grandes
-- ✅ Envíos nacionales e internacionales
+At **Codebrand**, we turn everyday items into brand vehicles. From t-shirts and mugs to hats and tote bags, we provide personalized promotional solutions that strengthen your visual identity and leave a lasting impression.
 
 ---
 
-## Opciones y precios estimados
+## ✅ What’s Included in Our Service
 
-| Producto              | Técnica disponible         | Mínimo sugerido | Precio aproximado | Tiempo de entrega     |
-|-----------------------|----------------------------|------------------|--------------------|------------------------|
-| **t-shirt**                | Sublimado y DTF             | 12 unidades       | Desde $16.00 c/u    | 2 – 5 días hábiles     |
-| **Tazas personalizadas**   | Estampado sublimado         | 12 unidades       | Desde $10.00 c/u    | 2 – 5 días hábiles     |
-| **Bolsos tipo tote bag**   | Serigrafía 1 a 3 tintas     | 12 unidades       | Desde $7.00 c/u     | 3 – 10 días hábiles    |
-| **Artículos especiales**   | (termos, libretas, alfombrillas, Stickerts)        | Según cotización  | A partir de $100    | Según producto elegido |
-
-> *Los precios varían según cantidad, técnica, diseño y tipo de producto. Consultá por combos y promociones.*
+- Product selection consulting tailored to your audience  
+- Custom design aligned with your branding  
+- High-quality screen printing, embroidery, and stamping  
+- Digital mockups for prior approval  
+- Small, medium, or large batch production  
+- Domestic and international shipping options
 
 ---
 
-## ¿Cómo trabajamos?
+## 📦 Product Options & Estimated Pricing
 
-1. **Brief de marca**: entendemos tu identidad y objetivos promocionales.
-2. **Selección de productos**: te ayudamos a elegir las mejores opciones.
-3. **Diseño y prueba visual**: te mostramos cómo lucirá tu marca.
-4. **Producción**: imprimimos o bordamos con materiales de primera.
-5. **Entrega**: recibís tus artículos listos para usar, regalar o vender.
+| Product                  | Available Technique        | Minimum Order | Approx. Price       | Delivery Time        |
+|--------------------------|----------------------------|----------------|----------------------|-----------------------|
+| **T-shirt**              | Sublimation & DTF          | 12 units       | From $16.00 each     | 2 – 5 business days   |
+| **Custom Mugs**          | Sublimation Print          | 12 units       | From $10.00 each     | 2 – 5 business days   |
+| **Tote Bags**            | 1 to 3 Color Screen Print  | 12 units       | From $7.00 each      | 3 – 10 business days  |
+| **Special Items**        | (thermoses, notebooks, mousepads, stickers) | Custom quote | Starting at $100    | Based on selected item |
 
----
-
-## Entregables
-
-- 🎽 Productos físicos personalizados con tu marca
-- 📦 Empaque básico o especial (si se requiere)
-- 🧾 Comprobante de producción con detalles técnicos
-- 🖼 Mockups digitales previos para revisión y aprobación
+> *Prices vary based on quantity, technique, design, and product type. Ask about bundles and special offers.*
 
 ---
 
-## Beneficios de trabajar con Codebrand
+## 🛠 How We Work
 
-- 💼 Refuerza tu presencia de marca en eventos, ferias o regalos corporativos
-- 🎯 Productos alineados a tu identidad visual
-- 🛠 Producción confiable y con estándares de calidad
-- 📈 Aumentá tu visibilidad de forma tangible y profesional
-- 🤝 Atención personalizada durante todo el proceso
-
----
-
-## ¿Por qué elegirnos?
-
-Porque **tu marca merece estar presente en cada detalle**.  
-En **Codebrand**, hacemos que tus artículos promocionales no pasen desapercibidos. Creamos productos útiles, con buen diseño y excelente calidad, que generan recordación y conexión. Nos efocamos en la velocidad y alta calidad para cada uno de nuestros clientes.
+1. **Brand Brief** – We understand your identity and promotional goals.  
+2. **Product Selection** – We help you choose the best options.  
+3. **Design & Visual Proof** – You’ll see a mockup before production.  
+4. **Production** – High-quality printing or embroidery begins.  
+5. **Delivery** – You receive your custom-branded products, ready to use, gift, or sell.
 
 ---
 
-## ¿Listo para llevar tu marca a otro nivel?
+## 📦 Deliverables
 
-> Contactanos para crear tus productos promocionales a medida.  
-> En cada taza, camisa o gorra, tu marca va a hablar por vos.
+- 🎽 Physical, customized items with your branding  
+- 📦 Basic or special packaging (upon request)  
+- 🧾 Production receipt with technical details  
+- 🖼 Digital mockups for review and approval
+
+---
+
+## 🎯 Benefits of Working with Codebrand
+
+- 💼 Strengthen your brand presence at events, expos, or corporate gifting  
+- 🎨 Products fully aligned with your visual identity  
+- 🛠 Reliable production with high-quality standards  
+- 📈 Boost your brand’s visibility in a tangible and professional way  
+- 🤝 Personalized attention every step of the way
+
+---
+
+## 🤝 Why Choose Us?
+
+Because **your brand deserves to be present in every detail**.  
+At **Codebrand**, we ensure your promotional items stand out. We create useful, well-designed, high-quality products that build brand recognition and emotional connection. We focus on fast delivery and consistent excellence for each of our clients.
+
+---
+
+## 📞 Ready to take your brand to the next level?
+
+> Reach out to create your custom promotional products.  
+> From every mug to every shirt or cap — your brand will speak for itself.

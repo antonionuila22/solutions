@@ -1,84 +1,84 @@
 ---
-title: Fotografía Profesional – Capturamos Momentos que Comunican
+title: Professional Photography – Capturing Moments That Speak
 img: /photos/fotografia.png
 readtime: 4
 price: $280 - $890
 inStock: true
-description: Servicio de fotografía profesional para marcas, productos, eventos, retratos y contenido digital. Imágenes que cuentan historias, conectan y elevan tu presencia visual. Tarifas según tipo de sesión, duración y edición.
+description: Professional photography service for brands, products, events, portraits, and digital content. Images that tell stories, connect, and elevate your visual presence. Rates vary based on session type, duration, and editing.
 date: 2025-01-15
 author: Codebrand Team
 ---
 
-## Fotografía Profesional
+## Professional Photography
 
-### Imágenes que transmiten más que mil palabras
+### Images that say more than a thousand words
 
-En **Codebrand**, entendemos que una imagen potente **comunica, emociona y posiciona**. Nuestro servicio de fotografía profesional está diseñado para **marcas, emprendedores, equipos creativos y negocios** que buscan elevar su imagen visual y destacarse en medios digitales, catálogos o presentaciones.
-
----
-
-## ¿Qué incluye este servicio?
-
-- ✅ Sesión de fotografía profesional (en locación o estudio)
-- ✅ Asesoramiento creativo previo a la sesión
-- ✅ Edición y retoque profesional de las mejores tomas
-- ✅ Entrega en alta resolución + formatos adaptados
-- ✅ Acceso a galería digital para visualización y descarga
-- ✅ 1 ronda de edición adicional incluida
+At **Codebrand**, we believe a powerful image can **communicate, inspire, and position your brand**. Our professional photography service is designed for **brands, entrepreneurs, creative teams, and businesses** looking to elevate their visual identity and stand out in digital platforms, catalogs, or presentations.
 
 ---
 
-## Tipos de fotografía y precios
+## ✅ What’s Included
 
-| Tipo de sesión                 | Descripción                                                                  | Precio USD |
-|-------------------------------|------------------------------------------------------------------------------|------------|
-| **Retrato profesional**        | Ideal para LinkedIn, perfiles de equipo o branding personal                   | $280       |
-| **Producto para e-commerce**   | Fotos sobre fondo blanco o estilizadas para catálogos y tiendas online        | Desde $320 |
-| **Lifestyle / Marca personal** | Sesión creativa para redes, marca o contenido de valor                        | Desde $390 |
-| **Eventos corporativos**       | Cobertura de eventos, lanzamientos o presentaciones                          | Desde $580 |
-| **Campaña visual completa**    | Dirección de arte + fotografía para campañas o lanzamientos clave            | Desde $890 |
-
-> *Los precios pueden variar según locación, cantidad de tomas requeridas y complejidad de edición.*
+- Professional photo session (on-location or in-studio)  
+- Creative direction and pre-session planning  
+- Professional retouching and editing of top selections  
+- Delivery in high resolution + formats adapted for various uses  
+- Access to a private digital gallery for viewing and download  
+- 1 round of additional edits included
 
 ---
 
-## ¿Cómo trabajamos?
+## 📷 Session Types & Pricing
 
-1. **Reunión inicial**: definimos tus objetivos visuales y estilo deseado.
-2. **Producción**: preparamos el equipo, locación y detalles creativos.
-3. **Sesión fotográfica**: capturamos imágenes que comuniquen tu esencia.
-4. **Selección y edición**: retocamos las mejores tomas con calidad profesional.
-5. **Entrega final**: archivos listos para uso digital, impresión o publicación.
+| Session Type               | Description                                                                  | Price USD  |
+|---------------------------|------------------------------------------------------------------------------|------------|
+| **Professional Portrait**  | Ideal for LinkedIn, team profiles, or personal branding                      | $280       |
+| **Product for E-commerce** | White background or styled shots for catalogs and online stores              | From $320  |
+| **Lifestyle / Personal Brand** | Creative session for social media, brand storytelling, or content         | From $390  |
+| **Corporate Events**       | Coverage of events, product launches, or corporate presentations             | From $580  |
+| **Full Visual Campaign**   | Art direction + photography for key campaigns or product launches            | From $890  |
 
----
-
-## Entregables
-
-- 📸 10 a 40 fotos editadas (según paquete)
-- 🖼️ Archivos en alta resolución (.JPG / .PNG)
-- 📁 Copias optimizadas para web y redes sociales
-- 🌐 Galería digital privada para selección y descarga
-- 📦 Archivos RAW si se contrata
+> *Pricing may vary based on location, number of shots, and editing complexity.*
 
 ---
 
-## Beneficios de trabajar con Codebrand
+## 📸 Our Process
 
-- 🎨 Dirección visual clara y alineada a tu marca
-- 💡 Asesoría creativa en cada paso
-- 📷 Equipamiento profesional y técnica de alto nivel
-- 🖌️ Retoque cuidadoso sin perder naturalidad
-- ⚡ Entrega puntual y eficiente
-
----
-
-## ¿Por qué elegirnos?
-
-Porque **no solo tomamos fotos, capturamos lo que tu marca quiere decir**.  
-En **Codebrand**, cada sesión fotográfica está diseñada para conectar visualmente con tu audiencia y generar impacto desde la primera imagen.
+1. **Initial Meeting** – We define your visual goals and preferred style.  
+2. **Production Prep** – Equipment, location, and creative planning.  
+3. **Photo Session** – We capture images that reflect your brand’s essence.  
+4. **Selection & Editing** – Professional retouching of the best shots.  
+5. **Final Delivery** – Files ready for digital use, print, or publishing.
 
 ---
 
-## ¿Listo para destacar con tus imágenes?
+## 📦 Deliverables
 
-> Escribinos y cotizá tu sesión de fotos. En Codebrand, hacemos que tus ideas cobren vida en cada imagen.
+- 10 to 40 retouched photos (depending on package)  
+- High-resolution files (.JPG / .PNG)  
+- Web and social media-optimized versions  
+- Private digital gallery for selection and download  
+- RAW files (if contracted)
+
+---
+
+## 🎯 Why Work with Codebrand?
+
+- 🎨 Clear visual direction aligned with your brand  
+- 💡 Creative support every step of the way  
+- 📷 Professional equipment and high-end technique  
+- 🖌️ Clean, detailed retouching that preserves authenticity  
+- ⚡ Fast, reliable turnaround
+
+---
+
+## 🤝 Why Choose Us?
+
+Because **we don’t just take photos — we capture what your brand wants to say**.  
+At **Codebrand**, every photo session is designed to connect visually with your audience and create impact from the very first image.
+
+---
+
+## 📞 Ready to make your brand stand out?
+
+> Message us and get a custom quote for your photo session. At Codebrand, we turn your ideas into images that resonate.

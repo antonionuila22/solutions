@@ -1,92 +1,92 @@
 ---
-title: Desarrollo de Tiendas Online – E-commerce Escalable, Visual y Rentable
+title: Online Store Development – Scalable, Visual, and High-Converting E-commerce
 img: /photos/diseñoweb.png
 readtime: 7
-price: $1,200 - $4,200
+price: From $1,500 to $5,200+
 inStock: true
-description: Creamos tiendas online modernas, rápidas y listas para escalar. Usamos plataformas como Shopify, WooCommerce, y soluciones personalizadas con React, Astro y Stripe. Ideal para marcas que quieren vender más y gestionar mejor.
+description: We build modern, fast, and scalable online stores using platforms like Shopify, WooCommerce, and custom tech with React, Astro, and Stripe. Ideal for brands looking to grow sales and streamline operations.
 date: 2025-01-01
 author: Codebrand Team
 ---
 
-## Desarrollo de E-commerce Profesional
+## Professional E-commerce Development
 
-### Tiendas online que venden más, cargan rápido y escalan contigo
+### Online stores that sell more, load fast, and scale with your business
 
-En **Codebrand**, diseñamos y desarrollamos tiendas online que convierten. Desde marcas que recién lanzan su primera tienda hasta negocios que migran a plataformas más escalables, nuestro enfoque es claro: **hacer crecer tus ventas con tecnología, diseño y rendimiento**.
-
----
-
-## ¿Qué incluye este servicio?
-
-- ✅ Tienda online responsive y autogestionable  
-- ✅ Integración con pasarelas de pago (Stripe, PayPal, etc.)  
-- ✅ Carrito de compras, inventario y gestión de pedidos  
-- ✅ Panel de administración personalizado  
-- ✅ SEO técnico inicial  
-- ✅ Capacitación básica en gestión del e-commerce  
-- ✅ Integración con herramientas externas (email, marketing, CRM)  
-- ✅ Alojamiento, configuración de dominio y seguridad SSL  
-- ✅ Ingreso de productos (hasta 1,000 unidades)*  
-
-> \* Para catálogos mayores, recomendamos nuestro servicio de [Data Entry](https://solutions.codebrand.es/products/data-entry/)
+At **Codebrand**, we design and develop e-commerce stores that truly convert. Whether you're launching your first shop or migrating to a more scalable platform, our focus is simple: **grow your revenue through smart technology, intentional design, and top-tier performance**.
 
 ---
 
-## Precios por tipo de tienda
+## ✅ What’s Included
 
-| Tipo de Tienda                | Ideal para...                                            | Precio desde |
-|------------------------------|----------------------------------------------------------|--------------|
-| **Tienda Básica**            | Productos simples, sin variantes, hasta 10 productos     | $1,200       |
-| **Tienda Intermedia**        | Hasta 50 productos, variantes, cupones y analítica       | $2,100       |
-| **Tienda Avanzada**          | Catálogo grande, integraciones con CRM o ERP, blog, etc. | $3,200       |
-| **Tienda Personalizada**     | Totalmente a medida, animaciones, ventas internacionales | $4,200+      |
+- Responsive, self-managed online store  
+- Payment gateway integration (Stripe, PayPal, etc.)  
+- Shopping cart, inventory, and order management  
+- Custom admin panel  
+- Initial technical SEO  
+- Basic e-commerce management training  
+- Integration with third-party tools (email, marketing, CRM)  
+- Hosting, domain setup, and SSL security  
+- Product upload (up to 1,000 items)*  
 
-> 💡 *Todos los planes incluyen instalación, configuración, y soporte técnico durante la entrega.*
+> \* For larger catalogs, check out our [Data Entry service](https://solutions.codebrand.es/products/data-entry/)
 
 ---
 
-## Tecnologías que usamos
+## 💰 Pricing by Store Type
 
-- **Plataformas E-commerce:** Shopify, WooCommerce, Stripe Checkout  
+| Store Type            | Best for...                                                | Starting Price |
+|-----------------------|------------------------------------------------------------|----------------|
+| **Basic Store**       | Simple products, no variants, up to 10 items               | From $1,500     |
+| **Intermediate Store**| Up to 50 products, variants, coupons, analytics            | From $2,500     |
+| **Advanced Store**    | Large catalogs, CRM/ERP integrations, blog, etc.           | From $3,800     |
+| **Custom Store**      | Fully tailored build, animations, global sales features    | From $5,200+    |
+
+> 💡 *All plans include full setup, configuration, and tech support during delivery.*
+
+---
+
+## 🔧 Technologies We Use
+
+- **E-commerce Platforms:** Shopify, WooCommerce, Stripe Checkout  
 - **CMS + Headless:** WordPress, Strapi, Sanity  
 - **Frontend:** Astro, Next.js, React  
-- **Estilos:** Tailwind CSS, Bootstrap  
+- **Styling:** Tailwind CSS, Bootstrap  
 - **Backend:** Node.js, Express.js  
-- **DBs:** PostgreSQL, MySQL, MongoDB  
+- **Databases:** PostgreSQL, MySQL, MongoDB  
 - **Hosting:** Vercel, Netlify, Hostinger, Cloudflare, AWS  
 
 ---
 
-## Beneficios de trabajar con Codebrand
+## 🎯 Why Work with Codebrand?
 
-- 🧩 Desarrollo a medida según tu negocio  
-- 📈 Tiendas optimizadas para SEO, velocidad y ventas  
-- 🛒 Experiencia UX pensada para e-commerce  
-- 🔐 Buenas prácticas de seguridad y escalabilidad  
-- 💡 Integraciones con herramientas como Meta Ads, Google Shopping o Klaviyo  
-- 🤝 Acompañamiento real, no solo soporte técnico  
-
----
-
-## Entregables
-
-- Sitio web funcional y publicado en tu dominio  
-- Accesos de administrador  
-- Manual básico para gestionar productos y pedidos  
-- Documentación técnica (si aplica)  
-- Soporte inicial de 15 días (extensible)  
+- 🧩 Custom development aligned with your business model  
+- 📈 Optimized for SEO, speed, and conversion  
+- 🛒 UX tailored for e-commerce best practices  
+- 🔐 Scalable and secure architecture  
+- 💡 Seamless integrations with Meta Ads, Google Shopping, Klaviyo  
+- 🤝 Real partnership — not just tech delivery
 
 ---
 
-## ¿Por qué elegirnos?
+## 📦 Deliverables
 
-En **Codebrand**, no vendemos plantillas: **creamos tiendas que venden de verdad**.  
-Diseñamos experiencias pensadas para escalar, generar confianza y facilitar la gestión de tu negocio.
+- Fully functional website on your domain  
+- Admin access  
+- Basic guide for managing products and orders  
+- Technical documentation (if applicable)  
+- 15 days of post-delivery support (extendable)
 
 ---
 
-## ¿Listo para lanzar o mejorar tu tienda online?
+## 🤝 Why Choose Us?
 
-> Escribinos con lo que necesitás: cantidad de productos, integraciones, nivel de personalización.  
-> Te enviaremos una propuesta a medida, sin promesas vacías.
+At **Codebrand**, we don’t sell templates — **we build online stores that truly sell**.  
+Our work is designed to scale, build trust, and simplify your business management.
+
+---
+
+## 🚀 Ready to launch or upgrade your e-commerce?
+
+> Tell us what you need: product volume, integrations, and customization level.  
+> We’ll send you a personalized proposal — no empty promises.
