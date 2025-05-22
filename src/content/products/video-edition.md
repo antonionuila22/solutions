@@ -1,85 +1,85 @@
 ---
-title: Edición de Video Profesional – Contenido Visual que Captura y Conecta
+title: Professional Video Editing – Visual Content That Captures and Connects
 img: /photos/videoedition.png
 readtime: 5
 price: $320 - $950
 inStock: true
-description: Servicio profesional de edición de video para marcas, productos, redes sociales y presentaciones. Transformamos tu material en contenido potente, dinámico y memorable. Precios según duración, formato y complejidad.
+description: Professional video editing service for brands, products, social media, and presentations. We turn your footage into powerful, dynamic, and memorable content. Pricing varies based on length, format, and complexity.
 date: 2025-01-15
 author: Codebrand Team
 ---
 
-## Edición de Video Profesional
+## Professional Video Editing
 
-### Transformamos tus clips en historias que conectan
+### We turn your footage into stories that resonate
 
-En **Codebrand**, convertimos tus grabaciones en contenido visual que **capta la atención**, **cuenta una historia** y **logra resultados**. Nuestro servicio de edición de video profesional está pensado para **marcas, productos, creadores de contenido y proyectos educativos** que necesitan impacto visual, ritmo y coherencia narrativa.
-
----
-
-## ¿Qué incluye este servicio?
-
-- ✅ Revisión y curaduría del material original
-- ✅ Edición con ritmo, estructura y transiciones modernas
-- ✅ Corrección de color y mejora visual general
-- ✅ Integración de gráficos, texto y animaciones simples
-- ✅ Música, efectos de sonido y mezcla sonora
-- ✅ Adaptación para redes sociales, YouTube o presentaciones
-- ✅ 1 ronda de ajustes incluida
+At **Codebrand**, we transform your raw footage into visual content that **grabs attention**, **tells a story**, and **delivers results**. Our professional video editing service is designed for **brands, creators, educators, and businesses** that need polished visuals, rhythm, and narrative clarity.
 
 ---
 
-## Tipos de edición y precios
+## ✅ What’s Included
 
-| Tipo de edición                | Descripción                                                                 | Precio USD |
-|-------------------------------|-----------------------------------------------------------------------------|------------|
-| **Edición simple**             | Corte básico + música + transiciones (hasta 60 seg.)                        | $320       |
-| **Edición dinámica para redes**| Reels, Shorts o TikToks con ritmo visual, efectos y branding                | Desde $380 |
-| **Edición narrativa**          | Videos explicativos, entrevistas o contenido educativo (2–5 minutos)        | Desde $520 |
-| **Video promocional completo** | Edición completa con storytelling, b-roll, textos animados y branding       | Desde $750 |
-| **Presentación / Pitch visual**| Video para negocios o inversores con diseño gráfico y estructura visual      | Desde $950 |
-
-> *Los precios pueden variar según la duración del material, el número de entregables y si se requiere diseño gráfico adicional.*
+- Review and curation of your original footage  
+- Editing with flow, structure, and modern transitions  
+- Color correction and overall visual enhancement  
+- Integration of graphics, text, and simple animations  
+- Music, sound effects, and audio mixing  
+- Format adaptation for social media, YouTube, or presentations  
+- 1 revision round included
 
 ---
 
-## ¿Cómo trabajamos?
+## 🎬 Editing Types & Pricing
 
-1. **Brief y objetivos**: entendemos qué querés comunicar y a quién.
-2. **Edición inicial**: seleccionamos el mejor material y estructuramos el ritmo.
-3. **Diseño visual**: aplicamos estilo, transiciones y elementos gráficos.
-4. **Revisión**: te mostramos el primer corte con una ronda de ajustes incluida.
-5. **Entrega final**: en el formato que necesites, listo para publicación.
+| Editing Type                | Description                                                                 | Price USD   |
+|----------------------------|-----------------------------------------------------------------------------|-------------|
+| **Simple Edit**             | Basic cut + music + transitions (up to 60 seconds)                          | $320        |
+| **Dynamic Social Media Edit**| Reels, Shorts, TikToks with visual rhythm, effects, and branding           | From $380   |
+| **Narrative Editing**       | Explainers, interviews, or educational videos (2–5 min)                     | From $520   |
+| **Full Promotional Video**  | Storytelling, b-roll, animated text, brand-aligned edit                     | From $750   |
+| **Presentation / Pitch Video**| Business/investor video with strong visual structure and motion design    | From $950   |
 
----
-
-## Entregables
-
-- 🎞️ Video final en .MP4 optimizado (Full HD o vertical para redes)
-- 📲 Versiones adaptadas a plataformas (IG, TikTok, YouTube, etc.)
-- 🖼️ Miniaturas, títulos o frames destacados
-- 🎵 Música libre de derechos incluida
-- 📁 Archivos fuente si se contrata (Premiere, Final Cut, etc.)
+> *Final pricing depends on duration, deliverables, and whether additional graphic design is required.*
 
 ---
 
-## Beneficios de trabajar con Codebrand
+## 🛠 How We Work
 
-- ✂️ Edición enfocada en comunicar con claridad y ritmo
-- 🎯 Contenido que engancha desde los primeros segundos
-- 🔠 Integración de elementos visuales alineados a tu marca
-- 🧠 Storytelling visual con intención y propósito
-- 📱 Adaptación estratégica a formatos digitales
-
----
-
-## ¿Por qué elegirnos?
-
-Porque **un buen video no solo se ve bien, se siente correcto**.  
-En **Codebrand**, trabajamos cada edición con intención: cuidamos el ritmo, el mensaje y el impacto visual. Ya sea que necesites editar una serie de videos cortos o una pieza promocional completa, estamos listos para ayudarte a conectar con tu audiencia.
+1. **Brief & Goals** – We align on what you want to communicate and to whom  
+2. **Initial Edit** – We select the best footage and establish the narrative flow  
+3. **Visual Design** – Style, transitions, and graphic elements are added  
+4. **Review** – You get a first cut and one round of revision  
+5. **Final Delivery** – Exported in the formats you need, ready to publish
 
 ---
 
-## ¿Listo para editar como un pro?
+## 📦 Deliverables
 
-> Escribinos y cotizá la edición de tu próximo video. Convertimos tu contenido en algo que vale la pena ver… y recordar.
+- 🎞️ Final video in optimized .MP4 (Full HD or vertical for socials)  
+- 📲 Platform-specific versions (IG, TikTok, YouTube, etc.)  
+- 🖼️ Thumbnails, titles, or highlight frames  
+- 🎵 Royalty-free music included  
+- 📁 Source files upon request (Premiere, Final Cut, etc.)
+
+---
+
+## 🎯 Why Work with Codebrand
+
+- ✂️ Editing focused on clarity, emotion, and flow  
+- 🎯 Hook-driven content that captures attention fast  
+- 🔠 Visual elements tailored to your brand  
+- 🧠 Purposeful storytelling and message alignment  
+- 📱 Strategic adaptation to digital platforms
+
+---
+
+## 🤝 Why Choose Us?
+
+Because **a great video isn’t just about how it looks — it’s about how it feels**.  
+At **Codebrand**, every edit is intentional. We craft rhythm, message, and visual impact to help your content connect. Whether you need a series of short videos or a full promotional piece, we’re ready to bring your story to life.
+
+---
+
+## 🚀 Ready to level up your video content?
+
+> Reach out for a quote on your next video project. We turn your footage into something worth watching… and remembering.

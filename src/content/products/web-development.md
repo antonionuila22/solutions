@@ -1,92 +1,92 @@
 ---
-title: Desarrollo Web Full Stack – Sitios Web Modernos, Administrables y Escalables
+title: Full Stack Web Development – Modern, Scalable & Custom-Built Websites
 img: /photos/webservice.png
 readtime: 6
-price: $350 - $900 (por página)
+price: $350 - $900 (per page)
 inStock: true
-description: Servicio profesional de desarrollo web full stack con precios por página según el nivel de complejidad. Creamos sitios rápidos, administrables y adaptados a tu negocio usando tecnologías como WordPress, Webflow, Astro, React, Next.js y Strapi.
+description: Professional full stack web development services with per-page pricing based on complexity. We build fast, scalable, and fully manageable websites using technologies like WordPress, Webflow, Astro, React, Next.js, and Strapi.
 date: 2025-01-01
 author: Codebrand Team
 ---
 
-## Desarrollo Web Full Stack Profesional
+## Professional Full Stack Web Development
 
-### Sitios web modernos, funcionales y listos para escalar
+### Custom websites built for performance, scalability, and growth
 
-En **Codebrand**, desarrollamos sitios personalizados que combinan diseño atractivo, rendimiento, escalabilidad y facilidad de administración.  
-Utilizamos tecnologías de vanguardia como **WordPress, Webflow, Astro, React, Next.js y Strapi**, según los objetivos de cada cliente.
-
----
-
-## ¿Qué incluye este servicio?
-
-- ✅ Desarrollo frontend responsive y modular
-- ✅ Backend funcional (si aplica) con base de datos
-- ✅ CMS personalizado con WordPress, Webflow o Strapi
-- ✅ Formularios de contacto, suscripción o login
-- ✅ SEO técnico básico
-- ✅ Despliegue en hosting, servidor o plataforma cloud
-- ✅ Manual de uso para autogestión (si aplica)
+At **Codebrand**, we build websites that combine clean design, high performance, and future-ready scalability — tailored to your business goals.  
+We use modern technologies such as **WordPress, Webflow, Astro, React, Next.js, and Strapi** depending on your needs and use case.
 
 ---
 
-## Precios por página (según complejidad)
+## ✅ What’s Included
 
-> Cotizamos **por página**, considerando la funcionalidad y complejidad técnica requerida. Cada sitio se arma en base al número de páginas y el nivel que cada una necesita.
-
-| Nivel        | Descripción                                                                                                  | Precio (USD) |
-|-----------------------------|-----------------------------------------------------------------------------------------------|--------------------------|
-| **Página Estándar**         | Hasta 8 secciones, diseño responsive, formulario básico                                      | Desde $350               |
-| **Página CMS Administrable**| Editable vía WordPress, Webflow o Strapi                                                     | Desde $350               |
-| **Página con Integraciones**| Conexión a APIs, formularios dinámicos, filtros, manejo de datos                             | Desde $450               |
-| **Página Avanzada**         | Animaciones personalizadas, múltiples integraciones, SEO técnico, componentes React/Astro   | Desde $900               |
-
-> 💡 *Ejemplo: un sitio con 5 páginas estándar cuesta desde $1,500 USD. Si algunas páginas incluyen backend, CMS o animaciones, se ajusta según el nivel requerido.*
+- Fully responsive and modular frontend development  
+- Functional backend (if required), with database integration  
+- Custom CMS via WordPress, Webflow, or Strapi  
+- Contact forms, subscription flows, or login systems  
+- Basic technical SEO  
+- Deployment on hosting, server, or cloud platforms  
+- Admin user guide for content management (if applicable)
 
 ---
 
-## Tecnologías que usamos
+## 💵 Per-Page Pricing (Based on Complexity)
 
-- **CMS Visuales:** WordPress, Webflow  
-- **CMS Headless:** Strapi  
+> We quote **per page**, depending on required functionality and technical complexity. Each project is tailored based on the number and level of pages involved.
+
+| Page Type                    | Description                                                                                 | Price (USD)     |
+|-----------------------------|---------------------------------------------------------------------------------------------|-----------------|
+| **Standard Page**           | Up to 8 sections, responsive design, basic form                                             | From $350       |
+| **CMS-Editable Page**       | Editable via WordPress, Webflow, or Strapi                                                  | From $350       |
+| **Page with Integrations**  | API connections, dynamic forms, filters, data handling                                     | From $450       |
+| **Advanced Page**           | Custom animations, multiple integrations, technical SEO, React/Astro components            | From $900       |
+
+> 💡 *Example: A 5-page website with standard pages starts at $1,500 USD. Pages with CMS, backend, or animations are priced based on additional complexity.*
+
+---
+
+## 🧪 Technologies We Use
+
+- **Visual CMS:** WordPress, Webflow  
+- **Headless CMS:** Strapi  
 - **Frontend:** React.js, Astro, Next.js, HTML/CSS/JS  
 - **Backend:** Node.js, Express.js  
-- **Bases de datos:** PostgreSQL, MongoDB, MySQL  
-- **Estilos:** Tailwind CSS, Bootstrap  
+- **Databases:** PostgreSQL, MongoDB, MySQL  
+- **Styling:** Tailwind CSS, Bootstrap  
 - **Deployment:** Vercel, Netlify, Hostinger, DigitalOcean, AWS  
 
 ---
 
-## Beneficios de trabajar con Codebrand
+## 🎯 Why Work with Codebrand
 
-- 🧩 Soluciones a medida, sin plantillas genéricas
-- ⚡ Sitios optimizados para velocidad, SEO y escalabilidad
-- 🔐 Buenas prácticas de seguridad y rendimiento
-- 📱 100% responsive: desktop, móvil y tablet
-- 👨‍💻 Equipo experto en frontend, backend y CMS
-- 💬 Acompañamiento técnico durante y después del proyecto
-
----
-
-## Entregables
-
-- Código fuente (si aplica)
-- Sitio web funcional y publicado en tu dominio
-- Accesos a CMS (si aplica)
-- Manual de administración
-- Documentación técnica básica
-- Soporte inicial (15 días)
+- 🧩 Fully custom solutions, no generic templates  
+- ⚡ Optimized for speed, SEO, and growth  
+- 🔐 Built with security and performance in mind  
+- 📱 100% responsive across desktop, mobile, and tablet  
+- 👨‍💻 Experienced frontend, backend, and CMS team  
+- 💬 Technical support throughout and after the project
 
 ---
 
-## ¿Por qué elegirnos?
+## 📦 Deliverables
 
-En **Codebrand**, no solo desarrollamos sitios: **construimos plataformas que hacen crecer tu negocio**.  
-Nos adaptamos a tus necesidades, con procesos claros, tecnologías modernas y una mentalidad enfocada en resultados.
+- Source code (when applicable)  
+- Live, fully functional website deployed on your domain  
+- CMS access credentials (if applicable)  
+- Admin user manual  
+- Basic technical documentation  
+- 15 days of post-launch support
 
 ---
 
-## ¿Listo para cotizar tu sitio web?
+## 🤝 Why Choose Us?
 
-> Escribinos con la cantidad de páginas que necesitás y el nivel de complejidad de cada una.  
-> Te enviaremos una propuesta personalizada, clara y sin rodeos.
+At **Codebrand**, we don’t just build websites — we **create platforms that help your business grow**.  
+We tailor our process to your goals with transparent communication, modern tech, and a results-driven mindset.
+
+---
+
+## 🚀 Ready to quote your project?
+
+> Send us the number of pages and complexity level for each.  
+> We’ll get back to you with a clear and customized proposal — no fluff, just real solutions.

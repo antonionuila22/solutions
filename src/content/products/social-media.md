@@ -1,79 +1,80 @@
 ---
-title: Diseño Gráfico para Redes Sociales – Paquetes Mensuales Personalizados
+title: Social Media Graphic Design – Custom Monthly Packages
 img: /photos/socialmedia.png
 readtime: 5
 price: $150 - $700
 inStock: true
-description: Paquetes mensuales de diseño gráfico para redes sociales. Creamos contenido visual alineado a tu marca, optimizado para rendimiento y adaptado a tus objetivos de comunicación. Ideal para marcas que quieren mantener presencia constante y profesional.
+description: Monthly social media design packages tailored to your brand. We create high-performing visuals aligned with your branding and communication goals. Ideal for brands seeking a consistent and professional presence.
 date: 2025-01-25
 author: Codebrand Team
 ---
 
-## Diseño Gráfico para Redes Sociales
+## Social Media Graphic Design
 
-### Diseños visuales que comunican, conectan y venden
+### Visual designs that communicate, connect, and convert
 
-En **Codebrand**, transformamos tu comunicación digital con contenido gráfico coherente, creativo y estratégico. Nuestro servicio de diseño para redes sociales incluye paquetes mensuales con entregas programadas, diseño original y acompañamiento creativo.
-
----
-
-## ¿Qué incluye cada paquete?
-
-- ✅ Diseños visuales alineados a tu branding
-- ✅ Composición de piezas para feed, historias, reels o publicidad
-- ✅ Adaptación a múltiples formatos por pieza
-- ✅ 1 ronda de ajustes incluida
-- ✅ Entrega semanal o quincenal (según volumen)
-- ✅ Soporte y acompañamiento creativo
+At **Codebrand**, we transform your digital communication with consistent, creative, and strategic visual content. Our monthly design service includes original graphics, scheduled deliveries, and ongoing creative support.
 
 ---
 
-## Paquetes disponibles y precios
+## ✅ What’s Included in Each Package
 
-| Paquete            | Descripción                                                          | Básico   | Avanzado | Extras c/u | Entrega estimada         |
-|--------------------|----------------------------------------------------------------------|----------|----------|------------|---------------------------|
-| **Social Media 60**| 60 diseños al mes, incluye componentes visuales y servicios de apoyo | $500,00  | $700,00  | $21,00     | 2 por día (4 semanas)     |
-| **Social Media 30**| 30 diseños al mes, incluye componentes visuales y servicios de apoyo | $320,00  | $400,00  | $21,00     | 1 por día (2 semanas)     |
-| **Social Media 10**| 10 diseños al mes, incluye componentes visuales y servicios de apoyo | $150,00  | $230,00  | $21,00     | 1 cada 3 días (2 semanas) |
-
-> *Los precios varían según el tipo de diseño, nivel de detalle y si se requieren múltiples formatos o adaptaciones adicionales.*
-
----
-
-## ¿Cómo trabajamos?
-
-1. **Kickoff creativo**: definimos tu identidad visual y objetivos.
-2. **Calendario de contenidos**: organizamos las entregas por semana.
-3. **Diseño y revisión**: presentamos avances y recibimos tu feedback.
-4. **Entrega final**: piezas listas para publicar, adaptadas a cada canal.
+- Custom visuals aligned with your branding  
+- Creative designs for feeds, stories, reels, or ads  
+- Format adaptation for each platform  
+- 1 round of revisions included  
+- Weekly or bi-weekly delivery (depending on volume)  
+- Creative guidance and ongoing support
 
 ---
 
-## Entregables
+## 📦 Available Packages & Pricing
 
-- 📱 Piezas visuales en .PNG o .JPG listas para publicar
-- 📐 Versiones adaptadas a los formatos que necesites (feed, stories, etc.)
-- 🧾 Documentación base para feedback y aprobación
+| Package             | Description                                                          | Basic    | Advanced | Extra (each) | Estimated Delivery        |
+|---------------------|----------------------------------------------------------------------|----------|----------|--------------|---------------------------|
+| **Social Media 60** | 60 designs/month, includes visual components and support services     | $500.00  | $700.00  | $21.00       | 2 per day (4 weeks)       |
+| **Social Media 30** | 30 designs/month, includes visual components and support services     | $320.00  | $400.00  | $21.00       | 1 per day (2 weeks)       |
+| **Social Media 10** | 10 designs/month, includes visual components and support services     | $150.00  | $230.00  | $21.00       | 1 every 3 days (2 weeks)  |
 
----
-
-## Beneficios de trabajar con Codebrand
-
-- 🎯 Comunicación visual alineada a tus objetivos de negocio
-- 🧠 Creatividad con intención y coherencia
-- 📅 Entregas programadas, sin estrés ni improvisación
-- 💬 Acompañamiento cercano para que cada pieza funcione
-- 📈 Contenido gráfico con impacto en la percepción de tu marca
+> *Prices vary depending on design type, detail level, and the number of formats or adaptations needed.*
 
 ---
 
-## ¿Por qué elegirnos?
+## 🛠 How We Work
 
-Porque **tu presencia en redes no puede dejarse al azar**.  
-En **Codebrand**, convertimos tus ideas en diseños con propósito, claridad visual y enfoque estratégico. Publicás con confianza, sabiendo que cada pieza está diseñada para conectar con tu audiencia.
+1. **Creative Kickoff** – Define your visual identity and goals  
+2. **Content Calendar** – Organize weekly or bi-weekly deliveries  
+3. **Design & Feedback** – Share previews and gather your input  
+4. **Final Delivery** – Assets ready to publish on each platform
 
 ---
 
-## ¿Listo para potenciar tus redes?
+## 📦 Deliverables
 
-> Escribinos y elegí el paquete de diseño que mejor se adapta a tu ritmo y tus metas. Creamos contenido visual para marcas que quieren destacar.
+- 📱 Visual pieces in .PNG or .JPG, ready to publish  
+- 📐 Format variations for feed, stories, reels, etc.  
+- 🧾 Base documentation for feedback and approvals
+
+---
+
+## 🎯 Why Work with Codebrand
+
+- Designs aligned with your business goals  
+- Smart, on-brand creativity  
+- Scheduled deliveries with no stress or delays  
+- Close collaboration to ensure every piece performs  
+- Graphic content that boosts brand perception and impact
+
+---
+
+## 🤝 Why Choose Us?
+
+Because **your social media presence shouldn't be left to chance**.  
+At **Codebrand**, we turn your ideas into visuals with purpose, clarity, and strategic focus. You post with confidence, knowing every design is made to connect with your audience.
+
+---
+
+## 🚀 Ready to elevate your social presence?
+
+> Get in touch and choose the design package that best fits your goals and pace.  
+> We create visual content for brands that are ready to stand out.
