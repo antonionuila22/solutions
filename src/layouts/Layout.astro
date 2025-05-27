@@ -4,20 +4,27 @@ import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
 
-let {
-  title = "Codebrand - Grow Your Business with Us",
-  description = "Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.",
-  keywords = "graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media",
-  image = "https://solutions.codebrand.es/photos/bannercodebrand.webp",
-} = Astro.props;
+// Props individuales (tal como los pasás)
+let { title, description, keywords, image } = Astro.props;
 
+// Valores por defecto
+title = title || "Codebrand - Grow Your Business with Us";
+description =
+  description ||
+  "Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.";
+keywords =
+  keywords ||
+  "graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media";
+image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
+
+// URL dinámica
 const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- SEO Meta Tags -->
+    <!-- Meta básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#ffffff" />
@@ -38,7 +45,7 @@ const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Cards -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -47,7 +54,7 @@ const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
     <meta name="twitter:site" content="@codebrand_es" />
     <meta name="twitter:creator" content="@codebrand_es" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD -->
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
@@ -59,7 +66,7 @@ const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
       }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -79,10 +86,8 @@ const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
       gtag("config", "G-PMQNNKWD3Z");
     </script>
 
-    <!-- Client-Side Navigation & Elfsight -->
     <ClientRouter />
   </head>
-
   <body>
     <Navbar client:visible />
     <main>
@@ -90,8 +95,8 @@ const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
     </main>
     <Footer />
 
-    <!-- GSAP Setup -->
-    <script is:inline>
+    <!-- GSAP -->
+    <script>
       import gsap from "gsap";
       window.gsap = gsap;
     </script>
