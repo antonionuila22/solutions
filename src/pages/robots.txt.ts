@@ -1,9 +1,11 @@
 import type { APIRoute } from 'astro';
 
+const site = import.meta.env.SITE || 'https://solutions.codebrand.es'; // Fallback
+
 const robotsTxt = `
 User-agent: *
 Allow: /
-Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
+Sitemap: ${new URL('sitemap-index.xml', site).href}
 `.trim();
 
 export const GET: APIRoute = () => {
