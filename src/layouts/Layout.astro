@@ -3,25 +3,71 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
-let { title } = Astro.props;
-let { description } = Astro.props;
-let { keywords } = Astro.props;
-let { image } = Astro.props;
 
-title = title || "Codebrand - Grow Your Business with Us";
-description =
-  description ||
-  "Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.";
-keywords =
-  keywords ||
-  "graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media";
-image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
+let {
+  title = "Codebrand - Grow Your Business with Us",
+  description = "Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.",
+  keywords = "graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media",
+  image = "https://solutions.codebrand.es/photos/bannercodebrand.webp",
+} = Astro.props;
+
+const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Codebrand" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="./iconcodebrand.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:site" content="@codebrand_es" />
+    <meta name="twitter:creator" content="@codebrand_es" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Codebrand",
+        "url": "https://solutions.codebrand.es",
+        "logo": "https://solutions.codebrand.es/iconcodebrand.svg",
+        "sameAs": ["https://www.linkedin.com/company/codebrand"]
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMQNNKWD3Z"
     ></script>
     <script is:inline>
@@ -30,50 +76,22 @@ image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-PMQNNKWD3Z");
     </script>
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="./iconcodebrand.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Client-Side Navigation & Elfsight -->
     <ClientRouter />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title} - Codebrand</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="CodeBrand" />
-    <meta name="og:title" content={title} />
-    <meta name="og:description" content={description} />
-    <meta name="og:image" content={image} />
-    <meta name="og:url" content="https://solutions.codebrand.es/" />
-    <meta name="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-    <meta name="twitter:url" content="https://solutions.codebrand.es/" />
-    <meta name="twitter:site" content="@codebrand_es" />
-    <meta name="twitter:creator" content="@codebrand_es" />
-    <meta name="theme-color" content="#ffffff" />
-    <script src="https://static.elfsight.com/platform/platform.js" async
-    ></script>
-  </head><body>
+  </head>
+
+  <body>
     <Navbar client:visible />
     <main>
       <slot />
     </main>
     <Footer />
-    <script>
+
+    <!-- GSAP Setup -->
+    <script is:inline>
       import gsap from "gsap";
       window.gsap = gsap;
     </script>
