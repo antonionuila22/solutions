@@ -181,6 +181,13 @@ import Layout from "../layouts/Layout.astro";
 					</div>
 				</div>
 
+				<div
+					class="g-recaptcha"
+					data-sitekey="6Lf6olArAAAAALJssnzah9pMjSczKZQIZYBglamB"
+					data-action="LOGIN"
+				>
+				</div>
+
 				<!-- Botón enviar -->
 				<div class="md:col-span-2">
 					<button
@@ -193,6 +200,12 @@ import Layout from "../layouts/Layout.astro";
 					>
 						Send Message
 					</button>
+
+					<script
+						src="https://www.google.com/recaptcha/enterprise.js"
+						async
+						defer
+						is:inline></script>
 				</div>
 			</form>
 		</div>
