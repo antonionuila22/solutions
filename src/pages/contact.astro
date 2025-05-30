@@ -80,7 +80,7 @@ import Layout from "../layouts/Layout.astro";
 				/>
 
 				<!-- Nombre -->
-				<div class="flex flex-col gap-2">
+				<div class="md:col-span-2 flex flex-col gap-2">
 					<label for="name" class="text-sm font-medium text-gray-700"
 						>Name</label
 					>
@@ -107,6 +107,22 @@ import Layout from "../layouts/Layout.astro";
 						required
 						autocomplete="email"
 						placeholder="email@email.com"
+						class="input-style"
+					/>
+				</div>
+
+				<!-- Phone -->
+				<div class="flex flex-col gap-2">
+					<label for="phone" class="text-sm font-medium text-gray-700"
+						>Phone Number</label
+					>
+					<input
+						id="phone"
+						name="phone"
+						type="tel"
+						required
+						autocomplete="tel"
+						placeholder="+504-3272-2973"
 						class="input-style"
 					/>
 				</div>
@@ -187,6 +203,7 @@ import Layout from "../layouts/Layout.astro";
 					data-action="LOGIN"
 				>
 				</div>
+				<!-- Token invisible -->
 				<input type="hidden" name="token" id="recaptcha-token" />
 
 				<!-- Botón enviar -->
