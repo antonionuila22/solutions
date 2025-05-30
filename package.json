@@ -14,6 +14,7 @@
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.0",
     "@astrojs/vercel": "^8.1.4",
+    "@google-cloud/recaptcha-enterprise": "^6.1.0",
     "@libsql/client": "^0.15.4",
     "@react-spring/web": "^9.7.5",
     "@tailwindcss/vite": "^4.0.14",

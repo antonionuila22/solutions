@@ -187,6 +187,7 @@ import Layout from "../layouts/Layout.astro";
 					data-action="LOGIN"
 				>
 				</div>
+				<input type="hidden" name="token" id="recaptcha-token" />
 
 				<!-- Botón enviar -->
 				<div class="md:col-span-2">
@@ -201,11 +202,28 @@ import Layout from "../layouts/Layout.astro";
 						Send Message
 					</button>
 
-					<script
-						src="https://www.google.com/recaptcha/enterprise.js"
-						async
-						defer
-						is:inline></script>
+					<script is:inline>
+						document
+							.querySelector('form[name="contact"]')
+							.addEventListener("submit", async function (e) {
+								e.preventDefault();
+								const form = this;
+
+								grecaptcha.enterprise.ready(function () {
+									grecaptcha.enterprise
+										.execute(
+											"6Lf6olArAAAAALJssnzah9pMjSczKZQIZYBglamB",
+											{ action: "form_submit" },
+										)
+										.then(function (token) {
+											document.getElementById(
+												"recaptcha-token",
+											).value = token;
+											form.submit(); // envía ahora sí el formulario con el token
+										});
+								});
+							});
+					</script>
 				</div>
 			</form>
 		</div>
