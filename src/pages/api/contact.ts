@@ -10,6 +10,11 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     try {
         const data = await request.formData();
 
+        console.log("📨 Form data recibido:");
+        for (const pair of data.entries()) {
+            console.log(`${pair[0]}: ${pair[1]}`);
+        }
+
         // Honeypot anti-spam
         const honeypot = sanitize(data.get("honey"));
         if (honeypot) {
@@ -76,21 +81,21 @@ export const POST: APIRoute = async ({ request, redirect }) => {
             to: "antonionuila022@gmail.com",
             subject: `Contacto: ${subject}`,
             html: `
-				<h2>Nuevo mensaje de contacto</h2>
-				<p><strong>Nombre:</strong> ${name}</p>
-				<p><strong>Email:</strong> ${email}</p>
-				<p><strong>Phone:</strong> ${phone}</p>
-				<p><strong>Asunto:</strong> ${subject}</p>
-				<p><strong>Servicios seleccionados:</strong> ${servicesString}</p>
-				<p><strong>Mensaje:</strong><br>${message}</p>
-			`,
+                <h2>Nuevo mensaje de contacto</h2>
+                <p><strong>Nombre:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Asunto:</strong> ${subject}</p>
+                <p><strong>Servicios seleccionados:</strong> ${servicesString}</p>
+                <p><strong>Mensaje:</strong><br>${message}</p>
+            `,
         });
 
         return redirect("/thank-you", 303);
 
-    } catch (err) {
-        console.error("Error al procesar el formulario:", err);
-        return new Response("Error del servidor", { status: 500 });
+    } catch (err: any) {
+        console.error("Error al procesar el formulario:", err.message, err.stack);
+        return new Response("Error del servidor: " + err.message, { status: 500 });
     }
 };
 
