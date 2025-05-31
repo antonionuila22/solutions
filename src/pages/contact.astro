@@ -216,7 +216,11 @@ import Layout from "../layouts/Layout.astro";
 					>
 						Send Message
 					</button>
-
+					<!-- Recaptcha -->
+					<script
+						src="https://www.google.com/recaptcha/api.js"
+						async
+						is:inline></script>
 					<script is:inline>
 						function onSubmit(token) {
 							fetch("/recaptcha", {
@@ -226,9 +230,13 @@ import Layout from "../layouts/Layout.astro";
 								.then((response) => response.json())
 								.then((gResponse) => {
 									if (gResponse.success) {
-										// Verificación del Captcha fue un éxito
+										console.log(
+											"Captcha verified successfully",
+										);
 									} else {
-										// Falló la verificación del Captcha
+										console.error(
+											"Captcha verification failed",
+										);
 									}
 								});
 						}
