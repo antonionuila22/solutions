@@ -199,7 +199,8 @@ import Layout from "../layouts/Layout.astro";
 				<div
 					class="g-recaptcha"
 					data-sitekey="6Lf6olArAAAAALJssnzah9pMjSczKZQIZYBglamB"
-					data-action="LOGIN"
+					data-callback="onSubmit"
+					data-action="Submit"
 				>
 				</div>
 
@@ -215,6 +216,23 @@ import Layout from "../layouts/Layout.astro";
 					>
 						Send Message
 					</button>
+
+					<script is:inline>
+						function onSubmit(token) {
+							fetch("/recaptcha", {
+								method: "POST",
+								body: JSON.stringify({ recaptcha: token }),
+							})
+								.then((response) => response.json())
+								.then((gResponse) => {
+									if (gResponse.success) {
+										// Verificación del Captcha fue un éxito
+									} else {
+										// Falló la verificación del Captcha
+									}
+								});
+						}
+					</script>
 				</div>
 			</form>
 
