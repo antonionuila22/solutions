@@ -53,7 +53,8 @@ const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:site" content="@codebrand_es" />
     <meta name="twitter:creator" content="@codebrand_es" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer is:inline
+    ></script>
 
     <!-- JSON-LD -->
     <script type="application/ld+json" is:inline>
