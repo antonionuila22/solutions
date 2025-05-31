@@ -22,26 +22,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
             return new Response("Bot detectado", { status: 403 });
         }
 
-        // Verificar reCAPTCHA v2
-        const token = data.get("g-recaptcha-response")?.toString();
-        if (!token) {
-            return new Response("Token reCAPTCHA faltante.", { status: 400 });
-        }
-
-        const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams({
-                secret: import.meta.env.RECAPTCHA_SECRET_KEY,
-                response: token,
-            }).toString(),
-        });
-
-        const recaptchaData = await recaptchaRes.json();
-        if (!recaptchaData.success) {
-            console.warn("Fallo reCAPTCHA:", recaptchaData);
-            return new Response("Fallo en la verificación de reCAPTCHA.", { status: 403 });
-        }
 
         // Sanitización de campos
         const name = sanitize(data.get("name"));
