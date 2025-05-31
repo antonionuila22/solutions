@@ -196,15 +196,12 @@ import Layout from "../layouts/Layout.astro";
 						}
 					</div>
 				</div>
-
 				<div
 					class="g-recaptcha"
 					data-sitekey="6Lf6olArAAAAALJssnzah9pMjSczKZQIZYBglamB"
 					data-action="LOGIN"
 				>
 				</div>
-				<!-- Token invisible -->
-				<input type="hidden" name="token" id="recaptcha-token" />
 
 				<!-- Botón enviar -->
 				<div class="md:col-span-2">
@@ -218,29 +215,6 @@ import Layout from "../layouts/Layout.astro";
 					>
 						Send Message
 					</button>
-
-					<script is:inline>
-						document
-							.querySelector('form[name="contact"]')
-							.addEventListener("submit", async function (e) {
-								e.preventDefault();
-								const form = this;
-
-								grecaptcha.enterprise.ready(function () {
-									grecaptcha.enterprise
-										.execute(
-											"6Lf6olArAAAAALJssnzah9pMjSczKZQIZYBglamB",
-											{ action: "form_submit" },
-										)
-										.then(function (token) {
-											document.getElementById(
-												"recaptcha-token",
-											).value = token;
-											form.submit(); // envía ahora sí el formulario con el token
-										});
-								});
-							});
-					</script>
 				</div>
 			</form>
 		</div>
