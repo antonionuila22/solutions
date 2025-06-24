@@ -100,11 +100,10 @@ No. Existen numerosas herramientas que permiten aprovechar los LLM sin conocimie
 
 No completamente. Son herramientas que complementan y optimizan el trabajo humano.
 
-...
 ## ¿Querés aprovechar la inteligencia artificial en tu estrategia digital?
 
 En **Codebrand**, ayudamos a marcas como la tuya a integrar soluciones con inteligencia artificial, crear contenido optimizado para LLMs y destacar en un entorno cada vez más competitivo.  
-👉 **[Contactanos hoy](#)** y descubrí cómo podemos impulsar tu negocio con estrategias de vanguardia.
+👉 **[Contactanos hoy](/contacto)** y descubrí cómo podemos impulsar tu negocio con estrategias de vanguardia.
 
 <script type="application/ld+json">
 {`
