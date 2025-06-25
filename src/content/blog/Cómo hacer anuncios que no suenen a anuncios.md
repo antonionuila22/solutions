@@ -3,7 +3,7 @@ title: "Cómo hacer anuncios que no suenen a anuncios"
 description: "Aprendé a crear anuncios publicitarios efectivos que conectan con tu audiencia sin parecer invasivos. Técnicas de storytelling, prueba social, lenguaje natural y contenido útil para vender sin forzar."
 author: "Ramon Nuila"
 readtime: 9
-img: /photos/astro-form-turso.png
+img: /photos/ads.png
 imageAlt: "Estrategia de marketing mostrando cómo crear anuncios que parecen contenido orgánico"
 date: 2025-03-28
 ---

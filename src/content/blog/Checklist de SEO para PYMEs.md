@@ -1,9 +1,9 @@
 ---
 title: "Checklist de SEO para PYMEs y contratistas que no tienen equipo técnico"
-description: "Guía paso a paso para implementar un formulario profesional en Astro con base de datos en Turso y notificaciones automáticas usando Resend. Ideal para sitios modernos y rápidos."
+description: "Hacer SEO no tiene por qué ser complicado, especialmente si sos dueño de una pequeña empresa o contratista independiente. Aunque no contés con un equipo técnico, podés aplicar buenas prácticas que harán que tu sitio web sea más visible en Google y genere más oportunidades de negocio."
 author: "Ramon Nuila"
 readtime: 9
-img: /photos/astro-form-turso.png
+img: /photos/semrush.png
 imageAlt: "Formulario en Astro con base de datos y envío de correo"
 date: 2024-03-28
 ---

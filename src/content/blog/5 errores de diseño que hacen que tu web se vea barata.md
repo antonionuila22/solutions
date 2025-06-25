@@ -3,7 +3,7 @@ title: "5 errores de diseño que hacen que tu web se vea barata"
 description: "No permitas que tu web siga pareciendo barata sigue estos consejos para que te muestres profesional en el mercado"
 author: "Ramon Nuila"
 readtime: 9
-img: /photos/astro-form-turso.png
+img: /photos/website-cheap.png
 imageAlt: "5 errores de diseño que hacen que tu web se vea barata"
 date: 2025-03-28
 ---

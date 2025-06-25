@@ -3,7 +3,7 @@ title: "¿Cuánto debería costar un buen sitio web en 2025?"
 description: "Descubrí cuánto cuesta realmente un sitio web profesional en 2025 según el tipo de negocio, tecnología utilizada y nivel de personalización. Comparativa de precios, factores clave y recomendaciones reales."
 author: "Ramon Nuila"
 readtime: 9
-img: /photos/astro-form-turso.png
+img: /photos/website-value.png
 imageAlt: "Persona navegando un sitio web moderno y bien diseñado desde una laptop"
 date: 2024-03-28
 ---
