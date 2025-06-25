@@ -3,9 +3,9 @@ title: "LLM: Qué Son, Cómo Funcionan y Por Qué Están Revolucionando el Mundo
 description: "Descubrí qué son los LLM (Modelos de Lenguaje de Gran Escala), cómo funcionan, sus beneficios, aplicaciones reales y cómo adaptar tu contenido para esta nueva era de la inteligencia artificial."
 author: "Ramon Nuila"
 readtime: 9
-img: "/public/photos/llm.png"
+img: /photos/llm.png
 imageAlt: "Ilustración de inteligencia artificial con un modelo de lenguaje procesando datos"
-date: "2025-06-24"
+date: 2025-06-24
 ---
 
 Modelos de Lenguaje de Gran Escala (LLM): Qué Son, Cómo Funcionan y Por Qué Están Revolucionando el Mundo Digital  

@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+# Sitemap
+Sitemap: https://solutions.codebrand.es/sitemap-index.xml
+
 Sitemap: https://solutions.codebrand.es/sitemap-index.xml

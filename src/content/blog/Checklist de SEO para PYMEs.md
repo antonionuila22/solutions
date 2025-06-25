@@ -8,233 +8,113 @@ imageAlt: "Formulario en Astro con base de datos y envío de correo"
 date: 2024-03-28
 ---
 
-## Crear un Formulario en Astro con Turso y Notificaciones por Email usando Resend
+## Checklist de SEO para PYMEs y contratistas que no tienen equipo técnico
 
-En esta guía te muestro paso a paso cómo crear un formulario de contacto usando **Astro**, almacenar los datos en **Turso** y enviar una notificación por email a una cuenta Gmail usando **Resend**. Esta solución es ideal si querés tener un sitio profesional, sin depender de herramientas externas como Netlify Forms o Google Forms.
+Hacer SEO no tiene por qué ser complicado, especialmente si sos dueño de una pequeña empresa o contratista independiente. Aunque no contés con un equipo técnico, podés aplicar buenas prácticas que harán que tu sitio web sea más visible en Google y genere más oportunidades de negocio.
 
----
-
-## 🧩 Stack utilizado
-
-- **Astro** (con SSR)
-- **Turso** (SQLite distribuido)
-- **Netlify** (hosting + serverless functions)
-- **Resend** (envío de emails transaccionales)
-- **TypeScript** (opcional)
+En esta guía práctica, te comparto una checklist simple pero efectiva de acciones SEO que podés implementar sin ser programador ni contratar una agencia costosa.
 
 ---
 
-## 1. Configurar Astro para manejar formularios con SSR
+## 1. Elegí bien tus palabras clave
 
-En `astro.config.mjs`, asegurate de tener el modo `server` activado:
+Identificá cómo buscan tus potenciales clientes. Por ejemplo:
 
-```js
-import { defineConfig } from "astro/config";
-import netlify from "@astrojs/netlify";
+- “reparación de techos en (tu ciudad)”
+- “electricista confiable en (barrio)”
+- “empresa de pintura económica”
 
-export default defineConfig({
-  output: "server",
-  adapter: netlify(),
-});
-```
-
-Instalá el adaptador si aún no lo tenés:
-
-```bash
-npm install @astrojs/netlify
-```
-
-Esto permite que Astro ejecute lógica del lado del servidor (como manejar formularios) en Netlify.
+**Consejo práctico:** Usá herramientas gratuitas como Google Suggest o Ubersuggest para encontrar frases reales.
 
 ---
 
-## 2. Crear tabla en Turso con verificación de email único
+## 2. Optimizá tus títulos y descripciones
 
-```sql
-CREATE TABLE contacts (
-  id INTEGER PRIMARY KEY,
-  name TEXT,
-  email TEXT UNIQUE,
-  subject TEXT,
-  message TEXT,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-```
+Cada página debe tener:
 
-Obtén las variables:
+- Un título claro (H1)
+- Una meta descripción atractiva
+- Palabras clave naturales, sin forzar
 
-- `TURSO_DATABASE_URL`
-- `TURSO_AUTH_TOKEN`
-
-Guardalas en `.env`:
-
-```bash
-TURSO_DATABASE_URL="libsql://..."
-TURSO_AUTH_TOKEN="..."
-```
-
-Instalá el cliente:
-
-```bash
-npm install @libsql/client
-```
-
-Y creá `src/turso.ts`:
-
-```ts
-import { createClient } from "@libsql/client";
-
-export const turso = createClient({
-  url: import.meta.env.TURSO_DATABASE_URL,
-  authToken: import.meta.env.TURSO_AUTH_TOKEN,
-});
-```
+**Ejemplo:**  
+Título: Servicios de Plomería en Tegucigalpa  
+Descripción: Expertos en plomería rápida, confiable y con precios accesibles. ¡Contactanos hoy!
 
 ---
 
-## 3. Crear el componente `ContactForm.astro`
+## 3. Mantené URLs limpias y amigables
 
-Este componente contiene solo la estructura visual del formulario:
-
-```astro
-<form method="POST" class="...">
-  <input type="text" name="name" required />
-  <input type="email" name="email" required />
-  <input type="text" name="subject" required />
-  <textarea name="message" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
-```
-
-No debe tener ninguna lógica del lado del servidor. Solo HTML + Tailwind CSS.
+Una URL como `tusitio.com/servicios-electricos` es mucho mejor que `tusitio.com/page?id=123`.
 
 ---
 
-## 4. Manejar el formulario en `src/pages/contact/index.astro`
+## 4. Asegurate de que tu sitio cargue rápido
 
-Dentro del frontmatter `---`, colocamos toda la lógica:
-
-```astro
----
-import ContactForm from "../../components/ContactForm.astro";
-import { turso } from "../../turso";
-import { Resend } from "resend";
-
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("name")?.toString();
-    const email = data.get("email")?.toString();
-    const subject = data.get("subject")?.toString();
-    const message = data.get("message")?.toString();
-
-    if (name && email && subject && message) {
-      const { rows } = await turso.execute({
-        sql: "SELECT id FROM contacts WHERE email = ?",
-        args: [email],
-      });
-
-      const exists = rows.length > 0;
-
-      if (!exists) {
-        await turso.execute({
-          sql: "INSERT INTO contacts (name, email, subject, message) VALUES (?, ?, ?, ?)",
-          args: [name, email, subject, message],
-        });
-
-        const htmlContent = `
-          <h2>Nuevo mensaje de contacto</h2>
-          <p><strong>Nombre:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Asunto:</strong> ${subject}</p>
-          <p><strong>Mensaje:</strong> ${message}</p>
-        `;
-
-        await resend.emails.send({
-          from: "Tu Sitio <contacto@tudominio.com>",
-          to: ["tu-cuenta@gmail.com"],
-          subject: `Contacto: ${subject}`,
-          html: htmlContent,
-        });
-      } else {
-        console.log("Email duplicado:", email);
-      }
-    }
-  } catch (error) {
-    console.error("Error en el formulario:", error);
-  }
-}
----
-
-<ContactForm />
-```
+Un sitio lento te hace perder clientes y posiciones en Google.  
+**Tip:** Usá [PageSpeed Insights](https://pagespeed.web.dev/) para medir tu velocidad y aplicar las recomendaciones.
 
 ---
 
-## 5. Configurar Resend
+## 5. Tu web debe verse bien en celular
 
-1. Crear cuenta en [resend.com](https://resend.com)
-2. Verificar un dominio o usar el temporal `onboarding@resend.dev`
-3. Crear una API Key y guardarla como `RESEND_API_KEY` en `.env`
-
-```bash
-npm install resend
-```
-
-```env
-RESEND_API_KEY="re_xxxxxxxxxxxxxx"
-```
+Más del 70% de las visitas vienen desde el móvil. Asegurate de que todo funcione bien en pantallas pequeñas: botones grandes, textos legibles, formularios funcionales.
 
 ---
 
-## 6. Variables de entorno en Netlify
+## 6. Incluí llamados a la acción (CTA)
 
-Desde el panel de Netlify:
+No basta con mostrar tus servicios. Invitá al usuario a actuar:
 
-- `TURSO_DATABASE_URL`
-- `TURSO_AUTH_TOKEN`
-- `RESEND_API_KEY`
-
-Netlify inyectará esas variables correctamente en funciones serverless.
+- “Solicitá tu presupuesto”
+- “Llamanos ahora”
+- “Agendá tu cita online”
 
 ---
 
-## 7. Alternativas para envío de correo
+## 7. Reclamá y optimizá tu perfil de Google Business
 
-### SMTP con Nodemailer
+Es gratis y muy poderoso. Agregá:
 
-Funciona, pero es menos confiable y Gmail suele bloquearlo si detecta comportamiento automatizado.
-
-### API de Gmail
-
-Compleja de integrar. Necesita OAuth2. No es la mejor opción para casos simples.
-
-### Servicios como Resend / Postmark / SendGrid
-
-✅ Simples, confiables y con mejor entregabilidad. Ideales para producción.
+- Fotos profesionales
+- Horarios correctos
+- Respuestas a preguntas frecuentes
+- Enlace a tu web
 
 ---
 
-## 8. Buenas prácticas
+## 8. Conseguí reseñas reales
 
-- Validar también en el servidor.
-- No guardar credenciales en el cliente.
-- Usar `try/catch` para manejar errores.
-- Evitar duplicados desde la lógica y desde la base de datos.
-- Mostrar feedback al usuario (mensaje de éxito/error).
+Pedile a tus clientes satisfechos que dejen una reseña en Google. Las opiniones generan confianza y mejoran tu posicionamiento local.
 
 ---
 
-## 🚀 Conclusión
+## 9. Subí contenido útil
 
-Con este stack podés tener un formulario profesional, seguro y moderno:
+Podés crear artículos cortos que respondan a preguntas frecuentes de tus clientes:
 
-- 🌐 Totalmente integrado a tu sitio
-- 🧠 Sin dependencias innecesarias
-- 🛠️ Con base de datos real y notificaciones automatizadas
+- ¿Cuánto dura una instalación eléctrica?
+- ¿Qué hacer si se rompe una teja?
 
-Ideal para freelancers, agencias, SaaS y cualquier proyecto serio en producción.
+Esto te posiciona como experto y mejora tu SEO.
 
-¿Te sirvió esta guía? Compartila con otros desarrolladores o añadila a tus recursos favoritos 💛
+---
+
+## 10. Usá un formulario con base de datos y alertas por email
+
+Tener un formulario profesional con respaldo de datos y notificaciones es clave.  
+Te recomiendo usar Astro con Turso como base de datos ligera y Resend para enviar correos automáticos.
+
+👉 Es moderno, rápido y fácil de implementar.
+
+---
+
+## Conclusión
+
+Hacer SEO sin equipo técnico es totalmente posible si sabés en qué enfocarte. Con esta checklist vas a poder mejorar tu presencia online, ganar visibilidad en Google y recibir más contactos de clientes interesados.
+
+---
+
+## ¿Querés ayuda con la parte técnica o mejorar tu sitio web?
+
+Somos expertos en diseño y SEO para pequeñas empresas y contratistas.  
+👉 [Contactanos hoy](mailto:info@codebrand.es) y te ayudamos a hacer crecer tu negocio online sin complicaciones.
