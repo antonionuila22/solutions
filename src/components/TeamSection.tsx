@@ -50,6 +50,28 @@ const teamMembers = [
   },
   {
     id: 3,
+    name: "Larisa Lopez",
+    role: "Product Manager & UX/UI Designer",
+    department: "Product & Design",
+    bio: "Product manager and UX/UI designer with 10+ years crafting intuitive digital experiences and leading cross-functional teams.",
+    image: "./photos/team-code/Cmorel.png",
+    achievements: [
+      "Google UX/UI Certification",
+      "Led 20+ product launches",
+      "Expert in User-Centered Design"
+    ],
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "#"
+    },
+    specialties: ["UX/UI Design", "Product Management", "User Research", "Prototyping"],
+    experience: "10+ years",
+    projects: "20+ digital products",
+    color: "from-orange-600 to-orange-400"
+  },
+  {
+    id: 4,
     name: "Enrique Perez",
     role: "Digital Marketing & Social Media Lead",
     department: "Marketing & Growth",
@@ -71,27 +93,27 @@ const teamMembers = [
     color: "from-orange-600 to-orange-400"
   },
   {
-    id: 4,
-    name: "Larisa Lopez",
-    role: "Product Manager & UX/UI Designer",
-    department: "Product & Design",
-    bio: "Product manager and UX/UI designer with 10+ years crafting intuitive digital experiences and leading cross-functional teams.",
-    image: "./photos/team-code/Cmorel.png",
+    id: 5,
+    name: "Maria Casco",
+    role: "Promotional Products & Branding Specialist",
+    department: "Marketing & Growth",
+    bio: "Promotional products expert with 13+ years creating impactful brand experiences through custom merchandise and promotional strategies.",
+    image: "./photos/team-code/Mariacasco.png",
     achievements: [
-      "Google UX/UI Certification",
-      "Led 20+ product launches",
-      "Expert in User-Centered Design"
+      "Product Branding Specialist",
+      "13+ years in promotional products",
+      "Expert in Custom Merchandise"
     ],
     social: {
       linkedin: "#",
       twitter: "#",
       email: "#"
     },
-    specialties: ["UX/UI Design", "Product Management", "User Research", "Prototyping"],
-    experience: "10+ years",
-    projects: "20+ digital products",
+    specialties: ["Product Branding", "Promotional Strategies", "Custom Merchandise"],
+    experience: "13+ years",
+    projects: "100+ branding projects",
     color: "from-orange-600 to-orange-400"
-  }
+  },
 ];
 
 function TeamMemberCard({ member, index, isInView }: { member: any; index: number; isInView: boolean }) {
