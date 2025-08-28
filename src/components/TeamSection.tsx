@@ -1,9 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Linkedin, Twitter, Mail, Award, Star } from "lucide-react";
-import { ImageWithFallback } from "@/figma/ImageWithFallback";
+import { ImageWithFallback } from "../components/figma/ImafeWithFallback";
 
-const teamMembers = [
+const teamMembers = [            
   {
     id: 1,
     name: "Ramón Antonio Nuila",
@@ -23,7 +23,7 @@ const teamMembers = [
     },
     specialties: ["Full Stack Development", "Cloud Architecture", "DevOps", "Technical Leadership"],
     experience: "7+ years",
-    projects: "100+ completed projects",
+    projects: "100+ completed proje ects",
     color: "from-orange-600 to-orange-400"
   },
   {
