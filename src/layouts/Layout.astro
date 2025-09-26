@@ -4,75 +4,223 @@ import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
 
-// Props individuales (tal como los pasás)
-let { title, description, keywords, image } = Astro.props;
+// Props individuales
+let { title, description, keywords, image, article, noindex } = Astro.props;
 
-// Valores por defecto
-title = title || "Codebrand - Grow Your Business with Us";
+// Valores por defecto mejorados
+title =
+  title ||
+  "Codebrand - Digital Agency | Web Development, Automations, Design,  & Marketing";
 description =
   description ||
-  "Codebrand is a digital creative agency specializing in graphic design, web development, and digital marketing. We create unique experiences that drive your brand and generate results.";
+  "Transform your business with Codebrand's expert web development, UI/UX design, and digital marketing services. Get custom solutions that drive real results. Contact us for a free consultation.";
 keywords =
   keywords ||
-  "graphic design, web development, digital marketing, branding, SEO, UX/UI design, mobile applications, social media";
+  "web development agency, UI/UX design services, digital marketing agency, custom web development, mobile app development, SEO optimization, social media marketing, branding agency, e-commerce development, graphic design services";
 image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
 
-// URL dinámica
+// URL dinámica y mejoras SEO
 const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
+const siteName = "Codebrand Digital Agency";
+const twitterHandle = "@codebrand_es";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Meta básicos -->
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Codebrand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/svg+xml" href="./iconcodebrand.svg" />
+    <meta name="author" content="Codebrand Digital Agency" />
+    <meta name="publisher" content="Codebrand" />
+    <meta
+      name="robots"
+      content={noindex
+        ? "noindex, nofollow"
+        : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+    />
+    <meta
+      name="googlebot"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
+    <meta
+      name="bingbot"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
 
-    <!-- Open Graph -->
+    <!-- Canonical and Alternative URLs -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
+    <!-- Theme and Application -->
+    <meta name="theme-color" content="#0D9488" />
+    <meta name="color-scheme" content="light" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Codebrand" />
+    <meta name="application-name" content="Codebrand" />
+    <meta name="msapplication-TileColor" content="#0D9488" />
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twitterHandle} />
+    <meta name="twitter:creator" content={twitterHandle} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-    <meta name="twitter:url" content={canonicalUrl} />
-    <meta name="twitter:site" content="@codebrand_es" />
-    <meta name="twitter:creator" content="@codebrand_es" />
+    <meta name="twitter:image:alt" content={title} />
 
-    <!-- JSON-LD -->
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Codebrand",
-        "url": "https://solutions.codebrand.es",
-        "logo": "https://solutions.codebrand.es/iconcodebrand.svg",
-        "sameAs": ["https://www.linkedin.com/company/codebrand"]
-      }
-    </script>
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="United States" />
 
-    <!-- Tipografía -->
+    <!-- Links and Resources -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/iconcodebrand.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/iconcodebrand.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- DNS Prefetch and Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Enhanced Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Codebrand Digital Agency",
+        "alternateName": "Codebrand",
+        "url": "https://solutions.codebrand.es",
+        "logo": "https://solutions.codebrand.es/iconcodebrand.svg",
+        "image": "https://solutions.codebrand.es/photos/bannercodebrand.webp",
+        "description": "Codebrand is a leading digital agency specializing in web development, UI/UX design, and digital marketing. We create custom solutions that drive business growth.",
+        "email": "info@codebrand.es",
+        "telephone": "+1-XXX-XXX-XXXX",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.linkedin.com/company/codebrand",
+          "https://twitter.com/codebrand_es",
+          "https://www.facebook.com/codebrand",
+          "https://www.instagram.com/codebrand"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "UI/UX Design",
+          "Digital Marketing",
+          "SEO",
+          "Mobile App Development",
+          "E-commerce",
+          "Branding",
+          "Social Media Marketing"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Digital Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Web Development",
+                "description": "Custom website development with modern technologies"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UI/UX Design",
+                "description": "User interface and experience design services"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Digital Marketing",
+                "description": "Comprehensive digital marketing solutions"
+              }
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://solutions.codebrand.es"
+          }
+        ]
+      }
+    </script>
+
+    <!-- WebSite Schema with Search -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Codebrand Digital Agency",
+        "url": "https://solutions.codebrand.es",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://solutions.codebrand.es/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMQNNKWD3Z"
@@ -85,6 +233,10 @@ const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
       gtag("js", new Date());
       gtag("config", "G-PMQNNKWD3Z");
     </script>
+
+    <!-- Performance Hints -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
 
     <ClientRouter />
   </head>

@@ -1,61 +1,61 @@
 ---
-title: "5 errores de diseño que hacen que tu web se vea barata"
-description: "No permitas que tu web siga pareciendo barata sigue estos consejos para que te muestres profesional en el mercado"
+title: "5 design mistakes that make your website look cheap"
+description: "Don't let your website keep looking cheap - follow these tips to show yourself professionally in the market"
 author: "Ramon Nuila"
 readtime: 9
 img: /photos/website-cheap.png
-imageAlt: "5 errores de diseño que hacen que tu web se vea barata"
+imageAlt: "5 design mistakes that make your website look cheap"
 date: 2025-03-28
 ---
 
-## 5 errores de diseño que hacen que tu web se vea barata
+## 5 design mistakes that make your website look cheap
 
-Tu sitio web es muchas veces la primera impresión que un cliente tiene de tu marca. Si se ve descuidado, poco profesional o anticuado, no importa cuán bueno sea tu producto: estarás perdiendo credibilidad al instante. En este artículo te mostramos los 5 errores de diseño más comunes que hacen que una web se vea barata — y cómo evitarlos.
+Your website is often the first impression a customer has of your brand. If it looks careless, unprofessional or outdated, it doesn't matter how good your product is: you'll be losing credibility instantly. In this article we show you the 5 most common design mistakes that make a website look cheap — and how to avoid them.
 
-## 1. Uso excesivo de colores brillantes o mal combinados
+## 1. Excessive use of bright or poorly matched colors
 
-El uso inadecuado del color es uno de los errores más visibles. Colores chillones, combinaciones que no contrastan bien o un arcoíris sin sentido pueden hacer que tu sitio parezca amateur.
+Improper use of color is one of the most visible mistakes. Loud colors, poorly contrasting combinations, or a meaningless rainbow can make your site look amateur.
 
-**Cómo evitarlo:**  
-Usá una paleta de colores coherente y limitada (3 a 4 tonos principales). Apoyate en herramientas como Coolors o Adobe Color para seleccionar combinaciones profesionales.
+**How to avoid it:**
+Use a coherent and limited color palette (3 to 4 main tones). Rely on tools like Coolors or Adobe Color to select professional combinations.
 
-## 2. Tipografía poco legible o anticuada
+## 2. Poorly legible or outdated typography
 
-Fuentes cursivas, demasiado decorativas o difíciles de leer en dispositivos móviles dan una sensación de descuido o falta de experiencia.
+Cursive, overly decorative, or hard-to-read fonts on mobile devices give a sense of carelessness or lack of experience.
 
-**Cómo evitarlo:**  
-Optá por tipografías modernas, limpias y legibles como Inter, Poppins o Lato. Asegurate de mantener jerarquías claras entre títulos, subtítulos y párrafos.
+**How to avoid it:**
+Opt for modern, clean, and legible typography like Inter, Poppins, or Lato. Make sure to maintain clear hierarchies between titles, subtitles, and paragraphs.
 
-## 3. Mala estructura visual y desorden
+## 3. Poor visual structure and clutter
 
-Una web sin márgenes, con bloques de texto amontonados o sin espacios en blanco cansa visualmente y parece improvisada.
+A website without margins, with crowded text blocks or without white space is visually tiring and looks improvised.
 
-**Cómo evitarlo:**  
-Usá una cuadrícula visual clara, respetá los espacios y mantené un flujo lógico de navegación. El espacio en blanco es un aliado, no un enemigo.
+**How to avoid it:**
+Use a clear visual grid, respect spaces, and maintain a logical navigation flow. White space is an ally, not an enemy.
 
-## 4. Imágenes de baja calidad o sin coherencia visual
+## 4. Low-quality images or lack of visual coherence
 
-Fotos pixeladas, genéricas o que no tienen relación con tu marca son un gran “no”. Dañan la percepción de calidad al instante.
+Pixelated, generic photos or those unrelated to your brand are a big "no". They damage the perception of quality instantly.
 
-**Cómo evitarlo:**  
-Invertí en imágenes profesionales o bancos visuales de calidad (como Unsplash o Pexels). Mantené una estética coherente en todas las páginas.
+**How to avoid it:**
+Invest in professional images or quality visual banks (like Unsplash or Pexels). Maintain a consistent aesthetic across all pages.
 
-## 5. Falta de consistencia entre secciones
+## 5. Lack of consistency between sections
 
-Diseños que cambian drásticamente de una sección a otra —sin justificación— confunden al usuario y reducen la confianza.
+Designs that change drastically from one section to another —without justification— confuse the user and reduce trust.
 
-**Cómo evitarlo:**  
-Definí un sistema de diseño: estilos de botones, tamaños de texto, íconos, espaciado. Repetí patrones visuales para transmitir profesionalismo.
-
----
-
-## Conclusión
-
-Un diseño profesional no requiere presupuestos enormes, pero sí atención a los detalles. Evitar estos errores comunes puede marcar la diferencia entre un sitio que genera confianza y uno que aleja a los usuarios. Recordá: tu web es tu vitrina digital. Que no parezca hecha con prisas.
+**How to avoid it:**
+Define a design system: button styles, text sizes, icons, spacing. Repeat visual patterns to convey professionalism.
 
 ---
 
-## ¿Querés que tu web proyecte profesionalismo y confianza?
+## Conclusion
 
-Somos expertos en diseño y desarrollo web, listos para ayudarte a transformar tu presencia digital con soluciones efectivas y personalizadas.  
-👉 **[Escribinos](mailto:info@codebrand.es)** y empecemos a trabajar en una web que sí represente tu valor.
+A professional design doesn't require huge budgets, but it does require attention to detail. Avoiding these common mistakes can make the difference between a site that builds trust and one that drives users away. Remember: your website is your digital storefront. Don't let it look rushed.
+
+---
+
+## Want your website to project professionalism and trust?
+
+We are experts in web design and development, ready to help you transform your digital presence with effective and personalized solutions.
+👉 **[Contact us](mailto:info@codebrand.es)** and let's start working on a website that truly represents your value.

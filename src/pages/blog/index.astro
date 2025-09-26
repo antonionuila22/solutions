@@ -11,11 +11,11 @@ const posts = await getCollection("blog");
             <h1
                 class="text-5xl font-extrabold text-cyan-900 mb-6 leading-tight"
             >
-                Nuestro Blog
+                Our Blog
             </h1>
             <p class="text-lg text-black leading-relaxed">
-                Artículos sobre desarrollo, marketing, diseño y tecnología para
-                agencias y programadores que quieren mantenerse actualizados.
+                Articles about development, marketing, design and technology for
+                agencies and developers who want to stay updated.
             </p>
         </div>
     </section>
@@ -54,13 +54,13 @@ const posts = await getCollection("blog");
                                         </h3>
                                         <div class="text-xs text-gray-500">
                                             {date?.toLocaleDateString()} ·{" "}
-                                            {readtime ?? 5} min de lectura
+                                            {readtime ?? 5} min read
                                         </div>
                                         <p class="text-sm text-black mt-2 line-clamp-3">
                                             {description}
                                         </p>
                                         <span class="text-sm font-semibold text-cyan-900 group-hover:text-orange-400 mt-auto pt-4 transition">
-                                            Leer más →
+                                            Read more →
                                         </span>
                                     </div>
                                 </a>
