@@ -4,57 +4,57 @@ import Button from "@/components/Button.astro";
 ---
 
 <Layout>
-    <section
-        class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-br from-cyan-50 via-white to-orange-50 overflow-hidden"
+  <section
+    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-br from-cyan-50 via-white to-orange-50 overflow-hidden"
+  >
+    <!-- Background shapes -->
+    <div
+      class="absolute -z-10 w-[600px] h-[600px] bg-cyan-100 rounded-full blur-[120px] opacity-40 top-[-100px] left-[-100px] animate-pulse"
     >
-        <!-- Background shapes -->
-        <div
-            class="absolute -z-10 w-[600px] h-[600px] bg-cyan-100 rounded-full blur-[120px] opacity-40 top-[-100px] left-[-100px] animate-pulse"
-        >
-        </div>
-        <div
-            class="absolute -z-10 w-[500px] h-[500px] bg-orange-100 rounded-full blur-[100px] opacity-30 bottom-[-80px] right-[-80px] animate-ping"
-        >
-        </div>
+    </div>
+    <div
+      class="absolute -z-10 w-[500px] h-[500px] bg-orange-100 rounded-full blur-[100px] opacity-30 bottom-[-80px] right-[-80px] animate-ping"
+    >
+    </div>
 
-        <!-- 404 Title -->
-        <h1
-            id="number"
-            class="text-[160px] md:text-[200px] font-bold text-orange-400 tracking-tight drop-shadow-2xl leading-none"
-        >
-            404
-        </h1>
+    <!-- 404 Title -->
+    <h1
+      id="number"
+      class="text-[160px] md:text-[200px] font-bold text-orange-400 tracking-tight drop-shadow-2xl leading-none"
+    >
+      404
+    </h1>
 
-        <!-- Subtitle -->
-        <p
-            id="message"
-            class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mt-6 font-medium my-10"
-        >
-            The page you're looking for doesn't exist or has been moved.<br
-            />Let's get you back to something helpful.
-        </p>
+    <!-- Subtitle -->
+    <p
+      id="message"
+      class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mt-6 font-medium my-10"
+    >
+      The page you're looking for doesn't exist or has been moved.<br />Let's
+      get you back to something helpful.
+    </p>
 
-        <!-- Call to Action -->
-        <Button text="⬅ Back to Home" href="/" />
-    </section>
+    <!-- Call to Action -->
+    <Button text="⬅ Back to Home" href="/" />
+  </section>
 
-    <script type="module" is:inline>
-        import gsap from "https://cdn.skypack.dev/gsap";
+  <script type="module" is:inline>
+    import gsap from "https://cdn.skypack.dev/gsap";
 
-        gsap.from("#number", {
-            opacity: 0,
-            scale: 0.4,
-            y: -80,
-            duration: 1.8,
-            ease: "elastic.out(1, 0.5)",
-        });
+    gsap.from("#number", {
+      opacity: 0,
+      scale: 0.4,
+      y: -80,
+      duration: 1.8,
+      ease: "elastic.out(1, 0.5)",
+    });
 
-        gsap.from("#message", {
-            opacity: 0,
-            y: 40,
-            delay: 0.6,
-            duration: 1.2,
-            ease: "power3.out",
-        });
-    </script>
+    gsap.from("#message", {
+      opacity: 0,
+      y: 40,
+      delay: 0.6,
+      duration: 1.2,
+      ease: "power3.out",
+    });
+  </script>
 </Layout>
