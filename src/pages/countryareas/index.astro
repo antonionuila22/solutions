@@ -1,87 +1,416 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Banner from "../../components/Banner.astro";
+import Button from "../../components/Button.astro";
 
 const countries = await getCollection("countryareas");
+
+// Group countries by region for better organization
+const countryGroups = countries.reduce((acc, country) => {
+    const region = country.data.region || "Other";
+    if (!acc[region]) acc[region] = [];
+    acc[region].push(country);
+    return acc;
+}, {} as Record<string, typeof countries>);
 ---
 
-<Layout title="Áreas de Servicio">
+<Layout title="Service Areas - Codebrand Global Coverage">
     <!-- Hero Section -->
-    <section class="w-full flex items-center justify-center bg-white">
-        <div class="py-28 w-11/12 max-w-4xl text-center">
-            <h1
-                class="text-5xl font-extrabold text-cyan-900 mb-6 leading-tight"
-            >
-                Our Service Areas
-            </h1>
-            <p class="text-lg text-black leading-relaxed">
-                Discover how Codebrand drives business growth across different
-                countries. Design, development, and technology for companies
-                throughout the region.
-            </p>
+    <section class="flex items-center justify-center flex-col bg-gradient-to-b from-white to-slate-50">
+        <div class="container px-4 py-20 lg:py-28 flex items-center justify-center w-full">
+            <article class="relative flex w-full text-center rounded-[20px] gap-6 items-center justify-center flex-col max-w-5xl">
+                <span class="text-orange-400 font-semibold text-lg md:text-xl uppercase animate-fade-in">
+                    Global Reach, Local Expertise
+                </span>
+
+                <h1 class="text-cyan-900 font-bold text-4xl lg:text-7xl md:text-6xl sm:text-5xl leading-tight animate-fade-in">
+                    Our Service Areas
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed animate-fade-in">
+                    From North America to Latin America, Codebrand delivers cutting-edge digital solutions
+                    tailored to each market. We understand local business needs while leveraging global best practices.
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4 mt-4 animate-fade-in">
+                    <Button text="Start Your Project" href="/contact" />
+                    <a
+                        href="#countries"
+                        class="px-8 py-4 rounded-full border-2 border-cyan-900 text-cyan-900 font-semibold hover:bg-cyan-900 hover:text-white transition-all duration-300"
+                    >
+                        Explore Regions
+                    </a>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- Cards -->
-    <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+    <!-- Stats Section -->
+    <section class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                {
-                    countries.map(({ slug, data }) => {
-                        const { title, name, code, region, description, img } =
-                            data;
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-bold text-orange-400 mb-2">
+                        {countries.length}+
+                    </div>
+                    <div class="text-gray-600 font-medium">Countries Served</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-bold text-orange-400 mb-2">
+                        500+
+                    </div>
+                    <div class="text-gray-600 font-medium">Projects Delivered</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-bold text-orange-400 mb-2">
+                        24/7
+                    </div>
+                    <div class="text-gray-600 font-medium">Support Available</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-bold text-orange-400 mb-2">
+                        98%
+                    </div>
+                    <div class="text-gray-600 font-medium">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        return (
-                            <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                                <a
-                                    href={`/countryareas/${slug}`}
-                                    class="block h-full"
-                                >
-                                    {img && (
-                                        <div class="overflow-hidden rounded-t-2xl">
-                                            <img
-                                                src={`${img}`}
-                                                alt={`Equipo de Codebrand en ${name}`}
-                                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                    )}
+    <!-- Why Global Coverage Matters -->
+    <section class="py-20 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <header class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-semibold text-xl uppercase">Why Choose Global</span>
+                <h2 class="text-4xl font-bold text-cyan-900 leading-tight mt-2">
+                    Local Knowledge, International Standards
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    We combine deep understanding of local markets with world-class technology and best practices.
+                </p>
+            </header>
 
-                                    <div class="p-5 flex flex-col gap-2 h-full">
-                                        <h3 class="text-lg font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
-                                            {title}
-                                        </h3>
-                                        <p class="text-sm text-gray-700 mt-2 line-clamp-3">
-                                            {description}
-                                        </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="group flex flex-col items-start gap-4 p-8 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 group-hover:bg-orange-400 transition-colors duration-300">
+                        <img
+                            src="/icons/collaboration-svgrepo-com.svg"
+                            alt="Cultural Understanding"
+                            class="w-10 h-10"
+                        />
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-900">
+                        Cultural Understanding
+                    </h3>
+                    <p class="text-gray-600">
+                        We understand the cultural nuances and business practices of each region we serve,
+                        ensuring your message resonates with local audiences.
+                    </p>
+                </article>
 
-                                        <ul class="text-xs text-gray-500 mt-2">
-                                            <li>
-                                                <strong>País:</strong> {name}
-                                            </li>
-                                            <li>
-                                                <strong>Código:</strong> {code}
-                                            </li>
-                                            {region && (
-                                                <li>
-                                                    <strong>Región:</strong>{" "}
-                                                    {region}
-                                                </li>
-                                            )}
-                                        </ul>
+                <article class="group flex flex-col items-start gap-4 p-8 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 group-hover:bg-orange-400 transition-colors duration-300">
+                        <img
+                            src="/icons/cpu-processor-hardware-chip-microchip-svgrepo-com.svg"
+                            alt="Advanced Technology"
+                            class="w-10 h-10"
+                        />
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-900">
+                        Advanced Technology
+                    </h3>
+                    <p class="text-gray-600">
+                        Access to the same cutting-edge tools and frameworks used by Fortune 500 companies,
+                        regardless of your location.
+                    </p>
+                </article>
 
-                                        <div class="mt-auto pt-4 border-t border-gray-100">
-                                            <p class="text-sm font-semibold text-cyan-900 group-hover:text-orange-400 transition">
-                                                Ver más →
+                <article class="group flex flex-col items-start gap-4 p-8 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 group-hover:bg-orange-400 transition-colors duration-300">
+                        <img
+                            src="/icons/support-svgrepo-com.svg"
+                            alt="Time Zone Coverage"
+                            class="w-10 h-10"
+                        />
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-900">
+                        Time Zone Coverage
+                    </h3>
+                    <p class="text-gray-600">
+                        With teams across multiple time zones, we provide faster response times and
+                        continuous development cycles.
+                    </p>
+                </article>
+
+                <article class="group flex flex-col items-start gap-4 p-8 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 group-hover:bg-orange-400 transition-colors duration-300">
+                        <img
+                            src="/icons/creativity-svgrepo-com.svg"
+                            alt="Multilingual Support"
+                            class="w-10 h-10"
+                        />
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-900">
+                        Multilingual Support
+                    </h3>
+                    <p class="text-gray-600">
+                        Communicate in your preferred language—English, Spanish, or Portuguese—for
+                        seamless collaboration and understanding.
+                    </p>
+                </article>
+
+                <article class="group flex flex-col items-start gap-4 p-8 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 group-hover:bg-orange-400 transition-colors duration-300">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-900">
+                        Proven Track Record
+                    </h3>
+                    <p class="text-gray-600">
+                        Successfully delivered projects across diverse markets, from startups to
+                        enterprise-level organizations.
+                    </p>
+                </article>
+
+                <article class="group flex flex-col items-start gap-4 p-8 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 group-hover:bg-orange-400 transition-colors duration-300">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-900">
+                        Compliance & Standards
+                    </h3>
+                    <p class="text-gray-600">
+                        We adhere to international standards and local regulations, ensuring your
+                        digital solutions are compliant and secure.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <Banner
+        title="Need a Custom Solution for Your Market?"
+        subtitle="Tailored Services"
+        description="Every market is unique. We create custom digital strategies that align with your specific business goals, local competition, and target audience. From e-commerce to SaaS platforms, we've got you covered."
+        imgUrl="/photos/diseñoweb.png"
+    />
+
+    <!-- Countries Section -->
+    <section id="countries" class="bg-gradient-to-b from-white to-slate-50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <header class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-semibold text-xl uppercase">Explore by Region</span>
+                <h2 class="text-4xl font-bold text-cyan-900 leading-tight mt-2">
+                    Countries We Serve
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Click on any country to learn more about our services, local expertise, and success stories in that market.
+                </p>
+            </header>
+
+            {Object.entries(countryGroups).map(([region, regionCountries]) => (
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-cyan-900 mb-8 border-b-2 border-orange-400 pb-3 inline-block">
+                        {region}
+                    </h3>
+                    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {regionCountries.map(({ slug, data }) => {
+                            const { title, name, code, description, img } = data;
+
+                            return (
+                                <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+                                    <a href={`/countryareas/${slug}`} class="block h-full">
+                                        {img && (
+                                            <div class="overflow-hidden relative h-56">
+                                                <img
+                                                    src={`${img}`}
+                                                    alt={`Codebrand services in ${name}`}
+                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                />
+                                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                                <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <span class="text-white font-bold text-lg">View Details →</span>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <div class="p-6 flex flex-col gap-3">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="text-2xl font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
+                                                    {title}
+                                                </h4>
+                                                <span class="text-2xl opacity-70">{code}</span>
+                                            </div>
+
+                                            <p class="text-gray-700 leading-relaxed line-clamp-3">
+                                                {description}
                                             </p>
+
+                                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                                <div class="flex items-center justify-between">
+                                                    <span class="text-sm text-gray-500 font-medium">
+                                                        Country: {name}
+                                                    </span>
+                                                    <span class="text-orange-400 font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                                                        Learn More →
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </article>
-                        );
-                    })
-                }
+                                    </a>
+                                </article>
+                            );
+                        })}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Services We Offer Section -->
+    <section class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <header class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-400 font-semibold text-xl uppercase">What We Deliver</span>
+                <h2 class="text-4xl font-bold text-cyan-900 leading-tight mt-2">
+                    Services Available in All Markets
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    Consistent quality, tailored approach—no matter where you are.
+                </p>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">🌐</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">Web Development</h4>
+                    <p class="text-gray-600 text-sm">Custom websites, web apps, and e-commerce platforms built with modern technologies.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">📱</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">Mobile Apps</h4>
+                    <p class="text-gray-600 text-sm">Native and cross-platform mobile applications for iOS and Android.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">🎨</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">UI/UX Design</h4>
+                    <p class="text-gray-600 text-sm">User-centered design that looks great and converts visitors into customers.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">🚀</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">Digital Marketing</h4>
+                    <p class="text-gray-600 text-sm">SEO, PPC, social media, and content marketing strategies tailored to your market.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">🛒</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">E-Commerce</h4>
+                    <p class="text-gray-600 text-sm">Complete online store solutions with payment gateways and inventory management.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">⚙️</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">Automation</h4>
+                    <p class="text-gray-600 text-sm">Process automation, integrations, and workflow optimization to save time.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">☁️</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">Cloud Solutions</h4>
+                    <p class="text-gray-600 text-sm">Scalable cloud infrastructure, hosting, and DevOps services.</p>
+                </div>
+
+                <div class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg">
+                    <div class="text-orange-400 text-4xl mb-4">🔒</div>
+                    <h4 class="text-xl font-bold text-cyan-900 mb-2">Security & Support</h4>
+                    <p class="text-gray-600 text-sm">24/7 monitoring, maintenance, and security updates for peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-cyan-900 to-cyan-800 py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Expand Your Digital Presence?
+            </h2>
+            <p class="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+                Whether you're looking to reach new markets or strengthen your position in your current one,
+                we're here to help you succeed with tailored digital solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                    href="/contact"
+                    class="px-10 py-4 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                    Get Started Today
+                </a>
+                <a
+                    href="/work"
+                    class="px-10 py-4 bg-white text-cyan-900 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                >
+                    View Our Work
+                </a>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <div class="font-semibold">Free Consultation</div>
+                    <div class="text-sm text-cyan-200">No commitment required</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div class="font-semibold">Fast Response</div>
+                    <div class="text-sm text-cyan-200">Within 24 hours</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div class="font-semibold">Proven Results</div>
+                    <div class="text-sm text-cyan-200">500+ successful projects</div>
+                </div>
             </div>
         </div>
     </section>
 </Layout>
+
+<style>
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+    }
+
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
