@@ -1,74 +1,473 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Button from "../../components/Button.astro";
 
-const posts = await getCollection("blog");
+const allPosts = await getCollection("blog");
+
+// Sort posts by date (newest first)
+const posts = allPosts.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+
+// Get featured post (most recent)
+const featuredPost = posts[0];
+const regularPosts = posts.slice(1);
+
+// Calculate stats
+const totalReadTime = posts.reduce(
+  (acc, post) => acc + (post.data.readtime || 5),
+  0
+);
 ---
 
-<Layout title="Blog">
-    <section class="w-full flex items-center justify-center bg-white">
-        <div class="py-28 w-11/12 max-w-4xl text-center">
-            <h1
-                class="text-5xl font-extrabold text-cyan-900 mb-6 leading-tight"
-            >
-                Our Blog
-            </h1>
-            <p class="text-lg text-black leading-relaxed">
-                Articles about development, marketing, design and technology for
-                agencies and developers who want to stay updated.
-            </p>
-        </div>
-    </section>
+<Layout title="Blog - Codebrand Digital Insights">
+  <!-- Hero Section -->
+  <section
+    class="relative flex items-center justify-center flex-col bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden"
+  >
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-orange-400/20 rounded-full blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl"
+      >
+      </div>
+    </div>
 
-    <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+    <div
+      class="container relative px-4 py-20 lg:py-28 flex items-center justify-center w-full"
+    >
+      <article
+        class="flex w-full text-center gap-6 items-center justify-center flex-col max-w-5xl"
+      >
+        <span
+          class="text-orange-400 font-semibold text-lg md:text-xl uppercase tracking-wide animate-fade-in"
+        >
+          Knowledge Hub
+        </span>
+
+        <h1
+          class="text-cyan-900 font-bold text-4xl lg:text-7xl md:text-6xl sm:text-5xl leading-tight animate-fade-in"
+        >
+          Codebrand Blog
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed animate-fade-in"
+        >
+          Expert insights on web development, digital marketing, design trends,
+          and business growth strategies. Learn from our experience building
+          digital solutions for 500+ clients.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  {
+    featuredPost && (
+      <section class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                {
-                    posts.map((post) => {
-                        const { slug, data } = post;
-                        const {
-                            title,
-                            description,
-                            img,
-                            imageAlt,
-                            date,
-                            readtime,
-                        } = data;
+          <div class="flex items-center gap-3 mb-8">
+            <span class="text-orange-400 font-semibold text-xl uppercase">
+              Featured Article
+            </span>
+            <div class="h-px flex-1 bg-gradient-to-r from-orange-400 to-transparent" />
+          </div>
 
-                        return (
-                            <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                                <a href={`/blog/${slug}`} class="block h-full">
-                                    {img && (
-                                        <div class="overflow-hidden rounded-t-2xl">
-                                            <img
-                                                src={img}
-                                                alt={imageAlt}
-                                                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                    )}
+          <article class="grid lg:grid-cols-2 gap-10 bg-gradient-to-br from-slate-50 to-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 group">
+            <a
+              href={`/blog/${featuredPost.slug}`}
+              class="block relative h-full min-h-[400px] lg:min-h-[500px] overflow-hidden"
+            >
+              {featuredPost.data.img && (
+                <>
+                  <img
+                    src={featuredPost.data.img}
+                    alt={featuredPost.data.imageAlt}
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div class="absolute top-6 left-6">
+                    <span class="bg-orange-400 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      Latest Post
+                    </span>
+                  </div>
+                </>
+              )}
+            </a>
 
-                                    <div class="p-5 flex flex-col gap-2 h-full">
-                                        <h3 class="text-lg font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
-                                            {title}
-                                        </h3>
-                                        <div class="text-xs text-gray-500">
-                                            {date?.toLocaleDateString()} ·{" "}
-                                            {readtime ?? 5} min read
-                                        </div>
-                                        <p class="text-sm text-black mt-2 line-clamp-3">
-                                            {description}
-                                        </p>
-                                        <span class="text-sm font-semibold text-cyan-900 group-hover:text-orange-400 mt-auto pt-4 transition">
-                                            Read more →
-                                        </span>
-                                    </div>
-                                </a>
-                            </article>
-                        );
-                    })
-                }
+            <div class="p-8 lg:p-12 flex flex-col justify-center">
+              <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                <span class="flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  {featuredPost.data.date?.toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </span>
+                <span class="flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  {featuredPost.data.readtime || 5} min read
+                </span>
+              </div>
+
+              <h2 class="text-3xl lg:text-4xl font-bold text-cyan-900 mb-4 leading-tight group-hover:text-orange-400 transition-colors">
+                <a href={`/blog/${featuredPost.slug}`}>
+                  {featuredPost.data.title}
+                </a>
+              </h2>
+
+              <p class="text-gray-700 text-lg leading-relaxed mb-6 line-clamp-4">
+                {featuredPost.data.description}
+              </p>
+
+              {featuredPost.data.author && (
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center text-white font-bold">
+                    {featuredPost.data.author.charAt(0)}
+                  </div>
+                  <div>
+                    <div class="font-semibold text-gray-900">
+                      {featuredPost.data.author}
+                    </div>
+                    <div class="text-sm text-gray-500">Author</div>
+                  </div>
+                </div>
+              )}
+
+              <a
+                href={`/blog/${featuredPost.slug}`}
+                class="inline-flex items-center gap-2 text-orange-400 font-bold text-lg group-hover:gap-4 transition-all duration-300"
+              >
+                Read Full Article
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
             </div>
+          </article>
         </div>
-    </section>
+      </section>
+    )
+  }
+
+  <!-- All Posts Grid -->
+  <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-12">
+        <span class="text-orange-400 font-semibold text-xl uppercase"
+          >All Articles</span
+        >
+        <div
+          class="h-px flex-1 bg-gradient-to-r from-orange-400 to-transparent"
+        >
+        </div>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          regularPosts.map((post) => {
+            const { slug, data } = post;
+            const {
+              title,
+              description,
+              img,
+              imageAlt,
+              date,
+              readtime,
+              author,
+            } = data;
+
+            return (
+              <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col">
+                <a href={`/blog/${slug}`} class="block">
+                  {img && (
+                    <div class="overflow-hidden relative h-56">
+                      <img
+                        src={img}
+                        alt={imageAlt || title}
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  )}
+
+                  <div class="p-6 flex flex-col gap-3 flex-1">
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                      <span class="flex items-center gap-1">
+                        <svg
+                          class="w-3.5 h-3.5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        {date?.toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                      <span>•</span>
+                      <span class="flex items-center gap-1">
+                        <svg
+                          class="w-3.5 h-3.5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        {readtime || 5} min
+                      </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-cyan-900 group-hover:text-orange-400 transition-colors leading-tight line-clamp-2">
+                      {title}
+                    </h3>
+
+                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-3 flex-1">
+                      {description}
+                    </p>
+
+                    {author && (
+                      <div class="flex items-center gap-2 pt-3 border-t border-gray-100">
+                        <div class="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center text-white text-xs font-bold">
+                          {author.charAt(0)}
+                        </div>
+                        <span class="text-xs text-gray-600 font-medium">
+                          {author}
+                        </span>
+                      </div>
+                    )}
+
+                    <div class="flex items-center justify-between pt-3">
+                      <span class="text-sm font-semibold text-orange-400 group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-1">
+                        Read more
+                        <svg
+                          class="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="bg-gradient-to-r from-cyan-900 to-cyan-800 py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="mb-6">
+        <svg
+          class="w-16 h-16 mx-auto text-orange-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
+        </svg>
+      </div>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Stay Updated
+      </h2>
+      <p class="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+        Get the latest insights on web development, digital marketing, and
+        business growth delivered to your inbox. No spam, unsubscribe anytime.
+      </p>
+
+      <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-1 px-6 py-4 rounded-full border-2 border-white/20 bg-white/10 text-white placeholder-cyan-200 focus:outline-none focus:border-orange-400 focus:bg-white/20 transition-all"
+        />
+        <button
+          type="submit"
+          class="px-10 py-4 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap"
+        >
+          Subscribe Now
+        </button>
+      </form>
+
+      <p class="text-sm text-cyan-200 mt-4">
+        Join 5,000+ professionals already subscribed
+      </p>
+    </div>
+  </section>
+
+  <!-- Topics We Cover -->
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <header class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-orange-400 font-semibold text-xl uppercase"
+          >Topics We Cover</span
+        >
+        <h2 class="text-4xl font-bold text-cyan-900 leading-tight mt-2">
+          Explore by Category
+        </h2>
+        <p class="mt-4 text-lg text-gray-600">
+          Deep dives into the subjects that matter most for your digital
+          success.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <a
+          href="/blog"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+        >
+          <div class="text-4xl mb-3">💻</div>
+          <h3
+            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
+          >
+            Web Development
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">{posts.length} articles</p>
+        </a>
+
+        <a
+          href="/blog"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+        >
+          <div class="text-4xl mb-3">🎨</div>
+          <h3
+            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
+          >
+            Design & UX
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">Expert tips</p>
+        </a>
+
+        <a
+          href="/blog"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+        >
+          <div class="text-4xl mb-3">📈</div>
+          <h3
+            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
+          >
+            Digital Marketing
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">Growth strategies</p>
+        </a>
+
+        <a
+          href="/blog"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+        >
+          <div class="text-4xl mb-3">🚀</div>
+          <h3
+            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
+          >
+            Business Growth
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">Scaling tips</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-b from-slate-50 to-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-cyan-900 mb-6">
+        Ready to Transform Your Digital Presence?
+      </h2>
+      <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+        Stop reading and start building. Let's create something amazing
+        together.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button text="Start Your Project" href="/contact" />
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

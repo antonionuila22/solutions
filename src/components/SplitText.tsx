@@ -1,12 +1,15 @@
 // SplitTextTailwind.tsx
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface SplitTextProps {
   text: string;
   className?: string;
 }
 
-const SplitTextTailwind: React.FC<SplitTextProps> = ({ text, className = '' }) => {
+const SplitTextTailwind: React.FC<SplitTextProps> = ({
+  text,
+  className = "",
+}) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -28,20 +31,20 @@ const SplitTextTailwind: React.FC<SplitTextProps> = ({ text, className = '' }) =
     return () => observer.disconnect();
   }, []);
 
-  const letters = text.split('');
+  const letters = text.split("");
 
   return (
-    <p ref={ref} className={`overflow-hidden ${className}`}>
+    <p ref={ref} className={className}>
       {letters.map((letter, index) => (
         <span
           key={index}
           className={`
             inline-block transition-all duration-500 ease-out
-            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+            ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
           `}
           style={{ transitionDelay: `${index * 90}ms` }}
         >
-          {letter === ' ' ? '\u00A0' : letter}
+          {letter === " " ? "\u00A0" : letter}
         </span>
       ))}
     </p>
