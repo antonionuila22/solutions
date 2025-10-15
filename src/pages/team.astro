@@ -5,153 +5,468 @@ import Whyus from "../components/whyus.astro";
 ---
 
 <Layout>
-    <section class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h1
-                class="text-4xl md:text-5xl font-extrabold text-cyan-900 mb-4 animate-fade-in-up"
-            >
-                Our Team
+  <!-- Hero Section - Creative Asymmetric Design -->
+  <section class="relative min-h-[85vh] overflow-hidden bg-white">
+    <!-- Background Geometric Shapes -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-orange-400 rounded-full opacity-5 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-900 rounded-full opacity-5 blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="space-y-8 animate-slide-up">
+          <!-- Badge -->
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-900 text-white rounded-full font-bold text-sm shadow-lg">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+              </svg>
+              MEET THE TEAM
+            </span>
+            <div class="h-px flex-1 bg-gradient-to-r from-cyan-900/20 to-transparent max-w-[100px]"></div>
+          </div>
+
+          <!-- Heading -->
+          <div>
+            <h1 class="text-5xl md:text-7xl font-black text-cyan-900 leading-tight mb-6">
+              The Minds<br/>
+              Behind <span class="relative inline-block">
+                <span class="text-orange-400">Codebrand</span>
+                <svg class="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 10C50 2 150 2 198 10" stroke="#fb923c" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </span>
             </h1>
-            <p
-                class="text-lg text-gray-700 max-w-3xl mx-auto animate-fade-in-up delay-200"
-            >
-                At Codebrand, we believe in the power of collective talent. Each
-                team member brings their expertise, creativity, and commitment
-                to deliver impactful projects.
+            <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+              Six specialists united by passion, expertise, and a relentless commitment to delivering excellence in every project.
             </p>
+          </div>
+
+          <!-- Inline Stats -->
+          <div class="flex flex-wrap gap-6 pt-4">
+            <div class="flex items-center gap-3 group">
+              <div class="w-14 h-14 rounded-2xl bg-orange-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <span class="text-2xl font-black text-white">6</span>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-cyan-900">Specialists</div>
+                <div class="text-xs text-gray-500">Expert Team</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 group">
+              <div class="w-14 h-14 rounded-2xl bg-cyan-900 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <span class="text-2xl font-black text-white">50+</span>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-cyan-900">Years Combined</div>
+                <div class="text-xs text-gray-500">Experience</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 group">
+              <div class="w-14 h-14 rounded-2xl bg-orange-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <span class="text-xl font-black text-white">100%</span>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-cyan-900">Dedication</div>
+                <div class="text-xs text-gray-500">Every Project</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 animate-fade-in-up delay-300"
-        >
-            <!-- Team Member -->
-            <div
-                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-            >
-                <img
-                    src="../photos/team-code/RamonNuila.png"
-                    alt="Ramon Nuila"
-                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-cyan-900">Ramon Nuila</h3>
-                    <p class="text-sm text-gray-500 mb-2">CEO & Founder</p>
-                    <p class="text-gray-600 text-sm">
-                        Full Stack Developer and digital strategist focused on
-                        business growth and scalable software. He has led
-                        successful projects in various areas, from software
-                        development to brand creation. His mindset is zero
-                        excuses, always results-driven.
-                    </p>
+        <!-- Right Image Section with Creative Clipping -->
+        <div class="relative animate-slide-up delay-100">
+          <!-- Main Image Container with Diagonal Clip -->
+          <div class="relative">
+            <!-- Decorative Orange Shape Behind -->
+            <div class="absolute -right-6 -top-6 w-72 h-72 bg-orange-400 rounded-[3rem] rotate-12 opacity-20"></div>
+
+            <!-- Image with Curved Clipping -->
+            <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+              <img
+                src="/photos/teamcode.png"
+                alt="Codebrand Team"
+                class="w-full h-auto object-cover"
+              />
+
+              <!-- Gradient Overlay on Bottom -->
+              <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cyan-900/80 to-transparent"></div>
+
+              <!-- Floating Badge on Image -->
+              <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-orange-400 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-sm font-black text-cyan-900">World-Class Quality</div>
+                      <div class="text-xs text-gray-500">Certified Excellence</div>
+                    </div>
+                  </div>
+                  <div class="hidden md:flex gap-1">
+                    <div class="w-2 h-2 rounded-full bg-orange-400"></div>
+                    <div class="w-2 h-2 rounded-full bg-cyan-900"></div>
+                    <div class="w-2 h-2 rounded-full bg-orange-400"></div>
+                  </div>
                 </div>
+              </div>
             </div>
 
-            <div
-                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-            >
-                <img
-                    src="../photos/team-code/Perez.png"
-                    alt="Enrique Perez"
-                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-cyan-900">
-                        Enrique Pérez
-                    </h3>
-                    <p class="text-sm text-gray-500 mb-2">
-                        Social Media Expert
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        Creator of functional digital experiences with over 10
-                        years in the graphic design industry. His focus on
-                        social media strategy and content creation makes him a
-                        valuable asset to any team.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-            >
-                <img
-                    src="../photos/team-code/Mariacasco.png"
-                    alt="Maria Casco"
-                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-cyan-900">Maria Casco</h3>
-                    <p class="text-sm text-gray-500 mb-2">Product Manager</p>
-                    <p class="text-gray-600 text-sm">
-                        With over 10 years of experience in the textile and
-                        promotional product industry, Maria is an expert in
-                        product management and brand-focused merchandise. She
-                        prioritizes delivering high-quality products at highly
-                        competitive prices.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-            >
-                <img
-                    src="../photos/team-code/Cmorel.png"
-                    alt="Larisa Lopez"
-                    class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-cyan-900">
-                        Larisa Lopez
-                    </h3>
-                    <p class="text-sm text-gray-500 mb-2">UX/UI Expert</p>
-                    <p class="text-gray-600 text-sm">
-                        With over 8 years of experience in UX/UI, Larisa is an
-                        expert in creating functional and attractive digital
-                        experiences. Her focus is on research and user-centered
-                        design.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="group bg-white rounded-3xl shadow-xl overflow-hidden relative transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-            >
-                <img
-                    src="../photos/team-code/irispaola.png"
-                    alt="Iris Gomez"
-                    class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-cyan-900">Iris Gomez</h3>
-                    <p class="text-sm text-gray-500 mb-2">
-                        Project Coordinator
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        An engineer passionate about optimizing time and
-                        resources. With experience in project management and
-                        team leadership, she focuses on delivering high-quality
-                        projects on time. Her skills in resource management,
-                        planning, and execution—along with quick
-                        decision-making—make her a valuable asset to any team.
-                    </p>
-                </div>
-            </div>
+            <!-- Small Decorative Cyan Shape -->
+            <div class="absolute -left-8 bottom-16 w-32 h-32 bg-cyan-900 rounded-[2rem] -rotate-12 opacity-10"></div>
+          </div>
         </div>
-
-        <div class="mt-24 text-center animate-fade-in-up delay-500">
-            <p class="text-gray-600 text-base max-w-3xl mx-auto">
-                More than a team, we are a blend of vision, discipline, and
-                creativity. Every project is a challenge we face together—from
-                strategy to execution.
-            </p>
-        </div>
-    </section>
-
-    <div class="text-center mt-0">
-        <h2 class="text-2xl md:text-3xl font-semibold text-cyan-900 mb-6">
-            Ready to work with a passionate and committed team?
-        </h2>
-        <ButtonCustom text="Let’s Talk" href="/contact" />
+      </div>
     </div>
-    <Whyus />
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div class="w-8 h-12 border-2 border-cyan-900 rounded-full flex items-start justify-center p-2">
+        <div class="w-1.5 h-3 bg-orange-400 rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members Section -->
+  <section class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Team Member 1: Ramon Nuila -->
+      <div class="group relative">
+        <div class="relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+          <!-- Image Container -->
+          <div class="relative h-80 overflow-hidden bg-gradient-to-br from-cyan-50 to-orange-50">
+            <img
+              src="/photos/team-code/RamonNuila.png"
+              alt="Ramon Nuila"
+              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+            />
+            <!-- Overlay on Hover -->
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <!-- Social Links (appear on hover) -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-orange-400 hover:scale-110 transition-all">
+                <svg class="w-5 h-5 text-cyan-900" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-orange-400 hover:scale-110 transition-all">
+                <svg class="w-5 h-5 text-cyan-900" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <h3 class="text-2xl font-black text-cyan-900 group-hover:text-orange-400 transition-colors">Ramon Nuila</h3>
+                <p class="text-sm font-bold text-orange-400 uppercase tracking-wider">CEO & Founder</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-400 transition-colors">
+                <svg class="w-6 h-6 text-orange-400 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Full Stack Developer and digital strategist focused on business growth and scalable software. Zero excuses, always results-driven.
+            </p>
+
+            <!-- Skills Tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Full Stack</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Strategy</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Leadership</span>
+            </div>
+          </div>
+
+          <!-- Decorative Element -->
+          <div class="absolute top-4 right-4 w-16 h-16 bg-orange-400 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
+        </div>
+      </div>
+
+      <!-- Team Member 2: Enrique Perez -->
+      <div class="group relative">
+        <div class="relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+          <div class="relative h-80 overflow-hidden bg-gradient-to-br from-orange-50 to-cyan-50">
+            <img
+              src="/photos/team-code/Perez.png"
+              alt="Enrique Perez"
+              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-orange-400 hover:scale-110 transition-all">
+                <svg class="w-5 h-5 text-cyan-900" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <h3 class="text-2xl font-black text-cyan-900 group-hover:text-orange-400 transition-colors">Enrique Pérez</h3>
+                <p class="text-sm font-bold text-orange-400 uppercase tracking-wider">Social Media Expert</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center group-hover:bg-cyan-900 transition-colors">
+                <svg class="w-6 h-6 text-cyan-900 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Creator of functional digital experiences with over 10 years in graphic design and social media strategy.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold">Social Media</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold">Content</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold">Design</span>
+            </div>
+          </div>
+
+          <div class="absolute top-4 right-4 w-16 h-16 bg-cyan-900 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
+        </div>
+      </div>
+
+      <!-- Team Member 3: Maria Casco -->
+      <div class="group relative">
+        <div class="relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+          <div class="relative h-80 overflow-hidden bg-gradient-to-br from-cyan-50 to-orange-50">
+            <img
+              src="/photos/team-code/Mariacasco.png"
+              alt="Maria Casco"
+              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-orange-400 hover:scale-110 transition-all">
+                <svg class="w-5 h-5 text-cyan-900" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <h3 class="text-2xl font-black text-cyan-900 group-hover:text-orange-400 transition-colors">Maria Casco</h3>
+                <p class="text-sm font-bold text-orange-400 uppercase tracking-wider">Product Manager</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-400 transition-colors">
+                <svg class="w-6 h-6 text-orange-400 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                </svg>
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Over 10 years in textile and promotional products. Expert in product management and brand-focused merchandise.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Products</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Branding</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Quality</span>
+            </div>
+          </div>
+
+          <div class="absolute top-4 right-4 w-16 h-16 bg-orange-400 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
+        </div>
+      </div>
+
+      <!-- Team Member 4: Larisa Lopez -->
+      <div class="group relative">
+        <div class="relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+          <div class="relative h-80 overflow-hidden bg-gradient-to-br from-orange-50 to-cyan-50">
+            <img
+              src="/photos/team-code/Cmorel.png"
+              alt="Larisa Lopez"
+              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-orange-400 hover:scale-110 transition-all">
+                <svg class="w-5 h-5 text-cyan-900" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <h3 class="text-2xl font-black text-cyan-900 group-hover:text-orange-400 transition-colors">Larisa Lopez</h3>
+                <p class="text-sm font-bold text-orange-400 uppercase tracking-wider">UX/UI Expert</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center group-hover:bg-cyan-900 transition-colors">
+                <svg class="w-6 h-6 text-cyan-900 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                </svg>
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Over 8 years creating functional and attractive digital experiences. Focus on research and user-centered design.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold">UX/UI</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold">Research</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold">Figma</span>
+            </div>
+          </div>
+
+          <div class="absolute top-4 right-4 w-16 h-16 bg-cyan-900 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
+        </div>
+      </div>
+
+      <!-- Team Member 5: Iris Gomez -->
+      <div class="group relative">
+        <div class="relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+          <div class="relative h-80 overflow-hidden bg-gradient-to-br from-cyan-50 to-orange-50">
+            <img
+              src="/photos/team-code/irispaola.png"
+              alt="Iris Gomez"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-orange-400 hover:scale-110 transition-all">
+                <svg class="w-5 h-5 text-cyan-900" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <h3 class="text-2xl font-black text-cyan-900 group-hover:text-orange-400 transition-colors">Iris Gomez</h3>
+                <p class="text-sm font-bold text-orange-400 uppercase tracking-wider">Project Coordinator</p>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-400 transition-colors">
+                <svg class="w-6 h-6 text-orange-400 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Engineer passionate about optimizing time and resources. Expert in project management and delivering quality on time.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Management</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Planning</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold">Agile</span>
+            </div>
+          </div>
+
+          <div class="absolute top-4 right-4 w-16 h-16 bg-orange-400 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Culture Section -->
+    <div class="mt-24 bg-gradient-to-br from-slate-50 to-white rounded-3xl p-12 border-2 border-slate-200">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-cyan-900 mb-6">
+          More Than a Team
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+          We are a blend of vision, discipline, and creativity. Every project is a challenge we face together—from strategy to execution. We don't just work together; we grow together.
+        </p>
+
+        <!-- Values -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all">
+            <div class="text-4xl mb-3">🎯</div>
+            <h4 class="font-bold text-cyan-900 mb-2">Results-Driven</h4>
+            <p class="text-sm text-gray-600">Zero excuses. We focus on delivering measurable outcomes.</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all">
+            <div class="text-4xl mb-3">🚀</div>
+            <h4 class="font-bold text-cyan-900 mb-2">Innovation First</h4>
+            <p class="text-sm text-gray-600">We embrace new technologies and creative solutions.</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all">
+            <div class="text-4xl mb-3">🤝</div>
+            <h4 class="font-bold text-cyan-900 mb-2">Client Partnership</h4>
+            <p class="text-sm text-gray-600">Your success is our success. We're in this together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <div class="text-center py-20 px-6 bg-cyan-900">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">
+        Ready to Work With a <span class="text-orange-400">Passionate Team?</span>
+      </h2>
+      <p class="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+        Let's turn your vision into reality. Our team is ready to deliver exceptional results.
+      </p>
+      <ButtonCustom text="Let's Talk" href="/contact" />
+    </div>
+  </div>
+
+  <Whyus />
 </Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+</style>
