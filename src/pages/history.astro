@@ -4,181 +4,345 @@ import ButtonCustom from "../components/Button.astro";
 ---
 
 <Layout>
-    <section class="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden">
-        <div class="absolute inset-0 bg-center opacity-10 z-0"></div>
-
-        <!-- HERO -->
-        <div class="relative z-10 mb-20 text-center animate-fade-in-up">
-            <h1 class="text-5xl font-extrabold text-cyan-900 mb-4">
-                Who We Are
+  <!-- Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
+    <!-- Content Grid -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="space-y-8">
+          <div>
+            <span class="inline-block px-5 py-2 bg-orange-400 text-white rounded-full font-bold text-sm mb-6 animate-fade-in shadow-lg">
+              OUR STORY
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black text-cyan-900 mb-6 leading-tight animate-slide-up">
+              Building Brands That <span class="text-orange-400">Matter</span>
             </h1>
-            <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-                Codebrand was born from a bold idea: to break formulas and build
-                brands that truly connect.
+            <p class="text-xl text-gray-700 leading-relaxed animate-slide-up delay-100 max-w-xl">
+              From a bold idea to a global creative force—discover the journey that shaped Codebrand into a team of six specialists delivering world-class results.
             </p>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-6 pt-4 animate-slide-up delay-200">
+            <div class="text-center">
+              <div class="text-4xl font-black text-orange-400 mb-1">500+</div>
+              <div class="text-sm text-gray-600 font-semibold">Projects</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-orange-400 mb-1">5+</div>
+              <div class="text-sm text-gray-600 font-semibold">Countries</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-black text-orange-400 mb-1">98%</div>
+              <div class="text-sm text-gray-600 font-semibold">Satisfaction</div>
+            </div>
+          </div>
         </div>
 
-        <!-- SECTION 1 -->
-        <div
-            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
-        >
-            <div
-                class="transition-transform duration-700 group-hover:-translate-y-1"
-            >
-                <img
-                    src="/photos/teamcode.png"
-                    alt="Creative collaboration"
-                    class="rounded-2xl shadow-xl w-full object-cover brightness-110"
-                />
+        <!-- Right Image -->
+        <div class="relative animate-slide-up delay-100 hidden md:block">
+          <div class="relative">
+            <img
+              src="/photos/teamcode.png"
+              alt="Codebrand team"
+              class="rounded-3xl shadow-2xl w-full"
+            />
+            <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-orange-400 rounded-full opacity-20 blur-2xl"></div>
+            <div class="absolute -top-6 -right-6 w-32 h-32 bg-cyan-900 rounded-full opacity-20 blur-2xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- Our Story Timeline -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-black text-cyan-900 mb-4">Our Journey</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Every great brand has a story. Here's ours.
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Timeline Line -->
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orange-400 to-cyan-900"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="mb-16 flex flex-col md:flex-row items-center gap-8 group">
+          <div class="md:w-5/12 md:text-right">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
+              <span class="inline-block px-4 py-1 bg-orange-400 text-white rounded-full font-bold text-sm mb-4">THE BEGINNING</span>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">A Bold Idea</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Codebrand was born from a simple but powerful vision: to break the mold and create brands that truly resonate with people, not just algorithms.
+              </p>
             </div>
-            <div
-                class="text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-200"
-            >
-                <p>
-                    We didn’t set out to become just another agency. From day
-                    one, our goal was clear: deliver world-class quality with
-                    speed, strategy, and vision.
-                </p>
-                <p>
-                    We work with urgency—but never rush. Every decision is
-                    intentional. Every solution is crafted to drive results.
-                </p>
+          </div>
+          <div class="hidden md:block relative z-10">
+            <div class="w-16 h-16 bg-orange-400 rounded-full border-4 border-white shadow-xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
             </div>
+          </div>
+          <div class="md:w-5/12">
+            <img src="/photos/teamcode.png" alt="The beginning" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" />
+          </div>
         </div>
 
-        <!-- SECTION 2 -->
-        <div
-            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
-        >
-            <div
-                class="order-2 md:order-1 text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-300"
-            >
-                <h2 class="text-3xl font-semibold text-orange-500">
-                    One Team. One Vision.
-                </h2>
-                <p>
-                    We’re six specialists, one purpose: to help brands grow
-                    through powerful design and technology.
-                </p>
-                <ul class="list-disc list-inside mt-3 space-y-2">
-                    <li>
-                        <strong>Branding & Graphic Design:</strong> building standout
-                        identities
-                    </li>
-                    <li>
-                        <strong>Web & App Development:</strong> crafting frictionless
-                        experiences
-                    </li>
-                    <li>
-                        <strong>3D Animation & Rendering:</strong> telling stories
-                        with impact
-                    </li>
-                    <li>
-                        <strong>Marketing & Social:</strong> creating strategic connection
-                    </li>
-                    <li>
-                        <strong>Promotional Products:</strong> translating brands
-                        into the real world
-                    </li>
-                </ul>
+        <!-- Timeline Item 2 -->
+        <div class="mb-16 flex flex-col md:flex-row-reverse items-center gap-8 group">
+          <div class="md:w-5/12">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
+              <span class="inline-block px-4 py-1 bg-cyan-900 text-white rounded-full font-bold text-sm mb-4">GROWTH</span>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">Building the Dream Team</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We assembled six specialists united by one purpose: delivering world-class quality with speed, strategy, and vision. No templates. No shortcuts.
+              </p>
             </div>
-            <div
-                class="order-1 md:order-2 transition-transform duration-700 group-hover:-translate-y-1"
-            >
-                <img
-                    src="/photos/teamcode.png"
-                    alt="Codebrand team"
-                    class="rounded-2xl shadow-xl w-full object-cover"
-                />
+          </div>
+          <div class="hidden md:block relative z-10">
+            <div class="w-16 h-16 bg-cyan-900 rounded-full border-4 border-white shadow-xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+              </svg>
             </div>
+          </div>
+          <div class="md:w-5/12">
+            <img src="/photos/developers-searching-for-bugs-2025-01-29-14-44-32-utc.webp" alt="Growth" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" />
+          </div>
         </div>
 
-        <!-- SECTION 3 -->
-        <div
-            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
-        >
-            <div
-                class="transition-transform duration-700 group-hover:-translate-y-1"
-            >
-                <img
-                    src="/photos/creativeprocess.jpg"
-                    alt="Creative process"
-                    class="rounded-2xl shadow-xl w-full object-cover"
-                />
+        <!-- Timeline Item 3 -->
+        <div class="mb-16 flex flex-col md:flex-row items-center gap-8 group">
+          <div class="md:w-5/12 md:text-right">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
+              <span class="inline-block px-4 py-1 bg-orange-400 text-white rounded-full font-bold text-sm mb-4">EXPANSION</span>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">Going Global</h3>
+              <p class="text-gray-700 leading-relaxed">
+                From local projects to international brands, we've helped businesses across 5+ countries build their digital presence and scale with purpose.
+              </p>
             </div>
-            <div
-                class="text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-300"
-            >
-                <h2 class="text-3xl font-semibold text-orange-500">
-                    Why Brands Choose Codebrand
-                </h2>
-                <p>
-                    Our clients don’t choose us for templates. They choose us
-                    for intention, detail, and execution.
-                </p>
-                <p>
-                    Every project starts with deep discovery and ends with a
-                    crafted solution—built to resonate and perform.
-                </p>
+          </div>
+          <div class="hidden md:block relative z-10">
+            <div class="w-16 h-16 bg-orange-400 rounded-full border-4 border-white shadow-xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+              </svg>
             </div>
+          </div>
+          <div class="md:w-5/12">
+            <img src="/photos/diseñoweb.png" alt="Global expansion" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" />
+          </div>
         </div>
 
-        <!-- SECTION 4 -->
-        <div
-            class="grid md:grid-cols-2 gap-12 mb-24 items-center relative z-10 group"
-        >
-            <div
-                class="order-2 md:order-1 text-gray-700 text-lg leading-relaxed space-y-5 animate-fade-in-up delay-300"
-            >
-                <h2 class="text-3xl font-semibold text-orange-500">Our DNA</h2>
-                <p>
-                    Behind every pixel is a person who cares. We value
-                    precision, simplicity, and technology with purpose.
-                </p>
-                <p>
-                    We’re not vendors — we’re partners. Our job is to turn your
-                    vision into a system that inspires, converts, and scales.
-                </p>
+        <!-- Timeline Item 4 -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-8 group">
+          <div class="md:w-5/12">
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
+              <span class="inline-block px-4 py-1 bg-cyan-900 text-white rounded-full font-bold text-sm mb-4">TODAY</span>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">The Future is Now</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Today, we're more than an agency. We're creative partners who turn ambitious visions into powerful realities—one brand at a time.
+              </p>
             </div>
-            <div
-                class="order-1 md:order-2 transition-transform duration-700 group-hover:-translate-y-1"
-            >
-                <img
-                    src="/photos/strategyteam.jpg"
-                    alt="Strategic session"
-                    class="rounded-2xl shadow-xl w-full object-cover"
-                />
+          </div>
+          <div class="hidden md:block relative z-10">
+            <div class="w-16 h-16 bg-cyan-900 rounded-full border-4 border-white shadow-xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+              </svg>
             </div>
+          </div>
+          <div class="md:w-5/12">
+            <img src="/photos/developer-explaining-details-in-code-2025-01-29-08-07-23-utc.webp" alt="Today" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our DNA / Values Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-cyan-900 mb-4">Our DNA</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          The principles that drive everything we do.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+          <div class="w-16 h-16 bg-orange-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-3">Precision</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Every pixel, every line of code, every word matters. We don't believe in "good enough"—we aim for exceptional.
+          </p>
         </div>
 
-        <!-- CTA -->
-        <div
-            class="text-center mt-32 relative z-10 animate-fade-in-up delay-500"
-        >
-            <div class="max-w-2xl mx-auto flex flex-col items-center">
-                <h2
-                    class="text-4xl font-semibold text-cyan-900 mb-6 leading-snug"
-                >
-                    Looking for a team that treats your brand like their own?
-                </h2>
-                <ButtonCustom text="Let's Connect" href="/contact" />
-            </div>
+        <div class="group bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-cyan-900 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+          <div class="w-16 h-16 bg-cyan-900 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-3">Speed</h3>
+          <p class="text-gray-700 leading-relaxed">
+            We work with urgency but never rush. Fast execution with strategic thinking—that's how we deliver results.
+          </p>
         </div>
-    </section>
+
+        <div class="group bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+          <div class="w-16 h-16 bg-orange-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-3">Partnership</h3>
+          <p class="text-gray-700 leading-relaxed">
+            We're not vendors—we're partners. Your success is our success, and we treat every brand like our own.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-black text-cyan-900 mb-6">
+            What Makes Us <span class="text-orange-400">Different</span>
+          </h2>
+          <p class="text-xl text-gray-700 leading-relaxed mb-8">
+            We're six specialists with one shared mission: to help brands grow through powerful design and technology.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start group">
+              <div class="flex-shrink-0 w-12 h-12 bg-orange-400 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-cyan-900 mb-1">Branding & Graphic Design</h4>
+                <p class="text-gray-600">Building standout identities that capture attention</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start group">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-cyan-900 mb-1">Web & App Development</h4>
+                <p class="text-gray-600">Crafting frictionless digital experiences</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start group">
+              <div class="flex-shrink-0 w-12 h-12 bg-orange-400 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-cyan-900 mb-1">3D Animation & Rendering</h4>
+                <p class="text-gray-600">Telling stories with visual impact</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start group">
+              <div class="flex-shrink-0 w-12 h-12 bg-cyan-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-cyan-900 mb-1">Marketing & Social</h4>
+                <p class="text-gray-600">Creating strategic connections with your audience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img src="/photos/animation.png" alt="Our services" class="rounded-3xl shadow-2xl w-full" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-cyan-900">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+        Ready to Build Something <span class="text-orange-400">Extraordinary?</span>
+      </h2>
+      <p class="text-xl text-cyan-100 mb-10 max-w-2xl mx-auto">
+        Let's create a brand experience that inspires, converts, and scales. Your vision deserves a team that treats it like their own.
+      </p>
+      <ButtonCustom text="Let's Connect" href="/contact" />
+    </div>
+  </section>
 </Layout>
-<style>
-    @keyframes fade-in-up {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
-    .animate-fade-in-up {
-        animation: fade-in-up 0.5s ease-out forwards;
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
 </style>
