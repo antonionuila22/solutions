@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { Linkedin, Twitter, Mail, Award, Star } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImafeWithFallback";
 
-const teamMembers = [            
+const teamMembers = [
   {
     id: 1,
     name: "Ramón Antonio Nuila",
@@ -14,17 +14,22 @@ const teamMembers = [
     achievements: [
       "Launched 100+ web platforms",
       "Pixel Pay API Integration",
-      "AWS Certified Solutions Architect"
+      "AWS Certified Solutions Architect",
     ],
     social: {
       linkedin: "https://www.linkedin.com/in/ramon-nuila",
       twitter: "https://twitter.com/ramonnuila22",
-      email: "info@codebrand.es"
+      email: "info@codebrand.es",
     },
-    specialties: ["Full Stack Development", "Cloud Architecture", "DevOps", "Technical Leadership"],
+    specialties: [
+      "Full Stack Development",
+      "Cloud Architecture",
+      "DevOps",
+      "Technical Leadership",
+    ],
     experience: "7+ years",
     projects: "100+ completed proje ects",
-    color: "from-orange-600 to-orange-400"
+    color: "from-orange-600 to-orange-400",
   },
   {
     id: 2,
@@ -36,17 +41,21 @@ const teamMembers = [
     achievements: [
       "Streamlined logistics for 50+ projects",
       "Master’s in Resource Management",
-      "Esabep Logistics Partnership"
+      "Esabep Logistics Partnership",
     ],
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "#"
+      email: "#",
     },
-    specialties: ["Process Optimization", "Supply Chain Engineering", "Resource Management"],
+    specialties: [
+      "Process Optimization",
+      "Supply Chain Engineering",
+      "Resource Management",
+    ],
     experience: "8+ years",
     projects: "50+ logistics projects",
-    color: "from-orange-600 to-orange-400"
+    color: "from-orange-600 to-orange-400",
   },
   {
     id: 3,
@@ -58,17 +67,22 @@ const teamMembers = [
     achievements: [
       "Google UX/UI Certification",
       "Led 20+ product launches",
-      "Expert in User-Centered Design"
+      "Expert in User-Centered Design",
     ],
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "#"
+      email: "#",
     },
-    specialties: ["UX/UI Design", "Product Management", "User Research", "Prototyping"],
+    specialties: [
+      "UX/UI Design",
+      "Product Management",
+      "User Research",
+      "Prototyping",
+    ],
     experience: "10+ years",
     projects: "20+ digital products",
-    color: "from-orange-600 to-orange-400"
+    color: "from-orange-600 to-orange-400",
   },
   {
     id: 4,
@@ -80,17 +94,22 @@ const teamMembers = [
     achievements: [
       "Google Premier Partner",
       "Managed 150+ successful campaigns",
-      "Facebook Marketing Expert"
+      "Facebook Marketing Expert",
     ],
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "#"
+      email: "#",
     },
-    specialties: ["Digital Marketing", "Content Strategy", "Analytics", "Conversion Optimization"],
+    specialties: [
+      "Digital Marketing",
+      "Content Strategy",
+      "Analytics",
+      "Conversion Optimization",
+    ],
     experience: "8+ years",
     projects: "150+ campaigns",
-    color: "from-orange-600 to-orange-400"
+    color: "from-orange-600 to-orange-400",
   },
   {
     id: 5,
@@ -102,21 +121,33 @@ const teamMembers = [
     achievements: [
       "Product Branding Specialist",
       "13+ years in promotional products",
-      "Expert in Custom Merchandise"
+      "Expert in Custom Merchandise",
     ],
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "#"
+      email: "#",
     },
-    specialties: ["Product Branding", "Promotional Strategies", "Custom Merchandise"],
+    specialties: [
+      "Product Branding",
+      "Promotional Strategies",
+      "Custom Merchandise",
+    ],
     experience: "13+ years",
     projects: "100+ branding projects",
-    color: "from-orange-600 to-orange-400"
+    color: "from-orange-600 to-orange-400",
   },
 ];
 
-function TeamMemberCard({ member, index, isInView }: { member: any; index: number; isInView: boolean }) {
+function TeamMemberCard({
+  member,
+  index,
+  isInView,
+}: {
+  member: any;
+  index: number;
+  isInView: boolean;
+}) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -132,11 +163,11 @@ function TeamMemberCard({ member, index, isInView }: { member: any; index: numbe
     <motion.div
       initial={{ opacity: 0, y: 50, rotateY: -15 }}
       animate={isInView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
-      transition={{ 
-        duration: 0.8, 
+      transition={{
+        duration: 0.8,
         delay: index * 0.1,
         type: "spring",
-        stiffness: 100
+        stiffness: 100,
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -145,18 +176,22 @@ function TeamMemberCard({ member, index, isInView }: { member: any; index: numbe
     >
       <motion.div
         className="relative bg-background/80 backdrop-blur-sm  rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl "
-        animate={isHovered ? { 
-          rotateX: (mousePosition.y - 50) * 0.1,
-          rotateY: (mousePosition.x - 50) * 0.1,
-          scale: 1.02
-        } : { 
-          rotateX: 0, 
-          rotateY: 0, 
-          scale: 1 
-        }}
+        animate={
+          isHovered
+            ? {
+                rotateX: (mousePosition.y - 50) * 0.1,
+                rotateY: (mousePosition.x - 50) * 0.1,
+                scale: 1.02,
+              }
+            : {
+                rotateX: 0,
+                rotateY: 0,
+                scale: 1,
+              }
+        }
         transition={{ duration: 0.3 }}
         style={{
-          transformStyle: "preserve-3d"
+          transformStyle: "preserve-3d",
         }}
       >
         {/* Background Gradient */}
@@ -169,7 +204,9 @@ function TeamMemberCard({ member, index, isInView }: { member: any; index: numbe
         <div className="relative p-6 pb-0">
           <motion.div
             className="relative w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden"
-            animate={isHovered ? { scale: 1.1, rotateZ: 5 } : { scale: 1, rotateZ: 0 }}
+            animate={
+              isHovered ? { scale: 1.1, rotateZ: 5 } : { scale: 1, rotateZ: 0 }
+            }
             transition={{ duration: 0.3 }}
           >
             <ImageWithFallback
@@ -177,13 +214,13 @@ function TeamMemberCard({ member, index, isInView }: { member: any; index: numbe
               alt={member.name}
               className="w-full h-full object-cover"
             />
-            
+
             {/* Overlay on hover */}
             <motion.div
               className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-0 transition-opacity duration-300`}
               animate={isHovered ? { opacity: 0.2 } : { opacity: 0 }}
             />
-            
+
             {/* Social Icons Overlay */}
             <motion.div
               className="absolute inset-0 flex items-center justify-center space-x-2 opacity-0"
@@ -235,7 +272,9 @@ function TeamMemberCard({ member, index, isInView }: { member: any; index: numbe
             <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
               {member.name}
             </h3>
-            <p className={`text-sm font-medium bg-gradient-to-r ${member.color} bg-clip-text text-transparent mb-3`}>
+            <p
+              className={`text-sm font-medium bg-gradient-to-r ${member.color} bg-clip-text text-transparent mb-3`}
+            >
               {member.role}
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -251,11 +290,15 @@ function TeamMemberCard({ member, index, isInView }: { member: any; index: numbe
             transition={{ duration: 0.3 }}
           >
             <div className="text-center p-2 bg-muted/50 rounded-lg">
-              <div className="text-lg font-bold text-primary">{member.experience}</div>
+              <div className="text-lg font-bold text-primary">
+                {member.experience}
+              </div>
               <div className="text-xs text-muted-foreground">Experience</div>
             </div>
             <div className="text-center p-2 bg-muted/50 rounded-lg">
-              <div className="text-lg font-bold text-primary">{member.projects}</div>
+              <div className="text-lg font-bold text-primary">
+                {member.projects}
+              </div>
               <div className="text-xs text-muted-foreground">Completed</div>
             </div>
           </motion.div>
@@ -266,33 +309,44 @@ function TeamMemberCard({ member, index, isInView }: { member: any; index: numbe
             initial={{ opacity: 0.7 }}
             animate={isHovered ? { opacity: 1 } : { opacity: 0.7 }}
           >
-            {member.specialties.slice(0, 2).map((specialty: string, idx: number) => (
-              <span
-                key={idx}
-                className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full"
-              >
-                {specialty}
-              </span>
-            ))}
+            {member.specialties
+              .slice(0, 2)
+              .map((specialty: string, idx: number) => (
+                <span
+                  key={idx}
+                  className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full"
+                >
+                  {specialty}
+                </span>
+              ))}
           </motion.div>
 
           {/* Achievements */}
           <motion.div
             className="space-y-1"
             initial={{ opacity: 0, height: 0 }}
-            animate={isHovered ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+            animate={
+              isHovered
+                ? { opacity: 1, height: "auto" }
+                : { opacity: 0, height: 0 }
+            }
             transition={{ duration: 0.3 }}
           >
             <div className="flex items-center text-xs text-muted-foreground mb-2">
               <Award className="h-3 w-3 mr-1" />
               Key Achievements:
             </div>
-            {member.achievements.slice(0, 2).map((achievement: string, idx: number) => (
-              <div key={idx} className="flex items-center text-xs text-muted-foreground">
-                <Star className="h-2 w-2 mr-2 text-yellow-500" />
-                {achievement}
-              </div>
-            ))}
+            {member.achievements
+              .slice(0, 2)
+              .map((achievement: string, idx: number) => (
+                <div
+                  key={idx}
+                  className="flex items-center text-xs text-muted-foreground"
+                >
+                  <Star className="h-2 w-2 mr-2 text-yellow-500" />
+                  {achievement}
+                </div>
+              ))}
           </motion.div>
         </div>
 
@@ -312,18 +366,22 @@ export default function TeamSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-24 bg-background relative overflow-hidden" ref={ref}>
+    <section
+      id="team"
+      className="py-24 bg-background relative overflow-hidden"
+      ref={ref}
+    >
       {/* Background Elements */}
       <motion.div
         className="absolute top-20 right-10 w-64 h-64 rounded-full blur-3xl"
-        animate={{ 
+        animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.3, 0.6, 0.3]
+          opacity: [0.3, 0.6, 0.3],
         }}
-        transition={{ 
-          duration: 10, 
+        transition={{
+          duration: 10,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
       />
 
@@ -344,17 +402,18 @@ export default function TeamSection() {
             <Award className="w-4 h-4 mr-2" />
             Our Team Experts
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Smart
             <span className="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
               Exceptional results for your business
             </span>
           </h2>
-          
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Meet the professionals who will make your company's digital transformation a reality
-            </p>
+
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Meet the professionals who will make your company's digital
+            transformation a reality
+          </p>
         </motion.div>
 
         {/* Team Grid */}
@@ -377,9 +436,7 @@ export default function TeamSection() {
           className="text-center"
         >
           <div className=" rounded-3xl p-8 border border-primary/10">
-            <h3 className="text-3xl font-bold mb-4">
-              Want to join the team?
-            </h3>
+            <h3 className="text-3xl font-bold mb-4">Want to join the team?</h3>
             <p className="text-muted-foreground mb-6 text-lg max-w-2xl mx-auto">
               We are always looking for exceptional talent to join our mission
             </p>
@@ -388,12 +445,10 @@ export default function TeamSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-2xl font-medium hover:shadow-lg transition-all duration-300"
-                onClick={() => window.location.href = "./contact"}
-              
+                onClick={() => (window.location.href = "./contact")}
               >
                 Contact us
               </motion.button>
-            
             </div>
           </div>
         </motion.div>

@@ -1,39 +1,45 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 const testimonials = [
   {
     name: "Sarah Chen",
     role: "Head of Operations",
     company: "TechCorp",
-    content: "n8n has revolutionized how we handle data between our tools. What used to take hours now happens automatically in seconds.",
+    content:
+      "n8n has revolutionized how we handle data between our tools. What used to take hours now happens automatically in seconds.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+    avatar:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     name: "Marcus Rodriguez",
     role: "DevOps Engineer",
     company: "StartupXYZ",
-    content: "The visual workflow editor is incredibly intuitive. Our team was able to build complex automations without writing a single line of code.",
+    content:
+      "The visual workflow editor is incredibly intuitive. Our team was able to build complex automations without writing a single line of code.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
   },
   {
     name: "Emily Johnson",
     role: "Product Manager",
     company: "Growth Inc",
-    content: "We've saved countless hours on manual tasks. The integration capabilities are exactly what we needed for our workflow automation.",
+    content:
+      "We've saved countless hours on manual tasks. The integration capabilities are exactly what we needed for our workflow automation.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
-  }
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+  },
 ];
 
 const stats = [
   { number: "50K+", label: "Active workflows" },
   { number: "1M+", label: "Tasks automated daily" },
   { number: "400+", label: "Integrations" },
-  { number: "99.9%", label: "Uptime" }
+  { number: "99.9%", label: "Uptime" },
 ];
 
 export default function Testimonials() {
@@ -51,7 +57,7 @@ export default function Testimonials() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-8">
             Trusted by teams worldwide
           </h2>
-          
+
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {stats.map((stat, index) => (
               <motion.div
@@ -65,9 +71,7 @@ export default function Testimonials() {
                 <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground">
-                  {stat.label}
-                </div>
+                <div className="text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -86,14 +90,17 @@ export default function Testimonials() {
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                  <Star
+                    key={i}
+                    className="h-4 w-4 text-yellow-400 fill-current"
+                  />
                 ))}
               </div>
-              
+
               <p className="text-muted-foreground mb-6 italic">
                 "{testimonial.content}"
               </p>
-              
+
               <div className="flex items-center space-x-3">
                 <ImageWithFallback
                   src={testimonial.avatar}

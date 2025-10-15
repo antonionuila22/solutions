@@ -60,16 +60,17 @@ export default function TabComponent({ tabs }: Props) {
             {current?.description}
           </p>
           <div className="mt-6">
-            <button onClick={() => window.location.href = './products'} className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold
+            <button
+              onClick={() => (window.location.href = "./products")}
+              className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold
    py-[15px] px-[30px] rounded-full shadow-lg
    hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
    transition-all duration-300 ease-in-out
-   transform border-none text-sm lg:text-lg">
-            Explore Products
+   transform border-none text-sm lg:text-lg"
+            >
+              Explore Products
             </button>
-
           </div>
-
         </div>
       </div>
     </section>

@@ -1,8 +1,7 @@
 import { Button } from "./ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-
+import ImageWithFallback from "./ImageWithFallback";
 export default function Hero() {
   return (
     <section className="pt-24 pb-12 bg-gradient-to-br from-background to-muted/20">
@@ -23,7 +22,7 @@ export default function Hero() {
               >
                 ✨ New: Advanced AI integrations available
               </motion.div>
-              
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -33,14 +32,15 @@ export default function Hero() {
                 Automate your
                 <span className="text-primary"> workflows</span> without limits
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-xl text-muted-foreground max-w-lg"
               >
-                Connect your apps and services with powerful automation. Build complex workflows with our intuitive visual editor.
+                Connect your apps and services with powerful automation. Build
+                complex workflows with our intuitive visual editor.
               </motion.p>
             </div>
 
@@ -89,7 +89,7 @@ export default function Hero() {
                 alt="Workflow automation dashboard"
                 className="w-full h-auto rounded-lg shadow-2xl"
               />
-              
+
               {/* Floating UI Elements */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ export default function Hero() {
                   <span className="text-sm">Active workflows: 24</span>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
