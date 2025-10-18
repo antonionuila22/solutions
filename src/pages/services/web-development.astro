@@ -1,0 +1,1046 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CardService from "../../components/CardService.astro";
+import Whyus from "../../components/whyus.astro";
+import Faq from "../../components/Faq.astro";
+import Button from "../../components/Button.astro";
+---
+
+<Layout
+  title="Web Development Services | Professional Website Design & Development - Codebrand"
+  description="Transform your business with our professional web development services. We create fast, responsive, and SEO-optimized websites tailored to your needs. Custom web applications, e-commerce solutions, and mobile-friendly designs that drive results."
+  keywords="web development, website design, custom web applications, responsive web design, e-commerce development, mobile-friendly websites, SEO web development, progressive web apps, front-end development, back-end development"
+  image="/photos/bannercodebrand.webp"
+>
+  <!-- Hero Section - Web Development -->
+  <section class="relative min-h-[85vh] overflow-hidden bg-white">
+    <!-- Background Geometric Shapes -->
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-orange-400 rounded-full opacity-5 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-900 rounded-full opacity-5 blur-3xl"
+    >
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="space-y-8 animate-slide-up">
+          <!-- Badge -->
+          <div class="flex items-center gap-3">
+            <span
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-900 text-white rounded-full font-bold text-sm shadow-lg"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M13 7H7v6h6V7z M13 2H7v3h6V2z M13 15H7v3h6v-3z M2 7v6h3V7H2z M18 7v6h-3V7h3z"
+                ></path>
+              </svg>
+              WEB DEVELOPMENT
+            </span>
+            <div
+              class="h-px flex-1 bg-gradient-to-r from-cyan-900/20 to-transparent max-w-[100px]"
+            >
+            </div>
+          </div>
+
+          <!-- Heading with SEO-optimized content -->
+          <div>
+            <h1
+              class="text-5xl md:text-7xl font-black text-cyan-900 leading-tight mb-6"
+            >
+              Professional
+              <br />
+              <span class="relative inline-block">
+                <span class="text-orange-400">Web Development</span>
+                <svg
+                  class="absolute -bottom-2 left-0 w-full"
+                  height="12"
+                  viewBox="0 0 200 12"
+                  fill="none"
+                >
+                  <path
+                    d="M2 10C50 2 150 2 198 10"
+                    stroke="#fb923c"
+                    stroke-width="4"
+                    stroke-linecap="round"></path>
+                </svg>
+              </span>
+              <br />
+              Solutions
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+              Transform your ideas into powerful digital experiences. We build
+              fast, scalable, and SEO-optimized websites that drive business
+              growth and deliver exceptional user experiences.
+            </p>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <Button text="Start Your Project" href="/contact" />
+            <a
+              href="#our-services"
+              class="px-8 py-3 border-2 border-cyan-900 text-cyan-900 rounded-full font-bold hover:bg-cyan-900 hover:text-white transition-all duration-300"
+            >
+              View Services
+            </a>
+          </div>
+
+          <!-- Inline Stats -->
+          <div class="flex flex-wrap gap-6 pt-4">
+            <div class="flex items-center gap-3 group">
+              <div
+                class="w-14 h-14 rounded-2xl bg-orange-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <span class="text-2xl font-black text-white">100+</span>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-cyan-900">
+                  Projects Delivered
+                </div>
+                <div class="text-xs text-gray-500">Successful Launches</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 group">
+              <div
+                class="w-14 h-14 rounded-2xl bg-cyan-900 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <span class="text-2xl font-black text-white">5+</span>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-cyan-900">
+                  Years Experience
+                </div>
+                <div class="text-xs text-gray-500">In Web Development</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Image Section -->
+        <div class="relative animate-slide-up delay-100">
+          <div class="relative">
+            <!-- Decorative Orange Shape Behind -->
+            <div
+              class="absolute -right-6 -top-6 w-72 h-72 bg-orange-400 rounded-[3rem] rotate-12 opacity-20"
+            >
+            </div>
+
+            <!-- Placeholder for Hero Image -->
+            <div
+              class="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-gradient-to-br from-cyan-50 to-orange-50"
+            >
+              <div
+                class="w-full h-[500px] flex items-center justify-center text-gray-400"
+              >
+                <div class="text-center p-8">
+                  <svg
+                    class="w-24 h-24 mx-auto mb-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                    ></path>
+                  </svg>
+                  <p class="text-sm font-semibold">
+                    Image: Modern web development workspace with multiple
+                    screens showing code, design mockups, and responsive layouts
+                  </p>
+                  <p class="text-xs mt-2">
+                    Alt: Professional web development services showcasing
+                    responsive design and modern coding practices
+                  </p>
+                </div>
+              </div>
+
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cyan-900/80 to-transparent"
+              >
+              </div>
+
+              <!-- Floating Badge -->
+              <div
+                class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-10 h-10 rounded-full bg-orange-400 flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-5 h-5 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-sm font-black text-cyan-900">
+                        99% Client Satisfaction
+                      </div>
+                      <div class="text-xs text-gray-500">Proven Results</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Decorative Shape -->
+            <div
+              class="absolute -left-8 bottom-16 w-32 h-32 bg-cyan-900 rounded-[2rem] -rotate-12 opacity-10"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        class="w-8 h-12 border-2 border-cyan-900 rounded-full flex items-start justify-center p-2"
+      >
+        <div class="w-1.5 h-3 bg-orange-400 rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <section
+    id="our-services"
+    class="py-24 px-6 bg-gradient-to-b from-white to-slate-50"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="text-orange-400 font-semibold text-xl uppercase"
+          >Our Services</span
+        >
+        <h2
+          class="text-4xl md:text-5xl font-bold text-cyan-900 leading-tight mt-3 mb-6"
+        >
+          Comprehensive <span class="text-orange-400"
+            >Web Development Services</span
+          >
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          From concept to launch, we provide end-to-end web development
+          solutions that combine cutting-edge technology with exceptional design
+          to create websites that perform and convert.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <CardService
+          icon="./icons/sitio-web.png"
+          title="Custom Website Development"
+          description="Tailored web solutions built from scratch to match your unique business requirements. We use modern frameworks and technologies to create scalable, maintainable websites."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/interfaz-de-usuario.png"
+          title="Responsive Web Design"
+          description="Mobile-first designs that provide seamless experiences across all devices. Your website will look stunning on desktops, tablets, and smartphones."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/seo.png"
+          title="SEO-Optimized Development"
+          description="Built with search engines in mind. We implement technical SEO best practices, fast loading speeds, and clean code structure to improve your rankings."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/diseno-grafico.png"
+          title="E-commerce Solutions"
+          description="Complete online store development with secure payment gateways, inventory management, and user-friendly shopping experiences that increase conversions."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/modelo-3d.png"
+          title="Web Applications"
+          description="Complex web applications with advanced functionality. From customer portals to SaaS platforms, we build robust solutions that scale with your business."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/animacion.png"
+          title="Progressive Web Apps (PWA)"
+          description="App-like experiences delivered through the web. PWAs work offline, load instantly, and provide engaging user experiences without app store downloads."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/support-svgrepo-com.svg"
+          title="Website Maintenance & Support"
+          description="Ongoing maintenance, updates, and technical support to keep your website secure, fast, and up-to-date with the latest technologies."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/cpu-processor-hardware-chip-microchip-svgrepo-com.svg"
+          title="API Development & Integration"
+          description="Custom API development and third-party integrations to connect your website with other tools, services, and platforms seamlessly."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="./icons/collaboration-svgrepo-com.svg"
+          title="Website Migration & Redesign"
+          description="Modernize your existing website with a complete redesign or migrate to a new platform while preserving your SEO rankings and data."
+          learnMoreUrl="/contact"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-orange-400 font-semibold text-xl uppercase"
+          >Technology Stack</span
+        >
+        <h2
+          class="text-4xl md:text-5xl font-bold text-cyan-900 leading-tight mt-3 mb-6"
+        >
+          Built with <span class="text-orange-400">Modern Technologies</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          We leverage the latest and most reliable technologies to ensure your
+          web development project is fast, secure, and future-proof.
+        </p>
+      </div>
+
+      <!-- Technologies Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/sitio-web.png"
+              alt="React.js"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">React.js</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">
+            Front-End Framework
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/cpu-processor-hardware-chip-microchip-svgrepo-com.svg"
+              alt="Node.js"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">Node.js</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">Back-End Runtime</p>
+        </div>
+
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/sitio-web.png"
+              alt="Next.js"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">Next.js</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">React Framework</p>
+        </div>
+
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/codigo.png"
+              alt="TypeScript"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">TypeScript</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">
+            Type-Safe JavaScript
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/diseno-grafico.png"
+              alt="Tailwind CSS"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">Tailwind CSS</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">
+            Utility-First CSS
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/base-de-datos.png"
+              alt="PostgreSQL"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">PostgreSQL</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">Database</p>
+        </div>
+
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/nube.png"
+              alt="AWS / Vercel"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">AWS / Vercel</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">Cloud Hosting</p>
+        </div>
+
+        <div
+          class="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:shadow-lg transition-all group"
+        >
+          <div
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+          >
+            <img
+              loading="lazy"
+              src="../../icons/api.png"
+              alt="GraphQL"
+              class="w-12 h-12"
+            />
+          </div>
+          <h4 class="font-bold text-cyan-900">GraphQL</h4>
+          <p class="text-xs text-gray-500 text-center mt-2">
+            API Query Language
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Process Section -->
+  <section class="py-24 px-6 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-orange-400 font-semibold text-xl uppercase"
+          >Our Process</span
+        >
+        <h2
+          class="text-4xl md:text-5xl font-bold text-cyan-900 leading-tight mt-3 mb-6"
+        >
+          How We <span class="text-orange-400">Build Your Website</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          A proven development process that ensures quality, efficiency, and
+          results from initial consultation to final launch and beyond.
+        </p>
+      </div>
+
+      <!-- Process Steps -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div
+            class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-900 to-cyan-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="text-2xl font-black text-white">1</span>
+            </div>
+            <h3 class="text-xl font-bold text-cyan-900 mb-3">
+              Discovery & Planning
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              We analyze your business goals, target audience, and requirements
+              to create a comprehensive project roadmap and technical
+              specifications.
+            </p>
+          </div>
+          <!-- Connecting Line (hidden on mobile) -->
+          <div
+            class="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-cyan-900 to-orange-400"
+          >
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative">
+          <div
+            class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="text-2xl font-black text-white">2</span>
+            </div>
+            <h3 class="text-xl font-bold text-cyan-900 mb-3">
+              Design & Prototyping
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Our designers create stunning mockups and interactive prototypes
+              that visualize your website before development begins.
+            </p>
+          </div>
+          <div
+            class="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-orange-400 to-cyan-900"
+          >
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative">
+          <div
+            class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-900 to-cyan-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="text-2xl font-black text-white">3</span>
+            </div>
+            <h3 class="text-xl font-bold text-cyan-900 mb-3">
+              Development & Testing
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Clean, efficient code development with continuous testing across
+              devices and browsers to ensure flawless functionality.
+            </p>
+          </div>
+          <div
+            class="hidden lg:block absolute top-8 -right-4 w-8 h-0.5 bg-gradient-to-r from-cyan-900 to-orange-400"
+          >
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative">
+          <div
+            class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="text-2xl font-black text-white">4</span>
+            </div>
+            <h3 class="text-xl font-bold text-cyan-900 mb-3">
+              Launch & Support
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Smooth deployment to production with training, documentation, and
+              ongoing support to ensure long-term success.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features/Benefits Section -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <!-- Left: Image Placeholder -->
+        <div class="order-2 md:order-1">
+          <div
+            class="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-cyan-50 to-orange-50"
+          >
+            <div
+              class="w-full h-[600px] flex items-center justify-center text-gray-400"
+            >
+              <div class="text-center p-8">
+                <svg
+                  class="w-24 h-24 mx-auto mb-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"
+                  ></path>
+                </svg>
+                <p class="text-sm font-semibold">
+                  Image: Dashboard interface showing website analytics,
+                  performance metrics, user engagement data, and mobile
+                  responsiveness visualization
+                </p>
+                <p class="text-xs mt-2">
+                  Alt: Web development analytics dashboard showing performance
+                  metrics and user engagement statistics
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Benefits -->
+        <div class="order-1 md:order-2 space-y-8">
+          <div>
+            <span class="text-orange-400 font-semibold text-xl uppercase"
+              >Why Choose Us</span
+            >
+            <h2
+              class="text-4xl md:text-5xl font-bold text-cyan-900 leading-tight mt-3 mb-6"
+            >
+              Web Development That <span class="text-orange-400"
+                >Delivers Results</span
+              >
+            </h2>
+          </div>
+
+          <!-- Benefit 1 -->
+          <div class="flex gap-4 group">
+            <div
+              class="flex-shrink-0 w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center group-hover:bg-cyan-900 transition-colors p-3"
+            >
+              <img
+                loading="lazy"
+                src="../../icons/cohete.png"
+                alt="Fast Performance"
+                class="w-full h-full object-contain group-hover:brightness-0 group-hover:invert transition-all"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">
+                Lightning-Fast Performance
+              </h3>
+              <p class="text-gray-600">
+                Optimized code and modern technologies ensure your website loads
+                in under 3 seconds, improving user experience and SEO rankings.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="flex gap-4 group">
+            <div
+              class="flex-shrink-0 w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center group-hover:bg-orange-400 transition-colors p-3"
+            >
+              <img
+                loading="lazy"
+                src="../../icons/interfaz-de-usuario.png"
+                alt="Responsive Design"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">
+                100% Responsive Design
+              </h3>
+              <p class="text-gray-600">
+                Perfect display on all devices. Mobile-first approach ensures
+                your website looks amazing on phones, tablets, and desktops.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="flex gap-4 group">
+            <div
+              class="flex-shrink-0 w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center group-hover:bg-cyan-900 transition-colors p-3"
+            >
+              <img
+                loading="lazy"
+                src="../../icons/escudo.png"
+                alt="Security"
+                class="w-full h-full object-contain group-hover:brightness-0 group-hover:invert transition-all"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">
+                Security & Reliability
+              </h3>
+              <p class="text-gray-600">
+                Enterprise-level security measures, SSL encryption, regular
+                backups, and 99.9% uptime guarantee for peace of mind.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="flex gap-4 group">
+            <div
+              class="flex-shrink-0 w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center group-hover:bg-orange-400 transition-colors p-3"
+            >
+              <img
+                loading="lazy"
+                src="../../icons/seo.png"
+                alt="SEO Optimized"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">
+                SEO-Ready from Day One
+              </h3>
+              <p class="text-gray-600">
+                Built-in SEO best practices, clean code structure, optimized
+                meta tags, and schema markup for better search engine
+                visibility.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <Button text="Get Started Today" href="/contact" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Component -->
+  <Whyus />
+
+  <!-- Case Study / Portfolio Teaser Section -->
+  <section class="py-24 px-6 bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-orange-400 font-semibold text-xl uppercase"
+          >Our Work</span
+        >
+        <h2
+          class="text-4xl md:text-5xl font-bold text-cyan-900 leading-tight mt-3 mb-6"
+        >
+          Recent <span class="text-orange-400">Web Development Projects</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Explore some of our recent web development success stories and see how
+          we've helped businesses transform their digital presence.
+        </p>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div
+          class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="relative h-80 bg-gradient-to-br from-cyan-50 to-orange-50"
+          >
+            <div
+              class="w-full h-full flex items-center justify-center text-gray-400"
+            >
+              <div class="text-center p-6">
+                <svg
+                  class="w-16 h-16 mx-auto mb-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-xs font-semibold">
+                  E-commerce website screenshot showing product catalog and
+                  checkout process
+                </p>
+                <p class="text-xs mt-1">
+                  Alt: Modern e-commerce website with clean design and intuitive
+                  navigation
+                </p>
+              </div>
+            </div>
+            <!-- Overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="p-6 bg-white">
+            <span
+              class="text-xs font-bold text-orange-400 uppercase tracking-wider"
+              >E-Commerce</span
+            >
+            <h3
+              class="text-xl font-bold text-cyan-900 mt-2 mb-2 group-hover:text-orange-400 transition-colors"
+            >
+              Fashion Store Platform
+            </h3>
+            <p class="text-sm text-gray-600 mb-4">
+              Complete e-commerce solution with 300+ products, payment
+              integration, and inventory management.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold"
+                >React</span
+              >
+              <span
+                class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold"
+                >Node.js</span
+              >
+              <span
+                class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold"
+                >Stripe</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="relative h-80 bg-gradient-to-br from-orange-50 to-cyan-50"
+          >
+            <div
+              class="w-full h-full flex items-center justify-center text-gray-400"
+            >
+              <div class="text-center p-6">
+                <svg
+                  class="w-16 h-16 mx-auto mb-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-xs font-semibold">
+                  Corporate website homepage with hero section and services
+                  overview
+                </p>
+                <p class="text-xs mt-1">
+                  Alt: Professional corporate website with modern design and
+                  clear call-to-actions
+                </p>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <span
+              class="text-xs font-bold text-orange-400 uppercase tracking-wider"
+              >Corporate</span
+            >
+            <h3
+              class="text-xl font-bold text-cyan-900 mt-2 mb-2 group-hover:text-orange-400 transition-colors"
+            >
+              Tech Consulting Firm
+            </h3>
+            <p class="text-sm text-gray-600 mb-4">
+              Professional corporate website with service portfolio, team
+              profiles, and client testimonials.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold"
+                >Next.js</span
+              >
+              <span
+                class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold"
+                >TypeScript</span
+              >
+              <span
+                class="px-3 py-1 bg-orange-100 text-orange-900 rounded-full text-xs font-semibold"
+                >CMS</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="relative h-80 bg-gradient-to-br from-cyan-50 to-orange-50"
+          >
+            <div
+              class="w-full h-full flex items-center justify-center text-gray-400"
+            >
+              <div class="text-center p-6">
+                <svg
+                  class="w-16 h-16 mx-auto mb-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-xs font-semibold">
+                  SaaS dashboard interface showing analytics and user management
+                  features
+                </p>
+                <p class="text-xs mt-1">
+                  Alt: Modern SaaS application dashboard with data visualization
+                  and intuitive controls
+                </p>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-cyan-900 via-cyan-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <span
+              class="text-xs font-bold text-orange-400 uppercase tracking-wider"
+              >SaaS Platform</span
+            >
+            <h3
+              class="text-xl font-bold text-cyan-900 mt-2 mb-2 group-hover:text-orange-400 transition-colors"
+            >
+              Project Management Tool
+            </h3>
+            <p class="text-sm text-gray-600 mb-4">
+              Feature-rich web application for team collaboration with real-time
+              updates and analytics.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold"
+                >React</span
+              >
+              <span
+                class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold"
+                >GraphQL</span
+              >
+              <span
+                class="px-3 py-1 bg-cyan-100 text-cyan-900 rounded-full text-xs font-semibold"
+                >AWS</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-sm text-gray-500 mb-6">
+          View more projects and success stories
+        </p>
+        <Button text="View Portfolio" href="/contact" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6 bg-gradient-to-br from-cyan-900 to-cyan-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6">
+        Ready to Build Your <span class="text-orange-400">Dream Website?</span>
+      </h2>
+      <p class="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+        Let's transform your vision into a powerful web presence. Our expert
+        team is ready to bring your ideas to life with cutting-edge web
+        development solutions.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button text="Get Free Consultation" href="/contact" />
+        <a
+          href="mailto:info@codebrand.es"
+          class="px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-cyan-900 transition-all duration-300"
+        >
+          Email Us
+        </a>
+      </div>
+      <p class="text-cyan-200 text-sm mt-8">
+        🚀 Fast turnaround times · 💯 Quality guaranteed · 🤝 Dedicated support
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <Faq />
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+</style>
