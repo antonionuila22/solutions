@@ -1,13 +1,313 @@
 ---
-import LayoutServices from "../../layouts/LayoutServices.astro";
-import Bannersecond from "../../components/BannerSecond.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardService from "@/components/CardService.astro";
+import Whyus from "@/components/whyus.astro";
+import Faq from "@/components/Faq.astro";
+import Button from "@/components/Button.astro";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Promotional Products and Custom Printing Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.com",
+    "logo": "https://codebrand.com/photos/bannercodebrand.webp"
+  },
+  "areaServed": "Worldwide",
+  "description": "Professional custom promotional products including sublimation, digital printing, laser engraving, branded merchandise, and corporate gifts.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
+const promotionalServices = [
+  {
+    icon: "/icons/camiseta.png",
+    title: "Custom Apparel",
+    description: "T-shirts, hoodies, polo shirts, and uniforms with custom printing and embroidery for your brand.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Sublimation Printing",
+    description: "Full-color sublimation on textiles, mugs, and other items for vibrant, long-lasting designs.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Digital Printing",
+    description: "High-quality digital printing on various materials including vinyl, canvas, and promotional items.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Laser Engraving",
+    description: "Precision laser engraving on wood, metal, glass, and acrylic for professional branded products.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Branded Merchandise",
+    description: "Pens, notebooks, bags, tech accessories, and other promotional items customized with your logo.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Corporate Gifts",
+    description: "Premium gift sets and custom corporate presents for clients, employees, and special events.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Event Merchandise",
+    description: "Custom products for events, trade shows, conferences, and promotional campaigns.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Vinyl Cutting & Decals",
+    description: "Custom vinyl stickers, decals, and vehicle wraps for branding and promotional purposes.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/camiseta.png",
+    title: "Packaging & Labels",
+    description: "Custom product packaging, labels, and boxes to enhance your brand presentation.",
+    learnMoreUrl: "#"
+  }
+];
+
+const techniques = [
+  { name: "Sublimation", icon: "🎨" },
+  { name: "Digital Printing", icon: "🖨️" },
+  { name: "Laser Engraving", icon: "⚡" },
+  { name: "Screen Printing", icon: "🖼️" },
+  { name: "Embroidery", icon: "🧵" },
+  { name: "Vinyl Cutting", icon: "✂️" },
+  { name: "Heat Transfer", icon: "🔥" },
+  { name: "UV Printing", icon: "☀️" }
+];
+
+const benefits = [
+  {
+    title: "Premium Quality",
+    description: "We use professional-grade materials and equipment to ensure your branded products look exceptional and last long.",
+    icon: "⭐"
+  },
+  {
+    title: "Fast Production",
+    description: "Efficient production processes and in-house manufacturing for quick turnaround times without compromising quality.",
+    icon: "⚡"
+  },
+  {
+    title: "No Minimum Orders",
+    description: "From single items to bulk orders, we accommodate projects of any size to meet your specific needs.",
+    icon: "📦"
+  }
+];
 ---
 
-<LayoutServices>
-    <Bannersecond
-        title="Servicios de Desarrollo Web y Marketing Digital a Medida"
-        subtitle="Impulsamos tu marca con tecnología de alto nivel"
-        description="En Codebrand, creamos experiencias digitales únicas que combinan diseño, estrategia y tecnología. Desde sitios web modernos hasta soluciones SEO y branding, ayudamos a tu empresa a destacar en línea, atraer más clientes y convertir visitas en resultados."
-        imgUrl="/photos/bannercodebrand.webp"
-    />
-</LayoutServices>
+<Layout
+  title="Promotional Products & Custom Printing Services - Codebrand"
+  description="Professional custom promotional products including sublimation, digital printing, laser engraving, branded merchandise, and corporate gifts. Create unique branded items that leave a lasting impression."
+  keywords="promotional products, custom printing, sublimation, laser engraving, branded merchandise, corporate gifts, custom apparel, promotional items, vinyl printing, custom gifts, branded products, custom promotional products, promotional printing, custom t-shirts, corporate branding, promotional giveaways, custom merchandise, screen printing, embroidery, promotional marketing, branded swag, event merchandise, custom packaging"
+  image="/photos/bannercodebrand.webp"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center justify-center px-4 md:px-6 py-16 md:py-20 bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900 overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-orange-400 rounded-full opacity-10 blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl animate-pulse delay-1000"></div>
+
+    <!-- Grid Pattern Overlay -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(251, 146, 60, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto text-center z-10">
+      <!-- Animated Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20 animate-fade-in">
+        <span class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></span>
+        <span class="text-white text-xs md:text-sm font-semibold uppercase tracking-wider">Custom Printing Excellence</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight mb-6 px-4">
+        Turn Products Into
+        <span class="block mt-2 text-orange-400">Brand Ambassadors</span>
+      </h1>
+
+      <p class="text-base md:text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed mb-10 px-4">
+        Custom promotional products and branded merchandise that extend your brand reach.
+        From apparel to tech accessories, we print and engrave your vision on anything.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+        <Button text="Request a Quote" href="/contact" />
+        <a href="#services" class="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 text-sm md:text-base">
+          <span>Explore Products</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+          <div class="text-3xl md:text-4xl font-black text-orange-400 mb-2">1000+</div>
+          <div class="text-xs md:text-sm text-cyan-100 font-semibold">Products Customized</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+          <div class="text-3xl md:text-4xl font-black text-orange-400 mb-2">100+</div>
+          <div class="text-xs md:text-sm text-cyan-100 font-semibold">Product Types</div>
+        </div>
+        <div class="col-span-2 md:col-span-1 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+          <div class="text-3xl md:text-4xl font-black text-orange-400 mb-2">24h</div>
+          <div class="text-xs md:text-sm text-cyan-100 font-semibold">Express Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16">
+        <div class="inline-flex items-center gap-3 mb-6">
+          <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
+          <span class="text-orange-400 font-bold text-xs md:text-sm uppercase tracking-widest">
+            Promotional Services
+          </span>
+          <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-900 leading-tight mb-4 md:mb-6 px-4">
+          Complete <span class="text-orange-400">Product Solutions</span>
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+          From custom apparel to corporate gifts, we offer a wide range of promotional products
+          customized with your brand to leave a lasting impression on your audience.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {promotionalServices.map((service) => (
+          <CardService
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            learnMoreUrl={service.learnMoreUrl}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Techniques Section -->
+  <section class="py-16 md:py-20 px-4 md:px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4">
+          Professional <span class="text-orange-400">Printing Techniques</span>
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          We use multiple customization methods to achieve the best results for each product type.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {techniques.map((technique) => (
+          <div class="bg-gradient-to-br from-slate-50 to-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 text-center group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+              {technique.icon}
+            </div>
+            <h3 class="text-sm md:text-base font-bold text-cyan-900">{technique.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <Whyus />
+
+  <!-- Benefits Section -->
+  <section class="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4">
+          Why Choose <span class="text-orange-400">Codebrand</span>
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          Our promotional products combine quality materials with expert customization for exceptional results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {benefits.map((benefit) => (
+          <div class="bg-white rounded-2xl md:rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            <div class="text-5xl mb-4">{benefit.icon}</div>
+            <h3 class="text-xl md:text-2xl font-bold text-cyan-900 mb-3">{benefit.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+        Ready to Create <span class="text-orange-400">Your Branded Products?</span>
+      </h2>
+      <p class="text-base md:text-xl text-cyan-100 mb-10 leading-relaxed px-4">
+        Let's customize high-quality promotional products that showcase your brand and create
+        memorable experiences for your customers, employees, and partners.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button text="Get a Quote" href="/contact" />
+        <a href="/services" class="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 text-sm md:text-base">
+          <span>View All Services</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <Faq />
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+</style>

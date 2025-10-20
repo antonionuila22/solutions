@@ -1,13 +1,313 @@
 ---
-import LayoutServices from "../../layouts/LayoutServices.astro";
-import Bannersecond from "../../components/BannerSecond.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardService from "@/components/CardService.astro";
+import Whyus from "@/components/whyus.astro";
+import Faq from "@/components/Faq.astro";
+import Button from "@/components/Button.astro";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "3D Rendering Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.com",
+    "logo": "https://codebrand.com/photos/bannercodebrand.webp"
+  },
+  "areaServed": "Worldwide",
+  "description": "Professional 3D rendering services including architectural visualization, product rendering, interior design, 360° virtual tours, and photorealistic 3D models.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
+const renderingServices = [
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "Architectural Visualization",
+    description: "Photorealistic 3D renders of buildings, interiors, and exteriors for architects and real estate developers.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "Product Rendering",
+    description: "High-quality 3D product visualizations for marketing, e-commerce, and advertising campaigns.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "Interior Design Renders",
+    description: "Stunning interior visualizations that bring design concepts to life with realistic lighting and materials.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "360° Virtual Tours",
+    description: "Interactive 360-degree renders for immersive virtual property tours and product showcases.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "3D Modeling",
+    description: "Precise 3D modeling services for architecture, products, characters, and environments.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "Lighting & Texturing",
+    description: "Professional lighting setups and material texturing for photorealistic results.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "CAD to 3D Conversion",
+    description: "Transform CAD drawings and blueprints into detailed 3D visualizations.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "Exterior Visualization",
+    description: "Realistic exterior renders with environmental elements, landscaping, and natural lighting.",
+    learnMoreUrl: "#"
+  },
+  {
+    icon: "/icons/modelo-3d.png",
+    title: "Animation Renders",
+    description: "High-quality frame-by-frame rendering for architectural walkthroughs and product animations.",
+    learnMoreUrl: "#"
+  }
+];
+
+const tools = [
+  { name: "3ds Max", icon: "📐" },
+  { name: "V-Ray", icon: "💡" },
+  { name: "Blender", icon: "🎨" },
+  { name: "Corona Renderer", icon: "☀️" },
+  { name: "SketchUp", icon: "🏗️" },
+  { name: "AutoCAD", icon: "📏" },
+  { name: "Lumion", icon: "🌄" },
+  { name: "Substance Painter", icon: "🎯" }
+];
+
+const benefits = [
+  {
+    title: "Photorealistic Quality",
+    description: "Industry-leading rendering techniques that create images indistinguishable from professional photography.",
+    icon: "📸"
+  },
+  {
+    title: "Fast Turnaround",
+    description: "Efficient rendering workflows and render farm technology for quick delivery without compromising quality.",
+    icon: "⚡"
+  },
+  {
+    title: "Flexible Revisions",
+    description: "Easy to make changes and iterations to lighting, materials, and camera angles without reshooting.",
+    icon: "🔄"
+  }
+];
 ---
 
-<LayoutServices>
-    <Bannersecond
-        title="Servicios de Desarrollo Web y Marketing Digital a Medida"
-        subtitle="Impulsamos tu marca con tecnología de alto nivel"
-        description="En Codebrand, creamos experiencias digitales únicas que combinan diseño, estrategia y tecnología. Desde sitios web modernos hasta soluciones SEO y branding, ayudamos a tu empresa a destacar en línea, atraer más clientes y convertir visitas en resultados."
-        imgUrl="/photos/bannercodebrand.webp"
-    />
-</LayoutServices>
+<Layout
+  title="3D Rendering Services | Architectural & Product Visualization - Codebrand"
+  description="Professional 3D rendering services including architectural visualization, product rendering, interior design, and photorealistic 3D models. Transform your designs into stunning visual presentations."
+  keywords="3D rendering, architectural visualization, product rendering, 3D modeling, interior design rendering, exterior visualization, photorealistic rendering, CAD to 3D, virtual tours, 3D rendering services, architectural rendering, real estate rendering, product visualization, 3D product rendering, interior rendering, exterior rendering, 3D architectural visualization, photorealistic 3D, 360 virtual tour, 3D walkthrough, 3D visualization services, commercial rendering, residential rendering"
+  image="/photos/bannercodebrand.webp"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center justify-center px-4 md:px-6 py-16 md:py-20 bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900 overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-orange-400 rounded-full opacity-10 blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl animate-pulse delay-1000"></div>
+
+    <!-- Grid Pattern Overlay -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(251, 146, 60, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto text-center z-10">
+      <!-- Animated Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20 animate-fade-in">
+        <span class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></span>
+        <span class="text-white text-xs md:text-sm font-semibold uppercase tracking-wider">3D Rendering Excellence</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight mb-6 px-4">
+        Photorealistic 3D
+        <span class="block mt-2 text-orange-400">That Sells Your Vision</span>
+      </h1>
+
+      <p class="text-base md:text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed mb-10 px-4">
+        Transform blueprints and concepts into stunning photorealistic 3D visualizations.
+        Perfect for architecture, real estate, product design, and marketing.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+        <Button text="Request a Quote" href="/contact" />
+        <a href="#services" class="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 text-sm md:text-base">
+          <span>Explore 3D Services</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+          <div class="text-3xl md:text-4xl font-black text-orange-400 mb-2">400+</div>
+          <div class="text-xs md:text-sm text-cyan-100 font-semibold">Projects Rendered</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+          <div class="text-3xl md:text-4xl font-black text-orange-400 mb-2">8K</div>
+          <div class="text-xs md:text-sm text-cyan-100 font-semibold">Resolution Quality</div>
+        </div>
+        <div class="col-span-2 md:col-span-1 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+          <div class="text-3xl md:text-4xl font-black text-orange-400 mb-2">99%</div>
+          <div class="text-xs md:text-sm text-cyan-100 font-semibold">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16">
+        <div class="inline-flex items-center gap-3 mb-6">
+          <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
+          <span class="text-orange-400 font-bold text-xs md:text-sm uppercase tracking-widest">
+            3D Rendering Services
+          </span>
+          <div class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-orange-400 to-transparent"></div>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-900 leading-tight mb-4 md:mb-6 px-4">
+          Complete <span class="text-orange-400">3D Solutions</span>
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+          From architectural visualizations to product renders, we create photorealistic 3D imagery
+          that helps you sell properties, showcase products, and bring designs to life.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {renderingServices.map((service) => (
+          <CardService
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            learnMoreUrl={service.learnMoreUrl}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Technologies Section -->
+  <section class="py-16 md:py-20 px-4 md:px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4">
+          Professional <span class="text-orange-400">3D Software</span>
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          We use industry-standard 3D rendering engines and modeling software for exceptional results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {tools.map((tool) => (
+          <div class="bg-gradient-to-br from-slate-50 to-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 text-center group">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+              {tool.icon}
+            </div>
+            <h3 class="text-sm md:text-base font-bold text-cyan-900">{tool.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <Whyus />
+
+  <!-- Benefits Section -->
+  <section class="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4">
+          Why Choose <span class="text-orange-400">Codebrand</span>
+        </h2>
+        <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          Our 3D rendering combines technical precision with artistic vision for stunning results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {benefits.map((benefit) => (
+          <div class="bg-white rounded-2xl md:rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            <div class="text-5xl mb-4">{benefit.icon}</div>
+            <h3 class="text-xl md:text-2xl font-bold text-cyan-900 mb-3">{benefit.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+        Ready to See Your <span class="text-orange-400">Vision in 3D?</span>
+      </h2>
+      <p class="text-base md:text-xl text-cyan-100 mb-10 leading-relaxed px-4">
+        Let's transform your blueprints, sketches, or concepts into photorealistic 3D visualizations
+        that impress clients and accelerate sales. Get your custom quote today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button text="Request a Quote" href="/contact" />
+        <a href="/services" class="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 text-sm md:text-base">
+          <span>View All Services</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <Faq />
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+</style>
