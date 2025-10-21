@@ -73,63 +73,63 @@ export const videoProductionConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Corporate Videos",
         description:
           "Professional company presentations, testimonials, and corporate communications that elevate your brand image.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Social Media Content",
         description:
           "Eye-catching short-form videos optimized for Instagram Reels, TikTok, YouTube Shorts, and Facebook.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Commercial Advertising",
         description:
           "Compelling video ads that capture attention, tell your story, and drive conversions across all platforms.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Product Demos",
         description:
           "Showcase your products with high-quality demos that highlight features and benefits effectively.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Event Coverage",
         description:
           "Capture and edit event footage into engaging highlight reels and full-length productions.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Explainer Videos",
         description:
           "Simplify complex concepts with clear, engaging explainer videos that educate and convert viewers.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "YouTube Content",
         description:
           "Full-service YouTube video production including editing, thumbnails, and channel optimization.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Motion Graphics",
         description:
           "Dynamic animated graphics, lower thirds, titles, and transitions that enhance your video content.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.png",
+        icon: "/icons/edicion-de-video.webp",
         title: "Color Grading",
         description:
           "Professional color correction and grading to achieve cinematic looks and consistent branding.",

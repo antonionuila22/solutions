@@ -50,63 +50,63 @@ export const promotionalProductsConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Custom Apparel",
         description:
           "T-shirts, hoodies, polo shirts, and uniforms with custom printing and embroidery for your brand.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Sublimation Printing",
         description:
           "Full-color sublimation on textiles, mugs, and other items for vibrant, long-lasting designs.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Digital Printing",
         description:
           "High-quality digital printing on various materials including vinyl, canvas, and promotional items.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Laser Engraving",
         description:
           "Precision laser engraving on wood, metal, glass, and acrylic for professional branded products.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Branded Merchandise",
         description:
           "Pens, notebooks, bags, tech accessories, and other promotional items customized with your logo.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Corporate Gifts",
         description:
           "Premium gift sets and custom corporate presents for clients, employees, and special events.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Event Merchandise",
         description:
           "Custom products for events, trade shows, conferences, and promotional campaigns.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Vinyl Cutting & Decals",
         description:
           "Custom vinyl stickers, decals, and vehicle wraps for branding and promotional purposes.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.png",
+        icon: "/icons/camiseta.webp",
         title: "Packaging & Labels",
         description:
           "Custom product packaging, labels, and boxes to enhance your brand presentation.",

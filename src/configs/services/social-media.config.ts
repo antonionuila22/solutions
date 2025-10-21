@@ -77,63 +77,63 @@ export const socialMediaConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Social Media Strategy",
         description:
           "Develop comprehensive strategies aligned with your business goals and target audience across all platforms.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Content Creation",
         description:
           "Craft engaging posts, graphics, videos, and stories that capture attention and drive engagement.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Community Management",
         description:
           "Build and nurture your online community with timely responses and authentic engagement.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Paid Social Advertising",
         description:
           "Create and optimize paid campaigns on Facebook, Instagram, LinkedIn, and TikTok for maximum ROI.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Influencer Marketing",
         description:
           "Partner with influencers to amplify your brand message and reach new audiences authentically.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Social Media Analytics",
         description:
           "Track performance metrics, audience insights, and campaign ROI with detailed reporting.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Platform Management",
         description:
           "Full-service management of your social media accounts across Facebook, Instagram, LinkedIn, and more.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Social Listening",
         description:
           "Monitor brand mentions, competitor activity, and industry trends to inform strategy and respond quickly.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.png",
+        icon: "/icons/redes-sociales.webp",
         title: "Viral Campaigns",
         description:
           "Create shareable content and campaigns designed to maximize reach and engagement organically.",

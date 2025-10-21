@@ -57,63 +57,63 @@ export const webDevelopmentConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "Custom Website Development",
         description:
           "Tailored web solutions built from scratch to match your unique business requirements. We use modern frameworks and technologies to create scalable, maintainable websites.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "Responsive Web Design",
         description:
           "Mobile-first designs that provide seamless experiences across all devices. Your website will look stunning on desktops, tablets, and smartphones.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "SEO-Optimized Development",
         description:
           "Built with search engines in mind. We implement technical SEO best practices, fast loading speeds, and clean code structure to improve your rankings.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "E-commerce Solutions",
         description:
           "Complete online store development with secure payment gateways, inventory management, and user-friendly shopping experiences that increase conversions.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "Web Applications",
         description:
           "Complex web applications with advanced functionality. From customer portals to SaaS platforms, we build robust solutions that scale with your business.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "Progressive Web Apps (PWA)",
         description:
           "App-like experiences delivered through the web. PWAs work offline, load instantly, and provide engaging user experiences without app store downloads.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "Website Maintenance & Support",
         description:
           "Ongoing maintenance, updates, and technical support to keep your website secure, fast, and up-to-date with the latest technologies.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "API Development & Integration",
         description:
           "Custom API development and third-party integrations to connect your website with other tools, services, and platforms seamlessly.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.png",
+        icon: "/icons/web.webp",
         title: "Website Migration & Redesign",
         description:
           "Modernize your existing website with a complete redesign or migrate to a new platform while preserving your SEO rankings and data.",

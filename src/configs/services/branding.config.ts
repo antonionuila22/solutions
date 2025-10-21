@@ -66,63 +66,63 @@ export const brandingConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Logo Design",
         description:
           "Create distinctive, memorable logos that embody your brand's personality and values with timeless appeal.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Brand Strategy",
         description:
           "Develop comprehensive brand positioning, messaging, and personality that resonates with your target audience.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Visual Identity",
         description:
           "Craft cohesive visual systems including color palettes, typography, and design elements for brand consistency.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Brand Guidelines",
         description:
           "Establish detailed brand standards and usage guidelines to maintain consistency across all touchpoints.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Business Stationery",
         description:
           "Design professional business cards, letterheads, and corporate materials that reinforce your brand identity.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Brand Collateral",
         description:
           "Create marketing materials, packaging, and promotional items that reflect your brand's visual language.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Rebranding",
         description:
           "Refresh and modernize existing brands while preserving equity and evolving with market demands.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Brand Naming",
         description:
           "Develop unique, memorable brand names and taglines that capture your brand essence and market positioning.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.png",
+        icon: "/icons/diseno-grafico.webp",
         title: "Style Guides",
         description:
           "Create comprehensive documentation covering logo usage, color codes, typography, imagery, and tone of voice.",

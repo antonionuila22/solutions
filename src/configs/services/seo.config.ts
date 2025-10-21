@@ -50,63 +50,63 @@ export const seoConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "Technical SEO Audit",
         description:
           "Comprehensive analysis of site structure, crawlability, indexing, and technical issues affecting search performance.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "Keyword Research",
         description:
           "In-depth keyword analysis to identify high-value search terms and opportunities for ranking growth.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "On-Page Optimization",
         description:
           "Optimize title tags, meta descriptions, headers, content, and internal linking for better rankings.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "Content Strategy",
         description:
           "Develop SEO-driven content plans that attract, engage, and convert your target audience.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "Link Building",
         description:
           "Strategic acquisition of high-quality backlinks to boost domain authority and search visibility.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "Local SEO",
         description:
           "Optimize for local searches with Google Business Profile, citations, and location-based strategies.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "SEO Analytics & Reporting",
         description:
           "Track rankings, traffic, conversions, and ROI with detailed monthly performance reports.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "Competitor Analysis",
         description:
           "Analyze competitor strategies to identify gaps and opportunities in your market.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.png",
+        icon: "/icons/seo.webp",
         title: "E-commerce SEO",
         description:
           "Specialized optimization for online stores, including product pages, categories, and schema markup.",

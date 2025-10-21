@@ -68,37 +68,37 @@ export const renderingConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/modelo-3d.png",
+        icon: "/icons/modelo-3d.webp",
         title: "Architectural Visualization",
         description:
           "Photorealistic renders of residential and commercial buildings for presentations, marketing, and approvals.",
       },
       {
-        icon: "/icons/modelo-3d.png",
+        icon: "/icons/modelo-3d.webp",
         title: "Interior Design Rendering",
         description:
           "Detailed 3D interior visualizations showcasing materials, lighting, and furniture arrangements.",
       },
       {
-        icon: "/icons/modelo-3d.png",
+        icon: "/icons/modelo-3d.webp",
         title: "Exterior Visualization",
         description:
           "Stunning exterior renders with realistic landscaping, lighting, and environmental context.",
       },
       {
-        icon: "/icons/modelo-3d.png",
+        icon: "/icons/modelo-3d.webp",
         title: "Product Rendering",
         description:
           "High-quality 3D product visualization for e-commerce, catalogs, and marketing materials.",
       },
       {
-        icon: "/icons/modelo-3d.png",
+        icon: "/icons/modelo-3d.webp",
         title: "360° Virtual Tours",
         description:
           "Immersive 360-degree renders and virtual tours for interactive property exploration.",
       },
       {
-        icon: "/icons/modelo-3d.png",
+        icon: "/icons/modelo-3d.webp",
         title: "Real Estate Marketing",
         description:
           "Pre-construction visualization for real estate sales and investor presentations.",

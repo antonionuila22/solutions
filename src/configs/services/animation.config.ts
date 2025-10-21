@@ -69,63 +69,63 @@ export const animationConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "2D Motion Graphics",
         description:
           "Dynamic animated graphics, kinetic typography, and visual effects for videos and presentations.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "3D Animation",
         description:
           "High-quality 3D character animation, product animations, and architectural walkthroughs.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "Explainer Animations",
         description:
           "Engaging animated explainer videos that simplify complex concepts and boost understanding.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "Logo Animation",
         description:
           "Bring your brand to life with animated logos and brand reveal sequences.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "Character Design & Rigging",
         description:
           "Create custom characters with full rigging for smooth, lifelike animation.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "Product Visualization",
         description:
           "Showcase products with stunning 3D animations that highlight features and benefits.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "Social Media Animations",
         description:
           "Eye-catching animated content optimized for Instagram, TikTok, and other social platforms.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "Whiteboard Animation",
         description:
           "Engaging whiteboard-style animations perfect for educational and corporate content.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.png",
+        icon: "/icons/animacion.webp",
         title: "VFX & Compositing",
         description:
           "Professional visual effects and compositing to enhance your video content.",
