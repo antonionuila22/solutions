@@ -86,19 +86,19 @@ export const renderingConfig: ServicePageConfig = {
           "Stunning exterior renders with realistic landscaping, lighting, and environmental context.",
       },
       {
-        icon: "/icons/modelo-3d.webp",
+        icon: "/icons/earth-planet-svgrepo-com.svg",
         title: "Product Rendering",
         description:
           "High-quality 3D product visualization for e-commerce, catalogs, and marketing materials.",
       },
       {
-        icon: "/icons/modelo-3d.webp",
+        icon: "/icons/balloon-business-svgrepo-com.svg",
         title: "360° Virtual Tours",
         description:
           "Immersive 360-degree renders and virtual tours for interactive property exploration.",
       },
       {
-        icon: "/icons/modelo-3d.webp",
+        icon: "/icons/planet-space-svgrepo-com.svg",
         title: "Real Estate Marketing",
         description:
           "Pre-construction visualization for real estate sales and investor presentations.",

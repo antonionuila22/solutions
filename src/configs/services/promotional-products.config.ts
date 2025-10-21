@@ -85,14 +85,14 @@ export const promotionalProductsConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.webp",
+        icon: "/icons/diseno-grafico.webp",
         title: "Corporate Gifts",
         description:
           "Premium gift sets and custom corporate presents for clients, employees, and special events.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.webp",
+        icon: "/icons/balloon-business-svgrepo-com.svg",
         title: "Event Merchandise",
         description:
           "Custom products for events, trade shows, conferences, and promotional campaigns.",

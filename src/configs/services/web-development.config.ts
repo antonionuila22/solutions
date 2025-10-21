@@ -64,56 +64,56 @@ export const webDevelopmentConfig: ServicePageConfig = {
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/website-program-svgrepo-com.svg",
         title: "Responsive Web Design",
         description:
           "Mobile-first designs that provide seamless experiences across all devices. Your website will look stunning on desktops, tablets, and smartphones.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/responsive-svgrepo-com.svg",
         title: "SEO-Optimized Development",
         description:
           "Built with search engines in mind. We implement technical SEO best practices, fast loading speeds, and clean code structure to improve your rankings.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/website-seo-promotion-svgrepo-com.svg",
         title: "E-commerce Solutions",
         description:
           "Complete online store development with secure payment gateways, inventory management, and user-friendly shopping experiences that increase conversions.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg",
         title: "Web Applications",
         description:
           "Complex web applications with advanced functionality. From customer portals to SaaS platforms, we build robust solutions that scale with your business.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/platform-program-svgrepo-com.svg",
         title: "Progressive Web Apps (PWA)",
         description:
           "App-like experiences delivered through the web. PWAs work offline, load instantly, and provide engaging user experiences without app store downloads.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/mobile-phone-app-svgrepo-com.svg",
         title: "Website Maintenance & Support",
         description:
           "Ongoing maintenance, updates, and technical support to keep your website secure, fast, and up-to-date with the latest technologies.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/support-svgrepo-com.svg",
         title: "API Development & Integration",
         description:
           "Custom API development and third-party integrations to connect your website with other tools, services, and platforms seamlessly.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/graphql-svgrepo-com.svg",
         title: "Website Migration & Redesign",
         description:
           "Modernize your existing website with a complete redesign or migrate to a new platform while preserving your SEO rankings and data.",
@@ -130,7 +130,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
       "We leverage the latest and most reliable technologies to ensure your web development project is fast, secure, and future-proof.",
     columns: "4",
     items: [
-      { name: "React.js", icon: "⚛️" },
+      { name: "React.js", icon: "/icons/web-browsing-svgrepo-com.svg" },
       { name: "Node.js", icon: "🟢" },
       { name: "Next.js", icon: "▲" },
       { name: "TypeScript", icon: "🔷" },

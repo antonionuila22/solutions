@@ -84,56 +84,56 @@ export const socialMediaConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/target-focus-svgrepo-com.svg",
         title: "Content Creation",
         description:
           "Craft engaging posts, graphics, videos, and stories that capture attention and drive engagement.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/creativity-svgrepo-com.svg",
         title: "Community Management",
         description:
           "Build and nurture your online community with timely responses and authentic engagement.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/talk-talk-svgrepo-com.svg",
         title: "Paid Social Advertising",
         description:
           "Create and optimize paid campaigns on Facebook, Instagram, LinkedIn, and TikTok for maximum ROI.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/horn-marketing-trumpet-svgrepo-com.svg",
         title: "Influencer Marketing",
         description:
           "Partner with influencers to amplify your brand message and reach new audiences authentically.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/balloon-business-svgrepo-com.svg",
         title: "Social Media Analytics",
         description:
           "Track performance metrics, audience insights, and campaign ROI with detailed reporting.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/data-graphics-analysis-svgrepo-com.svg",
         title: "Platform Management",
         description:
           "Full-service management of your social media accounts across Facebook, Instagram, LinkedIn, and more.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/operating-system-svgrepo-com.svg",
         title: "Social Listening",
         description:
           "Monitor brand mentions, competitor activity, and industry trends to inform strategy and respond quickly.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/redes-sociales.webp",
+        icon: "/icons/response-monitoring-svgrepo-com.svg",
         title: "Viral Campaigns",
         description:
           "Create shareable content and campaigns designed to maximize reach and engagement organically.",
@@ -150,7 +150,7 @@ export const socialMediaConfig: ServicePageConfig = {
       "We use powerful social media management and analytics tools to maximize your social presence.",
     columns: "4",
     items: [
-      { name: "Meta Business Suite", icon: "📘" },
+      { name: "Meta Business Suite", icon: "/icons/earth-planet-svgrepo-com.svg" },
       { name: "Hootsuite", icon: "🦉" },
       { name: "Buffer", icon: "📊" },
       { name: "Sprout Social", icon: "🌱" },

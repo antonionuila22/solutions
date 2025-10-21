@@ -73,14 +73,14 @@ export const brandingConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.webp",
+        icon: "/icons/creativity-svgrepo-com.svg",
         title: "Brand Strategy",
         description:
           "Develop comprehensive brand positioning, messaging, and personality that resonates with your target audience.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.webp",
+        icon: "/icons/target-focus-svgrepo-com.svg",
         title: "Visual Identity",
         description:
           "Craft cohesive visual systems including color palettes, typography, and design elements for brand consistency.",
@@ -94,7 +94,7 @@ export const brandingConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.webp",
+        icon: "/icons/case-ppt-svgrepo-com.svg",
         title: "Business Stationery",
         description:
           "Design professional business cards, letterheads, and corporate materials that reinforce your brand identity.",
@@ -115,7 +115,7 @@ export const brandingConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.webp",
+        icon: "/icons/brainstorming-svgrepo-com.svg",
         title: "Brand Naming",
         description:
           "Develop unique, memorable brand names and taglines that capture your brand essence and market positioning.",

@@ -85,14 +85,14 @@ export const seoConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.webp",
+        icon: "/icons/planet-space-svgrepo-com.svg",
         title: "Local SEO",
         description:
           "Optimize for local searches with Google Business Profile, citations, and location-based strategies.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.webp",
+        icon: "/icons/map-service-ocean-svgrepo-com.svg",
         title: "SEO Analytics & Reporting",
         description:
           "Track rankings, traffic, conversions, and ROI with detailed monthly performance reports.",
@@ -123,7 +123,7 @@ export const seoConfig: ServicePageConfig = {
       "We use cutting-edge SEO tools and analytics platforms to deliver data-driven results.",
     columns: "4",
     items: [
-      { name: "Google Search Console", icon: "📊" },
+      { name: "Google Search Console", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
       { name: "Google Analytics", icon: "📈" },
       { name: "Ahrefs", icon: "🔗" },
       { name: "SEMrush", icon: "🎯" },

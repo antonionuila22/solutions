@@ -83,7 +83,7 @@ export const animationConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.webp",
+        icon: "/icons/modelo-3d.webp",
         title: "Explainer Animations",
         description:
           "Engaging animated explainer videos that simplify complex concepts and boost understanding.",
@@ -97,7 +97,7 @@ export const animationConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.webp",
+        icon: "/icons/creativity-svgrepo-com.svg",
         title: "Character Design & Rigging",
         description:
           "Create custom characters with full rigging for smooth, lifelike animation.",
@@ -125,7 +125,7 @@ export const animationConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.webp",
+        icon: "/icons/case-ppt-svgrepo-com.svg",
         title: "VFX & Compositing",
         description:
           "Professional visual effects and compositing to enhance your video content.",

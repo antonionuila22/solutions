@@ -72,56 +72,56 @@ export const uxUiConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/brainstorming-svgrepo-com.svg",
         title: "Information Architecture",
         description:
           "Structure content and navigation logically to help users find what they need quickly and intuitively.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/the-upper-and-lower-levels-of-the-company-employees-boss-structure-management-svgrepo-com.svg",
         title: "Wireframing",
         description:
           "Create low-fidelity wireframes to establish layout, structure, and user flows before visual design.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/computer-monitor-svgrepo-com.svg",
         title: "Interactive Prototyping",
         description:
           "Build clickable prototypes that simulate the final product for testing and stakeholder approval.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/untact-app-mobile-svgrepo-com.svg",
         title: "UI Design",
         description:
           "Craft beautiful, on-brand interface designs with attention to typography, color, spacing, and visual hierarchy.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/interfaz-de-usuario.webp",
         title: "Design Systems",
         description:
           "Create comprehensive design systems and component libraries for consistency and scalability.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/platform-program-svgrepo-com.svg",
         title: "Usability Testing",
         description:
           "Test designs with real users to identify pain points, validate solutions, and optimize the experience.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/system-search-svgrepo-com.svg",
         title: "Mobile App Design",
         description:
           "Design native iOS and Android apps with platform-specific guidelines and best practices.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/mobile-phone-app-svgrepo-com.svg",
         title: "Web Application Design",
         description:
           "Create responsive web app interfaces that work seamlessly across all devices and screen sizes.",
@@ -138,7 +138,7 @@ export const uxUiConfig: ServicePageConfig = {
       "We use cutting-edge design tools to create, prototype, and collaborate on exceptional user experiences.",
     columns: "4",
     items: [
-      { name: "Figma", icon: "🎨" },
+      { name: "Figma", icon: "/icons/web-browsing-svgrepo-com.svg" },
       { name: "Adobe XD", icon: "🎯" },
       { name: "Sketch", icon: "✏️" },
       { name: "InVision", icon: "💡" },

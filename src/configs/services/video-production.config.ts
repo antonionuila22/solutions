@@ -80,42 +80,42 @@ export const videoProductionConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.webp",
+        icon: "/icons/case-ppt-svgrepo-com.svg",
         title: "Social Media Content",
         description:
           "Eye-catching short-form videos optimized for Instagram Reels, TikTok, YouTube Shorts, and Facebook.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.webp",
+        icon: "/icons/redes-sociales.webp",
         title: "Commercial Advertising",
         description:
           "Compelling video ads that capture attention, tell your story, and drive conversions across all platforms.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.webp",
+        icon: "/icons/horn-marketing-trumpet-svgrepo-com.svg",
         title: "Product Demos",
         description:
           "Showcase your products with high-quality demos that highlight features and benefits effectively.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.webp",
+        icon: "/icons/balloon-business-svgrepo-com.svg",
         title: "Event Coverage",
         description:
           "Capture and edit event footage into engaging highlight reels and full-length productions.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.webp",
+        icon: "/icons/earth-planet-svgrepo-com.svg",
         title: "Explainer Videos",
         description:
           "Simplify complex concepts with clear, engaging explainer videos that educate and convert viewers.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.webp",
+        icon: "/icons/light-bulb-idea-people-svgrepo-com.svg",
         title: "YouTube Content",
         description:
           "Full-service YouTube video production including editing, thumbnails, and channel optimization.",
@@ -129,7 +129,7 @@ export const videoProductionConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/edicion-de-video.webp",
+        icon: "/icons/animacion.webp",
         title: "Color Grading",
         description:
           "Professional color correction and grading to achieve cinematic looks and consistent branding.",
@@ -146,7 +146,7 @@ export const videoProductionConfig: ServicePageConfig = {
       "We use cutting-edge video production and editing tools for cinematic-quality results.",
     columns: "4",
     items: [
-      { name: "Adobe Premiere Pro", icon: "🎬" },
+      { name: "Adobe Premiere Pro", icon: "/icons/creativity-svgrepo-com.svg" },
       { name: "Adobe After Effects", icon: "🎞️" },
       { name: "DaVinci Resolve", icon: "🎨" },
       { name: "Final Cut Pro", icon: "✂️" },
