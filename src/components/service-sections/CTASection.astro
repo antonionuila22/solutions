@@ -1,0 +1,84 @@
+---
+/**
+ * CTA (Call-to-Action) Section Component
+ * Reusable CTA section for service pages
+ */
+
+interface Props {
+  title: string;
+  titleHighlight: string;
+  description: string;
+  ctaPrimary?: string;
+  ctaPrimaryUrl?: string;
+  ctaSecondary?: string;
+  ctaSecondaryUrl?: string;
+  features?: string;
+  className?: string;
+}
+
+const {
+  title,
+  titleHighlight,
+  description,
+  ctaPrimary = "Get Started Now",
+  ctaPrimaryUrl = "/contact",
+  ctaSecondary = "View All Services",
+  ctaSecondaryUrl = "/services",
+  features = "Fast turnaround times | Quality guaranteed | Dedicated support",
+  className = "",
+} = Astro.props;
+---
+
+<section
+  class={`py-16 md:py-20 px-4 md:px-6 bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900 ${className}`}
+>
+  <div class="max-w-4xl mx-auto text-center">
+    <h2
+      class="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-6"
+    >
+      {title}
+      <span class="text-orange-400">{titleHighlight}</span>
+    </h2>
+    <p
+      class="text-base md:text-xl text-cyan-100 mb-10 leading-relaxed px-4 max-w-2xl mx-auto"
+    >
+      {description}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a
+        href={ctaPrimaryUrl}
+        class="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm lg:text-lg"
+      >
+        <span>{ctaPrimary}</span>
+        <svg
+          class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+      <a
+        href={ctaSecondaryUrl}
+        class="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 text-sm md:text-base"
+      >
+        <span>{ctaSecondary}</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+    <p class="text-cyan-200 text-xs md:text-sm mt-8">
+      {features}
+    </p>
+  </div>
+</section>

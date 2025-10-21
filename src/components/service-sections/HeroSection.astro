@@ -1,0 +1,150 @@
+---
+/**
+ * Hero Section Component for Service Pages
+ * Reusable hero section with animated background and customizable content
+ */
+
+interface Stat {
+  value: string;
+  label: string;
+  sublabel: string;
+}
+
+interface Props {
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  titleEnd?: string;
+  description: string;
+  ctaPrimary?: string;
+  ctaPrimaryUrl?: string;
+  ctaSecondary?: string;
+  ctaSecondaryUrl?: string;
+  stats: Stat[];
+  className?: string;
+}
+
+const {
+  badge,
+  title,
+  titleHighlight,
+  titleEnd = "",
+  description,
+  ctaPrimary = "Start Your Project",
+  ctaPrimaryUrl = "/contact",
+  ctaSecondary = "View Services",
+  ctaSecondaryUrl = "#services",
+  stats,
+  className = "",
+} = Astro.props;
+---
+
+<section
+  class={`relative min-h-[70vh] flex items-center justify-center px-4 md:px-6 py-16 md:py-20 bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900 overflow-hidden ${className}`}
+>
+  <!-- Animated Background Elements -->
+  <div
+    class="absolute top-0 right-0 w-96 h-96 bg-orange-400 rounded-full opacity-10 blur-3xl animate-pulse"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full opacity-10 blur-3xl animate-pulse delay-1000"
+  >
+  </div>
+
+  <!-- Grid Pattern Overlay -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute inset-0"
+      style="background-image: linear-gradient(rgba(251, 146, 60, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(251, 146, 60, 0.3) 1px, transparent 1px); background-size: 50px 50px;"
+    >
+    </div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto text-center z-10">
+    <!-- Animated Badge -->
+    <div
+      class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20 animate-fade-in"
+    >
+      <span class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></span>
+      <span
+        class="text-white text-xs md:text-sm font-semibold uppercase tracking-wider"
+      >
+        {badge}
+      </span>
+    </div>
+
+    <!-- Main Heading -->
+    <h1
+      class="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight mb-6 px-4 animate-slide-up"
+    >
+      {title}
+      <span class="block mt-2 text-orange-400">{titleHighlight}</span>
+      {titleEnd && <span class="block mt-2">{titleEnd}</span>}
+    </h1>
+
+    <p
+      class="text-base md:text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed mb-10 px-4 animate-fade-in delay-200"
+    >
+      {description}
+    </p>
+
+    <!-- CTA Buttons -->
+    <div
+      class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 mb-16 animate-slide-up delay-300"
+    >
+      <a
+        href={ctaPrimaryUrl}
+        class="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm lg:text-lg"
+      >
+        <span>{ctaPrimary}</span>
+        <svg
+          class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+      <a
+        href={ctaSecondaryUrl}
+        class="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 text-sm md:text-base"
+      >
+        <span>{ctaSecondary}</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto animate-fade-in delay-500"
+    >
+      {
+        stats.map((stat) => (
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all hover-lift">
+            <div class="text-3xl md:text-4xl font-black text-orange-400 mb-2">
+              {stat.value}
+            </div>
+            <div class="text-xs md:text-sm text-cyan-100 font-semibold">
+              {stat.label}
+            </div>
+            {stat.sublabel && (
+              <div class="text-xs text-cyan-200/70 mt-1">{stat.sublabel}</div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
