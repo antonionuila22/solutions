@@ -69,14 +69,14 @@ export const animationConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/animacion.webp",
+        icon: "/icons/creativity-svgrepo-com.svg",
         title: "2D Motion Graphics",
         description:
           "Dynamic animated graphics, kinetic typography, and visual effects for videos and presentations.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.webp",
+        icon: "/icons/creativity-svgrepo-com.svg",
         title: "3D Animation",
         description:
           "High-quality 3D character animation, product animations, and architectural walkthroughs.",
@@ -111,14 +111,14 @@ export const animationConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.webp",
+        icon: "/icons/balloon-business-svgrepo-com.svg",
         title: "Social Media Animations",
         description:
           "Eye-catching animated content optimized for Instagram, TikTok, and other social platforms.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/animacion.webp",
+        icon: "/icons/redes-sociales.webp",
         title: "Whiteboard Animation",
         description:
           "Engaging whiteboard-style animations perfect for educational and corporate content.",

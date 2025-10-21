@@ -138,7 +138,7 @@ export const uxUiConfig: ServicePageConfig = {
       "We use cutting-edge design tools to create, prototype, and collaborate on exceptional user experiences.",
     columns: "4",
     items: [
-      { name: "Figma", icon: "/icons/web-browsing-svgrepo-com.svg" },
+      { name: "Figma", icon: "/icons/figma.svg" },
       { name: "Adobe XD", icon: "🎯" },
       { name: "Sketch", icon: "✏️" },
       { name: "InVision", icon: "💡" },

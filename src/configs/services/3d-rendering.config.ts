@@ -68,13 +68,13 @@ export const renderingConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/modelo-3d.webp",
+        icon: "/icons/computer-monitor-svgrepo-com.svg",
         title: "Architectural Visualization",
         description:
           "Photorealistic renders of residential and commercial buildings for presentations, marketing, and approvals.",
       },
       {
-        icon: "/icons/modelo-3d.webp",
+        icon: "/icons/computer-monitor-svgrepo-com.svg",
         title: "Interior Design Rendering",
         description:
           "Detailed 3D interior visualizations showcasing materials, lighting, and furniture arrangements.",

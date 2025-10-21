@@ -108,7 +108,7 @@ export const brandingConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/diseno-grafico.webp",
+        icon: "/icons/case-ppt-svgrepo-com.svg",
         title: "Rebranding",
         description:
           "Refresh and modernize existing brands while preserving equity and evolving with market demands.",

@@ -106,7 +106,7 @@ export const promotionalProductsConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/camiseta.webp",
+        icon: "/icons/discount-label-svgrepo-com.svg",
         title: "Packaging & Labels",
         description:
           "Custom product packaging, labels, and boxes to enhance your brand presentation.",

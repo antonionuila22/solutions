@@ -57,28 +57,28 @@ export const seoConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.webp",
+        icon: "/icons/system-search-svgrepo-com.svg",
         title: "Keyword Research",
         description:
           "In-depth keyword analysis to identify high-value search terms and opportunities for ranking growth.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.webp",
+        icon: "/icons/tags-discount-seo-svgrepo-com.svg",
         title: "On-Page Optimization",
         description:
           "Optimize title tags, meta descriptions, headers, content, and internal linking for better rankings.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.webp",
+        icon: "/icons/website-seo-promotion-svgrepo-com.svg",
         title: "Content Strategy",
         description:
           "Develop SEO-driven content plans that attract, engage, and convert your target audience.",
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.webp",
+        icon: "/icons/case-ppt-svgrepo-com.svg",
         title: "Link Building",
         description:
           "Strategic acquisition of high-quality backlinks to boost domain authority and search visibility.",
@@ -106,7 +106,7 @@ export const seoConfig: ServicePageConfig = {
         learnMoreUrl: "#",
       },
       {
-        icon: "/icons/seo.webp",
+        icon: "/icons/data-graphics-analysis-svgrepo-com.svg",
         title: "E-commerce SEO",
         description:
           "Specialized optimization for online stores, including product pages, categories, and schema markup.",
