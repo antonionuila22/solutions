@@ -1,0 +1,205 @@
+---
+/**
+ * Service Page Template
+ * DRY compliant template for all service pages
+ *
+ * This component eliminates 90% of code duplication across service pages
+ * by providing a consistent structure with customizable content.
+ *
+ * @see QA-QC-REPORT.md for implementation details
+ */
+
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "./service-sections/HeroSection.astro";
+import ServicesGrid from "./service-sections/ServicesGrid.astro";
+import ToolsSection from "./service-sections/ToolsSection.astro";
+import BenefitsSection from "./service-sections/BenefitsSection.astro";
+import CTASection from "./service-sections/CTASection.astro";
+import Whyus from "./whyus.astro";
+import Faq from "./Faq.astro";
+
+interface Stat {
+  value: string;
+  label: string;
+  sublabel?: string;
+}
+
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  learnMoreUrl?: string;
+}
+
+interface Tool {
+  name: string;
+  icon: string;
+}
+
+interface Benefit {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface HeroConfig {
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  titleEnd?: string;
+  description: string;
+  ctaPrimary?: string;
+  ctaPrimaryUrl?: string;
+  ctaSecondary?: string;
+  ctaSecondaryUrl?: string;
+  stats: Stat[];
+}
+
+interface ServicesConfig {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  items: Service[];
+  columns?: "2" | "3" | "4";
+}
+
+interface ToolsConfig {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  items: Tool[];
+  columns?: "2" | "3" | "4" | "6" | "8";
+}
+
+interface BenefitsConfig {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  items: Benefit[];
+  columns?: "1" | "2" | "3";
+}
+
+interface CTAConfig {
+  title: string;
+  titleHighlight: string;
+  description: string;
+  ctaPrimary?: string;
+  ctaPrimaryUrl?: string;
+  ctaSecondary?: string;
+  ctaSecondaryUrl?: string;
+  features?: string;
+}
+
+interface SEOConfig {
+  title: string;
+  description: string;
+  keywords: string;
+  image?: string;
+}
+
+export interface ServicePageConfig {
+  seo: SEOConfig;
+  schema: any; // Schema.org JSON-LD
+  hero: HeroConfig;
+  services: ServicesConfig;
+  tools?: ToolsConfig;
+  benefits?: BenefitsConfig;
+  cta: CTAConfig;
+  showWhyUs?: boolean;
+  showFaq?: boolean;
+  customSections?: any[]; // For future extensibility
+}
+
+interface Props {
+  config: ServicePageConfig;
+}
+
+const { config } = Astro.props;
+
+// Default values
+const showWhyUs = config.showWhyUs ?? true;
+const showFaq = config.showFaq ?? true;
+---
+
+<Layout
+  title={config.seo.title}
+  description={config.seo.description}
+  keywords={config.seo.keywords}
+  image={config.seo.image}
+>
+  <!-- Schema.org JSON-LD -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(config.schema)}
+  />
+
+  <!-- Hero Section -->
+  <HeroSection
+    badge={config.hero.badge}
+    title={config.hero.title}
+    titleHighlight={config.hero.titleHighlight}
+    titleEnd={config.hero.titleEnd}
+    description={config.hero.description}
+    ctaPrimary={config.hero.ctaPrimary}
+    ctaPrimaryUrl={config.hero.ctaPrimaryUrl}
+    ctaSecondary={config.hero.ctaSecondary}
+    ctaSecondaryUrl={config.hero.ctaSecondaryUrl}
+    stats={config.hero.stats}
+  />
+
+  <!-- Services Grid -->
+  <ServicesGrid
+    title={config.services.title}
+    subtitle={config.services.subtitle}
+    description={config.services.description}
+    services={config.services.items}
+    columns={config.services.columns}
+  />
+
+  <!-- Tools Section (optional) -->
+  {
+    config.tools && (
+      <ToolsSection
+        title={config.tools.title}
+        subtitle={config.tools.subtitle}
+        description={config.tools.description}
+        tools={config.tools.items}
+        columns={config.tools.columns}
+      />
+    )
+  }
+
+  <!-- Why Choose Us Component (optional) -->
+  {showWhyUs && <Whyus />}
+
+  <!-- Benefits Section (optional) -->
+  {
+    config.benefits && (
+      <BenefitsSection
+        title={config.benefits.title}
+        subtitle={config.benefits.subtitle}
+        description={config.benefits.description}
+        benefits={config.benefits.items}
+        columns={config.benefits.columns}
+      />
+    )
+  }
+
+  <!-- Custom Sections (for extensibility) -->
+  {config.customSections?.map((Section) => <Section />)}
+
+  <!-- CTA Section -->
+  <CTASection
+    title={config.cta.title}
+    titleHighlight={config.cta.titleHighlight}
+    description={config.cta.description}
+    ctaPrimary={config.cta.ctaPrimary}
+    ctaPrimaryUrl={config.cta.ctaPrimaryUrl}
+    ctaSecondary={config.cta.ctaSecondary}
+    ctaSecondaryUrl={config.cta.ctaSecondaryUrl}
+    features={config.cta.features}
+  />
+
+  <!-- FAQ Section (optional) -->
+  {showFaq && <Faq />}
+</Layout>

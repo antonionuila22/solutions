@@ -1,0 +1,84 @@
+---
+/**
+ * Benefits Section Component
+ * Displays service benefits in cards
+ */
+
+interface Benefit {
+  title: string;
+  description: string;
+  icon: string; // emoji or image path
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  benefits: Benefit[];
+  columns?: "1" | "2" | "3";
+  className?: string;
+}
+
+const {
+  title = "Why Choose Us",
+  subtitle = "Our Advantages",
+  description = "We combine creativity, technical expertise, and marketing strategy.",
+  benefits,
+  columns = "3",
+  className = "",
+} = Astro.props;
+
+const gridCols = {
+  "1": "grid-cols-1",
+  "2": "md:grid-cols-2",
+  "3": "md:grid-cols-3",
+};
+---
+
+<section
+  class={`py-16 md:py-20 px-4 md:px-6 bg-gradient-to-b from-slate-50 to-white ${className}`}
+>
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <span
+        class="text-orange-400 font-bold text-xs md:text-sm uppercase tracking-widest"
+      >
+        {subtitle}
+      </span>
+      <h2
+        class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4 mt-3 leading-tight"
+      >
+        {title}
+      </h2>
+      <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+        {description}
+      </p>
+    </div>
+
+    <div class={`grid grid-cols-1 ${gridCols[columns]} gap-6 md:gap-8`}>
+      {
+        benefits.map((benefit) => (
+          <div class="bg-white rounded-2xl md:rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover-lift">
+            <div class="text-5xl mb-4">
+              {benefit.icon.startsWith("/") ||
+              benefit.icon.startsWith("http") ? (
+                <img
+                  src={benefit.icon}
+                  alt={benefit.title}
+                  class="w-16 h-16 object-contain"
+                  loading="lazy"
+                />
+              ) : (
+                benefit.icon
+              )}
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-cyan-900 mb-3">
+              {benefit.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

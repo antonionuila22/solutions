@@ -14,16 +14,6 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-  { name: "Home", link: "/", hasDropdown: false },
-  {
-    name: "About Us",
-    link: "#",
-    hasDropdown: true,
-    subItems: [
-      { name: "History", link: "/history" },
-      { name: "Our Specialist", link: "/team" },
-    ],
-  },
   {
     name: "Services",
     link: "/services",
@@ -41,11 +31,12 @@ const menuItems: MenuItem[] = [
     ],
   },
   {
-    name: "Resources",
+    name: "About Us",
     link: "#",
     hasDropdown: true,
     subItems: [
-      { name: "Books", link: "/books" },
+      { name: "History", link: "/history" },
+      { name: "Our Specialist", link: "/team" },
       { name: "Blog", link: "/blog" },
       { name: "Countries We Serve", link: "/countryareas" },
     ],

@@ -1,0 +1,88 @@
+---
+/**
+ * Services Grid Component
+ * Displays a grid of service cards with consistent styling
+ */
+
+import CardService from "../CardService.astro";
+
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  learnMoreUrl?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  services: Service[];
+  columns?: "2" | "3" | "4";
+  className?: string;
+}
+
+const {
+  title = "Our Services",
+  subtitle = "What We Offer",
+  description = "Comprehensive services designed to meet your needs.",
+  services,
+  columns = "3",
+  className = "",
+} = Astro.props;
+
+const gridCols = {
+  "2": "md:grid-cols-2",
+  "3": "md:grid-cols-2 lg:grid-cols-3",
+  "4": "md:grid-cols-2 lg:grid-cols-4",
+};
+---
+
+<section
+  id="services"
+  class={`py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-white to-slate-50 ${className}`}
+>
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-3 mb-6">
+        <div
+          class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-orange-400 to-transparent"
+        >
+        </div>
+        <span
+          class="text-orange-400 font-bold text-xs md:text-sm uppercase tracking-widest"
+        >
+          {subtitle}
+        </span>
+        <div
+          class="h-px w-8 md:w-12 bg-gradient-to-r from-transparent via-orange-400 to-transparent"
+        >
+        </div>
+      </div>
+
+      <h2
+        class="text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-900 leading-tight mb-4 md:mb-6 px-4"
+      >
+        {title}
+      </h2>
+      <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+        {description}
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class={`grid grid-cols-1 ${gridCols[columns]} gap-6 md:gap-8`}>
+      {
+        services.map((service) => (
+          <CardService
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            learnMoreUrl={service.learnMoreUrl || "/contact"}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
