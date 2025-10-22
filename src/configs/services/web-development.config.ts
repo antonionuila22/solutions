@@ -57,35 +57,35 @@ export const webDevelopmentConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/web.webp",
+        icon: "/icons/login-page-svgrepo-com.svg",
         title: "Custom Website Development",
         description:
           "Tailored web solutions built from scratch to match your unique business requirements. We use modern frameworks and technologies to create scalable, maintainable websites.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/website-program-svgrepo-com.svg",
+        icon: " /icons/responsive-svgrepo-com.svg",
         title: "Responsive Web Design",
         description:
           "Mobile-first designs that provide seamless experiences across all devices. Your website will look stunning on desktops, tablets, and smartphones.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/responsive-svgrepo-com.svg",
+        icon: "/icons/website-program-svgrepo-com.svg",
         title: "SEO-Optimized Development",
         description:
           "Built with search engines in mind. We implement technical SEO best practices, fast loading speeds, and clean code structure to improve your rankings.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/website-seo-promotion-svgrepo-com.svg",
+        icon: " /icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg",
         title: "E-commerce Solutions",
         description:
           "Complete online store development with secure payment gateways, inventory management, and user-friendly shopping experiences that increase conversions.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg",
+        icon: "/icons/website-seo-promotion-svgrepo-com.svg",
         title: "Web Applications",
         description:
           "Complex web applications with advanced functionality. From customer portals to SaaS platforms, we build robust solutions that scale with your business.",
@@ -106,14 +106,14 @@ export const webDevelopmentConfig: ServicePageConfig = {
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/support-svgrepo-com.svg",
+        icon: "/icons/host-website-se-svgrepo-com.svg",
         title: "API Development & Integration",
         description:
           "Custom API development and third-party integrations to connect your website with other tools, services, and platforms seamlessly.",
         learnMoreUrl: "/contact",
       },
       {
-        icon: "/icons/graphql-svgrepo-com.svg",
+        icon: "/icons/data-graphics-analysis-svgrepo-com.svg",
         title: "Website Migration & Redesign",
         description:
           "Modernize your existing website with a complete redesign or migrate to a new platform while preserving your SEO rankings and data.",
