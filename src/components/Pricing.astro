@@ -1,115 +1,202 @@
 ---
 import ButtonCustom from "../components/Button.astro";
-const plans = [
-    {
-        name: "Basic",
-        price: "$1,000/mo",
-        description:
-            "A strong start for small businesses entering the digital space.",
-        features: [
-            "Custom UX/UI Design – 1 Landing Page (Conversion-Focused)",
-            "Responsive Web Development (Mobile + Tablet Optimized)",
-            "1 Blog Article per Month – SEO-Optimized",
-            "On-Page SEO Essentials (Meta Tags, Header Structure, Sitemap)",
-            "Basic Analytics Setup (Google Analytics 4 + Search Console)",
-            "Contact Form with Email Notifications",
-            "Social Media Integration (Facebook/Instagram buttons)",
-            "Monthly Performance Report (Basic Metrics)",
-        ],
-        icon: "🚀",
-        highlighted: false,
-    },
-    {
-        name: "Pro",
-        price: "$3,500/mo",
-        description: "Everything a growing business needs to compete online.",
-        features: [
-            "UX/UI Design & Web Development – Up to 5 Pages",
-            "Responsive, Speed-Optimized Website",
-            "4 Custom Web Pages or Blog Posts per Month",
-            "Advanced SEO Optimization + Keyword Tracking",
-            "CRM Integration (e.g., HubSpot, Mailchimp, Zoho)",
-            "Lead Capture Forms + Basic Automations",
-            "Google Business Profile Optimization",
-            "Monthly Performance Reports (SEO + Social Insights)",
-        ],
-        icon: "✨",
-        highlighted: true,
-    },
-    {
-        name: "Premium",
-        price: "$4,500/mo",
-        description:
-            "For ambitious brands aiming for high growth, visibility, and engagement.",
-        features: [
-            "UX/UI Design – Up to 10 Pages (Home, About, Services, Contact, Blog, etc.)",
-            "Advanced Web Development (Animations, API Integrations, Forms, etc.)",
-            "8+ Pages of SEO-Driven Content or Blog Posts per Month",
-            "Brand Strategy – Visuals, Messaging, and Storytelling",
-            "Social Media Management – 2 Platforms, 10+ Posts/Month",
-            "Full Website Security Stack (Firewall, Malware Scanning, Backups)",
-            "Custom Video Editing – Promos, Reels, Explainers (up to 4/month)",
-            "Performance Marketing Landing Pages (up to 2/month)",
-            "Advanced Analytics Setup (GA4, Tag Manager, Heatmaps)",
-            "Monthly Performance Reports (SEO, Social, Video, and Web)",
-            "Dedicated Account Manager Support",
-        ],
-        icon: "🧠",
-        highlighted: false,
-    },
+
+type Plan = {
+  name: string;
+  priceHourly: number;
+  desc: string;
+  highlight?: boolean;
+  features: string[];
+  ctaHref: string;
+  ctaText?: string;
+};
+
+const plans: Plan[] = [
+  {
+    name: "Consulting",
+    priceHourly: 75,
+    desc: "Perfect for one-time consultations and actionable strategy sessions.",
+    features: [
+      "Needs analysis",
+      "Digital strategy",
+      "Website audit",
+      "SEO consulting",
+      "Brand review",
+      "Conversion optimization",
+    ],
+    ctaHref: "./contact",
+  },
+  {
+    name: "Web Development",
+    priceHourly: 95,
+    desc: "Focused development sprints with clean code and performance in mind.",
+    highlight: true,
+    features: [
+      "Frontend & backend development",
+      "API integrations",
+      "Custom UX/UI design",
+      "Performance optimization",
+      "Testing and debugging",
+      "Technical support",
+    ],
+    ctaHref: "./contact",
+    ctaText: "Start your project",
+  },
+  {
+    name: "Design & Marketing",
+    priceHourly: 85,
+    desc: "Creative content and marketing strategy to grow with a strong brand.",
+    features: [
+      "Graphic design",
+      "Branding & identity",
+      "Social media content",
+      "Video editing",
+      "Advertising campaigns",
+      "Content marketing",
+    ],
+    ctaHref: "./contact",
+  },
 ];
+
+// Collect all unique features
+const allFeatures = Array.from(new Set(plans.flatMap((p) => p.features)));
 ---
 
-<section class="py-[15vw] bg-gray-50" id="pricing">
-    <div class="text-center mb-16 px-4">
-        <h2 class="text-4xl font-extrabold text-cyan-900">Pricing</h2>
-        <p class="mt-4 text-lg text-gray-600">
-            Select the plan that best suits your needs. We offer flexible
-            options to adapt to your business.
-        </p>
+<section id="pricing" class="py-16 md:py-24 bg-gray-50">
+  <div class="mx-auto px-4 max-w-6xl">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span
+        class="inline-block px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-semibold rounded-full mb-3"
+      >
+        Hourly Pricing
+      </span>
+      <h2
+        class="text-3xl md:text-4xl font-extrabold text-cyan-900 tracking-tight"
+      >
+        Clear Packages. Built for Speed.
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mt-3">
+        Pay only for the hours you need. No heavy effects, no scripts, no
+        surprises.
+      </p>
     </div>
 
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 max-w-7xl mx-auto"
-    >
-        {
-            plans.map((plan) => (
-                <article
-                    class={`relative flex flex-col justify-between p-8 rounded-3xl backdrop-blur-md shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl bg-white/70 ${plan.highlighted ? "border-2 border-orange-500 scale-105" : ""}`}
-                >
-                    {plan.highlighted && (
-                        <span class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
-                            Más Popular
-                        </span>
-                    )}
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      {
+        plans.map((p) => (
+          <article
+            class={`h-full flex flex-col center align-center items-center rounded-xl bg-white p-6 border border-slate-200/70 ${
+              p.highlight ? "ring-2 ring-orange-500" : ""
+            }`}
+            aria-label={`Plan ${p.name}`}
+          >
+            <header class="mb-7">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-cyan-900">{p.name}</h3>
+                {p.highlight && (
+                  <span class="text-[10px] font-bold px-3 py-1 m-[-10px] rounded-full bg-orange-500 text-white">
+                    Most Popular
+                  </span>
+                )}
+              </div>
+              <p class="text-gray-600 text-sm mt-5">{p.desc}</p>
+            </header>
 
-                    <div>
-                        <div class="text-center">
-                            <div class="text-4xl mb-2">{plan.icon}</div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-1">
-                                {plan.name}
-                            </h3>
-                            <p class="text-gray-600 mb-4">{plan.description}</p>
-                            <div class="text-4xl font-extrabold text-gray-900">
-                                {plan.price}
-                            </div>
-                        </div>
+            <div class="mb-5">
+              <div class="flex items-end gap-1">
+                <span class="text-4xl font-black text-cyan-900 leading-none">
+                  ${p.priceHourly}
+                </span>
+                <span class="text-gray-500 text-sm mb-0.5">/hour</span>
+              </div>
+            </div>
 
-                        <ul class="mt-6 space-y-2 text-gray-700">
-                            {plan.features.map((feature) => (
-                                <li class="flex items-center gap-2">
-                                    <span class="text-green-500" />{" "}
-                                    <span>{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+            <ul class="space-y-2 mb-6">
+              {p.features.map((f) => (
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <svg
+                    class="w-4 h-4 mt-0.5 text-emerald-600 flex-shrink-0"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-7.5 7.5a1 1 0 01-1.414 0l-3-3A1 1 0 016.207 10.293L8.5 12.586l6.793-6.793a1 1 0 011.414 0z"
+                    />
+                  </svg>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
 
-                    <div class="mt-8 text-center">
-                        <ButtonCustom text="Elegir plan" href="./contact" />
-                    </div>
-                </article>
+            <ButtonCustom
+              text={p.ctaText || "Request Service"}
+              href={p.ctaHref}
+            />
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-slate-50">
+          <tr class="text-slate-700">
+            <th class="px-4 py-3 font-semibold">Features</th>
+            {
+              plans.map((p) => (
+                <th class="px-4 py-3 font-semibold text-center">{p.name}</th>
+              ))
+            }
+          </tr>
+        </thead>
+        <tbody>
+          {
+            allFeatures.map((feat, i) => (
+              <tr class={i % 2 ? "bg-white" : "bg-slate-50/50"}>
+                <td class="px-4 py-3 text-slate-800">{feat}</td>
+                {plans.map((p) => {
+                  const has = p.features.includes(feat);
+                  return (
+                    <td class="px-4 py-3 text-center">
+                      {has ? (
+                        <svg
+                          class="w-4 h-4 text-emerald-600 mx-auto"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-7.5 7.5a1 1 0 01-1.414 0l-3-3A1 1 0 016.207 10.293L8.5 12.586l6.793-6.793a1 1 0 011.414 0z"
+                          />
+                        </svg>
+                      ) : (
+                        <span class="text-slate-400">—</span>
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
             ))
-        }
+          }
+        </tbody>
+      </table>
     </div>
+
+    <!-- Final CTA -->
+    <div class="text-center mt-10">
+      <a
+        href="./contact"
+        class="inline-block px-5 py-3 bg-cyan-900 text-white font-semibold rounded-lg hover:bg-cyan-800 transition-colors"
+      >
+        Check Availability →
+      </a>
+    </div>
+  </div>
 </section>

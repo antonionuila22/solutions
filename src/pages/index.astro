@@ -13,7 +13,7 @@ import Testimonial from "../components/testimonial.tsx";
 import Brand from "../components/Brand.tsx";
 import Beam from "../components/beam.tsx";
 import Button from "@/components/Button.astro";
-import TeamMembers from "@/components/TeamSection.tsx";
+import Ourteam from "@/components/Ourteam.astro";
 ---
 
 <Layout
@@ -218,9 +218,7 @@ import TeamMembers from "@/components/TeamSection.tsx";
     </div>
   </section>
   <Testimonial client:visible />
-
-  <TeamMembers client:visible />
-
+  <Ourteam />
   <Pricing />
   <Faq />
 </Layout>
