@@ -1,0 +1,1517 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Whyus from "../../components/whyus.astro";
+
+const title = "Web Development for Construction Companies | CodeBrand";
+const description =
+  "Transform your construction business with custom web solutions. Project management systems, client portals, and mobile apps designed specifically for the construction industry.";
+const keywords =
+  "construction web development, construction software, project management system, contractor websites, construction CRM, building industry technology";
+---
+
+<Layout title={title}>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content={description} slot="head" />
+  <meta name="keywords" content={keywords} slot="head" />
+  <meta property="og:title" content={title} slot="head" />
+  <meta property="og:description" content={description} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
+  >
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+            ></path>
+          </svg>
+          Construction Industry Solutions
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
+        >
+          Build Your Digital Foundation with <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600"
+            >CodeBrand</span
+          >
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+          Custom web development and software solutions designed to streamline
+          operations, enhance client communication, and grow your construction
+          business in the digital age.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Get Started Today
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
+          >
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+          >
+            Digital Transformation for the Construction Industry
+          </h2>
+          <div class="prose prose-lg text-gray-700 space-y-4">
+            <p>
+              The construction industry is evolving rapidly, and staying
+              competitive means embracing digital innovation. At CodeBrand, we
+              understand the unique challenges construction companies face—from
+              managing multiple projects simultaneously to coordinating with
+              subcontractors, tracking materials, and maintaining clear
+              communication with clients.
+            </p>
+            <p>
+              We specialize in creating custom web applications, mobile
+              solutions, and management systems that address the specific needs
+              of construction businesses. Whether you're a general contractor,
+              specialty trade contractor, or construction management firm, our
+              technology solutions help you work smarter, not harder.
+            </p>
+            <p>
+              Our team has worked with construction companies of all sizes, from
+              small local contractors to large commercial builders. We know that
+              every construction business is unique, which is why we don't
+              believe in one-size-fits-all solutions. Instead, we take the time
+              to understand your workflows, pain points, and goals to create
+              software that truly serves your needs.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="relative bg-gradient-to-br from-cyan-100 to-orange-100 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="space-y-4">
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">40%</div>
+                    <div class="text-sm text-gray-600">Time Savings</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">98%</div>
+                    <div class="text-sm text-gray-600">Client Satisfaction</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">50+</div>
+                    <div class="text-sm text-gray-600">Projects Completed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section
+    id="services"
+    class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Specialized Services for Construction Companies
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Comprehensive digital solutions tailored to meet the unique demands of
+          the construction industry
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Project Management Systems
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Custom-built project management platforms that help you track
+            multiple construction projects, manage timelines, budgets, and
+            resources all in one place. Real-time updates keep your entire team
+            aligned and informed.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Task scheduling and assignment</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Budget tracking and forecasting</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Document management</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 2 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Mobile Field Apps
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Empower your field teams with mobile applications that work offline
+            and sync automatically. Capture photos, update progress, track time,
+            and communicate with the office—all from the job site.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Offline functionality</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Photo and video documentation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>GPS tracking and geolocation</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 3 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">Client Portals</h3>
+          <p class="text-gray-600 mb-4">
+            Build trust and transparency with custom client portals where your
+            customers can view project progress, access documents, review
+            invoices, and communicate with your team 24/7.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Real-time project updates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Secure document sharing</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Invoice and payment tracking</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 4 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Professional Websites
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Stand out from competitors with a modern, mobile-responsive website
+            that showcases your portfolio, services, and expertise. Optimized
+            for search engines to attract more leads.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>SEO optimization</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Portfolio showcase</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Lead generation forms</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 5 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Estimation Software
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Speed up your bidding process with custom estimation tools that
+            calculate materials, labor costs, and project timelines accurately.
+            Generate professional proposals in minutes.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Material cost tracking</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Labor calculations</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Professional proposal templates</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 6 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Custom Integrations
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Connect all your existing tools and software with custom
+            integrations. From accounting software to CRM systems, we ensure all
+            your systems work together seamlessly.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>QuickBooks integration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>API development</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Data synchronization</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Our Proven Development Process
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          A transparent, collaborative approach that ensures your project is
+          delivered on time and exceeds expectations
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Timeline line -->
+        <div
+          class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 via-orange-500 to-cyan-500"
+        >
+        </div>
+
+        <div class="space-y-12">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right lg:pr-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                1
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Discovery & Planning
+              </h3>
+              <p class="text-gray-600">
+                We start by understanding your construction business inside and
+                out. We'll meet with your team, observe your workflows, and
+                identify opportunities for improvement. This phase includes
+                defining project scope, goals, and success metrics.
+              </p>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              1
+            </div>
+            <div class="lg:w-1/2"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2"></div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              2
+            </div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                2
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Design & Prototyping
+              </h3>
+              <p class="text-gray-600">
+                Our design team creates intuitive, user-friendly interfaces
+                tailored to construction professionals. We'll develop
+                interactive prototypes so you can experience the solution before
+                development begins. Your feedback drives refinement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right lg:pr-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                3
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Development & Testing
+              </h3>
+              <p class="text-gray-600">
+                Our development team builds your solution using modern, scalable
+                technologies. We follow agile methodologies with regular
+                check-ins and demos. Rigorous testing ensures everything works
+                flawlessly on all devices and scenarios.
+              </p>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              3
+            </div>
+            <div class="lg:w-1/2"></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2"></div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              4
+            </div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                4
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Training & Deployment
+              </h3>
+              <p class="text-gray-600">
+                We provide comprehensive training for your team to ensure smooth
+                adoption. Our deployment process is carefully planned to
+                minimize disruption to your operations. We're with you every
+                step of the way during launch.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right lg:pr-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                5
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Support & Optimization
+              </h3>
+              <p class="text-gray-600">
+                Our relationship doesn't end at launch. We provide ongoing
+                support, maintenance, and optimization services. As your
+                business grows and evolves, we'll enhance your solution with new
+                features and improvements.
+              </p>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              5
+            </div>
+            <div class="lg:w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 text-white font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          Why Construction Companies Choose CodeBrand
+        </h2>
+        <p class="text-xl text-cyan-100 max-w-3xl mx-auto">
+          We're not just developers—we're your technology partners committed to
+          your success
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Industry Expertise</h3>
+          <p class="text-cyan-100">
+            We've worked extensively with construction companies and understand
+            the unique challenges, regulations, and workflows specific to your
+            industry.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Fast Development</h3>
+          <p class="text-cyan-100">
+            Our agile approach and experienced team means faster time-to-market
+            without compromising quality. See results in weeks, not months.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Security First</h3>
+          <p class="text-cyan-100">
+            Your data and your clients' data are protected with enterprise-grade
+            security measures, encryption, and regular security audits.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+              ></path>
+              <path
+                d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Scalable Solutions</h3>
+          <p class="text-cyan-100">
+            Our solutions grow with your business. Whether you're managing 5
+            projects or 500, our systems scale seamlessly to meet your needs.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+          <p class="text-cyan-100">
+            Construction doesn't stop at 5 PM, and neither do we. Our support
+            team is available around the clock to help you succeed.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Cost-Effective</h3>
+          <p class="text-cyan-100">
+            We provide transparent pricing with no hidden fees. Our solutions
+            deliver ROI by reducing manual work, minimizing errors, and
+            improving efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies / Results -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Real Results for Construction Companies
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          See how we've helped construction businesses streamline operations and
+          grow revenue
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-800 mb-2"
+          >
+            40%
+          </div>
+          <div class="text-gray-600 font-medium">
+            Average time saved on project management tasks
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-2"
+          >
+            3x
+          </div>
+          <div class="text-gray-600 font-medium">
+            Faster bid preparation and proposal generation
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-800 mb-2"
+          >
+            95%
+          </div>
+          <div class="text-gray-600 font-medium">
+            Client satisfaction with transparency and communication
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+              <svg
+                class="w-10 h-10 text-orange-500 mb-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                ></path>
+              </svg>
+              <p class="text-lg text-gray-700 mb-6 italic">
+                "CodeBrand transformed how we manage our projects. What used to
+                take hours of paperwork and phone calls now happens instantly
+                through their custom platform. Our clients love being able to
+                see real-time progress, and our team is more productive than
+                ever."
+              </p>
+              <div>
+                <div class="font-bold text-cyan-900">Mike Richardson</div>
+                <div class="text-gray-600">
+                  Owner, Richardson General Contracting
+                </div>
+                <div class="text-sm text-gray-500 mt-1">
+                  Commercial Construction - $15M Annual Revenue
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+              <svg
+                class="w-10 h-10 text-orange-500 mb-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                ></path>
+              </svg>
+              <p class="text-lg text-gray-700 mb-6 italic">
+                "The mobile app CodeBrand built for our field crews has been a
+                game-changer. My guys can update project status, capture photos,
+                and track materials right from the job site. No more end-of-day
+                paperwork or missing documentation. It's saved us countless
+                hours and prevented costly mistakes."
+              </p>
+              <div>
+                <div class="font-bold text-cyan-900">Sarah Chen</div>
+                <div class="text-gray-600">
+                  Project Manager, Urban Development Corp
+                </div>
+                <div class="text-sm text-gray-500 mt-1">
+                  Residential Construction - Multiple Projects
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Built with Modern, Reliable Technology
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We use cutting-edge tools and frameworks to build fast, secure, and
+          scalable solutions
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">⚛️</div>
+          <div class="text-sm font-semibold text-gray-700">React</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">📱</div>
+          <div class="text-sm font-semibold text-gray-700">React Native</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">🟢</div>
+          <div class="text-sm font-semibold text-gray-700">Node.js</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">🔷</div>
+          <div class="text-sm font-semibold text-gray-700">PostgreSQL</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">☁️</div>
+          <div class="text-sm font-semibold text-gray-700">AWS</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">🔐</div>
+          <div class="text-sm font-semibold text-gray-700">Security</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Challenges Section -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-cyan-50 font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Common Challenges We Solve
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Construction-specific problems require construction-specific solutions
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Manual Document Management
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Piles of paperwork, lost documents, and version control
+                nightmares slow down projects and create liability issues.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Cloud-based document management with
+                  version control, e-signatures, and instant access from anywhere.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Poor Communication
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Miscommunication between office staff, field crews,
+                subcontractors, and clients leads to costly delays and rework.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Integrated messaging, notifications,
+                  and client portals that keep everyone on the same page in real-time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Inaccurate Estimates
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Manual calculations lead to estimation errors that eat into
+                profit margins or lose bids to competitors.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Automated estimation software with real-time
+                  pricing, labor calculations, and historical data analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Disconnected Systems
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Using separate tools for scheduling, accounting, CRM, and
+                project management creates data silos and duplicate entry.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Custom integrations and unified platforms
+                  that connect all your existing tools or replace them entirely.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 text-white font-poppins"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+        Ready to Modernize Your Construction Business?
+      </h2>
+      <p class="text-xl text-cyan-100 mb-8 leading-relaxed">
+        Let's discuss how custom software solutions can transform your
+        operations, improve profitability, and give you a competitive edge.
+        Schedule a free consultation with our team today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Schedule Free Consultation
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="tel:+1234567890"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-lg text-white rounded-xl font-bold text-lg border-2 border-white/30 transition-all duration-200"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+            ></path>
+          </svg>
+          Call Us Now
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-cyan-200">
+        No commitment required • Free initial consultation • Response within 24
+        hours
+      </p>
+    </div>
+  </section>
+
+  <Whyus />
+</Layout>

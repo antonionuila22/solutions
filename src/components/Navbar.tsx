@@ -31,12 +31,19 @@ const menuItems: MenuItem[] = [
     ],
   },
   {
+    name: "Industries",
+    link: "#",
+    hasDropdown: true,
+    subItems: [{ name: "Construction", link: "/industries/construction" }],
+  },
+  {
     name: "About Us",
     link: "#",
     hasDropdown: true,
     subItems: [
       { name: "History", link: "/history" },
       { name: "Our Specialist", link: "/team" },
+      { name: "Projects", link: "/projects" },
       { name: "Blog", link: "/blog" },
       { name: "Countries We Serve", link: "/countryareas" },
     ],
