@@ -34,7 +34,10 @@ const menuItems: MenuItem[] = [
     name: "Industries",
     link: "#",
     hasDropdown: true,
-    subItems: [{ name: "Construction", link: "/industries/construction" }],
+    subItems: [
+      { name: "Construction", link: "/industries/construction" },
+      { name: "Travel", link: "/industries/travel-agency" },
+    ],
   },
   {
     name: "About Us",
