@@ -1,0 +1,1114 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Whyus from "../../components/whyus.astro";
+
+const title = "Restaurant Website Design & Online Ordering Systems | CodeBrand";
+const description =
+  "Transform your restaurant with custom websites, online ordering systems, digital menus, QR code menus, reservation software, and delivery platforms. Solutions for restaurants, cafes, bars, and food service businesses.";
+const keywords =
+  "restaurant website design, online ordering system for restaurants, digital menu software, QR code menu, restaurant reservation system, food delivery platform, restaurant management software, restaurant app development, online food ordering, contactless menu, restaurant POS integration, table booking software, ghost kitchen software, restaurant marketing";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
+  >
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
+            ></path>
+          </svg>
+          Restaurant Technology Solutions
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
+        >
+          Grow Your Restaurant Business with <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600"
+            >CodeBrand</span
+          >
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+          Custom restaurant websites, online ordering systems, digital menus,
+          and reservation platforms designed to increase orders, fill tables,
+          and delight diners.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Get Started Today
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
+          >
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+          >
+            Digital Solutions for Modern Restaurants
+          </h2>
+          <div class="prose prose-lg text-gray-700 space-y-4">
+            <p>
+              The restaurant industry has transformed dramatically. Today's
+              diners expect to browse menus online, order from their phones,
+              and book tables with a tap. At CodeBrand, we build custom
+              technology solutions that help restaurants thrive in this digital
+              era—from stunning websites to complete online ordering platforms.
+            </p>
+            <p>
+              We create beautiful, mobile-responsive restaurant websites that
+              showcase your menu, atmosphere, and story. Our online ordering
+              systems integrate seamlessly with your operations, accepting
+              orders 24/7 without third-party commissions. Digital QR code
+              menus, reservation systems, and loyalty programs complete your
+              digital transformation.
+            </p>
+            <p>
+              Whether you run a fine dining establishment, casual restaurant,
+              cafe, bar, ghost kitchen, or food truck, our solutions are
+              tailored to your unique needs. We've helped restaurants increase
+              online orders by 200%, reduce no-shows by 60%, and build direct
+              relationships with customers.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="relative bg-gradient-to-br from-cyan-100 to-orange-100 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="space-y-4">
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">200%</div>
+                    <div class="text-sm text-gray-600">More Online Orders</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">0%</div>
+                    <div class="text-sm text-gray-600">Third-Party Fees</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">800+</div>
+                    <div class="text-sm text-gray-600">Restaurants Served</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section
+    id="services"
+    class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Complete Restaurant Technology Solutions
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Everything you need to take your restaurant digital and increase
+          revenue
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Online Ordering Systems
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Accept orders directly from your website with zero commission fees.
+            Custom online ordering platform with menu management, delivery
+            zones, pickup times, and integrated payment processing.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>0% commission - keep all profits</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Real-time menu updates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Delivery & pickup options</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 2 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Digital QR Code Menus
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Contactless, eco-friendly digital menus accessible via QR code.
+            Update prices and items instantly, add photos and descriptions,
+            highlight specials, and track popular dishes—all without printing
+            costs.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Instant menu updates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Multi-language support</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Beautiful food photography</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 3 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Table Reservation Systems
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Let diners book tables online 24/7 with smart reservation
+            management. Automated confirmations, SMS reminders, waitlist
+            management, and table turnover optimization to maximize revenue.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>24/7 online booking</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Automated SMS reminders</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Table management dashboard</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 4 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Restaurant Websites
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Beautiful, mobile-responsive websites that showcase your food,
+            ambiance, and story. SEO-optimized to rank for local searches,
+            integrated with Google Maps, and designed to drive reservations and
+            orders.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Local SEO optimization</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Professional food photography</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Google My Business integration</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 5 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Loyalty & Rewards Programs
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Build customer loyalty with digital rewards programs. Points for
+            purchases, birthday rewards, exclusive offers, and mobile app
+            integration that keep customers coming back.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Points-based rewards</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Automated marketing campaigns</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Customer analytics dashboard</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 6 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Restaurant Mobile Apps
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Custom mobile apps for iOS and Android that increase engagement.
+            Order ahead, earn rewards, get push notifications for specials, and
+            provide a branded experience in customers' pockets.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>iOS & Android native apps</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Push notification marketing</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Integrated loyalty program</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Mid-Section -->
+  <section class="py-16 bg-gradient-to-r from-orange-500 to-orange-600 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        Stop Paying 30% Commission to Third-Party Apps
+      </h2>
+      <p class="text-xl text-orange-100 mb-8">
+        Build your own online ordering system and keep 100% of the profits.
+        We'll have you up and running in 2 weeks.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-orange-600 rounded-xl font-bold text-lg shadow-lg transition-all duration-200"
+      >
+        Get Your Free Quote
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 text-white font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          Why Restaurants Choose CodeBrand
+        </h2>
+        <p class="text-xl text-cyan-100 max-w-3xl mx-auto">
+          Specialized restaurant technology with proven results
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Restaurant Specialists</h3>
+          <p class="text-cyan-100">
+            We've built 800+ restaurant websites and ordering systems. We
+            understand food service operations, POS integration, and what
+            drives orders.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Zero Commission</h3>
+          <p class="text-cyan-100">
+            Unlike third-party apps that take 30%, our ordering systems have
+            zero commission. Keep 100% of every order and build your own
+            customer database.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Fast Implementation</h3>
+          <p class="text-cyan-100">
+            We get restaurants up and running in 2-3 weeks, not months. Quick
+            setup means you start taking commission-free orders sooner.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">POS Integration</h3>
+          <p class="text-cyan-100">
+            Seamless integration with major POS systems like Toast, Square,
+            Clover, and more. Orders flow directly to your kitchen with no
+            manual entry.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Local SEO Experts</h3>
+          <p class="text-cyan-100">
+            We optimize for "restaurants near me" and local searches. Get found
+            by hungry customers searching Google for food in your area.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Dedicated Support</h3>
+          <p class="text-cyan-100">
+            Restaurant-specific support team that understands your business.
+            Fast response times during peak hours when you need help most.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Real Results for Restaurant Owners
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          See how we've helped restaurants increase online orders and revenue
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-800 mb-2"
+          >
+            200%
+          </div>
+          <div class="text-gray-600 font-medium">
+            Average increase in online orders after launch
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-2"
+          >
+            $15K+
+          </div>
+          <div class="text-gray-600 font-medium">
+            Average monthly savings vs third-party apps
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-800 mb-2"
+          >
+            60%
+          </div>
+          <div class="text-gray-600 font-medium">
+            Reduction in table no-shows with reservation system
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+              <svg
+                class="w-10 h-10 text-orange-500 mb-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                ></path>
+              </svg>
+              <p class="text-lg text-gray-700 mb-6 italic">
+                "Switching from third-party delivery apps to CodeBrand's custom
+                online ordering system was the best decision we made. We went
+                from paying 30% commission to zero, and we now control our
+                customer data. Online orders tripled in the first month, and
+                we're saving over $18,000 annually in fees."
+              </p>
+              <div>
+                <div class="font-bold text-cyan-900">Marco Rossi</div>
+                <div class="text-gray-600">
+                  Owner, Bella Italia Ristorante
+                </div>
+                <div class="text-sm text-gray-500 mt-1">
+                  Italian Restaurant - 3 Locations
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+              <svg
+                class="w-10 h-10 text-orange-500 mb-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                ></path>
+              </svg>
+              <p class="text-lg text-gray-700 mb-6 italic">
+                "The QR code digital menu and reservation system transformed
+                our operations. Our staff spends less time answering phone
+                calls about our menu and taking reservations. No-shows dropped
+                by 60% thanks to automated SMS reminders. Our customers love
+                the convenience, and we're more efficient than ever."
+              </p>
+              <div>
+                <div class="font-bold text-cyan-900">Jessica Park</div>
+                <div class="text-gray-600">
+                  General Manager, The Modern Bistro
+                </div>
+                <div class="text-sm text-gray-500 mt-1">
+                  Contemporary American - Fine Dining
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 text-white font-poppins"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+        Ready to Stop Paying 30% Commission?
+      </h2>
+      <p class="text-xl text-cyan-100 mb-8 leading-relaxed">
+        Let's build your custom online ordering system and website. Keep 100%
+        of your profits, own your customer data, and grow your restaurant
+        business. Schedule a free consultation with our restaurant technology
+        experts today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Schedule Free Consultation
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="tel:+1234567890"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-lg text-white rounded-xl font-bold text-lg border-2 border-white/30 transition-all duration-200"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+            ></path>
+          </svg>
+          Call Us Now
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-cyan-200">
+        No commitment required • Free initial consultation • Go live in 2-3
+        weeks
+      </p>
+    </div>
+  </section>
+
+  <Whyus />
+</Layout>

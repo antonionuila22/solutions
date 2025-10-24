@@ -37,6 +37,14 @@ const menuItems: MenuItem[] = [
     subItems: [
       { name: "Construction", link: "/industries/construction" },
       { name: "Travel", link: "/industries/travel-agency" },
+      { name: "E-Commerce", link: "/industries/ecommerce" },
+      { name: "Healt Care", link: "/industries/healthcare" },
+      { name: "Real State", link: "/industries/real-estate" },
+      { name: "Restaurants", link: "/industries/restaurants" },
+      { name: "Law Firms", link: "/industries/law-firms" },
+      { name: "Automotive", link: "/industries/automotive" },
+      { name: "Fitness", link: "/industries/fitness" },
+      { name: "Content Creators", link: "/industries/content-creators" },
     ],
   },
   {

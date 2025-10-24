@@ -1,0 +1,1533 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Whyus from "../../components/whyus.astro";
+
+const title = "Law Firm Website Design & Legal Practice Management Software | CodeBrand";
+const description =
+  "Transform your law practice with custom legal technology solutions. Case management systems, client portals, document automation, and professional attorney websites designed for law firms.";
+const keywords =
+  "law firm website design, legal case management software, attorney website development, legal practice management software, law firm client portal, legal document automation, attorney CRM, law firm billing software, lawyer website design, legal tech solutions, attorney marketing website, law practice software, legal time tracking, secure client portal";
+---
+
+<Layout title={title}>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content={description} slot="head" />
+  <meta name="keywords" content={keywords} slot="head" />
+  <meta property="og:title" content={title} slot="head" />
+  <meta property="og:description" content={description} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
+  >
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Legal Industry Solutions
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
+        >
+          Elevate Your Legal Practice with <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600"
+            >CodeBrand</span
+          >
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+          Custom legal technology solutions designed to streamline case
+          management, enhance client communication, and grow your law firm's
+          reputation in the digital age.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Get Started Today
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
+          >
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+          >
+            Digital Transformation for Law Firms
+          </h2>
+          <div class="prose prose-lg text-gray-700 space-y-4">
+            <p>
+              The legal profession demands precision, security, and efficiency.
+              At CodeBrand, we understand the unique challenges law firms
+              face—from managing complex case files and tracking billable hours
+              to maintaining client confidentiality and building a strong
+              professional reputation online.
+            </p>
+            <p>
+              We specialize in creating custom legal technology solutions that
+              address the specific needs of modern law practices. Whether
+              you're a solo practitioner, boutique firm, or large law office,
+              our software solutions help you practice law more efficiently
+              while enhancing client satisfaction.
+            </p>
+            <p>
+              Our team has worked with law firms across multiple practice
+              areas—from personal injury and family law to corporate law and
+              criminal defense. We know that every practice is unique, which is
+              why we don't believe in one-size-fits-all solutions. Instead, we
+              create technology that adapts to your specific workflows and
+              practice management style.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="relative bg-gradient-to-br from-cyan-100 to-orange-100 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="space-y-4">
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">45%</div>
+                    <div class="text-sm text-gray-600">More Billable Hours</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">92%</div>
+                    <div class="text-sm text-gray-600">Client Satisfaction</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">300+</div>
+                    <div class="text-sm text-gray-600">Law Firms Served</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section
+    id="services"
+    class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Specialized Services for Law Firms
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Comprehensive legal technology solutions tailored to meet the unique
+          demands of modern law practices
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Case Management Systems
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Comprehensive case management platforms that organize client files,
+            track deadlines, manage court dates, and store documents securely.
+            Everything you need to manage cases efficiently in one centralized
+            system.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Deadline tracking and calendar integration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Secure document storage and management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Task automation and workflow management</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 2 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Secure Client Portals
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Encrypted client portals that enable secure communication, document
+            sharing, and case updates. Give clients 24/7 access to their case
+            information while maintaining attorney-client privilege and
+            confidentiality.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Bank-level encryption and security</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Secure messaging and document exchange</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Real-time case status updates</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 3 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Document Automation
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Automate the creation of legal documents, contracts, and forms with
+            intelligent templates. Save hours of drafting time while ensuring
+            accuracy and consistency across all your legal documents.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Smart document templates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>E-signature integration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Version control and audit trails</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 4 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Time Tracking & Billing
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Capture every billable minute with automatic time tracking, generate
+            professional invoices, and integrate with accounting software.
+            Increase revenue by ensuring no billable time goes unbilled.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Automatic time tracking</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Customizable billing rates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>QuickBooks and accounting integrations</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 5 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
+            Professional Attorney Websites
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Establish credibility and attract quality clients with a
+            professionally designed attorney website. Showcase your expertise,
+            practice areas, and case results with SEO-optimized content that
+            ranks in local searches.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Local SEO optimization</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Attorney bio and case results showcase</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Lead capture and consultation booking</span>
+            </li>
+          </ul>
+          <a
+            href="/services/web-development"
+            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
+          >
+            Learn More
+            <svg
+              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 6 -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-900 mb-4">Legal CRM Systems</h3>
+          <p class="text-gray-600 mb-4">
+            Manage client relationships, track leads, and automate follow-ups
+            with a CRM designed specifically for law firms. Convert more
+            consultations into retained clients and improve client retention.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Lead tracking and intake management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Automated follow-up workflows</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Client communication history</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Our Proven Development Process
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          A transparent, collaborative approach that ensures your legal
+          technology project is delivered on time and exceeds expectations
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Timeline line -->
+        <div
+          class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 via-orange-500 to-cyan-500"
+        >
+        </div>
+
+        <div class="space-y-12">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right lg:pr-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                1
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Practice Analysis & Consultation
+              </h3>
+              <p class="text-gray-600">
+                We begin with a comprehensive analysis of your law practice,
+                understanding your practice areas, workflows, pain points, and
+                technology goals. This includes reviewing current systems,
+                identifying inefficiencies, and defining success metrics.
+              </p>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              1
+            </div>
+            <div class="lg:w-1/2"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2"></div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              2
+            </div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                2
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Security & Compliance Planning
+              </h3>
+              <p class="text-gray-600">
+                Legal technology requires the highest security standards. We
+                design a security architecture that protects attorney-client
+                privilege, ensures data confidentiality, and meets all
+                regulatory compliance requirements for your jurisdiction.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right lg:pr-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                3
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Custom Development & Integration
+              </h3>
+              <p class="text-gray-600">
+                Our development team builds your legal technology solution using
+                secure, enterprise-grade technologies. We integrate with your
+                existing tools (calendar systems, accounting software, document
+                storage) and provide regular demos throughout development.
+              </p>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              3
+            </div>
+            <div class="lg:w-1/2"></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2"></div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              4
+            </div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                4
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Training & Seamless Deployment
+              </h3>
+              <p class="text-gray-600">
+                We provide comprehensive training for attorneys, paralegals, and
+                support staff. Our deployment process is carefully planned to
+                ensure minimal disruption to your practice, with data migration
+                support and go-live assistance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right lg:pr-12">
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
+              >
+                5
+              </div>
+              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
+                Ongoing Support & Maintenance
+              </h3>
+              <p class="text-gray-600">
+                Your practice evolves, and so should your technology. We provide
+                ongoing support, security updates, and feature enhancements. Our
+                team is always available to help you maximize the value of your
+                legal technology investment.
+              </p>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full font-bold text-2xl shadow-xl z-10"
+            >
+              5
+            </div>
+            <div class="lg:w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 text-white font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          Why Law Firms Choose CodeBrand
+        </h2>
+        <p class="text-xl text-cyan-100 max-w-3xl mx-auto">
+          We're not just developers—we're your legal technology partners
+          committed to your practice's success
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Legal Industry Expertise</h3>
+          <p class="text-cyan-100">
+            We've worked with law firms across all practice areas and
+            understand the unique ethical, security, and confidentiality
+            requirements of the legal profession.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Bank-Level Security</h3>
+          <p class="text-cyan-100">
+            Attorney-client privilege is sacred. We implement military-grade
+            encryption, secure authentication, and regular security audits to
+            protect sensitive client information.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Increase Billable Hours</h3>
+          <p class="text-cyan-100">
+            Our time-saving automation tools help attorneys focus on billable
+            work instead of administrative tasks. Clients report 30-50% more
+            billable hours captured.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+              <path
+                fill-rule="evenodd"
+                d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Custom Workflows</h3>
+          <p class="text-cyan-100">
+            Every practice is different. We build solutions that match YOUR
+            workflows, not generic software that forces you to change how you
+            work.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Priority Support</h3>
+          <p class="text-cyan-100">
+            When you're preparing for trial or meeting a filing deadline, you
+            need immediate support. Our legal clients receive priority,
+            same-day support response.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Client Experience</h3>
+          <p class="text-cyan-100">
+            Modern clients expect modern communication. Our client portals and
+            automated updates improve client satisfaction and reduce "where's my
+            case?" calls.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies / Results -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Real Results for Law Firms
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          See how we've helped law practices increase efficiency, grow revenue,
+          and enhance client satisfaction
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-800 mb-2"
+          >
+            45%
+          </div>
+          <div class="text-gray-600 font-medium">
+            Increase in billable hours captured with automated time tracking
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-2"
+          >
+            $180K
+          </div>
+          <div class="text-gray-600 font-medium">
+            Average annual revenue increase from improved efficiency
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-800 mb-2"
+          >
+            92%
+          </div>
+          <div class="text-gray-600 font-medium">
+            Client satisfaction rating with secure portal access
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+              <svg
+                class="w-10 h-10 text-orange-500 mb-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                ></path>
+              </svg>
+              <p class="text-lg text-gray-700 mb-6 italic">
+                "CodeBrand's case management system has transformed our
+                practice. We've recovered over $150K in previously unbilled
+                time in the first year alone. The automated time tracking
+                captures billable work we used to miss, and the client portal
+                has dramatically reduced administrative calls from clients
+                asking for updates."
+              </p>
+              <div>
+                <div class="font-bold text-cyan-900">Jennifer Martinez, Esq.</div>
+                <div class="text-gray-600">
+                  Managing Partner, Martinez & Associates Law Firm
+                </div>
+                <div class="text-sm text-gray-500 mt-1">
+                  Personal Injury & Medical Malpractice - 12 Attorneys
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+              <svg
+                class="w-10 h-10 text-orange-500 mb-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                ></path>
+              </svg>
+              <p class="text-lg text-gray-700 mb-6 italic">
+                "As a solo practitioner, I needed technology that would make me
+                competitive with larger firms. CodeBrand built me a
+                professional website and intake system that converts leads at
+                3x the rate of my old site. The document automation saves me 10
+                hours a week on routine filings. Best investment I've made in
+                my practice."
+              </p>
+              <div>
+                <div class="font-bold text-cyan-900">David Thompson, Esq.</div>
+                <div class="text-gray-600">
+                  Solo Practitioner, Thompson Law Office
+                </div>
+                <div class="text-sm text-gray-500 mt-1">
+                  Family Law & Estate Planning - Solo Practice
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Built with Enterprise-Grade Technology
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We use cutting-edge, secure technologies trusted by Fortune 500
+          companies and law firms worldwide
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">⚛️</div>
+          <div class="text-sm font-semibold text-gray-700">React</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">🟢</div>
+          <div class="text-sm font-semibold text-gray-700">Node.js</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">🔷</div>
+          <div class="text-sm font-semibold text-gray-700">PostgreSQL</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">☁️</div>
+          <div class="text-sm font-semibold text-gray-700">AWS</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">🔐</div>
+          <div class="text-sm font-semibold text-gray-700">Encryption</div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+        >
+          <div class="text-4xl mb-3">🛡️</div>
+          <div class="text-sm font-semibold text-gray-700">Security</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Challenges Section -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-cyan-50 font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+        >
+          Common Challenges We Solve
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Legal practice problems require specialized legal technology solutions
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Lost Billable Hours
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Attorneys forget to track time, resulting in thousands of
+                dollars in lost revenue each month. Manual time entry is
+                inaccurate and easily forgotten.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Automatic time tracking that captures
+                  all billable work, with one-click timers and smart suggestions
+                  based on calendar events and emails.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Missed Deadlines
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Court deadlines, statute of limitations, and filing dates
+                scattered across calendars. Missing a deadline can result in
+                malpractice claims.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Integrated deadline management with
+                  automatic reminders, court rule calculators, and team notifications
+                  to ensure nothing falls through the cracks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Insecure Client Communication
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Sending confidential information via regular email violates
+                attorney-client privilege and exposes the firm to data breaches
+                and ethical violations.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Encrypted client portals with secure
+                  messaging, document sharing, and audit trails that maintain confidentiality
+                  and meet ethical requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
+        >
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-cyan-900 mb-2">
+                Problem: Inefficient Lead Conversion
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Potential clients call or submit forms but never get followed
+                up with promptly. By the time you respond, they've hired another
+                attorney.
+              </p>
+              <div class="flex gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-gray-700">
+                  <strong>Solution:</strong> Legal CRM with automatic lead capture,
+                  instant notifications, follow-up reminders, and intake management
+                  to convert more consultations into paying clients.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 text-white font-poppins"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+        Ready to Transform Your Law Practice?
+      </h2>
+      <p class="text-xl text-cyan-100 mb-8 leading-relaxed">
+        Let's discuss how custom legal technology can increase your billable
+        hours, improve client satisfaction, and give you a competitive
+        advantage. Schedule a confidential consultation with our team today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Schedule Free Consultation
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="tel:+1234567890"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-lg text-white rounded-xl font-bold text-lg border-2 border-white/30 transition-all duration-200"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+            ></path>
+          </svg>
+          Call Us Now
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-cyan-200">
+        Attorney-client privilege protected • Confidential consultation • Response
+        within 24 hours
+      </p>
+    </div>
+  </section>
+
+  <Whyus />
+</Layout>
