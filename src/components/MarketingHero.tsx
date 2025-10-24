@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { ArrowRight, Play, TrendingUp, Users, Award, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 export default function MarketingHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -15,15 +15,15 @@ export default function MarketingHero() {
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   const stats = [
     { icon: TrendingUp, value: "300%", label: "ROI Promedio" },
     { icon: Users, value: "500+", label: "Clientes Felices" },
     { icon: Award, value: "50+", label: "Premios Ganados" },
-    { icon: Zap, value: "24/7", label: "Soporte" }
+    { icon: Zap, value: "24/7", label: "Soporte" },
   ];
 
   const floatingElements = [
@@ -36,13 +36,13 @@ export default function MarketingHero() {
   return (
     <section className="relative min-h-screen pt-20 pb-12 overflow-hidden">
       {/* Animated Background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-30"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)`
+          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)`,
         }}
       />
-      
+
       {/* Floating Background Elements */}
       {floatingElements.map((element, index) => (
         <motion.div
@@ -50,12 +50,12 @@ export default function MarketingHero() {
           className={`absolute ${element.position} text-4xl opacity-20`}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.2, scale: 1 }}
-          transition={{ 
-            duration: 2, 
+          transition={{
+            duration: 2,
             delay: element.delay,
             repeat: Infinity,
             repeatType: "reverse",
-            repeatDelay: 3
+            repeatDelay: 3,
           }}
         >
           {element.icon}
@@ -79,7 +79,7 @@ export default function MarketingHero() {
             >
               ✨ Agencia #1 en Resultados Digitales
             </motion.div>
-            
+
             {/* Main Headline */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -94,9 +94,10 @@ export default function MarketingHero() {
                 </span>
                 en resultados
               </h1>
-              
+
               <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Estrategias de marketing digital que generan más leads, ventas y crecimiento exponencial para tu negocio.
+                Estrategias de marketing digital que generan más leads, ventas y
+                crecimiento exponencial para tu negocio.
               </p>
             </motion.div>
 
@@ -107,17 +108,17 @@ export default function MarketingHero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="group bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary text-white shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 Obtener Propuesta Gratis
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
+
+              <Button
+                size="lg"
+                variant="outline"
                 className="group border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-all duration-300"
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
@@ -161,7 +162,7 @@ export default function MarketingHero() {
                 alt="Marketing Dashboard"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
-              
+
               {/* Floating Stats Cards */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -177,7 +178,7 @@ export default function MarketingHero() {
                   </div>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}

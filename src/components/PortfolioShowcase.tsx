@@ -1,10 +1,18 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink, TrendingUp, Users, Award, Target } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  TrendingUp,
+  Users,
+  Award,
+  Target,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 const portfolioItems = [
   {
@@ -12,69 +20,80 @@ const portfolioItems = [
     title: "E-commerce Fashion Revolution",
     client: "StyleHub",
     category: "E-commerce",
-    description: "Transformación digital completa de una marca de moda, desde el rebranding hasta la implementación de una plataforma e-commerce de alto rendimiento.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description:
+      "Transformación digital completa de una marca de moda, desde el rebranding hasta la implementación de una plataforma e-commerce de alto rendimiento.",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
       { metric: "Ventas Online", value: "+340%", icon: TrendingUp },
       { metric: "Nuevos Clientes", value: "+280%", icon: Users },
-      { metric: "ROI", value: "450%", icon: Award }
+      { metric: "ROI", value: "450%", icon: Award },
     ],
     tags: ["E-commerce", "Branding", "SEO", "Social Media"],
     challenge: "Bajo reconocimiento de marca y ventas online limitadas",
-    solution: "Estrategia integral de marketing digital con enfoque en experiencia de usuario y conversión",
-    timeline: "6 meses"
+    solution:
+      "Estrategia integral de marketing digital con enfoque en experiencia de usuario y conversión",
+    timeline: "6 meses",
   },
   {
     id: 2,
     title: "SaaS Lead Generation Mastery",
     client: "TechFlow",
     category: "SaaS",
-    description: "Campaña de generación de leads para una startup de software B2B, optimizando el funnel de ventas y automatizando procesos de marketing.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description:
+      "Campaña de generación de leads para una startup de software B2B, optimizando el funnel de ventas y automatizando procesos de marketing.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
       { metric: "Leads Cualificados", value: "+520%", icon: Target },
       { metric: "Conversión", value: "+185%", icon: TrendingUp },
-      { metric: "CAC Reducción", value: "-60%", icon: Award }
+      { metric: "CAC Reducción", value: "-60%", icon: Award },
     ],
     tags: ["SaaS", "Lead Generation", "Marketing Automation", "PPC"],
     challenge: "Alto costo de adquisición de clientes y baja calidad de leads",
-    solution: "Implementación de marketing automation y optimización de campañas PPC",
-    timeline: "4 meses"
+    solution:
+      "Implementación de marketing automation y optimización de campañas PPC",
+    timeline: "4 meses",
   },
   {
     id: 3,
     title: "Restaurant Chain Digital Transformation",
     client: "FoodCorp",
     category: "Food & Beverage",
-    description: "Digitalización completa de una cadena de restaurantes, incluyendo app móvil, delivery online y estrategias de social media.",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description:
+      "Digitalización completa de una cadena de restaurantes, incluyendo app móvil, delivery online y estrategias de social media.",
+    image:
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
       { metric: "Pedidos Online", value: "+450%", icon: TrendingUp },
       { metric: "App Downloads", value: "100K+", icon: Users },
-      { metric: "Revenue", value: "+220%", icon: Award }
+      { metric: "Revenue", value: "+220%", icon: Award },
     ],
     tags: ["Mobile App", "Delivery", "Social Media", "Local SEO"],
     challenge: "Impacto de pandemia en ventas presenciales",
-    solution: "Pivote rápido a modelo digital con app de delivery y marketing local",
-    timeline: "3 meses"
+    solution:
+      "Pivote rápido a modelo digital con app de delivery y marketing local",
+    timeline: "3 meses",
   },
   {
     id: 4,
     title: "FinTech User Acquisition",
     client: "PayFlow",
     category: "FinTech",
-    description: "Estrategia de adquisición de usuarios para una app de pagos móviles, enfocada en segmentación avanzada y retargeting.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description:
+      "Estrategia de adquisición de usuarios para una app de pagos móviles, enfocada en segmentación avanzada y retargeting.",
+    image:
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
       { metric: "Usuarios Activos", value: "+380%", icon: Users },
       { metric: "Retención", value: "+95%", icon: Target },
-      { metric: "LTV", value: "+250%", icon: TrendingUp }
+      { metric: "LTV", value: "+250%", icon: TrendingUp },
     ],
     tags: ["FinTech", "User Acquisition", "Retargeting", "Analytics"],
     challenge: "Alta competencia en mercado de pagos móviles",
     solution: "Segmentación avanzada y campañas de retargeting personalizadas",
-    timeline: "8 meses"
-  }
+    timeline: "8 meses",
+  },
 ];
 
 export default function PortfolioShowcase() {
@@ -88,7 +107,9 @@ export default function PortfolioShowcase() {
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + portfolioItems.length) % portfolioItems.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + portfolioItems.length) % portfolioItems.length
+    );
   };
 
   const currentItem = portfolioItems[currentIndex];
@@ -112,16 +133,17 @@ export default function PortfolioShowcase() {
             <Award className="w-4 h-4 mr-2" />
             Casos de Éxito Comprobados
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Resultados que
             <span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent">
               hablan por sí solos
             </span>
           </h2>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Descubre cómo hemos ayudado a empresas como la tuya a alcanzar el éxito digital
+            Descubre cómo hemos ayudado a empresas como la tuya a alcanzar el
+            éxito digital
           </p>
         </motion.div>
 
@@ -147,14 +169,14 @@ export default function PortfolioShowcase() {
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              
+
               {/* Category Badge */}
               <div className="absolute top-6 left-6">
                 <Badge className="bg-background/90 text-foreground">
                   {currentItem.category}
                 </Badge>
               </div>
-              
+
               {/* Navigation Buttons */}
               <div className="absolute bottom-6 right-6 flex space-x-2">
                 <Button
@@ -183,9 +205,9 @@ export default function PortfolioShowcase() {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'bg-primary scale-125' 
-                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                    index === currentIndex
+                      ? "bg-primary scale-125"
+                      : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                   }`}
                 />
               ))}
@@ -202,7 +224,9 @@ export default function PortfolioShowcase() {
           >
             <div>
               <h3 className="text-3xl font-bold mb-2">{currentItem.title}</h3>
-              <p className="text-primary font-medium mb-4">Cliente: {currentItem.client}</p>
+              <p className="text-primary font-medium mb-4">
+                Cliente: {currentItem.client}
+              </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 {currentItem.description}
               </p>
@@ -211,7 +235,11 @@ export default function PortfolioShowcase() {
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {currentItem.tags.map((tag, index) => (
-                <Badge key={index} variant="secondary" className="bg-primary/10 text-primary">
+                <Badge
+                  key={index}
+                  variant="secondary"
+                  className="bg-primary/10 text-primary"
+                >
                   {tag}
                 </Badge>
               ))}
@@ -242,17 +270,23 @@ export default function PortfolioShowcase() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold mb-2 text-primary">Desafío</h4>
-                <p className="text-muted-foreground text-sm">{currentItem.challenge}</p>
+                <p className="text-muted-foreground text-sm">
+                  {currentItem.challenge}
+                </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-2 text-primary">Solución</h4>
-                <p className="text-muted-foreground text-sm">{currentItem.solution}</p>
+                <p className="text-muted-foreground text-sm">
+                  {currentItem.solution}
+                </p>
               </div>
             </div>
 
             <div className="flex items-center justify-between pt-6 border-t border-border">
               <div>
-                <span className="text-sm text-muted-foreground">Timeline: </span>
+                <span className="text-sm text-muted-foreground">
+                  Timeline:{" "}
+                </span>
                 <span className="font-medium">{currentItem.timeline}</span>
               </div>
               <Button className="group">
@@ -281,9 +315,11 @@ export default function PortfolioShowcase() {
               onClick={() => setCurrentIndex(index)}
               className="cursor-pointer group"
             >
-              <Card className={`overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
-                currentIndex === index ? 'ring-2 ring-primary' : ''
-              }`}>
+              <Card
+                className={`overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+                  currentIndex === index ? "ring-2 ring-primary" : ""
+                }`}
+              >
                 <CardContent className="p-0">
                   <div className="relative">
                     <ImageWithFallback
@@ -292,7 +328,7 @@ export default function PortfolioShowcase() {
                       className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
+
                     {hoveredCard === item.id && (
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -305,7 +341,7 @@ export default function PortfolioShowcase() {
                       </motion.div>
                     )}
                   </div>
-                  
+
                   <div className="p-4">
                     <h4 className="font-semibold mb-1 group-hover:text-primary transition-colors">
                       {item.client}
@@ -332,10 +368,14 @@ export default function PortfolioShowcase() {
               ¿Listo para ser nuestro próximo caso de éxito?
             </h3>
             <p className="text-muted-foreground mb-6 text-lg max-w-2xl mx-auto">
-              Analicemos tu proyecto y creemos una estrategia personalizada para alcanzar tus objetivos
+              Analicemos tu proyecto y creemos una estrategia personalizada para
+              alcanzar tus objetivos
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary"
+              >
                 Solicitar Análisis Gratuito
               </Button>
               <Button size="lg" variant="outline">
