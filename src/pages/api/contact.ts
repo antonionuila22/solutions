@@ -27,6 +27,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         const name = sanitize(data.get("name"));
         const email = sanitize(data.get("email"));
         const phone = sanitize(data.get("phone"));
+        const industry = sanitize(data.get("industry"));
         const subject = sanitize(data.get("subject"));
         const message = sanitize(data.get("message"));
         const rawServices = data.getAll("services");
@@ -34,7 +35,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         const servicesString = services.join(", ");
 
         // Validaciones
-        if (!name || !email || !phone || !subject || !message || services.length === 0) {
+        if (!name || !email || !phone || !industry || !subject || !message || services.length === 0) {
             return new Response("Faltan campos obligatorios.", { status: 400 });
         }
 
@@ -50,8 +51,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
         if (rows.length === 0) {
             await turso.execute({
-                sql: `INSERT INTO contacts (name, email, phone, subject, message, services) VALUES (?, ?, ?, ?, ?, ?)`,
-                args: [name, email, phone, subject, message, servicesString],
+                sql: `INSERT INTO contacts (name, email, phone, industry, subject, message, services) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+                args: [name, email, phone, industry, subject, message, servicesString],
             });
         }
 
@@ -65,6 +66,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
                 <p><strong>Nombre:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>
                 <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Industria:</strong> ${industry}</p>
                 <p><strong>Asunto:</strong> ${subject}</p>
                 <p><strong>Servicios seleccionados:</strong> ${servicesString}</p>
                 <p><strong>Mensaje:</strong><br>${message}</p>

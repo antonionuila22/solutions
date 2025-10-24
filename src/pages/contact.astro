@@ -5,6 +5,21 @@ import Layout from "../layouts/Layout.astro";
 const pageTitle = "Contact Us – Codebrand | Get in Touch";
 const pageDescription =
   "Get in touch with Codebrand. We offer web development, SEO, branding, UX/UI design, and more. Contact us for a free consultation in San Pedro Sula, Honduras.";
+
+// Industrias disponibles
+const industries = [
+  "Automotive",
+  "Construction",
+  "Content Creators",
+  "E-commerce",
+  "Fitness",
+  "Healthcare",
+  "Law Firms",
+  "Real Estate",
+  "Restaurants",
+  "Travel Agency",
+  "Other"
+];
 ---
 
 <Layout title={pageTitle}>
@@ -269,6 +284,24 @@ const pageDescription =
             placeholder="+504-3272-2973"
             class="input-style"
           />
+        </div>
+
+        <!-- Industry -->
+        <div class="flex flex-col gap-2">
+          <label for="industry" class="text-sm font-medium text-gray-700"
+            >Industry</label
+          >
+          <select
+            id="industry"
+            name="industry"
+            required
+            class="input-style cursor-pointer"
+          >
+            <option value="" disabled selected>Select your industry</option>
+            {industries.map((industry) => (
+              <option value={industry}>{industry}</option>
+            ))}
+          </select>
         </div>
 
         <!-- Asunto -->
