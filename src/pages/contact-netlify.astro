@@ -18,7 +18,7 @@ const industries = [
   "Real Estate",
   "Restaurants",
   "Travel Agency",
-  "Other"
+  "Other",
 ];
 
 // Servicios disponibles
@@ -319,9 +319,11 @@ const services = [
             class="input-style cursor-pointer"
           >
             <option value="" disabled selected>Select your industry</option>
-            {industries.map((industry) => (
-              <option value={industry}>{industry}</option>
-            ))}
+            {
+              industries.map((industry) => (
+                <option value={industry}>{industry}</option>
+              ))
+            }
           </select>
         </div>
 
@@ -355,9 +357,10 @@ const services = [
             placeholder="Write your message here..."
             minlength="10"
             maxlength="2000"
-            class="input-style resize-none"
-          ></textarea>
-          <span class="text-xs text-gray-500" id="char-count">0 / 2000 characters</span>
+            class="input-style resize-none"></textarea>
+          <span class="text-xs text-gray-500" id="char-count"
+            >0 / 2000 characters</span
+          >
         </div>
 
         <!-- Servicios -->
@@ -366,17 +369,19 @@ const services = [
             Services of Interest <span class="text-red-500">*</span>
           </label>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {services.map((service) => (
-              <label class="flex items-center gap-2 cursor-pointer hover:text-orange-600 transition-colors">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value={service}
-                  class="w-4 h-4 text-orange-500 border-gray-300 rounded focus:ring-orange-500 focus:ring-2 cursor-pointer"
-                />
-                <span class="text-sm text-gray-700">{service}</span>
-              </label>
-            ))}
+            {
+              services.map((service) => (
+                <label class="flex items-center gap-2 cursor-pointer hover:text-orange-600 transition-colors">
+                  <input
+                    type="checkbox"
+                    name="services"
+                    value={service}
+                    class="w-4 h-4 text-orange-500 border-gray-300 rounded focus:ring-orange-500 focus:ring-2 cursor-pointer"
+                  />
+                  <span class="text-sm text-gray-700">{service}</span>
+                </label>
+              ))
+            }
           </div>
           <span class="text-xs text-red-500 hidden" id="services-error">
             Please select at least one service
@@ -470,74 +475,80 @@ const services = [
 
 <script>
   // Character counter for message field
-  const messageField = document.getElementById('message') as HTMLTextAreaElement;
-  const charCount = document.getElementById('char-count');
+  const messageField = document.getElementById(
+    "message"
+  ) as HTMLTextAreaElement;
+  const charCount = document.getElementById("char-count");
 
   if (messageField && charCount) {
-    messageField.addEventListener('input', () => {
+    messageField.addEventListener("input", () => {
       const count = messageField.value.length;
       charCount.textContent = `${count} / 2000 characters`;
 
       if (count > 1900) {
-        charCount.classList.add('text-red-500');
+        charCount.classList.add("text-red-500");
       } else {
-        charCount.classList.remove('text-red-500');
+        charCount.classList.remove("text-red-500");
       }
     });
   }
 
   // Form validation
-  const form = document.querySelector('form[name="contact-netlify"]') as HTMLFormElement;
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-  const submitText = document.getElementById('submit-text');
-  const submitLoading = document.getElementById('submit-loading');
-  const servicesError = document.getElementById('services-error');
+  const form = document.querySelector(
+    'form[name="contact-netlify"]'
+  ) as HTMLFormElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const submitText = document.getElementById("submit-text");
+  const submitLoading = document.getElementById("submit-loading");
+  const servicesError = document.getElementById("services-error");
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener("submit", (e) => {
       // Check if at least one service is selected
-      const servicesCheckboxes = form.querySelectorAll('input[name="services"]:checked');
+      const servicesCheckboxes = form.querySelectorAll(
+        'input[name="services"]:checked'
+      );
 
       if (servicesCheckboxes.length === 0) {
         e.preventDefault();
-        servicesError?.classList.remove('hidden');
-        servicesError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        servicesError?.classList.remove("hidden");
+        servicesError?.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       } else {
-        servicesError?.classList.add('hidden');
+        servicesError?.classList.add("hidden");
       }
 
       // Show loading state
       if (submitBtn && submitText && submitLoading) {
         submitBtn.disabled = true;
-        submitText.classList.add('hidden');
-        submitLoading.classList.remove('hidden');
+        submitText.classList.add("hidden");
+        submitLoading.classList.remove("hidden");
       }
     });
 
     // Remove error when services are selected
     const serviceCheckboxes = form.querySelectorAll('input[name="services"]');
     serviceCheckboxes.forEach((checkbox) => {
-      checkbox.addEventListener('change', () => {
+      checkbox.addEventListener("change", () => {
         const checked = form.querySelectorAll('input[name="services"]:checked');
         if (checked.length > 0) {
-          servicesError?.classList.add('hidden');
+          servicesError?.classList.add("hidden");
         }
       });
     });
   }
 
   // Email validation enhancement
-  const emailInput = document.getElementById('email') as HTMLInputElement;
+  const emailInput = document.getElementById("email") as HTMLInputElement;
   if (emailInput) {
-    emailInput.addEventListener('blur', () => {
+    emailInput.addEventListener("blur", () => {
       const email = emailInput.value;
       const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
       if (email && !isValid) {
-        emailInput.setCustomValidity('Please enter a valid email address');
+        emailInput.setCustomValidity("Please enter a valid email address");
       } else {
-        emailInput.setCustomValidity('');
+        emailInput.setCustomValidity("");
       }
     });
   }

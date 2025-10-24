@@ -89,10 +89,10 @@ Para que los datos se guarden automáticamente en Turso DB:
 1. Ve a **Site Settings** > **Forms** > **Form notifications**
 2. Click en **"Add notification"**
 3. Selecciona **"Outgoing webhook"**
-4. Ingresa la URL: `https://tu-sitio.netlify.app/.netlify/functions/contact-submission`
+4. Ingresa la URL: `https://codebrand.netlify.app/.netlify/functions/contact-submission`
 5. Selecciona el formulario: `contact-netlify`
 6. Event to listen for: **"Form submission"**
-7. Guarda
+7. Guardaa
 
 ---
 

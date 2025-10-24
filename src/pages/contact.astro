@@ -347,25 +347,6 @@ const pageDescription =
           >
             Send Message
           </button>
-          <!-- Recaptcha -->
-          <script src="https://www.google.com/recaptcha/api.js" async is:inline
-          ></script>
-          <script is:inline>
-            function onSubmit(token) {
-              fetch("/recaptcha", {
-                method: "POST",
-                body: JSON.stringify({ recaptcha: token }),
-              })
-                .then((response) => response.json())
-                .then((gResponse) => {
-                  if (gResponse.success) {
-                    console.log("Captcha verified successfully");
-                  } else {
-                    console.error("Captcha verification failed");
-                  }
-                });
-            }
-          </script>
         </div>
       </form>
     </div>
