@@ -46,20 +46,22 @@ const industries = [
           Contact Us
         </h1>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Have a question or want to work together? Fill out the form below and we'll get back to you shortly.
+          Have a question or want to work together? Fill out the form below and
+          we'll get back to you shortly.
         </p>
       </div>
     </div>
 
     <!-- Main Content -->
-    <div class="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <div
+      class="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 lg:grid-cols-3 gap-12"
+    >
       <!-- Contact Information -->
       <div class="lg:col-span-1">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Get In Touch
-        </h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
         <p class="text-gray-600 mb-8 leading-relaxed">
-          Whether you have a question or need a quote, our team is ready to assist you.
+          Whether you have a question or need a quote, our team is ready to
+          assist you.
         </p>
 
         <!-- Contact Details -->
@@ -135,7 +137,10 @@ const industries = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Name -->
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
               Name *
             </label>
             <input
@@ -151,7 +156,10 @@ const industries = [
 
           <!-- Email -->
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
               Email *
             </label>
             <input
@@ -167,7 +175,10 @@ const industries = [
 
           <!-- Phone -->
           <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              for="phone"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
               Phone *
             </label>
             <input
@@ -183,15 +194,13 @@ const industries = [
 
           <!-- Industry -->
           <div>
-            <label for="industry" class="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              for="industry"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
               Industry *
             </label>
-            <select
-              id="industry"
-              name="industry"
-              required
-              class="form-input"
-            >
+            <select id="industry" name="industry" required class="form-input">
               <option value="" disabled selected>Select your industry</option>
               {
                 industries.map((industry) => (
@@ -203,7 +212,10 @@ const industries = [
 
           <!-- Subject -->
           <div class="md:col-span-2">
-            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              for="subject"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
               Subject *
             </label>
             <input
@@ -218,7 +230,10 @@ const industries = [
 
           <!-- Message -->
           <div class="md:col-span-2">
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
               Message *
             </label>
             <textarea
@@ -227,8 +242,7 @@ const industries = [
               rows="5"
               required
               placeholder="Tell us about your project..."
-              class="form-input resize-none"
-            ></textarea>
+              class="form-input resize-none"></textarea>
           </div>
 
           <!-- Services -->
@@ -299,7 +313,9 @@ const industries = [
     border: 1px solid #d1d5db;
     border-radius: 0.5rem;
     font-size: 0.938rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
     outline: none;
   }
 
