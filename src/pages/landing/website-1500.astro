@@ -1,0 +1,974 @@
+---
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import Logo from "../../components/logo.astro";
+
+// SEO Metadata optimized for professional website
+const pageTitle = "Professional 10-Page Website for $1500 | Codebrand";
+const pageDescription =
+  "Get a professional 10-page website, ultra-fast and SEO-optimized for only $1500. Responsive design, Google Analytics, and 90 days of support included. Codebrand - Your web development agency.";
+const pageKeywords =
+  "professional web development, 10-page website, responsive web design, SEO optimization, business website, web development agency, professional website design, web development services, custom website, Codebrand";
+
+// Available industries
+const industries = [
+  "Automotive",
+  "Construction",
+  "Content Creators",
+  "E-commerce",
+  "Fitness",
+  "Healthcare",
+  "Law Firms",
+  "Real Estate",
+  "Restaurants",
+  "Travel Agency",
+  "Other",
+];
+---
+
+<LandingLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+>
+  <!-- Additional SEO Meta Tags -->
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:title" content={pageTitle} slot="head" />
+  <meta name="twitter:description" content={pageDescription} slot="head" />
+
+  <!-- Structured Data for Service Offer -->
+  <script type="application/ld+json" is:inline slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      "name": "Professional 10-Page Website",
+      "description": "Complete 10-page website with responsive design, SEO optimization and 90 days of support",
+      "price": "1500",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Codebrand",
+        "url": "https://solutions.codebrand.es"
+      },
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Professional Web Development",
+        "provider": {
+          "@type": "Organization",
+          "name": "Codebrand"
+        }
+      }
+    }
+  </script>
+
+  <div class="relative w-full overflow-x-hidden bg-white">
+    <!-- Hero Section -->
+    <header
+      class="relative min-h-screen bg-cover bg-center"
+      style='background-image: linear-gradient(rgba(8, 51, 68, 0.85) 0%, rgba(8, 51, 68, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrL-kJcYzyP7rGcBNKfq9V-E2gyJiayKc9fn9E2fDskl1am_H_3JhMLaa6Ee8xQ4EtZX1WSWurAQzLrFhgFk-78Npk8vEufOVVsLEG8U4N2BksiUSWtSYZrt4oswQ02q3hBNgiHY7bM8zxMn790ss2LLwmNzuyMyx5EaTJ7K9v6_gcSLN_finGYjeWFbQg0Gb8cqjNt6lXCGoRKlu7RAfeKisjQjrgQvoL42vCqrZPCkwYrv4UirrhpXJbjgMGJqrmZehNvxRDUl0A");'
+    >
+      <div
+        class="absolute top-0 left-0 w-full z-20 bg-gradient-to-b from-black/30 to-transparent text-white"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-6">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+              <Logo sizeW={180} sizeH={54} />
+            </div>
+            <nav class="hidden md:flex space-x-8">
+              <a
+                class="text-base font-medium text-white/90 hover:text-white transition-colors"
+                href="#features">Benefits</a
+              >
+              <a
+                class="text-base font-medium text-white/90 hover:text-white transition-colors"
+                href="#pricing">Pricing</a
+              >
+              <a
+                class="text-base font-medium text-white/90 hover:text-white transition-colors"
+                href="#portfolio">Portfolio</a
+              >
+              <a
+                class="text-base font-medium text-white/90 hover:text-white transition-colors"
+                href="#contact">Contact</a
+              >
+            </nav>
+            <div
+              class="hidden md:flex items-center justify-end md:flex-1 lg:w-0"
+            >
+              <a
+                class="whitespace-nowrap inline-flex items-center justify-center px-6 py-2.5 border border-transparent rounded-lg shadow-lg text-base font-semibold text-white bg-orange-600 hover:bg-orange-700 transition-all duration-300 hover:scale-105"
+                href="#contact"
+              >
+                Get My Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="relative flex flex-col items-center justify-center min-h-screen px-4 py-20 text-center md:px-8 lg:px-16"
+      >
+        <div class="max-w-5xl mx-auto">
+          <p
+            class="text-orange-500 font-bold text-sm md:text-base uppercase tracking-wider mb-4"
+          >
+            Your Complete Website for a One-Time Price
+          </p>
+          <h1
+            class="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight mb-6"
+          >
+            A Professional 10-Page<br class="hidden sm:block" />
+            Website for Only <span class="text-orange-500 inline-block"
+              >$1500</span
+            >
+          </h1>
+          <p
+            class="mt-6 text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+          >
+            Get a complete, ultra-fast, SEO-optimized website designed to
+            convert visitors into customers. Your online presence, solved once
+            and for all.
+          </p>
+          <div
+            class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5"
+          >
+            <a
+              class="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 rounded-lg bg-orange-600 text-white text-lg font-semibold shadow-xl hover:bg-orange-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+              href="#pricing"
+            >
+              <span>View Package Details</span>
+              <svg
+                class="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+            <a
+              class="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 rounded-lg bg-white/10 text-white text-lg font-semibold backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+              href="#contact"
+            >
+              Contact Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Benefits Section -->
+    <section class="bg-gray-50 py-20 sm:py-24" id="features">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p class="text-orange-600 font-semibold tracking-wide uppercase">
+            Everything Your Business Needs
+          </p>
+          <h2
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            Benefits of Our 10-Page Website
+          </h2>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            It's not just a website, it's a growth tool designed to give you a
+            competitive advantage.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12"
+        >
+          <div
+            class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md"
+          >
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 text-orange-600"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-gray-900">
+              Extreme Speed
+            </h3>
+            <p class="mt-2 text-gray-600">
+              Pages that load instantly to capture your visitors' attention and
+              improve your Google ranking.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md"
+          >
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 text-orange-600"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-gray-900">
+              Complete SEO Optimization
+            </h3>
+            <p class="mt-2 text-gray-600">
+              From structure to content, we optimize everything so your
+              customers find you first.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md"
+          >
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 text-orange-600"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-gray-900">
+              Responsive Design
+            </h3>
+            <p class="mt-2 text-gray-600">
+              A perfect user experience on mobile, tablets, and desktops.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md"
+          >
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 text-orange-600"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-gray-900">
+              Professional & Unique Design
+            </h3>
+            <p class="mt-2 text-gray-600">
+              We reflect your brand identity with an attractive design that
+              builds trust.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md"
+          >
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 text-orange-600"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-gray-900">
+              Up to 10 Strategic Pages
+            </h3>
+            <p class="mt-2 text-gray-600">
+              Enough space to present your company, services, team, contact,
+              and more.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md"
+          >
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 text-orange-600"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-gray-900">
+              Security & Trust
+            </h3>
+            <p class="mt-2 text-gray-600">
+              We implement security best practices to protect your website and
+              users.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bg-gray-900 py-20 sm:py-24" id="pricing">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <div
+            class="absolute -top-10 -right-10 w-40 h-40 bg-orange-500/20 rounded-full blur-2xl"
+          >
+          </div>
+          <div
+            class="absolute -bottom-16 -left-16 w-52 h-52 bg-orange-500/20 rounded-full blur-3xl"
+          >
+          </div>
+          <div class="relative p-8 lg:p-12">
+            <div class="text-center">
+              <p
+                class="text-sm font-semibold tracking-wider uppercase bg-orange-100 text-orange-600 inline-block px-3 py-1 rounded-full"
+              >
+                Exclusive & Transparent Offer
+              </p>
+              <h2
+                class="mt-4 text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900"
+              >
+                The Ultimate Package That Will <span class="text-orange-600"
+                  >Boost</span
+                > Your Business
+              </h2>
+              <p class="mt-4 max-w-2xl text-lg text-gray-500 lg:mx-auto">
+                Everything you need for a dominant online presence. No
+                complications. No hidden costs. Just results.
+              </p>
+            </div>
+            <div
+              class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+            >
+              <div
+                class="text-center bg-orange-50 p-8 rounded-xl border border-orange-200"
+              >
+                <p class="text-lg font-semibold text-gray-900">
+                  Complete 10-Page Website
+                </p>
+                <div class="my-4">
+                  <span
+                    class="text-4xl font-bold text-gray-500 line-through decoration-2"
+                    >$2500</span
+                  >
+                  <p class="text-7xl lg:text-8xl font-black text-gray-900">
+                    $1500
+                  </p>
+                  <p class="text-xl font-bold text-orange-600">
+                    Save $1000!
+                  </p>
+                </div>
+                <p class="text-gray-600 mb-6">
+                  A one-time investment for a digital asset that works for you
+                  24/7.
+                </p>
+                <a
+                  class="w-full inline-block cursor-pointer rounded-lg bg-orange-600 px-8 py-4 text-xl font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-orange-700"
+                  href="#contact"
+                >
+                  I Want My Website Now!
+                </a>
+                <p class="mt-3 text-sm text-gray-500">
+                  Limited time offer
+                </p>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                  What's included in this unbeatable package?
+                </h3>
+                <ul class="space-y-2.5 text-gray-600">
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span>10 Strategic Pages for your business</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span>100% Responsive and Modern Design</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span>SEO Optimization for maximum visibility</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Extreme loading speed (Core Web Vitals)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Contact form and calls to action</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Google Analytics integration</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                    <span>90 days warranty and priority technical support</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gray-50 py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            Tired of Losing Customers with a Slow Website?
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Every second counts. A professional website is not a luxury, it's a
+            necessity. It's your best salesperson, working 24/7. Our solution
+            puts you on the map and converts visitors into loyal customers.
+          </p>
+          <div class="mt-10">
+            <a
+              class="inline-block cursor-pointer rounded-lg bg-orange-600 px-8 py-3 text-lg font-bold text-white shadow-md hover:bg-orange-700 transition-colors"
+              href="#contact"
+            >
+              Fix My Online Presence
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="bg-white py-20 sm:py-24" id="portfolio">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-gray-900 text-3xl font-bold tracking-tight lg:text-4xl"
+          >
+            Our Work Speaks for Itself
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            We don't just create beautiful websites, we create conversion
+            machines. Explore how we've helped businesses like yours succeed
+            online.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden group">
+            <img
+              alt="Corporate Website for Consulting Firm"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcXEkkvffeKMgOUFPaOtxA3ulmzOoqbsqKCd0WVYxHH7dkYIyMDzOy-6JH8hfahEoOmKNgn3b1-BpBGxALSN8uvsmsENsCO0H_5kutQPtoD-aQ-md98no6nlyqij_b39EZau3keuBboPHMmghQ-a0QwYo0Lk7Hx8kQisHRrKhiCqWkqkgiyujcb5bzHIHPXwaByVhkpfN3RR3S6cWTj4OIoqBc-RU4b8XKVNN2gwxzMcs5w9wfXtha1lFUu0g5HUlItdTAzrtuyJaF"
+            />
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900">
+                Corporate Website for Consulting Firm
+              </h3>
+              <div class="mt-4 text-gray-600 space-y-2">
+                <p>
+                  <strong class="text-orange-600">Goal:</strong> Generate credibility
+                  and capture high-quality leads.
+                </p>
+                <p>
+                  <strong class="text-orange-600">Result:</strong> A professional
+                  website that positioned the firm as a sector leader, resulting in
+                  a 75% increase in qualified inquiries.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden group">
+            <img
+              alt="Website for Local Services Company"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj-lhyIzG9uOy80bnmNXV3VuLimRCdscwQvk1i3XuEj6O7rK8OpFrq1bbxPFSvXxt3KUzVeZTwT2Fr_ehZeynHh9-CScqNNiTZ--oZq_vDKEbkfb1s06CPfFpPcU5bYRKfi5R6Ory3xmpkcXmMczjwzA2YYIgGhQx8HKMHgAc-S1oU40NSZ3KhfJ7ckG3W5lMjoXQR6SjXeaGoH98q2KN5XN7E2cljPxAkWP3LdaobCYs8ftcd79CfqBzSVfc4ITJOWGFLHB0KuWXd"
+            />
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900">
+                Website for Local Services Company
+              </h3>
+              <div class="mt-4 text-gray-600 space-y-2">
+                <p>
+                  <strong class="text-orange-600">Goal:</strong> Improve visibility
+                  in local searches and simplify service booking.
+                </p>
+                <p>
+                  <strong class="text-orange-600">Result:</strong> Appears on
+                  Google's first page for their key services. Online bookings
+                  doubled in 3 months.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 py-20 sm:py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2
+            class="text-gray-900 text-3xl font-bold tracking-tight lg:text-4xl"
+          >
+            Frequently Asked Questions
+          </h2>
+        </div>
+        <div class="space-y-4">
+          <details class="group bg-white p-6 rounded-lg shadow-md">
+            <summary
+              class="flex items-center justify-between cursor-pointer font-bold text-gray-900"
+            >
+              What exactly does the $1500 package include?
+              <svg
+                class="w-5 h-5 transform group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">
+              Includes a complete website of up to 10 pages, responsive design,
+              on-page SEO optimization, high-speed loading, contact form,
+              Google Analytics integration, and 90 days of post-launch
+              technical support.
+            </p>
+          </details>
+          <details class="group bg-white p-6 rounded-lg shadow-md">
+            <summary
+              class="flex items-center justify-between cursor-pointer font-bold text-gray-900"
+            >
+              Can I add more pages or features in the future?
+              <svg
+                class="w-5 h-5 transform group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">
+              Absolutely! We build your website on a scalable foundation. If in
+              the future you need more pages, a blog, or e-commerce features,
+              we can quote and add those characteristics without any problem.
+            </p>
+          </details>
+          <details class="group bg-white p-6 rounded-lg shadow-md">
+            <summary
+              class="flex items-center justify-between cursor-pointer font-bold text-gray-900"
+            >
+              What do you need from me to get started?
+              <svg
+                class="w-5 h-5 transform group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">
+              To get started, we'll need your logo, text content, and images
+              you want to include on the pages. If you don't have content,
+              don't worry! We can help you create it or use high-quality stock
+              content to begin.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-gray-900 py-20 sm:py-24 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+          Ready to Transform Your Online Presence?
+        </h2>
+        <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
+          Stop losing customers. Invest in a website that works for you. Get
+          your professional 10-page website for only $1500.
+        </p>
+        <div class="mt-10">
+          <a
+            class="inline-block cursor-pointer rounded-lg bg-orange-600 px-8 py-4 text-lg font-bold text-white shadow-lg hover:bg-orange-700 transition-transform hover:scale-105"
+            href="#contact"
+          >
+            Start Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="bg-gray-50 py-20 sm:py-24" id="contact">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            Let's Talk About Your Project!
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Complete the form and one of our specialists will contact you
+            within 24 hours to start building your new website.
+          </p>
+        </div>
+        <div class="mt-12 bg-white p-8 rounded-xl shadow-2xl">
+          <form
+            name="contact-website-1500"
+            method="POST"
+            action="/api/contact"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            <input
+              type="hidden"
+              name="form-name"
+              value="contact-website-1500"
+            />
+
+            <!-- Honeypot -->
+            <input
+              type="text"
+              name="honey"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+              class="hidden"
+            />
+
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Name *
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                autocomplete="name"
+                placeholder="John Doe"
+                class="form-input"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Email *
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="john@example.com"
+                class="form-input"
+              />
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Phone *
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                required
+                autocomplete="tel"
+                placeholder="+1 (555) 000-0000"
+                class="form-input"
+              />
+            </div>
+
+            <!-- Industry -->
+            <div>
+              <label
+                for="industry"
+                class="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Industry *
+              </label>
+              <select id="industry" name="industry" required class="form-input">
+                <option value="" disabled selected>Select your industry</option>
+                {
+                  industries.map((industry) => (
+                    <option value={industry}>{industry}</option>
+                  ))
+                }
+              </select>
+            </div>
+
+            <!-- Subject -->
+            <div class="md:col-span-2">
+              <label
+                for="subject"
+                class="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Subject *
+              </label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                required
+                placeholder="Professional 10-Page Website"
+                class="form-input"
+              />
+            </div>
+
+            <!-- Message -->
+            <div class="md:col-span-2">
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Tell us about your business and what you expect from your new website *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Describe your project..."
+                class="form-input resize-none"></textarea>
+            </div>
+
+            <!-- Services -->
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 mb-3">
+                Additional Services of Interest
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                {
+                  [
+                    "Advanced SEO",
+                    "Digital Marketing",
+                    "Branding",
+                    "UX/UI Design",
+                    "E-commerce",
+                    "Social Media",
+                    "Photography",
+                    "Video Editing",
+                  ].map((service) => (
+                    <label class="flex items-center gap-2 text-sm">
+                      <input
+                        type="checkbox"
+                        name="services"
+                        value={service}
+                        class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                      />
+                      <span class="text-gray-700">{service}</span>
+                    </label>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- ReCAPTCHA -->
+            <div class="md:col-span-2">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6Lf6olArAAAAALJssnzah9pMjSczKZQIZYBglamB"
+                data-callback="onSubmit"
+                data-action="Submit"
+              >
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="md:col-span-2">
+              <button
+                type="submit"
+                class="w-full bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-700 transition-colors duration-200"
+              >
+                Request My $1500 Website
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Chat Button -->
+    <a
+      href="https://wa.me/50432722973?text=Hi%2C%20I'm%20interested%20in%20the%20professional%2010-page%20website"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-5 right-5 z-20 bg-orange-600 text-white rounded-full p-4 shadow-lg hover:bg-orange-700 transition-colors"
+    >
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        ></path>
+      </svg>
+    </a>
+  </div>
+</LandingLayout>
+
+<style>
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.938rem;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+    outline: none;
+  }
+
+  .form-input:focus {
+    border-color: #ea580c;
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+  }
+
+  .form-input::placeholder {
+    color: #9ca3af;
+  }
+</style>
+
+<script is:inline src="https://www.google.com/recaptcha/api.js" async defer
+></script>

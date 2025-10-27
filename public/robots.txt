@@ -15,5 +15,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://solutions.codebrand.es/sitemap-index.xml
-
-Sitemap: https://solutions.codebrand.es/sitemap-index.xml
