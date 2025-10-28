@@ -1,0 +1,1524 @@
+---
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import Logo from "../../components/logo.astro";
+
+const pageTitle = "IronPulse Gym | Transform Your Body, Transform Your Life";
+const pageDescription =
+  "Premier fitness center in Los Angeles. Personal training, group classes, state-of-the-art equipment. Join today and start your transformation!";
+const pageKeywords =
+  "gym Los Angeles, fitness center, personal training, group fitness classes, weight training, cardio, CrossFit, yoga";
+---
+
+<LandingLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+>
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+
+          // Animate counters
+          if (entry.target.classList.contains("counter")) {
+            const target = parseInt(entry.target.getAttribute("data-target"));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+              current += increment;
+              if (current < target) {
+                entry.target.textContent =
+                  Math.floor(current) +
+                  (entry.target.getAttribute("data-suffix") || "");
+                requestAnimationFrame(updateCounter);
+              } else {
+                entry.target.textContent =
+                  target + (entry.target.getAttribute("data-suffix") || "");
+              }
+            };
+            updateCounter();
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.addEventListener("DOMContentLoaded", () => {
+      document
+        .querySelectorAll(".scroll-animate")
+        .forEach((el) => observer.observe(el));
+      document
+        .querySelectorAll(".counter")
+        .forEach((el) => observer.observe(el));
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // Parallax effect
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector(".parallax-bg");
+        if (parallax) {
+          parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+      });
+    });
+  </script>
+
+  <div class="relative w-full overflow-hidden bg-black">
+    <!-- Enhanced Fixed Navigation -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-green-500/20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <Logo sizeW={160} sizeH={48} />
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#programs"
+              class="text-gray-300 hover:text-green-400 font-medium transition-all duration-300 hover:scale-110"
+              >Programs</a
+            >
+            <a
+              href="#classes"
+              class="text-gray-300 hover:text-green-400 font-medium transition-all duration-300 hover:scale-110"
+              >Classes</a
+            >
+            <a
+              href="#membership"
+              class="text-gray-300 hover:text-green-400 font-medium transition-all duration-300 hover:scale-110"
+              >Membership</a
+            >
+            <a
+              href="#contact"
+              class="px-6 py-2.5 bg-green-500 text-black rounded-lg font-bold btn-glow shadow-lg shadow-green-500/50"
+              >Join Now</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-gray-300 hover:text-green-400 focus:outline-none transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#programs"
+              class="text-gray-300 hover:text-green-400 font-medium transition-colors px-4 py-2 rounded hover:bg-green-500/10"
+              >Programs</a
+            >
+            <a
+              href="#classes"
+              class="text-gray-300 hover:text-green-400 font-medium transition-colors px-4 py-2 rounded hover:bg-green-500/10"
+              >Classes</a
+            >
+            <a
+              href="#membership"
+              class="text-gray-300 hover:text-green-400 font-medium transition-colors px-4 py-2 rounded hover:bg-green-500/10"
+              >Membership</a
+            >
+            <a
+              href="#contact"
+              class="px-6 py-3 bg-green-500 text-black rounded-lg font-bold hover:bg-green-400 transition-all text-center shadow-lg shadow-green-500/50"
+              >Join Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      // Nav scroll effect
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("main-nav");
+        if (nav) {
+          if (window.scrollY > 50) {
+            nav.classList.add("scrolled");
+          } else {
+            nav.classList.remove("scrolled");
+          }
+        }
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <section
+      class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-black overflow-hidden"
+    >
+      <!-- Animated background pattern -->
+      <div class="absolute inset-0 opacity-20">
+        <div class="pulse-grid"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="space-y-8">
+            <span
+              class="inline-block px-4 py-2 bg-green-500/20 text-green-400 text-sm font-bold rounded-full border border-green-500/30 glow-pulse"
+            >
+              LOS ANGELES PREMIER FITNESS CENTER
+            </span>
+            <h1
+              class="text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight power-text"
+            >
+              TRANSFORM YOUR <span class="text-green-400 stroke-text">BODY</span
+              >
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed fade-in-up">
+              State-of-the-art facility with expert trainers, cutting-edge
+              equipment, and a community that pushes you to be your best. Your
+              transformation starts here.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 fade-in-up">
+              <a
+                href="#membership"
+                class="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-black rounded-lg font-bold hover:bg-green-400 transition-all shadow-lg shadow-green-500/50 hover:shadow-green-400/50"
+              >
+                Start Free Trial
+                <svg
+                  class="ml-2 w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </a>
+              <a
+                href="#classes"
+                class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white rounded-lg font-bold border-2 border-green-500 hover:bg-green-500/10 transition-all"
+              >
+                View Schedule
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div
+              class="grid grid-cols-3 gap-8 pt-8 border-t border-green-500/20"
+            >
+              <div class="stat-item">
+                <div class="text-4xl font-black text-green-400">5000+</div>
+                <div class="text-sm text-gray-400 mt-1">Active Members</div>
+              </div>
+              <div class="stat-item">
+                <div class="text-4xl font-black text-green-400">50+</div>
+                <div class="text-sm text-gray-400 mt-1">Expert Trainers</div>
+              </div>
+              <div class="stat-item">
+                <div class="text-4xl font-black text-green-400">24/7</div>
+                <div class="text-sm text-gray-400 mt-1">Gym Access</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Image -->
+          <div class="relative">
+            <div
+              class="absolute -inset-4 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl blur-3xl opacity-30 pulse-glow"
+            >
+            </div>
+            <div
+              class="relative rounded-2xl overflow-hidden border-2 border-green-500/30 shadow-2xl shadow-green-500/20"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+                alt="IronPulse Gym Training Floor"
+                class="w-full h-[500px] object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/60 to-transparent p-8"
+              >
+                <div class="text-white">
+                  <div class="text-sm font-bold text-green-400 mb-2">
+                    FEATURED FACILITY
+                  </div>
+                  <div class="text-2xl font-black">
+                    50,000 SQ FT | 200+ Equipment
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 lg:py-28 bg-zinc-950 relative">
+      <!-- Diagonal stripes background -->
+      <div
+        class="absolute inset-0 opacity-5"
+        style="background: repeating-linear-gradient(45deg, #10b981, #10b981 10px, transparent 10px, transparent 20px);"
+      >
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-black text-white mb-4 power-text"
+          >
+            TRAINING <span class="text-green-400">PROGRAMS</span>
+          </h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            Professional training programs designed to help you reach your goals
+            faster
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Program Card 1 -->
+          <div
+            class="group relative p-8 bg-zinc-900 rounded-xl border-2 border-green-500/20 hover:border-green-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 clip-corner-program overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl group-hover:bg-green-500/20 transition-all"
+            >
+            </div>
+            <div
+              class="w-14 h-14 bg-green-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500 transition-all relative z-10"
+            >
+              <svg
+                class="w-7 h-7 text-green-400 group-hover:text-black transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-black text-white mb-3 relative z-10">
+              PERSONAL TRAINING
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4 relative z-10">
+              One-on-one coaching with certified trainers. Customized workout
+              plans and nutrition guidance.
+            </p>
+            <div class="text-green-400 font-bold relative z-10">
+              From $79/session
+            </div>
+          </div>
+
+          <!-- Program Card 2 -->
+          <div
+            class="group relative p-8 bg-zinc-900 rounded-xl border-2 border-green-500/20 hover:border-green-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 clip-corner-program overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl group-hover:bg-green-500/20 transition-all"
+            >
+            </div>
+            <div
+              class="w-14 h-14 bg-green-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500 transition-all relative z-10"
+            >
+              <svg
+                class="w-7 h-7 text-green-400 group-hover:text-black transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-black text-white mb-3 relative z-10">
+              GROUP CLASSES
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4 relative z-10">
+              High-energy group training sessions. HIIT, CrossFit, Spin,
+              Kickboxing, and more.
+            </p>
+            <div class="text-green-400 font-bold relative z-10">
+              Included with membership
+            </div>
+          </div>
+
+          <!-- Program Card 3 -->
+          <div
+            class="group relative p-8 bg-zinc-900 rounded-xl border-2 border-green-500/20 hover:border-green-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 clip-corner-program overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl group-hover:bg-green-500/20 transition-all"
+            >
+            </div>
+            <div
+              class="w-14 h-14 bg-green-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500 transition-all relative z-10"
+            >
+              <svg
+                class="w-7 h-7 text-green-400 group-hover:text-black transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-black text-white mb-3 relative z-10">
+              NUTRITION COACHING
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4 relative z-10">
+              Custom meal plans and nutrition strategies. Track macros and
+              achieve your body composition goals.
+            </p>
+            <div class="text-green-400 font-bold relative z-10">
+              From $199/month
+            </div>
+          </div>
+
+          <!-- Program Card 4 -->
+          <div
+            class="group relative p-8 bg-zinc-900 rounded-xl border-2 border-green-500/20 hover:border-green-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 clip-corner-program overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl group-hover:bg-green-500/20 transition-all"
+            >
+            </div>
+            <div
+              class="w-14 h-14 bg-green-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500 transition-all relative z-10"
+            >
+              <svg
+                class="w-7 h-7 text-green-400 group-hover:text-black transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-black text-white mb-3 relative z-10">
+              STRENGTH ZONE
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4 relative z-10">
+              Full powerlifting setup, Olympic platforms, squat racks, and
+              extensive free weight selection.
+            </p>
+            <div class="text-green-400 font-bold relative z-10">
+              Premium equipment
+            </div>
+          </div>
+
+          <!-- Program Card 5 -->
+          <div
+            class="group relative p-8 bg-zinc-900 rounded-xl border-2 border-green-500/20 hover:border-green-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 clip-corner-program overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl group-hover:bg-green-500/20 transition-all"
+            >
+            </div>
+            <div
+              class="w-14 h-14 bg-green-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500 transition-all relative z-10"
+            >
+              <svg
+                class="w-7 h-7 text-green-400 group-hover:text-black transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-black text-white mb-3 relative z-10">
+              RECOVERY ZONE
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4 relative z-10">
+              Sauna, steam room, cold plunge, and massage therapy to optimize
+              your recovery.
+            </p>
+            <div class="text-green-400 font-bold relative z-10">
+              Elite members only
+            </div>
+          </div>
+
+          <!-- Program Card 6 -->
+          <div
+            class="group relative p-8 bg-zinc-900 rounded-xl border-2 border-green-500/20 hover:border-green-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20 clip-corner-program overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl group-hover:bg-green-500/20 transition-all"
+            >
+            </div>
+            <div
+              class="w-14 h-14 bg-green-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500 transition-all relative z-10"
+            >
+              <svg
+                class="w-7 h-7 text-green-400 group-hover:text-black transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-black text-white mb-3 relative z-10">
+              MIND & BODY
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4 relative z-10">
+              Yoga, Pilates, meditation, and stretching classes for holistic
+              wellness.
+            </p>
+            <div class="text-green-400 font-bold relative z-10">
+              Daily classes
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Classes Schedule Section -->
+    <section id="classes" class="py-20 lg:py-28 bg-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-black text-white mb-4 power-text"
+          >
+            TODAY'S <span class="text-green-400">SCHEDULE</span>
+          </h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            Join any class with your membership - no reservations needed
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Class 1 -->
+          <div
+            class="relative bg-zinc-900 rounded-xl p-6 border border-green-500/20 hover:border-green-500 transition-all group overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 w-1 h-full bg-green-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+            >
+            </div>
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <div class="text-green-400 font-bold text-sm mb-1">6:00 AM</div>
+                <h3 class="text-xl font-black text-white">MORNING BOOTCAMP</h3>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full"
+                >45 min</span
+              >
+            </div>
+            <p class="text-gray-400 text-sm mb-3">
+              High-intensity full body workout to kickstart your day
+            </p>
+            <div class="flex items-center text-gray-500 text-sm">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                ></path>
+              </svg>
+              Coach Marcus • Studio A
+            </div>
+          </div>
+
+          <!-- Class 2 -->
+          <div
+            class="relative bg-zinc-900 rounded-xl p-6 border border-green-500/20 hover:border-green-500 transition-all group overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 w-1 h-full bg-green-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+            >
+            </div>
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <div class="text-green-400 font-bold text-sm mb-1">9:00 AM</div>
+                <h3 class="text-xl font-black text-white">POWER YOGA</h3>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full"
+                >60 min</span
+              >
+            </div>
+            <p class="text-gray-400 text-sm mb-3">
+              Strength-building yoga flow for all levels
+            </p>
+            <div class="flex items-center text-gray-500 text-sm">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                ></path>
+              </svg>
+              Coach Sarah • Yoga Studio
+            </div>
+          </div>
+
+          <!-- Class 3 -->
+          <div
+            class="relative bg-zinc-900 rounded-xl p-6 border border-green-500/20 hover:border-green-500 transition-all group overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 w-1 h-full bg-green-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+            >
+            </div>
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <div class="text-green-400 font-bold text-sm mb-1">
+                  12:00 PM
+                </div>
+                <h3 class="text-xl font-black text-white">SPIN CYCLE</h3>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full"
+                >45 min</span
+              >
+            </div>
+            <p class="text-gray-400 text-sm mb-3">
+              Rhythm-based cycling with energizing playlists
+            </p>
+            <div class="flex items-center text-gray-500 text-sm">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                ></path>
+              </svg>
+              Coach Dylan • Spin Studio
+            </div>
+          </div>
+
+          <!-- Class 4 -->
+          <div
+            class="relative bg-zinc-900 rounded-xl p-6 border border-green-500/20 hover:border-green-500 transition-all group overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 w-1 h-full bg-green-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+            >
+            </div>
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <div class="text-green-400 font-bold text-sm mb-1">5:30 PM</div>
+                <h3 class="text-xl font-black text-white">CROSSFIT WOD</h3>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full"
+                >60 min</span
+              >
+            </div>
+            <p class="text-gray-400 text-sm mb-3">
+              Workout of the Day - functional fitness at its best
+            </p>
+            <div class="flex items-center text-gray-500 text-sm">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                ></path>
+              </svg>
+              Coach Alex • CrossFit Zone
+            </div>
+          </div>
+
+          <!-- Class 5 -->
+          <div
+            class="relative bg-zinc-900 rounded-xl p-6 border border-green-500/20 hover:border-green-500 transition-all group overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 w-1 h-full bg-green-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+            >
+            </div>
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <div class="text-green-400 font-bold text-sm mb-1">6:45 PM</div>
+                <h3 class="text-xl font-black text-white">KICKBOXING</h3>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full"
+                >50 min</span
+              >
+            </div>
+            <p class="text-gray-400 text-sm mb-3">
+              Cardio kickboxing with bags and partner drills
+            </p>
+            <div class="flex items-center text-gray-500 text-sm">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                ></path>
+              </svg>
+              Coach Jamie • Studio B
+            </div>
+          </div>
+
+          <!-- Class 6 -->
+          <div
+            class="relative bg-zinc-900 rounded-xl p-6 border border-green-500/20 hover:border-green-500 transition-all group overflow-hidden"
+          >
+            <div
+              class="absolute top-0 left-0 w-1 h-full bg-green-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"
+            >
+            </div>
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <div class="text-green-400 font-bold text-sm mb-1">8:00 PM</div>
+                <h3 class="text-xl font-black text-white">NIGHT PUMP</h3>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full"
+                >45 min</span
+              >
+            </div>
+            <p class="text-gray-400 text-sm mb-3">
+              Strength and hypertrophy focused group training
+            </p>
+            <div class="flex items-center text-gray-500 text-sm">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                ></path>
+              </svg>
+              Coach Marcus • Studio A
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="py-20 lg:py-28 bg-zinc-950 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-black text-white mb-4 power-text"
+          >
+            MEMBERSHIP <span class="text-green-400">PLANS</span>
+          </h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            Choose the plan that fits your fitness journey. No contracts, cancel
+            anytime.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Basic Plan -->
+          <div
+            class="relative bg-zinc-900 rounded-2xl p-8 border-2 border-green-500/20 hover:border-green-500/50 transition-all"
+          >
+            <h3 class="text-2xl font-black text-white mb-2">BASIC</h3>
+            <div class="flex items-baseline mb-6">
+              <span class="text-5xl font-black text-green-400">$49</span>
+              <span class="text-gray-500 ml-2">/month</span>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                24/7 gym access
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                All cardio & strength equipment
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Locker room & showers
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Fitness app access
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="block w-full py-3 bg-zinc-800 text-white rounded-lg font-bold hover:bg-zinc-700 transition-all text-center"
+            >
+              Get Started
+            </a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div
+            class="relative bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 border-2 border-green-400 shadow-2xl shadow-green-500/50 transform scale-105"
+          >
+            <div
+              class="absolute top-4 right-4 px-3 py-1 bg-black text-green-400 text-xs font-bold rounded-full"
+            >
+              MOST POPULAR
+            </div>
+            <h3 class="text-2xl font-black text-black mb-2">PREMIUM</h3>
+            <div class="flex items-baseline mb-6">
+              <span class="text-5xl font-black text-black">$89</span>
+              <span class="text-black/70 ml-2">/month</span>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start text-black">
+                <svg
+                  class="w-6 h-6 text-black mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Everything in Basic
+              </li>
+              <li class="flex items-start text-black">
+                <svg
+                  class="w-6 h-6 text-black mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Unlimited group classes
+              </li>
+              <li class="flex items-start text-black">
+                <svg
+                  class="w-6 h-6 text-black mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Guest privileges (2 per month)
+              </li>
+              <li class="flex items-start text-black">
+                <svg
+                  class="w-6 h-6 text-black mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Nutrition consultation
+              </li>
+              <li class="flex items-start text-black">
+                <svg
+                  class="w-6 h-6 text-black mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Priority equipment access
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="block w-full py-3 bg-black text-green-400 rounded-lg font-bold hover:bg-zinc-900 transition-all text-center"
+            >
+              Start Free Trial
+            </a>
+          </div>
+
+          <!-- Elite Plan -->
+          <div
+            class="relative bg-zinc-900 rounded-2xl p-8 border-2 border-green-500/20 hover:border-green-500/50 transition-all"
+          >
+            <h3 class="text-2xl font-black text-white mb-2">ELITE</h3>
+            <div class="flex items-baseline mb-6">
+              <span class="text-5xl font-black text-green-400">$149</span>
+              <span class="text-gray-500 ml-2">/month</span>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Everything in Premium
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                2 personal training sessions/month
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Recovery zone access
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Unlimited guest privileges
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                VIP parking
+              </li>
+              <li class="flex items-start text-gray-300">
+                <svg
+                  class="w-6 h-6 text-green-400 mr-3 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                Private locker
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="block w-full py-3 bg-zinc-800 text-white rounded-lg font-bold hover:bg-zinc-700 transition-all text-center"
+            >
+              Go Elite
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center text-gray-500 mt-8">
+          All memberships include a 7-day free trial. No credit card required.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-28 bg-black">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2
+            class="text-4xl lg:text-5xl font-black text-white mb-4 power-text"
+          >
+            START YOUR <span class="text-green-400">TRANSFORMATION</span>
+          </h2>
+          <p class="text-xl text-gray-400">
+            Visit us for a free tour and trial session
+          </p>
+        </div>
+
+        <div
+          class="bg-zinc-900 rounded-2xl shadow-xl p-8 lg:p-12 border border-green-500/20"
+        >
+          <form method="POST" action="/api/contact" class="space-y-6">
+            <input type="hidden" name="form-name" value="fitness-template" />
+            <input
+              type="text"
+              name="honey"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+              class="hidden"
+            />
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-bold text-gray-300 mb-2"
+                  >Full Name</label
+                >
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  class="w-full px-4 py-3 bg-black border border-green-500/30 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-white placeholder-gray-600"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-bold text-gray-300 mb-2"
+                  >Email Address</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="w-full px-4 py-3 bg-black border border-green-500/30 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-white placeholder-gray-600"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-bold text-gray-300 mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  class="w-full px-4 py-3 bg-black border border-green-500/30 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-white placeholder-gray-600"
+                  placeholder="+1 (555) 000-0000"
+                />
+              </div>
+              <div>
+                <label
+                  for="goal"
+                  class="block text-sm font-bold text-gray-300 mb-2"
+                  >Fitness Goal</label
+                >
+                <select
+                  id="goal"
+                  name="goal"
+                  required
+                  class="w-full px-4 py-3 bg-black border border-green-500/30 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-white"
+                >
+                  <option value="">Select your goal</option>
+                  <option value="weight-loss">Weight Loss</option>
+                  <option value="muscle-gain">Build Muscle</option>
+                  <option value="strength">Get Stronger</option>
+                  <option value="endurance">Improve Endurance</option>
+                  <option value="general">General Fitness</option>
+                  <option value="sports">Sports Performance</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-bold text-gray-300 mb-2"
+                >Additional Information</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="w-full px-4 py-3 bg-black border border-green-500/30 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none text-white placeholder-gray-600"
+                placeholder="Tell us about your fitness experience and what you're looking to achieve..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-4 bg-green-500 text-black rounded-lg font-bold hover:bg-green-400 transition-all shadow-lg shadow-green-500/50 text-lg"
+            >
+              Schedule Free Trial
+            </button>
+          </form>
+
+          <div class="mt-8 pt-8 border-t border-green-500/20">
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div class="text-green-400 font-bold mb-1">LOCATION</div>
+                <div class="text-gray-400 text-sm">
+                  2500 Fitness Blvd<br />Los Angeles, CA 90028
+                </div>
+              </div>
+              <div>
+                <div class="text-green-400 font-bold mb-1">HOURS</div>
+                <div class="text-gray-400 text-sm">
+                  Open 24/7<br />Staffed 5AM - 11PM
+                </div>
+              </div>
+              <div>
+                <div class="text-green-400 font-bold mb-1">CONTACT</div>
+                <div class="text-gray-400 text-sm">
+                  (555) FIT-PULSE<br />info@ironpulsegym.com
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</LandingLayout>
+
+<style>
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll Animations */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  .scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Power Text Animation with 3D Effect */
+  .power-text {
+    animation: powerUp 1s ease-out forwards;
+    opacity: 0;
+    text-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+  }
+
+  @keyframes powerUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95) rotateX(10deg);
+      text-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotateX(0);
+      text-shadow: 0 0 50px rgba(16, 185, 129, 0.3);
+    }
+  }
+
+  /* Fade In Up Animation */
+  .fade-in-up {
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Stat Counter Animation with Bounce */
+  .stat-item {
+    animation: statPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .stat-item:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+  .stat-item:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+  .stat-item:nth-child(3) {
+    animation-delay: 0.7s;
+  }
+
+  @keyframes statPop {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) rotate(-5deg);
+    }
+    80% {
+      transform: scale(1.05) rotate(2deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+    }
+  }
+
+  /* Pulse Grid Background with Perspective */
+  .pulse-grid {
+    background-image:
+      linear-gradient(#10b981 1px, transparent 1px),
+      linear-gradient(90deg, #10b981 1px, transparent 1px);
+    background-size: 50px 50px;
+    width: 100%;
+    height: 100%;
+    animation: pulseGrid 20s linear infinite;
+  }
+
+  @keyframes pulseGrid {
+    0% {
+      background-position: 0 0;
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      background-position: 50px 50px;
+      opacity: 0.3;
+    }
+  }
+
+  /* Enhanced Glow Pulse Animation */
+  .glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%,
+    100% {
+      box-shadow:
+        0 0 5px rgba(16, 185, 129, 0.3),
+        0 0 10px rgba(16, 185, 129, 0.2);
+    }
+    50% {
+      box-shadow:
+        0 0 20px rgba(16, 185, 129, 0.6),
+        0 0 40px rgba(16, 185, 129, 0.3);
+    }
+  }
+
+  /* Enhanced Pulse Glow for Hero Image */
+  .pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      opacity: 0.3;
+      filter: blur(60px);
+    }
+    50% {
+      opacity: 0.6;
+      filter: blur(80px);
+    }
+  }
+
+  /* 3D Stroke Text Effect */
+  .stroke-text {
+    -webkit-text-stroke: 2px #10b981;
+    text-stroke: 2px #10b981;
+    paint-order: stroke fill;
+    filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.5));
+  }
+
+  /* Enhanced Clip Corner for Program Cards with 3D */
+  .clip-corner-program {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 16px) 0,
+      100% 16px,
+      100% 100%,
+      16px 100%,
+      0 calc(100% - 16px)
+    );
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .clip-corner-program:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+  }
+
+  /* Card 3D Hover Effect */
+  .program-card-3d {
+    perspective: 1000px;
+  }
+
+  .program-card-inner {
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+  }
+
+  .program-card-3d:hover .program-card-inner {
+    transform: rotateY(5deg) rotateX(5deg);
+  }
+
+  /* Button Hover Effects */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-glow::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.6s,
+      height 0.6s;
+  }
+
+  .btn-glow:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
+    transform: translateY(-2px);
+  }
+
+  /* Class Card Slide Animation */
+  .class-card {
+    transition: all 0.3s ease;
+  }
+
+  .class-card:hover {
+    transform: translateX(10px);
+    box-shadow: -4px 0 0 0 #10b981;
+  }
+
+  /* Nav Bar Scroll Effect */
+  nav {
+    transition: all 0.3s ease;
+  }
+
+  nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+  }
+
+  /* Loading Animation for Images */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .img-loading {
+    background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Parallax Background */
+  .parallax-bg {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Mobile Menu Animation */
+  #mobile-menu {
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  #mobile-menu:not(.hidden) {
+    max-height: 500px;
+  }
+
+  /* Form Focus Effects */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+  }
+
+  /* Counter Animation */
+  .counter {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Membership Card Hover */
+  .membership-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .membership-card:hover {
+    transform: scale(1.05) translateY(-10px);
+  }
+
+  /* Gradient Animation */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+  }
+</style>

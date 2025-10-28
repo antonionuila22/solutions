@@ -8,18 +8,20 @@ let { title, description, keywords, image, article, noindex } = Astro.props;
 
 // Valores por defecto mejorados
 title = title || "Codebrand - Landing Page";
-description = description || "Transform your business with Codebrand's expert web development services.";
+description =
+  description ||
+  "Transform your business with Codebrand's expert web development services.";
 keywords = keywords || "web development, UI/UX design, digital marketing, SEO";
-image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
+image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 
 // URL dinámica y mejoras SEO
-const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
+const canonicalUrl = Astro.url?.href || "https://codebrand.us";
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_es";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en-US">
   <head>
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
@@ -88,15 +90,13 @@ const twitterHandle = "@codebrand_es";
     />
 
     <!-- Google Analytics -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PMQNNKWD3Z"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-PMQNNKWD3Z");
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T9HKBF45M9');
     </script>
 
     <!-- Google Tag Manager -->

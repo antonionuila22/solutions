@@ -29,7 +29,7 @@ At **Codebrand**, we design and develop e-commerce stores that truly convert. Wh
 - Hosting, domain setup, and SSL security  
 - Product upload (up to 1,000 items)*  
 
-> \* For larger catalogs, check out our [Data Entry service](https://solutions.codebrand.es/products/data-entry/)
+> \* For larger catalogs, check out our [Data Entry service](https://codebrand.us/products/data-entry/)
 
 ---
 

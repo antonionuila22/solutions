@@ -1,0 +1,730 @@
+---
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import Logo from "../../components/logo.astro";
+
+const pageTitle = "Elite Motors | Premium Pre-Owned & New Vehicles";
+const pageDescription =
+  "Discover premium vehicles at Elite Motors. New and certified pre-owned cars, trucks, and SUVs. Financing available. Your dream ride awaits.";
+const pageKeywords =
+  "car dealership, used cars, new cars, auto sales, vehicle financing, car trade-in, luxury vehicles";
+---
+
+<LandingLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+>
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+
+  <div class="relative w-full overflow-x-hidden bg-black">
+    <!-- Hero Section -->
+    <header
+      class="relative min-h-screen bg-cover bg-center"
+      style='background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(220,38,38,0.6) 50%, rgba(0,0,0,0.85) 100%), url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80") center/cover;'
+    >
+      <!-- Speed Lines Effect -->
+      <div class="speed-lines"></div>
+
+      <!-- Navbar -->
+      <div
+        class="absolute top-0 left-0 w-full z-20 bg-black/40 backdrop-blur-sm"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-6">
+            <div class="text-white">
+              <div class="text-3xl font-black tracking-tighter">
+                ELITE <span class="text-red-600">MOTORS</span>
+              </div>
+              <div class="text-xs uppercase tracking-widest text-gray-400">
+                Premium Auto Gallery
+              </div>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+              <a
+                class="text-base font-bold text-red-500 hover:text-red-400 transition-colors uppercase"
+                href="#inventory">Inventory</a
+              >
+              <a
+                class="text-base font-bold text-white hover:text-red-400 transition-colors uppercase"
+                href="#financing">Financing</a
+              >
+              <a
+                class="text-base font-bold text-white hover:text-red-400 transition-colors uppercase"
+                href="#services">Services</a
+              >
+              <a
+                class="text-base font-bold text-white hover:text-red-400 transition-colors uppercase"
+                href="#contact">Visit Us</a
+              >
+            </nav>
+            <a
+              class="hidden md:inline-flex items-center px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold skew-x-[-5deg] hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg shadow-red-900/50"
+              href="#contact"
+            >
+              <span class="skew-x-[5deg] uppercase">Test Drive</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Content -->
+      <div
+        class="relative flex flex-col items-center justify-center min-h-screen px-4 py-50 text-center"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h1
+            class="text-white text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none mb-8 animate-slide-up"
+            style="text-shadow: 4px 4px 0px rgba(220,38,38,0.5), 8px 8px 0px rgba(0,0,0,0.3);"
+          >
+            <span class="block text-red-600">YOUR DREAM</span>
+            <span class="block">RIDE AWAITS</span>
+          </h1>
+
+          <p
+            class="text-xl md:text-2xl lg:text-3xl text-gray-300 font-bold mb-12 max-w-4xl mx-auto uppercase tracking-wide"
+          >
+            Premium New & Certified <span class="text-red-500">Pre-Owned</span> Vehicles
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-6"
+          >
+            <a
+              class="group inline-flex items-center px-10 py-5 bg-gradient-to-r from-red-600 to-red-700 text-white text-xl font-black skew-x-[-5deg] hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-2xl shadow-red-900/50 hover:scale-105"
+              href="#inventory"
+            >
+              <span class="skew-x-[5deg] flex items-center gap-3 uppercase">
+                View Inventory
+                <svg
+                  class="w-6 h-6 group-hover:translate-x-2 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+            </a>
+            <a
+              class="inline-flex items-center px-10 py-5 bg-transparent border-4 border-white text-white text-xl font-black skew-x-[-5deg] hover:bg-white hover:text-black transition-all duration-300 uppercase"
+              href="#financing"
+            >
+              <span class="skew-x-[5deg]">Get Financed</span>
+            </a>
+          </div>
+
+          <!-- Stats Bar -->
+          <div class="mt-20 grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div class="text-center">
+              <div class="text-5xl font-black text-red-500 mb-2">200+</div>
+              <div
+                class="text-sm text-gray-400 uppercase tracking-widest font-bold"
+              >
+                Vehicles In Stock
+              </div>
+            </div>
+            <div class="text-center border-x-2 border-red-600/30">
+              <div class="text-5xl font-black text-white mb-2">4.9★</div>
+              <div
+                class="text-sm text-gray-400 uppercase tracking-widest font-bold"
+              >
+                Customer Rating
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-5xl font-black text-red-500 mb-2">15+</div>
+              <div
+                class="text-sm text-gray-400 uppercase tracking-widest font-bold"
+              >
+                Years Experience
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Featured Inventory Section -->
+    <section
+      class="bg-gradient-to-b from-black via-zinc-900 to-black py-24"
+      id="inventory"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2
+            class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight uppercase"
+          >
+            Featured <span class="text-red-600">Vehicles</span>
+          </h2>
+          <div
+            class="w-32 h-2 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-6"
+          >
+          </div>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            Hand-picked premium vehicles ready for test drive today
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Vehicle Card 1 -->
+          <div
+            class="group relative bg-zinc-900 border-4 border-zinc-800 overflow-hidden hover:border-red-600 transition-all duration-300"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=600&q=80"
+                alt="2023 BMW M4"
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 font-black uppercase text-sm skew-x-[-5deg]"
+              >
+                <span class="skew-x-[5deg] block">New Arrival</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-black text-white uppercase">
+                    2023 BMW M4
+                  </h3>
+                  <p class="text-gray-400 text-sm">Competition Package</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">12K</div>
+                  <div class="text-gray-500 text-xs">Miles</div>
+                </div>
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">Auto</div>
+                  <div class="text-gray-500 text-xs">Trans</div>
+                </div>
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">AWD</div>
+                  <div class="text-gray-500 text-xs">Drive</div>
+                </div>
+              </div>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-zinc-800"
+              >
+                <div class="text-3xl font-black text-red-600">$67,995</div>
+                <a
+                  href="#contact"
+                  class="px-6 py-2 bg-red-600 text-white font-bold uppercase text-sm hover:bg-red-700 transition-colors"
+                >
+                  Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle Card 2 -->
+          <div
+            class="group relative bg-zinc-900 border-4 border-zinc-800 overflow-hidden hover:border-red-600 transition-all duration-300"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80"
+                alt="2024 Porsche 911"
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 font-black uppercase text-sm skew-x-[-5deg]"
+              >
+                <span class="skew-x-[5deg] block">Hot Deal</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-black text-white uppercase">
+                    2024 Porsche 911
+                  </h3>
+                  <p class="text-gray-400 text-sm">Carrera S</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">5K</div>
+                  <div class="text-gray-500 text-xs">Miles</div>
+                </div>
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">PDK</div>
+                  <div class="text-gray-500 text-xs">Trans</div>
+                </div>
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">RWD</div>
+                  <div class="text-gray-500 text-xs">Drive</div>
+                </div>
+              </div>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-zinc-800"
+              >
+                <div class="text-3xl font-black text-red-600">$124,900</div>
+                <a
+                  href="#contact"
+                  class="px-6 py-2 bg-red-600 text-white font-bold uppercase text-sm hover:bg-red-700 transition-colors"
+                >
+                  Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle Card 3 -->
+          <div
+            class="group relative bg-zinc-900 border-4 border-zinc-800 overflow-hidden hover:border-red-600 transition-all duration-300"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80"
+                alt="2023 Mercedes AMG GT"
+                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute top-4 right-4 bg-black text-white px-4 py-2 font-black uppercase text-sm skew-x-[-5deg] border-2 border-red-600"
+              >
+                <span class="skew-x-[5deg] block">Certified</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-black text-white uppercase">
+                    2023 AMG GT
+                  </h3>
+                  <p class="text-gray-400 text-sm">Mercedes-Benz</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">8K</div>
+                  <div class="text-gray-500 text-xs">Miles</div>
+                </div>
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">Auto</div>
+                  <div class="text-gray-500 text-xs">Trans</div>
+                </div>
+                <div class="bg-black/50 p-2">
+                  <div class="text-red-500 text-xs font-bold">RWD</div>
+                  <div class="text-gray-500 text-xs">Drive</div>
+                </div>
+              </div>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-zinc-800"
+              >
+                <div class="text-3xl font-black text-red-600">$89,995</div>
+                <a
+                  href="#contact"
+                  class="px-6 py-2 bg-red-600 text-white font-bold uppercase text-sm hover:bg-red-700 transition-colors"
+                >
+                  Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#contact"
+            class="inline-flex items-center px-10 py-4 bg-white text-black font-black uppercase text-lg hover:bg-gray-200 transition-colors"
+          >
+            View Full Inventory
+            <svg
+              class="ml-3 w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-black py-24 relative" id="services">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2
+            class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight uppercase"
+          >
+            Our <span class="text-red-600">Services</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="group relative bg-zinc-900 border-4 border-zinc-800 p-8 hover:border-red-600 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500"
+            >
+            </div>
+            <div class="relative">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center mb-6 skew-x-[-5deg]"
+              >
+                <svg
+                  class="w-8 h-8 text-white skew-x-[5deg]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-4 uppercase">
+                Financing
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Competitive rates and flexible terms. Get pre-approved in
+                minutes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="group relative bg-zinc-900 border-4 border-zinc-800 p-8 hover:border-red-600 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500"
+            >
+            </div>
+            <div class="relative">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center mb-6 skew-x-[-5deg]"
+              >
+                <svg
+                  class="w-8 h-8 text-white skew-x-[5deg]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-4 uppercase">
+                Trade-Ins
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Top dollar for your trade. Get instant valuation online.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="group relative bg-zinc-900 border-4 border-zinc-800 p-8 hover:border-red-600 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500"
+            >
+            </div>
+            <div class="relative">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center mb-6 skew-x-[-5deg]"
+              >
+                <svg
+                  class="w-8 h-8 text-white skew-x-[5deg]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-4 uppercase">
+                Warranty
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Extended warranty options. Drive with peace of mind.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="group relative bg-zinc-900 border-4 border-zinc-800 p-8 hover:border-red-600 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500"
+            >
+            </div>
+            <div class="relative">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center mb-6 skew-x-[-5deg]"
+              >
+                <svg
+                  class="w-8 h-8 text-white skew-x-[5deg]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-4 uppercase">
+                Service
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Full-service center. Factory-trained technicians.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Financing CTA Section -->
+    <section
+      class="bg-gradient-to-br from-red-900 via-red-700 to-red-900 py-20"
+      id="financing"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2
+          class="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tight"
+        >
+          Get Pre-Approved <span class="text-black">Today</span>
+        </h2>
+        <p class="text-xl text-white/90 mb-8 font-bold">
+          Fast approval. Competitive rates. Drive home today.
+        </p>
+        <a
+          class="inline-flex items-center px-10 py-4 bg-black text-white text-xl font-black skew-x-[-5deg] hover:bg-zinc-900 transition-all duration-300 shadow-2xl uppercase"
+          href="#contact"
+        >
+          <span class="skew-x-[5deg]">Apply Now</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-black py-24" id="contact">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-black text-white mb-6 uppercase">
+            <span class="text-red-600">Visit</span> Our Showroom
+          </h2>
+          <p class="text-xl text-gray-400">
+            Schedule a test drive or get more information
+          </p>
+        </div>
+
+        <div class="bg-zinc-900 border-4 border-zinc-800 p-8 lg:p-12">
+          <form method="POST" action="/api/contact" class="space-y-6">
+            <input type="hidden" name="form-name" value="automotive-template" />
+            <input
+              type="text"
+              name="honey"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+              class="hidden"
+            />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-black text-white uppercase tracking-wider mb-2"
+                  >Name *</label
+                >
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  class="w-full px-4 py-3 bg-black border-2 border-zinc-700 text-white focus:border-red-600 focus:ring-0 transition-colors"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-black text-white uppercase tracking-wider mb-2"
+                  >Email *</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="w-full px-4 py-3 bg-black border-2 border-zinc-700 text-white focus:border-red-600 focus:ring-0 transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-black text-white uppercase tracking-wider mb-2"
+                  >Phone *</label
+                >
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  class="w-full px-4 py-3 bg-black border-2 border-zinc-700 text-white focus:border-red-600 focus:ring-0 transition-colors"
+                  placeholder="+1 (555) 000-0000"
+                />
+              </div>
+              <div>
+                <label
+                  for="interest"
+                  class="block text-sm font-black text-white uppercase tracking-wider mb-2"
+                  >I'm Interested In *</label
+                >
+                <select
+                  id="interest"
+                  name="interest"
+                  required
+                  class="w-full px-4 py-3 bg-black border-2 border-zinc-700 text-white focus:border-red-600 focus:ring-0 transition-colors"
+                >
+                  <option value="">Select...</option>
+                  <option value="purchase">Purchasing a Vehicle</option>
+                  <option value="testdrive">Scheduling Test Drive</option>
+                  <option value="financing">Financing Options</option>
+                  <option value="tradein">Trade-In Value</option>
+                  <option value="service">Service Appointment</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-black text-white uppercase tracking-wider mb-2"
+                >Message *</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 bg-black border-2 border-zinc-700 text-white focus:border-red-600 focus:ring-0 transition-colors resize-none"
+                placeholder="Tell us what you're looking for..."></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-5 bg-gradient-to-r from-red-600 to-red-700 text-white text-xl font-black uppercase skew-x-[-5deg] hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-xl hover:scale-[1.02]"
+            >
+              <span class="skew-x-[5deg] inline-block">Send Message</span>
+            </button>
+          </form>
+
+          <div class="mt-12 pt-8 border-t border-zinc-800">
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div class="text-red-600 font-black uppercase text-sm mb-2">
+                  Location
+                </div>
+                <div class="text-white">123 Auto Mile Dr</div>
+                <div class="text-gray-400 text-sm">Los Angeles, CA 90001</div>
+              </div>
+              <div>
+                <div class="text-red-600 font-black uppercase text-sm mb-2">
+                  Hours
+                </div>
+                <div class="text-white">Mon-Sat: 9AM-8PM</div>
+                <div class="text-gray-400 text-sm">Sunday: 10AM-6PM</div>
+              </div>
+              <div>
+                <div class="text-red-600 font-black uppercase text-sm mb-2">
+                  Contact
+                </div>
+                <div class="text-white">(555) 123-4567</div>
+                <div class="text-gray-400 text-sm">info@elitemotors.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</LandingLayout>
+
+<style>
+  .speed-lines {
+    position: absolute;
+    top: 100px;
+    left: -100%;
+    width: 200%;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(220, 38, 38, 0.8),
+      transparent
+    );
+    animation: speed 2s linear infinite;
+  }
+
+  @keyframes speed {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

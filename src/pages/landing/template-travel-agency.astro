@@ -1,0 +1,749 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+
+const pageTitle = "Wanderlust Adventures | Luxury Travel Experiences Worldwide";
+const pageDescription = "Your trusted travel partner for unforgettable journeys. Custom itineraries, luxury accommodations, and expert guidance for 25+ years.";
+---
+
+<LandingLayout title={pageTitle} description={pageDescription}>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0) translateZ(0) scaleY(1); }
+      50% { transform: translateX(-25%) translateZ(0) scaleY(0.55); }
+      100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+    }
+
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .wave {
+      animation: wave 10s linear infinite;
+    }
+
+    .destination-card {
+      transition: all 0.3s ease;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-10px);
+    }
+  </style>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-500 text-white py-32 overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 opacity-20">
+      <svg class="wave absolute bottom-0 left-0 w-full h-64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="currentColor" fill-opacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="animate-fade-in mb-6">
+          <svg class="w-20 h-20 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+          Your Journey Begins Here
+        </h1>
+        <p class="text-2xl md:text-3xl mb-8 font-light">
+          Wanderlust Adventures - Crafting Dream Vacations Since 1998
+        </p>
+        <p class="text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+          From exotic beaches to mountain peaks, cultural immersions to luxury escapes, we design personalized travel experiences that create memories for a lifetime.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="#packages" class="px-8 py-4 bg-white text-blue-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl">
+            Explore Destinations
+          </a>
+          <a href="#contact" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-all">
+            Plan Your Trip
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="bg-white/10 backdrop-blur p-6 rounded-2xl">
+            <div class="text-4xl font-bold mb-2">25+</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">Years Experience</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-2xl">
+            <div class="text-4xl font-bold mb-2">150+</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">Destinations</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-2xl">
+            <div class="text-4xl font-bold mb-2">50K+</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">Happy Travelers</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-6 rounded-2xl">
+            <div class="text-4xl font-bold mb-2">4.9★</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">Average Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section id="packages" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Featured Destinations
+        </h2>
+        <p class="text-xl text-gray-600">
+          Handpicked experiences from around the world
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Destination 1 -->
+        <div class="destination-card group bg-white rounded-2xl overflow-hidden shadow-xl">
+          <div class="relative overflow-hidden h-80">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=1000&fit=crop"
+              alt="Norwegian Fjords"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg font-bold text-sm">
+              POPULAR
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="text-sm uppercase tracking-wide mb-2">8 Days / 7 Nights</div>
+                <h3 class="text-3xl font-bold mb-2">Norwegian Fjords</h3>
+                <p class="text-sm opacity-90">Bergen, Flåm, Geiranger</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Cruise through majestic fjords, witness cascading waterfalls, and explore charming Nordic villages on this unforgettable Scandinavian adventure.
+            </p>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-sm text-gray-600">Starting from</div>
+                <div class="text-3xl font-bold text-blue-600">$3,299</div>
+                <div class="text-sm text-gray-600">per person</div>
+              </div>
+              <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Book Now
+              </a>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-600">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                </svg>
+                <span>Max 12</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span>All Year</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 2 -->
+        <div class="destination-card group bg-white rounded-2xl overflow-hidden shadow-xl">
+          <div class="relative overflow-hidden h-80">
+            <img
+              src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=1000&fit=crop"
+              alt="Santorini"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 bg-teal-600 text-white px-4 py-2 rounded-lg font-bold text-sm">
+              LUXURY
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="text-sm uppercase tracking-wide mb-2">6 Days / 5 Nights</div>
+                <h3 class="text-3xl font-bold mb-2">Santorini Paradise</h3>
+                <p class="text-sm opacity-90">Oia, Fira, Caldera Views</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Experience the iconic whitewashed buildings, stunning sunsets, and crystal-clear waters of Greece's most romantic island destination.
+            </p>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-sm text-gray-600">Starting from</div>
+                <div class="text-3xl font-bold text-blue-600">$2,799</div>
+                <div class="text-sm text-gray-600">per person</div>
+              </div>
+              <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Book Now
+              </a>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-600">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                </svg>
+                <span>Max 8</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span>Apr-Oct</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 3 -->
+        <div class="destination-card group bg-white rounded-2xl overflow-hidden shadow-xl">
+          <div class="relative overflow-hidden h-80">
+            <img
+              src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=1000&fit=crop"
+              alt="Tokyo"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 bg-purple-600 text-white px-4 py-2 rounded-lg font-bold text-sm">
+              CULTURAL
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="text-sm uppercase tracking-wide mb-2">10 Days / 9 Nights</div>
+                <h3 class="text-3xl font-bold mb-2">Japan Discovery</h3>
+                <p class="text-sm opacity-90">Tokyo, Kyoto, Osaka, Hiroshima</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Immerse yourself in ancient traditions and cutting-edge technology. From Tokyo's neon streets to Kyoto's zen temples, discover the soul of Japan.
+            </p>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-sm text-gray-600">Starting from</div>
+                <div class="text-3xl font-bold text-blue-600">$4,599</div>
+                <div class="text-sm text-gray-600">per person</div>
+              </div>
+              <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Book Now
+              </a>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-600">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                </svg>
+                <span>Max 15</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span>Year Round</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 4 -->
+        <div class="destination-card group bg-white rounded-2xl overflow-hidden shadow-xl">
+          <div class="relative overflow-hidden h-80">
+            <img
+              src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=1000&fit=crop"
+              alt="Safari"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 bg-orange-600 text-white px-4 py-2 rounded-lg font-bold text-sm">
+              ADVENTURE
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="text-sm uppercase tracking-wide mb-2">12 Days / 11 Nights</div>
+                <h3 class="text-3xl font-bold mb-2">African Safari</h3>
+                <p class="text-sm opacity-90">Kenya & Tanzania</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Witness the Great Migration, spot the Big Five, and sleep under African stars in luxury tented camps on this once-in-a-lifetime safari adventure.
+            </p>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-sm text-gray-600">Starting from</div>
+                <div class="text-3xl font-bold text-blue-600">$6,999</div>
+                <div class="text-sm text-gray-600">per person</div>
+              </div>
+              <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Book Now
+              </a>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-600">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                </svg>
+                <span>Max 10</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span>Jul-Oct</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 5 -->
+        <div class="destination-card group bg-white rounded-2xl overflow-hidden shadow-xl">
+          <div class="relative overflow-hidden h-80">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=1000&fit=crop"
+              alt="Iceland"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold text-sm">
+              NATURE
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="text-sm uppercase tracking-wide mb-2">7 Days / 6 Nights</div>
+                <h3 class="text-3xl font-bold mb-2">Iceland Adventure</h3>
+                <p class="text-sm opacity-90">Reykjavik, Golden Circle, South Coast</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Explore glaciers, waterfalls, geysers, and the Northern Lights. Soak in geothermal hot springs and discover Iceland's otherworldly landscapes.
+            </p>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-sm text-gray-600">Starting from</div>
+                <div class="text-3xl font-bold text-blue-600">$3,899</div>
+                <div class="text-sm text-gray-600">per person</div>
+              </div>
+              <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Book Now
+              </a>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-600">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                </svg>
+                <span>Max 14</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span>Sep-Mar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination 6 -->
+        <div class="destination-card group bg-white rounded-2xl overflow-hidden shadow-xl">
+          <div class="relative overflow-hidden h-80">
+            <img
+              src="https://images.unsplash.com/photo-1483791424735-e9ad0209eea2?w=800&h=1000&fit=crop"
+              alt="Peru"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold text-sm">
+              HISTORICAL
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <div class="text-sm uppercase tracking-wide mb-2">9 Days / 8 Nights</div>
+                <h3 class="text-3xl font-bold mb-2">Machu Picchu Trek</h3>
+                <p class="text-sm opacity-90">Lima, Cusco, Sacred Valley</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Journey through the ancient Inca Empire, trek the legendary Inca Trail, and stand in awe before the magnificent ruins of Machu Picchu.
+            </p>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-sm text-gray-600">Starting from</div>
+                <div class="text-3xl font-bold text-blue-600">$3,499</div>
+                <div class="text-sm text-gray-600">per person</div>
+              </div>
+              <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Book Now
+              </a>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-gray-600">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                </svg>
+                <span>Max 12</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span>Apr-Oct</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Why Travel With Us?
+        </h2>
+        <p class="text-xl text-gray-600">
+          Your journey is our passion
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <!-- Feature 1 -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 mx-auto float-animation">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Expert Guidance</h3>
+          <p class="text-gray-600">
+            25+ years of experience crafting perfect itineraries with local knowledge and insider access
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-teal-600 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto float-animation" style="animation-delay: 0.2s">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+          <p class="text-gray-600">
+            Round-the-clock assistance during your journey. We're always here when you need us
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto float-animation" style="animation-delay: 0.4s">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Custom Itineraries</h3>
+          <p class="text-gray-600">
+            Every trip is tailored to your preferences, interests, and budget. Your dream, our expertise
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto float-animation" style="animation-delay: 0.6s">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Best Value</h3>
+          <p class="text-gray-600">
+            Exclusive partnerships and group rates mean premium experiences at competitive prices
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Traveler Stories
+        </h2>
+        <div class="flex items-center justify-center gap-2 mb-4">
+          {[...Array(5)].map((_, i) => (
+            <svg key={i} class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+          ))}
+        </div>
+        <p class="text-xl text-gray-600">
+          4.9/5 from 8,342 reviews
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Review 1 -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Our African safari exceeded all expectations! The attention to detail, the luxury camps, and the incredible wildlife encounters made this truly unforgettable. Thank you Wanderlust!"
+          </p>
+          <div class="flex items-center">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+              alt="Customer"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <div class="font-bold text-gray-900">Emma Richardson</div>
+              <div class="text-sm text-gray-600">Seattle, WA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-gradient-to-br from-teal-50 to-green-50 p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Japan was magical! From the bustling streets of Tokyo to the serene temples of Kyoto, every moment was perfectly orchestrated. The local guides were phenomenal."
+          </p>
+          <div class="flex items-center">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+              alt="Customer"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <div class="font-bold text-gray-900">Michael Zhang</div>
+              <div class="text-sm text-gray-600">Austin, TX</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Our honeymoon in Santorini was absolutely perfect. The hotel was stunning, the views breathtaking, and every detail was taken care of. We felt like royalty!"
+          </p>
+          <div class="flex items-center">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+              alt="Customer"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <div class="font-bold text-gray-900">Lisa & James Cooper</div>
+              <div class="text-sm text-gray-600">Denver, CO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="py-20 bg-gradient-to-br from-blue-600 to-cyan-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Start Planning Your Journey
+          </h2>
+          <p class="text-xl opacity-90">
+            Tell us about your dream destination and we'll create a custom itinerary just for you
+          </p>
+        </div>
+
+        <form class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="name" class="block text-sm font-semibold mb-2">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+                placeholder="John Doe"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-2">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+                placeholder="john@example.com"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="phone" class="block text-sm font-semibold mb-2">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+                placeholder="(555) 123-4567"
+              />
+            </div>
+            <div>
+              <label for="destination" class="block text-sm font-semibold mb-2">Interested In *</label>
+              <select
+                id="destination"
+                name="destination"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+              >
+                <option value="" class="text-gray-900">Select destination</option>
+                <option value="norway" class="text-gray-900">Norwegian Fjords</option>
+                <option value="santorini" class="text-gray-900">Santorini Paradise</option>
+                <option value="japan" class="text-gray-900">Japan Discovery</option>
+                <option value="safari" class="text-gray-900">African Safari</option>
+                <option value="iceland" class="text-gray-900">Iceland Adventure</option>
+                <option value="peru" class="text-gray-900">Machu Picchu Trek</option>
+                <option value="custom" class="text-gray-900">Custom Destination</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="travelers" class="block text-sm font-semibold mb-2">Number of Travelers *</label>
+              <select
+                id="travelers"
+                name="travelers"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+              >
+                <option value="" class="text-gray-900">Select</option>
+                <option value="1" class="text-gray-900">1 Traveler</option>
+                <option value="2" class="text-gray-900">2 Travelers</option>
+                <option value="3-4" class="text-gray-900">3-4 Travelers</option>
+                <option value="5-8" class="text-gray-900">5-8 Travelers</option>
+                <option value="9+" class="text-gray-900">9+ Travelers</option>
+              </select>
+            </div>
+            <div>
+              <label for="budget" class="block text-sm font-semibold mb-2">Budget (per person)</label>
+              <select
+                id="budget"
+                name="budget"
+                class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+              >
+                <option value="" class="text-gray-900">Select budget range</option>
+                <option value="2000-4000" class="text-gray-900">$2,000 - $4,000</option>
+                <option value="4000-6000" class="text-gray-900">$4,000 - $6,000</option>
+                <option value="6000-10000" class="text-gray-900">$6,000 - $10,000</option>
+                <option value="10000+" class="text-gray-900">$10,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="message" class="block text-sm font-semibold mb-2">Tell Us About Your Dream Trip *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"
+              placeholder="What type of experience are you looking for? Any specific dates in mind? Special occasions or interests we should know about?"
+            ></textarea>
+          </div>
+
+          <!-- Honeypot field -->
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <button
+            type="submit"
+            class="w-full bg-white text-blue-600 font-bold text-lg py-4 px-8 rounded-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
+          >
+            Get Your Free Custom Itinerary
+          </button>
+        </form>
+
+        <div class="mt-12 text-center">
+          <h3 class="text-2xl font-bold mb-6">Visit Our Office or Call Us</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold text-lg mb-2">San Francisco Office</h4>
+              <p class="mb-1">580 California Street, Suite 1200</p>
+              <p class="mb-3">San Francisco, CA 94104</p>
+              <a href="tel:+14155557890" class="text-white hover:text-cyan-200 transition-colors font-semibold">
+                (415) 555-7890
+              </a>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2">New York Office</h4>
+              <p class="mb-1">485 Madison Avenue, 12th Floor</p>
+              <p class="mb-3">New York, NY 10022</p>
+              <a href="tel:+12125559876" class="text-white hover:text-cyan-200 transition-colors font-semibold">
+                (212) 555-9876
+              </a>
+            </div>
+          </div>
+          <div class="mt-8">
+            <p class="text-lg mb-2">Email us anytime:</p>
+            <a href="mailto:travel@wanderlustadventures.com" class="text-white hover:text-cyan-200 transition-colors font-semibold text-lg">
+              travel@wanderlustadventures.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</LandingLayout>

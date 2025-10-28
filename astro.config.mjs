@@ -39,7 +39,7 @@ export default defineConfig({
 
   output: 'server',
 
-  site: 'https://solutions.codebrand.es/',
+  site: 'https://codebrand.us',
 
   integrations: [react(), sitemap(), mdx()],
 

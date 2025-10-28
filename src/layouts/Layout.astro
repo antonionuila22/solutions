@@ -18,16 +18,16 @@ description =
 keywords =
   keywords ||
   "web development agency, UI/UX design services, digital marketing agency, custom web development, mobile app development, SEO optimization, social media marketing, branding agency, e-commerce development, graphic design services";
-image = image || "https://solutions.codebrand.es/photos/bannercodebrand.webp";
+image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 
 // URL dinámica y mejoras SEO
-const canonicalUrl = Astro.url?.href || "https://solutions.codebrand.es/";
+const canonicalUrl = Astro.url?.href || "https://codebrand.us";
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_es";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
@@ -121,9 +121,9 @@ const twitterHandle = "@codebrand_es";
         "@type": "ProfessionalService",
         "name": "Codebrand Digital Agency",
         "alternateName": "Codebrand Solutions",
-        "url": "https://solutions.codebrand.es",
-        "logo": "https://solutions.codebrand.es/iconcodebrand.svg",
-        "image": "https://solutions.codebrand.es/photos/bannercodebrand.webp",
+        "url": "https://codebrand.us",
+        "logo": "https://codebrand.us/iconcodebrand.svg",
+        "image": "https://codebrand.us/photos/bannercodebrand.webp",
         "description": "Codebrand is a leading digital agency specializing in web development, UI/UX design, and digital marketing. We create custom solutions that drive business growth.",
         "email": "info@codebrand.es",
         "telephone": "+504 3272-2973",
@@ -199,7 +199,7 @@ const twitterHandle = "@codebrand_es";
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://solutions.codebrand.es"
+            "item": "https://codebrand.us"
           }
         ]
       }
@@ -211,12 +211,12 @@ const twitterHandle = "@codebrand_es";
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Codebrand Digital Agency",
-        "url": "https://solutions.codebrand.es",
+        "url": "https://codebrand.us",
         "potentialAction": {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://solutions.codebrand.es/search?q={search_term_string}"
+            "urlTemplate": "https://codebrand.us/search?q={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
@@ -224,15 +224,13 @@ const twitterHandle = "@codebrand_es";
     </script>
 
     <!-- Google Analytics -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PMQNNKWD3Z"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-PMQNNKWD3Z");
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T9HKBF45M9');
     </script>
 
     <!-- Google Tag Manager -->

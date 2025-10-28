@@ -1,0 +1,975 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+
+const pageTitle = "Urban Thread | Premium Streetwear & Modern Fashion";
+const pageDescription = "Discover the latest in urban fashion. Free shipping on orders over $100. Shop now and elevate your style.";
+---
+
+<LandingLayout title={pageTitle} description={pageDescription}>
+  <style>
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Advanced Keyframe Animations */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes cartPop {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes priceGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(167, 139, 250, 0.8), 0 0 30px rgba(167, 139, 250, 0.6);
+      }
+    }
+
+    /* Animation Classes */
+    .animate-slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+
+    .animate-scale-in {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                  transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .scroll-animate.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Product Card Enhanced Effects */
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
+    }
+
+    .product-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                  0 0 0 1px rgba(167, 139, 250, 0.1);
+    }
+
+    .product-card .product-image-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card:hover .product-image-wrapper img {
+      transform: scale(1.15);
+    }
+
+    /* Badges with Shimmer Effect */
+    .badge-new {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      animation: pulse 2s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-new::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    .badge-sale {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    /* Add to Cart Button Enhanced */
+    .add-to-cart-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .add-to-cart-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .add-to-cart-btn:active::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .add-to-cart-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .add-to-cart-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Wishlist Heart Animation */
+    .wishlist-btn {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .wishlist-btn:hover {
+      transform: scale(1.2);
+    }
+
+    .wishlist-btn:active {
+      animation: cartPop 0.3s ease;
+    }
+
+    .wishlist-btn.active svg {
+      fill: currentColor;
+      color: #ef4444;
+    }
+
+    /* Price Animation */
+    .price-tag {
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .product-card:hover .price-tag {
+      animation: priceGlow 1.5s ease-in-out infinite;
+      transform: scale(1.05);
+    }
+
+    /* Collection Cards 3D Effect */
+    .collection-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-10px) rotateX(5deg);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Stats Counter Animation */
+    .stat-number {
+      transition: all 0.3s ease;
+    }
+
+    /* Feature Icons Float */
+    .feature-icon {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .feature-icon:hover {
+      transform: translateY(-5px) rotate(5deg);
+    }
+
+    /* Review Cards Enhanced */
+    .review-card {
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .review-card:hover {
+      border-color: rgba(167, 139, 250, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -12px rgba(167, 139, 250, 0.2);
+    }
+
+    /* Newsletter Input Focus Effect */
+    .newsletter-input {
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-input:focus {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Announcement Bar Animation */
+    .announcement-bar {
+      animation: slideInDown 0.5s ease-out;
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Quick View Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 50;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.show {
+      display: flex;
+      opacity: 1;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 1rem;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .modal-backdrop.show .modal-content {
+      transform: scale(1);
+    }
+
+    /* Loading Spinner */
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.6s linear infinite;
+    }
+
+    /* Cart Badge Notification */
+    .cart-badge {
+      animation: cartPop 0.3s ease;
+    }
+
+    /* Size Selector */
+    .size-option {
+      transition: all 0.2s ease;
+      border: 2px solid #e5e7eb;
+      cursor: pointer;
+    }
+
+    .size-option:hover {
+      border-color: #a78bfa;
+      transform: translateY(-2px);
+    }
+
+    .size-option.active {
+      border-color: #7c3aed;
+      background: #7c3aed;
+      color: white;
+    }
+  </style>
+
+  <!-- Announcement Bar -->
+  <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center py-3">
+    <p class="text-sm font-semibold">
+      🎉 FREE SHIPPING ON ORDERS OVER $100 | USE CODE: FREESHIP
+    </p>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%239C92AC&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-slide-in-left">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Elevate Your<br />
+            <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Street Style
+            </span>
+          </h1>
+          <p class="text-xl mb-8 text-gray-300">
+            Premium quality streetwear designed for the modern urban lifestyle. Express yourself with confidence.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#products" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 text-center">
+              Shop Now
+            </a>
+            <a href="#collections" class="px-8 py-4 bg-white/10 backdrop-blur text-white border-2 border-white/20 rounded-lg font-bold text-lg hover:bg-white/20 transition-all text-center">
+              View Collections
+            </a>
+          </div>
+          <div class="mt-12 grid grid-cols-3 gap-8">
+            <div>
+              <div class="text-3xl font-bold">10K+</div>
+              <div class="text-gray-400 text-sm">Happy Customers</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold">4.9★</div>
+              <div class="text-gray-400 text-sm">Average Rating</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold">500+</div>
+              <div class="text-gray-400 text-sm">Products</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="animate-slide-in-right">
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=1000&fit=crop"
+            alt="Fashion Model"
+            class="rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section id="products" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          New Arrivals
+        </h2>
+        <p class="text-xl text-gray-600">
+          Fresh drops you don't want to miss
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Product 1 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop"
+              alt="Oversized Hoodie"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 left-4 badge-new text-white px-3 py-1 rounded-lg text-sm font-bold">
+              NEW
+            </div>
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Premium Oversized Hoodie</h3>
+            <p class="text-gray-600 text-sm mb-3">Charcoal Gray</p>
+            <div class="flex items-center justify-between">
+              <div class="text-2xl font-bold text-gray-900">$89</div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=800&fit=crop"
+              alt="Cargo Pants"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 left-4 badge-sale text-white px-3 py-1 rounded-lg text-sm font-bold">
+              SALE
+            </div>
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Tactical Cargo Pants</h3>
+            <p class="text-gray-600 text-sm mb-3">Olive Green</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-2xl font-bold text-gray-900">$69</span>
+                <span class="text-gray-500 line-through ml-2">$95</span>
+              </div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&h=800&fit=crop"
+              alt="Sneakers"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 left-4 badge-new text-white px-3 py-1 rounded-lg text-sm font-bold">
+              NEW
+            </div>
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Urban Runner Sneakers</h3>
+            <p class="text-gray-600 text-sm mb-3">Triple White</p>
+            <div class="flex items-center justify-between">
+              <div class="text-2xl font-bold text-gray-900">$129</div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=800&fit=crop"
+              alt="Denim Jacket"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Vintage Denim Jacket</h3>
+            <p class="text-gray-600 text-sm mb-3">Washed Blue</p>
+            <div class="flex items-center justify-between">
+              <div class="text-2xl font-bold text-gray-900">$119</div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop"
+              alt="Graphic Tee"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Limited Edition Graphic Tee</h3>
+            <p class="text-gray-600 text-sm mb-3">Black</p>
+            <div class="flex items-center justify-between">
+              <div class="text-2xl font-bold text-gray-900">$45</div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop"
+              alt="Backpack"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 left-4 badge-new text-white px-3 py-1 rounded-lg text-sm font-bold">
+              NEW
+            </div>
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Tech Backpack Pro</h3>
+            <p class="text-gray-600 text-sm mb-3">Midnight Black</p>
+            <div class="flex items-center justify-between">
+              <div class="text-2xl font-bold text-gray-900">$159</div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1588484628369-dd7a85bfdc98?w=600&h=800&fit=crop"
+              alt="Beanie"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Merino Wool Beanie</h3>
+            <p class="text-gray-600 text-sm mb-3">Navy Blue</p>
+            <div class="flex items-center justify-between">
+              <div class="text-2xl font-bold text-gray-900">$35</div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=600&h=800&fit=crop"
+              alt="Joggers"
+              class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute top-4 left-4 badge-sale text-white px-3 py-1 rounded-lg text-sm font-bold">
+              SALE
+            </div>
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <svg class="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Premium Joggers</h3>
+            <p class="text-gray-600 text-sm mb-3">Heather Gray</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-2xl font-bold text-gray-900">$59</span>
+                <span class="text-gray-500 line-through ml-2">$79</span>
+              </div>
+              <button class="px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#collections" class="inline-block px-8 py-4 bg-gray-900 text-white rounded-lg font-bold text-lg hover:bg-gray-800 transition-all hover:scale-105">
+          View All Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections -->
+  <section id="collections" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Shop By Collection
+        </h2>
+        <p class="text-xl text-gray-600">
+          Curated styles for every occasion
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Collection 1 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-xl h-96 cursor-pointer">
+          <img
+            src="https://images.unsplash.com/photo-1507680434567-5739c80be1ac?w=800&h=600&fit=crop"
+            alt="Summer Collection"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+            <div>
+              <h3 class="text-3xl font-bold text-white mb-2">Summer 2024</h3>
+              <p class="text-white/80 mb-4">Light, breathable, and stylish</p>
+              <button class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                Shop Collection →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collection 2 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-xl h-96 cursor-pointer">
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop"
+            alt="Essentials"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+            <div>
+              <h3 class="text-3xl font-bold text-white mb-2">Essentials</h3>
+              <p class="text-white/80 mb-4">Timeless basics you need</p>
+              <button class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                Shop Collection →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collection 3 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-xl h-96 cursor-pointer">
+          <img
+            src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&h=600&fit=crop"
+            alt="Streetwear"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+            <div>
+              <h3 class="text-3xl font-bold text-white mb-2">Streetwear</h3>
+              <p class="text-white/80 mb-4">Bold and unapologetic</p>
+              <button class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                Shop Collection →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <!-- Feature 1 -->
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Free Shipping</h3>
+          <p class="text-gray-600 text-sm">On orders over $100</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Easy Returns</h3>
+          <p class="text-gray-600 text-sm">30-day return policy</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Secure Payment</h3>
+          <p class="text-gray-600 text-sm">SSL encrypted checkout</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">24/7 Support</h3>
+          <p class="text-gray-600 text-sm">Here to help anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          What Our Customers Say
+        </h2>
+        <div class="flex items-center justify-center gap-2 mb-4">
+          {[...Array(5)].map((_, i) => (
+            <svg key={i} class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+          ))}
+        </div>
+        <p class="text-xl text-gray-600">
+          4.9/5 from 2,847 reviews
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Review 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Best quality streetwear I've ever purchased. The hoodie is incredibly soft and the fit is perfect. Will definitely be ordering more!"
+          </p>
+          <div class="flex items-center">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+              alt="Customer"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <div class="font-bold text-gray-900">Alex Johnson</div>
+              <div class="text-sm text-gray-600">Los Angeles, CA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Fast shipping and amazing customer service. The cargo pants fit true to size and look even better in person. Urban Thread is now my go-to!"
+          </p>
+          <div class="flex items-center">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+              alt="Customer"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <div class="font-bold text-gray-900">Sarah Kim</div>
+              <div class="text-sm text-gray-600">New York, NY</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "I've ordered from Urban Thread multiple times now and I'm never disappointed. The quality is consistent and the styles are always on point."
+          </p>
+          <div class="flex items-center">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+              alt="Customer"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <div class="font-bold text-gray-900">Marcus Williams</div>
+              <div class="text-sm text-gray-600">Chicago, IL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          Join the Urban Thread Community
+        </h2>
+        <p class="text-xl mb-8 opacity-90">
+          Get exclusive access to new drops, special offers, and style tips. Plus 15% off your first order!
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+            required
+          />
+          <button
+            type="submit"
+            class="px-8 py-4 bg-white text-purple-600 rounded-lg font-bold hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p class="text-sm mt-4 opacity-75">
+          No spam, unsubscribe anytime. We respect your privacy.
+        </p>
+      </div>
+    </div>
+  </section>
+</LandingLayout>
