@@ -52,9 +52,29 @@ const products = defineCollection({
     }),
 });
 
+// Projects
+const projects = defineCollection({
+    schema: searchable.extend({
+        img: z.string(),
+        category: z.string(), // Web Development, Branding, Social Media, etc.
+        tags: z.array(z.string()),
+        client: z.string().optional(),
+        date: z.date(),
+        featured: z.boolean().default(false),
+        link: z.string().optional(), // External link to live project
+        results: z.object({
+            metric1: z.string().optional(),
+            metric2: z.string().optional(),
+            metric3: z.string().optional(),
+        }).optional(),
+    }),
+});
+
 // Exportá todas las colecciones
 export const collections = {
     blog,
     books,
-    products, countryareas,
+    products,
+    countryareas,
+    projects,
 };

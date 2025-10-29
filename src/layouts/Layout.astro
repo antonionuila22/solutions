@@ -63,7 +63,7 @@ const twitterHandle = "@codebrand_es";
     <!-- Theme and Application -->
     <meta name="theme-color" content="#0D9488" />
     <meta name="color-scheme" content="light" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Codebrand" />
     <meta name="application-name" content="Codebrand" />
@@ -224,13 +224,16 @@ const twitterHandle = "@codebrand_es";
     </script>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9"
+    ></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-T9HKBF45M9');
+      gtag("config", "G-T9HKBF45M9");
     </script>
 
     <!-- Google Tag Manager -->

@@ -1,111 +1,34 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
-import PartnershipBanner from "../components/PartnershipBanner.astro";
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import PartnershipBanner from "../../components/PartnershipBanner.astro";
+import { getCollection } from "astro:content";
 
-// Sample projects data - you can replace with real data from a CMS or database
-const projects = [
-  {
-    id: 1,
-    title: "E-commerce Platform",
-    description:
-      "Modern online store with advanced features, payment integration, and inventory management system.",
-    category: "Web Development",
-    image: "/photos/diseñoweb.png",
-    tags: ["React", "Next.js", "Stripe"],
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Brand Identity Design",
-    description:
-      "Complete brand identity including logo, color palette, typography, and brand guidelines.",
-    category: "Branding",
-    image: "/photos/Branding.png",
-    tags: ["Logo Design", "Brand Guidelines"],
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "Corporate Website",
-    description:
-      "Professional website with SEO optimization, fast loading times, and responsive design.",
-    category: "Web Development",
-    image: "/photos/diseñoweb.png",
-    tags: ["Astro", "Tailwind", "SEO"],
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Social Media Campaign",
-    description:
-      "Comprehensive social media strategy with content creation and ad campaigns.",
-    category: "Social Media",
-    image: "/photos/socialmedia.png",
-    tags: ["Instagram", "Facebook", "Content"],
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "3D Product Visualization",
-    description:
-      "High-quality 3D rendering for architectural and product visualization.",
-    category: "3D Rendering",
-    image: "/photos/render3d.png",
-    tags: ["3D Modeling", "Rendering"],
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Animated Explainer Video",
-    description: "Engaging 2D animation for marketing and product explanation.",
-    category: "Animation",
-    image: "/photos/animation.png",
-    tags: ["2D Animation", "Motion Graphics"],
-    link: "#",
-  },
-  {
-    id: 7,
-    title: "Mobile App Development",
-    description:
-      "Cross-platform mobile application with intuitive UI and seamless performance.",
-    category: "Web Development",
-    image: "/photos/diseñoweb.png",
-    tags: ["React Native", "Mobile", "iOS/Android"],
-    link: "#",
-  },
-  {
-    id: 8,
-    title: "SEO Optimization Project",
-    description:
-      "Complete SEO audit and optimization resulting in 300% increase in organic traffic.",
-    category: "SEO",
-    image: "/photos/seo.png",
-    tags: ["Technical SEO", "Content", "Analytics"],
-    link: "#",
-  },
-  {
-    id: 9,
-    title: "Video Production",
-    description:
-      "Professional video production for advertising and corporate communications.",
-    category: "Video",
-    image: "/photos/videoedition.png",
-    tags: ["Video Editing", "Production"],
-    link: "#",
-  },
-];
+// Get all projects from the collection
+const allProjects = await getCollection("projects");
 
-const categories = [
-  "All",
-  "Web Development",
-  "Branding",
-  "Social Media",
-  "3D Rendering",
-  "Animation",
-  "SEO",
-  "Video",
-];
+console.log("Total projects found:", allProjects.length);
+
+// Sort by date (newest first)
+const projects = allProjects
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((project) => ({
+    title: project.data.title,
+    description: project.data.description,
+    category: project.data.category,
+    image: project.data.img,
+    tags: project.data.tags,
+    link: `/projects/${project.slug}`,
+    featured: project.data.featured || false,
+  }));
+
+console.log("Mapped projects:", projects.length);
+
+// Get unique categories from projects
+const allCategories = [...new Set(projects.map((p) => p.category))];
+const categories = ["All", ...allCategories.sort()];
+
+console.log("Categories:", categories);
 ---
 
 <Layout
@@ -530,7 +453,7 @@ const categories = [
 
 <script is:inline>
   // Category Filter Functionality
-  (function() {
+  (function () {
     function initProjectFilters() {
       const filterButtons = document.querySelectorAll(".filter-btn");
       const projectCards = document.querySelectorAll(".project-card");
@@ -581,7 +504,8 @@ const categories = [
               card.style.display = "block";
               card.style.animation = "none";
               setTimeout(() => {
-                card.style.animation = "fade-in 0.6s ease-out forwards " + (index * 0.1) + "s";
+                card.style.animation =
+                  "fade-in 0.6s ease-out forwards " + index * 0.1 + "s";
               }, 10);
             } else {
               card.style.display = "none";

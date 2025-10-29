@@ -1,25 +1,43 @@
 ---
-import LandingLayout from '../../layouts/LandingLayout.astro';
+import LandingLayout from "../../layouts/LandingLayout.astro";
 
 const pageTitle = "Maya Rivers | Content Creator & Digital Storyteller";
-const pageDescription = "Award-winning content creator specializing in lifestyle, tech, and travel. 2.5M+ followers across platforms.";
+const pageDescription =
+  "Award-winning content creator specializing in lifestyle, tech, and travel. 2.5M+ followers across platforms.";
 ---
 
 <LandingLayout title={pageTitle} description={pageDescription}>
   <style>
     @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
     }
 
     @keyframes sparkle {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.2); }
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+      }
     }
 
     .gradient-bg {
@@ -62,35 +80,49 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
           Content Creator • Digital Storyteller • Brand Partner
         </p>
         <p class="text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
-          Creating engaging content about lifestyle, tech, and travel for millions of viewers worldwide.
-          Let's bring your brand's story to life.
+          Creating engaging content about lifestyle, tech, and travel for
+          millions of viewers worldwide. Let's bring your brand's story to life.
         </p>
 
         <!-- Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div class="glass-card p-6 rounded-2xl">
             <div class="text-4xl font-bold mb-2">2.5M+</div>
-            <div class="text-sm uppercase tracking-wide opacity-90">Total Followers</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">
+              Total Followers
+            </div>
           </div>
           <div class="glass-card p-6 rounded-2xl">
             <div class="text-4xl font-bold mb-2">500+</div>
-            <div class="text-sm uppercase tracking-wide opacity-90">Videos Created</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">
+              Videos Created
+            </div>
           </div>
           <div class="glass-card p-6 rounded-2xl">
             <div class="text-4xl font-bold mb-2">50M+</div>
-            <div class="text-sm uppercase tracking-wide opacity-90">Total Views</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">
+              Total Views
+            </div>
           </div>
           <div class="glass-card p-6 rounded-2xl">
             <div class="text-4xl font-bold mb-2">100+</div>
-            <div class="text-sm uppercase tracking-wide opacity-90">Brand Partners</div>
+            <div class="text-sm uppercase tracking-wide opacity-90">
+              Brand Partners
+            </div>
           </div>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#services" class="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl">
+          <a
+            href="#services"
+            class="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
+          >
             Work With Me
           </a>
-          <a href="#portfolio" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all">
+          <a
+            href="#portfolio"
+            class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all"
+          >
             View My Work
           </a>
         </div>
@@ -112,13 +144,25 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- YouTube -->
-        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-          <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2"
+        >
+          <div
+            class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+          >
+            <svg
+              class="w-10 h-10 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">YouTube</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">
+            YouTube
+          </h3>
           <div class="text-center mb-4">
             <div class="text-3xl font-bold text-gray-900">1.2M</div>
             <div class="text-gray-600">Subscribers</div>
@@ -129,13 +173,25 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
         </div>
 
         <!-- Instagram -->
-        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-          <div class="w-16 h-16 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2"
+        >
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+          >
+            <svg
+              class="w-10 h-10 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">Instagram</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">
+            Instagram
+          </h3>
           <div class="text-center mb-4">
             <div class="text-3xl font-bold text-gray-900">850K</div>
             <div class="text-gray-600">Followers</div>
@@ -146,13 +202,25 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
         </div>
 
         <!-- TikTok -->
-        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-          <div class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2"
+        >
+          <div
+            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+          >
+            <svg
+              class="w-10 h-10 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">TikTok</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">
+            TikTok
+          </h3>
           <div class="text-center mb-4">
             <div class="text-3xl font-bold text-gray-900">450K</div>
             <div class="text-gray-600">Followers</div>
@@ -177,92 +245,196 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+      >
         <!-- Sponsored Content -->
-        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+        <div
+          class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Sponsored Content</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Sponsored Content
+          </h3>
           <p class="text-gray-600 mb-6">
-            Dedicated videos and posts showcasing your product or service to my engaged audience across all platforms.
+            Dedicated videos and posts showcasing your product or service to my
+            engaged audience across all platforms.
           </p>
           <div class="text-3xl font-bold text-purple-600 mb-2">$15,000+</div>
           <div class="text-sm text-gray-500">per campaign</div>
         </div>
 
         <!-- Brand Partnerships -->
-        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        <div
+          class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Brand Partnerships</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Brand Partnerships
+          </h3>
           <p class="text-gray-600 mb-6">
-            Long-term ambassador programs with integrated content across multiple touchpoints and platforms.
+            Long-term ambassador programs with integrated content across
+            multiple touchpoints and platforms.
           </p>
           <div class="text-3xl font-bold text-blue-600 mb-2">Custom</div>
           <div class="text-sm text-gray-500">6-12 month contracts</div>
         </div>
 
         <!-- Content Creation -->
-        <div class="bg-gradient-to-br from-pink-50 to-orange-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+        <div
+          class="bg-gradient-to-br from-pink-50 to-orange-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Content Creation</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Content Creation
+          </h3>
           <p class="text-gray-600 mb-6">
-            Professional photo and video content created for your brand's use on your own channels and marketing.
+            Professional photo and video content created for your brand's use on
+            your own channels and marketing.
           </p>
           <div class="text-3xl font-bold text-pink-600 mb-2">$8,000+</div>
           <div class="text-sm text-gray-500">per project</div>
         </div>
 
         <!-- Consulting -->
-        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+        <div
+          class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Strategy Consulting</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Strategy Consulting
+          </h3>
           <p class="text-gray-600 mb-6">
-            One-on-one consulting to help develop your social media strategy and content approach.
+            One-on-one consulting to help develop your social media strategy and
+            content approach.
           </p>
           <div class="text-3xl font-bold text-green-600 mb-2">$500/hr</div>
           <div class="text-sm text-gray-500">2 hour minimum</div>
         </div>
 
         <!-- Speaking -->
-        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+        <div
+          class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Speaking Engagements</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Speaking Engagements
+          </h3>
           <p class="text-gray-600 mb-6">
-            Keynote speeches and panel discussions about content creation, social media, and digital marketing.
+            Keynote speeches and panel discussions about content creation,
+            social media, and digital marketing.
           </p>
           <div class="text-3xl font-bold text-indigo-600 mb-2">$10,000+</div>
           <div class="text-sm text-gray-500">per event</div>
         </div>
 
         <!-- Workshops -->
-        <div class="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-          <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        <div
+          class="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Workshops & Training</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Workshops & Training
+          </h3>
           <p class="text-gray-600 mb-6">
-            Interactive workshops teaching teams how to create engaging content and grow their online presence.
+            Interactive workshops teaching teams how to create engaging content
+            and grow their online presence.
           </p>
           <div class="text-3xl font-bold text-orange-600 mb-2">$5,000+</div>
           <div class="text-sm text-gray-500">half or full day</div>
@@ -283,122 +455,172 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+      >
         <!-- Video 1 -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div
+          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+        >
           <div class="relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=450&fit=crop"
               alt="Tech Review"
               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+            >
               <div>
-                <div class="text-white font-bold text-lg mb-1">Ultimate Tech Setup Tour 2024</div>
+                <div class="text-white font-bold text-lg mb-1">
+                  Ultimate Tech Setup Tour 2024
+                </div>
                 <div class="text-white/80 text-sm">2.5M views • YouTube</div>
               </div>
             </div>
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-lg text-sm font-bold">
+            <div
+              class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
               TECH
             </div>
           </div>
         </div>
 
         <!-- Video 2 -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div
+          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+        >
           <div class="relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=450&fit=crop"
               alt="Travel Vlog"
               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+            >
               <div>
-                <div class="text-white font-bold text-lg mb-1">Bali Travel Guide: Hidden Gems</div>
+                <div class="text-white font-bold text-lg mb-1">
+                  Bali Travel Guide: Hidden Gems
+                </div>
                 <div class="text-white/80 text-sm">1.8M views • YouTube</div>
               </div>
             </div>
-            <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-bold">
+            <div
+              class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
               TRAVEL
             </div>
           </div>
         </div>
 
         <!-- Video 3 -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div
+          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+        >
           <div class="relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=450&fit=crop"
               alt="Lifestyle"
               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+            >
               <div>
-                <div class="text-white font-bold text-lg mb-1">My Morning Routine for Success</div>
+                <div class="text-white font-bold text-lg mb-1">
+                  My Morning Routine for Success
+                </div>
                 <div class="text-white/80 text-sm">3.2M views • YouTube</div>
               </div>
             </div>
-            <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-lg text-sm font-bold">
+            <div
+              class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
               LIFESTYLE
             </div>
           </div>
         </div>
 
         <!-- Video 4 -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div
+          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+        >
           <div class="relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&h=450&fit=crop"
               alt="Product Review"
               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+            >
               <div>
-                <div class="text-white font-bold text-lg mb-1">Best Gadgets Under $100</div>
+                <div class="text-white font-bold text-lg mb-1">
+                  Best Gadgets Under $100
+                </div>
                 <div class="text-white/80 text-sm">1.5M views • YouTube</div>
               </div>
             </div>
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-lg text-sm font-bold">
+            <div
+              class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
               TECH
             </div>
           </div>
         </div>
 
         <!-- Video 5 -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div
+          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+        >
           <div class="relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=450&fit=crop"
               alt="Fashion"
               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+            >
               <div>
-                <div class="text-white font-bold text-lg mb-1">Summer Fashion Haul 2024</div>
+                <div class="text-white font-bold text-lg mb-1">
+                  Summer Fashion Haul 2024
+                </div>
                 <div class="text-white/80 text-sm">920K views • Instagram</div>
               </div>
             </div>
-            <div class="absolute top-4 right-4 bg-pink-600 text-white px-3 py-1 rounded-lg text-sm font-bold">
+            <div
+              class="absolute top-4 right-4 bg-pink-600 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
               FASHION
             </div>
           </div>
         </div>
 
         <!-- Video 6 -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div
+          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+        >
           <div class="relative overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=450&fit=crop"
               alt="Behind the Scenes"
               class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
+            >
               <div>
-                <div class="text-white font-bold text-lg mb-1">How I Create Content: BTS</div>
+                <div class="text-white font-bold text-lg mb-1">
+                  How I Create Content: BTS
+                </div>
                 <div class="text-white/80 text-sm">1.1M views • YouTube</div>
               </div>
             </div>
-            <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-bold">
+            <div
+              class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
               BTS
             </div>
           </div>
@@ -414,23 +636,30 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           What Brands Say
         </h2>
-        <p class="text-xl text-gray-600">
-          Trusted by leading brands worldwide
-        </p>
+        <p class="text-xl text-gray-600">Trusted by leading brands worldwide</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <!-- Testimonial 1 -->
-        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg">
+        <div
+          class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg"
+        >
           <div class="flex items-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
+            {
+              [...Array(5)].map(() => (
+                <svg
+                  class="w-5 h-5 text-yellow-400 fill-current"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))
+            }
           </div>
           <p class="text-gray-700 mb-6 italic">
-            "Maya's content drove a 300% increase in engagement for our campaign. Her authenticity resonates with audiences in a way that truly moves the needle."
+            "Maya's content drove a 300% increase in engagement for our
+            campaign. Her authenticity resonates with audiences in a way that
+            truly moves the needle."
           </p>
           <div class="flex items-center">
             <div>
@@ -441,41 +670,65 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
         </div>
 
         <!-- Testimonial 2 -->
-        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg">
+        <div
+          class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg"
+        >
           <div class="flex items-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
+            {
+              [...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  class="w-5 h-5 text-yellow-400 fill-current"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))
+            }
           </div>
           <p class="text-gray-700 mb-6 italic">
-            "Working with Maya was seamless from start to finish. Professional, creative, and delivered results beyond our expectations. A true partner!"
+            "Working with Maya was seamless from start to finish. Professional,
+            creative, and delivered results beyond our expectations. A true
+            partner!"
           </p>
           <div class="flex items-center">
             <div>
               <div class="font-bold text-gray-900">Michael Torres</div>
-              <div class="text-sm text-gray-600">Marketing Director, Luxe Travel</div>
+              <div class="text-sm text-gray-600">
+                Marketing Director, Luxe Travel
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Testimonial 3 -->
-        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl shadow-lg">
+        <div
+          class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl shadow-lg"
+        >
           <div class="flex items-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
+            {
+              [...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  class="w-5 h-5 text-yellow-400 fill-current"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))
+            }
           </div>
           <p class="text-gray-700 mb-6 italic">
-            "Maya helped us reach a completely new demographic. Her insights and content strategy were invaluable. We saw a 250% ROI on our partnership."
+            "Maya helped us reach a completely new demographic. Her insights and
+            content strategy were invaluable. We saw a 250% ROI on our
+            partnership."
           </p>
           <div class="flex items-center">
             <div>
               <div class="font-bold text-gray-900">Emily Rodriguez</div>
-              <div class="text-sm text-gray-600">VP Marketing, FreshLife Wellness</div>
+              <div class="text-sm text-gray-600">
+                VP Marketing, FreshLife Wellness
+              </div>
             </div>
           </div>
         </div>
@@ -484,7 +737,9 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
   </section>
 
   <!-- Contact -->
-  <section class="py-20 bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+  <section
+    class="py-20 bg-gradient-to-br from-purple-600 to-pink-600 text-white"
+  >
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
@@ -492,14 +747,17 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
             Let's Create Something Amazing
           </h2>
           <p class="text-xl opacity-90">
-            Interested in working together? Fill out the form below and I'll get back to you within 24-48 hours.
+            Interested in working together? Fill out the form below and I'll get
+            back to you within 24-48 hours.
           </p>
         </div>
 
         <form class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label for="name" class="block text-sm font-semibold mb-2">Name *</label>
+              <label for="name" class="block text-sm font-semibold mb-2"
+                >Name *</label
+              >
               <input
                 type="text"
                 id="name"
@@ -510,7 +768,9 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
               />
             </div>
             <div>
-              <label for="company" class="block text-sm font-semibold mb-2">Company *</label>
+              <label for="company" class="block text-sm font-semibold mb-2"
+                >Company *</label
+              >
               <input
                 type="text"
                 id="company"
@@ -524,7 +784,9 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label for="email" class="block text-sm font-semibold mb-2">Email *</label>
+              <label for="email" class="block text-sm font-semibold mb-2"
+                >Email *</label
+              >
               <input
                 type="email"
                 id="email"
@@ -535,23 +797,35 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
               />
             </div>
             <div>
-              <label for="budget" class="block text-sm font-semibold mb-2">Budget Range</label>
+              <label for="budget" class="block text-sm font-semibold mb-2"
+                >Budget Range</label
+              >
               <select
                 id="budget"
                 name="budget"
                 class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
               >
-                <option value="" class="text-gray-900">Select budget range</option>
-                <option value="5k-10k" class="text-gray-900">$5,000 - $10,000</option>
-                <option value="10k-25k" class="text-gray-900">$10,000 - $25,000</option>
-                <option value="25k-50k" class="text-gray-900">$25,000 - $50,000</option>
+                <option value="" class="text-gray-900"
+                  >Select budget range</option
+                >
+                <option value="5k-10k" class="text-gray-900"
+                  >$5,000 - $10,000</option
+                >
+                <option value="10k-25k" class="text-gray-900"
+                  >$10,000 - $25,000</option
+                >
+                <option value="25k-50k" class="text-gray-900"
+                  >$25,000 - $50,000</option
+                >
                 <option value="50k+" class="text-gray-900">$50,000+</option>
               </select>
             </div>
           </div>
 
           <div class="mb-6">
-            <label for="service" class="block text-sm font-semibold mb-2">Service Interested In *</label>
+            <label for="service" class="block text-sm font-semibold mb-2"
+              >Service Interested In *</label
+            >
             <select
               id="service"
               name="service"
@@ -559,17 +833,31 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
               class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
             >
               <option value="" class="text-gray-900">Select a service</option>
-              <option value="sponsored" class="text-gray-900">Sponsored Content</option>
-              <option value="partnership" class="text-gray-900">Brand Partnership</option>
-              <option value="content-creation" class="text-gray-900">Content Creation</option>
-              <option value="consulting" class="text-gray-900">Strategy Consulting</option>
-              <option value="speaking" class="text-gray-900">Speaking Engagement</option>
-              <option value="workshop" class="text-gray-900">Workshop/Training</option>
+              <option value="sponsored" class="text-gray-900"
+                >Sponsored Content</option
+              >
+              <option value="partnership" class="text-gray-900"
+                >Brand Partnership</option
+              >
+              <option value="content-creation" class="text-gray-900"
+                >Content Creation</option
+              >
+              <option value="consulting" class="text-gray-900"
+                >Strategy Consulting</option
+              >
+              <option value="speaking" class="text-gray-900"
+                >Speaking Engagement</option
+              >
+              <option value="workshop" class="text-gray-900"
+                >Workshop/Training</option
+              >
             </select>
           </div>
 
           <div class="mb-6">
-            <label for="message" class="block text-sm font-semibold mb-2">Tell Me About Your Project *</label>
+            <label for="message" class="block text-sm font-semibold mb-2"
+              >Tell Me About Your Project *</label
+            >
             <textarea
               id="message"
               name="message"
@@ -594,11 +882,17 @@ const pageDescription = "Award-winning content creator specializing in lifestyle
         <div class="mt-12 text-center">
           <p class="text-lg mb-4">Or reach out directly:</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:hello@mayarivers.com" class="text-white hover:text-pink-200 transition-colors font-semibold">
+            <a
+              href="mailto:hello@mayarivers.com"
+              class="text-white hover:text-pink-200 transition-colors font-semibold"
+            >
               hello@mayarivers.com
             </a>
             <span class="hidden sm:inline text-white/50">•</span>
-            <a href="tel:+13105551234" class="text-white hover:text-pink-200 transition-colors font-semibold">
+            <a
+              href="tel:+13105551234"
+              class="text-white hover:text-pink-200 transition-colors font-semibold"
+            >
               (310) 555-1234
             </a>
           </div>
