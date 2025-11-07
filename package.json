@@ -10,10 +10,10 @@
     "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.6",
-    "@astrojs/netlify": "^6.5.11",
-    "@astrojs/react": "^4.4.0",
-    "@astrojs/rss": "^4.0.12",
+    "@astrojs/mdx": "^4.3.10",
+    "@astrojs/netlify": "^6.6.0",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
     "@google-cloud/recaptcha-enterprise": "^6.1.0",
     "@libsql/client": "^0.15.4",
@@ -39,7 +39,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
-    "astro": "^5.14.1",
+    "astro": "^5.15.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
