@@ -379,7 +379,7 @@ We've built hundreds of landing pages for clients across industries—from SaaS 
 
 👉 **[Schedule a free landing page audit](/contact)** and we'll analyze your current page and show you exactly what's holding back your conversions.
 
-👉 **[See our portfolio](/work)** of high-converting landing pages we've built for clients.
+👉 **[See our portfolio](/projects)** of high-converting landing pages we've built for clients.
 
 👉 **[Explore our landing page services](/landing-pages)** and packages designed for businesses serious about growth.
 

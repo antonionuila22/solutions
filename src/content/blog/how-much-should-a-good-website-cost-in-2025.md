@@ -468,7 +468,7 @@ At our agency, we build websites that aren't just beautiful—they're strategic 
 
 👉 **[Schedule a free website consultation](/contact)** and get a custom quote based on your actual needs—not a one-size-fits-all estimate.
 
-👉 **[View our portfolio](/work)** to see websites we've built across different industries and budgets.
+👉 **[View our portfolio](/projects)** to see websites we've built across different industries and budgets.
 
 👉 **[Explore our web development services](/web-development)** to learn more about our process and approach.
 

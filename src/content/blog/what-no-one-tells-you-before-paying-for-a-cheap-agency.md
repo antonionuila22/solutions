@@ -354,7 +354,7 @@ We've helped hundreds of businesses recover from bad agency experiences—and ev
 
 👉 **[Schedule a free strategy consultation](/contact)** and let's discuss your goals, challenges, and how we can help you achieve real results.
 
-👉 **[See our case studies](/work)** of businesses we've helped grow through strategic, effective marketing.
+👉 **[See our case studies](/projects)** of businesses we've helped grow through strategic, effective marketing.
 
 👉 **[Explore our web design](/web-design)** and [development services](/web-development) to find the right solution for your business.
 

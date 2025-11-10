@@ -405,7 +405,7 @@ Whether you choose Squarespace, WordPress, or Webflow, our team has deep experti
 
 👉 **[Schedule a free website consultation](/contact)** and we'll help you choose the right platform and strategy for your business.
 
-👉 **[View our web design portfolio](/work)** to see examples of beautiful, high-performing sites we've built on all three platforms.
+👉 **[View our web design portfolio](/projects)** to see examples of beautiful, high-performing sites we've built on all three platforms.
 
 👉 **[Explore our web development services](/web-development)** to learn how we can help you launch or rebuild your website.
 

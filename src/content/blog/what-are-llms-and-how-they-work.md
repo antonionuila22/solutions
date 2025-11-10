@@ -456,7 +456,7 @@ Whether you need content creation, customer service automation, or custom AI sol
 
 👉 **[Schedule a free AI strategy consultation](/contact)** and discover how AI can transform your business.
 
-👉 **[View our AI implementation case studies](/work)** to see real results.
+👉 **[View our AI implementation case studies](/projects)** to see real results.
 
 👉 **[Explore our digital services](/digital-marketing)** powered by cutting-edge AI.
 

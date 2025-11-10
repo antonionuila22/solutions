@@ -514,7 +514,7 @@ You don't have to figure this out alone. We've built (and optimized) hundreds of
 
 👉 **[Schedule a free funnel consultation](/contact)** and we'll map out exactly how to generate more qualified leads for your business.
 
-👉 **[See our case studies](/work)** of funnels we've built that generated 3-10x ROI.
+👉 **[See our case studies](/projects)** of funnels we've built that generated 3-10x ROI.
 
 👉 **[Explore our digital marketing services](/digital-marketing)** to learn how we can build and manage your entire sales funnel.
 

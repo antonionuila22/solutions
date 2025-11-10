@@ -474,7 +474,7 @@ Creating advertising that feels like valuable content requires strategy, psychol
 
 👉 **[Schedule a free marketing consultation](/contact)** and let's create ads that people actually enjoy seeing.
 
-👉 **[See our ad campaigns](/work)** that generated engagement rates 3-5x industry averages.
+👉 **[See our ad campaigns](/projects)** that generated engagement rates 3-5x industry averages.
 
 👉 **[Explore our digital marketing services](/digital-marketing)** to learn how we help brands cut through the noise.
 

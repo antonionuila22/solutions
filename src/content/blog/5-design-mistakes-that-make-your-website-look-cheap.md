@@ -310,7 +310,7 @@ Don't let a cheap-looking website hold your business back any longer.
 
 👉 **[Schedule a free design consultation](/contact)** and let's discuss how we can elevate your digital presence to match the quality of your business.
 
-👉 **[View our portfolio](/work)** to see examples of websites we've transformed from amateur to professional.
+👉 **[View our portfolio](/projects)** to see examples of websites we've transformed from amateur to professional.
 
 👉 **[Explore our web design services](/web-design)** to learn more about our process and packages.
 

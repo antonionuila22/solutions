@@ -645,7 +645,7 @@ Building custom forms and integrations takes time and technical expertise. If yo
 
 👉 **[Schedule a free development consultation](/contact)** and let's discuss your project
 
-👉 **[View our portfolio](/work)** of custom web applications we've built
+👉 **[View our portfolio](/projects)** of custom web applications we've built
 
 👉 **[Explore our web development services](/web-development)** for more details
 

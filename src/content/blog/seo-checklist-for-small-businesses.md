@@ -429,7 +429,7 @@ While this checklist will get you started, **professional SEO delivers faster, b
 
 👉 **[Schedule a free SEO consultation](/contact)** and we'll analyze your current visibility and show you exactly what's holding you back.
 
-👉 **[See our SEO case studies](/work)** of local businesses we've helped dominate their markets.
+👉 **[See our SEO case studies](/projects)** of local businesses we've helped dominate their markets.
 
 👉 **[Explore our SEO services](/seo)** to learn how we can help your business get found, chosen, and grow.
 
