@@ -6,16 +6,19 @@ const pageTitle = "Premier Realty Group | Luxury Real Estate in Miami";
 const pageDescription =
   "Leading real estate agency in Miami specializing in luxury homes, waterfront properties, and commercial real estate. Expert agents, exceptional service.";
 const pageKeywords =
-  "Miami real estate, luxury homes Miami, waterfront property, real estate agent, buy sell home Miami, commercial real estate";
+  "Miami real estate, luxury homes Miami, waterfront property, real estate agent, buy sell home Miami, commercial real estate, premier realty, Miami properties, real estate Miami, luxury real estate";
+const pageImage = "/photos/bannercodebrand.webp";
 ---
 
 <LandingLayout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
+  image={pageImage}
 >
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:image" content={pageImage} slot="head" />
 
   <div class="relative w-full overflow-hidden bg-white">
     <!-- Fixed Navigation -->

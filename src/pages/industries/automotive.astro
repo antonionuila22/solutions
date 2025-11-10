@@ -6,16 +6,11 @@ const title = "Car Dealership Website Design & Automotive Software Solutions | C
 const description =
   "Transform your dealership with custom automotive websites, vehicle inventory management, online showrooms, and CRM systems. Drive more sales with professional car dealer technology.";
 const keywords =
-  "car dealership website design, automotive website development, vehicle inventory management software, car dealer CRM, automotive lead management, dealership website builder, auto dealer software, car sales website, vehicle showroom website, automotive digital marketing, online car sales platform, dealer management system, automotive e-commerce";
+  "car dealership website design, automotive website development, vehicle inventory management software, car dealer CRM, automotive lead management, dealership website builder, auto dealer software, car sales website, vehicle showroom website, automotive digital marketing, online car sales platform, dealer management system, automotive e-commerce, car dealer digital solutions";
+const image = "/photos/bannercodebrand.webp";
 ---
 
-<Layout title={title}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={description} slot="head" />
-  <meta name="keywords" content={keywords} slot="head" />
-  <meta property="og:title" content={title} slot="head" />
-  <meta property="og:description" content={description} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+<Layout title={title} description={description} keywords={keywords} image={image}>
 
   <!-- Hero Section -->
   <section

@@ -1,11 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// SEO Metadata
-const pageTitle = "Contact Us – Codebrand | Get in Touch";
-const pageDescription =
-  "Get in touch with Codebrand. We offer web development, SEO, branding, UX/UI design, and more. Contact us for a free consultation in San Pedro Sula, Honduras.";
-
 // Industrias disponibles
 const industries = [
   "Automotive",
@@ -22,20 +17,12 @@ const industries = [
 ];
 ---
 
-<Layout title={pageTitle}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={pageDescription} slot="head" />
-  <meta
-    name="keywords"
-    content="contact codebrand, web development contact, SEO services Honduras, branding agency contact, UX/UI design consultation"
-    slot="head"
-  />
-  <meta property="og:title" content={pageTitle} slot="head" />
-  <meta property="og:description" content={pageDescription} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
-  <meta name="twitter:card" content="summary_large_image" slot="head" />
-  <meta name="twitter:title" content={pageTitle} slot="head" />
-  <meta name="twitter:description" content={pageDescription} slot="head" />
+<Layout
+  title="Contact Codebrand | Free Consultation - Digital Agency"
+  description="Get a free consultation with Codebrand digital agency. Offering web development, UI/UX design, branding, SEO, and marketing services in San Pedro Sula, Honduras. Contact us today!"
+  keywords="contact codebrand, free consultation, digital agency contact, web development services Honduras, SEO agency San Pedro Sula, branding consultation, UX/UI design quote, digital marketing contact, agency consultation, get a quote, contact web developer, Honduras digital agency"
+  image="/photos/bannercodebrand.webp"
+>
 
   <!-- Hero Section -->
   <section class="relative bg-gray-50 font-poppins">

@@ -2,20 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
 
-const title = "Web Development for Travel Agencies | CodeBrand";
+const title = "Travel Agency Website Design & Tourism Software Solutions | CodeBrand";
 const description =
-  "Transform your travel agency with custom digital solutions. Online booking systems, mobile apps, and customer portals designed specifically for the travel industry.";
+  "Transform your travel agency with custom digital solutions. Online booking systems, tour packages management, itinerary builders, mobile apps, and customer portals designed specifically for the travel and tourism industry.";
 const keywords =
-  "travel agency web development, travel booking software, tourism technology, travel agency websites, travel CRM, online booking system";
+  "travel agency web development, travel booking software, tourism technology, travel agency websites, travel CRM, online booking system, tour package management, travel itinerary builder, tourism website design, vacation booking platform, travel agency portal, tour operator software, travel management system";
+const image = "/photos/bannercodebrand.webp";
 ---
 
-<Layout title={title}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={description} slot="head" />
-  <meta name="keywords" content={keywords} slot="head" />
-  <meta property="og:title" content={title} slot="head" />
-  <meta property="og:description" content={description} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+<Layout title={title} description={description} keywords={keywords} image={image}>
 
   <!-- Hero Section -->
   <section

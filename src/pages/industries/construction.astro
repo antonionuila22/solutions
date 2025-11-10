@@ -2,20 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
 
-const title = "Web Development for Construction Companies | CodeBrand";
+const title = "Construction Software & Contractor Website Development | CodeBrand";
 const description =
-  "Transform your construction business with custom web solutions. Project management systems, client portals, and mobile apps designed specifically for the construction industry.";
+  "Transform your construction business with custom web solutions. Project management systems, client portals, bid management, and mobile apps designed specifically for the construction industry.";
 const keywords =
-  "construction web development, construction software, project management system, contractor websites, construction CRM, building industry technology";
+  "construction web development, construction software, project management system, contractor websites, construction CRM, building industry technology, construction project management, bid management software, contractor software, construction portal, field management app";
+const image = "/photos/bannercodebrand.webp";
 ---
 
-<Layout title={title}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={description} slot="head" />
-  <meta name="keywords" content={keywords} slot="head" />
-  <meta property="og:title" content={title} slot="head" />
-  <meta property="og:description" content={description} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+<Layout title={title} description={description} keywords={keywords} image={image}>
 
   <!-- Hero Section -->
   <section

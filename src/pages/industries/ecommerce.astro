@@ -2,20 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
 
-const title = "E-commerce Development Solutions | CodeBrand";
+const title = "E-commerce Development & Online Store Solutions | CodeBrand";
 const description =
-  "Transform your online store with custom e-commerce solutions. Shopping cart optimization, payment integrations, and inventory management designed to maximize conversions and sales.";
+  "Transform your online store with custom e-commerce solutions. Shopping cart optimization, payment integrations, inventory management, and conversion-optimized design to maximize online sales.";
 const keywords =
-  "e-commerce development, online store development, shopping cart software, e-commerce platform, Shopify development, WooCommerce development, custom e-commerce, payment gateway integration";
+  "e-commerce development, online store development, shopping cart software, e-commerce platform, Shopify development, WooCommerce development, custom e-commerce, payment gateway integration, online retail platform, e-commerce website design, product catalog management";
+const image = "/photos/bannercodebrand.webp";
 ---
 
-<Layout title={title}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={description} slot="head" />
-  <meta name="keywords" content={keywords} slot="head" />
-  <meta property="og:title" content={title} slot="head" />
-  <meta property="og:description" content={description} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+<Layout title={title} description={description} keywords={keywords} image={image}>
 
   <!-- Hero Section -->
   <section

@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
 const { post, blog } = Astro.props;
 const { data } = post;
-const { title, description, img, imageAlt, date, readtime, author } = data;
+const { title, description, img, imageAlt, date, readtime, author, categories, tags } = data;
 
 const { Content } = await render(post);
 
@@ -42,10 +42,27 @@ if (date instanceof Date && !isNaN(date.getTime())) {
 } else {
   formattedDate = "Fecha no válida";
 }
-// Formato de fecha legible
+
+// SEO optimization
+const seoTitle = `${title} | Codebrand Blog`;
+const seoDescription = description || `Read about ${title} on Codebrand's blog. ${author ? `Written by ${author}.` : ''} ${readtime ? `${readtime} min read.` : ''}`;
+const seoKeywords = [
+  title.toLowerCase(),
+  'codebrand blog',
+  'web development',
+  'digital marketing',
+  'design tips',
+  ...(categories || []),
+  ...(tags || [])
+].join(', ');
 ---
 
-<Layout title={title}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  image={img || "/photos/bannercodebrand.webp"}
+>
   <article class="font-poppins text-black">
     <!-- Hero Section -->
     <section class="relative w-full">

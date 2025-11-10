@@ -3,9 +3,11 @@ import LandingLayout from '../../layouts/LandingLayout.astro';
 
 const pageTitle = "La Dolce Vita | Authentic Italian Cuisine in San Francisco";
 const pageDescription = "Experience the finest Italian dining in the heart of San Francisco. Handmade pasta, wood-fired pizza, and an extensive wine collection.";
+const pageKeywords = "Italian restaurant, San Francisco dining, Italian cuisine, pasta restaurant, pizza restaurant, Italian food, la dolce vita, fine dining, authentic Italian, wine restaurant";
+const pageImage = "/photos/bannercodebrand.webp";
 ---
 
-<LandingLayout title={pageTitle} description={pageDescription}>
+<LandingLayout title={pageTitle} description={pageDescription} keywords={pageKeywords} image={pageImage}>
   <script>
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

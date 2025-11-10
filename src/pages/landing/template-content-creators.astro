@@ -4,9 +4,17 @@ import LandingLayout from "../../layouts/LandingLayout.astro";
 const pageTitle = "Maya Rivers | Content Creator & Digital Storyteller";
 const pageDescription =
   "Award-winning content creator specializing in lifestyle, tech, and travel. 2.5M+ followers across platforms.";
+const pageKeywords =
+  "content creator, digital storyteller, lifestyle influencer, tech content, travel blogger, social media influencer, creator portfolio, digital content, influencer marketing";
+const pageImage = "/photos/bannercodebrand.webp";
 ---
 
-<LandingLayout title={pageTitle} description={pageDescription}>
+<LandingLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  image={pageImage}
+>
   <style>
     @keyframes gradientShift {
       0%,

@@ -7,15 +7,10 @@ const description =
   "Transform your law practice with custom legal technology solutions. Case management systems, client portals, document automation, and professional attorney websites designed for law firms.";
 const keywords =
   "law firm website design, legal case management software, attorney website development, legal practice management software, law firm client portal, legal document automation, attorney CRM, law firm billing software, lawyer website design, legal tech solutions, attorney marketing website, law practice software, legal time tracking, secure client portal";
+const image = "/photos/bannercodebrand.webp";
 ---
 
-<Layout title={title}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={description} slot="head" />
-  <meta name="keywords" content={keywords} slot="head" />
-  <meta property="og:title" content={title} slot="head" />
-  <meta property="og:description" content={description} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+<Layout title={title} description={description} keywords={keywords} image={image}>
 
   <!-- Hero Section -->
   <section

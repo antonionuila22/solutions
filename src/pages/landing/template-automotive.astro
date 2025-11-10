@@ -6,16 +6,19 @@ const pageTitle = "Elite Motors | Premium Pre-Owned & New Vehicles";
 const pageDescription =
   "Discover premium vehicles at Elite Motors. New and certified pre-owned cars, trucks, and SUVs. Financing available. Your dream ride awaits.";
 const pageKeywords =
-  "car dealership, used cars, new cars, auto sales, vehicle financing, car trade-in, luxury vehicles";
+  "car dealership, used cars, new cars, auto sales, vehicle financing, car trade-in, luxury vehicles, elite motors, premium vehicles, certified pre-owned";
+const pageImage = "/photos/bannercodebrand.webp";
 ---
 
 <LandingLayout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
+  image={pageImage}
 >
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:image" content={pageImage} slot="head" />
 
   <div class="relative w-full overflow-x-hidden bg-black">
     <!-- Hero Section -->

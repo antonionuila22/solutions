@@ -3,9 +3,11 @@ import LandingLayout from '../../layouts/LandingLayout.astro';
 
 const pageTitle = "Wanderlust Adventures | Luxury Travel Experiences Worldwide";
 const pageDescription = "Your trusted travel partner for unforgettable journeys. Custom itineraries, luxury accommodations, and expert guidance for 25+ years.";
+const pageKeywords = "luxury travel, travel agency, custom itineraries, travel experiences, vacation packages, wanderlust adventures, international travel, luxury vacations, travel planning";
+const pageImage = "/photos/bannercodebrand.webp";
 ---
 
-<LandingLayout title={pageTitle} description={pageDescription}>
+<LandingLayout title={pageTitle} description={pageDescription} keywords={pageKeywords} image={pageImage}>
   <style>
     @keyframes float {
       0%, 100% { transform: translateY(0px); }

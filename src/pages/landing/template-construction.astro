@@ -6,16 +6,19 @@ const pageTitle = "BuildCo Construction | Expert Builders & Contractors";
 const pageDescription =
   "Professional construction services. Residential & commercial building, renovations, and remodeling. Quality craftsmanship. Free quotes.";
 const pageKeywords =
-  "construction company, building contractor, home builder, commercial construction, renovations, remodeling";
+  "construction company, building contractor, home builder, commercial construction, renovations, remodeling, buildco construction, residential construction, construction services";
+const pageImage = "/photos/bannercodebrand.webp";
 ---
 
 <LandingLayout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
+  image={pageImage}
 >
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:image" content={pageImage} slot="head" />
 
   <div class="relative w-full overflow-hidden bg-black">
     <!-- Hero Section -->

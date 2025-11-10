@@ -7,15 +7,10 @@ const description =
   "Transform your gym or fitness studio with custom websites, online class booking, member management, and workout tracking apps. Increase memberships and retention with professional fitness technology.";
 const keywords =
   "gym website design, fitness website development, gym management software, fitness class booking system, gym membership management, personal trainer website, fitness studio software, gym booking system, fitness app development, workout tracking software, gym member portal, fitness center website, online fitness classes, gym scheduling software";
+const image = "/photos/bannercodebrand.webp";
 ---
 
-<Layout title={title}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={description} slot="head" />
-  <meta name="keywords" content={keywords} slot="head" />
-  <meta property="og:title" content={title} slot="head" />
-  <meta property="og:description" content={description} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+<Layout title={title} description={description} keywords={keywords} image={image}>
 
   <!-- Hero Section -->
   <section

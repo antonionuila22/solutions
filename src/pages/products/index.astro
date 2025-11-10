@@ -5,7 +5,12 @@ import { getCollection } from "astro:content";
 const products = await getCollection("products");
 ---
 
-<Layout title="Productos">
+<Layout
+  title="Our Digital Products & Services | Codebrand Solutions"
+  description="Explore Codebrand's comprehensive digital products and services including web development, UI/UX design, branding, SEO, social media marketing, video production, 3D animation, and promotional products. Transform your business with our expert solutions."
+  keywords="digital products, digital services, web development services, design services, branding packages, SEO services, marketing services, video production, 3D animation, promotional products, digital solutions, agency services, professional services, codebrand products"
+  image="/photos/bannercodebrand.webp"
+>
     <section class="w-full flex items-center justify-center bg-white">
         <div class="py-24 w-11/12 max-w-4xl text-center">
             <h1

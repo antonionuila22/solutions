@@ -6,16 +6,19 @@ const pageTitle = "PrimeCare Medical Center | Compassionate Healthcare in Boston
 const pageDescription =
   "Comprehensive primary care and specialty services in Boston. Board-certified physicians, same-day appointments, and patient-centered care.";
 const pageKeywords =
-  "medical center Boston, primary care, family doctor, healthcare clinic, medical services, urgent care, pediatrics";
+  "medical center Boston, primary care, family doctor, healthcare clinic, medical services, urgent care, pediatrics, board-certified physicians, healthcare Boston, medical center";
+const pageImage = "/photos/bannercodebrand.webp";
 ---
 
 <LandingLayout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
+  image={pageImage}
 >
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:image" content={pageImage} slot="head" />
 
   <div class="relative w-full overflow-hidden bg-white">
     <!-- Fixed Navigation -->

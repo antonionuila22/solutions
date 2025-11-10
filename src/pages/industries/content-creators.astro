@@ -7,15 +7,10 @@ const description =
   "Build your personal brand with custom websites for YouTubers, streamers, and content creators. Showcase your content, sell merch, manage memberships, and monetize your audience beyond the platform.";
 const keywords =
   "youtuber website design, content creator website, influencer website development, youtube channel website, streamer website design, content creator portfolio, video creator website, influencer landing page, creator platform development, youtube branding website, twitch streamer website, instagram influencer website, content creator merch store, influencer membership platform";
+const image = "/photos/bannercodebrand.webp";
 ---
 
-<Layout title={title}>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content={description} slot="head" />
-  <meta name="keywords" content={keywords} slot="head" />
-  <meta property="og:title" content={title} slot="head" />
-  <meta property="og:description" content={description} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+<Layout title={title} description={description} keywords={keywords} image={image}>
 
   <!-- Hero Section -->
   <section
