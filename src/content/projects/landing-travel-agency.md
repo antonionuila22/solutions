@@ -1,8 +1,8 @@
 ---
-title: Travel Agency Landing Page Template
+title: Travel Agency 
 description: Inspiring, destination-focused landing page for travel agencies, tour operators, and tourism businesses with package showcases and booking forms.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: https://agenciatraveluphn.com/wp-content/uploads/2024/12/variante-logo-travel-up_Mesa-de-trabajo-1-copy-copia-3.svg
 category: Web Design
 tags:
   - Landing Page
@@ -13,7 +13,7 @@ tags:
   - Adventure
 date: 2024-10-28
 featured: false
-link: /landing/template-travel-agency
+link: https://agenciatraveluphn.com/
 ---
 
 ## Project Overview
