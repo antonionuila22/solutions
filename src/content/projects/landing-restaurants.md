@@ -2,7 +2,7 @@
 title: Restaurant Landing Page Template
 description: Appetizing, menu-focused landing page for restaurants, cafes, and food businesses with online ordering, reservations, and menu displays.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: /photos/Restaurantdolcevita.png
 category: Web Design
 tags:
   - Landing Page

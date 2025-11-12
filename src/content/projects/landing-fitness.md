@@ -2,7 +2,7 @@
 title: Fitness & Gym Landing Page Template
 description: Energetic, motivation-driven landing page for gyms, fitness centers, personal trainers, and wellness businesses with class schedules and membership forms.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: /photos/gymfit.png
 category: Web Design
 tags:
   - Landing Page
