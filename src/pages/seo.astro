@@ -1,0 +1,416 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Whyus from "../components/whyus.astro";
+import Faq from "../components/Faq.astro";
+import CardService from "../components/CardService.astro";
+import Button from "../components/Button.astro";
+
+const title = "Professional SEO Services | Search Engine Optimization & Ranking - Codebrand";
+const description =
+  "Dominate search results and drive organic traffic with expert SEO services. Technical SEO, on-page optimization, link building, keyword research, and local SEO strategies that boost rankings and grow your business.";
+const keywords =
+  "SEO services, search engine optimization, SEO company, SEO agency, local SEO, technical SEO, on-page SEO, off-page SEO, link building, keyword research, SEO audit, Google rankings, organic traffic, SEO strategy, SEO consulting, white hat SEO, SEO optimization, search rankings, SEO expert";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
+  >
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Expert SEO Services
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
+        >
+          Dominate Search Rankings with <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600"
+            >Expert SEO</span
+          >
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+          Increase organic traffic, generate qualified leads, and grow revenue with comprehensive SEO strategies that deliver sustainable, long-term results. We optimize every aspect of your online presence to outrank competitors and capture high-intent search traffic.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Get Free SEO Audit
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
+          >
+            Explore SEO Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+          >
+            Strategic SEO That Delivers Sustainable Growth
+          </h2>
+          <div class="prose prose-lg text-gray-700 space-y-4">
+            <p>
+              Search engine optimization is one of the most powerful marketing channels for driving sustainable business growth. When potential customers search for solutions you offer, appearing at the top of search results dramatically increases your visibility, credibility, and conversion rates. At Codebrand, we specialize in comprehensive SEO strategies that improve your search rankings, increase organic traffic, and generate qualified leads that convert into revenue.
+            </p>
+            <p>
+              Our approach to SEO goes far beyond basic keyword stuffing and link schemes. We implement holistic strategies that address every ranking factor Google considers—from technical website architecture and page speed to content quality and user experience. We conduct thorough competitive analysis, extensive keyword research, comprehensive site audits, and strategic optimization to ensure your website not only ranks higher but also delivers exceptional experiences that keep visitors engaged and converting.
+            </p>
+            <p>
+              SEO is not a one-time project—it's an ongoing process of optimization, monitoring, and adaptation. Search engine algorithms constantly evolve, competitor landscapes shift, and user behaviors change. Our team stays ahead of industry trends, algorithm updates, and best practices to ensure your SEO strategy remains effective and competitive. We continuously analyze performance data, identify new opportunities, refine existing tactics, and implement improvements that drive measurable results month after month.
+            </p>
+            <p>
+              Whether you're a local business targeting customers in specific geographic areas, an e-commerce store competing in national markets, or a B2B company seeking to establish thought leadership, we have the expertise and experience to develop SEO strategies tailored to your unique goals, industry, and competitive landscape. Our proven track record includes helping businesses increase organic traffic by 300%, achieve first-page rankings for competitive keywords, and generate substantial revenue growth through search engine optimization.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="relative bg-gradient-to-br from-cyan-100 to-orange-100 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="space-y-4">
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">+385%</div>
+                    <div class="text-sm text-gray-600">Avg. Traffic Increase</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">1st Page</div>
+                    <div class="text-sm text-gray-600">87% Keywords Ranked</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">620+</div>
+                    <div class="text-sm text-gray-600">Successful Campaigns</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Complete SEO <span class="text-orange-500"
+            >Solutions</span
+          >
+        </h2>
+        <p class="text-lg text-gray-700">
+          From technical optimization to content strategy and link building, we provide end-to-end SEO services that improve every aspect of your search performance.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <CardService
+          icon="/icons/seo.png"
+          title="Technical SEO Optimization"
+          description="Fix technical issues that prevent search engines from crawling, indexing, and ranking your website. We optimize site speed, mobile responsiveness, crawlability, site architecture, schema markup, and Core Web Vitals for maximum search performance."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/sitio-web.png"
+          title="On-Page SEO"
+          description="Optimize every page element for target keywords and user intent. We enhance title tags, meta descriptions, header tags, content quality, internal linking, image optimization, and URL structures to improve rankings and click-through rates."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/data-graphics-analysis-svgrepo-com.svg"
+          title="Keyword Research & Strategy"
+          description="Identify high-value keywords that drive qualified traffic and conversions. We analyze search volume, competition, intent, and relevance to develop comprehensive keyword strategies that target opportunities competitors miss."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/diseno-grafico.png"
+          title="Content SEO & Optimization"
+          description="Create and optimize content that ranks and converts. We develop comprehensive content strategies, write SEO-optimized blog posts and articles, optimize existing content, and ensure all content satisfies search intent while engaging readers."
+          learnMoreUrl="/copywriting"
+        />
+
+        <CardService
+          icon="/icons/host-website-se-svgrepo-com.svg"
+          title="Link Building & Off-Page SEO"
+          description="Build high-quality backlinks that boost domain authority and rankings. We execute white-hat link building strategies including guest posting, digital PR, resource link building, and content promotion to earn authoritative backlinks."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/login-page-svgrepo-com.svg"
+          title="Local SEO Services"
+          description="Dominate local search results and attract nearby customers. We optimize Google Business Profile, build local citations, manage reviews, implement local schema markup, and execute strategies that improve local pack rankings."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg"
+          title="E-commerce SEO"
+          description="Increase product visibility and drive sales with specialized e-commerce SEO. We optimize product pages, category pages, implement structured data, improve site architecture, and create content strategies that attract ready-to-buy shoppers."
+          learnMoreUrl="/e-commerce"
+        />
+
+        <CardService
+          icon="/icons/data-graphics-analysis-svgrepo-com.svg"
+          title="SEO Audits & Analysis"
+          description="Identify opportunities and issues with comprehensive SEO audits. We analyze technical health, on-page optimization, backlink profiles, competitor strategies, and content gaps to create detailed roadmaps for improvement."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/website-seo-promotion-svgrepo-com.svg"
+          title="Enterprise SEO"
+          description="Scale SEO across large, complex websites with enterprise-level strategies. We handle large-scale technical optimization, manage international SEO, implement advanced tracking, and coordinate with stakeholder teams for maximum impact."
+          learnMoreUrl="/contact"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Process Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Our Proven SEO <span class="text-orange-500">Process</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          A systematic approach that delivers measurable improvements in rankings, traffic, and revenue.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-cyan-100">
+          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Audit & Research</h3>
+          <p class="text-gray-700">
+            Comprehensive analysis of your website, competitors, keywords, and market opportunities to establish baseline performance and identify quick wins.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Strategy Development</h3>
+          <p class="text-gray-700">
+            Create detailed SEO roadmap with prioritized recommendations, keyword targets, content plans, and technical optimizations aligned with business goals.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-orange-100">
+          <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Implementation</h3>
+          <p class="text-gray-700">
+            Execute technical fixes, on-page optimizations, content creation, and link building campaigns according to strategic priorities and timelines.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-100">
+          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Monitor & Optimize</h3>
+          <p class="text-gray-700">
+            Track rankings, traffic, and conversions, analyze performance data, refine strategies, and continuously optimize to improve results over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ranking Factors Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          What We <span class="text-orange-500">Optimize</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          We address every major ranking factor to ensure comprehensive SEO improvement.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Content Quality</h4>
+          <p class="text-sm text-gray-600">Comprehensive, relevant, valuable content that satisfies search intent and engages users</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Backlinks</h4>
+          <p class="text-sm text-gray-600">High-quality, relevant backlinks from authoritative domains that boost domain authority</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Page Speed</h4>
+          <p class="text-sm text-gray-600">Fast loading times across all devices to improve user experience and rankings</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Mobile Optimization</h4>
+          <p class="text-sm text-gray-600">Perfect mobile experience as Google uses mobile-first indexing for all websites</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">User Experience</h4>
+          <p class="text-sm text-gray-600">Intuitive navigation, clear layouts, and engaging design that keeps visitors on site</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Core Web Vitals</h4>
+          <p class="text-sm text-gray-600">LCP, FID, and CLS metrics optimized to meet Google's page experience standards</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Site Architecture</h4>
+          <p class="text-sm text-gray-600">Logical structure, clear hierarchy, and optimal internal linking for crawlability</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Schema Markup</h4>
+          <p class="text-sm text-gray-600">Structured data implementation for rich snippets and enhanced search visibility</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="font-bold text-cyan-900 mb-2">Security (HTTPS)</h4>
+          <p class="text-sm text-gray-600">SSL certificates and secure connections as ranking factor and trust signal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <Whyus />
+
+  <!-- CTA Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to Rank Higher and <span class="text-orange-400">Drive More Traffic?</span>
+      </h2>
+      <p class="text-xl text-gray-200 mb-8">
+        Let's develop an SEO strategy that delivers sustainable growth and measurable ROI. Get a free comprehensive SEO audit and discover your ranking opportunities.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button text="Get Free SEO Audit" href="/contact" />
+        <a
+          href="#services"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-cyan-900 rounded-xl font-bold text-lg shadow-lg transition-all duration-200"
+        >
+          View SEO Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <Faq />
+</Layout>

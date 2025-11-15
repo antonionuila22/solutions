@@ -1,0 +1,458 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Whyus from "../components/whyus.astro";
+import Faq from "../components/Faq.astro";
+import CardService from "../components/CardService.astro";
+import Button from "../components/Button.astro";
+
+const title = "Professional Web Design Services | UI/UX Design & Website Redesign - Codebrand";
+const description =
+  "Create stunning, user-centered web designs that captivate audiences and drive conversions. Expert UI/UX design, responsive layouts, brand-focused aesthetics, and conversion-optimized interfaces that elevate your digital presence.";
+const keywords =
+  "web design, UI design, UX design, user interface design, user experience design, responsive web design, website redesign, landing page design, mobile app design, visual design, interaction design, wireframing, prototyping, design system, brand design, conversion-focused design, accessible design, modern web design";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
+  >
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Award-Winning Web Design
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
+        >
+          Beautiful Web Designs That <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600"
+            >Convert Visitors</span
+          >
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+          Transform your brand with stunning, user-centered web designs that captivate audiences and drive business growth. We combine aesthetic excellence with strategic thinking to create digital experiences that users love and remember.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Start Your Design Project
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#portfolio"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
+          >
+            View Our Portfolio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+          >
+            Design Excellence That Drives Business Results
+          </h2>
+          <div class="prose prose-lg text-gray-700 space-y-4">
+            <p>
+              Great web design is more than just beautiful visuals—it's the perfect marriage of aesthetics, functionality, and strategic thinking. At Codebrand, we create web designs that don't just look stunning, they drive measurable business results by guiding users through intuitive, engaging experiences that convert visitors into loyal customers. Every design decision we make is rooted in user research, brand strategy, and conversion optimization principles.
+            </p>
+            <p>
+              Our design philosophy centers on understanding your users deeply and crafting experiences that resonate with their needs, preferences, and behaviors. We combine cutting-edge design trends with timeless principles of visual hierarchy, color psychology, typography, and user interface design to create websites that stand out in crowded markets. Whether you need a complete website redesign, landing page optimization, or a comprehensive design system, we have the expertise to elevate your digital presence.
+            </p>
+            <p>
+              We believe exceptional web design should be accessible, responsive, and performant across all devices and screen sizes. Mobile-first design isn't just a buzzword for us—it's a fundamental approach that ensures your website delivers pixel-perfect experiences whether users access it from smartphones, tablets, or desktop computers. With over 60% of web traffic coming from mobile devices, responsive design is no longer optional—it's essential for business success.
+            </p>
+            <p>
+              Our collaborative design process keeps you involved every step of the way. From initial concepts and wireframes to high-fidelity mockups and interactive prototypes, you'll see your vision come to life through regular reviews and iterations. We use industry-standard design tools and methodologies to ensure seamless handoff to development teams, maintaining design integrity from concept to final implementation. The result is a cohesive, polished digital product that exceeds your expectations and delights your users.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="relative bg-gradient-to-br from-cyan-100 to-orange-100 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="space-y-4">
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">250+</div>
+                    <div class="text-sm text-gray-600">Designs Delivered</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">99%</div>
+                    <div class="text-sm text-gray-600">Client Satisfaction</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">+165%</div>
+                    <div class="text-sm text-gray-600">Avg. Conversion Lift</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Comprehensive Web Design <span class="text-orange-500"
+            >Services</span
+          >
+        </h2>
+        <p class="text-lg text-gray-700">
+          From concept to final design, we offer complete design services that transform your brand vision into compelling digital experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <CardService
+          icon="/icons/interfaz-de-usuario.png"
+          title="UI/UX Design"
+          description="Create intuitive, user-centered interfaces that delight users and drive engagement. We conduct user research, create information architectures, design wireframes, and craft beautiful interfaces optimized for usability and conversions."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/responsive-svgrepo-com.svg"
+          title="Responsive Design"
+          description="Ensure flawless experiences across all devices with mobile-first responsive design. Your website will look stunning and function perfectly on smartphones, tablets, and desktops with adaptive layouts that respond to every screen size."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/sitio-web.png"
+          title="Website Redesign"
+          description="Modernize outdated websites with strategic redesigns that improve aesthetics, functionality, and performance. We analyze existing designs, identify opportunities, and create fresh, contemporary looks that elevate your brand."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/login-page-svgrepo-com.svg"
+          title="Landing Page Design"
+          description="Design high-converting landing pages optimized for specific campaigns and goals. From lead generation to product launches, we create focused, persuasive designs that eliminate distractions and drive desired actions."
+          learnMoreUrl="/landing-pages"
+        />
+
+        <CardService
+          icon="/icons/diseno-grafico.png"
+          title="Brand Identity Design"
+          description="Develop cohesive visual identities that reflect your brand personality and resonate with target audiences. We design logos, color palettes, typography systems, and brand guidelines that ensure consistency across all touchpoints."
+          learnMoreUrl="/branding"
+        />
+
+        <CardService
+          icon="/icons/website-program-svgrepo-com.svg"
+          title="Design Systems"
+          description="Build scalable design systems with reusable components, patterns, and guidelines. Design systems ensure visual consistency, accelerate design and development workflows, and maintain brand integrity as your product evolves."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/mobile-phone-app-svgrepo-com.svg"
+          title="Mobile App Design"
+          description="Design beautiful, intuitive mobile applications for iOS and Android platforms. We create app interfaces that follow platform guidelines while maintaining your unique brand identity and delivering exceptional user experiences."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/interfaz-de-usuario.png"
+          title="Prototyping & Testing"
+          description="Validate design concepts with interactive prototypes and user testing before development. We create clickable prototypes that simulate real functionality, gather user feedback, and refine designs based on actual usage data."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/data-graphics-analysis-svgrepo-com.svg"
+          title="Conversion Optimization"
+          description="Increase conversion rates through data-driven design optimizations. We analyze user behavior, conduct A/B tests, optimize layouts and CTAs, and refine design elements to maximize the percentage of visitors who take desired actions."
+          learnMoreUrl="/contact"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Principles Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Our Design <span class="text-orange-500">Principles</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          We follow proven design principles that ensure every project delivers exceptional results and user satisfaction.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-8 shadow-lg border border-cyan-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+              <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">User-Centered Focus</h3>
+          <p class="text-gray-700">
+            Every design decision starts with understanding user needs, behaviors, and goals. We create experiences that solve real problems and delight users through intuitive, accessible interfaces.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border border-orange-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Performance & Speed</h3>
+          <p class="text-gray-700">
+            Beautiful designs mean nothing if they load slowly. We optimize every asset, minimize code, and design with performance in mind to ensure fast, responsive experiences that retain users.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border border-blue-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Brand Consistency</h3>
+          <p class="text-gray-700">
+            Strong brands maintain visual consistency across all touchpoints. We create cohesive design systems with defined colors, typography, and components that reinforce brand identity.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg border border-green-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Accessibility First</h3>
+          <p class="text-gray-700">
+            Inclusive design ensures everyone can use your website. We follow WCAG guidelines, implement proper semantics, ensure keyboard navigation, and maintain sufficient color contrast.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg border border-purple-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Conversion Focused</h3>
+          <p class="text-gray-700">
+            Great design drives business results. We strategically place calls-to-action, optimize user flows, reduce friction, and guide visitors toward conversion goals that matter to your business.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-pink-50 to-white rounded-2xl p-8 shadow-lg border border-pink-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Iterative Improvement</h3>
+          <p class="text-gray-700">
+            Design is never truly finished. We continuously test, gather feedback, analyze data, and refine designs based on real user behavior to improve performance over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Our Design <span class="text-orange-500">Process</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          A proven methodology that ensures successful outcomes and client satisfaction on every project.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Research</h3>
+          <p class="text-gray-700">
+            Understand users, competitors, and market trends through comprehensive research and analysis.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Wireframing</h3>
+          <p class="text-gray-700">
+            Create low-fidelity wireframes to establish information architecture and layout structures.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Visual Design</h3>
+          <p class="text-gray-700">
+            Design high-fidelity mockups with beautiful aesthetics, brand alignment, and attention to detail.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Prototyping</h3>
+          <p class="text-gray-700">
+            Build interactive prototypes to validate functionality and gather feedback before development.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-white">5</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Handoff</h3>
+          <p class="text-gray-700">
+            Deliver complete design specifications and assets for seamless development implementation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <Whyus />
+
+  <!-- CTA Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to Create Something <span class="text-orange-400">Amazing?</span>
+      </h2>
+      <p class="text-xl text-gray-200 mb-8">
+        Let's design a website that captivates your audience and drives business growth. Our award-winning design team is ready to bring your vision to life.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button text="Start Your Project" href="/contact" />
+        <a
+          href="/projects"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-cyan-900 rounded-xl font-bold text-lg shadow-lg transition-all duration-200"
+        >
+          View Our Work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <Faq />
+</Layout>

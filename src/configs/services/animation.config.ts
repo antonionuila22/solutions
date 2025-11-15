@@ -30,7 +30,7 @@ export const animationConfig: ServicePageConfig = {
       {
         name: "3D Animation",
         description: "High-quality 3D character animation, product animations, and architectural walkthroughs",
-      },
+      },  
       {
         name: "Explainer Animations",
         description: "Engaging animated explainer videos that simplify complex concepts",
@@ -196,5 +196,5 @@ export const animationConfig: ServicePageConfig = {
 
   // Optional sections
   showWhyUs: true,
-  showFaq: true,
+  showFaq: false,
 };
