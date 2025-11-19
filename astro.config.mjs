@@ -24,27 +24,6 @@ export default defineConfig({
           drop_debugger: true,
         },
       },
-      rollupOptions: {
-        output: {
-          manualChunks: (id) => {
-            // Split GSAP into separate chunk
-            if (id.includes('gsap')) {
-              return 'gsap';
-            }
-            // Split React components into separate chunk
-            if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
-              return 'react-vendor';
-            }
-            // Split other large dependencies
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
-          },
-        },
-      },
-    },
-    ssr: {
-      noExternal: ['gsap'],
     },
   },
 
@@ -58,23 +37,11 @@ export default defineConfig({
     },
   },
 
-  // Performance optimizations
-  compressHTML: true,
-  build: {
-    inlineStylesheets: 'auto',
-  },
-
   output: 'server',
 
   site: 'https://codebrand.us',
 
-  integrations: [
-    react({
-      experimentalReactChildren: true,
-    }),
-    sitemap(),
-    mdx()
-  ],
+  integrations: [react(), sitemap(), mdx()],
 
   adapter: netlify({
     edgeMiddleware: true,
