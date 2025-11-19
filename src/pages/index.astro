@@ -25,82 +25,148 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 >
   <Hero />
   <section>
-    <Globe client:load />
+    <Globe client:visible />
   </section>
 
   <!-- Honduras to USA Value Proposition Section -->
-  <section class="py-20 lg:py-32 bg-white font-poppins overflow-hidden" id="value-proposition">
+  <section
+    class="py-20 lg:py-32 bg-white font-poppins overflow-hidden"
+    id="value-proposition"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="text-center mb-16 value-header">
-        <div class="inline-flex items-center gap-3 px-5 py-2.5 bg-gray-100 rounded-full mb-6">
+        <div
+          class="inline-flex items-center gap-3 px-5 py-2.5 bg-gray-100 rounded-full mb-6"
+        >
           <span class="text-2xl">🇭🇳</span>
-          <span class="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+          <span
+            class="text-sm font-semibold text-gray-700 uppercase tracking-wide"
+          >
             Honduras → United States
           </span>
           <span class="text-2xl">🇺🇸</span>
         </div>
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        <h2
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+        >
           Premium Web Development<br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600"
+          >
             at 60% Lower Cost
           </span>
         </h2>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Why pay $15,000+ for web development in the US when you can get the same professional quality from our certified team in Honduras for a fraction of the cost?
+        <p
+          class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+        >
+          Why pay $15,000+ for web development in the US when you can get the
+          same professional quality from our certified team in Honduras for a
+          fraction of the cost?
         </p>
       </div>
 
       <!-- Stats Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 stats-grid">
         <div class="stat-card group">
-          <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full">
-            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+          <div
+            class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
+          >
+            <div
+              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                ></path>
               </svg>
             </div>
             <div class="text-5xl font-bold text-gray-900 mb-3">60%</div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Cost Savings</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Cost Savings
+            </h3>
             <p class="text-gray-600 leading-relaxed">
-              Save thousands compared to US agency rates while maintaining the same professional quality standards.
+              Save thousands compared to US agency rates while maintaining the
+              same professional quality standards.
             </p>
           </div>
         </div>
 
         <div class="stat-card group">
-          <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full">
-            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          <div
+            class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
+          >
+            <div
+              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
             <div class="text-5xl font-bold text-gray-900 mb-3">100%</div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Same Quality</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Same Quality
+            </h3>
             <p class="text-gray-600 leading-relaxed">
-              Our certified professionals deliver the exact same quality as US agencies. Same standards, better prices.
+              Our certified professionals deliver the exact same quality as US
+              agencies. Same standards, better prices.
             </p>
           </div>
         </div>
 
         <div class="stat-card group">
-          <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full">
-            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          <div
+            class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
+          >
+            <div
+              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
             <div class="text-5xl font-bold text-gray-900 mb-3">24/7</div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">US Time Support</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              US Time Support
+            </h3>
             <p class="text-gray-600 leading-relaxed">
-              Work seamlessly with our bilingual team. We operate in US time zones for smooth collaboration.
+              Work seamlessly with our bilingual team. We operate in US time
+              zones for smooth collaboration.
             </p>
           </div>
         </div>
       </div>
 
       <!-- Main Content Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start content-grid">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start content-grid"
+      >
         <!-- Why Choose Us -->
         <div class="lg:col-span-3 space-y-6">
           <h3 class="text-3xl font-bold text-gray-900 mb-8">
@@ -108,73 +174,141 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           </h3>
 
           <div class="space-y-4 benefits-list">
-            <div class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-              <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+            <div
+              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+            >
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+                  ></path>
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Certified Professional Team</h4>
+                <h4 class="font-semibold text-gray-900 mb-1">
+                  Certified Professional Team
+                </h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                  Our developers hold certifications from Udemy, Platzi, and Adobe, ensuring cutting-edge expertise in modern technologies.
+                  Our developers hold certifications from Udemy, Platzi, and
+                  Adobe, ensuring cutting-edge expertise in modern technologies.
                 </p>
               </div>
             </div>
 
-            <div class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-              <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            <div
+              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+            >
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Export-Quality Services</h4>
+                <h4 class="font-semibold text-gray-900 mb-1">
+                  Export-Quality Services
+                </h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                  We specialize in serving international clients with the same standards expected by Fortune 500 companies.
+                  We specialize in serving international clients with the same
+                  standards expected by Fortune 500 companies.
                 </p>
               </div>
             </div>
 
-            <div class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-              <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+            <div
+              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+            >
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                  ></path>
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Managed Honduran Talent</h4>
+                <h4 class="font-semibold text-gray-900 mb-1">
+                  Managed Honduran Talent
+                </h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                  We handle all talent management, so you get premium results without the overhead costs.
+                  We handle all talent management, so you get premium results
+                  without the overhead costs.
                 </p>
               </div>
             </div>
 
-            <div class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-              <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clip-rule="evenodd"></path>
+            <div
+              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+            >
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z"
+                    clip-rule="evenodd"></path>
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Bilingual Communication</h4>
+                <h4 class="font-semibold text-gray-900 mb-1">
+                  Bilingual Communication
+                </h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                  Fluent English-speaking team ensures clear communication throughout your project lifecycle.
+                  Fluent English-speaking team ensures clear communication
+                  throughout your project lifecycle.
                 </p>
               </div>
             </div>
 
-            <div class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-              <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div
+              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+            >
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Proven Track Record</h4>
+                <h4 class="font-semibold text-gray-900 mb-1">
+                  Proven Track Record
+                </h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                  500+ successful projects delivered to international clients across various industries.
+                  500+ successful projects delivered to international clients
+                  across various industries.
                 </p>
               </div>
             </div>
@@ -184,22 +318,43 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         <!-- Price Comparison -->
         <div class="lg:col-span-2 price-comparison">
           <div class="sticky top-8">
-            <div class="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg">
+            <div
+              class="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg"
+            >
               <div class="text-center mb-8">
-                <h4 class="text-2xl font-bold text-gray-900 mb-2">Price Comparison</h4>
-                <p class="text-sm text-gray-600">Professional Website Development</p>
+                <h4 class="text-2xl font-bold text-gray-900 mb-2">
+                  Price Comparison
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Professional Website Development
+                </p>
               </div>
 
               <div class="space-y-5">
-                <div class="bg-white rounded-xl p-6 border-2 border-gray-200 shadow-sm">
+                <div
+                  class="bg-white rounded-xl p-6 border-2 border-gray-200 shadow-sm"
+                >
                   <div class="flex items-center justify-between mb-3">
                     <div>
                       <p class="text-sm text-gray-500 mb-1">US Agency</p>
-                      <p class="text-3xl font-bold text-gray-900">$15,000<span class="text-lg text-gray-400">+</span></p>
+                      <p class="text-3xl font-bold text-gray-900">
+                        $15,000<span class="text-lg text-gray-400">+</span>
+                      </p>
                     </div>
-                    <div class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full">
-                      <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <div
+                      class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full"
+                    >
+                      <svg
+                        class="w-6 h-6 text-red-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
                       </svg>
                     </div>
                   </div>
@@ -207,33 +362,56 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 </div>
 
                 <div class="relative">
-                  <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                  <div
+                    class="absolute inset-0 flex items-center"
+                    aria-hidden="true"
+                  >
                     <div class="w-full border-t border-gray-300"></div>
                   </div>
                   <div class="relative flex justify-center">
-                    <span class="px-3 bg-gray-50 text-sm font-semibold text-gray-700">VS</span>
+                    <span
+                      class="px-3 bg-gray-50 text-sm font-semibold text-gray-700"
+                      >VS</span
+                    >
                   </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div
+                  class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300"
+                >
                   <div class="flex items-center justify-between mb-3">
                     <div>
                       <p class="text-sm text-cyan-100 mb-1">Codebrand</p>
                       <p class="text-3xl font-bold text-white">$6,000</p>
                     </div>
-                    <div class="flex items-center justify-center w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm">
-                      <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    <div
+                      class="flex items-center justify-center w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm"
+                    >
+                      <svg
+                        class="w-6 h-6 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
                       </svg>
                     </div>
                   </div>
-                  <p class="text-xs text-cyan-100">Same quality, Honduras pricing</p>
+                  <p class="text-xs text-cyan-100">
+                    Same quality, Honduras pricing
+                  </p>
                 </div>
 
-                <div class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-6 border-2 border-green-200">
+                <div
+                  class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-6 border-2 border-green-200"
+                >
                   <div class="text-center">
                     <p class="text-sm text-gray-600 mb-2">You Save</p>
-                    <p class="text-4xl font-bold text-green-600 mb-1">$9,000+</p>
+                    <p class="text-4xl font-bold text-green-600 mb-1">
+                      $9,000+
+                    </p>
                     <p class="text-xs text-gray-500">60% cost reduction</p>
                   </div>
                 </div>
@@ -250,8 +428,17 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
         >
           Get Your Free Quote Today
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
         <p class="text-gray-500 mt-5 text-sm">
@@ -268,13 +455,13 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
     gsap.registerPlugin(ScrollTrigger);
 
     // Wait for DOM to be ready
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener("DOMContentLoaded", () => {
       // Animate header on load
       gsap.from(".value-header", {
         opacity: 0,
         y: 30,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
 
       // Animate stats cards with stagger
@@ -287,7 +474,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         y: 50,
         stagger: 0.15,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
 
       // Animate benefits list items
@@ -300,7 +487,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         x: -30,
         stagger: 0.1,
         duration: 0.6,
-        ease: "power2.out"
+        ease: "power2.out",
       });
 
       // Animate price comparison
@@ -312,7 +499,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         opacity: 0,
         x: 50,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
 
       // Animate CTA
@@ -324,7 +511,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         opacity: 0,
         y: 30,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
     });
   </script>
@@ -333,132 +520,250 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
   <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          Powered by <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">Modern Technologies</span>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+        >
+          Powered by <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600"
+            >Modern Technologies</span
+          >
         </h2>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Our certified developers master 20+ cutting-edge technologies to deliver world-class software solutions
+          Our certified developers master 20+ cutting-edge technologies to
+          deliver world-class software solutions
         </p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
+      >
         <!-- React -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/react-svgrepo-com.svg" alt="React" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/react-svgrepo-com.svg"
+            alt="React"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">React</span>
         </div>
 
         <!-- Next.js -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/nextjs-svgrepo-com.svg" alt="Next.js" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/nextjs-svgrepo-com.svg"
+            alt="Next.js"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Next.js</span>
         </div>
 
         <!-- Node.js -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/nodejs-svgrepo-com.svg" alt="Node.js" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/nodejs-svgrepo-com.svg"
+            alt="Node.js"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Node.js</span>
         </div>
 
         <!-- TypeScript -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/typescript-official-svgrepo-com.svg" alt="TypeScript" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/typescript-official-svgrepo-com.svg"
+            alt="TypeScript"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">TypeScript</span>
         </div>
 
         <!-- Python -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/python-svgrepo-com.svg" alt="Python" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/python-svgrepo-com.svg"
+            alt="Python"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Python</span>
         </div>
 
         <!-- Tailwind CSS -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/tailwindcss-svgrepo-com.svg" alt="Tailwind CSS" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/tailwindcss-svgrepo-com.svg"
+            alt="Tailwind CSS"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Tailwind CSS</span>
         </div>
 
         <!-- PostgreSQL -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/postgresql-logo-svgrepo-com.svg" alt="PostgreSQL" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/postgresql-logo-svgrepo-com.svg"
+            alt="PostgreSQL"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">PostgreSQL</span>
         </div>
 
         <!-- MongoDB -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/mongodb-svgrepo-com.svg" alt="MongoDB" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/mongodb-svgrepo-com.svg"
+            alt="MongoDB"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">MongoDB</span>
         </div>
 
         <!-- GraphQL -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/graphql-svgrepo-com.svg" alt="GraphQL" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/graphql-svgrepo-com.svg"
+            alt="GraphQL"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">GraphQL</span>
         </div>
 
         <!-- AWS -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
           <img src="/icons/aws-svgrepo-com.svg" alt="AWS" class="w-16 h-16" />
           <span class="text-sm font-semibold text-gray-700">AWS</span>
         </div>
 
         <!-- Docker -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/docker-svgrepo-com.svg" alt="Docker" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/docker-svgrepo-com.svg"
+            alt="Docker"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Docker</span>
         </div>
 
         <!-- Git -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
           <img src="/icons/git-svgrepo-com.svg" alt="Git" class="w-16 h-16" />
           <span class="text-sm font-semibold text-gray-700">Git</span>
         </div>
 
         <!-- Figma -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/figma-svgrepo-com.svg" alt="Figma" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/figma-svgrepo-com.svg"
+            alt="Figma"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Figma</span>
         </div>
 
         <!-- Shopify -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/shopify-svgrepo-com.svg" alt="Shopify" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/shopify-svgrepo-com.svg"
+            alt="Shopify"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Shopify</span>
         </div>
 
         <!-- WordPress -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/wordpress-svgrepo-com.svg" alt="WordPress" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/wordpress-svgrepo-com.svg"
+            alt="WordPress"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">WordPress</span>
         </div>
 
         <!-- Flutter -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/flutter-svgrepo-com.svg" alt="Flutter" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/flutter-svgrepo-com.svg"
+            alt="Flutter"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Flutter</span>
         </div>
 
         <!-- Swift -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/swift-svgrepo-com.svg" alt="Swift" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/swift-svgrepo-com.svg"
+            alt="Swift"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Swift</span>
         </div>
 
         <!-- Kotlin -->
-        <div class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <img src="/icons/kotlin-svgrepo-com.svg" alt="Kotlin" class="w-16 h-16" />
+        <div
+          class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+        >
+          <img
+            src="/icons/kotlin-svgrepo-com.svg"
+            alt="Kotlin"
+            class="w-16 h-16"
+          />
           <span class="text-sm font-semibold text-gray-700">Kotlin</span>
         </div>
       </div>
 
       <div class="text-center mt-12">
         <p class="text-gray-600 text-lg">
-          <strong class="text-gray-900">20+ Technologies</strong> mastered by our certified team
+          <strong class="text-gray-900">20+ Technologies</strong> mastered by our
+          certified team
         </p>
         <div class="flex flex-wrap justify-center gap-3 mt-6">
-          <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200">Udemy Certified</span>
-          <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200">Platzi Certified</span>
-          <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200">Adobe Certified</span>
+          <span
+            class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200"
+            >Udemy Certified</span
+          >
+          <span
+            class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200"
+            >Platzi Certified</span
+          >
+          <span
+            class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200"
+            >Adobe Certified</span
+          >
         </div>
       </div>
     </div>
@@ -560,7 +865,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       </div>
     </div>
     <!-- Beam visual component rendered only on client side -->
-    <Beam client:load />
+    <Beam client:visible />
   </section>
 
   <Bannersecond
@@ -660,14 +965,21 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
   <Pricing />
 
   <!-- Contact Form Section -->
-  <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins">
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
-          Ready to Save on Your Next <span class="text-orange-500">Web Project?</span>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Ready to Save on Your Next <span class="text-orange-500"
+            >Web Project?</span
+          >
         </h2>
         <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-          Get a free quote and discover how much you can save by working with our certified team in Honduras. No commitment required.
+          Get a free quote and discover how much you can save by working with
+          our certified team in Honduras. No commitment required.
         </p>
       </div>
 
@@ -677,7 +989,8 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           <div class="bg-white rounded-2xl p-8 shadow-lg">
             <h3 class="text-2xl font-bold text-cyan-900 mb-6">Get In Touch</h3>
             <p class="text-gray-600 mb-8 leading-relaxed">
-              Whether you have a question or need a quote, our bilingual team is ready to assist you.
+              Whether you have a question or need a quote, our bilingual team is
+              ready to assist you.
             </p>
 
             <!-- Contact Details -->
@@ -710,7 +1023,9 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 </a>
               </div>
 
-              <div class="bg-gradient-to-br from-cyan-50 to-orange-50 p-6 rounded-lg mt-8">
+              <div
+                class="bg-gradient-to-br from-cyan-50 to-orange-50 p-6 rounded-lg mt-8"
+              >
                 <h4 class="font-semibold text-gray-900 mb-3">Business Hours</h4>
                 <div class="space-y-2 text-sm text-gray-600">
                   <div class="flex justify-between">
@@ -725,7 +1040,9 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                     <span>Sunday</span>
                     <span>Closed</span>
                   </div>
-                  <p class="text-xs text-gray-500 mt-3">Central Time (Honduras)</p>
+                  <p class="text-xs text-gray-500 mt-3">
+                    Central Time (Honduras)
+                  </p>
                 </div>
               </div>
             </div>
@@ -818,7 +1135,12 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
               >
                 Industry *
               </label>
-              <select id="industry" name="industry" required class="contact-form-input">
+              <select
+                id="industry"
+                name="industry"
+                required
+                class="contact-form-input"
+              >
                 <option value="" disabled selected>Select your industry</option>
                 <option value="Automotive">Automotive</option>
                 <option value="Construction">Construction</option>
