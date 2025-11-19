@@ -461,7 +461,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         opacity: 0,
         y: 30,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
 
       // Animate stats cards with stagger
@@ -474,7 +474,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         y: 50,
         stagger: 0.15,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
 
       // Animate benefits list items
@@ -487,7 +487,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         x: -30,
         stagger: 0.1,
         duration: 0.6,
-        ease: "power2.out"
+        ease: "power2.out",
       });
 
       // Animate price comparison
@@ -499,7 +499,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         opacity: 0,
         x: 50,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
 
       // Animate CTA
@@ -511,22 +511,25 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         opacity: 0,
         y: 30,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       });
     };
 
     // Use Intersection Observer to only load GSAP when section is near viewport
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            initAnimations();
-            observer.disconnect();
-          }
-        });
-      }, { rootMargin: '100px' });
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              initAnimations();
+              observer.disconnect();
+            }
+          });
+        },
+        { rootMargin: "100px" }
+      );
 
-      const section = document.querySelector('#value-proposition');
+      const section = document.querySelector("#value-proposition");
       if (section) observer.observe(section);
     } else {
       // Fallback for browsers without IntersectionObserver
@@ -695,11 +698,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         <div
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
-          <img
-            src="/icons/figma-svgrepo-com.svg"
-            alt="Figma"
-            class="w-16 h-16"
-          />
+          <img src="/icons/figma.svg" alt="Figma" class="w-16 h-16" />
           <span class="text-sm font-semibold text-gray-700">Figma</span>
         </div>
 
@@ -965,8 +964,6 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
     ]}
     client:visible
   />
-
-  <Brand client:visible />
 
   <Whyus />
 
