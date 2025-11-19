@@ -105,38 +105,80 @@ const twitterHandle = "@codebrand_es";
     <link rel="manifest" href="/manifest.json" />
 
     <!-- DNS Prefetch and Preconnect -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
 
-    <!-- Fonts -->
+    <!-- Fonts with optimized loading -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Enhanced Structured Data -->
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "Codebrand Digital Agency",
-        "alternateName": "Codebrand Solutions",
+        "name": "Codebrand - Honduras Software Development Agency",
+        "alternateName": ["Codebrand Solutions", "Codebrand Digital Agency", "Codebrand Honduras"],
         "url": "https://codebrand.us",
         "logo": "https://codebrand.us/iconcodebrand.svg",
         "image": "https://codebrand.us/photos/bannercodebrand.webp",
-        "description": "Codebrand is a leading digital agency specializing in web development, UI/UX design, and digital marketing. We create custom solutions that drive business growth.",
+        "description": "Leading software development agency in Honduras providing export-quality web development, mobile apps, and digital services to US businesses. 60% cost savings compared to US agencies with the same professional quality. Certified team (Udemy, Platzi, Adobe) with 500+ successful projects delivered to international clients.",
+        "slogan": "Premium Web Development at 60% Lower Cost - Honduras to USA",
         "email": "info@codebrand.es",
-        "telephone": "+504 3272-2973",
+        "telephone": "+504-3272-2973",
+        "foundingDate": "2020",
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "value": "25"
+        },
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "US"
+          "streetAddress": "Calle 4, Avenida 11",
+          "addressLocality": "San Pedro Sula",
+          "addressRegion": "Cortés",
+          "addressCountry": "HN",
+          "postalCode": "21102"
         },
-        "priceRange": "$$",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "Honduras"
+          },
+          {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "15.5",
+              "longitude": "-88.0"
+            },
+            "geoRadius": "global"
+          }
+        ],
+        "serviceArea": {
+          "@type": "AdministrativeArea",
+          "name": "United States and Latin America"
+        },
+        "priceRange": "$$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": "Credit Card, Bank Transfer, PayPal",
         "openingHours": "Mo-Fr 09:00-18:00",
+        "timeZone": "America/Tegucigalpa",
         "sameAs": [
           "https://hn.linkedin.com/company/codebrand-es",
           "https://x.com/Codebrand_es",
@@ -145,40 +187,116 @@ const twitterHandle = "@codebrand_es";
         ],
         "knowsAbout": [
           "Web Development",
+          "React Development",
+          "Next.js Development",
+          "Astro Development",
+          "Node.js Development",
+          "TypeScript Development",
           "UI/UX Design",
-          "Digital Marketing",
-          "SEO",
           "Mobile App Development",
-          "E-commerce",
+          "iOS Development",
+          "Android Development",
+          "E-commerce Development",
+          "Shopify Development",
+          "Digital Marketing",
+          "SEO Optimization",
+          "Landing Page Design",
           "Branding",
-          "Social Media Marketing"
+          "Social Media Marketing",
+          "Video Production",
+          "3D Rendering",
+          "Nearshore Development",
+          "Offshore Development",
+          "Software Export Services",
+          "Honduras Software Development",
+          "Central America Tech Services",
+          "Cost-Effective Web Development",
+          "Bilingual Software Teams"
+        ],
+        "knowsLanguage": ["English", "Spanish"],
+        "award": [
+          "Top Rated Web Development Agency Honduras 2023",
+          "500+ Successful International Projects"
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Digital Services",
+          "name": "Software Development Services",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Web Development",
-                "description": "Custom website development with modern technologies"
+                "name": "Custom Web Development",
+                "description": "Full-stack web development using React, Next.js, Astro, Node.js, and TypeScript. Professional quality at 60% less than US rates.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Codebrand"
+                },
+                "areaServed": "United States",
+                "availableLanguage": ["English", "Spanish"]
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "UI/UX Design",
-                "description": "User interface and experience design services"
+                "name": "Mobile App Development",
+                "description": "Native iOS and Android app development with cross-platform solutions using React Native and Flutter.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Codebrand"
+                },
+                "areaServed": "United States"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Digital Marketing",
-                "description": "Comprehensive digital marketing solutions"
+                "name": "E-commerce Development",
+                "description": "Complete e-commerce solutions with Shopify, WooCommerce, and custom platforms. Payment gateway integration and inventory management.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Codebrand"
+                },
+                "areaServed": "United States"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UI/UX Design Services",
+                "description": "User-centered design services including wireframing, prototyping, and high-fidelity mockups using Figma and Adobe Creative Suite.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Codebrand"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SEO and Digital Marketing",
+                "description": "Comprehensive SEO optimization, content marketing, social media management, and paid advertising campaigns.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Codebrand"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Nearshore Software Development",
+                "description": "Honduras-based development team serving US businesses with timezone compatibility, bilingual communication, and 60% cost savings.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Codebrand"
+                },
+                "areaServed": "United States"
               }
             }
           ]
@@ -189,7 +307,28 @@ const twitterHandle = "@codebrand_es";
           "reviewCount": "127",
           "bestRating": "5",
           "worstRating": "1"
-        }
+        },
+        "brand": {
+          "@type": "Brand",
+          "name": "Codebrand",
+          "slogan": "Export-Quality Software Development from Honduras to USA"
+        },
+        "employee": [
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Development Team",
+            "description": "Certified developers with expertise in Udemy, Platzi, and Adobe certifications"
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "Free Consultation",
+            "description": "Free initial consultation for US businesses seeking cost-effective software development",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        ]
       }
     </script>
 
@@ -271,17 +410,11 @@ const twitterHandle = "@codebrand_es";
         style="display:none;visibility:hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
-    <Navbar client:visible />
+    <Navbar client:load />
     <main>
       <slot />
     </main>
     <Footer />
-
-    <!-- GSAP -->
-    <script>
-      import gsap from "gsap";
-      window.gsap = gsap;
-    </script>
   </body>
 </html>
 
