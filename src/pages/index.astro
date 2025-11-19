@@ -25,7 +25,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 >
   <Hero />
   <section>
-    <Globe client:visible />
+    <Globe client:load />
   </section>
 
   <!-- Honduras to USA Value Proposition Section -->
@@ -865,7 +865,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       </div>
     </div>
     <!-- Beam visual component rendered only on client side -->
-    <Beam client:visible />
+    <Beam client:load />
   </section>
 
   <Bannersecond
