@@ -1,0 +1,603 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Whyus from "../components/whyus.astro";
+import Faq from "../components/Faq.astro";
+import CardService from "../components/CardService.astro";
+import Button from "../components/Button.astro";
+
+const title =
+  "High-Converting Landing Pages | Professional Landing Page Design & Development - Codebrand";
+const description =
+  "Create landing pages that convert visitors into customers. We design and develop custom, high-performing landing pages optimized for conversions, mobile devices, and fast loading. Specializing in A/B testing, lead generation, and campaign-focused pages.";
+const keywords =
+  "landing page design, landing page development, high converting landing pages, custom landing pages, lead generation pages, sales funnel pages, squeeze pages, campaign landing pages, mobile landing pages, responsive landing pages, A/B testing landing pages, conversion rate optimization, landing page optimization, professional landing pages, landing page templates, landing page services";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
+  >
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+            ></path>
+          </svg>
+          High-Converting Landing Pages
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
+        >
+          Landing Pages That <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600"
+            >Convert Visitors Into Customers</span
+          >
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+          Drive more leads and sales with professionally designed landing pages
+          optimized for maximum conversions. We create laser-focused pages that
+          capture attention, build trust, and turn clicks into customers with
+          proven conversion strategies.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Get Your Landing Page
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
+          >
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+          >
+            Turn Traffic Into Revenue with Strategic Landing Page Design
+          </h2>
+          <div class="prose prose-lg text-gray-700 space-y-4">
+            <p>
+              Your landing page has one job: convert visitors into leads or
+              customers. Every element, every word, and every design choice must
+              work together to guide visitors toward taking action. At
+              Codebrand, we specialize in creating high-converting landing pages
+              that combine persuasive copy, compelling design, and proven
+              conversion optimization techniques to maximize your return on
+              investment.
+            </p>
+            <p>
+              Whether you're running paid ads, email campaigns, social media
+              promotions, or product launches, a well-designed landing page is
+              the difference between wasted ad spend and profitable campaigns.
+              Our landing pages are built with conversion rate optimization
+              (CRO) at their core, featuring clear value propositions, strategic
+              calls-to-action, trust signals, and mobile-responsive designs that
+              perform across all devices.
+            </p>
+            <p>
+              We understand that different campaigns require different
+              approaches. From lead generation pages and sales pages to webinar
+              registrations and product launches, we create custom landing pages
+              tailored to your specific goals and target audience. Our data-driven
+              approach includes A/B testing capabilities, analytics integration,
+              and ongoing optimization to continuously improve your conversion
+              rates.
+            </p>
+            <p>
+              Our landing pages load blazingly fast, follow SEO best practices,
+              and integrate seamlessly with your marketing tools and CRM
+              systems. With mobile-first design, persuasive copywriting, and
+              conversion-focused layouts, we ensure every visitor has a smooth
+              path to conversion, helping you get the most from your marketing
+              budget.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="relative bg-gradient-to-br from-cyan-100 to-orange-100 rounded-3xl p-8 shadow-xl"
+          >
+            <div class="space-y-4">
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">500+</div>
+                    <div class="text-sm text-gray-600">Landing Pages Created</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">45%</div>
+                    <div class="text-sm text-gray-600">Average Conversion Increase</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-cyan-900">&lt;2s</div>
+                    <div class="text-sm text-gray-600">Page Load Time</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Complete Landing Page <span class="text-orange-500">Solutions</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          From concept to conversion, we provide comprehensive landing page
+          services designed to maximize your marketing ROI and achieve your
+          campaign goals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <CardService
+          icon="/icons/login-page-svgrepo-com.svg"
+          title="Lead Generation Landing Pages"
+          description="Capture qualified leads with strategically designed pages optimized for form submissions. Perfect for building email lists, generating qualified prospects, and growing your customer database."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg"
+          title="Sales & Product Launch Pages"
+          description="Drive direct sales with persuasive product landing pages that highlight benefits, overcome objections, and guide visitors to purchase. Ideal for product launches and promotional campaigns."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/responsive-svgrepo-com.svg"
+          title="Mobile-Optimized Design"
+          description="Ensure maximum conversions across all devices with mobile-first landing pages. Your pages will look stunning and convert effectively on smartphones, tablets, and desktops."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/data-graphics-analysis-svgrepo-com.svg"
+          title="A/B Testing & Optimization"
+          description="Continuously improve conversion rates with built-in A/B testing capabilities. We test headlines, CTAs, images, and layouts to identify what drives the best results for your campaigns."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/website-seo-promotion-svgrepo-com.svg"
+          title="PPC Campaign Landing Pages"
+          description="Maximize your paid advertising ROI with landing pages specifically designed for Google Ads, Facebook Ads, and other PPC campaigns. Message-matched pages that improve Quality Scores and conversions."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/website-program-svgrepo-com.svg"
+          title="Event & Webinar Registration"
+          description="Boost event attendance and webinar signups with compelling registration pages. Create urgency, showcase speaker value, and streamline the registration process for maximum attendance."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/mobile-phone-app-svgrepo-com.svg"
+          title="App Download Pages"
+          description="Drive mobile app installations with dedicated landing pages that highlight app features, showcase screenshots, and provide direct download links for iOS and Android platforms."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/platform-program-svgrepo-com.svg"
+          title="Marketing Automation Integration"
+          description="Seamlessly connect your landing pages with email marketing platforms, CRMs, and marketing automation tools. Integrate with HubSpot, Mailchimp, Salesforce, and more."
+          learnMoreUrl="/contact"
+        />
+
+        <CardService
+          icon="/icons/host-website-se-svgrepo-com.svg"
+          title="Analytics & Conversion Tracking"
+          description="Track every interaction and conversion with comprehensive analytics integration. Monitor visitor behavior, identify drop-off points, and make data-driven optimization decisions."
+          learnMoreUrl="/contact"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion Elements Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Key Elements for <span class="text-orange-500"
+            >High Conversions</span
+          >
+        </h2>
+        <p class="text-lg text-gray-700">
+          Every landing page we create includes these proven conversion elements
+          to maximize your results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-gradient-to-br from-cyan-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Compelling Headlines
+          </h3>
+          <p class="text-gray-700">
+            Attention-grabbing headlines that immediately communicate your
+            unique value proposition and hook visitors in the first 3 seconds.
+          </p>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Strategic CTAs
+          </h3>
+          <p class="text-gray-700">
+            Prominent, action-oriented call-to-action buttons with persuasive
+            copy that drives clicks and conversions at optimal positions.
+          </p>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">Trust Signals</h3>
+          <p class="text-gray-700">
+            Social proof, testimonials, security badges, client logos, and
+            guarantees that build credibility and overcome visitor objections.
+          </p>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Visual Hierarchy
+          </h3>
+          <p class="text-gray-700">
+            Strategic use of colors, whitespace, and visual elements that guide
+            visitors' eyes toward conversion actions and key information.
+          </p>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Fast Load Times
+          </h3>
+          <p class="text-gray-700">
+            Optimized code and assets ensure pages load in under 2 seconds,
+            reducing bounce rates and improving conversion rates significantly.
+          </p>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-pink-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Simplified Forms
+          </h3>
+          <p class="text-gray-700">
+            User-friendly forms that ask for only essential information,
+            reducing friction and increasing completion rates with smart validation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+        >
+          Our Landing Page <span class="text-orange-500">Process</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          We follow a proven methodology to create landing pages that consistently
+          deliver exceptional conversion rates.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <span class="text-2xl font-bold text-white">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Strategy & Research
+          </h3>
+          <p class="text-gray-700">
+            We analyze your target audience, campaign goals, and competitors to
+            develop a conversion-focused strategy and messaging framework.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <span class="text-2xl font-bold text-white">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Design & Copywriting
+          </h3>
+          <p class="text-gray-700">
+            Our team creates compelling designs and persuasive copy that speaks
+            directly to your audience's pain points and desired outcomes.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <span class="text-2xl font-bold text-white">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Development & Testing
+          </h3>
+          <p class="text-gray-700">
+            We build your landing page with clean code, integrate tracking and
+            forms, then rigorously test across devices and browsers.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <span class="text-2xl font-bold text-white">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Launch & Optimize
+          </h3>
+          <p class="text-gray-700">
+            We deploy your page, monitor performance metrics, and continuously
+            optimize elements to improve conversion rates over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <Whyus />
+
+  <!-- CTA Section -->
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to Boost Your <span class="text-orange-400"
+          >Conversion Rates?</span
+        >
+      </h2>
+      <p class="text-xl text-gray-200 mb-8">
+        Let's create a high-converting landing page that turns your traffic into
+        leads and sales. Start maximizing your marketing ROI today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button text="Get Started Now" href="/contact" />
+        <a
+          href="/projects"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-cyan-900 rounded-xl font-bold text-lg shadow-lg transition-all duration-200"
+        >
+          View Our Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <Faq />
+</Layout>
