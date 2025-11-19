@@ -6,12 +6,12 @@ import CardService from "../components/CardService.astro";
 import Whyus from "../components/whyus.astro";
 import Pricing from "../components/Pricing.astro";
 import Bannersecond from "../components/BannerSecond.astro";
-import TabComponent from "../components/TabComp.tsx";
+import TabComponent from "../components/TabComp";
 import Faq from "../components/Faq.astro";
-import { Globe } from "../components/magicui/globe.tsx";
-import Testimonial from "../components/testimonial.tsx";
-import Brand from "../components/Brand.tsx";
-import Beam from "../components/beam.tsx";
+import { Globe } from "../components/magicui/globe";
+import Testimonial from "../components/testimonial";
+import Brand from "../components/Brand";
+import Beam from "../components/beam";
 import Button from "@/components/Button.astro";
 import Ourteam from "@/components/Ourteam.astro";
 import PartnershipBanner from "@/components/PartnershipBanner.astro";
@@ -25,7 +25,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 >
   <Hero />
   <section>
-    <Globe client:load />
+    <Globe client:idle />
   </section>
 
   <!-- Honduras to USA Value Proposition Section -->
@@ -449,19 +449,19 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
   </section>
 
   <script>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    // Dynamically import GSAP only when needed for better performance
+    const initAnimations = async () => {
+      const { gsap } = await import("gsap");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
 
-    gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-    // Wait for DOM to be ready
-    document.addEventListener("DOMContentLoaded", () => {
       // Animate header on load
       gsap.from(".value-header", {
         opacity: 0,
         y: 30,
         duration: 0.8,
-        ease: "power3.out",
+        ease: "power3.out"
       });
 
       // Animate stats cards with stagger
@@ -474,7 +474,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         y: 50,
         stagger: 0.15,
         duration: 0.8,
-        ease: "power3.out",
+        ease: "power3.out"
       });
 
       // Animate benefits list items
@@ -487,7 +487,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         x: -30,
         stagger: 0.1,
         duration: 0.6,
-        ease: "power2.out",
+        ease: "power2.out"
       });
 
       // Animate price comparison
@@ -499,7 +499,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         opacity: 0,
         x: 50,
         duration: 0.8,
-        ease: "power3.out",
+        ease: "power3.out"
       });
 
       // Animate CTA
@@ -511,9 +511,27 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         opacity: 0,
         y: 30,
         duration: 0.8,
-        ease: "power3.out",
+        ease: "power3.out"
       });
-    });
+    };
+
+    // Use Intersection Observer to only load GSAP when section is near viewport
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            initAnimations();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: '100px' });
+
+      const section = document.querySelector('#value-proposition');
+      if (section) observer.observe(section);
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      initAnimations();
+    }
   </script>
 
   <!-- Technologies Section -->
@@ -865,7 +883,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       </div>
     </div>
     <!-- Beam visual component rendered only on client side -->
-    <Beam client:load />
+    <Beam client:idle />
   </section>
 
   <Bannersecond
