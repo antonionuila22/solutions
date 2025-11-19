@@ -25,7 +25,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 >
   <Hero />
   <section>
-    <Globe client:idle />
+    <Globe client:load />
   </section>
 
   <!-- Honduras to USA Value Proposition Section -->
@@ -262,13 +262,13 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
   </section>
 
   <script>
-    // Dynamically import GSAP only when needed for better performance
-    const initAnimations = async () => {
-      const { gsap } = await import("gsap");
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-      gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', () => {
       // Animate header on load
       gsap.from(".value-header", {
         opacity: 0,
@@ -326,25 +326,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         duration: 0.8,
         ease: "power3.out"
       });
-    };
-
-    // Use Intersection Observer to only load GSAP when section is near viewport
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            initAnimations();
-            observer.disconnect();
-          }
-        });
-      }, { rootMargin: '100px' });
-
-      const section = document.querySelector('#value-proposition');
-      if (section) observer.observe(section);
-    } else {
-      // Fallback for browsers without IntersectionObserver
-      initAnimations();
-    }
+    });
   </script>
 
   <!-- Technologies Section -->
@@ -578,7 +560,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       </div>
     </div>
     <!-- Beam visual component rendered only on client side -->
-    <Beam client:idle />
+    <Beam client:load />
   </section>
 
   <Bannersecond
