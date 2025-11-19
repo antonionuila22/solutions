@@ -29,10 +29,6 @@ const twitterHandle = "@codebrand_es";
 <!doctype html>
 <html lang="en-US">
   <head>
-    <script
-      src="https://analytics.ahrefs.com/analytics.js"
-      data-key="plZIV34o8GkbBMLLu3ZPEA"
-      async></script>
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -104,11 +100,21 @@ const twitterHandle = "@codebrand_es";
     <link rel="apple-touch-icon" sizes="180x180" href="/iconcodebrand.svg" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- DNS Prefetch and Preconnect -->
+    <!-- DNS Prefetch and Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.recaptcha.net" />
+
+    <!-- Preload Critical Resources for LCP optimization -->
+    <link rel="preload" as="image" href="/photos/bannercodebrand.webp" fetchpriority="high" />
+
+    <!-- Resource Hints for better loading -->
+    <link rel="prefetch" href="/photos/section.webp" />
+    <link rel="prefetch" href="/iconcodebrand.svg" />
 
     <!-- Fonts with optimized loading -->
     <link
@@ -415,6 +421,12 @@ const twitterHandle = "@codebrand_es";
       <slot />
     </main>
     <Footer />
+
+    <!-- Analytics loaded at end for better performance -->
+    <script
+      src="https://analytics.ahrefs.com/analytics.js"
+      data-key="plZIV34o8GkbBMLLu3ZPEA"
+      defer></script>
   </body>
 </html>
 
