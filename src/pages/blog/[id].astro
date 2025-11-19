@@ -15,7 +15,17 @@ export async function getStaticPaths() {
 
 const { post, blog } = Astro.props;
 const { data } = post;
-const { title, description, img, imageAlt, date, readtime, author, categories, tags } = data;
+const {
+  title,
+  description,
+  img,
+  imageAlt,
+  date,
+  readtime,
+  author,
+  categories,
+  tags,
+} = data;
 
 const { Content } = await render(post);
 
@@ -45,16 +55,18 @@ if (date instanceof Date && !isNaN(date.getTime())) {
 
 // SEO optimization
 const seoTitle = `${title} | Codebrand Blog`;
-const seoDescription = description || `Read about ${title} on Codebrand's blog. ${author ? `Written by ${author}.` : ''} ${readtime ? `${readtime} min read.` : ''}`;
+const seoDescription =
+  description ||
+  `Read about ${title} on Codebrand's blog. ${author ? `Written by ${author}.` : ""} ${readtime ? `${readtime} min read.` : ""}`;
 const seoKeywords = [
   title.toLowerCase(),
-  'codebrand blog',
-  'web development',
-  'digital marketing',
-  'design tips',
+  "codebrand blog",
+  "web development",
+  "digital marketing",
+  "design tips",
   ...(categories || []),
-  ...(tags || [])
-].join(', ');
+  ...(tags || []),
+].join(", ");
 ---
 
 <Layout
@@ -126,17 +138,18 @@ const seoKeywords = [
     >
       <div class="space-y-2 text-center md:text-left">
         <h2 class="text-2xl font-bold text-orange-700">
-          ¿Te gustó este artículo?
+          Do you want to read more articles?
         </h2>
         <p class="text-gray-700">
-          Explorá más publicaciones en nuestro blog o compartilo con alguien.
+          Visit our blog to explore more content on web development, design, and
+          digital marketing.
         </p>
       </div>
       <a
         href="/blog"
         class="bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-700 transition"
       >
-        Ver más artículos
+        Read More Articles
       </a>
     </section>
   </article>

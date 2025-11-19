@@ -7,8 +7,19 @@ const allPosts = await getCollection("blog");
 
 // Sort posts by date (newest first)
 const posts = allPosts.sort((a, b) => {
-  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
-  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  // Handle both Date objects and date strings
+  const dateA = a.data.date instanceof Date
+    ? a.data.date.getTime()
+    : a.data.date
+      ? new Date(a.data.date).getTime()
+      : 0;
+  const dateB = b.data.date instanceof Date
+    ? b.data.date.getTime()
+    : b.data.date
+      ? new Date(b.data.date).getTime()
+      : 0;
+
+  // Sort newest first
   return dateB - dateA;
 });
 
@@ -302,54 +313,6 @@ const totalReadTime = posts.reduce(
       </div>
     </div>
   </section>
-
-  <!-- Newsletter Section -->
-  <section class="bg-gradient-to-r from-cyan-900 to-cyan-800 py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="mb-6">
-        <svg
-          class="w-16 h-16 mx-auto text-orange-400"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          ></path>
-        </svg>
-      </div>
-
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        Stay Updated
-      </h2>
-      <p class="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
-        Get the latest insights on web development, digital marketing, and
-        business growth delivered to your inbox. No spam, unsubscribe anytime.
-      </p>
-
-      <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          class="flex-1 px-6 py-4 rounded-full border-2 border-white/20 bg-white/10 text-white placeholder-cyan-200 focus:outline-none focus:border-orange-400 focus:bg-white/20 transition-all"
-        />
-        <button
-          type="submit"
-          class="px-10 py-4 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap"
-        >
-          Subscribe Now
-        </button>
-      </form>
-
-      <p class="text-sm text-cyan-200 mt-4">
-        Join 5,000+ professionals already subscribed
-      </p>
-    </div>
-  </section>
-
   <!-- Topics We Cover -->
   <section class="bg-white py-20">
     <div class="max-w-7xl mx-auto px-6">
