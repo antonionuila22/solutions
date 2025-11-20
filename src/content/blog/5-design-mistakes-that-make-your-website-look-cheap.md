@@ -14,7 +14,7 @@ Your website is often the first impression a customer has of your brand. In toda
 
 According to [Stanford Web Credibility Research](https://credibility.stanford.edu/), **75% of users admit to making judgments about a company's credibility based on their website's design**. That's a massive number—and it means your design is directly impacting your bottom line.
 
-In this comprehensive guide, we'll walk you through the 5 most common design mistakes that make websites look cheap, unprofessional, and outdated—and more importantly, we'll show you exactly how to avoid them and create a website that builds trust, converts visitors, and represents your brand professionally.
+In this comprehensive guide, we'll walk you through the 5 most common design mistakes that make websites look cheap, unprofessional, and outdated—and more importantly, we'll show you exactly how to avoid them and create a website that builds trust, converts visitors, and represents your brand professionally. Combined with effective [web development](/web-development) practices, your site can become a powerful business asset.
 
 ## 1. Excessive Use of Bright or Poorly Matched Colors
 
@@ -48,7 +48,7 @@ Imagine landing on a financial services website with hot pink buttons, neon gree
 
 5. **Test on multiple devices**: Colors can look dramatically different on various screens
 
-**Pro tip**: Look at websites in your industry that you respect and analyze their color choices. You'll notice most professional sites stick to 2-3 colors maximum, with one dominant color and strategic accent colors for CTAs.
+**Pro tip**: Look at websites in your industry that you respect and analyze their color choices. You'll notice most professional sites stick to 2-3 colors maximum, with one dominant color and strategic accent colors for CTAs. This is especially important for [landing pages](/landing-pages) where clarity drives conversions.
 
 Need help selecting the perfect color palette for your brand? [Our branding services](/branding) specialize in creating cohesive, professional color schemes that convert.
 
@@ -101,7 +101,7 @@ Poor typography doesn't just look bad—it actively hurts your business:
 
 5. **Test readability**: Use the [Hemingway Editor](http://www.hemingwayapp.com/) to ensure your text is easy to read
 
-**Remember**: Your font choices should support your content, not compete with it. When in doubt, choose simplicity over style.
+**Remember**: Your font choices should support your content, not compete with it. When in doubt, choose simplicity over style. Good typography is also crucial for [SEO](/seo)—readable content keeps visitors engaged longer, which signals quality to search engines.
 
 Looking to create a typography system that's both beautiful and functional? [Our web design services](/web-design) include comprehensive typography systems that enhance readability and reinforce your brand.
 
@@ -151,7 +151,7 @@ Think about luxury brands like Apple, Tesla, or high-end fashion websites. What 
 5. **Use visual dividers**: Subtle lines, color blocks, or spacing to separate sections
 6. **Embrace minimalism**: Remove elements that don't serve a clear purpose
 
-**Pro tip**: Try the "blur test"—blur your webpage and see if you can still identify the main sections and hierarchy. If everything blends together, you need more spacing and contrast.
+**Pro tip**: Try the "blur test"—blur your webpage and see if you can still identify the main sections and hierarchy. If everything blends together, you need more spacing and contrast. Learn more about what makes [landing pages convert](/src/content/blog/landing-pages-that-convert-vs-those-that-dont.md).
 
 Our [web design services](/web-design) include comprehensive UX/UI design that creates clean, organized layouts that guide users naturally toward conversion.
 
@@ -204,7 +204,7 @@ Visual coherence means all your images work together to tell a consistent brand 
 
 5. **Add meaningful alt text**: Helps SEO and accessibility
 
-**Investment tip**: Professional photography or custom illustrations may seem expensive upfront, but they pay for themselves in increased credibility and conversions. We've seen conversion rate increases of 30-40% simply from upgrading from stock photos to custom brand photography.
+**Investment tip**: Professional photography or custom illustrations may seem expensive upfront, but they pay for themselves in increased credibility and conversions. We've seen conversion rate increases of 30-40% simply from upgrading from stock photos to custom brand photography. And remember, professional [web development](/web-development) ensures your images load fast and look great on all devices.
 
 Need help creating a consistent visual identity for your website? [Our branding team](/branding) can help with everything from photography direction to custom illustrations that truly represent your brand.
 
@@ -258,7 +258,7 @@ Consistency in design creates **predictability**, and predictability creates **c
 - Sketch
 - InVision DSM
 
-**Real-world impact**: Companies with strong design systems see 40% faster design-to-development time and significantly higher user satisfaction scores.
+**Real-world impact**: Companies with strong design systems see 40% faster design-to-development time and significantly higher user satisfaction scores. This consistency also improves your [SEO performance](/seo) by creating a better user experience.
 
 Our [web development services](/web-development) include comprehensive design systems for every client website—ensuring that your site not only looks professional today but remains consistent as it grows and evolves.
 
@@ -279,7 +279,7 @@ Consider these statistics:
 - **94% of first impressions** are design-related
 - Professional design can **increase conversions by 200% or more**
 
-The question isn't whether you can afford to invest in professional design—it's whether you can afford not to.
+The question isn't whether you can afford to invest in professional design—it's whether you can afford not to. For cost-conscious businesses, check out our [web development cost comparison](/src/content/blog/web-development-cost-comparison-usa-vs-honduras-2024.md) to see how to get quality design at affordable rates.
 
 ---
 

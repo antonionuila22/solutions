@@ -16,7 +16,7 @@ Here's the good news: **You don't need a technical team or expensive agency to i
 
 According to [BrightEdge Research](https://www.brightedge.com/), **68% of online experiences begin with a search engine**, and **53% of all website traffic comes from organic search**. For small businesses, that means **showing up on Google isn't optional—it's essential for survival and growth**.
 
-But here's what most SEO agencies won't tell you: **The basics matter more than the advanced tactics.** Getting the fundamentals right will deliver 80% of the results with 20% of the effort.
+But here's what most SEO agencies won't tell you: **The basics matter more than the advanced tactics.** Getting the fundamentals right will deliver 80% of the results with 20% of the effort. And when combined with effective [web development](/web-development) practices, your site becomes a powerful lead generation machine.
 
 In this practical guide, I'll walk you through a simple but effective SEO checklist you can implement yourself—without coding skills, without expensive tools, and without hiring an agency. These are proven tactics that work for local contractors, service businesses, and small companies ready to get found by customers actively searching for what they offer.
 
@@ -108,7 +108,7 @@ Every page on your website needs two critical elements that Google (and users) s
 **Where to edit these:**
 - Most website platforms (WordPress, Squarespace, Webflow) have fields for page titles and meta descriptions
 - In WordPress, use plugins like Yoast SEO or Rank Math
-- If you can't find it, ask your web developer or [contact our team](/web-development) for help
+- If you can't find it, ask your [web development](/web-development) team or [contact us](/contact) for help
 
 ---
 
@@ -150,7 +150,7 @@ Use [Google PageSpeed Insights](https://pagespeed.web.dev/) and aim for:
 4. **Enable caching**: Most platforms have caching plugins or settings
 5. **Use a CDN**: Services like Cloudflare (free plan available) speed up global delivery
 
-**Can't figure it out?** This is exactly where most business owners get stuck. [Our web development team](/web-development) can optimize your site speed—usually seeing 2-3x improvements in load times.
+**Can't figure it out?** This is exactly where most business owners get stuck. [Our web development team](/web-development) can optimize your site speed—usually seeing 2-3x improvements in load times. Fast websites don't just rank better—they convert better too. Learn more about [how good web design impacts conversions](/src/content/blog/5-design-mistakes-that-make-your-website-look-cheap.md).
 
 ---
 
@@ -195,7 +195,7 @@ Many small business websites show their services but **don't tell visitors what 
 - Include CTAs multiple times on each page
 - Make phone numbers click-to-call on mobile
 
-**Example**: A roofing contractor should have "Request Free Roof Inspection" buttons on every service page, not just a generic "Contact Us."
+**Example**: A roofing contractor should have "Request Free Roof Inspection" buttons on every service page, not just a generic "Contact Us." For more on creating effective CTAs that convert, check out our guide on [landing pages that convert](/src/content/blog/landing-pages-that-convert-vs-those-that-dont.md).
 
 ---
 
@@ -290,7 +290,7 @@ You don't need a huge blog. You just need **content that answers the questions y
 
 **How often to publish**: Even **one quality article per month** makes a difference. Consistency beats volume.
 
-Need help creating SEO-optimized content that actually ranks? [Our copywriting services](/copywriting) include keyword-targeted blog posts and service pages.
+Need help creating SEO-optimized content that actually ranks? [Our copywriting services](/copywriting) include keyword-targeted blog posts and service pages that drive traffic and conversions.
 
 ---
 
