@@ -308,7 +308,7 @@ A: Reputable agencies offer revision rounds and warranties. Start with a pilot p
 A: No. Honduras is same timezone (CST) with bilingual teams. Communication is often BETTER than offshore outsourcing.
 
 **Q: How do I know I'm getting a fair price?**
-A: Get 3 quotes, compare line-item, and check reviews. This guide shows market rates. Also learn about [what a good website should cost](/src/content/blog/how-much-should-a-good-website-cost-in-2025.md).
+A: Get 3 quotes, compare line-item, and check reviews. This guide shows market rates. Also learn about [what a good website should cost](/blog/how-much-should-a-good-website-cost-in-2025).
 
 **Q: Can I negotiate prices further?**
 A: Often yes—by bundling projects, providing assets, or offering flexible timelines.

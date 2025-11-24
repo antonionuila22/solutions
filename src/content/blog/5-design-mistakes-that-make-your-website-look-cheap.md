@@ -151,7 +151,7 @@ Think about luxury brands like Apple, Tesla, or high-end fashion websites. What 
 5. **Use visual dividers**: Subtle lines, color blocks, or spacing to separate sections
 6. **Embrace minimalism**: Remove elements that don't serve a clear purpose
 
-**Pro tip**: Try the "blur test"—blur your webpage and see if you can still identify the main sections and hierarchy. If everything blends together, you need more spacing and contrast. Learn more about what makes [landing pages convert](/src/content/blog/landing-pages-that-convert-vs-those-that-dont.md).
+**Pro tip**: Try the "blur test"—blur your webpage and see if you can still identify the main sections and hierarchy. If everything blends together, you need more spacing and contrast. Learn more about what makes [landing pages convert](/blog/landing-pages-that-convert-vs-those-that-dont).
 
 Our [web design services](/web-design) include comprehensive UX/UI design that creates clean, organized layouts that guide users naturally toward conversion.
 
@@ -279,7 +279,7 @@ Consider these statistics:
 - **94% of first impressions** are design-related
 - Professional design can **increase conversions by 200% or more**
 
-The question isn't whether you can afford to invest in professional design—it's whether you can afford not to. For cost-conscious businesses, check out our [web development cost comparison](/src/content/blog/web-development-cost-comparison-usa-vs-honduras-2024.md) to see how to get quality design at affordable rates.
+The question isn't whether you can afford to invest in professional design—it's whether you can afford not to. For cost-conscious businesses, check out our [web development cost comparison](/blog/web-development-cost-comparison-usa-vs-honduras-2024) to see how to get quality design at affordable rates.
 
 ---
 

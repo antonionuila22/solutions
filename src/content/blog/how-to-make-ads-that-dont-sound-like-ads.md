@@ -94,7 +94,7 @@ Let's break down exactly how to create these.
 **Example in action:**
 Instead of "We sell project management software," tell the story: "Meet James. He used to spend 3 hours every Monday morning chasing down status updates from his team. Now? His entire team updates their progress in real-time, and he gets those 3 hours back."
 
-This storytelling approach is also powerful on [landing pages](/src/content/blog/landing-pages-that-convert-vs-those-that-dont.md) where you need to convert visitors quickly.
+This storytelling approach is also powerful on [landing pages](/blog/landing-pages-that-convert-vs-those-that-dont) where you need to convert visitors quickly.
 
 ---
 
@@ -196,7 +196,7 @@ This benefit-focused approach is essential for all marketing, from ads to [web d
 6. **Logos of recognizable clients** (if you have them):
    - "Trusted by [Brand], [Brand], and [Brand]"
 
-**Pro tip**: Make testimonials feel natural by including minor imperfections—pauses, "um," conversational language. Polish makes it feel fake. These same testimonials work great on your website—learn more about [what makes landing pages convert](/src/content/blog/landing-pages-that-convert-vs-those-that-dont.md).
+**Pro tip**: Make testimonials feel natural by including minor imperfections—pauses, "um," conversational language. Polish makes it feel fake. These same testimonials work great on your website—learn more about [what makes landing pages convert](/blog/landing-pages-that-convert-vs-those-that-dont).
 
 ---
 
@@ -370,7 +370,7 @@ Make it easy to say yes by removing friction and risk.
 - "Download our free guide. No email required"
 - "Just looking? Save this for later"
 
-These same CTA principles apply to your website's design. Learn more about [design mistakes that hurt conversions](/src/content/blog/5-design-mistakes-that-make-your-website-look-cheap.md).
+These same CTA principles apply to your website's design. Learn more about [design mistakes that hurt conversions](/blog/5-design-mistakes-that-make-your-website-look-cheap).
 
 Ready to create ads that actually resonate? [Our digital marketing team](/digital-marketing) creates campaigns that people engage with—not ignore.
 

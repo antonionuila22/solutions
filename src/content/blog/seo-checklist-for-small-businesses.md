@@ -150,7 +150,7 @@ Use [Google PageSpeed Insights](https://pagespeed.web.dev/) and aim for:
 4. **Enable caching**: Most platforms have caching plugins or settings
 5. **Use a CDN**: Services like Cloudflare (free plan available) speed up global delivery
 
-**Can't figure it out?** This is exactly where most business owners get stuck. [Our web development team](/web-development) can optimize your site speed—usually seeing 2-3x improvements in load times. Fast websites don't just rank better—they convert better too. Learn more about [how good web design impacts conversions](/src/content/blog/5-design-mistakes-that-make-your-website-look-cheap.md).
+**Can't figure it out?** This is exactly where most business owners get stuck. [Our web development team](/web-development) can optimize your site speed—usually seeing 2-3x improvements in load times. Fast websites don't just rank better—they convert better too. Learn more about [how good web design impacts conversions](/blog/5-design-mistakes-that-make-your-website-look-cheap).
 
 ---
 
@@ -195,7 +195,7 @@ Many small business websites show their services but **don't tell visitors what 
 - Include CTAs multiple times on each page
 - Make phone numbers click-to-call on mobile
 
-**Example**: A roofing contractor should have "Request Free Roof Inspection" buttons on every service page, not just a generic "Contact Us." For more on creating effective CTAs that convert, check out our guide on [landing pages that convert](/src/content/blog/landing-pages-that-convert-vs-those-that-dont.md).
+**Example**: A roofing contractor should have "Request Free Roof Inspection" buttons on every service page, not just a generic "Contact Us." For more on creating effective CTAs that convert, check out our guide on [landing pages that convert](/blog/landing-pages-that-convert-vs-those-that-dont).
 
 ---
 

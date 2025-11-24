@@ -67,14 +67,64 @@ const seoKeywords = [
   ...(categories || []),
   ...(tags || []),
 ].join(", ");
+
+// Ensure absolute URL for images (required for Open Graph)
+const baseUrl = "https://codebrand.us";
+const absoluteImage = img ? (img.startsWith('http') ? img : `${baseUrl}${img}`) : `${baseUrl}/photos/bannercodebrand.webp`;
+
+// Format ISO date for structured data
+const isoDate = date instanceof Date ? date.toISOString() : (typeof date === "string" ? new Date(date).toISOString() : new Date().toISOString());
+
+// Article URL
+const articleUrl = `${baseUrl}/blog/${post.slug}`;
+
+// Structured Data for Article
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "image": absoluteImage,
+  "datePublished": isoDate,
+  "dateModified": isoDate,
+  "author": {
+    "@type": "Person",
+    "name": author || "Codebrand Team",
+    "url": "https://codebrand.us"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Codebrand Digital Agency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://codebrand.us/iconcodebrand.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": articleUrl
+  },
+  "url": articleUrl,
+  "keywords": seoKeywords,
+  ...(readtime && { "timeRequired": `PT${readtime}M` }),
+  ...(categories && categories.length > 0 && { "articleSection": categories }),
+  ...(tags && tags.length > 0 && { "keywords": tags.join(", ") })
+};
 ---
 
 <Layout
   title={seoTitle}
   description={seoDescription}
   keywords={seoKeywords}
-  image={img || "/photos/bannercodebrand.webp"}
+  image={absoluteImage}
+  article={true}
+  author={author}
+  publishedTime={date}
+  tags={tags}
+  categories={categories}
 >
+  <!-- Article Structured Data -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
   <article class="font-poppins text-black">
     <!-- Hero Section -->
     <section class="relative w-full">

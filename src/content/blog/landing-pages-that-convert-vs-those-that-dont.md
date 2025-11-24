@@ -186,7 +186,7 @@ And since **60%+ of traffic now comes from mobile devices**, if your landing pag
 - **Simple forms**: Minimize typing on mobile
 - **Fast, distraction-free**: Remove anything non-essential
 
-**Pro tip**: Test your landing page on actual mobile devices (iPhone, Android), not just desktop simulators. The experience is often different. For more on avoiding common design issues, read our guide on [design mistakes that make websites look cheap](/src/content/blog/5-design-mistakes-that-make-your-website-look-cheap.md).
+**Pro tip**: Test your landing page on actual mobile devices (iPhone, Android), not just desktop simulators. The experience is often different. For more on avoiding common design issues, read our guide on [design mistakes that make websites look cheap](/blog/5-design-mistakes-that-make-your-website-look-cheap).
 
 Need a blazing-fast, mobile-optimized landing page? [Our web development team](/web-development) builds high-performance pages that load in under 2 seconds.
 
@@ -209,7 +209,7 @@ High-converting landing pages use **relevant, professional images or videos** th
 - Low-quality or pixelated images
 - Too many competing visuals
 
-**Video tips**: If using video, make it short (60-90 seconds), start with a hook, and include captions (80% watch without sound). Learn more about creating [ads that don't sound like ads](/src/content/blog/how-to-make-ads-that-dont-sound-like-ads.md) to maximize engagement.
+**Video tips**: If using video, make it short (60-90 seconds), start with a hook, and include captions (80% watch without sound). Learn more about creating [ads that don't sound like ads](/blog/how-to-make-ads-that-dont-sound-like-ads) to maximize engagement.
 
 ---
 
@@ -261,7 +261,7 @@ Asking for name, email, phone, address, company size, job title, annual revenue,
 
 ### 3. Outdated or Confusing Design
 
-If your page looks like it's from 2012, it affects trust perception. Design matters—it's not just aesthetics, it's **credibility**. Check out our detailed post on [design mistakes that make your website look cheap](/src/content/blog/5-design-mistakes-that-make-your-website-look-cheap.md) for a comprehensive breakdown.
+If your page looks like it's from 2012, it affects trust perception. Design matters—it's not just aesthetics, it's **credibility**. Check out our detailed post on [design mistakes that make your website look cheap](/blog/5-design-mistakes-that-make-your-website-look-cheap) for a comprehensive breakdown.
 
 **Common design mistakes:**
 - Poor color contrast making text hard to read
