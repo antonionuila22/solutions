@@ -2,13 +2,35 @@
   command = "npm run build"
   publish = "dist"
 
+# ===========================================
+# STATIC ASSETS - Long-term caching (1 year)
+# ===========================================
+
+# JavaScript files (bundled with hashes)
 [[headers]]
   for = "/*.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
+  for = "/_astro/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS files (bundled with hashes)
+[[headers]]
   for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_astro/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Fonts
+[[headers]]
+  for = "/*.woff"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -16,6 +38,20 @@
   for = "/*.woff2"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ttf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.otf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ===========================================
+# IMAGES - Long-term caching (1 year)
+# ===========================================
 
 [[headers]]
   for = "/icons/*"
@@ -28,8 +64,117 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.avif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ===========================================
+# DOCUMENTS & DATA
+# ===========================================
+
+# PDF files
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# JSON data files
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# Manifest
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# ===========================================
+# SEO FILES - Moderate caching
+# ===========================================
+
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# ===========================================
+# HTML PAGES - Short caching with revalidation
+# ===========================================
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ===========================================
+# SECURITY HEADERS - All pages
+# ===========================================
+
+[[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "frame-ancestors 'none'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# ===========================================
+# REDIRECTS
+# ===========================================
+
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.codebrand.us/*"
+  to = "https://codebrand.us/:splat"
+  status = 301
+  force = true
