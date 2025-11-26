@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     try {
         const data = await request.formData();
 
-        console.log("📨 Form data recibido:");
+        console.log("📨 Form data received:");
         for (const pair of data.entries()) {
             console.log(`${pair[0]}: ${pair[1]}`);
         }
@@ -18,8 +18,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         // Honeypot anti-spam
         const honeypot = sanitize(data.get("honey"));
         if (honeypot) {
-            console.warn("Bot detectado por honeypot.");
-            return new Response("Bot detectado", { status: 403 });
+            console.warn("Bot detected by honeypot.");
+            return new Response("Bot detected", { status: 403 });
         }
 
 
@@ -36,11 +36,11 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
         // Validaciones
         if (!name || !email || !phone || !industry || !subject || !message || services.length === 0) {
-            return new Response("Faltan campos obligatorios.", { status: 400 });
+            return new Response("Missing required fields.", { status: 400 });
         }
 
         if (!validateEmail(email)) {
-            return new Response("Correo electrónico inválido.", { status: 400 });
+            return new Response("Invalid email address.", { status: 400 });
         }
 
         // Verificar duplicados

@@ -12,9 +12,70 @@ const description =
 const keywords =
   "landing page design, landing page development, high converting landing pages, custom landing pages, lead generation pages, sales funnel pages, squeeze pages, campaign landing pages, mobile landing pages, responsive landing pages, A/B testing landing pages, conversion rate optimization, landing page optimization, professional landing pages, landing page templates, landing page services";
 const image = "/photos/uxservice.webp";
+
+// Service Schema for Landing Pages
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Landing Page Development",
+  "name": "High-Converting Landing Page Design & Development",
+  "description": description,
+  "url": "https://codebrand.us/landing-pages",
+  "image": "https://codebrand.us/photos/uxservice.webp",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Landing Page Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Lead Generation Pages",
+          "description": "Optimized landing pages for capturing leads"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sales Funnel Pages",
+          "description": "Conversion-focused pages for sales funnels"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "A/B Testing",
+          "description": "Split testing to maximize conversion rates"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Campaign Landing Pages",
+          "description": "Custom pages for marketing campaigns"
+        }
+      }
+    ]
+  },
+  "priceRange": "$$$"
+};
 ---
 
 <Layout title={title} description={description} keywords={keywords} image={image}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"

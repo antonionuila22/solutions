@@ -12,9 +12,9 @@ type Props = {
   testimonials: Testimonial[];
   interval?: number;
 };
- /// Componente de Slider
- /// que muestra testimonios de clientes
- /// @param {Testimonial[]} testimonials - Array de testimonios
+ /// Slider Component
+ /// that displays customer testimonials
+ /// @param {Testimonial[]} testimonials - Array of testimonials
 export default function Slider({ testimonials, interval = 4000 }: Props) {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -61,7 +61,7 @@ export default function Slider({ testimonials, interval = 4000 }: Props) {
   return (
     <div className="w-full max-w-6xl mx-auto px-4">
       <h2 className="text-4xl font-bold text-center text-white mb-12">
-        Lo que dicen nuestros clientes
+        What Our Clients Say
       </h2>
 
       <AnimatedDiv
@@ -99,13 +99,13 @@ export default function Slider({ testimonials, interval = 4000 }: Props) {
           onClick={prev}
           className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition"
         >
-          ← Anterior
+          ← Previous
         </button>
         <button
           onClick={next}
           className="bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-lg transition"
         >
-          Siguiente →
+          Next →
         </button>
       </div>
     </div>

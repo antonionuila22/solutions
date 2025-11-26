@@ -20,10 +20,10 @@ export default function MarketingHero() {
   }, []);
 
   const stats = [
-    { icon: TrendingUp, value: "300%", label: "ROI Promedio" },
-    { icon: Users, value: "500+", label: "Clientes Felices" },
-    { icon: Award, value: "50+", label: "Premios Ganados" },
-    { icon: Zap, value: "24/7", label: "Soporte" },
+    { icon: TrendingUp, value: "300%", label: "Average ROI" },
+    { icon: Users, value: "500+", label: "Happy Clients" },
+    { icon: Award, value: "50+", label: "Awards Won" },
+    { icon: Zap, value: "24/7", label: "Support" },
   ];
 
   const floatingElements = [
@@ -77,7 +77,7 @@ export default function MarketingHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium"
             >
-              ✨ Agencia #1 en Resultados Digitales
+              ✨ #1 Agency in Digital Results
             </motion.div>
 
             {/* Main Headline */}
@@ -88,16 +88,16 @@ export default function MarketingHero() {
               className="space-y-4"
             >
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-                Transformamos tu
+                We transform your
                 <span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent gradient-animate">
-                  marca digital
+                  digital brand
                 </span>
-                en resultados
+                into results
               </h1>
 
               <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Estrategias de marketing digital que generan más leads, ventas y
-                crecimiento exponencial para tu negocio.
+                Digital marketing strategies that generate more leads, sales and
+                exponential growth for your business.
               </p>
             </motion.div>
 
@@ -112,7 +112,7 @@ export default function MarketingHero() {
                 size="lg"
                 className="group bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary text-white shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                Obtener Propuesta Gratis
+                Get Free Proposal
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
 
@@ -122,7 +122,7 @@ export default function MarketingHero() {
                 className="group border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-all duration-300"
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Ver Casos de Éxito
+                View Success Stories
               </Button>
             </motion.div>
 
@@ -135,11 +135,11 @@ export default function MarketingHero() {
             >
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Consulta gratuita sin compromiso</span>
+                <span>Free consultation, no commitment</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span>Resultados garantizados en 90 días</span>
+                <span>Guaranteed results in 90 days</span>
               </div>
             </motion.div>
           </motion.div>
@@ -173,7 +173,7 @@ export default function MarketingHero() {
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                   <div>
-                    <p className="text-sm font-medium">Conversiones</p>
+                    <p className="text-sm font-medium">Conversions</p>
                     <p className="text-2xl font-bold text-green-500">+47%</p>
                   </div>
                 </div>

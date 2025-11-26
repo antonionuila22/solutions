@@ -146,7 +146,7 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden"
-          aria-label="Abrir menú móvil"
+          aria-label="Open mobile menu"
         >
           <svg
             className="h-6 w-6 text-gray-800"

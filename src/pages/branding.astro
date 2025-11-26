@@ -12,9 +12,70 @@ const description =
 const keywords =
   "branding services, brand identity, logo design, brand strategy, corporate identity, visual identity, brand guidelines, brand development, rebranding, brand design, brand positioning, brand messaging, brand refresh, graphic design, company branding";
 const image = "/photos/Branding.webp";
+
+// Service Schema for Branding
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Branding Services",
+  "name": "Professional Branding & Logo Design Services",
+  "description": description,
+  "url": "https://codebrand.us/branding",
+  "image": "https://codebrand.us/photos/Branding.webp",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Branding Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Logo Design",
+          "description": "Custom logo design that captures your brand essence"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Brand Identity",
+          "description": "Complete visual identity system including colors, typography, and guidelines"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Brand Strategy",
+          "description": "Strategic brand positioning and messaging framework"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Brand Guidelines",
+          "description": "Comprehensive brand style guide for consistent application"
+        }
+      }
+    ]
+  },
+  "priceRange": "$$$"
+};
 ---
 
 <Layout title={title} description={description} keywords={keywords} image={image}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"

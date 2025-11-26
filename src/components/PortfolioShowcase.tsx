@@ -21,19 +21,19 @@ const portfolioItems = [
     client: "StyleHub",
     category: "E-commerce",
     description:
-      "Transformación digital completa de una marca de moda, desde el rebranding hasta la implementación de una plataforma e-commerce de alto rendimiento.",
+      "Complete digital transformation of a fashion brand, from rebranding to implementing a high-performance e-commerce platform.",
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
-      { metric: "Ventas Online", value: "+340%", icon: TrendingUp },
-      { metric: "Nuevos Clientes", value: "+280%", icon: Users },
+      { metric: "Online Sales", value: "+340%", icon: TrendingUp },
+      { metric: "New Clients", value: "+280%", icon: Users },
       { metric: "ROI", value: "450%", icon: Award },
     ],
     tags: ["E-commerce", "Branding", "SEO", "Social Media"],
-    challenge: "Bajo reconocimiento de marca y ventas online limitadas",
+    challenge: "Low brand recognition and limited online sales",
     solution:
-      "Estrategia integral de marketing digital con enfoque en experiencia de usuario y conversión",
-    timeline: "6 meses",
+      "Comprehensive digital marketing strategy focused on user experience and conversion",
+    timeline: "6 months",
   },
   {
     id: 2,
@@ -41,19 +41,19 @@ const portfolioItems = [
     client: "TechFlow",
     category: "SaaS",
     description:
-      "Campaña de generación de leads para una startup de software B2B, optimizando el funnel de ventas y automatizando procesos de marketing.",
+      "Lead generation campaign for a B2B software startup, optimizing the sales funnel and automating marketing processes.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
-      { metric: "Leads Cualificados", value: "+520%", icon: Target },
-      { metric: "Conversión", value: "+185%", icon: TrendingUp },
-      { metric: "CAC Reducción", value: "-60%", icon: Award },
+      { metric: "Qualified Leads", value: "+520%", icon: Target },
+      { metric: "Conversion", value: "+185%", icon: TrendingUp },
+      { metric: "CAC Reduction", value: "-60%", icon: Award },
     ],
     tags: ["SaaS", "Lead Generation", "Marketing Automation", "PPC"],
-    challenge: "Alto costo de adquisición de clientes y baja calidad de leads",
+    challenge: "High customer acquisition cost and low lead quality",
     solution:
-      "Implementación de marketing automation y optimización de campañas PPC",
-    timeline: "4 meses",
+      "Implementation of marketing automation and PPC campaign optimization",
+    timeline: "4 months",
   },
   {
     id: 3,
@@ -61,19 +61,19 @@ const portfolioItems = [
     client: "FoodCorp",
     category: "Food & Beverage",
     description:
-      "Digitalización completa de una cadena de restaurantes, incluyendo app móvil, delivery online y estrategias de social media.",
+      "Complete digitalization of a restaurant chain, including mobile app, online delivery, and social media strategies.",
     image:
       "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
-      { metric: "Pedidos Online", value: "+450%", icon: TrendingUp },
+      { metric: "Online Orders", value: "+450%", icon: TrendingUp },
       { metric: "App Downloads", value: "100K+", icon: Users },
       { metric: "Revenue", value: "+220%", icon: Award },
     ],
     tags: ["Mobile App", "Delivery", "Social Media", "Local SEO"],
-    challenge: "Impacto de pandemia en ventas presenciales",
+    challenge: "Pandemic impact on in-person sales",
     solution:
-      "Pivote rápido a modelo digital con app de delivery y marketing local",
-    timeline: "3 meses",
+      "Quick pivot to digital model with delivery app and local marketing",
+    timeline: "3 months",
   },
   {
     id: 4,
@@ -81,18 +81,18 @@ const portfolioItems = [
     client: "PayFlow",
     category: "FinTech",
     description:
-      "Estrategia de adquisición de usuarios para una app de pagos móviles, enfocada en segmentación avanzada y retargeting.",
+      "User acquisition strategy for a mobile payments app, focused on advanced segmentation and retargeting.",
     image:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     results: [
-      { metric: "Usuarios Activos", value: "+380%", icon: Users },
-      { metric: "Retención", value: "+95%", icon: Target },
+      { metric: "Active Users", value: "+380%", icon: Users },
+      { metric: "Retention", value: "+95%", icon: Target },
       { metric: "LTV", value: "+250%", icon: TrendingUp },
     ],
     tags: ["FinTech", "User Acquisition", "Retargeting", "Analytics"],
-    challenge: "Alta competencia en mercado de pagos móviles",
-    solution: "Segmentación avanzada y campañas de retargeting personalizadas",
-    timeline: "8 meses",
+    challenge: "High competition in mobile payments market",
+    solution: "Advanced segmentation and personalized retargeting campaigns",
+    timeline: "8 months",
   },
 ];
 
@@ -131,19 +131,19 @@ export default function PortfolioShowcase() {
             className="inline-flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6"
           >
             <Award className="w-4 h-4 mr-2" />
-            Casos de Éxito Comprobados
+            Proven Success Stories
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Resultados que
+            Results that
             <span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              hablan por sí solos
+              speak for themselves
             </span>
           </h2>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Descubre cómo hemos ayudado a empresas como la tuya a alcanzar el
-            éxito digital
+            Discover how we've helped companies like yours achieve digital
+            success
           </p>
         </motion.div>
 
@@ -225,7 +225,7 @@ export default function PortfolioShowcase() {
             <div>
               <h3 className="text-3xl font-bold mb-2">{currentItem.title}</h3>
               <p className="text-primary font-medium mb-4">
-                Cliente: {currentItem.client}
+                Client: {currentItem.client}
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 {currentItem.description}
@@ -269,13 +269,13 @@ export default function PortfolioShowcase() {
             {/* Details */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2 text-primary">Desafío</h4>
+                <h4 className="font-semibold mb-2 text-primary">Challenge</h4>
                 <p className="text-muted-foreground text-sm">
                   {currentItem.challenge}
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2 text-primary">Solución</h4>
+                <h4 className="font-semibold mb-2 text-primary">Solution</h4>
                 <p className="text-muted-foreground text-sm">
                   {currentItem.solution}
                 </p>
@@ -290,7 +290,7 @@ export default function PortfolioShowcase() {
                 <span className="font-medium">{currentItem.timeline}</span>
               </div>
               <Button className="group">
-                Ver Caso Completo
+                View Full Case
                 <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
@@ -365,21 +365,21 @@ export default function PortfolioShowcase() {
         >
           <div className="bg-gradient-to-r from-primary/5 via-purple-600/5 to-pink-600/5 rounded-3xl p-8 border border-primary/10">
             <h3 className="text-3xl font-bold mb-4">
-              ¿Listo para ser nuestro próximo caso de éxito?
+              Ready to be our next success story?
             </h3>
             <p className="text-muted-foreground mb-6 text-lg max-w-2xl mx-auto">
-              Analicemos tu proyecto y creemos una estrategia personalizada para
-              alcanzar tus objetivos
+              Let's analyze your project and create a personalized strategy to
+              achieve your goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary"
               >
-                Solicitar Análisis Gratuito
+                Request Free Analysis
               </Button>
               <Button size="lg" variant="outline">
-                Descargar Portfolio Completo
+                Download Full Portfolio
               </Button>
             </div>
           </div>

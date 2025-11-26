@@ -11,9 +11,70 @@ const description =
 const keywords =
   "web design, UI design, UX design, user interface design, user experience design, responsive web design, website redesign, landing page design, mobile app design, visual design, interaction design, wireframing, prototyping, design system, brand design, conversion-focused design, accessible design, modern web design";
 const image = "/photos/uxui.webp";
+
+// Service Schema for Web Design
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Web Design Services",
+  "name": "Professional UI/UX & Web Design Services",
+  "description": description,
+  "url": "https://codebrand.us/web-design",
+  "image": "https://codebrand.us/photos/uxui.webp",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Design Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "UI/UX Design",
+          "description": "User-centered interface and experience design"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Redesign",
+          "description": "Modernize and refresh your existing website"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Responsive Design",
+          "description": "Mobile-first designs that work on all devices"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Design Systems",
+          "description": "Scalable design systems for consistent branding"
+        }
+      }
+    ]
+  },
+  "priceRange": "$$$"
+};
 ---
 
 <Layout title={title} description={description} keywords={keywords} image={image}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"

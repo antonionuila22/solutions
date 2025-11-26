@@ -19,69 +19,69 @@ const services = [
     id: "seo",
     icon: Search,
     title: "SEO & SEM",
-    description: "Optimización para motores de búsqueda y campañas pagadas",
-    features: ["Investigación de palabras clave", "Optimización on-page", "Link building", "Google Ads"],
+    description: "Search engine optimization and paid campaigns",
+    features: ["Keyword research", "On-page optimization", "Link building", "Google Ads"],
     color: "from-blue-500 to-cyan-500",
     bgColor: "bg-blue-500/10",
-    results: "+150% tráfico orgánico promedio"
+    results: "+150% average organic traffic"
   },
   {
     id: "social",
     icon: Megaphone,
     title: "Social Media",
-    description: "Gestión completa de redes sociales y community management",
-    features: ["Estrategia de contenido", "Community management", "Publicidad social", "Influencer marketing"],
+    description: "Complete social media management and community management",
+    features: ["Content strategy", "Community management", "Social advertising", "Influencer marketing"],
     color: "from-pink-500 to-purple-500",
     bgColor: "bg-pink-500/10",
-    results: "+200% engagement en redes"
+    results: "+200% social engagement"
   },
   {
     id: "design",
     icon: PenTool,
-    title: "Diseño Creativo",
-    description: "Diseño gráfico y branding que conecta con tu audiencia",
-    features: ["Identidad visual", "Diseño web", "Material publicitario", "UX/UI Design"],
+    title: "Creative Design",
+    description: "Graphic design and branding that connects with your audience",
+    features: ["Visual identity", "Web design", "Marketing materials", "UX/UI Design"],
     color: "from-orange-500 to-red-500",
     bgColor: "bg-orange-500/10",
-    results: "+85% mejor percepción de marca"
+    results: "+85% better brand perception"
   },
   {
     id: "analytics",
     icon: BarChart3,
     title: "Analytics & Data",
-    description: "Análisis profundo de datos para optimizar resultados",
-    features: ["Google Analytics", "Data visualization", "Reporting automático", "KPI tracking"],
+    description: "In-depth data analysis to optimize results",
+    features: ["Google Analytics", "Data visualization", "Automated reporting", "KPI tracking"],
     color: "from-green-500 to-emerald-500",
     bgColor: "bg-green-500/10",
-    results: "+40% mejor ROI en campañas"
+    results: "+40% better campaign ROI"
   },
   {
     id: "web",
     icon: Globe,
-    title: "Desarrollo Web",
-    description: "Sitios web optimizados para conversión y rendimiento",
-    features: ["Desarrollo responsive", "E-commerce", "Landing pages", "WordPress/Shopify"],
+    title: "Web Development",
+    description: "Websites optimized for conversion and performance",
+    features: ["Responsive development", "E-commerce", "Landing pages", "WordPress/Shopify"],
     color: "from-indigo-500 to-blue-500",
     bgColor: "bg-indigo-500/10",
-    results: "+95% mejor velocidad de carga"
+    results: "+95% better loading speed"
   },
   {
     id: "mobile",
     icon: Smartphone,
-    title: "Marketing Mobile",
-    description: "Estrategias optimizadas para dispositivos móviles",
+    title: "Mobile Marketing",
+    description: "Strategies optimized for mobile devices",
     features: ["App marketing", "Mobile ads", "SMS marketing", "Push notifications"],
     color: "from-violet-500 to-purple-500",
     bgColor: "bg-violet-500/10",
-    results: "+180% conversiones mobile"
+    results: "+180% mobile conversions"
   }
 ];
 
 const categories = [
-  { id: "all", label: "Todos los Servicios" },
-  { id: "digital", label: "Marketing Digital" },
-  { id: "creative", label: "Creatividad" },
-  { id: "tech", label: "Tecnología" }
+  { id: "all", label: "All Services" },
+  { id: "digital", label: "Digital Marketing" },
+  { id: "creative", label: "Creativity" },
+  { id: "tech", label: "Technology" }
 ];
 
 export default function InteractiveServices() {
@@ -122,18 +122,18 @@ export default function InteractiveServices() {
             className="inline-flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6"
           >
             <Target className="w-4 h-4 mr-2" />
-            Servicios que Impulsan Resultados
+            Services That Drive Results
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Soluciones completas de
+            Complete digital
             <span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              marketing digital
+              marketing solutions
             </span>
           </h2>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Desde estrategia hasta ejecución, tenemos todo lo que necesitas para hacer crecer tu negocio online
+            From strategy to execution, we have everything you need to grow your online business
           </p>
         </motion.div>
 
@@ -223,7 +223,7 @@ export default function InteractiveServices() {
                     variant="outline" 
                     className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
                   >
-                    Más Información
+                    Learn More
                   </Button>
                 </div>
 
@@ -247,17 +247,17 @@ export default function InteractiveServices() {
         >
           <div className="bg-gradient-to-r from-primary/5 via-purple-600/5 to-pink-600/5 rounded-3xl p-8 border border-primary/10">
             <h3 className="text-2xl font-bold mb-4">
-              ¿No encuentras lo que buscas?
+              Can't find what you're looking for?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Creamos soluciones personalizadas adaptadas a las necesidades específicas de tu negocio
+              We create customized solutions tailored to your business's specific needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary">
-                Solicitar Consulta Personalizada
+                Request Custom Consultation
               </Button>
               <Button variant="outline">
-                Ver Todos los Servicios
+                View All Services
               </Button>
             </div>
           </div>

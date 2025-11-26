@@ -22,10 +22,10 @@ export default function MarketingHeader() {
   };
 
   const navItems = [
-    { name: "Servicios", href: "#services" },
+    { name: "Services", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Equipo", href: "#team" },
-    { name: "Contacto", href: "#contact" }
+    { name: "Team", href: "#team" },
+    { name: "Contact", href: "#contact" }
   ];
 
   return (
@@ -119,17 +119,17 @@ export default function MarketingHeader() {
               variant="outline" 
               className="hover:bg-primary hover:text-white transition-all duration-300"
             >
-              Consulta Gratis
+              Free Consultation
             </Button>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <Button className="bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl">
-              Empezar Proyecto
+              Start Project
             </Button>
           </motion.div>
         </div>
@@ -197,10 +197,10 @@ export default function MarketingHeader() {
                 transition={{ duration: 0.3, delay: 0.4 }}
               >
                 <Button variant="outline" className="justify-start">
-                  Consulta Gratis
+                  Free Consultation
                 </Button>
                 <Button className="justify-start bg-gradient-to-r from-primary to-purple-600">
-                  Empezar Proyecto
+                  Start Project
                 </Button>
               </motion.div>
             </nav>

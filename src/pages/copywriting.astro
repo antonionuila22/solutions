@@ -11,9 +11,70 @@ const description =
 const keywords =
   "copywriting services, professional copywriter, web copywriting, SEO copywriting, content writing, website copy, sales copy, email copywriting, ad copywriting, landing page copy, blog writing, product descriptions, brand messaging, conversion copywriting, persuasive writing, marketing copy";
 const image = "/photos/ads.webp";
+
+// Service Schema for Copywriting
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Copywriting Services",
+  "name": "Professional Copywriting & Content Writing",
+  "description": description,
+  "url": "https://codebrand.us/copywriting",
+  "image": "https://codebrand.us/photos/ads.webp",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Copywriting Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Copywriting",
+          "description": "Compelling website copy that converts visitors to customers"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Copywriting",
+          "description": "Search-optimized content that ranks and converts"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Email Copywriting",
+          "description": "Engaging email campaigns and sequences"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Ad Copywriting",
+          "description": "High-converting ad copy for PPC and social media"
+        }
+      }
+    ]
+  },
+  "priceRange": "$$$"
+};
 ---
 
 <Layout title={title} description={description} keywords={keywords} image={image}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"

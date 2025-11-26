@@ -11,9 +11,70 @@ const description =
 const keywords =
   "digital marketing, SEO services, PPC advertising, social media marketing, content marketing, email marketing, conversion optimization, Google Ads, Facebook Ads, Instagram marketing, digital marketing agency, online marketing services, marketing strategy, lead generation, brand awareness, marketing automation, influencer marketing, video marketing, analytics and reporting";
 const image = "/photos/socialmedia.webp";
+
+// Service Schema for Digital Marketing
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Digital Marketing Services",
+  "name": "Comprehensive Digital Marketing Solutions",
+  "description": description,
+  "url": "https://codebrand.us/digital-marketing",
+  "image": "https://codebrand.us/photos/socialmedia.webp",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "PPC Advertising",
+          "description": "Google Ads and paid search campaign management"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media Marketing",
+          "description": "Facebook, Instagram, LinkedIn, and TikTok marketing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content Marketing",
+          "description": "Strategic content creation and distribution"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Email Marketing",
+          "description": "Email campaigns, automation, and lead nurturing"
+        }
+      }
+    ]
+  },
+  "priceRange": "$$$"
+};
 ---
 
 <Layout title={title} description={description} keywords={keywords} image={image}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"

@@ -7,8 +7,8 @@ const stats = [
     icon: Users,
     value: 500,
     suffix: "+",
-    label: "Clientes Satisfechos",
-    description: "Empresas que confían en nosotros",
+    label: "Satisfied Clients",
+    description: "Companies that trust us",
     color: "from-blue-500 to-cyan-500",
     bgColor: "bg-blue-500/10"
   },
@@ -16,8 +16,8 @@ const stats = [
     icon: TrendingUp,
     value: 300,
     suffix: "%",
-    label: "ROI Promedio",
-    description: "Retorno de inversión garantizado",
+    label: "Average ROI",
+    description: "Guaranteed return on investment",
     color: "from-green-500 to-emerald-500",
     bgColor: "bg-green-500/10"
   },
@@ -25,8 +25,8 @@ const stats = [
     icon: Award,
     value: 50,
     suffix: "+",
-    label: "Premios Ganados",
-    description: "Reconocimientos de la industria",
+    label: "Awards Won",
+    description: "Industry recognition",
     color: "from-yellow-500 to-orange-500",
     bgColor: "bg-yellow-500/10"
   },
@@ -34,8 +34,8 @@ const stats = [
     icon: Globe,
     value: 25,
     suffix: "+",
-    label: "Países Alcanzados",
-    description: "Presencia internacional",
+    label: "Countries Reached",
+    description: "International presence",
     color: "from-purple-500 to-pink-500",
     bgColor: "bg-purple-500/10"
   },
@@ -43,8 +43,8 @@ const stats = [
     icon: Zap,
     value: 1000000,
     suffix: "+",
-    label: "Impresiones Generadas",
-    description: "Alcance mensual promedio",
+    label: "Impressions Generated",
+    description: "Average monthly reach",
     color: "from-indigo-500 to-blue-500",
     bgColor: "bg-indigo-500/10",
     format: "compact"
@@ -53,8 +53,8 @@ const stats = [
     icon: Target,
     value: 95,
     suffix: "%",
-    label: "Tasa de Satisfacción",
-    description: "Clientes que nos recomiendan",
+    label: "Satisfaction Rate",
+    description: "Clients who recommend us",
     color: "from-red-500 to-pink-500",
     bgColor: "bg-red-500/10"
   }
@@ -240,18 +240,18 @@ export default function AnimatedStats() {
             className="inline-flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6"
           >
             <TrendingUp className="w-4 h-4 mr-2" />
-            Números que Impresionan
+            Impressive Numbers
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Resultados que
+            Results that
             <span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              superan expectativas
+              exceed expectations
             </span>
           </h2>
-          
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Más de 5 años creando éxito digital para empresas de todos los tamaños
+            Over 5 years creating digital success for businesses of all sizes
           </p>
         </motion.div>
 
@@ -301,10 +301,10 @@ export default function AnimatedStats() {
           className="text-center mt-16 pt-12 border-t border-border/50"
         >
           <h3 className="text-2xl font-bold mb-4">
-            ¿Quieres formar parte de estas estadísticas?
+            Want to be part of these statistics?
           </h3>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Únete a las empresas que ya están viendo resultados extraordinarios con nuestras estrategias
+            Join the companies already seeing extraordinary results with our strategies
           </p>
           
           <motion.div
@@ -318,7 +318,7 @@ export default function AnimatedStats() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-primary to-purple-600 text-white rounded-2xl font-medium hover:shadow-lg transition-all duration-300"
             >
-              Empezar Mi Proyecto
+              Start My Project
             </motion.button>
             
             <motion.button
@@ -326,7 +326,7 @@ export default function AnimatedStats() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border border-primary/20 rounded-2xl font-medium hover:bg-primary/5 transition-all duration-300"
             >
-              Ver Metodología
+              View Methodology
             </motion.button>
           </motion.div>
         </motion.div>
