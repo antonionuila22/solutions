@@ -167,14 +167,3 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Content-Security-Policy = "frame-ancestors 'none'"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-
-# ===========================================
-# REDIRECTS
-# ===========================================
-
-# Redirect www to non-www
-[[redirects]]
-  from = "https://www.codebrand.us/*"
-  to = "https://codebrand.us/:splat"
-  status = 301
-  force = true
