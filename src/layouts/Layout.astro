@@ -4,6 +4,7 @@ import "../styles/animations.css";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
+import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 
 // Props individuales
@@ -463,6 +464,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       <slot />
     </main>
     <Footer />
+    <WhatsAppWidget />
 
     <!-- Analytics loaded at end for better performance -->
     <script
