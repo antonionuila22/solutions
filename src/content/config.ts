@@ -70,11 +70,50 @@ const projects = defineCollection({
     }),
 });
 
+// Regions (States, Departments, Provinces - intermediate level between country and city)
+const regions = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        name: z.string(), // "Florida", "Cortés", "Jalisco"
+        code: z.string(), // "FL", "COR", "JAL"
+        country: z.string(), // slug of countryarea: "usa", "honduras", "mexico"
+        img: z.string().optional(),
+        imageAlt: z.string().optional(),
+        population: z.string().optional(),
+        capital: z.string().optional(), // Capital city of the region
+        timezone: z.string().optional(),
+        keywords: z.array(z.string()).optional(),
+        featured: z.boolean().default(false),
+    }),
+});
+
+// Locations (City Landing Pages for SEO)
+const locations = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        city: z.string(),
+        state: z.string(), // Full name: "Florida", "Cortés"
+        stateCode: z.string(), // "FL", "COR", etc.
+        country: z.string(), // slug of countryarea: "usa", "honduras"
+        region: z.string().optional(), // slug of region (for linking)
+        img: z.string(),
+        imageAlt: z.string(),
+        population: z.string().optional(),
+        timezone: z.string().optional(),
+        keywords: z.array(z.string()).optional(),
+        featured: z.boolean().default(false),
+    }),
+});
+
 // Exportá todas las colecciones
 export const collections = {
     blog,
     books,
     products,
     countryareas,
+    regions,
     projects,
+    locations,
 };

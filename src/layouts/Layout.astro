@@ -4,9 +4,10 @@ import "../styles/animations.css";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
+import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 
 // Props individuales
-let { title, description, keywords, image, article, noindex, author, publishedTime, tags, categories } = Astro.props;
+let { title, description, keywords, image, article, noindex, author, publishedTime, tags, categories, breadcrumbNames } = Astro.props;
 
 // Valores por defecto mejorados
 title =
@@ -37,6 +38,13 @@ if (publishedTime) {
     }
   }
 }
+
+// Generate dynamic breadcrumbs based on current URL
+const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
+  canonicalUrl,
+  "https://codebrand.us",
+  breadcrumbNames || {}
+);
 ---
 
 <!doctype html>
@@ -374,21 +382,8 @@ if (publishedTime) {
       }
     </script>
 
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://codebrand.us"
-          }
-        ]
-      }
-    </script>
+    <!-- Dynamic BreadcrumbList Schema -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
     <!-- WebSite Schema with Search -->
     <script type="application/ld+json" is:inline>
@@ -408,31 +403,42 @@ if (publishedTime) {
       }
     </script>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9"
-    ></script>
+    <!-- Google Analytics - Deferred for Core Web Vitals -->
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      // Load GA after page load for better LCP/FID
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9';
+          script.async = true;
+          document.head.appendChild(script);
 
-      gtag("config", "G-T9HKBF45M9");
+          script.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-T9HKBF45M9', { send_page_view: true });
+          };
+        }, 100);
+      });
     </script>
 
-    <!-- Google Tag Manager -->
-    <script defer is:inline>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TJCP2CWN");
+    <!-- Google Tag Manager - Deferred for Core Web Vitals -->
+    <script is:inline>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-TJCP2CWN");
+        }, 150);
+      });
     </script>
     <!-- End Google Tag Manager -->
 

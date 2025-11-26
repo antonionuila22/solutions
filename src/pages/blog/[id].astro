@@ -3,6 +3,7 @@ export const prerender = true;
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { createArticleSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 export async function getStaticPaths() {
   const blog = await getCollection("blog");
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { post, blog } = Astro.props;
-const { data } = post;
+const { data, body } = post;
 const {
   title,
   description,
@@ -28,6 +29,9 @@ const {
 } = data;
 
 const { Content } = await render(post);
+
+// Calculate word count for SEO
+const wordCount = body ? body.split(/\s+/).filter(Boolean).length : 0;
 
 // Formato de fecha legible
 let formattedDate = "";
@@ -78,38 +82,27 @@ const isoDate = date instanceof Date ? date.toISOString() : (typeof date === "st
 // Article URL
 const articleUrl = `${baseUrl}/blog/${post.slug}`;
 
-// Structured Data for Article
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": title,
-  "description": description,
-  "image": absoluteImage,
-  "datePublished": isoDate,
-  "dateModified": isoDate,
-  "author": {
-    "@type": "Person",
-    "name": author || "Codebrand Team",
-    "url": "https://codebrand.us"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Codebrand Digital Agency",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://codebrand.us/iconcodebrand.svg"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": articleUrl
-  },
-  "url": articleUrl,
-  "keywords": seoKeywords,
-  ...(readtime && { "timeRequired": `PT${readtime}M` }),
-  ...(categories && categories.length > 0 && { "articleSection": categories }),
-  ...(tags && tags.length > 0 && { "keywords": tags.join(", ") })
-};
+// Enhanced Structured Data using schema utility
+const structuredData = createArticleSchema({
+  headline: title,
+  description: description || "",
+  image: absoluteImage,
+  datePublished: isoDate,
+  dateModified: isoDate, // Could be different if you track modifications
+  author: author,
+  url: articleUrl,
+  keywords: [...(categories || []), ...(tags || [])],
+  articleSection: categories?.[0],
+  wordCount: wordCount,
+  readingTime: readtime || Math.ceil(wordCount / 200), // Estimate if not provided
+});
+
+// Breadcrumb schema for blog post
+const breadcrumbData = createBreadcrumbSchema([
+  { name: "Home", url: baseUrl },
+  { name: "Blog", url: `${baseUrl}/blog` },
+  { name: title, url: articleUrl },
+]);
 ---
 
 <Layout
@@ -125,6 +118,8 @@ const structuredData = {
 >
   <!-- Article Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+  <!-- Article Breadcrumb Schema -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbData)} />
   <article class="font-poppins text-black">
     <!-- Hero Section -->
     <section class="relative w-full">

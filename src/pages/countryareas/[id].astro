@@ -7,19 +7,45 @@ import Layout from "../../layouts/Layout.astro";
 // 1. Generamos las rutas estáticas basadas en los slugs de cada país
 export async function getStaticPaths() {
     const countries = await getCollection("countryareas");
+    const regions = await getCollection("regions");
+    const locations = await getCollection("locations");
 
-    return countries.map((country) => ({
-        params: { id: country.slug },
-        props: { country, countries }, // Pasamos también todas las entradas
-    }));
+    return countries.map((country) => {
+        // Get regions for this country
+        const countryRegions = regions.filter(r => r.data.country === country.slug);
+        // Get cities for this country
+        const countryCities = locations.filter(l => l.data.country === country.slug);
+
+        return {
+            params: { id: country.slug },
+            props: { country, countries, regions: countryRegions, cities: countryCities },
+        };
+    });
 }
 
 // 2. Props del archivo .md para ese país
-const { country, countries } = Astro.props;
+const { country, countries, regions: countryRegions, cities: countryCities } = Astro.props;
 const { data } = country;
 const { title, name, region, code, img, description } = data;
 
 const { Content } = await render(country);
+
+// Sort regions and cities
+const sortedRegions = countryRegions.sort((a, b) => {
+    if (a.data.featured && !b.data.featured) return -1;
+    if (!a.data.featured && b.data.featured) return 1;
+    return a.data.name.localeCompare(b.data.name);
+});
+
+const featuredCities = countryCities
+    .filter(c => c.data.featured)
+    .sort((a, b) => a.data.city.localeCompare(b.data.city))
+    .slice(0, 6);
+
+// Count cities per region
+const getCityCount = (regionSlug: string) => {
+    return countryCities.filter(loc => loc.data.region === regionSlug).length;
+};
 ---
 
 <Layout title={title}>
@@ -88,6 +114,134 @@ const { Content } = await render(country);
         <section class="markdown-content border-t pt-12">
             <Content />
         </section>
+
+        <!-- Regions Section (States/Departments) -->
+        {sortedRegions.length > 0 && (
+            <section class="bg-gradient-to-b from-white to-slate-50 py-16 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-12">
+                        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
+                            Explore by Region
+                        </span>
+                        <h2 class="text-3xl font-bold text-cyan-900 mt-2">
+                            {code === "EN" ? "States" : "Regions"} We Serve in {name}
+                        </h2>
+                        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                            Select a {code === "EN" ? "state" : "region"} to find web development services and cities in that area.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {sortedRegions.map((regionItem) => {
+                            const cityCount = getCityCount(regionItem.slug);
+                            return (
+                                <a
+                                    href={`/regions/${regionItem.slug}`}
+                                    class="group bg-white p-5 rounded-xl shadow-sm hover:shadow-lg border border-gray-100 hover:border-orange-300 transition-all duration-300"
+                                >
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xl font-bold text-cyan-600 group-hover:text-orange-500 transition-colors">
+                                            {regionItem.data.code}
+                                        </span>
+                                        {regionItem.data.featured && (
+                                            <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                        )}
+                                    </div>
+                                    <h3 class="text-base font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
+                                        {regionItem.data.name}
+                                    </h3>
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        {cityCount} {cityCount === 1 ? 'city' : 'cities'}
+                                    </p>
+                                </a>
+                            );
+                        })}
+                    </div>
+
+                    <div class="text-center mt-8">
+                        <a
+                            href="/regions"
+                            class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
+                        >
+                            View All Regions
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        )}
+
+        <!-- Featured Cities Section -->
+        {featuredCities.length > 0 && (
+            <section class="py-16">
+                <div class="text-center mb-12">
+                    <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
+                        Top Cities
+                    </span>
+                    <h2 class="text-3xl font-bold text-cyan-900 mt-2">
+                        Featured Cities in {name}
+                    </h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                        Explore web development services in our most popular cities.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {featuredCities.map((city) => (
+                        <a
+                            href={`/locations/${city.slug}`}
+                            class="group bg-gradient-to-br from-white to-cyan-50 p-6 rounded-2xl shadow-md hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300"
+                        >
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center group-hover:from-orange-500 group-hover:to-orange-600 transition-all">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">
+                                    {city.data.stateCode}
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-cyan-900 mb-2 group-hover:text-orange-600 transition-colors">
+                                {city.data.city}
+                            </h3>
+
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                {city.data.description}
+                            </p>
+
+                            {city.data.population && (
+                                <p class="text-xs text-gray-500 mb-3">
+                                    Population: {city.data.population}
+                                </p>
+                            )}
+
+                            <span class="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                                View Services
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    ))}
+                </div>
+
+                <div class="text-center mt-8">
+                    <a
+                        href="/locations"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-900 hover:bg-cyan-800 text-white rounded-xl font-semibold transition-colors"
+                    >
+                        View All {countryCities.length} Cities
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        )}
 
         <!-- Recomendaciones dinámicas -->
         <section class="bg-white py-20 font-poppins w-full">

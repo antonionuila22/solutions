@@ -1,0 +1,142 @@
+---
+export const prerender = true;
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { createBreadcrumbSchema } from "../../utils/schema";
+
+// Get all regions and locations
+const regions = await getCollection("regions");
+const locations = await getCollection("locations");
+const countries = await getCollection("countryareas");
+
+// Group regions by country
+const regionsByCountry = regions.reduce((acc, region) => {
+  const countrySlug = region.data.country;
+  if (!acc[countrySlug]) acc[countrySlug] = [];
+  acc[countrySlug].push(region);
+  return acc;
+}, {} as Record<string, typeof regions>);
+
+// Count cities per region
+const getCityCount = (regionSlug: string) => {
+  return locations.filter(loc => loc.data.region === regionSlug).length;
+};
+
+// SEO
+const title = "Web Development by Region | States & Departments | Codebrand";
+const description = "Find professional web development services in your state, department, or region. Codebrand serves businesses across multiple countries with custom websites and web applications.";
+const baseUrl = "https://codebrand.us";
+
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: baseUrl },
+  { name: "Regions", url: `${baseUrl}/regions` },
+]);
+---
+
+<Layout
+  title={title}
+  description={description}
+  image="/photos/webservice.webp"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+          </svg>
+          {regions.length} Regions Served
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-cyan-900 mb-6">
+          Web Development by <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Region</span>
+        </h1>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Find specialized web development services for your state, department, or province. We serve businesses across multiple countries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regions by Country -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {Object.entries(regionsByCountry).map(([countrySlug, countryRegions]) => {
+        const country = countries.find(c => c.slug === countrySlug);
+        const sortedRegions = countryRegions.sort((a, b) => {
+          if (a.data.featured && !b.data.featured) return -1;
+          if (!a.data.featured && b.data.featured) return 1;
+          return a.data.name.localeCompare(b.data.name);
+        });
+
+        return (
+          <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+              <a href={`/countryareas/${countrySlug}`} class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-orange-100 transition-colors">
+                  <span class="text-cyan-800 font-bold group-hover:text-orange-600">{country?.data.code}</span>
+                </div>
+                <h2 class="text-2xl font-bold text-cyan-900 group-hover:text-orange-600 transition-colors">
+                  {country?.data.name || countrySlug}
+                </h2>
+              </a>
+              <div class="flex-grow h-px bg-gradient-to-r from-cyan-200 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {sortedRegions.map((region) => {
+                const cityCount = getCityCount(region.slug);
+                return (
+                  <a
+                    href={`/regions/${region.slug}`}
+                    class="group bg-gradient-to-br from-white to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-lg border border-cyan-100 hover:border-orange-300 transition-all duration-300"
+                  >
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-2xl font-bold text-cyan-600 group-hover:text-orange-500 transition-colors">
+                        {region.data.code}
+                      </span>
+                      {region.data.featured && (
+                        <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">
+                          Featured
+                        </span>
+                      )}
+                    </div>
+                    <h3 class="text-lg font-bold text-cyan-900 mb-1 group-hover:text-orange-600 transition-colors">
+                      {region.data.name}
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-3">
+                      {cityCount} {cityCount === 1 ? 'city' : 'cities'} served
+                    </p>
+                    <span class="inline-flex items-center gap-1 text-orange-600 text-sm font-medium">
+                      View Region
+                      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-br from-cyan-900 to-cyan-800 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">
+        Don't See Your Region?
+      </h2>
+      <p class="text-xl text-cyan-100 mb-8">
+        We serve clients worldwide. Contact us for services in any location.
+      </p>
+      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg transition-all">
+        Get Free Quote
+      </a>
+    </div>
+  </section>
+</Layout>
