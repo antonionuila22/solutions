@@ -29,6 +29,7 @@ We'll break it down by stage, show you the tools we use, provide real examples, 
 A sales funnel is a **visual representation of the customer journey** from first awareness to final purchase decision. It's called a "funnel" because many people enter at the top, but only a fraction make it to the bottom—becoming paying customers.
 
 **Why most funnels fail:**
+
 - ❌ No clear stages or handoffs
 - ❌ Messaging mismatch at each stage
 - ❌ Lack of follow-up or nurturing
@@ -36,6 +37,7 @@ A sales funnel is a **visual representation of the customer journey** from first
 - ❌ Trying to sell too early
 
 **Why our funnel works:**
+
 - ✅ Clear stages with specific goals
 - ✅ Value-first messaging at every step
 - ✅ Automated nurturing that feels personal
@@ -43,6 +45,7 @@ A sales funnel is a **visual representation of the customer journey** from first
 - ✅ Focus on building trust before asking for the sale
 
 **Our funnel has 4 primary stages:**
+
 1. **Awareness (Attraction)**
 2. **Interest (Capture)**
 3. **Consideration (Nurture)**
@@ -62,6 +65,7 @@ They focus on getting ANY traffic, not the RIGHT traffic. 10,000 unqualified vis
 ### What We Do:
 
 **Content Marketing (Organic)**:
+
 - **Educational blog posts** targeting problem-aware keywords
   - Example: "How to increase website conversion rates" (for business owners needing web design)
 - **SEO-optimized guides** that rank on Google
@@ -69,6 +73,7 @@ They focus on getting ANY traffic, not the RIGHT traffic. 10,000 unqualified vis
 - **Social media posts** (LinkedIn, Instagram, Facebook) sharing insights
 
 **Paid Advertising (Targeted)**:
+
 - **Facebook/Instagram Ads** with precise targeting (interests, behaviors, demographics)
 - **Google Ads** targeting high-intent keywords
 - **LinkedIn Ads** for B2B targeting (job titles, company size, industries)
@@ -77,21 +82,26 @@ They focus on getting ANY traffic, not the RIGHT traffic. 10,000 unqualified vis
 **Key Principles:**
 
 ✅ **Speak to the problem, not your product**:
+
 - Instead of "We build websites," we say "Is your website losing you customers? Here's why"
 
 ✅ **Use attention-grabbing headlines**:
+
 - "5 Design Mistakes Costing You Sales" > "Our Web Design Services"
 
 ✅ **Target keywords people actually search**:
+
 - Use tools like Google Search Console, AnswerThePublic, SEMrush to find real search terms
 
 ✅ **Provide value first**:
+
 - Every piece of content should educate, entertain, or solve a problem BEFORE pitching
 
 **Real Example**:
 Our blog post "SEO Checklist for Small Businesses" ranks on Google, bringing 500+ qualified visitors per month. These aren't random clicks—they're business owners actively seeking SEO help. That's qualified traffic.
 
 **Metrics We Track**:
+
 - Traffic volume
 - Traffic sources
 - Bounce rate (are people engaged?)
@@ -109,7 +119,7 @@ Want to drive qualified traffic to your business? [Our digital marketing service
 **The Challenge**:
 Most visitors won't buy on their first visit. You need a way to stay in touch and continue the conversation.
 
-### What We Do:
+### What We Do
 
 **Lead Magnets (Value Exchange)**:
 We offer something valuable in exchange for contact info:
@@ -124,6 +134,7 @@ We offer something valuable in exchange for contact info:
 **Capture Mechanisms**:
 
 📝 **Landing Pages**:
+
 - Dedicated pages focused on ONE offer
 - Clear headline explaining the benefit
 - Short form (name + email only—or even just email)
@@ -131,17 +142,20 @@ We offer something valuable in exchange for contact info:
 - No navigation distractions
 
 🪟 **Pop-ups (Strategic, Not Annoying)**:
+
 - Exit-intent pop-ups (when visitor is about to leave)
 - Scroll-triggered (after engaging with content)
 - Time-delayed (after 30+ seconds on page)
 - Mobile-friendly slide-ins
 
 💬 **WhatsApp/Chat Integration**:
+
 - Floating WhatsApp button
 - Live chat for immediate questions
 - Chatbot qualifying leads 24/7
 
 📊 **Interactive Tools**:
+
 - ROI calculators
 - Quizzes ("What type of website do you need?")
 - Cost estimators
@@ -157,6 +171,7 @@ We offer something valuable in exchange for contact info:
 Our "Free Website Audit" landing page converts at 32% (industry average is 2-5%). Why? Clear value, minimal form fields, and instant delivery.
 
 **Metrics We Track**:
+
 - Conversion rate (visitors → leads)
 - Cost per lead (for paid traffic)
 - Lead source (which channels convert best)
@@ -175,14 +190,13 @@ Most businesses capture leads and then... nothing. Or they immediately try to se
 
 **The Reality**: **Only 3% of your market is actively buying right now** (Chet Holmes). The other 97% aren't ready yet—but they will be. Nurturing keeps you top-of-mind for when they are.
 
-### What We Do:
+### What We Do
 
 **Email Nurture Sequences (Automated)**:
 
 We use segmented email sequences that deliver value over time:
 
 **Sequence Example: New Lead from "Free Website Audit"**
-
 📧 **Email 1** (Immediate): Deliver the audit + welcome
 📧 **Email 2** (Day 2): Educational content: "5 Website Fixes You Can Make Today"
 📧 **Email 3** (Day 5): Case study: "How We Increased Client's Conversions by 215%"

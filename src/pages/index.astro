@@ -6,15 +6,12 @@ import CardService from "../components/CardService.astro";
 import Whyus from "../components/whyus.astro";
 import Pricing from "../components/Pricing.astro";
 import Bannersecond from "../components/BannerSecond.astro";
-import TabComponent from "../components/TabComp.tsx";
 import Faq from "../components/Faq.astro";
-import { Globe } from "../components/magicui/globe.tsx";
 import Testimonial from "../components/testimonial.tsx";
-import Brand from "../components/Brand.tsx";
 import Beam from "../components/beam.tsx";
-import Button from "@/components/Button.astro";
 import Ourteam from "@/components/Ourteam.astro";
 import PartnershipBanner from "@/components/PartnershipBanner.astro";
+import Button from "@/components/Button.astro";
 ---
 
 <Layout
@@ -24,9 +21,30 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
   image="/photos/bannercodebrand.webp"
 >
   <Hero />
-  <section>
-    <Globe client:idle />
+
+  <!-- Social Proof - Testimonials (moved up for trust) -->
+  <section class="py-16 lg:py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6">
+          <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <span class="text-sm font-medium text-cyan-400">Client Success Stories</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Trusted by <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-orange-400">500+ Businesses</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          See what our clients say about working with our Honduras-based team
+        </p>
+      </div>
+    </div>
+    <Testimonial client:visible />
   </section>
+
+  <!-- Transition gradient from dark to light -->
+  <div class="h-24 bg-gradient-to-b from-slate-950 to-white"></div>
 
   <!-- Honduras to USA Value Proposition Section -->
   <section
@@ -37,32 +55,32 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       <!-- Header -->
       <div class="text-center mb-16 value-header">
         <div
-          class="inline-flex items-center gap-3 px-5 py-2.5 bg-gray-100 rounded-full mb-6"
+          class="inline-flex items-center gap-3 px-5 py-2.5 bg-slate-100 rounded-full mb-6"
         >
           <span class="text-2xl">🇭🇳</span>
           <span
-            class="text-sm font-semibold text-gray-700 uppercase tracking-wide"
+            class="text-sm font-semibold text-slate-700 uppercase tracking-wide"
           >
             Honduras → United States
           </span>
           <span class="text-2xl">🇺🇸</span>
         </div>
         <h2
-          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight"
         >
           Premium Web Development<br />
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600"
+            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-cyan-600"
           >
             at 60% Lower Cost
           </span>
         </h2>
         <p
-          class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+          class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
         >
           Why pay $15,000+ for <a
             href="/web-development"
-            class="text-cyan-600 hover:text-cyan-700 font-semibold"
+            class="text-cyan-500 hover:text-cyan-500 font-semibold"
             >web development</a
           > in the US when you can get the same professional quality from our certified
           team in Honduras for a fraction of the cost?
@@ -73,10 +91,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 stats-grid">
         <div class="stat-card group">
           <div
-            class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
+            class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
           >
             <div
-              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
+              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
             >
               <svg
                 class="w-8 h-8 text-white"
@@ -92,11 +110,11 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 ></path>
               </svg>
             </div>
-            <div class="text-5xl font-bold text-gray-900 mb-3">60%</div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            <div class="text-5xl font-bold text-slate-900 mb-3">60%</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">
               Cost Savings
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-slate-600 leading-relaxed">
               Save thousands compared to US agency rates while maintaining the
               same professional quality standards.
             </p>
@@ -105,10 +123,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 
         <div class="stat-card group">
           <div
-            class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
+            class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
           >
             <div
-              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
+              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
             >
               <svg
                 class="w-8 h-8 text-white"
@@ -123,11 +141,11 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <div class="text-5xl font-bold text-gray-900 mb-3">100%</div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            <div class="text-5xl font-bold text-slate-900 mb-3">100%</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">
               Same Quality
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-slate-600 leading-relaxed">
               Our certified professionals deliver the exact same quality as US
               agencies. Same standards, better prices.
             </p>
@@ -136,10 +154,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 
         <div class="stat-card group">
           <div
-            class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
+            class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 h-full"
           >
             <div
-              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
+              class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300"
             >
               <svg
                 class="w-8 h-8 text-white"
@@ -154,11 +172,11 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <div class="text-5xl font-bold text-gray-900 mb-3">24/7</div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            <div class="text-5xl font-bold text-slate-900 mb-3">24/7</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">
               US Time Support
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-slate-600 leading-relaxed">
               Work seamlessly with our bilingual team. We operate in US time
               zones for smooth collaboration.
             </p>
@@ -172,16 +190,16 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       >
         <!-- Why Choose Us -->
         <div class="lg:col-span-3 space-y-6">
-          <h3 class="text-3xl font-bold text-gray-900 mb-8">
+          <h3 class="text-3xl font-bold text-slate-900 mb-8">
             Why US Companies Choose Codebrand
           </h3>
 
           <div class="space-y-4 benefits-list">
             <div
-              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+              class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
             >
               <div
-                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center"
+                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center"
               >
                 <svg
                   class="w-5 h-5 text-white"
@@ -194,10 +212,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">
+                <h4 class="font-semibold text-slate-900 mb-1">
                   Certified Professional Team
                 </h4>
-                <p class="text-gray-600 text-sm leading-relaxed">
+                <p class="text-slate-600 text-sm leading-relaxed">
                   Our developers hold certifications from Udemy, Platzi, and
                   Adobe, ensuring cutting-edge expertise in modern technologies.
                 </p>
@@ -205,7 +223,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             </div>
 
             <div
-              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+              class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
             >
               <div
                 class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center"
@@ -222,10 +240,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">
+                <h4 class="font-semibold text-slate-900 mb-1">
                   Export-Quality Services
                 </h4>
-                <p class="text-gray-600 text-sm leading-relaxed">
+                <p class="text-slate-600 text-sm leading-relaxed">
                   We specialize in serving international clients with the same
                   standards expected by Fortune 500 companies.
                 </p>
@@ -233,7 +251,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             </div>
 
             <div
-              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+              class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
             >
               <div
                 class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center"
@@ -249,10 +267,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">
+                <h4 class="font-semibold text-slate-900 mb-1">
                   Managed Honduran Talent
                 </h4>
-                <p class="text-gray-600 text-sm leading-relaxed">
+                <p class="text-slate-600 text-sm leading-relaxed">
                   We handle all talent management, so you get premium results
                   without the overhead costs.
                 </p>
@@ -260,7 +278,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             </div>
 
             <div
-              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+              class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
             >
               <div
                 class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center"
@@ -277,10 +295,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">
+                <h4 class="font-semibold text-slate-900 mb-1">
                   Bilingual Communication
                 </h4>
-                <p class="text-gray-600 text-sm leading-relaxed">
+                <p class="text-slate-600 text-sm leading-relaxed">
                   Fluent English-speaking team ensures clear communication
                   throughout your project lifecycle.
                 </p>
@@ -288,7 +306,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             </div>
 
             <div
-              class="benefit-item flex items-start gap-4 p-5 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+              class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
             >
               <div
                 class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center"
@@ -306,10 +324,10 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">
+                <h4 class="font-semibold text-slate-900 mb-1">
                   Proven Track Record
                 </h4>
-                <p class="text-gray-600 text-sm leading-relaxed">
+                <p class="text-slate-600 text-sm leading-relaxed">
                   500+ successful projects delivered to international clients
                   across various industries.
                 </p>
@@ -322,26 +340,26 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         <div class="lg:col-span-2 price-comparison">
           <div class="sticky top-8">
             <div
-              class="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg"
+              class="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 rounded-2xl p-8 shadow-lg"
             >
               <div class="text-center mb-8">
-                <h4 class="text-2xl font-bold text-gray-900 mb-2">
+                <h4 class="text-2xl font-bold text-slate-900 mb-2">
                   Price Comparison
                 </h4>
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-slate-600">
                   Professional Website Development
                 </p>
               </div>
 
               <div class="space-y-5">
                 <div
-                  class="bg-white rounded-xl p-6 border-2 border-gray-200 shadow-sm"
+                  class="bg-white rounded-xl p-6 border-2 border-slate-200 shadow-sm"
                 >
                   <div class="flex items-center justify-between mb-3">
                     <div>
-                      <p class="text-sm text-gray-500 mb-1">US Agency</p>
-                      <p class="text-3xl font-bold text-gray-900">
-                        $15,000<span class="text-lg text-gray-400">+</span>
+                      <p class="text-sm text-slate-500 mb-1">US Agency</p>
+                      <p class="text-3xl font-bold text-slate-900">
+                        $15,000<span class="text-lg text-slate-400">+</span>
                       </p>
                     </div>
                     <div
@@ -361,7 +379,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                       </svg>
                     </div>
                   </div>
-                  <p class="text-xs text-gray-500">Average US market rate</p>
+                  <p class="text-xs text-slate-500">Average US market rate</p>
                 </div>
 
                 <div class="relative">
@@ -369,18 +387,18 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                     class="absolute inset-0 flex items-center"
                     aria-hidden="true"
                   >
-                    <div class="w-full border-t border-gray-300"></div>
+                    <div class="w-full border-t border-slate-300"></div>
                   </div>
                   <div class="relative flex justify-center">
                     <span
-                      class="px-3 bg-gray-50 text-sm font-semibold text-gray-700"
+                      class="px-3 bg-slate-50 text-sm font-semibold text-slate-700"
                       >VS</span
                     >
                   </div>
                 </div>
 
                 <div
-                  class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300"
+                  class="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300"
                 >
                   <div class="flex items-center justify-between mb-3">
                     <div>
@@ -411,11 +429,11 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                   class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-6 border-2 border-green-200"
                 >
                   <div class="text-center">
-                    <p class="text-sm text-gray-600 mb-2">You Save</p>
+                    <p class="text-sm text-slate-600 mb-2">You Save</p>
                     <p class="text-4xl font-bold text-green-600 mb-1">
                       $9,000+
                     </p>
-                    <p class="text-xs text-gray-500">60% cost reduction</p>
+                    <p class="text-xs text-slate-500">60% cost reduction</p>
                   </div>
                 </div>
               </div>
@@ -428,7 +446,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
       <div class="text-center mt-16 cta-section">
         <a
           href="/contact"
-          class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+          class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white rounded-xl font-bold text-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
         >
           Get Your Free Quote Today
           <svg
@@ -444,7 +462,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
               d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
-        <p class="text-gray-500 mt-5 text-sm">
+        <p class="text-slate-500 mt-5 text-sm">
           Join 500+ US businesses saving thousands on quality web development
         </p>
       </div>
@@ -541,22 +559,22 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
   </script>
 
   <!-- Technologies Section -->
-  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+  <section class="py-16 lg:py-24 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4"
         >
           Powered by <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600"
+            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-cyan-600"
             >Modern Technologies</span
           >
         </h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
           Our certified developers master 20+ cutting-edge technologies to
           deliver world-class <a
             href="/web-development"
-            class="text-cyan-600 hover:text-cyan-700 font-semibold"
+            class="text-cyan-500 hover:text-cyan-600 font-semibold"
             >software solutions</a
           >
         </p>
@@ -574,7 +592,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="React"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">React</span>
+          <span class="text-sm font-semibold text-slate-700">React</span>
         </div>
 
         <!-- Next.js -->
@@ -586,7 +604,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="Next.js"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">Next.js</span>
+          <span class="text-sm font-semibold text-slate-700">Next.js</span>
         </div>
 
         <!-- Node.js -->
@@ -598,7 +616,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="Node.js"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">Node.js</span>
+          <span class="text-sm font-semibold text-slate-700">Node.js</span>
         </div>
 
         <!-- TypeScript -->
@@ -610,7 +628,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="TypeScript"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">TypeScript</span>
+          <span class="text-sm font-semibold text-slate-700">TypeScript</span>
         </div>
 
         <!-- Python -->
@@ -622,7 +640,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="Python"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">Python</span>
+          <span class="text-sm font-semibold text-slate-700">Python</span>
         </div>
 
         <!-- Tailwind CSS -->
@@ -634,7 +652,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="Tailwind CSS"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">Tailwind CSS</span>
+          <span class="text-sm font-semibold text-slate-700">Tailwind CSS</span>
         </div>
 
         <!-- PostgreSQL -->
@@ -646,7 +664,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="PostgreSQL"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">PostgreSQL</span>
+          <span class="text-sm font-semibold text-slate-700">PostgreSQL</span>
         </div>
 
         <!-- MongoDB -->
@@ -658,7 +676,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="MongoDB"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">MongoDB</span>
+          <span class="text-sm font-semibold text-slate-700">MongoDB</span>
         </div>
 
         <!-- GraphQL -->
@@ -670,7 +688,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="GraphQL"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">GraphQL</span>
+          <span class="text-sm font-semibold text-slate-700">GraphQL</span>
         </div>
 
         <!-- AWS -->
@@ -678,7 +696,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
           <img src="/icons/aws-svgrepo-com.svg" alt="AWS" class="w-16 h-16" />
-          <span class="text-sm font-semibold text-gray-700">AWS</span>
+          <span class="text-sm font-semibold text-slate-700">AWS</span>
         </div>
 
         <!-- Docker -->
@@ -690,7 +708,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="Docker"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">Docker</span>
+          <span class="text-sm font-semibold text-slate-700">Docker</span>
         </div>
 
         <!-- Git -->
@@ -698,7 +716,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
           <img src="/icons/git-svgrepo-com.svg" alt="Git" class="w-16 h-16" />
-          <span class="text-sm font-semibold text-gray-700">Git</span>
+          <span class="text-sm font-semibold text-slate-700">Git</span>
         </div>
 
         <!-- Figma -->
@@ -706,7 +724,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
           <img src="/icons/figma.svg" alt="Figma" class="w-16 h-16" />
-          <span class="text-sm font-semibold text-gray-700">Figma</span>
+          <span class="text-sm font-semibold text-slate-700">Figma</span>
         </div>
 
         <!-- Shopify -->
@@ -714,7 +732,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
           <img src="/icons/shopify.svg" alt="Shopify" class="w-16 h-16" />
-          <span class="text-sm font-semibold text-gray-700">Shopify</span>
+          <span class="text-sm font-semibold text-slate-700">Shopify</span>
         </div>
 
         <!-- WordPress -->
@@ -722,7 +740,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
           <img src="/icons/wordpress.svg" alt="WordPress" class="w-16 h-16" />
-          <span class="text-sm font-semibold text-gray-700">WordPress</span>
+          <span class="text-sm font-semibold text-slate-700">WordPress</span>
         </div>
 
         <!-- Flutter -->
@@ -734,7 +752,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             alt="Flutter"
             class="w-16 h-16"
           />
-          <span class="text-sm font-semibold text-gray-700">Flutter</span>
+          <span class="text-sm font-semibold text-slate-700">Flutter</span>
         </div>
 
         <!-- Swift -->
@@ -742,7 +760,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
           <img src="/icons/swift.svg" alt="Swift" class="w-16 h-16" />
-          <span class="text-sm font-semibold text-gray-700">Swift</span>
+          <span class="text-sm font-semibold text-slate-700">Swift</span>
         </div>
 
         <!-- Kotlin -->
@@ -750,26 +768,26 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           class="flex flex-col items-center gap-3 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
           <img src="/icons/kotlin.svg" alt="Kotlin" class="w-16 h-16" />
-          <span class="text-sm font-semibold text-gray-700">Kotlin</span>
+          <span class="text-sm font-semibold text-slate-700">Kotlin</span>
         </div>
       </div>
 
       <div class="text-center mt-12">
-        <p class="text-gray-600 text-lg">
-          <strong class="text-gray-900">20+ Technologies</strong> mastered by our
+        <p class="text-slate-600 text-lg">
+          <strong class="text-slate-900">20+ Technologies</strong> mastered by our
           certified team
         </p>
         <div class="flex flex-wrap justify-center gap-3 mt-6">
           <span
-            class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200"
+            class="px-4 py-2 bg-white rounded-full text-sm text-slate-700 shadow-sm border border-slate-200"
             >Udemy Certified</span
           >
           <span
-            class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200"
+            class="px-4 py-2 bg-white rounded-full text-sm text-slate-700 shadow-sm border border-slate-200"
             >Platzi Certified</span
           >
           <span
-            class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 shadow-sm border border-gray-200"
+            class="px-4 py-2 bg-white rounded-full text-sm text-slate-700 shadow-sm border border-slate-200"
             >Adobe Certified</span
           >
         </div>
@@ -779,7 +797,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 
   <!-- Services Section -->
   <section class="py-30 flex flex-col gap-20">
-    <h2 class="text-4xl font-bold text-cyan-900 text-center">
+    <h2 class="text-4xl font-bold text-slate-900 text-center">
       Smart Solutions, <span class="text-orange-500">Real Impact</span>
     </h2>
 
@@ -853,56 +871,54 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 
   <section class="relative bg-white py-20">
     <div
-      class="flex flex-col items-center justify-center text-center max-w-5xl mx-auto"
+      class="flex flex-col items-center justify-center text-center max-w-5xl mx-auto px-4"
     >
       <h2
-        class="text-4xl md:text-5xl font-extrabold text-cyan-900 leading-tight"
+        class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight"
       >
-        Smart Automations, Real Impact
+        Smart Automations, <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-cyan-600">Real Impact</span>
       </h2>
-      <p class="mt-6 text-md md:text-md text-gray-700">
+      <p class="mt-6 text-md md:text-lg text-slate-600 max-w-3xl">
         Tired of wasting time on leads that don't convert? We build intelligent
         systems that deliver results—saving you time, reducing costs, and
         driving real performance. From CRMs to automated <a
           href="/digital-marketing"
-          class="text-cyan-600 hover:text-cyan-700 font-semibold"
+          class="text-cyan-500 hover:text-cyan-600 font-semibold"
           >marketing workflows</a
         >, we'll connect you with the right tools to help your business run more
         efficiently and grow faster.
       </p>
 
       <div class="mt-8">
-        <Button text="Get a Free Consultation" href="/contact" />
+        <Button text="Get Your Free Quote" href="/contact" />
       </div>
     </div>
     <!-- Beam visual component rendered only on client side -->
     <Beam client:idle />
   </section>
 
+  <!-- Transition gradient from light to dark -->
+  <div class="h-16 bg-gradient-to-b from-white to-[#0d0f1a]"></div>
+
   <Bannersecond
     subtitle="We boost your brand"
     title="Transform Your Vision into Reality"
-    description="Ready to grow? It's time to take action. We create digital experiences that convert potential into measurable results through strategic <a href='/services/ux-ui' class='text-cyan-600 hover:text-cyan-700 font-semibold'>design</a> and smart <a href='/web-development' class='text-cyan-600 hover:text-cyan-700 font-semibold'>technology</a>. Your brand deserves more than just maintenance—it deserves momentum."
+    description="Ready to grow? It's time to take action. We create digital experiences that convert potential into measurable results through strategic <a href='/services/ux-ui' class='text-cyan-500 hover:text-cyan-600 font-semibold'>design</a> and smart <a href='/web-development' class='text-cyan-500 hover:text-cyan-600 font-semibold'>technology</a>. Your brand deserves more than just maintenance—it deserves momentum."
     imgUrl="/photos/bannercodebrand.webp"
   />
+
+  <!-- Transition gradient from dark to light -->
+  <div class="h-16 bg-gradient-to-b from-[#1a1d2e] to-white"></div>
 
   <Banner
     subtitle="More Than Creatives—We're Your Partners"
     title="Your Design and Technology Expert Team"
-    description="At Codebrand, we don't just execute ideas—we refine and elevate them. We help your company set new standards in style, performance, and impact through exceptional <a href='/services/ux-ui' class='text-cyan-600 hover:text-cyan-700 font-semibold'>design</a>, strategic <a href='/branding' class='text-cyan-600 hover:text-cyan-700 font-semibold'>branding</a>, and results-driven <a href='/digital-marketing' class='text-cyan-600 hover:text-cyan-700 font-semibold'>digital marketing</a>."
+    description="At Codebrand, we don't just execute ideas—we refine and elevate them. We help your company set new standards in style, performance, and impact through exceptional <a href='/services/ux-ui' class='text-cyan-500 hover:text-cyan-600 font-semibold'>design</a>, strategic <a href='/branding' class='text-cyan-500 hover:text-cyan-600 font-semibold'>branding</a>, and results-driven <a href='/digital-marketing' class='text-cyan-500 hover:text-cyan-600 font-semibold'>digital marketing</a>."
     imgUrl="/photos/section.webp"
   />
 
   <Whyus />
 
-  <section class="pt-12 px-4 md:px-8 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-cyan-900 mb-6">
-        Real Reviews from our Clients
-      </h2>
-    </div>
-  </section>
-  <Testimonial client:visible />
   <PartnershipBanner />
   <Ourteam />
   <Pricing />
@@ -914,13 +930,13 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6"
         >
           Ready to Save on Your Next <span class="text-orange-500"
             >Web Project?</span
           >
         </h2>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        <p class="text-xl text-slate-700 max-w-3xl mx-auto">
           Get a free quote and discover how much you can save by working with
           our certified team in Honduras. No commitment required.
         </p>
@@ -930,8 +946,8 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
         <!-- Contact Information -->
         <div class="lg:col-span-1">
           <div class="bg-white rounded-2xl p-8 shadow-lg">
-            <h3 class="text-2xl font-bold text-cyan-900 mb-6">Get In Touch</h3>
-            <p class="text-gray-600 mb-8 leading-relaxed">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6">Get In Touch</h3>
+            <p class="text-slate-600 mb-8 leading-relaxed">
               Whether you have a question or need a quote, our bilingual team is
               ready to assist you.
             </p>
@@ -939,15 +955,15 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             <!-- Contact Details -->
             <div class="space-y-6">
               <div class="border-l-4 border-orange-500 pl-4">
-                <h4 class="font-semibold text-gray-900 mb-1">Location</h4>
-                <p class="text-gray-600 text-sm">
+                <h4 class="font-semibold text-slate-900 mb-1">Location</h4>
+                <p class="text-slate-600 text-sm">
                   San Pedro Sula, Cortés, Honduras<br />
                   Calle 4, Avenida 11, Codebrand
                 </p>
               </div>
 
               <div class="border-l-4 border-orange-500 pl-4">
-                <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
+                <h4 class="font-semibold text-slate-900 mb-1">Email</h4>
                 <a
                   href="mailto:info@codebrand.es"
                   class="text-orange-600 hover:text-orange-700 text-sm"
@@ -957,7 +973,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
               </div>
 
               <div class="border-l-4 border-orange-500 pl-4">
-                <h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
+                <h4 class="font-semibold text-slate-900 mb-1">Phone</h4>
                 <a
                   href="tel:+504-3272-2973"
                   class="text-orange-600 hover:text-orange-700 text-sm"
@@ -969,8 +985,8 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
               <div
                 class="bg-gradient-to-br from-cyan-50 to-orange-50 p-6 rounded-lg mt-8"
               >
-                <h4 class="font-semibold text-gray-900 mb-3">Business Hours</h4>
-                <div class="space-y-2 text-sm text-gray-600">
+                <h4 class="font-semibold text-slate-900 mb-3">Business Hours</h4>
+                <div class="space-y-2 text-sm text-slate-600">
                   <div class="flex justify-between">
                     <span>Monday - Friday</span>
                     <span>9:00 AM – 6:00 PM</span>
@@ -983,7 +999,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                     <span>Sunday</span>
                     <span>Closed</span>
                   </div>
-                  <p class="text-xs text-gray-500 mt-3">
+                  <p class="text-xs text-slate-500 mt-3">
                     Central Time (Honduras)
                   </p>
                 </div>
@@ -997,7 +1013,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
           name="contact-home"
           method="POST"
           action="/api/contact"
-          class="lg:col-span-2 bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
+          class="lg:col-span-2 bg-white p-8 rounded-2xl shadow-lg border border-slate-200"
         >
           <input type="hidden" name="form-name" value="contact-home" />
 
@@ -1017,7 +1033,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             <div>
               <label
                 for="name"
-                class="block text-sm font-medium text-gray-700 mb-2"
+                class="block text-sm font-medium text-slate-700 mb-2"
               >
                 Name *
               </label>
@@ -1036,7 +1052,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             <div>
               <label
                 for="email"
-                class="block text-sm font-medium text-gray-700 mb-2"
+                class="block text-sm font-medium text-slate-700 mb-2"
               >
                 Email *
               </label>
@@ -1055,7 +1071,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             <div>
               <label
                 for="phone"
-                class="block text-sm font-medium text-gray-700 mb-2"
+                class="block text-sm font-medium text-slate-700 mb-2"
               >
                 Phone *
               </label>
@@ -1074,7 +1090,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             <div>
               <label
                 for="industry"
-                class="block text-sm font-medium text-gray-700 mb-2"
+                class="block text-sm font-medium text-slate-700 mb-2"
               >
                 Industry *
               </label>
@@ -1103,7 +1119,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             <div class="md:col-span-2">
               <label
                 for="subject"
-                class="block text-sm font-medium text-gray-700 mb-2"
+                class="block text-sm font-medium text-slate-700 mb-2"
               >
                 Subject *
               </label>
@@ -1121,7 +1137,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
             <div class="md:col-span-2">
               <label
                 for="message"
-                class="block text-sm font-medium text-gray-700 mb-2"
+                class="block text-sm font-medium text-slate-700 mb-2"
               >
                 Message *
               </label>
@@ -1136,7 +1152,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
 
             <!-- Services -->
             <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-gray-700 mb-3">
+              <label class="block text-sm font-medium text-slate-700 mb-3">
                 Services Interested In
               </label>
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -1145,72 +1161,72 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
                     type="checkbox"
                     name="services"
                     value="Web Development"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">Web Development</span>
+                  <span class="text-slate-700">Web Development</span>
                 </label>
                 <label class="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     name="services"
                     value="UX/UI Design"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">UX/UI Design</span>
+                  <span class="text-slate-700">UX/UI Design</span>
                 </label>
                 <label class="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     name="services"
                     value="Branding"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">Branding</span>
+                  <span class="text-slate-700">Branding</span>
                 </label>
                 <label class="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     name="services"
                     value="SEO"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">SEO</span>
+                  <span class="text-slate-700">SEO</span>
                 </label>
                 <label class="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     name="services"
                     value="Social Media"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">Social Media</span>
+                  <span class="text-slate-700">Social Media</span>
                 </label>
                 <label class="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     name="services"
                     value="Video Editing"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">Video Editing</span>
+                  <span class="text-slate-700">Video Editing</span>
                 </label>
                 <label class="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     name="services"
                     value="Animation"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">Animation</span>
+                  <span class="text-slate-700">Animation</span>
                 </label>
                 <label class="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
                     name="services"
                     value="E-commerce"
-                    class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
                   />
-                  <span class="text-gray-700">E-commerce</span>
+                  <span class="text-slate-700">E-commerce</span>
                 </label>
               </div>
             </div>
@@ -1234,7 +1250,7 @@ import PartnershipBanner from "@/components/PartnershipBanner.astro";
               >
                 Get Your Free Quote
               </button>
-              <p class="text-center text-sm text-gray-500 mt-3">
+              <p class="text-center text-sm text-slate-500 mt-3">
                 We'll respond within 24 hours with a detailed quote
               </p>
             </div>

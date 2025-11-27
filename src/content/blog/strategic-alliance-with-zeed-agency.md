@@ -10,7 +10,7 @@ date: 2025-10-26
 
 ## Codebrand and Zeed Agency: A Strategic Alliance for Excellence in Design and Digital Consulting
 
-We're thrilled to announce a game-changing strategic alliance between Codebrand and **Zeed Agency Firm**, a premier graphic design and consulting agency with over **15 years of proven experience** working with major corporations across Honduras and Central America.
+We're thrilled to announce a game-changing strategic alliance between Codebrand and [zeed](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true), a premier graphic design and consulting agency with over **15 years of proven experience** working with major corporations across Honduras and Central America.
 
 This partnership represents a powerful combination: Codebrand's cutting-edge web development and digital solutions expertise merged with Zeed Agency's unparalleled design excellence and strategic consulting services. Together, we're positioned to deliver comprehensive, end-to-end solutions that transform businesses from the inside out.
 
@@ -18,19 +18,35 @@ This partnership represents a powerful combination: Codebrand's cutting-edge web
 
 ## Who is Zeed Agency?
 
-For over 15 years, **Zeed Agency** has been at the forefront of graphic design and brand consulting in Honduras. Their portfolio speaks volumes—they've collaborated with some of the largest corporations and most respected brands in the region, helping them craft visual identities, marketing materials, and strategic communications that truly resonate with their audiences.
+**[Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true)** is a performance-driven digital marketing agency specializing in **service exportation**—delivering world-class marketing solutions remotely to clients across Latin America, the United States, and beyond. Their model is built for the modern digital economy: you provide the raw content, and they transform it into high-converting campaigns, stunning designs, and strategic assets that drive real business results.
+
+### Core Services
+
+**Digital 360° Performance**: Data-driven growth across Meta (Facebook & Instagram), Google Ads, and multi-channel campaigns. They leverage advanced tracking, conversion APIs, CRM integration, and continuous optimization to deliver measurable outcomes—lower acquisition costs and consistent revenue generation.
+
+**Creative Strategy & Digital Content**: High-impact creative that drives performance, not just aesthetics. From conceptual development to storytelling and content architecture, they craft digital-first ideas that capture attention and convert. Their work includes video editing, motion graphics, social media assets, and AI-enhanced visuals—all designed to strengthen your brand across every platform.
+
+**High-Ticket Lead Generation Systems**: Proven systems to attract, qualify, and convert premium clients. They design end-to-end acquisition funnels using landing pages, automation flows, WhatsApp bots, CRM integrations, and advanced audience modeling. Ideal for real estate, corporate services, medical practices, and high-value industries that require precision and consistency in their sales pipeline.
+
+### How Their Remote Model Works
+
+[Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) operates on a **content-in, results-out** model:
+
+1. **You provide the raw material**: Videos, photos, testimonials, product shots—any content that requires on-site recording
+2. **They handle everything else remotely**: Video editing, graphic design, campaign strategy, ad creative, copywriting, funnel building, automation setup, and ongoing optimization
+3. **You get professional, conversion-focused assets**: Ready to deploy across all digital channels
+
+This model allows them to serve clients anywhere in the world while maintaining the quality and strategic depth of a full-service agency. Whether you're in Honduras, Mexico, the US, or Spain—if it can be done remotely, Zeed delivers.
 
 ### What Makes Zeed Agency Stand Out
 
-**Deep Industry Experience**: With a decade and a half in the business, Zeed Agency understands what works and what doesn't. They've seen design trends come and go, and they know how to create timeless, impactful visual solutions.
+**Performance-First Mindset**: Every creative decision is rooted in data and conversion strategy. They don't just make things look good—they make things that sell.
 
-**Corporate-Level Expertise**: Their client roster includes major corporations across Honduras, from financial institutions to retail giants, healthcare providers to tech companies. They know how to handle complex projects with multiple stakeholders and deliver results that meet the highest standards.
+**Specialized in High-Ticket Markets**: Their expertise lies in industries where each lead matters: real estate, medical services, legal firms, corporate consulting, and premium B2B services.
 
-**Strategic Thinking**: Zeed Agency doesn't just make things look pretty—they dig deep to understand your business goals, target audience, and competitive landscape. Every design decision is rooted in strategy, ensuring that your brand not only looks good but performs well.
+**Full Remote Capability**: Everything that can be executed digitally—design, editing, campaigns, automation, strategy—they handle with precision. You focus on your business; they focus on your growth.
 
-**Comprehensive Design Services**: From logo design and brand identity to marketing collateral, packaging design, corporate communications, and beyond—Zeed Agency offers a full spectrum of graphic design services.
-
-**Proven Track Record**: 15 years in business speaks for itself. Zeed Agency has built long-lasting relationships with their clients because they consistently deliver quality work, on time and on budget.
+**Agile & Results-Oriented**: Fast turnaround times, clear communication, and a relentless focus on ROI. They treat your marketing budget like their own money.
 
 ---
 
@@ -56,35 +72,35 @@ This strategic partnership isn't just about two companies working together—it'
 
 ## Services We Offer Together
 
-Through this strategic alliance, we can now provide an expanded range of integrated services:
+Through this strategic alliance, we provide a complete ecosystem of digital services—combining Codebrand's technical expertise with Zeed's performance marketing mastery:
 
-### Web Development + Brand Identity
+### Web Development + Performance Marketing
 
-Launch a new website with a complete brand identity package. Zeed Agency creates your logo, color palette, typography system, and brand guidelines, while Codebrand builds a stunning, high-performance website that brings your brand to life online.
+Launch a high-converting website built by Codebrand, then drive qualified traffic with [Zeed Agency's](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) Meta and Google Ads campaigns. From landing pages to full e-commerce platforms—we build, they fill with leads.
 
-### Digital Marketing + Graphic Design
+### Content Transformation + Campaign Execution
 
-Run cohesive digital marketing campaigns where Codebrand handles your SEO, paid ads, email marketing, and website optimization, while Zeed Agency creates eye-catching graphics, ad creatives, infographics, and promotional materials.
+You shoot the content (videos, photos, testimonials), and we handle the rest. Codebrand manages your web presence and SEO, while Zeed transforms your raw footage into scroll-stopping ads, reels, and social content that converts.
 
-### E-commerce + Product Photography & Design
+### High-Ticket Lead Generation Funnels
 
-Build a powerful e-commerce platform with Codebrand's technical expertise, enhanced by Zeed Agency's product photography, packaging design, and promotional graphics that make your products irresistible.
+For businesses selling premium services ($1,000+), we create end-to-end acquisition systems: Codebrand builds the technical infrastructure (websites, integrations, tracking), and Zeed designs the funnel strategy, ad creatives, WhatsApp automation, and CRM flows.
 
-### Corporate Website + Communication Materials
+### Brand Identity + Digital Presence
 
-Develop a professional corporate website alongside annual reports, investor presentations, corporate brochures, and internal communications—all with consistent branding and messaging.
+Complete brand packages that work across every channel. Zeed creates your visual identity, ad templates, and social assets, while Codebrand ensures your website, emails, and digital touchpoints deliver a consistent, professional experience.
 
-### Consulting Services
+### Ongoing Growth Partnership
 
-Get strategic consulting on both the digital and design fronts. We'll audit your current brand presence, identify gaps and opportunities, and create a comprehensive roadmap for growth.
+Beyond one-time projects, we offer continuous optimization: website maintenance, A/B testing, campaign scaling, creative refreshes, and performance reporting. Your dedicated team across both agencies, focused on your growth.
 
 ---
 
 ## Why This Alliance Works
 
-**Shared Values**: Both Codebrand and Zeed Agency are committed to excellence, client satisfaction, and delivering measurable results. We don't just want to complete projects—we want to build long-term partnerships with our clients.
+**Shared Values**: Both Codebrand and [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) are committed to excellence, client satisfaction, and delivering measurable results. We don't just want to complete projects—we want to build long-term partnerships with our clients.
 
-**Complementary Expertise**: We each bring unique strengths to the table. Codebrand excels in web development, digital marketing, and technical solutions. Zeed Agency is a powerhouse in graphic design, branding, and creative strategy. Together, we cover all the bases.
+**Complementary Expertise**: We each bring unique strengths to the table. Codebrand excels in web development, digital marketing, and technical solutions. [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) is a powerhouse in graphic design, branding, and creative strategy. Together, we cover all the bases.
 
 **Local Knowledge with Global Standards**: Both companies understand the unique challenges and opportunities of doing business in Honduras and Central America, but we deliver work that meets international quality standards.
 
@@ -94,31 +110,32 @@ Get strategic consulting on both the digital and design fronts. We'll audit your
 
 ## Real-World Impact
 
-Imagine launching a new product line. In the old model, you might hire a web developer for an e-commerce site, a graphic designer for packaging, a marketing agency for promotional campaigns, and a photographer for product shots. You'd spend weeks coordinating between all these vendors, dealing with miscommunications, and trying to ensure brand consistency.
+Imagine you're a real estate developer launching a new project. In the old model, you'd hire a web developer for a landing page, a video editor for your property tours, a designer for social media assets, a marketing agency for ads, and somehow try to coordinate all of them while running your business.
 
-**With the Codebrand-Zeed Agency alliance**, you have one point of contact, one unified vision, and one cohesive strategy. We handle everything:
+**With the Codebrand-Zeed Agency alliance**, you have one unified team. Here's how it works:
 
-- Zeed Agency designs your product packaging and brand assets
-- Codebrand builds your e-commerce platform
-- Zeed creates stunning product photography and marketing graphics
-- Codebrand develops and executes your digital marketing campaigns
-- Both teams work together to ensure everything is perfectly aligned
+1. **You record**: Property walkthroughs, drone footage, client testimonials—raw content from your phone or camera
+2. **Zeed transforms**: Professional video editing, motion graphics, ad creatives, social reels, and WhatsApp sequences
+3. **Codebrand builds**: High-converting landing pages, lead capture forms, CRM integrations, and tracking systems
+4. **Zeed launches**: Meta Ads campaigns, audience targeting, retargeting funnels, and continuous optimization
+5. **You receive**: Qualified leads directly in your WhatsApp or CRM, ready to close
 
-The result? A faster launch, lower costs, better quality, and peace of mind knowing that experts are handling every aspect of your project.
+The result? A complete digital acquisition system without the complexity of managing multiple vendors. You focus on selling properties; we focus on filling your pipeline.
 
 ---
 
-## Companies We've Worked With
+## Industries We Serve
 
-While we respect client confidentiality, we're proud to share that through this alliance, we've already worked with:
+Our alliance is particularly effective for **high-ticket industries** where each lead has significant value:
 
-- **Major financial institutions** on website redesigns and brand refreshes
-- **Leading retail chains** on e-commerce platforms and promotional campaigns
-- **Healthcare providers** on patient-facing websites and marketing materials
-- **Tech startups** on complete brand identities and digital presence
-- **Established corporations** on annual reports, investor materials, and internal communications
+- **Real Estate & Development**: Property launches, project marketing, lead generation funnels, virtual tours, and investor presentations
+- **Medical & Healthcare**: Patient acquisition campaigns, clinic branding, appointment booking systems, and educational content
+- **Legal & Professional Services**: Authority positioning, lead qualification funnels, and client acquisition campaigns
+- **Corporate & B2B Services**: Brand positioning, LinkedIn strategies, proposal systems, and enterprise lead generation
+- **Education & Coaching**: Course launches, webinar funnels, community building, and student acquisition
+- **Luxury & Premium Brands**: High-end positioning, exclusive campaigns, and VIP client experiences
 
-Our combined client roster includes some of the most respected names in Honduras and beyond—businesses that demand excellence and trust us to deliver it consistently.
+If your average transaction value is $1,000 or more, our systems are designed specifically for your business model.
 
 ---
 
@@ -128,7 +145,7 @@ Ready to experience the power of this strategic alliance? Here's how to get star
 
 ### 1. Schedule a Consultation
 
-Reach out to either Codebrand or Zeed Agency, and we'll set up a joint consultation where we can understand your needs, goals, and challenges.
+Reach out to either Codebrand or [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true), and we'll set up a joint consultation where we can understand your needs, goals, and challenges.
 
 ### 2. Receive a Comprehensive Proposal
 
@@ -148,7 +165,7 @@ We don't just deliver projects and disappear. We're committed to your long-term 
 
 In today's fast-paced digital landscape, businesses need partners who can move quickly, think strategically, and deliver comprehensive solutions. They need teams that communicate seamlessly and work toward a common goal.
 
-That's exactly what the Codebrand and Zeed Agency alliance offers.
+That's exactly what the Codebrand and [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) alliance offers.
 
 By combining **15 years of proven design expertise** with **cutting-edge web development capabilities**, we're uniquely positioned to help businesses in Honduras and throughout Central America compete on the global stage.
 
@@ -166,9 +183,9 @@ We invite you to experience the difference that comes from working with industry
 
 **Codebrand**
 Web Development & Digital Marketing
-[Contact Us](/contact)
+[Contact Us](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true)
 
-**Zeed Agency Firm**
+**[Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true)**
 Graphic Design & Strategic Consulting
 15+ Years of Excellence
 

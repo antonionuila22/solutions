@@ -1,46 +1,177 @@
 ---
-import SplitText from "../components/SplitText.tsx";
 import Button from "../components/Button.astro";
-import Background from "../components/background.tsx";
-const handleAnimationComplete = () => {
-    console.log("¡Todas las letras han terminado de animarse!");
-};
 ---
 
-<section class="flex items-center justify-center flex-col my-25">
-    <div class="container px-4 py-10 flex items-center justify-center w-full">
-        <article
-            class="relative flex w-full text-center bg-cover bg-center rounded-[20px] py-[5vw] gap-4 items-center justify-center flex-col"
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
+  <!-- Animated Grid Background -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(6, 182, 212, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  </div>
+
+  <!-- Gradient Orbs -->
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+
+  <!-- Floating Code Elements -->
+  <div class="absolute top-20 left-10 text-cyan-500/20 font-mono text-sm hidden lg:block animate-float">
+    <pre>&lt;code&gt;</pre>
+  </div>
+  <div class="absolute top-40 right-20 text-cyan-500/20 font-mono text-sm hidden lg:block animate-float" style="animation-delay: 0.5s;">
+    <pre>{ }</pre>
+  </div>
+  <div class="absolute bottom-40 left-20 text-orange-500/20 font-mono text-sm hidden lg:block animate-float" style="animation-delay: 1s;">
+    <pre>&lt;/&gt;</pre>
+  </div>
+  <div class="absolute bottom-20 right-10 text-orange-500/20 font-mono text-sm hidden lg:block animate-float" style="animation-delay: 1.5s;">
+    <pre>( )</pre>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-cyan-500/30 rounded-full mb-8 backdrop-blur-sm animate-fade-in-up">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        </span>
+        <span class="text-sm font-medium text-cyan-400">Honduras-Based Agency Serving US Businesses</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.1s;">
+        Premium Web Development
+        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-300 to-orange-400">
+          at 60% Lower Cost
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+        Get the same quality as <span class="text-white font-semibold">$15,000+ US agencies</span> for a fraction of the price.
+        Our certified team delivers world-class websites, apps, and digital solutions with
+        <span class="text-cyan-400 font-semibold">bilingual support</span> in your timezone.
+      </p>
+
+      <!-- Stats Row -->
+      <div class="flex flex-wrap justify-center gap-8 mb-10 animate-fade-in-up" style="animation-delay: 0.3s;">
+        <div class="flex items-center gap-2">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-2xl font-bold text-white">60%</p>
+            <p class="text-xs text-slate-400">Cost Savings</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500/20 border border-orange-500/30">
+            <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-2xl font-bold text-white">500+</p>
+            <p class="text-xs text-slate-400">Projects Delivered</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-2xl font-bold text-white">24/7</p>
+            <p class="text-xs text-slate-400">US Time Support</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500/20 border border-orange-500/30">
+            <svg class="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-2xl font-bold text-white">4.9/5</p>
+            <p class="text-xs text-slate-400">Client Rating</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <a
+          href="/contact"
+          class="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-1 transition-all duration-200"
         >
-            <div class="absolute mt-[-10em] w-full h-full opacity-60">
-                <Background client:visible />
-            </div>
+          Get Your Free Quote
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+        <a
+          href="/projects"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold rounded-xl border border-slate-700 hover:border-slate-600 backdrop-blur-sm transition-all duration-200"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          View Our Work
+        </a>
+      </div>
 
-            <h1
-                class="relative max-w-6xl text-md lg:text-xl sm:text-sm text-orange-400 animate-fade-in"
-            >
-                Developing solutions - Designing experiences
-            </h1>
-
-            <SplitText
-                text="Codebrand"
-                className="text-cyan-900 font-bold max-w-5xl lg:max-w-6xl text-5xl lg:text-8xl md:text-6xl sm:text-4xl max-h-[650px]"
-                client:visible
-            />
-
-            <p
-                class="relative text-md text-black max-w-5xl animate-fade-in opacity-0 transition-opacity duration-700 delay-200"
-            >
-                Time. Control. Results. We simplify your operations, increase
-                your visibility, and automate your processes so you can focus on
-                what matters.
-            </p>
-
-            <div
-                class="relative flex flex-col md:flex-row gap-7 flex-wrap justify-center z-1"
-            >
-                <Button text="Grow my business Now!" href="./contact" />
-            </div>
-        </article>
+      <!-- Tech Stack Preview -->
+      <div class="animate-fade-in-up" style="animation-delay: 0.5s;">
+        <p class="text-sm text-slate-500 mb-4 uppercase tracking-wider">Trusted Technologies</p>
+        <div class="flex flex-wrap justify-center items-center gap-6 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          <img src="/icons/react-svgrepo-com.svg" alt="React" class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300" />
+          <img src="/icons/nextjs-svgrepo-com.svg" alt="Next.js" class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300 invert" />
+          <img src="/icons/typescript-official-svgrepo-com.svg" alt="TypeScript" class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300" />
+          <img src="/icons/nodejs-svgrepo-com.svg" alt="Node.js" class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300" />
+          <img src="/icons/tailwindcss-svgrepo-com.svg" alt="Tailwind CSS" class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300" />
+          <img src="/icons/aws-svgrepo-com.svg" alt="AWS" class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300" />
+          <img src="/icons/figma.svg" alt="Figma" class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
 </section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+</style>

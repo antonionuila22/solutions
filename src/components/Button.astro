@@ -10,11 +10,11 @@ const { text, href } = Astro.props;
 <!-- Este es el nuevo deploy  -->
 <a
     href={href}
-    class="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold
-   py-[15px] px-[30px] rounded-full shadow-lg
-   hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
+    class="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold
+   py-[15px] px-[30px] rounded-xl shadow-lg shadow-orange-500/25
+   hover:from-orange-400 hover:to-orange-500 hover:shadow-orange-500/40 hover:brightness-110
    transition-all duration-300 ease-in-out
-   transform hover:scale-105 active:scale-95 hover:-rotate-2 border-none text-sm lg:text-lg"
+   transform hover:scale-105 hover:-translate-y-1 active:scale-95 border-none text-sm lg:text-lg"
 >
     {text}
 </a>

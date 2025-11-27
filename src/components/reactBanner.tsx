@@ -37,13 +37,13 @@ export default function BannerSecond({ title, subtitle, description, imgUrl }: P
           <div id="gsap-cta" className="opacity-0">
             <a
               href="./contact"
-              className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold
-              py-[15px] px-[30px] rounded-full shadow-lg
-              hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-2xl hover:brightness-125
+              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold
+              py-[15px] px-[30px] rounded-xl shadow-lg shadow-orange-500/25
+              hover:from-orange-400 hover:to-orange-500 hover:shadow-orange-500/40 hover:brightness-110
               transition-all duration-300 ease-in-out
-              transform hover:scale-105 active:scale-95 hover:-rotate-2 border-none text-sm lg:text-lg"
+              transform hover:scale-105 hover:-translate-y-1 active:scale-95 border-none text-sm lg:text-lg"
             >
-              Get Started 
+              Get Started
             </a>
           </div>
         </div>
