@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { animated, useSpring} from "@react-spring/web";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { animated, useSpring } from "@react-spring/web";
 
 type Testimonial = {
   quote: string;
@@ -65,7 +65,7 @@ export default function Slider({ testimonials, interval = 4000 }: Props) {
       </h2>
 
       <AnimatedDiv
-        style={springProps as any}
+        style={springProps as unknown as CSSProperties}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
       >
         {visibleSlides.map((testimonial, i) => (

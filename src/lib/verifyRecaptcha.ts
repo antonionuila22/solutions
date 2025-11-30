@@ -1,10 +1,15 @@
 // src/lib/verifyRecaptcha.ts
 import { RecaptchaEnterpriseServiceClient } from '@google-cloud/recaptcha-enterprise';
 
-const projectID = 'solutions-codebr-1748634875071';
-const recaptchaKey = '6Lf6olArAAAAALJssnzah9pMjSczKZQIZYBglamB';
+const projectID = import.meta.env.RECAPTCHA_ENTERPRISE_PROJECT_ID;
+const recaptchaKey = import.meta.env.RECAPTCHA_ENTERPRISE_SITE_KEY;
 
 export async function verifyRecaptchaToken(token: string, action = 'form_submit'): Promise<number | null> {
+    if (!projectID || !recaptchaKey) {
+        console.error('Missing reCAPTCHA Enterprise configuration');
+        return null;
+    }
+
     const client = new RecaptchaEnterpriseServiceClient();
     const projectPath = client.projectPath(projectID);
 
@@ -18,17 +23,19 @@ export async function verifyRecaptchaToken(token: string, action = 'form_submit'
         parent: projectPath,
     };
 
-    const [response] = await client.createAssessment(request);
+    try {
+        const [response] = await client.createAssessment(request);
 
-    if (!response.tokenProperties?.valid) {
-        console.error(`Invalid token: ${response.tokenProperties?.invalidReason}`);
+        if (!response.tokenProperties?.valid) {
+            return null;
+        }
+
+        if (response.tokenProperties.action !== action) {
+            return null;
+        }
+
+        return response.riskAnalysis?.score || null;
+    } catch (error) {
         return null;
     }
-
-    if (response.tokenProperties.action !== action) {
-        console.error(`Action mismatch: ${response.tokenProperties.action}`);
-        return null;
-    }
-
-    return response.riskAnalysis?.score || null;
 }

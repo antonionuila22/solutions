@@ -52,7 +52,7 @@ export default function BannerSecond({
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-br from-[#0d0f1a] to-[#1a1d2e] overflow-hidden">
+    <section className="w-full px-6 py-40  bg-gradient-to-br from-[#0d0f1a] to-[#1a1d2e] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-40 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
         <div className="z-10 space-y-6 text-center lg:text-left">
           <span

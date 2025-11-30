@@ -1,4 +1,5 @@
+import { validateEmail } from "../../lib/validation";
+
 export const validateContact = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return validateEmail(email);
 }

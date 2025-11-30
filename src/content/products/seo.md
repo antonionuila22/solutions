@@ -1,6 +1,6 @@
 ---
 title: Professional SEO Optimization – Improve Visibility and Drive Organic Traffic
-img: /photos/Branding.png
+img: /photos/seo.webp
 readtime: 5
 price: $500 - $950
 inStock: true

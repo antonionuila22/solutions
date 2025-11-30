@@ -3,8 +3,10 @@ export const prerender = false;
 import type { APIRoute } from "astro";
 import { turso } from "../../turso";
 import { Resend } from "resend";
+import { validateEmail, sanitize } from "../../lib/validation";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const CONTACT_EMAIL = import.meta.env.CONTACT_RECIPIENT_EMAIL || "info@codebrand.es";
 
 export const POST: APIRoute = async ({ request, redirect }) => {
     try {
@@ -53,7 +55,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         // Enviar correo
         await resend.emails.send({
             from: "onboarding@resend.dev",
-            to: "antonionuila022@gmail.com",
+            to: CONTACT_EMAIL,
             subject: `Contacto: ${subject}`,
             html: `
                 <h2>Nuevo mensaje de contacto</h2>
@@ -69,17 +71,9 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
         return redirect("/thank-you", 303);
 
-    } catch (err: any) {
-        return new Response("Error del servidor: " + err.message, { status: 500 });
+    } catch (err) {
+        const message = err instanceof Error ? err.message : "Unknown error";
+        return new Response("Error del servidor: " + message, { status: 500 });
     }
 };
 
-function sanitize(input: FormDataEntryValue | null): string {
-    if (!input) return "";
-    return input.toString().replace(/</g, "&lt;").replace(/>/g, "&gt;").trim();
-}
-
-function validateEmail(email: string): boolean {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}

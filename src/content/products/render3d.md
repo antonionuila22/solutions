@@ -1,6 +1,6 @@
 ---
 title: Professional 3D Renderings – Realistic Visuals for Products and Architecture
-img: /photos/animacion2d.png
+img: /photos/render3d.webp
 readtime: 5
 price: $100 - $700
 inStock: true

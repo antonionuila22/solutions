@@ -161,13 +161,20 @@ export const commonCatalogItems = {
   ],
 };
 
+interface SchemaBase {
+  "@context"?: string;
+  "@type"?: string;
+  serviceType?: string;
+  [key: string]: unknown;
+}
+
 /**
  * Validates a Schema.org object structure
  *
  * @param schema - Schema object to validate
  * @returns true if valid, throws error if invalid
  */
-export function validateSchema(schema: any): boolean {
+export function validateSchema(schema: SchemaBase): boolean {
   if (!schema["@context"]) {
     throw new Error("Schema must have @context");
   }
