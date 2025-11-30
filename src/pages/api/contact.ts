@@ -10,15 +10,9 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     try {
         const data = await request.formData();
 
-        console.log("📨 Form data received:");
-        for (const pair of data.entries()) {
-            console.log(`${pair[0]}: ${pair[1]}`);
-        }
-
         // Honeypot anti-spam
         const honeypot = sanitize(data.get("honey"));
         if (honeypot) {
-            console.warn("Bot detected by honeypot.");
             return new Response("Bot detected", { status: 403 });
         }
 
@@ -76,7 +70,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         return redirect("/thank-you", 303);
 
     } catch (err: any) {
-        console.error("Error al procesar el formulario:", err.message, err.stack);
         return new Response("Error del servidor: " + err.message, { status: 500 });
     }
 };

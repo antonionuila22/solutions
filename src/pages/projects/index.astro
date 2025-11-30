@@ -7,8 +7,6 @@ import { getCollection } from "astro:content";
 // Get all projects from the collection
 const allProjects = await getCollection("projects");
 
-console.log("Total projects found:", allProjects.length);
-
 // Sort by date (newest first)
 const projects = allProjects
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -22,13 +20,9 @@ const projects = allProjects
     featured: project.data.featured || false,
   }));
 
-console.log("Mapped projects:", projects.length);
-
 // Get unique categories from projects
 const allCategories = [...new Set(projects.map((p) => p.category))];
 const categories = ["All", ...allCategories.sort()];
-
-console.log("Categories:", categories);
 ---
 
 <Layout
@@ -459,7 +453,6 @@ console.log("Categories:", categories);
       const projectCards = document.querySelectorAll(".project-card");
 
       if (!filterButtons.length || !projectCards.length) {
-        console.log("Filter buttons or project cards not found");
         return;
       }
 
