@@ -1,0 +1,114 @@
+---
+interface Badge {
+  name: string;
+  url: string;
+  logo: string;
+}
+
+interface Props {
+  title?: string;
+  badges?: Badge[];
+}
+
+const defaultBadges: Badge[] = [
+  {
+    name: "Clutch",
+    url: "https://clutch.co/profile/codebrand",
+    logo: "/photos/clutch-logo.png"
+  },
+  {
+    name: "GoodFirms",
+    url: "https://www.goodfirms.co/company/codebrand",
+    logo: "/photos/gf-logo-horizontal.png"
+  },
+  {
+    name: "DesignRush",
+    url: "https://www.designrush.com/agency/profile/codebrand",
+    logo: "/photos/Best Interactive Design  Companies.png"
+  },
+  {
+    name: "TechBehemoths",
+    url: "https://techbehemoths.com/company/codebrand",
+    logo: "/photos/techbehemoths_logo.jpeg"
+  },
+  {
+    name: "Google Reviews",
+    url: "https://g.page/r/codebrand/review",
+    logo: "/photos/google-reviews-logo.png"
+  }
+];
+
+const {
+  title = "As Featured On",
+  badges = defaultBadges
+} = Astro.props;
+---
+
+<div class="py-10 bg-white border-b border-slate-100 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-center text-xs uppercase tracking-widest text-slate-400 mb-8 font-medium">
+      {title}
+    </p>
+    <div class="slider-container relative">
+      <div class="slider-track flex items-center gap-16 sm:gap-20 lg:gap-24">
+        {badges.map((badge) => (
+          <a
+            href={badge.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="slider-item flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-200"
+            title={`View Codebrand on ${badge.name}`}
+          >
+            <img
+              src={badge.logo}
+              alt={badge.name}
+              class="h-10 sm:h-12 lg:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-200"
+              loading="lazy"
+            />
+          </a>
+        ))}
+        {badges.map((badge) => (
+          <a
+            href={badge.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="slider-item flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-200"
+            title={`View Codebrand on ${badge.name}`}
+          >
+            <img
+              src={badge.logo}
+              alt={badge.name}
+              class="h-10 sm:h-12 lg:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-200"
+              loading="lazy"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slider-container {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .slider-track {
+    animation: scroll 25s linear infinite;
+    width: max-content;
+  }
+
+  .slider-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
