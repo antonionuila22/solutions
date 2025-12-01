@@ -1,7 +1,8 @@
 ---
 // WhatsApp Floating Widget
 const phoneNumber = "50432722973";
-const defaultMessage = "Hi! I'm interested in your web development services. Can we schedule a call?";
+const defaultMessage =
+  "Hi! I'm interested in your web development services. Can we schedule a call?";
 const encodedMessage = encodeURIComponent(defaultMessage);
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 ---
@@ -15,8 +16,28 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     class="whatsapp-button"
     aria-label="Chat on WhatsApp"
   >
-    <svg viewBox="0 0 32 32" class="whatsapp-icon" fill="currentColor">
-      <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.13 6.742 3.05 9.378L1.054 31.29l6.166-1.963C9.72 30.97 12.742 32 16.004 32 24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.294 22.6c-.39 1.092-1.932 1.998-3.156 2.264-.838.178-1.932.32-5.616-1.208-4.714-1.952-7.752-6.744-7.986-7.058-.226-.314-1.886-2.51-1.886-4.788s1.194-3.398 1.618-3.864c.39-.428.924-.642 1.436-.642.174 0 .33.016.472.03.424.018.636.042.916.708.35.832 1.2 2.924 1.304 3.138.104.214.208.502.062.788-.138.294-.258.476-.476.73-.218.254-.426.448-.644.72-.194.238-.412.492-.176.916.236.424 1.052 1.734 2.26 2.81 1.552 1.382 2.86 1.81 3.264 2.012.314.156.69.13.934-.13.308-.332.69-.882 1.078-1.424.276-.386.624-.434.97-.294.35.132 2.222 1.048 2.602 1.238.38.192.632.286.726.448.094.162.094.924-.296 2.016z"/>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      fill="#fff"
+      version="1.1"
+      width="25"
+      height="25"
+      id="Capa_1"
+      width="800px"
+      height="800px"
+      viewBox="0 0 348.077 348.077"
+      xml:space="preserve"
+    >
+      <g>
+        <g>
+          <g>
+            <path
+              d="M340.273,275.083l-53.755-53.761c-10.707-10.664-28.438-10.34-39.518,0.744l-27.082,27.076     c-1.711-0.943-3.482-1.928-5.344-2.973c-17.102-9.476-40.509-22.464-65.14-47.113c-24.704-24.701-37.704-48.144-47.209-65.257     c-1.003-1.813-1.964-3.561-2.913-5.221l18.176-18.149l8.936-8.947c11.097-11.1,11.403-28.826,0.721-39.521L73.39,8.194     C62.708-2.486,44.969-2.162,33.872,8.938l-15.15,15.237l0.414,0.411c-5.08,6.482-9.325,13.958-12.484,22.02     C3.74,54.28,1.927,61.603,1.098,68.941C-6,127.785,20.89,181.564,93.866,254.541c100.875,100.868,182.167,93.248,185.674,92.876     c7.638-0.913,14.958-2.738,22.397-5.627c7.992-3.122,15.463-7.361,21.941-12.43l0.331,0.294l15.348-15.029     C350.631,303.527,350.95,285.795,340.273,275.083z"
+            ></path>
+          </g>
+        </g>
+      </g>
     </svg>
     <span class="whatsapp-tooltip">Chat with us!</span>
   </a>
@@ -39,7 +60,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     justify-content: center;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
     border-radius: 50%;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     transition: all 0.3s ease;
@@ -76,7 +97,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   }
 
   .whatsapp-tooltip::after {
-    content: '';
+    content: "";
     position: absolute;
     right: -6px;
     top: 50%;
@@ -99,7 +120,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     transform: translate(-50%, -50%);
     width: 60px;
     height: 60px;
-    background: #25D366;
+    background: #25d366;
     border-radius: 50%;
     z-index: 1;
     animation: pulse 2s infinite;
