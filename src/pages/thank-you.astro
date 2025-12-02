@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Button from "@/components/Button.astro";
 ---
 
 <Layout
@@ -11,54 +10,115 @@ import Button from "@/components/Button.astro";
   noindex={true}
 >
   <section
-    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-br from-green-50 via-white to-cyan-50 overflow-hidden"
+    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
   >
-    <!-- Animated background shapes -->
-    <div
-      class="absolute -z-10 w-[500px] h-[500px] bg-green-100 rounded-full blur-[120px] opacity-30 top-[-100px] left-[-120px] animate-pulse"
-    >
-    </div>
-    <div
-      class="absolute -z-10 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[100px] opacity-20 bottom-[-100px] right-[-80px] animate-ping"
-    >
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[150px] opacity-40 top-[-200px] left-[-200px] animate-pulse"
+      ></div>
+      <div
+        class="absolute w-[500px] h-[500px] bg-orange-500/20 rounded-full blur-[120px] opacity-30 bottom-[-150px] right-[-150px] animate-pulse"
+        style="animation-delay: 1s;"
+      ></div>
+      <div
+        class="absolute w-[300px] h-[300px] bg-cyan-400/10 rounded-full blur-[80px] opacity-40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      ></div>
     </div>
 
-    <!-- Checkmark icon -->
-    <div id="checkmark" class="text-green-600 mb-6">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-20 h-20"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <!-- Success icon with animated ring -->
+      <div id="checkmark" class="relative mb-8">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-28 h-28 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 opacity-20 animate-ping"></div>
+        </div>
+        <div class="relative flex items-center justify-center w-28 h-28 mx-auto bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full shadow-lg shadow-cyan-500/30">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-14 h-14 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1
+        id="thankTitle"
+        class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4"
       >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"
-        ></path>
-      </svg>
+        <span class="text-white">Thank </span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-orange-400">You!</span>
+      </h1>
+
+      <!-- Message -->
+      <p
+        id="thankMessage"
+        class="text-lg md:text-xl text-slate-400 max-w-xl mx-auto mb-6"
+      >
+        Your message has been successfully received. Our team will review your inquiry and get back to you within 24 hours.
+      </p>
+
+      <!-- What happens next -->
+      <div id="nextSteps" class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 mb-10 text-left">
+        <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
+          <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          What happens next?
+        </h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-slate-400">
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-semibold">1</span>
+            <span>We'll review your project requirements</span>
+          </li>
+          <li class="flex items-start gap-3 text-slate-400">
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-semibold">2</span>
+            <span>A team member will reach out via email or phone</span>
+          </li>
+          <li class="flex items-start gap-3 text-slate-400">
+            <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-semibold">3</span>
+            <span>We'll schedule a free consultation to discuss your needs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Action buttons -->
+      <div id="buttons" class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          Back to Home
+        </a>
+        <a
+          href="/projects"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300 hover:scale-105"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+          View Our Work
+        </a>
+      </div>
+
+      <!-- Social proof -->
+      <p id="socialProof" class="mt-10 text-slate-500 text-sm">
+        Join <span class="text-cyan-400 font-semibold">500+</span> businesses that trust Codebrand for their digital success
+      </p>
     </div>
-
-    <!-- Title -->
-    <h1
-      id="thankTitle"
-      class="text-5xl md:text-7xl font-extrabold text-orange-400 mb-4"
-    >
-      Thank You!
-    </h1>
-
-    <!-- Message -->
-    <p
-      id="thankMessage"
-      class="text-lg md:text-xl text-gray-600 max-w-xl mb-10"
-    >
-      Your submission has been received. We'll be in touch soon.
-    </p>
-
-    <!-- Back to Home Button -->
-    <Button text="Back to Home" href="/" />
   </section>
 
-  <!-- GSAP animations -->
   <script type="module" is:inline>
     import gsap from "https://cdn.skypack.dev/gsap";
 
@@ -66,23 +126,46 @@ import Button from "@/components/Button.astro";
       scale: 0,
       opacity: 0,
       duration: 1,
-      ease: "back.out(1.7)",
+      ease: "elastic.out(1, 0.5)",
     });
 
     gsap.from("#thankTitle", {
       y: -30,
       opacity: 0,
       delay: 0.3,
-      duration: 1,
-      ease: "power2.out",
+      duration: 0.8,
+      ease: "power3.out",
     });
 
     gsap.from("#thankMessage", {
-      y: 30,
+      y: 20,
       opacity: 0,
       delay: 0.5,
-      duration: 1,
-      ease: "power2.out",
+      duration: 0.8,
+      ease: "power3.out",
+    });
+
+    gsap.from("#nextSteps", {
+      y: 30,
+      opacity: 0,
+      delay: 0.7,
+      duration: 0.8,
+      ease: "power3.out",
+    });
+
+    gsap.from("#buttons", {
+      y: 20,
+      opacity: 0,
+      delay: 0.9,
+      duration: 0.8,
+      ease: "power3.out",
+    });
+
+    gsap.from("#socialProof", {
+      opacity: 0,
+      delay: 1.1,
+      duration: 0.8,
+      ease: "power3.out",
     });
   </script>
 </Layout>

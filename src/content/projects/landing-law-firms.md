@@ -2,7 +2,7 @@
 title: Law Firm Landing Page Template
 description: Professional, authoritative landing page for law firms, attorneys, and legal services with case consultation forms and practice area showcases.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: /photos/Lawfirms.png
 category: Web Design
 tags:
   - Landing Page
