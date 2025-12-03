@@ -70,6 +70,10 @@ Disallow: /_astro/
 
 # Sitemaps
 Sitemap: ${new URL('sitemap-index.xml', site).href}
+
+# LLM Information
+# For AI assistants and large language models seeking information about Codebrand
+LLMs-Txt: ${new URL('llms.txt', site).href}
 `.trim();
 
 export const GET: APIRoute = () => {

@@ -19,7 +19,6 @@ export const POST: APIRoute = async ({ request }) => {
             return new Response('Bot detection triggered ❌', { status: 403 });
         }
     } catch (err) {
-        console.error(err);
         return new Response('Error verifying token', { status: 500 });
     }
 };

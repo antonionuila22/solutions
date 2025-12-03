@@ -6,7 +6,6 @@ const recaptchaKey = import.meta.env.RECAPTCHA_ENTERPRISE_SITE_KEY;
 
 export async function verifyRecaptchaToken(token: string, action = 'form_submit'): Promise<number | null> {
     if (!projectID || !recaptchaKey) {
-        console.error('Missing reCAPTCHA Enterprise configuration');
         return null;
     }
 

@@ -2,6 +2,12 @@
 import Faqcomp from "../components/Faqcomp.tsx";
 import type { FAQItem } from "../components/Faqcomp.tsx";
 
+interface Props {
+    includeFaqSchema?: boolean;
+}
+
+const { includeFaqSchema = true } = Astro.props;
+
 const faqs: FAQItem[] = [
     {
         question: "What services does Codebrand offer?",
@@ -49,6 +55,21 @@ const faqs: FAQItem[] = [
     },
 ];
 ---
+
+{includeFaqSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    })} />
+)}
 
 <section class="flex py-16 items-center justify-center cont">
     <div

@@ -99,6 +99,13 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Codebrand Blog RSS Feed" href="/rss.xml" />
+
+    <!-- LLM Information for AI Assistants -->
+    <link rel="author" href="/llms.txt" />
+    <meta name="ai-content-declaration" content="This website contains information optimized for AI assistants. See /llms.txt for structured data." />
+
     <!-- Theme and Application -->
     <meta name="theme-color" content="#0D9488" />
     <meta name="color-scheme" content="light" />

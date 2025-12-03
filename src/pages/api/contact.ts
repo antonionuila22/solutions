@@ -46,21 +46,12 @@ export const POST: APIRoute = async ({ request, redirect }) => {
                 sql: `INSERT INTO contacts (name, email, phone, industry, subject, message, services) VALUES (?, ?, ?, ?, ?, ?, ?)`,
                 args: [name, email, phone, industry, subject, message, servicesString],
             });
-            console.log("Contact saved to database successfully");
         } catch (dbError) {
-            console.error("Database error:", dbError);
             // Continue with email even if DB fails
         }
 
         // Enviar correo
         try {
-            console.log("Sending email with config:", {
-                from: FROM_EMAIL,
-                to: CONTACT_EMAIL,
-                replyTo: email,
-                apiKeyExists: !!import.meta.env.RESEND_API_KEY
-            });
-
             const emailResult = await resend.emails.send({
                 from: FROM_EMAIL,
                 to: CONTACT_EMAIL,
@@ -105,16 +96,13 @@ export const POST: APIRoute = async ({ request, redirect }) => {
                     </div>
                 `,
             });
-            console.log("Email sent successfully:", emailResult);
         } catch (emailError) {
-            console.error("Email error:", emailError);
             // Still redirect to thank you even if email fails (data is saved in DB)
         }
 
         return redirect("/thank-you", 303);
 
     } catch (err) {
-        console.error("Contact form error:", err);
         const message = err instanceof Error ? err.message : "Unknown error";
         return new Response("Server error: " + message, { status: 500 });
     }
