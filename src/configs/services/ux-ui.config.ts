@@ -65,7 +65,7 @@ export const uxUiConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "/icons/diseno-uxui.webp",
+        icon: "/icons/diseno-grafico.webp",
         title: "User Research & Analysis",
         description:
           "Conduct in-depth user research through interviews, surveys, analytics, and competitive analysis to inform design decisions.",
