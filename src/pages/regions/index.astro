@@ -4,10 +4,10 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 
-// Get all regions and locations
-const regions = await getCollection("regions");
-const locations = await getCollection("locations");
-const countries = await getCollection("countryareas");
+// Get all regions and locations (exclude drafts)
+const regions = await getCollection("regions", ({ data }) => !data.draft);
+const locations = await getCollection("locations", ({ data }) => !data.draft);
+const countries = await getCollection("countryareas", ({ data }) => !data.draft);
 
 // Group regions by country
 const regionsByCountry = regions.reduce((acc, region) => {

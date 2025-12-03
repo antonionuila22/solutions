@@ -6,9 +6,9 @@ import Layout from "../../layouts/Layout.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 
 export async function getStaticPaths() {
-  const regions = await getCollection("regions");
-  const locations = await getCollection("locations");
-  const countries = await getCollection("countryareas");
+  const regions = await getCollection("regions", ({ data }) => !data.draft);
+  const locations = await getCollection("locations", ({ data }) => !data.draft);
+  const countries = await getCollection("countryareas", ({ data }) => !data.draft);
 
   return regions.map((region) => {
     // Get cities in this region

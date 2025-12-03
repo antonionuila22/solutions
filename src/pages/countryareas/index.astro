@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import Banner from "../../components/Banner.astro";
 import Button from "../../components/Button.astro";
 
-const countries = await getCollection("countryareas");
+const countries = await getCollection("countryareas", ({ data }) => !data.draft);
 
 // Group countries by region for better organization
 const countryGroups = countries.reduce(

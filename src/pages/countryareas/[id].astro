@@ -6,9 +6,9 @@ import Layout from "../../layouts/Layout.astro";
 
 // 1. Generamos las rutas estáticas basadas en los slugs de cada país
 export async function getStaticPaths() {
-    const countries = await getCollection("countryareas");
-    const regions = await getCollection("regions");
-    const locations = await getCollection("locations");
+    const countries = await getCollection("countryareas", ({ data }) => !data.draft);
+    const regions = await getCollection("regions", ({ data }) => !data.draft);
+    const locations = await getCollection("locations", ({ data }) => !data.draft);
 
     return countries.map((country) => {
         // Get regions for this country

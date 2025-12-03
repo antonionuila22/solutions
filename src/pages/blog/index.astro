@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Button from "../../components/Button.astro";
 
-const allPosts = await getCollection("blog");
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 
 // Sort posts by date (newest first)
 const posts = allPosts.sort((a, b) => {

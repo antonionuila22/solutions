@@ -2,7 +2,7 @@
 title: Content Creators Landing Page Template
 description: Modern, creative landing page designed for influencers, YouTubers, streamers, and digital content creators with portfolio showcases and collaboration forms.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: /photos/3D.webp
 category: Web Design
 tags:
   - Landing Page

@@ -20,6 +20,7 @@ const blog = defineCollection({
         tags: z.array(z.string()).optional(),
         complexity: z.number().default(1),
         hideToc: z.boolean().default(false),
+        draft: z.boolean().default(false), // true = not published, false = published
     }),
 });
 
@@ -28,6 +29,7 @@ const books = defineCollection({
     schema: searchable.extend({
         img: z.string(),
         date: z.string(),
+        draft: z.boolean().default(false),
     }),
 });
 
@@ -40,6 +42,7 @@ const countryareas = defineCollection({
         name: z.string(),
         code: z.string(), // Ej: "USA", "ARG"
         region: z.string().optional(),
+        draft: z.boolean().default(false),
     }),
 });
 
@@ -49,6 +52,7 @@ const products = defineCollection({
         img: z.string(),
         price: z.string(),
         inStock: z.boolean().default(true),
+        draft: z.boolean().default(false),
     }),
 });
 
@@ -67,6 +71,7 @@ const projects = defineCollection({
             metric2: z.string().optional(),
             metric3: z.string().optional(),
         }).optional(),
+        draft: z.boolean().default(false),
     }),
 });
 
@@ -85,6 +90,7 @@ const regions = defineCollection({
         timezone: z.string().optional(),
         keywords: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
+        draft: z.boolean().default(false),
     }),
 });
 
@@ -104,6 +110,7 @@ const locations = defineCollection({
         timezone: z.string().optional(),
         keywords: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
+        draft: z.boolean().default(false),
     }),
 });
 

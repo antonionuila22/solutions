@@ -4,8 +4,8 @@ import Button from "../../components/Button.astro";
 import PartnershipBanner from "../../components/PartnershipBanner.astro";
 import { getCollection } from "astro:content";
 
-// Get all projects from the collection
-const allProjects = await getCollection("projects");
+// Get all projects from the collection (exclude drafts)
+const allProjects = await getCollection("projects", ({ data }) => !data.draft);
 
 // Sort by date (newest first)
 const projects = allProjects

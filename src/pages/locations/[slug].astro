@@ -8,7 +8,7 @@ import Whyus from "../../components/whyus.astro";
 import Faq from "../../components/Faq.astro";
 
 export async function getStaticPaths() {
-  const locations = await getCollection("locations");
+  const locations = await getCollection("locations", ({ data }) => !data.draft);
 
   return locations.map((location) => ({
     params: { slug: location.slug },

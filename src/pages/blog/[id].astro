@@ -6,7 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import { createArticleSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 export async function getStaticPaths() {
-  const blog = await getCollection("blog");
+  const blog = await getCollection("blog", ({ data }) => !data.draft);
 
   return blog.map((post) => ({
     params: { id: post.slug },
