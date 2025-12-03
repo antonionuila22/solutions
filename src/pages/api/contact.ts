@@ -6,7 +6,7 @@ import { Resend } from "resend";
 import { validateEmail, sanitize } from "../../lib/validation";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
-const CONTACT_EMAIL = import.meta.env.CONTACT_RECIPIENT_EMAIL || "antonionuila022@gmail.com";
+const CONTACT_EMAIL = import.meta.env.CONTACT_RECIPIENT_EMAIL;
 // Usar dominio verificado de Resend, o el de prueba si no está configurado
 const FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL || "Codebrand <onboarding@resend.dev>";
 
