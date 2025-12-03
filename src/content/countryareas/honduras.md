@@ -2,7 +2,7 @@
 title: Codebrand Honduras
 name: Honduras
 code: HN
-region: Centroamérica
+region: Central America
 author: Ramon Nuila
 img: /photos/teamcode.png
 readtime: 5

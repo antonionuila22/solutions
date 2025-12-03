@@ -2,7 +2,7 @@
 title: Codebrand España
 name: España
 code: ES
-region: Europa
+region: Europe
 author: Ramon Nuila
 img: /photos/teamcode.png
 readtime: 5
@@ -56,4 +56,4 @@ Y cualquier marca en Europa que necesite un **aliado digital confiable y creativ
 
 ### ¿Listo para crear algo grande?
 
-Contactanos hoy mismo y empecemos a transformar tu presencia digital con Codebrand.
+Contáctanos hoy mismo y empecemos a transformar tu presencia digital con Codebrand.

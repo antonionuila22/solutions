@@ -2,7 +2,7 @@
 title: Codebrand México
 name: México
 code: ES
-region: América Latina
+region: North America
 author: Ramón Nuila
 img: /photos/teamcode.png
 readtime: 5

@@ -2,7 +2,7 @@
 title: Codebrand Chile
 name: Chile
 code: ES
-region: Sudamérica
+region: South America
 author: Ramón Nuila
 img: /photos/teamcode.png
 readtime: 5
