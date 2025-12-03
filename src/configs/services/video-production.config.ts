@@ -9,7 +9,7 @@ import type { ServicePageConfig } from "../../components/ServicePageTemplate.ast
 export const videoProductionConfig: ServicePageConfig = {
   // SEO Configuration
   seo: {
-    title: "Video Production & Editing Services | Professional Video Content - Codebrand",
+    title: "Video Production & Editing Services | Codebrand",
     description:
       "Professional video production and editing services including corporate videos, social media content, commercials, product demos, motion graphics, color grading, and event coverage.",
     keywords:

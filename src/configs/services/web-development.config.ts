@@ -15,7 +15,7 @@ import type { ServicePageConfig } from "../../components/ServicePageTemplate.ast
 export const webDevelopmentConfig: ServicePageConfig = {
   // SEO Configuration
   seo: {
-    title: "Web Development Services | Professional Website Design & Development - Codebrand",
+    title: "Web Development Services | Custom Website Design | Codebrand",
     description:
       "Transform your business with our professional web development services. We create fast, responsive, and SEO-optimized websites tailored to your needs. Custom web applications, e-commerce solutions, and mobile-friendly designs that drive results.",
     keywords:
