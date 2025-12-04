@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import "../styles/animations.css";
 import { ClientRouter } from "astro:transitions";
-import Navbar from "../components/Navbar.tsx";
+import Navbar from "../components/NavbarAstro.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
@@ -546,7 +546,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         style="display:none;visibility:hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
-    <Navbar client:load />
+    <Navbar />
     <main>
       <slot />
     </main>
