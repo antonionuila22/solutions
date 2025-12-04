@@ -11,7 +11,7 @@ const products = await getCollection("products", ({ data }) => !data.draft);
   keywords="digital products, digital services, web development services, design services, branding packages, SEO services, marketing services, video production, 3D animation, promotional products, digital solutions, agency services, professional services, codebrand products"
   image="/photos/bannercodebrand.webp"
 >
-    <section class="w-full flex items-center justify-center bg-white pt-28 sm:pt-24 lg:pt-20">
+    <section class="w-full flex items-center justify-center bg-white pt-32 sm:pt-36 lg:pt-28">
         <div class="py-24 w-11/12 max-w-4xl text-center">
             <h1
                 class="text-5xl font-extrabold text-cyan-900 mb-4 leading-tight tracking-tight"
@@ -68,13 +68,13 @@ const products = await getCollection("products", ({ data }) => !data.draft);
                                                 class={`font-medium ${inStock ? "text-green-600" : "text-red-600"}`}
                                             >
                                                 {inStock
-                                                    ? "Disponible"
-                                                    : "Agotado"}
+                                                    ? "Available"
+                                                    : "Sold Out"}
                                             </span>
                                         </div>
 
                                         <span class="text-sm font-semibold text-cyan-900 group-hover:text-orange-500 mt-auto pt-4 transition">
-                                            Ver más →
+                                            View more →
                                         </span>
                                     </div>
                                 </a>

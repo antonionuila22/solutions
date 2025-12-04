@@ -54,7 +54,7 @@ import Button from "../components/Button.astro";
     <div class="max-w-5xl mx-auto text-center">
       <!-- Badge -->
       <div
-        class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-cyan-500/30 rounded-full mb-8 animate-fade-in-up"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-cyan-500/30 rounded-full mb-8 animate-fade-in"
       >
         <span class="relative flex h-2 w-2">
           <span
@@ -68,23 +68,20 @@ import Button from "../components/Button.astro";
         >
       </div>
 
-      <!-- Main Headline with fixed height to prevent CLS -->
+      <!-- Main Headline -->
       <h1
-        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[200px]"
-        style="animation-delay: 0.1s;"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
       >
         Premium Web Development
-        <span
-          class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-300 to-orange-400"
-        >
+        <span class="block mt-2 text-cyan-400">
           at 60% Lower Cost
         </span>
       </h1>
 
       <!-- Subheadline -->
       <p
-        class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
-        style="animation-delay: 0.2s;"
+        class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in"
+        style="animation-delay: 0.1s;"
       >
         Get the same quality as <span class="text-white font-semibold"
           >$15,000+ US agencies</span
@@ -96,8 +93,8 @@ import Button from "../components/Button.astro";
 
       <!-- Stats Row -->
       <div
-        class="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 sm:gap-8 mb-10 animate-fade-in-up"
-        style="animation-delay: 0.3s;"
+        class="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 sm:gap-8 mb-10 animate-fade-in"
+        style="animation-delay: 0.2s;"
       >
         <div class="flex items-center gap-2 justify-center sm:justify-start">
           <div
@@ -192,8 +189,8 @@ import Button from "../components/Button.astro";
 
       <!-- CTA Buttons -->
       <div
-        class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up px-4 sm:px-0"
-        style="animation-delay: 0.4s;"
+        class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in px-4 sm:px-0"
+        style="animation-delay: 0.3s;"
       >
         <a
           href="/contact"
@@ -235,7 +232,7 @@ import Button from "../components/Button.astro";
       </div>
 
       <!-- Tech Stack Preview -->
-      <div class="animate-fade-in-up" style="animation-delay: 0.5s;">
+      <div class="animate-fade-in" style="animation-delay: 0.4s;">
         <p class="text-sm text-slate-500 mb-4 uppercase tracking-wider">
           Trusted Technologies
         </p>
@@ -316,18 +313,18 @@ import Button from "../components/Button.astro";
     animation: float 6s ease-in-out infinite;
   }
 
-  @keyframes fade-in-up {
+  /* Fade-in animation without transform to prevent CLS */
+  @keyframes fade-in {
     from {
       opacity: 0;
-      transform: translateY(30px);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
     }
   }
 
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 0.6s ease-out forwards;
   }
 </style>

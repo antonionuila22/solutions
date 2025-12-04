@@ -1,21 +1,22 @@
 /**
  * Global animations for Codebrand Solutions
  * Shared across all pages to maintain consistency and reduce duplication
+ *
+ * NOTE: Animations for above-the-fold content use opacity-only to prevent CLS
+ * Transform-based animations are only for interactive/scroll-triggered elements
  */
 
-/* Fade In Animation */
+/* Fade In Animation - CLS Safe (opacity only) */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* Slide Up Animation */
+/* Slide Up Animation - Use only for below-fold/scroll-triggered content */
 @keyframes slide-up {
   from {
     opacity: 0;
@@ -27,7 +28,7 @@
   }
 }
 
-/* Slide In from Left */
+/* Slide In from Left - Use only for below-fold/scroll-triggered content */
 @keyframes slide-in-left {
   from {
     opacity: 0;
@@ -39,7 +40,7 @@
   }
 }
 
-/* Slide In from Right */
+/* Slide In from Right - Use only for below-fold/scroll-triggered content */
 @keyframes slide-in-right {
   from {
     opacity: 0;
@@ -51,7 +52,7 @@
   }
 }
 
-/* Scale In Animation */
+/* Scale In Animation - CLS Safe (doesn't affect layout) */
 @keyframes scale-in {
   from {
     opacity: 0;
@@ -63,7 +64,7 @@
   }
 }
 
-/* Pulse Animation */
+/* Pulse Animation - CLS Safe */
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
@@ -73,7 +74,7 @@
   }
 }
 
-/* Bounce Animation */
+/* Bounce Animation - Use only for fixed-position elements */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -84,10 +85,14 @@
 }
 
 /* Animation Utility Classes */
+
+/* CLS-Safe fade-in - USE THIS for above-the-fold content */
 .animate-fade-in {
+  opacity: 0;
   animation: fade-in 0.6s ease-out forwards;
 }
 
+/* Use slide-up ONLY for below-fold or scroll-triggered content */
 .animate-slide-up {
   animation: slide-up 0.8s ease-out forwards;
   opacity: 0;
@@ -137,7 +142,7 @@
   animation-delay: 1s;
 }
 
-/* Hover Animations */
+/* Hover Animations - Safe for interaction */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -155,7 +160,7 @@
   transform: scale(1.05);
 }
 
-/* Scroll Reveal - for elements that should animate on scroll */
+/* Scroll Reveal - for elements that should animate on scroll (below-fold only) */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
