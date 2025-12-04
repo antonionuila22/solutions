@@ -1,8 +1,10 @@
 ---
 import Logo from "./logo.astro";
+
 interface SubItem {
   name: string;
   link: string;
+  icon?: string;
 }
 
 interface MenuItem {
@@ -37,8 +39,8 @@ const menuItems: MenuItem[] = [
       { name: "Construction", link: "/industries/construction" },
       { name: "Travel", link: "/industries/travel-agency" },
       { name: "E-Commerce", link: "/industries/ecommerce" },
-      { name: "Healt Care", link: "/industries/healthcare" },
-      { name: "Real State", link: "/industries/real-estate" },
+      { name: "Health Care", link: "/industries/healthcare" },
+      { name: "Real Estate", link: "/industries/real-estate" },
       { name: "Restaurants", link: "/industries/restaurants" },
       { name: "Law Firms", link: "/industries/law-firms" },
       { name: "Automotive", link: "/industries/automotive" },
@@ -64,37 +66,34 @@ const menuItems: MenuItem[] = [
 ---
 
 <header
-  class="navbar-header sticky top-0 z-50 transition-all bg-white"
+  class="navbar-header fixed top-0 left-0 right-0 z-50 px-4 py-3"
   role="banner"
 >
   <nav
-    class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
+    class="navbar-glass max-w-7xl mx-auto flex justify-between items-center px-6 py-3 rounded-2xl"
     role="navigation"
     aria-label="Main navigation"
   >
     <Logo />
 
     <!-- Desktop Menu -->
-    <ul
-      class="hidden md:flex items-center gap-8 font-medium mx-auto"
-      role="menubar"
-    >
+    <ul class="hidden lg:flex items-center gap-1 font-medium" role="menubar">
       {
         menuItems.map((item) => (
           <li class="relative group" role="none">
             <a
               href={item.link}
-              class="flex items-center py-4 gap-1 text-gray-800 hover:text-orange-400 transition"
+              class="nav-link flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-slate-700 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all duration-200"
               role="menuitem"
               aria-haspopup={item.hasDropdown ? "true" : undefined}
             >
-              {item.name}
+              <span class="text-sm font-medium">{item.name}</span>
               {item.hasDropdown && (
                 <svg
-                  class="w-3 h-3 transition-transform group-hover:rotate-180"
+                  class="w-3.5 h-3.5 opacity-50 transition-transform duration-200 group-hover:rotate-180"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.5"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
@@ -108,23 +107,26 @@ const menuItems: MenuItem[] = [
             </a>
 
             {item.hasDropdown && item.subItems && (
-              <ul
-                class="absolute left-1/2 -translate-x-1/2 top-7 bg-white shadow-md rounded-lg py-4 px-4 mt-2 space-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-[220px] border border-zinc-100 z-50"
-                role="menu"
-                aria-label={`${item.name} submenu`}
-              >
-                {item.subItems.map((sub) => (
-                  <li role="none">
-                    <a
-                      href={sub.link}
-                      class="block text-sm text-gray-700 hover:text-orange-400 whitespace-nowrap py-1"
-                      role="menuitem"
-                    >
-                      {sub.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div class="dropdown-container absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <ul
+                  class="dropdown-glass rounded-2xl py-3 px-2 min-w-[240px] shadow-xl shadow-slate-200/50"
+                  role="menu"
+                  aria-label={`${item.name} submenu`}
+                >
+                  {item.subItems.map((sub) => (
+                    <li role="none">
+                      <a
+                        href={sub.link}
+                        class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/70 transition-all duration-150"
+                        role="menuitem"
+                      >
+                        <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        {sub.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </li>
         ))
@@ -132,26 +134,38 @@ const menuItems: MenuItem[] = [
     </ul>
 
     <!-- Desktop CTA -->
-    <div class="hidden md:block">
+    <div class="hidden lg:flex items-center gap-3">
       <a
         href="/contact"
-        class="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+        class="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white text-sm font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 hover:-translate-y-0.5"
         aria-label="Contact us for a free consultation"
       >
-        Talk to us!
+        Talk to us
+        <svg
+          class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
       </a>
     </div>
 
     <!-- Mobile Menu Button -->
     <button
       type="button"
-      class="md:hidden mobile-menu-btn"
+      class="lg:hidden mobile-menu-btn p-2 rounded-xl hover:bg-slate-100/80 transition-colors"
       aria-label="Open mobile menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
       <svg
-        class="h-6 w-6 text-gray-800 hamburger-icon"
+        class="h-6 w-6 text-slate-700 hamburger-icon"
         fill="none"
         stroke="currentColor"
         stroke-width="2"
@@ -163,7 +177,7 @@ const menuItems: MenuItem[] = [
           d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
       <svg
-        class="h-6 w-6 text-gray-800 close-icon hidden"
+        class="h-6 w-6 text-slate-700 close-icon hidden"
         fill="none"
         stroke="currentColor"
         stroke-width="2"
@@ -180,76 +194,95 @@ const menuItems: MenuItem[] = [
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="mobile-menu md:hidden"
+    class="mobile-menu lg:hidden mt-2 mx-auto max-w-7xl"
     role="menu"
     aria-label="Mobile navigation menu"
   >
     <div
-      class="flex flex-col gap-3 px-6 pb-6 pt-2 bg-white border-t border-zinc-100 shadow-inner"
+      class="mobile-menu-glass rounded-2xl px-4 py-5 shadow-xl shadow-slate-200/50"
     >
-      {
-        menuItems.map((item, index) => (
-          <div role="none">
-            {item.hasDropdown ? (
-              <div class="mobile-dropdown">
-                <button
-                  type="button"
-                  class="mobile-dropdown-btn w-full flex justify-between items-center text-left font-semibold py-2 text-gray-800 hover:text-orange-400"
-                  aria-expanded="false"
-                  aria-controls={`mobile-submenu-${index}`}
+      <div class="flex flex-col gap-1">
+        {
+          menuItems.map((item, index) => (
+            <div role="none">
+              {item.hasDropdown ? (
+                <div class="mobile-dropdown">
+                  <button
+                    type="button"
+                    class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 transition-colors"
+                    aria-expanded="false"
+                    aria-controls={`mobile-submenu-${index}`}
+                  >
+                    <span class="font-medium">{item.name}</span>
+                    <svg
+                      class="w-4 h-4 opacity-50 transition-transform duration-200 dropdown-arrow"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M19 9l-7 7-7-7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    id={`mobile-submenu-${index}`}
+                    class="mobile-submenu"
+                    role="menu"
+                    aria-label={`${item.name} submenu`}
+                  >
+                    <div class="py-2 pl-4 pr-2 space-y-1">
+                      {item.subItems?.map((subItem) => (
+                        <a
+                          href={subItem.link}
+                          class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-slate-500 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all"
+                          role="menuitem"
+                        >
+                          <span class="w-1 h-1 rounded-full bg-slate-300" />
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  href={item.link}
+                  class="block px-4 py-3 rounded-xl text-slate-700 font-medium hover:bg-slate-50 transition-colors"
+                  role="menuitem"
                 >
                   {item.name}
-                  <svg
-                    class="w-4 h-4 transition-transform dropdown-arrow"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M19 9l-7 7-7-7"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div
-                  id={`mobile-submenu-${index}`}
-                  class="mobile-submenu pl-4"
-                  role="menu"
-                  aria-label={`${item.name} submenu`}
-                >
-                  {item.subItems?.map((subItem) => (
-                    <a
-                      href={subItem.link}
-                      class="block text-sm text-gray-600 py-1 hover:text-orange-400"
-                      role="menuitem"
-                    >
-                      {subItem.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <a
-                href={item.link}
-                class="block text-base text-gray-800 hover:text-orange-400 py-2 font-semibold"
-                role="menuitem"
-              >
-                {item.name}
-              </a>
-            )}
-          </div>
-        ))
-      }
-      <div class="mt-4">
+                </a>
+              )}
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Mobile CTA -->
+      <div class="mt-4 pt-4 border-t border-slate-100">
         <a
           href="/contact"
-          class="inline-block bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+          class="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-200"
           aria-label="Contact us for a free consultation"
         >
-          Talk to us!
+          Talk to us
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
         </a>
       </div>
     </div>
@@ -257,34 +290,71 @@ const menuItems: MenuItem[] = [
 </header>
 
 <style>
-  /* Scroll shadow - usando CSS puro */
-  .navbar-header.scrolled {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-    border-bottom: 1px solid rgb(244 244 245);
+  /* Glassmorphism base */
+  .navbar-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+      0 4px 30px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
   }
 
-  /* Mobile menu - cerrado por defecto */
+  .dropdown-glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .mobile-menu-glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  /* Scrolled state - más sólido */
+  .navbar-header.scrolled .navbar-glass {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  /* Dropdown animation */
+  .dropdown-container {
+    transform: translateY(8px);
+  }
+
+  .group:hover .dropdown-container {
+    transform: translateY(0);
+  }
+
+  /* Mobile menu animations */
   .mobile-menu {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition:
-      max-height 0.3s ease-out,
-      opacity 0.2s ease-out;
+      max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.25s ease-out;
   }
 
   .mobile-menu.open {
-    max-height: 100vh;
+    max-height: 85vh;
     opacity: 1;
+    overflow-y: auto;
   }
 
-  /* Mobile submenu - cerrado por defecto */
+  /* Mobile submenu */
   .mobile-submenu {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition:
-      max-height 0.25s ease-out,
+      max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       opacity 0.2s ease-out;
   }
 
@@ -309,6 +379,24 @@ const menuItems: MenuItem[] = [
   .mobile-menu-btn.open .close-icon {
     display: block;
   }
+
+  /* Active link indicator */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(to right, #06b6d4, #f97316);
+    border-radius: 1px;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
 </style>
 
 <script>
@@ -332,22 +420,42 @@ const menuItems: MenuItem[] = [
       );
     });
 
-    // Toggle mobile submenus
+    // Toggle mobile submenus (accordion style - only one open at a time)
     dropdownBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         const dropdown = btn.closest<HTMLDivElement>(".mobile-dropdown");
-        const isOpen = dropdown?.classList.toggle("open");
-        btn.setAttribute("aria-expanded", String(isOpen));
+        const wasOpen = dropdown?.classList.contains("open");
+
+        // Close all other dropdowns
+        document.querySelectorAll(".mobile-dropdown.open").forEach((d) => {
+          if (d !== dropdown) {
+            d.classList.remove("open");
+            d.querySelector("button")?.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Toggle current
+        dropdown?.classList.toggle("open", !wasOpen);
+        btn.setAttribute("aria-expanded", String(!wasOpen));
       });
     });
 
-    // Scroll shadow
+    // Scroll detection
     const handleScroll = (): void => {
-      header?.classList.toggle("scrolled", window.scrollY > 10);
+      header?.classList.toggle("scrolled", window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check initial state
+    handleScroll();
+
+    // Close mobile menu on link click
+    mobileMenu?.querySelectorAll('a[role="menuitem"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuBtn?.classList.remove("open");
+        menuBtn?.setAttribute("aria-expanded", "false");
+      });
+    });
   }
 
   // Run on initial load
