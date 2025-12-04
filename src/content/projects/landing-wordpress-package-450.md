@@ -2,7 +2,7 @@
 title: WordPress Website Package Landing Page - $450
 description: Affordable, feature-rich landing page promoting our $450 WordPress website package for startups and small businesses looking for budget-friendly professional web presence.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: /photos/diseñoweb.webp
 category: Web Design
 tags:
   - Landing Page

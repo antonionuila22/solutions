@@ -5,7 +5,8 @@ import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
 
-const title = "Professional Web Design Services | UI/UX Design & Website Redesign - Codebrand";
+const title =
+  "Professional Web Design Services | UI/UX Design & Website Redesign - Codebrand";
 const description =
   "Create stunning, user-centered web designs that captivate audiences and drive conversions. Expert UI/UX design, responsive layouts, brand-focused aesthetics, and conversion-optimized interfaces that elevate your digital presence.";
 const keywords =
@@ -16,65 +17,74 @@ const image = "/photos/uxui.webp";
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Web Design Services",
-  "name": "Professional UI/UX & Web Design Services",
-  "description": description,
-  "url": "https://codebrand.us/web-design",
-  "image": "https://codebrand.us/photos/uxui.webp",
-  "provider": {
+  serviceType: "Web Design Services",
+  name: "Professional UI/UX & Web Design Services",
+  description: description,
+  url: "https://codebrand.us/web-design",
+  image: "https://codebrand.us/photos/uxui.webp",
+  provider: {
     "@type": "Organization",
-    "name": "Codebrand",
-    "url": "https://codebrand.us",
-    "logo": "https://codebrand.us/iconcodebrand.svg"
+    name: "Codebrand",
+    url: "https://codebrand.us",
+    logo: "https://codebrand.us/iconcodebrand.svg",
   },
-  "areaServed": {
+  areaServed: {
     "@type": "Country",
-    "name": "United States"
+    name: "United States",
   },
-  "hasOfferCatalog": {
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "Web Design Services",
-    "itemListElement": [
+    name: "Web Design Services",
+    itemListElement: [
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "UI/UX Design",
-          "description": "User-centered interface and experience design"
-        }
+          name: "UI/UX Design",
+          description: "User-centered interface and experience design",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Website Redesign",
-          "description": "Modernize and refresh your existing website"
-        }
+          name: "Website Redesign",
+          description: "Modernize and refresh your existing website",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Responsive Design",
-          "description": "Mobile-first designs that work on all devices"
-        }
+          name: "Responsive Design",
+          description: "Mobile-first designs that work on all devices",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Design Systems",
-          "description": "Scalable design systems for consistent branding"
-        }
-      }
-    ]
+          name: "Design Systems",
+          description: "Scalable design systems for consistent branding",
+        },
+      },
+    ],
   },
-  "priceRange": "$$$"
+  priceRange: "$$$",
 };
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(serviceSchema)}
+  />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
@@ -109,7 +119,10 @@ const serviceSchema = {
           >
         </h1>
         <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
-          Transform your brand with stunning, user-centered web designs that captivate audiences and drive business growth. We combine aesthetic excellence with strategic thinking to create digital experiences that users love and remember.
+          Transform your brand with stunning, user-centered web designs that
+          captivate audiences and drive business growth. We combine aesthetic
+          excellence with strategic thinking to create digital experiences that
+          users love and remember.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -153,16 +166,44 @@ const serviceSchema = {
           </h2>
           <div class="prose prose-lg text-gray-700 space-y-4">
             <p>
-              Great web design is more than just beautiful visuals—it's the perfect marriage of aesthetics, functionality, and strategic thinking. At Codebrand, we create web designs that don't just look stunning, they drive measurable business results by guiding users through intuitive, engaging experiences that convert visitors into loyal customers. Every design decision we make is rooted in user research, brand strategy, and conversion optimization principles.
+              Great web design is more than just beautiful visuals—it's the
+              perfect marriage of aesthetics, functionality, and strategic
+              thinking. At Codebrand, we create web designs that don't just look
+              stunning, they drive measurable business results by guiding users
+              through intuitive, engaging experiences that convert visitors into
+              loyal customers. Every design decision we make is rooted in user
+              research, brand strategy, and conversion optimization principles.
             </p>
             <p>
-              Our design philosophy centers on understanding your users deeply and crafting experiences that resonate with their needs, preferences, and behaviors. We combine cutting-edge design trends with timeless principles of visual hierarchy, color psychology, typography, and user interface design to create websites that stand out in crowded markets. Whether you need a complete website redesign, landing page optimization, or a comprehensive design system, we have the expertise to elevate your digital presence.
+              Our design philosophy centers on understanding your users deeply
+              and crafting experiences that resonate with their needs,
+              preferences, and behaviors. We combine cutting-edge design trends
+              with timeless principles of visual hierarchy, color psychology,
+              typography, and user interface design to create websites that
+              stand out in crowded markets. Whether you need a complete website
+              redesign, landing page optimization, or a comprehensive design
+              system, we have the expertise to elevate your digital presence.
             </p>
             <p>
-              We believe exceptional web design should be accessible, responsive, and performant across all devices and screen sizes. Mobile-first design isn't just a buzzword for us—it's a fundamental approach that ensures your website delivers pixel-perfect experiences whether users access it from smartphones, tablets, or desktop computers. With over 60% of web traffic coming from mobile devices, responsive design is no longer optional—it's essential for business success.
+              We believe exceptional web design should be accessible,
+              responsive, and performant across all devices and screen sizes.
+              Mobile-first design isn't just a buzzword for us—it's a
+              fundamental approach that ensures your website delivers
+              pixel-perfect experiences whether users access it from
+              smartphones, tablets, or desktop computers. With over 60% of web
+              traffic coming from mobile devices, responsive design is no longer
+              optional—it's essential for business success.
             </p>
             <p>
-              Our collaborative design process keeps you involved every step of the way. From initial concepts and wireframes to high-fidelity mockups and interactive prototypes, you'll see your vision come to life through regular reviews and iterations. We use industry-standard design tools and methodologies to ensure seamless handoff to development teams, maintaining design integrity from concept to final implementation. The result is a cohesive, polished digital product that exceeds your expectations and delights your users.
+              Our collaborative design process keeps you involved every step of
+              the way. From initial concepts and wireframes to high-fidelity
+              mockups and interactive prototypes, you'll see your vision come to
+              life through regular reviews and iterations. We use
+              industry-standard design tools and methodologies to ensure
+              seamless handoff to development teams, maintaining design
+              integrity from concept to final implementation. The result is a
+              cohesive, polished digital product that exceeds your expectations
+              and delights your users.
             </p>
           </div>
         </div>
@@ -238,7 +279,9 @@ const serviceSchema = {
                   </div>
                   <div>
                     <div class="text-2xl font-bold text-cyan-900">+165%</div>
-                    <div class="text-sm text-gray-600">Avg. Conversion Lift</div>
+                    <div class="text-sm text-gray-600">
+                      Avg. Conversion Lift
+                    </div>
                   </div>
                 </div>
               </div>
@@ -256,18 +299,17 @@ const serviceSchema = {
         <h2
           class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
         >
-          Comprehensive Web Design <span class="text-orange-500"
-            >Services</span
-          >
+          Comprehensive Web Design <span class="text-orange-500">Services</span>
         </h2>
         <p class="text-lg text-gray-700">
-          From concept to final design, we offer complete design services that transform your brand vision into compelling digital experiences.
+          From concept to final design, we offer complete design services that
+          transform your brand vision into compelling digital experiences.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <CardService
-          icon="/icons/interfaz-de-usuario.png"
+          icon="/icons/interfaz-de-usuario.webp"
           title="UI/UX Design"
           description="Create intuitive, user-centered interfaces that delight users and drive engagement. We conduct user research, create information architectures, design wireframes, and craft beautiful interfaces optimized for usability and conversions."
           learnMoreUrl="/contact"
@@ -281,7 +323,7 @@ const serviceSchema = {
         />
 
         <CardService
-          icon="/icons/sitio-web.png"
+          icon="/icons/sitio-web.webp"
           title="Website Redesign"
           description="Modernize outdated websites with strategic redesigns that improve aesthetics, functionality, and performance. We analyze existing designs, identify opportunities, and create fresh, contemporary looks that elevate your brand."
           learnMoreUrl="/contact"
@@ -295,7 +337,7 @@ const serviceSchema = {
         />
 
         <CardService
-          icon="/icons/diseno-grafico.png"
+          icon="/icons/diseno-grafico.webp"
           title="Brand Identity Design"
           description="Develop cohesive visual identities that reflect your brand personality and resonate with target audiences. We design logos, color palettes, typography systems, and brand guidelines that ensure consistency across all touchpoints."
           learnMoreUrl="/branding"
@@ -316,7 +358,7 @@ const serviceSchema = {
         />
 
         <CardService
-          icon="/icons/interfaz-de-usuario.png"
+          icon="/icons/interfaz-de-usuario.webp"
           title="Prototyping & Testing"
           description="Validate design concepts with interactive prototypes and user testing before development. We create clickable prototypes that simulate real functionality, gather user feedback, and refine designs based on actual usage data."
           learnMoreUrl="/contact"
@@ -342,81 +384,171 @@ const serviceSchema = {
           Our Design <span class="text-orange-500">Principles</span>
         </h2>
         <p class="text-lg text-gray-700">
-          We follow proven design principles that ensure every project delivers exceptional results and user satisfaction.
+          We follow proven design principles that ensure every project delivers
+          exceptional results and user satisfaction.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-8 shadow-lg border border-cyan-100">
-          <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+        <div
+          class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-8 shadow-lg border border-cyan-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
               <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-              <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+              <path
+                fill-rule="evenodd"
+                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">User-Centered Focus</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            User-Centered Focus
+          </h3>
           <p class="text-gray-700">
-            Every design decision starts with understanding user needs, behaviors, and goals. We create experiences that solve real problems and delight users through intuitive, accessible interfaces.
+            Every design decision starts with understanding user needs,
+            behaviors, and goals. We create experiences that solve real problems
+            and delight users through intuitive, accessible interfaces.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border border-orange-100">
-          <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+        <div
+          class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border border-orange-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Performance & Speed</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Performance & Speed
+          </h3>
           <p class="text-gray-700">
-            Beautiful designs mean nothing if they load slowly. We optimize every asset, minimize code, and design with performance in mind to ensure fast, responsive experiences that retain users.
+            Beautiful designs mean nothing if they load slowly. We optimize
+            every asset, minimize code, and design with performance in mind to
+            ensure fast, responsive experiences that retain users.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border border-blue-100">
-          <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path>
+        <div
+          class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border border-blue-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Brand Consistency</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Brand Consistency
+          </h3>
           <p class="text-gray-700">
-            Strong brands maintain visual consistency across all touchpoints. We create cohesive design systems with defined colors, typography, and components that reinforce brand identity.
+            Strong brands maintain visual consistency across all touchpoints. We
+            create cohesive design systems with defined colors, typography, and
+            components that reinforce brand identity.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg border border-green-100">
-          <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+        <div
+          class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg border border-green-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Accessibility First</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Accessibility First
+          </h3>
           <p class="text-gray-700">
-            Inclusive design ensures everyone can use your website. We follow WCAG guidelines, implement proper semantics, ensure keyboard navigation, and maintain sufficient color contrast.
+            Inclusive design ensures everyone can use your website. We follow
+            WCAG guidelines, implement proper semantics, ensure keyboard
+            navigation, and maintain sufficient color contrast.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg border border-purple-100">
-          <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+        <div
+          class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg border border-purple-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Conversion Focused</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Conversion Focused
+          </h3>
           <p class="text-gray-700">
-            Great design drives business results. We strategically place calls-to-action, optimize user flows, reduce friction, and guide visitors toward conversion goals that matter to your business.
+            Great design drives business results. We strategically place
+            calls-to-action, optimize user flows, reduce friction, and guide
+            visitors toward conversion goals that matter to your business.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-pink-50 to-white rounded-2xl p-8 shadow-lg border border-pink-100">
-          <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path>
+        <div
+          class="bg-gradient-to-br from-pink-50 to-white rounded-2xl p-8 shadow-lg border border-pink-100"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+                clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Iterative Improvement</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Iterative Improvement
+          </h3>
           <p class="text-gray-700">
-            Design is never truly finished. We continuously test, gather feedback, analyze data, and refine designs based on real user behavior to improve performance over time.
+            Design is never truly finished. We continuously test, gather
+            feedback, analyze data, and refine designs based on real user
+            behavior to improve performance over time.
           </p>
         </div>
       </div>
@@ -424,7 +556,9 @@ const serviceSchema = {
   </section>
 
   <!-- Process Section -->
-  <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins">
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2
@@ -433,58 +567,74 @@ const serviceSchema = {
           Our Design <span class="text-orange-500">Process</span>
         </h2>
         <p class="text-lg text-gray-700">
-          A proven methodology that ensures successful outcomes and client satisfaction on every project.
+          A proven methodology that ensures successful outcomes and client
+          satisfaction on every project.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">1</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Research</h3>
           <p class="text-gray-700">
-            Understand users, competitors, and market trends through comprehensive research and analysis.
+            Understand users, competitors, and market trends through
+            comprehensive research and analysis.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">2</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Wireframing</h3>
           <p class="text-gray-700">
-            Create low-fidelity wireframes to establish information architecture and layout structures.
+            Create low-fidelity wireframes to establish information architecture
+            and layout structures.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">3</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Visual Design</h3>
           <p class="text-gray-700">
-            Design high-fidelity mockups with beautiful aesthetics, brand alignment, and attention to detail.
+            Design high-fidelity mockups with beautiful aesthetics, brand
+            alignment, and attention to detail.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">4</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Prototyping</h3>
           <p class="text-gray-700">
-            Build interactive prototypes to validate functionality and gather feedback before development.
+            Build interactive prototypes to validate functionality and gather
+            feedback before development.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">5</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Handoff</h3>
           <p class="text-gray-700">
-            Deliver complete design specifications and assets for seamless development implementation.
+            Deliver complete design specifications and assets for seamless
+            development implementation.
           </p>
         </div>
       </div>
@@ -495,13 +645,17 @@ const serviceSchema = {
   <Whyus />
 
   <!-- CTA Section -->
-  <section class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins">
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins"
+  >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
         Ready to Create Something <span class="text-orange-400">Amazing?</span>
       </h2>
       <p class="text-xl text-gray-200 mb-8">
-        Let's design a website that captivates your audience and drives business growth. Our award-winning design team is ready to bring your vision to life.
+        Let's design a website that captivates your audience and drives business
+        growth. Our award-winning design team is ready to bring your vision to
+        life.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button text="Start Your Project" href="/contact" />

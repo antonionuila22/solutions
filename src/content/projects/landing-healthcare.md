@@ -2,7 +2,7 @@
 title: Healthcare & Medical Landing Page Template
 description: Professional, trust-focused landing page for healthcare providers, medical practices, clinics, and wellness services with appointment booking and patient information.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: /photos/diseñoweb.webp
 category: Web Design
 tags:
   - Landing Page

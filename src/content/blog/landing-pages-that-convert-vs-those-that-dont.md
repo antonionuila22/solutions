@@ -3,7 +3,7 @@ title: "Landing Pages That Convert vs. Those That Don't: A Complete Analysis"
 description: "Detailed comparison between landing pages that convert and those that fail. Learn what elements make the difference, common mistakes, and clear recommendations to improve your results."
 author: "Ramon Nuila"
 readtime: 10
-img: /photos/uxservice.png
+img: /photos/uxservice.webp
 imageAlt: "Visual comparison of two landing pages with different conversion rates"
 date: 2024-03-28
 ---

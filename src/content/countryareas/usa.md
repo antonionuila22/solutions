@@ -4,7 +4,7 @@ name: United States
 code: EN
 region: North America
 author: Ramon Nuila
-img: /photos/teamcode.png
+img: /photos/teamcode.webp
 readtime: 5
 description: Web design and development agency based in the United States. We create custom digital solutions for companies seeking quality, innovation, and real results across North America.
 ---

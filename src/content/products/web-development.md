@@ -1,6 +1,6 @@
 ---
 title: Full Stack Web Development – Modern, Scalable & Custom-Built Websites
-img: /photos/webservice.png
+img: /photos/webservice.webp
 readtime: 6
 price: $350 - $900 (per page)
 inStock: true

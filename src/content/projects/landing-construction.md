@@ -2,7 +2,7 @@
 title: Construction & Contractors Landing Page Template
 description: Professional landing page designed for construction companies, contractors, and building services with project galleries, service listings, and quote request forms.
 author: Codebrand Team
-img: /photos/buidco.png
+img: /photos/diseñoweb.webp
 category: Web Design
 tags:
   - Landing Page

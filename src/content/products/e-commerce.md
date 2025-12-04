@@ -1,6 +1,6 @@
 ---
 title: Online Store Development – Scalable, Visual, and High-Converting E-commerce
-img: /photos/diseñoweb.png
+img: /photos/diseñoweb.webp
 readtime: 7
 price: From $1,500 to $5,200+
 inStock: true

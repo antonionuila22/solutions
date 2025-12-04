@@ -2,7 +2,7 @@
 title: Premium Website Package Landing Page - $1500
 description: Professional landing page showcasing our premium $1500 website package with complete features, design examples, and clear value proposition for businesses ready to establish their online presence.
 author: Codebrand Team
-img: /photos/diseñoweb.png
+img: /photos/diseñoweb.webp
 category: Web Design
 tags:
   - Landing Page

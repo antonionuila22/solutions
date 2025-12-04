@@ -4,7 +4,7 @@ name: Costa Rica
 code: ES
 region: Central America
 author: Ramon Nuila
-img: /photos/teamcode.png
+img: /photos/teamcode.webp
 readtime: 5
 description: Agencia de diseño y desarrollo web en Costa Rica. Creamos soluciones digitales personalizadas para empresas costarricenses que buscan calidad, innovación y resultados reales.
 ---

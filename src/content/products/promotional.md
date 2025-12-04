@@ -1,6 +1,6 @@
 ---
 title: Custom Promotional Products for Businesses
-img: /photos/promocionales.png
+img: /photos/promocionales.webp
 readtime: 4
 price: $100 - $1200
 inStock: true

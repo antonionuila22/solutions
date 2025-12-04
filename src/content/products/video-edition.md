@@ -1,6 +1,6 @@
 ---
 title: Professional Video Editing – Visual Content That Captures and Connects
-img: /photos/videoedition.png
+img: /photos/videoedition.webp
 readtime: 5
 price: $320 - $950
 inStock: true

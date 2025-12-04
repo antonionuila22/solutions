@@ -3,7 +3,7 @@ title: "What No One Tells You Before Paying for a Cheap Agency"
 description: "Discover the hidden risks of hiring 'cheap' marketing agencies and why budget options often end up costing more. Warning signs, hidden costs, and how to choose wisely."
 author: "Ramon Nuila"
 readtime: 11
-img: /photos/website-value.png
+img: /photos/website-value.webp
 imageAlt: "Visual warning about hiring low-cost marketing agencies"
 date: 2025-03-28
 ---

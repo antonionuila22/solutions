@@ -1,6 +1,6 @@
 ---
 title: Professional Data Entry Service – Accuracy, Speed, and Security
-img: /photos/dataentry.png
+img: /photos/dataentry.webp
 readtime: 5
 price: From $650/month
 inStock: true

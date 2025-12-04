@@ -1,6 +1,6 @@
 ---
 title: Professional UX/UI Website Design in Figma – Modern & Efficient Prototypes
-img: /photos/uxservice.png
+img: /photos/uxservice.webp
 readtime: 5
 price: $180 - $800
 inStock: true

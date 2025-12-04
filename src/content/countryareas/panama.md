@@ -4,7 +4,7 @@ name: Panamá
 code: ES
 region: Central America
 author: Ramon Nuila
-img: /photos/teamcode.png
+img: /photos/teamcode.webp
 readtime: 5
 description: Agencia de diseño y desarrollo web en Panamá. Creamos soluciones digitales personalizadas para empresas panameñas que buscan calidad, innovación y resultados reales.
 ---

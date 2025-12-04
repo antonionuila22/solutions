@@ -56,7 +56,7 @@ We create visuals that rival real photography — hyper-realistic, stylized, det
 
 ## 📦 Deliverables
 
-- 🖼️ Final high-resolution image (.JPG, .PNG, or .TIFF)  
+- 🖼️ Final high-resolution image (.JPG, .webp, or .TIFF)  
 - 🧱 Source files (if requested and quoted)  
 - 📁 Versions with white background, transparent, or fully staged  
 - 🎨 Realism and style tailored to your brand (commercial, technical, or artistic)

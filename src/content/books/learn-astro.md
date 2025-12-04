@@ -243,7 +243,7 @@ my-astro-site/
 - Static files served as-is
 - Not processed by Astro
 - Use for images, fonts, `robots.txt`, etc.
-- Access via `/filename.ext` (e.g., `/logo.png`)
+- Access via `/filename.ext` (e.g., `/logo.webp`)
 
 **`src/pages/`**
 - **File-based routing**: Each file becomes a URL

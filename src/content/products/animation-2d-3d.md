@@ -1,6 +1,6 @@
 ---
 title: Professional 2D & 3D Animation – Motion Graphics and Animated Illustration
-img: /photos/animacion2d.png
+img: /photos/animacion2d.webp
 readtime: 6
 price: $480 - $1200
 inStock: true

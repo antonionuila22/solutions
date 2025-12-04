@@ -3,7 +3,7 @@ title: "5 Design Mistakes That Make Your Website Look Cheap"
 description: "Don't let your website keep looking cheap - follow these tips to show yourself professionally in the market and build trust with your audience"
 author: "Ramon Nuila"
 readtime: 9
-img: /photos/website-cheap.png
+img: /photos/website-cheap.webp
 imageAlt: "5 design mistakes that make your website look cheap"
 date: 2025-03-28
 ---

@@ -248,12 +248,12 @@ Required for service workers and security.
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "/icons/icon-192.webp",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/icons/icon-512.webp",
       "sizes": "512x512",
       "type": "image/png"
     }

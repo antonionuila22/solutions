@@ -1,6 +1,6 @@
 ---
 title: Professional Photography – Capturing Moments That Speak
-img: /photos/fotografia.png
+img: /photos/fotografia.webp
 readtime: 4
 price: $280 - $890
 inStock: true
@@ -55,7 +55,7 @@ At **Codebrand**, we believe a powerful image can **communicate, inspire, and po
 ## 📦 Deliverables
 
 - 10 to 40 retouched photos (depending on package)  
-- High-resolution files (.JPG / .PNG)  
+- High-resolution files (.JPG / .webp)  
 - Web and social media-optimized versions  
 - Private digital gallery for selection and download  
 - RAW files (if contracted)

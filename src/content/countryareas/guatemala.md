@@ -4,7 +4,7 @@ name: Guatemala
 code: ES
 region: Central America
 author: Ramon Nuila
-img: /photos/teamcode.png
+img: /photos/teamcode.webp
 readtime: 5
 description: Agencia de diseño y desarrollo web en Guatemala. Creamos soluciones digitales personalizadas para empresas guatemaltecas que buscan calidad, innovación y resultados reales.
 ---

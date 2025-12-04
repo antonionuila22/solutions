@@ -16,65 +16,75 @@ const image = "/photos/ads.webp";
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Copywriting Services",
-  "name": "Professional Copywriting & Content Writing",
-  "description": description,
-  "url": "https://codebrand.us/copywriting",
-  "image": "https://codebrand.us/photos/ads.webp",
-  "provider": {
+  serviceType: "Copywriting Services",
+  name: "Professional Copywriting & Content Writing",
+  description: description,
+  url: "https://codebrand.us/copywriting",
+  image: "https://codebrand.us/photos/ads.webp",
+  provider: {
     "@type": "Organization",
-    "name": "Codebrand",
-    "url": "https://codebrand.us",
-    "logo": "https://codebrand.us/iconcodebrand.svg"
+    name: "Codebrand",
+    url: "https://codebrand.us",
+    logo: "https://codebrand.us/iconcodebrand.svg",
   },
-  "areaServed": {
+  areaServed: {
     "@type": "Country",
-    "name": "United States"
+    name: "United States",
   },
-  "hasOfferCatalog": {
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "Copywriting Services",
-    "itemListElement": [
+    name: "Copywriting Services",
+    itemListElement: [
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Website Copywriting",
-          "description": "Compelling website copy that converts visitors to customers"
-        }
+          name: "Website Copywriting",
+          description:
+            "Compelling website copy that converts visitors to customers",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "SEO Copywriting",
-          "description": "Search-optimized content that ranks and converts"
-        }
+          name: "SEO Copywriting",
+          description: "Search-optimized content that ranks and converts",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Email Copywriting",
-          "description": "Engaging email campaigns and sequences"
-        }
+          name: "Email Copywriting",
+          description: "Engaging email campaigns and sequences",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Ad Copywriting",
-          "description": "High-converting ad copy for PPC and social media"
-        }
-      }
-    ]
+          name: "Ad Copywriting",
+          description: "High-converting ad copy for PPC and social media",
+        },
+      },
+    ],
   },
-  "priceRange": "$$$"
+  priceRange: "$$$",
 };
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(serviceSchema)}
+  />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
@@ -109,7 +119,10 @@ const serviceSchema = {
           >
         </h1>
         <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
-          Transform your marketing with powerful copywriting that captures attention, builds trust, and drives action. We craft compelling messages that resonate with your audience and deliver measurable business results.
+          Transform your marketing with powerful copywriting that captures
+          attention, builds trust, and drives action. We craft compelling
+          messages that resonate with your audience and deliver measurable
+          business results.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -153,16 +166,68 @@ const serviceSchema = {
           </h2>
           <div class="prose prose-lg text-gray-700 space-y-4">
             <p>
-              In the digital age, words are your most powerful marketing tool. Great copywriting doesn't just inform—it persuades, engages, and converts. At Codebrand, we specialize in crafting compelling copy that captures attention in crowded markets, builds emotional connections with audiences, and drives them to take action. Whether you need <a href="/services/web-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">website copy</a> that converts visitors into customers, <a href="/digital-marketing" class="text-cyan-600 hover:text-cyan-700 font-semibold">email campaigns</a> that nurture leads, or <a href="/landing-pages" class="text-cyan-600 hover:text-cyan-700 font-semibold">landing page copy</a> that generates conversions, our expert copywriters deliver results.
+              In the digital age, words are your most powerful marketing tool.
+              Great copywriting doesn't just inform—it persuades, engages, and
+              converts. At Codebrand, we specialize in crafting compelling copy
+              that captures attention in crowded markets, builds emotional
+              connections with audiences, and drives them to take action.
+              Whether you need <a
+                href="/services/web-development"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >website copy</a
+              > that converts visitors into customers, <a
+                href="/digital-marketing"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >email campaigns</a
+              > that nurture leads, or <a
+                href="/landing-pages"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >landing page copy</a
+              > that generates conversions, our expert copywriters deliver results.
             </p>
             <p>
-              Our approach to copywriting combines the art of storytelling with the science of conversion optimization. We research your target audience deeply, understanding their pain points, desires, motivations, and objections. This insight allows us to craft messages that speak directly to their needs using language that resonates emotionally while addressing logical concerns. Every word is chosen strategically to move prospects through your sales funnel, from awareness to consideration to conversion.
+              Our approach to copywriting combines the art of storytelling with
+              the science of conversion optimization. We research your target
+              audience deeply, understanding their pain points, desires,
+              motivations, and objections. This insight allows us to craft
+              messages that speak directly to their needs using language that
+              resonates emotionally while addressing logical concerns. Every
+              word is chosen strategically to move prospects through your sales
+              funnel, from awareness to consideration to conversion.
             </p>
             <p>
-              We understand that effective copywriting requires more than just good writing skills—it demands strategic thinking, marketing expertise, and deep understanding of consumer psychology. Our copywriters are trained in proven frameworks like AIDA (Attention, Interest, Desire, Action), PAS (Problem, Agitate, Solution), and the Hero's Journey. We apply these frameworks along with <a href="/services/seo" class="text-cyan-600 hover:text-cyan-700 font-semibold">SEO best practices</a> to create copy that not only converts but also ranks well in search engines, driving organic traffic alongside paid campaigns.
+              We understand that effective copywriting requires more than just
+              good writing skills—it demands strategic thinking, marketing
+              expertise, and deep understanding of consumer psychology. Our
+              copywriters are trained in proven frameworks like AIDA (Attention,
+              Interest, Desire, Action), PAS (Problem, Agitate, Solution), and
+              the Hero's Journey. We apply these frameworks along with <a
+                href="/services/seo"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >SEO best practices</a
+              > to create copy that not only converts but also ranks well in search
+              engines, driving organic traffic alongside paid campaigns.
             </p>
             <p>
-              From punchy headlines and compelling <a href="/e-commerce" class="text-cyan-600 hover:text-cyan-700 font-semibold">product descriptions</a> to long-form sales pages and thought leadership articles, we adapt our writing style to match your brand voice and campaign objectives. Whether you need authoritative B2B copy that builds credibility or playful B2C messaging that entertains, we have the versatility and experience to deliver copy that achieves your specific goals. Every project receives meticulous attention to detail, multiple rounds of revisions, and optimization based on performance data. Our <a href="/team" class="text-cyan-600 hover:text-cyan-700 font-semibold">expert team</a> combines copywriting with <a href="/services/branding" class="text-cyan-600 hover:text-cyan-700 font-semibold">brand strategy</a> for maximum impact.
+              From punchy headlines and compelling <a
+                href="/e-commerce"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >product descriptions</a
+              > to long-form sales pages and thought leadership articles, we adapt
+              our writing style to match your brand voice and campaign objectives.
+              Whether you need authoritative B2B copy that builds credibility or
+              playful B2C messaging that entertains, we have the versatility and
+              experience to deliver copy that achieves your specific goals. Every
+              project receives meticulous attention to detail, multiple rounds of
+              revisions, and optimization based on performance data. Our <a
+                href="/team"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >expert team</a
+              > combines copywriting with <a
+                href="/services/branding"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >brand strategy</a
+              > for maximum impact.
             </p>
           </div>
         </div>
@@ -191,7 +256,9 @@ const serviceSchema = {
                   </div>
                   <div>
                     <div class="text-2xl font-bold text-cyan-900">+285%</div>
-                    <div class="text-sm text-gray-600">Avg. Conversion Boost</div>
+                    <div class="text-sm text-gray-600">
+                      Avg. Conversion Boost
+                    </div>
                   </div>
                 </div>
               </div>
@@ -256,25 +323,24 @@ const serviceSchema = {
         <h2
           class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
         >
-          Complete Copywriting <span class="text-orange-500"
-            >Solutions</span
-          >
+          Complete Copywriting <span class="text-orange-500">Solutions</span>
         </h2>
         <p class="text-lg text-gray-700">
-          From websites to email campaigns, we provide expert copywriting services for every marketing channel and customer touchpoint.
+          From websites to email campaigns, we provide expert copywriting
+          services for every marketing channel and customer touchpoint.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <CardService
-          icon="/icons/sitio-web.png"
+          icon="/icons/sitio-web.webp"
           title="Website Copywriting"
           description="Transform your website into a conversion machine with compelling copy that engages visitors and guides them toward action. We write homepage copy, about pages, service descriptions, and product pages that showcase value and build trust."
           learnMoreUrl="/contact"
         />
 
         <CardService
-          icon="/icons/seo.png"
+          icon="/icons/seo.webp"
           title="SEO Content Writing"
           description="Rank higher and attract organic traffic with SEO-optimized content. We create keyword-rich blog posts, articles, and landing pages that satisfy search intent while maintaining readability and engagement for human audiences."
           learnMoreUrl="/seo"
@@ -288,14 +354,14 @@ const serviceSchema = {
         />
 
         <CardService
-          icon="/icons/redes-sociales.png"
+          icon="/icons/redes-sociales.webp"
           title="Email Copywriting"
           description="Boost open rates and click-through rates with email copy that gets read and drives action. From welcome sequences to promotional campaigns and nurture series, we craft emails that build relationships and generate revenue."
           learnMoreUrl="/contact"
         />
 
         <CardService
-          icon="/icons/redes-sociales.png"
+          icon="/icons/redes-sociales.webp"
           title="Ad Copywriting"
           description="Capture attention and generate clicks with high-performing ad copy for Google Ads, Facebook Ads, LinkedIn Ads, and more. We write headlines and descriptions that stop scrolls, spark interest, and drive qualified traffic."
           learnMoreUrl="/digital-marketing"
@@ -309,14 +375,14 @@ const serviceSchema = {
         />
 
         <CardService
-          icon="/icons/diseno-grafico.png"
+          icon="/icons/diseno-grafico.webp"
           title="Brand Messaging & Voice"
           description="Develop a consistent brand voice and messaging framework that differentiates you from competitors. We create brand guidelines, taglines, value propositions, and messaging architecture that resonates with your target market."
           learnMoreUrl="/branding"
         />
 
         <CardService
-          icon="/icons/edicion-de-video.png"
+          icon="/icons/edicion-de-video.webp"
           title="Video Scripts"
           description="Engage viewers with compelling video scripts for explainer videos, commercials, social media content, and presentations. Our scripts combine visual storytelling with persuasive messaging to maximize engagement and conversions."
           learnMoreUrl="/contact"
@@ -342,103 +408,201 @@ const serviceSchema = {
           Why Our Copywriting <span class="text-orange-500">Works</span>
         </h2>
         <p class="text-lg text-gray-700">
-          We combine proven copywriting principles with strategic thinking to deliver copy that achieves your business objectives.
+          We combine proven copywriting principles with strategic thinking to
+          deliver copy that achieves your business objectives.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-8 shadow-lg border border-cyan-100">
+        <div
+          class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-8 shadow-lg border border-cyan-100"
+        >
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                ></path>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-cyan-900 mb-3">Audience-Centric Approach</h3>
+              <h3 class="text-xl font-bold text-cyan-900 mb-3">
+                Audience-Centric Approach
+              </h3>
               <p class="text-gray-700">
-                We start by deeply understanding your target audience—their pain points, desires, objections, and language. This allows us to craft messages that resonate emotionally and address specific needs, making your copy more persuasive and effective.
+                We start by deeply understanding your target audience—their pain
+                points, desires, objections, and language. This allows us to
+                craft messages that resonate emotionally and address specific
+                needs, making your copy more persuasive and effective.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border border-orange-100">
+        <div
+          class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border border-orange-100"
+        >
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-cyan-900 mb-3">Proven Frameworks</h3>
+              <h3 class="text-xl font-bold text-cyan-900 mb-3">
+                Proven Frameworks
+              </h3>
               <p class="text-gray-700">
-                Our copywriters are experts in conversion frameworks like AIDA, PAS, FAB, and the Hero's Journey. These time-tested structures guide readers through a logical and emotional journey that naturally leads to conversion without feeling pushy or salesy.
+                Our copywriters are experts in conversion frameworks like AIDA,
+                PAS, FAB, and the Hero's Journey. These time-tested structures
+                guide readers through a logical and emotional journey that
+                naturally leads to conversion without feeling pushy or salesy.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border border-blue-100">
+        <div
+          class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border border-blue-100"
+        >
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-cyan-900 mb-3">SEO Integration</h3>
+              <h3 class="text-xl font-bold text-cyan-900 mb-3">
+                SEO Integration
+              </h3>
               <p class="text-gray-700">
-                We seamlessly blend SEO best practices with compelling copywriting. Our content includes strategic keyword placement, proper header structure, and optimized meta descriptions while maintaining natural, engaging readability that converts visitors into customers.
+                We seamlessly blend SEO best practices with compelling
+                copywriting. Our content includes strategic keyword placement,
+                proper header structure, and optimized meta descriptions while
+                maintaining natural, engaging readability that converts visitors
+                into customers.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg border border-green-100">
+        <div
+          class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg border border-green-100"
+        >
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"></path>
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-cyan-900 mb-3">Conversion-Focused</h3>
+              <h3 class="text-xl font-bold text-cyan-900 mb-3">
+                Conversion-Focused
+              </h3>
               <p class="text-gray-700">
-                Every word serves a purpose. We craft copy with clear conversion goals in mind, strategically placing calls-to-action, addressing objections, building urgency, and guiding readers toward the desired action whether that's a purchase, signup, or consultation request.
+                Every word serves a purpose. We craft copy with clear conversion
+                goals in mind, strategically placing calls-to-action, addressing
+                objections, building urgency, and guiding readers toward the
+                desired action whether that's a purchase, signup, or
+                consultation request.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg border border-purple-100">
+        <div
+          class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg border border-purple-100"
+        >
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                ></path>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-cyan-900 mb-3">Brand Voice Consistency</h3>
+              <h3 class="text-xl font-bold text-cyan-900 mb-3">
+                Brand Voice Consistency
+              </h3>
               <p class="text-gray-700">
-                We adapt our writing style to match your brand personality and tone. Whether you need professional B2B copy, playful consumer messaging, or authoritative thought leadership content, we maintain consistency that strengthens brand recognition and trust.
+                We adapt our writing style to match your brand personality and
+                tone. Whether you need professional B2B copy, playful consumer
+                messaging, or authoritative thought leadership content, we
+                maintain consistency that strengthens brand recognition and
+                trust.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gradient-to-br from-pink-50 to-white rounded-2xl p-8 shadow-lg border border-pink-100">
+        <div
+          class="bg-gradient-to-br from-pink-50 to-white rounded-2xl p-8 shadow-lg border border-pink-100"
+        >
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-cyan-900 mb-3">Research-Backed</h3>
+              <h3 class="text-xl font-bold text-cyan-900 mb-3">
+                Research-Backed
+              </h3>
               <p class="text-gray-700">
-                Great copy requires great research. We analyze your competitors, study market trends, review customer feedback, and conduct keyword research to ensure every piece of copy is informed by data and strategically positioned for maximum impact.
+                Great copy requires great research. We analyze your competitors,
+                study market trends, review customer feedback, and conduct
+                keyword research to ensure every piece of copy is informed by
+                data and strategically positioned for maximum impact.
               </p>
             </div>
           </div>
@@ -448,7 +612,9 @@ const serviceSchema = {
   </section>
 
   <!-- Process Section -->
-  <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins">
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2
@@ -457,48 +623,61 @@ const serviceSchema = {
           Our Copywriting <span class="text-orange-500">Process</span>
         </h2>
         <p class="text-lg text-gray-700">
-          A systematic approach that ensures every project delivers compelling, conversion-focused copy.
+          A systematic approach that ensures every project delivers compelling,
+          conversion-focused copy.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">1</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Discovery</h3>
           <p class="text-gray-700">
-            We research your business, audience, competitors, and goals to understand what messaging will resonate most effectively.
+            We research your business, audience, competitors, and goals to
+            understand what messaging will resonate most effectively.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">2</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Strategy</h3>
           <p class="text-gray-700">
-            We develop a content strategy defining key messages, tone of voice, conversion goals, and the frameworks we'll use.
+            We develop a content strategy defining key messages, tone of voice,
+            conversion goals, and the frameworks we'll use.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">3</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Writing</h3>
           <p class="text-gray-700">
-            Our expert copywriters craft compelling copy optimized for both human readers and search engines.
+            Our expert copywriters craft compelling copy optimized for both
+            human readers and search engines.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">4</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Refinement</h3>
           <p class="text-gray-700">
-            We revise and optimize based on your feedback, A/B test different variations, and refine until perfect.
+            We revise and optimize based on your feedback, A/B test different
+            variations, and refine until perfect.
           </p>
         </div>
       </div>
@@ -509,13 +688,29 @@ const serviceSchema = {
   <Whyus />
 
   <!-- CTA Section -->
-  <section class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins">
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins"
+  >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
         Ready for Copy That <span class="text-orange-400">Converts?</span>
       </h2>
       <p class="text-xl text-gray-200 mb-8">
-        Let's create powerful, persuasive copy that drives real business results. Our expert copywriters are ready to transform your marketing with words that sell. Perfect for <a href="/services/web-development" class="text-orange-400 hover:text-orange-300 font-semibold">website content</a>, <a href="/landing-pages" class="text-orange-400 hover:text-orange-300 font-semibold">landing pages</a>, and <a href="/digital-marketing" class="text-orange-400 hover:text-orange-300 font-semibold">marketing campaigns</a>.
+        Let's create powerful, persuasive copy that drives real business
+        results. Our expert copywriters are ready to transform your marketing
+        with words that sell. Perfect for <a
+          href="/services/web-development"
+          class="text-orange-400 hover:text-orange-300 font-semibold"
+          >website content</a
+        >, <a
+          href="/landing-pages"
+          class="text-orange-400 hover:text-orange-300 font-semibold"
+          >landing pages</a
+        >, and <a
+          href="/digital-marketing"
+          class="text-orange-400 hover:text-orange-300 font-semibold"
+          >marketing campaigns</a
+        >.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button text="Get Expert Copywriting" href="/contact" />

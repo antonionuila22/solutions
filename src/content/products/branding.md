@@ -1,6 +1,6 @@
 ---
 title: Professional Graphic Design & Branding – Unique and Memorable Visual Identities
-img: /photos/diseñobranding.png
+img: /photos/diseñobranding.webp
 readtime: 5
 price: $250 - $950
 inStock: true
@@ -57,7 +57,7 @@ Our process includes:
 
 ## Tools & Deliverables
 
-- 🖼️ Deliverable files: .AI, .EPS, .PDF, .PNG, .JPG, .SVG  
+- 🖼️ Deliverable files: .AI, .EPS, .PDF, .webp, .JPG, .SVG  
 - 📦 Brand guideline PDF  
 - 🎨 Color palette in HEX and CMYK  
 - 🔤 Licensed or recommended fonts  

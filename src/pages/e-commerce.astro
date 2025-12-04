@@ -16,65 +16,75 @@ const image = "/photos/diseñoweb.webp";
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "E-commerce Development",
-  "name": "E-commerce Development & Online Store Design",
-  "description": description,
-  "url": "https://codebrand.us/e-commerce",
-  "image": "https://codebrand.us/photos/diseñoweb.webp",
-  "provider": {
+  serviceType: "E-commerce Development",
+  name: "E-commerce Development & Online Store Design",
+  description: description,
+  url: "https://codebrand.us/e-commerce",
+  image: "https://codebrand.us/photos/diseñoweb.webp",
+  provider: {
     "@type": "Organization",
-    "name": "Codebrand",
-    "url": "https://codebrand.us",
-    "logo": "https://codebrand.us/iconcodebrand.svg"
+    name: "Codebrand",
+    url: "https://codebrand.us",
+    logo: "https://codebrand.us/iconcodebrand.svg",
   },
-  "areaServed": {
+  areaServed: {
     "@type": "Country",
-    "name": "United States"
+    name: "United States",
   },
-  "hasOfferCatalog": {
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "E-commerce Services",
-    "itemListElement": [
+    name: "E-commerce Services",
+    itemListElement: [
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Shopify Development",
-          "description": "Custom Shopify stores with premium themes and apps"
-        }
+          name: "Shopify Development",
+          description: "Custom Shopify stores with premium themes and apps",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "WooCommerce Development",
-          "description": "WordPress-based e-commerce solutions"
-        }
+          name: "WooCommerce Development",
+          description: "WordPress-based e-commerce solutions",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Payment Gateway Integration",
-          "description": "Secure payment processing with Stripe, PayPal, and more"
-        }
+          name: "Payment Gateway Integration",
+          description:
+            "Secure payment processing with Stripe, PayPal, and more",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Custom E-commerce Platforms",
-          "description": "Tailored online stores for unique business needs"
-        }
-      }
-    ]
+          name: "Custom E-commerce Platforms",
+          description: "Tailored online stores for unique business needs",
+        },
+      },
+    ],
   },
-  "priceRange": "$$$"
+  priceRange: "$$$",
 };
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image}>
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(serviceSchema)}
+  />
   <!-- Hero Section -->
   <section
     class="relative bg-gradient-to-br from-cyan-50 via-white to-orange-50 py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden"
@@ -108,7 +118,10 @@ const serviceSchema = {
           >
         </h1>
         <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
-          Transform your retail business with powerful e-commerce solutions that convert browsers into buyers. We create fast, secure, and conversion-optimized online stores that scale with your business and maximize revenue.
+          Transform your retail business with powerful e-commerce solutions that
+          convert browsers into buyers. We create fast, secure, and
+          conversion-optimized online stores that scale with your business and
+          maximize revenue.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -152,16 +165,62 @@ const serviceSchema = {
           </h2>
           <div class="prose prose-lg text-gray-700 space-y-4">
             <p>
-              The e-commerce landscape has never been more competitive or more opportunity-rich. Consumers increasingly prefer the convenience of online shopping, creating massive potential for businesses that deliver exceptional digital commerce experiences. At Codebrand, we specialize in building high-performing online stores that not only look beautiful but convert visitors into customers and generate sustainable revenue growth. Our <a href="/services/web-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">web development team</a> creates custom solutions powered by <a href="/services/ux-ui" class="text-cyan-600 hover:text-cyan-700 font-semibold">conversion-focused UX/UI design</a>.
+              The e-commerce landscape has never been more competitive or more
+              opportunity-rich. Consumers increasingly prefer the convenience of
+              online shopping, creating massive potential for businesses that
+              deliver exceptional digital commerce experiences. At Codebrand, we
+              specialize in building high-performing online stores that not only
+              look beautiful but convert visitors into customers and generate
+              sustainable revenue growth. Our <a
+                href="/services/web-development"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >web development team</a
+              > creates custom solutions powered by <a
+                href="/services/ux-ui"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >conversion-focused UX/UI design</a
+              >.
             </p>
             <p>
-              Our e-commerce development services go far beyond basic online catalogs. We create comprehensive digital storefronts with advanced features including intelligent product recommendations, one-click checkout, abandoned cart recovery, inventory management, customer accounts, wishlist functionality, and seamless integration with shipping carriers and payment processors. Every element is optimized for conversions, from product page layouts to checkout flows.
+              Our e-commerce development services go far beyond basic online
+              catalogs. We create comprehensive digital storefronts with
+              advanced features including intelligent product recommendations,
+              one-click checkout, abandoned cart recovery, inventory management,
+              customer accounts, wishlist functionality, and seamless
+              integration with shipping carriers and payment processors. Every
+              element is optimized for conversions, from product page layouts to
+              checkout flows.
             </p>
             <p>
-              We understand that successful e-commerce requires more than just technical development—it demands strategic thinking about user experience, conversion psychology, and business operations. Our team analyzes your target audience, competitive landscape, and business model to design shopping experiences that reduce friction, build trust, overcome objections, and guide customers smoothly from browsing to purchase. We implement proven strategies like social proof, scarcity messaging, security badges, and streamlined checkouts that dramatically improve conversion rates. Combined with our <a href="/digital-marketing" class="text-cyan-600 hover:text-cyan-700 font-semibold">digital marketing expertise</a> and <a href="/copywriting" class="text-cyan-600 hover:text-cyan-700 font-semibold">persuasive copywriting</a>, we create stores that truly sell.
+              We understand that successful e-commerce requires more than just
+              technical development—it demands strategic thinking about user
+              experience, conversion psychology, and business operations. Our
+              team analyzes your target audience, competitive landscape, and
+              business model to design shopping experiences that reduce
+              friction, build trust, overcome objections, and guide customers
+              smoothly from browsing to purchase. We implement proven strategies
+              like social proof, scarcity messaging, security badges, and
+              streamlined checkouts that dramatically improve conversion rates.
+              Combined with our <a
+                href="/digital-marketing"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >digital marketing expertise</a
+              > and <a
+                href="/copywriting"
+                class="text-cyan-600 hover:text-cyan-700 font-semibold"
+                >persuasive copywriting</a
+              >, we create stores that truly sell.
             </p>
             <p>
-              Whether you're launching your first online store, migrating from an existing platform, or scaling an established e-commerce business, we have the expertise to deliver results. Our solutions support businesses of all sizes—from boutique retailers selling curated collections to large-scale merchants managing thousands of SKUs. We build on robust platforms like Shopify, WooCommerce, Magento, and custom solutions tailored to your specific needs, ensuring your store can handle current demands while scaling effortlessly as your business grows.
+              Whether you're launching your first online store, migrating from
+              an existing platform, or scaling an established e-commerce
+              business, we have the expertise to deliver results. Our solutions
+              support businesses of all sizes—from boutique retailers selling
+              curated collections to large-scale merchants managing thousands of
+              SKUs. We build on robust platforms like Shopify, WooCommerce,
+              Magento, and custom solutions tailored to your specific needs,
+              ensuring your store can handle current demands while scaling
+              effortlessly as your business grows.
             </p>
           </div>
         </div>
@@ -240,7 +299,9 @@ const serviceSchema = {
                   </div>
                   <div>
                     <div class="text-2xl font-bold text-cyan-900">4.8%</div>
-                    <div class="text-sm text-gray-600">Avg. Conversion Rate</div>
+                    <div class="text-sm text-gray-600">
+                      Avg. Conversion Rate
+                    </div>
                   </div>
                 </div>
               </div>
@@ -258,12 +319,11 @@ const serviceSchema = {
         <h2
           class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
         >
-          Complete E-commerce <span class="text-orange-500"
-            >Solutions</span
-          >
+          Complete E-commerce <span class="text-orange-500">Solutions</span>
         </h2>
         <p class="text-lg text-gray-700">
-          From initial setup to ongoing optimization, we provide end-to-end e-commerce services that drive sales and business growth.
+          From initial setup to ongoing optimization, we provide end-to-end
+          e-commerce services that drive sales and business growth.
         </p>
       </div>
 
@@ -276,7 +336,7 @@ const serviceSchema = {
         />
 
         <CardService
-          icon="/icons/sitio-web.png"
+          icon="/icons/sitio-web.webp"
           title="Shopify Development"
           description="Launch beautiful, high-converting Shopify stores with custom themes and functionality. We design, develop, and optimize Shopify sites that maximize sales while providing exceptional user experiences."
           learnMoreUrl="/contact"
@@ -318,14 +378,14 @@ const serviceSchema = {
         />
 
         <CardService
-          icon="/icons/seo.png"
+          icon="/icons/seo.webp"
           title="E-commerce SEO"
           description="Rank higher in search results and attract ready-to-buy shoppers. We optimize product pages, implement structured data, improve site architecture, and create content strategies that drive organic traffic."
           learnMoreUrl="/seo"
         />
 
         <CardService
-          icon="/icons/redes-sociales.png"
+          icon="/icons/redes-sociales.webp"
           title="Marketing Automation"
           description="Recover abandoned carts, nurture customers, and increase lifetime value with automated email campaigns, personalized recommendations, and targeted promotions based on user behavior."
           learnMoreUrl="/digital-marketing"
@@ -344,49 +404,86 @@ const serviceSchema = {
           Essential E-commerce <span class="text-orange-500">Features</span>
         </h2>
         <p class="text-lg text-gray-700">
-          We build online stores with all the features needed to compete and win in today's digital marketplace.
+          We build online stores with all the features needed to compete and win
+          in today's digital marketplace.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-gradient-to-br from-cyan-50 to-white rounded-xl p-6 shadow-md border border-cyan-100">
+        <div
+          class="bg-gradient-to-br from-cyan-50 to-white rounded-xl p-6 shadow-md border border-cyan-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Product Management</h4>
-          <p class="text-sm text-gray-600">Unlimited products, variants, categories, and flexible pricing options</p>
+          <p class="text-sm text-gray-600">
+            Unlimited products, variants, categories, and flexible pricing
+            options
+          </p>
         </div>
-        <div class="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 shadow-md border border-orange-100">
+        <div
+          class="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 shadow-md border border-orange-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Shopping Cart</h4>
-          <p class="text-sm text-gray-600">Intuitive cart with saved items, quantity updates, and coupon codes</p>
+          <p class="text-sm text-gray-600">
+            Intuitive cart with saved items, quantity updates, and coupon codes
+          </p>
         </div>
-        <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 shadow-md border border-blue-100">
+        <div
+          class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 shadow-md border border-blue-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Secure Checkout</h4>
-          <p class="text-sm text-gray-600">SSL encrypted, PCI compliant checkout with guest and account options</p>
+          <p class="text-sm text-gray-600">
+            SSL encrypted, PCI compliant checkout with guest and account options
+          </p>
         </div>
-        <div class="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 shadow-md border border-green-100">
+        <div
+          class="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 shadow-md border border-green-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Multi-Currency</h4>
-          <p class="text-sm text-gray-600">Sell globally with automatic currency conversion and localized pricing</p>
+          <p class="text-sm text-gray-600">
+            Sell globally with automatic currency conversion and localized
+            pricing
+          </p>
         </div>
-        <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 shadow-md border border-purple-100">
+        <div
+          class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 shadow-md border border-purple-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Shipping Integration</h4>
-          <p class="text-sm text-gray-600">Real-time rates from carriers, label printing, and tracking</p>
+          <p class="text-sm text-gray-600">
+            Real-time rates from carriers, label printing, and tracking
+          </p>
         </div>
-        <div class="bg-gradient-to-br from-pink-50 to-white rounded-xl p-6 shadow-md border border-pink-100">
+        <div
+          class="bg-gradient-to-br from-pink-50 to-white rounded-xl p-6 shadow-md border border-pink-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Customer Accounts</h4>
-          <p class="text-sm text-gray-600">Order history, wishlists, saved addresses, and loyalty programs</p>
+          <p class="text-sm text-gray-600">
+            Order history, wishlists, saved addresses, and loyalty programs
+          </p>
         </div>
-        <div class="bg-gradient-to-br from-cyan-50 to-white rounded-xl p-6 shadow-md border border-cyan-100">
+        <div
+          class="bg-gradient-to-br from-cyan-50 to-white rounded-xl p-6 shadow-md border border-cyan-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Reviews & Ratings</h4>
-          <p class="text-sm text-gray-600">Customer reviews, star ratings, and user-generated content</p>
+          <p class="text-sm text-gray-600">
+            Customer reviews, star ratings, and user-generated content
+          </p>
         </div>
-        <div class="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 shadow-md border border-orange-100">
+        <div
+          class="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 shadow-md border border-orange-100"
+        >
           <h4 class="font-bold text-cyan-900 mb-2">Analytics Dashboard</h4>
-          <p class="text-sm text-gray-600">Sales reports, traffic analysis, and customer insights</p>
+          <p class="text-sm text-gray-600">
+            Sales reports, traffic analysis, and customer insights
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Process Section -->
-  <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins">
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-br from-cyan-50 to-orange-50 font-poppins"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2
@@ -395,48 +492,67 @@ const serviceSchema = {
           Our E-commerce <span class="text-orange-500">Process</span>
         </h2>
         <p class="text-lg text-gray-700">
-          A structured approach that ensures successful store launches and sustainable growth.
+          A structured approach that ensures successful store launches and
+          sustainable growth.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">1</span>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Strategy & Planning</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Strategy & Planning
+          </h3>
           <p class="text-gray-700">
-            Define goals, select platforms, plan features, and create detailed specifications aligned with business objectives.
+            Define goals, select platforms, plan features, and create detailed
+            specifications aligned with business objectives.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">2</span>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Design & Development</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Design & Development
+          </h3>
           <p class="text-gray-700">
-            Create conversion-focused designs and build robust, scalable stores with all necessary features and integrations.
+            Create conversion-focused designs and build robust, scalable stores
+            with all necessary features and integrations.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">3</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Testing & Launch</h3>
           <p class="text-gray-700">
-            Thoroughly test checkout flows, payments, and functionality before launching with proper SEO and marketing setup.
+            Thoroughly test checkout flows, payments, and functionality before
+            launching with proper SEO and marketing setup.
           </p>
         </div>
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+          >
             <span class="text-2xl font-bold text-white">4</span>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-3">Growth & Optimization</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-3">
+            Growth & Optimization
+          </h3>
           <p class="text-gray-700">
-            Monitor performance, optimize conversions, add features, and scale infrastructure as your business grows.
+            Monitor performance, optimize conversions, add features, and scale
+            infrastructure as your business grows.
           </p>
         </div>
       </div>
@@ -447,13 +563,25 @@ const serviceSchema = {
   <Whyus />
 
   <!-- CTA Section -->
-  <section class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins">
+  <section
+    class="py-16 lg:py-24 bg-gradient-to-r from-cyan-900 to-blue-900 font-poppins"
+  >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
         Ready to Launch Your <span class="text-orange-400">Online Store?</span>
       </h2>
       <p class="text-xl text-gray-200 mb-8">
-        Let's build an e-commerce platform that turns browsers into buyers and grows your revenue. Get a free consultation and discover how we can help you succeed online. Learn about our <a href="/services/seo" class="text-orange-400 hover:text-orange-300 font-semibold">e-commerce SEO services</a> or explore <a href="/landing-pages" class="text-orange-400 hover:text-orange-300 font-semibold">product landing page solutions</a>.
+        Let's build an e-commerce platform that turns browsers into buyers and
+        grows your revenue. Get a free consultation and discover how we can help
+        you succeed online. Learn about our <a
+          href="/services/seo"
+          class="text-orange-400 hover:text-orange-300 font-semibold"
+          >e-commerce SEO services</a
+        > or explore <a
+          href="/landing-pages"
+          class="text-orange-400 hover:text-orange-300 font-semibold"
+          >product landing page solutions</a
+        >.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button text="Start Selling Online" href="/contact" />

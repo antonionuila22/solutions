@@ -2,7 +2,7 @@
 title: GMJ Architectural Design - Interior Design Studio Website
 description: Professional website for St. Louis-based interior design studio featuring portfolio gallery, online consultation booking, 3D visualization showcase, and client estimate request system.
 author: Codebrand Team
-img: /photos/gmj-logo.png
+img: /photos/diseñoweb.webp
 category: Web Development
 tags:
   - Interior Design

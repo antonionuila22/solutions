@@ -2,7 +2,7 @@
 title: E-commerce Store Landing Page Template
 description: High-conversion landing page template for online stores and e-commerce businesses with product showcases, testimonials, and shopping features.
 author: Codebrand Team
-img: /photos/ecommercepage.png
+img: /photos/diseñoweb.webp
 category: Web Design
 tags:
   - Landing Page

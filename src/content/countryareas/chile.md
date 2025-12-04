@@ -4,7 +4,7 @@ name: Chile
 code: ES
 region: South America
 author: Ramón Nuila
-img: /photos/teamcode.png
+img: /photos/teamcode.webp
 readtime: 5
 description: Agencia de diseño y desarrollo web en Chile. Creamos soluciones digitales personalizadas para empresas que buscan calidad, innovación y resultados reales en el mercado latinoamericano.
 ---

@@ -1,6 +1,6 @@
 ---
 title: Social Media Graphic Design – Custom Monthly Packages
-img: /photos/socialmedia.png
+img: /photos/socialmedia.webp
 readtime: 5
 price: $150 - $700
 inStock: true
@@ -51,7 +51,7 @@ At **Codebrand**, we transform your digital communication with consistent, creat
 
 ## 📦 Deliverables
 
-- 📱 Visual pieces in .PNG or .JPG, ready to publish  
+- 📱 Visual pieces in .webp or .JPG, ready to publish  
 - 📐 Format variations for feed, stories, reels, etc.  
 - 🧾 Base documentation for feedback and approvals
 
