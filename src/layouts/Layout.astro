@@ -188,6 +188,33 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="prefetch" href="/photos/section.webp" />
     <link rel="prefetch" href="/iconcodebrand.svg" />
 
+    <!-- Modulepreload for critical JS to reduce chain latency -->
+    <link rel="modulepreload" href="/_astro/client.D7xuJPQP.js" />
+    <link rel="modulepreload" href="/_astro/index.foKzRe6q.js" />
+
+    <!-- Preload font files directly for CLS optimization -->
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecg.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Fonts with optimized loading -->
     <link
       rel="preload"

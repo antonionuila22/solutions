@@ -81,22 +81,32 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all bg-white ${isScrolled ? "shadow-md border-b border-zinc-100" : ""}`}
+      role="banner"
     >
-      <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <a href="/" className="flex-shrink-0">
+      <nav
+        className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <a href="/" className="flex-shrink-0" aria-label="Codebrand - Go to homepage">
           <img
             src={logo.src ?? logo}
             alt="Codebrand logo"
             className="w-32 sm:w-36"
+            width="144"
+            height="40"
           />
         </a>
 
-        <ul className="hidden md:flex items-center gap-8 font-medium mx-auto">
+        <ul className="hidden md:flex items-center gap-8 font-medium mx-auto" role="menubar">
           {menuItems.map((item, index) => (
-            <li key={index} className="relative group">
+            <li key={index} className="relative group" role="none">
               <a
                 href={item.link}
                 className="flex items-center py-4 gap-1 text-gray-800 hover:text-orange-400 transition"
+                role="menuitem"
+                aria-haspopup={item.hasDropdown ? "true" : undefined}
+                aria-expanded={item.hasDropdown ? "false" : undefined}
               >
                 {item.name}
                 {item.hasDropdown && (
@@ -106,6 +116,7 @@ export default function Navbar() {
                     stroke="currentColor"
                     strokeWidth="2"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       d="M19 9l-7 7-7-7"
@@ -117,12 +128,17 @@ export default function Navbar() {
               </a>
 
               {item.hasDropdown && (
-                <ul className="absolute left-1/2 -translate-x-1/2 top-7 bg-white shadow-md rounded-lg py-4 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity ease-in-out min-w-[25z20px] border border-zinc-100 z-50">
+                <ul
+                  className="absolute left-1/2 -translate-x-1/2 top-7 bg-white shadow-md rounded-lg py-4 px-4 mt-2 space-y-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity ease-in-out min-w-[220px] border border-zinc-100 z-50"
+                  role="menu"
+                  aria-label={`${item.name} submenu`}
+                >
                   {item.subItems?.map((sub, i) => (
-                    <li key={i}>
+                    <li key={i} role="none">
                       <a
                         href={sub.link}
                         className="block text-sm text-gray-700 hover:text-orange-400 whitespace-nowrap"
+                        role="menuitem"
                       >
                         {sub.name}
                       </a>
@@ -138,6 +154,7 @@ export default function Navbar() {
           <a
             href="/contact"
             className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+            aria-label="Contact us for a free consultation"
           >
             Talk to us!
           </a>
@@ -167,15 +184,21 @@ export default function Navbar() {
 
       <div
         className={`md:hidden transition-all overflow-hidden ${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+        id="mobile-menu"
+        role="menu"
+        aria-label="Mobile navigation menu"
       >
         <div className="flex flex-col gap-3 px-6 pb-6 pt-2 bg-white border-t border-zinc-100 shadow-inner">
           {menuItems.map((item, index) => (
-            <div key={index}>
+            <div key={index} role="none">
               {item.hasDropdown ? (
                 <>
                   <button
                     onClick={() => toggleSubmenu(index)}
                     className="w-full flex justify-between items-center text-left font-semibold py-2 text-gray-800 hover:text-orange-400"
+                    aria-expanded={activeSubmenu === index}
+                    aria-controls={`mobile-submenu-${index}`}
+                    aria-label={`${item.name}, ${activeSubmenu === index ? 'collapse' : 'expand'} submenu`}
                   >
                     {item.name}
                     <svg
@@ -184,6 +207,7 @@ export default function Navbar() {
                       stroke="currentColor"
                       strokeWidth="2"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         d="M19 9l-7 7-7-7"
@@ -193,13 +217,17 @@ export default function Navbar() {
                     </svg>
                   </button>
                   <div
+                    id={`mobile-submenu-${index}`}
                     className={`pl-4 transition-all ${activeSubmenu === index ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
+                    role="menu"
+                    aria-label={`${item.name} submenu`}
                   >
                     {item.subItems?.map((subItem, i) => (
                       <a
                         key={i}
                         href={subItem.link}
                         className="block text-sm text-gray-600 py-1 hover:text-orange-400"
+                        role="menuitem"
                       >
                         {subItem.name}
                       </a>
@@ -210,6 +238,7 @@ export default function Navbar() {
                 <a
                   href={item.link}
                   className="block text-base text-gray-800 hover:text-orange-400 py-2"
+                  role="menuitem"
                 >
                   {item.name}
                 </a>
@@ -220,6 +249,7 @@ export default function Navbar() {
             <a
               href="/contact"
               className="bg-gradient-to-r from-[#f48200] to-[#faa732] text-white font-semibold py-3 px-6 rounded-full shadow-md hover:from-[#007BFF] hover:to-[#00BCD4] hover:shadow-lg transition ease-in-out transform hover:scale-105 active:scale-95 text-sm lg:text-base"
+              aria-label="Contact us for a free consultation"
             >
               Talk to us!
             </a>

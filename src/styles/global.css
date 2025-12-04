@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Fuente de respaldo con métricas ajustadas para evitar CLS */
+@font-face {
+    font-family: 'Poppins Fallback';
+    src: local('Arial');
+    size-adjust: 105%;
+    ascent-override: 95%;
+    descent-override: 22%;
+    line-height-override: normal;
+}
+
+/* Aplicar fuente con fallback optimizado */
+html {
+    font-family: 'Poppins Fallback', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer utilities {
     @keyframes fade-in {
         from {

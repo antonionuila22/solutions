@@ -68,9 +68,9 @@ import Button from "../components/Button.astro";
         >
       </div>
 
-      <!-- Main Headline -->
+      <!-- Main Headline with fixed height to prevent CLS -->
       <h1
-        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[200px]"
         style="animation-delay: 0.1s;"
       >
         Premium Web Development
