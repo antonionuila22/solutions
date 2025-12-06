@@ -2,7 +2,7 @@
 title: Automotive Industry Landing Page Template
 description: Modern, conversion-optimized landing page designed specifically for automotive businesses, dealerships, and auto service centers with service showcases and contact forms.
 author: Codebrand Team
-img: /photos/diseñoweb.webp
+img: /photos/projects/EliteMotos.avif
 category: Web Design
 tags:
   - Landing Page

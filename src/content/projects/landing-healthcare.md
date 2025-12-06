@@ -4,6 +4,7 @@ description: Professional, trust-focused landing page for healthcare providers, 
 author: Codebrand Team
 img: /photos/diseñoweb.webp
 category: Web Design
+draft: true
 tags:
   - Landing Page
   - Healthcare

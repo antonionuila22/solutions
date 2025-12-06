@@ -2,7 +2,7 @@
 title: Real Estate Landing Page Template
 description: Stunning, property-focused landing page for real estate agents, agencies, and property listings with search functionality and contact forms.
 author: Codebrand Team
-img: /photos/diseñoweb.webp
+img: /photos/projects/RealStates.avif
 category: Web Design
 tags:
   - Landing Page

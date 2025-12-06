@@ -2,7 +2,7 @@
 title: Laboratory Equipment B2B Platform
 description: International e-commerce platform for laboratory and industrial equipment distribution with quote request system, multilingual support, and technical services integration.
 author: Codebrand Team
-img: /photos/diseñoweb.webp
+img: /photos/projects/Laboratory.avif
 category: Web Development
 tags:
   - E-commerce

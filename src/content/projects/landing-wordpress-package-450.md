@@ -4,6 +4,7 @@ description: Affordable, feature-rich landing page promoting our $450 WordPress 
 author: Codebrand Team
 img: /photos/diseñoweb.webp
 category: Web Design
+draft: true
 tags:
   - Landing Page
   - WordPress

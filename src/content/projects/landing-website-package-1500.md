@@ -4,6 +4,7 @@ description: Professional landing page showcasing our premium $1500 website pack
 author: Codebrand Team
 img: /photos/diseñoweb.webp
 category: Web Design
+draft: true
 tags:
   - Landing Page
   - Website Package
