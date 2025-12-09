@@ -64,4 +64,4 @@ Disallow: /admin/
 Disallow: /_astro/
 
 # Sitemaps
-Sitemap: https://codebrand.us/sitemap-index.xml
+Sitemap: https://codebrand.us/sitemap-0.xml

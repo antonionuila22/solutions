@@ -3,7 +3,7 @@ title: "Google Algorithm Updates 2025: What Changed and How to Adapt Your SEO St
 description: "Complete breakdown of Google's 2025 algorithm updates including the March and June core updates. Learn what's working in SEO now, what stopped working, and how to protect your rankings."
 author: "Ramon Nuila"
 readtime: 14
-img: /photos/seo.webp
+img: /photos/blog/seo.webp
 imageAlt: "Google search algorithm and SEO strategy visualization"
 date: 2025-12-02
 categories:

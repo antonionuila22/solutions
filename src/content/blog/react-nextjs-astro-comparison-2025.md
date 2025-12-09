@@ -3,7 +3,7 @@ title: "React vs Next.js vs Astro: Complete Technical Comparison 2025"
 description: "In-depth technical comparison of React, Next.js, and Astro for web development in 2025. Learn when to use each framework, performance benchmarks, SEO capabilities, and real-world use cases from 500+ projects."
 author: "Ramon Nuila"
 readtime: 20
-img: /photos/team-of-app-developers-looking-at-coding-algorithm-2025-02-17-08-38-57-utc.avif
+img: /photos/blog/team-of-app-developers-looking-at-coding-algorithm-2025-02-17-08-38-57-utc.avif
 imageAlt: "Comparison of React Next.js and Astro frameworks"
 date: 2025-12-02
 categories:

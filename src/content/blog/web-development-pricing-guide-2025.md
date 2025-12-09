@@ -3,7 +3,7 @@ title: "Web Development Pricing Guide 2025: What Every Service Actually Costs"
 description: "Transparent breakdown of web development costs in 2025. Compare prices for websites, e-commerce, apps, SEO, and more across US agencies, nearshore, offshore, and freelancers. Real data from industry research."
 author: "Ramon Nuila"
 readtime: 22
-img: /photos/website-value.webp
+img: /photos/blog/website-value.webp
 imageAlt: "Web development pricing comparison chart"
 date: 2025-12-01
 categories:

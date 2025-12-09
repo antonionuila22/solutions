@@ -3,7 +3,7 @@ title: "The Sales Funnel We Use to Generate Leads (Complete Breakdown)"
 description: "Discover the exact sales funnel we use to attract, nurture, and convert prospects into clients. Key stages, tools, and practical tips you can replicate in your business to generate consistent leads."
 author: "Ramon Nuila"
 readtime: 11
-img: /photos/socialmedia.webp
+img: /photos/blog/socialmedia.webp
 imageAlt: "Visual diagram of a digital sales funnel showing stages and conversion tools"
 date: 2025-03-28
 ---

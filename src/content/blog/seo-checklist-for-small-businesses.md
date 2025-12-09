@@ -3,7 +3,7 @@ title: "SEO Checklist for Small Businesses Without a Technical Team"
 description: "Practical SEO doesn't have to be complicated. This comprehensive checklist helps small business owners and contractors improve their Google visibility and generate more business opportunities—no technical team required."
 author: "Ramon Nuila"
 readtime: 11
-img: /photos/pymes-seo.webp
+img: /photos/blog/pymes-seo.webp
 imageAlt: "SEO checklist for small businesses and contractors"
 date: 2024-03-28
 ---

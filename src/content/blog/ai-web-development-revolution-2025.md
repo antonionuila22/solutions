@@ -3,7 +3,7 @@ title: "AI in Web Development 2025: The Revolution Is Here (And What It Means fo
 description: "How AI is transforming web development in 2025. From code generation to autonomous site builders, learn what 81% of developers already know and how businesses can leverage AI without losing quality."
 author: "Ramon Nuila"
 readtime: 16
-img: /photos/iawebsite.avif
+img: /photos/blog/iawebsite.avif
 imageAlt: "AI-powered web development tools and interfaces"
 date: 2025-12-02
 categories:

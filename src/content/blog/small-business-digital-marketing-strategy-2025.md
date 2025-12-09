@@ -3,7 +3,7 @@ title: "Complete Digital Marketing Strategy for Small Businesses in 2025"
 description: "Step-by-step digital marketing strategy guide for small businesses. Learn SEO, social media, email marketing, paid ads, and content marketing with real budgets and actionable tactics that actually work."
 author: "Ramon Nuila"
 readtime: 25
-img: /photos/socialmedia.webp
+img: /photos/blog/socialmedia.webp
 imageAlt: "Small business owner planning digital marketing strategy"
 date: 2025-12-02
 categories:

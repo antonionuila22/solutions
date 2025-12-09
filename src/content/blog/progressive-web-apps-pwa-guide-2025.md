@@ -3,7 +3,7 @@ title: "Progressive Web Apps (PWA) in 2025: The Complete Business Guide"
 description: "Everything you need to know about Progressive Web Apps in 2025. When PWAs make sense, real-world ROI data, implementation costs, and why major companies are choosing PWAs over native apps."
 author: "Ramon Nuila"
 readtime: 18
-img: /photos/webservice.webp
+img: /photos/blog/webservice.webp
 imageAlt: "Progressive Web App on mobile and desktop devices"
 date: 2025-12-02
 categories:

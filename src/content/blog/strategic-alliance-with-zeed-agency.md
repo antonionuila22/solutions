@@ -3,7 +3,7 @@ title: "Codebrand and Zeed Agency: A Strategic Alliance for Excellence in Design
 description: "Discover how Codebrand's strategic alliance with Zeed Agency, a firm with 15 years of experience, brings together world-class graphic design and digital consulting to deliver comprehensive solutions for businesses in Honduras and beyond."
 author: "Ramon Nuila"
 readtime: 8
-img: /photos/partnership zeed.avif
+img: /photos/blog/partnership zeed.avif
 imageAlt: "Zeed Agency and Codebrand Strategic Alliance"
 date: 2025-10-26
 ---
