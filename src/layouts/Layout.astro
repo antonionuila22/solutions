@@ -63,10 +63,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 <!doctype html>
 <html lang="en-US">
   <head>
-    <script
-      src="https://analytics.ahrefs.com/analytics.js"
-      data-key="JekMc+iUh7qv8b6i7VSQFw"
-      async></script>
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -100,11 +96,19 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
     <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="Codebrand Blog RSS Feed" href="/rss.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Codebrand Blog RSS Feed"
+      href="/rss.xml"
+    />
 
     <!-- LLM Information for AI Assistants -->
     <link rel="author" href="/llms.txt" />
-    <meta name="ai-content-declaration" content="This website contains information optimized for AI assistants. See /llms.txt for structured data." />
+    <meta
+      name="ai-content-declaration"
+      content="This website contains information optimized for AI assistants. See /llms.txt for structured data."
+    />
 
     <!-- Theme and Application -->
     <meta name="theme-color" content="#0D9488" />
@@ -187,10 +191,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- Resource Hints for better loading -->
     <link rel="prefetch" href="/photos/section.webp" />
     <link rel="prefetch" href="/iconcodebrand.svg" />
-
-    <!-- Modulepreload for critical JS to reduce chain latency -->
-    <link rel="modulepreload" href="/_astro/client.D7xuJPQP.js" />
-    <link rel="modulepreload" href="/_astro/index.foKzRe6q.js" />
 
     <!-- Preload font files directly for CLS optimization -->
     <link
@@ -552,7 +552,19 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     </main>
     <Footer />
     <WhatsAppWidget />
+    <!-- Ahrefs Analytics - Deferred loading for performance -->
 
+    <script is:inline>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          var s = document.createElement("script");
+          s.src = "https://analytics.ahrefs.com/analytics.js";
+          s.setAttribute("data-key", "JekMc+iUh7qv8b6i7VSQFw");
+          s.async = true;
+          document.head.appendChild(s);
+        }, 2000);
+      });
+    </script>
   </body>
 </html>
 
