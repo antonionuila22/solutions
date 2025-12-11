@@ -1,0 +1,766 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+
+// SEO Metadata
+const pageTitle = "Website Maintenance Plans from $99/mo | Codebrand";
+const pageDescription =
+  "Professional website maintenance starting at $99/month. Security updates, backups, performance monitoring, and 24/7 support. US agencies charge $300-$500/mo for the same service.";
+const pageKeywords =
+  "website maintenance plans, wordpress maintenance, website support, website updates, website security, monthly website care, affordable web maintenance";
+
+// Maintenance Plans
+const plans = [
+  {
+    name: "Essential",
+    price: 99,
+    description: "Perfect for small business websites that need basic care",
+    popular: false,
+    features: [
+      "Weekly security scans",
+      "Monthly backups",
+      "WordPress/CMS updates",
+      "Plugin & theme updates",
+      "Uptime monitoring",
+      "Monthly performance report",
+      "Email support (48h response)",
+      "1 hour of edits/month",
+    ],
+    notIncluded: ["SEO monitoring", "Speed optimization", "Priority support"],
+  },
+  {
+    name: "Growth",
+    price: 199,
+    description: "Ideal for growing businesses that need proactive care",
+    popular: true,
+    features: [
+      "Daily security scans",
+      "Weekly backups",
+      "WordPress/CMS updates",
+      "Plugin & theme updates",
+      "24/7 uptime monitoring",
+      "Weekly performance reports",
+      "Basic SEO monitoring",
+      "Speed optimization (quarterly)",
+      "Priority email support (24h)",
+      "2 hours of edits/month",
+      "Google Analytics reports",
+    ],
+    notIncluded: ["Phone support", "Emergency response"],
+  },
+  {
+    name: "Premium",
+    price: 349,
+    description: "For businesses that can't afford any downtime",
+    popular: false,
+    features: [
+      "Real-time security monitoring",
+      "Daily backups + off-site storage",
+      "Immediate updates & patches",
+      "24/7 uptime monitoring",
+      "Monthly speed optimization",
+      "Full SEO health monitoring",
+      "Weekly detailed reports",
+      "Priority phone & email support",
+      "4-hour emergency response",
+      "4 hours of edits/month",
+      "Quarterly strategy call",
+      "Malware removal included",
+    ],
+    notIncluded: [],
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+  <!-- Hero Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full mb-6"
+        >
+          <svg
+            class="w-4 h-4 text-cyan-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-sm font-medium text-slate-700"
+            >Professional Website Maintenance</span
+          >
+        </div>
+
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight"
+        >
+          Website Maintenance Plans
+          <span class="block text-orange-500 mt-2">
+            Starting at $99/month
+          </span>
+        </h1>
+
+        <p
+          class="text-xl text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed"
+        >
+          Keep your website secure, fast, and up-to-date without lifting a
+          finger.
+        </p>
+        <p class="text-lg text-slate-500 mb-8">
+          US agencies charge <span
+            class="text-slate-700 font-semibold line-through">$300-$500/mo</span
+          > for the same service.
+          <span class="text-orange-500 font-medium"
+            >Save 60-70% with Codebrand.</span
+          >
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a
+            href="#plans"
+            class="inline-flex items-center justify-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300 text-lg"
+          >
+            View Plans & Pricing
+            <svg
+              class="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div
+            class="bg-white rounded-xl p-4 shadow-sm border border-slate-100"
+          >
+            <p class="text-3xl font-bold text-slate-900">99.9%</p>
+            <p class="text-slate-500 text-sm">Uptime Guarantee</p>
+          </div>
+          <div
+            class="bg-white rounded-xl p-4 shadow-sm border border-slate-100"
+          >
+            <p class="text-3xl font-bold text-slate-900">24/7</p>
+            <p class="text-slate-500 text-sm">Monitoring</p>
+          </div>
+          <div
+            class="bg-white rounded-xl p-4 shadow-sm border border-slate-100"
+          >
+            <p class="text-3xl font-bold text-slate-900">4hr</p>
+            <p class="text-slate-500 text-sm">Emergency Response</p>
+          </div>
+          <div
+            class="bg-white rounded-xl p-4 shadow-sm border border-slate-100"
+          >
+            <p class="text-3xl font-bold text-orange-500">70%</p>
+            <p class="text-slate-500 text-sm">Cost Savings</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins" id="plans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span
+          class="inline-block px-4 py-1 bg-orange-100 text-orange-500 text-sm font-semibold rounded-full mb-4"
+        >
+          SIMPLE PRICING
+        </span>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4"
+        >
+          Choose Your Maintenance Plan
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          No contracts, cancel anytime. All plans include a dedicated account
+          manager.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          plans.map((plan) => (
+            <div
+              class={`relative bg-white border-2 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 ${plan.popular ? "border-orange-500 scale-105" : "border-slate-200"}`}
+            >
+              {plan.popular && (
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span class="px-4 py-1 bg-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
+                    MOST POPULAR
+                  </span>
+                </div>
+              )}
+
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  {plan.name}
+                </h3>
+                <p class="text-slate-500 text-sm mb-4">{plan.description}</p>
+                <div class="flex items-baseline justify-center gap-1">
+                  <span class="text-5xl font-bold text-slate-900">
+                    ${plan.price}
+                  </span>
+                  <span class="text-slate-500">/month</span>
+                </div>
+              </div>
+
+              <ul class="space-y-3 mb-8">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-slate-700">
+                    <svg
+                      class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span class="text-sm">{feature}</span>
+                  </li>
+                ))}
+                {plan.notIncluded.map((feature) => (
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg
+                      class="w-5 h-5 text-slate-300 flex-shrink-0 mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span class="text-sm line-through">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="#contact"
+                class={`block w-full py-4 font-bold rounded-xl text-center transition-all duration-300 ${plan.popular ? "bg-orange-500 hover:bg-orange-600 text-white shadow-lg" : "bg-slate-100 hover:bg-slate-200 text-slate-900"}`}
+              >
+                Get Started
+              </a>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="text-center text-slate-500 mt-8">
+        All prices in USD. Billed monthly. No setup fees.
+      </p>
+    </div>
+  </section>
+
+  <!-- What's Included Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4"
+        >
+          What We Do For <span class="text-orange-500">Your Website</span>
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Complete peace of mind. We handle everything so you can focus on your
+          business.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          [
+            {
+              icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+              title: "Security Monitoring",
+              description:
+                "24/7 malware scanning, firewall protection, and vulnerability patching to keep hackers out.",
+              color: "cyan",
+            },
+            {
+              icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4",
+              title: "Regular Backups",
+              description:
+                "Daily/weekly backups stored off-site. Restore your site in minutes if anything goes wrong.",
+              color: "orange",
+            },
+            {
+              icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
+              title: "Software Updates",
+              description:
+                "WordPress core, themes, and plugins updated safely with testing before deployment.",
+              color: "cyan",
+            },
+            {
+              icon: "M13 10V3L4 14h7v7l9-11h-7z",
+              title: "Performance Optimization",
+              description:
+                "Speed improvements, image optimization, and caching to keep your site lightning fast.",
+              color: "orange",
+            },
+            {
+              icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+              title: "Uptime Monitoring",
+              description:
+                "We monitor your site 24/7 and get alerted instantly if it goes down.",
+              color: "cyan",
+            },
+            {
+              icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
+              title: "Priority Support",
+              description:
+                "Email, phone, or chat support when you need it. We're here to help.",
+              color: "orange",
+            },
+          ].map((feature) => (
+            <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-cyan-400 transition-all duration-300">
+              <div
+                class={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${feature.color === "cyan" ? "bg-cyan-900" : "bg-orange-500"}`}
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d={feature.icon}
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                {feature.title}
+              </h3>
+              <p class="text-slate-600">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Maintenance Matters -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+            Why Your Website Needs <span class="text-orange-500"
+              >Regular Maintenance</span
+            >
+          </h2>
+          <div class="space-y-6">
+            <div
+              class="flex gap-4 p-5 bg-red-50 rounded-xl border border-red-100"
+            >
+              <div
+                class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
+                <span class="text-xl text-white">!</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">
+                  30,000 websites get hacked daily
+                </h3>
+                <p class="text-slate-600">
+                  Outdated software is the #1 cause of security breaches.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex gap-4 p-5 bg-yellow-50 rounded-xl border border-yellow-100"
+            >
+              <div
+                class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">
+                  53% of users leave slow sites
+                </h3>
+                <p class="text-slate-600">
+                  Speed optimization keeps visitors and improves SEO.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex gap-4 p-5 bg-blue-50 rounded-xl border border-blue-100"
+            >
+              <div
+                class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">
+                  $200K average cost of downtime
+                </h3>
+                <p class="text-slate-600">
+                  Every hour of downtime costs businesses thousands.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 rounded-2xl p-8 shadow-lg"
+        >
+          <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+            Compare Our Prices
+          </h3>
+          <div class="space-y-4">
+            <div
+              class="flex items-center justify-between p-4 bg-slate-100 rounded-lg"
+            >
+              <div>
+                <p class="font-bold text-slate-900">US Web Agency</p>
+                <p class="text-slate-500 text-sm">Basic maintenance</p>
+              </div>
+              <p class="font-bold text-lg text-slate-700">$300 - $600/mo</p>
+            </div>
+            <div
+              class="flex items-center justify-between p-4 bg-slate-100 rounded-lg"
+            >
+              <div>
+                <p class="font-bold text-slate-900">US Freelancer</p>
+                <p class="text-slate-500 text-sm">Limited availability</p>
+              </div>
+              <p class="font-bold text-lg text-slate-700">$150 - $300/mo</p>
+            </div>
+            <div
+              class="flex items-center justify-between p-4 bg-orange-500 rounded-lg"
+            >
+              <div>
+                <p class="font-bold text-white">Codebrand</p>
+                <p class="text-orange-100 text-sm">Full professional service</p>
+              </div>
+              <p class="font-bold text-lg text-white">From $99/mo</p>
+            </div>
+          </div>
+          <div
+            class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200 text-center"
+          >
+            <p class="text-green-800 font-bold text-lg">
+              You save up to $500/month
+            </p>
+            <p class="text-green-600 text-sm">
+              That's $6,000/year back in your pocket
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {
+          [
+            {
+              question: "What types of websites do you maintain?",
+              answer:
+                "We maintain WordPress, Webflow, Shopify, custom sites, and more. If it's a website, we can maintain it. During onboarding, we'll assess your specific tech stack and customize our service accordingly.",
+            },
+            {
+              question: "What happens if my site goes down?",
+              answer:
+                "Our monitoring systems alert us immediately. For Premium plans, we guarantee a 4-hour emergency response. For all plans, we work to resolve issues as quickly as possible and keep you informed throughout.",
+            },
+            {
+              question: "Can I upgrade or downgrade my plan?",
+              answer:
+                "Yes! You can change your plan at any time. Upgrades take effect immediately, and downgrades apply to your next billing cycle.",
+            },
+            {
+              question: "Do you require long-term contracts?",
+              answer:
+                "No contracts required. All plans are month-to-month and you can cancel anytime with no penalties. We believe in earning your business every month.",
+            },
+            {
+              question: "What counts as 'edits' in my plan?",
+              answer:
+                "Edits include text changes, image swaps, adding new sections, or minor design tweaks. Major redesigns or new features are quoted separately. Unused hours don't roll over.",
+            },
+          ].map((faq) => (
+            <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="text-slate-900 font-bold pr-6">
+                  {faq.question}
+                </span>
+                <svg
+                  class="w-5 h-5 text-orange-500 transform group-open:rotate-180 transition-transform flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-slate-600">{faq.answer}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section
+    class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins"
+    id="contact"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span
+          class="inline-block px-4 py-1 bg-orange-100 text-orange-500 text-sm font-semibold rounded-full mb-4"
+        >
+          LIMITED SPOTS AVAILABLE
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          Start Protecting Your Website Today
+        </h2>
+        <p class="text-xl text-slate-600">
+          Fill out the form and we'll get you set up within 24 hours.
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-200"
+      >
+        <form
+          name="contact-maintenance"
+          method="POST"
+          action="/api/contact"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <input type="hidden" name="form-name" value="contact-maintenance" />
+          <input
+            type="hidden"
+            name="service"
+            value="Website Maintenance Plans"
+          />
+          <input
+            type="text"
+            name="honey"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            class="hidden"
+          />
+
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Full Name *</label
+            >
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="John Doe"
+              class="contact-form-input"
+            />
+          </div>
+
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Email Address *</label
+            >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="john@example.com"
+              class="contact-form-input"
+            />
+          </div>
+
+          <div>
+            <label
+              for="phone"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Phone Number</label
+            >
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="+1 (555) 000-0000"
+              class="contact-form-input"
+            />
+          </div>
+
+          <div>
+            <label
+              for="website"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Website URL *</label
+            >
+            <input
+              id="website"
+              name="website"
+              type="url"
+              required
+              placeholder="https://yoursite.com"
+              class="contact-form-input"
+            />
+          </div>
+
+          <div>
+            <label
+              for="plan"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Interested Plan *</label
+            >
+            <select id="plan" name="plan" required class="contact-form-input">
+              <option value="" disabled selected>Select a plan</option>
+              <option value="Essential - $99/mo">Essential - $99/mo</option>
+              <option value="Growth - $199/mo">Growth - $199/mo</option>
+              <option value="Premium - $349/mo">Premium - $349/mo</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              for="platform"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Website Platform</label
+            >
+            <select id="platform" name="platform" class="contact-form-input">
+              <option value="" disabled selected>Select platform</option>
+              <option value="WordPress">WordPress</option>
+              <option value="Shopify">Shopify</option>
+              <option value="Webflow">Webflow</option>
+              <option value="Custom">Custom / Other</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+          </div>
+
+          <div class="md:col-span-2">
+            <label
+              for="message"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Additional Notes</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              placeholder="Any specific concerns or requirements?"
+              class="contact-form-input resize-none"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <button
+              type="submit"
+              class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Get Started Today
+            </button>
+            <p class="text-center text-slate-500 text-sm mt-4">
+              No commitment required. We'll send you a proposal within 24 hours.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.938rem;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+    outline: none;
+  }
+
+  .contact-form-input:focus {
+    border-color: #ea580c;
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+  }
+
+  .contact-form-input::placeholder {
+    color: #9ca3af;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

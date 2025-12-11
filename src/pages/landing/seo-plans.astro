@@ -1,0 +1,823 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// SEO Metadata
+const pageTitle =
+  "SEO Services from $449/mo | Rank Higher on Google | Codebrand";
+const pageDescription =
+  "Professional SEO services starting at $449/month. Keyword research, on-page optimization, link building, and monthly reporting. US agencies charge $1,500-$5,000/mo for the same service.";
+const pageKeywords =
+  "SEO services, search engine optimization, local SEO, keyword research, link building, Google ranking, affordable SEO, small business SEO";
+
+// SEO Plans
+const plans = [
+  {
+    name: "Local",
+    price: 449,
+    description: "Perfect for local businesses targeting their city",
+    popular: false,
+    features: [
+      "10 target keywords",
+      "Google Business Profile optimization",
+      "Local citation building (20/mo)",
+      "On-page SEO optimization",
+      "Technical SEO audit",
+      "Monthly ranking report",
+      "Competitor analysis",
+      "Email support",
+    ],
+    notIncluded: ["Content creation", "Link building", "National targeting"],
+  },
+  {
+    name: "Growth",
+    price: 899,
+    description: "For businesses ready to dominate their market",
+    popular: true,
+    features: [
+      "25 target keywords",
+      "Google Business Profile management",
+      "Local citation building (40/mo)",
+      "Advanced on-page SEO",
+      "Technical SEO optimization",
+      "2 SEO blog posts/month",
+      "Link building (5 links/mo)",
+      "Bi-weekly ranking reports",
+      "Detailed competitor tracking",
+      "Priority email & chat support",
+    ],
+    notIncluded: ["E-commerce SEO", "International targeting"],
+  },
+  {
+    name: "Enterprise",
+    price: 1499,
+    description: "Full-scale SEO for maximum visibility",
+    popular: false,
+    features: [
+      "50+ target keywords",
+      "Complete GBP management",
+      "Unlimited local citations",
+      "Advanced technical SEO",
+      "4 SEO blog posts/month",
+      "Premium link building (15 links/mo)",
+      "Weekly ranking reports",
+      "Advanced competitor analysis",
+      "Content strategy & planning",
+      "E-commerce SEO support",
+      "Dedicated SEO manager",
+      "Monthly strategy calls",
+    ],
+    notIncluded: [],
+  },
+];
+
+// What we do
+const services = [
+  {
+    icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+    title: "Keyword Research",
+    description:
+      "We find the exact keywords your customers are searching for and target them strategically.",
+  },
+  {
+    icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+    title: "On-Page Optimization",
+    description:
+      "We optimize your pages' titles, meta descriptions, content, and structure for maximum visibility.",
+  },
+  {
+    icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+    title: "Technical SEO",
+    description:
+      "Site speed, mobile optimization, schema markup, and crawlability - we fix all technical issues.",
+  },
+  {
+    icon: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1",
+    title: "Link Building",
+    description:
+      "Quality backlinks from relevant websites to boost your domain authority and rankings.",
+  },
+  {
+    icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
+    title: "Local SEO",
+    description:
+      "Dominate local search results with Google Business Profile optimization and local citations.",
+  },
+  {
+    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+    title: "Reporting & Analytics",
+    description:
+      "Transparent monthly reports showing your rankings, traffic growth, and ROI.",
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+
+  <script type="application/ld+json" is:inline slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SEO Services",
+      "description": "Professional search engine optimization services",
+      "provider": {
+        "@type": "Organization",
+        "name": "Codebrand",
+        "url": "https://codebrand.us"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Local SEO Plan",
+          "price": "449",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Growth SEO Plan",
+          "price": "899",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise SEO Plan",
+          "price": "1499",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Hero Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full mb-6"
+      >
+        <svg
+          class="w-4 h-4 text-green-500"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span class="text-slate-700 text-sm font-medium"
+          >Professional SEO Services</span
+        >
+      </div>
+
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6"
+      >
+        Get Found on Google
+        <span class="block text-orange-500 mt-2">SEO from $449/month</span>
+      </h1>
+
+      <p class="text-xl text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed">
+        Stop losing customers to competitors. Get your business on the first
+        page of Google and watch your leads grow.
+      </p>
+      <p class="text-lg text-slate-500 mb-8 max-w-2xl mx-auto">
+        US agencies charge <span class="text-slate-700 line-through"
+          >$1,500 - $5,000/mo</span
+        > for the same service.
+        <span class="text-orange-500 font-semibold"
+          >Save 60-70% with Codebrand.</span
+        >
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="#plans"
+          class="inline-flex items-center justify-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-all duration-300 text-lg shadow-lg"
+        >
+          View SEO Plans
+          <svg
+            class="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+        <a
+          href="#results"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-lg border border-slate-200 transition-all duration-300 shadow-sm"
+        >
+          See Client Results
+        </a>
+      </div>
+
+      <!-- Stats - Realistic -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+          <p class="text-3xl font-bold text-slate-900">30+</p>
+          <p class="text-slate-500 text-sm">Active Clients</p>
+        </div>
+        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+          <p class="text-3xl font-bold text-slate-900">3+</p>
+          <p class="text-slate-500 text-sm">Years Experience</p>
+        </div>
+        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+          <p class="text-3xl font-bold text-slate-900">85%</p>
+          <p class="text-slate-500 text-sm">Client Retention</p>
+        </div>
+        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+          <p class="text-3xl font-bold text-orange-500">60%</p>
+          <p class="text-slate-500 text-sm">Cost Savings</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why SEO Matters -->
+  <section class="py-12 bg-white border-y border-slate-100 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="text-4xl font-black text-cyan-900 mb-2">93%</p>
+          <p class="text-slate-600">
+            of online experiences begin with a search engine
+          </p>
+        </div>
+        <div>
+          <p class="text-4xl font-black text-orange-500 mb-2">75%</p>
+          <p class="text-slate-600">
+            of users never scroll past the first page
+          </p>
+        </div>
+        <div>
+          <p class="text-4xl font-black text-cyan-900 mb-2">14.6%</p>
+          <p class="text-slate-600">
+            SEO leads close rate vs 1.7% for outbound
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins" id="plans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span
+          class="inline-block px-4 py-1 bg-orange-100 text-orange-600 text-sm font-semibold rounded-full mb-4"
+        >
+          TRANSPARENT PRICING
+        </span>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-4"
+        >
+          Choose Your SEO Plan
+        </h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">
+          No contracts, cancel anytime. Results-focused SEO that actually works.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          plans.map((plan) => (
+            <div
+              class={`relative bg-white border-2 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ${plan.popular ? "border-orange-500 scale-105" : "border-slate-200"}`}
+            >
+              {plan.popular && (
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span class="px-4 py-1 bg-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
+                    BEST VALUE
+                  </span>
+                </div>
+              )}
+
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  {plan.name}
+                </h3>
+                <p class="text-slate-500 text-sm mb-4">{plan.description}</p>
+                <div class="flex items-baseline justify-center gap-1">
+                  <span class="text-5xl font-black text-slate-900">
+                    ${plan.price}
+                  </span>
+                  <span class="text-slate-500">/month</span>
+                </div>
+              </div>
+
+              <ul class="space-y-3 mb-8">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-slate-600">
+                    <svg
+                      class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span class="text-sm">{feature}</span>
+                  </li>
+                ))}
+                {plan.notIncluded.map((feature) => (
+                  <li class="flex items-start gap-3 text-slate-400">
+                    <svg
+                      class="w-5 h-5 text-slate-300 flex-shrink-0 mt-0.5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span class="text-sm line-through">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="#contact"
+                class={`block w-full py-4 font-bold rounded-lg text-center transition-all duration-300 ${plan.popular ? "bg-orange-500 hover:bg-orange-600 text-white shadow-lg" : "bg-slate-100 hover:bg-slate-200 text-slate-700"}`}
+              >
+                Get Started
+              </a>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="text-center text-slate-400 mt-8">
+        All prices in USD. Billed monthly. 3-month minimum recommended for best
+        results.
+      </p>
+    </div>
+  </section>
+
+  <!-- What's Included Section -->
+  <section
+    class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins"
+    id="services"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-4"
+        >
+          Our SEO Services
+        </h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">
+          Comprehensive SEO strategies that drive real, measurable results for
+          your business.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          services.map((service) => (
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-cyan-400 hover:shadow-lg transition-all duration-300">
+              <div class="w-12 h-12 bg-cyan-900 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d={service.icon}
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                {service.title}
+              </h3>
+              <p class="text-slate-500">{service.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins" id="results">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span
+          class="inline-block px-4 py-1 bg-orange-100 text-orange-500 text-sm font-semibold rounded-full mb-4"
+        >
+          PROVEN RESULTS
+        </span>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-4"
+        >
+          Real Client Results
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          [
+            {
+              business: "Plumbing Company",
+              location: "Denver, CO",
+              stats: [
+                { label: "Organic Traffic", value: "+340%" },
+                { label: "Keywords on Page 1", value: "45" },
+                { label: "Monthly Leads", value: "120+" },
+              ],
+              quote:
+                "We went from invisible on Google to dominating our local market.",
+            },
+            {
+              business: "Dental Practice",
+              location: "Houston, TX",
+              stats: [
+                { label: "Organic Traffic", value: "+280%" },
+                { label: "Keywords on Page 1", value: "32" },
+                { label: "New Patients/mo", value: "35+" },
+              ],
+              quote:
+                "Our appointment bookings doubled within 6 months of starting SEO.",
+            },
+            {
+              business: "E-commerce Store",
+              location: "Los Angeles, CA",
+              stats: [
+                { label: "Organic Traffic", value: "+450%" },
+                { label: "Keywords on Page 1", value: "120+" },
+                { label: "Revenue Increase", value: "+180%" },
+              ],
+              quote: "SEO became our #1 source of sales, beating paid ads.",
+            },
+          ].map((result) => (
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <div class="mb-6">
+                <p class="text-slate-900 font-bold text-lg">
+                  {result.business}
+                </p>
+                <p class="text-cyan-900 text-sm font-medium">
+                  {result.location}
+                </p>
+              </div>
+              <div class="space-y-4 mb-6">
+                {result.stats.map((stat) => (
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-500 text-sm">{stat.label}</span>
+                    <span class="text-slate-900 font-bold">{stat.value}</span>
+                  </div>
+                ))}
+              </div>
+              <p class="text-slate-600 italic text-sm border-t border-slate-200 pt-6">
+                "{result.quote}"
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-4"
+        >
+          Our SEO Process
+        </h2>
+        <p class="text-xl text-slate-500 max-w-3xl mx-auto">
+          A proven methodology that delivers consistent results.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        {
+          [
+            {
+              step: "1",
+              title: "Audit & Analysis",
+              description:
+                "We analyze your site, competitors, and target keywords to create a winning strategy.",
+            },
+            {
+              step: "2",
+              title: "Optimization",
+              description:
+                "Fix technical issues and optimize your pages for search engines.",
+            },
+            {
+              step: "3",
+              title: "Content & Links",
+              description:
+                "Create optimized content and build quality backlinks to boost authority.",
+            },
+            {
+              step: "4",
+              title: "Monitor & Improve",
+              description:
+                "Track rankings, analyze data, and continuously improve your results.",
+            },
+          ].map((item) => (
+            <div class="text-center">
+              <div class="w-16 h-16 bg-cyan-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span class="text-2xl font-black text-white">{item.step}</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                {item.title}
+              </h3>
+              <p class="text-slate-500">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins" id="faq">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {
+          [
+            {
+              question: "How long does SEO take to show results?",
+              answer:
+                "SEO is a long-term strategy. Most clients see initial improvements in 2-3 months, with significant results in 4-6 months. The exact timeline depends on your competition, website age, and current SEO status.",
+            },
+            {
+              question: "Do you guarantee first page rankings?",
+              answer:
+                "No ethical SEO company can guarantee specific rankings - Google's algorithm changes constantly. What we guarantee is a data-driven approach, transparent reporting, and continuous improvement of your organic visibility.",
+            },
+            {
+              question: "What's the difference between local and national SEO?",
+              answer:
+                "Local SEO focuses on ranking in your geographic area (city/region) and Google Maps. It's ideal for businesses serving local customers. National SEO targets broader keywords and requires more content and link building.",
+            },
+            {
+              question: "Will I own my SEO work if I cancel?",
+              answer:
+                "Absolutely. All on-page optimizations, content, and improvements made to your site remain yours. We'll also provide a complete handover document with recommendations for maintaining your rankings.",
+            },
+            {
+              question: "How do you report on progress?",
+              answer:
+                "You'll receive detailed monthly reports showing keyword rankings, organic traffic, leads/conversions, and work completed. We also include actionable recommendations and strategy updates.",
+            },
+          ].map((faq) => (
+            <details class="group bg-slate-50 border border-slate-200 rounded-xl overflow-hidden hover:border-cyan-400 transition-all duration-300">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <span class="text-slate-900 font-bold pr-6">
+                  {faq.question}
+                </span>
+                <svg
+                  class="w-5 h-5 text-cyan-900 transform group-open:rotate-180 transition-transform flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-slate-600">{faq.answer}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section
+    class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins"
+    id="contact"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span
+          class="inline-block px-4 py-1 bg-orange-100 text-orange-500 text-sm font-semibold rounded-full mb-4"
+        >
+          FREE SEO AUDIT
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">
+          Get Your Free SEO Analysis
+        </h2>
+        <p class="text-xl text-slate-600">
+          Find out exactly what's holding your website back from ranking higher.
+        </p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-xl">
+        <form
+          name="contact-seo"
+          method="POST"
+          action="/api/contact"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <input type="hidden" name="form-name" value="contact-seo" />
+          <input type="hidden" name="service" value="SEO Services" />
+          <input
+            type="text"
+            name="honey"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            class="hidden"
+          />
+
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Full Name *</label
+            >
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="John Doe"
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 text-slate-900 placeholder-slate-400"
+            />
+          </div>
+
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Email Address *</label
+            >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="john@example.com"
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 text-slate-900 placeholder-slate-400"
+            />
+          </div>
+
+          <div>
+            <label
+              for="phone"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Phone Number</label
+            >
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="+1 (555) 000-0000"
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 text-slate-900 placeholder-slate-400"
+            />
+          </div>
+
+          <div>
+            <label
+              for="website"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Website URL *</label
+            >
+            <input
+              id="website"
+              name="website"
+              type="url"
+              required
+              placeholder="https://yourwebsite.com"
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 text-slate-900 placeholder-slate-400"
+            />
+          </div>
+
+          <div>
+            <label
+              for="plan"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Interested Plan *</label
+            >
+            <select
+              id="plan"
+              name="plan"
+              required
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 text-slate-900 bg-white"
+            >
+              <option value="" disabled selected>Select a plan</option>
+              <option value="Local - $449/mo">Local - $449/mo</option>
+              <option value="Growth - $899/mo">Growth - $899/mo</option>
+              <option value="Enterprise - $1,499/mo"
+                >Enterprise - $1,499/mo</option
+              >
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              for="business-type"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >Business Type</label
+            >
+            <select
+              id="business-type"
+              name="business-type"
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 text-slate-900 bg-white"
+            >
+              <option value="" disabled selected
+                >Select your business type</option
+              >
+              <option value="Local Business">Local Business</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Professional Services"
+                >Professional Services</option
+              >
+              <option value="SaaS / Tech">SaaS / Tech</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="md:col-span-2">
+            <label
+              for="goals"
+              class="block text-sm font-medium text-slate-700 mb-2"
+              >What are your SEO goals? *</label
+            >
+            <textarea
+              id="goals"
+              name="goals"
+              rows="3"
+              required
+              placeholder="E.g., Rank for 'plumber near me', increase organic traffic, get more leads..."
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-200 text-slate-900 placeholder-slate-400 resize-none"
+            ></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <button
+              type="submit"
+              class="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-all duration-300 text-lg shadow-lg"
+            >
+              Get My Free SEO Audit
+            </button>
+            <p class="text-center text-slate-500 text-sm mt-4">
+              No commitment required. Get a detailed analysis of your current
+              SEO status.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a
+    href="https://wa.me/50432722973?text=Hi%2C%20I'm%20interested%20in%20SEO%20services"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full p-4 shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+      ></path>
+    </svg>
+  </a>
+</Layout>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

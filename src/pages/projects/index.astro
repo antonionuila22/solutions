@@ -87,7 +87,7 @@ const categories = ["All", ...allCategories.sort()];
             <br />
             <span class="relative inline-block">
               <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"
+                class="text-transparent bg-clip-text text-orange-500"
               >
                 Portfolio
               </span>
@@ -123,7 +123,7 @@ const categories = ["All", ...allCategories.sort()];
         >
           <div class="flex items-center gap-2 md:gap-3 group">
             <div
-              class="w-16 h-12 md:w-20 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-cyan-900 to-cyan-700 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
+              class="w-16 h-12 md:w-20 md:h-16 rounded-xl md:rounded-2xl bg-cyan-900 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
             >
               <span class="text-xl md:text-3xl font-black text-white">100+</span
               >
@@ -138,7 +138,7 @@ const categories = ["All", ...allCategories.sort()];
 
           <div class="flex items-center gap-2 md:gap-3 group">
             <div
-              class="w-16 h-12 md:w-20 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
+              class="w-16 h-12 md:w-20 md:h-16 rounded-xl md:rounded-2xl bg-orange-500 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
             >
               <span class="text-xl md:text-3xl font-black text-white">50+</span>
             </div>
@@ -152,7 +152,7 @@ const categories = ["All", ...allCategories.sort()];
 
           <div class="flex items-center gap-2 md:gap-3 group">
             <div
-              class="w-16 h-12 md:w-20 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-cyan-900 to-cyan-700 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
+              class="w-16 h-12 md:w-20 md:h-16 rounded-xl md:rounded-2xl bg-cyan-900 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
             >
               <span class="text-xl md:text-3xl font-black text-white">5+</span>
             </div>
@@ -213,7 +213,7 @@ const categories = ["All", ...allCategories.sort()];
               data-category={category}
               class={`px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-xs md:text-sm transition-all duration-300 ${
                 category === "All"
-                  ? "bg-gradient-to-r from-orange-400 to-orange-600 text-white shadow-lg"
+                  ? "text-orange-500 text-white shadow-lg"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               } filter-btn`}
             >
@@ -236,7 +236,7 @@ const categories = ["All", ...allCategories.sort()];
               style={`animation-delay: ${index * 0.1}s`}
             >
               {/* Project Image */}
-              <div class="relative h-64 overflow-hidden bg-gradient-to-br from-cyan-900/5 to-orange-400/5">
+              <div class="relative h-64 overflow-hidden bg-slate-50">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -244,7 +244,7 @@ const categories = ["All", ...allCategories.sort()];
                   loading="lazy"
                 />
                 {/* Category Badge */}
-                <div class="absolute top-4 right-4 bg-gradient-to-r from-orange-400 to-orange-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                <div class="absolute top-4 right-4 text-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
                   {project.category}
                 </div>
               </div>
@@ -291,7 +291,7 @@ const categories = ["All", ...allCategories.sort()];
               </div>
 
               {/* Hover Overlay Effect */}
-              <div class="absolute inset-0 bg-gradient-to-t from-orange-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div class="absolute inset-0 bg-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
           ))
         }
@@ -304,7 +304,7 @@ const categories = ["All", ...allCategories.sort()];
 
   <!-- CTA Section -->
   <section
-    class="relative py-16 md:py-24 px-4 md:px-6 bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900 overflow-hidden"
+    class="relative py-16 md:py-24 px-4 md:px-6 bg-cyan-900 overflow-hidden"
   >
     <!-- Decorative Elements -->
     <div
@@ -398,7 +398,7 @@ const categories = ["All", ...allCategories.sort()];
       <div class="flex flex-wrap justify-center gap-3 md:gap-4 px-4">
         <a
           href="/contact"
-          class="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm lg:text-lg"
+          class="group inline-flex items-center gap-3 bg-orange-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm lg:text-lg"
         >
           <span>Get Started Now</span>
           <svg

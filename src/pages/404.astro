@@ -11,15 +11,15 @@ import Button from "@/components/Button.astro";
   noindex={true}
 >
   <section
-    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden"
+    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 bg-cyan-900 overflow-hidden"
   >
     <!-- Animated background elements -->
     <div class="absolute inset-0 overflow-hidden">
       <div
-        class="absolute w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-40 top-[-200px] left-[-200px] animate-pulse"
+        class="absolute w-[600px] h-[600px] bg-cyan-400/20 rounded-full blur-[120px] opacity-40 top-[-200px] left-[-200px] animate-pulse"
       ></div>
       <div
-        class="absolute w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] opacity-30 bottom-[-150px] right-[-150px] animate-pulse"
+        class="absolute w-[500px] h-[500px] bg-orange-500/20 rounded-full blur-[100px] opacity-30 bottom-[-150px] right-[-150px] animate-pulse"
         style="animation-delay: 1s;"
       ></div>
       <div
@@ -34,19 +34,19 @@ import Button from "@/components/Button.astro";
       <!-- 404 Number with glitch effect -->
       <div id="number" class="relative mb-8">
         <h1
-          class="text-[140px] md:text-[200px] lg:text-[240px] font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-orange-500 leading-none select-none"
+          class="text-[140px] md:text-[200px] lg:text-[240px] font-black text-orange-500 leading-none select-none"
         >
           404
         </h1>
         <!-- Glitch layers -->
         <h1
-          class="absolute inset-0 text-[140px] md:text-[200px] lg:text-[240px] font-black text-primary/30 leading-none select-none glitch-1"
+          class="absolute inset-0 text-[140px] md:text-[200px] lg:text-[240px] font-black text-cyan-400/30 leading-none select-none glitch-1"
           aria-hidden="true"
         >
           404
         </h1>
         <h1
-          class="absolute inset-0 text-[140px] md:text-[200px] lg:text-[240px] font-black text-purple-500/30 leading-none select-none glitch-2"
+          class="absolute inset-0 text-[140px] md:text-[200px] lg:text-[240px] font-black text-orange-500/30 leading-none select-none glitch-2"
           aria-hidden="true"
         >
           404
@@ -68,7 +68,7 @@ import Button from "@/components/Button.astro";
       <div id="buttons" class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
         <a
           href="/"
-          class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
+          class="inline-flex items-center justify-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
@@ -77,7 +77,7 @@ import Button from "@/components/Button.astro";
         </a>
         <a
           href="/contact"
-          class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-primary hover:text-primary transition-all duration-300 hover:scale-105"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:border-orange-500 hover:text-orange-500 transition-all duration-300 hover:scale-105"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -87,42 +87,42 @@ import Button from "@/components/Button.astro";
       </div>
 
       <!-- Quick links -->
-      <div id="links" class="border-t border-gray-700 pt-10">
-        <p class="text-gray-500 mb-6">Or check out these popular pages:</p>
+      <div id="links" class="border-t border-white/20 pt-10">
+        <p class="text-white/60 mb-6">Or check out these popular pages:</p>
         <div class="flex flex-wrap justify-center gap-3">
           <a
             href="/web-development"
-            class="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200 text-sm"
+            class="px-4 py-2 bg-white/10 text-white/80 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm"
           >
             Web Development
           </a>
           <a
             href="/branding"
-            class="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200 text-sm"
+            class="px-4 py-2 bg-white/10 text-white/80 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm"
           >
             Branding
           </a>
           <a
             href="/e-commerce"
-            class="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200 text-sm"
+            class="px-4 py-2 bg-white/10 text-white/80 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm"
           >
             E-Commerce
           </a>
           <a
             href="/seo"
-            class="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200 text-sm"
+            class="px-4 py-2 bg-white/10 text-white/80 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm"
           >
             SEO
           </a>
           <a
             href="/blog"
-            class="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200 text-sm"
+            class="px-4 py-2 bg-white/10 text-white/80 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm"
           >
             Blog
           </a>
           <a
             href="/projects"
-            class="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200 text-sm"
+            class="px-4 py-2 bg-white/10 text-white/80 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm"
           >
             Projects
           </a>
