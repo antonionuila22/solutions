@@ -3,21 +3,25 @@
   "short_name": "Codebrand",
   "description": "Professional web development, branding, and digital marketing services. Building brands that matter with world-class quality.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0e7490",
   "orientation": "portrait-primary",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/iconcodebrand.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/iconcodebrand.svg",
       "sizes": "512x512",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     },
     {
       "src": "/iconcodebrand.svg",

@@ -32,7 +32,7 @@ description =
 keywords =
   keywords ||
   "web development agency, UI/UX design services, digital marketing agency, custom web development, mobile app development, SEO optimization, social media marketing, branding agency, e-commerce development, graphic design services";
-image = image || "https://codebrand.us/photos/bannercodebrand.webp";
+image = image || "https://codebrand.us/og-image.svg";
 
 // URL dinámica y mejoras SEO
 const canonicalUrl = Astro.url?.href || "https://codebrand.us";
@@ -93,6 +93,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- Canonical and Alternative URLs -->
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
     <!-- RSS Feed -->
@@ -130,6 +131,9 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta property="og:image:alt" content={title} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="es_MX" />
+    <meta property="og:locale:alternate" content="es_HN" />
 
     {
       article && formattedPublishedTime && (
@@ -162,9 +166,11 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content={title} />
 
-    <!-- Geo Tags -->
+    <!-- Geo Tags - Primary market US, operations in Honduras -->
     <meta name="geo.region" content="US" />
     <meta name="geo.placename" content="United States" />
+    <meta name="geo.position" content="15.5049;-88.0254" />
+    <meta name="ICBM" content="15.5049, -88.0254" />
 
     <!-- Links and Resources -->
     <link rel="sitemap" href="/sitemap-index.xml" />
