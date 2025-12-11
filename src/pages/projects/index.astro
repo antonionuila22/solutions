@@ -213,7 +213,7 @@ const categories = ["All", ...allCategories.sort()];
               data-category={category}
               class={`px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-xs md:text-sm transition-all duration-300 ${
                 category === "All"
-                  ? "text-orange-500 text-white shadow-lg"
+                  ? "bg-orange-500 text-white shadow-lg"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               } filter-btn`}
             >
@@ -244,7 +244,7 @@ const categories = ["All", ...allCategories.sort()];
                   loading="lazy"
                 />
                 {/* Category Badge */}
-                <div class="absolute top-4 right-4 text-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
                   {project.category}
                 </div>
               </div>
