@@ -14,10 +14,18 @@ import Layout from "@/layouts/Layout.astro";
                 Terms and Conditions
             </h1>
             <p class="text-center text-gray-600 mb-12">
-                Last Updated: January 2025
+                Last Updated: December 2025
             </p>
 
             <div class="bg-white rounded-lg shadow-md p-8 md:p-12 space-y-10 text-gray-700 leading-relaxed">
+                <!-- Important Notice Box -->
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
+                    <h3 class="text-lg font-bold text-amber-800 mb-2">Important Notice</h3>
+                    <p class="text-amber-700">
+                        These Terms and Conditions constitute a legally binding agreement between you ("Client") and Codebrand ("Company"). By signing a project proposal, making a payment, or providing written approval via email, you acknowledge that you have read, understood, and agree to be bound by these Terms. <strong>Please read them carefully before engaging our services.</strong>
+                    </p>
+                </div>
+
                 <div>
                     <p class="text-lg">
                         Welcome to <strong>Codebrand</strong> ("the Company", "we", "us", or "our"). These Terms and Conditions ("Terms") govern access to and use of our website, located at <a
@@ -91,7 +99,43 @@ import Layout from "@/layouts/Layout.astro";
                         <li>Revision policies and limitations</li>
                         <li>Responsibilities of both parties</li>
                         <li>Acceptance criteria and approval process</li>
+                        <li><strong>Included scope</strong> (what IS part of the project)</li>
+                        <li><strong>Excluded scope</strong> (what is NOT part of the project)</li>
                     </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3.1 Scope Definition and Boundaries</h3>
+                    <div class="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                        <p class="text-purple-800 mb-3">
+                            <strong>Critical:</strong> The project scope is strictly limited to what is explicitly documented in the approved proposal. Items not specifically mentioned in the "Included Scope" section are considered <strong>out of scope</strong> and will require additional budget and timeline.
+                        </p>
+                        <p class="text-purple-800 text-sm">
+                            Examples of commonly excluded items (unless explicitly included): mobile apps, third-party integrations not mentioned, custom admin dashboards, user authentication systems, payment processing beyond specified gateways, content creation, and translations.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3.2 Scope Changes (Change Requests)</h3>
+                    <p>Any changes to the approved scope require:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Written request:</strong> Client must submit change requests in writing via email</li>
+                        <li><strong>Impact assessment:</strong> We will provide an estimate of additional cost and timeline impact within 3-5 business days</li>
+                        <li><strong>Written approval:</strong> Changes only proceed after Client provides written approval of the additional cost and timeline</li>
+                        <li><strong>Payment:</strong> Additional scope may require upfront payment before implementation</li>
+                    </ul>
+                    <p class="mt-4 text-sm text-gray-600">
+                        <strong>Note:</strong> Frequent scope changes may significantly impact project timeline and budget. We recommend finalizing requirements before project commencement to avoid delays and additional costs.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3.3 Project Acceptance</h3>
+                    <p>
+                        By approving a proposal (via signature, email confirmation, or payment), the Client confirms:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>They have read and understood the complete proposal</li>
+                        <li>They agree to the defined scope, timeline, and cost</li>
+                        <li>They accept these Terms and Conditions</li>
+                        <li>They have authority to enter into this agreement on behalf of their organization</li>
+                    </ul>
+
                     <p class="mt-4">
                         We reserve the right to decline any project that does not align with our capabilities, values, or business standards. All projects are subject to availability and resource allocation.
                     </p>
@@ -102,52 +146,87 @@ import Layout from "@/layouts/Layout.astro";
                         4. Payment Terms and Billing
                     </h2>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.1 Project-Based Services (Web Development and Major Projects)</h3>
+                    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-6">
+                        <p class="text-blue-800 text-sm">
+                            <strong>Payment as Acceptance:</strong> Making any payment to Codebrand constitutes full acceptance of these Terms and Conditions, the project scope as defined in the approved proposal, and all related policies.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.1 Traditional Stage-Based Payment (Individual Deliverables)</h3>
                     <p>
-                        For web development projects and other major deliverables, our standard payment structure is:
+                        For custom web development projects with defined deliverables, our standard payment structure is:
                     </p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li><strong>70% upfront deposit:</strong> Required before project commencement to secure resources and initiate work</li>
-                        <li><strong>30% final payment:</strong> Due upon project completion and final delivery, before transfer of files and ownership</li>
+                        <li><strong>50% at project start:</strong> Required before project commencement to secure resources and initiate work. This payment is <strong>non-refundable</strong> once work begins.</li>
+                        <li><strong>30% at mid-project:</strong> Due upon completion of design phase or agreed milestone</li>
+                        <li><strong>10% upon completion:</strong> Due upon project delivery and client approval</li>
+                        <li><strong>10% guarantee retention:</strong> Retained for 15 days after launch to cover any critical issues. Released after the guarantee period if no issues are reported.</li>
                     </ul>
-                    <p class="mt-4">
-                        The initial deposit is non-refundable once work has commenced. The final payment must be received before we transfer final files, provide source code, or release the project to production.
+                    <p class="mt-4 text-sm text-gray-600">
+                        The initial deposit is <strong>non-refundable</strong> once work has commenced, as it covers resource allocation, planning, and initial development efforts. Final files, source code, and production deployment occur only after full payment.
                     </p>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.2 Hourly Services</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.2 Monthly Subscription Plans</h3>
                     <p>
-                        For clients who prefer hourly billing arrangements:
+                        We offer various monthly subscription plans for different services (development, maintenance, SEO, social media, etc.). Each plan has specific pricing and features as detailed on our website or in the approved proposal.
                     </p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li><strong>Minimum engagement:</strong> 4 hours per contract</li>
-                        <li><strong>Maximum daily hours:</strong> 8 hours per day per resource</li>
-                        <li><strong>Billing increments:</strong> Work is billed in 30-minute increments</li>
-                        <li><strong>Payment:</strong> Due within 15 days of invoice date</li>
-                        <li><strong>Advance payment:</strong> May be required for new clients or large hourly commitments</li>
-                    </ul>
-
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.3 Monthly Project-Based Packages</h3>
-                    <p>
-                        We offer monthly project-based packages for web design and development services with fixed durations:
-                    </p>
-                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li><strong>Essential Package:</strong> $1,800/month × 2 months = $3,600 total (3-5 page website with basic CMS)</li>
-                        <li><strong>Growth Package:</strong> $4,200/month × 3 months = $12,600 total (5-10 page custom website with advanced features)</li>
-                        <li><strong>Enterprise Package:</strong> $7,500/month × 4 months = $30,000 total (Full web application or e-commerce platform)</li>
-                    </ul>
-                    <p class="mt-4">
-                        <strong>Payment Terms for Monthly Packages:</strong>
-                    </p>
-                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Monthly fee:</strong> As specified in the selected plan or approved proposal</li>
                         <li><strong>Billing cycle:</strong> Monthly payments due on the 1st of each month</li>
-                        <li><strong>First payment:</strong> Due upon contract signing to initiate the project</li>
-                        <li><strong>Fixed commitment:</strong> Client commits to the full package duration (2, 3, or 4 months depending on package)</li>
-                        <li><strong>Early cancellation:</strong> If project is cancelled before completion, client remains responsible for work completed to date</li>
-                        <li><strong>No refunds:</strong> Monthly payments are non-refundable once the billing period has begun</li>
-                        <li><strong>Revision rounds:</strong> Each package includes specified monthly revision rounds (Essential: 1, Growth: 2, Enterprise: 4)</li>
+                        <li><strong>First payment:</strong> Due upon contract signing to initiate the service</li>
+                        <li><strong>Plan features:</strong> Each plan includes specific features, hours, and revision rounds as described</li>
+                        <li><strong>Plan upgrades/downgrades:</strong> Changes take effect on the next billing cycle with written notice</li>
+                    </ul>
+                    <p class="mt-4 font-semibold text-gray-800">Cancellation Policy for Monthly Plans:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Development/Growth plans:</strong> Cancellation requires 2 months written notice. Both months must be fully paid.</li>
+                        <li><strong>Maintenance/Support plans:</strong> Cancellation requires 30 days written notice</li>
+                        <li>Work completed during notice period remains property of Client upon full payment</li>
+                        <li>Monthly payments are <strong>non-refundable</strong> once the billing period has begun</li>
                     </ul>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.4 Accepted Payment Methods</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.3 One-Time Payment with Discount</h3>
+                    <p>
+                        Clients who pay the full project amount upfront may receive a discount based on project scope and complexity:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Discount:</strong> Variable percentage based on project magnitude (specified in the proposal)</li>
+                        <li><strong>Eligibility:</strong> Available for projects meeting minimum thresholds as determined by Codebrand</li>
+                        <li><strong>Payment structure:</strong> Full discounted amount due before project commencement</li>
+                        <li><strong>10% guarantee retention:</strong> Retained for 15 days after launch (calculated on the original, non-discounted price)</li>
+                        <li><strong>Non-refundable:</strong> Full upfront payments are non-refundable once work begins. The discount is provided in exchange for the client's full commitment.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.4 Premium All-Inclusive Plan</h3>
+                    <p>
+                        For clients requiring priority execution and enhanced services:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>40% at project start:</strong> Required before project commencement</li>
+                        <li><strong>40% at mid-project:</strong> Due upon completion of design phase</li>
+                        <li><strong>20% upon completion:</strong> Due upon project delivery</li>
+                        <li><strong>10% guarantee retention:</strong> Retained for 15 days after launch</li>
+                    </ul>
+                    <p class="mt-2 text-sm text-gray-600">
+                        Premium plans include extended revisions, priority support for 45 days post-launch, and additional enhancements as specified in the proposal.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.5 Guarantee Retention (10%)</h3>
+                    <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                        <p class="text-green-800">
+                            <strong>How it works:</strong> 10% of the total project cost is retained for 15 calendar days after project launch. This guarantee covers critical bugs or functionality issues that were present at launch but not detected during QA. The retained amount is automatically released after 15 days if:
+                        </p>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-green-800 space-y-1">
+                            <li>No critical issues are reported by the Client</li>
+                            <li>All reported issues have been resolved</li>
+                            <li>Client provides written approval or does not respond within the guarantee period</li>
+                        </ul>
+                        <p class="mt-2 text-green-800 text-sm">
+                            <strong>Note:</strong> The guarantee does NOT cover issues caused by client modifications, third-party changes, hosting problems, or new feature requests.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.6 Accepted Payment Methods</h3>
                     <p>We accept the following payment methods:</p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
                         <li>Bank transfer (wire transfer)</li>
@@ -156,10 +235,17 @@ import Layout from "@/layouts/Layout.astro";
                         <li>Cryptocurrency (Bitcoin, USDT) for international clients</li>
                     </ul>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.5 Late Payments</h3>
-                    <p>
-                        Late payments are subject to a 5% monthly interest charge. If payment is more than 30 days overdue, we reserve the right to suspend services, withhold deliverables, and pursue legal collection methods. Client is responsible for all collection costs and legal fees.
-                    </p>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4.7 Late Payments and Consequences</h3>
+                    <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+                        <ul class="list-disc list-inside text-red-800 space-y-2">
+                            <li><strong>Interest:</strong> Late payments are subject to a 5% monthly interest charge</li>
+                            <li><strong>Work suspension:</strong> If payment is more than 7 days overdue, we reserve the right to pause all work</li>
+                            <li><strong>Deliverable withholding:</strong> If payment is more than 15 days overdue, we may withhold all deliverables and access</li>
+                            <li><strong>Legal action:</strong> If payment is more than 30 days overdue, we reserve the right to pursue legal collection methods</li>
+                            <li><strong>Collection costs:</strong> Client is responsible for all collection costs, legal fees, and associated expenses</li>
+                            <li><strong>Project termination:</strong> Persistent non-payment may result in project termination with no refund of amounts already paid</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div>
@@ -302,8 +388,42 @@ import Layout from "@/layouts/Layout.astro";
                         <li>Reviewing and approving deliverables in a timely manner</li>
                         <li>Making payments according to the agreed schedule</li>
                     </ul>
-                    <p class="mt-4">
-                        Delays caused by client unresponsiveness or failure to provide necessary materials may result in timeline extensions and potential additional charges.
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">9.1 Client-Provided Requirements</h3>
+                    <p>For projects involving third-party integrations (e.g., APIs, payment gateways), clients must provide:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>Active accounts with required access levels and API credentials</li>
+                        <li>Properly configured systems with valid IDs and data</li>
+                        <li>Brand assets (logos, colors, brand guidelines) in appropriate formats</li>
+                        <li>Text content for all pages as specified in the proposal</li>
+                        <li>DNS access for domain configuration when applicable</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">9.2 Response Times and Delays</h3>
+                    <div class="bg-orange-50 border border-orange-200 p-4 rounded-lg">
+                        <p class="text-orange-800 mb-3">
+                            <strong>Important:</strong> Client responsiveness directly impacts project timeline. The following applies:
+                        </p>
+                        <ul class="list-disc list-inside text-orange-800 space-y-2">
+                            <li><strong>Feedback deadline:</strong> Clients have 5 business days to provide feedback on deliverables unless otherwise agreed</li>
+                            <li><strong>Approval by silence:</strong> If no feedback is received within 10 business days, the deliverable is considered approved</li>
+                            <li><strong>Project pause:</strong> If client is unresponsive for 15+ days, the project may be paused and resources reallocated</li>
+                            <li><strong>Reactivation fee:</strong> Paused projects may require a reactivation fee and new timeline upon resumption</li>
+                            <li><strong>Project abandonment:</strong> Projects inactive for 60+ days may be considered abandoned with no refund of payments made</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">9.3 Timeline Extensions Due to Client Delays</h3>
+                    <p>
+                        Project timelines are estimates based on the assumption of timely client collaboration. Delays caused by client unresponsiveness or failure to provide necessary materials will result in:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>Automatic timeline extension equal to the delay period</li>
+                        <li>Potential additional charges if resources need to be reallocated</li>
+                        <li>No liability on Codebrand's part for extended timelines caused by client delays</li>
+                    </ul>
+                    <p class="mt-4 text-sm text-gray-600">
+                        <strong>Note:</strong> Codebrand is not responsible for missed deadlines or project delays resulting from client's failure to meet their responsibilities.
                     </p>
                 </div>
 
@@ -328,36 +448,83 @@ import Layout from "@/layouts/Layout.astro";
 
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
-                        11. Warranty and Support
+                        11. Warranties, Disclaimers, and Support
                     </h2>
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">11.1 Warranty Period</h3>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">11.1 Limited Warranty Period</h3>
                     <p>
-                        We provide a 30-day warranty on all web development work, covering:
+                        We provide a <strong>30-day limited warranty</strong> on web development work, covering ONLY:
                     </p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li>Bug fixes and functionality issues present at launch</li>
-                        <li>Browser compatibility issues</li>
-                        <li>Responsive design problems</li>
-                    </ul>
-                    <p class="mt-4">
-                        The warranty does NOT cover:
-                    </p>
-                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li>Issues caused by third-party modifications</li>
-                        <li>Problems resulting from hosting or server changes</li>
-                        <li>New features or scope additions</li>
-                        <li>Issues caused by third-party plugins or services</li>
+                        <li>Bug fixes for functionality issues that existed at launch and were documented in the approved scope</li>
+                        <li>Browser compatibility issues for browsers specified in the proposal</li>
+                        <li>Responsive design problems on device sizes specified in the proposal</li>
                     </ul>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">11.2 Ongoing Support</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">11.2 Warranty Exclusions</h3>
+                    <p>The warranty expressly does NOT cover:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>Issues caused by client or third-party modifications after delivery</li>
+                        <li>Problems resulting from hosting, server, or DNS changes not made by Codebrand</li>
+                        <li>New features, enhancements, or scope additions</li>
+                        <li>Issues caused by third-party plugins, APIs, services, or integrations</li>
+                        <li>Content errors or omissions provided by the client</li>
+                        <li>Security issues resulting from client's failure to maintain passwords or update software</li>
+                        <li>Issues arising from browsers or devices not specified in the original scope</li>
+                        <li>Performance issues caused by client's hosting provider</li>
+                        <li>Compatibility issues with software installed or modified after delivery</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">11.3 DISCLAIMER OF WARRANTIES</h3>
+                    <div class="bg-red-50 border-2 border-red-300 p-5 rounded-lg">
+                        <p class="text-red-800 font-bold mb-3 uppercase">Important Legal Disclaimer</p>
+                        <p class="text-red-700 mb-3">
+                            EXCEPT FOR THE LIMITED WARRANTY EXPRESSLY SET FORTH ABOVE, ALL SERVICES AND DELIVERABLES ARE PROVIDED <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+                        </p>
+                        <p class="text-red-700 mb-3">
+                            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CODEBRAND EXPRESSLY DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO:
+                        </p>
+                        <ul class="list-disc list-inside text-red-700 space-y-1 mb-3">
+                            <li>IMPLIED WARRANTIES OF MERCHANTABILITY</li>
+                            <li>FITNESS FOR A PARTICULAR PURPOSE</li>
+                            <li>NON-INFRINGEMENT</li>
+                            <li>ACCURACY, RELIABILITY, OR COMPLETENESS</li>
+                            <li>QUIET ENJOYMENT</li>
+                            <li>INTEGRATION</li>
+                            <li>TITLE</li>
+                        </ul>
+                        <p class="text-red-700 text-sm">
+                            CODEBRAND DOES NOT WARRANT THAT THE DELIVERABLES WILL MEET CLIENT'S REQUIREMENTS, THAT OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS WILL BE CORRECTED BEYOND THE LIMITED WARRANTY PERIOD.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">11.4 No Guarantee of Results</h3>
+                    <div class="bg-yellow-50 border border-yellow-300 p-4 rounded-lg">
+                        <p class="text-yellow-800 mb-2">
+                            <strong>CRITICAL DISCLAIMER:</strong> Codebrand makes NO guarantees, representations, or warranties regarding:
+                        </p>
+                        <ul class="list-disc list-inside text-yellow-800 space-y-1">
+                            <li><strong>Business Results:</strong> Revenue, sales, conversions, leads, or ROI</li>
+                            <li><strong>Search Rankings:</strong> Google rankings, SEO positions, or organic traffic (algorithms are controlled by third parties)</li>
+                            <li><strong>User Engagement:</strong> Website visitors, page views, bounce rates, or user behavior</li>
+                            <li><strong>Third-Party Performance:</strong> Uptime, speed, or availability of third-party services, APIs, or integrations</li>
+                            <li><strong>Market Success:</strong> Success in any market, industry, or competitive environment</li>
+                            <li><strong>Compliance:</strong> Compliance with any specific industry regulations unless explicitly stated in writing</li>
+                        </ul>
+                        <p class="text-yellow-700 text-sm mt-3">
+                            Client acknowledges that business success depends on many factors outside Codebrand's control, including but not limited to: market conditions, competition, client's business operations, product/service quality, pricing, customer service, and economic factors.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">11.5 Ongoing Support</h3>
                     <p>
-                        After the warranty period, we offer ongoing support and maintenance packages on a monthly subscription basis. These packages include updates, security patches, content changes, and technical support.
+                        After the warranty period, we offer ongoing support and maintenance packages on a monthly subscription basis. These packages include updates, security patches, content changes, and technical support. <strong>Support is not included after the warranty period unless a separate maintenance agreement is in place.</strong>
                     </p>
                 </div>
 
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
-                        12. Termination of Services
+                        12. Termination of Services and Refund Policy
                     </h2>
                     <p>
                         Either party may terminate a service contract under the following conditions:
@@ -367,43 +534,94 @@ import Layout from "@/layouts/Layout.astro";
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
                         <li>Requires written notice via email to info@codebrand.es</li>
                         <li>Client remains responsible for payment of all work completed to date</li>
-                        <li>Initial deposits are non-refundable</li>
-                        <li>Completed work will be delivered upon full payment of outstanding balances</li>
-                        <li>Subscription services require 30 days notice and are non-refundable for current billing period</li>
+                        <li>Initial deposits are <strong>non-refundable</strong></li>
+                        <li>Completed work will be delivered only upon full payment of outstanding balances</li>
                     </ul>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">12.2 Company-Initiated Termination</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">12.2 Refund Policy</h3>
+                    <div class="bg-gray-100 border border-gray-300 p-4 rounded-lg">
+                        <p class="text-gray-800 font-semibold mb-3">General Refund Rules:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li><strong>Before work begins:</strong> Full refund minus 10% administrative fee (if payment was made but work hasn't started)</li>
+                            <li><strong>After work begins:</strong> No refund on work completed. Client pays for work done to date.</li>
+                            <li><strong>Monthly subscriptions:</strong> No refunds for the current billing period. Cancellation takes effect at the end of the notice period (2 months).</li>
+                            <li><strong>One-time payments with discount:</strong> Non-refundable once work begins. The discount was provided in exchange for commitment.</li>
+                        </ul>
+                        <p class="mt-3 text-gray-600 text-sm">
+                            <strong>Calculation of work completed:</strong> Based on time tracked, deliverables produced, and phase completion percentage as determined by Codebrand.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">12.3 Termination by Plan Type</h3>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Development/Growth subscription plans:</strong> Requires 2 months written notice. Both months must be paid in full.</li>
+                        <li><strong>Maintenance/Support subscription plans:</strong> Requires 30 days written notice. Current billing period is non-refundable.</li>
+                        <li><strong>Stage-Based Projects:</strong> Client pays for all completed phases plus any work in progress.</li>
+                        <li><strong>One-Time Payment Projects:</strong> Non-refundable once work begins. Discount was provided in exchange for commitment.</li>
+                        <li><strong>Premium Plans:</strong> Same as stage-based, with work valued at premium rates.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">12.4 Company-Initiated Termination</h3>
                     <p>
-                        We reserve the right to terminate services if:
+                        We reserve the right to terminate services immediately if:
                     </p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li>Client fails to make payments according to agreed schedule</li>
+                        <li>Client fails to make payments according to agreed schedule (after 30 days overdue)</li>
                         <li>Client fails to provide necessary materials or feedback within 30 days</li>
                         <li>Client behavior is abusive, threatening, or unprofessional</li>
                         <li>Client requests work that violates laws or ethical standards</li>
+                        <li>Client attempts to bypass agreed processes or access systems without authorization</li>
                     </ul>
-                    <p class="mt-4">
-                        In such cases, client will be invoiced for work completed to date, and any unused portion of deposits may be refunded at our discretion.
+                    <p class="mt-4 text-sm text-gray-600">
+                        In such cases, client will be invoiced for work completed to date. No refunds will be issued. Completed work may be delivered at Codebrand's discretion upon payment settlement.
                     </p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">12.5 Effects of Termination</h3>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>All work in progress will be halted immediately</li>
+                        <li>Access to project management tools and staging environments will be revoked</li>
+                        <li>Source code and files transfer only after full payment settlement</li>
+                        <li>Confidentiality and non-disclosure obligations survive termination</li>
+                        <li>Client license to use deliverables requires full payment</li>
+                    </ul>
                 </div>
 
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
                         13. Limitation of Liability
                     </h2>
+                    <div class="bg-red-50 border border-red-200 p-4 rounded-lg mb-4">
+                        <p class="text-red-800 font-semibold">
+                            IMPORTANT: Please read this section carefully. It limits our liability and your remedies.
+                        </p>
+                    </div>
                     <p>
-                        To the fullest extent permitted by law:
+                        To the fullest extent permitted by applicable law:
                     </p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
                         <li>We do not guarantee that services will be error-free, uninterrupted, or completely secure</li>
-                        <li>We are not liable for indirect, incidental, consequential, or punitive damages</li>
-                        <li>Our total liability shall not exceed the total amount paid by client for the specific project</li>
+                        <li>We are <strong>NOT liable</strong> for indirect, incidental, consequential, special, or punitive damages, including but not limited to: loss of profits, loss of revenue, loss of business opportunities, loss of data, or business interruption</li>
+                        <li><strong>Maximum liability:</strong> Our total aggregate liability shall not exceed the total amount actually paid by client for the specific project giving rise to the claim</li>
                         <li>We are not responsible for losses due to client's misuse of deliverables</li>
-                        <li>We are not liable for third-party service failures, hosting issues, or internet connectivity problems</li>
+                        <li>We are not liable for third-party service failures, API changes, hosting issues, or internet connectivity problems</li>
                         <li>Client is responsible for maintaining backups of all provided materials and final deliverables</li>
+                        <li>We are not liable for any delays, failures, or damages resulting from client's failure to meet their responsibilities</li>
                     </ul>
-                    <p class="mt-4">
-                        Clients are encouraged to maintain appropriate insurance for their digital assets and business operations.
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">13.1 Specific Exclusions</h3>
+                    <p>Codebrand is expressly NOT responsible for:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>Revenue, sales, or conversions generated (or not generated) by the delivered website or application</li>
+                        <li>Search engine rankings or SEO results (algorithms are controlled by third parties)</li>
+                        <li>Third-party API availability, changes, or deprecation (e.g., Guesty, payment gateways)</li>
+                        <li>Security breaches resulting from client's failure to maintain passwords, update software, or follow security best practices</li>
+                        <li>Issues arising from modifications made by client or third parties after delivery</li>
+                        <li>Business decisions made based on the delivered product</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">13.2 Client's Insurance</h3>
+                    <p>
+                        Clients are strongly encouraged to maintain appropriate insurance for their digital assets, business operations, cyber liability, and any other risks associated with operating an online business.
                     </p>
                 </div>
 
@@ -431,16 +649,49 @@ import Layout from "@/layouts/Layout.astro";
                     <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
                         15. Indemnification
                     </h2>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">15.1 Client Indemnification Obligations</h3>
                     <p>
-                        Client agrees to indemnify and hold harmless Codebrand, its employees, contractors, and affiliates from any claims, damages, losses, or expenses (including legal fees) arising from:
+                        Client agrees to <strong>indemnify, defend, and hold harmless</strong> Codebrand, its officers, directors, employees, agents, contractors, licensors, suppliers, successors, and assigns (collectively, "Codebrand Parties") from and against any and all claims, demands, actions, suits, proceedings, losses, damages, costs, expenses, and liabilities, including but not limited to reasonable attorneys' fees and court costs, arising out of or related to:
                     </p>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li>Client's misuse of deliverables or services</li>
-                        <li>Violation of these Terms and Conditions</li>
-                        <li>Content provided by client that infringes on third-party rights</li>
-                        <li>Client's violation of any applicable laws or regulations</li>
-                        <li>Unauthorized modifications to delivered work</li>
+                        <li>Client's use or misuse of deliverables or services</li>
+                        <li>Client's breach of any representation, warranty, or obligation under these Terms</li>
+                        <li>Any content, materials, data, or information provided by Client, including but not limited to claims of copyright infringement, trademark infringement, defamation, invasion of privacy, or violation of any third-party rights</li>
+                        <li>Client's violation of any applicable law, statute, ordinance, regulation, or third-party rights</li>
+                        <li>Unauthorized modifications to delivered work by Client or third parties</li>
+                        <li>Client's failure to obtain necessary licenses, permits, or consents</li>
+                        <li>Claims by end users or customers of Client's products or services</li>
+                        <li>Any dispute between Client and third parties, including but not limited to vendors, customers, or competitors</li>
+                        <li>Security breaches resulting from Client's negligence or failure to follow security recommendations</li>
+                        <li>Tax obligations, fines, or penalties arising from Client's business operations</li>
                     </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">15.2 Indemnification Procedure</h3>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                        <li>Codebrand will promptly notify Client in writing of any claim for which indemnification is sought</li>
+                        <li>Client shall assume sole control of the defense and settlement of such claim</li>
+                        <li>Codebrand may participate in the defense at its own expense</li>
+                        <li>Client shall not settle any claim in a manner that adversely affects Codebrand without prior written consent</li>
+                        <li>This indemnification obligation shall survive termination of the agreement</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">15.3 Client-Provided Content</h3>
+                    <div class="bg-orange-50 border border-orange-300 p-4 rounded-lg">
+                        <p class="text-orange-800 mb-2">
+                            <strong>Client's Full Responsibility:</strong> Client represents, warrants, and agrees that:
+                        </p>
+                        <ul class="list-disc list-inside text-orange-800 space-y-1">
+                            <li>All content, images, logos, text, and materials provided to Codebrand are owned by Client or Client has obtained all necessary rights, licenses, and permissions</li>
+                            <li>No content provided violates any copyright, trademark, patent, trade secret, or other intellectual property rights of any third party</li>
+                            <li>No content is defamatory, libelous, obscene, pornographic, abusive, or otherwise unlawful</li>
+                            <li>Client has obtained all necessary releases, consents, and permissions for use of any images of identifiable persons</li>
+                            <li>All claims, representations, and statements in Client-provided content are truthful and not misleading</li>
+                        </ul>
+                        <p class="text-orange-700 text-sm mt-3">
+                            <strong>Codebrand assumes no responsibility</strong> for verifying the accuracy, legality, or ownership of any content provided by Client. Client shall be solely liable for any claims arising from Client-provided content.
+                        </p>
+                    </div>
                 </div>
 
                 <div>
@@ -448,15 +699,37 @@ import Layout from "@/layouts/Layout.astro";
                         16. Dispute Resolution
                     </h2>
                     <p>
-                        In the event of any dispute, controversy, or claim arising from these Terms:
+                        In the event of any dispute, controversy, or claim arising from these Terms or any project:
                     </p>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">16.1 Mandatory Resolution Process</h3>
+                    <p>Before initiating any legal action, both parties agree to follow this mandatory process:</p>
+                    <ol class="list-decimal list-inside ml-4 mt-2 space-y-2">
+                        <li><strong>Written Notice:</strong> The complaining party must send a detailed written notice of the dispute via email, describing the issue and proposed resolution</li>
+                        <li><strong>Good Faith Negotiation (15 days):</strong> Both parties agree to attempt resolution through direct negotiation within 15 business days</li>
+                        <li><strong>Mediation (30 days):</strong> If negotiation fails, parties agree to engage a mutually agreed mediator before any litigation</li>
+                        <li><strong>Arbitration:</strong> If mediation fails, disputes will be resolved through binding arbitration in San Pedro Sula, Honduras</li>
+                    </ol>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">16.2 Governing Law and Jurisdiction</h3>
                     <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                        <li><strong>Good Faith Negotiation:</strong> Parties agree to first attempt resolution through good faith negotiation</li>
-                        <li><strong>Mediation:</strong> If negotiation fails, parties agree to pursue mediation before litigation</li>
-                        <li><strong>Governing Law:</strong> These Terms are governed by the laws of Honduras</li>
-                        <li><strong>Jurisdiction:</strong> Any legal proceedings shall be conducted in the courts of San Pedro Sula, Honduras</li>
-                        <li><strong>Language:</strong> All proceedings shall be conducted in Spanish or English</li>
+                        <li><strong>Governing Law:</strong> These Terms are governed by and construed in accordance with the laws of Honduras</li>
+                        <li><strong>Exclusive Jurisdiction:</strong> The courts of San Pedro Sula, Cortés, Honduras shall have exclusive jurisdiction</li>
+                        <li><strong>Language:</strong> All proceedings shall be conducted in Spanish. English translations may be provided for convenience but Spanish shall prevail</li>
+                        <li><strong>Waiver of Jury Trial:</strong> Both parties waive any right to a jury trial in any legal proceeding</li>
                     </ul>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">16.3 Limitation on Claims</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <p class="text-yellow-800">
+                            <strong>Time Limit:</strong> Any claim or cause of action arising from these Terms or the services provided must be filed within <strong>one (1) year</strong> after such claim arose, or be forever barred.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">16.4 Legal Fees</h3>
+                    <p>
+                        In any legal action arising from these Terms, the prevailing party shall be entitled to recover reasonable attorneys' fees, court costs, and all expenses incurred in connection with such action.
+                    </p>
                 </div>
 
                 <div>
@@ -485,13 +758,171 @@ import Layout from "@/layouts/Layout.astro";
                         19. Severability
                     </h2>
                     <p>
-                        If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms shall otherwise remain in full force and effect.
+                        If any provision of these Terms is found to be unenforceable or invalid by a court of competent jurisdiction, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms shall otherwise remain in full force and effect. The invalidity of any provision shall not affect the validity of the remaining provisions.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        20. Entire Agreement
+                    </h2>
+                    <p>
+                        These Terms and Conditions, together with any approved project proposal, constitute the <strong>entire agreement</strong> between Client and Codebrand regarding the subject matter hereof and supersede all prior or contemporaneous understandings, agreements, negotiations, representations, warranties, and communications, whether written or oral.
+                    </p>
+                    <p class="mt-4">
+                        Client acknowledges that it has not relied on any statement, promise, or representation made by Codebrand that is not set forth in these Terms or the approved proposal. No trade usage, prior course of dealing, or course of performance shall be relevant to supplement or explain any term used in these Terms.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        21. No Oral Modifications
+                    </h2>
+                    <p>
+                        These Terms may only be modified or amended by a <strong>written document signed by both parties</strong> or through an official written change order process. No oral statements, representations, or agreements shall modify or affect these Terms.
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li>Verbal discussions, phone calls, or meetings do not constitute binding modifications</li>
+                        <li>Email modifications are only valid if explicitly acknowledged by both parties in writing</li>
+                        <li>Any proposed changes must be documented through the formal change request process outlined in Section 3.2</li>
+                        <li>Informal communications, including text messages or chat messages, do not constitute amendments</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        22. Waiver
+                    </h2>
+                    <p>
+                        The failure of either party to enforce any right or provision of these Terms shall <strong>not constitute a waiver</strong> of such right or provision. Any waiver of any provision of these Terms will be effective only if in writing and signed by the waiving party.
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li>A waiver on one occasion shall not be deemed a waiver on any other occasion</li>
+                        <li>Delay in exercising any right shall not constitute a waiver of such right</li>
+                        <li>Partial exercise of any right shall not preclude any other or further exercise of that right</li>
+                        <li>No waiver shall be effective unless expressly stated in writing</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        23. Assignment and Transfer
+                    </h2>
+                    <p>
+                        Client <strong>may not assign, transfer, or delegate</strong> any rights or obligations under these Terms without the prior written consent of Codebrand. Any attempted assignment without such consent shall be void and of no effect.
+                    </p>
+                    <p class="mt-4">
+                        Codebrand may assign or transfer these Terms or any rights or obligations hereunder without Client's consent to: (a) an affiliate; (b) in connection with a merger, acquisition, corporate reorganization, or sale of all or substantially all of its assets; or (c) any qualified subcontractor for purposes of performing the services.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        24. No Third-Party Beneficiaries
+                    </h2>
+                    <p>
+                        These Terms are for the sole benefit of the parties hereto and their respective successors and permitted assigns. Nothing in these Terms, express or implied, is intended to or shall confer upon any other person or entity any legal or equitable right, benefit, or remedy of any nature whatsoever under or by reason of these Terms.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        25. Survival
+                    </h2>
+                    <p>
+                        The following provisions shall <strong>survive termination or expiration</strong> of these Terms and any project agreement:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li>Section 8 (Intellectual Property and Ownership)</li>
+                        <li>Section 10 (Confidentiality and Non-Disclosure)</li>
+                        <li>Section 11.3 (Disclaimer of Warranties)</li>
+                        <li>Section 11.4 (No Guarantee of Results)</li>
+                        <li>Section 12 (Termination and Refund Policy - regarding payment obligations)</li>
+                        <li>Section 13 (Limitation of Liability)</li>
+                        <li>Section 15 (Indemnification)</li>
+                        <li>Section 16 (Dispute Resolution)</li>
+                        <li>Sections 19-29 (General Provisions)</li>
+                        <li>Any other provisions which by their nature should survive termination</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        26. Non-Solicitation of Employees
+                    </h2>
+                    <p>
+                        During the term of any project and for a period of <strong>twelve (12) months</strong> following completion or termination, Client agrees not to:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li>Directly or indirectly solicit, recruit, hire, or attempt to hire any employee, contractor, or team member of Codebrand who was involved in Client's project</li>
+                        <li>Induce or attempt to induce any such person to leave their position with Codebrand</li>
+                        <li>Assist any third party in any of the foregoing activities</li>
+                    </ul>
+                    <p class="mt-4">
+                        In the event of a breach of this provision, Client agrees to pay Codebrand liquidated damages equal to <strong>one hundred percent (100%) of the annual compensation</strong> of the solicited individual, which the parties agree represents a reasonable estimate of Codebrand's damages.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        27. Independent Contractor
+                    </h2>
+                    <p>
+                        Codebrand is an <strong>independent contractor</strong> and nothing in these Terms shall be construed to create a partnership, joint venture, agency, or employment relationship between the parties. Neither party has authority to bind the other or to incur any obligation on behalf of the other.
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li>Codebrand shall be solely responsible for payment of all taxes, including income taxes, self-employment taxes, and any other taxes arising from compensation received</li>
+                        <li>Client shall not withhold any taxes from payments to Codebrand</li>
+                        <li>No benefits, including health insurance, retirement benefits, or workers' compensation, are provided to Codebrand by Client</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        28. Electronic Communications and Signatures
+                    </h2>
+                    <p>
+                        Client agrees that all communications from Codebrand may be provided electronically, including contracts, invoices, notices, and disclosures. Client consents to receive such communications in electronic form.
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li><strong>Electronic Signatures:</strong> The parties agree that electronic signatures, including but not limited to typed names in emails, digital signatures, and click-to-accept agreements, shall have the same legal effect as handwritten signatures</li>
+                        <li><strong>Email as Written Notice:</strong> Email correspondence to the addresses specified in the project documentation shall constitute valid written notice</li>
+                        <li><strong>Record Retention:</strong> Client is responsible for maintaining copies of all electronic communications for their records</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        29. Compliance with Laws
+                    </h2>
+                    <p>
+                        Each party shall comply with all applicable laws, regulations, and ordinances in connection with the performance of its obligations under these Terms. Client is solely responsible for ensuring that the use of the deliverables complies with all laws applicable to Client's business, including but not limited to:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 mt-4 space-y-2">
+                        <li>Data protection and privacy laws (GDPR, CCPA, etc.)</li>
+                        <li>Accessibility laws and regulations (ADA, WCAG)</li>
+                        <li>Industry-specific regulations (HIPAA, PCI-DSS, etc.)</li>
+                        <li>Consumer protection laws</li>
+                        <li>Advertising and marketing regulations</li>
+                        <li>Intellectual property laws</li>
+                    </ul>
+                    <p class="mt-4 text-sm text-gray-600">
+                        Codebrand does not provide legal advice and makes no representation that deliverables comply with any specific legal requirements unless explicitly stated in the proposal.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-4 border-orange-500 pl-4">
+                        30. Headings and Interpretation
+                    </h2>
+                    <p>
+                        The headings in these Terms are for convenience only and shall not affect their interpretation. The words "include," "includes," and "including" shall be deemed to be followed by the words "without limitation." The word "or" is not exclusive. References to "days" mean calendar days unless otherwise specified.
                     </p>
                 </div>
 
                 <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                        20. Contact Information
+                        31. Contact Information
                     </h2>
                     <p class="mb-4">
                         For questions, clarifications, or concerns about these Terms and Conditions, please contact us:
@@ -506,9 +937,49 @@ import Layout from "@/layouts/Layout.astro";
                     </div>
                 </div>
 
+                <!-- Final Acknowledgment Section -->
+                <div class="bg-slate-900 text-white p-8 rounded-lg mt-10">
+                    <h2 class="text-2xl font-bold mb-4 text-center uppercase tracking-wide">
+                        Acknowledgment and Acceptance
+                    </h2>
+                    <div class="border-t border-slate-700 pt-6">
+                        <p class="mb-4 text-center text-slate-300">
+                            By engaging Codebrand's services through any of the following actions, <strong class="text-white">YOU EXPRESSLY ACKNOWLEDGE AND AGREE</strong> that:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
+                            <li>You have <strong>READ</strong> these Terms and Conditions in their entirety (31 sections)</li>
+                            <li>You <strong>UNDERSTAND</strong> and agree to ALL provisions contained herein, including but not limited to the limitation of liability, disclaimer of warranties, and indemnification obligations</li>
+                            <li>You have the <strong>LEGAL AUTHORITY</strong> to enter into this binding agreement on behalf of yourself and/or your organization</li>
+                            <li>You <strong>ACCEPT</strong> the scope, timeline, and pricing as defined in the approved proposal</li>
+                            <li>You understand the <strong>REFUND POLICY</strong> and acknowledge that payments are non-refundable under the conditions specified</li>
+                            <li>You acknowledge the <strong>LIMITATIONS OF LIABILITY</strong> and understand that Codebrand's maximum liability is limited to the amount paid for the specific project</li>
+                            <li>You understand that deliverables are provided <strong>"AS IS"</strong> without warranties beyond the limited warranty period</li>
+                            <li>You understand that Codebrand makes <strong>NO GUARANTEES</strong> regarding business results, SEO rankings, or third-party performance</li>
+                            <li>You agree to <strong>INDEMNIFY</strong> Codebrand for any claims arising from content you provide or your use of the deliverables</li>
+                            <li>You agree to the <strong>DISPUTE RESOLUTION</strong> process, including mandatory mediation and arbitration in Honduras</li>
+                        </ul>
+                        <div class="bg-slate-800 p-4 rounded-lg mb-4">
+                            <p class="text-sm text-slate-400 text-center">
+                                <strong class="text-white">Actions that legally constitute acceptance of these Terms:</strong><br>
+                                Signing a proposal (physically or electronically) • Making any payment • Sending written approval via email • Providing project materials or content • Approving any deliverable • Clicking "I Agree" or similar buttons • Continuing to work with Codebrand after receiving these Terms
+                            </p>
+                        </div>
+                        <div class="bg-red-900/50 border border-red-500 p-4 rounded-lg">
+                            <p class="text-red-200 text-sm text-center">
+                                <strong>IMPORTANT:</strong> If you do not agree with any provision of these Terms, you must notify Codebrand in writing BEFORE making any payment or approving any proposal. Proceeding with the engagement constitutes your full acceptance of these Terms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-center text-sm text-gray-600 mt-12 pt-8 border-t">
-                    <p>
-                        By using Codebrand's services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
+                    <p class="font-medium">
+                        By using Codebrand's services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions in their entirety.
+                    </p>
+                    <p class="mt-4 text-xs text-gray-500">
+                        © 2025 Codebrand. All rights reserved.<br>
+                        These Terms and Conditions are protected by copyright and may not be reproduced without permission.<br>
+                        Last comprehensive review: December 2025
                     </p>
                 </div>
             </div>
