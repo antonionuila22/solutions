@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
+import Testimonial from "../../components/testimonial.tsx";
 
 const title =
   "Law Firm Website Design & Legal Practice Management Software | CodeBrand";
@@ -1079,127 +1080,33 @@ const image = "/photos/bannercodebrand.webp";
     </div>
   </section>
 
-  <!-- Case Studies / Results -->
-  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+  <!-- Google Reviews Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+      <div class="text-center mb-12">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
         >
-          Real Results for Law Firms
+          <svg
+            class="w-4 h-4 text-cyan-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+            ></path>
+          </svg>
+          <span class="text-sm font-medium text-cyan-400">Google Reviews</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          What Our <span class="text-orange-500">Clients Say</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          See how we've helped law practices increase efficiency, grow revenue,
-          and enhance client satisfaction
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Real reviews from our satisfied clients
         </p>
       </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-cyan-900 mb-2"
-          >
-            45%
-          </div>
-          <div class="text-gray-600 font-medium">
-            Increase in billable hours captured with automated time tracking
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-orange-500 mb-2"
-          >
-            $180K
-          </div>
-          <div class="text-gray-600 font-medium">
-            Average annual revenue increase from improved efficiency
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-cyan-900 mb-2"
-          >
-            92%
-          </div>
-          <div class="text-gray-600 font-medium">
-            Client satisfaction rating with secure portal access
-          </div>
-        </div>
-      </div>
-
-      <div class="space-y-8">
-        <!-- Testimonial 1 -->
-        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <div class="flex flex-col md:flex-row gap-8">
-            <div class="flex-1">
-              <svg
-                class="w-10 h-10 text-orange-500 mb-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                ></path>
-              </svg>
-              <p class="text-lg text-gray-700 mb-6 italic">
-                "CodeBrand's case management system has transformed our
-                practice. We've recovered over $150K in previously unbilled time
-                in the first year alone. The automated time tracking captures
-                billable work we used to miss, and the client portal has
-                dramatically reduced administrative calls from clients asking
-                for updates."
-              </p>
-              <div>
-                <div class="font-bold text-cyan-900">
-                  Jennifer Martinez, Esq.
-                </div>
-                <div class="text-gray-600">
-                  Managing Partner, Martinez & Associates Law Firm
-                </div>
-                <div class="text-sm text-gray-500 mt-1">
-                  Personal Injury & Medical Malpractice - 12 Attorneys
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <div class="flex flex-col md:flex-row gap-8">
-            <div class="flex-1">
-              <svg
-                class="w-10 h-10 text-orange-500 mb-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                ></path>
-              </svg>
-              <p class="text-lg text-gray-700 mb-6 italic">
-                "As a solo practitioner, I needed technology that would make me
-                competitive with larger firms. CodeBrand built me a professional
-                website and intake system that converts leads at 3x the rate of
-                my old site. The document automation saves me 10 hours a week on
-                routine filings. Best investment I've made in my practice."
-              </p>
-              <div>
-                <div class="font-bold text-cyan-900">David Thompson, Esq.</div>
-                <div class="text-gray-600">
-                  Solo Practitioner, Thompson Law Office
-                </div>
-                <div class="text-sm text-gray-500 mt-1">
-                  Family Law & Estate Planning - Solo Practice
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    <Testimonial client:visible />
   </section>
 
   <!-- Technologies Section -->

@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
+import Testimonial from "../../components/testimonial.tsx";
 
 const title = "Content Creator Website Design | Influencer Sites | Codebrand";
 const description =
@@ -1105,120 +1106,33 @@ const image = "/photos/bannercodebrand.webp";
     </div>
   </section>
 
-  <!-- Case Studies / Results -->
-  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+  <!-- Google Reviews Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+      <div class="text-center mb-12">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
         >
-          Real Results for Content Creators
+          <svg
+            class="w-4 h-4 text-cyan-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+            ></path>
+          </svg>
+          <span class="text-sm font-medium text-cyan-400">Google Reviews</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          What Our <span class="text-orange-500">Clients Say</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          See how we've helped creators build sustainable businesses beyond
-          platform revenue
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Real reviews from our satisfied clients
         </p>
       </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-cyan-900 mb-2"
-          >
-            380%
-          </div>
-          <div class="text-gray-600 font-medium">
-            Increase in email list growth with optimized opt-in forms
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-orange-500 mb-2"
-          >
-            $45K+
-          </div>
-          <div class="text-gray-600 font-medium">
-            Average monthly merch revenue for creators with integrated stores
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-cyan-900 mb-2"
-          >
-            2,400+
-          </div>
-          <div class="text-gray-600 font-medium">
-            Paid memberships generated through subscription platforms
-          </div>
-        </div>
-      </div>
-
-      <div class="space-y-8">
-        <!-- Testimonial 1 -->
-        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <div class="flex flex-col md:flex-row gap-8">
-            <div class="flex-1">
-              <svg
-                class="w-10 h-10 text-orange-500 mb-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                ></path>
-              </svg>
-              <p class="text-lg text-gray-700 mb-6 italic">
-                "Before my website, I was 100% dependent on YouTube ad revenue.
-                CodeBrand built me a complete platform with merch store,
-                membership system, and email list. Now I make $45K/month from my
-                website alone—more than double what YouTube pays me. Plus, I own
-                the audience relationship. Best decision I ever made."
-              </p>
-              <div>
-                <div class="font-bold text-cyan-900">Jake Morrison</div>
-                <div class="text-gray-600">Gaming YouTuber & Streamer</div>
-                <div class="text-sm text-gray-500 mt-1">
-                  850K YouTube Subscribers • 45K Twitch Followers
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <div class="flex flex-col md:flex-row gap-8">
-            <div class="flex-1">
-              <svg
-                class="w-10 h-10 text-orange-500 mb-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                ></path>
-              </svg>
-              <p class="text-lg text-gray-700 mb-6 italic">
-                "My website has become my #1 tool for landing sponsorships. The
-                professional design and detailed stats page make me look like a
-                serious business, not just a creator. I've closed 3 five-figure
-                deals in the past 6 months, and brands specifically mention how
-                impressed they were with my website. ROI has been insane."
-              </p>
-              <div>
-                <div class="font-bold text-cyan-900">Sophia Martinez</div>
-                <div class="text-gray-600">Fitness & Lifestyle Influencer</div>
-                <div class="text-sm text-gray-500 mt-1">
-                  420K Instagram • 180K YouTube • 95K TikTok
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    <Testimonial client:visible />
   </section>
 
   <!-- Technologies Section -->

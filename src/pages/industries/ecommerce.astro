@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
+import Testimonial from "../../components/testimonial.tsx";
 
 const title = "E-commerce Development & Online Store Solutions | CodeBrand";
 const description =
@@ -1070,120 +1071,33 @@ const image = "/photos/bannercodebrand.webp";
     </div>
   </section>
 
-  <!-- Case Studies / Results -->
-  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+  <!-- Google Reviews Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
+      <div class="text-center mb-12">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
         >
-          Real Results for E-commerce Businesses
+          <svg
+            class="w-4 h-4 text-cyan-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+            ></path>
+          </svg>
+          <span class="text-sm font-medium text-cyan-400">Google Reviews</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          What Our <span class="text-orange-500">Clients Say</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          See how we've helped online stores increase sales and delight
-          customers
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Real reviews from our satisfied clients
         </p>
       </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-cyan-900 mb-2"
-          >
-            87%
-          </div>
-          <div class="text-gray-600 font-medium">
-            Average increase in conversion rate after optimization
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-orange-500 mb-2"
-          >
-            $2.5M+
-          </div>
-          <div class="text-gray-600 font-medium">
-            Additional revenue generated for clients annually
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
-          <div
-            class="text-5xl font-bold text-cyan-900 mb-2"
-          >
-            35%
-          </div>
-          <div class="text-gray-600 font-medium">
-            Reduction in cart abandonment rate
-          </div>
-        </div>
-      </div>
-
-      <div class="space-y-8">
-        <!-- Testimonial 1 -->
-        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <div class="flex flex-col md:flex-row gap-8">
-            <div class="flex-1">
-              <svg
-                class="w-10 h-10 text-orange-500 mb-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                ></path>
-              </svg>
-              <p class="text-lg text-gray-700 mb-6 italic">
-                "CodeBrand completely transformed our online store. Our
-                conversion rate jumped from 1.2% to 3.8% within three months,
-                and our average order value increased by 45%. The new checkout
-                process is so smooth that we've seen cart abandonment drop by
-                40%. Best investment we've made in our business."
-              </p>
-              <div>
-                <div class="font-bold text-cyan-900">Jennifer Martinez</div>
-                <div class="text-gray-600">CEO, StyleHub Fashion</div>
-                <div class="text-sm text-gray-500 mt-1">
-                  Fashion E-commerce - $5M Annual Revenue
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-          <div class="flex flex-col md:flex-row gap-8">
-            <div class="flex-1">
-              <svg
-                class="w-10 h-10 text-orange-500 mb-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                ></path>
-              </svg>
-              <p class="text-lg text-gray-700 mb-6 italic">
-                "We migrated from our old platform to a custom solution built by
-                CodeBrand. The site is incredibly fast, our inventory management
-                is automated across all channels, and we can handle Black Friday
-                traffic without breaking a sweat. Revenue is up 120%
-                year-over-year, and we're just getting started."
-              </p>
-              <div>
-                <div class="font-bold text-cyan-900">Alex Thompson</div>
-                <div class="text-gray-600">Founder, TechGear Pro</div>
-                <div class="text-sm text-gray-500 mt-1">
-                  Electronics E-commerce - Multi-Channel Retailer
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    <Testimonial client:visible />
   </section>
 
   <!-- Technologies Section -->
