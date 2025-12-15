@@ -130,10 +130,7 @@ const showFaq = config.showFaq ?? true;
   canonicalOverride={config.seo.canonicalUrl}
 >
   <!-- Schema.org JSON-LD -->
-  <script
-    type="application/ld+json"
-    set:html={JSON.stringify(config.schema)}
-  />
+  <script type="application/ld+json" set:html={JSON.stringify(config.schema)} />
 
   <!-- Hero Section -->
   <HeroSection
