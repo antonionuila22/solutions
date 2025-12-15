@@ -142,4 +142,4 @@ The website is strategically designed to attract:
 
 ---
 
-*Website developed by [Codebrand](https://codebrand.es) - Premium Web Development Solutions*
+*Website developed by [Codebrand](https://codebrand.us) - Premium Web Development Solutions*

@@ -95,6 +95,7 @@ interface SEOConfig {
   description: string;
   keywords: string;
   image?: string;
+  canonicalUrl?: string; // Override for duplicate pages
 }
 
 export interface ServicePageConfig {
@@ -126,6 +127,7 @@ const showFaq = config.showFaq ?? true;
   description={config.seo.description}
   keywords={config.seo.keywords}
   image={config.seo.image}
+  canonicalOverride={config.seo.canonicalUrl}
 >
   <!-- Schema.org JSON-LD -->
   <script

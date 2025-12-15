@@ -16,6 +16,7 @@ export const brandingConfig: ServicePageConfig = {
     keywords:
       "branding, logo design, brand identity, visual identity, brand strategy, rebranding, brand guidelines, logo creation, corporate identity, brand design, brand development, brand positioning, brand messaging, brand personality, brand naming, brand collateral, business stationery, brand refresh, brand architecture, brand equity, trademark design, monogram design, wordmark design, symbol design",
     image: "/photos/bannercodebrand.webp",
+    canonicalUrl: "https://codebrand.us/branding", // Points to main page to avoid duplicate content
   },
 
   // Schema.org Structured Data

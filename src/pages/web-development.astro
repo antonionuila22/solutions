@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Whyus from "../components/whyus.astro";
-import Faq from "../components/Faq.astro";
+import Faqcomp from "../components/Faqcomp.tsx";
+import Testimonial from "../components/testimonial.tsx";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
 
@@ -11,6 +12,65 @@ const description =
 const keywords =
   "web development, custom website development, professional web design, responsive web development, e-commerce development, web application development, React development, Next.js development, full stack development, progressive web apps, mobile-friendly websites, SEO web development, website redesign, web development company, scalable web solutions, API development, CMS development";
 const image = "/og/og-web-development.svg";
+
+// Web Development specific FAQs for better SEO
+const webDevFaqs = [
+  {
+    question: "How much does custom web development cost?",
+    answer: "Custom web development costs vary based on project complexity, features, and timeline. A basic business website typically ranges from $3,000-$10,000, while complex web applications or e-commerce platforms can range from $15,000-$50,000+. At Codebrand, we offer competitive pricing with our Honduras-based team, providing premium quality at up to 60% less than US agencies. Contact us for a free, detailed quote tailored to your specific requirements."
+  },
+  {
+    question: "How long does it take to build a custom website?",
+    answer: "Development timelines depend on project scope. A standard business website takes 4-6 weeks, a custom web application 8-12 weeks, and complex e-commerce platforms 10-16 weeks. We use agile methodologies with weekly sprints, so you'll see progress from week one. Rush projects are available for time-sensitive launches."
+  },
+  {
+    question: "What technologies do you use for web development?",
+    answer: "We specialize in modern, high-performance technologies including React, Next.js, Astro, and Vue.js for frontend development. For backend, we use Node.js, Python, and serverless architectures. Our databases include PostgreSQL, MongoDB, and Supabase. We also work with headless CMS platforms like Contentful, Sanity, and Strapi for content management."
+  },
+  {
+    question: "Do you provide ongoing website maintenance and support?",
+    answer: "Yes, we offer comprehensive maintenance packages including security updates, performance monitoring, content updates, bug fixes, and technical support. Our maintenance plans start at $299/month and include priority response times, regular backups, and uptime monitoring. We also offer on-demand support for clients who prefer pay-as-you-go arrangements."
+  },
+  {
+    question: "Will my website be mobile-friendly and SEO-optimized?",
+    answer: "Absolutely. Every website we build is mobile-first and fully responsive across all devices. We implement technical SEO best practices including semantic HTML, optimized meta tags, structured data markup, fast loading speeds (under 2 seconds), Core Web Vitals optimization, and accessibility compliance. Our sites consistently score 90+ on Google PageSpeed Insights."
+  },
+  {
+    question: "Can you redesign my existing website without losing SEO rankings?",
+    answer: "Yes, website migration and redesign is one of our specialties. We carefully plan URL structures, implement proper 301 redirects, preserve meta data, and maintain your existing SEO equity. We've successfully migrated hundreds of websites while maintaining or improving their search rankings. We also conduct pre and post-migration SEO audits to ensure nothing is lost."
+  },
+  {
+    question: "Do you build e-commerce websites?",
+    answer: "Yes, we develop full-featured e-commerce platforms using Shopify, WooCommerce, and custom solutions. Our e-commerce sites include secure payment gateway integration (Stripe, PayPal, Square), inventory management, order tracking, customer accounts, and conversion-optimized checkout flows. We've helped businesses increase online sales by an average of 40% after launching with us."
+  },
+  {
+    question: "What is your web development process?",
+    answer: "Our process includes four phases: 1) Discovery & Planning - we analyze your business goals, target audience, and technical requirements. 2) Design & Architecture - we create wireframes, UI mockups, and technical specifications. 3) Development & Testing - we build using agile sprints with regular demos and comprehensive QA testing. 4) Launch & Support - we deploy to production and provide ongoing maintenance. You're involved at every step with weekly updates and review sessions."
+  },
+  {
+    question: "Can you integrate third-party services and APIs?",
+    answer: "Yes, we have extensive experience integrating payment processors, CRMs (Salesforce, HubSpot), email marketing platforms (Mailchimp, Klaviyo), analytics tools, social media APIs, shipping providers, accounting software, and custom enterprise systems. We also develop custom APIs and can connect your website to virtually any external service."
+  },
+  {
+    question: "Why should I choose Codebrand for web development?",
+    answer: "Codebrand offers the perfect combination of quality, speed, and value. Our Honduras-based team provides US-quality development at 60% lower cost. We specialize in high-performance, SEO-optimized websites using cutting-edge technologies. With 150+ successful projects, 98% client satisfaction, and average load times under 1.5 seconds, we deliver measurable results. Plus, our bilingual team works in your timezone for seamless communication."
+  }
+];
+
+// FAQ Schema for Web Development page
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": webDevFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
 
 // Service Schema for Web Development
 const serviceSchema = {
@@ -75,6 +135,7 @@ const serviceSchema = {
 
 <Layout title={title} description={description} keywords={keywords} image={image}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-24 lg:pb-32 font-poppins overflow-hidden"
@@ -178,7 +239,7 @@ const serviceSchema = {
               That's why we take a consultative approach to web development,
               working closely with you to understand your requirements, target
               audience, and business objectives. From startups launching their
-              first website to enterprises modernizing legacy systems, we have
+              first <a href="/landing-pages" class="text-cyan-600 hover:text-cyan-700 font-semibold">landing page</a> to enterprises modernizing legacy systems, we have
               the expertise and experience to deliver outstanding results that
               scale with your business growth.
             </p>
@@ -186,7 +247,7 @@ const serviceSchema = {
               Our development process emphasizes collaboration, transparency,
               and quality. We use agile methodologies that allow for regular
               feedback and iterations, ensuring the final product aligns
-              perfectly with your vision. With a focus on clean code, security
+              perfectly with your vision. Combined with our <a href="/web-design" class="text-cyan-600 hover:text-cyan-700 font-semibold">web design</a> expertise, we deliver websites that are both beautiful and functional. With a focus on clean code, security
               best practices, and maintainability, we build websites that stand
               the test of time while remaining flexible enough to evolve with
               your changing needs.
@@ -543,6 +604,129 @@ const serviceSchema = {
   <!-- Why Choose Us Section -->
   <Whyus />
 
+  <!-- Google Reviews Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          What Our <span class="text-orange-500">Clients Say</span>
+        </h2>
+        <p class="text-lg text-slate-300">
+          Real reviews from real clients on Google. See why businesses trust Codebrand for their web development needs.
+        </p>
+      </div>
+      <Testimonial client:visible />
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
+          Web Development <span class="text-orange-500">Success Stories</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          Real results from real projects. See how we've helped businesses transform their digital presence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-cyan-600 to-cyan-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cyan-600 uppercase tracking-wide">E-commerce</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Fashion Retailer Platform</h3>
+            <p class="text-gray-600 mb-4">Complete e-commerce rebuild with headless architecture, resulting in 40% faster page loads and 65% increase in mobile conversions.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+65%</div>
+                <div class="text-gray-500">Conversions</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">-40%</div>
+                <div class="text-gray-500">Load Time</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+120%</div>
+                <div class="text-gray-500">Mobile Sales</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-orange-500 uppercase tracking-wide">SaaS Platform</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Healthcare Management App</h3>
+            <p class="text-gray-600 mb-4">Custom web application for patient management with HIPAA compliance, real-time scheduling, and integrated telehealth features.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">50K+</div>
+                <div class="text-gray-500">Users</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">99.9%</div>
+                <div class="text-gray-500">Uptime</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">-30%</div>
+                <div class="text-gray-500">Admin Time</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-blue-600 uppercase tracking-wide">Corporate Website</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Law Firm Digital Presence</h3>
+            <p class="text-gray-600 mb-4">Modern website redesign with SEO optimization, content management system, and lead generation integration for a top-tier law firm.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+200%</div>
+                <div class="text-gray-500">Organic Traffic</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+85%</div>
+                <div class="text-gray-500">Lead Gen</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">Top 3</div>
+                <div class="text-gray-500">Google Rank</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/projects" class="inline-flex items-center gap-2 px-8 py-4 bg-cyan-900 hover:bg-cyan-800 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-200">
+          View All Projects
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section
     class="py-16 lg:py-24 bg-cyan-900 font-poppins"
@@ -568,6 +752,18 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <Faq />
+  <!-- Web Development FAQ Section -->
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
+          Web Development <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          Common questions about our web development services, pricing, and process.
+        </p>
+      </div>
+      <Faqcomp faqs={webDevFaqs} client:visible />
+    </div>
+  </section>
 </Layout>

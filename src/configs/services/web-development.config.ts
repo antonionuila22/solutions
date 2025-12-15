@@ -21,6 +21,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
     keywords:
       "web development, website design, custom web applications, responsive web design, e-commerce development, mobile-friendly websites, SEO web development, progressive web apps, front-end development, back-end development, website development services, professional web design, custom website development, web application development, React development, Next.js development, full stack development, website redesign, web development company, modern web development, scalable web solutions",
     image: "/photos/bannercodebrand.webp",
+    canonicalUrl: "https://codebrand.us/web-development", // Points to main page to avoid duplicate content
   },
 
   // Schema.org Structured Data

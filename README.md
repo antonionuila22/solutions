@@ -45,4 +45,4 @@ Este proyecto es propiedad de **CodeBrand** y no está disponible para uso públ
 
 ---
 
-Para más información, contactar con el equipo en [soporte@codebrand.es](mailto:soporte@codebrand.es).
+Para más información, contactar con el equipo en [info@codebrand.es](mailto:info@codebrand.es).

@@ -6,6 +6,7 @@ readtime: 15
 img: /photos/blog/team-of-app-developers-looking-at-coding-algorithm-2025-02-17-08-38-57-utc.avif
 imageAlt: "Developer working with AI coding assistant on web project"
 date: 2025-12-15
+draft: true
 categories:
   - Web Development
   - Technology

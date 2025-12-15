@@ -15,6 +15,7 @@ export const seoConfig: ServicePageConfig = {
     keywords:
       "SEO services, search engine optimization, technical SEO, keyword research, on-page SEO, link building, local SEO, SEO audit, content strategy, SEO consulting, Google rankings, organic traffic, SEO company, SEO optimization, SEO marketing, search engine marketing",
     image: "/photos/bannercodebrand.webp",
+    canonicalUrl: "https://codebrand.us/seo", // Points to main page to avoid duplicate content
   },
 
   // Schema.org Structured Data

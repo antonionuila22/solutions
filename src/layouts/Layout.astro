@@ -20,6 +20,7 @@ let {
   tags,
   categories,
   breadcrumbNames,
+  canonicalOverride,
 } = Astro.props;
 
 // Valores por defecto mejorados
@@ -34,8 +35,8 @@ keywords =
   "web development agency, UI/UX design services, digital marketing agency, custom web development, mobile app development, SEO optimization, social media marketing, branding agency, e-commerce development, graphic design services";
 image = image || "https://codebrand.us/og-image.svg";
 
-// URL dinámica y mejoras SEO
-const canonicalUrl = Astro.url?.href || "https://codebrand.us";
+// URL dinámica y mejoras SEO (permite override para páginas duplicadas)
+const canonicalUrl = canonicalOverride || Astro.url?.href || "https://codebrand.us";
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_es";
 
@@ -352,7 +353,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         ],
         "knowsLanguage": ["English", "Spanish"],
         "award": [
-          "Top Rated Web Development Agency Honduras 2023",
+          "Top Rated Web Development Agency Honduras 2025",
           "500+ Successful International Projects"
         ],
         "hasOfferCatalog": {
