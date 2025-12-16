@@ -8,46 +8,160 @@ import Layout from "../layouts/Layout.astro";
 import FaqDark from "../components/FaqDark.tsx";
 
 // SEO
-const title = "Graphic Design Outsourcing | White-Label Design Partner - Codebrand";
-const description = "White-label graphic design partner for agencies and businesses. Brand identity, social media graphics, marketing materials, and print design.";
-const keywords = "white label design, design outsourcing, graphic design partner, brand design agency, social media design";
+const title =
+  "Graphic Design Outsourcing | White-Label Design Partner - Codebrand";
+const description =
+  "White-label graphic design partner for agencies and businesses. Brand identity, social media graphics, marketing materials, and print design.";
+const keywords =
+  "white label design, design outsourcing, graphic design partner, brand design agency, social media design";
 
 // Schema
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Codebrand Design Outsourcing",
-  "url": "https://codebrand.us/outsourcing-design",
-  "description": description
+  name: "Codebrand Design Outsourcing",
+  url: "https://codebrand.us/outsourcing-design",
+  description: description,
 };
 
-// FAQ
+// FAQ - Expanded for SEO
 const faqs = [
-  { question: "How does design outsourcing work?", answer: "Send us your briefs and brand guidelines. We deliver polished designs ready for your clients. White-label, NDA-protected, unlimited revisions." },
-  { question: "What file formats do you deliver?", answer: "All source files (AI, PSD, Figma) plus exports (PNG, JPG, PDF, SVG). Print-ready files with bleeds when needed." },
-  { question: "How fast is turnaround?", answer: "Social graphics: 24-48h. Brand identities: 1-2 weeks. Rush delivery available." },
-  { question: "What about revisions?", answer: "Unlimited revisions until approved. We're not done until you're happy." },
-  { question: "How does pricing work?", answer: "Retainers from $2,500/mo. Per-project from $500. Volume discounts available." }
+  {
+    question: "How does design outsourcing work?",
+    answer:
+      "Design outsourcing is simple: you send us your creative briefs and brand guidelines, and we deliver polished, client-ready designs. Everything is white-label and NDA-protected, meaning your clients never know we exist. We integrate with your workflow using tools like Slack, Asana, or your preferred project management platform. You review, we revise until perfect, and you deliver to your clients as your own work.",
+  },
+  {
+    question: "What file formats do you deliver?",
+    answer:
+      "We deliver all source files including Adobe Illustrator (AI), Photoshop (PSD), and Figma files. Export formats include PNG, JPG, PDF, SVG, and any specific format you need. For print projects, we provide print-ready files with proper bleeds, crop marks, and color profiles (CMYK). Web assets come optimized for fast loading with multiple resolution options for retina displays.",
+  },
+  {
+    question: "How fast is turnaround?",
+    answer:
+      "Turnaround depends on project complexity. Social media graphics: 24-48 hours. Marketing materials (brochures, flyers): 2-3 days. Brand identity packages: 1-2 weeks. Presentation decks: 2-4 days. We also offer rush delivery for urgent projects at a premium rate, with same-day delivery available for simple requests.",
+  },
+  {
+    question: "What about revisions?",
+    answer:
+      "Our Priority and Rush tiers include unlimited revisions until you're 100% satisfied. Standard tier includes 2 revision rounds. We believe great design requires iteration, so we never rush you to approve. Each revision round typically takes 24 hours or less to complete.",
+  },
+  {
+    question: "How does pricing work?",
+    answer:
+      "We offer transparent hourly pricing: Standard at $65/hr (48h turnaround), Priority at $85/hr (24h turnaround with unlimited revisions and dedicated designer), and Rush at $120/hr (same-day delivery). Volume discounts are available for 20+ hours monthly. No hidden fees, no surprise charges. You only pay for actual design time.",
+  },
+  {
+    question: "Is my work confidential?",
+    answer:
+      "Absolutely. Every project is protected by our standard NDA. We never share, showcase, or reference your work without explicit permission. Your clients will never know you outsourced the work. We can also sign custom NDAs if your clients require specific confidentiality terms.",
+  },
+  {
+    question: "What industries do you work with?",
+    answer:
+      "We work with agencies and businesses across all industries including technology, healthcare, finance, real estate, e-commerce, hospitality, and professional services. Our designers have experience creating industry-specific designs that resonate with target audiences while meeting regulatory requirements where applicable.",
+  },
+  {
+    question: "Can you match our client's brand guidelines?",
+    answer:
+      "Yes, brand consistency is our specialty. Send us the brand guidelines, style guide, or even just examples of previous work, and we'll match the visual language perfectly. We create designs that look like they came from your client's internal team, maintaining fonts, colors, imagery style, and tone of voice.",
+  },
+  {
+    question: "What if I'm not satisfied with the work?",
+    answer:
+      "Your satisfaction is guaranteed. If the initial concepts don't meet your expectations, we'll revise until they do. In the rare case we can't reach a satisfactory outcome, we offer a full refund for that project. We've maintained a 98% client satisfaction rate by focusing on communication and understanding your vision from the start.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Getting started is easy: simply contact us with your first project brief. We'll review the requirements, provide a time estimate, and begin work immediately upon approval. No long-term contracts required—start with a single project and scale up as needed. Most clients start with a small test project before committing to ongoing work.",
+  },
+];
+
+// Comparison data for SEO
+const comparison = [
+  {
+    aspect: "Cost",
+    inHouse: "High ($60-100k/year salary + benefits + tools)",
+    freelancer: "Variable ($30-150/hr, inconsistent)",
+    outsourcing: "Predictable ($65-120/hr, no overhead)",
+  },
+  {
+    aspect: "Availability",
+    inHouse: "Limited to business hours, PTO affects output",
+    freelancer: "Often juggling multiple clients",
+    outsourcing: "Dedicated capacity, consistent delivery",
+  },
+  {
+    aspect: "Scalability",
+    inHouse: "Slow to hire, expensive to scale",
+    freelancer: "Limited bandwidth per person",
+    outsourcing: "Scale up/down instantly as needed",
+  },
+  {
+    aspect: "Quality Control",
+    inHouse: "Single perspective, potential blind spots",
+    freelancer: "Varies greatly by individual",
+    outsourcing: "Team review process, consistent standards",
+  },
+  {
+    aspect: "Tools & Software",
+    inHouse: "You pay for all licenses",
+    freelancer: "Usually included but limited",
+    outsourcing: "Full suite included in rate",
+  },
+];
+
+// Detailed process steps
+const processDetailed = [
+  {
+    num: "01",
+    title: "Submit Your Brief",
+    desc: "Share your project requirements, brand guidelines, and any reference materials. The more context you provide, the better we can nail it on the first try.",
+    details: ["Project scope & objectives", "Brand assets & guidelines", "Timeline & budget", "Reference examples"],
+  },
+  {
+    num: "02",
+    title: "We Create",
+    desc: "Our designers get to work, typically delivering first concepts within 24-48 hours. We focus on understanding your vision and translating it into compelling visuals.",
+    details: ["Concept development", "Multiple directions if needed", "Progress updates", "24-48h first draft"],
+  },
+  {
+    num: "03",
+    title: "You Review",
+    desc: "Review the designs at your pace. Provide feedback through your preferred channel—marked-up PDFs, Loom videos, or a quick call. We make revisions fast.",
+    details: ["Detailed review process", "Feedback integration", "Unlimited revisions (Priority)", "Quick turnaround"],
+  },
+  {
+    num: "04",
+    title: "We Deliver",
+    desc: "Once approved, you receive all files in every format you need. Source files, exports, and organized assets ready to hand off to your clients or send to print.",
+    details: ["All source files", "Multiple export formats", "Organized file structure", "Print-ready when needed"],
+  },
 ];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
+  mainEntity: faqs.map((faq) => ({
     "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-  }))
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
 };
 
 // Services with icons
 const services = [
-  { title: "Brand Identity", desc: "Logos, guidelines, visual systems", icon: "◆" },
+  {
+    title: "Brand Identity",
+    desc: "Logos, guidelines, visual systems",
+    icon: "◆",
+  },
   { title: "Social Media", desc: "Posts, stories, ads, templates", icon: "◐" },
   { title: "Marketing", desc: "Decks, brochures, one-pagers", icon: "▲" },
   { title: "Print Design", desc: "Cards, packaging, signage", icon: "■" },
   { title: "Web Graphics", desc: "Banners, icons, UI elements", icon: "●" },
-  { title: "Illustration", desc: "Custom art, infographics", icon: "✦" }
+  { title: "Illustration", desc: "Custom art, infographics", icon: "✦" },
 ];
 
 // Work showcase
@@ -55,7 +169,7 @@ const showcase = [
   { title: "Brand Systems", color: "from-purple-600 to-pink-600" },
   { title: "Social Campaigns", color: "from-cyan-500 to-blue-600" },
   { title: "Pitch Decks", color: "from-orange-500 to-red-500" },
-  { title: "Packaging", color: "from-green-500 to-emerald-600" }
+  { title: "Packaging", color: "from-green-500 to-emerald-600" },
 ];
 ---
 
@@ -65,138 +179,269 @@ const showcase = [
   keywords={keywords}
   canonicalOverride="https://codebrand.us/outsourcing-design"
 >
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(serviceSchema)}
+  />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+  />
 
   <style>
-    .page-bg { background: #050505; }
+    .page-bg {
+      background: #030303;
+    }
 
-    /* Animated gradient mesh */
-    .gradient-mesh {
+    /* Animated gradient orbs */
+    .gradient-orbs {
       position: fixed;
       inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 10% 10%, rgba(139, 92, 246, 0.15), transparent 50%),
-        radial-gradient(ellipse 60% 50% at 90% 20%, rgba(236, 72, 153, 0.12), transparent 50%),
-        radial-gradient(ellipse 50% 40% at 50% 90%, rgba(6, 182, 212, 0.08), transparent 50%);
+      overflow: hidden;
       pointer-events: none;
       z-index: 0;
     }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: float 20s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 600px;
+      height: 600px;
+      background: linear-gradient(135deg, #7c3aed, #db2777);
+      top: -200px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #ec4899, #f97316);
+      top: 50%;
+      right: -150px;
+      animation-delay: -7s;
+    }
+    .orb-3 {
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+      bottom: -100px;
+      left: 30%;
+      animation-delay: -14s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* Noise texture overlay */
+    .noise {
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1;
+    }
 
     /* Typography */
-    .text-massive {
-      font-size: clamp(3.5rem, 15vw, 12rem);
+    .text-display {
+      font-size: clamp(4rem, 18vw, 14rem);
       line-height: 0.85;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
+      font-weight: 800;
     }
     .text-gradient {
-      background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+      background: linear-gradient(135deg, #c084fc 0%, #fb7185 50%, #fbbf24 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .text-outline {
-      -webkit-text-stroke: 2px rgba(255,255,255,0.5);
+    .text-gradient-animate {
+      background: linear-gradient(135deg, #c084fc, #fb7185, #fbbf24, #c084fc);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      color: transparent;
+      background-clip: text;
+      animation: gradient-shift 8s ease infinite;
+    }
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .text-stroke {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Cards */
-    .card {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Glass card */
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .card:hover {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-4px);
+    .glass-hover {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-hover:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-8px);
+      box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     }
 
     /* Bento grid */
     .bento-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 1rem;
+      gap: 1.25rem;
+    }
+    .bento-grid .col-span-7 { grid-column: span 7; }
+    .bento-grid .col-span-5 { grid-column: span 5; }
+    @media (min-width: 1024px) {
+      .bento-grid { gap: 1.5rem; }
     }
     @media (max-width: 768px) {
       .bento-grid { grid-template-columns: 1fr; }
       .bento-grid > * { grid-column: span 1 !important; }
     }
 
-    /* Showcase cards */
+    /* Showcase cards - Premium */
     .showcase-card {
       position: relative;
-      border-radius: 24px;
+      border-radius: 20px;
       overflow: hidden;
-      aspect-ratio: 4/3;
       cursor: pointer;
+      min-height: 300px;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .showcase-card::before {
-      content: '';
+    @media (min-width: 769px) { .showcase-card { min-height: 340px; } }
+    @media (min-width: 1024px) { .showcase-card { min-height: 400px; } }
+    @media (max-width: 768px) { .showcase-card { aspect-ratio: 4/3; min-height: auto; } }
+
+    .showcase-card::after {
+      content: "";
       position: absolute;
       inset: 0;
-      opacity: 0.9;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+      opacity: 0.8;
       transition: opacity 0.4s;
     }
-    .showcase-card:hover::before {
+    .showcase-card:hover {
+      transform: scale(1.03) translateY(-8px);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    }
+    .showcase-card:hover::after {
       opacity: 1;
     }
-    .showcase-card:hover {
-      transform: scale(1.02);
+    .showcase-card .card-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+    .showcase-card .card-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease 0.1s;
+    }
+    .showcase-card:hover .card-tag {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .showcase-card .card-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      transform: translateY(10px);
+      transition: transform 0.4s ease;
+    }
+    .showcase-card:hover .card-title {
+      transform: translateY(0);
     }
 
     /* Service icon */
     .service-icon {
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
-      background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.2));
-      border-radius: 12px;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
       color: #e879f9;
+      transition: all 0.4s ease;
+    }
+    .glass-hover:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
     }
 
-    /* Buttons */
+    /* Premium buttons */
     .btn-primary {
-      background: linear-gradient(135deg, #a855f7, #ec4899);
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
       color: #fff;
       font-weight: 600;
-      padding: 1.125rem 2.5rem;
-      border-radius: 9999px;
-      transition: all 0.3s ease;
+      padding: 1.25rem 3rem;
+      border-radius: 100px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 15px -3px rgba(139, 92, 246, 0.4);
     }
     .btn-primary::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #c084fc, #f472b6);
+      background: linear-gradient(135deg, #a78bfa, #f472b6);
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.4s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.5);
     }
     .btn-primary:hover::before { opacity: 1; }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.5);
-    }
     .btn-primary span { position: relative; z-index: 1; }
 
-    .btn-outline {
+    .btn-ghost {
       color: #fff;
       font-weight: 500;
-      padding: 1.125rem 2.5rem;
-      border-radius: 9999px;
+      padding: 1.25rem 3rem;
+      border-radius: 100px;
       border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
     }
-    .btn-outline:hover {
-      border-color: rgba(168, 85, 247, 0.5);
-      background: rgba(168, 85, 247, 0.1);
+    .btn-ghost:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      background: rgba(139, 92, 246, 0.1);
+      transform: translateY(-2px);
     }
 
     /* Marquee */
@@ -204,110 +449,152 @@ const showcase = [
       display: flex;
       overflow: hidden;
       user-select: none;
-      gap: 4rem;
-      mask-image: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+      mask-image: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
     }
     .marquee-content {
       display: flex;
-      gap: 4rem;
-      animation: scroll 30s linear infinite;
+      gap: 3rem;
+      animation: marquee 25s linear infinite;
     }
-    @keyframes scroll {
+    @keyframes marquee {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
 
-    /* Fade animations */
+    /* Animations */
     .fade-up {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(60px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-
-    /* Divider */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(168,85,247,0.4), rgba(236,72,153,0.4), transparent);
-    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.15s; }
+    .delay-2 { transition-delay: 0.3s; }
+    .delay-3 { transition-delay: 0.45s; }
+    .delay-4 { transition-delay: 0.6s; }
+    .delay-5 { transition-delay: 0.75s; }
 
     /* Stats */
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
     .stat-number {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
       line-height: 1;
+      letter-spacing: -0.02em;
     }
 
-    /* Process line */
-    .process-line {
-      position: absolute;
-      top: 24px;
-      left: 24px;
-      right: 24px;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(168,85,247,0.5), rgba(236,72,153,0.5), rgba(6,182,212,0.5));
+    /* Process */
+    .process-step {
+      position: relative;
     }
+    .process-step::before {
+      content: "";
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      width: calc(100% + 2rem);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
+    }
+    .process-step:last-child::before { display: none; }
+    @media (max-width: 768px) { .process-step::before { display: none; } }
+
+    /* Pricing card */
+    .pricing-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card.featured {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+    .pricing-card.featured::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    }
+
+    /* Glow effect */
+    .glow {
+      position: relative;
+    }
+    .glow::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899, #f97316);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      filter: blur(15px);
+      transition: opacity 0.4s;
+    }
+    .glow:hover::before { opacity: 0.5; }
   </style>
 
   <div class="page-bg min-h-screen relative overflow-hidden text-white">
-    <div class="gradient-mesh"></div>
+    <!-- Animated background -->
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="noise"></div>
 
     <div class="relative z-10">
-
       <!-- ==================== HERO ==================== -->
-      <section class="min-h-screen flex flex-col justify-center px-6 py-20">
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
         <div class="max-w-7xl mx-auto w-full">
-          <!-- Eyebrow -->
-          <div class="fade-up mb-8">
-            <span class="inline-flex items-center gap-2 text-purple-400 text-sm font-medium tracking-widest uppercase">
-              <span class="w-8 h-px bg-purple-400"></span>
-              Design Outsourcing
+          <!-- Badge -->
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-purple-500/20">
+              <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+              <span class="text-purple-300 text-sm font-medium tracking-wide">Design Partner for Agencies</span>
             </span>
           </div>
 
-          <!-- Massive headline -->
-          <h1 class="fade-up delay-1 text-massive font-bold text-white mb-4">
-            Design
-          </h1>
-          <h1 class="fade-up delay-2 text-massive font-bold text-outline mb-12">
-            On Demand
+          <!-- Display headline -->
+          <h1 class="text-display mb-6">
+            <span class="fade-up delay-1 block text-white">Design</span>
+            <span class="fade-up delay-2 block text-gradient-animate">On Demand</span>
           </h1>
 
           <!-- Subtitle -->
-          <p class="fade-up delay-3 text-xl md:text-2xl text-neutral-400 max-w-xl mb-12 leading-relaxed">
-            White-label design for agencies. Fast turnaround. Unlimited revisions. Your brand, our craft.
+          <p class="fade-up delay-3 text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            White-label design for agencies. Fast turnaround.<br class="hidden md:block" />
+            Unlimited revisions. Your brand, our craft.
           </p>
 
           <!-- CTAs -->
-          <div class="fade-up delay-4 flex flex-wrap gap-4 mb-20">
-            <a href="/contact" class="btn-primary"><span>Start Creating</span></a>
-            <a href="#work" class="btn-outline">See Our Work</a>
+          <div class="fade-up delay-4 flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary glow"><span>Start Creating →</span></a>
+            <a href="#work" class="btn-ghost">View Our Work</a>
           </div>
 
-          <!-- Stats row -->
-          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/10">
-            <div>
+          <!-- Stats -->
+          <div class="fade-up delay-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="stat-card glass rounded-2xl">
               <div class="stat-number text-gradient">500+</div>
-              <div class="text-neutral-500 text-sm mt-1">Designs Delivered</div>
+              <div class="text-neutral-400 text-sm mt-2">Designs Delivered</div>
             </div>
-            <div>
+            <div class="stat-card glass rounded-2xl">
               <div class="stat-number text-white">24h</div>
-              <div class="text-neutral-500 text-sm mt-1">Avg. Turnaround</div>
+              <div class="text-neutral-400 text-sm mt-2">Avg. Turnaround</div>
             </div>
-            <div>
+            <div class="stat-card glass rounded-2xl">
               <div class="stat-number text-white">∞</div>
-              <div class="text-neutral-500 text-sm mt-1">Revisions</div>
+              <div class="text-neutral-400 text-sm mt-2">Revisions</div>
             </div>
-            <div>
+            <div class="stat-card glass rounded-2xl">
               <div class="stat-number text-white">100%</div>
-              <div class="text-neutral-500 text-sm mt-1">Satisfaction</div>
+              <div class="text-neutral-400 text-sm mt-2">Satisfaction</div>
             </div>
           </div>
         </div>
@@ -317,20 +604,32 @@ const showcase = [
       <div class="py-8 border-y border-white/5">
         <div class="marquee">
           <div class="marquee-content">
-            {[...Array(2)].map(() => (
-              <>
-                <span class="text-2xl font-bold text-white/10 whitespace-nowrap">Brand Identity</span>
-                <span class="text-purple-500">◆</span>
-                <span class="text-2xl font-bold text-white/10 whitespace-nowrap">Social Media</span>
-                <span class="text-pink-500">◐</span>
-                <span class="text-2xl font-bold text-white/10 whitespace-nowrap">Marketing Materials</span>
-                <span class="text-cyan-500">▲</span>
-                <span class="text-2xl font-bold text-white/10 whitespace-nowrap">Print Design</span>
-                <span class="text-orange-500">■</span>
-                <span class="text-2xl font-bold text-white/10 whitespace-nowrap">Illustration</span>
-                <span class="text-green-500">✦</span>
-              </>
-            ))}
+            {
+              [...Array(2)].map(() => (
+                <>
+                  <span class="text-2xl font-bold text-white/10 whitespace-nowrap">
+                    Brand Identity
+                  </span>
+                  <span class="text-purple-500">◆</span>
+                  <span class="text-2xl font-bold text-white/10 whitespace-nowrap">
+                    Social Media
+                  </span>
+                  <span class="text-pink-500">◐</span>
+                  <span class="text-2xl font-bold text-white/10 whitespace-nowrap">
+                    Marketing Materials
+                  </span>
+                  <span class="text-cyan-500">▲</span>
+                  <span class="text-2xl font-bold text-white/10 whitespace-nowrap">
+                    Print Design
+                  </span>
+                  <span class="text-orange-500">■</span>
+                  <span class="text-2xl font-bold text-white/10 whitespace-nowrap">
+                    Illustration
+                  </span>
+                  <span class="text-green-500">✦</span>
+                </>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -338,165 +637,240 @@ const showcase = [
       <!-- ==================== WORK SHOWCASE ==================== -->
       <section id="work" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
-          <div class="fade-up flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div
+            class="fade-up flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
+          >
             <div>
-              <p class="text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">What We Create</p>
+              <p
+                class="text-purple-400 text-sm font-medium tracking-widest uppercase mb-4"
+              >
+                What We Create
+              </p>
               <h2 class="text-4xl md:text-6xl font-bold text-white">
-                Work that<br/>
+                Work that<br />
                 <span class="text-gradient">converts.</span>
               </h2>
             </div>
             <p class="text-neutral-400 max-w-sm">
-              From brand identities to campaign assets — design that makes an impact.
+              From brand identities to campaign assets — design that makes an
+              impact.
             </p>
           </div>
 
           <!-- Bento showcase -->
           <div class="bento-grid">
-            <div class="fade-up col-span-7 showcase-card" style="transition-delay: 0.1s">
-              <div class={`absolute inset-0 bg-gradient-to-br ${showcase[0].color}`}></div>
-              <div class="absolute inset-0 flex items-end p-8">
-                <span class="text-white text-2xl font-bold">{showcase[0].title}</span>
-              </div>
-            </div>
-            <div class="fade-up col-span-5 showcase-card" style="transition-delay: 0.2s">
-              <div class={`absolute inset-0 bg-gradient-to-br ${showcase[1].color}`}></div>
-              <div class="absolute inset-0 flex items-end p-8">
-                <span class="text-white text-2xl font-bold">{showcase[1].title}</span>
-              </div>
-            </div>
-            <div class="fade-up col-span-5 showcase-card" style="transition-delay: 0.3s">
-              <div class={`absolute inset-0 bg-gradient-to-br ${showcase[2].color}`}></div>
-              <div class="absolute inset-0 flex items-end p-8">
-                <span class="text-white text-2xl font-bold">{showcase[2].title}</span>
-              </div>
-            </div>
-            <div class="fade-up col-span-7 showcase-card" style="transition-delay: 0.4s">
-              <div class={`absolute inset-0 bg-gradient-to-br ${showcase[3].color}`}></div>
-              <div class="absolute inset-0 flex items-end p-8">
-                <span class="text-white text-2xl font-bold">{showcase[3].title}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== SERVICES ==================== -->
-      <section class="py-32 px-6 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto">
-          <div class="fade-up text-center mb-20">
-            <p class="text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Services</p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white">
-              Everything you need
-            </h2>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <div class="fade-up card p-8 group" style={`transition-delay: ${i * 0.1}s`}>
-                <div class="service-icon mb-6 group-hover:scale-110 transition-transform">
-                  {service.icon}
+            {[
+              { ...showcase[0], span: "col-span-7", tag: "Branding" },
+              { ...showcase[1], span: "col-span-5", tag: "Social" },
+              { ...showcase[2], span: "col-span-5", tag: "Presentations" },
+              { ...showcase[3], span: "col-span-7", tag: "Print" },
+            ].map((item, i) => (
+              <div
+                class={`fade-up ${item.span} showcase-card`}
+                style={`transition-delay: ${0.1 + i * 0.1}s`}
+              >
+                <div class={`absolute inset-0 bg-gradient-to-br ${item.color}`}></div>
+                <div class="card-content">
+                  <span class="card-tag text-white">{item.tag}</span>
+                  <span class="card-title text-white">{item.title}</span>
                 </div>
-                <h3 class="text-xl font-semibold text-white mb-2">{service.title}</h3>
-                <p class="text-neutral-400">{service.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <!-- ==================== PROCESS ==================== -->
+      <!-- ==================== SERVICES ==================== -->
       <section class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
-          <div class="fade-up text-center mb-20">
-            <p class="text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Process</p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white">
-              Brief → Design → Done
+          <div class="fade-up text-center mb-16">
+            <span class="inline-block text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Services</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white">
+              Everything you need
             </h2>
           </div>
 
-          <div class="relative">
-            <div class="process-line hidden md:block"></div>
-            <div class="grid md:grid-cols-4 gap-8">
-              {[
-                { num: "01", title: "Brief", desc: "Share requirements and brand assets" },
-                { num: "02", title: "Create", desc: "We design, you review" },
-                { num: "03", title: "Refine", desc: "Unlimited revisions" },
-                { num: "04", title: "Deliver", desc: "All files, ready to use" }
-              ].map((step, i) => (
-                <div class="fade-up text-center" style={`transition-delay: ${i * 0.15}s`}>
-                  <div class="w-12 h-12 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold relative z-10">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((service, i) => (
+              <div
+                class="fade-up glass glass-hover p-8"
+                style={`transition-delay: ${i * 0.08}s`}
+              >
+                <div class="service-icon mb-6">{service.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{service.title}</h3>
+                <p class="text-neutral-400 leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== HOW IT WORKS (Detailed) ==================== -->
+      <section class="py-32 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">How It Works</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+              From brief to delivery
+            </h2>
+            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+              Our streamlined process ensures fast turnaround without sacrificing quality. Here's exactly what happens when you work with us.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-16">
+            {processDetailed.map((step, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.1}s`}>
+                <div class="flex items-start gap-6">
+                  <div class="w-14 h-14 flex-shrink-0 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 font-bold">
                     {step.num}
                   </div>
-                  <h3 class="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                  <p class="text-neutral-400 text-sm">{step.desc}</p>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
+                    <p class="text-neutral-400 mb-4 leading-relaxed">{step.desc}</p>
+                    <ul class="grid grid-cols-2 gap-2">
+                      {step.details.map((detail) => (
+                        <li class="flex items-center gap-2 text-sm text-neutral-500">
+                          <span class="w-1 h-1 rounded-full bg-purple-400"></span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== COMPARISON ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Compare Options</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+              Why outsource design?
+            </h2>
+            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+              Compare the real costs and benefits of hiring in-house, working with freelancers, or partnering with a dedicated design outsourcing team.
+            </p>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="fade-up mt-16 overflow-x-auto">
+            <table class="w-full min-w-[700px]">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-4 px-4 text-neutral-500 font-medium">Aspect</th>
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">In-House Designer</th>
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Freelancers</th>
+                  <th class="text-left py-4 px-4 text-purple-400 font-semibold">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                      Design Outsourcing
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row, i) => (
+                  <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                    <td class="py-5 px-4 text-white font-medium">{row.aspect}</td>
+                    <td class="py-5 px-4 text-neutral-500 text-sm">{row.inHouse}</td>
+                    <td class="py-5 px-4 text-neutral-500 text-sm">{row.freelancer}</td>
+                    <td class="py-5 px-4 text-neutral-300 text-sm font-medium">{row.outsourcing}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Summary boxes -->
+          <div class="grid md:grid-cols-3 gap-5 mt-12">
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.1s">
+              <div class="text-3xl font-bold text-gradient mb-2">70%</div>
+              <p class="text-neutral-400 text-sm">Average cost savings vs in-house designer</p>
+            </div>
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.2s">
+              <div class="text-3xl font-bold text-white mb-2">0</div>
+              <p class="text-neutral-400 text-sm">HR headaches, benefits, or equipment costs</p>
+            </div>
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.3s">
+              <div class="text-3xl font-bold text-white mb-2">∞</div>
+              <p class="text-neutral-400 text-sm">Scalability—ramp up or down instantly</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ==================== PRICING ==================== -->
-      <section class="py-32 px-6 bg-white/[0.01]">
+      <section class="py-32 px-6">
         <div class="max-w-6xl mx-auto">
-          <div class="fade-up text-center mb-20">
-            <p class="text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Pricing</p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          <div class="fade-up text-center mb-16">
+            <span class="inline-block text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Pricing</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white">
               Simple, transparent
             </h2>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-8">
+          <div class="grid md:grid-cols-3 gap-5">
             {[
               {
-                title: "Retainer",
-                price: "$2,500",
-                period: "/month",
-                desc: "Ongoing design support",
-                features: ["40 design hours", "Dedicated designer", "24h turnaround", "Unlimited revisions", "All source files"],
-                highlighted: true
+                title: "Standard",
+                price: "$65",
+                period: "/hour",
+                desc: "Quality design work",
+                features: ["48h turnaround", "2 revision rounds", "Source files included", "Email support"],
+                highlighted: false,
               },
               {
-                title: "Project",
-                price: "$500",
-                period: "+",
-                desc: "One-time projects",
-                features: ["Fixed deliverables", "Clear timeline", "2 revision rounds", "Source files included"],
-                highlighted: false
+                title: "Priority",
+                price: "$85",
+                period: "/hour",
+                desc: "Dedicated attention",
+                features: ["24h turnaround", "Unlimited revisions", "All source files", "Slack/direct support", "Dedicated designer"],
+                highlighted: true,
               },
               {
                 title: "Rush",
-                price: "+50%",
-                period: "",
+                price: "$120",
+                period: "/hour",
                 desc: "Need it yesterday?",
-                features: ["Same-day start", "12h turnaround", "Priority support", "Direct communication"],
-                highlighted: false
-              }
+                features: ["Same-day delivery", "12h turnaround", "Priority queue", "Direct communication", "Weekend availability"],
+                highlighted: false,
+              },
             ].map((plan, i) => (
-              <div class={`fade-up card p-8 ${plan.highlighted ? 'ring-2 ring-purple-500/50 bg-purple-500/5' : ''}`} style={`transition-delay: ${i * 0.15}s`}>
+              <div
+                class={`fade-up glass glass-hover pricing-card p-8 ${plan.highlighted ? "featured" : ""}`}
+                style={`transition-delay: ${i * 0.12}s`}
+              >
                 {plan.highlighted && (
-                  <span class="inline-block text-xs font-semibold text-purple-400 bg-purple-500/20 px-3 py-1 rounded-full mb-6">
+                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-purple-300 bg-purple-500/20 px-3 py-1.5 rounded-full mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
                     Most Popular
                   </span>
                 )}
                 <h3 class="text-2xl font-bold text-white mb-2">{plan.title}</h3>
                 <p class="text-neutral-400 mb-6">{plan.desc}</p>
-                <div class="mb-6">
-                  <span class="text-4xl font-bold text-white">{plan.price}</span>
-                  <span class="text-neutral-500">{plan.period}</span>
+                <div class="mb-8">
+                  <span class="text-5xl font-bold text-white">{plan.price}</span>
+                  <span class="text-neutral-400 text-lg">{plan.period}</span>
                 </div>
-                <ul class="space-y-3 mb-8">
+                <ul class="space-y-4 mb-8">
                   {plan.features.map((feature) => (
-                    <li class="flex items-center gap-3 text-neutral-300 text-sm">
-                      <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    <li class="flex items-center gap-3 text-neutral-300">
+                      <svg class="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                       </svg>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <a href="/contact" class={plan.highlighted ? 'btn-primary w-full text-center block' : 'btn-outline w-full text-center block'}>
+                <a
+                  href="/contact"
+                  class={plan.highlighted ? "btn-primary w-full text-center block" : "btn-ghost w-full text-center block"}
+                >
                   <span>Get Started</span>
                 </a>
               </div>
@@ -505,56 +879,84 @@ const showcase = [
         </div>
       </section>
 
+      <!-- ==================== WHY CHOOSE US ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <span class="inline-block text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Why Codebrand</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
+              Your design team, without the overhead
+            </h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Finding reliable design talent is hard. Managing them is harder. Between recruiting, onboarding, providing feedback, and ensuring quality—running an in-house design operation can drain resources you'd rather spend on growth. That's where design outsourcing changes the game.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                As your white-label design partner, we become an extension of your team. We learn your clients' brands, understand your quality standards, and deliver work that looks like it came from your own studio. The difference? No salaries to pay, no benefits to manage, no software licenses to maintain.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Our designers have worked with Fortune 500 companies, Y Combinator startups, and everything in between. We bring that experience to every project—whether it's a simple social media graphic or a complete brand identity system.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                The best part? You can start small. Try us with a single project. See the quality. Experience the turnaround. Then scale up when you're ready. No long-term commitments, no minimums, no risk.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ==================== FAQ ==================== -->
       <section class="py-32 px-6">
-        <div class="max-w-3xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <p class="text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">FAQ</p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white">
-              Questions?
-            </h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-purple-400 text-sm font-medium tracking-widest uppercase mb-4">Frequently Asked Questions</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Everything you need to know</h2>
+            <p class="text-neutral-400 text-lg">Can't find what you're looking for? <a href="/contact" class="text-purple-400 hover:text-purple-300 underline">Contact us</a> and we'll get back to you within 24 hours.</p>
           </div>
-          <div class="fade-up">
+          <div class="fade-up mt-12">
             <FaqDark faqs={faqs} client:visible />
           </div>
         </div>
       </section>
 
       <!-- ==================== CTA ==================== -->
-      <section class="py-32 px-6 relative overflow-hidden">
-        <!-- Decorative gradient -->
-        <div class="absolute inset-0 bg-gradient-to-t from-purple-500/10 via-transparent to-transparent pointer-events-none"></div>
+      <section class="py-40 px-6 relative overflow-hidden">
+        <!-- Glow effect -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[120px]"></div>
+        </div>
 
         <div class="max-w-4xl mx-auto text-center relative">
           <div class="fade-up">
-            <p class="text-purple-400 text-sm font-medium tracking-widest uppercase mb-6">Ready?</p>
-            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Let's create<br/>
-              <span class="text-gradient">something great.</span>
+            <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[0.9]">
+              Let's create<br />
+              <span class="text-gradient-animate">something great.</span>
             </h2>
-            <p class="text-xl text-neutral-400 mb-10 max-w-xl mx-auto">
+            <p class="text-xl md:text-2xl text-neutral-400 mb-12 max-w-xl mx-auto">
               Send us a brief. Get a quote in 24 hours.
             </p>
-            <a href="/contact" class="btn-primary inline-block text-lg px-12 py-5">
-              <span>Start a Project</span>
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5 glow">
+              <span>Start a Project →</span>
             </a>
           </div>
         </div>
       </section>
-
     </div>
   </div>
 
   <!-- Scroll animations -->
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
 
-    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
   </script>
 </Layout>

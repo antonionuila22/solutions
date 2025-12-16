@@ -1,8 +1,7 @@
 ---
 /**
  * Development Outsourcing Services Page
- * Clean, premium design inspired by arounda.agency & zeedst.netlify.app
- * Principles: Minimal, dark, spacious, typography-focused
+ * Premium design with animated backgrounds, glass effects
  */
 
 import Layout from "../layouts/Layout.astro";
@@ -14,7 +13,7 @@ const title =
 const description =
   "White-label development partner for marketing agencies, design studios, and startups. Dedicated teams, staff augmentation, and project-based development.";
 const keywords =
-  "white label development, development partner for agencies, staff augmentation, dedicated development team, nearshore development";
+  "white label development, development partner for agencies, staff augmentation, dedicated development team, nearshore development, react development outsourcing, nodejs development partner";
 
 // Schema
 const serviceSchema = {
@@ -25,37 +24,57 @@ const serviceSchema = {
   description: description,
 };
 
-// FAQ Data
+// FAQ Data - Expanded for SEO
 const faqs = [
   {
-    question: "How does white-label partnership work?",
+    question: "How does white-label development partnership work?",
     answer:
-      "We work behind the scenes as your development team. NDA protection, branded deliverables, and we can join client calls under your brand. Your clients never know we exist.",
+      "White-label partnership means we work as an invisible extension of your team. We sign NDAs, use your branding on deliverables, and can join client calls representing your company. Your clients never know we exist. We integrate with your existing workflow—using your project management tools, communication channels, and processes. Think of us as your back-office development department.",
   },
   {
-    question: "What engagement models do you offer?",
+    question: "What technologies and frameworks do you specialize in?",
     answer:
-      "Three options: Dedicated Teams (full-time devs on retainer), Staff Augmentation (hourly/part-time), and Project-Based (fixed scope and price).",
+      "Our core expertise includes React, Next.js, Node.js, TypeScript, and modern CSS frameworks like Tailwind. We also work with Vue.js, Astro, PostgreSQL, MongoDB, Redis, and cloud platforms (AWS, Vercel, Netlify). For e-commerce, we specialize in Shopify (Liquid, Hydrogen) and headless commerce solutions. We adapt to your tech stack rather than forcing you to adapt to ours.",
   },
   {
-    question: "How fast can you start?",
+    question: "How fast can you start on a new project?",
     answer:
-      "Staff augmentation: 1-2 weeks. New projects: we begin after a brief discovery call. We're built for speed.",
+      "For staff augmentation, we can typically onboard developers within 1-2 weeks. For new projects, we can start immediately after a brief discovery call—usually within 2-3 business days. Rush projects can begin same-day with our Rush tier. We maintain bench capacity specifically to handle urgent client needs without delays.",
   },
   {
-    question: "What technologies do you work with?",
+    question: "What's your development process like?",
     answer:
-      "React, Next.js, Node.js, TypeScript, Astro, Tailwind, PostgreSQL, MongoDB, Shopify, and more. We adapt to your stack.",
-  },
-  {
-    question: "What about communication and timezone?",
-    answer:
-      "We work US timezone hours (CST). Daily standups, Slack/Teams integration, and transparent project tracking via your preferred tools.",
+      "We follow agile methodology with 1-2 week sprints depending on project needs. Each sprint includes planning, daily standups (async or sync based on your preference), code reviews, and demos. We use Git with pull requests, automated testing, and CI/CD pipelines. You get full visibility into progress through your preferred project management tool—Jira, Linear, Asana, or others.",
   },
   {
     question: "How does pricing work?",
     answer:
-      "Dedicated teams from $4,500/mo. Staff augmentation from $45/hr. Projects quoted individually. No hidden fees, transparent estimates.",
+      "We offer transparent hourly pricing: Standard at $45/hr (48h response time), Priority at $65/hr (24h response, dedicated developer, daily standups), and Rush at $95/hr (same-day start, emergency support). Volume discounts are available for 40+ hours monthly. No hidden fees, no surprise charges. You only pay for actual development time, and we provide detailed time tracking.",
+  },
+  {
+    question: "What about code quality and testing?",
+    answer:
+      "Code quality is non-negotiable. Every pull request goes through peer review before merging. We write unit tests for critical functionality and integration tests for APIs. Our code follows industry best practices—TypeScript for type safety, ESLint for consistency, and Prettier for formatting. You receive clean, documented, maintainable code that your team can easily work with.",
+  },
+  {
+    question: "How do you handle communication across timezones?",
+    answer:
+      "We work US timezone hours (Central Time) for maximum overlap with North American clients. Communication happens through Slack, Microsoft Teams, or your preferred platform. We offer daily async standups via Loom/written updates, or live standups if you prefer. Response time is guaranteed within 4 hours during business hours, or faster with Priority/Rush tiers.",
+  },
+  {
+    question: "Do you provide ongoing maintenance and support?",
+    answer:
+      "Yes, we offer ongoing maintenance packages for projects we build. This includes bug fixes, security updates, performance monitoring, and minor enhancements. For larger ongoing work, we recommend our Priority tier which includes a dedicated developer who learns your codebase deeply. We also provide documentation and knowledge transfer if you want to bring development in-house later.",
+  },
+  {
+    question: "What if we're not satisfied with the work?",
+    answer:
+      "Your satisfaction is guaranteed. If deliverables don't meet the agreed specifications, we'll revise until they do at no extra cost. We maintain a 98% client satisfaction rate by focusing on clear communication upfront and iterative delivery. For new clients, we recommend starting with a small pilot project to ensure we're a good fit before committing to larger engagements.",
+  },
+  {
+    question: "How do we get started?",
+    answer:
+      "Getting started is simple: book a free 30-minute discovery call where we discuss your needs, technical requirements, and timeline. Within 24 hours, you'll receive a proposal with team recommendations and pricing. Once approved, we handle onboarding—tool access, codebase familiarization, and workflow integration. Most clients are up and running within a week.",
   },
 ];
 
@@ -69,106 +88,126 @@ const faqSchema = {
   })),
 };
 
-// Data
-const stats = [
-  { value: "100+", label: "Projects Delivered" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "5+", label: "Years Experience" },
-  { value: "2 weeks", label: "Average Start Time" },
-];
-
-const clients = [
+// Comparison data for SEO
+const comparison = [
   {
-    name: "Marketing Agencies",
-    desc: "Landing pages, campaign sites, client projects",
-  },
-  { name: "Design Studios", desc: "Figma to code, pixel-perfect development" },
-  { name: "Software Companies", desc: "Scale your development capacity" },
-  { name: "Startups", desc: "MVP development, rapid prototyping" },
-  { name: "Consultancies", desc: "Technical implementation partner" },
-  { name: "E-commerce Brands", desc: "Shopify, custom platforms" },
-];
-
-const services = [
-  {
-    title: "Web Development",
-    items: [
-      "React & Next.js",
-      "Node.js APIs",
-      "E-commerce",
-      "Custom Platforms",
-      "Performance Optimization",
-    ],
+    aspect: "Cost",
+    inHouse: "High ($80-150k/year salary + benefits + equipment)",
+    freelancer: "Variable ($50-200/hr, inconsistent availability)",
+    outsourcing: "Predictable ($45-95/hr, no overhead costs)",
   },
   {
-    title: "UI/UX Design",
-    items: [
-      "Interface Design",
-      "Prototyping",
-      "Design Systems",
-      "User Research",
-      "Brand Identity",
-    ],
+    aspect: "Scalability",
+    inHouse: "Slow hiring process, expensive to scale down",
+    freelancer: "Limited to individual capacity",
+    outsourcing: "Scale up/down instantly based on project needs",
+  },
+  {
+    aspect: "Expertise",
+    inHouse: "Limited to hired skillset",
+    freelancer: "Single specialist, narrow focus",
+    outsourcing: "Full team with diverse skills and experience",
+  },
+  {
+    aspect: "Availability",
+    inHouse: "Business hours only, affected by PTO/sick days",
+    freelancer: "Often juggling multiple clients",
+    outsourcing: "Consistent capacity with backup coverage",
+  },
+  {
+    aspect: "Code Quality",
+    inHouse: "Single perspective, potential blind spots",
+    freelancer: "Varies greatly by individual",
+    outsourcing: "Team code reviews, consistent standards",
   },
 ];
 
-const process = [
+// Detailed process steps
+const processDetailed = [
   {
     num: "01",
     title: "Discovery Call",
-    desc: "30-min call to understand your needs and match the right team.",
+    desc: "30-minute call to understand your project requirements, technical needs, and timeline. We'll discuss your current challenges and how we can help.",
+    details: ["Project scope assessment", "Tech stack discussion", "Timeline planning", "Team sizing"],
   },
   {
     num: "02",
-    title: "Team Setup",
-    desc: "Onboarding, tool integration, and communication protocols.",
+    title: "Proposal & Match",
+    desc: "Within 24 hours, receive a detailed proposal with recommended team composition, pricing, and project approach tailored to your needs.",
+    details: ["Developer profiles", "Pricing breakdown", "Project milestones", "Risk assessment"],
   },
   {
     num: "03",
+    title: "Onboarding",
+    desc: "Quick setup process—tool access, codebase familiarization, workflow integration. We adapt to your processes, not the other way around.",
+    details: ["Tool integration", "Codebase review", "Process alignment", "Communication setup"],
+  },
+  {
+    num: "04",
     title: "Build & Deliver",
-    desc: "Agile sprints with continuous delivery and transparent updates.",
+    desc: "Agile development with continuous delivery. Regular updates, transparent progress tracking, and iterative releases you can review.",
+    details: ["Sprint planning", "Daily standups", "Code reviews", "Continuous deployment"],
   },
 ];
 
-const models = [
+// Stats
+const stats = [
+  { value: "100+", label: "Projects Delivered" },
+  { value: "24h", label: "Avg. Response Time" },
+  { value: "98%", label: "Client Satisfaction" },
+  { value: "5+", label: "Years Experience" },
+];
+
+// Who we work with
+const clients = [
+  { name: "Marketing Agencies", desc: "Landing pages, campaign sites, client projects", icon: "◆" },
+  { name: "Design Studios", desc: "Figma to code, pixel-perfect development", icon: "◐" },
+  { name: "SaaS Companies", desc: "Feature development, scaling teams", icon: "▲" },
+  { name: "Startups", desc: "MVP development, rapid prototyping", icon: "●" },
+  { name: "Consultancies", desc: "Technical implementation partner", icon: "■" },
+  { name: "E-commerce Brands", desc: "Shopify, headless commerce", icon: "✦" },
+];
+
+// Showcase
+const showcase = [
+  { title: "Web Applications", color: "from-cyan-500 to-blue-600" },
+  { title: "E-commerce Sites", color: "from-emerald-500 to-teal-600" },
+  { title: "Marketing Sites", color: "from-orange-500 to-amber-500" },
+  { title: "SaaS Platforms", color: "from-violet-500 to-purple-600" },
+];
+
+// Pricing
+const pricing = [
   {
-    title: "Dedicated Teams",
-    desc: "Full-time developers working exclusively on your projects.",
-    price: "From $4,500/mo",
-    features: [
-      "Dedicated resources",
-      "Long-term partnership",
-      "Full team integration",
-    ],
+    title: "Standard",
+    price: "$45",
+    period: "/hour",
+    desc: "Quality development work",
+    features: ["48h response time", "Code reviews included", "Source code ownership", "Email support"],
+    highlighted: false,
+  },
+  {
+    title: "Priority",
+    price: "$65",
+    period: "/hour",
+    desc: "Dedicated attention",
+    features: ["24h response time", "Dedicated developer", "Daily standups", "Slack/direct support", "Priority queue"],
     highlighted: true,
   },
   {
-    title: "Staff Augmentation",
-    desc: "Extend your team with our specialists on flexible hours.",
-    price: "From $45/hr",
-    features: ["Flexible hours", "Quick onboarding", "Skill gap coverage"],
-    highlighted: false,
-  },
-  {
-    title: "Project-Based",
-    desc: "Fixed scope, fixed price for defined deliverables.",
-    price: "Custom Quote",
-    features: ["Clear deliverables", "Fixed budget", "Milestone payments"],
+    title: "Rush",
+    price: "$95",
+    period: "/hour",
+    desc: "Urgent projects",
+    features: ["Same-day start", "12h turnaround", "Direct communication", "Weekend availability", "Emergency support"],
     highlighted: false,
   },
 ];
 
+// Technologies
 const technologies = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "TypeScript",
-  "Tailwind",
-  "PostgreSQL",
-  "Shopify",
-  "Figma",
-  "AWS",
-  "Vercel",
+  "React", "Next.js", "Node.js", "TypeScript", "Tailwind", "PostgreSQL",
+  "MongoDB", "Shopify", "AWS", "Vercel", "GraphQL", "REST APIs"
 ];
 ---
 
@@ -190,462 +229,691 @@ const technologies = [
   />
 
   <style>
-    /* Base */
     .page-bg {
-      background: #0a0a0b;
+      background: #030303;
     }
 
-    /* Gradient accent - subtle */
-    .gradient-bg {
+    /* Animated gradient orbs */
+    .gradient-orbs {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      background:
-        radial-gradient(
-          ellipse 80% 50% at 50% -20%,
-          rgba(34, 211, 238, 0.15),
-          transparent
-        ),
-        radial-gradient(
-          ellipse 60% 40% at 80% 60%,
-          rgba(168, 85, 247, 0.08),
-          transparent
-        );
+      inset: 0;
+      overflow: hidden;
       pointer-events: none;
       z-index: 0;
     }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: float 20s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 600px;
+      height: 600px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      top: -200px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      top: 50%;
+      right: -150px;
+      animation-delay: -7s;
+    }
+    .orb-3 {
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      bottom: -100px;
+      left: 30%;
+      animation-delay: -14s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* Noise texture */
+    .noise {
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1;
+    }
 
     /* Typography */
+    .text-display {
+      font-size: clamp(4rem, 18vw, 14rem);
+      line-height: 0.85;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+    }
     .text-gradient {
-      background: linear-gradient(135deg, #22d3ee, #a855f7);
+      background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #8b5cf6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .text-gradient-animate {
+      background: linear-gradient(135deg, #22d3ee, #3b82f6, #8b5cf6, #22d3ee);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-shift 8s ease infinite;
+    }
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
 
-    /* Cards */
-    .card {
+    /* Glass card */
+    .glass {
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 16px;
-      transition: all 0.3s ease;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
     }
-    .card:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
+    .glass-hover {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    .card-highlight {
-      background: rgba(34, 211, 238, 0.05);
-      border: 1px solid rgba(34, 211, 238, 0.2);
-    }
-    .card-highlight:hover {
-      border-color: rgba(34, 211, 238, 0.4);
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background: #22d3ee;
-      color: #0a0a0b;
-      font-weight: 600;
-      padding: 1rem 2rem;
-      border-radius: 9999px;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      background: #06b6d4;
-      transform: translateY(-2px);
+    .glass-hover:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-8px);
+      box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
+    /* Bento grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+    }
+    .bento-grid .col-span-7 { grid-column: span 7; }
+    .bento-grid .col-span-5 { grid-column: span 5; }
+    @media (min-width: 1024px) {
+      .bento-grid { gap: 1.5rem; }
+    }
+    @media (max-width: 768px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-grid > * { grid-column: span 1 !important; }
+    }
+
+    /* Showcase cards */
+    .showcase-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 300px;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @media (min-width: 769px) { .showcase-card { min-height: 340px; } }
+    @media (min-width: 1024px) { .showcase-card { min-height: 400px; } }
+    @media (max-width: 768px) { .showcase-card { aspect-ratio: 4/3; min-height: auto; } }
+
+    .showcase-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+      opacity: 0.8;
+      transition: opacity 0.4s;
+    }
+    .showcase-card:hover {
+      transform: scale(1.03) translateY(-8px);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    }
+    .showcase-card:hover::after { opacity: 1; }
+    .showcase-card .card-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+    .showcase-card .card-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 100px;
+      font-size: 0.75rem;
       font-weight: 500;
-      padding: 1rem 2rem;
-      border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-    .btn-secondary:hover {
-      border-color: rgba(255, 255, 255, 0.4);
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    /* Animations */
-    .fade-in {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      width: fit-content;
       opacity: 0;
-      transform: translateY(30px);
-      transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+      transform: translateY(10px);
+      transition: all 0.4s ease 0.1s;
     }
-    .fade-in.visible {
+    .showcase-card:hover .card-tag {
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Divider */
-    .divider {
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-      );
+    .showcase-card .card-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      transform: translateY(10px);
+      transition: transform 0.4s ease;
     }
+    .showcase-card:hover .card-title { transform: translateY(0); }
+
+    /* Service icon */
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      color: #22d3ee;
+      transition: all 0.4s ease;
+    }
+    .glass-hover:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(59, 130, 246, 0.3));
+    }
+
+    /* Premium buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      color: #fff;
+      font-weight: 600;
+      padding: 1.25rem 3rem;
+      border-radius: 100px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px -3px rgba(6, 182, 212, 0.4);
+    }
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #22d3ee, #60a5fa);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.5);
+    }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-ghost {
+      color: #fff;
+      font-weight: 500;
+      padding: 1.25rem 3rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(6, 182, 212, 0.5);
+      background: rgba(6, 182, 212, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Marquee */
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      mask-image: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
+    }
+    .marquee-content {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 25s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.15s; }
+    .delay-2 { transition-delay: 0.3s; }
+    .delay-3 { transition-delay: 0.45s; }
+    .delay-4 { transition-delay: 0.6s; }
+    .delay-5 { transition-delay: 0.75s; }
+
+    /* Stats */
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .stat-number {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    /* Pricing card */
+    .pricing-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card.featured {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+    .pricing-card.featured::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+    }
+
+    /* Tech pill */
+    .tech-pill {
+      padding: 0.625rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+    .tech-pill:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      color: #22d3ee;
+      background: rgba(6, 182, 212, 0.1);
+    }
+
+    /* Glow effect */
+    .glow {
+      position: relative;
+    }
+    .glow::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      filter: blur(15px);
+      transition: opacity 0.4s;
+    }
+    .glow:hover::before { opacity: 0.5; }
   </style>
 
-  <div class="page-bg min-h-screen relative text-white">
-    <!-- Subtle gradient background -->
-    <div class="gradient-bg"></div>
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <!-- Animated background -->
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="noise"></div>
 
-    <!-- Content -->
     <div class="relative z-10">
       <!-- ==================== HERO ==================== -->
-      <section class="min-h-screen flex items-center justify-center px-6">
-        <div class="max-w-5xl mx-auto text-center">
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
           <!-- Badge -->
-          <div
-            class="fade-in inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 mb-8"
-          >
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            <span class="text-cyan-400 text-sm font-medium tracking-wide"
-              >Development Partner</span
-            >
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-cyan-500/20">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span class="text-cyan-300 text-sm font-medium tracking-wide">Development Partner for Agencies</span>
+            </span>
           </div>
 
-          <!-- Headline -->
-          <h1
-            class="fade-in text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8"
-          >
-            Your Extended<br />
-            <span class="text-gradient">Dev Team</span>
+          <!-- Display headline -->
+          <h1 class="text-display mb-6">
+            <span class="fade-up delay-1 block text-white">Your Dev</span>
+            <span class="fade-up delay-2 block text-gradient-animate">Team</span>
           </h1>
 
           <!-- Subtitle -->
-          <p
-            class="fade-in text-xl md:text-2xl text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed"
-          >
-            White-label development for agencies and startups.<br
-              class="hidden md:block"
-            />
+          <p class="fade-up delay-3 text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            White-label development for agencies and startups.<br class="hidden md:block" />
             Senior talent. Transparent pricing. Fast delivery.
           </p>
 
           <!-- CTAs -->
-          <div
-            class="fade-in flex flex-col sm:flex-row gap-4 justify-center mb-20"
-          >
-            <a href="/contact" class="btn-primary">Start a Project</a>
-            <a href="#services" class="btn-secondary">Learn More</a>
+          <div class="fade-up delay-4 flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary glow"><span>Start Building →</span></a>
+            <a href="#work" class="btn-ghost">View Our Work</a>
           </div>
 
           <!-- Stats -->
-          <div class="fade-in grid grid-cols-2 md:grid-cols-4 gap-6">
-            {
-              stats.map((stat) => (
-                <div class="text-center">
-                  <div class="text-3xl md:text-4xl font-bold text-white mb-1">
-                    {stat.value}
-                  </div>
-                  <div class="text-neutral-500 text-sm">{stat.label}</div>
-                </div>
-              ))
-            }
+          <div class="fade-up delay-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {stats.map((stat) => (
+              <div class="stat-card glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <!-- Divider -->
-      <div class="divider mx-6"></div>
+      <!-- Marquee -->
+      <div class="py-8 border-y border-white/5">
+        <div class="marquee">
+          <div class="marquee-content">
+            {[...Array(2)].map(() => (
+              <>
+                {technologies.map((tech, i) => (
+                  <>
+                    <span class="text-2xl font-bold text-white/10 whitespace-nowrap">{tech}</span>
+                    <span class={`${i % 3 === 0 ? 'text-cyan-500' : i % 3 === 1 ? 'text-blue-500' : 'text-violet-500'}`}>◆</span>
+                  </>
+                ))}
+              </>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== WORK SHOWCASE ==================== -->
+      <section id="work" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <p class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">What We Build</p>
+              <h2 class="text-4xl md:text-6xl font-bold text-white">
+                Code that<br />
+                <span class="text-gradient">scales.</span>
+              </h2>
+            </div>
+            <p class="text-neutral-400 max-w-sm">
+              From MVPs to enterprise platforms — development that drives growth.
+            </p>
+          </div>
+
+          <!-- Bento showcase -->
+          <div class="bento-grid">
+            {[
+              { ...showcase[0], span: "col-span-7", tag: "Applications" },
+              { ...showcase[1], span: "col-span-5", tag: "Commerce" },
+              { ...showcase[2], span: "col-span-5", tag: "Marketing" },
+              { ...showcase[3], span: "col-span-7", tag: "SaaS" },
+            ].map((item, i) => (
+              <div
+                class={`fade-up ${item.span} showcase-card`}
+                style={`transition-delay: ${0.1 + i * 0.1}s`}
+              >
+                <div class={`absolute inset-0 bg-gradient-to-br ${item.color}`}></div>
+                <div class="card-content">
+                  <span class="card-tag text-white">{item.tag}</span>
+                  <span class="card-title text-white">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <!-- ==================== WHO WE WORK WITH ==================== -->
       <section class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-in text-center mb-20">
-            <p
-              class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4"
-            >
-              Who We Work With
-            </p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white">
-              Built for your business
-            </h2>
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Who We Work With</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Built for your business</h2>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {
-              clients.map((client) => (
-                <div class="fade-in card p-8">
-                  <h3 class="text-xl font-semibold text-white mb-2">
-                    {client.name}
-                  </h3>
-                  <p class="text-neutral-400">{client.desc}</p>
-                </div>
-              ))
-            }
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {clients.map((client, i) => (
+              <div
+                class="fade-up glass glass-hover p-8"
+                style={`transition-delay: ${i * 0.08}s`}
+              >
+                <div class="service-icon mb-6">{client.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{client.name}</h3>
+                <p class="text-neutral-400 leading-relaxed">{client.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <!-- ==================== ENGAGEMENT MODELS ==================== -->
-      <section class="py-32 px-6 bg-white/[0.02]">
+      <!-- ==================== HOW IT WORKS ==================== -->
+      <section class="py-32 px-6 overflow-hidden">
         <div class="max-w-6xl mx-auto">
-          <div class="fade-in text-center mb-20">
-            <p
-              class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4"
-            >
-              Engagement Models
-            </p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-              Flexible options
-            </h2>
-            <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
-              Choose the model that fits your needs. Scale up, down, or engage
-              per-project.
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">How It Works</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">From call to code</h2>
+            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+              Our streamlined process gets you from first contact to working code fast. Here's exactly what to expect.
             </p>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-8">
-            {
-              models.map((model) => (
-                <div
-                  class={`fade-in ${model.highlighted ? "card-highlight" : "card"} p-8 flex flex-col`}
-                >
-                  {model.highlighted && (
-                    <span class="text-xs font-medium text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full self-start mb-6">
-                      Most Popular
-                    </span>
-                  )}
-                  <h3 class="text-2xl font-bold text-white mb-3">
-                    {model.title}
-                  </h3>
-                  <p class="text-neutral-400 mb-6 flex-grow">{model.desc}</p>
-
-                  <ul class="space-y-3 mb-8">
-                    {model.features.map((feature) => (
-                      <li class="flex items-center gap-3 text-neutral-300">
-                        <svg
-                          class="w-5 h-5 text-cyan-400 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div class="pt-6 border-t border-white/10">
-                    <p class="text-2xl font-bold text-white mb-4">
-                      {model.price}
-                    </p>
-                    <a
-                      href="/contact"
-                      class={
-                        model.highlighted
-                          ? "btn-primary block text-center"
-                          : "btn-secondary block text-center"
-                      }
-                    >
-                      Get Started
-                    </a>
+          <div class="grid md:grid-cols-2 gap-6 mt-16">
+            {processDetailed.map((step, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.1}s`}>
+                <div class="flex items-start gap-6">
+                  <div class="w-14 h-14 flex-shrink-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-300 font-bold">
+                    {step.num}
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
+                    <p class="text-neutral-400 mb-4 leading-relaxed">{step.desc}</p>
+                    <ul class="grid grid-cols-2 gap-2">
+                      {step.details.map((detail) => (
+                        <li class="flex items-center gap-2 text-sm text-neutral-500">
+                          <span class="w-1 h-1 rounded-full bg-cyan-400"></span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              ))
-            }
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <!-- ==================== SERVICES ==================== -->
-      <section id="services" class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-in mb-20">
-            <p
-              class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4"
-            >
-              Services
-            </p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white">
-              What we build
-            </h2>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8 mb-20">
-            {
-              services.map((service) => (
-                <div class="fade-in card p-10">
-                  <h3 class="text-2xl font-bold text-white mb-8">
-                    {service.title}
-                  </h3>
-                  <ul class="space-y-4">
-                    {service.items.map((item) => (
-                      <li class="flex items-center gap-4 text-lg text-neutral-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))
-            }
-          </div>
-
-          <!-- Technologies -->
-          <div class="fade-in">
-            <p
-              class="text-neutral-600 text-sm uppercase tracking-widest mb-6 text-center"
-            >
-              Technologies
-            </p>
-            <div class="flex flex-wrap justify-center gap-3">
-              {
-                technologies.map((tech) => (
-                  <span class="px-5 py-2.5 rounded-full text-neutral-400 text-sm border border-white/10 hover:border-white/20 transition-colors">
-                    {tech}
-                  </span>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== PROCESS ==================== -->
-      <section class="py-32 px-6 bg-white/[0.02]">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-in text-center mb-20">
-            <p
-              class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4"
-            >
-              Process
-            </p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-              How we work
-            </h2>
-            <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
-              Simple, transparent, fast. From first call to first delivery in
-              weeks.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8">
-            {
-              process.map((step, i) => (
-                <div class="fade-in relative">
-                  <div class="card p-8">
-                    <span class="text-6xl font-bold text-white/5 absolute top-4 right-6">
-                      {step.num}
-                    </span>
-                    <div class="relative">
-                      <h3 class="text-xl font-semibold text-white mb-3">
-                        {step.title}
-                      </h3>
-                      <p class="text-neutral-400">{step.desc}</p>
-                    </div>
-                  </div>
-                  {i < 2 && (
-                    <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-px bg-white/10" />
-                  )}
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== WHY US ==================== -->
+      <!-- ==================== COMPARISON ==================== -->
       <section class="py-32 px-6">
         <div class="max-w-6xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-16 items-center">
-            <!-- Left -->
-            <div class="fade-in">
-              <p
-                class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4"
-              >
-                Why Codebrand
-              </p>
-              <h2
-                class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
-              >
-                Not just vendors.<br />
-                <span class="text-gradient">Partners.</span>
-              </h2>
-              <p class="text-lg text-neutral-400 mb-8">
-                We invest in your success. We understand your business. We
-                deliver work we're proud of.
-              </p>
-              <a href="/contact" class="btn-primary inline-block">Let's Talk</a>
-            </div>
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Compare Options</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Why outsource development?</h2>
+            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+              Compare the real costs and benefits of hiring in-house, working with freelancers, or partnering with a dedicated development team.
+            </p>
+          </div>
 
-            <!-- Right -->
-            <div class="grid grid-cols-2 gap-4">
-              {
-                [
-                  { title: "Senior Talent", desc: "5+ years avg. experience" },
-                  { title: "US Timezone", desc: "Real-time collaboration" },
-                  { title: "Transparent", desc: "No hidden fees" },
-                  { title: "Quality First", desc: "Code reviews on all PRs" },
-                ].map((item) => (
-                  <div class="fade-in card p-6">
-                    <h3 class="text-white font-semibold mb-1">{item.title}</h3>
-                    <p class="text-neutral-500 text-sm">{item.desc}</p>
-                  </div>
-                ))
-              }
+          <!-- Comparison Table -->
+          <div class="fade-up mt-16 overflow-x-auto">
+            <table class="w-full min-w-[700px]">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-4 px-4 text-neutral-500 font-medium">Aspect</th>
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">In-House Developer</th>
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Freelancers</th>
+                  <th class="text-left py-4 px-4 text-cyan-400 font-semibold">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                      Dev Outsourcing
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row) => (
+                  <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                    <td class="py-5 px-4 text-white font-medium">{row.aspect}</td>
+                    <td class="py-5 px-4 text-neutral-500 text-sm">{row.inHouse}</td>
+                    <td class="py-5 px-4 text-neutral-500 text-sm">{row.freelancer}</td>
+                    <td class="py-5 px-4 text-neutral-300 text-sm font-medium">{row.outsourcing}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Summary boxes -->
+          <div class="grid md:grid-cols-3 gap-5 mt-12">
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.1s">
+              <div class="text-3xl font-bold text-gradient mb-2">60%</div>
+              <p class="text-neutral-400 text-sm">Average cost savings vs in-house developer</p>
+            </div>
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.2s">
+              <div class="text-3xl font-bold text-white mb-2">2 weeks</div>
+              <p class="text-neutral-400 text-sm">Average time to start vs months for hiring</p>
+            </div>
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.3s">
+              <div class="text-3xl font-bold text-white mb-2">∞</div>
+              <p class="text-neutral-400 text-sm">Scalability—add or reduce capacity instantly</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PRICING ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Pricing</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Simple, transparent</h2>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5">
+            {pricing.map((plan, i) => (
+              <div
+                class={`fade-up glass glass-hover pricing-card p-8 ${plan.highlighted ? "featured" : ""}`}
+                style={`transition-delay: ${i * 0.12}s`}
+              >
+                {plan.highlighted && (
+                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-500/20 px-3 py-1.5 rounded-full mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                    Most Popular
+                  </span>
+                )}
+                <h3 class="text-2xl font-bold text-white mb-2">{plan.title}</h3>
+                <p class="text-neutral-400 mb-6">{plan.desc}</p>
+                <div class="mb-8">
+                  <span class="text-5xl font-bold text-white">{plan.price}</span>
+                  <span class="text-neutral-400 text-lg">{plan.period}</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                  {plan.features.map((feature) => (
+                    <li class="flex items-center gap-3 text-neutral-300">
+                      <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/contact"
+                  class={plan.highlighted ? "btn-primary w-full text-center block" : "btn-ghost w-full text-center block"}
+                >
+                  <span>Get Started</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TECHNOLOGIES ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Tech Stack</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Technologies we master</h2>
+            <p class="text-neutral-400 text-lg">We adapt to your stack, not the other way around.</p>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {technologies.map((tech) => (
+              <span class="tech-pill">{tech}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== WHY CHOOSE US ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Why Codebrand</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Your development team, without the overhead</h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Hiring developers is expensive and time-consuming. Between recruiting, interviewing, onboarding, and managing—building an in-house development team can take months and cost significantly more than the salary alone. Benefits, equipment, software licenses, office space, and management overhead add up quickly.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                As your white-label development partner, we become an invisible extension of your team. We learn your codebase, understand your quality standards, and deliver work that integrates seamlessly with your existing systems. Your clients never know we exist—they just see great work delivered on time.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Our developers have shipped code for Fortune 500 companies, Y Combinator startups, and established agencies. We bring that experience to every project—whether it's a simple landing page or a complex web application. Every line of code goes through peer review, ensuring consistent quality.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                The best part? You can start with a single project to test the waters. See our code quality. Experience our communication. Then scale up when you're ready. No long-term contracts, no minimums, no risk. Just great development work when you need it.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ==================== FAQ ==================== -->
-      <section class="py-32 px-6 bg-white/[0.02]">
-        <div class="max-w-3xl mx-auto">
-          <div class="fade-in text-center mb-16">
-            <p
-              class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4"
-            >
-              FAQ
-            </p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white">
-              Common questions
-            </h2>
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Frequently Asked Questions</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Everything you need to know</h2>
+            <p class="text-neutral-400 text-lg">Can't find what you're looking for? <a href="/contact" class="text-cyan-400 hover:text-cyan-300 underline">Contact us</a> and we'll get back to you within 24 hours.</p>
           </div>
-          <div class="fade-in">
+          <div class="fade-up mt-12">
             <FaqDark faqs={faqs} client:visible />
           </div>
         </div>
       </section>
 
       <!-- ==================== CTA ==================== -->
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-          <div class="fade-in">
-            <h2
-              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
-            >
-              Ready to scale<br />
-              <span class="text-gradient">your team?</span>
+      <section class="py-40 px-6 relative overflow-hidden">
+        <!-- Glow effect -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[0.9]">
+              Let's build<br />
+              <span class="text-gradient-animate">something great.</span>
             </h2>
-            <p class="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto">
-              Free consultation. No commitment. Let's discuss how we can help.
+            <p class="text-xl md:text-2xl text-neutral-400 mb-12 max-w-xl mx-auto">
+              Free 30-min consultation. No commitment required.
             </p>
-            <a
-              href="/contact"
-              class="btn-primary inline-block text-lg px-10 py-4"
-            >
-              Get in Touch
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5 glow">
+              <span>Book a Call →</span>
             </a>
           </div>
         </div>
@@ -653,23 +921,19 @@ const technologies = [
     </div>
   </div>
 
-  <!-- Simple scroll animations -->
+  <!-- Scroll animations -->
   <script>
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll(".fade-in").forEach((el) => {
-      observer.observe(el);
-    });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
   </script>
 </Layout>
