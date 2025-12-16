@@ -106,8 +106,11 @@ const totalReadTime = posts.reduce(
                 <>
                   <img
                     src={featuredPost.data.img}
-                    alt={featuredPost.data.imageAlt}
+                    alt={featuredPost.data.imageAlt || featuredPost.data.title}
                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div class="absolute top-6 left-6">
@@ -227,6 +230,8 @@ const totalReadTime = posts.reduce(
                         src={img}
                         alt={imageAlt || title}
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>

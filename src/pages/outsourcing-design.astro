@@ -730,7 +730,7 @@ const showcase = [
                     <p class="text-neutral-400 mb-4 leading-relaxed">{step.desc}</p>
                     <ul class="grid grid-cols-2 gap-2">
                       {step.details.map((detail) => (
-                        <li class="flex items-center gap-2 text-sm text-neutral-500">
+                        <li class="flex items-center gap-2 text-sm text-neutral-400">
                           <span class="w-1 h-1 rounded-full bg-purple-400"></span>
                           {detail}
                         </li>
@@ -762,7 +762,7 @@ const showcase = [
             <table class="w-full min-w-[700px]">
               <thead>
                 <tr class="border-b border-white/10">
-                  <th class="text-left py-4 px-4 text-neutral-500 font-medium">Aspect</th>
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Aspect</th>
                   <th class="text-left py-4 px-4 text-neutral-400 font-medium">In-House Designer</th>
                   <th class="text-left py-4 px-4 text-neutral-400 font-medium">Freelancers</th>
                   <th class="text-left py-4 px-4 text-purple-400 font-semibold">
@@ -777,8 +777,8 @@ const showcase = [
                 {comparison.map((row, i) => (
                   <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                     <td class="py-5 px-4 text-white font-medium">{row.aspect}</td>
-                    <td class="py-5 px-4 text-neutral-500 text-sm">{row.inHouse}</td>
-                    <td class="py-5 px-4 text-neutral-500 text-sm">{row.freelancer}</td>
+                    <td class="py-5 px-4 text-neutral-400 text-sm">{row.inHouse}</td>
+                    <td class="py-5 px-4 text-neutral-400 text-sm">{row.freelancer}</td>
                     <td class="py-5 px-4 text-neutral-300 text-sm font-medium">{row.outsourcing}</td>
                   </tr>
                 ))}
