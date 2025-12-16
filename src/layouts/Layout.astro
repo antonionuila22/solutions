@@ -500,21 +500,29 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta name="format-detection" content="telephone=no" />
     <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
 
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TJCP2CWN');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9"></script>
+    <!-- Google Tag Manager + Analytics (carga diferida) -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T9HKBF45M9');
+
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          // GTM
+          (function(w,d,s,l,i){w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TJCP2CWN');
+
+          // GA4
+          var ga = document.createElement('script');
+          ga.async = true;
+          ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9';
+          document.head.appendChild(ga);
+          gtag('js', new Date());
+          gtag('config', 'G-T9HKBF45M9');
+        }, 1500);
+      });
     </script>
 
     <ClientRouter />
