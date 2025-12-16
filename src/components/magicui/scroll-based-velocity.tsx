@@ -51,25 +51,41 @@ function ParallaxText({
   const textRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    let rafId: number;
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+
     const calculateRepetitions = () => {
-      if (containerRef.current && textRef.current) {
-        const containerWidth = containerRef.current.offsetWidth;
-        const textWidth = textRef.current.offsetWidth;
-        const newRepetitions = Math.ceil(containerWidth / textWidth) + 2;
-        setRepetitions(newRepetitions);
-      }
+      // Use requestAnimationFrame to batch DOM reads and avoid forced reflows
+      rafId = requestAnimationFrame(() => {
+        if (containerRef.current && textRef.current) {
+          const containerWidth = containerRef.current.offsetWidth;
+          const textWidth = textRef.current.offsetWidth;
+          const newRepetitions = Math.ceil(containerWidth / textWidth) + 2;
+          setRepetitions(newRepetitions);
+        }
+      });
     };
 
     calculateRepetitions();
 
-    window.addEventListener("resize", calculateRepetitions);
-    return () => window.removeEventListener("resize", calculateRepetitions);
+    // Debounce resize handler to avoid excessive reflows
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(calculateRepetitions, 100);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (rafId) cancelAnimationFrame(rafId);
+      clearTimeout(resizeTimeout);
+    };
   }, [children]);
 
   const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
 
   const directionFactor = React.useRef<number>(1);
-  useAnimationFrame((t, delta) => {
+  useAnimationFrame((_t, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
     if (velocityFactor.get() < 0) {

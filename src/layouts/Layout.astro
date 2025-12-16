@@ -496,11 +496,20 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       }
     </script>
 
-    <!-- Google Analytics - Deferred for Core Web Vitals -->
+    <!-- Google Analytics & GTM - Deferred using requestIdleCallback for Core Web Vitals -->
     <script is:inline>
-      // Load GA after page load for better LCP/FID
+      // Helper function to schedule with requestIdleCallback or fallback
+      function scheduleWhenIdle(callback, timeout) {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(callback, { timeout: timeout || 3000 });
+        } else {
+          setTimeout(callback, timeout || 1000);
+        }
+      }
+
+      // Load GA after page is interactive
       window.addEventListener("load", function () {
-        setTimeout(function () {
+        scheduleWhenIdle(function () {
           var script = document.createElement("script");
           script.src =
             "https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9";
@@ -515,14 +524,12 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
             gtag("js", new Date());
             gtag("config", "G-T9HKBF45M9", { send_page_view: true });
           };
-        }, 100);
+        }, 2000);
       });
-    </script>
 
-    <!-- Google Tag Manager - Deferred for Core Web Vitals -->
-    <script is:inline>
+      // Load GTM after page is interactive
       window.addEventListener("load", function () {
-        setTimeout(function () {
+        scheduleWhenIdle(function () {
           (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -533,7 +540,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
             j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
             f.parentNode.insertBefore(j, f);
           })(window, document, "script", "dataLayer", "GTM-TJCP2CWN");
-        }, 150);
+        }, 2500);
       });
     </script>
     <!-- End Google Tag Manager -->

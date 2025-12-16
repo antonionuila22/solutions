@@ -61,12 +61,12 @@ export default function BannerSecond({
           >
             {subtitle}
           </span>
-          <h1
+          <h2
             id="gsap-title"
             className="text-white text-4xl sm:text-5xl font-bold leading-tight opacity-0"
           >
             {title}
-          </h1>
+          </h2>
           <p
             id="gsap-desc"
             className="text-white text-md sm:text-md max-w-xl mx-auto lg:mx-0 opacity-0"
@@ -92,6 +92,8 @@ export default function BannerSecond({
             src={imgUrl}
             alt="Hero Visual"
             id="gsap-image"
+            width="512"
+            height="512"
             className="w-full max-w-md sm:max-w-lg rounded-3xl shadow-2xl object-cover opacity-0"
           />
 
