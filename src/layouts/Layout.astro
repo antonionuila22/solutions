@@ -496,55 +496,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       }
     </script>
 
-    <!-- Google Analytics & GTM - Deferred using requestIdleCallback for Core Web Vitals -->
-    <script is:inline>
-      // Helper function to schedule with requestIdleCallback or fallback
-      function scheduleWhenIdle(callback, timeout) {
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(callback, { timeout: timeout || 3000 });
-        } else {
-          setTimeout(callback, timeout || 1000);
-        }
-      }
-
-      // Load GA after page is interactive
-      window.addEventListener("load", function () {
-        scheduleWhenIdle(function () {
-          var script = document.createElement("script");
-          script.src =
-            "https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9";
-          script.async = true;
-          document.head.appendChild(script);
-
-          script.onload = function () {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "G-T9HKBF45M9", { send_page_view: true });
-          };
-        }, 2000);
-      });
-
-      // Load GTM after page is interactive
-      window.addEventListener("load", function () {
-        scheduleWhenIdle(function () {
-          (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-            var f = d.getElementsByTagName(s)[0],
-              j = d.createElement(s),
-              dl = l != "dataLayer" ? "&l=" + l : "";
-            j.async = true;
-            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-            f.parentNode.insertBefore(j, f);
-          })(window, document, "script", "dataLayer", "GTM-TJCP2CWN");
-        }, 2500);
-      });
-    </script>
-    <!-- End Google Tag Manager -->
-
     <!-- Performance Hints -->
     <meta name="format-detection" content="telephone=no" />
     <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
@@ -552,22 +503,12 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <ClientRouter />
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-TJCP2CWN"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
-    >
-    <!-- End Google Tag Manager (noscript) -->
     <Navbar />
     <main>
       <slot />
     </main>
     <Footer />
     <WhatsAppWidget />
-    <!-- Ahrefs Analytics - Deferred loading for performance -->
 
     <script is:inline>
       window.addEventListener("load", function () {
