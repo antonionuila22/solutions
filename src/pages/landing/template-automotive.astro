@@ -553,7 +553,12 @@ const pageImage = "/photos/bannercodebrand.webp";
         </div>
 
         <div class="bg-zinc-900 border-4 border-zinc-800 p-8 lg:p-12">
-          <form method="POST" action="/api/contact" class="space-y-6">
+          <form
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="honey"
+            class="space-y-6"
+          >
             <input type="hidden" name="form-name" value="automotive-template" />
             <input
               type="text"
@@ -651,7 +656,10 @@ const pageImage = "/photos/bannercodebrand.webp";
                 placeholder="Tell us what you're looking for..."></textarea>
             </div>
 
-            <button type="button" type="button" type="button"
+            <button
+              type="button"
+              type="button"
+              type="button"
               type="submit"
               class="w-full py-5 bg-gradient-to-r from-red-600 to-red-700 text-white text-xl font-black uppercase skew-x-[-5deg] hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-xl hover:scale-[1.02]"
             >

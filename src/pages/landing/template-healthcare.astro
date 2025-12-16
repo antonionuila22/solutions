@@ -2,7 +2,8 @@
 import LandingLayout from "../../layouts/LandingLayout.astro";
 import Logo from "../../components/logo.astro";
 
-const pageTitle = "PrimeCare Medical Center | Compassionate Healthcare in Boston";
+const pageTitle =
+  "PrimeCare Medical Center | Compassionate Healthcare in Boston";
 const pageDescription =
   "Comprehensive primary care and specialty services in Boston. Board-certified physicians, same-day appointments, and patient-centered care.";
 const pageKeywords =
@@ -72,12 +73,16 @@ const pageImage = "/photos/bannercodebrand.webp";
             >
               Your Health, <span class="text-blue-600">Our Priority</span>
             </h1>
-            <p class="text-xl text-gray-600 leading-relaxed animate-fade-in-delay">
+            <p
+              class="text-xl text-gray-600 leading-relaxed animate-fade-in-delay"
+            >
               Comprehensive medical care from board-certified physicians.
-              Serving Boston families with compassion and excellence for over
-              20 years.
+              Serving Boston families with compassion and excellence for over 20
+              years.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2">
+            <div
+              class="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2"
+            >
               <a
                 href="#contact"
                 class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl"
@@ -328,8 +333,7 @@ const pageImage = "/photos/bannercodebrand.webp";
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Urgent Care</h3>
@@ -444,9 +448,7 @@ const pageImage = "/photos/bannercodebrand.webp";
                 ></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
-              Mental Health
-            </h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Mental Health</h3>
             <p class="text-gray-600 leading-relaxed mb-4">
               Behavioral health services including counseling, therapy, and
               psychiatric care.
@@ -569,9 +571,7 @@ const pageImage = "/photos/bannercodebrand.webp";
               <h3 class="text-xl font-bold text-gray-900 mb-1">
                 Dr. Sarah Johnson, MD
               </h3>
-              <p class="text-blue-600 font-semibold mb-3">
-                Internal Medicine
-              </p>
+              <p class="text-blue-600 font-semibold mb-3">Internal Medicine</p>
               <p class="text-gray-600 text-sm mb-4">
                 Harvard Medical School • 15 years experience
               </p>
@@ -673,8 +673,9 @@ const pageImage = "/photos/bannercodebrand.webp";
               <div
                 class="p-4 bg-gray-50 rounded-lg border border-gray-200 text-center"
               >
-                <p class="font-semibold text-gray-900">Blue Cross Blue Shield</p
-                >
+                <p class="font-semibold text-gray-900">
+                  Blue Cross Blue Shield
+                </p>
               </div>
               <div
                 class="p-4 bg-gray-50 rounded-lg border border-gray-200 text-center"
@@ -822,7 +823,12 @@ const pageImage = "/photos/bannercodebrand.webp";
               hours to confirm your appointment.
             </p>
 
-            <form method="POST" action="/api/contact" class="space-y-6">
+            <form
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="honey"
+              class="space-y-6"
+            >
               <input
                 type="hidden"
                 name="form-name"
@@ -939,7 +945,9 @@ const pageImage = "/photos/bannercodebrand.webp";
                 ></textarea>
               </div>
 
-              <button type="button" type="button"
+              <button
+                type="button"
+                type="button"
                 type="submit"
                 class="w-full py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl text-lg"
               >

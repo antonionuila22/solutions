@@ -739,14 +739,10 @@ const process = [
         <form
           name="contact-business-starter"
           method="POST"
-          action="/api/contact"
+          data-netlify="true"
+          netlify-honeypot="honey"
           class="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          <input
-            type="hidden"
-            name="form-name"
-            value="contact-business-starter"
-          />
           <input
             type="hidden"
             name="service"

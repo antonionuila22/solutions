@@ -19,9 +19,10 @@ const pageImage = "/photos/Restaurantdolcevita.webp";
   <script>
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener("click", function (this: HTMLElement, e: Event) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
+        const href = this.getAttribute("href");
+        const target = href ? document.querySelector(href) : null;
         if (target) {
           target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -756,9 +757,17 @@ const pageImage = "/photos/Restaurantdolcevita.webp";
   <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6">
-          <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
+        >
+          <svg
+            class="w-4 h-4 text-cyan-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+            ></path>
           </svg>
           <span class="text-sm font-medium text-cyan-400">Google Reviews</span>
         </span>
@@ -892,7 +901,7 @@ const pageImage = "/photos/Restaurantdolcevita.webp";
           <!-- Honeypot field -->
           <input type="text" name="_gotcha" style="display:none" />
 
-          <button type="button" type="button"
+          <button
             type="submit"
             class="w-full bg-white text-amber-600 font-bold text-lg py-4 px-8 rounded-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
           >

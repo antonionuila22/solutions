@@ -533,7 +533,7 @@ export function createLocalBusinessSchema(
       ],
     },
     sameAs: [
-      "https://hn.https://hn.linkedin.com/company/codebrand-es-es",
+      "https://www.linkedin.com/company/codebrand-es",
       "https://x.com/Codebrand_es",
       "https://www.facebook.com/codebrand",
     ],

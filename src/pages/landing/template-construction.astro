@@ -501,12 +501,7 @@ const pageImage = "/photos/bannercodebrand.webp";
         </div>
 
         <div class="bg-zinc-900 border-4 border-zinc-800 p-8 lg:p-12">
-          <form method="POST" action="/api/contact" class="space-y-6">
-            <input
-              type="hidden"
-              name="form-name"
-              value="construction-template"
-            />
+          <form name="construction-template" method="POST" data-netlify="true" netlify-honeypot="honey" class="space-y-6">
             <input
               type="text"
               name="honey"
