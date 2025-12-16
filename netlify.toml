@@ -10,44 +10,44 @@
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/_astro/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 # CSS files (bundled with hashes)
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/_astro/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 # Fonts
 [[headers]]
   for = "/*.woff"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.woff2"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.ttf"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=3153600000, immutable"
 
 [[headers]]
   for = "/*.otf"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=3153600000, immutable"
 
 # ===========================================
 # IMAGES - Long-term caching (1 year)
@@ -56,52 +56,52 @@
 [[headers]]
   for = "/icons/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=3153600000, immutable"
 
 [[headers]]
   for = "/photos/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.jpeg"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.gif"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.ico"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.avif"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 # ===========================================
 # DOCUMENTS & DATA
@@ -111,19 +111,19 @@
 [[headers]]
   for = "/*.pdf"
   [headers.values]
-    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+    Cache-Control = "public, max-age=864000, stale-while-revalidate=604800"
 
 # JSON data files
 [[headers]]
   for = "/*.json"
   [headers.values]
-    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=360000, stale-while-revalidate=864000"
 
 # Manifest
 [[headers]]
   for = "/manifest.json"
   [headers.values]
-    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+    Cache-Control = "public, max-age=864000, stale-while-revalidate=604800"
 
 # ===========================================
 # SEO FILES - Moderate caching
@@ -132,12 +132,12 @@
 [[headers]]
   for = "/sitemap*.xml"
   [headers.values]
-    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=864000"
 
 [[headers]]
   for = "/robots.txt"
   [headers.values]
-    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+    Cache-Control = "public, max-age=864000, stale-while-revalidate=604800"
 
 # ===========================================
 # HTML PAGES - Short caching with revalidation
@@ -146,12 +146,12 @@
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=100000, must-revalidate"
 
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=100000, must-revalidate"
 
 # ===========================================
 # SECURITY HEADERS - All pages
@@ -166,4 +166,4 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Content-Security-Policy = "frame-ancestors 'none'"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=315360000; includeSubDomains; preload"

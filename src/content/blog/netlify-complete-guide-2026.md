@@ -516,7 +516,7 @@ Netlify automatically optimizes assets:
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.html"
@@ -526,7 +526,7 @@ Netlify automatically optimizes assets:
 [[headers]]
   for = "/fonts/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 ```
 
 ### Security Headers

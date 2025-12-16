@@ -326,7 +326,7 @@ ENVIRONMENT = "production"
 [[headers]]
   for = "/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.html"
@@ -588,7 +588,7 @@ Sites built with this stack consistently achieve:
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 ```
 
 ---

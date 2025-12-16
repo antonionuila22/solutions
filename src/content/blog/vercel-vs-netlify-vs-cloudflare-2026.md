@@ -83,7 +83,7 @@ vercel --prod
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=315360000, immutable"
         }
       ]
     }
@@ -183,7 +183,7 @@ netlify deploy --prod
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 # Redirects
 [[redirects]]

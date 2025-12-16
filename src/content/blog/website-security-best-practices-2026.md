@@ -106,7 +106,7 @@ HTTP security headers instruct browsers how to handle your content securely.
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
 
     # Strict Transport Security (HSTS)
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=315360000; includeSubDomains; preload"
 ```
 
 **Content Security Policy (CSP):**
