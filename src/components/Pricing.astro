@@ -15,16 +15,16 @@ const plans: Plan[] = [
     priceMonthly: 1800,
     desc: "Perfect for businesses launching their digital presence.",
     features: [
+      "20 productive hours per week (4h/day × 5 days)",
       "Professional website (3-5 pages)",
       "UX/UI design in Figma (responsive for all devices)",
       "Modern frontend development (React/Astro/HTML5)",
       "Basic CMS (WordPress or Webflow)",
       "Contact forms with validation",
-      "Hosting, domain, and SSL included",
+      "Hosting setup assistance (hosting cost separate)",
       "Mobile-first responsive design",
       "1 revision round per month",
-      "Basic technical support",
-      "Duration: 2 months • Total: $3,600",
+      "Email support (48h response)",
     ],
     ctaHref: "./contact",
     ctaText: "Start Building",
@@ -35,17 +35,17 @@ const plans: Plan[] = [
     desc: "For businesses ready to scale with custom solutions.",
     highlight: true,
     features: [
+      "40 productive hours per week (8h/day × 5 days)",
       "Custom website (5-10 pages) with premium features",
       "Advanced UX/UI design + interactive Figma prototype",
       "Modern tech stack (React/Next.js/Astro)",
       "Headless CMS (Strapi/Sanity) or Webflow",
       "API integrations (CRM, email, payments)",
-      "Basic backend + database setup",
+      "Basic backend + database setup (Supabase/Turso)",
       "Custom animations & micro-interactions",
       "Performance optimization (Core Web Vitals)",
       "2 revision rounds per month",
-      "Priority support",
-      "Duration: 3 months • Total: $12,600",
+      "Priority support (24h response)",
     ],
     ctaHref: "./contact",
     ctaText: "Let's Grow Together",
@@ -55,18 +55,18 @@ const plans: Plan[] = [
     priceMonthly: 7500,
     desc: "Complete web applications and advanced e-commerce.",
     features: [
+      "40 productive hours per week (8h/day × 5 days)",
       "Full web app or advanced e-commerce (10-15+ pages)",
       "Complete design system in Figma",
-      "Full-stack development (frontend + backend + database)",
+      "Full-stack development (Next.js + Supabase)",
       "Complex API integrations & custom features",
       "E-commerce with cart, payments, inventory management",
       "Custom admin dashboard",
       "Advanced animations & interactive features",
-      "New feature development each month",
+      "Dedicated designer + senior developer",
       "4 revision rounds per month",
-      "Dedicated support 24/7",
+      "Same-day support",
       "Technical documentation included",
-      "Duration: 4 months • Total: $30,000",
     ],
     ctaHref: "./contact",
     ctaText: "Scale With Us",
@@ -212,7 +212,7 @@ const plans: Plan[] = [
                 clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-base text-gray-700 font-medium">Cancel anytime</span
+          <span class="text-base text-gray-700 font-medium">6-month partnership</span
           >
         </div>
         <div class="flex items-center gap-3">
@@ -230,7 +230,7 @@ const plans: Plan[] = [
                 clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-base text-gray-700 font-medium">No setup fees</span>
+          <span class="text-base text-gray-700 font-medium">Transparent pricing</span>
         </div>
         <div class="flex items-center gap-3">
           <div
@@ -248,7 +248,7 @@ const plans: Plan[] = [
             </svg>
           </div>
           <span class="text-base text-gray-700 font-medium"
-            >Priority support</span
+            >Dedicated support</span
           >
         </div>
       </div>
@@ -310,9 +310,9 @@ const plans: Plan[] = [
                   </div>
                 </div>
                 <p class="text-sm text-gray-500 font-medium">
-                  {p.priceMonthly === 1800 && "2 months • $3,600 total"}
-                  {p.priceMonthly === 4200 && "3 months • $12,600 total"}
-                  {p.priceMonthly === 7500 && "4 months • $30,000 total"}
+                  {p.priceMonthly === 1800 && "20h productive per week"}
+                  {p.priceMonthly === 4200 && "40h productive per week"}
+                  {p.priceMonthly === 7500 && "40h productive per week + docs"}
                 </p>
               </div>
 
@@ -475,10 +475,10 @@ const plans: Plan[] = [
             ></path>
           </svg>
         </div>
-        <div class="text-4xl font-black text-gray-900 mb-2">100+</div>
+        <div class="text-4xl font-black text-gray-900 mb-2">500+</div>
         <p class="text-gray-600 font-semibold">Projects Delivered</p>
         <p class="text-sm text-gray-500 mt-1">
-          Trusted by businesses worldwide
+          50+ businesses served worldwide
         </p>
       </div>
 
@@ -520,9 +520,9 @@ const plans: Plan[] = [
               clip-rule="evenodd"></path>
           </svg>
         </div>
-        <div class="text-4xl font-black text-gray-900 mb-2">24/7</div>
-        <p class="text-gray-600 font-semibold">Priority Support</p>
-        <p class="text-sm text-gray-500 mt-1">We're here when you need us</p>
+        <div class="text-4xl font-black text-gray-900 mb-2">5+</div>
+        <p class="text-gray-600 font-semibold">Years of Experience</p>
+        <p class="text-sm text-gray-500 mt-1">Enterprise-level expertise</p>
       </div>
     </div>
   </div>

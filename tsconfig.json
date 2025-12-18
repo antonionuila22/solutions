@@ -12,7 +12,6 @@
     "jsxImportSource": "react",
     "strictNullChecks": true,
     "allowJs": true,
-    "resolveJsonModule": true,
-    "ignoreDeprecations": "6.0"
+    "resolveJsonModule": true
   }
 }
