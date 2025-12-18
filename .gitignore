@@ -25,3 +25,9 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Business Logic (internal document - not public)
+business-logic.md
+Explicacion.txt
+
+.gitignore
