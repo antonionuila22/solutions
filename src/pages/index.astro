@@ -15,6 +15,7 @@ import Button from "@/components/Button.astro";
 import BannerSecond from "../components/BannerSecond.astro";
 import TrustBadges from "../components/TrustBadges.astro";
 import DesignRushSection from "../components/DesignRushSection.astro";
+import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
 ---
 
 <Layout
@@ -995,6 +996,9 @@ import DesignRushSection from "../components/DesignRushSection.astro";
     </div>
   </section>
 
+  <!-- Website vs Web Application Educational Section -->
+  <WebsiteVsWebApp />
+
   <section class="relative bg-white py-12 sm:py-16 lg:py-20">
     <div
       class="flex flex-col items-center justify-center text-center max-w-5xl mx-auto px-4 sm:px-6"
@@ -1021,7 +1025,7 @@ import DesignRushSection from "../components/DesignRushSection.astro";
         <Button text="Get Your Free Quote" href="/contact" />
       </div>
     </div>
-    <!-- Beam visual component - lazy loaded when visible to reduce critical path -->
+    <!-- Beam visual component -->
     <Beam client:visible />
   </section>
 
