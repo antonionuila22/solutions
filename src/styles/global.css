@@ -77,34 +77,6 @@ html {
     /* Color de la pista */
 }
 
-.stuck-top {
-    container-type: scroll-state;
-    top: 0px;
-}
-
-.stuck-top>nav {
-    @container scroll-state(stuck: top) {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-}
-
-.stuck-top>nav a {
-    @container scroll-state(stuck: top) {
-        color: #1e293b;
-        font-weight: 600;
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
-    }
-}
-
-.stuck-top>nav a:hover {
-    @container scroll-state(stuck: top) {
-        color: #f97316;
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
-    }
-}
 
 /* --------------------------
    Markdown Content Styling
