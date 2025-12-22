@@ -62,7 +62,14 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt={`${name} profile photo`} src={img} loading="lazy" />
+        <img
+          className="rounded-full"
+          width="32"
+          height="32"
+          alt={`${name} profile photo`}
+          src={img}
+          loading="lazy"
+        />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium text-white">
             {name}
@@ -88,8 +95,8 @@ export default function MarqueeDemo() {
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-slate-950"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-slate-950"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to from-slate-950"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to from-slate-950"></div>
     </div>
   );
 }
