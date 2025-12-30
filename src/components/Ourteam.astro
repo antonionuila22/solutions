@@ -165,34 +165,69 @@ const iconColor = (i: number) => (i % 2 === 0 ? "text-orange-400 group-hover:tex
     ))}
   </div>
 
-  <!-- Team Culture Section (sin cambios) -->
-  <div class="mt-24 bg-gradient-to-br from-slate-50 to-white rounded-3xl p-12 border-2 border-slate-200">
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-black text-cyan-900 mb-6">
-        More Than a Team
+  <!-- How We Work Section -->
+  <div class="mt-24 bg-gradient-to-br from-slate-900 to-cyan-900 rounded-3xl p-12 text-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-black mb-4">
+        How We Work
       </h2>
-      <p class="text-lg text-gray-700 leading-relaxed mb-8">
-        We are a blend of vision, discipline, and creativity. Every project is a
-        challenge we face together—from strategy to execution. We don't just
-        work together; we grow together.
+      <p class="text-lg text-slate-300 mb-12">
+        We don't follow trends—we choose what works. Here's our technical approach.
       </p>
 
-      <!-- Values -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all">
-          <div class="text-4xl mb-3">🎯</div>
-          <h4 class="font-bold text-cyan-900 mb-2">Results-Driven</h4>
-          <p class="text-sm text-gray-600">Zero excuses. We focus on delivering measurable outcomes.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Technical Philosophy -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-bold text-cyan-400 mb-2">Modern Stack, Pragmatic Choices</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              We use Astro, React, and Tailwind because they deliver fast sites that are easy to maintain.
+              For e-commerce, we customize WooCommerce or build headless solutions depending on the scale.
+              No over-engineering—just the right tool for the job.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-cyan-400 mb-2">Performance is Non-Negotiable</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Every site we build loads in under 2 seconds. We optimize images, minimize JavaScript,
+              and deploy on edge networks. Slow sites lose clients—we don't build slow sites.
+            </p>
+          </div>
         </div>
-        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all">
-          <div class="text-4xl mb-3">🚀</div>
-          <h4 class="font-bold text-cyan-900 mb-2">Innovation First</h4>
-          <p class="text-sm text-gray-600">We embrace new technologies and creative solutions.</p>
+
+        <!-- Process Philosophy -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-bold text-orange-400 mb-2">Direct Communication, Zero Bureaucracy</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              You talk directly with the team building your project. No account managers,
+              no middlemen. Questions get answered the same day. Problems get solved fast.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-orange-400 mb-2">Built to Scale From Day One</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              We don't build for "right now." Every project is architected so you can add features,
+              integrate systems, and grow without starting over. Your website should last years, not months.
+            </p>
+          </div>
         </div>
-        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all">
-          <div class="text-4xl mb-3">🤝</div>
-          <h4 class="font-bold text-cyan-900 mb-2">Client Partnership</h4>
-          <p class="text-sm text-gray-600">Your success is our success. We're in this together.</p>
+      </div>
+
+      <!-- Tech Stack Visual -->
+      <div class="mt-12 pt-8 border-t border-slate-700">
+        <p class="text-sm text-slate-400 mb-4 uppercase tracking-wider">Our Core Stack</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">Astro</span>
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">React</span>
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">Next.js</span>
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">Tailwind CSS</span>
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">WordPress</span>
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">WooCommerce</span>
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">Node.js</span>
+          <span class="px-4 py-2 bg-slate-800 rounded-lg text-sm font-medium">PostgreSQL</span>
         </div>
       </div>
     </div>

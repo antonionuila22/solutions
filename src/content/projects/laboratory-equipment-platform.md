@@ -1,82 +1,62 @@
 ---
 title: Laboratory Equipment B2B Platform
-description: International e-commerce platform for laboratory and industrial equipment distribution with quote request system, multilingual support, and technical services integration.
+description: Custom WooCommerce platform with 7,900+ products, CRM integration, and quote system built from scratch for a laboratory equipment distributor.
 author: Codebrand Team
 img: /photos/projects/Laboratory.avif
 category: Web Development
 tags:
   - E-commerce
-  - B2B
-  - Laboratory Equipment
-  - Quote System
-  - Multilingual
-  - International Logistics
+  - WooCommerce
+  - Custom Plugin
+  - API Integration
+  - B2B Platform
+  - CRM Integration
 client: Laboratory & Tech
 date: 2024-08-15
 featured: true
 link: https://laboratory.codebrand.es/
 results:
-  metric1: 24/7 multilingual support
-  metric2: International shipping with tracking
-  metric3: 6 main product categories
+  metric1: 7,900+ products uploaded
+  metric2: Custom CRM plugin built
+  metric3: Full API integration
 ---
 
-## Project Overview
+## The Problem
 
-Laboratory & Tech needed a comprehensive B2B e-commerce platform to connect global suppliers with industries requiring laboratory and industrial equipment. The platform serves life sciences, healthcare, agriculture, manufacturing, and research sectors across Latin America and global markets.
+Laboratory & Tech is a laboratory and industrial equipment distributor serving Latin America and the US. They needed more than a standard e-commerce site—they needed a B2B platform where clients could request quotes instead of buying directly.
 
-## The Challenge
+Their challenge: they had thousands of products, an existing CRM they couldn't replace, and needed a way to manage quotes, extract data, and sync everything automatically. Off-the-shelf solutions couldn't handle this complexity.
 
-Creating a sophisticated platform that could handle:
-- Large catalog of technical products across multiple categories
-- Complex quote request system instead of traditional checkout
+## The Solution
+
+We built a custom WooCommerce platform from the ground up, transforming it from a traditional store into a B2B quotation system.
+
+**What we built:**
+
+- Custom WooCommerce setup converted into a quote request system (no checkout)
+- Custom WordPress plugin built from scratch to integrate with their existing CRM
+- Webhooks to extract and sync data automatically between platforms
+- Custom API for seamless communication between systems
+- Complete UX/UI design for complex B2B navigation
+- Full product architecture and categorization system
+
+**What we managed:**
+
+- Uploaded and organized **7,900+ products** across 6 categories
 - Multilingual support for international markets
-- Integration with logistics and technical services
-- Professional presentation for B2B clientele
+- Mobile-optimized experience for a catalog-heavy site
+- Performance optimization for fast loading despite massive inventory
 
-## Our Solution
+**Tech stack:** WooCommerce, WordPress, Custom PHP Plugin, REST API, Webhooks, CRM Integration
 
-We developed a robust e-commerce platform with a focus on B2B functionality and user experience.
+## The Result
 
-### Key Features
+Laboratory & Tech now has a fully operational B2B platform that:
 
-- **Product Catalog**: Six main categories covering laboratory and industrial equipment
-- **Quote Request System**: Personalized quotation process replacing traditional checkout
-- **Multilingual Platform**: Support for multiple languages to serve global markets
-- **24/7 Support**: Phone, email, and WhatsApp support channels
-- **Service Integration**: Technical services, maintenance, and training programs
-- **International Logistics**: Shipping with traceability across borders
+- Handles 7,900+ products with fast search and navigation
+- Automatically syncs quote requests with their CRM
+- Eliminates manual data entry through webhook automation
+- Serves clients across Latin America and the US from their Florida base
+- Scales as they add more products and expand to new markets
 
-## Technical Implementation
-
-- **Modern Stack**: Built with responsive design and mobile optimization
-- **Product Management**: Advanced categorization and search functionality
-- **Quote System**: Custom form builder for personalized quote requests
-- **CMS Integration**: Easy content management for product updates
-- **Multi-language**: i18n implementation for global reach
-- **Performance Optimized**: Fast loading times for extensive catalog
-
-## Services Offered Through Platform
-
-- Product sourcing and distribution
-- Preventive and corrective maintenance
-- Equipment training programs
-- Lab workflow optimization consulting
-- Space reengineering services
-
-## Results
-
-- Serving multiple industries across Latin America
-- Operational base in Doral, Florida
-- Comprehensive catalog with international reach
-- Integrated technical support services
-- Professional B2B experience
-
-## Technologies Used
-
-- Responsive Web Design
-- E-commerce Platform
-- Quote Management System
-- Multilingual Support (i18n)
-- Form Management
-- CMS Integration
+This project required full-stack thinking: from UX research to API architecture to ongoing data management. It's the kind of platform that grows with the business.

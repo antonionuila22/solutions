@@ -1,61 +1,55 @@
 ---
-title: Travel Agency 
-description: Inspiring, destination-focused landing page for travel agencies, tour operators, and tourism businesses with package showcases and booking forms.
+title: TravelUp - Travel Agency Platform
+description: Complete online booking system for Honduras travel agency. We helped TravelUp double their daily clients from 10 to 20 and position as the top travel agency.
 author: Codebrand Team
 img: https://agenciatraveluphn.com/wp-content/uploads/2024/12/variante-logo-travel-up_Mesa-de-trabajo-1-copy-copia-3.svg
-category: Web Design
+category: Web Development
 tags:
-  - Landing Page
   - Travel Agency
-  - Tourism
-  - Tour Packages
   - Booking System
-  - Adventure
+  - WhatsApp Integration
+  - SEO
+  - WordPress
+client: TravelUp
 date: 2024-10-28
-featured: false
+featured: true
 link: https://agenciatraveluphn.com/
+results:
+  metric1: 10 to 20 daily clients
+  metric2: Top agency positioning
+  metric3: Full booking system
 ---
 
-## Project Overview
+## The Problem
 
-An inspiring, wanderlust-inducing landing page template perfect for travel agencies, tour operators, and tourism businesses looking to showcase destinations and convert browsers into travelers.
+TravelUp is a travel agency in Honduras that was handling all reservations manually. Phone calls, WhatsApp messages, spreadsheets—everything was done by hand.
 
-## Key Features
+They had no online presence, no way for clients to browse packages or book online, and were losing potential customers who expected a modern booking experience. Their competitors were showing up on Google; they weren't.
 
-- **Destination Showcase**: Featured travel packages
-- **Tour Packages**: Detailed itineraries and pricing
-- **Booking System**: Inquiry and reservation forms
-- **Traveler Reviews**: Customer testimonials with photos
-- **Travel Blog**: Destination guides and tips
-- **Special Deals**: Promotions and seasonal offers
+## The Solution
 
-## Target Audience
+We built a complete online platform that transformed how TravelUp operates.
 
-- Travel Agencies
-- Tour Operators
-- Adventure Tourism Companies
-- Cruise Lines
-- Safari Operators
-- Vacation Package Providers
+**What we built:**
 
-## Design Elements
+- Full booking system with online reservations
+- WhatsApp integration for instant communication
+- Destination and package showcase with pricing
+- SEO optimization for local search visibility
+- Mobile-optimized experience for on-the-go travelers
+- Traveler reviews and testimonials section
+- Special deals and promotions system
 
-- Stunning destination photography
-- Inspirational, adventure-driven copy
-- Package comparison tables
-- Interactive destination maps
-- Video backgrounds of destinations
-- Trust badges (certifications, awards)
-- Customer travel photos
-- Newsletter for travel deals
+**Tech stack:** WordPress, Custom Booking System, WhatsApp Business Integration, SEO Optimization
 
-## Technologies Used
+## The Result
 
-- Astro
-- React Components
-- Tailwind CSS
-- Booking Form Integration
-- Gallery Components
-- Map Integration
-- Blog System
-- Mobile Responsive
+TravelUp went from invisible to the top travel agency in their market:
+
+- **Doubled daily clients** from 10 to 20 per day
+- **Top positioning** in local search results
+- Online reservations reduced manual work
+- WhatsApp integration streamlined communication
+- Professional presence that builds trust with travelers
+
+The platform now works as their 24/7 sales team—clients can browse destinations, check prices, and book without waiting for a phone call.

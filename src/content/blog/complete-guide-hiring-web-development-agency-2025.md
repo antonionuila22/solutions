@@ -20,7 +20,7 @@ tags:
 
 Hiring the right web development agency can transform your business. Hiring the wrong one can cost you months of time, thousands of dollars, and countless headaches.
 
-After delivering 500+ projects at Codebrand and seeing both successful partnerships and failed ones (before clients came to us), we've identified exactly what separates great agency relationships from disasters.
+After years of delivering projects at Codebrand and seeing both successful partnerships and failed ones (before clients came to us), we've identified exactly what separates great agency relationships from disasters.
 
 This guide will help you make the right choice—whether you hire us or not.
 
@@ -88,16 +88,17 @@ Before contacting any agency, answer these questions:
 - Smaller team capacity
 
 ### Nearshore Agencies
-**What they offer:** US-quality work from Latin American teams with significant cost savings.
-**Best for:** Budget-conscious businesses wanting quality without offshore communication issues.
+**What they offer:** US-quality work from Latin American teams with competitive pricing.
+**Best for:** Businesses wanting quality, communication, and smart pricing without offshore issues.
 **Price range:** $2,000-$30,000
 **Examples:** Codebrand (Honduras), agencies in Mexico, Colombia, Argentina
 
 **Pros:**
-- 40-60% cost savings vs US agencies
+- Competitive pricing vs US agencies
 - Same timezone (Central/Eastern)
 - Bilingual teams
 - US-trained developers
+- Direct communication
 
 **Cons:**
 - May require more project management
@@ -383,15 +384,16 @@ Whether you choose a large US agency, a specialized boutique, a nearshore partne
 
 ## About Codebrand
 
-We're a Honduras-based digital agency serving US businesses. Our model offers:
-- **60% cost savings** vs comparable US agencies
+We're a boutique digital agency focused on modern web development for growing businesses. Our approach:
+
+- **US-quality work** with senior-level expertise
 - **Same timezone** (CST) for real-time collaboration
 - **Bilingual team** fluent in English and Spanish
-- **Modern tech stack** (React, Next.js, Astro)
-- **500+ projects** delivered successfully
+- **Modern tech stack** (React, Next.js, Astro, WordPress)
+- **Direct communication** with the team building your project
 
 If you'd like to see if we're the right fit, [schedule a free consultation](/contact). No pressure, no obligations—just an honest conversation about your project.
 
 ---
 
-*This guide is based on our experience delivering 500+ projects and helping businesses recover from failed agency relationships. We update it regularly to reflect current best practices.*
+*This guide is based on our experience helping businesses build and recover from failed agency relationships. We update it regularly to reflect current best practices.*

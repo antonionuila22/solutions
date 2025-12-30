@@ -10,48 +10,44 @@ const { includeFaqSchema = true } = Astro.props;
 
 const faqs: FAQItem[] = [
     {
-        question: "What services does Codebrand offer?",
-        answer: "At Codebrand, we offer a full range of digital marketing and web development services designed to position your brand and scale your business in the digital space. Our portfolio includes professional, responsive websites optimized for SEO and mobile devices. We also focus on user experience (UX) and interface design (UI), ensuring intuitive navigation and conversion-oriented layouts. Our search engine optimization services include technical SEO, content SEO, and comprehensive audits. Additionally, we provide branding strategies, visual identity design, digital advertising campaigns (Google Ads, Meta Ads), continuous website maintenance, and consulting in digital presence. Everything you need to stand out online — all in one agency.",
+        question: "How much does a website cost with Codebrand?",
+        answer: "Our websites start at $2,500 for a professional 5-page site. E-commerce and custom platforms range from $5,000-$25,000 depending on complexity. We provide detailed quotes after understanding your specific needs—no hidden fees.",
     },
     {
-        question: "Where are you located?",
-        answer: "Codebrand is headquartered in Honduras, but we operate fully remotely, which allows us to serve clients across Central America, South America, Mexico, and Spain. Our location gives us a strategic advantage in the region, and our digital-first approach enables us to work with brands all over the world. We adapt to different time zones and business cultures to deliver agile, empathetic, and highly personalized service. We work with both local and international clients, positioning ourselves as a global digital agency with strong Latin American roots.",
+        question: "How long does it take to build a website?",
+        answer: "A standard business website takes 4-6 weeks. E-commerce sites take 6-10 weeks. Custom web applications vary based on complexity. We set clear milestones and deliver on schedule.",
     },
     {
-        question: "How can I contact the Codebrand team?",
-        answer: "You can easily reach us through the contact form on our official website, available 24/7. You can also email us directly, send a message via WhatsApp, or schedule a video call for more in-depth consultations. We’re also active on Instagram, Facebook, and LinkedIn, where we share valuable content, success stories, and service updates. We respond quickly and are committed to providing you with the information and guidance you need — even if you're just exploring your options.",
+        question: "What technologies do you use and why?",
+        answer: "We use Astro, React, and Next.js for fast, modern websites. For e-commerce, we customize WooCommerce or build headless solutions. For simpler sites, WordPress works great. We choose based on your needs—not trends.",
     },
     {
-        question: "What type of companies work with Codebrand?",
-        answer: "We work with companies of all sizes and industries. From entrepreneurs launching their brand to small and medium businesses seeking to professionalize their digital presence, and established companies looking to redesign their website, improve SEO, or develop a new communication strategy. We serve clients in tech, retail, construction, healthcare, education, tourism, logistics, and professional services. We also partner with marketing agencies that outsource technical work to us. We tailor our solutions to your goals and resources, always focused on delivering real and effective results.",
+        question: "Is Codebrand good for small businesses?",
+        answer: "Yes. Most of our clients are small to medium businesses looking to grow. We've helped local service providers, e-commerce stores, and startups build professional websites that actually convert visitors into customers.",
     },
     {
-        question: "What makes Codebrand different from other agencies?",
-        answer: "What sets us apart is our combination of speed, quality, and commitment. We understand that time is critical in business, which is why we work with defined timelines and deliver on schedule — without compromising on detail or results. Our team is made up of specialists who are 100% focused on your business. We treat every project as our own, and that’s why so many brands choose us: because we deliver what we promise, we do it right, and we do it fast.",
+        question: "How is Codebrand different from hiring a freelancer?",
+        answer: "With us, you get a full team: designers, developers, and project management. No single point of failure. We also provide ongoing support, clear contracts, and accountability. Freelancers are great for small tasks; we handle complete projects.",
     },
     {
-        question: "How long does a project take to complete?",
-        answer: "It depends on the type of project, but we work with agile methodologies that allow us to move quickly and efficiently. A basic institutional website can be completed in 10 to 15 business days, while a full branding package might take 2 to 4 weeks. It all depends on your needs, but we always define clear deadlines from the start and meet every delivery.",
+        question: "Do you work with clients outside Honduras?",
+        answer: "Yes. We work with clients across the US, Latin America, and Spain. We're in the Central timezone (CST), so we overlap with US business hours. Our team is fully bilingual (English/Spanish).",
     },
     {
-        question: "Can I hire multiple services at the same time?",
-        answer: "Yes, many of our clients combine services to get a more comprehensive solution. For example, you can hire a website redesign along with an SEO strategy, or branding services along with social media design. We offer custom packages and discounts for integrated projects.",
+        question: "What happens after my website launches?",
+        answer: "Every project includes 30-90 days of post-launch support for bug fixes and adjustments. We also offer monthly maintenance plans for ongoing updates, security, and improvements. Your website shouldn't be abandoned after launch.",
     },
     {
-        question: "Why do other companies recommend you?",
-        answer: "Because we deliver on our promises — with fast turnaround times, high-quality work, and close communication. Our professional, strategic approach earns the trust of many brands looking to grow their digital presence. We’re also frequently recommended for our work ethic, clear communication, and visible results.",
+        question: "Do I own my website and code?",
+        answer: "Yes, 100%. You own everything: domain, hosting account, design files, and source code. We don't lock you in. If you want to leave, you take everything with you.",
     },
     {
-        question: "What level of experience does the team have?",
-        answer: "We have a highly skilled team of professionals in key areas such as graphic design, web development, SEO, branding, digital strategy, and copywriting. Each team member is specialized and actively involved in every project. We don’t outsource to third parties or use generic templates — every solution is custom-made by a team committed to your brand’s success.",
+        question: "Can you help with SEO and marketing?",
+        answer: "Yes. We build websites with SEO best practices from day one. We also offer ongoing SEO services, content strategy, and can integrate with your marketing tools (Google Analytics, Meta Pixel, CRMs).",
     },
     {
-        question: "What happens after a project is delivered?",
-        answer: "Once the project is delivered, we provide support to ensure everything works smoothly. If you’ve contracted ongoing maintenance, we continue working on optimizations, updates, and improvements. We also offer continuous services in design, social media, and SEO to keep your brand active and competitive in the digital space.",
-    },
-    {
-        question: "How can I get started with Codebrand?",
-        answer: "Getting started with us is easy, fast, and transparent. Just reach out through our website form, WhatsApp, or email. Once you contact us, we’ll schedule a call or video meeting to learn about your business, your goals, and your needs. From there, we’ll prepare a custom proposal with clear timelines, deliverables, and pricing. Once approved, we kick off the project and our team of specialists gets to work. In less than a week, you’ll already see tangible progress. Our goal is to make your experience efficient and smooth from day one. Ready to improve your digital presence? Contact us today and take the first step with Codebrand.",
+        question: "How do I get started?",
+        answer: "Contact us through the form or WhatsApp. We'll schedule a quick call to understand your project, then send you a detailed proposal with scope, timeline, and pricing. No commitment until you're ready.",
     },
 ];
 ---

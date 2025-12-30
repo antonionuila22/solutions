@@ -1,101 +1,53 @@
 ---
 title: GMJ Architectural Design - Interior Design Studio Website
-description: Professional website for St. Louis-based interior design studio featuring portfolio gallery, online consultation booking, 3D visualization showcase, and client estimate request system.
+description: Professional website for St. Louis-based interior design studio. We helped GMJ expand from local-only to serving clients across the United States.
 author: Codebrand Team
 img: /photos/projects/GMJ.avif
 category: Web Development
 tags:
   - Interior Design
   - Portfolio
-  - 3D Visualization
   - Online Booking
-  - Consultation
+  - Small Business
   - Responsive Design
 client: GMJ Architectural Design
 date: 2024-09-20
 featured: true
 link: https://gmj.codebrand.es/
 results:
-  metric1: Remote consultation booking system
-  metric2: 4-step design process presentation
-  metric3: Portfolio gallery showcase
+  metric1: Local to nationwide reach
+  metric2: Online booking system
+  metric3: Portfolio showcase
 ---
 
-## Project Overview
+## The Problem
 
-GMJ Architectural Design is a family-owned interior design studio in St. Louis that needed a professional website to showcase their work and attract both local and remote clients across the United States. The website needed to communicate their artistic vision while providing practical ways for clients to engage with their services.
+GMJ is a family-owned interior design studio in St. Louis. They had years of experience and a solid portfolio of residential and commercial projects, but no way to show it online.
 
-## The Challenge
+Their business was limited to local referrals. Potential clients from other states couldn't see their work, couldn't book consultations remotely, and couldn't request estimates without calling directly. They were missing opportunities daily.
 
-The studio required a website that could:
-- Showcase their portfolio of completed projects professionally
-- Enable online consultation bookings for remote clients
-- Present their design process clearly
-- Provide estimate request functionality
-- Reflect their brand as an accessible, family-owned business
-- Support both local St. Louis and nationwide remote services
+## The Solution
 
-## Our Solution
+We built a clean, professional website that lets GMJ's work speak for itself.
 
-We created a modern, elegant website that balances aesthetics with functionality, perfectly representing GMJ's approach to interior design.
+**What we implemented:**
 
-### Key Features
+- Portfolio gallery organized by project type (residential, commercial, 3D visualization)
+- Online booking system for remote consultations
+- Estimate request form with clear next steps
+- 4-step design process section to set client expectations
+- Mobile-optimized experience for image-heavy content
+- Fast loading times despite high-quality project photos
 
-- **Portfolio Gallery**: Beautiful showcase of bedroom, living room, and commercial projects
-- **Online Booking System**: Easy consultation scheduling for remote and local clients
-- **Estimate Request Form**: Streamlined process for getting custom quotes
-- **4-Step Design Process**: Clear visualization of their collaborative approach
-- **Responsive Design**: Optimized viewing across all devices
-- **Service Pages**: Detailed information about residential and commercial offerings
+**Tech stack:** Responsive design, booking integration, image optimization, mobile-first approach
 
-## Services Highlighted
+## The Result
 
-- **Home Space Planning**: Comprehensive room and home layout design
-- **Room Interior Design**: Detailed design for specific spaces
-- **Commercial Space Design**: Professional environments
-- **3D Imaging**: Realistic visualizations before implementation
-- **Design Consultation**: Personalized advisory services
+GMJ now serves clients across the United States, not just St. Louis.
 
-## Design Philosophy Communicated
+- Remote consultations are now possible through the booking system
+- Clients can browse the portfolio and request estimates without calling
+- The website communicates their process clearly, reducing back-and-forth questions
+- Professional online presence that matches the quality of their design work
 
-The website emphasizes GMJ's core values:
-- Artistic vision combined with practical expertise
-- Collaborative partnership approach
-- Attention to detail
-- Transparent communication
-- Accessible, personalized service
-- Both aesthetic appeal and functionality
-
-## Technical Implementation
-
-- **Modern Design**: Clean, professional aesthetic matching interior design industry
-- **Portfolio System**: Image gallery with project categorization
-- **Booking Integration**: Online appointment scheduling system
-- **Form Management**: Custom estimate request forms
-- **Mobile Optimization**: Perfect experience on all devices
-- **Fast Performance**: Optimized loading for image-heavy content
-
-## Results
-
-- Professional online presence for family-owned studio
-- Operational booking system for remote consultations
-- Portfolio showcase attracting new clients
-- Clear process communication reducing client uncertainty
-- Service area expansion beyond local St. Louis market
-
-## Client Benefits
-
-- Remote consultation capabilities
-- Transparent 4-step process
-- Easy estimate requests
-- Portfolio proof of quality work
-- Professional credibility enhancement
-
-## Technologies Used
-
-- Responsive Web Design
-- Portfolio Management System
-- Online Booking Integration
-- Form Builder
-- Image Optimization
-- Mobile-First Approach
+For a family-owned studio, having a website that works as a 24/7 sales tool has been transformative for their reach and credibility.
