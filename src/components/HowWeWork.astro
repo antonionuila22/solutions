@@ -1,0 +1,277 @@
+---
+// HowWeWork.astro - Process Section matching site style
+---
+
+<section class="py-16 sm:py-20 lg:py-28 bg-slate-950" id="how-we-work">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12 lg:mb-16">
+      <span
+        class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
+      >
+        <svg
+          class="w-4 h-4 text-cyan-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span class="text-sm font-medium text-cyan-400">Our Process</span>
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+        How We <span class="text-orange-500">Work</span>
+      </h2>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+        A transparent, milestone-driven process from first call to launch
+      </p>
+    </div>
+
+    <!-- Process Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Step 1 -->
+      <div class="group">
+        <div
+          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/30 transition-all duration-300 h-full"
+        >
+          <div class="flex items-center gap-4 mb-5">
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-cyan-500 rounded-xl text-white font-bold text-xl"
+            >
+              1
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Discovery Call</h3>
+              <span class="text-sm text-cyan-400">30 min • Free</span>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Free consultation to understand your business, goals, and define the
+            complete project scope together.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="group">
+        <div
+          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-orange-500/30 transition-all duration-300 h-full"
+        >
+          <div class="flex items-center gap-4 mb-5">
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-orange-500 rounded-xl text-white font-bold text-xl"
+            >
+              2
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Proposal</h3>
+              <span class="text-sm text-orange-400">2-5 days</span>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Clear scope, fixed pricing, and realistic timeline. No surprises —
+            you know exactly what you're getting.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="group">
+        <div
+          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-violet-500/30 transition-all duration-300 h-full"
+        >
+          <div class="flex items-center gap-4 mb-5">
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-violet-500 rounded-xl text-white font-bold text-xl"
+            >
+              3
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">UX/UI Design</h3>
+              <span class="text-sm text-violet-400">1-2 weeks</span>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Interactive Figma prototypes for all devices. You approve the design
+            before we write any code.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="group">
+        <div
+          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-emerald-500/30 transition-all duration-300 h-full"
+        >
+          <div class="flex items-center gap-4 mb-5">
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-emerald-500 rounded-xl text-white font-bold text-xl"
+            >
+              4
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Development</h3>
+              <span class="text-sm text-emerald-400">2-4 weeks</span>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Clean, performant code built exactly to spec. Weekly video updates
+            via Loom keep you in the loop.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="group">
+        <div
+          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-blue-500/30 transition-all duration-300 h-full"
+        >
+          <div class="flex items-center gap-4 mb-5">
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-xl text-white font-bold text-xl"
+            >
+              5
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Review & QA</h3>
+              <span class="text-sm text-blue-400">3-5 days</span>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            You test everything thoroughly. We fix, refine, and polish until
+            it's perfect across all devices.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="group">
+        <div
+          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-amber-500/30 transition-all duration-300 h-full"
+        >
+          <div class="flex items-center gap-4 mb-5">
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-amber-500 rounded-xl text-white font-bold text-xl"
+            >
+              6
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Launch</h3>
+              <span class="text-sm text-amber-400">+ 30 days support</span>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            We deploy, transfer all files and credentials to you, and provide 30
+            days of free post-launch support.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's Included -->
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
+      <div
+        class="flex items-center gap-4 p-5 bg-slate-800/30 border border-slate-700/50 rounded-xl"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 bg-cyan-500/10 rounded-xl"
+        >
+          <svg
+            class="w-6 h-6 text-cyan-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">24h Response</h4>
+          <p class="text-sm text-slate-500">Max response time</p>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center gap-4 p-5 bg-slate-800/30 border border-slate-700/50 rounded-xl"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 bg-orange-500/10 rounded-xl"
+        >
+          <svg
+            class="w-6 h-6 text-orange-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Weekly Updates</h4>
+          <p class="text-sm text-slate-500">Video progress reports</p>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center gap-4 p-5 bg-slate-800/30 border border-slate-700/50 rounded-xl"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 bg-emerald-500/10 rounded-xl"
+        >
+          <svg
+            class="w-6 h-6 text-emerald-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">100% Ownership</h4>
+          <p class="text-sm text-slate-500">You own everything</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+      >
+        Start Your Project
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+      <p class="text-slate-500 mt-4 text-sm">
+        Free discovery call • No commitment required
+      </p>
+    </div>
+  </div>
+</section>
