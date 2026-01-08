@@ -4,6 +4,7 @@ import Whyus from "../components/whyus.astro";
 import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
+import Testimonial from "../components/testimonial.tsx";
 
 const title =
   "Professional Web Design Services | UI/UX Design & Website Redesign - Codebrand";
@@ -353,7 +354,7 @@ const serviceSchema = {
         <CardService
           icon="/icons/mobile-phone-app-svgrepo-com.svg"
           title="Mobile App Design"
-          description="Design beautiful, intuitive mobile applications for iOS and Android platforms. We create app interfaces that follow platform guidelines while maintaining your unique brand identity and delivering exceptional user experiences."
+          description="Design beautiful, intuitive mobile app interfaces for iOS and Android with Expo React Native. We create responsive experiences that work flawlessly across all devices while maintaining your unique brand identity."
           learnMoreUrl="/contact"
         />
 
@@ -643,6 +644,118 @@ const serviceSchema = {
 
   <!-- Why Choose Us Section -->
   <Whyus />
+
+  <!-- Testimonials Section -->
+  <section class="py-16 lg:py-24 bg-slate-900 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          What Our <span class="text-orange-500">Clients Say</span>
+        </h2>
+        <p class="text-lg text-slate-300">
+          Real reviews from real clients on Google. See why businesses trust Codebrand for their web design needs.
+        </p>
+      </div>
+      <Testimonial client:visible />
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
+          Web Design <span class="text-orange-500">Success Stories</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          Real results from real projects. See how our designs have transformed businesses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-purple-600 uppercase tracking-wide">Healthcare</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Medical Clinic Redesign</h3>
+            <p class="text-gray-600 mb-4">Complete website redesign focusing on patient experience, accessibility compliance, and appointment booking optimization.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+85%</div>
+                <div class="text-gray-500">Bookings</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">-60%</div>
+                <div class="text-gray-500">Bounce Rate</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">4.9/5</div>
+                <div class="text-gray-500">User Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-orange-600 uppercase tracking-wide">Real Estate</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Luxury Property Portal</h3>
+            <p class="text-gray-600 mb-4">Premium UI/UX design for high-end real estate listings with virtual tours, interactive maps, and lead capture optimization.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+120%</div>
+                <div class="text-gray-500">Lead Gen</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">3x</div>
+                <div class="text-gray-500">Time on Site</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+95%</div>
+                <div class="text-gray-500">Mobile UX</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-cyan-600 to-cyan-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-cyan-600 uppercase tracking-wide">SaaS</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">B2B Dashboard Redesign</h3>
+            <p class="text-gray-600 mb-4">Complete UX overhaul for a SaaS platform dashboard, improving user workflows and reducing support tickets significantly.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">-70%</div>
+                <div class="text-gray-500">Support Tickets</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+45%</div>
+                <div class="text-gray-500">User Adoption</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+90%</div>
+                <div class="text-gray-500">Task Completion</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section

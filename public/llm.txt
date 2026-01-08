@@ -22,6 +22,7 @@ CodeBrand is a full-service digital creative agency specializing in enterprise-g
 - Headless CMS implementation (Strapi, WordPress, Contentful)
 - Server-side rendering and static site generation
 - Progressive Web Apps (PWA)
+- Cross-platform mobile apps with Expo React Native (iOS & Android)
 - API development and third-party integrations
 - Performance optimization (Core Web Vitals)
 - Responsive, mobile-first design
@@ -99,7 +100,7 @@ CodeBrand is a full-service digital creative agency specializing in enterprise-g
 - **APIs:** REST, GraphQL, tRPC
 
 ### Infrastructure & Tools
-- **Hosting:** Netlify, Vercel, AWS, VPS Hostinger
+- **Hosting:** Netlify, AWS, VPS Hostinger
 - **Edge Computing:** Netlify Edge Functions, Cloudflare Workers
 - **CMS:** Strapi, WordPress, Contentful, Sanity
 - **Email:** Resend, SendGrid

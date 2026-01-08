@@ -137,7 +137,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
       { name: "TypeScript", icon: "/icons/typescript-official-svgrepo-com.svg" },
       { name: "Tailwind CSS", icon: "/icons/tailwindcss-svgrepo-com.svg" },
       { name: "PostgreSQL", icon: "/icons/postgresql-logo-svgrepo-com.svg" },
-      { name: "AWS / Vercel", icon: "/icons/aws-svgrepo-com.svg" },
+      { name: "AWS / Netlify", icon: "/icons/aws-svgrepo-com.svg" },
       { name: "GraphQL", icon: "/icons/graphql-svgrepo-com.svg" },
     ],
   },

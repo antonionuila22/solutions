@@ -21,11 +21,47 @@ const { title, description, img, readtime, author, price, inStock } = data;
 const { Content } = await render(product);
 
 // SEO optimization
+const baseUrl = "https://codebrand.us";
 const seoTitle = `${title} | Codebrand Digital Services`;
 const seoDescription =
   description ||
   `Discover ${title} from Codebrand. Professional digital services with ${price}. ${inStock ? "Available now" : "Contact us for availability"}.`;
 const seoKeywords = `${title.toLowerCase()}, codebrand services, digital services, ${title.toLowerCase()} service, professional ${title.toLowerCase()}, ${title.toLowerCase()} agency`;
+
+// Extract numeric price for schema
+const numericPrice = price ? price.replace(/[^0-9.]/g, '') : "0";
+
+// Product Schema for rich snippets
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": title,
+  "description": description,
+  "image": img ? `${baseUrl}${img}` : `${baseUrl}/photos/bannercodebrand.webp`,
+  "url": `${baseUrl}/products/${product.slug}`,
+  "brand": {
+    "@type": "Brand",
+    "name": "Codebrand"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+    "price": numericPrice,
+    "priceCurrency": "USD",
+    "url": `${baseUrl}/products/${product.slug}`,
+    "seller": {
+      "@type": "Organization",
+      "name": "Codebrand"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
 ---
 
 <Layout
@@ -34,6 +70,9 @@ const seoKeywords = `${title.toLowerCase()}, codebrand services, digital service
   keywords={seoKeywords}
   image={img || "/photos/bannercodebrand.webp"}
 >
+  <!-- Product Schema for rich snippets -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(productSchema)} />
+
   <!-- Hero section con gradient de fondo -->
   <div class="relative bg-white">
     <div

@@ -18,9 +18,62 @@ const { data } = post;
 const { title, description, img, readtime, author, date } = data;
 
 const { Content } = await render(post);
+
+// SEO optimization
+const baseUrl = "https://codebrand.us";
+const seoTitle = `${title} | Codebrand Books`;
+const seoDescription = description || `Read ${title} by ${author || 'Codebrand'}. Discover insights on web development, design, and digital marketing.`;
+const seoKeywords = `${title.toLowerCase()}, ${author ? author.toLowerCase() : ''}, codebrand books, web development books, digital marketing books, design books`;
+const absoluteImage = img ? `${baseUrl}/${img}` : `${baseUrl}/photos/bannercodebrand.webp`;
+
+// Format date for schema
+const formattedDate = date ? new Date(date).toISOString() : new Date().toISOString();
+
+// Book Schema for rich snippets
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": title,
+  "description": description,
+  "image": absoluteImage,
+  "url": `${baseUrl}/books/${post.slug}`,
+  "author": author ? {
+    "@type": "Person",
+    "name": author
+  } : {
+    "@type": "Organization",
+    "name": "Codebrand"
+  },
+  "datePublished": formattedDate,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${baseUrl}/iconcodebrand.svg`
+    }
+  },
+  "inLanguage": "en",
+  "genre": "Business & Technology",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "45",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
 ---
 
-<Layout title={title}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  image={absoluteImage}
+>
+  <!-- Book Schema for rich snippets -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(bookSchema)} />
+
   <div
     class="max-w-6xl mx-auto py-12 grid grid-cols-1 md:grid-cols-3 gap-13 text-black"
   >

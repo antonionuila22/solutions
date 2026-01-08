@@ -6,6 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import Button from "../../components/Button.astro";
 import Whyus from "../../components/whyus.astro";
 import Faq from "../../components/Faq.astro";
+import { createLocalBusinessSchema } from "../../utils/schema";
 
 export async function getStaticPaths() {
   const locations = await getCollection("locations", ({ data }) => !data.draft);
@@ -83,6 +84,9 @@ const structuredData = {
   "url": `${baseUrl}/locations/${location.slug}`,
   "image": absoluteImage
 };
+
+// LocalBusiness Schema for enhanced local SEO
+const localBusinessSchema = createLocalBusinessSchema(city, state, stateCode, description);
 ---
 
 <Layout
@@ -93,6 +97,9 @@ const structuredData = {
 >
   <!-- Service Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+
+  <!-- LocalBusiness Schema for enhanced local SEO -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessSchema)} />
 
   <!-- Hero Section -->
   <section class="relative bg-white py-16 sm:py-24 lg:py-32 font-poppins overflow-hidden">

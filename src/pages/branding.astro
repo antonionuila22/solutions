@@ -4,6 +4,7 @@ import Whyus from "../components/whyus.astro";
 import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
+import Testimonial from "../components/testimonial.tsx";
 
 const title =
   "Professional Branding Services | Logo Design & Brand Identity - Codebrand";
@@ -566,6 +567,118 @@ const serviceSchema = {
 
   <!-- Why Choose Us Section -->
   <Whyus />
+
+  <!-- Testimonials Section -->
+  <section class="py-16 lg:py-24 bg-slate-900 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          What Our <span class="text-orange-500">Clients Say</span>
+        </h2>
+        <p class="text-lg text-slate-300">
+          Real reviews from real clients on Google. See why businesses trust Codebrand for their branding needs.
+        </p>
+      </div>
+      <Testimonial client:visible />
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
+          Branding <span class="text-orange-500">Success Stories</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          Real brand transformations that made lasting impressions. See how we've helped businesses build powerful identities.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-indigo-600 to-indigo-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wide">Tech Startup</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Complete Brand Identity</h3>
+            <p class="text-gray-600 mb-4">Full rebrand for a fintech startup including logo, brand guidelines, marketing collateral, and digital assets for investor pitch.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+200%</div>
+                <div class="text-gray-500">Brand Recognition</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">$2M</div>
+                <div class="text-gray-500">Funding Raised</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">4 weeks</div>
+                <div class="text-gray-500">Delivery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-emerald-600 uppercase tracking-wide">Restaurant Chain</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Restaurant Rebrand</h3>
+            <p class="text-gray-600 mb-4">Complete visual identity overhaul for a growing restaurant chain, including menu design, signage, and packaging.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+45%</div>
+                <div class="text-gray-500">Customer Recall</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">3</div>
+                <div class="text-gray-500">New Locations</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+30%</div>
+                <div class="text-gray-500">Revenue</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-rose-500 to-rose-700 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-rose-600 uppercase tracking-wide">E-commerce</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">D2C Beauty Brand</h3>
+            <p class="text-gray-600 mb-4">Brand creation from scratch for a direct-to-consumer beauty company, including packaging design and social media templates.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">50K</div>
+                <div class="text-gray-500">Instagram Followers</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+180%</div>
+                <div class="text-gray-500">Online Sales</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">Award</div>
+                <div class="text-gray-500">Brand Design</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section

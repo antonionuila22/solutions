@@ -53,7 +53,7 @@ We use modern technologies such as **WordPress, Webflow, Astro, React, Next.js, 
 - **Backend:** Node.js, Express.js  
 - **Databases:** PostgreSQL, MongoDB, MySQL  
 - **Styling:** Tailwind CSS, Bootstrap  
-- **Deployment:** Vercel, Netlify, Hostinger, DigitalOcean, AWS  
+- **Deployment:** Netlify, Hostinger, DigitalOcean, AWS  
 
 ---
 

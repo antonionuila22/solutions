@@ -9,11 +9,11 @@ import type { ServicePageConfig } from "../../components/ServicePageTemplate.ast
 export const socialMediaConfig: ServicePageConfig = {
   // SEO Configuration
   seo: {
-    title: "Social Media Marketing Services | Strategy & Management - Codebrand",
+    title: "Social Media Design Services | Content & Graphics - Codebrand",
     description:
-      "Professional social media marketing services including strategy development, content creation, community management, paid social advertising, influencer marketing, and analytics.",
+      "Professional social media design services including custom graphics, post templates, stories, reels covers, and visual content creation for all platforms.",
     keywords:
-      "social media marketing, social media management, social media strategy, content creation, community management, social media advertising, Facebook marketing, Instagram marketing, LinkedIn marketing, TikTok marketing, influencer marketing, social media analytics, paid social, social media campaigns",
+      "social media design, social media graphics, social media content, Instagram graphics, Facebook posts design, social media templates, post design, story design, social media visual content, brand graphics",
     image: "/photos/bannercodebrand.webp",
   },
 
@@ -52,28 +52,28 @@ export const socialMediaConfig: ServicePageConfig = {
 
   // Hero Section
   hero: {
-    badge: "Social Media Excellence",
-    title: "Amplify Your Brand",
+    badge: "Social Media Design",
+    title: "Stand Out",
     titleHighlight: "On Social Media",
     description:
-      "Professional social media marketing that builds communities, drives engagement, and converts followers into customers. Strategic campaigns that deliver real business results.",
-    ctaPrimary: "Get Social Strategy",
+      "Professional social media design that makes your brand stand out. Custom graphics, templates, and visual content that capture attention and maintain brand consistency across all platforms.",
+    ctaPrimary: "Get Design Quote",
     ctaPrimaryUrl: "/contact",
-    ctaSecondary: "View Services",
+    ctaSecondary: "View Packages",
     ctaSecondaryUrl: "#services",
     stats: [
-      { value: "500K+", label: "Followers Grown", sublabel: "Across All Platforms" },
-      { value: "250%", label: "Engagement Increase", sublabel: "Average Growth" },
-      { value: "150+", label: "Brands Managed", sublabel: "Successfully" },
+      { value: "500+", label: "Designs Delivered", sublabel: "Monthly Average" },
+      { value: "50+", label: "Brands Served", sublabel: "Across Industries" },
+      { value: "3", label: "Design Packages", sublabel: "10, 30, 60 Posts/mo" },
     ],
   },
 
   // Services Section
   services: {
-    title: "Complete Social Media Solutions",
-    subtitle: "Social Media Marketing Services",
+    title: "Social Media Design Packages",
+    subtitle: "Visual Content Creation",
     description:
-      "From strategy to execution, we create and manage social media campaigns that build brand awareness, engage audiences, and drive conversions.",
+      "We design professional social media content that aligns with your brand. You handle posting and strategy - we handle the visuals. Note: We provide design only, not account management or posting.",
     columns: "3",
     items: [
       {

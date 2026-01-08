@@ -25,6 +25,17 @@ const getCityCount = (regionSlug: string) => {
 // SEO
 const title = "Web Development by Region | States & Departments | Codebrand";
 const description = "Find professional web development services in your state, department, or region. Codebrand serves businesses across multiple countries with custom websites and web applications.";
+const keywords = [
+  "web development by region",
+  "web development by state",
+  "regional web development services",
+  "state web developers",
+  "local web development company",
+  "nearshore web development",
+  "US web development services",
+  "affordable web development",
+  ...regions.map(r => `web development ${r.data.name}`),
+].join(", ");
 const baseUrl = "https://codebrand.us";
 
 const breadcrumbSchema = createBreadcrumbSchema([
@@ -36,6 +47,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 <Layout
   title={title}
   description={description}
+  keywords={keywords}
   image="/photos/webservice.webp"
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />

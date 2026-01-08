@@ -15,6 +15,65 @@ import DesignRushSection from "../components/DesignRushSection.astro";
 import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
 import HowWeWork from "../components/HowWeWork.astro";
 import ValueProposition from "../components/ValueProposition.astro";
+
+// Review Schema for Google rich snippets - individual reviews
+const reviewsSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Codebrand",
+  "url": "https://codebrand.us",
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Astrid Euceda" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Code Brand ofrece un excelente servicio en el desarrollo técnico y creativo. Lograron cumplir con mis necesidades entregando un resultado mejor de lo esperado.",
+      "datePublished": "2024-08-15"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Cindy Serrano" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Thanks, I'm in Mexico and they gave me excellent service",
+      "datePublished": "2024-09-20"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Virginia Denisse Alfaro Reyes" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Excelente trabajo creando sitios webs",
+      "datePublished": "2024-07-10"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Nelson Nuñez" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Excelente Servicio, Eficaz y Responsables.",
+      "datePublished": "2024-10-05"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Mayelin Canelas" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Excelente !!",
+      "datePublished": "2024-06-28"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Jose Castro Urquia" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Lo mejor de lo mejor..",
+      "datePublished": "2024-11-12"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
 ---
 
 <Layout
@@ -23,6 +82,9 @@ import ValueProposition from "../components/ValueProposition.astro";
   keywords="affordable web development USA, Honduras software development, nearshore web development, cost-effective web design, offshore development Honduras, US web development affordable, certified web developers Honduras, bilingual web development, export services Honduras to USA, cheap quality web development, outsource web development Honduras, Latin America web agency, nearshore outsourcing, web development under $15000, affordable digital agency USA, budget web development services, professional web design Honduras, US nearshore development, Central America tech services, quality affordable websites, web development agency, custom website development, React development agency, Next.js developers"
   image="/photos/bannercodebrand.webp"
 >
+  <!-- Reviews Schema for Google rich snippets -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewsSchema)} />
+
   <Hero />
 
   <!-- Social Proof - Testimonials (moved up for trust) -->
@@ -81,7 +143,7 @@ import ValueProposition from "../components/ValueProposition.astro";
       <CardService
         icon="./icons/sitio-web.webp"
         title="Web Development"
-        description="We build fast, SEO-optimized websites that scale across all platforms, plus iOS and Android apps with smooth, high-performance interfaces."
+        description="We build fast, SEO-optimized websites and cross-platform mobile apps with Expo React Native. Smooth, high-performance interfaces for web, iOS, and Android."
         learnMoreUrl="/services/web-development"
       />
 

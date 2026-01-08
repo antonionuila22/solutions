@@ -1,6 +1,30 @@
 ---
 // HowWeWork.astro - Process Section matching site style
+import { createHowToSchema } from "../utils/schema";
+
+// HowTo Schema for rich snippets - helps Google understand this is a process
+const howToSchema = createHowToSchema(
+  "How Codebrand Builds Your Website",
+  "Our proven 6-step web development process from discovery to launch, ensuring quality and transparency at every stage.",
+  [
+    "Discovery Call: Schedule a free 30-minute consultation to discuss your business goals, target audience, and project requirements.",
+    "Proposal: Receive a detailed proposal with clear scope, fixed pricing, and realistic timeline within 2-5 business days.",
+    "UX/UI Design: Review and approve interactive Figma prototypes for all devices before any code is written (1-2 weeks).",
+    "Development: We build your website with clean, performant code exactly to spec, with weekly video progress updates (2-4 weeks).",
+    "Review & QA: Test everything thoroughly across all devices while we fix, refine, and polish until perfect (3-5 days).",
+    "Launch: We deploy your site, transfer all files and credentials to you, and provide 30 days of free post-launch support.",
+  ],
+  "https://codebrand.us/photos/bannercodebrand.webp",
+  "PT6W" // Approximate total duration: 6 weeks
+);
 ---
+
+<!-- HowTo Schema for SEO -->
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(howToSchema)}
+/>
 
 <section class="py-16 sm:py-20 lg:py-28 bg-slate-950" id="how-we-work">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

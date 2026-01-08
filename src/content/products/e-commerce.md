@@ -54,7 +54,7 @@ At **Codebrand**, we design and develop e-commerce stores that truly convert. Wh
 - **Styling:** Tailwind CSS, Bootstrap  
 - **Backend:** Node.js, Express.js  
 - **Databases:** PostgreSQL, MySQL, MongoDB  
-- **Hosting:** Vercel, Netlify, Hostinger, Cloudflare, AWS  
+- **Hosting:** Netlify, Hostinger, Cloudflare, AWS  
 
 ---
 

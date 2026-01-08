@@ -4,6 +4,7 @@ import Whyus from "../components/whyus.astro";
 import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
+import Testimonial from "../components/testimonial.tsx";
 
 const title = "E-commerce Development | Online Store Design | Codebrand";
 const description =
@@ -561,6 +562,118 @@ const serviceSchema = {
 
   <!-- Why Choose Us Section -->
   <Whyus />
+
+  <!-- Testimonials Section -->
+  <section class="py-16 lg:py-24 bg-slate-900 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          What Our <span class="text-orange-500">Clients Say</span>
+        </h2>
+        <p class="text-lg text-slate-300">
+          Real reviews from real clients on Google. See why businesses trust Codebrand for their e-commerce development needs.
+        </p>
+      </div>
+      <Testimonial client:visible />
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
+          E-commerce <span class="text-orange-500">Success Stories</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          Real revenue growth and conversions. See how we've helped online stores scale their businesses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-violet-600 to-violet-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-violet-600 uppercase tracking-wide">Fashion</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Clothing Brand Store</h3>
+            <p class="text-gray-600 mb-4">Custom Shopify store with advanced filtering, size guides, and Instagram integration that transformed their online sales.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+250%</div>
+                <div class="text-gray-500">Online Revenue</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">-40%</div>
+                <div class="text-gray-500">Cart Abandonment</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">3.5%</div>
+                <div class="text-gray-500">Conversion Rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-lime-600 to-lime-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-lime-600 uppercase tracking-wide">Food & Beverage</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Specialty Food Store</h3>
+            <p class="text-gray-600 mb-4">WooCommerce store with subscription boxes, gift options, and loyalty program for a gourmet food company.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+180%</div>
+                <div class="text-gray-500">Monthly Revenue</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">45%</div>
+                <div class="text-gray-500">Subscription Rate</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">$85</div>
+                <div class="text-gray-500">Avg Order Value</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-sky-600 to-sky-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-sky-600 uppercase tracking-wide">B2B</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Industrial Supplies Portal</h3>
+            <p class="text-gray-600 mb-4">B2B e-commerce platform with bulk pricing, quote requests, and ERP integration for an industrial supplies distributor.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+320%</div>
+                <div class="text-gray-500">Online Orders</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">-50%</div>
+                <div class="text-gray-500">Order Processing</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">$2.5M</div>
+                <div class="text-gray-500">Annual Sales</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section

@@ -4,6 +4,7 @@ import Whyus from "../components/whyus.astro";
 import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
+import Testimonial from "../components/testimonial.tsx";
 
 const title =
   "Digital Marketing Services | SEO, PPC & Social Media | Codebrand";
@@ -596,6 +597,121 @@ const serviceSchema = {
 
   <!-- Why Choose Us Section -->
   <Whyus />
+
+  <!-- Testimonials Section -->
+  <section class="py-16 lg:py-24 bg-slate-900 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          What Our <span class="text-orange-500">Clients Say</span>
+        </h2>
+        <p class="text-lg text-slate-300">
+          Real reviews from real clients on Google. See why businesses trust Codebrand for their digital marketing needs.
+        </p>
+      </div>
+      <Testimonial client:visible />
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
+          Marketing <span class="text-orange-500">Success Stories</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          Real ROI and business growth. See how our digital marketing strategies have transformed businesses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-pink-600 to-pink-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-pink-600 uppercase tracking-wide">Social Media</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Fashion Brand Campaign</h3>
+            <p class="text-gray-600 mb-4">Multi-platform social media campaign for a fashion brand that generated massive engagement and direct sales through Instagram and TikTok.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">+500%</div>
+                <div class="text-gray-500">Engagement</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">50K</div>
+                <div class="text-gray-500">New Followers</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+320%</div>
+                <div class="text-gray-500">Sales</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide">PPC Advertising</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">B2B Lead Generation</h3>
+            <p class="text-gray-600 mb-4">Google Ads and LinkedIn campaign for a B2B software company that dramatically reduced cost per lead while increasing quality.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">-65%</div>
+                <div class="text-gray-500">Cost Per Lead</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+200%</div>
+                <div class="text-gray-500">Qualified Leads</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">4.5x</div>
+                <div class="text-gray-500">ROAS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-teal-600 uppercase tracking-wide">Email Marketing</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">E-commerce Automation</h3>
+            <p class="text-gray-600 mb-4">Email automation sequences for an e-commerce store that recovered abandoned carts and increased repeat purchase rate.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">25%</div>
+                <div class="text-gray-500">Cart Recovery</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+45%</div>
+                <div class="text-gray-500">Repeat Purchases</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">$150K</div>
+                <div class="text-gray-500">Revenue Added</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section

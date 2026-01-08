@@ -4,6 +4,7 @@ import Whyus from "../components/whyus.astro";
 import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
+import Testimonial from "../components/testimonial.tsx";
 
 const title = "Landing Page Design & Development | Codebrand";
 const description =
@@ -632,6 +633,118 @@ const serviceSchema = {
 
   <!-- Why Choose Us Section -->
   <Whyus />
+
+  <!-- Testimonials Section -->
+  <section class="py-16 lg:py-24 bg-slate-900 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          What Our <span class="text-orange-500">Clients Say</span>
+        </h2>
+        <p class="text-lg text-slate-300">
+          Real reviews from real clients on Google. See why businesses trust Codebrand for their landing page needs.
+        </p>
+      </div>
+      <Testimonial client:visible />
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
+          Landing Page <span class="text-orange-500">Success Stories</span>
+        </h2>
+        <p class="text-lg text-gray-700">
+          Real conversion improvements and lead generation. See how our landing pages have driven results for businesses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-red-600 uppercase tracking-wide">SaaS</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Product Launch Page</h3>
+            <p class="text-gray-600 mb-4">High-converting landing page for a SaaS product launch that generated thousands of signups before the official release.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">12.5%</div>
+                <div class="text-gray-500">Conversion Rate</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">5K+</div>
+                <div class="text-gray-500">Signups</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">$2.50</div>
+                <div class="text-gray-500">Cost Per Lead</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-fuchsia-600 to-fuchsia-800 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-fuchsia-600 uppercase tracking-wide">Webinar</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Event Registration Page</h3>
+            <p class="text-gray-600 mb-4">Landing page for a business coaching webinar that achieved exceptional registration rates through urgency and social proof.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">18.3%</div>
+                <div class="text-gray-500">Conversion Rate</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">2.5K</div>
+                <div class="text-gray-500">Registrations</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">65%</div>
+                <div class="text-gray-500">Attendance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold text-yellow-600 uppercase tracking-wide">Lead Gen</span>
+            <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Free Consultation Funnel</h3>
+            <p class="text-gray-600 mb-4">Multi-step landing page funnel for a consulting firm that qualified leads and booked discovery calls automatically.</p>
+            <div class="flex gap-4 text-sm">
+              <div>
+                <div class="font-bold text-orange-500">8.7%</div>
+                <div class="text-gray-500">Conversion Rate</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">+350%</div>
+                <div class="text-gray-500">Qualified Leads</div>
+              </div>
+              <div>
+                <div class="font-bold text-orange-500">$15K</div>
+                <div class="text-gray-500">Avg Deal Size</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section
