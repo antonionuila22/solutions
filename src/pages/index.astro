@@ -16,6 +16,65 @@ import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
 import HowWeWork from "../components/HowWeWork.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 
+// LocalBusiness Schema for local SEO
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Codebrand",
+  "image": "https://codebrand.us/photos/bannercodebrand.webp",
+  "logo": "https://codebrand.us/iconcodebrand.svg",
+  "@id": "https://codebrand.us",
+  "url": "https://codebrand.us",
+  "telephone": "+1 (689) 316-9102",
+  "email": "info@codebrand.us",
+  "description": "Professional web development agency offering affordable, US-quality websites at 60% less cost. Specializing in React, Next.js, and custom web solutions.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Colonia Tepeyac",
+    "addressLocality": "Tegucigalpa",
+    "addressRegion": "Francisco Morazán",
+    "postalCode": "11101",
+    "addressCountry": "HN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 14.0818,
+    "longitude": -87.2068
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Honduras" },
+    { "@type": "Country", "name": "Mexico" },
+    { "@type": "Country", "name": "Spain" }
+  ],
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/codebrandes",
+    "https://www.instagram.com/codebrand.us",
+    "https://www.linkedin.com/company/codebrand",
+    "https://twitter.com/codebrand_us"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Development Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://codebrand.us/web-development" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design", "url": "https://codebrand.us/web-design" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Services", "url": "https://codebrand.us/seo" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce Development", "url": "https://codebrand.us/e-commerce" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding", "url": "https://codebrand.us/branding" }}
+    ]
+  }
+};
+
 // Review Schema for Google rich snippets - individual reviews
 const reviewsSchema = {
   "@context": "https://schema.org",
@@ -82,6 +141,9 @@ const reviewsSchema = {
   keywords="affordable web development USA, Honduras software development, nearshore web development, cost-effective web design, offshore development Honduras, US web development affordable, certified web developers Honduras, bilingual web development, export services Honduras to USA, cheap quality web development, outsource web development Honduras, Latin America web agency, nearshore outsourcing, web development under $15000, affordable digital agency USA, budget web development services, professional web design Honduras, US nearshore development, Central America tech services, quality affordable websites, web development agency, custom website development, React development agency, Next.js developers"
   image="/photos/bannercodebrand.webp"
 >
+  <!-- LocalBusiness Schema for local SEO -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessSchema)} />
+
   <!-- Reviews Schema for Google rich snippets -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewsSchema)} />
 

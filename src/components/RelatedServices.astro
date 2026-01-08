@@ -1,0 +1,119 @@
+---
+/**
+ * RelatedServices Component
+ * Shows related services for internal linking and SEO
+ * Add to bottom of service pages to improve cross-linking
+ */
+
+interface Service {
+  title: string;
+  description: string;
+  href: string;
+  icon: string;
+}
+
+interface Props {
+  currentService: string;
+  title?: string;
+  subtitle?: string;
+}
+
+const { currentService, title = "Related Services", subtitle = "Explore More Solutions" } = Astro.props;
+
+// Define all services with their relationships
+const allServices: Record<string, Service[]> = {
+  "web-development": [
+    { title: "UX/UI Design", description: "Create intuitive interfaces that convert visitors into customers with user-centered design.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "SEO Services", description: "Boost your search rankings and drive organic traffic with expert optimization.", href: "/seo", icon: "/icons/seo.webp" },
+    { title: "E-commerce Development", description: "Build powerful online stores that maximize sales and customer experience.", href: "/e-commerce", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+  ],
+  "web-design": [
+    { title: "Web Development", description: "Transform your designs into fast, scalable websites with modern technologies.", href: "/web-development", icon: "/icons/sitio-web.webp" },
+    { title: "Branding", description: "Build a cohesive brand identity that resonates with your target audience.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
+    { title: "Landing Pages", description: "High-converting landing pages designed to maximize your campaign ROI.", href: "/landing-pages", icon: "/icons/login-page-svgrepo-com.svg" },
+  ],
+  "branding": [
+    { title: "Web Design", description: "Bring your brand to life with stunning, user-focused web designs.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Web Development", description: "Build a professional website that reflects your brand identity.", href: "/web-development", icon: "/icons/sitio-web.webp" },
+    { title: "Social Media Design", description: "Consistent brand presence across all your social media platforms.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
+  ],
+  "seo": [
+    { title: "Web Development", description: "SEO-optimized websites built for speed and search engine visibility.", href: "/web-development", icon: "/icons/sitio-web.webp" },
+    { title: "Digital Marketing", description: "Comprehensive marketing strategies to amplify your online presence.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
+    { title: "Landing Pages", description: "Conversion-optimized pages that turn traffic into leads.", href: "/landing-pages", icon: "/icons/login-page-svgrepo-com.svg" },
+  ],
+  "digital-marketing": [
+    { title: "SEO Services", description: "Dominate search results with expert optimization strategies.", href: "/seo", icon: "/icons/seo.webp" },
+    { title: "Social Media Design", description: "Eye-catching graphics that boost engagement on all platforms.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
+    { title: "Landing Pages", description: "High-converting pages for your marketing campaigns.", href: "/landing-pages", icon: "/icons/login-page-svgrepo-com.svg" },
+  ],
+  "e-commerce": [
+    { title: "Web Development", description: "Custom web solutions to scale your online business.", href: "/web-development", icon: "/icons/sitio-web.webp" },
+    { title: "UX/UI Design", description: "Optimize your store's user experience for higher conversions.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "SEO Services", description: "Drive organic traffic to your products with e-commerce SEO.", href: "/seo", icon: "/icons/seo.webp" },
+  ],
+  "landing-pages": [
+    { title: "Digital Marketing", description: "Maximize your landing page ROI with integrated marketing.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
+    { title: "Web Design", description: "Beautiful designs that capture attention and convert.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "SEO Services", description: "Optimize your pages for search visibility and conversions.", href: "/seo", icon: "/icons/seo.webp" },
+  ],
+  "outsourcing-design": [
+    { title: "Outsourcing Development", description: "White-label development services for agencies.", href: "/outsourcing-development", icon: "/icons/sitio-web.webp" },
+    { title: "Branding Services", description: "Complete brand identity solutions for your clients.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
+    { title: "Web Design", description: "Professional UI/UX design for any project.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+  ],
+  "outsourcing-development": [
+    { title: "Outsourcing Design", description: "White-label design services for agencies.", href: "/outsourcing-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Web Development", description: "Full-stack development for complex projects.", href: "/web-development", icon: "/icons/sitio-web.webp" },
+    { title: "E-commerce Development", description: "Custom e-commerce solutions for your clients.", href: "/e-commerce", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+  ],
+};
+
+const relatedServices = allServices[currentService] || [];
+---
+
+{relatedServices.length > 0 && (
+  <section class="py-16 lg:py-24 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">{subtitle}</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mt-2">
+          {title}
+        </h2>
+        <p class="text-gray-600 mt-4">
+          Discover other services that complement your project and help you achieve better results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {relatedServices.map((service) => (
+          <a
+            href={service.href}
+            class="group p-6 bg-gray-50 rounded-2xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-white shadow-sm mb-4 group-hover:bg-orange-50 transition-colors">
+              <img
+                src={service.icon}
+                alt={`${service.title} service icon`}
+                class="w-10 h-10"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-cyan-900 mb-2 group-hover:text-orange-500 transition-colors">
+              {service.title}
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              {service.description}
+            </p>
+            <span class="inline-flex items-center text-orange-500 font-semibold text-sm group-hover:gap-2 transition-all">
+              Learn More
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

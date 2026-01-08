@@ -24,6 +24,8 @@ According to [Deloitte's 2024 Global Outsourcing Survey](https://www2.deloitte.c
 
 In this comprehensive guide, we'll explore everything you need to know about nearshore software development, with a focus on why Honduras is emerging as a top destination for US companies.
 
+> **Looking for nearshore development?** Explore our [outsourcing development](/outsourcing-development) and [outsourcing design](/outsourcing-design) services.
+
 ---
 
 ## What is Nearshore Software Development?
@@ -61,7 +63,7 @@ Honduras offers the **lowest development costs in Central America** while mainta
 
 Compare this to US rates of $100-200/hour for equivalent experience.
 
-**Real Example**: A typical e-commerce website that costs $15,000 in the US can be built for **$6,000 in Honduras**—same quality, 60% savings.
+**Real Example**: A typical e-commerce website that costs $15,000 in the US can be built for **$6,000 in Honduras**—same quality, 60% savings. Check out our [web development services](/web-development) and [e-commerce development](/e-commerce) for competitive nearshore pricing.
 
 ### 2. **Perfect Timezone Alignment**
 

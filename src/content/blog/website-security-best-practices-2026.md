@@ -26,6 +26,8 @@ Website security isn't optional—it's essential. In 2026, cyberattacks are more
 
 This guide covers everything you need to protect your website, from fundamental practices to advanced security measures. Whether you're building a simple blog or a complex e-commerce platform, these principles apply.
 
+> **Need a secure website?** Our [web development services](/web-development) include security best practices built into every project.
+
 ---
 
 ## Part 1: Foundation Security

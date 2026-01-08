@@ -5,6 +5,7 @@ import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
 import Testimonial from "../components/testimonial.tsx";
+import RelatedServices from "../components/RelatedServices.astro";
 
 const title =
   "Professional Web Design Services | UI/UX Design & Website Redesign - Codebrand";
@@ -781,6 +782,9 @@ const serviceSchema = {
       </div>
     </div>
   </section>
+
+  <!-- Related Services Section -->
+  <RelatedServices currentService="web-design" />
 
   <!-- FAQ Section -->
   <Faq />
