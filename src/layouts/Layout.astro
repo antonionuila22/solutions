@@ -5,6 +5,7 @@ import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/NavbarAstro.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppWidget from "../components/WhatsAppWidget.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 
 // Props individuales
@@ -33,7 +34,7 @@ description =
 keywords =
   keywords ||
   "web development agency, UI/UX design services, digital marketing agency, custom web development, mobile app development, SEO optimization, social media marketing, branding agency, e-commerce development, graphic design services";
-image = image || "https://codebrand.us/og-image.svg";
+image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 
 // URL dinámica y mejoras SEO (permite override para páginas duplicadas)
 const canonicalUrl =
@@ -535,6 +536,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- End Google Tag Manager (noscript) -->
 
     <Navbar />
+    <Breadcrumbs />
     <main>
       <slot />
     </main>

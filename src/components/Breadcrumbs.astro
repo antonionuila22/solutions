@@ -1,0 +1,123 @@
+---
+interface BreadcrumbItem {
+  name: string;
+  href: string;
+}
+
+interface Props {
+  items?: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+// Generate breadcrumbs from URL if not provided
+function generateBreadcrumbs(url: URL): BreadcrumbItem[] {
+  const path = url.pathname;
+
+  // Don't show breadcrumbs on homepage
+  if (path === "/" || path === "") {
+    return [];
+  }
+
+  const segments = path.split("/").filter(Boolean);
+  const breadcrumbs: BreadcrumbItem[] = [{ name: "Home", href: "/" }];
+
+  // Map of URL segments to display names
+  const nameMap: Record<string, string> = {
+    "web-development": "Web Development",
+    "web-design": "Web Design",
+    "branding": "Branding",
+    "seo": "SEO Services",
+    "digital-marketing": "Digital Marketing",
+    "e-commerce": "E-commerce",
+    "landing-pages": "Landing Pages",
+    "outsourcing-development": "Outsourcing Development",
+    "outsourcing-design": "Outsourcing Design",
+    "blog": "Blog",
+    "projects": "Projects",
+    "contact": "Contact",
+    "about": "About",
+    "locations": "Locations",
+    "regions": "Regions",
+    "industries": "Industries",
+    "countryareas": "Service Areas",
+    "real-estate": "Real Estate",
+    "restaurants": "Restaurants",
+    "healthcare": "Healthcare",
+    "ecommerce": "E-commerce",
+    "law-firms": "Law Firms",
+    "fitness": "Fitness",
+    "travel-agency": "Travel Agency",
+    "construction": "Construction",
+    "content-creators": "Content Creators",
+    "automotive": "Automotive",
+  };
+
+  let currentPath = "";
+  segments.forEach((segment, index) => {
+    currentPath += `/${segment}`;
+    const isLast = index === segments.length - 1;
+
+    // Try to get display name from map, otherwise format the segment
+    let displayName = nameMap[segment] ||
+      segment
+        .split("-")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
+    // Truncate long names (like blog post slugs)
+    if (displayName.length > 40) {
+      displayName = displayName.substring(0, 37) + "...";
+    }
+
+    breadcrumbs.push({
+      name: displayName,
+      href: isLast ? "" : currentPath,
+    });
+  });
+
+  return breadcrumbs;
+}
+
+const breadcrumbItems = items || generateBreadcrumbs(Astro.url);
+const showBreadcrumbs = breadcrumbItems.length > 1;
+---
+
+{showBreadcrumbs && (
+  <nav aria-label="Breadcrumb" class="bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ol class="flex items-center gap-1 py-3 text-sm overflow-x-auto whitespace-nowrap">
+        {breadcrumbItems.map((item, index) => {
+          const isLast = index === breadcrumbItems.length - 1;
+          return (
+            <li class="flex items-center">
+              {index > 0 && (
+                <svg
+                  class="w-4 h-4 text-slate-400 mx-1 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              )}
+              {isLast ? (
+                <span class="text-slate-600 font-medium" aria-current="page">
+                  {item.name}
+                </span>
+              ) : (
+                <a
+                  href={item.href}
+                  class="text-slate-500 hover:text-orange-500 transition-colors"
+                >
+                  {item.name}
+                </a>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  </nav>
+)}
