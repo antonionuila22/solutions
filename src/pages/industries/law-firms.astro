@@ -2,6 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
+import TrustBadges from "../../components/TrustBadges.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
 
 const title =
   "Law Firm Website Design & Legal Practice Management Software | CodeBrand";
@@ -85,6 +87,9 @@ const image = "/photos/bannercodebrand.webp";
       </div>
     </div>
   </section>
+
+  <!-- Trust Badges Section -->
+  <TrustBadges />
 
   <!-- Introduction Section -->
   <section class="py-16 lg:py-24 bg-white font-poppins">
@@ -1438,4 +1443,7 @@ const image = "/photos/bannercodebrand.webp";
   </section>
 
   <Whyus />
+
+  <!-- Related Services Section -->
+  <RelatedServices currentService="web-development" />
 </Layout>

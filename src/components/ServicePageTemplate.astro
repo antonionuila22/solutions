@@ -3,6 +3,13 @@
  * Service Page Template
  * DRY compliant template for all service pages
  *
+ * ENHANCED VERSION with:
+ * - Testimonials for social proof
+ * - Case Studies for authority
+ * - Process section for methodology
+ * - Related Services for internal linking
+ * - Trust Badges for E-E-A-T
+ *
  * This component eliminates 90% of code duplication across service pages
  * by providing a consistent structure with customizable content.
  *
@@ -15,8 +22,13 @@ import ServicesGrid from "./service-sections/ServicesGrid.astro";
 import ToolsSection from "./service-sections/ToolsSection.astro";
 import BenefitsSection from "./service-sections/BenefitsSection.astro";
 import CTASection from "./service-sections/CTASection.astro";
+import ProcessSection from "./service-sections/ProcessSection.astro";
+import CaseStudiesSection from "./service-sections/CaseStudiesSection.astro";
+import TestimonialsSection from "./service-sections/TestimonialsSection.astro";
 import Whyus from "./whyus.astro";
 import Faq from "./Faq.astro";
+import TrustBadges from "./TrustBadges.astro";
+import RelatedServices from "./RelatedServices.astro";
 
 interface Stat {
   value: string;
@@ -40,6 +52,26 @@ interface Benefit {
   title: string;
   description: string;
   icon: string;
+}
+
+interface ProcessStep {
+  number: number;
+  title: string;
+  description: string;
+  color?: string;
+}
+
+interface CaseStudy {
+  category: string;
+  categoryColor: string;
+  title: string;
+  description: string;
+  metrics: {
+    value: string;
+    label: string;
+  }[];
+  gradientFrom: string;
+  gradientTo: string;
 }
 
 interface HeroConfig {
@@ -79,6 +111,26 @@ interface BenefitsConfig {
   columns?: "1" | "2" | "3";
 }
 
+interface ProcessConfig {
+  title?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  steps: ProcessStep[];
+}
+
+interface CaseStudiesConfig {
+  title?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  items: CaseStudy[];
+}
+
+interface TestimonialsConfig {
+  title?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+}
+
 interface CTAConfig {
   title: string;
   titleHighlight: string;
@@ -105,9 +157,15 @@ export interface ServicePageConfig {
   services: ServicesConfig;
   tools?: ToolsConfig;
   benefits?: BenefitsConfig;
+  process?: ProcessConfig;
+  caseStudies?: CaseStudiesConfig;
+  testimonials?: TestimonialsConfig;
   cta: CTAConfig;
+  relatedServicesKey?: string; // Key for RelatedServices component
   showWhyUs?: boolean;
   showFaq?: boolean;
+  showTrustBadges?: boolean;
+  showTestimonials?: boolean;
   customSections?: any[]; // For future extensibility
 }
 
@@ -120,6 +178,8 @@ const { config } = Astro.props;
 // Default values
 const showWhyUs = config.showWhyUs ?? true;
 const showFaq = config.showFaq ?? true;
+const showTrustBadges = config.showTrustBadges ?? true;
+const showTestimonials = config.showTestimonials ?? true;
 ---
 
 <Layout
@@ -130,7 +190,7 @@ const showFaq = config.showFaq ?? true;
   canonicalOverride={config.seo.canonicalUrl}
 >
   <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json" set:html={JSON.stringify(config.schema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(config.schema)} />
 
   <!-- Hero Section -->
   <HeroSection
@@ -146,6 +206,9 @@ const showFaq = config.showFaq ?? true;
     stats={config.hero.stats}
   />
 
+  <!-- Trust Badges (after hero for immediate trust signals) -->
+  {showTrustBadges && <TrustBadges />}
+
   <!-- Services Grid -->
   <ServicesGrid
     title={config.services.title}
@@ -154,6 +217,18 @@ const showFaq = config.showFaq ?? true;
     services={config.services.items}
     columns={config.services.columns}
   />
+
+  <!-- Process Section (optional) -->
+  {
+    config.process && config.process.steps.length > 0 && (
+      <ProcessSection
+        title={config.process.title}
+        titleHighlight={config.process.titleHighlight}
+        subtitle={config.process.subtitle}
+        steps={config.process.steps}
+      />
+    )
+  }
 
   <!-- Tools Section (optional) -->
   {
@@ -184,6 +259,29 @@ const showFaq = config.showFaq ?? true;
     )
   }
 
+  <!-- Testimonials Section (social proof) -->
+  {
+    showTestimonials && (
+      <TestimonialsSection
+        title={config.testimonials?.title}
+        titleHighlight={config.testimonials?.titleHighlight}
+        subtitle={config.testimonials?.subtitle}
+      />
+    )
+  }
+
+  <!-- Case Studies Section (optional) -->
+  {
+    config.caseStudies && config.caseStudies.items.length > 0 && (
+      <CaseStudiesSection
+        title={config.caseStudies.title}
+        titleHighlight={config.caseStudies.titleHighlight}
+        subtitle={config.caseStudies.subtitle}
+        caseStudies={config.caseStudies.items}
+      />
+    )
+  }
+
   <!-- Custom Sections (for extensibility) -->
   {config.customSections?.map((Section) => <Section />)}
 
@@ -198,6 +296,9 @@ const showFaq = config.showFaq ?? true;
     ctaSecondaryUrl={config.cta.ctaSecondaryUrl}
     features={config.cta.features}
   />
+
+  <!-- Related Services (internal linking for SEO) -->
+  {config.relatedServicesKey && <RelatedServices currentService={config.relatedServicesKey} />}
 
   <!-- FAQ Section (optional) -->
   {showFaq && <Faq />}

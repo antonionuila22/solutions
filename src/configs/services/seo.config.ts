@@ -1,6 +1,7 @@
 /**
  * SEO Service Page Configuration
  * Configuration for SEO services using ServicePageTemplate
+ * ENHANCED: Added process, case studies, testimonials, and related services
  */
 
 import { createServiceSchema } from "../../utils/schema";
@@ -13,7 +14,7 @@ export const seoConfig: ServicePageConfig = {
     description:
       "Professional SEO services including technical audits, keyword research, on-page optimization, link building, content strategy, and local SEO. Boost Google rankings and drive organic traffic.",
     keywords:
-      "SEO services, search engine optimization, technical SEO, keyword research, on-page SEO, link building, local SEO, SEO audit, content strategy, SEO consulting, Google rankings, organic traffic, SEO company, SEO optimization, SEO marketing, search engine marketing",
+      "SEO services, search engine optimization, technical SEO, keyword research, on-page SEO, link building, local SEO, SEO audit, content strategy, SEO consulting, Google rankings, organic traffic, SEO company, SEO optimization, SEO marketing, search engine marketing, SEO agency, professional SEO services, SEO expert, website SEO, SEO specialist, SEO packages, monthly SEO services",
     image: "/photos/bannercodebrand.webp",
     canonicalUrl: "https://codebrand.us/seo", // Points to main page to avoid duplicate content
   },
@@ -21,7 +22,26 @@ export const seoConfig: ServicePageConfig = {
   // Schema.org Structured Data
   schema: createServiceSchema(
     "SEO Services",
-    "Professional SEO services including technical audits, keyword research, on-page optimization, link building, content strategy, and local SEO. Boost Google rankings and drive organic traffic."
+    "Professional SEO services including technical audits, keyword research, on-page optimization, link building, content strategy, and local SEO. Boost Google rankings and drive organic traffic.",
+    "SEO Services",
+    [
+      {
+        name: "Technical SEO",
+        description: "Site structure, crawlability, indexing, and technical optimization",
+      },
+      {
+        name: "On-Page SEO",
+        description: "Content optimization, meta tags, headers, and internal linking",
+      },
+      {
+        name: "Off-Page SEO",
+        description: "Link building, brand mentions, and authority building",
+      },
+      {
+        name: "Local SEO",
+        description: "Google Business Profile, citations, and local rankings",
+      },
+    ]
   ),
 
   // Hero Section
@@ -116,6 +136,83 @@ export const seoConfig: ServicePageConfig = {
     ],
   },
 
+  // Process Section
+  process: {
+    title: "Our SEO",
+    titleHighlight: "Process",
+    subtitle: "A proven methodology that delivers sustainable ranking improvements.",
+    steps: [
+      {
+        number: 1,
+        title: "Audit & Analysis",
+        description: "Comprehensive technical audit, competitor analysis, and keyword research to identify opportunities and create a baseline.",
+      },
+      {
+        number: 2,
+        title: "Strategy Development",
+        description: "Custom SEO strategy based on your goals, industry, and competitive landscape. Prioritized action plan for maximum impact.",
+      },
+      {
+        number: 3,
+        title: "Implementation",
+        description: "Execute technical fixes, on-page optimization, content creation, and link building campaigns according to strategy.",
+      },
+      {
+        number: 4,
+        title: "Monitor & Optimize",
+        description: "Continuous monitoring, A/B testing, and refinement. Monthly reports track progress and inform ongoing optimization.",
+      },
+    ],
+  },
+
+  // Case Studies Section
+  caseStudies: {
+    title: "SEO",
+    titleHighlight: "Success Stories",
+    subtitle: "Real results from real clients. See how our SEO strategies have transformed businesses.",
+    items: [
+      {
+        category: "E-commerce",
+        categoryColor: "text-blue-600",
+        title: "Online Store Rankings",
+        description: "Took an e-commerce store from page 5 to page 1 for their primary keywords, resulting in massive organic revenue growth.",
+        metrics: [
+          { value: "+420%", label: "Organic Traffic" },
+          { value: "+280%", label: "Revenue" },
+          { value: "#1", label: "Primary Keywords" },
+        ],
+        gradientFrom: "from-blue-600",
+        gradientTo: "to-blue-800",
+      },
+      {
+        category: "Local Business",
+        categoryColor: "text-green-600",
+        title: "Local Service Provider",
+        description: "Dominated local search results for a service business, filling their calendar with qualified leads.",
+        metrics: [
+          { value: "+350%", label: "Local Leads" },
+          { value: "3-Pack", label: "Google Maps" },
+          { value: "+200%", label: "Calls" },
+        ],
+        gradientFrom: "from-green-600",
+        gradientTo: "to-green-800",
+      },
+      {
+        category: "B2B SaaS",
+        categoryColor: "text-purple-600",
+        title: "SaaS Company SEO",
+        description: "Built organic authority for a B2B software company, reducing their CAC and increasing inbound demo requests.",
+        metrics: [
+          { value: "-65%", label: "CAC" },
+          { value: "+180%", label: "Demo Requests" },
+          { value: "50+", label: "Page 1 Keywords" },
+        ],
+        gradientFrom: "from-purple-600",
+        gradientTo: "to-purple-800",
+      },
+    ],
+  },
+
   // Tools Section
   tools: {
     title: "Professional SEO Tools",
@@ -124,7 +221,7 @@ export const seoConfig: ServicePageConfig = {
       "We use cutting-edge SEO tools and analytics platforms to deliver data-driven results.",
     columns: "4",
     items: [
-      { name: "Google Search Console", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+      { name: "Google Search Console", icon: "🔍" },
       { name: "Google Analytics", icon: "📈" },
       { name: "Ahrefs", icon: "🔗" },
       { name: "SEMrush", icon: "🎯" },
@@ -176,7 +273,12 @@ export const seoConfig: ServicePageConfig = {
     ctaSecondaryUrl: "/services",
   },
 
+  // Related Services for internal linking
+  relatedServicesKey: "seo",
+
   // Optional sections
   showWhyUs: true,
   showFaq: true,
+  showTrustBadges: true,
+  showTestimonials: true,
 };

@@ -2,6 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
+import TrustBadges from "../../components/TrustBadges.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
 
 const title = "Restaurant Website Design & Online Ordering Systems | CodeBrand";
 const description =
@@ -83,6 +85,9 @@ const image = "/photos/Restaurantdolcevita.webp";
       </div>
     </div>
   </section>
+
+  <!-- Trust Badges Section -->
+  <TrustBadges />
 
   <!-- Introduction Section -->
   <section class="py-16 lg:py-24 bg-white font-poppins">
@@ -1028,4 +1033,7 @@ const image = "/photos/Restaurantdolcevita.webp";
   </section>
 
   <Whyus />
+
+  <!-- Related Services Section -->
+  <RelatedServices currentService="web-development" />
 </Layout>

@@ -1,6 +1,7 @@
 /**
  * UX/UI Design Service Page Configuration
  * Configuration for UX/UI design services using ServicePageTemplate
+ * ENHANCED: Added process, case studies, testimonials, and related services
  */
 
 import { createServiceSchema } from "../../utils/schema";
@@ -13,7 +14,7 @@ export const uxUiConfig: ServicePageConfig = {
     description:
       "Transform your digital products with exceptional UX/UI design services. We create intuitive interfaces and engaging user experiences that boost conversions and customer loyalty through research-driven design.",
     keywords:
-      "UX design, UI design, user experience design, user interface design, UX/UI services, wireframing, prototyping, user research, usability testing, interaction design, responsive web design, mobile app design, UI UX designer, user experience consulting, interface design agency, UX research, user testing, design thinking, user-centered design, conversion rate optimization",
+      "UX design, UI design, user experience design, user interface design, UX/UI services, wireframing, prototyping, user research, usability testing, interaction design, responsive web design, mobile app design, UI UX designer, user experience consulting, interface design agency, UX research, user testing, design thinking, user-centered design, conversion rate optimization, UX audit, UI redesign, product design, digital product design, app interface design",
     image: "/photos/bannercodebrand.webp",
   },
 
@@ -34,6 +35,10 @@ export const uxUiConfig: ServicePageConfig = {
       {
         name: "UI Design & Visual Design",
         description: "Beautiful, on-brand interface design with attention to detail",
+      },
+      {
+        name: "Usability Testing",
+        description: "User testing and validation to optimize the experience",
       },
     ]
   ),
@@ -130,6 +135,83 @@ export const uxUiConfig: ServicePageConfig = {
     ],
   },
 
+  // Process Section
+  process: {
+    title: "Our UX/UI Design",
+    titleHighlight: "Process",
+    subtitle: "A user-centered approach that creates interfaces users love.",
+    steps: [
+      {
+        number: 1,
+        title: "Research & Discovery",
+        description: "User interviews, competitive analysis, and stakeholder workshops to understand needs, goals, and pain points.",
+      },
+      {
+        number: 2,
+        title: "Strategy & Architecture",
+        description: "Define information architecture, user flows, and interaction patterns based on research insights.",
+      },
+      {
+        number: 3,
+        title: "Design & Prototype",
+        description: "Create wireframes, visual designs, and interactive prototypes. Iterate based on feedback and testing.",
+      },
+      {
+        number: 4,
+        title: "Test & Refine",
+        description: "Usability testing with real users, analyze results, and refine designs for optimal user experience.",
+      },
+    ],
+  },
+
+  // Case Studies Section
+  caseStudies: {
+    title: "UX/UI Design",
+    titleHighlight: "Success Stories",
+    subtitle: "See how our user-centered designs have transformed digital products and improved business outcomes.",
+    items: [
+      {
+        category: "SaaS Platform",
+        categoryColor: "text-blue-600",
+        title: "Dashboard Redesign",
+        description: "Redesigned a complex analytics dashboard that reduced user onboarding time and increased feature adoption significantly.",
+        metrics: [
+          { value: "-60%", label: "Onboarding Time" },
+          { value: "+85%", label: "Feature Adoption" },
+          { value: "+40%", label: "User Satisfaction" },
+        ],
+        gradientFrom: "from-blue-600",
+        gradientTo: "to-blue-800",
+      },
+      {
+        category: "E-commerce",
+        categoryColor: "text-green-600",
+        title: "Checkout Flow Optimization",
+        description: "Simplified checkout process reducing cart abandonment and increasing completed purchases for an online retailer.",
+        metrics: [
+          { value: "-45%", label: "Cart Abandonment" },
+          { value: "+65%", label: "Conversions" },
+          { value: "3.2s", label: "Faster Checkout" },
+        ],
+        gradientFrom: "from-green-600",
+        gradientTo: "to-green-800",
+      },
+      {
+        category: "Mobile App",
+        categoryColor: "text-purple-600",
+        title: "Fitness App Redesign",
+        description: "Complete redesign of a fitness tracking app that improved daily active users and user retention rates.",
+        metrics: [
+          { value: "+120%", label: "Daily Active Users" },
+          { value: "+80%", label: "Retention Rate" },
+          { value: "4.8", label: "App Store Rating" },
+        ],
+        gradientFrom: "from-purple-600",
+        gradientTo: "to-purple-800",
+      },
+    ],
+  },
+
   // Tools Section
   tools: {
     title: "Professional Design Tools",
@@ -138,7 +220,7 @@ export const uxUiConfig: ServicePageConfig = {
       "We use cutting-edge design tools to create, prototype, and collaborate on exceptional user experiences.",
     columns: "4",
     items: [
-      { name: "Figma", icon: "/icons/figma.svg" },
+      { name: "Figma", icon: "🎨" },
       { name: "Adobe XD", icon: "🎯" },
       { name: "Sketch", icon: "✏️" },
       { name: "InVision", icon: "💡" },
@@ -190,7 +272,12 @@ export const uxUiConfig: ServicePageConfig = {
     ctaSecondaryUrl: "/services",
   },
 
+  // Related Services for internal linking
+  relatedServicesKey: "ux-ui",
+
   // Optional sections
   showWhyUs: true,
   showFaq: true,
+  showTrustBadges: true,
+  showTestimonials: true,
 };

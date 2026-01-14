@@ -1,0 +1,32 @@
+---
+/**
+ * Testimonials Section Component for Service Pages
+ * Wrapper for Testimonial component with customizable header
+ */
+
+import Testimonial from "../testimonial.tsx";
+
+interface Props {
+  title?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "What Our",
+  titleHighlight = "Clients Say",
+  subtitle = "Real reviews from real clients on Google. See why businesses trust Codebrand for their digital needs.",
+} = Astro.props;
+---
+
+<section class="py-16 lg:py-24 bg-slate-900 font-poppins">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        {title} <span class="text-orange-500">{titleHighlight}</span>
+      </h2>
+      <p class="text-lg text-slate-300">{subtitle}</p>
+    </div>
+    <Testimonial client:visible />
+  </div>
+</section>

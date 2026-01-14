@@ -1,6 +1,7 @@
 /**
  * Branding Service Page Configuration
  * Configuration for branding services using ServicePageTemplate
+ * ENHANCED: Added process, case studies, testimonials, and related services
  */
 
 import { createServiceSchema } from "../../utils/schema";
@@ -14,7 +15,7 @@ export const brandingConfig: ServicePageConfig = {
     description:
       "Professional branding services including logo design, brand strategy, visual identity, and brand guidelines. Create a memorable brand that resonates with your audience and stands the test of time.",
     keywords:
-      "branding, logo design, brand identity, visual identity, brand strategy, rebranding, brand guidelines, logo creation, corporate identity, brand design, brand development, brand positioning, brand messaging, brand personality, brand naming, brand collateral, business stationery, brand refresh, brand architecture, brand equity, trademark design, monogram design, wordmark design, symbol design",
+      "branding, logo design, brand identity, visual identity, brand strategy, rebranding, brand guidelines, logo creation, corporate identity, brand design, brand development, brand positioning, brand messaging, brand personality, brand naming, brand collateral, business stationery, brand refresh, brand architecture, brand equity, trademark design, monogram design, wordmark design, symbol design, branding agency, brand identity design, professional branding services",
     image: "/photos/bannercodebrand.webp",
     canonicalUrl: "https://codebrand.us/branding", // Points to main page to avoid duplicate content
   },
@@ -36,6 +37,10 @@ export const brandingConfig: ServicePageConfig = {
       {
         name: "Visual Identity Design",
         description: "Cohesive visual systems with color, typography, and design elements",
+      },
+      {
+        name: "Brand Guidelines",
+        description: "Detailed brand standards and usage documentation",
       },
     ]
   ),
@@ -132,6 +137,83 @@ export const brandingConfig: ServicePageConfig = {
     ],
   },
 
+  // Process Section
+  process: {
+    title: "Our Branding",
+    titleHighlight: "Process",
+    subtitle: "A strategic approach that creates brands with lasting impact.",
+    steps: [
+      {
+        number: 1,
+        title: "Discovery & Research",
+        description: "Deep dive into your business, audience, competitors, and market to understand the landscape and opportunities.",
+      },
+      {
+        number: 2,
+        title: "Strategy & Positioning",
+        description: "Define brand positioning, values, personality, and messaging that differentiates you from competitors.",
+      },
+      {
+        number: 3,
+        title: "Creative Development",
+        description: "Design logo concepts, explore visual directions, and develop the visual identity system.",
+      },
+      {
+        number: 4,
+        title: "Refinement & Delivery",
+        description: "Finalize designs, create brand guidelines, and deliver all assets and documentation.",
+      },
+    ],
+  },
+
+  // Case Studies Section
+  caseStudies: {
+    title: "Branding",
+    titleHighlight: "Success Stories",
+    subtitle: "See how our branding work has helped businesses establish strong market presence.",
+    items: [
+      {
+        category: "Tech Startup",
+        categoryColor: "text-blue-600",
+        title: "SaaS Brand Launch",
+        description: "Created a complete brand identity for a tech startup that helped them secure Series A funding and establish market presence.",
+        metrics: [
+          { value: "$5M", label: "Funding Secured" },
+          { value: "+200%", label: "Brand Recognition" },
+          { value: "90%", label: "Investor Approval" },
+        ],
+        gradientFrom: "from-blue-600",
+        gradientTo: "to-blue-800",
+      },
+      {
+        category: "Restaurant",
+        categoryColor: "text-green-600",
+        title: "Restaurant Rebrand",
+        description: "Complete rebrand of a local restaurant chain that modernized their image and attracted a new demographic.",
+        metrics: [
+          { value: "+85%", label: "New Customers" },
+          { value: "+45%", label: "Revenue Growth" },
+          { value: "3x", label: "Social Following" },
+        ],
+        gradientFrom: "from-green-600",
+        gradientTo: "to-green-800",
+      },
+      {
+        category: "Professional Services",
+        categoryColor: "text-purple-600",
+        title: "Law Firm Identity",
+        description: "Developed a sophisticated brand identity for a law firm that communicated trust, expertise, and professionalism.",
+        metrics: [
+          { value: "+120%", label: "Client Inquiries" },
+          { value: "95%", label: "Brand Consistency" },
+          { value: "+60%", label: "Client Trust" },
+        ],
+        gradientFrom: "from-purple-600",
+        gradientTo: "to-purple-800",
+      },
+    ],
+  },
+
   // Tools Section
   tools: {
     title: "Professional Design Tools",
@@ -195,7 +277,12 @@ export const brandingConfig: ServicePageConfig = {
   // Custom Sections - "What is Branding?" explainer
   customSections: [BrandingExplainerSection],
 
+  // Related Services for internal linking
+  relatedServicesKey: "branding",
+
   // Optional sections
   showWhyUs: true,
   showFaq: true,
+  showTrustBadges: true,
+  showTestimonials: true,
 };

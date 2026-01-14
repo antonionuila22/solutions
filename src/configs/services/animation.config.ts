@@ -1,6 +1,7 @@
 /**
  * Animation Service Page Configuration
  * Configuration for 2D and 3D Animation services using ServicePageTemplate
+ * ENHANCED: Added process, case studies, testimonials, and related services
  */
 
 import { createServiceSchema } from "../../utils/schema";
@@ -13,7 +14,7 @@ export const animationConfig: ServicePageConfig = {
     description:
       "Professional 2D and 3D animation services including motion graphics, character animation, product visualization, explainer videos, and visual effects. Bring your ideas to life with stunning animations.",
     keywords:
-      "2D animation, 3D animation, motion graphics, character animation, product animation, explainer videos, logo animation, visual effects, VFX, whiteboard animation, animated explainer videos, kinetic typography, 3D character animation, product visualization, animation services, animated videos, motion design, 2D motion graphics, 3D modeling and animation, explainer animation, corporate animation, educational animation, social media animation, animated logo design",
+      "2D animation, 3D animation, motion graphics, character animation, product animation, explainer videos, logo animation, visual effects, VFX, whiteboard animation, animated explainer videos, kinetic typography, 3D character animation, product visualization, animation services, animated videos, motion design, 2D motion graphics, 3D modeling and animation, explainer animation, corporate animation, educational animation, social media animation, animated logo design, animation company, animation studio, professional animation services",
     image: "/photos/bannercodebrand.webp",
   },
 
@@ -30,7 +31,7 @@ export const animationConfig: ServicePageConfig = {
       {
         name: "3D Animation",
         description: "High-quality 3D character animation, product animations, and architectural walkthroughs",
-      },  
+      },
       {
         name: "Explainer Animations",
         description: "Engaging animated explainer videos that simplify complex concepts",
@@ -134,6 +135,83 @@ export const animationConfig: ServicePageConfig = {
     ],
   },
 
+  // Process Section
+  process: {
+    title: "Our Animation",
+    titleHighlight: "Process",
+    subtitle: "A proven workflow that delivers stunning animations on time and on budget.",
+    steps: [
+      {
+        number: 1,
+        title: "Discovery & Concept",
+        description: "We discuss your goals, target audience, and vision. Then develop creative concepts, storyboards, and style frames to visualize the final product.",
+      },
+      {
+        number: 2,
+        title: "Design & Pre-Production",
+        description: "Character design, asset creation, and animatic development. We finalize all visual elements before animation begins.",
+      },
+      {
+        number: 3,
+        title: "Animation & Production",
+        description: "Our animators bring your vision to life with smooth, professional animation. Regular updates ensure you're always in the loop.",
+      },
+      {
+        number: 4,
+        title: "Review & Delivery",
+        description: "Final polish, sound design, and revisions. We deliver your animation in all required formats, ready for any platform.",
+      },
+    ],
+  },
+
+  // Case Studies Section
+  caseStudies: {
+    title: "Animation",
+    titleHighlight: "Success Stories",
+    subtitle: "See how our animations have helped businesses engage audiences and achieve their goals.",
+    items: [
+      {
+        category: "SaaS Product",
+        categoryColor: "text-blue-600",
+        title: "Product Explainer Animation",
+        description: "Created an engaging 2D animated explainer video that simplified complex software features and boosted demo requests by 85%.",
+        metrics: [
+          { value: "+85%", label: "Demo Requests" },
+          { value: "2.5M", label: "Views" },
+          { value: "+120%", label: "Engagement" },
+        ],
+        gradientFrom: "from-blue-600",
+        gradientTo: "to-blue-800",
+      },
+      {
+        category: "E-commerce",
+        categoryColor: "text-green-600",
+        title: "Product 3D Animation",
+        description: "Produced stunning 3D product animations for an electronics brand that increased product page conversions significantly.",
+        metrics: [
+          { value: "+65%", label: "Conversions" },
+          { value: "45s", label: "Avg. Watch Time" },
+          { value: "+40%", label: "Add to Cart" },
+        ],
+        gradientFrom: "from-green-600",
+        gradientTo: "to-green-800",
+      },
+      {
+        category: "Healthcare",
+        categoryColor: "text-purple-600",
+        title: "Medical Education Animation",
+        description: "Developed 3D medical animations explaining complex procedures, improving patient understanding and consent rates.",
+        metrics: [
+          { value: "+90%", label: "Comprehension" },
+          { value: "12", label: "Animations" },
+          { value: "+50%", label: "Patient Satisfaction" },
+        ],
+        gradientFrom: "from-purple-600",
+        gradientTo: "to-purple-800",
+      },
+    ],
+  },
+
   // Tools Section
   tools: {
     title: "Professional Animation Tools",
@@ -194,7 +272,12 @@ export const animationConfig: ServicePageConfig = {
     ctaSecondaryUrl: "/services",
   },
 
+  // Related Services for internal linking
+  relatedServicesKey: "animation",
+
   // Optional sections
   showWhyUs: true,
-  showFaq: false,
+  showFaq: true,
+  showTrustBadges: true,
+  showTestimonials: true,
 };

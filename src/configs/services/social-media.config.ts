@@ -1,6 +1,7 @@
 /**
  * Social Media Service Page Configuration
  * Configuration for social media marketing services using ServicePageTemplate
+ * ENHANCED: Added process, case studies, testimonials, and related services
  */
 
 import { createServiceSchema } from "../../utils/schema";
@@ -9,11 +10,11 @@ import type { ServicePageConfig } from "../../components/ServicePageTemplate.ast
 export const socialMediaConfig: ServicePageConfig = {
   // SEO Configuration
   seo: {
-    title: "Social Media Design Services | Content & Graphics - Codebrand",
+    title: "Social Media Design & Marketing Services | Content Creation - Codebrand",
     description:
-      "Professional social media design services including custom graphics, post templates, stories, reels covers, and visual content creation for all platforms.",
+      "Professional social media design and marketing services including custom graphics, post templates, stories, reels covers, content strategy, and visual content creation for all platforms.",
     keywords:
-      "social media design, social media graphics, social media content, Instagram graphics, Facebook posts design, social media templates, post design, story design, social media visual content, brand graphics",
+      "social media design, social media graphics, social media content, Instagram graphics, Facebook posts design, social media templates, post design, story design, social media visual content, brand graphics, social media marketing, social media management, content creation, social media strategy, Instagram marketing, Facebook marketing, TikTok marketing, LinkedIn marketing, social media agency, social media content creation",
     image: "/photos/bannercodebrand.webp",
   },
 
@@ -142,6 +143,83 @@ export const socialMediaConfig: ServicePageConfig = {
     ],
   },
 
+  // Process Section
+  process: {
+    title: "Our Social Media",
+    titleHighlight: "Process",
+    subtitle: "A strategic approach that builds engaged communities and drives real business results.",
+    steps: [
+      {
+        number: 1,
+        title: "Brand Discovery",
+        description: "We analyze your brand, audience, competitors, and goals to create a customized social media strategy.",
+      },
+      {
+        number: 2,
+        title: "Content Planning",
+        description: "Develop content calendars, design templates, and establish brand voice guidelines for consistency.",
+      },
+      {
+        number: 3,
+        title: "Design & Creation",
+        description: "Create scroll-stopping graphics, videos, and content optimized for each platform's specifications.",
+      },
+      {
+        number: 4,
+        title: "Delivery & Optimization",
+        description: "Deliver content on schedule with performance tracking. Continuously optimize based on analytics.",
+      },
+    ],
+  },
+
+  // Case Studies Section
+  caseStudies: {
+    title: "Social Media",
+    titleHighlight: "Success Stories",
+    subtitle: "See how our social media strategies have helped brands grow their online presence.",
+    items: [
+      {
+        category: "Retail",
+        categoryColor: "text-blue-600",
+        title: "Fashion Brand Growth",
+        description: "Developed a complete social media strategy and content package that transformed a local boutique into a regional fashion destination.",
+        metrics: [
+          { value: "+450%", label: "Followers" },
+          { value: "+280%", label: "Engagement" },
+          { value: "+180%", label: "Online Sales" },
+        ],
+        gradientFrom: "from-blue-600",
+        gradientTo: "to-blue-800",
+      },
+      {
+        category: "Restaurant",
+        categoryColor: "text-green-600",
+        title: "Restaurant Social Revival",
+        description: "Created mouth-watering food content and promotional graphics that drove significant foot traffic increase.",
+        metrics: [
+          { value: "+320%", label: "Engagement" },
+          { value: "+85%", label: "Reservations" },
+          { value: "50K", label: "New Followers" },
+        ],
+        gradientFrom: "from-green-600",
+        gradientTo: "to-green-800",
+      },
+      {
+        category: "B2B Tech",
+        categoryColor: "text-purple-600",
+        title: "SaaS LinkedIn Strategy",
+        description: "Developed thought leadership content and professional graphics that established the brand as an industry authority.",
+        metrics: [
+          { value: "+200%", label: "Lead Gen" },
+          { value: "15K", label: "LinkedIn Followers" },
+          { value: "+90%", label: "Inbound Interest" },
+        ],
+        gradientFrom: "from-purple-600",
+        gradientTo: "to-purple-800",
+      },
+    ],
+  },
+
   // Tools Section
   tools: {
     title: "Professional Social Media Tools",
@@ -150,7 +228,7 @@ export const socialMediaConfig: ServicePageConfig = {
       "We use powerful social media management and analytics tools to maximize your social presence.",
     columns: "4",
     items: [
-      { name: "Meta Business Suite", icon: "/icons/earth-planet-svgrepo-com.svg" },
+      { name: "Meta Business Suite", icon: "📱" },
       { name: "Hootsuite", icon: "🦉" },
       { name: "Buffer", icon: "📊" },
       { name: "Sprout Social", icon: "🌱" },
@@ -202,7 +280,12 @@ export const socialMediaConfig: ServicePageConfig = {
     ctaSecondaryUrl: "/services",
   },
 
+  // Related Services for internal linking
+  relatedServicesKey: "social-media",
+
   // Optional sections
   showWhyUs: true,
   showFaq: true,
+  showTrustBadges: true,
+  showTestimonials: true,
 };

@@ -3,6 +3,8 @@
  * RelatedServices Component
  * Shows related services for internal linking and SEO
  * Add to bottom of service pages to improve cross-linking
+ *
+ * ENHANCED: Now includes all services for comprehensive internal linking
  */
 
 interface Service {
@@ -66,6 +68,42 @@ const allServices: Record<string, Service[]> = {
     { title: "Outsourcing Design", description: "White-label design services for agencies.", href: "/outsourcing-design", icon: "/icons/interfaz-de-usuario.webp" },
     { title: "Web Development", description: "Full-stack development for complex projects.", href: "/web-development", icon: "/icons/sitio-web.webp" },
     { title: "E-commerce Development", description: "Custom e-commerce solutions for your clients.", href: "/e-commerce", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+  ],
+  // NEW: Animation services
+  "animation": [
+    { title: "Video Production", description: "Professional video content to complement your animations.", href: "/services/video-production", icon: "/icons/animacion.webp" },
+    { title: "3D Rendering", description: "Photorealistic 3D visuals for products and architecture.", href: "/services/3d-rendering", icon: "/icons/modelo-3d.webp" },
+    { title: "Branding", description: "Animated logo reveals and brand motion graphics.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
+  ],
+  // NEW: Video Production services
+  "video-production": [
+    { title: "Animation Services", description: "2D and 3D animation to enhance your video content.", href: "/services/animation", icon: "/icons/animacion.webp" },
+    { title: "Social Media Design", description: "Video content optimized for social platforms.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
+    { title: "Digital Marketing", description: "Video marketing strategies that drive engagement.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
+  ],
+  // NEW: 3D Rendering services
+  "3d-rendering": [
+    { title: "Animation Services", description: "Bring your 3D models to life with animation.", href: "/services/animation", icon: "/icons/animacion.webp" },
+    { title: "Web Design", description: "Showcase 3D visuals in stunning web experiences.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Video Production", description: "Incorporate 3D renders into professional videos.", href: "/services/video-production", icon: "/icons/animacion.webp" },
+  ],
+  // NEW: Social Media services
+  "social-media": [
+    { title: "Branding", description: "Consistent brand identity across all social channels.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
+    { title: "Digital Marketing", description: "Comprehensive social media marketing strategies.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
+    { title: "Video Production", description: "Engaging video content for social platforms.", href: "/services/video-production", icon: "/icons/animacion.webp" },
+  ],
+  // NEW: UX/UI services
+  "ux-ui": [
+    { title: "Web Development", description: "Transform your UI designs into functional websites.", href: "/web-development", icon: "/icons/sitio-web.webp" },
+    { title: "Branding", description: "Create cohesive brand experiences across digital touchpoints.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
+    { title: "E-commerce Design", description: "User-focused e-commerce experiences that convert.", href: "/e-commerce", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+  ],
+  // NEW: Promotional Products
+  "promotional-products": [
+    { title: "Branding", description: "Extend your brand identity to physical products.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
+    { title: "Web Design", description: "Showcase your products with stunning web design.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Social Media Design", description: "Promote your products across social channels.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
   ],
 };
 

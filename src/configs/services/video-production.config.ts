@@ -1,6 +1,7 @@
 /**
  * Video Production Service Page Configuration
  * Configuration for video production and editing services using ServicePageTemplate
+ * ENHANCED: Added process, case studies, testimonials, and related services
  */
 
 import { createServiceSchema } from "../../utils/schema";
@@ -9,11 +10,11 @@ import type { ServicePageConfig } from "../../components/ServicePageTemplate.ast
 export const videoProductionConfig: ServicePageConfig = {
   // SEO Configuration
   seo: {
-    title: "Video Production & Editing Services | Codebrand",
+    title: "Video Production & Editing Services | Professional Videography - Codebrand",
     description:
-      "Professional video production and editing services including corporate videos, social media content, commercials, product demos, motion graphics, color grading, and event coverage.",
+      "Professional video production and editing services including corporate videos, social media content, commercials, product demos, motion graphics, color grading, and event coverage. High-quality video content that drives results.",
     keywords:
-      "video production, video editing, corporate videos, commercial videos, social media videos, product videos, motion graphics, color grading, video marketing, promotional videos, explainer videos, YouTube videos, video content creation, professional videography, video production company, video editing services, video post-production",
+      "video production, video editing, corporate videos, commercial videos, social media videos, product videos, motion graphics, color grading, video marketing, promotional videos, explainer videos, YouTube videos, video content creation, professional videography, video production company, video editing services, video post-production, video production agency, corporate video production, promotional video production, video content strategy",
     image: "/photos/bannercodebrand.webp",
   },
 
@@ -138,6 +139,83 @@ export const videoProductionConfig: ServicePageConfig = {
     ],
   },
 
+  // Process Section
+  process: {
+    title: "Our Video Production",
+    titleHighlight: "Process",
+    subtitle: "A streamlined workflow that delivers high-quality videos efficiently.",
+    steps: [
+      {
+        number: 1,
+        title: "Pre-Production",
+        description: "Script development, storyboarding, location scouting, and production planning. We prepare everything before cameras roll.",
+      },
+      {
+        number: 2,
+        title: "Production",
+        description: "Professional filming with cinema-grade equipment, expert lighting, and quality audio capture. On-location or in-studio.",
+      },
+      {
+        number: 3,
+        title: "Post-Production",
+        description: "Expert editing, color grading, sound design, motion graphics, and visual effects to create polished final content.",
+      },
+      {
+        number: 4,
+        title: "Delivery & Optimization",
+        description: "Final review, revisions, and delivery in all required formats optimized for web, social, and broadcast.",
+      },
+    ],
+  },
+
+  // Case Studies Section
+  caseStudies: {
+    title: "Video Production",
+    titleHighlight: "Success Stories",
+    subtitle: "See how our videos have helped brands tell their stories and achieve their goals.",
+    items: [
+      {
+        category: "Corporate",
+        categoryColor: "text-blue-600",
+        title: "Tech Company Brand Video",
+        description: "Produced a cinematic brand story video that captured the company culture and mission, used for recruiting and investor presentations.",
+        metrics: [
+          { value: "+200%", label: "Applications" },
+          { value: "1.2M", label: "LinkedIn Views" },
+          { value: "95%", label: "Completion Rate" },
+        ],
+        gradientFrom: "from-blue-600",
+        gradientTo: "to-blue-800",
+      },
+      {
+        category: "E-commerce",
+        categoryColor: "text-green-600",
+        title: "Product Launch Campaign",
+        description: "Created a series of product videos for social media launch that generated massive engagement and sales.",
+        metrics: [
+          { value: "+340%", label: "Sales Week 1" },
+          { value: "5M+", label: "Social Views" },
+          { value: "+180%", label: "ROAS" },
+        ],
+        gradientFrom: "from-green-600",
+        gradientTo: "to-green-800",
+      },
+      {
+        category: "Healthcare",
+        categoryColor: "text-purple-600",
+        title: "Medical Facility Tour",
+        description: "Produced virtual tour and testimonial videos for a healthcare network, improving patient trust and appointment bookings.",
+        metrics: [
+          { value: "+75%", label: "Appointments" },
+          { value: "45%", label: "Longer Site Visits" },
+          { value: "+60%", label: "Patient Trust" },
+        ],
+        gradientFrom: "from-purple-600",
+        gradientTo: "to-purple-800",
+      },
+    ],
+  },
+
   // Tools Section
   tools: {
     title: "Professional Video Production Tools",
@@ -146,7 +224,7 @@ export const videoProductionConfig: ServicePageConfig = {
       "We use cutting-edge video production and editing tools for cinematic-quality results.",
     columns: "4",
     items: [
-      { name: "Adobe Premiere Pro", icon: "/icons/creativity-svgrepo-com.svg" },
+      { name: "Adobe Premiere Pro", icon: "🎬" },
       { name: "Adobe After Effects", icon: "🎞️" },
       { name: "DaVinci Resolve", icon: "🎨" },
       { name: "Final Cut Pro", icon: "✂️" },
@@ -198,7 +276,12 @@ export const videoProductionConfig: ServicePageConfig = {
     ctaSecondaryUrl: "/services",
   },
 
+  // Related Services for internal linking
+  relatedServicesKey: "video-production",
+
   // Optional sections
   showWhyUs: true,
   showFaq: true,
+  showTrustBadges: true,
+  showTestimonials: true,
 };

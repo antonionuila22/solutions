@@ -1,6 +1,7 @@
 /**
  * Promotional Products Service Page Configuration
  * Configuration for custom printing and promotional products using ServicePageTemplate
+ * ENHANCED: Added process, case studies, testimonials, and related services
  */
 
 import { createServiceSchema } from "../../utils/schema";
@@ -13,14 +14,33 @@ export const promotionalProductsConfig: ServicePageConfig = {
     description:
       "Professional custom promotional products including sublimation, digital printing, laser engraving, branded merchandise, and corporate gifts. Create unique branded items that leave a lasting impression.",
     keywords:
-      "promotional products, custom printing, sublimation, laser engraving, branded merchandise, corporate gifts, custom apparel, promotional items, vinyl printing, custom gifts, branded products, custom promotional products, promotional printing, custom t-shirts, corporate branding, promotional giveaways, custom merchandise, screen printing, embroidery, promotional marketing, branded swag, event merchandise, custom packaging",
+      "promotional products, custom printing, sublimation, laser engraving, branded merchandise, corporate gifts, custom apparel, promotional items, vinyl printing, custom gifts, branded products, custom promotional products, promotional printing, custom t-shirts, corporate branding, promotional giveaways, custom merchandise, screen printing, embroidery, promotional marketing, branded swag, event merchandise, custom packaging, promotional products company, custom branded items",
     image: "/photos/bannercodebrand.webp",
   },
 
   // Schema.org Structured Data
   schema: createServiceSchema(
     "Promotional Products and Custom Printing Services",
-    "Professional custom promotional products including sublimation, digital printing, laser engraving, branded merchandise, and corporate gifts."
+    "Professional custom promotional products including sublimation, digital printing, laser engraving, branded merchandise, and corporate gifts.",
+    "Promotional Products Services",
+    [
+      {
+        name: "Custom Apparel",
+        description: "T-shirts, hoodies, uniforms with custom printing and embroidery",
+      },
+      {
+        name: "Sublimation Printing",
+        description: "Full-color sublimation on textiles, mugs, and promotional items",
+      },
+      {
+        name: "Laser Engraving",
+        description: "Precision engraving on wood, metal, glass, and acrylic",
+      },
+      {
+        name: "Corporate Gifts",
+        description: "Premium gift sets and custom corporate presents",
+      },
+    ]
   ),
 
   // Hero Section
@@ -115,6 +135,83 @@ export const promotionalProductsConfig: ServicePageConfig = {
     ],
   },
 
+  // Process Section
+  process: {
+    title: "Our Custom Printing",
+    titleHighlight: "Process",
+    subtitle: "From concept to delivery, we ensure quality at every step.",
+    steps: [
+      {
+        number: 1,
+        title: "Consultation & Design",
+        description: "Discuss your needs, review product options, and finalize artwork. We provide design assistance if needed.",
+      },
+      {
+        number: 2,
+        title: "Proof & Approval",
+        description: "Receive digital proofs of your products for approval before production begins. Make revisions as needed.",
+      },
+      {
+        number: 3,
+        title: "Production",
+        description: "Professional printing, engraving, or embroidery using premium materials and equipment.",
+      },
+      {
+        number: 4,
+        title: "Quality Check & Delivery",
+        description: "Every item is inspected for quality before packaging and shipping to your location.",
+      },
+    ],
+  },
+
+  // Case Studies Section
+  caseStudies: {
+    title: "Promotional Products",
+    titleHighlight: "Success Stories",
+    subtitle: "See how our custom products have helped businesses make lasting impressions.",
+    items: [
+      {
+        category: "Tech Conference",
+        categoryColor: "text-blue-600",
+        title: "Annual Tech Summit Swag",
+        description: "Produced complete event merchandise package including t-shirts, bags, badges, and giveaways for 2,000+ attendees.",
+        metrics: [
+          { value: "2,000+", label: "Items Produced" },
+          { value: "15", label: "Product Types" },
+          { value: "98%", label: "Satisfaction" },
+        ],
+        gradientFrom: "from-blue-600",
+        gradientTo: "to-blue-800",
+      },
+      {
+        category: "Corporate",
+        categoryColor: "text-green-600",
+        title: "Employee Recognition Program",
+        description: "Created custom award plaques, branded apparel, and gift sets for a company-wide recognition program.",
+        metrics: [
+          { value: "500", label: "Custom Awards" },
+          { value: "1,200", label: "Branded Items" },
+          { value: "+45%", label: "Employee Morale" },
+        ],
+        gradientFrom: "from-green-600",
+        gradientTo: "to-green-800",
+      },
+      {
+        category: "Retail",
+        categoryColor: "text-purple-600",
+        title: "Restaurant Branded Merch",
+        description: "Designed and produced custom merchandise line including t-shirts, mugs, and accessories that became an additional revenue stream.",
+        metrics: [
+          { value: "$15K", label: "Monthly Revenue" },
+          { value: "25", label: "Product SKUs" },
+          { value: "+30%", label: "Brand Exposure" },
+        ],
+        gradientFrom: "from-purple-600",
+        gradientTo: "to-purple-800",
+      },
+    ],
+  },
+
   // Tools Section - Using "techniques" instead of traditional tools
   tools: {
     title: "Professional Printing Techniques",
@@ -175,7 +272,12 @@ export const promotionalProductsConfig: ServicePageConfig = {
     ctaSecondaryUrl: "/services",
   },
 
+  // Related Services for internal linking
+  relatedServicesKey: "promotional-products",
+
   // Optional sections
   showWhyUs: true,
   showFaq: true,
+  showTrustBadges: true,
+  showTestimonials: true,
 };
