@@ -3,11 +3,15 @@ import LandingLayout from "../../layouts/LandingLayout.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import logoWhite from "../../assets/codebrand-white.svg";
 
-const pageTitle = "Professional WordPress Landing Page $450 | Codebrand";
+const pageTitle = "Professional WordPress Landing Page $450 | Save 70% vs US Agencies";
 const pageDescription =
-  "Get a stunning WordPress landing page for only $450. US agencies charge $1,500-$3,000 for the same quality. Same timezone, bilingual team, 7-day delivery.";
+  "Get a stunning WordPress landing page for only $450. US agencies charge $1,500-$3,000. Fast 7-day delivery, bilingual team in your timezone, mobile responsive. Free quote today!";
 const pageKeywords =
-  "affordable wordpress landing page, cheap landing page design, budget website design, wordpress development usa";
+  "affordable landing page USA, wordpress landing page design, cheap landing page development, one page website, business landing page, small business website, landing page $450, web design agency USA";
+
+// SEO structured data
+const canonicalUrl = "https://codebrand.us/landing/wordpress-450";
+const ogImage = "https://codebrand.us/og/wordpress-450.png";
 
 const industries = [
   "Automotive",
@@ -74,22 +78,103 @@ const getIcon = (name: string) => {
   description={pageDescription}
   keywords={pageKeywords}
 >
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl} slot="head" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:url" content={canonicalUrl} slot="head" />
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:image" content={ogImage} slot="head" />
+  <meta property="og:image:width" content="1200" slot="head" />
+  <meta property="og:image:height" content="630" slot="head" />
+  <meta property="og:locale" content="en_US" slot="head" />
+  <meta property="og:site_name" content="Codebrand" slot="head" />
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:url" content={canonicalUrl} slot="head" />
+  <meta name="twitter:title" content={pageTitle} slot="head" />
+  <meta name="twitter:description" content={pageDescription} slot="head" />
+  <meta name="twitter:image" content={ogImage} slot="head" />
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head" />
+  <meta name="author" content="Codebrand" slot="head" />
+  <meta name="geo.region" content="US" slot="head" />
+  <meta name="geo.placename" content="United States" slot="head" />
+
+  <!-- JSON-LD Structured Data - Service -->
   <script type="application/ld+json" is:inline slot="head">
     {
       "@context": "https://schema.org",
-      "@type": "Offer",
-      "name": "Professional WordPress Landing Page",
-      "price": "450",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "seller": {
+      "@type": "Service",
+      "name": "Professional WordPress Landing Page Development",
+      "description": "Custom WordPress landing page development service including unique design, mobile responsiveness, SEO optimization, contact forms, and analytics integration.",
+      "provider": {
         "@type": "Organization",
         "name": "Codebrand",
-        "url": "https://codebrand.us"
+        "url": "https://codebrand.us",
+        "logo": "https://codebrand.us/codebrand-logo.png",
+        "sameAs": [
+          "https://www.facebook.com/codebrand.us",
+          "https://www.instagram.com/codebrand.us",
+          "https://www.linkedin.com/company/codebrand"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        }
+      },
+      "serviceType": "Web Development",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "WordPress Landing Page",
+        "description": "Professional WordPress landing page with custom design, mobile responsive, SEO optimized, 7-day delivery",
+        "price": "450",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31"
       }
+    }
+  </script>
+
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json" is:inline slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is Codebrand cheaper than US agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We're based in Honduras with lower operational costs, but our team is US-trained and works in your timezone. You get the same quality at a better price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does payment work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "50% upfront to start, 50% on delivery. We accept all major credit cards, PayPal, and bank transfers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. All files, code, and content are yours forever."
+          }
+        }
+      ]
     }
   </script>
 
@@ -211,7 +296,7 @@ const getIcon = (name: string) => {
             <!-- Trust Badges -->
             <div class="flex flex-wrap gap-2.5">
               {
-                ["US Timezone", "Bilingual Team", "Money-back Guarantee"].map(
+                ["US Timezone", "Bilingual Team", "Satisfaction Guaranteed"].map(
                   (badge) => (
                     <span class="trust-badge">
                       <svg
@@ -512,7 +597,11 @@ const getIcon = (name: string) => {
         </div>
 
         <!-- Package Comparison Table -->
-        <div class="packages-section mt-12 sm:mt-16" data-animate="fade-up" data-delay="200">
+        <div
+          class="packages-section mt-12 sm:mt-16"
+          data-animate="fade-up"
+          data-delay="200"
+        >
           <h3 class="text-xl sm:text-2xl font-bold text-center text-white mb-8">
             Choose Your <span class="text-gradient">Package</span>
           </h3>
@@ -525,34 +614,50 @@ const getIcon = (name: string) => {
                 <span class="package-badge-premium">Quick & Easy</span>
                 <h4 class="text-lg font-bold text-white mt-3">Standard</h4>
                 <div class="flex items-baseline gap-1 mt-2">
-                  <span class="text-3xl sm:text-4xl font-bold text-gradient">$450</span>
+                  <span class="text-3xl sm:text-4xl font-bold text-gradient"
+                    >$450</span
+                  >
                 </div>
                 <p class="text-white/45 text-sm mt-2">One-time payment</p>
               </div>
 
               <div class="package-features relative z-10">
                 <ul class="space-y-3">
-                  {[
-                    "WordPress CMS",
-                    "Easy to edit yourself",
-                    "Ready in 7 days",
-                    "Mobile responsive",
-                    "Contact form included",
-                    "Basic SEO setup",
-                    "1 round of revisions",
-                  ].map((feature) => (
-                    <li class="flex items-start gap-2.5 text-sm text-white/70">
-                      <svg class="w-4 h-4 text-orange-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
+                  {
+                    [
+                      "WordPress CMS",
+                      "Easy to edit yourself",
+                      "Ready in 7 days",
+                      "Mobile responsive",
+                      "Contact form included",
+                      "Basic SEO setup",
+                      "1 round of revisions",
+                    ].map((feature) => (
+                      <li class="flex items-start gap-2.5 text-sm text-white/70">
+                        <svg
+                          class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))
+                  }
                 </ul>
               </div>
 
               <div class="package-footer relative z-10">
-                <p class="text-xs text-white/35 mb-3">Best for: Small businesses getting started online</p>
+                <p class="text-xs text-white/35 mb-3">
+                  Best for: Small businesses getting started online
+                </p>
                 <a href="#contact" class="btn-package-premium">Get Started</a>
               </div>
             </div>
@@ -564,7 +669,9 @@ const getIcon = (name: string) => {
                 <span class="package-badge-premium">Maximum Performance</span>
                 <h4 class="text-lg font-bold text-white mt-3">Performance</h4>
                 <div class="flex items-baseline gap-1 mt-2">
-                  <span class="text-3xl sm:text-4xl font-bold text-gradient">$1,200</span>
+                  <span class="text-3xl sm:text-4xl font-bold text-gradient"
+                    >$1,200</span
+                  >
                   <span class="text-white/45 text-sm">+</span>
                 </div>
                 <p class="text-white/45 text-sm mt-2">One-time payment</p>
@@ -572,27 +679,41 @@ const getIcon = (name: string) => {
 
               <div class="package-features relative z-10">
                 <ul class="space-y-3">
-                  {[
-                    "Custom Code (Astro/Next.js)",
-                    "Extreme loading speed",
-                    "Advanced SEO to compete on Google",
-                    "No plugin maintenance needed",
-                    "Perfect Core Web Vitals",
-                    "Premium animations",
-                    "Unlimited revisions",
-                  ].map((feature) => (
-                    <li class="flex items-start gap-2.5 text-sm text-white/70">
-                      <svg class="w-4 h-4 text-orange-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
+                  {
+                    [
+                      "Custom Code (Astro/Next.js)",
+                      "Extreme loading speed",
+                      "SEO best practices included",
+                      "No plugin maintenance needed",
+                      "Perfect Core Web Vitals",
+                      "Premium animations",
+                      "Revisions included",
+                    ].map((feature) => (
+                      <li class="flex items-start gap-2.5 text-sm text-white/70">
+                        <svg
+                          class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))
+                  }
                 </ul>
               </div>
 
               <div class="package-footer relative z-10">
-                <p class="text-xs text-white/35 mb-3">Best for: Businesses that want top Google rankings</p>
+                <p class="text-xs text-white/35 mb-3">
+                  Best for: Businesses that prioritize SEO performance
+                </p>
                 <a href="#contact" class="btn-package-premium">Get Started</a>
               </div>
             </div>
@@ -649,11 +770,11 @@ const getIcon = (name: string) => {
                     icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
                   },
                   {
-                    label: "Native English",
+                    label: "Bilingual Team",
                     icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129",
                   },
                   {
-                    label: "Money-back",
+                    label: "Quality Assured",
                     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
                   },
                 ].map((item) => (
@@ -825,49 +946,56 @@ const getIcon = (name: string) => {
           {
             [
               {
-                name: "AutoPro Detailing",
-                industry: "Automotive",
-                image: "/images/portfolio/autopro.jpg",
-                description: "Lead generation landing page for a Miami-based auto detailing business.",
+                name: "Zeed",
+                industry: "Marketing Agency",
+                image: "/photos/projects/zeed.avif",
+                description:
+                  "Marketing agency landing page with service showcase and client portfolio.",
               },
               {
-                name: "Peak Fitness Studio",
-                industry: "Fitness",
-                image: "/images/portfolio/peakfitness.jpg",
-                description: "Membership signup page with booking integration for a gym in Texas.",
-              },
-              {
-                name: "Green Valley Landscaping",
+                name: "BuildCO",
                 industry: "Construction",
-                image: "/images/portfolio/greenvalley.jpg",
-                description: "Service showcase page with quote request form for a landscaping company.",
+                image: "/photos/projects/BuildCO.avif",
+                description:
+                  "Construction company landing page with project galleries and quote request.",
               },
               {
-                name: "Legal Edge Attorneys",
-                industry: "Law Firms",
-                image: "/images/portfolio/legaledge.jpg",
-                description: "Professional landing page for a personal injury law firm in California.",
+                name: "Elite Motos",
+                industry: "Automotive",
+                image: "/photos/projects/EliteMotos.avif",
+                description:
+                  "Motorcycle dealership page with inventory display and lead capture.",
               },
               {
-                name: "Coastal Realty Group",
+                name: "Real States Properties",
                 industry: "Real Estate",
-                image: "/images/portfolio/coastalrealty.jpg",
-                description: "Property listing page with lead capture for a Florida real estate agency.",
+                image: "/photos/projects/RealStates.avif",
+                description:
+                  "Property listing landing page with search filters and contact forms.",
               },
               {
-                name: "Bella Cucina Restaurant",
-                industry: "Restaurants",
-                image: "/images/portfolio/bellacucina.jpg",
-                description: "Menu showcase with reservation system for an Italian restaurant.",
+                name: "GymFit Studio",
+                industry: "Fitness",
+                image: "/photos/projects/gymfit.webp",
+                description:
+                  "Fitness center landing page with class schedules and membership signup.",
+              },
+              {
+                name: "Laboratory Tech",
+                industry: "Lab Equipment",
+                image: "/photos/projects/Laboratory.avif",
+                description:
+                  "E-commerce landing page for laboratory supplements and equipment.",
               },
             ].map((project) => (
               <div class="portfolio-card group">
                 <div class="portfolio-image">
-                  <div class="portfolio-placeholder">
-                    <svg class="w-12 h-12 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                  </div>
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                   <div class="portfolio-overlay">
                     <span class="portfolio-industry">{project.industry}</span>
                   </div>
@@ -906,7 +1034,7 @@ const getIcon = (name: string) => {
               },
               {
                 q: "What if I'm not satisfied?",
-                a: "We offer unlimited revisions until you're 100% happy, plus a money-back guarantee if we can't meet your expectations.",
+                a: "We include revisions during development until you're satisfied. Full refund available before work begins (minus 10% admin fee). See our terms for details.",
               },
               {
                 q: "How does payment work?",
@@ -956,39 +1084,67 @@ const getIcon = (name: string) => {
               <div>
                 <span class="section-tag">Post-Launch Support</span>
                 <h3 class="text-2xl sm:text-3xl font-bold text-white mt-3 mb-4">
-                  Keep Your Site <span class="text-gradient">Secure & Fast</span>
+                  Keep Your Site <span class="text-gradient">Secure & Fast</span
+                  >
                 </h3>
                 <p class="text-white/50 leading-relaxed mb-6">
-                  WordPress sites need regular care. Our maintenance plan handles everything so you can focus on your business.
+                  WordPress sites need regular care. Our maintenance plan
+                  handles everything so you can focus on your business.
                 </p>
 
                 <div class="flex items-baseline gap-2 mb-6">
-                  <span class="text-4xl sm:text-5xl font-bold text-gradient">$29</span>
+                  <span class="text-4xl sm:text-5xl font-bold text-gradient"
+                    >$29</span
+                  >
                   <span class="text-white/45">/month</span>
                 </div>
 
                 <ul class="space-y-3 mb-6">
-                  {[
-                    "Daily automated backups",
-                    "WordPress & plugin updates",
-                    "Security monitoring & malware scans",
-                    "SSL certificate management",
-                    "Uptime monitoring (99.9%)",
-                    "Priority email support",
-                  ].map((feature) => (
-                    <li class="flex items-center gap-2.5 text-sm text-white/70">
-                      <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
+                  {
+                    [
+                      "Daily automated backups",
+                      "WordPress & plugin updates",
+                      "Security monitoring & malware scans",
+                      "SSL certificate management",
+                      "Uptime monitoring (99.9%)",
+                      "Priority email support",
+                    ].map((feature) => (
+                      <li class="flex items-center gap-2.5 text-sm text-white/70">
+                        <svg
+                          class="w-4 h-4 text-emerald-400 shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))
+                  }
                 </ul>
 
-                <a href="#contact" class="btn-maintenance inline-flex items-center">
+                <a
+                  href="#contact"
+                  class="btn-maintenance inline-flex items-center"
+                >
                   <span>Add to Your Package</span>
-                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  <svg
+                    class="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                   </svg>
                 </a>
               </div>
@@ -996,26 +1152,65 @@ const getIcon = (name: string) => {
               <div class="maintenance-visual">
                 <div class="maintenance-icon-grid">
                   <div class="maintenance-icon-item">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      ></path>
                     </svg>
                     <span>Security</span>
                   </div>
                   <div class="maintenance-icon-item">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                      ></path>
                     </svg>
                     <span>Updates</span>
                   </div>
                   <div class="maintenance-icon-item">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                      ></path>
                     </svg>
                     <span>Backups</span>
                   </div>
                   <div class="maintenance-icon-item">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                     <span>Speed</span>
                   </div>
@@ -1070,9 +1265,9 @@ const getIcon = (name: string) => {
         >
           {
             [
-              "Money-back guarantee",
+              "Satisfaction guaranteed",
               "7-day delivery",
-              "Unlimited revisions",
+              "30 days free support",
             ].map((item) => (
               <span class="flex items-center gap-1.5">
                 <svg
@@ -1790,7 +1985,11 @@ const getIcon = (name: string) => {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+    background: radial-gradient(
+      circle,
+      rgba(16, 185, 129, 0.08) 0%,
+      transparent 50%
+    );
     pointer-events: none;
   }
 
@@ -1840,7 +2039,11 @@ const getIcon = (name: string) => {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+    background: radial-gradient(
+      circle,
+      rgba(249, 115, 22, 0.08) 0%,
+      transparent 50%
+    );
     pointer-events: none;
   }
 
@@ -1867,7 +2070,11 @@ const getIcon = (name: string) => {
   .package-badge-premium {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(251, 191, 36, 0.2));
+    background: linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.2),
+      rgba(251, 191, 36, 0.2)
+    );
     border: 1px solid rgba(249, 115, 22, 0.3);
     border-radius: 9999px;
     font-size: 0.6875rem;
@@ -1943,7 +2150,11 @@ const getIcon = (name: string) => {
   .portfolio-image {
     position: relative;
     aspect-ratio: 16/10;
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(251, 191, 36, 0.03));
+    background: linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.05),
+      rgba(251, 191, 36, 0.03)
+    );
   }
 
   .portfolio-placeholder {
@@ -1979,7 +2190,11 @@ const getIcon = (name: string) => {
   /* ===== MAINTENANCE SECTION ===== */
   .maintenance-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.02), rgba(6, 182, 212, 0.02));
+    background: linear-gradient(
+      135deg,
+      rgba(16, 185, 129, 0.02),
+      rgba(6, 182, 212, 0.02)
+    );
     border: 1px solid rgba(16, 185, 129, 0.1);
     border-radius: 1.25rem;
     padding: 2rem;
@@ -1998,7 +2213,11 @@ const getIcon = (name: string) => {
     right: -100px;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(16, 185, 129, 0.08) 0%,
+      transparent 70%
+    );
     pointer-events: none;
   }
 

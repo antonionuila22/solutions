@@ -1,18 +1,18 @@
 ---
 import LandingLayout from "../../layouts/LandingLayout.astro";
-import Logo from "../../components/logo.astro";
 import Testimonial from "../../components/testimonial.tsx";
+import logoWhite from "../../assets/codebrand-white.svg";
 
-// SEO Metadata optimized for US market
-const pageTitle =
-  "Professional 10-Page Website $1,500 | Save 70% vs US Agencies | Codebrand";
+const pageTitle = "Professional 10-Page Business Website $1,500 | Save 70% vs US Agencies";
 const pageDescription =
-  "Get a professional 10-page business website for only $1,500. US agencies charge $8,000-$15,000 for the same quality. SEO-optimized, mobile-responsive, 14-day delivery. Bilingual team in your timezone.";
+  "Get a professional 10-page business website for $1,500 (WordPress) or $3,500-$5,500 (Custom Astro). US agencies charge $8,000-$18,000. Fast 14-day delivery, bilingual team in your timezone. Free quote today.";
 const pageKeywords =
-  "affordable web development USA, professional business website, 10-page website design, cheap web design US, small business website, custom website development, nearshore web development, web development agency USA";
-const pageImage = "/photos/bannercodebrand.webp";
+  "affordable business website USA, professional 10-page website, cheap web development, wordpress website design, astro website development, small business website, custom website $1500, web design agency USA";
 
-// Available industries
+// SEO structured data
+const canonicalUrl = "https://codebrand.us/landing/website-1500";
+const ogImage = "https://codebrand.us/og/website-1500.png";
+
 const industries = [
   "Automotive",
   "Construction",
@@ -26,274 +26,208 @@ const industries = [
   "Tech Startup",
   "Other",
 ];
+
+const features = [
+  {
+    title: "10 Custom Pages",
+    desc: "Home, About, Services, Contact + 6 more tailored pages",
+    icon: "pages",
+  },
+  {
+    title: "Mobile Responsive",
+    desc: "Perfect experience on all devices and screens",
+    icon: "mobile",
+  },
+  {
+    title: "Lightning Fast",
+    desc: "90+ PageSpeed score, optimized Core Web Vitals",
+    icon: "bolt",
+  },
+  {
+    title: "SEO Optimized",
+    desc: "Meta tags, schema markup, sitemap & Google setup",
+    icon: "search",
+  },
+  {
+    title: "Lead Capture",
+    desc: "Contact forms that send leads directly to your inbox",
+    icon: "mail",
+  },
+  {
+    title: "Analytics Ready",
+    desc: "Google Analytics 4 integration included",
+    icon: "chart",
+  },
+];
+
+const getIcon = (name: string) => {
+  const icons: Record<string, string> = {
+    pages: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`,
+    mobile: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>`,
+    bolt: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+    search: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>`,
+    mail: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`,
+    chart: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
+  };
+  return icons[name] || icons.pages;
+};
 ---
 
 <LandingLayout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
-  image={pageImage}
 >
-  <!-- Additional SEO Meta Tags -->
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl} slot="head" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:url" content={canonicalUrl} slot="head" />
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:image" content={ogImage} slot="head" />
+  <meta property="og:image:width" content="1200" slot="head" />
+  <meta property="og:image:height" content="630" slot="head" />
+  <meta property="og:locale" content="en_US" slot="head" />
+  <meta property="og:site_name" content="Codebrand" slot="head" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:url" content={canonicalUrl} slot="head" />
   <meta name="twitter:title" content={pageTitle} slot="head" />
   <meta name="twitter:description" content={pageDescription} slot="head" />
+  <meta name="twitter:image" content={ogImage} slot="head" />
 
-  <!-- Structured Data for Service Offer -->
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head" />
+  <meta name="author" content="Codebrand" slot="head" />
+  <meta name="geo.region" content="US" slot="head" />
+  <meta name="geo.placename" content="United States" slot="head" />
+
+  <!-- JSON-LD Structured Data - Service -->
   <script type="application/ld+json" is:inline slot="head">
     {
       "@context": "https://schema.org",
-      "@type": "Offer",
-      "name": "Professional 10-Page Business Website",
-      "description": "Complete 10-page custom website with responsive design, SEO optimization and 90 days of support",
-      "price": "1500",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "seller": {
+      "@type": "Service",
+      "name": "Professional 10-Page Business Website Development",
+      "description": "Complete 10-page business website development service including custom design, mobile responsiveness, SEO optimization, and analytics integration.",
+      "provider": {
         "@type": "Organization",
         "name": "Codebrand",
-        "url": "https://codebrand.us"
-      },
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Professional Web Development",
-        "provider": {
-          "@type": "Organization",
-          "name": "Codebrand"
+        "url": "https://codebrand.us",
+        "logo": "https://codebrand.us/codebrand-logo.png",
+        "sameAs": [
+          "https://www.facebook.com/codebrand.us",
+          "https://www.instagram.com/codebrand.us",
+          "https://www.linkedin.com/company/codebrand"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
         }
+      },
+      "serviceType": "Web Development",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website Packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "WordPress 10-Page Website",
+            "description": "Professional 10-page WordPress website with CMS, mobile responsive, SEO optimized",
+            "price": "1500",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31"
+          },
+          {
+            "@type": "Offer",
+            "name": "Custom Code 10-Page Website (Astro/Next.js)",
+            "description": "High-performance 10-page static website with custom Astro or Next.js code",
+            "price": "3500",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31"
+          }
+        ]
       }
     }
   </script>
 
-  <div class="relative w-full overflow-x-hidden bg-slate-950">
-    <!-- Urgency Banner -->
-    <div class="bg-orange-500 py-2.5 px-4 text-center">
-      <p class="text-white text-sm font-semibold">
-        <span class="inline-flex items-center gap-2">
-          <span class="relative flex h-2 w-2">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"
-            ></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"
-            ></span>
-          </span>
-          LIMITED OFFER: Only 3 spots available this month at this price
-          <svg
-            class="w-4 h-4 inline ml-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-        </span>
-      </p>
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json" is:inline slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between WordPress and Custom Code websites?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WordPress is easier to edit yourself and costs less ($1,500). Custom code (Astro) loads faster, is optimized for SEO performance, and requires no plugin updates ($3,500-$5,500). Choose WordPress if you want to manage content yourself. Choose custom code if speed and SEO are priorities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is Codebrand cheaper than US agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We're based in Honduras with lower operational costs, but our team is US-trained and works in your timezone. You get the same quality at a better price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long until my website is ready?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WordPress sites are ready in 14 days. Custom code sites take 3-4 weeks. Rush delivery is available for an additional fee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. All files, code, and content are yours forever. We'll provide everything you need to host it anywhere."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <div class="landing-wrapper">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
     </div>
 
     <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-slate-950/95 border-b border-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center py-4">
-          <div class="flex justify-start lg:w-0 lg:flex-1">
-            <Logo sizeW={160} sizeH={48} />
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+      <div class="container-main py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex-shrink-0" aria-label="Codebrand">
+            <img src={logoWhite.src} alt="Codebrand" width="110" height="32" />
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#process" class="nav-link">Process</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#reviews" class="nav-link">Reviews</a>
           </div>
-          <nav class="hidden md:flex space-x-8">
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              href="#compare">Compare Prices</a
-            >
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              href="#features">What's Included</a
-            >
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              href="#testimonials">Reviews</a
-            >
-            <a
-              class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              href="#faq">FAQ</a
-            >
-          </nav>
-          <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a
-              class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-orange-600 hover:bg-orange-500 transition-all duration-200 shadow-lg shadow-orange-600/25"
-              href="#contact"
-            >
-              Get Started Now
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative py-16 lg:py-24 overflow-hidden">
-      <!-- Background Effects -->
-      <div
-        class="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"
-      >
-      </div>
-      <div
-        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
-      >
-      </div>
-
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto">
-          <!-- Trust Badge -->
-          <div
-            class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-orange-500/30 rounded-full mb-6"
-          >
+          <a href="#contact" class="btn-primary text-sm">
+            Get Started
             <svg
-              class="w-4 h-4 text-orange-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"></path>
-            </svg>
-            <span class="text-sm font-medium text-orange-500"
-              >Trusted by US Businesses</span
-            >
-          </div>
-
-          <h1
-            class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
-          >
-            Professional 10-Page Website
-            <span class="block text-orange-500 mt-2"> for Only $1,500 </span>
-          </h1>
-
-          <p class="text-xl text-slate-300 mb-4 max-w-2xl mx-auto">
-            US agencies charge <span
-              class="text-white font-semibold line-through"
-              >$8,000 - $15,000</span
-            > for the same quality.
-          </p>
-          <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-            Get a complete business website with SEO optimization,
-            mobile-responsive design, and ongoing support.
-            <span class="text-cyan-400 font-medium"
-              >Bilingual team working in your timezone.</span
-            >
-          </p>
-
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <a
-              href="#contact"
-              class="inline-flex items-center justify-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-1 transition-all duration-200"
-            >
-              Claim Your Spot - $1,500
-              <svg
-                class="ml-2 w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-              </svg>
-            </a>
-            <a
-              href="#compare"
-              class="inline-flex items-center justify-center px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition-all duration-200"
-            >
-              See Price Comparison
-            </a>
-          </div>
-
-          <!-- Stats Bar -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            <div
-              class="bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-center"
-            >
-              <p class="text-2xl font-bold text-orange-400">70%</p>
-              <p class="text-sm text-slate-400">Cost Savings</p>
-            </div>
-            <div
-              class="bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-center"
-            >
-              <p class="text-2xl font-bold text-white">14</p>
-              <p class="text-sm text-slate-400">Day Delivery</p>
-            </div>
-            <div
-              class="bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-center"
-            >
-              <p class="text-2xl font-bold text-white">4.9/5</p>
-              <p class="text-sm text-slate-400">Client Rating</p>
-            </div>
-            <div
-              class="bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-center"
-            >
-              <p class="text-2xl font-bold text-cyan-400">90</p>
-              <p class="text-sm text-slate-400">Days Support</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social Proof Bar -->
-    <section class="bg-slate-900 border-y border-slate-800 py-6">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          class="flex flex-wrap justify-center items-center gap-8 text-center"
-        >
-          <div class="flex items-center gap-2">
-            <div class="flex -space-x-2">
-              <div
-                class="w-8 h-8 rounded-full bg-orange-500 border-2 border-slate-900 flex items-center justify-center text-white text-xs font-bold"
-              >
-                J
-              </div>
-              <div
-                class="w-8 h-8 rounded-full bg-cyan-500 border-2 border-slate-900 flex items-center justify-center text-white text-xs font-bold"
-              >
-                M
-              </div>
-              <div
-                class="w-8 h-8 rounded-full bg-orange-600 border-2 border-slate-900 flex items-center justify-center text-white text-xs font-bold"
-              >
-                S
-              </div>
-            </div>
-            <span class="text-slate-300 text-sm">500+ satisfied clients</span>
-          </div>
-          <div class="h-6 w-px bg-slate-700 hidden md:block"></div>
-          <div class="flex items-center gap-2">
-            <div class="flex">
-              {
-                [1, 2, 3, 4, 5].map(() => (
-                  <svg
-                    class="w-4 h-4 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))
-              }
-            </div>
-            <span class="text-slate-300 text-sm">4.9 average rating</span>
-          </div>
-          <div class="h-6 w-px bg-slate-700 hidden md:block"></div>
-          <div class="flex items-center gap-2">
-            <svg
-              class="w-5 h-5 text-green-400"
+              class="w-4 h-4 ml-1.5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -302,450 +236,650 @@ const industries = [
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span class="text-slate-300 text-sm"
-              >100% satisfaction guarantee</span
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Price Comparison Section -->
-    <section class="py-20 bg-slate-900" id="compare">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Why Pay More for the <span class="text-orange-400"
-              >Same Quality?</span
-            >
-          </h2>
-          <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-            Compare our pricing with US-based agencies and freelancers. Same
-            deliverables, fraction of the cost.
-          </p>
-        </div>
-
-        <!-- Comparison Table -->
-        <div class="overflow-x-auto">
-          <table class="w-full">
-            <thead>
-              <tr class="border-b border-slate-700">
-                <th class="text-left py-4 px-4 text-slate-400 font-medium"
-                  >Provider</th
-                >
-                <th class="text-center py-4 px-4 text-slate-400 font-medium"
-                  >Price</th
-                >
-                <th class="text-center py-4 px-4 text-slate-400 font-medium"
-                  >Pages</th
-                >
-                <th class="text-center py-4 px-4 text-slate-400 font-medium"
-                  >Delivery</th
-                >
-                <th class="text-center py-4 px-4 text-slate-400 font-medium"
-                  >Support</th
-                >
-                <th class="text-center py-4 px-4 text-slate-400 font-medium"
-                  >SEO</th
-                >
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Codebrand Row (Highlighted) -->
-              <tr
-                class="bg-orange-500/20 border-2 border-orange-500/50 rounded-lg"
-              >
-                <td class="py-5 px-4">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-orange-600 flex items-center justify-center"
-                    >
-                      <span class="text-white font-bold text-sm">CB</span>
-                    </div>
-                    <div>
-                      <p class="font-bold text-white">Codebrand</p>
-                      <p class="text-xs text-orange-400">Best Value</p>
-                    </div>
-                  </div>
-                </td>
-                <td class="text-center py-5 px-4">
-                  <span class="text-2xl font-bold text-orange-400">$1,500</span>
-                </td>
-                <td class="text-center py-5 px-4 text-white font-medium"
-                  >10 pages</td
-                >
-                <td class="text-center py-5 px-4 text-white font-medium"
-                  >14 days</td
-                >
-                <td class="text-center py-5 px-4 text-white font-medium"
-                  >90 days</td
-                >
-                <td class="text-center py-5 px-4">
-                  <svg
-                    class="w-6 h-6 text-green-400 mx-auto"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </td>
-              </tr>
-
-              <!-- US Agencies -->
-              <tr class="border-b border-slate-800">
-                <td class="py-5 px-4">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center"
-                    >
-                      <span class="text-slate-400 text-sm">US</span>
-                    </div>
-                    <div>
-                      <p class="font-medium text-slate-300">US Web Agency</p>
-                      <p class="text-xs text-slate-500">Traditional agency</p>
-                    </div>
-                  </div>
-                </td>
-                <td class="text-center py-5 px-4">
-                  <span class="text-xl font-bold text-red-400"
-                    >$8,000 - $15,000</span
-                  >
-                </td>
-                <td class="text-center py-5 px-4 text-slate-400">10 pages</td>
-                <td class="text-center py-5 px-4 text-slate-400">4-8 weeks</td>
-                <td class="text-center py-5 px-4 text-slate-400">30 days</td>
-                <td class="text-center py-5 px-4">
-                  <svg
-                    class="w-6 h-6 text-green-400 mx-auto"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </td>
-              </tr>
-
-              <!-- US Freelancers -->
-              <tr class="border-b border-slate-800">
-                <td class="py-5 px-4">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center"
-                    >
-                      <span class="text-slate-400 text-sm">FR</span>
-                    </div>
-                    <div>
-                      <p class="font-medium text-slate-300">US Freelancer</p>
-                      <p class="text-xs text-slate-500">
-                        Independent developer
-                      </p>
-                    </div>
-                  </div>
-                </td>
-                <td class="text-center py-5 px-4">
-                  <span class="text-xl font-bold text-slate-300"
-                    >$3,000 - $6,000</span
-                  >
-                </td>
-                <td class="text-center py-5 px-4 text-slate-400">10 pages</td>
-                <td class="text-center py-5 px-4 text-slate-400">3-6 weeks</td>
-                <td class="text-center py-5 px-4 text-slate-400">Limited</td>
-                <td class="text-center py-5 px-4">
-                  <span class="text-slate-500 text-sm">Extra $</span>
-                </td>
-              </tr>
-
-              <!-- Fiverr/Upwork -->
-              <tr class="border-b border-slate-800">
-                <td class="py-5 px-4">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center"
-                    >
-                      <span class="text-slate-400 text-sm">FV</span>
-                    </div>
-                    <div>
-                      <p class="font-medium text-slate-300">Fiverr / Upwork</p>
-                      <p class="text-xs text-slate-500">Marketplace</p>
-                    </div>
-                  </div>
-                </td>
-                <td class="text-center py-5 px-4">
-                  <span class="text-xl font-bold text-slate-300"
-                    >$800 - $2,500</span
-                  >
-                </td>
-                <td class="text-center py-5 px-4 text-slate-400">5-10 pages</td>
-                <td class="text-center py-5 px-4 text-slate-400">Varies</td>
-                <td class="text-center py-5 px-4 text-red-400">None</td>
-                <td class="text-center py-5 px-4">
-                  <svg
-                    class="w-6 h-6 text-red-400 mx-auto"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </td>
-              </tr>
-
-              <!-- Template Sites -->
-              <tr>
-                <td class="py-5 px-4">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center"
-                    >
-                      <span class="text-slate-400 text-sm">WX</span>
-                    </div>
-                    <div>
-                      <p class="font-medium text-slate-300">
-                        Wix / Squarespace
-                      </p>
-                      <p class="text-xs text-slate-500">DIY Templates</p>
-                    </div>
-                  </div>
-                </td>
-                <td class="text-center py-5 px-4">
-                  <span class="text-xl font-bold text-slate-300"
-                    >$200 - $500/yr</span
-                  >
-                </td>
-                <td class="text-center py-5 px-4 text-slate-400">Unlimited</td>
-                <td class="text-center py-5 px-4 text-slate-400">DIY</td>
-                <td class="text-center py-5 px-4 text=" slate-400">Chat only</td
-                >
-                <td class="text-center py-5 px-4">
-                  <span class="text-slate-500 text-sm">Basic</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="mt-8 text-center">
-          <p class="text-slate-400 mb-4">
-            You could save <span class="text-orange-400 font-bold"
-              >$6,500 - $13,500</span
-            > compared to US agencies
-          </p>
-          <a
-            href="#contact"
-            class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 font-semibold transition-colors"
-          >
-            Get this deal now
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
         </div>
       </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex items-center section-spacing-top"
+    >
+      <div class="hero-container">
+        <div class="hero-grid">
+          <!-- Left Content -->
+          <div class="hero-content">
+            <!-- Badge -->
+            <div
+              class="inline-flex items-center gap-3 px-4 py-2 rounded-full badge-glow mb-8"
+            >
+              <span class="relative flex h-2.5 w-2.5">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"
+                ></span>
+              </span>
+              <span class="text-sm font-medium text-white/80"
+                >Limited spots available this month</span
+              >
+            </div>
+
+            <!-- Main Headline -->
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
+            >
+              <span class="block text-white">10-Page</span>
+              <span class="block text-white">Business Website</span>
+              <span class="block text-gradient mt-1">$1,500</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p
+              class="text-base sm:text-lg lg:text-xl text-white/55 leading-relaxed max-w-lg mb-10"
+            >
+              US agencies charge <span class="text-white/90 font-medium"
+                >$8,000 - $15,000</span
+              > for the same quality. Get premium results at <span
+                class="text-orange-400 font-semibold">70% less</span
+              >.
+            </p>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-10">
+              <div class="stat-card">
+                <div class="stat-card-inner">
+                  <span class="stat-value" data-count="15">0</span>
+                  <span class="stat-unit">days</span>
+                </div>
+                <p class="stat-desc">Fast Delivery</p>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card-inner">
+                  <span class="stat-value" data-count="30">0</span>
+                  <span class="stat-unit">days</span>
+                </div>
+                <p class="stat-desc">Free Support</p>
+              </div>
+              <div class="stat-card stat-card-highlight">
+                <div class="stat-card-inner">
+                  <span
+                    class="stat-value text-gradient"
+                    data-count="70"
+                    data-suffix="%">0%</span
+                  >
+                </div>
+                <p class="stat-desc">Cost Savings</p>
+              </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="flex flex-wrap gap-2.5">
+              {
+                ["US Timezone", "Bilingual Team", "Satisfaction Guaranteed"].map(
+                  (badge) => (
+                    <span class="trust-badge">
+                      <svg
+                        class="w-3.5 h-3.5 text-emerald-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {badge}
+                    </span>
+                  )
+                )
+              }
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div id="contact" class="hero-form-wrapper">
+            <div class="form-card">
+              <div class="form-glow"></div>
+
+              <div class="relative z-10">
+                <!-- Form Header -->
+                <div class="flex items-center gap-3 mb-6">
+                  <div
+                    class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20"
+                  >
+                    <svg
+                      class="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-white">
+                      Get Your Free Quote
+                    </h3>
+                    <p class="text-xs text-white/45 mt-0.5">
+                      Response within 2 hours
+                    </p>
+                  </div>
+                </div>
+
+                <div class="divider-gradient mb-6"></div>
+
+                <form action="/api/contact" method="POST" class="space-y-4">
+                  <input
+                    type="text"
+                    name="honey"
+                    class="hidden"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+
+                  <div class="grid grid-cols-2 gap-3">
+                    <div>
+                      <label class="form-label">Name *</label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="John Doe"
+                        class="form-input"
+                      />
+                    </div>
+                    <div>
+                      <label class="form-label">Email *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="john@email.com"
+                        class="form-input"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-3">
+                    <div>
+                      <label class="form-label">Phone *</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        placeholder="+1 (555) 000-0000"
+                        class="form-input"
+                      />
+                    </div>
+                    <div>
+                      <label class="form-label">Industry *</label>
+                      <select
+                        name="industry"
+                        required
+                        class="form-input form-select"
+                      >
+                        <option value="" disabled selected>Select...</option>
+                        {industries.map((i) => <option value={i}>{i}</option>)}
+                      </select>
+                    </div>
+                  </div>
+
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="10-Page Website $1,500 - New Lead"
+                  />
+                  <input
+                    type="hidden"
+                    name="services"
+                    value="Web Development"
+                  />
+
+                  <div>
+                    <label class="form-label"
+                      >Tell us about your project *</label
+                    >
+                    <textarea
+                      name="message"
+                      required
+                      rows="3"
+                      placeholder="What does your business do? What pages do you need?"
+                      class="form-input resize-none"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn-submit group">
+                    <span>Get My Free Proposal</span>
+                    <svg
+                      class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </button>
+
+                  <div
+                    class="flex items-center justify-center gap-3 text-[11px] text-white/35 pt-1"
+                  >
+                    <span class="flex items-center gap-1">
+                      <svg
+                        class="w-3 h-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                        ></path>
+                      </svg>
+                      Secure
+                    </span>
+                    <span class="text-white/20">|</span>
+                    <span>No credit card</span>
+                    <span class="text-white/20">|</span>
+                    <span>100% free quote</span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
+      >
+        <span class="text-[10px] uppercase tracking-[0.2em] text-white/25"
+          >Scroll</span
+        >
+        <div
+          class="w-5 h-8 rounded-full border border-white/15 flex items-start justify-center p-1.5"
+        >
+          <div class="w-1 h-1.5 bg-white/30 rounded-full animate-bounce"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- What's Included Section -->
-    <section class="py-20 bg-slate-950" id="features">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Everything You Need for <span class="text-orange-400">$1,500</span>
+    <!-- Pricing Comparison -->
+    <section class="section-spacing relative" id="pricing">
+      <div class="container-main">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">Transparent Pricing</span>
+          <h2 class="section-title">
+            Compare <span class="text-gradient">&</span> Save
           </h2>
-          <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-            A complete business website package with no hidden fees or surprise
-            charges.
+          <p class="section-subtitle">
+            See why smart business owners choose Codebrand.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Feature 1 -->
-          <div
-            class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-orange-500/50 transition-colors"
-          >
-            <div
-              class="w-12 h-12 rounded-lg bg-orange-600/20 flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+        <div
+          class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          data-animate="fade-up"
+          data-delay="150"
+        >
+          {
+            [
+              {
+                name: "US Agency",
+                price: "$8,000 - $15,000",
+                time: "4-8 weeks",
+                featured: false,
+              },
+              {
+                name: "US Freelancer",
+                price: "$3,000 - $6,000",
+                time: "3-6 weeks",
+                featured: false,
+              },
+              {
+                name: "Fiverr/Upwork",
+                price: "$800 - $2,500",
+                time: "2-4 weeks",
+                featured: false,
+                warning: true,
+              },
+              {
+                name: "Codebrand",
+                price: "$1,500",
+                time: "14 days",
+                featured: true,
+              },
+            ].map((item) => (
+              <div
+                class={`pricing-card ${item.featured ? "pricing-card-featured" : ""} ${item.warning ? "pricing-card-warning" : ""}`}
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
+                {item.featured && (
+                  <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10">
+                    <span class="px-3 py-0.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wide">
+                      Best Value
+                    </span>
+                  </div>
+                )}
+                {item.warning && (
+                  <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10">
+                    <span class="px-3 py-0.5 bg-red-500/80 text-white text-[10px] font-bold rounded-full uppercase tracking-wide">
+                      Risky
+                    </span>
+                  </div>
+                )}
+                <p
+                  class={`text-sm font-medium mb-2 ${item.featured ? "text-white" : "text-white/45"}`}
+                >
+                  {item.name}
+                </p>
+                <p
+                  class={`text-xl sm:text-2xl font-bold mb-1.5 ${item.featured ? "text-gradient" : "text-white"}`}
+                >
+                  {item.price}
+                </p>
+                <p class="text-white/35 text-xs flex items-center gap-1.5">
+                  <svg
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  {item.time}
+                </p>
+                {item.warning && (
+                  <p class="text-red-400/70 text-[10px] mt-2 leading-tight">
+                    Quality varies, no support after
+                  </p>
+                )}
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Package Comparison Table -->
+        <div
+          class="packages-section mt-12 sm:mt-16"
+          data-animate="fade-up"
+          data-delay="200"
+        >
+          <h3 class="text-xl sm:text-2xl font-bold text-center text-white mb-8">
+            Choose Your <span class="text-gradient">Package</span>
+          </h3>
+
+          <div class="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+            <!-- WordPress Package -->
+            <div class="package-card package-card-premium">
+              <div class="package-glow"></div>
+              <div class="package-header relative z-10">
+                <span class="package-badge-premium">Easy to Edit</span>
+                <h4 class="text-lg font-bold text-white mt-3">WordPress</h4>
+                <div class="flex items-baseline gap-1 mt-2">
+                  <span class="text-3xl sm:text-4xl font-bold text-gradient"
+                    >$1,500</span
+                  >
+                </div>
+                <p class="text-white/45 text-sm mt-2">One-time payment</p>
+              </div>
+
+              <div class="package-features relative z-10">
+                <ul class="space-y-3">
+                  {
+                    [
+                      "10 custom pages",
+                      "WordPress CMS",
+                      "Easy to edit yourself",
+                      "Ready in 14 days",
+                      "Mobile responsive",
+                      "SEO optimized",
+                      "90 days free support",
+                    ].map((feature) => (
+                      <li class="flex items-start gap-2.5 text-sm text-white/70">
+                        <svg
+                          class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+              <div class="package-footer relative z-10">
+                <p class="text-xs text-white/35 mb-3">
+                  Best for: Businesses that want to manage content themselves
+                </p>
+                <a href="#contact" class="btn-package-premium">Get Started</a>
+              </div>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">10 Custom Pages</h3>
-            <p class="text-slate-400">
-              Home, About, Services, Contact, and 6 more pages tailored to your
-              business needs.
-            </p>
+
+            <!-- Astro/Custom Code Package -->
+            <div class="package-card package-card-cyan">
+              <div class="package-glow-cyan"></div>
+              <div class="package-header relative z-10">
+                <span class="package-badge-cyan">Maximum Performance</span>
+                <h4 class="text-lg font-bold text-white mt-3">Custom Code</h4>
+                <div class="flex items-baseline gap-1 mt-2">
+                  <span
+                    class="text-3xl sm:text-4xl font-bold text-gradient-cyan"
+                    >$3,500 - $5,500</span
+                  >
+                </div>
+                <p class="text-white/45 text-sm mt-2">One-time payment</p>
+              </div>
+
+              <div class="package-features relative z-10">
+                <ul class="space-y-3">
+                  {
+                    [
+                      "10 custom pages",
+                      "Astro/Next.js static code",
+                      "Extreme loading speed (100 PageSpeed)",
+                      "Ready in 3-4 weeks",
+                      "No plugin maintenance needed",
+                      "SEO best practices included",
+                      "90 days free support",
+                    ].map((feature) => (
+                      <li class="flex items-start gap-2.5 text-sm text-white/70">
+                        <svg
+                          class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+              <div class="package-footer relative z-10">
+                <p class="text-xs text-white/35 mb-3">
+                  Best for: Businesses that prioritize speed & SEO performance
+                </p>
+                <a href="#contact" class="btn-package-cyan">Get Started</a>
+              </div>
+            </div>
           </div>
 
-          <!-- Feature 2 -->
-          <div
-            class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-orange-500/50 transition-colors"
-          >
-            <div
-              class="w-12 h-12 rounded-lg bg-orange-600/20 flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Mobile Responsive</h3>
-            <p class="text-slate-400">
-              Perfect display on phones, tablets, and desktops. 60% of traffic
-              comes from mobile.
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div
-            class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-orange-500/50 transition-colors"
-          >
-            <div
-              class="w-12 h-12 rounded-lg bg-orange-600/20 flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">SEO Optimized</h3>
-            <p class="text-slate-400">
-              On-page SEO, meta tags, schema markup, and Google Search Console
-              setup included.
-            </p>
-          </div>
-
-          <!-- Feature 4 -->
-          <div
-            class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-orange-500/50 transition-colors"
-          >
-            <div
-              class="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-cyan-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Lightning Fast</h3>
-            <p class="text-slate-400">
-              90+ PageSpeed score guaranteed. Fast sites rank higher and convert
-              better.
-            </p>
-          </div>
-
-          <!-- Feature 5 -->
-          <div
-            class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-orange-500/50 transition-colors"
-          >
-            <div
-              class="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-cyan-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Analytics Setup</h3>
-            <p class="text-slate-400">
-              Google Analytics 4 integration to track visitors, conversions, and
-              business growth.
-            </p>
-          </div>
-
-          <!-- Feature 6 -->
-          <div
-            class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-orange-500/50 transition-colors"
-          >
-            <div
-              class="w-12 h-12 rounded-lg bg-cyan-600/20 flex items-center justify-center mb-4"
-            >
-              <svg
-                class="w-6 h-6 text-cyan-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">90-Day Support</h3>
-            <p class="text-slate-400">
-              Three months of free technical support, updates, and bug fixes
-              after launch.
+          <!-- Comparison note -->
+          <div class="mt-8 text-center" data-animate="fade-up" data-delay="250">
+            <p class="text-white/40 text-sm">
+              US agencies charge <span class="text-orange-400 font-semibold"
+                >$10,000 - $18,000</span
+              > for Astro websites. You save up to 70%.
             </p>
           </div>
         </div>
 
-        <!-- Additional Features List -->
-        <div class="mt-12 bg-slate-900 border border-slate-800 rounded-xl p-8">
-          <h3 class="text-xl font-bold text-white mb-6 text-center">
+        <!-- Why cheaper card -->
+        <div
+          class="why-card mt-10 sm:mt-14"
+          data-animate="fade-up"
+          data-delay="300"
+        >
+          <div class="why-card-glow"></div>
+          <div class="relative z-10">
+            <div class="flex items-start gap-4 mb-5">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shrink-0 shadow-lg shadow-cyan-500/20"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
+                  Why can we offer these prices?
+                </h3>
+                <p class="text-sm sm:text-base text-white/50 leading-relaxed">
+                  We're a US-facing agency based in Honduras. Lower costs, same
+                  quality. Our bilingual team works in <span
+                    class="text-white/80 font-medium">your timezone</span
+                  > and delivers US-standard work.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {
+                [
+                  {
+                    label: "Same Quality",
+                    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+                  },
+                  {
+                    label: "Your Timezone",
+                    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+                  },
+                  {
+                    label: "Bilingual Team",
+                    icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129",
+                  },
+                  {
+                    label: "Quality Assured",
+                    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+                  },
+                ].map((item) => (
+                  <div class="why-badge">
+                    <svg
+                      class="w-4 h-4 text-emerald-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d={item.icon}
+                      />
+                    </svg>
+                    <span>{item.label}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section-spacing relative" id="features">
+      <div class="container-main">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">What's Included</span>
+          <h2 class="section-title">
+            Everything You <span class="text-gradient">Need</span>
+          </h2>
+          <p class="section-subtitle">
+            No hidden fees. Here's exactly what you get.
+          </p>
+        </div>
+
+        <div
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          data-animate="fade-up"
+          data-delay="150"
+        >
+          {
+            features.map((item) => (
+              <div class="feature-card group">
+                <div class="feature-icon">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    set:html={getIcon(item.icon)}
+                  />
+                </div>
+                <h3 class="text-base font-semibold mb-1.5 text-white group-hover:text-orange-400 transition-colors">
+                  {item.title}
+                </h3>
+                <p class="text-white/45 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Also included list -->
+        <div
+          class="mt-10 bg-white/[0.01] border border-white/[0.03] rounded-xl p-6 sm:p-8"
+          data-animate="fade-up"
+          data-delay="200"
+        >
+          <h3 class="text-lg font-bold text-white mb-6 text-center">
             Also Included at No Extra Cost:
           </h3>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -766,17 +900,19 @@ const industries = [
               ].map((item) => (
                 <div class="flex items-center gap-2">
                   <svg
-                    class="w-5 h-5 text-green-400 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+                    class="w-4 h-4 text-emerald-400 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
                     <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span class="text-slate-300 text-sm">{item}</span>
+                  <span class="text-white/60 text-sm">{item}</span>
                 </div>
               ))
             }
@@ -785,301 +921,415 @@ const industries = [
       </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Why US Businesses Choose <span class="text-orange-400"
-              >Codebrand</span
-            >
+    <!-- Process -->
+    <section class="section-spacing relative" id="process">
+      <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">How It Works</span>
+          <h2 class="section-title">
+            Simple <span class="text-gradient">3-Step</span> Process
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div
-              class="w-16 h-16 rounded-full bg-orange-600/20 flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Same Timezone</h3>
-            <p class="text-slate-400">
-              We work CST hours (Central Time). Real-time communication, no
-              waiting overnight for responses.
-            </p>
+        <div class="relative" data-animate="fade-up" data-delay="150">
+          <!-- Connection Line -->
+          <div
+            class="hidden lg:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-orange-500/70 to-transparent"
+          >
           </div>
 
-          <div class="text-center">
-            <div
-              class="w-16 h-16 rounded-full bg-orange-600/20 flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Bilingual Team</h3>
-            <p class="text-slate-400">
-              100% fluent in English. Clear communication with no language
-              barriers or misunderstandings.
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-16 h-16 rounded-full bg-orange-600/20 flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">
-              Money-Back Guarantee
-            </h3>
-            <p class="text-slate-400">
-              Not satisfied? Get a full refund within 14 days of project start.
-              Zero risk for you.
-            </p>
+          <div class="grid md:grid-cols-3 gap-8 lg:gap-6">
+            {
+              [
+                {
+                  num: "01",
+                  title: "Submit Request",
+                  desc: "Fill out the form with your project details.",
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`,
+                },
+                {
+                  num: "02",
+                  title: "Get Quote",
+                  desc: "We respond within 2 hours with a proposal.",
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>`,
+                },
+                {
+                  num: "03",
+                  title: "Launch",
+                  desc: "Your website goes live in 14 days or less.",
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>`,
+                },
+              ].map((step) => (
+                <div class="process-card">
+                  <div class="process-number">{step.num}</div>
+                  <div class="process-icon">
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      set:html={step.icon}
+                    />
+                  </div>
+                  <h3 class="text-lg font-bold mt-5 mb-2 text-white">
+                    {step.title}
+                  </h3>
+                  <p class="text-white/45 text-sm leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Google Reviews Section -->
-    <section class="py-20 bg-slate-950" id="testimonials">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <span
-            class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
-          >
-            <svg
-              class="w-4 h-4 text-cyan-400"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              ></path>
-            </svg>
-            <span class="text-sm font-medium text-cyan-400">Google Reviews</span
-            >
-          </span>
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            What Our <span class="text-orange-400">Clients</span> Say
+    <!-- Reviews -->
+    <section class="section-spacing relative" id="reviews">
+      <div class="container-main">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">Testimonials</span>
+          <h2 class="section-title">
+            What Clients <span class="text-gradient">Say</span>
           </h2>
-          <p class="text-lg text-slate-400">
-            Real reviews from our satisfied clients
+          <p class="section-subtitle">
+            Real feedback from businesses we've helped grow.
           </p>
         </div>
       </div>
-      <Testimonial client:visible />
+      <div data-animate="fade-up" data-delay="150">
+        <Testimonial client:visible />
+      </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-slate-900" id="faq">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Frequently Asked <span class="text-orange-400">Questions</span>
+    <!-- Portfolio -->
+    <section class="section-spacing relative" id="portfolio">
+      <div class="container-main">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">Our Work</span>
+          <h2 class="section-title">
+            Recent <span class="text-gradient">Projects</span>
+          </h2>
+          <p class="section-subtitle">
+            Real business websites we've built for US clients.
+          </p>
+        </div>
+
+        <div
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          data-animate="fade-up"
+          data-delay="150"
+        >
+          {
+            [
+              {
+                name: "Zeed",
+                industry: "Marketing Agency",
+                image: "/photos/projects/zeed.avif",
+                description:
+                  "Marketing agency website with service showcase and client portfolio.",
+              },
+              {
+                name: "BuildCO",
+                industry: "Construction",
+                image: "/photos/projects/BuildCO.avif",
+                description:
+                  "Complete construction company website with project galleries and quote system.",
+              },
+              {
+                name: "Elite Motos",
+                industry: "Automotive",
+                image: "/photos/projects/EliteMotos.avif",
+                description:
+                  "Motorcycle dealership site with inventory display and financing options.",
+              },
+              {
+                name: "Real States Properties",
+                industry: "Real Estate",
+                image: "/photos/projects/RealStates.avif",
+                description:
+                  "Property listings website with search filters and agent profiles.",
+              },
+              {
+                name: "GymFit Studio",
+                industry: "Fitness",
+                image: "/photos/projects/gymfit.webp",
+                description:
+                  "Fitness center website with class schedules and membership signup.",
+              },
+              {
+                name: "Laboratory Tech",
+                industry: "Lab Equipment",
+                image: "/photos/projects/Laboratory.avif",
+                description:
+                  "E-commerce for laboratory supplements and equipment sales.",
+              },
+            ].map((project) => (
+              <div class="portfolio-card group">
+                <div class="portfolio-image">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div class="portfolio-overlay">
+                    <span class="portfolio-industry">{project.industry}</span>
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3 class="text-base font-semibold text-white group-hover:text-orange-400 transition-colors">
+                    {project.name}
+                  </h3>
+                  <p class="text-white/45 text-sm mt-1 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-spacing relative">
+      <div class="max-w-2xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">Questions?</span>
+          <h2 class="section-title">
+            Frequently <span class="text-gradient">Asked</span>
           </h2>
         </div>
 
-        <div class="space-y-4">
-          <details
-            class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer p-6 font-semibold text-white"
-            >
-              How can you offer such low prices compared to US agencies?
-              <svg
-                class="w-5 h-5 transform group-open:rotate-180 transition-transform text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <p class="px-6 pb-6 text-slate-400">
-              We're based in Honduras where operational costs are significantly
-              lower than the US. This lets us hire top-tier developers and
-              designers (many trained in the US or with US agency experience) at
-              rates that allow us to pass massive savings to you - without
-              compromising on quality. You get US-quality work at nearshore
-              prices.
-            </p>
-          </details>
+        <div class="space-y-3" data-animate="fade-up" data-delay="150">
+          {
+            [
+              {
+                q: "What's the difference between WordPress and Custom Code?",
+                a: "WordPress is easier to edit yourself and costs less. Custom code (Astro) loads faster, is optimized for SEO performance, and requires no plugin updates. Choose WordPress if you want to manage content yourself. Choose custom code if speed and SEO are priorities.",
+              },
+              {
+                q: "Why is it cheaper than US agencies?",
+                a: "We're based in Honduras with lower operational costs, but our team is US-trained and works in your timezone. You get the same quality at a better price.",
+              },
+              {
+                q: "What if I'm not satisfied?",
+                a: "We include revisions during development until you're satisfied. Full refund available before work begins (minus 10% admin fee). See our terms for details.",
+              },
+              {
+                q: "How long until my website is ready?",
+                a: "WordPress sites are ready in 14 days. Custom code sites take 3-4 weeks. Rush delivery is available for an additional fee.",
+              },
+              {
+                q: "Do I own the website?",
+                a: "Yes, 100%. All files, code, and content are yours forever. We'll provide everything you need to host it anywhere.",
+              },
+            ].map((item) => (
+              <details class="faq-item group">
+                <summary class="faq-question">
+                  <span class="flex-1 pr-4 text-sm sm:text-base">{item.q}</span>
+                  <div class="faq-icon">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 4v16m8-8H4"
+                      />
+                    </svg>
+                  </div>
+                </summary>
+                <div class="faq-answer">
+                  <p class="text-sm">{item.a}</p>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-          <details
-            class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer p-6 font-semibold text-white"
-            >
-              What if I need changes after the website is done?
-              <svg
-                class="w-5 h-5 transform group-open:rotate-180 transition-transform text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <p class="px-6 pb-6 text-slate-400">
-              You get 90 days of free support after launch, which includes
-              unlimited minor revisions. For ongoing support beyond that, we
-              offer affordable monthly maintenance plans starting at $99/month.
-              You're never locked in - cancel anytime.
-            </p>
-          </details>
+    <!-- Maintenance Section -->
+    <section class="section-spacing relative" id="maintenance">
+      <div class="container-main">
+        <div class="maintenance-card" data-animate="fade-up">
+          <div class="maintenance-glow"></div>
+          <div class="relative z-10">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <span class="section-tag">Post-Launch Support</span>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mt-3 mb-4">
+                  Keep Your Site <span class="text-gradient">Secure & Fast</span
+                  >
+                </h3>
+                <p class="text-white/50 leading-relaxed mb-6">
+                  WordPress sites need regular care. Our maintenance plan
+                  handles everything so you can focus on your business.
+                </p>
 
-          <details
-            class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer p-6 font-semibold text-white"
-            >
-              How does communication work? What about the time difference?
-              <svg
-                class="w-5 h-5 transform group-open:rotate-180 transition-transform text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <p class="px-6 pb-6 text-slate-400">
-              Honduras is in the Central Time Zone (CST), so we work the same
-              hours as most US businesses. Our entire team is 100% fluent in
-              English. We communicate via email, Zoom, Slack, or phone -
-              whatever works best for you. Most clients say our communication is
-              better than local agencies they've used.
-            </p>
-          </details>
+                <div class="flex items-baseline gap-2 mb-6">
+                  <span class="text-4xl sm:text-5xl font-bold text-gradient"
+                    >$49</span
+                  >
+                  <span class="text-white/45">/month</span>
+                </div>
 
-          <details
-            class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer p-6 font-semibold text-white"
-            >
-              Will I own my website? Can I move it to another host?
-              <svg
-                class="w-5 h-5 transform group-open:rotate-180 transition-transform text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <p class="px-6 pb-6 text-slate-400">
-              Absolutely. You own 100% of your website - code, design, content,
-              everything. We'll provide all source files and help you migrate if
-              you ever want to switch hosts. No vendor lock-in, no proprietary
-              systems.
-            </p>
-          </details>
+                <ul class="space-y-3 mb-6">
+                  {
+                    [
+                      "Daily automated backups",
+                      "WordPress & plugin updates",
+                      "Security monitoring & malware scans",
+                      "SSL certificate management",
+                      "Uptime monitoring (99.9%)",
+                      "Priority email support",
+                    ].map((feature) => (
+                      <li class="flex items-center gap-2.5 text-sm text-white/70">
+                        <svg
+                          class="w-4 h-4 text-emerald-400 shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))
+                  }
+                </ul>
 
-          <details
-            class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer p-6 font-semibold text-white"
-            >
-              What's your typical turnaround time?
-              <svg
-                class="w-5 h-5 transform group-open:rotate-180 transition-transform text-orange-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <p class="px-6 pb-6 text-slate-400">
-              Most 10-page websites are completed within 14 business days from
-              receiving your content. We'll give you a specific timeline during
-              our kickoff call. Need it faster? We offer rush delivery for an
-              additional fee.
-            </p>
-          </details>
+                <a
+                  href="#contact"
+                  class="btn-maintenance inline-flex items-center"
+                >
+                  <span>Add to Your Package</span>
+                  <svg
+                    class="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="maintenance-visual">
+                <div class="maintenance-icon-grid">
+                  <div class="maintenance-icon-item">
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      ></path>
+                    </svg>
+                    <span>Security</span>
+                  </div>
+                  <div class="maintenance-icon-item">
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                      ></path>
+                    </svg>
+                    <span>Updates</span>
+                  </div>
+                  <div class="maintenance-icon-item">
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                      ></path>
+                    </svg>
+                    <span>Backups</span>
+                  </div>
+                  <div class="maintenance-icon-item">
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span>Speed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-          Ready to Save Thousands on Your Website?
-        </h2>
-        <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-          Get a professional 10-page website for <span
-            class="text-orange-400 font-bold">$1,500</span
-          > instead of paying US agencies $8,000+. Limited spots available.
-        </p>
-        <a
-          href="#contact"
-          class="inline-flex items-center justify-center px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white font-bold text-xl rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-1 transition-all duration-200"
+    <section class="section-spacing relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-orange-500/[0.08] via-transparent to-transparent"
+      >
+      </div>
+
+      <div
+        class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center relative z-10"
+        data-animate="fade-up"
+      >
+        <span class="section-tag">Ready to Start?</span>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-5 text-white leading-tight"
         >
-          Start My Project Now
+          Get Your Professional<br />
+          <span class="text-gradient">10-Page Website Today</span>
+        </h2>
+        <p class="text-base sm:text-lg text-white/45 mb-8 max-w-xl mx-auto">
+          Join 500+ US businesses that chose quality over price.
+        </p>
+
+        <a href="#contact" class="btn-cta group">
+          <span>Get Your Free Quote</span>
           <svg
-            class="ml-2 w-6 h-6"
+            class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -1088,285 +1338,107 @@ const industries = [
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>
-        <p class="mt-4 text-slate-500 text-sm">
-          14-day money-back guarantee. No questions asked.
-        </p>
-      </div>
-    </section>
 
-    <!-- Contact Form Section -->
-    <section class="py-20 bg-slate-950" id="contact">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Get Your <span class="text-orange-400">$1,500</span> Website
-          </h2>
-          <p class="text-lg text-slate-400">
-            Fill out the form below and we'll get back to you within 24 hours
-            with a custom proposal.
-          </p>
-        </div>
-
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
-          <!-- Trust Badges -->
-          <div
-            class="flex flex-wrap justify-center gap-6 mb-8 pb-8 border-b border-slate-800"
-          >
-            <div class="flex items-center gap-2 text-sm text-slate-400">
-              <svg
-                class="w-5 h-5 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
-              </svg>
-              Money-Back Guarantee
-            </div>
-            <div class="flex items-center gap-2 text-sm text-slate-400">
-              <svg
-                class="w-5 h-5 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                ></path>
-              </svg>
-              Secure & Confidential
-            </div>
-            <div class="flex items-center gap-2 text-sm text-slate-400">
-              <svg
-                class="w-5 h-5 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              Response in 24 Hours
-            </div>
-          </div>
-
-          <form
-            action="/api/contact"
-            method="POST"
-            class="grid grid-cols-1 md:grid-cols-2 gap-6"
-          >
-            <input type="hidden" name="package" value="10-Page Website $1500" />
-
-            <!-- Honeypot -->
-            <input
-              type="text"
-              name="honey"
-              style="display:none"
-              tabindex="-1"
-              autocomplete="off"
-              aria-hidden="true"
-              class="hidden"
-            />
-
-            <!-- Name -->
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-medium text-slate-300 mb-2"
-              >
-                Full Name *
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                autocomplete="name"
-                placeholder="John Smith"
-                class="form-input"
-              />
-            </div>
-
-            <!-- Email -->
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-medium text-slate-300 mb-2"
-              >
-                Business Email *
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                autocomplete="email"
-                placeholder="john@company.com"
-                class="form-input"
-              />
-            </div>
-
-            <!-- Phone -->
-            <div>
-              <label
-                for="phone"
-                class="block text-sm font-medium text-slate-300 mb-2"
-              >
-                Phone Number *
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                required
-                autocomplete="tel"
-                placeholder="+1 (555) 123-4567"
-                class="form-input"
-              />
-            </div>
-
-            <!-- Industry -->
-            <div>
-              <label
-                for="industry"
-                class="block text-sm font-medium text-slate-300 mb-2"
-              >
-                Industry *
-              </label>
-              <select id="industry" name="industry" required class="form-input">
-                <option value="" disabled selected>Select your industry</option>
-                {
-                  industries.map((industry) => (
-                    <option value={industry}>{industry}</option>
-                  ))
-                }
-              </select>
-            </div>
-
-            <!-- Company Website -->
-            <div>
-              <label
-                for="website"
-                class="block text-sm font-medium text-slate-300 mb-2"
-              >
-                Current Website (if any)
-              </label>
-              <input
-                id="website"
-                name="website"
-                type="url"
-                placeholder="https://yourcompany.com"
-                class="form-input"
-              />
-            </div>
-
-            <!-- Timeline -->
-            <div>
-              <label
-                for="timeline"
-                class="block text-sm font-medium text-slate-300 mb-2"
-              >
-                Ideal Timeline
-              </label>
-              <select id="timeline" name="timeline" class="form-input">
-                <option value="" disabled selected
-                  >When do you need this?</option
+        <div
+          class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8 text-xs sm:text-sm text-white/35"
+        >
+          {
+            [
+              "Satisfaction guaranteed",
+              "14-day delivery",
+              "90 days free support",
+            ].map((item) => (
+              <span class="flex items-center gap-1.5">
+                <svg
+                  class="w-3.5 h-3.5 text-emerald-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                <option value="ASAP">ASAP - Rush delivery</option>
-                <option value="2-weeks">Within 2 weeks</option>
-                <option value="1-month">Within 1 month</option>
-                <option value="flexible">Flexible / No rush</option>
-              </select>
-            </div>
-
-            <!-- Message -->
-            <div class="md:col-span-2">
-              <label
-                for="message"
-                class="block text-sm font-medium text-slate-300 mb-2"
-              >
-                Tell Us About Your Project *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-                placeholder="Describe your business, what pages you need, and any specific features or design preferences..."
-                class="form-input resize-none"></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="md:col-span-2">
-              <button
-                type="button"
-                type="button"
-                type="submit"
-                class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-200"
-              >
-                Get My Free Proposal
-              </button>
-              <p class="text-center text-slate-500 text-sm mt-3">
-                No commitment required. We'll send you a detailed proposal
-                within 24 hours.
-              </p>
-            </div>
-          </form>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                {item}
+              </span>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="py-10 border-t border-white/[0.06]">
+      <div class="container-main">
         <div
-          class="flex flex-col md:flex-row justify-between items-center gap-4"
+          class="flex flex-col sm:flex-row items-center justify-between gap-5"
         >
-          <div class="flex items-center gap-2">
-            <Logo sizeW={120} sizeH={36} />
-          </div>
-          <p class="text-slate-500 text-sm">
-            © 2024 Codebrand. Serving US businesses from Central America.
-          </p>
-          <div class="flex items-center gap-4">
+          <a href="/" class="shrink-0" aria-label="Codebrand">
+            <img src={logoWhite.src} alt="Codebrand" width="120" height="35" />
+          </a>
+          <div class="flex items-center gap-3">
             <a
-              href="/privacy"
-              class="text-slate-500 hover:text-slate-300 text-sm transition-colors"
-              >Privacy</a
+              href="https://x.com/Codebrand_es"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="Twitter"
             >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"
+                ><path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                ></path></svg
+              >
+            </a>
             <a
-              href="/terms"
-              class="text-slate-500 hover:text-slate-300 text-sm transition-colors"
-              >Terms</a
+              href="https://www.facebook.com/codebrand"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="Facebook"
             >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"
+                ><path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="https://es.linkedin.com/company/codebrand-es"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="LinkedIn"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"
+                ><path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                ></path></svg
+              >
+            </a>
           </div>
         </div>
+        <p class="text-center text-white/25 text-xs mt-6">
+          © 2025 Codebrand. All rights reserved.
+        </p>
       </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
+    <!-- WhatsApp -->
     <a
       href="https://wa.me/50432722973?text=Hi%2C%20I'm%20interested%20in%20the%20%241%2C500%20website%20package"
       target="_blank"
-      rel="noopener noreferrer"
-      class="fixed bottom-5 right-5 z-20 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-all hover:scale-110"
-      aria-label="Contact us on WhatsApp"
+      rel="noopener"
+      class="whatsapp-btn"
+      aria-label="WhatsApp"
     >
-      <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
         ></path>
@@ -1375,32 +1447,1163 @@ const industries = [
   </div>
 </LandingLayout>
 
-<style>
+<style is:global>
+  /* ===== VARIABLES ===== */
+  :root {
+    --color-bg: #000000;
+    --color-orange: #f97316;
+    --color-amber: #fbbf24;
+    --color-emerald: #10b981;
+    --color-cyan: #06b6d4;
+    --container-max: 1200px;
+    --section-spacing: clamp(4rem, 10vw, 7rem);
+  }
+
+  /* ===== BASE ===== */
+  body {
+    background-color: var(--color-bg) !important;
+  }
+
+  .landing-wrapper {
+    background-color: var(--color-bg);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ===== LAYOUT ===== */
+  .container-main {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-main {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-main {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Hero Layout */
+  .hero-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .hero-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-grid {
+      grid-template-columns: 1fr 460px;
+      gap: 5rem;
+    }
+  }
+
+  .hero-content {
+    padding-top: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-content {
+      padding-top: 2rem;
+    }
+  }
+
+  .hero-form-wrapper {
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-form-wrapper {
+      position: sticky;
+      top: 6rem;
+    }
+  }
+
+  .section-spacing {
+    padding-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
+  }
+
+  .section-spacing-top {
+    padding-top: calc(var(--section-spacing) + 4rem);
+    padding-bottom: var(--section-spacing);
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-header {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-orange);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    color: rgba(255, 255, 255, 0.45);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  /* ===== BACKGROUNDS ===== */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.12;
+    animation: orb-float 25s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    top: -150px;
+    right: -150px;
+  }
+
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    bottom: 30%;
+    left: -120px;
+    animation-delay: -8s;
+  }
+
+  .orb-3 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    bottom: -80px;
+    right: 15%;
+    animation-delay: -15s;
+  }
+
+  @keyframes orb-float {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(20px, -20px) scale(1.03);
+    }
+    66% {
+      transform: translate(-15px, 15px) scale(0.97);
+    }
+  }
+
+  /* ===== NAVIGATION ===== */
+  .nav-blur {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .nav-link {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: all 0.25s;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+  }
+
+  .btn-submit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border-radius: 0.625rem;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.45);
+  }
+
+  /* ===== TEXT STYLES ===== */
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-orange),
+      var(--color-amber),
+      var(--color-orange)
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-move 4s ease infinite;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(
+      135deg,
+      var(--color-cyan),
+      #22d3ee,
+      var(--color-cyan)
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-move 4s ease infinite;
+  }
+
+  @keyframes gradient-move {
+    0%,
+    100% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 200% center;
+    }
+  }
+
+  /* ===== BADGE ===== */
+  .badge-glow {
+    background: rgba(249, 115, 22, 0.08);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+  }
+
+  /* ===== TRUST BADGES ===== */
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  /* ===== STAT CARDS ===== */
+  .stat-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 0.875rem;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .stat-card-highlight {
+    background: rgba(249, 115, 22, 0.04);
+    border-color: rgba(249, 115, 22, 0.1);
+  }
+
+  .stat-card-highlight:hover {
+    background: rgba(249, 115, 22, 0.08);
+    border-color: rgba(249, 115, 22, 0.15);
+  }
+
+  .stat-card-inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.125rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+  }
+
+  @media (min-width: 640px) {
+    .stat-value {
+      font-size: 2.5rem;
+    }
+  }
+
+  .stat-unit {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: lowercase;
+  }
+
+  .stat-desc {
+    font-size: 0.6875rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== WHY CARD ===== */
+  .why-card {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(6, 182, 212, 0.02) 0%,
+      rgba(59, 130, 246, 0.015) 100%
+    );
+    border: 1px solid rgba(6, 182, 212, 0.08);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .why-card {
+      padding: 2rem;
+    }
+  }
+
+  .why-card-glow {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(
+      circle,
+      rgba(6, 182, 212, 0.06) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .why-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+  }
+
+  .why-badge:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(16, 185, 129, 0.15);
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+  }
+
+  /* ===== FORM ===== */
+  .form-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  @media (min-width: 640px) {
+    .form-card {
+      padding: 1.75rem;
+    }
+  }
+
+  .form-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(249, 115, 22, 0.08),
+      transparent,
+      rgba(249, 115, 22, 0.08),
+      transparent
+    );
+    animation: glow-rotate 12s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .form-card:hover .form-glow {
+    opacity: 1;
+  }
+
+  @keyframes glow-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 0.375rem;
+  }
+
   .form-input {
     width: 100%;
-    padding: 0.875rem 1rem;
-    background-color: rgb(30 41 59);
-    border: 1px solid rgb(51 65 85);
-    border-radius: 0.75rem;
-    font-size: 0.938rem;
-    color: white;
-    transition:
-      border-color 0.2s,
-      box-shadow 0.2s;
+    padding: 0.625rem 0.875rem;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 0.875rem;
+    transition: all 0.2s;
     outline: none;
   }
 
-  .form-input:focus {
-    border-color: #ea580c;
-    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
-  }
-
   .form-input::placeholder {
-    color: rgb(100 116 139);
+    color: rgba(255, 255, 255, 0.2);
   }
 
-  .form-input option {
-    background-color: rgb(30 41 59);
-    color: white;
+  .form-input:focus {
+    border-color: var(--color-orange);
+    background: rgba(249, 115, 22, 0.04);
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.1);
+  }
+
+  .form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(255,255,255,0.4)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.875rem;
+    padding-right: 2.25rem;
+  }
+
+  .form-select option {
+    background: #111;
+    color: #fff;
+  }
+
+  /* ===== PRICING CARDS ===== */
+  .pricing-card {
+    position: relative;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 0.875rem;
+    transition: all 0.3s;
+  }
+
+  @media (min-width: 640px) {
+    .pricing-card {
+      padding: 1.5rem;
+    }
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .pricing-card-featured {
+    background: rgba(249, 115, 22, 0.03);
+    border-color: rgba(249, 115, 22, 0.12);
+  }
+
+  .pricing-card-featured:hover {
+    border-color: rgba(249, 115, 22, 0.2);
+  }
+
+  .pricing-card-warning {
+    border-color: rgba(239, 68, 68, 0.15);
+  }
+
+  .pricing-card-warning:hover {
+    border-color: rgba(239, 68, 68, 0.25);
+  }
+
+  /* ===== PACKAGE CARDS ===== */
+  .package-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  @media (min-width: 640px) {
+    .package-card {
+      padding: 2rem;
+    }
+  }
+
+  .package-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .package-card-premium {
+    background: rgba(249, 115, 22, 0.03);
+    border-color: rgba(249, 115, 22, 0.15);
+    overflow: hidden;
+  }
+
+  .package-card-premium:hover {
+    border-color: rgba(249, 115, 22, 0.25);
+  }
+
+  .package-card-cyan {
+    background: rgba(6, 182, 212, 0.03);
+    border-color: rgba(6, 182, 212, 0.15);
+    overflow: hidden;
+  }
+
+  .package-card-cyan:hover {
+    border-color: rgba(6, 182, 212, 0.25);
+  }
+
+  .package-glow {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(249, 115, 22, 0.08) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  .package-glow-cyan {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(6, 182, 212, 0.08) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  .package-header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 1.5rem;
+  }
+
+  .package-badge-premium {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.2),
+      rgba(251, 191, 36, 0.2)
+    );
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #f97316;
+  }
+
+  .package-badge-cyan {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(
+      135deg,
+      rgba(6, 182, 212, 0.2),
+      rgba(34, 211, 238, 0.2)
+    );
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #06b6d4;
+  }
+
+  .package-features {
+    margin-bottom: 1.5rem;
+  }
+
+  .package-footer {
+    text-align: center;
+  }
+
+  .btn-package-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+  }
+
+  .btn-package-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-package-cyan {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-cyan), #0891b2);
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
+  }
+
+  .btn-package-cyan:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(6, 182, 212, 0.4);
+  }
+
+  /* ===== PORTFOLIO CARDS ===== */
+  .portfolio-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(249, 115, 22, 0.15);
+  }
+
+  .portfolio-image {
+    position: relative;
+    aspect-ratio: 16/10;
+    background: linear-gradient(
+      135deg,
+      rgba(249, 115, 22, 0.05),
+      rgba(251, 191, 36, 0.03)
+    );
+  }
+
+  .portfolio-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .portfolio-industry {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .portfolio-content {
+    padding: 1rem 1.25rem;
+  }
+
+  /* ===== MAINTENANCE SECTION ===== */
+  .maintenance-card {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(16, 185, 129, 0.02),
+      rgba(6, 182, 212, 0.02)
+    );
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .maintenance-card {
+      padding: 3rem;
+    }
+  }
+
+  .maintenance-glow {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(16, 185, 129, 0.08) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .maintenance-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maintenance-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .maintenance-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 0.75rem;
+    color: #10b981;
+    transition: all 0.25s;
+  }
+
+  .maintenance-icon-item span {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .maintenance-icon-item:hover {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .btn-maintenance {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+  }
+
+  .btn-maintenance:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(16, 185, 129, 0.35);
+  }
+
+  /* ===== FEATURE CARDS ===== */
+  .feature-card {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.008);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 0.75rem;
+    transition: all 0.3s;
+  }
+
+  @media (min-width: 640px) {
+    .feature-card {
+      padding: 1.5rem;
+    }
+  }
+
+  .feature-card:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(249, 115, 22, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-orange);
+    transition: all 0.25s;
+  }
+
+  .feature-card:hover .feature-icon {
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    border-color: transparent;
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  /* ===== PROCESS CARDS ===== */
+  .process-card {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .process-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(249, 115, 22, 1) 0%,
+      transparent 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+  }
+
+  .process-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    border-radius: 0.75rem;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.25);
+  }
+
+  /* ===== FAQ ===== */
+  .faq-item {
+    background: rgba(255, 255, 255, 0.008);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+
+  .faq-item:hover {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .faq-item[open] {
+    background: rgba(255, 255, 255, 0.015);
+    border-color: rgba(249, 115, 22, 0.08);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 0.375rem;
+    color: var(--color-orange);
+    transition: all 0.25s;
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-icon {
+    background: var(--color-orange);
+    color: #fff;
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.65;
+  }
+
+  /* ===== SOCIAL ===== */
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s;
+  }
+
+  .social-link:hover {
+    color: #fff;
+  }
+
+  /* ===== WHATSAPP ===== */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    background: #25d366;
+    border-radius: 9999px;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+    transition: all 0.25s;
+  }
+
+  .whatsapp-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  }
+
+  /* ===== SCROLL ===== */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+
+  [data-animate].animate-in {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+
+  // Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(
+            entry.target.getAttribute("data-delay") || "0"
+          );
+          setTimeout(() => entry.target.classList.add("animate-in"), delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  document
+    .querySelectorAll("[data-animate]")
+    .forEach((el) => observer.observe(el));
+
+  // Counter animation
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = parseInt(el.dataset.count || "0");
+          const suffix = el.dataset.suffix || "";
+
+          gsap.to(
+            { val: 0 },
+            {
+              val: target,
+              duration: 1.8,
+              ease: "power2.out",
+              onUpdate: function () {
+                el.textContent = Math.round(this.targets()[0].val) + suffix;
+              },
+            }
+          );
+          counterObserver.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document
+    .querySelectorAll("[data-count]")
+    .forEach((el) => counterObserver.observe(el));
+
+  // Hero entrance
+  gsap.from(".hero-content > *", {
+    y: 25,
+    opacity: 0,
+    duration: 0.7,
+    stagger: 0.12,
+    ease: "power2.out",
+    delay: 0.2,
+  });
+
+  gsap.from(".form-card", {
+    x: 40,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    delay: 0.4,
+  });
+</script>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="orb-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="orb-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+  <!-- Decorative orbs -->
+  <circle cx="150" cy="500" r="300" fill="url(#orb-gradient-1)"/>
+  <circle cx="1100" cy="100" r="250" fill="url(#orb-gradient-2)"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Content container -->
+  <g transform="translate(80, 80)">
+    <!-- Badge -->
+    <rect x="0" y="0" width="180" height="36" rx="18" fill="#f97316" fill-opacity="0.15"/>
+    <circle cx="22" cy="18" r="5" fill="#10b981"/>
+    <text x="38" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#ffffff" fill-opacity="0.8">Limited Spots</text>
+
+    <!-- Main headline -->
+    <text x="0" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff">WordPress</text>
+    <text x="0" y="185" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Landing Page</text>
+
+    <!-- Price -->
+    <text x="0" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="86" font-weight="700" fill="url(#orange-gradient)">$450</text>
+
+    <!-- Subheadline -->
+    <text x="0" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#94a3b8">US agencies charge $1,500-$3,000 for the same quality</text>
+
+    <!-- Features -->
+    <g transform="translate(0, 380)">
+      <g transform="translate(0, 0)">
+        <circle cx="10" cy="10" r="10" fill="#10b981" fill-opacity="0.2"/>
+        <path d="M6 10 L9 13 L14 7" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="30" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#ffffff" fill-opacity="0.7">7-day delivery</text>
+      </g>
+      <g transform="translate(180, 0)">
+        <circle cx="10" cy="10" r="10" fill="#10b981" fill-opacity="0.2"/>
+        <path d="M6 10 L9 13 L14 7" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="30" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#ffffff" fill-opacity="0.7">Mobile Responsive</text>
+      </g>
+      <g transform="translate(400, 0)">
+        <circle cx="10" cy="10" r="10" fill="#10b981" fill-opacity="0.2"/>
+        <path d="M6 10 L9 13 L14 7" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="30" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#ffffff" fill-opacity="0.7">SEO Ready</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right side - WordPress icon simplified -->
+  <g transform="translate(850, 180)">
+    <circle cx="120" cy="120" r="120" fill="#ffffff" fill-opacity="0.05"/>
+    <circle cx="120" cy="120" r="100" fill="#ffffff" fill-opacity="0.05"/>
+    <!-- W letter stylized -->
+    <text x="120" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="120" font-weight="700" fill="#f97316" text-anchor="middle">W</text>
+  </g>
+
+  <!-- Logo at bottom -->
+  <g transform="translate(80, 550)">
+    <text x="0" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#ffffff">codebrand</text>
+    <text x="195" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#64748b">.us</text>
+  </g>
+
+  <!-- Save percentage badge -->
+  <g transform="translate(950, 520)">
+    <rect x="0" y="0" width="170" height="50" rx="25" fill="url(#orange-gradient)"/>
+    <text x="85" y="33" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Save 70%</text>
+  </g>
+</svg>
