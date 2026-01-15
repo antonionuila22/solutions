@@ -6,7 +6,7 @@ readtime: 25
 img: /photos/blog/placeholder-security.avif
 imageAlt: "Website security best practices and protection measures"
 date: 2025-12-15
-draft: true
+draft: false
 categories:
   - Web Development
   - Security

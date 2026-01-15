@@ -6,7 +6,7 @@ readtime: 24
 img: /photos/blog/placeholder-api-design.avif
 imageAlt: "REST API design architecture and best practices"
 date: 2025-12-15
-draft: true
+draft: false
 categories:
   - Web Development
   - Technology

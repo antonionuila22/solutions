@@ -6,7 +6,7 @@ readtime: 20
 img: /photos/blog/placeholder-fast-stack.avif
 imageAlt: "Fast web development tech stack architecture diagram"
 date: 2025-12-15
-draft: true
+draft: false
 categories:
   - Web Development
   - Technology

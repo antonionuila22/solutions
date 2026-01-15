@@ -6,7 +6,7 @@ readtime: 25
 img: /photos/blog/placeholder-hosting-comparison.avif
 imageAlt: "Comparison of Vercel Netlify and Cloudflare Pages hosting platforms"
 date: 2025-12-15
-draft: true
+draft: false
 categories:
   - Web Development
   - Technology

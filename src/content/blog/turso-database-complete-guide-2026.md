@@ -6,7 +6,7 @@ readtime: 20
 img: /photos/blog/placeholder-turso.avif
 imageAlt: "Turso edge database architecture and global replication"
 date: 2025-12-15
-draft: true
+draft: false
 categories:
   - Web Development
   - Technology

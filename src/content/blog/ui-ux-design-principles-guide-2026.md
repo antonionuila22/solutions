@@ -6,7 +6,7 @@ readtime: 22
 img: /photos/blog/placeholder-ui-ux.avif
 imageAlt: "UI UX design principles and user interface elements"
 date: 2025-12-15
-draft: true
+draft: false
 categories:
   - Web Development
   - Design

@@ -6,7 +6,7 @@ readtime: 18
 img: /photos/blog/placeholder-web-tech.avif
 imageAlt: "Top web development technologies and frameworks for 2026"
 date: 2025-12-15
-draft: true
+draft: false
 categories:
   - Web Development
   - Technology
