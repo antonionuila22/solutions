@@ -26,8 +26,8 @@ interface SchemaOfferCatalog {
 const ORGANIZATION_DATA = {
   "@type": "Organization",
   name: "Codebrand",
-  url: "https://codebrand.com",
-  logo: "https://codebrand.com/photos/bannercodebrand.webp",
+  url: "https://codebrand.us",
+  logo: "https://codebrand.us/photos/bannercodebrand.webp",
 } as const;
 
 /**
@@ -535,7 +535,7 @@ export function createLocalBusinessSchema(
     sameAs: [
       "https://www.linkedin.com/company/codebrand-es",
       "https://x.com/Codebrand_es",
-      "https://www.facebook.com/codebrand",
+      "https://www.facebook.com/p/Codebrand-100087321501519/",
     ],
   };
 }

@@ -289,7 +289,7 @@ Let's go deeper into how Codebrand uses Astro:
 ### Architecture Overview
 
 ```text
-codebrand.com/
+codebrand.us/
 ├── src/
 │   ├── components/        # Reusable Astro components
 │   ├── layouts/           # Page layouts
