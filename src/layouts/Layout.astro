@@ -59,31 +59,50 @@ if (publishedTime) {
 const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
   canonicalUrl,
   "https://codebrand.us",
-  breadcrumbNames || {}
+  breadcrumbNames || {},
 );
 ---
 
 <!doctype html>
 <html lang="en-US">
   <head>
-
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '823190717423799');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "823190717423799");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1"
+      /></noscript
+    >
+    <!-- End Meta Pixel Code -->
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -341,7 +360,7 @@ src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1"
         "sameAs": [
           "https://www.linkedin.com/company/codebrand-es",
           "https://x.com/Codebrand_es",
-          "https://www.facebook.com/p/Codebrand-100087321501519/
+          "https://www.facebook.com/p/Codebrand-100087321501519/"
         ],
         "knowsAbout": [
           "Web Development",
@@ -522,24 +541,30 @@ src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1"
     <!-- Google Tag Manager + Analytics (carga diferida) -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-      window.addEventListener('load', function() {
-        setTimeout(function() {
+      window.addEventListener("load", function () {
+        setTimeout(function () {
           // GTM
-          (function(w,d,s,l,i){w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-TJCP2CWN');
+          (function (w, d, s, l, i) {
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-TJCP2CWN");
 
           // GA4
-          var ga = document.createElement('script');
+          var ga = document.createElement("script");
           ga.async = true;
-          ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9';
+          ga.src = "https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9";
           document.head.appendChild(ga);
-          gtag('js', new Date());
-          gtag('config', 'G-T9HKBF45M9');
+          gtag("js", new Date());
+          gtag("config", "G-T9HKBF45M9");
         }, 1500);
       });
     </script>
@@ -548,8 +573,13 @@ src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1"
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJCP2CWN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TJCP2CWN"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
     <!-- End Google Tag Manager (noscript) -->
 
     <Navbar />
