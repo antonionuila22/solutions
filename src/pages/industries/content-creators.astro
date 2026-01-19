@@ -11,6 +11,31 @@ const description =
 const keywords =
   "youtuber website design, content creator website, influencer website development, youtube channel website, streamer website design, content creator portfolio, video creator website, influencer landing page, creator platform development, youtube branding website, twitch streamer website, instagram influencer website, content creator merch store, influencer membership platform";
 const image = "/photos/bannercodebrand.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Content Creator Website Development",
+  "name": "Content Creator Website Design | Influencer Sites",
+  "description": description,
+  "url": "https://codebrand.us/industries/content-creators",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Creator Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creator Portfolio Sites", "description": "Personal brand websites for content creators" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Merch Store Integration", "description": "E-commerce for merchandise sales" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Membership Platforms", "description": "Subscription and membership systems" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -19,6 +44,7 @@ const image = "/photos/bannercodebrand.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

@@ -73,6 +73,124 @@ const plans = [
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://codebrand.us/landing/maintenance-plans" slot="head" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:url" content="https://codebrand.us/landing/maintenance-plans" slot="head" />
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:image" content="https://codebrand.us/photos/bannercodebrand.webp" slot="head" />
+  <meta property="og:image:width" content="1200" slot="head" />
+  <meta property="og:image:height" content="630" slot="head" />
+  <meta property="og:site_name" content="Codebrand" slot="head" />
+  <meta property="og:locale" content="en_US" slot="head" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:site" content="@codebrand_es" slot="head" />
+  <meta name="twitter:title" content={pageTitle} slot="head" />
+  <meta name="twitter:description" content={pageDescription} slot="head" />
+  <meta name="twitter:image" content="https://codebrand.us/photos/bannercodebrand.webp" slot="head" />
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head" />
+  <meta name="author" content="Codebrand" slot="head" />
+
+  <!-- Service Schema -->
+  <script type="application/ld+json" is:inline slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Website Maintenance",
+      "name": "Professional Website Maintenance Plans",
+      "description": "Professional website maintenance services including security updates, backups, performance monitoring, and 24/7 support. Starting at $99/month.",
+      "url": "https://codebrand.us/landing/maintenance-plans",
+      "provider": {
+        "@type": "Organization",
+        "name": "Codebrand",
+        "url": "https://codebrand.us",
+        "logo": "https://codebrand.us/iconcodebrand.svg"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essential Maintenance Plan",
+          "description": "Weekly security scans, monthly backups, CMS updates, uptime monitoring, email support",
+          "price": "99",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Growth Maintenance Plan",
+          "description": "Daily security scans, weekly backups, SEO monitoring, speed optimization, priority support",
+          "price": "199",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium Maintenance Plan",
+          "description": "Real-time security, daily backups, full SEO monitoring, priority phone support, 4-hour emergency response",
+          "price": "349",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" is:inline slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's included in website maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our maintenance plans include security scans, regular backups, CMS and plugin updates, uptime monitoring, performance reports, and dedicated support. Higher tiers add SEO monitoring, speed optimization, and priority support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a maintenance plan for my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, regular maintenance is crucial for security, performance, and SEO. Without updates, your site becomes vulnerable to hackers and may slow down over time, affecting your search rankings and user experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel my maintenance plan anytime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all our maintenance plans are month-to-month with no long-term contracts. You can cancel anytime with 30 days notice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my site goes down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We monitor your site 24/7 and are alerted immediately if it goes down. Premium plan clients get a 4-hour emergency response guarantee. We also maintain regular backups to quickly restore your site if needed."
+          }
+        }
+      ]
+    }
+  </script>
+
   <!-- Hero Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

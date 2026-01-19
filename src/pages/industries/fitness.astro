@@ -11,6 +11,31 @@ const description =
 const keywords =
   "gym website design, fitness website development, gym management software, fitness class booking system, gym membership management, personal trainer website, fitness studio software, gym booking system, fitness app development, workout tracking software, gym member portal, fitness center website, online fitness classes, gym scheduling software";
 const image = "/photos/bannercodebrand.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Fitness Website Development",
+  "name": "Gym & Fitness Website Design | Studio Solutions",
+  "description": description,
+  "url": "https://codebrand.us/industries/fitness",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Fitness Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gym Website Design", "description": "Custom websites for gyms and fitness studios" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Class Booking Systems", "description": "Online class scheduling and reservations" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Member Management", "description": "Membership portals and tracking" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -19,6 +44,7 @@ const image = "/photos/bannercodebrand.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

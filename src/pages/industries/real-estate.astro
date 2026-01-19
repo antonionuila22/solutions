@@ -12,6 +12,31 @@ const description =
 const keywords =
   "real estate software development, property listing website, real estate web development, MLS integration, IDX website, real estate CRM, property management software, virtual tour software, real estate app development, realtor website design, property search platform, real estate portal development, 3D property tours, real estate lead generation";
 const image = "/photos/webservice.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Real Estate Software Development",
+  "name": "Real Estate Software Development & Property Listing Websites",
+  "description": description,
+  "url": "https://codebrand.us/industries/real-estate",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Real Estate Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Property Listing Websites", "description": "IDX-enabled property search platforms" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "MLS Integration", "description": "Real-time MLS data integration" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Virtual Tour Software", "description": "3D property tours and visualization" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -20,6 +45,7 @@ const image = "/photos/webservice.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

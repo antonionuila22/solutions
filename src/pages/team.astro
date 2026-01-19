@@ -3,6 +3,66 @@ import Layout from "../layouts/Layout.astro";
 import ButtonCustom from "../components/Button.astro";
 import Ourteam from "../components/Ourteam.astro";
 import Whyus from "../components/whyus.astro";
+
+// Team members for Person schema
+const teamMembers = [
+  {
+    name: "Ramon Nuila",
+    jobTitle: "CEO & Founder",
+    image: "/photos/team-code/RamonNuila.webp",
+    description: "Full Stack Developer and digital strategist focused on business growth and scalable software."
+  },
+  {
+    name: "Larisa Lopez",
+    jobTitle: "UX/UI Expert",
+    image: "/photos/team-code/Cmorel.webp",
+    description: "Over 8 years creating functional and attractive digital experiences."
+  },
+  {
+    name: "Enrique Pérez",
+    jobTitle: "Social Media Expert",
+    image: "/photos/team-code/Perez.webp",
+    description: "Creator of functional digital experiences with over 10 years in graphic design and social media strategy."
+  },
+  {
+    name: "Maria Casco",
+    jobTitle: "Product Manager",
+    image: "/photos/team-code/Mariacasco.webp",
+    description: "Over 10 years in textile and promotional products. Expert in product management."
+  },
+  {
+    name: "Iris Gomez",
+    jobTitle: "Project Coordinator",
+    image: "/photos/team-code/irispaola.webp",
+    description: "Engineer passionate about optimizing time and resources. Expert in project management."
+  },
+  {
+    name: "Diego Alvarez",
+    jobTitle: "Full Stack Developer",
+    image: "/photos/team-code/diegoalvarez.webp",
+    description: "Experienced developer specializing in building scalable web applications with more than 12 years in the industry."
+  }
+];
+
+const teamSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Codebrand",
+  "url": "https://codebrand.us",
+  "logo": "https://codebrand.us/photos/bannercodebrand.webp",
+  "employee": teamMembers.map(member => ({
+    "@type": "Person",
+    "name": member.name,
+    "jobTitle": member.jobTitle,
+    "image": `https://codebrand.us${member.image}`,
+    "description": member.description,
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Codebrand",
+      "url": "https://codebrand.us"
+    }
+  }))
+};
 ---
 
 <Layout
@@ -11,6 +71,9 @@ import Whyus from "../components/whyus.astro";
   keywords="digital agency team, web development team, design team, expert developers, creative team, professional designers, marketing specialists, agency professionals, codebrand team, digital experts, specialized team"
   image="/photos/teamcode.webp"
 >
+  <!-- Person Schema for Team Members -->
+  <script type="application/ld+json" set:html={JSON.stringify(teamSchema)} />
+
   <!-- Hero Section - Creative Asymmetric Design -->
   <section class="relative min-h-[85vh] overflow-hidden bg-white pt-28 sm:pt-24 lg:pt-20">
     <!-- Background Geometric Shapes -->

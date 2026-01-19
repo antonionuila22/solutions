@@ -12,6 +12,31 @@ const description =
 const keywords =
   "construction web development, construction software, project management system, contractor websites, construction CRM, building industry technology, construction project management, bid management software, contractor software, construction portal, field management app";
 const image = "/photos/bannercodebrand.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Construction Software Development",
+  "name": "Construction Software & Contractor Website Development",
+  "description": description,
+  "url": "https://codebrand.us/industries/construction",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Construction Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Websites", "description": "Professional websites for construction companies" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Project Management Systems", "description": "Construction project tracking and management" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bid Management Software", "description": "Construction bidding and proposal systems" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -20,6 +45,7 @@ const image = "/photos/bannercodebrand.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

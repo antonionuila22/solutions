@@ -11,6 +11,31 @@ const description =
 const keywords =
   "e-commerce development, online store development, shopping cart software, e-commerce platform, Shopify development, WooCommerce development, custom e-commerce, payment gateway integration, online retail platform, e-commerce website design, product catalog management";
 const image = "/photos/bannercodebrand.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "E-commerce Development",
+  "name": "E-commerce Development & Online Store Solutions",
+  "description": description,
+  "url": "https://codebrand.us/industries/ecommerce",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "E-commerce Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom E-commerce Stores", "description": "Shopify, WooCommerce, and custom online stores" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Payment Integration", "description": "Secure payment gateway integration" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inventory Management", "description": "Product catalog and inventory systems" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -19,6 +44,7 @@ const image = "/photos/bannercodebrand.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

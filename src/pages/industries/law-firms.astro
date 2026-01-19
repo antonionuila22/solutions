@@ -12,6 +12,31 @@ const description =
 const keywords =
   "law firm website design, legal case management software, attorney website development, legal practice management software, law firm client portal, legal document automation, attorney CRM, law firm billing software, lawyer website design, legal tech solutions, attorney marketing website, law practice software, legal time tracking, secure client portal";
 const image = "/photos/bannercodebrand.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Legal Website Development",
+  "name": "Law Firm Website Design & Legal Practice Management Software",
+  "description": description,
+  "url": "https://codebrand.us/industries/law-firms",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Legal Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Law Firm Websites", "description": "Professional attorney and law firm websites" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Case Management Systems", "description": "Legal case tracking and management" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Client Portals", "description": "Secure client communication portals" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -20,6 +45,7 @@ const image = "/photos/bannercodebrand.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

@@ -12,6 +12,31 @@ const description =
 const keywords =
   "healthcare software development, medical practice management software, HIPAA compliant software, telemedicine platform, patient portal development, EMR software, EHR systems, healthcare app development, medical appointment scheduling, telehealth solutions, hospital management system, healthcare IT solutions";
 const image = "/photos/teamcode.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Healthcare Software Development",
+  "name": "Healthcare Software Development & Medical Practice Solutions",
+  "description": description,
+  "url": "https://codebrand.us/industries/healthcare",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Healthcare Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patient Portal Development", "description": "HIPAA-compliant patient portals" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Telemedicine Platforms", "description": "Video consultation and telehealth solutions" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Appointment Scheduling", "description": "Medical appointment booking systems" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -20,6 +45,7 @@ const image = "/photos/teamcode.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

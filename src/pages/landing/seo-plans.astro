@@ -115,36 +115,112 @@ const services = [
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
   <meta property="og:type" content="website" slot="head" />
+  <meta property="og:image" content="https://codebrand.us/photos/bannercodebrand.webp" slot="head" />
+  <meta property="og:url" content="https://codebrand.us/landing/seo-plans" slot="head" />
+  <link rel="canonical" href="https://codebrand.us/landing/seo-plans" slot="head" />
 
+  <!-- Service Schema -->
   <script type="application/ld+json" is:inline slot="head">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "SEO Services",
-      "description": "Professional search engine optimization services",
+      "serviceType": "Search Engine Optimization",
+      "name": "Professional SEO Services",
+      "description": "Professional search engine optimization services including keyword research, on-page optimization, link building, and monthly reporting. Starting at $400/month.",
+      "url": "https://codebrand.us/landing/seo-plans",
       "provider": {
         "@type": "Organization",
         "name": "Codebrand",
-        "url": "https://codebrand.us"
+        "url": "https://codebrand.us",
+        "logo": "https://codebrand.us/iconcodebrand.svg"
       },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "Honduras"
+        }
+      ],
       "offers": [
         {
           "@type": "Offer",
           "name": "Local SEO Plan",
+          "description": "Perfect for local businesses targeting their city. Includes 10 target keywords, Google Business Profile optimization, and monthly reporting.",
           "price": "400",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock"
         },
         {
           "@type": "Offer",
           "name": "Growth SEO Plan",
+          "description": "For businesses ready to dominate their market. Includes 25 keywords, content creation, and link building.",
           "price": "750",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock"
         },
         {
           "@type": "Offer",
           "name": "Enterprise SEO Plan",
+          "description": "Full-scale SEO for maximum visibility. Includes 50+ keywords, dedicated SEO manager, and monthly strategy calls.",
           "price": "1200",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+  </script>
+
+  <!-- FAQPage Schema for Rich Results -->
+  <script type="application/ld+json" is:inline slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does SEO take to show results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO is a long-term strategy. Most clients see initial improvements in 2-3 months, with significant results in 4-6 months. The exact timeline depends on your competition, website age, and current SEO status."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you guarantee first page rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No ethical SEO company can guarantee specific rankings - Google's algorithm changes constantly. What we guarantee is a data-driven approach, transparent reporting, and continuous improvement of your organic visibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between local and national SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Local SEO focuses on ranking in your geographic area (city/region) and Google Maps. It's ideal for businesses serving local customers. National SEO targets broader keywords and requires more content and link building."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I own my SEO work if I cancel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All on-page optimizations, content, and improvements made to your site remain yours. We'll also provide a complete handover document with recommendations for maintaining your rankings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you report on progress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You'll receive detailed monthly reports showing keyword rankings, organic traffic, leads/conversions, and work completed. We also include actionable recommendations and strategy updates."
+          }
         }
       ]
     }
@@ -180,7 +256,7 @@ const services = [
 
       <p class="text-xl text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed">
         Stop losing customers to competitors. Get your business on the first
-        page of Google and watch your leads grow.
+        page of Google and watch your leads grow. Our SEO services complement your <a href="/web-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">web development</a> and <a href="/digital-marketing" class="text-cyan-600 hover:text-cyan-700 font-semibold">digital marketing</a> strategy.
       </p>
       <p class="text-lg text-slate-500 mb-8 max-w-2xl mx-auto">
         US agencies charge <span class="text-slate-700 line-through"
@@ -783,9 +859,6 @@ const services = [
 
           <div class="md:col-span-2">
             <button
-              type="button"
-              type="button"
-              type="button"
               type="submit"
               class="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-all duration-300 text-lg shadow-lg"
             >

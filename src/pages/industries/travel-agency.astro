@@ -12,6 +12,31 @@ const description =
 const keywords =
   "travel agency web development, travel booking software, tourism technology, travel agency websites, travel CRM, online booking system, tour package management, travel itinerary builder, tourism website design, vacation booking platform, travel agency portal, tour operator software, travel management system";
 const image = "/photos/bannercodebrand.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Travel Agency Website Development",
+  "name": "Travel Agency Website Design & Tourism Software Solutions",
+  "description": description,
+  "url": "https://codebrand.us/industries/travel-agency",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Travel Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Travel Booking Systems", "description": "Online booking and reservation platforms" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tour Package Management", "description": "Tour and itinerary management software" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Travel Agency CRM", "description": "Customer relationship management for travel" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -20,6 +45,7 @@ const image = "/photos/bannercodebrand.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

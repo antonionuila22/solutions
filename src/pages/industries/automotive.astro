@@ -12,6 +12,57 @@ const description =
 const keywords =
   "car dealership website design, automotive website development, vehicle inventory management software, car dealer CRM, automotive lead management, dealership website builder, auto dealer software, car sales website, vehicle showroom website, automotive digital marketing, online car sales platform, dealer management system, automotive e-commerce, car dealer digital solutions";
 const image = "/photos/bannercodebrand.webp";
+
+// Service Schema for Automotive Industry
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Automotive Website Development",
+  "name": "Car Dealership Website Design & Automotive Software Solutions",
+  "description": description,
+  "url": "https://codebrand.us/industries/automotive",
+  "image": "https://codebrand.us/photos/bannercodebrand.webp",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Automotive Web Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Car Dealership Website Design",
+          "description": "Custom websites for auto dealers with vehicle inventory integration"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vehicle Inventory Management",
+          "description": "Digital showroom and inventory management software"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automotive CRM Integration",
+          "description": "Lead management and customer relationship systems"
+        }
+      }
+    ]
+  }
+};
 ---
 
 <Layout
@@ -20,6 +71,7 @@ const image = "/photos/bannercodebrand.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"

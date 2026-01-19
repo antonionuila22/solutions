@@ -11,6 +11,31 @@ const description =
 const keywords =
   "restaurant website design, online ordering system for restaurants, digital menu software, QR code menu, restaurant reservation system, food delivery platform, restaurant management software, restaurant app development, online food ordering, contactless menu, restaurant POS integration, table booking software, ghost kitchen software, restaurant marketing";
 const image = "/photos/Restaurantdolcevita.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Restaurant Website Development",
+  "name": "Restaurant Website Design & Online Ordering Systems",
+  "description": description,
+  "url": "https://codebrand.us/industries/restaurants",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://codebrand.us",
+    "logo": "https://codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Restaurant Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Restaurant Website Design", "description": "Custom websites for restaurants and cafes" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online Ordering Systems", "description": "Food ordering and delivery platforms" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Menu & QR Codes", "description": "Contactless digital menus" }}
+    ]
+  }
+};
 ---
 
 <Layout
@@ -19,6 +44,7 @@ const image = "/photos/Restaurantdolcevita.webp";
   keywords={keywords}
   image={image}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"
