@@ -667,4 +667,4 @@ Start simple, measure everything, and iterate based on data. The most successful
 
 ---
 
-*Ready to build your e-commerce website? [Contact Codebrand](/contact) for a free consultation and custom quote. We've helped 100+ businesses launch successful online stores.*
+*Ready to build your e-commerce website? [Contact Codebrand](/contact) for a free consultation and custom quote.*

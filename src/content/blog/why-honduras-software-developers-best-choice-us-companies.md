@@ -346,14 +346,14 @@ Some US companies visit quarterly for team building.
 
 ### **Our Advantages**
 
-🎯 **500+ Successful Projects** for international clients
-🎯 **Certified Team**: Udemy, Platzi, Adobe certifications
-🎯 **Bilingual**: 100% English fluency
+🎯 **Successful Projects** for international clients
+🎯 **Certified Team**: Relevant technical certifications
+🎯 **Bilingual**: Strong English fluency
 🎯 **Same Timezone**: CST (perfect overlap with US)
-🎯 **60% Cost Savings**: $6,000 for projects that cost $15,000 in US
-🎯 **Modern Tech Stack**: React, Next.js, Node.js, TypeScript, Python
-🎯 **Agile Process**: Daily standups, 2-week sprints
-🎯 **Fast Response**: &lt;2 hour response time during business hours
+🎯 **Competitive Pricing**: Nearshore rates
+🎯 **Modern Tech Stack**: Astro, React, Next.js, Node.js, TypeScript
+🎯 **Agile Process**: Regular standups and iterative development
+🎯 **Fast Response**: Quick response times during business hours
 
 ### **Technologies We Master**
 

@@ -1,9 +1,9 @@
 ---
 title: "Netlify Complete Guide 2026: From Zero to Production in Minutes"
-description: "Master Netlify hosting in 2026. Learn deployment, serverless functions, forms, edge functions, and advanced features. Complete tutorial with real examples from 200+ deployed projects."
+description: "Master Netlify hosting in 2026. Learn deployment, serverless functions, forms, edge functions, and advanced features. Complete tutorial with real-world examples."
 author: "Ramon Nuila"
 readtime: 22
-img: /photos/blog/placeholder-netlify.avif
+img: /photos/blog/close-up-of-desktop-with-notebook-and-abstract-glo-2026-01-11-08-48-04-utc.webp
 imageAlt: "Netlify hosting platform dashboard and deployment workflow"
 date: 2025-12-15
 draft: false

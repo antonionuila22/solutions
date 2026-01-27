@@ -5,7 +5,6 @@ import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/NavbarAstro.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppWidget from "../components/WhatsAppWidget.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 
 // Props individuales
@@ -583,7 +582,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- End Google Tag Manager (noscript) -->
 
     <Navbar />
-    <Breadcrumbs />
     <main>
       <slot />
     </main>

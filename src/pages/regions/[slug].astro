@@ -3,6 +3,7 @@ export const prerender = true;
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 
 export async function getStaticPaths() {
@@ -96,17 +97,6 @@ const citiesListSchema = {
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <!-- Breadcrumb -->
-      <nav class="mb-8 text-sm">
-        <ol class="flex items-center gap-2 text-gray-600">
-          <li><a href="/countryareas" class="hover:text-orange-600 transition">Locations</a></li>
-          <li><span class="mx-2">/</span></li>
-          <li><a href={`/countryareas/${region.data.country}`} class="hover:text-orange-600 transition">{country?.data.name}</a></li>
-          <li><span class="mx-2">/</span></li>
-          <li class="text-cyan-900 font-medium">{name}</li>
-        </ol>
-      </nav>
-
       <div class="text-center max-w-4xl mx-auto">
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -160,6 +150,17 @@ const citiesListSchema = {
       </div>
     </div>
   </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Service Areas", href: "/countryareas" },
+      { name: country?.data.name || "Country", href: `/countryareas/${region.data.country}` },
+      { name: name, href: "" }
+    ]}
+    variant="transparent"
+    class="bg-gray-50 border-y border-gray-100"
+  />
 
   <!-- Cities Grid -->
   {cities.length > 0 && (

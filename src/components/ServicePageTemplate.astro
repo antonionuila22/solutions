@@ -17,6 +17,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "./Breadcrumbs.astro";
 import HeroSection from "./service-sections/HeroSection.astro";
 import ServicesGrid from "./service-sections/ServicesGrid.astro";
 import ToolsSection from "./service-sections/ToolsSection.astro";
@@ -180,6 +181,9 @@ const showWhyUs = config.showWhyUs ?? true;
 const showFaq = config.showFaq ?? true;
 const showTrustBadges = config.showTrustBadges ?? true;
 const showTestimonials = config.showTestimonials ?? true;
+
+// Generate service name for breadcrumb from the hero title highlight
+const serviceName = config.hero.titleHighlight || config.hero.title;
 ---
 
 <Layout
@@ -204,6 +208,16 @@ const showTestimonials = config.showTestimonials ?? true;
     ctaSecondary={config.hero.ctaSecondary}
     ctaSecondaryUrl={config.hero.ctaSecondaryUrl}
     stats={config.hero.stats}
+  />
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Services", href: "/services" },
+      { name: serviceName, href: "" }
+    ]}
+    variant="transparent"
+    class="bg-gray-50 border-y border-gray-100"
   />
 
   <!-- Trust Badges (after hero for immediate trust signals) -->

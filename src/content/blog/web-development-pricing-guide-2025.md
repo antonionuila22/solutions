@@ -21,7 +21,7 @@ tags:
 One of the biggest challenges businesses face when planning a website project is understanding what things should cost. Prices vary wildly, and without industry knowledge, it's impossible to know if you're getting a fair deal.
 
 This guide provides transparent pricing data for web development services in 2025, based on:
-- Our experience delivering 500+ projects
+- Our experience delivering projects across various industries
 - Industry surveys from Clutch, GoodFirms, and DesignRush
 - Direct quotes from agencies across different markets
 - Real project data from US businesses
@@ -445,7 +445,7 @@ Since we wrote this guide, here's what we charge:
 
 - Based in Honduras (lower cost of living)
 - No expensive office overhead
-- Efficient processes from 500+ projects
+- Efficient processes refined over years of experience
 - We don't overbill for senior staff time
 
 ### What We DON'T Compromise On

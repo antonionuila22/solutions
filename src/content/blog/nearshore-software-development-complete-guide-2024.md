@@ -340,16 +340,16 @@ Honduras nearshore developers are proficient in modern tech stacks:
 
 As Honduras's leading software development agency, **Codebrand** specializes in helping US companies reduce costs while maintaining world-class quality:
 
-🎯 **500+ successful projects** for international clients
-🎯 **60% cost savings** compared to US agencies
-🎯 **Certified team** (Udemy, Platzi, Adobe)
+🎯 **Successful projects** for international clients
+🎯 **Competitive pricing** compared to US agencies
+🎯 **Certified team** with relevant technical certifications
 🎯 **Bilingual** English/Spanish fluency
 🎯 **Same timezone** (CST) for real-time collaboration
-🎯 **Modern tech stack** (React, Next.js, Node.js, TypeScript)
+🎯 **Modern tech stack** (Astro, React, Next.js, Node.js, TypeScript)
 
-**Real results**:
+**What We Offer**:
 
-- E-commerce site: $6,000 (vs. $15,000 in US)
+- Competitive nearshore rates
 - Mobile app: $25,000 (vs. $60,000 in US)
 - Custom platform: $45,000 (vs. $120,000 in US)
 

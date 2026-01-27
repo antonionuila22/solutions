@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
@@ -112,6 +113,16 @@ const serviceSchema = {
       </div>
     </div>
   </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Industries", href: "/industries" },
+      { name: "Travel Agency", href: "" }
+    ]}
+    variant="transparent"
+    class="bg-gray-50 border-y border-gray-100"
+  />
 
   <!-- Trust Badges Section -->
   <TrustBadges />

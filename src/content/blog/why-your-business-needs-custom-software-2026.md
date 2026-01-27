@@ -3,7 +3,7 @@ title: "Why Your Business Needs Custom Software: The Hidden Costs of Generic Sol
 description: "Discover why custom software development delivers better ROI than off-the-shelf solutions. Learn how tailored software solves your unique business challenges and drives growth."
 author: "Ramon Nuila"
 readtime: 12
-img: /photos/blog/custom-software.avif
+img: /photos/blog/asian-business-meet-sustainable-practices-focusin-2026-01-07-06-22-08-utc.webp
 imageAlt: "Custom software development team planning business solution"
 date: 2026-01-13
 categories:

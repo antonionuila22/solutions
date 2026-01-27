@@ -16,7 +16,7 @@ So what should you actually pay? And more importantly, **what do you get for you
 
 Here's the uncomfortable truth: **Most businesses either overpay for features they don't need, or underpay and end up with a website that actively hurts their business.**
 
-According to [Clutch's 2024 Website Cost Survey](https://clutch.co/), **the average small business website costs between $2,000-$9,000**, but the range varies dramatically based on complexity, functionality, and who builds it. More critically, **81% of businesses that went with the cheapest option ended up rebuilding their site within 2 years**—essentially paying twice.
+Industry research suggests that **the average small business website costs between $2,000-$9,000**, but the range varies dramatically based on complexity, functionality, and who builds it. Many businesses that go with the cheapest option end up rebuilding their site within a few years—essentially paying twice.
 
 In this comprehensive guide, we'll break down exactly what websites cost in 2025, what factors drive those costs, and how to make a smart investment that delivers ROI instead of regret.
 

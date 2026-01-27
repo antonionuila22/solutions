@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
@@ -46,6 +47,7 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"
@@ -113,6 +115,16 @@ const serviceSchema = {
       </div>
     </div>
   </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Industries", href: "/industries" },
+      { name: "Law Firms", href: "" }
+    ]}
+    variant="transparent"
+    class="bg-gray-50 border-y border-gray-100"
+  />
 
   <!-- Trust Badges Section -->
   <TrustBadges />

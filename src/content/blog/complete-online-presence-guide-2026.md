@@ -3,7 +3,7 @@ title: "How to Build a Complete Online Presence for Your Business in 2026"
 description: "The complete guide to establishing a professional online presence. Learn how to combine website, branding, SEO, social media, and content strategy for maximum business impact."
 author: "Ramon Nuila"
 readtime: 15
-img: /photos/blog/online-presence.avif
+img: /photos/blog/web-designers-are-reviewing-the-layouts-of-a-mobil-2026-01-07-06-37-15-utc.webp
 imageAlt: "Business professional analyzing online presence strategy"
 date: 2026-01-12
 categories:

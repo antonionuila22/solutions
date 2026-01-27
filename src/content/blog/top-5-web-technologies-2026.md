@@ -3,7 +3,7 @@ title: "Top 5 Web Development Technologies for 2026: What's Actually Worth Learn
 description: "Discover the top 5 web technologies dominating 2026. From Astro to Turso, learn what's worth your time and what's just hype. Based on real production experience from 300+ projects."
 author: "Ramon Nuila"
 readtime: 18
-img: /photos/blog/placeholder-web-tech.avif
+img: /photos/blog/science-and-technology-screen-2026-01-07-02-08-56-utc.webp
 imageAlt: "Top web development technologies and frameworks for 2026"
 date: 2025-12-15
 draft: false

@@ -3,7 +3,7 @@ title: "The Fastest Web Tech Stack in 2026: Build Lightning-Fast Websites"
 description: "Discover the fastest web development stack for 2026. Learn how to combine Astro, Turso, Tailwind, and edge hosting for sub-second page loads and 100 Lighthouse scores."
 author: "Ramon Nuila"
 readtime: 20
-img: /photos/blog/placeholder-fast-stack.avif
+img: /photos/blog/confident-young-female-professionals-web-developer-2026-01-06-09-06-23-utc.webp
 imageAlt: "Fast web development tech stack architecture diagram"
 date: 2025-12-15
 draft: false

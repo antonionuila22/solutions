@@ -2,6 +2,7 @@
 export const prerender = true;
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 
 // Get all regions and locations (exclude drafts)
@@ -71,6 +72,15 @@ const breadcrumbSchema = createBreadcrumbSchema([
       </div>
     </div>
   </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Regions", href: "" }
+    ]}
+    variant="transparent"
+    class="bg-gray-50 border-y border-gray-100"
+  />
 
   <!-- Regions by Country -->
   <section class="py-16 lg:py-24 bg-white font-poppins">

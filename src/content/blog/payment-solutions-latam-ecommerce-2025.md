@@ -17,7 +17,7 @@ tags:
   - latinoamérica
 ---
 
-## Pagos en Latinoamérica: Por Qué el 70% de los E-commerce Extranjeros Fracasan al Entrar al Mercado
+## Pagos en Latinoamérica: Por Qué Muchos E-commerce Extranjeros Fracasan al Entrar al Mercado
 
 Tengo una historia que probablemente te suene familiar si has intentado vender en Latinoamérica.
 
@@ -27,7 +27,7 @@ Lanzaron. Y las ventas... no llegaron.
 
 El problema no era el producto, ni el marketing, ni el precio. **Era el checkout.** Solo aceptaban tarjetas de crédito internacionales. En una región donde el 60% de los adultos no tiene tarjeta de crédito, estaban ignorando a la mayoría del mercado.
 
-Tres meses después de implementar métodos de pago locales (OXXO en México, PIX en Brasil, PSE en Colombia), sus ventas en LATAM aumentaron 340%.
+Después de implementar métodos de pago locales (OXXO en México, PIX en Brasil, PSE en Colombia), sus ventas en LATAM mejoraron significativamente.
 
 **Latinoamérica no es un mercado—son 20+ mercados diferentes, cada uno con sus propias reglas de juego.** Y si no entiendes cómo paga la gente en cada país, estás dejando dinero sobre la mesa.
 

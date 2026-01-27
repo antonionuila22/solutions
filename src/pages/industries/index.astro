@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 
 const industries = [
   {
@@ -164,6 +165,15 @@ const industries = [
       </div>
     </div>
   </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Industries", href: "" }
+    ]}
+    variant="transparent"
+    class="bg-gray-50 border-y border-gray-100"
+  />
 
   <!-- Industries Grid -->
   <section class="py-20 bg-white">

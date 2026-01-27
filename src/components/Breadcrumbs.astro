@@ -6,9 +6,11 @@ interface BreadcrumbItem {
 
 interface Props {
   items?: BreadcrumbItem[];
+  variant?: "light" | "dark" | "transparent";
+  class?: string;
 }
 
-const { items } = Astro.props;
+const { items, variant = "light", class: className } = Astro.props;
 
 // Generate breadcrumbs from URL if not provided
 function generateBreadcrumbs(url: URL): BreadcrumbItem[] {
@@ -51,6 +53,7 @@ function generateBreadcrumbs(url: URL): BreadcrumbItem[] {
     "construction": "Construction",
     "content-creators": "Content Creators",
     "automotive": "Automotive",
+    "services": "Services",
   };
 
   let currentPath = "";
@@ -81,19 +84,66 @@ function generateBreadcrumbs(url: URL): BreadcrumbItem[] {
 
 const breadcrumbItems = items || generateBreadcrumbs(Astro.url);
 const showBreadcrumbs = breadcrumbItems.length > 1;
+
+// Variant styles
+const variantStyles = {
+  light: {
+    container: "bg-gradient-to-r from-cyan-50 to-orange-50 border-b border-cyan-100",
+    text: "text-cyan-700",
+    textHover: "hover:text-orange-600",
+    textActive: "text-cyan-900 font-semibold",
+    separator: "text-cyan-400",
+    icon: "text-cyan-500",
+  },
+  dark: {
+    container: "bg-cyan-900/10 backdrop-blur-sm border-b border-cyan-800/20",
+    text: "text-cyan-100",
+    textHover: "hover:text-orange-400",
+    textActive: "text-white font-semibold",
+    separator: "text-cyan-500",
+    icon: "text-cyan-400",
+  },
+  transparent: {
+    container: "bg-transparent",
+    text: "text-gray-600",
+    textHover: "hover:text-orange-600",
+    textActive: "text-cyan-900 font-semibold",
+    separator: "text-gray-400",
+    icon: "text-gray-500",
+  },
+};
+
+const styles = variantStyles[variant];
 ---
 
 {showBreadcrumbs && (
-  <nav aria-label="Breadcrumb" class="bg-slate-50 border-b border-slate-100">
+  <nav
+    aria-label="Breadcrumb"
+    class:list={[
+      "font-poppins",
+      styles.container,
+      className
+    ]}
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <ol class="flex items-center gap-1 py-3 text-sm overflow-x-auto whitespace-nowrap">
+      <ol class="flex items-center gap-2 py-4 text-sm overflow-x-auto whitespace-nowrap">
         {breadcrumbItems.map((item, index) => {
           const isLast = index === breadcrumbItems.length - 1;
           return (
             <li class="flex items-center">
+              {index === 0 && (
+                <svg
+                  class:list={["w-4 h-4 mr-1.5 flex-shrink-0", styles.icon]}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
+                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                </svg>
+              )}
               {index > 0 && (
                 <svg
-                  class="w-4 h-4 text-slate-400 mx-1 flex-shrink-0"
+                  class:list={["w-4 h-4 mx-2 flex-shrink-0", styles.separator]}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -103,13 +153,20 @@ const showBreadcrumbs = breadcrumbItems.length > 1;
                 </svg>
               )}
               {isLast ? (
-                <span class="text-slate-600 font-medium" aria-current="page">
+                <span
+                  class:list={[styles.textActive]}
+                  aria-current="page"
+                >
                   {item.name}
                 </span>
               ) : (
                 <a
                   href={item.href}
-                  class="text-slate-500 hover:text-orange-500 transition-colors"
+                  class:list={[
+                    "transition-colors duration-200",
+                    styles.text,
+                    styles.textHover
+                  ]}
                 >
                   {item.name}
                 </a>

@@ -3,6 +3,7 @@ export const prerender = true;
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import {
   createArticleSchema,
   createBreadcrumbSchema,
@@ -140,6 +141,7 @@ const breadcrumbData = createBreadcrumbSchema([
     is:inline
     set:html={JSON.stringify(breadcrumbData)}
   />
+
   <article class="font-poppins text-black">
     <!-- Hero Section -->
     <section class="relative w-full">
@@ -192,6 +194,16 @@ const breadcrumbData = createBreadcrumbSchema([
         }
       </div>
     </section>
+
+    <Breadcrumbs
+      items={[
+        { name: "Home", href: "/" },
+        { name: "Blog", href: "/blog" },
+        { name: title, href: "" }
+      ]}
+      variant="transparent"
+      class="bg-gray-50 border-y border-gray-100"
+    />
 
     <!-- Contenido principal -->
     <section class="max-w-3xl mx-auto">

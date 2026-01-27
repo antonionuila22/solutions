@@ -3,7 +3,7 @@ title: "AI Agents for Business: How Autonomous AI Is Transforming Operations in 
 description: "Learn how AI agents are revolutionizing business operations. From customer service to sales automation, discover practical applications and implementation strategies for your company."
 author: "Ramon Nuila"
 readtime: 16
-img: /photos/blog/ai-agents.avif
+img: /photos/blog/LLM.webp
 imageAlt: "AI agent autonomous system managing business workflows"
 date: 2026-01-14
 categories:

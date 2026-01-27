@@ -1,8 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import CardService from "../../components/CardService.astro";
 import Whyus from "../../components/whyus.astro";
 import Faq from "../../components/Faq.astro";
+import TrustBadges from "../../components/TrustBadges.astro";
 import Button from "../../components/Button.astro";
 ---
 
@@ -177,20 +179,20 @@ import Button from "../../components/Button.astro";
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div
-      class="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-    >
-      <div
-        class="w-6 h-10 md:w-8 md:h-12 border-2 border-cyan-900 rounded-full flex items-start justify-center p-2"
-      >
-        <div
-          class="w-1 h-2 md:w-1.5 md:h-3 bg-orange-400 rounded-full animate-pulse"
-        >
-        </div>
-      </div>
-    </div>
+    
   </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Services", href: "" }
+    ]}
+    variant="transparent"
+    class="bg-gray-50 border-y border-gray-100"
+  />
+
+  <!-- Trust Badges -->
+  <TrustBadges />
 
   <!-- Detailed Services Grid -->
   <section class="py-16 md:py-24 px-4 md:px-6 bg-white">
