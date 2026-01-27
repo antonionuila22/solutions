@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title = "E-commerce Development & Online Store Solutions | CodeBrand";
 const description =
@@ -12,6 +14,10 @@ const description =
 const keywords =
   "e-commerce development, online store development, shopping cart software, e-commerce platform, Shopify development, WooCommerce development, custom e-commerce, payment gateway integration, online retail platform, e-commerce website design, product catalog management";
 const image = "/photos/bannercodebrand.webp";
+
+// Industry-specific colors
+const accentColor = "from-emerald-500 to-teal-500";
+const accentBg = "bg-emerald-500";
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -37,6 +43,101 @@ const serviceSchema = {
     ]
   }
 };
+
+// FAQ data for e-commerce industry
+const ecommerceFaqs = [
+  {
+    question: "How much does an e-commerce website cost?",
+    answer: "E-commerce websites start at $5,000 for a basic store with essential features. Custom stores with advanced functionality range from $10,000-$25,000+. We provide detailed quotes based on your specific requirements, including product catalog size, payment integrations, and custom features needed."
+  },
+  {
+    question: "Which e-commerce platform do you recommend?",
+    answer: "It depends on your needs. For quick launches, Shopify is excellent. For WordPress users, WooCommerce offers flexibility. For high-volume stores, we build custom headless solutions. We'll recommend the best platform after understanding your business goals and budget."
+  },
+  {
+    question: "How long does it take to build an online store?",
+    answer: "A standard e-commerce store takes 6-10 weeks. This includes design, development, product upload, payment integration, and testing. Complex custom stores may take 12-16 weeks. We set clear milestones and keep you updated throughout the process."
+  },
+  {
+    question: "Can you integrate with my existing inventory system?",
+    answer: "Yes. We integrate with popular inventory management systems, ERPs, and POS systems. Whether you use NetSuite, QuickBooks, Square, or custom software, we can sync your inventory, orders, and customer data seamlessly."
+  },
+  {
+    question: "Do you provide ongoing support after launch?",
+    answer: "Absolutely. Every e-commerce project includes 90 days of post-launch support. We also offer monthly maintenance plans that include security updates, performance monitoring, and technical support to keep your store running smoothly."
+  },
+  {
+    question: "Can you help increase my store's conversion rate?",
+    answer: "Yes. We build stores optimized for conversions from day one, including streamlined checkout, trust badges, and mobile optimization. We also offer conversion rate optimization (CRO) services with A/B testing and analytics to continuously improve your sales."
+  }
+];
+
+// Generate FAQ schema
+const faqSchema = createFAQSchema(ecommerceFaqs);
+
+// Breadcrumb schema
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "E-commerce", url: "https://codebrand.us/industries/ecommerce" }
+]);
+
+// Services data
+const services = [
+  {
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>`,
+    title: "Custom E-commerce Development",
+    description: "Build a unique online store tailored to your brand and products. From headless commerce to fully custom platforms.",
+    features: ["Custom product catalogs", "Advanced filtering and search", "Mobile-first responsive design"]
+  },
+  {
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>`,
+    title: "Payment Gateway Integration",
+    description: "Accept payments seamlessly with secure integration of multiple payment gateways and digital wallets.",
+    features: ["Stripe, PayPal, Square integration", "PCI-DSS compliant security", "Multi-currency support"]
+  },
+  {
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>`,
+    title: "Inventory Management",
+    description: "Keep track of stock levels, automate reordering, and sync inventory across multiple sales channels.",
+    features: ["Real-time stock tracking", "Multi-location warehouse support", "Low stock alerts"]
+  },
+  {
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`,
+    title: "Conversion Rate Optimization",
+    description: "Maximize sales with data-driven optimization strategies and A/B testing to turn browsers into buyers.",
+    features: ["Streamlined checkout process", "Cart abandonment recovery", "Personalized recommendations"]
+  },
+  {
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>`,
+    title: "Multi-Channel Integration",
+    description: "Sell everywhere your customers are. Integrate with Amazon, eBay, and social commerce platforms.",
+    features: ["Marketplace integrations", "Facebook/Instagram Shopping", "Centralized order management"]
+  },
+  {
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>`,
+    title: "Mobile Commerce Apps",
+    description: "Reach customers on their favorite devices with cross-platform mobile apps built with Expo React Native.",
+    features: ["iOS & Android apps", "Push notification campaigns", "Seamless mobile payments"]
+  }
+];
+
+// Process steps
+const processSteps = [
+  { title: "Discovery & Strategy", description: "We analyze your products, target audience, and competitors to develop a comprehensive e-commerce strategy." },
+  { title: "UX Design & Prototyping", description: "Our designers create intuitive shopping experiences optimized for conversions." },
+  { title: "Development & Integration", description: "We build your store using best-in-class platforms, integrating payments and third-party tools." },
+  { title: "Testing & Launch", description: "Comprehensive testing ensures flawless functionality before executing a smooth launch." },
+  { title: "Optimization & Growth", description: "Post-launch, we continuously monitor and optimize for better conversions." }
+];
+
+// Stats
+const stats = [
+  { value: "200+", label: "Stores Launched" },
+  { value: "87%", label: "Avg. Conversion Boost" },
+  { value: "99.9%", label: "Uptime Guarantee" },
+  { value: "24/7", label: "Support Available" }
+];
 ---
 
 <Layout
@@ -46,70 +147,84 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <!-- Hero Section -->
-  <section
-    class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"
-  >
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div
-        class="absolute inset-0"
-        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
-      >
-      </div>
+  <!-- Hero Section - Dark Theme with Animated Background -->
+  <section class="relative min-h-[90vh] flex items-center justify-center bg-slate-950 overflow-hidden font-poppins">
+    <!-- Animated gradient orbs -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 -left-20 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="text-center max-w-4xl mx-auto">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-            ></path>
-          </svg>
-          E-commerce Solutions
-        </span>
-        <h1
-          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
-        >
-          Grow Your Online Sales with <span class="text-orange-500"
-            >CodeBrand</span
-          >
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+
+    <!-- Floating elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 border border-emerald-500/20 rounded-2xl rotate-12 animate-float hidden lg:block"></div>
+    <div class="absolute bottom-32 right-16 w-16 h-16 border border-teal-500/20 rounded-full animate-float hidden lg:block" style="animation-delay: 1s;"></div>
+    <div class="absolute top-40 right-1/4 w-3 h-3 bg-emerald-500 rounded-full animate-ping hidden lg:block"></div>
+    <div class="absolute bottom-40 left-1/4 w-2 h-2 bg-orange-500 rounded-full animate-ping hidden lg:block" style="animation-delay: 0.5s;"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center max-w-5xl mx-auto">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 rounded-full mb-8 backdrop-blur-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="text-sm font-medium text-emerald-300">E-commerce Solutions</span>
+        </div>
+
+        <!-- Main heading -->
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-[1.1]">
+          <span class="text-white">Grow Your</span>
+          <br />
+          <span class="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Online Sales</span>
         </h1>
-        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
-          Custom e-commerce development and optimization solutions designed to
-          boost conversions, streamline operations, and scale your online
-          business to new heights.
+
+        <!-- Subtitle -->
+        <p class="text-xl sm:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          Custom e-commerce development and optimization solutions designed to boost conversions, streamline operations, and scale your online business.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-          >
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transform hover:-translate-y-1 transition-all duration-300">
             Get Started Today
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </a>
-          <a
-            href="#services"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
-          >
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white rounded-2xl font-bold text-lg border border-white/10 hover:border-white/20 transition-all duration-300">
             View Our Services
           </a>
         </div>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {stats.map((stat) => (
+            <div class="relative group">
+              <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300">
+                <div class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1">{stat.value}</div>
+                <div class="text-sm text-slate-400">{stat.label}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-white/40 rounded-full mt-2 animate-scroll"></div>
       </div>
     </div>
   </section>
@@ -120,128 +235,78 @@ const serviceSchema = {
       { name: "Industries", href: "/industries" },
       { name: "E-commerce", href: "" }
     ]}
-    variant="transparent"
-    class="bg-gray-50 border-y border-gray-100"
+    variant="dark"
+    class="bg-slate-900 border-y border-slate-800"
   />
 
   <!-- Trust Badges Section -->
   <TrustBadges />
 
-  <!-- Introduction Section -->
-  <section class="py-16 lg:py-24 bg-white font-poppins">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
-          >
-            E-commerce Excellence in the Digital Age
+  <!-- Introduction Section - Modern Split Layout -->
+  <section class="py-24 lg:py-32 bg-white font-poppins relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-emerald-50 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Trusted by 200+ Businesses
+          </div>
+
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+            E-commerce Excellence in the <span class="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">Digital Age</span>
           </h2>
-          <div class="prose prose-lg text-gray-700 space-y-4">
+
+          <div class="prose prose-lg text-slate-600 space-y-4">
             <p>
-              The e-commerce landscape is more competitive than ever, and
-              success requires more than just putting products online. At
-              CodeBrand, we understand the unique challenges online retailers
-              face—from optimizing conversion rates and managing inventory to
-              providing seamless checkout experiences and integrating with
-              multiple sales channels.
+              The e-commerce landscape is more competitive than ever. Success requires more than just putting products online. At CodeBrand, we understand the unique challenges online retailers face—from optimizing conversion rates to providing seamless checkout experiences.
             </p>
             <p>
-              We specialize in creating high-performance e-commerce platforms,
-              custom shopping experiences, and integrated solutions that drive
-              sales and delight customers. Whether you're launching a new online
-              store, scaling an existing business, or migrating to a better
-              platform, our technology solutions help you maximize revenue and
-              minimize cart abandonment.
-            </p>
-            <p>
-              Our team has worked with e-commerce businesses of all sizes, from
-              startups to established retailers processing millions in annual
-              sales. We know that every online store is unique, which is why we
-              don't believe in cookie-cutter solutions. Instead, we craft custom
-              experiences tailored to your products, customers, and business
-              goals.
+              We specialize in creating high-performance e-commerce platforms, custom shopping experiences, and integrated solutions that drive sales and delight customers.
             </p>
           </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-semibold transition-colors">
+              Start Your Project
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
         </div>
+
+        <!-- Visual Stats Cards -->
         <div class="relative">
-          <div
-            class="relative bg-slate-100 rounded-3xl p-8 shadow-xl"
-          >
-            <div class="space-y-4">
-              <div
-                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
-              >
-                <div class="flex items-center gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="text-2xl font-bold text-cyan-900">87%</div>
-                    <div class="text-sm text-gray-600">
-                      Conversion Rate Boost
-                    </div>
-                  </div>
-                </div>
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-3xl blur-2xl"></div>
+          <div class="relative grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 transform hover:-translate-y-1 transition-transform">
+              <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
               </div>
-              <div
-                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
-              >
-                <div class="flex items-center gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="text-2xl font-bold text-cyan-900">99.9%</div>
-                    <div class="text-sm text-gray-600">Uptime Guarantee</div>
-                  </div>
-                </div>
+              <div class="text-3xl font-bold text-slate-900 mb-1">87%</div>
+              <div class="text-sm text-slate-500">Conversion Rate Boost</div>
+            </div>
+            <div class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 transform hover:-translate-y-1 transition-transform mt-8">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
               </div>
-              <div
-                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
-              >
-                <div class="flex items-center gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="text-2xl font-bold text-cyan-900">200+</div>
-                    <div class="text-sm text-gray-600">Stores Launched</div>
-                  </div>
-                </div>
+              <div class="text-3xl font-bold text-slate-900 mb-1">99.9%</div>
+              <div class="text-sm text-slate-500">Uptime Guarantee</div>
+            </div>
+            <div class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 transform hover:-translate-y-1 transition-transform">
+              <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
               </div>
+              <div class="text-3xl font-bold text-slate-900 mb-1">200+</div>
+              <div class="text-sm text-slate-500">Stores Launched</div>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-500 rounded-3xl p-6 shadow-xl transform hover:-translate-y-1 transition-transform mt-8">
+              <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
+              </div>
+              <div class="text-3xl font-bold text-white mb-1">24/7</div>
+              <div class="text-sm text-white/80">Support Available</div>
             </div>
           </div>
         </div>
@@ -249,890 +314,172 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section
-    id="services"
-    class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white font-poppins"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Services Section - Modern Cards -->
+  <section id="services" class="py-24 lg:py-32 bg-slate-950 font-poppins relative overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 -left-40 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 -right-40 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Specialized E-commerce Services
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-6">
+          <span class="text-sm font-medium text-emerald-400">Our Services</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Specialized E-commerce <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Services</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Comprehensive solutions designed to help you sell more, serve better,
-          and scale faster
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+          Comprehensive solutions designed to help you sell more, serve better, and scale faster
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-cyan-900 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-            </svg>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <div class="group relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative h-full bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-emerald-500/50 rounded-3xl p-8 transition-all duration-300">
+              <div class={`w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`} set:html={service.icon}></div>
+              <h3 class="text-xl font-bold text-white mb-3">{service.title}</h3>
+              <p class="text-slate-400 mb-6">{service.description}</p>
+              <ul class="space-y-2">
+                {service.features.map((feature) => (
+                  <li class="flex items-center gap-2 text-sm text-slate-300">
+                    <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Custom E-commerce Development
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Build a unique online store tailored to your brand and products.
-            From headless commerce to fully custom platforms, we create shopping
-            experiences that convert visitors into loyal customers.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Custom product catalogs</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Advanced filtering and search</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Mobile-first responsive design</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Service 2 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Payment Gateway Integration
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Accept payments seamlessly with secure integration of multiple
-            payment gateways. Support credit cards, digital wallets, buy now pay
-            later, and international payment methods.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Stripe, PayPal, Square integration</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>PCI-DSS compliant security</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Multi-currency support</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Service 3 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Inventory Management
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Keep track of stock levels, automate reordering, and sync inventory
-            across multiple sales channels. Real-time updates prevent
-            overselling and stockouts.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Real-time stock tracking</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Multi-location warehouse support</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Low stock alerts</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Service 4 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Conversion Rate Optimization
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Maximize sales with data-driven optimization strategies. A/B
-            testing, user behavior analysis, and strategic improvements to turn
-            more browsers into buyers.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Streamlined checkout process</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Cart abandonment recovery</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Personalized recommendations</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Service 5 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Multi-Channel Integration
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Sell everywhere your customers are. Integrate with Amazon, eBay,
-            social commerce platforms, and marketplaces while managing
-            everything from one dashboard.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Marketplace integrations</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Facebook/Instagram Shopping</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Centralized order management</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Service 6 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Mobile Commerce Apps
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Reach customers on their favorite devices with cross-platform mobile apps built with Expo React Native.
-            Push notifications, one-tap checkout, and offline browsing
-            capabilities for iOS and Android.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Expo React Native for iOS & Android</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Push notification campaigns</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Seamless mobile payments</span>
-            </li>
-          </ul>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Process Section -->
-  <section class="py-16 lg:py-24 bg-white font-poppins">
+  <!-- Process Section - Modern Timeline -->
+  <section class="py-24 lg:py-32 bg-white font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Our E-commerce Development Process
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-semibold rounded-full mb-6">
+          Our Process
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+          Our E-commerce Development <span class="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">Process</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          A proven methodology that delivers high-converting online stores on
-          time and within budget
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          A proven methodology that delivers high-converting online stores on time and within budget
         </p>
       </div>
 
       <div class="relative">
         <!-- Timeline line -->
-        <div
-          class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-cyan-900"
-        >
-        </div>
+        <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500 via-teal-500 to-cyan-500"></div>
 
         <div class="space-y-12">
-          <!-- Step 1 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right lg:pr-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-cyan-900 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                1
+          {processSteps.map((step, index) => (
+            <div class={`relative flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+              <div class={`lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right lg:pr-16' : 'lg:text-left lg:pl-16'}`}>
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow">
+                  <div class={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 text-white rounded-2xl font-bold text-lg mb-4`}>
+                    {index + 1}
+                  </div>
+                  <h3 class="text-2xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                  <p class="text-slate-600">{step.description}</p>
+                </div>
               </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Discovery & Strategy
-              </h3>
-              <p class="text-gray-600">
-                We analyze your products, target audience, and competitors to
-                develop a comprehensive e-commerce strategy. This includes
-                defining your unique value proposition, pricing strategy, and
-                conversion goals.
-              </p>
-            </div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-cyan-900 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              1
-            </div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-orange-500 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              2
-            </div>
-            <div class="lg:w-1/2 lg:pl-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-orange-500 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                2
+              <div class="hidden lg:flex items-center justify-center w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full shadow-lg shadow-emerald-500/30 z-10">
+                <div class="w-2 h-2 bg-white rounded-full"></div>
               </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                UX Design & Prototyping
-              </h3>
-              <p class="text-gray-600">
-                Our designers create intuitive shopping experiences optimized
-                for conversions. We design product pages, checkout flows, and
-                category layouts that guide customers smoothly from browsing to
-                purchase.
-              </p>
+              <div class="lg:w-1/2"></div>
             </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right lg:pr-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-cyan-900 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                3
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Development & Integration
-              </h3>
-              <p class="text-gray-600">
-                We build your store using best-in-class e-commerce platforms or
-                custom solutions, integrating payment gateways, shipping
-                providers, and third-party tools. Everything is optimized for
-                speed and security.
-              </p>
-            </div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-cyan-900 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              3
-            </div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-orange-500 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              4
-            </div>
-            <div class="lg:w-1/2 lg:pl-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-orange-500 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                4
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Testing & Launch
-              </h3>
-              <p class="text-gray-600">
-                Comprehensive testing ensures flawless functionality across all
-                devices and payment scenarios. We handle product uploads, train
-                your team, and execute a smooth launch with minimal downtime.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right lg:pr-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-cyan-900 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                5
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Optimization & Growth
-              </h3>
-              <p class="text-gray-600">
-                Post-launch, we continuously monitor performance and optimize
-                for better conversions. A/B testing, analytics review, and
-                strategic improvements help you sell more every month.
-              </p>
-            </div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-cyan-900 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              5
-            </div>
-            <div class="lg:w-1/2"></div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section
-    class="py-16 lg:py-24 bg-cyan-900 text-white font-poppins"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Why Choose Us - Dark Section -->
+  <section class="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 font-poppins relative overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-          Why E-commerce Brands Choose CodeBrand
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Why E-commerce Brands <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Choose CodeBrand</span>
         </h2>
-        <p class="text-xl text-cyan-100 max-w-3xl mx-auto">
-          We combine technical excellence with e-commerce expertise to deliver
-          stores that sell
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+          We combine technical excellence with e-commerce expertise to deliver stores that sell
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-              ></path>
-            </svg>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-emerald-500/30 hover:bg-white/10 transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">E-commerce Specialists</h3>
-          <p class="text-cyan-100">
-            We live and breathe e-commerce. Our team has launched 200+ online
-            stores and knows exactly what drives sales and what kills
-            conversions.
-          </p>
+          <h3 class="text-xl font-bold text-white mb-3">E-commerce Specialists</h3>
+          <p class="text-slate-300">We live and breathe e-commerce. Our team has launched 200+ online stores and knows exactly what drives sales.</p>
         </div>
 
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                clip-rule="evenodd"></path>
-            </svg>
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-emerald-500/30 hover:bg-white/10 transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">Lightning-Fast Performance</h3>
-          <p class="text-cyan-100">
-            Every second counts in e-commerce. Our stores load in under 2
-            seconds, improving SEO rankings and conversion rates.
-          </p>
+          <h3 class="text-xl font-bold text-white mb-3">Lightning-Fast Performance</h3>
+          <p class="text-slate-300">Every second counts in e-commerce. Our stores load in under 2 seconds, improving SEO and conversions.</p>
         </div>
 
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"></path>
-            </svg>
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-emerald-500/30 hover:bg-white/10 transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">Bank-Level Security</h3>
-          <p class="text-cyan-100">
-            PCI-DSS compliant infrastructure, SSL encryption, fraud detection,
-            and regular security audits protect your business and customers.
-          </p>
+          <h3 class="text-xl font-bold text-white mb-3">Bank-Level Security</h3>
+          <p class="text-slate-300">PCI-DSS compliant infrastructure, SSL encryption, and regular security audits protect your business.</p>
         </div>
 
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-              ></path>
-              <path
-                d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"
-              ></path>
-            </svg>
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-emerald-500/30 hover:bg-white/10 transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path></svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">Infinite Scalability</h3>
-          <p class="text-cyan-100">
-            Built to handle traffic spikes during sales and holidays. Our
-            infrastructure scales automatically from 100 to 100,000 visitors.
-          </p>
+          <h3 class="text-xl font-bold text-white mb-3">Infinite Scalability</h3>
+          <p class="text-slate-300">Built to handle traffic spikes during sales and holidays. Our infrastructure scales automatically.</p>
         </div>
 
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
-                clip-rule="evenodd"></path>
-            </svg>
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-emerald-500/30 hover:bg-white/10 transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path></svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">Data-Driven Decisions</h3>
-          <p class="text-cyan-100">
-            Comprehensive analytics and reporting help you understand customer
-            behavior and make informed decisions to grow your business.
-          </p>
+          <h3 class="text-xl font-bold text-white mb-3">Data-Driven Decisions</h3>
+          <p class="text-slate-300">Comprehensive analytics help you understand customer behavior and make informed decisions.</p>
         </div>
 
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
-                clip-rule="evenodd"></path>
-            </svg>
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-emerald-500/30 hover:bg-white/10 transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>
           </div>
-          <h3 class="text-xl font-bold mb-3">Proven ROI</h3>
-          <p class="text-cyan-100">
-            Our clients see an average 87% increase in conversion rates within 6
-            months. Better UX and optimized checkout mean more revenue.
-          </p>
+          <h3 class="text-xl font-bold text-white mb-3">Proven ROI</h3>
+          <p class="text-slate-300">Our clients see an average 87% increase in conversion rates within 6 months of launching.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Google Reviews Section -->
-  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+  <section class="py-24 lg:py-32 bg-slate-950 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
-        >
-          <svg
-            class="w-4 h-4 text-cyan-400"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-            ></path>
-          </svg>
-          <span class="text-sm font-medium text-cyan-400">Google Reviews</span>
-        </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-6">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          <span class="text-sm font-medium text-yellow-400">Google Reviews</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
           What Our <span class="text-orange-500">Clients Say</span>
         </h2>
         <p class="text-lg text-slate-400 max-w-2xl mx-auto">
@@ -1144,325 +491,142 @@ const serviceSchema = {
   </section>
 
   <!-- Technologies Section -->
-  <section class="py-16 lg:py-24 bg-white font-poppins">
+  <section class="py-24 lg:py-32 bg-white font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Built with Best-in-Class E-commerce Technology
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+          Built with <span class="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">Best-in-Class</span> Technology
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          We use proven platforms and modern frameworks to deliver fast, secure,
-          and scalable stores
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          We use proven platforms and modern frameworks to deliver fast, secure, and scalable stores
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">🛒</div>
-          <div class="text-sm font-semibold text-gray-700">Shopify</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">⚛️</div>
-          <div class="text-sm font-semibold text-gray-700">React</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">🟢</div>
-          <div class="text-sm font-semibold text-gray-700">Node.js</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">💳</div>
-          <div class="text-sm font-semibold text-gray-700">Stripe</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">☁️</div>
-          <div class="text-sm font-semibold text-gray-700">AWS</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">🔐</div>
-          <div class="text-sm font-semibold text-gray-700">Security</div>
-        </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {[
+          { name: "Shopify", icon: "🛒" },
+          { name: "React", icon: "⚛️" },
+          { name: "Node.js", icon: "🟢" },
+          { name: "Stripe", icon: "💳" },
+          { name: "AWS", icon: "☁️" },
+          { name: "Security", icon: "🔐" }
+        ].map((tech) => (
+          <div class="group flex flex-col items-center justify-center p-8 bg-slate-50 rounded-3xl hover:bg-gradient-to-br hover:from-emerald-50 hover:to-teal-50 border border-slate-100 hover:border-emerald-200 transition-all duration-300">
+            <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">{tech.icon}</div>
+            <div class="text-sm font-semibold text-slate-700">{tech.name}</div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- Common Challenges Section -->
-  <section
-    class="py-16 lg:py-24 bg-slate-50 font-poppins"
-  >
+  <section class="py-24 lg:py-32 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Common E-commerce Challenges We Solve
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+          Common E-commerce <span class="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">Challenges We Solve</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
           Turn obstacles into opportunities with our proven solutions
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
+        {[
+          {
+            problem: "High Cart Abandonment",
+            description: "Complicated checkout, unexpected fees, or slow loading times cause 70% of shoppers to abandon their carts.",
+            solution: "Streamlined one-page checkout, guest checkout options, transparent pricing, and abandoned cart recovery emails."
+          },
+          {
+            problem: "Poor Mobile Experience",
+            description: "Over 60% of e-commerce traffic comes from mobile, but many stores offer clunky mobile experiences.",
+            solution: "Mobile-first design, touch-optimized interfaces, and progressive web app features for app-like experiences."
+          },
+          {
+            problem: "Inventory Mismanagement",
+            description: "Selling out-of-stock items or losing track of inventory across multiple channels damages reputation.",
+            solution: "Real-time inventory tracking, automated stock updates, and multi-channel synchronization."
+          },
+          {
+            problem: "Limited Payment Options",
+            description: "Not accepting customers' preferred payment methods leads to lost sales at checkout.",
+            solution: "Multiple payment gateways, digital wallets (Apple Pay, Google Pay), buy now pay later, and international support."
+          }
+        ].map((challenge) => (
+          <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-slate-100">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: High Cart Abandonment
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                Complicated checkout, unexpected fees, or slow loading times
-                cause 70% of shoppers to abandon their carts before completing
-                purchase.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Streamlined one-page checkout, guest
-                  checkout options, transparent pricing, and abandoned cart recovery
-                  emails.
-                </p>
+              <div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">Problem: {challenge.problem}</h3>
+                <p class="text-slate-600 text-sm mb-4">{challenge.description}</p>
+                <div class="flex gap-3 items-start">
+                  <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <p class="text-sm text-slate-700"><strong class="text-emerald-600">Solution:</strong> {challenge.solution}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: Poor Mobile Experience
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                Over 60% of e-commerce traffic comes from mobile, but many
-                stores offer clunky mobile experiences that don't convert.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Mobile-first design, touch-optimized
-                  interfaces, and progressive web app features for app-like experiences.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: Inventory Mismanagement
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                Selling out-of-stock items, overselling, or losing track of
-                inventory across multiple channels damages reputation and
-                revenue.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Real-time inventory tracking, automated
-                  stock updates, and multi-channel synchronization.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: Limited Payment Options
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                Not accepting customers' preferred payment methods or lacking
-                international payment support leads to lost sales.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Multiple payment gateways, digital wallets
-                  (Apple Pay, Google Pay), buy now pay later, and international payment
-                  support.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
+  <!-- E-commerce FAQ Section -->
+  <section class="py-24 lg:py-32 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+          E-commerce <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our e-commerce development services
+        </p>
+      </div>
+      <FaqDark faqs={ecommerceFaqs} client:visible />
+    </div>
+  </section>
+
   <!-- Final CTA -->
-  <section
-    class="py-16 lg:py-24 bg-cyan-900 text-white font-poppins"
-  >
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+  <section class="py-24 lg:py-32 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 font-poppins relative overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+      <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
         Ready to Boost Your Online Sales?
       </h2>
-      <p class="text-xl text-cyan-100 mb-8 leading-relaxed">
-        Let's discuss how a high-performance e-commerce platform can increase
-        your conversions, streamline operations, and scale your business.
-        Schedule a free consultation with our e-commerce experts today.
+      <p class="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+        Let's discuss how a high-performance e-commerce platform can increase your conversions and scale your business.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="/contact"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-        >
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-emerald-600 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
           Schedule Free Consultation
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            ></path>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
         </a>
-        <a
-          href="tel:+1234567890"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-lg text-white rounded-xl font-bold text-lg border-2 border-white/30 transition-all duration-200"
-        >
+        <a href="tel:+1234567890" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-2xl font-bold text-lg border-2 border-white/30 transition-all duration-300">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-            ></path>
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
           </svg>
           Call Us Now
         </a>
       </div>
-      <p class="mt-6 text-sm text-cyan-200">
-        No commitment required • Free initial consultation • Response within 24
-        hours
+      <p class="mt-8 text-sm text-white/70">
+        No commitment required • Free initial consultation • Response within 24 hours
       </p>
     </div>
   </section>
@@ -1472,3 +636,23 @@ const serviceSchema = {
   <!-- Related Services Section -->
   <RelatedServices currentService="web-development" />
 </Layout>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(12deg); }
+    50% { transform: translateY(-20px) rotate(12deg); }
+  }
+
+  @keyframes scroll {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(8px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-scroll {
+    animation: scroll 1.5s ease-in-out infinite;
+  }
+</style>

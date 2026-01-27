@@ -1,6 +1,258 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { videoProductionConfig } from "../../configs/services/video-production.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "Promotional Videos",
+        description: "Short, impactful videos that tell your brand story and drive action. Company overview videos, product showcases, service explanations—content that works for websites, ads, and presentations. We handle scripting, filming, and editing."
+    },
+    {
+        title: "Social Media Video Content",
+        description: "Vertical videos for Instagram Reels, TikTok, YouTube Shorts, and Stories. Platform-optimized content designed to capture attention in the first second and drive engagement. Quick turnaround for trending topics."
+    },
+    {
+        title: "Video Editing & Post-Production",
+        description: "Got raw footage? We turn it into polished content. Professional editing, color grading, sound design, motion graphics, and effects. We work with footage you provide or shoot alongside our team."
+    },
+    {
+        title: "Corporate & Training Videos",
+        description: "Internal communications, onboarding videos, training content, and company announcements. Professional production that makes your organization look polished, whether it's for 10 employees or 10,000."
+    },
+    {
+        title: "Event Coverage & Highlights",
+        description: "Capture conferences, trade shows, company events, and celebrations. Full event coverage or highlight reels that extend the life of your event and create marketing content."
+    },
+    {
+        title: "Testimonial & Interview Videos",
+        description: "Customer testimonials and expert interviews that build trust. We handle the technical production—lighting, sound, multiple camera angles—so your subjects look and sound their best."
+    }
+];
+
+const process = [
+    {
+        title: "Pre-Production",
+        description: "Planning is everything. We develop the concept, write scripts, create storyboards, and plan every detail before cameras roll.",
+        details: [
+            "Creative concept development",
+            "Script writing",
+            "Storyboard creation",
+            "Location scouting",
+            "Talent and crew coordination",
+            "Equipment planning"
+        ]
+    },
+    {
+        title: "Production",
+        description: "Filming day. Professional equipment, experienced crew, and attention to every detail. Whether in-studio or on-location, we capture what we need efficiently.",
+        details: [
+            "Professional camera equipment",
+            "Lighting setup",
+            "Audio recording",
+            "Direction and coaching",
+            "Multiple takes and angles",
+            "On-set review"
+        ]
+    },
+    {
+        title: "Post-Production",
+        description: "Where raw footage becomes story. Editing, color grading, sound design, music, graphics, and effects combine to create the final product.",
+        details: [
+            "Professional editing",
+            "Color correction and grading",
+            "Sound design and mixing",
+            "Music selection and licensing",
+            "Motion graphics and titles",
+            "Visual effects (if needed)"
+        ]
+    },
+    {
+        title: "Review & Delivery",
+        description: "You review, we refine. Once approved, we deliver in every format you need—web, social, broadcast, whatever the destination requires.",
+        details: [
+            "Review cut for feedback",
+            "Revision rounds",
+            "Final export in all formats",
+            "Platform-optimized versions",
+            "Raw footage delivery (optional)",
+            "Archive and backup"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "🎬",
+        title: "End-to-End Production",
+        description: "From concept to final cut, we handle everything. You don't need to coordinate separate writers, crews, and editors—we're your complete video partner."
+    },
+    {
+        icon: "⚡",
+        title: "Fast Turnaround",
+        description: "Social media moves fast. We're set up for quick turnarounds when you need them. Standard projects deliver in 1-2 weeks; rush options available."
+    },
+    {
+        icon: "📱",
+        title: "Platform Expertise",
+        description: "YouTube, Instagram, TikTok, LinkedIn—each platform has different specs and best practices. We optimize for wherever your video will live."
+    },
+    {
+        icon: "🎨",
+        title: "Cinematic Quality",
+        description: "Professional equipment, experienced editors, and attention to craft. Your videos will look polished and professional, not like amateur content."
+    },
+    {
+        icon: "🔄",
+        title: "Flexible Engagement",
+        description: "Need one video or ongoing content? We work on project basis or retainer. Scale up or down based on your needs."
+    },
+    {
+        icon: "📦",
+        title: "All Assets Included",
+        description: "You get the final video in all formats plus raw footage (if requested). No hidden fees for additional exports or revisions within scope."
+    }
+];
+
+const packages = [
+    {
+        name: "Social Video",
+        price: "$500",
+        description: "Quick social media content",
+        features: [
+            "15-60 second video",
+            "Editing with your footage",
+            "Or simple shoot (half-day)",
+            "Color grading",
+            "Basic motion graphics",
+            "Music selection",
+            "2 platform formats",
+            "1 revision round"
+        ]
+    },
+    {
+        name: "Promo Video",
+        price: "$2,500",
+        description: "Professional promotional content",
+        popular: true,
+        features: [
+            "60-90 second video",
+            "Full-day shoot",
+            "Script development",
+            "Professional editing",
+            "Color grading",
+            "Custom graphics",
+            "Licensed music",
+            "All platform formats",
+            "2 revision rounds"
+        ]
+    },
+    {
+        name: "Full Production",
+        price: "$5,000+",
+        description: "Comprehensive video project",
+        features: [
+            "2-3 minute video",
+            "Multi-day production",
+            "Script and storyboard",
+            "Multiple locations",
+            "Interviews/testimonials",
+            "Advanced motion graphics",
+            "Professional voiceover",
+            "Unlimited revisions",
+            "Raw footage included"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "Do you provide the filming or just editing?",
+        answer: "Both. We can shoot your video with professional equipment and crew, or we can work with footage you already have. Many clients do a mix—we shoot key scenes and incorporate their existing content. Whatever works for your project."
+    },
+    {
+        question: "How long does a video project take?",
+        answer: "Social media videos: 3-5 days. Promotional videos: 1-2 weeks. Full productions: 3-4 weeks. Timeline includes pre-production, filming (if needed), editing, and revisions. Rush turnarounds available for urgent projects at additional cost."
+    },
+    {
+        question: "What equipment do you use?",
+        answer: "Cinema cameras (Sony FX series, Blackmagic), professional lighting, wireless lavalier and shotgun microphones, stabilizers and sliders. We bring the right equipment for each project—studio interviews need different gear than outdoor events."
+    },
+    {
+        question: "Do you handle music licensing?",
+        answer: "Yes. We source music from licensed libraries (Artlist, Epidemic Sound) included in project cost. If you want a specific commercial song, we can research licensing costs—they vary widely depending on the track and usage."
+    },
+    {
+        question: "What formats do you deliver?",
+        answer: "Whatever you need. Standard delivery includes H.264 for web, ProRes for archiving, and platform-specific exports (16:9 for YouTube, 9:16 for TikTok/Reels, 1:1 for Instagram feed). Just tell us where the video will live."
+    },
+    {
+        question: "Can you add subtitles/captions?",
+        answer: "Absolutely—and you should. Most social video is watched without sound. We provide burned-in captions (always visible) or SRT files for platform captions. Professional captioning is included in our packages."
+    },
+    {
+        question: "Do you travel for shoots?",
+        answer: "Yes. We're based in the US but travel for projects. Travel costs (flights, hotels, per diem) are billed separately and discussed upfront. For straightforward projects, we can also direct remote shoots via video call."
+    },
+    {
+        question: "What do you need from me to get started?",
+        answer: "A brief: what's the video for, who's the audience, where will it be used, and any existing assets (footage, photos, logos). If we're filming, we'll need location details and talent availability. We'll guide you through everything else."
+    }
+];
+
+const overviewPoints = [
+    "Video is the most engaging content format online. Social posts with video get 48% more views. Product pages with video convert 80% better. If you're not using video, you're leaving results on the table.",
+    "Quality matters. Audiences instantly judge credibility based on video quality. Amateur video makes your business look amateur. Professional video builds trust.",
+    "We handle the complexity so you don't have to. Video production involves scripting, filming, editing, color, sound, graphics, and delivery—a lot of moving parts. We manage all of it.",
+    "Every platform needs different video. YouTube wants long-form, TikTok wants vertical, LinkedIn wants professional. We create and optimize for wherever your audience is.",
+    "Video content has long shelf life. A good promotional video works for years. Testimonials stay relevant. The investment pays off over time.",
+    "We make the process easy. Tell us what you need, we'll handle the rest. No need to become a video expert yourself."
+];
+
+const approachPoints = [
+    {
+        title: "Story First",
+        description: "Technology and technique serve the story, not the other way around. We start with what you want to communicate and work backward to how we'll capture and edit it."
+    },
+    {
+        title: "Efficiency Without Sacrifice",
+        description: "Video production can be expensive. We're efficient—smart planning, focused shoots, streamlined editing—without cutting corners on quality."
+    },
+    {
+        title: "Collaboration Throughout",
+        description: "You see the script before we shoot, rough cuts before we finish. No surprises at the end. Your input shapes the final product."
+    },
+    {
+        title: "Platform-Aware Production",
+        description: "A video for your website is different from a video for TikTok. We consider final destination from the start—aspect ratios, lengths, hooks, and formats."
+    }
+];
 ---
 
-<ServicePageTemplate config={videoProductionConfig} />
+<ServicePageTemplateV3
+    title="Video Production & Editing Services - Codebrand"
+    description="Professional video production: promotional videos, social media content, corporate videos, and editing services. End-to-end production from concept to final cut."
+    keywords="video production, video editing, promotional videos, social media videos, corporate video, video marketing, commercial production"
+    serviceName="Video Production"
+    tagline="Videos That Get Watched"
+    heroDescription="We produce video content that captures attention, tells your story, and drives results. From quick social clips to polished promotional videos, we handle everything from concept to final delivery."
+    heroFeatures={[
+        "Full-service production (script to screen)",
+        "Social media optimized content",
+        "Professional equipment and crew",
+        "Fast turnaround options"
+    ]}
+    price="$500"
+    priceNote="for social video / From $2,500 for promo videos"
+    overviewTitle="Why Video?"
+    overviewDescription="Video is the dominant content format online—and the gap is growing. Audiences watch, share, and engage with video more than any other content type. If you're not producing video, your competitors are."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="How We Approach Video Production"
+    approachDescription="After producing hundreds of videos for businesses of all sizes, we've developed an approach that delivers quality efficiently."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Create Your Video?"
+    ctaDescription="Tell us about your project and we'll provide a custom quote. Whether it's a quick social clip or a full production, we've got you covered."
+/>

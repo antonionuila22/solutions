@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title = "Gym & Fitness Website Design | Studio Solutions | Codebrand";
 const description =
@@ -37,6 +39,41 @@ const serviceSchema = {
     ]
   }
 };
+
+// Fitness FAQ data
+const fitnessFaqs = [
+  {
+    question: "How much does a gym website cost?",
+    answer: "Gym websites start at $3,000 for a professional site with class schedules and contact forms. Sites with online booking systems range from $5,000-$12,000. Full member management platforms are $15,000+. We provide quotes based on your fitness business needs."
+  },
+  {
+    question: "Can members book classes online?",
+    answer: "Yes. We build custom class booking systems where members can view schedules, reserve spots, and manage their bookings. Features include waitlists, recurring bookings, and automatic reminders."
+  },
+  {
+    question: "Do you integrate with gym management software?",
+    answer: "Absolutely. We integrate with popular fitness software including Mindbody, ClubReady, PushPress, and Zen Planner. Member data, class schedules, and payments sync seamlessly."
+  },
+  {
+    question: "Can you build a member portal?",
+    answer: "Yes. Our member portals include workout tracking, class history, payment management, and progress photos. Members can manage their entire fitness journey from their phone or computer."
+  },
+  {
+    question: "How long does it take to build a fitness website?",
+    answer: "A standard gym website takes 4-6 weeks. Sites with booking and member management take 8-12 weeks. Custom fitness apps take 12-16 weeks depending on features."
+  },
+  {
+    question: "Do you build fitness apps?",
+    answer: "Yes. We develop custom fitness apps for iOS and Android including workout tracking, video workouts, nutrition logging, and coach communication. Perfect for gyms, personal trainers, and fitness influencers."
+  }
+];
+
+const faqSchema = createFAQSchema(fitnessFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "Fitness", url: "https://codebrand.us/industries/fitness" }
+]);
 ---
 
 <Layout
@@ -46,6 +83,8 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero Section -->
   <section
@@ -1475,6 +1514,21 @@ const serviceSchema = {
       <p class="mt-6 text-sm text-cyan-200">
         Free demo available • No commitment required • Response within 24 hours
       </p>
+    </div>
+  </section>
+
+  <!-- Fitness FAQ Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Fitness Development <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our gym and fitness website development
+        </p>
+      </div>
+      <FaqDark faqs={fitnessFaqs} client:visible />
     </div>
   </section>
 

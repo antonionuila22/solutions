@@ -1,6 +1,206 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { promotionalProductsConfig } from "../../configs/services/promotional-products.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "Custom Apparel",
+        description: "T-shirts, hoodies, polo shirts, jackets, and uniforms with your logo. We use screen printing for large runs, embroidery for a premium feel, or sublimation for full-color all-over prints. Quality garments from brands like Bella+Canvas, Gildan, and Champion."
+    },
+    {
+        title: "Sublimation Printing",
+        description: "Full-color printing that becomes part of the material—vibrant, durable, and photo-quality. Perfect for mugs, mousepads, phone cases, and polyester apparel. Colors that won't crack, peel, or fade."
+    },
+    {
+        title: "Laser Engraving",
+        description: "Permanent engraving on wood, metal, glass, leather, and acrylic. Premium look for awards, plaques, corporate gifts, and high-end promotional items. Precise detail that lasts forever."
+    },
+    {
+        title: "Branded Merchandise",
+        description: "Pens, notebooks, bags, water bottles, tech accessories, and hundreds of other items—all customizable with your logo. From budget giveaways to premium corporate gifts, we source and brand it."
+    },
+    {
+        title: "Event & Trade Show Materials",
+        description: "Everything you need for events: banners, tablecloths, badges, lanyards, giveaways, and swag bags. Complete event branding packages coordinated and delivered ready to go."
+    },
+    {
+        title: "Custom Packaging & Labels",
+        description: "Branded boxes, product labels, and packaging that elevates your presentation. Turn unboxing into a brand experience. Small runs welcome—no massive minimums required."
+    }
+];
+
+const process = [
+    {
+        title: "Consultation",
+        description: "We discuss what you need, your budget, timeline, and quantity. We recommend products and decoration methods that fit your goals.",
+        details: [
+            "Needs assessment",
+            "Budget discussion",
+            "Product recommendations",
+            "Decoration method selection",
+            "Timeline confirmation",
+            "Quote provided"
+        ]
+    },
+    {
+        title: "Design & Proof",
+        description: "We prepare your artwork for production and create digital mockups. You see exactly how your items will look before we start.",
+        details: [
+            "Artwork preparation",
+            "Digital mockup creation",
+            "Color matching",
+            "Placement confirmation",
+            "Proof approval",
+            "Revision if needed"
+        ]
+    },
+    {
+        title: "Production",
+        description: "Your items are printed, embroidered, engraved, or otherwise decorated. We quality-check throughout production.",
+        details: [
+            "Material preparation",
+            "Production run",
+            "Quality control",
+            "Inspection and counting",
+            "Packaging",
+            "Preparation for shipping"
+        ]
+    },
+    {
+        title: "Delivery",
+        description: "Items are carefully packaged and shipped to your location. We handle logistics for single-address or multi-location delivery.",
+        details: [
+            "Final quality check",
+            "Careful packaging",
+            "Shipping arrangement",
+            "Tracking provided",
+            "Delivery confirmation",
+            "Follow-up support"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "1️⃣",
+        title: "No Minimum Orders",
+        description: "Need 1 item or 1,000? We accommodate both. No pressure to order more than you need. Sample orders welcome."
+    },
+    {
+        icon: "⭐",
+        title: "Quality Materials",
+        description: "We use brand-name blanks and professional equipment. Your logo goes on items people will actually want to use and keep."
+    },
+    {
+        icon: "🎨",
+        title: "Design Assistance",
+        description: "Don't have print-ready artwork? We can prepare your logo for production, adjust colors for different methods, and optimize for best results."
+    },
+    {
+        icon: "⚡",
+        title: "Fast Turnaround",
+        description: "Standard orders ship in 5-7 business days. Rush options available when you need items quickly. Just let us know your deadline."
+    },
+    {
+        icon: "📦",
+        title: "Multi-Location Shipping",
+        description: "Need items sent to multiple addresses? We handle kitting and distribution. Perfect for remote teams, franchises, and multi-office companies."
+    },
+    {
+        icon: "🔄",
+        title: "Reorder Simplicity",
+        description: "We keep your artwork and specifications on file. Reorders are fast and consistent. Same quality every time."
+    }
+];
+
+const faqs = [
+    {
+        question: "What's the minimum order?",
+        answer: "There is no minimum—we're happy to do single items. That said, per-unit costs decrease with quantity. A single custom t-shirt might cost $25; 100 shirts might cost $8 each. We'll show you price breaks so you can decide what makes sense."
+    },
+    {
+        question: "What file format do you need for my logo?",
+        answer: "Ideally: vector files (AI, EPS, SVG, PDF). For simple printing, high-resolution PNG (300+ DPI) works too. Don't have vector files? We can often recreate your logo from a high-quality image—ask and we'll let you know."
+    },
+    {
+        question: "What's the difference between printing methods?",
+        answer: "Screen printing: best for simple designs, 1-3 colors, large quantities. Sublimation: full-color, photographic quality, best on white/light polyester. Embroidery: premium look, durable, limited detail. Laser engraving: permanent, premium, works on hard materials. We recommend based on your design and product."
+    },
+    {
+        question: "How long does production take?",
+        answer: "Standard orders: 5-7 business days after proof approval. Rush orders: 2-3 business days (additional cost). Very large orders or custom products may take longer. We'll confirm timeline before you commit."
+    },
+    {
+        question: "Can you match specific Pantone colors?",
+        answer: "For screen printing and some products, yes—we can match Pantone colors. Sublimation and digital printing produce close matches but aren't exact Pantone. We'll advise on color accuracy for your specific order."
+    },
+    {
+        question: "Do you ship internationally?",
+        answer: "Yes. We ship throughout the US and internationally. International orders have longer transit times and may incur customs fees. We'll provide shipping quotes before you order."
+    },
+    {
+        question: "Can I see a sample before ordering?",
+        answer: "Yes. For larger orders, we recommend approving a physical sample first. Sample fees are typically waived for production orders. For smaller orders, digital proofs usually suffice, but samples are available if needed."
+    },
+    {
+        question: "What about items not listed?",
+        answer: "We can source almost any promotional product. If you have something specific in mind—whether it's branded golf balls, custom USB drives, or unique corporate gifts—just ask. We'll find it and quote it."
+    }
+];
+
+const overviewPoints = [
+    "Promotional products put your brand in people's hands—literally. A useful, quality item with your logo creates positive brand associations and keeps you top of mind.",
+    "We're not a catalog company. We consult on what works for your goals, recommend products and decoration methods, and ensure quality output.",
+    "No minimum orders means we work with startups ordering 10 shirts and corporations ordering 10,000. Scale doesn't change our quality or service.",
+    "We offer multiple decoration methods: screen printing, sublimation, embroidery, laser engraving, vinyl, and more. Different items and designs need different approaches.",
+    "Events, employee appreciation, customer gifts, trade shows—promotional products work for many purposes. We help you choose items that fit your specific use case.",
+    "Quality matters. A cheap, poorly printed item reflects badly on your brand. We use quality blanks and professional production to ensure items people actually want."
+];
+
+const approachPoints = [
+    {
+        title: "Right Product for the Purpose",
+        description: "Trade show giveaway? Premium client gift? Employee uniform? Each needs different products and budgets. We help you choose appropriately."
+    },
+    {
+        title: "Quality Over Cheapest Price",
+        description: "We don't race to the bottom. We recommend quality blanks and proper decoration methods. Your brand deserves items people won't throw away."
+    },
+    {
+        title: "Artwork Optimization",
+        description: "Logos don't automatically work on every product. We optimize your artwork for each decoration method—screen printing needs different files than embroidery."
+    },
+    {
+        title: "Reliable Delivery",
+        description: "We understand deadlines matter. Events have dates, launches have schedules. We confirm realistic timelines and deliver on them."
+    }
+];
 ---
 
-<ServicePageTemplate config={promotionalProductsConfig} />
+<ServicePageTemplateV3
+    title="Promotional Products & Custom Printing - Codebrand"
+    description="Custom promotional products: apparel, sublimation, laser engraving, and branded merchandise. No minimums, quality materials, fast turnaround."
+    keywords="promotional products, custom printing, sublimation, laser engraving, branded merchandise, custom apparel, corporate gifts"
+    serviceName="Promotional Products"
+    tagline="Your Brand on Everything"
+    heroDescription="We put your logo on products people actually use. From custom apparel to laser-engraved gifts, we create branded items that extend your reach and leave lasting impressions."
+    heroFeatures={[
+        "No minimum order requirements",
+        "Professional-grade equipment",
+        "Multiple decoration methods",
+        "Fast turnaround (5-7 days)"
+    ]}
+    price="Varies"
+    priceNote="by product and quantity"
+    overviewTitle="Why Promotional Products?"
+    overviewDescription="Promotional products are one of the most cost-effective marketing channels. Useful items with your logo create repeated brand exposure and positive associations—unlike ads that disappear after one view."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="How We Work"
+    approachDescription="We're not just order-takers. We consult on products, methods, and quantities to ensure you get items that represent your brand well."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    faqs={faqs}
+    ctaTitle="Ready to Brand Your Products?"
+    ctaDescription="Tell us what you need—type of product, quantity, and timeline—and we'll provide options and pricing. No commitment, just information."
+/>

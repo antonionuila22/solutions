@@ -1,14 +1,251 @@
 ---
-/**
- * NOTE: This page was migrated to use ServicePageTemplate
- * Original custom sections removed:
- * - Two-column hero layout with image
- * - Portfolio/case study teaser section
- * - Custom technologies section with Tabler Icons
- * These can be re-added using customSections if needed
- */
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { webDevelopmentConfig } from "../../configs/services/web-development.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "Custom Website Development",
+        description: "We build websites from scratch using modern technologies like React, Next.js, and Astro. No templates, no page builders—just clean, performant code tailored to your brand and business goals. Every site is responsive, accessible, and optimized for search engines from day one."
+    },
+    {
+        title: "E-commerce Development",
+        description: "Complete online stores with secure payment processing (Stripe, PayPal, Square), inventory management, shipping integrations, and customer accounts. We build on platforms like Shopify, WooCommerce, or custom solutions depending on your needs and scale."
+    },
+    {
+        title: "Web Application Development",
+        description: "Custom dashboards, client portals, booking systems, CRM tools, and business applications. When off-the-shelf software doesn't fit your workflow, we build solutions that do. Full-stack development with modern frameworks and secure authentication."
+    },
+    {
+        title: "Website Redesign & Migration",
+        description: "Modernize your existing website without losing your SEO rankings or content. We handle the migration from WordPress, Wix, Squarespace, or any platform to a faster, more maintainable solution. Redirect mapping, content transfer, and performance optimization included."
+    },
+    {
+        title: "Landing Pages & Marketing Sites",
+        description: "High-converting landing pages for campaigns, product launches, and lead generation. A/B testing ready, integrated with your CRM and email marketing tools, and optimized for maximum conversions. Fast turnaround for time-sensitive campaigns."
+    },
+    {
+        title: "Website Maintenance & Support",
+        description: "Ongoing support to keep your site secure, fast, and up-to-date. Security patches, plugin updates, performance monitoring, content updates, and technical support. We offer monthly retainer plans or pay-as-you-go support hours."
+    }
+];
+
+const process = [
+    {
+        title: "Discovery & Planning",
+        description: "We start by understanding your business, goals, target audience, and competitors. This phase defines the project scope, sitemap, and technical requirements.",
+        details: [
+            "Business goals and KPI definition",
+            "Target audience analysis",
+            "Competitor research",
+            "Sitemap and content structure",
+            "Technical requirements document"
+        ]
+    },
+    {
+        title: "Design & Prototyping",
+        description: "Before writing any code, you'll see exactly what your site will look like. We create wireframes and visual designs in Figma, getting your approval before development begins.",
+        details: [
+            "Wireframes for key pages",
+            "Visual design mockups",
+            "Mobile and desktop versions",
+            "Interactive prototypes",
+            "Design revisions until approved"
+        ]
+    },
+    {
+        title: "Development & Testing",
+        description: "We build your site with clean, maintainable code. Regular check-ins keep you informed of progress. We test on all browsers and devices before launch.",
+        details: [
+            "Responsive development",
+            "SEO implementation",
+            "Cross-browser testing",
+            "Performance optimization",
+            "Content integration"
+        ]
+    },
+    {
+        title: "Launch & Support",
+        description: "We handle deployment, DNS configuration, SSL setup, and everything needed to go live. After launch, we provide training and ongoing support to ensure your success.",
+        details: [
+            "Deployment to your hosting",
+            "Domain and SSL configuration",
+            "Analytics and tracking setup",
+            "Team training",
+            "30-day post-launch support"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "⚡",
+        title: "Performance First",
+        description: "Every site we build scores 90+ on Google PageSpeed. Fast loading times mean better SEO rankings, lower bounce rates, and more conversions. We optimize images, minimize code, and use modern hosting solutions."
+    },
+    {
+        icon: "🔍",
+        title: "SEO Built-In",
+        description: "We don't treat SEO as an afterthought. Semantic HTML, proper heading structure, meta tags, schema markup, and optimized URLs are standard in every build. Your site will be ready to rank from day one."
+    },
+    {
+        icon: "🔒",
+        title: "You Own Everything",
+        description: "Full source code access, no proprietary lock-in, no monthly platform fees (unless you choose them). You can host anywhere, hire anyone to maintain it, or continue working with us. Your website is truly yours."
+    },
+    {
+        icon: "📱",
+        title: "Mobile-First Approach",
+        description: "Over 60% of web traffic is mobile. We design for phones first, then scale up to tablets and desktops. Every interaction, every button, every form works perfectly on touchscreens."
+    },
+    {
+        icon: "🛡️",
+        title: "Secure & Scalable",
+        description: "HTTPS by default, secure forms, protected admin areas, and regular security updates. We build on platforms that scale—from 100 visitors to 100,000 visitors without breaking."
+    },
+    {
+        icon: "🤝",
+        title: "Ongoing Partnership",
+        description: "We don't disappear after launch. Most clients continue working with us for updates, new features, and strategic improvements. We're invested in your long-term success."
+    }
+];
+
+const packages = [
+    {
+        name: "Starter",
+        price: "$2,500",
+        description: "Perfect for small businesses and professionals",
+        features: [
+            "5-page responsive website",
+            "Mobile-optimized design",
+            "Contact form with email notifications",
+            "Basic SEO setup",
+            "Google Analytics integration",
+            "1 month post-launch support",
+            "2 rounds of revisions"
+        ]
+    },
+    {
+        name: "Professional",
+        price: "$5,000",
+        description: "For growing businesses that need more",
+        popular: true,
+        features: [
+            "Up to 10 pages",
+            "Custom design from scratch",
+            "CMS for easy content updates",
+            "Advanced SEO optimization",
+            "Blog or news section",
+            "Social media integration",
+            "3 months support",
+            "Unlimited revisions"
+        ]
+    },
+    {
+        name: "E-commerce",
+        price: "$10,000+",
+        description: "Full online store with all the features",
+        features: [
+            "Unlimited products",
+            "Payment gateway integration",
+            "Inventory management",
+            "Shipping calculations",
+            "Customer accounts",
+            "Order management dashboard",
+            "6 months support",
+            "Training included"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "How long does it take to build a website?",
+        answer: "Most websites take 4-8 weeks from kickoff to launch. A simple 5-page site can be ready in 3-4 weeks, while complex e-commerce or web applications may take 8-12 weeks. We'll give you a specific timeline during our discovery call based on your project requirements."
+    },
+    {
+        question: "What technologies do you use?",
+        answer: "We primarily build with React, Next.js, and Astro for the frontend, with Node.js or serverless functions for backend needs. For e-commerce, we work with Shopify, WooCommerce, or custom solutions. We choose the right technology based on your specific needs, not just what's trendy."
+    },
+    {
+        question: "Do you provide hosting?",
+        answer: "We recommend and can set up hosting on platforms like Vercel, Netlify, or AWS—but you own the account. Hosting typically costs $0-20/month for most sites. We can also work with your existing hosting provider if you have one."
+    },
+    {
+        question: "Can I update the content myself?",
+        answer: "Absolutely. For most projects, we integrate a CMS (content management system) that lets you edit text, images, and add new pages without touching code. We provide training and documentation so you're comfortable making updates."
+    },
+    {
+        question: "What if I need changes after launch?",
+        answer: "Your package includes a support period for minor fixes and adjustments. For ongoing updates, we offer monthly retainer plans starting at $500/month, or you can request changes on a project basis. Many clients choose the retainer for peace of mind."
+    },
+    {
+        question: "Do you work with clients outside the US?",
+        answer: "Yes, we work with clients worldwide. We're based in the US but have successfully delivered projects for clients in Latin America, Europe, and beyond. We adapt our communication schedule to work across time zones."
+    },
+    {
+        question: "What do you need from me to get started?",
+        answer: "We'll need your brand assets (logo, colors, fonts), content for the site (or we can help you create it), and access to any existing accounts (domain registrar, current hosting, Google Analytics). Beyond that, just your time for feedback sessions and approvals."
+    },
+    {
+        question: "What if I'm not happy with the design?",
+        answer: "We include multiple revision rounds in every project. We don't move to development until you approve the designs. If we're ever completely misaligned, we'll work together to find a solution or part ways professionally—but in 5+ years, that's never happened."
+    }
+];
+
+const overviewPoints = [
+    "Your website is often the first impression customers have of your business. A slow, outdated, or confusing site loses visitors—and sales.",
+    "We build websites that load fast, rank well on Google, and convert visitors into customers. No bloated page builders or slow themes.",
+    "Every site is custom-designed for your brand. We don't use generic templates or one-size-fits-all solutions.",
+    "You get full ownership of your code and content. No vendor lock-in, no surprise fees, no dependency on proprietary platforms.",
+    "Our sites are built to grow with you. Add new pages, features, or integrations as your business evolves.",
+    "We focus on results: more traffic, more leads, more sales. Your website should be a business asset, not just a digital brochure."
+];
+
+const approachPoints = [
+    {
+        title: "Business Goals First",
+        description: "We start every project by understanding what success looks like for you. More leads? Online sales? Brand awareness? Your goals drive every design and development decision."
+    },
+    {
+        title: "User-Centered Design",
+        description: "We design for your customers, not for design awards. Clear navigation, fast loading, easy-to-find information, and obvious calls-to-action. Websites that work for real people."
+    },
+    {
+        title: "Clean, Modern Code",
+        description: "No bloated plugins, no unnecessary dependencies, no technical debt. Our code is clean, documented, and maintainable. Future developers (or you) will thank us."
+    },
+    {
+        title: "Transparent Communication",
+        description: "You'll always know where your project stands. Weekly updates, shared project boards, and quick responses to questions. No surprises, no radio silence."
+    }
+];
 ---
 
-<ServicePageTemplate config={webDevelopmentConfig} />
+<ServicePageTemplateV3
+    title="Web Development Services | Custom Websites & Web Apps - Codebrand"
+    description="Custom website development with React, Next.js, and Astro. Fast, SEO-optimized websites that convert visitors into customers. E-commerce, web apps, and more."
+    keywords="web development, custom website, React, Next.js, Astro, e-commerce, web application, website design, responsive website"
+    serviceName="Web Development"
+    tagline="Websites That Work as Hard as You Do"
+    heroDescription="We build fast, modern websites that help businesses grow. From simple sites to complex applications, we create digital experiences that look great, rank well, and convert visitors into customers."
+    heroFeatures={[
+        "Custom designs—no templates or page builders",
+        "90+ Google PageSpeed scores guaranteed",
+        "Full code ownership—no vendor lock-in",
+        "SEO-optimized from day one"
+    ]}
+    price="$2,500"
+    priceNote="for a 5-page website"
+    overviewTitle="Why Your Website Matters"
+    overviewDescription="In 2024, your website isn't just a digital business card—it's your 24/7 salesperson, your brand ambassador, and often the first touchpoint with potential customers. A well-built website builds trust, generates leads, and drives revenue. A poorly built one does the opposite."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="How We Think About Web Development"
+    approachDescription="We've built over 100 websites for businesses of all sizes. Here's what we've learned makes the difference between a website that collects dust and one that drives results."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Build Your Website?"
+    ctaDescription="Tell us about your project and we'll get back to you within 24 hours with a free consultation and detailed quote."
+/>

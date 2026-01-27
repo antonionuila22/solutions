@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title =
   "Travel Agency Website Design & Tourism Software Solutions | CodeBrand";
@@ -38,6 +40,41 @@ const serviceSchema = {
     ]
   }
 };
+
+// Travel Agency FAQ data
+const travelFaqs = [
+  {
+    question: "How much does a travel agency website cost?",
+    answer: "Travel agency websites start at $4,000 for a professional site with tour packages. Sites with booking systems range from $8,000-$18,000. Full travel platforms with supplier integrations are $25,000+. We provide quotes based on your agency's needs."
+  },
+  {
+    question: "Can customers book trips directly on the website?",
+    answer: "Yes. We build complete booking systems where travelers can search packages, check availability, make reservations, and pay online. Integrates with your back-office for seamless operations."
+  },
+  {
+    question: "Do you integrate with GDS systems like Amadeus or Sabre?",
+    answer: "Absolutely. We integrate with major Global Distribution Systems including Amadeus, Sabre, and Travelport. Display real-time flight, hotel, and car rental availability directly on your website."
+  },
+  {
+    question: "Can I manage tour packages and itineraries online?",
+    answer: "Yes. Our tour management systems let you create, price, and publish packages easily. Build custom itineraries, manage availability, and update content without technical knowledge."
+  },
+  {
+    question: "How long does it take to build a travel website?",
+    answer: "A professional travel website takes 6-8 weeks. Sites with booking systems take 10-14 weeks. Full platforms with GDS integration take 16-24 weeks depending on complexity."
+  },
+  {
+    question: "Do you offer travel CRM solutions?",
+    answer: "Yes. Our travel CRMs track customer preferences, booking history, and communications. Automate follow-ups, send targeted offers, and build lasting relationships with travelers."
+  }
+];
+
+const faqSchema = createFAQSchema(travelFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "Travel Agency", url: "https://codebrand.us/industries/travel-agency" }
+]);
 ---
 
 <Layout
@@ -47,6 +84,9 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"
@@ -1476,6 +1516,21 @@ const serviceSchema = {
         No commitment required • Free initial consultation • Response within 24
         hours
       </p>
+    </div>
+  </section>
+
+  <!-- Travel Agency FAQ Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Travel Agency <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our travel agency website development
+        </p>
+      </div>
+      <FaqDark faqs={travelFaqs} client:visible />
     </div>
   </section>
 

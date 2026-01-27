@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title = "Restaurant Website Design & Online Ordering Systems | CodeBrand";
 const description =
@@ -37,6 +39,41 @@ const serviceSchema = {
     ]
   }
 };
+
+// Restaurant FAQ data
+const restaurantFaqs = [
+  {
+    question: "How much does a restaurant website cost?",
+    answer: "Restaurant websites start at $2,500 for a professional site with menu, hours, and contact info. Online ordering systems add $3,000-$8,000. Full custom ordering platforms with delivery management are $10,000-$25,000. We provide quotes based on your specific needs."
+  },
+  {
+    question: "Can you build an online ordering system for my restaurant?",
+    answer: "Yes. We build custom online ordering systems that integrate with your kitchen workflow. Features include real-time order tracking, scheduled orders, delivery zones, payment processing, and POS integration. Own your platform instead of paying high commission fees."
+  },
+  {
+    question: "Do you create QR code digital menus?",
+    answer: "Absolutely. We create beautiful digital menus accessible via QR code. Customers scan and see your full menu with photos, descriptions, and prices. You can update items and prices instantly without reprinting."
+  },
+  {
+    question: "Can you integrate with my POS system?",
+    answer: "Yes. We integrate with popular restaurant POS systems including Toast, Square, Clover, and Lightspeed. Online orders sync directly to your kitchen, reducing manual entry and errors."
+  },
+  {
+    question: "How long does it take to build a restaurant website?",
+    answer: "A standard restaurant website takes 3-4 weeks. Sites with online ordering take 6-8 weeks. Full delivery platforms with driver management take 10-14 weeks. We can expedite for urgent launches."
+  },
+  {
+    question: "Do you offer table reservation systems?",
+    answer: "Yes. We build custom reservation systems or integrate with OpenTable, Resy, and other platforms. Features include table management, waitlist handling, automated confirmations, and no-show tracking."
+  }
+];
+
+const faqSchema = createFAQSchema(restaurantFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "Restaurants", url: "https://codebrand.us/industries/restaurants" }
+]);
 ---
 
 <Layout
@@ -46,6 +83,8 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero Section -->
   <section
@@ -1067,6 +1106,21 @@ const serviceSchema = {
         No commitment required • Free initial consultation • Go live in 2-3
         weeks
       </p>
+    </div>
+  </section>
+
+  <!-- Restaurant FAQ Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Restaurant Development <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our restaurant website and ordering systems
+        </p>
+      </div>
+      <FaqDark faqs={restaurantFaqs} client:visible />
     </div>
   </section>
 

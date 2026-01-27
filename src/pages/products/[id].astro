@@ -31,6 +31,32 @@ const seoKeywords = `${title.toLowerCase()}, codebrand services, digital service
 // Extract numeric price for schema
 const numericPrice = price ? price.replace(/[^0-9.]/g, '') : "0";
 
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://codebrand.us"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Products",
+      "item": "https://codebrand.us/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title,
+      "item": `https://codebrand.us/products/${product.slug}`
+    }
+  ]
+};
+
 // Product Schema for rich snippets
 const productSchema = {
   "@context": "https://schema.org",
@@ -72,6 +98,7 @@ const productSchema = {
 >
   <!-- Product Schema for rich snippets -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(productSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero section con gradient de fondo -->
   <div class="relative bg-white">

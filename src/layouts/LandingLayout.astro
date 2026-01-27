@@ -18,6 +18,50 @@ image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 const canonicalUrl = Astro.url?.href || "https://codebrand.us";
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_es";
+
+// LocalBusiness Schema for landing pages
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Codebrand Digital Agency",
+  "description": description,
+  "url": "https://codebrand.us",
+  "logo": "https://codebrand.us/iconcodebrand.svg",
+  "image": image,
+  "telephone": "+504-3272-2973",
+  "email": "info@codebrand.es",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tegucigalpa",
+    "addressRegion": "Francisco Morazán",
+    "addressCountry": "HN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "14.0723",
+    "longitude": "-87.1921"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Honduras" },
+    { "@type": "Country", "name": "Spain" },
+    { "@type": "Country", "name": "Mexico" }
+  ],
+  "serviceType": ["Web Development", "UI/UX Design", "Digital Marketing", "SEO", "Branding"],
+  "sameAs": [
+    "https://www.linkedin.com/company/codebrand-es",
+    "https://x.com/Codebrand_es",
+    "https://www.facebook.com/p/Codebrand-100087321501519/"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
 ---
 
 <!doctype html>
@@ -87,6 +131,12 @@ const twitterHandle = "@codebrand_es";
     <link rel="alternate" hreflang="es" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
+    <!-- Geographic Meta Tags -->
+    <meta name="geo.region" content="HN-FM" />
+    <meta name="geo.placename" content="Tegucigalpa" />
+    <meta name="ICBM" content="14.0723, -87.1921" />
+    <meta name="geo.position" content="14.0723;-87.1921" />
+
     <!-- Theme and Application -->
     <meta name="theme-color" content="#ea580c" />
     <meta name="color-scheme" content="light" />
@@ -129,6 +179,9 @@ const twitterHandle = "@codebrand_es";
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
     <slot name="head" />
     <ClientRouter />
   </head>

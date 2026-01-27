@@ -1,6 +1,252 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { renderingConfig } from "../../configs/services/3d-rendering.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "Architectural Visualization",
+        description: "Photorealistic renders of buildings, interiors, and developments—before they're built. Exterior views, interior spaces, aerial perspectives. For architects, developers, and real estate marketing. CAD-based accuracy with artistic presentation."
+    },
+    {
+        title: "Interior Design Rendering",
+        description: "Visualize interior spaces with realistic materials, furniture, and lighting. Help clients see the finished room before committing. Multiple material options, lighting scenarios, and layout variations rendered for comparison."
+    },
+    {
+        title: "Product Rendering",
+        description: "High-quality 3D product images for e-commerce, catalogs, and marketing. Every angle, every color variant, perfect lighting—without the expense and limitations of traditional photography. Ideal when products aren't yet manufactured."
+    },
+    {
+        title: "360° Virtual Tours",
+        description: "Interactive panoramic experiences that let viewers explore spaces. Click to move room-to-room, zoom in on details, look around freely. Perfect for real estate, hospitality, and showroom marketing."
+    },
+    {
+        title: "Real Estate Marketing Renders",
+        description: "Pre-construction visualization that sells properties before ground is broken. Exterior shots, interior finishes, amenity spaces, and neighborhood context. The marketing materials that make projects fundable and sellable."
+    },
+    {
+        title: "Technical & Industrial Visualization",
+        description: "Cutaway views, assembly animations, and technical illustrations. Visualize machinery, processes, and products in ways photography can't capture. For manufacturing, engineering, and technical documentation."
+    }
+];
+
+const process = [
+    {
+        title: "Project Brief & Files",
+        description: "We gather your requirements, reference materials, and technical files. CAD drawings, floor plans, product specs—whatever you have becomes our starting point.",
+        details: [
+            "Requirement gathering",
+            "CAD/drawings collection",
+            "Reference imagery review",
+            "Material and finish selection",
+            "Camera angle planning",
+            "Timeline agreement"
+        ]
+    },
+    {
+        title: "3D Modeling",
+        description: "We build accurate 3D models from your files. Geometry, proportions, and details exactly as specified. For products, we model from drawings or physical samples.",
+        details: [
+            "Geometry creation",
+            "Proportion accuracy check",
+            "Detail modeling",
+            "Model review and approval",
+            "Revisions if needed"
+        ]
+    },
+    {
+        title: "Materials & Lighting",
+        description: "We apply realistic textures and materials, then set up lighting that brings the scene to life. This is where renders become photorealistic.",
+        details: [
+            "Material library application",
+            "Custom texture creation",
+            "Lighting design",
+            "Camera composition",
+            "Test renders for approval"
+        ]
+    },
+    {
+        title: "Rendering & Delivery",
+        description: "High-resolution final renders with post-production polish. Delivered in all formats you need—print-ready, web-optimized, and source files.",
+        details: [
+            "High-resolution rendering",
+            "Post-production enhancement",
+            "Color correction",
+            "Final approval",
+            "Multi-format delivery",
+            "Revision rounds if needed"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "📸",
+        title: "Photorealistic Quality",
+        description: "Our renders are indistinguishable from photographs. Perfect lighting, accurate materials, realistic reflections. Presentation quality that impresses clients and investors."
+    },
+    {
+        icon: "⏱️",
+        title: "Fast Turnaround",
+        description: "Most renders delivered within days, not weeks. We have the computing power and workflow optimization to deliver quality quickly."
+    },
+    {
+        icon: "🔄",
+        title: "Unlimited Revisions",
+        description: "Material changes, lighting adjustments, camera angles—we keep refining until you're satisfied. No nickeling and diming for reasonable revisions."
+    },
+    {
+        icon: "💰",
+        title: "Cost Effective",
+        description: "Change materials, angles, and settings without reshooting. One 3D model generates unlimited variations. More economical than photography for many applications."
+    },
+    {
+        icon: "🎯",
+        title: "Technical Accuracy",
+        description: "We work from CAD files and technical drawings. Proportions and details are accurate—this isn't artistic interpretation, it's visualization of real specifications."
+    },
+    {
+        icon: "🖼️",
+        title: "Multiple Outputs",
+        description: "Still images, animations, 360° tours, AR/VR assets—all from the same 3D model. Build once, render many times for different needs."
+    }
+];
+
+const packages = [
+    {
+        name: "Single Render",
+        price: "$300",
+        description: "One high-quality image",
+        features: [
+            "1 photorealistic render",
+            "Up to 4K resolution",
+            "Basic modeling (or use your model)",
+            "Material setup",
+            "Professional lighting",
+            "1 revision round",
+            "3-5 day delivery"
+        ]
+    },
+    {
+        name: "Visualization Package",
+        price: "$1,200",
+        description: "Multiple views of one project",
+        popular: true,
+        features: [
+            "5 photorealistic renders",
+            "Interior and/or exterior",
+            "Custom modeling included",
+            "Material variations",
+            "Day/night lighting options",
+            "2 revision rounds",
+            "5-7 day delivery"
+        ]
+    },
+    {
+        name: "Full Project",
+        price: "$3,000+",
+        description: "Complete visualization solution",
+        features: [
+            "10+ renders",
+            "Complex modeling",
+            "Multiple spaces/products",
+            "360° virtual tour option",
+            "Animation option",
+            "Unlimited revisions",
+            "Priority delivery",
+            "Source files included"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "What files do you need to start?",
+        answer: "Ideally: CAD files (DWG, DXF), floor plans, elevations, and material specifications. For products: technical drawings, physical samples, or detailed photos from multiple angles. Don't have CAD? We can work from sketches, photos, and measurements—just takes a bit longer."
+    },
+    {
+        question: "How realistic are the renders?",
+        answer: "Very. We use physically-based rendering with accurate light simulation. Our renders are regularly mistaken for photographs. For real estate, clients often can't tell renders from photos of finished spaces."
+    },
+    {
+        question: "How long does rendering take?",
+        answer: "Single renders: 3-5 days. Visualization packages: 5-7 days. Complex projects: 2-3 weeks. Timeline depends on modeling complexity and revision cycles. Rush delivery available when you need it."
+    },
+    {
+        question: "Can you match specific materials and finishes?",
+        answer: "Yes. We work from material samples, manufacturer specifications, or reference photos. Flooring, countertops, fabrics, metals, wood grains—we match what you specify. We have extensive material libraries and create custom textures when needed."
+    },
+    {
+        question: "Do you do architectural animations?",
+        answer: "Yes—walkthroughs, flyovers, and animated sequences. Animation is priced separately based on length and complexity. The 3D model we create for stills can be animated without starting over."
+    },
+    {
+        question: "What resolution do you deliver?",
+        answer: "Standard delivery is 4K (3840x2160). We can render higher for large-format printing—8K or custom sizes as needed. We also provide web-optimized versions for online use."
+    },
+    {
+        question: "Can you make changes after the render is done?",
+        answer: "Usually yes, and that's a major advantage of 3D. Material changes, furniture swaps, and lighting adjustments are straightforward. Major structural changes may require additional modeling time. We include revision rounds in all packages."
+    },
+    {
+        question: "Do you work with real estate developers?",
+        answer: "Extensively. Pre-construction visualization is a significant part of our work. We understand marketing timelines, financing milestones, and what makes renders sell properties. Many clients work with us from land acquisition through project completion."
+    }
+];
+
+const overviewPoints = [
+    "3D rendering lets you visualize projects before they exist. Sell properties before construction, show products before manufacturing, test designs before commitment.",
+    "Photorealistic rendering has become indistinguishable from photography. Modern rendering technology simulates real light physics—the results look real because they're calculated like real light.",
+    "Unlike photography, 3D is infinitely flexible. Change materials, lighting, camera angles, time of day—all without reshooting. One model, unlimited variations.",
+    "For products, 3D rendering often costs less than photography while offering more flexibility. No studio rental, no shipping samples, no scheduling constraints.",
+    "Real estate developers use our renders to secure financing and pre-sell units. When you're selling something that doesn't exist yet, visualization is essential.",
+    "We work from technical files (CAD, architectural drawings) so proportions and details are accurate. This isn't artistic interpretation—it's technical visualization."
+];
+
+const approachPoints = [
+    {
+        title: "Technical Accuracy First",
+        description: "We work from your CAD files, drawings, and specifications. The goal is accurate visualization, not artistic reinterpretation. What we render is what gets built."
+    },
+    {
+        title: "Realistic Light Simulation",
+        description: "We use physically-based rendering that simulates actual light behavior. Reflections, shadows, and materials behave like they do in reality. That's what makes our renders believable."
+    },
+    {
+        title: "Efficient Revision Process",
+        description: "We show test renders early and often. You approve modeling before we start on materials. You approve lighting before final renders. No surprises at the end."
+    },
+    {
+        title: "Delivery Flexibility",
+        description: "Print-ready files, web-optimized versions, and source files when needed. We deliver in formats that work for your use case, not just what's convenient for us."
+    }
+];
 ---
 
-<ServicePageTemplate config={renderingConfig} />
+<ServicePageTemplateV3
+    title="3D Rendering Services | Architectural & Product Visualization - Codebrand"
+    description="Professional 3D rendering: architectural visualization, product rendering, interior design, and virtual tours. Photorealistic quality, fast turnaround."
+    keywords="3D rendering, architectural visualization, product rendering, interior design, virtual tours, photorealistic rendering, CGI"
+    serviceName="3D Rendering"
+    tagline="See It Before You Build It"
+    heroDescription="We create photorealistic 3D renders that bring projects to life before they exist. Architectural visualization, product rendering, and virtual tours—see exactly what you're building, selling, or creating."
+    heroFeatures={[
+        "Photorealistic quality",
+        "CAD-accurate modeling",
+        "Fast turnaround (days, not weeks)",
+        "Unlimited revision rounds"
+    ]}
+    price="$300"
+    priceNote="per render / Packages from $1,200"
+    overviewTitle="What is 3D Rendering?"
+    overviewDescription="3D rendering creates photorealistic images of objects, spaces, and products that don't yet exist—or can't be easily photographed. From architectural concepts to product prototypes, visualization makes the intangible tangible."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="How We Approach 3D Rendering"
+    approachDescription="Rendering that looks real requires both technical precision and artistic sensibility. Here's how we deliver both."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Visualize Your Project?"
+    ctaDescription="Send us your plans, drawings, or product specs and we'll provide a quote. See your project in photorealistic detail before committing to build."
+/>

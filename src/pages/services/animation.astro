@@ -1,6 +1,255 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { animationConfig } from "../../configs/services/animation.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "2D Motion Graphics",
+        description: "Animated graphics, kinetic typography, infographics, and visual effects. Perfect for explainer content, social media, presentations, and video enhancement. Modern, eye-catching motion design that brings static content to life."
+    },
+    {
+        title: "Explainer Videos",
+        description: "Complex ideas made simple through animation. Product explanations, process walkthroughs, service descriptions—animated explainers help audiences understand what you do and why it matters."
+    },
+    {
+        title: "Logo Animation",
+        description: "Your logo, but alive. Animated logo reveals for video intros, website headers, presentations, and social content. From subtle motion to dramatic reveals, we bring your brand mark to life."
+    },
+    {
+        title: "3D Animation",
+        description: "When 2D isn't enough. Product animations, architectural walkthroughs, character animation, and technical visualizations. Photorealistic or stylized—whatever serves your story best."
+    },
+    {
+        title: "Character Animation",
+        description: "Custom characters that represent your brand and engage audiences. From simple mascots to complex character narratives, we design and animate characters that connect."
+    },
+    {
+        title: "Social Media Animations",
+        description: "Animated content optimized for social platforms. GIFs, short loops, animated posts, and Stories content. Stand out in feeds with motion that catches the eye."
+    }
+];
+
+const process = [
+    {
+        title: "Concept & Storyboard",
+        description: "We develop the creative concept, write scripts if needed, and create storyboards showing every scene before animation begins.",
+        details: [
+            "Creative brief development",
+            "Script writing",
+            "Visual style exploration",
+            "Storyboard creation",
+            "Timing and pacing plan",
+            "Client approval checkpoint"
+        ]
+    },
+    {
+        title: "Design & Asset Creation",
+        description: "All visual elements are designed: characters, environments, graphics, and icons. Everything is prepared before animation starts.",
+        details: [
+            "Character design (if needed)",
+            "Environment/background design",
+            "Icon and graphic creation",
+            "Color palette finalization",
+            "Asset organization",
+            "Design approval"
+        ]
+    },
+    {
+        title: "Animation",
+        description: "Assets come to life. Frame by frame, scene by scene, we animate according to the approved storyboard. Regular check-ins keep you informed.",
+        details: [
+            "Scene-by-scene animation",
+            "Motion timing refinement",
+            "Transitions and effects",
+            "Progress reviews",
+            "Animation revisions",
+            "Final animation polish"
+        ]
+    },
+    {
+        title: "Sound & Delivery",
+        description: "Audio brings it all together. Music, sound effects, and voiceover (if needed) are added. Final exports in all required formats.",
+        details: [
+            "Music selection/licensing",
+            "Sound effects",
+            "Voiceover integration",
+            "Audio mixing",
+            "Final review",
+            "Multi-format delivery"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "🎨",
+        title: "Custom Style",
+        description: "No template animations. Every project is designed from scratch to match your brand. Your animation looks like yours, not like everyone else's."
+    },
+    {
+        icon: "💡",
+        title: "Simplify Complexity",
+        description: "Animation excels at explaining complicated ideas. Visualize processes, data, and concepts that are hard to capture on camera."
+    },
+    {
+        icon: "🌐",
+        title: "Universal Appeal",
+        description: "Animation transcends language and location. No actors aging, no location restrictions, easy to localize. Content that works globally and stays relevant."
+    },
+    {
+        icon: "📁",
+        title: "Source Files Included",
+        description: "You get the project files (After Effects, Illustrator, etc.). Make future edits, create variations, or have another team extend the work."
+    },
+    {
+        icon: "🔄",
+        title: "Easy Updates",
+        description: "Change text, swap images, update data—animation is easier to revise than live-action. Keep content current without reshooting."
+    },
+    {
+        icon: "⏱️",
+        title: "Timeless Content",
+        description: "No dated hairstyles, old phones, or out-of-fashion wardrobes. Animation ages gracefully and stays relevant for years."
+    }
+];
+
+const packages = [
+    {
+        name: "Logo Animation",
+        price: "$400",
+        description: "Animated logo reveal",
+        features: [
+            "5-10 second animation",
+            "2 concept options",
+            "Sound design",
+            "Transparent background version",
+            "Web and social formats",
+            "1 revision round",
+            "Source files included"
+        ]
+    },
+    {
+        name: "Motion Graphics",
+        price: "$1,500",
+        description: "Animated video content",
+        popular: true,
+        features: [
+            "30-60 second animation",
+            "Custom graphic design",
+            "Storyboard included",
+            "Professional voiceover",
+            "Licensed music",
+            "All platform formats",
+            "2 revision rounds",
+            "Source files"
+        ]
+    },
+    {
+        name: "Explainer Video",
+        price: "$3,500+",
+        description: "Full animated explainer",
+        features: [
+            "60-120 second animation",
+            "Script development",
+            "Custom character design",
+            "Professional storyboard",
+            "Voiceover and music",
+            "Sound design",
+            "Unlimited revisions",
+            "Full source files"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "What's the difference between 2D and 3D animation?",
+        answer: "2D animation is flat—like traditional cartoons or motion graphics. It's generally faster and more affordable. 3D animation has depth and dimension—think Pixar movies or product spins. 3D is more complex and costly but can achieve photorealism. We recommend based on your goals and budget."
+    },
+    {
+        question: "How long does animation take?",
+        answer: "Logo animations: 1 week. Motion graphics (30-60 sec): 2-3 weeks. Explainer videos: 4-6 weeks. 3D animation: 4-8 weeks depending on complexity. Animation is labor-intensive—every second of smooth motion takes significant work."
+    },
+    {
+        question: "Do you write scripts for explainer videos?",
+        answer: "Yes. For explainer videos, we typically write the script as part of the process. We research your product/service, identify key messages, and write a script that's engaging and the right length. You approve before we animate."
+    },
+    {
+        question: "Can you match our brand style?",
+        answer: "Absolutely. We design animations to extend your existing brand identity. Your colors, typography, and visual style inform the animation design. If you don't have established guidelines, we can develop an animation style that fits your brand personality."
+    },
+    {
+        question: "Do you provide voiceover?",
+        answer: "Yes. We work with professional voiceover artists in multiple languages and styles. You'll hear samples and approve the voice before recording. Voiceover is included in our Motion Graphics and Explainer packages."
+    },
+    {
+        question: "What software do you use?",
+        answer: "2D: Adobe After Effects, Adobe Illustrator, Adobe Animate. 3D: Cinema 4D, Blender, Maya. We deliver source files so you (or another designer) can make future edits."
+    },
+    {
+        question: "Can animations be updated later?",
+        answer: "Yes—that's a major advantage of animation. Text changes, color updates, new data—we can modify the animation without starting over. We provide source files, so you can also make simple updates yourself or have another team do it."
+    },
+    {
+        question: "What do you need to get started?",
+        answer: "Your brand assets (logo, colors, fonts), information about what you want to explain or promote, and any examples of animation styles you like. For explainer videos, we'll also need product/service details for script writing."
+    }
+];
+
+const overviewPoints = [
+    "Animation grabs attention in ways static content can't. Movement naturally draws the eye. In crowded feeds and busy websites, animation stands out.",
+    "Complex ideas become clear through animation. Show processes, explain abstractions, visualize data—animation makes the intangible tangible.",
+    "Animation is infinitely flexible. No location constraints, no actor schedules, no weather delays. Create anything you can imagine.",
+    "Animated content is evergreen. No dated fashion, aging faces, or outdated settings. Your animation stays relevant for years.",
+    "We design custom animations—no templates. Your animation reflects your brand, not a generic style everyone else is using.",
+    "Animation is shareable. Engaging animated content gets watched, liked, and shared. It's social media fuel."
+];
+
+const approachPoints = [
+    {
+        title: "Story and Message First",
+        description: "Cool animation that doesn't communicate is pointless. We start with what you need to say, then figure out the best way to animate it."
+    },
+    {
+        title: "Design Before Motion",
+        description: "We nail the visual design before animating. You approve static frames so there are no surprises when things start moving."
+    },
+    {
+        title: "Purposeful Motion",
+        description: "Every movement should serve communication. We don't add animation for animation's sake—motion guides attention and reinforces message."
+    },
+    {
+        title: "Delivery Flexibility",
+        description: "We provide source files and multiple export formats. You're not locked into coming back to us for every small change or new format needed."
+    }
+];
 ---
 
-<ServicePageTemplate config={animationConfig} />
+<ServicePageTemplateV3
+    title="2D & 3D Animation Services | Motion Graphics - Codebrand"
+    description="Professional animation services: motion graphics, explainer videos, logo animation, and 3D animation. Custom animation that explains, engages, and converts."
+    keywords="animation services, motion graphics, explainer videos, 2D animation, 3D animation, logo animation, animated video"
+    serviceName="Animation"
+    tagline="Bring Your Ideas to Life"
+    heroDescription="We create custom animations that explain complex ideas, showcase products, and capture attention. From simple motion graphics to full explainer videos, we animate your vision with style."
+    heroFeatures={[
+        "Custom design—no templates",
+        "2D motion graphics and 3D animation",
+        "Script and storyboard included",
+        "Source files delivered"
+    ]}
+    price="$400"
+    priceNote="for logo animation / From $1,500 for motion graphics"
+    overviewTitle="Why Animation?"
+    overviewDescription="Animation does what live video can't: visualize the invisible, simplify the complex, and create worlds that don't exist. When you need to explain, demonstrate, or captivate—animation delivers."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="How We Approach Animation"
+    approachDescription="Great animation isn't just technique—it's communication. Here's how we ensure your animation actually works."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Animate Your Vision?"
+    ctaDescription="Tell us what you want to bring to life and we'll show you what's possible. From simple motion to complex narratives, we'll find the right approach for your project."
+/>

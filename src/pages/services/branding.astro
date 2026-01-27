@@ -1,6 +1,251 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { brandingConfig } from "../../configs/services/branding.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "Logo Design",
+        description: "Your logo is the face of your brand—it needs to work everywhere, at any size, in any context. We create distinctive, memorable logos through a process of research, sketching, refinement, and testing. You'll see multiple concepts and iterations until we land on something perfect."
+    },
+    {
+        title: "Visual Identity System",
+        description: "A logo alone isn't a brand. We develop complete visual systems: primary and secondary color palettes, typography pairings, graphic elements, photography style, iconography, and patterns. Everything you need to look consistent across all touchpoints."
+    },
+    {
+        title: "Brand Strategy & Positioning",
+        description: "Before we design anything, we help you define who you are. Your mission, values, personality, target audience, and competitive positioning. This strategic foundation ensures your visual identity communicates the right message to the right people."
+    },
+    {
+        title: "Brand Guidelines",
+        description: "Comprehensive documentation showing exactly how to use your brand. Logo usage rules, color specifications (CMYK, RGB, HEX, Pantone), typography guidelines, voice and tone guidance, and do's and don'ts. Everything your team or vendors need to stay on-brand."
+    },
+    {
+        title: "Business Stationery & Collateral",
+        description: "Business cards, letterheads, envelopes, email signatures, presentations templates, and essential marketing materials. First impressions matter—every touchpoint should reinforce your brand professionally."
+    },
+    {
+        title: "Brand Refresh & Rebranding",
+        description: "Existing brand feeling outdated? We can modernize without losing recognition, or help you start fresh if needed. We analyze what's working, what isn't, and create a path forward that respects your equity while moving you ahead."
+    }
+];
+
+const process = [
+    {
+        title: "Discovery & Research",
+        description: "We dive deep into your business, market, and competitors. Understanding your story, audience, and goals shapes everything that follows.",
+        details: [
+            "Stakeholder interviews",
+            "Competitive landscape analysis",
+            "Target audience definition",
+            "Industry and market research",
+            "Brand audit (if rebranding)"
+        ]
+    },
+    {
+        title: "Strategy & Positioning",
+        description: "We define your brand's strategic foundation. Who you are, what you stand for, and how you're different from competitors.",
+        details: [
+            "Brand positioning statement",
+            "Mission and vision clarity",
+            "Brand personality definition",
+            "Value proposition",
+            "Messaging framework"
+        ]
+    },
+    {
+        title: "Creative Exploration",
+        description: "Sketches, concepts, and iterations. We explore multiple directions, present options, gather feedback, and refine until we hit the mark.",
+        details: [
+            "Logo concept development (3-5 directions)",
+            "Color palette exploration",
+            "Typography selection",
+            "Visual style development",
+            "Feedback and iteration rounds"
+        ]
+    },
+    {
+        title: "Refinement & Delivery",
+        description: "Final polish on selected concepts, production of all assets and formats, and delivery of comprehensive brand guidelines.",
+        details: [
+            "Logo finalization (all formats)",
+            "Complete visual identity system",
+            "Brand guidelines document",
+            "Asset files (print and digital)",
+            "Implementation support"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "🎯",
+        title: "Strategy-Led Design",
+        description: "We don't just make things look nice—we make them mean something. Every color, shape, and font choice is intentional, supporting your brand's strategic position and connecting with your audience."
+    },
+    {
+        icon: "⏱️",
+        title: "Built to Last",
+        description: "Trendy designs age poorly. We create timeless brands that stay relevant for years, balancing contemporary aesthetics with classic design principles that endure."
+    },
+    {
+        icon: "📦",
+        title: "Complete Package",
+        description: "You get everything you need: logo files in every format (AI, EPS, SVG, PNG, JPG), color codes for print and digital, typography licenses, guidelines document, and ready-to-use templates."
+    },
+    {
+        icon: "🔄",
+        title: "Iterative Process",
+        description: "Branding is collaborative. You're involved at every stage, providing input and feedback. We refine until you love it—no settling for 'good enough' on something this important."
+    },
+    {
+        icon: "🌐",
+        title: "Versatile Applications",
+        description: "Your logo needs to work on a business card, a billboard, a website, and embroidered on a hat. We test across applications to ensure it performs everywhere."
+    },
+    {
+        icon: "📝",
+        title: "Clear Documentation",
+        description: "Brand guidelines that your team can actually use. No ambiguity, no guessing. Clear rules and examples so everyone stays on-brand, even without a designer."
+    }
+];
+
+const packages = [
+    {
+        name: "Logo Package",
+        price: "$800",
+        description: "Professional logo for startups and small businesses",
+        features: [
+            "3 initial logo concepts",
+            "2 revision rounds",
+            "Primary logo + variations",
+            "All file formats (AI, SVG, PNG, JPG)",
+            "Black/white versions",
+            "Basic usage guidelines",
+            "1-week turnaround"
+        ]
+    },
+    {
+        name: "Brand Identity",
+        price: "$2,500",
+        description: "Complete visual identity system",
+        popular: true,
+        features: [
+            "Everything in Logo Package",
+            "5 initial concepts",
+            "Color palette (primary + secondary)",
+            "Typography system",
+            "Business card design",
+            "Letterhead design",
+            "Brand guidelines PDF",
+            "3 revision rounds"
+        ]
+    },
+    {
+        name: "Full Branding",
+        price: "$5,000+",
+        description: "Strategy + identity for established businesses",
+        features: [
+            "Brand strategy workshop",
+            "Competitive analysis",
+            "Positioning statement",
+            "Complete visual identity",
+            "Extended collateral design",
+            "Comprehensive guidelines",
+            "Social media templates",
+            "Ongoing support"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "How many logo concepts will I see?",
+        answer: "Our standard packages include 3-5 initial concepts representing different creative directions. You'll choose one direction to refine, and we iterate from there. Most clients find their winner in the first round, but we keep exploring until you're confident in the choice."
+    },
+    {
+        question: "How long does branding take?",
+        answer: "A logo-only project takes 1-2 weeks. A complete brand identity takes 3-4 weeks. Full branding with strategy takes 6-8 weeks. Timeline depends on your feedback speed—we can move fast if you can. Rush options available for urgent projects."
+    },
+    {
+        question: "What if I don't like any of the initial concepts?",
+        answer: "It rarely happens because we do discovery work upfront. But if it does, we dig into why, gather more direction, and create a new round of concepts. Our goal is your genuine excitement about your brand, and we'll keep working until we get there."
+    },
+    {
+        question: "Do I own the final logo and brand assets?",
+        answer: "Yes, 100%. Upon final payment, you receive full ownership of all deliverables. We don't retain any rights to use your brand—it's entirely yours. You'll get source files (Adobe Illustrator) so you or any designer can edit them in the future."
+    },
+    {
+        question: "Can you match my existing brand colors/style?",
+        answer: "Absolutely. If you have existing brand elements you want to keep, we incorporate them. Brand refreshes and extensions are common—updating a logo while maintaining color equity, or creating a sub-brand that connects to the parent. We'll respect what's working."
+    },
+    {
+        question: "What's the difference between a logo and a brand?",
+        answer: "A logo is one element of a brand—like a face is one part of a person. A brand includes: visual identity (logo, colors, typography, imagery), messaging (voice, tone, key messages), and strategy (positioning, values, personality). The logo is important, but it's not the whole story."
+    },
+    {
+        question: "Do you do brand naming?",
+        answer: "Yes, though it's typically an add-on service. Brand naming involves brainstorming, trademark screening, domain availability checking, and linguistic testing. It's a significant undertaking—expect 2-3 weeks and additional cost. Happy to discuss if you need it."
+    },
+    {
+        question: "What do you need from me to get started?",
+        answer: "A brief about your business: what you do, who your customers are, who your competitors are, and any brands you admire (in or outside your industry). If you have existing materials or a previous logo, share those too. The more context, the better our starting point."
+    }
+];
+
+const overviewPoints = [
+    "Your brand is more than a logo—it's the gut feeling people have about your business. Every interaction shapes that feeling, and visual consistency builds trust and recognition.",
+    "In crowded markets, strong branding is competitive advantage. It's the difference between being a commodity competing on price and being a recognized name people seek out.",
+    "We don't follow trends blindly. Trendy logos feel dated in 3 years. We aim for timeless designs that stay relevant for a decade or more—think Nike, Apple, Coca-Cola.",
+    "Branding isn't just for big companies. Small businesses benefit even more—consistent, professional branding makes you look established and trustworthy from day one.",
+    "Good branding makes marketing easier. When your visual identity is defined and consistent, every piece of content, every ad, every email reinforces recognition.",
+    "We create brands that work everywhere: screens, print, signage, merchandise. A logo that only works in one context isn't a good logo."
+];
+
+const approachPoints = [
+    {
+        title: "Research Before Design",
+        description: "We don't open design software until we understand your business, audience, and competitive landscape. Strategy informs design—not the other way around."
+    },
+    {
+        title: "Meaning Over Decoration",
+        description: "Every design element should communicate something. We don't add decorative flourishes for their own sake. Simple, meaningful, memorable."
+    },
+    {
+        title: "Versatility is Required",
+        description: "A logo that only works in one color, one size, or one context isn't a good logo. We test across applications and ensure your brand works everywhere it needs to."
+    },
+    {
+        title: "Collaboration, Not Dictation",
+        description: "You know your business better than we do. We bring design expertise; you bring business insight. The best brands emerge from that partnership."
+    }
+];
 ---
 
-<ServicePageTemplate config={brandingConfig} />
+<ServicePageTemplateV3
+    title="Branding Services | Logo Design & Brand Identity - Codebrand"
+    description="Professional branding services: logo design, visual identity, brand strategy, and guidelines. Create a memorable brand that stands out and connects with your audience."
+    keywords="branding, logo design, brand identity, visual identity, brand guidelines, corporate identity, brand strategy, rebranding"
+    serviceName="Branding"
+    tagline="Build a Brand People Remember"
+    heroDescription="We create visual identities that capture who you are, resonate with your audience, and stand the test of time. From logo design to complete brand systems, we help businesses look as good as they are."
+    heroFeatures={[
+        "Strategic approach—design with purpose",
+        "Multiple concepts—you choose the direction",
+        "All file formats—print and digital ready",
+        "Complete ownership—no licensing restrictions"
+    ]}
+    price="$800"
+    priceNote="for logo design / From $2,500 for full identity"
+    overviewTitle="What is Branding?"
+    overviewDescription="Branding is how the world perceives your business. It's the visual signals—logo, colors, typography—that trigger recognition and emotion. Strong branding builds trust, attracts the right customers, and creates lasting value."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="Our Branding Philosophy"
+    approachDescription="After creating brands for startups, established businesses, and everything in between, we've learned what separates forgettable brands from memorable ones."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Build Your Brand?"
+    ctaDescription="Tell us about your business and we'll discuss how we can help you create a brand identity that makes you proud and your customers remember."
+/>

@@ -1,6 +1,250 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { uxUiConfig } from "../../configs/services/ux-ui.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "User Research & Discovery",
+        description: "We don't design based on assumptions. Through user interviews, surveys, analytics review, and competitive analysis, we understand who your users are, what they need, and how they behave. This research forms the foundation of every design decision we make."
+    },
+    {
+        title: "Information Architecture",
+        description: "Before designing screens, we organize your content logically. We create sitemaps, user flows, and content hierarchies that help users find what they need quickly. Good IA is invisible—when it's done right, everything just makes sense."
+    },
+    {
+        title: "Wireframing & Prototyping",
+        description: "Low-fidelity wireframes let us test structure and flow before investing in visual design. Interactive prototypes in Figma allow stakeholders and users to click through the experience and provide feedback early—when changes are cheap."
+    },
+    {
+        title: "UI Design & Visual Design",
+        description: "Pixel-perfect interface designs that bring your brand to life. We obsess over typography, spacing, color, and micro-interactions. Every button, form, and component is designed with purpose—to guide users toward their goals and yours."
+    },
+    {
+        title: "Design Systems & Component Libraries",
+        description: "For larger products, we create comprehensive design systems. Reusable components, documented patterns, and consistent styles that scale. Your development team gets organized Figma files with clear specs, not messy artboards."
+    },
+    {
+        title: "Usability Testing & Optimization",
+        description: "We test designs with real users before development. Screen recordings, task analysis, and user feedback reveal friction points we'd never find otherwise. Iterative testing means launching products people actually want to use."
+    }
+];
+
+const process = [
+    {
+        title: "Research & Discovery",
+        description: "We immerse ourselves in your users' world. Understanding their needs, frustrations, and behaviors guides everything that follows.",
+        details: [
+            "Stakeholder interviews",
+            "User research (interviews, surveys)",
+            "Analytics and data review",
+            "Competitive analysis",
+            "User persona development"
+        ]
+    },
+    {
+        title: "Strategy & Information Architecture",
+        description: "We define the structure of your product. How content is organized, how users navigate, and what the key user journeys look like.",
+        details: [
+            "Sitemap creation",
+            "User flow mapping",
+            "Content hierarchy",
+            "Navigation structure",
+            "Feature prioritization"
+        ]
+    },
+    {
+        title: "Design & Prototyping",
+        description: "From wireframes to high-fidelity mockups, we design every screen and interaction. You review and approve before any code is written.",
+        details: [
+            "Low-fidelity wireframes",
+            "High-fidelity UI designs",
+            "Interactive prototypes",
+            "Responsive designs (mobile, tablet, desktop)",
+            "Design iterations based on feedback"
+        ]
+    },
+    {
+        title: "Testing & Handoff",
+        description: "We validate designs with real users, refine based on findings, and deliver developer-ready files with complete specifications.",
+        details: [
+            "Usability testing sessions",
+            "Design refinements",
+            "Design system documentation",
+            "Developer handoff (specs, assets)",
+            "Implementation support"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "🔬",
+        title: "Research-Driven Decisions",
+        description: "Every design choice we make is backed by data—user research, analytics, or testing results. No designing based on personal preferences or trends. Your users' needs drive the solution."
+    },
+    {
+        icon: "🎯",
+        title: "Conversion-Focused Design",
+        description: "Pretty designs that don't convert are useless. We design with business goals in mind: more sign-ups, more purchases, more engagement. UX and business success aren't separate—they're the same thing."
+    },
+    {
+        icon: "📱",
+        title: "Cross-Platform Consistency",
+        description: "Your product works on phones, tablets, and desktops. We design responsive experiences that feel native on every device, maintaining consistency while adapting to each platform's strengths."
+    },
+    {
+        icon: "🧩",
+        title: "Scalable Design Systems",
+        description: "Components that work together, patterns that repeat, styles that stay consistent. Our design systems make development faster and ensure your product looks cohesive as it grows."
+    },
+    {
+        icon: "✅",
+        title: "Developer-Ready Deliverables",
+        description: "No guessing for your dev team. We deliver organized Figma files with proper naming, documented components, clear specs, and exportable assets. Development goes faster when designs are clear."
+    },
+    {
+        icon: "🔄",
+        title: "Iterative & Collaborative",
+        description: "Design isn't a handoff—it's a conversation. We work closely with you and your team throughout the process, incorporating feedback and iterating until we get it right."
+    }
+];
+
+const packages = [
+    {
+        name: "UX Audit",
+        price: "$1,500",
+        description: "Expert review of your existing product",
+        features: [
+            "Heuristic evaluation",
+            "User flow analysis",
+            "Competitive benchmarking",
+            "Accessibility review",
+            "Prioritized recommendations report",
+            "1-hour strategy call",
+            "Delivered in 1-2 weeks"
+        ]
+    },
+    {
+        name: "UI Design",
+        price: "$3,000",
+        description: "Visual design for existing UX",
+        popular: true,
+        features: [
+            "Up to 10 screens",
+            "2 design concepts",
+            "Desktop and mobile versions",
+            "Component library",
+            "Design system basics",
+            "Developer handoff",
+            "2 revision rounds"
+        ]
+    },
+    {
+        name: "Full UX/UI",
+        price: "$6,000+",
+        description: "Complete design from research to handoff",
+        features: [
+            "User research phase",
+            "Information architecture",
+            "Wireframes",
+            "High-fidelity UI design",
+            "Interactive prototype",
+            "Usability testing",
+            "Full design system",
+            "Ongoing support"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "What's the difference between UX and UI design?",
+        answer: "UX (User Experience) design focuses on how a product works—the structure, flow, and functionality. It's about making things easy and intuitive. UI (User Interface) design focuses on how it looks—colors, typography, spacing, and visual polish. Great digital products need both: good UX with bad UI looks unprofessional; good UI with bad UX is frustrating to use."
+    },
+    {
+        question: "Do you work with existing development teams?",
+        answer: "Absolutely. Many clients have internal developers or work with dev agencies. We integrate into your workflow, use your preferred tools, and deliver in formats your team needs. We're also happy to collaborate directly with developers to ensure designs are implemented correctly."
+    },
+    {
+        question: "What tools do you use?",
+        answer: "We design primarily in Figma for its collaboration features and developer handoff capabilities. For prototyping, we use Figma's built-in prototyping or ProtoPie for more complex interactions. For research, we use tools like Hotjar, Google Analytics, and Maze for usability testing."
+    },
+    {
+        question: "Can you work with our existing brand guidelines?",
+        answer: "Yes, and we prefer it. Existing brand guidelines give us constraints that lead to better, more cohesive designs. We'll apply your colors, typography, and brand personality to create interfaces that feel distinctly yours."
+    },
+    {
+        question: "How many revision rounds are included?",
+        answer: "Our packages include 2-3 revision rounds, but honestly, we rarely need them all. We share work early and often, getting alignment throughout the process rather than revealing a big surprise at the end. That said, we'll keep refining until you're happy."
+    },
+    {
+        question: "Do you design for both web and mobile apps?",
+        answer: "Yes. We design responsive websites, web applications, iOS apps, and Android apps. Each platform has its own conventions and guidelines, and we design accordingly. If you need an app and website that feel connected, we ensure visual and interaction consistency across platforms."
+    },
+    {
+        question: "What do I need to provide to get started?",
+        answer: "Ideally: your brand guidelines (logo, colors, fonts), any existing design files, analytics access if available, and—most importantly—context about your users and business goals. If you don't have brand guidelines, we can work with what you have or help you develop them."
+    },
+    {
+        question: "How long does a typical UX/UI project take?",
+        answer: "A UX audit takes 1-2 weeks. UI design for an existing product takes 2-4 weeks. A full UX/UI project with research takes 6-10 weeks depending on scope. We'll give you a specific timeline based on your project's complexity during our initial call."
+    }
+];
+
+const overviewPoints = [
+    "Good design isn't just aesthetic—it directly impacts your bottom line. Users form an opinion about your product in milliseconds, and poor UX costs businesses billions in lost conversions.",
+    "We design interfaces that feel effortless. When users don't have to think about how to use your product, they focus on what they came to do—and they come back.",
+    "Data drives our decisions. We combine user research, analytics, and testing to create designs that solve real problems, not imaginary ones.",
+    "Beautiful UI builds trust. A polished, professional interface signals that your business is legitimate, competent, and worth doing business with.",
+    "We design systems, not just screens. Consistent patterns and reusable components make development faster and ensure your product scales gracefully.",
+    "Accessibility isn't optional. We design for all users, including those with disabilities. Accessible design is better design for everyone."
+];
+
+const approachPoints = [
+    {
+        title: "Users First, Always",
+        description: "We start with empathy. Understanding your users—their goals, frustrations, and behaviors—is the foundation of everything we design. We're not designing for ourselves; we're designing for them."
+    },
+    {
+        title: "Simplicity Over Cleverness",
+        description: "The best interfaces are invisible. We favor clarity over complexity, familiar patterns over novel ones. Users shouldn't need a tutorial to use your product."
+    },
+    {
+        title: "Test Early, Test Often",
+        description: "Assumptions are expensive. We validate designs with real users throughout the process, catching problems when they're cheap to fix rather than after development is complete."
+    },
+    {
+        title: "Design for Development",
+        description: "Great designs that can't be built are worthless. We consider technical constraints, design with components, and communicate clearly with developers to ensure our work translates to code."
+    }
+];
 ---
 
-<ServicePageTemplate config={uxUiConfig} />
+<ServicePageTemplateV3
+    title="UX/UI Design Services | User Experience & Interface Design - Codebrand"
+    description="User experience and interface design that converts. Research-driven UX, pixel-perfect UI, and design systems that scale. From startups to enterprises."
+    keywords="UX design, UI design, user experience, user interface, product design, wireframing, prototyping, Figma, usability testing"
+    serviceName="UX/UI Design"
+    tagline="Design Experiences Users Love"
+    heroDescription="We create digital products that are intuitive, beautiful, and effective. From user research to pixel-perfect interfaces, we design experiences that make complex things feel simple and turn visitors into customers."
+    heroFeatures={[
+        "Research-backed design decisions",
+        "Conversion-optimized interfaces",
+        "Developer-ready Figma files",
+        "Usability testing included"
+    ]}
+    price="$1,500"
+    priceNote="for UX audit / From $3,000 for UI design"
+    overviewTitle="Why UX/UI Design Matters"
+    overviewDescription="Your users don't care about your technology stack or business model—they care about whether your product helps them get things done. Great UX/UI design is the difference between products people love and products they abandon."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="Our Design Philosophy"
+    approachDescription="After designing dozens of digital products, we've developed principles that consistently lead to successful outcomes. Here's how we think about design."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Improve Your Product's Design?"
+    ctaDescription="Whether you need a UX audit of your existing product or a complete redesign, let's talk about how great design can help you reach your goals."
+/>

@@ -1,0 +1,146 @@
+---
+/**
+ * Service Comparison Section
+ * Clean pricing table for website packages
+ */
+
+interface Package {
+    name: string;
+    price: string;
+    description: string;
+    features: string[];
+    cta: string;
+    ctaUrl: string;
+    highlight?: boolean;
+}
+
+const packages: Package[] = [
+    {
+        name: "Basic Website",
+        price: "$2,500",
+        description: "Professional 5-page website",
+        features: [
+            "5 responsive pages",
+            "Mobile-first design",
+            "Basic SEO setup",
+            "Contact form",
+            "1 month support"
+        ],
+        cta: "Get Started",
+        ctaUrl: "/contact?package=basic"
+    },
+    {
+        name: "Professional",
+        price: "$5,000",
+        description: "Advanced site with CMS",
+        features: [
+            "Up to 10 pages",
+            "CMS integration",
+            "Advanced SEO",
+            "Custom animations",
+            "3 months support"
+        ],
+        cta: "Get Started",
+        ctaUrl: "/contact?package=professional",
+        highlight: true
+    },
+    {
+        name: "E-commerce",
+        price: "$10,000+",
+        description: "Full online store",
+        features: [
+            "Unlimited products",
+            "Payment gateway",
+            "Inventory system",
+            "Order management",
+            "6 months support"
+        ],
+        cta: "Get Quote",
+        ctaUrl: "/contact?package=ecommerce"
+    }
+];
+---
+
+<section class="py-16 md:py-20 px-4 bg-slate-50">
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                Website Packages
+            </h2>
+            <p class="text-slate-600">
+                One-time project pricing. Need ongoing support?
+                <a href="/#pricing" class="text-cyan-700 hover:text-orange-500">View retainer plans</a>
+            </p>
+        </div>
+
+        <!-- Packages Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {packages.map((pkg) => (
+                <div
+                    class:list={[
+                        "rounded-2xl p-6 transition-all duration-300",
+                        pkg.highlight
+                            ? "bg-cyan-800 text-white shadow-xl scale-105 relative"
+                            : "bg-white border border-slate-200"
+                    ]}
+                >
+                    {pkg.highlight && (
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
+                        </span>
+                    )}
+
+                    <h3 class:list={[
+                        "text-lg font-bold mb-1",
+                        pkg.highlight ? "text-white" : "text-slate-900"
+                    ]}>
+                        {pkg.name}
+                    </h3>
+
+                    <p class:list={[
+                        "text-sm mb-4",
+                        pkg.highlight ? "text-cyan-100" : "text-slate-600"
+                    ]}>
+                        {pkg.description}
+                    </p>
+
+                    <div class:list={[
+                        "text-3xl font-black mb-6",
+                        pkg.highlight ? "text-white" : "text-cyan-800"
+                    ]}>
+                        {pkg.price}
+                    </div>
+
+                    <ul class="space-y-2 mb-6">
+                        {pkg.features.map((feature) => (
+                            <li class="flex items-center gap-2 text-sm">
+                                <svg class:list={[
+                                    "w-4 h-4 flex-shrink-0",
+                                    pkg.highlight ? "text-green-400" : "text-green-500"
+                                ]} fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class={pkg.highlight ? "text-cyan-100" : "text-slate-700"}>
+                                    {feature}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <a
+                        href={pkg.ctaUrl}
+                        class:list={[
+                            "block w-full py-3 text-center font-semibold rounded-lg transition-colors",
+                            pkg.highlight
+                                ? "bg-white text-cyan-800 hover:bg-orange-500 hover:text-white"
+                                : "bg-slate-900 text-white hover:bg-cyan-700"
+                        ]}
+                    >
+                        {pkg.cta}
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

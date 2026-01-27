@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title =
   "Construction Software & Contractor Website Development | CodeBrand";
@@ -38,6 +40,41 @@ const serviceSchema = {
     ]
   }
 };
+
+// Construction FAQ data
+const constructionFaqs = [
+  {
+    question: "How much does a construction company website cost?",
+    answer: "Construction websites start at $3,500 for a professional site with portfolio and contact forms. Sites with project management features range from $8,000-$20,000. Full bid management platforms are $25,000+. We provide quotes based on your company's needs."
+  },
+  {
+    question: "Can you build project management software for construction?",
+    answer: "Yes. We develop custom project management systems with features like timeline tracking, budget management, document storage, subcontractor coordination, and progress reporting. Accessible from the office or job site."
+  },
+  {
+    question: "Do you integrate with construction software like Procore?",
+    answer: "Absolutely. We integrate with industry-standard tools including Procore, Buildertrend, CoConstruct, and accounting software like QuickBooks. Data flows seamlessly between your systems."
+  },
+  {
+    question: "Can clients track their project progress online?",
+    answer: "Yes. We build client portals where homeowners can view construction progress, photos, timelines, change orders, and communicate with your team. Increases transparency and client satisfaction."
+  },
+  {
+    question: "How long does it take to build a construction website?",
+    answer: "A professional construction website takes 4-6 weeks. Sites with project management features take 10-14 weeks. Full custom platforms take 16-24 weeks depending on complexity."
+  },
+  {
+    question: "Do you offer bid management solutions?",
+    answer: "Yes. Our bid management systems include RFP tracking, subcontractor databases, cost estimation tools, and proposal generation. Streamline your bidding process and win more projects."
+  }
+];
+
+const faqSchema = createFAQSchema(constructionFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "Construction", url: "https://codebrand.us/industries/construction" }
+]);
 ---
 
 <Layout
@@ -47,6 +84,8 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero Section -->
   <section
@@ -1462,6 +1501,21 @@ const serviceSchema = {
         No commitment required • Free initial consultation • Response within 24
         hours
       </p>
+    </div>
+  </section>
+
+  <!-- Construction FAQ Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Construction Development <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our construction software development services
+        </p>
+      </div>
+      <FaqDark faqs={constructionFaqs} client:visible />
     </div>
   </section>
 

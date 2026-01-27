@@ -1,6 +1,251 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { socialMediaConfig } from "../../configs/services/social-media.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "Social Media Graphics & Posts",
+        description: "Custom-designed graphics for Instagram, Facebook, LinkedIn, Twitter, and more. We create eye-catching posts that match your brand and stop the scroll. Each design optimized for platform specifications and best practices."
+    },
+    {
+        title: "Stories & Reels Templates",
+        description: "Instagram Stories, Reels covers, TikTok templates, and vertical video assets. Consistent visual style across all your short-form content. Templates you can reuse or custom designs for each post."
+    },
+    {
+        title: "Content Calendars & Planning",
+        description: "We help plan your content strategy: what to post, when to post, and how it fits together. Monthly content calendars with organized assets so you always know what's coming. No more last-minute scrambling."
+    },
+    {
+        title: "Social Media Template Systems",
+        description: "Reusable Canva or Figma templates customized for your brand. Quote posts, testimonials, announcements, promotions—templates for every content type. Your team can create on-brand content without a designer."
+    },
+    {
+        title: "Profile Optimization",
+        description: "Profile pictures, cover images, and bio optimization for all platforms. First impressions matter—make sure your profiles look professional and communicate what you do clearly."
+    },
+    {
+        title: "Carousel & Multi-Image Posts",
+        description: "Educational carousels, product showcases, and multi-slide content that drives engagement. Perfect for Instagram, LinkedIn, and platforms where swiping means attention."
+    }
+];
+
+const process = [
+    {
+        title: "Brand Review",
+        description: "We analyze your existing brand, content style, and social presence. Understanding what you have helps us build on it consistently.",
+        details: [
+            "Brand asset review",
+            "Current content audit",
+            "Competitor analysis",
+            "Audience insights",
+            "Platform selection"
+        ]
+    },
+    {
+        title: "Style Development",
+        description: "We create a visual style guide for your social media. Colors, fonts, graphic elements, and content formats specific to each platform.",
+        details: [
+            "Social media style guide",
+            "Post format templates",
+            "Color and typography system",
+            "Graphic element library",
+            "Content pillar definition"
+        ]
+    },
+    {
+        title: "Content Creation",
+        description: "We design your posts, stories, and assets according to the approved style and content calendar. Regular delivery keeps your queue full.",
+        details: [
+            "Custom graphic design",
+            "Post copywriting (optional)",
+            "Hashtag research",
+            "Asset organization",
+            "Batch delivery schedule"
+        ]
+    },
+    {
+        title: "Delivery & Support",
+        description: "Organized files delivered to your preferred location—Google Drive, Dropbox, or direct to your scheduling tool. We're available for revisions and questions.",
+        details: [
+            "Organized file delivery",
+            "Platform-specific exports",
+            "Caption suggestions",
+            "Monthly check-in call",
+            "Quick revision turnaround"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "🎨",
+        title: "Consistent Brand Presence",
+        description: "Every post looks like it belongs to your brand. No more random graphics that confuse your audience. Professional, cohesive content that builds recognition."
+    },
+    {
+        icon: "⏰",
+        title: "Time Savings",
+        description: "Stop spending hours creating mediocre graphics. We deliver ready-to-post content so you can focus on running your business and engaging with your audience."
+    },
+    {
+        icon: "📱",
+        title: "Platform Expertise",
+        description: "Each platform has its own dimensions, best practices, and content styles. We design specifically for Instagram, LinkedIn, Facebook, TikTok—wherever you need to be."
+    },
+    {
+        icon: "🔧",
+        title: "Design Only = Simplicity",
+        description: "We create the visuals; you post them. No account access needed, no content approval bottlenecks. Simple, focused service that delivers what you need."
+    },
+    {
+        icon: "📊",
+        title: "Flexible Packages",
+        description: "Need 10 posts a month? 60? We have packages that scale to your content needs without locking you into more than you need."
+    },
+    {
+        icon: "🔄",
+        title: "Quick Turnarounds",
+        description: "Need a last-minute announcement graphic? We build flexibility into our process for urgent requests when you need to move fast."
+    }
+];
+
+const packages = [
+    {
+        name: "Starter",
+        price: "$400/mo",
+        description: "Essential social presence",
+        features: [
+            "10 custom post designs",
+            "2 story/reel covers",
+            "1 content format/platform",
+            "Brand-consistent designs",
+            "Organized file delivery",
+            "1 revision per post",
+            "Monthly planning call"
+        ]
+    },
+    {
+        name: "Growth",
+        price: "$800/mo",
+        description: "Active social presence",
+        popular: true,
+        features: [
+            "25 custom post designs",
+            "8 story/reel covers",
+            "Multiple content formats",
+            "2 platforms optimized",
+            "Content calendar",
+            "2 revisions per post",
+            "Bi-weekly calls",
+            "Caption suggestions"
+        ]
+    },
+    {
+        name: "Scale",
+        price: "$1,500/mo",
+        description: "Full social media design support",
+        features: [
+            "50+ post designs",
+            "20 story/reel covers",
+            "All content formats",
+            "All platforms",
+            "Template system creation",
+            "Unlimited revisions",
+            "Priority support",
+            "Strategy consulting"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "Do you post the content for us?",
+        answer: "No—we focus on design only. We create the graphics and deliver them to you; you handle posting and scheduling. This keeps things simple and means we don't need access to your accounts. If you need full management, we can recommend partners."
+    },
+    {
+        question: "What platforms do you design for?",
+        answer: "Instagram, Facebook, LinkedIn, Twitter/X, TikTok, Pinterest, YouTube thumbnails—any major platform. Each has different dimensions and best practices, and we design accordingly. Just tell us where you're active."
+    },
+    {
+        question: "How do you deliver the files?",
+        answer: "We deliver via Google Drive, Dropbox, or your preferred platform. Files are organized by date or campaign, named clearly, and exported in the right formats for each platform. Some clients prefer direct upload to scheduling tools like Later or Buffer—we can accommodate that too."
+    },
+    {
+        question: "Can I request specific post ideas or topics?",
+        answer: "Absolutely. You can provide specific topics, campaigns, or promotions you want covered. Or you can give us general direction and we'll suggest content ideas. Most clients do a mix—some posts they direct, others they trust us to plan."
+    },
+    {
+        question: "What if I need something outside my monthly package?",
+        answer: "We build flexibility into our process. Occasional extra posts are usually no problem. For consistently higher volume, we'd discuss moving to a larger package. Rush requests for time-sensitive content are accommodated when possible."
+    },
+    {
+        question: "Do you write captions too?",
+        answer: "Our Growth and Scale packages include caption suggestions. We're designers first, but we provide caption ideas and hashtag research to make posting easier. If you need professional copywriting, we can add that or recommend a content writer."
+    },
+    {
+        question: "How does the revision process work?",
+        answer: "After we deliver a batch of designs, you have time to review and request changes. Color tweaks, text edits, layout adjustments—we refine until you're happy. Most posts need zero or one revision because we nail the style early."
+    },
+    {
+        question: "What do you need from us to start?",
+        answer: "Your brand assets (logo, colors, fonts), examples of content you like, any existing brand guidelines, and context about your audience and goals. If you don't have formal guidelines, we'll work with what you have and develop a consistent style."
+    }
+];
+
+const overviewPoints = [
+    "Social media is visual first. People scroll fast—you have a fraction of a second to catch attention. Professional, on-brand graphics stop the scroll and get your message seen.",
+    "Consistency builds recognition. When every post looks like it belongs to your brand, followers develop familiarity and trust. Random, inconsistent graphics undermine your credibility.",
+    "We create the design; you keep control. No account access needed, no third party posting on your behalf. You decide what gets posted and when.",
+    "Different platforms need different approaches. An Instagram carousel is not a LinkedIn post is not a TikTok cover. We optimize for each platform's unique requirements.",
+    "Templates save time long-term. Beyond custom posts, we create reusable templates your team can adapt, maintaining brand consistency even when you're creating in-house.",
+    "Your social media represents your brand 24/7. Make sure it looks as professional as the rest of your business."
+];
+
+const approachPoints = [
+    {
+        title: "Brand-First Design",
+        description: "Every graphic extends your brand identity. We use your colors, fonts, and visual language—your social media should feel like a natural extension of your website and marketing."
+    },
+    {
+        title: "Platform-Native Content",
+        description: "We don't just resize the same graphic for different platforms. We design content that works with each platform's format, audience expectations, and best practices."
+    },
+    {
+        title: "Scroll-Stopping Visuals",
+        description: "Social feeds are noisy. We design for impact—bold, clear, immediately understandable. Your content should demand attention, not blend into the background."
+    },
+    {
+        title: "Organized Delivery",
+        description: "No messy Dropbox folders or lost files. We deliver organized, clearly named assets that make scheduling easy. Your content workflow should be simple."
+    }
+];
 ---
 
-<ServicePageTemplate config={socialMediaConfig} />
+<ServicePageTemplateV3
+    title="Social Media Design Services | Graphics & Content Creation - Codebrand"
+    description="Professional social media design services: custom graphics, post templates, stories, and content calendars. Stand out on Instagram, Facebook, LinkedIn, and more."
+    keywords="social media design, Instagram graphics, social media content, post design, story templates, social media marketing"
+    serviceName="Social Media Design"
+    tagline="Stand Out in Every Feed"
+    heroDescription="We design professional social media content that makes your brand look polished and gets noticed. Custom graphics, templates, and content systems—you handle strategy and posting, we handle the visuals."
+    heroFeatures={[
+        "Custom designs for every platform",
+        "Brand-consistent visual style",
+        "Flexible monthly packages",
+        "Design only—you keep control"
+    ]}
+    price="$400/mo"
+    priceNote="for 10 posts / Larger packages available"
+    overviewTitle="Why Professional Social Media Design?"
+    overviewDescription="In a world where everyone is competing for attention, professional social media content isn't optional—it's essential. First impressions happen in milliseconds. Make yours count with graphics that represent your brand properly."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="How We Approach Social Media Design"
+    approachDescription="Social media moves fast, but brand consistency shouldn't suffer. Here's how we create content that's both timely and on-brand."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Level Up Your Social Media?"
+    ctaDescription="Let's discuss your content needs and create a social media presence that truly represents your brand."
+/>

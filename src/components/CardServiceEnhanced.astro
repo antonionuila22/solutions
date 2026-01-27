@@ -1,0 +1,119 @@
+---
+/**
+ * Enhanced Service Card Component
+ * Modern design with better UX, pricing indicators, and feature highlights
+ */
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    learnMoreUrl?: string;
+    priceFrom?: string;
+    features?: string[];
+    popular?: boolean;
+    category?: string;
+}
+
+const {
+    icon,
+    title,
+    description,
+    learnMoreUrl = "/contact",
+    priceFrom,
+    features = [],
+    popular = false,
+    category
+} = Astro.props;
+---
+
+<article
+    class:list={[
+        "relative group bg-white rounded-2xl border-2 transition-all duration-300",
+        "hover:shadow-2xl hover:shadow-cyan-900/10 hover:-translate-y-2",
+        "flex flex-col h-full overflow-hidden",
+        popular ? "border-orange-400 ring-2 ring-orange-400/20" : "border-slate-200 hover:border-cyan-500/50"
+    ]}
+>
+    <!-- Popular Badge -->
+    {popular && (
+        <div class="absolute -top-0 right-4 z-10">
+            <div class="bg-gradient-to-r from-orange-500 to-orange-400 text-white text-xs font-bold px-3 py-1.5 rounded-b-lg shadow-lg">
+                Popular
+            </div>
+        </div>
+    )}
+
+    <!-- Card Content -->
+    <div class="p-6 flex flex-col flex-grow">
+        <!-- Category Badge -->
+        {category && (
+            <span class="inline-flex self-start px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full mb-4">
+                {category}
+            </span>
+        )}
+
+        <!-- Icon -->
+        <div class="relative mb-5">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-50 to-slate-100 flex items-center justify-center group-hover:from-cyan-100 group-hover:to-orange-50 transition-colors duration-300">
+                <img
+                    loading="lazy"
+                    src={icon}
+                    alt=""
+                    class="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300"
+                    aria-hidden="true"
+                />
+            </div>
+            <!-- Decorative dot -->
+            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+
+        <!-- Title -->
+        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-cyan-800 transition-colors">
+            {title}
+        </h3>
+
+        <!-- Description -->
+        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+            {description}
+        </p>
+
+        <!-- Features List -->
+        {features.length > 0 && (
+            <ul class="space-y-2 mb-5">
+                {features.slice(0, 3).map((feature) => (
+                    <li class="flex items-center gap-2 text-sm text-slate-600">
+                        <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>{feature}</span>
+                    </li>
+                ))}
+            </ul>
+        )}
+
+        <!-- Price Indicator -->
+        {priceFrom && (
+            <div class="mb-5 pb-5 border-b border-slate-100">
+                <span class="text-xs text-slate-500 uppercase tracking-wide">Starting from</span>
+                <div class="text-2xl font-bold text-cyan-800">{priceFrom}</div>
+            </div>
+        )}
+
+        <!-- CTA Button -->
+        <a
+            href={learnMoreUrl}
+            class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-slate-900 text-white font-semibold rounded-xl hover:bg-cyan-800 transition-all duration-300 group/btn"
+        >
+            <span>Learn More</span>
+            <svg
+                class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</article>

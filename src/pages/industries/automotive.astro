@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title =
   "Car Dealership Website Design & Automotive Software Solutions | CodeBrand";
@@ -64,6 +66,41 @@ const serviceSchema = {
     ]
   }
 };
+
+// Automotive FAQ data
+const automotiveFaqs = [
+  {
+    question: "How much does a car dealership website cost?",
+    answer: "Dealership websites start at $5,000 for a professional site with vehicle listings. Sites with inventory management and lead tools range from $10,000-$20,000. Full DMS-integrated platforms are $25,000+. We provide detailed quotes based on your dealership's needs."
+  },
+  {
+    question: "Can you integrate with our dealer management system (DMS)?",
+    answer: "Yes. We integrate with major DMS providers including CDK, Reynolds and Reynolds, Dealertrack, and RouteOne. Vehicle inventory, pricing, and customer data sync automatically between your website and DMS."
+  },
+  {
+    question: "Do you offer vehicle inventory management?",
+    answer: "Absolutely. Our inventory management includes automated photo uploads, window sticker generation, pricing tools, and syndication to third-party sites like AutoTrader and Cars.com. Update inventory once, publish everywhere."
+  },
+  {
+    question: "How long does it take to build a dealership website?",
+    answer: "A standard dealership website takes 6-8 weeks. Sites with full DMS integration and custom features take 10-14 weeks. We can expedite for urgent launches while maintaining quality."
+  },
+  {
+    question: "Can customers apply for financing online?",
+    answer: "Yes. We integrate secure credit applications with major lenders and your preferred finance partners. Customers can apply 24/7, and applications route directly to your F&I team."
+  },
+  {
+    question: "Do you provide automotive CRM solutions?",
+    answer: "Yes. We integrate with automotive CRMs like VinSolutions, DealerSocket, and Elead. Website leads automatically sync to your CRM with full tracking and follow-up automation."
+  }
+];
+
+const faqSchema = createFAQSchema(automotiveFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "Automotive", url: "https://codebrand.us/industries/automotive" }
+]);
 ---
 
 <Layout
@@ -73,6 +110,9 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+
   <!-- Hero Section -->
   <section
     class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"
@@ -1504,6 +1544,21 @@ const serviceSchema = {
       <p class="mt-6 text-sm text-cyan-200">
         Free demo available • No commitment required • Response within 24 hours
       </p>
+    </div>
+  </section>
+
+  <!-- Automotive FAQ Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Automotive Development <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our automotive and dealership website development
+        </p>
+      </div>
+      <FaqDark faqs={automotiveFaqs} client:visible />
     </div>
   </section>
 

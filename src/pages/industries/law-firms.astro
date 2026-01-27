@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title =
   "Law Firm Website Design & Legal Practice Management Software | CodeBrand";
@@ -38,6 +40,41 @@ const serviceSchema = {
     ]
   }
 };
+
+// Law Firm FAQ data
+const lawFirmFaqs = [
+  {
+    question: "How much does a law firm website cost?",
+    answer: "Law firm websites start at $3,500 for a professional attorney site. Sites with intake forms and client portals range from $6,000-$12,000. Full practice management platforms with case tracking are $15,000-$40,000. We provide detailed quotes based on your firm's needs."
+  },
+  {
+    question: "Is the client portal secure and confidential?",
+    answer: "Absolutely. Our client portals use bank-level encryption, secure authentication, and access controls to protect attorney-client privilege. All communications and documents are encrypted at rest and in transit."
+  },
+  {
+    question: "Can you integrate with legal practice management software?",
+    answer: "Yes. We integrate with Clio, MyCase, PracticePanther, and other popular legal software. Case data, documents, and billing can sync seamlessly between your website and practice management system."
+  },
+  {
+    question: "Do you offer legal document automation?",
+    answer: "Yes. We build document automation systems that generate contracts, agreements, and legal documents from templates. Reduce drafting time and minimize errors while maintaining consistency across your firm."
+  },
+  {
+    question: "How long does it take to build a law firm website?",
+    answer: "A professional law firm website takes 4-6 weeks. Sites with client portals and intake forms take 8-10 weeks. Full practice management platforms take 12-20 weeks depending on complexity."
+  },
+  {
+    question: "Can clients schedule consultations online?",
+    answer: "Yes. We build online booking systems where potential clients can view availability and schedule consultations. Features include conflict checking, automated reminders, and calendar integration with your practice management software."
+  }
+];
+
+const faqSchema = createFAQSchema(lawFirmFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "Law Firms", url: "https://codebrand.us/industries/law-firms" }
+]);
 ---
 
 <Layout
@@ -47,6 +84,8 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero Section -->
   <section
@@ -1477,6 +1516,21 @@ const serviceSchema = {
         Attorney-client privilege protected • Confidential consultation •
         Response within 24 hours
       </p>
+    </div>
+  </section>
+
+  <!-- Law Firm FAQ Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Legal Website Development <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our law firm website and software development
+        </p>
+      </div>
+      <FaqDark faqs={lawFirmFaqs} client:visible />
     </div>
   </section>
 

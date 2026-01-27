@@ -5,6 +5,8 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
+import FaqDark from "../../components/FaqDark.tsx";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title =
   "Real Estate Software Development & Property Listing Websites | CodeBrand";
@@ -38,6 +40,41 @@ const serviceSchema = {
     ]
   }
 };
+
+// Real Estate FAQ data
+const realEstateFaqs = [
+  {
+    question: "How much does a real estate website cost?",
+    answer: "Real estate websites start at $5,000 for a professional site with property listings. IDX-enabled sites with MLS integration range from $8,000-$15,000. Custom property portals with advanced search are $15,000-$35,000. We provide detailed quotes based on your needs."
+  },
+  {
+    question: "Can you integrate with MLS/IDX feeds?",
+    answer: "Yes. We specialize in MLS and IDX integrations. We can connect your website to local MLS boards, display real-time listings, and keep data synchronized automatically. We work with popular IDX providers and can build custom solutions."
+  },
+  {
+    question: "Do you offer virtual tour and 3D walkthrough features?",
+    answer: "Absolutely. We integrate virtual tour software including Matterport, 3DVista, and custom 360° solutions. Buyers can explore properties from anywhere, increasing engagement and reducing unnecessary showings."
+  },
+  {
+    question: "How long does it take to build a real estate website?",
+    answer: "A standard real estate website takes 6-8 weeks. Sites with full IDX integration take 8-12 weeks due to MLS approval processes. Custom property management platforms take 12-16 weeks depending on features."
+  },
+  {
+    question: "Can agents have their own profiles and listings?",
+    answer: "Yes. We build multi-agent platforms where each realtor has a personal profile, their own listings, lead capture forms, and performance dashboards. Perfect for brokerages and real estate teams."
+  },
+  {
+    question: "Do you provide CRM integration for lead management?",
+    answer: "Yes. We integrate with popular real estate CRMs like Follow Up Boss, kvCORE, and Salesforce. Leads from your website are automatically captured and synced to your CRM for follow-up."
+  }
+];
+
+const faqSchema = createFAQSchema(realEstateFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://codebrand.us" },
+  { name: "Industries", url: "https://codebrand.us/industries" },
+  { name: "Real Estate", url: "https://codebrand.us/industries/real-estate" }
+]);
 ---
 
 <Layout
@@ -47,6 +84,8 @@ const serviceSchema = {
   image={image}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero Section -->
   <section
@@ -1471,6 +1510,21 @@ const serviceSchema = {
         No commitment required • Free initial consultation • Response within 24
         hours
       </p>
+    </div>
+  </section>
+
+  <!-- Real Estate FAQ Section -->
+  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Real Estate Development <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Common questions about our real estate website development services
+        </p>
+      </div>
+      <FaqDark faqs={realEstateFaqs} client:visible />
     </div>
   </section>
 

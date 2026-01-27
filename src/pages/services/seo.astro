@@ -1,6 +1,249 @@
 ---
-import ServicePageTemplate from "../../components/ServicePageTemplate.astro";
-import { seoConfig } from "../../configs/services/seo.config";
+import ServicePageTemplateV3 from "../../components/ServicePageTemplateV3.astro";
+
+const services = [
+    {
+        title: "Technical SEO Audit & Optimization",
+        description: "We analyze your website's technical foundation: crawlability, indexing, site speed, mobile-friendliness, HTTPS security, XML sitemaps, and more. Technical issues can block rankings no matter how good your content is—we find and fix them."
+    },
+    {
+        title: "Keyword Research & Strategy",
+        description: "Not all keywords are equal. We identify high-value search terms your customers actually use, analyze search intent, and prioritize based on volume, competition, and business value. Strategy built on data, not guesses."
+    },
+    {
+        title: "On-Page SEO Optimization",
+        description: "We optimize every element that search engines use to understand your pages: title tags, meta descriptions, headers, URL structure, internal linking, image alt text, and content structure. Each page becomes a targeted ranking opportunity."
+    },
+    {
+        title: "Content Strategy & Optimization",
+        description: "Content is the fuel of SEO. We audit existing content, identify gaps, and develop a strategy to create new content that ranks. Whether optimizing existing pages or planning new ones, we make sure your content answers what people are searching for."
+    },
+    {
+        title: "Local SEO",
+        description: "For businesses serving specific areas: Google Business Profile optimization, local citation building, review management, and location-specific content. Get found when customers search 'near me' or in your service areas."
+    },
+    {
+        title: "Link Building & Digital PR",
+        description: "Quality backlinks remain one of the strongest ranking factors. We build links through content marketing, digital PR, and strategic outreach—no spammy tactics, only links that Google respects and that drive real referral traffic."
+    }
+];
+
+const process = [
+    {
+        title: "Audit & Analysis",
+        description: "We dig deep into your current SEO situation. Technical health, keyword rankings, backlink profile, and competitor analysis. You can't improve what you don't measure.",
+        details: [
+            "Technical SEO audit (100+ checkpoints)",
+            "Current keyword ranking analysis",
+            "Backlink profile review",
+            "Competitor SEO analysis",
+            "Content audit and gap analysis"
+        ]
+    },
+    {
+        title: "Strategy Development",
+        description: "Based on the audit, we create a prioritized action plan. Quick wins first, then longer-term initiatives. Every recommendation tied to expected impact.",
+        details: [
+            "Keyword opportunity mapping",
+            "Content calendar planning",
+            "Technical fix prioritization",
+            "Link building strategy",
+            "Monthly milestone targets"
+        ]
+    },
+    {
+        title: "Implementation",
+        description: "We execute the strategy—or guide your team. Technical fixes, on-page optimization, content creation, and link building campaigns running in parallel.",
+        details: [
+            "Technical SEO fixes",
+            "On-page optimizations",
+            "Content creation/optimization",
+            "Link acquisition outreach",
+            "Local SEO setup (if applicable)"
+        ]
+    },
+    {
+        title: "Monitor & Optimize",
+        description: "SEO is never 'done.' We track rankings, traffic, and conversions continuously. Monthly reports show progress, and strategy adjusts based on what's working.",
+        details: [
+            "Weekly ranking monitoring",
+            "Monthly performance reports",
+            "Conversion tracking",
+            "Algorithm update response",
+            "Ongoing optimization"
+        ]
+    }
+];
+
+const benefits = [
+    {
+        icon: "📊",
+        title: "Data-Driven Strategy",
+        description: "No guessing. Every recommendation is based on search data, competitor analysis, and proven ranking factors. We show you the numbers behind our decisions."
+    },
+    {
+        icon: "⚪",
+        title: "White-Hat Only",
+        description: "No shortcuts, no tricks that could get you penalized. We build sustainable SEO that keeps working for years. Google's guidelines are our guidelines."
+    },
+    {
+        icon: "📈",
+        title: "Transparent Reporting",
+        description: "Monthly reports you can actually understand. Rankings, traffic, conversions, and what we did that month. No jargon, no hiding behind vanity metrics."
+    },
+    {
+        icon: "🎯",
+        title: "Business-Focused Results",
+        description: "We don't chase rankings for ranking's sake. We focus on keywords that drive revenue—searches with buying intent, not just high volume."
+    },
+    {
+        icon: "🔧",
+        title: "Technical Excellence",
+        description: "Many agencies skip technical SEO because it's hard. We don't. A technically sound website is the foundation everything else builds on."
+    },
+    {
+        icon: "🤝",
+        title: "Education & Partnership",
+        description: "We explain what we're doing and why. You'll understand your SEO, not just depend on us. We're building your capability, not your dependency."
+    }
+];
+
+const packages = [
+    {
+        name: "SEO Audit",
+        price: "$750",
+        description: "One-time comprehensive analysis",
+        features: [
+            "Full technical audit",
+            "Keyword ranking snapshot",
+            "Competitor analysis (3 competitors)",
+            "Backlink profile review",
+            "Content gap analysis",
+            "Prioritized action plan",
+            "60-min strategy call"
+        ]
+    },
+    {
+        name: "Growth",
+        price: "$500/mo",
+        description: "Essential ongoing SEO for small businesses",
+        popular: true,
+        features: [
+            "Monthly technical monitoring",
+            "10 pages optimized per month",
+            "Keyword tracking (50 keywords)",
+            "Monthly performance report",
+            "Content recommendations",
+            "Quarterly strategy calls",
+            "6-month minimum"
+        ]
+    },
+    {
+        name: "Accelerate",
+        price: "$1,500/mo",
+        description: "Aggressive growth for competitive markets",
+        features: [
+            "Everything in Growth",
+            "Keyword tracking (200 keywords)",
+            "2 SEO-optimized articles/month",
+            "Link building campaign",
+            "Local SEO (if applicable)",
+            "Bi-weekly calls",
+            "Priority support"
+        ]
+    }
+];
+
+const faqs = [
+    {
+        question: "How long does it take to see SEO results?",
+        answer: "SEO is a long-term investment. Most clients see meaningful improvement in 3-6 months, with significant results by 6-12 months. The timeline depends on your starting point, competition, and resources. We set realistic expectations upfront and show progress monthly—you'll see the needle moving before the big results hit."
+    },
+    {
+        question: "Can you guarantee first page rankings?",
+        answer: "No legitimate SEO professional can guarantee specific rankings—Google's algorithm is complex and constantly changing. What we can guarantee: we'll follow best practices, be transparent about our work, and show you measurable progress. If rankings and traffic aren't improving after 6 months, something's wrong."
+    },
+    {
+        question: "Do you write content or just optimize existing pages?",
+        answer: "Both. We audit and optimize your existing content first—often there are quick wins. For content gaps, we either write SEO-optimized content ourselves (included in higher packages or as an add-on) or provide detailed briefs for your team or writers to execute."
+    },
+    {
+        question: "What's the difference between SEO and paid ads?",
+        answer: "Paid ads (Google Ads, Facebook) give instant traffic but stop when you stop paying. SEO takes longer but builds lasting organic traffic that continues without ongoing ad spend. Most businesses benefit from both—ads for immediate needs, SEO for long-term sustainable growth."
+    },
+    {
+        question: "How do you track and report on progress?",
+        answer: "We track keyword rankings weekly, organic traffic daily, and conversions continuously. Monthly reports show: ranking changes, traffic growth, top-performing pages, work completed, and next month's priorities. Reports are clear and actionable, not 50-page PDFs of vanity metrics."
+    },
+    {
+        question: "Do you work with e-commerce sites?",
+        answer: "Yes. E-commerce SEO has unique challenges: product pages, category structure, faceted navigation, seasonal products, and more. We've optimized Shopify, WooCommerce, Magento, and custom e-commerce platforms. Product schema, inventory management, and conversion optimization are all part of our approach."
+    },
+    {
+        question: "What tools do you use?",
+        answer: "We use professional tools including Ahrefs, SEMrush, Screaming Frog, Google Search Console, and Google Analytics. But tools are just tools—what matters is how we interpret the data and turn it into actionable strategy. We share relevant access so you can see what we see."
+    },
+    {
+        question: "What do you need from us to get started?",
+        answer: "We'll need: access to Google Search Console and Analytics (or help setting them up), access to your website CMS for making changes, and information about your business goals, target customers, and competitors. The first month is mostly us doing audits—minimal time required from you."
+    }
+];
+
+const overviewPoints = [
+    "SEO is the process of making your website more visible in Google search results. When people search for what you offer, you want to appear on page one—because 90% of clicks go to the first page.",
+    "Unlike paid ads, SEO builds lasting traffic. Once you rank, you get ongoing visitors without paying per click. It's an investment that compounds over time.",
+    "We focus on three pillars: technical foundation (can Google crawl and index your site properly?), content (do you have pages that answer what people search?), and authority (do other sites trust and link to you?).",
+    "SEO isn't about tricks or gaming the system—those tactics backfire. It's about making your site genuinely useful for searchers. Google wants to show the best results; we make sure your site qualifies.",
+    "Local businesses especially benefit from SEO. When someone searches 'plumber near me' or 'best restaurant in [city],' you want to be there. We optimize for local intent and Google Maps visibility.",
+    "Every dollar spent on SEO should return more in revenue. We track not just rankings and traffic, but leads and sales. If SEO isn't profitable, we adjust the strategy."
+];
+
+const approachPoints = [
+    {
+        title: "Technical Foundation First",
+        description: "You can't rank if Google can't properly crawl and index your site. We fix technical issues before worrying about content—no point optimizing pages that Google can't even see."
+    },
+    {
+        title: "Intent Over Volume",
+        description: "A keyword with 100 searches from ready-to-buy customers beats one with 10,000 searches from curious browsers. We target keywords that drive business, not just traffic."
+    },
+    {
+        title: "Quality Over Quantity",
+        description: "One thorough, authoritative page outranks ten thin pages. We optimize for depth and value, creating content that genuinely helps searchers—which is what Google rewards."
+    },
+    {
+        title: "Sustainable Growth",
+        description: "Quick-fix SEO tactics can work temporarily then backfire. We build SEO that lasts through algorithm updates because we follow the principles Google actually values."
+    }
+];
 ---
 
-<ServicePageTemplate config={seoConfig} />
+<ServicePageTemplateV3
+    title="SEO Services | Search Engine Optimization - Codebrand"
+    description="Professional SEO services that increase organic traffic and rankings. Technical SEO, keyword strategy, content optimization, and link building. Transparent reporting, proven results."
+    keywords="SEO services, search engine optimization, keyword research, technical SEO, local SEO, link building, content optimization, Google rankings"
+    serviceName="SEO"
+    tagline="Get Found on Google"
+    heroDescription="We help businesses rank higher in search results and attract more qualified organic traffic. Data-driven SEO strategy, technical excellence, and transparent reporting—no black-box tactics or empty promises."
+    heroFeatures={[
+        "Technical audits with 100+ checkpoints",
+        "Keyword strategy based on real search data",
+        "White-hat tactics only—no penalty risk",
+        "Monthly reports showing real ROI"
+    ]}
+    price="$500/mo"
+    priceNote="for ongoing SEO / $750 for one-time audit"
+    overviewTitle="What is SEO and Why Does It Matter?"
+    overviewDescription="Search Engine Optimization (SEO) is how you get found when customers search Google for what you offer. 68% of online experiences start with a search engine. If you're not visible in search results, you're invisible to most potential customers."
+    overviewPoints={overviewPoints}
+    services={services}
+    approachTitle="How We Think About SEO"
+    approachDescription="SEO isn't magic—it's methodology. After helping dozens of businesses grow their organic traffic, here's what we've learned actually works."
+    approachPoints={approachPoints}
+    process={process}
+    benefits={benefits}
+    packages={packages}
+    faqs={faqs}
+    ctaTitle="Ready to Grow Your Organic Traffic?"
+    ctaDescription="Get a free SEO audit showing exactly where you stand and what opportunities exist. No obligation, no hard sell—just honest analysis."
+/>
