@@ -91,7 +91,36 @@ const regions = defineCollection({
         keywords: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
         draft: z.boolean().default(false),
+        // SEO Enhancement Fields for Regions
+        longDescription: z.string().optional(), // Extended description for SEO
+        industries: z.array(z.object({
+            name: z.string(),
+            description: z.string().optional(),
+        })).optional(), // Key industries in the region
+        marketHighlights: z.array(z.string()).optional(), // Bullet points about regional market
+        faqs: z.array(z.object({
+            question: z.string(),
+            answer: z.string(),
+        })).optional(), // Region-specific FAQs
+        majorCities: z.array(z.string()).optional(), // Major cities in the region
+        regionalStats: z.object({
+            gdp: z.string().optional(),
+            techCompanies: z.string().optional(),
+            businessGrowth: z.string().optional(),
+        }).optional(),
     }),
+});
+
+// FAQ Item schema for locations
+const faqItemSchema = z.object({
+    question: z.string(),
+    answer: z.string(),
+});
+
+// Local industry schema
+const industrySchema = z.object({
+    name: z.string(),
+    description: z.string().optional(),
 });
 
 // Locations (City Landing Pages for SEO)
@@ -111,6 +140,22 @@ const locations = defineCollection({
         keywords: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
         draft: z.boolean().default(false),
+        // SEO Enhancement Fields
+        metaTitle: z.string().optional(), // Custom meta title for SEO
+        longDescription: z.string().optional(), // Extended description for SEO
+        industries: z.array(industrySchema).optional(), // Key industries in the city
+        marketHighlights: z.array(z.string()).optional(), // Bullet points about local market
+        faqs: z.array(faqItemSchema).optional(), // City-specific FAQs
+        whyChooseUs: z.array(z.object({
+            title: z.string(),
+            description: z.string(),
+        })).optional(), // City-specific benefits
+        nearbyAreas: z.array(z.string()).optional(), // Nearby cities/areas served
+        localStats: z.object({
+            techCompanies: z.string().optional(),
+            averageProjectCost: z.string().optional(),
+            businessGrowth: z.string().optional(),
+        }).optional(),
     }),
 });
 

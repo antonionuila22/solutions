@@ -151,6 +151,36 @@ const plans: Plan[] = [
   .cta-button:hover {
     background-position: right center;
   }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-scale-in,
+    .pricing-card {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .animate-float,
+    .animate-shimmer {
+      animation: none;
+    }
+
+    .cta-button {
+      transition: none;
+    }
+
+    .cta-button:hover {
+      transform: none;
+    }
+  }
+
+  /* Enhanced focus states for pricing CTAs */
+  .cta-button:focus-visible {
+    outline: 3px solid #06b6d4;
+    outline-offset: 2px;
+  }
 </style>
 
 <section

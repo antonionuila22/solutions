@@ -65,43 +65,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 <!doctype html>
 <html lang="en-US">
   <head>
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
-      fbq("init", "823190717423799");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1"
-      /></noscript
-    >
-    <!-- End Meta Pixel Code -->
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -238,39 +201,21 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="prefetch" href="/photos/section.webp" />
     <link rel="prefetch" href="/iconcodebrand.svg" />
 
-    <!-- Preload font files directly for CLS optimization -->
+    <!-- Fonts with optimized loading - using display=optional for faster mobile -->
     <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecg.woff2"
-      as="font"
-      type="font/woff2"
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
       crossorigin
     />
     <link
       rel="preload"
-      href="https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
-    <!-- Fonts with optimized loading -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"
         rel="stylesheet"
       />
     </noscript>
@@ -537,40 +482,23 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta name="format-detection" content="telephone=no" />
     <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
 
-    <!-- Google Tag Manager + Analytics (carga diferida) -->
+    <!-- Google Tag Manager + Analytics - loaded with tracking scripts -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          // GTM
-          (function (w, d, s, l, i) {
-            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-            var f = d.getElementsByTagName(s)[0],
-              j = d.createElement(s),
-              dl = l != "dataLayer" ? "&l=" + l : "";
-            j.async = true;
-            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-            f.parentNode.insertBefore(j, f);
-          })(window, document, "script", "dataLayer", "GTM-TJCP2CWN");
-
-          // GA4
-          var ga = document.createElement("script");
-          ga.async = true;
-          ga.src = "https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9";
-          document.head.appendChild(ga);
-          gtag("js", new Date());
-          gtag("config", "G-T9HKBF45M9");
-        }, 1500);
-      });
+      function gtag() { dataLayer.push(arguments); }
     </script>
 
     <ClientRouter />
   </head>
   <body>
+    <!-- Skip to main content link for keyboard/screen reader users -->
+    <a
+      href="#main-content"
+      class="skip-to-content"
+    >
+      Skip to main content
+    </a>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -582,28 +510,100 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- End Google Tag Manager (noscript) -->
 
     <Navbar />
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <Footer />
     <WhatsAppWidget />
 
+    <!-- Deferred Analytics Scripts - Load after page is interactive -->
     <script is:inline>
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          var s = document.createElement("script");
-          s.src = "https://analytics.ahrefs.com/analytics.js";
-          s.setAttribute("data-key", "JekMc+iUh7qv8b6i7VSQFw");
-          s.async = true;
-          document.head.appendChild(s);
-        }, 2000);
+      // Load all tracking scripts after user interaction or 3 seconds
+      function loadTrackingScripts() {
+        // Google Tag Manager
+        (function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TJCP2CWN');
+
+        // Google Analytics 4
+        var ga=document.createElement('script');ga.async=true;
+        ga.src='https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9';
+        document.head.appendChild(ga);
+        gtag('js',new Date());gtag('config','G-T9HKBF45M9');
+
+        // Meta Pixel (Facebook)
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init','823190717423799');fbq('track','PageView');
+
+        // Ahrefs Analytics
+        var s=document.createElement('script');s.async=true;
+        s.src='https://analytics.ahrefs.com/analytics.js';
+        s.setAttribute('data-key','JekMc+iUh7qv8b6i7VSQFw');
+        document.head.appendChild(s);
+      }
+
+      // Load tracking after first user interaction OR after 4 seconds (mobile-friendly)
+      var trackingLoaded=false;
+      function triggerTracking(){
+        if(trackingLoaded)return;
+        trackingLoaded=true;
+        // Use requestIdleCallback if available, otherwise setTimeout
+        if('requestIdleCallback' in window){
+          requestIdleCallback(loadTrackingScripts,{timeout:2000});
+        }else{
+          setTimeout(loadTrackingScripts,100);
+        }
+      }
+
+      // User interaction triggers - passive for better scroll performance
+      ['scroll','click','touchstart','keydown'].forEach(function(e){
+        document.addEventListener(e,triggerTracking,{once:true,passive:true});
       });
+
+      // Fallback: load after 4 seconds if no interaction (more mobile-friendly)
+      setTimeout(triggerTracking,4000);
     </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" />
+    </noscript>
   </body>
 </html>
 
 <style>
   body {
     font-family: "Poppins", sans-serif;
+  }
+
+  /* Skip to content link - visible only on focus for keyboard users */
+  .skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 1rem 2rem;
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: top 0.3s ease;
+  }
+
+  .skip-to-content:focus {
+    top: 0;
+    outline: 3px solid #06b6d4;
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus outline on main when focused via skip link */
+  main:focus {
+    outline: none;
   }
 </style>

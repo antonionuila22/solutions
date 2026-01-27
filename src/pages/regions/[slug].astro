@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
+import { sanitizeHtml } from "../../lib/sanitize-html";
 
 export async function getStaticPaths() {
   const regions = await getCollection("regions", ({ data }) => !data.draft);
@@ -36,7 +37,13 @@ const {
   population,
   capital,
   timezone,
-  keywords
+  keywords,
+  longDescription,
+  industries,
+  marketHighlights,
+  faqs,
+  majorCities,
+  regionalStats
 } = data;
 
 // Sort cities by featured first, then by population/name
@@ -78,6 +85,20 @@ const citiesListSchema = {
     "url": `${baseUrl}/locations/${city.slug}`,
   })),
 };
+
+// FAQ Schema for SEO
+const faqSchema = faqs && faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+} : null;
 ---
 
 <Layout
@@ -89,6 +110,9 @@ const citiesListSchema = {
   <!-- Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(citiesListSchema)} />
+  {faqSchema && (
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  )}
 
   <!-- Hero Section -->
   <section class="relative bg-white py-16 sm:py-24 font-poppins overflow-hidden">
@@ -161,6 +185,95 @@ const citiesListSchema = {
     variant="transparent"
     class="bg-gray-50 border-y border-gray-100"
   />
+
+  <!-- Extended Description Section -->
+  {longDescription && (
+    <section class="py-12 lg:py-16 bg-white font-poppins">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed" set:html={sanitizeHtml(longDescription || '')} />
+      </div>
+    </section>
+  )}
+
+  <!-- Industries Section -->
+  {industries && industries.length > 0 && (
+    <section class="py-12 lg:py-16 bg-gray-50 font-poppins">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
+            Industries We Serve in {name}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Specialized web development for {name}'s key economic sectors.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {industries.map((industry) => (
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">{industry.name}</h3>
+              {industry.description && (
+                <p class="text-gray-600 text-sm">{industry.description}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Market Highlights & Stats Section -->
+  {(marketHighlights && marketHighlights.length > 0) || regionalStats ? (
+    <section class="py-12 lg:py-16 bg-white font-poppins">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {marketHighlights && marketHighlights.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-cyan-900 mb-6">
+                {name} Market Highlights
+              </h2>
+              <ul class="space-y-3">
+                {marketHighlights.map((highlight) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-gray-700">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {regionalStats && (
+            <div>
+              <h2 class="text-2xl font-bold text-cyan-900 mb-6">
+                Regional Statistics
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {regionalStats.gdp && (
+                  <div class="bg-cyan-50 p-4 rounded-xl text-center">
+                    <div class="text-2xl font-bold text-cyan-900">{regionalStats.gdp}</div>
+                    <div class="text-sm text-gray-600">State GDP</div>
+                  </div>
+                )}
+                {regionalStats.techCompanies && (
+                  <div class="bg-cyan-50 p-4 rounded-xl text-center">
+                    <div class="text-2xl font-bold text-cyan-900">{regionalStats.techCompanies}</div>
+                    <div class="text-sm text-gray-600">Tech Companies</div>
+                  </div>
+                )}
+                {regionalStats.businessGrowth && (
+                  <div class="bg-cyan-50 p-4 rounded-xl text-center">
+                    <div class="text-2xl font-bold text-cyan-900">{regionalStats.businessGrowth}</div>
+                    <div class="text-sm text-gray-600">Business Growth</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  ) : null}
 
   <!-- Cities Grid -->
   {cities.length > 0 && (
@@ -240,9 +353,9 @@ const citiesListSchema = {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-cyan-900 mb-2">60% Cost Savings</h3>
+          <h3 class="text-xl font-bold text-cyan-900 mb-2">Cost-Effective</h3>
           <p class="text-gray-600">
-            Same quality as local {name} agencies at a fraction of the cost.
+            Competitive rates compared to local {name} agencies.
           </p>
         </div>
 
@@ -272,6 +385,30 @@ const citiesListSchema = {
       </div>
     </div>
   </section>
+
+  <!-- FAQs Section -->
+  {faqs && faqs.length > 0 && (
+    <section class="py-16 lg:py-24 bg-white font-poppins">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xl text-gray-600">
+            Common questions about web development services in {name}.
+          </p>
+        </div>
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="text-lg font-bold text-cyan-900 mb-3">{faq.question}</h3>
+              <p class="text-gray-700 leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- CTA -->
   <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 font-poppins">

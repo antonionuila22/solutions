@@ -171,3 +171,57 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ================================
+   REDUCED MOTION PREFERENCES
+   Respects user's motion preferences for accessibility
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all animations for users who prefer reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Remove transform-based animations */
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  /* Disable continuous animations */
+  .animate-pulse,
+  .animate-bounce,
+  .animate-float {
+    animation: none;
+  }
+
+  /* Disable hover animations */
+  .hover-lift:hover,
+  .hover-scale:hover {
+    transform: none;
+  }
+
+  /* Make scroll-reveal elements visible immediately */
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* Disable marquee animations */
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation: none;
+  }
+}

@@ -50,7 +50,7 @@ const menuItems: MenuItem[] = [
   },
   {
     name: "About Us",
-    link: "#",
+    link: "/history",
     hasDropdown: true,
     subItems: [
       { name: "History", link: "/history" },
@@ -147,6 +147,8 @@ const menuItems: MenuItem[] = [
           stroke="currentColor"
           stroke-width="2"
           viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
         >
           <path
             stroke-linecap="round"
@@ -277,6 +279,8 @@ const menuItems: MenuItem[] = [
             stroke="currentColor"
             stroke-width="2"
             viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
           >
             <path
               stroke-linecap="round"
@@ -396,6 +400,24 @@ const menuItems: MenuItem[] = [
 
   .nav-link:hover::after {
     transform: translateX(-50%) scaleX(1);
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu,
+    .mobile-submenu,
+    .dropdown-container,
+    .nav-link::after {
+      transition: none;
+    }
+
+    .group:hover .dropdown-container {
+      transform: none;
+    }
+
+    .dropdown-arrow {
+      transition: none;
+    }
   }
 </style>
 

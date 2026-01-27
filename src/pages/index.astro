@@ -9,7 +9,7 @@ import Testimonial from "../components/testimonial.tsx";
 import TechMarquee from "../components/TechMarquee.astro";
 import Ourteam from "@/components/Ourteam.astro";
 import PartnershipBanner from "@/components/PartnershipBanner.astro";
-import BannerSecond from "../components/BannerSecond.astro";
+import BannerSecond from "../components/BannerSecondOptimized.astro";
 import TrustBadges from "../components/TrustBadges.astro";
 import DesignRushSection from "../components/DesignRushSection.astro";
 import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
@@ -137,7 +137,7 @@ const reviewsSchema = {
 
 <Layout
   title="Affordable Web Development Agency | US Quality, 60% Less - Codebrand"
-  description="Top web development agency in Honduras serving USA. Get US-quality websites at 60% less cost. Bilingual team, React/Next.js experts. Free quote today."
+  description="Top web development agency in Honduras serving USA. Get US-quality websites at 60% less cost. Bilingual team, React & Next.js experts. Request your free quote today!"
   keywords="affordable web development USA, Honduras software development, nearshore web development, cost-effective web design, offshore development Honduras, US web development affordable, certified web developers Honduras, bilingual web development, export services Honduras to USA, cheap quality web development, outsource web development Honduras, Latin America web agency, nearshore outsourcing, web development under $15000, affordable digital agency USA, budget web development services, professional web design Honduras, US nearshore development, Central America tech services, quality affordable websites, web development agency, custom website development, React development agency, Next.js developers"
   image="/photos/bannercodebrand.webp"
 >
@@ -172,12 +172,12 @@ const reviewsSchema = {
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
           Web Development <span class="text-orange-500">Client Reviews</span>
         </h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           50+ US businesses trust our Honduras-based development team
         </p>
       </div>
     </div>
-    <Testimonial client:visible />
+    <Testimonial client:idle />
   </section>
 
   <TrustBadges />
@@ -379,17 +379,27 @@ const reviewsSchema = {
           action="/api/contact"
           method="POST"
           class="lg:col-span-2 bg-white p-5 sm:p-6 lg:p-8 rounded-2xl shadow-lg border border-slate-200 order-1 lg:order-2"
+          aria-labelledby="contact-form-heading"
+          novalidate
         >
-          <!-- Honeypot -->
-          <input
-            type="text"
-            name="honey"
-            style="display:none"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-            class="hidden"
-          />
+          <!-- Form heading for screen readers -->
+          <h3 id="contact-form-heading" class="sr-only">Contact Form</h3>
+
+          <!-- Live region for form status announcements -->
+          <div id="form-status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+          <!-- Honeypot - multiple layers of hiding -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+            <label for="website-url">Leave this field empty</label>
+            <input
+              type="text"
+              name="honey"
+              id="website-url"
+              tabindex="-1"
+              autocomplete="new-password"
+              placeholder="Your website"
+            />
+          </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Name -->
@@ -398,7 +408,8 @@ const reviewsSchema = {
                 for="name"
                 class="block text-sm font-medium text-slate-700 mb-2"
               >
-                Name *
+                Name <span aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
               </label>
               <input
                 id="name"
@@ -408,7 +419,14 @@ const reviewsSchema = {
                 autocomplete="name"
                 placeholder="John Doe"
                 class="contact-form-input"
+                aria-required="true"
+                aria-describedby="name-error"
+                maxlength="60"
+                minlength="2"
+                pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+"
+                title="Only letters, spaces, hyphens and apostrophes allowed"
               />
+              <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
             </div>
 
             <!-- Email -->
@@ -417,7 +435,8 @@ const reviewsSchema = {
                 for="email"
                 class="block text-sm font-medium text-slate-700 mb-2"
               >
-                Email *
+                Email <span aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
               </label>
               <input
                 id="email"
@@ -427,7 +446,13 @@ const reviewsSchema = {
                 autocomplete="email"
                 placeholder="john@example.com"
                 class="contact-form-input"
+                aria-required="true"
+                aria-describedby="email-hint email-error"
+                maxlength="254"
+                pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z]{2,10})+"
               />
+              <span id="email-hint" class="text-xs text-slate-500 mt-1 block">We'll never share your email</span>
+              <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
             </div>
 
             <!-- Phone -->
@@ -436,7 +461,8 @@ const reviewsSchema = {
                 for="phone"
                 class="block text-sm font-medium text-slate-700 mb-2"
               >
-                Phone *
+                Phone <span aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
               </label>
               <input
                 id="phone"
@@ -446,7 +472,13 @@ const reviewsSchema = {
                 autocomplete="tel"
                 placeholder="+1 (555) 000-0000"
                 class="contact-form-input"
+                aria-required="true"
+                aria-describedby="phone-error"
+                maxlength="20"
+                minlength="7"
+                pattern="[\d\s\-\+\(\)]+"
               />
+              <span id="phone-error" class="error-message" role="alert" aria-live="polite"></span>
             </div>
 
             <!-- Industry -->
@@ -455,13 +487,16 @@ const reviewsSchema = {
                 for="industry"
                 class="block text-sm font-medium text-slate-700 mb-2"
               >
-                Industry *
+                Industry <span aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
               </label>
               <select
                 id="industry"
                 name="industry"
                 required
                 class="contact-form-input"
+                aria-required="true"
+                aria-describedby="industry-error"
               >
                 <option value="" disabled selected>Select your industry</option>
                 <option value="Automotive">Automotive</option>
@@ -476,6 +511,7 @@ const reviewsSchema = {
                 <option value="Travel Agency">Travel Agency</option>
                 <option value="Other">Other</option>
               </select>
+              <span id="industry-error" class="error-message" role="alert" aria-live="polite"></span>
             </div>
 
             <!-- Subject -->
@@ -484,7 +520,8 @@ const reviewsSchema = {
                 for="subject"
                 class="block text-sm font-medium text-slate-700 mb-2"
               >
-                Subject *
+                Subject <span aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
               </label>
               <input
                 id="subject"
@@ -493,7 +530,14 @@ const reviewsSchema = {
                 required
                 placeholder="How can we help you?"
                 class="contact-form-input"
+                aria-required="true"
+                aria-describedby="subject-error"
+                maxlength="100"
+                minlength="3"
+                pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+"
+                title="Only letters, numbers, spaces and basic punctuation allowed"
               />
+              <span id="subject-error" class="error-message" role="alert" aria-live="polite"></span>
             </div>
 
             <!-- Message -->
@@ -502,7 +546,8 @@ const reviewsSchema = {
                 for="message"
                 class="block text-sm font-medium text-slate-700 mb-2"
               >
-                Message *
+                Message <span aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
               </label>
               <textarea
                 id="message"
@@ -510,91 +555,98 @@ const reviewsSchema = {
                 rows="5"
                 required
                 placeholder="Tell us about your project and budget..."
-                class="contact-form-input resize-none"></textarea>
+                class="contact-form-input resize-none"
+                aria-required="true"
+                aria-describedby="message-error"
+                maxlength="2000"
+                minlength="10"></textarea>
+              <span id="message-error" class="error-message" role="alert" aria-live="polite"></span>
             </div>
 
             <!-- Services -->
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-slate-700 mb-3">
-                Services Interested In
-              </label>
+            <fieldset class="md:col-span-2">
+              <legend class="block text-sm font-medium text-slate-700 mb-3">
+                Services Interested In <span class="text-slate-500 font-normal">(optional)</span>
+              </legend>
               <div
                 class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3"
+                role="group"
+                aria-label="Select services you're interested in"
               >
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="Web Development"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">Web Development</span>
                 </label>
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="UX/UI Design"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">UX/UI Design</span>
                 </label>
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="Branding"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">Branding</span>
                 </label>
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="SEO"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">SEO</span>
                 </label>
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="Social Media"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">Social Media</span>
                 </label>
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="Video Editing"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">Video Editing</span>
                 </label>
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="Animation"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">Animation</span>
                 </label>
-                <label class="flex items-center gap-2 text-sm">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="checkbox"
                     name="services"
                     value="E-commerce"
-                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500"
+                    class="w-4 h-4 text-orange-600 border-slate-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
                   <span class="text-slate-700">E-commerce</span>
                 </label>
               </div>
-            </div>
+            </fieldset>
 
             <!-- Submit Button -->
             <div class="md:col-span-2">
@@ -677,7 +729,184 @@ const reviewsSchema = {
     box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
   }
 
+  /* Enhanced focus for keyboard users */
+  .contact-form-input:focus-visible {
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+    outline: none;
+  }
+
   .contact-form-input::placeholder {
     color: #9ca3af;
   }
+
+  /* Error states for form inputs */
+  .contact-form-input[aria-invalid="true"],
+  .contact-form-input.error {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  }
+
+  /* Error message styling */
+  .error-message {
+    display: block;
+    min-height: 1.25rem;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #ef4444;
+  }
+
+  .error-message:empty {
+    display: none;
+  }
+
+  /* Screen reader only class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Fieldset reset for services */
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 </style>
+
+<script>
+  // Accessible form validation
+  function initFormValidation() {
+    const form = document.querySelector('form[action="/api/contact"]');
+    if (!form) return;
+
+    const formStatus = document.getElementById('form-status');
+
+    // Validation patterns (must match server-side validation.ts)
+    const patterns = {
+      name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$/,
+      subject: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+$/,
+      message: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?;:'"()\n\r]+$/,
+      phone: /^[\d\s\-\+\(\)]+$/,
+      email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z]{2,10})+$/
+    };
+
+    // Validation rules
+    const validators = {
+      name: {
+        validate: (value) => {
+          const trimmed = value.trim();
+          return trimmed.length >= 2 && trimmed.length <= 60 && patterns.name.test(trimmed);
+        },
+        message: 'Name: only letters, spaces, hyphens and apostrophes (2-60 characters)'
+      },
+      email: {
+        validate: (value) => patterns.email.test(value),
+        message: 'Please enter a valid email address'
+      },
+      phone: {
+        validate: (value) => {
+          const trimmed = value.trim();
+          const digitsOnly = trimmed.replace(/\D/g, '');
+          return digitsOnly.length >= 7 && digitsOnly.length <= 15 && patterns.phone.test(trimmed);
+        },
+        message: 'Please enter a valid phone number (digits, spaces, +, -, parentheses)'
+      },
+      industry: {
+        validate: (value) => value !== '',
+        message: 'Please select your industry'
+      },
+      subject: {
+        validate: (value) => {
+          const trimmed = value.trim();
+          return trimmed.length >= 3 && trimmed.length <= 100 && patterns.subject.test(trimmed);
+        },
+        message: 'Subject: only letters, numbers and basic punctuation (3-100 characters)'
+      },
+      message: {
+        validate: (value) => {
+          const trimmed = value.trim();
+          return trimmed.length >= 10 && trimmed.length <= 2000 && patterns.message.test(trimmed);
+        },
+        message: 'Message: only letters, numbers and common punctuation (10-2000 characters)'
+      }
+    };
+
+    // Validate single field
+    function validateField(field) {
+      const name = field.name;
+      const value = field.value;
+      const validator = validators[name];
+      const errorEl = document.getElementById(`${name}-error`);
+
+      if (!validator || !errorEl) return true;
+
+      const isValid = validator.validate(value);
+
+      if (!isValid && value.trim() !== '') {
+        field.setAttribute('aria-invalid', 'true');
+        errorEl.textContent = validator.message;
+      } else {
+        field.removeAttribute('aria-invalid');
+        errorEl.textContent = '';
+      }
+
+      return isValid;
+    }
+
+    // Add blur validation for required fields
+    const requiredFields = form.querySelectorAll('input[required], select[required], textarea[required]');
+    requiredFields.forEach(field => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => {
+        if (field.getAttribute('aria-invalid') === 'true') {
+          validateField(field);
+        }
+      });
+    });
+
+    // Form submission
+    form.addEventListener('submit', (e) => {
+      let isFormValid = true;
+      let firstInvalidField = null;
+
+      requiredFields.forEach(field => {
+        const isFieldValid = validateField(field);
+        if (!isFieldValid) {
+          isFormValid = false;
+          if (!firstInvalidField) {
+            firstInvalidField = field;
+          }
+        }
+      });
+
+      if (!isFormValid) {
+        e.preventDefault();
+        firstInvalidField?.focus();
+
+        // Announce error to screen readers
+        if (formStatus) {
+          formStatus.textContent = 'Form has errors. Please correct the highlighted fields.';
+        }
+      } else {
+        // Announce submission to screen readers
+        if (formStatus) {
+          formStatus.textContent = 'Submitting form, please wait...';
+        }
+      }
+    });
+  }
+
+  // Initialize on page load
+  initFormValidation();
+
+  // Re-initialize on Astro page transitions
+  document.addEventListener('astro:after-swap', initFormValidation);
+</script>

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(head:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx astro check)",
+      "Bash(npx tsc:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}

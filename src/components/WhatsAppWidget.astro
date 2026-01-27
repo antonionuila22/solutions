@@ -7,14 +7,14 @@ const encodedMessage = encodeURIComponent(defaultMessage);
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 ---
 
-<div id="whatsapp-widget" class="whatsapp-widget">
+<div id="whatsapp-widget" class="whatsapp-widget" role="complementary" aria-label="WhatsApp contact">
   <!-- Main Button -->
   <a
     href={whatsappUrl}
     target="_blank"
     rel="noopener noreferrer"
     class="whatsapp-button"
-    aria-label="Chat on WhatsApp"
+    aria-label="Chat with us on WhatsApp (opens in new window)"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,11 +23,10 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
       version="1.1"
       width="25"
       height="25"
-      id="Capa_1"
-      width="800px"
-      height="800px"
       viewBox="0 0 348.077 348.077"
       xml:space="preserve"
+      aria-hidden="true"
+      focusable="false"
     >
       <g>
         <g>
@@ -39,11 +38,11 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
         </g>
       </g>
     </svg>
-    <span class="whatsapp-tooltip">Chat with us!</span>
+    <span class="whatsapp-tooltip" aria-hidden="true">Chat with us!</span>
   </a>
 
-  <!-- Pulse Animation -->
-  <div class="whatsapp-pulse"></div>
+  <!-- Pulse Animation (decorative) -->
+  <div class="whatsapp-pulse" aria-hidden="true"></div>
 </div>
 
 <style>
@@ -134,6 +133,29 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     100% {
       transform: translate(-50%, -50%) scale(1.5);
       opacity: 0;
+    }
+  }
+
+  /* Enhanced focus for keyboard users */
+  .whatsapp-button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+    transform: scale(1.1);
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .whatsapp-pulse {
+      animation: none;
+      display: none;
+    }
+
+    .whatsapp-button:hover {
+      transform: none;
+    }
+
+    .whatsapp-tooltip {
+      transition: none;
     }
   }
 

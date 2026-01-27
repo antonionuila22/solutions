@@ -144,6 +144,9 @@ const technologies: Tech[] = [
     gap: 1rem;
     animation: marquee 40s linear infinite;
     will-change: transform;
+    /* Use GPU acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .marquee-reverse .marquee-track {
@@ -156,16 +159,23 @@ const technologies: Tech[] = [
 
   @keyframes marquee {
     0% {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
   }
 
   /* Pause animation on hover */
   .marquee-container:hover .marquee-track {
     animation-play-state: paused;
+  }
+
+  /* Mobile: slower animation to reduce GPU pressure */
+  @media (max-width: 768px) {
+    .marquee-track {
+      animation-duration: 60s;
+    }
   }
 
   /* Reduce motion for accessibility */
@@ -175,3 +185,25 @@ const technologies: Tech[] = [
     }
   }
 </style>
+
+<script>
+  // Pause marquee when not visible to save CPU/GPU
+  function initMarqueeObserver() {
+    const marquees = document.querySelectorAll('.marquee-container');
+    if (!marquees.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const track = entry.target.querySelector('.marquee-track');
+        if (track) {
+          track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    marquees.forEach(m => observer.observe(m));
+  }
+
+  initMarqueeObserver();
+  document.addEventListener('astro:after-swap', initMarqueeObserver);
+</script>
