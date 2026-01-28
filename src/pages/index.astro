@@ -15,6 +15,7 @@ import DesignRushSection from "../components/DesignRushSection.astro";
 import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
 import HowWeWork from "../components/HowWeWork.astro";
 import ValueProposition from "../components/ValueProposition.astro";
+import StickyCTA from "../components/StickyCTA";
 
 // LocalBusiness Schema for local SEO
 const localBusinessSchema = {
@@ -186,77 +187,108 @@ const reviewsSchema = {
   <TechMarquee />
   <!-- Services Section -->
   <section
-    class="py-12 sm:py-16 lg:py-24 flex flex-col gap-8 sm:gap-12 lg:gap-16"
+    class="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50"
   >
-    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 text-center px-4">
-      Web Development Services <span class="text-orange-500">That Deliver Results</span>
-    </h2>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-10 sm:mb-14">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full mb-6"
+        >
+          <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span class="text-sm font-medium text-orange-600">Full-Service Digital Agency</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          Everything Your Brand Needs <span class="text-orange-500">to Grow</span>
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          From web development to branding, video production to 3D rendering — we handle it all under one roof.
+        </p>
+      </div>
 
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full sm:w-11/12 lg:w-3/4 mx-auto px-4 sm:px-0"
-    >
+      <!-- Services Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+      >
       <CardService
         icon="./icons/interfaz-de-usuario.webp"
         title="UX/UI Design"
-        description="We design intuitive and engaging experiences that boost conversions and build customer loyalty."
+        description="Intuitive interfaces that convert visitors into customers. User-centered design that keeps people engaged."
         learnMoreUrl="/services/ux-ui"
       />
 
       <CardService
         icon="./icons/sitio-web.webp"
-        title="Web Development"
-        description="We build fast, SEO-optimized websites and cross-platform mobile apps with Expo React Native. Smooth, high-performance interfaces for web, iOS, and Android."
+        title="Web & App Development"
+        description="Fast, SEO-ready websites and mobile apps. React, Next.js, and Expo for web, iOS, and Android."
         learnMoreUrl="/services/web-development"
       />
 
       <CardService
         icon="./icons/diseno-grafico.webp"
-        title="Branding"
-        description="We craft visual identities that capture your brand's essence and elevate your market presence."
-        learnMoreUrl="/branding"
+        title="Branding & Identity"
+        description="Logos, color systems, and brand guides that make your business memorable and professional."
+        learnMoreUrl="/services/branding"
       />
 
       <CardService
         icon="./icons/seo.webp"
-        title="SEO"
-        description="We boost your Google rankings through strategic technical and content SEO optimization."
-        learnMoreUrl="/seo"
+        title="SEO Optimization"
+        description="Rank higher on Google with technical SEO, content strategy, and performance optimization."
+        learnMoreUrl="/services/seo"
       />
 
       <CardService
         icon="./icons/redes-sociales.webp"
-        title="Social Media"
-        description="We create content strategies and ad campaigns that amplify your social media presence and engagement."
+        title="Social Media Marketing"
+        description="Content creation, ad campaigns, and community management that grow your audience."
         learnMoreUrl="/services/social-media"
       />
 
       <CardService
         icon="./icons/edicion-de-video.webp"
         title="Video Production"
-        description="We produce and edit professional videos that captivate audiences across advertising and social platforms."
+        description="Professional video editing, commercials, and social content that captures attention."
         learnMoreUrl="/services/video-production"
       />
 
       <CardService
         icon="./icons/animacion.webp"
-        title="2D & 3D Animation"
-        description="We create dynamic motion graphics that bring your marketing, presentations, and interactive content to life."
+        title="Motion & Animation"
+        description="2D/3D animations, motion graphics, and explainer videos that bring ideas to life."
         learnMoreUrl="/services/animation"
       />
 
       <CardService
         icon="./icons/modelo-3d.webp"
         title="3D Rendering"
-        description="We deliver photorealistic 3D models and renderings for architectural projects and product visualization."
+        description="Photorealistic renders for architecture, products, and marketing visualizations."
         learnMoreUrl="/services/3d-rendering"
       />
 
       <CardService
         icon="./icons/camiseta.webp"
-        title="Promotional Products"
-        description="Custom branded merchandise using sublimation, digital printing, and laser engraving techniques."
+        title="Branded Merchandise"
+        description="Custom promotional products with sublimation, digital print, and laser engraving."
         learnMoreUrl="/services/promotional-products"
       />
+      </div>
+
+      <!-- CTA after services -->
+      <div class="text-center mt-10 sm:mt-14">
+        <p class="text-slate-600 mb-4">Need something specific?</p>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-all duration-200 active:scale-[0.98]"
+        >
+          Let's Talk About Your Project
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -709,6 +741,9 @@ const reviewsSchema = {
   <DesignRushSection />
 
   <Faq />
+
+  <!-- Sticky CTA for mobile -->
+  <StickyCTA client:idle text="Get Free Quote" href="/contact" />
 </Layout>
 
 <style>

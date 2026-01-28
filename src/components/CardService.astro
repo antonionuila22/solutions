@@ -9,36 +9,55 @@ interface Props {
 const { icon, title, description, learnMoreUrl } = Astro.props;
 ---
 
-<div
-    class="container-card-service w-full max-w-screen-xl p-4 sm:p-6 rounded-xl border border-gray-300
-          cursor-pointer transition-all duration-300
-         bg-white hover:bg-gradient-to-r from-[#f48200] to-[#faa732] hover:shadow-sm hover:scale-105 active:scale-[1.02] flex flex-col items-start gap-3 sm:gap-4 group"
+<article
+    aria-label={`${title} service`}
+    class="container-card-service w-full max-w-screen-xl p-4 sm:p-6 rounded-xl border border-gray-200
+          cursor-pointer transition-all duration-300 ease-out
+         bg-white hover:shadow-xl hover:shadow-orange-500/20 hover:scale-[1.03] active:scale-[1.01] flex flex-col items-start gap-3 sm:gap-4 group hover:border-transparent service-card-hover"
 >
-    <!-- Ícono -->
+    <!-- Ícono con animación -->
     <div
-        class="flex items-center justify-center w-15 h-15 rounded-full bg-gray-100 mb-4"
+        class="icon-container flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl mb-2 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
     >
-        <img loading="lazy" src={icon} alt={title} class="w-10 h-10" />
+        <img loading="lazy" src={icon} alt="" class="w-8 h-8 sm:w-10 sm:h-10 transition-transform duration-300 group-hover:scale-110" />
     </div>
 
     <!-- Título -->
-    <h3 class="text-base sm:text-lg font-bold text-black group-hover:text-white">{title}</h3>
+    <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-white transition-colors duration-300">{title}</h3>
 
     <!-- Descripción -->
-    <p class="text-black text-xs sm:text-sm mt-1 sm:mt-2 group-hover:text-white leading-relaxed">{description}</p>
+    <p class="text-slate-600 text-xs sm:text-sm mt-1 group-hover:text-white/90 leading-relaxed transition-colors duration-300">{description}</p>
 
     <!-- Botón dinámico - visible siempre en mobile, hover en desktop -->
     <div
-        class="learn-more-btn opacity-100 sm:opacity-0 transition-opacity duration-300 sm:group-hover:opacity-100 mt-auto pt-2"
+        class="learn-more-btn opacity-100 sm:opacity-0 transition-all duration-300 sm:group-hover:opacity-100 mt-auto pt-2"
     >
         <a
             href={learnMoreUrl}
-            class="inline-flex items-center gap-1 text-sm font-semibold text-black group-hover:text-white hover:underline py-2"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-orange-600 group-hover:text-white py-2 transition-colors duration-300"
         >
             Learn More
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
         </a>
     </div>
-</div>
+</article>
+
+<style>
+    .service-card-hover {
+        background: white;
+    }
+
+    .service-card-hover:hover {
+        background: linear-gradient(to bottom right, #f48200, #faa732);
+    }
+
+    .icon-container {
+        background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+    }
+
+    .service-card-hover:hover .icon-container {
+        background: rgba(255, 255, 255, 0.2);
+    }
+</style>
