@@ -1,0 +1,673 @@
+---
+/**
+ * Service Page Template V4
+ * Premium design matching the Home page style
+ */
+
+import Layout from "../layouts/Layout.astro";
+
+interface ServiceItem {
+    title: string;
+    description: string;
+    icon?: string;
+}
+
+interface ProcessStep {
+    title: string;
+    description: string;
+    details?: string[];
+}
+
+interface Benefit {
+    title: string;
+    description: string;
+    icon?: string;
+}
+
+interface Package {
+    name: string;
+    price: string;
+    description: string;
+    features: string[];
+    popular?: boolean;
+}
+
+interface FaqItem {
+    question: string;
+    answer: string;
+}
+
+interface Props {
+    title: string;
+    description: string;
+    keywords: string;
+    serviceName: string;
+    tagline: string;
+    heroDescription: string;
+    heroFeatures?: string[];
+    price?: string;
+    priceNote?: string;
+    overviewTitle?: string;
+    overviewDescription: string;
+    overviewPoints?: string[];
+    services: ServiceItem[];
+    approachTitle?: string;
+    approachDescription?: string;
+    approachPoints?: { title: string; description: string }[];
+    process: ProcessStep[];
+    benefits: Benefit[];
+    packages?: Package[];
+    faqs?: FaqItem[];
+    ctaTitle?: string;
+    ctaDescription?: string;
+}
+
+const {
+    title,
+    description,
+    keywords,
+    serviceName,
+    tagline,
+    heroDescription,
+    heroFeatures = [],
+    price,
+    priceNote,
+    overviewTitle,
+    overviewDescription,
+    overviewPoints = [],
+    services,
+    approachTitle = "Our Approach",
+    approachDescription,
+    approachPoints = [],
+    process,
+    benefits,
+    packages = [],
+    faqs = [],
+    ctaTitle = "Ready to get started?",
+    ctaDescription = "Let's discuss your project and find the best solution for your needs."
+} = Astro.props;
+---
+
+<Layout
+    title={title}
+    description={description}
+    keywords={keywords}
+    image="/photos/bannercodebrand.webp"
+>
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center py-32 lg:py-40 overflow-hidden bg-slate-950">
+        <!-- Grid Background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(6, 182, 212, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        </div>
+
+        <!-- Gradient Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 text-cyan-500/20 font-mono text-sm hidden lg:block animate-float">
+            <pre>&lt;code&gt;</pre>
+        </div>
+        <div class="absolute bottom-40 right-20 text-orange-500/20 font-mono text-sm hidden lg:block animate-float" style="animation-delay: 1s;">
+            <pre>&lt;/&gt;</pre>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-cyan-500/30 rounded-full mb-8 backdrop-blur-sm">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                        </span>
+                        <span class="text-sm font-medium text-cyan-400">{serviceName}</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        {tagline}
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-8">
+                        {heroDescription}
+                    </p>
+
+                    {heroFeatures.length > 0 && (
+                        <ul class="space-y-3 mb-10">
+                            {heroFeatures.map((feature) => (
+                                <li class="flex items-center gap-3 text-slate-300">
+                                    <div class="flex-shrink-0 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center">
+                                        <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <span>{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a
+                            href="/contact"
+                            class="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1"
+                        >
+                            Get a Free Quote
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a
+                            href="#overview"
+                            class="inline-flex items-center gap-2 px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold rounded-xl border border-slate-700 hover:border-slate-600 transition-all duration-200"
+                        >
+                            Learn More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right - Price Card -->
+                {price && (
+                    <div class="lg:justify-self-end hero-card">
+                        <div class="relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-lg opacity-30"></div>
+                            <div class="relative bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 max-w-sm">
+                                <div class="text-center mb-8">
+                                    <p class="text-slate-400 text-sm mb-2 uppercase tracking-wide">Starting from</p>
+                                    <div class="text-5xl lg:text-6xl font-black text-white mb-2">{price}</div>
+                                    {priceNote && <p class="text-slate-400 text-sm">{priceNote}</p>}
+                                </div>
+
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-center gap-4 text-slate-300 p-3 bg-slate-800/50 rounded-xl">
+                                        <div class="w-10 h-10 rounded-xl bg-cyan-500 flex items-center justify-center shadow-lg">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium">Free consultation</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-slate-300 p-3 bg-slate-800/50 rounded-xl">
+                                        <div class="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center shadow-lg">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium">Quote within 24 hours</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-slate-300 p-3 bg-slate-800/50 rounded-xl">
+                                        <div class="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center shadow-lg">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium">Dedicated team</span>
+                                    </div>
+                                </div>
+
+                                <a
+                                    href="tel:+16893169102"
+                                    class="flex items-center justify-center gap-2 w-full py-4 bg-white hover:bg-slate-100 text-slate-900 font-bold rounded-xl transition-all duration-200 shadow-lg"
+                                >
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                    </svg>
+                                    Call Us Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-3">
+            <span class="text-xs text-slate-500 uppercase tracking-widest">Scroll</span>
+            <div class="w-6 h-10 border-2 border-slate-700 rounded-full flex items-start justify-center p-2">
+                <div class="w-1 h-2 bg-slate-500 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex items-center gap-2 text-sm text-slate-400">
+                <a href="/" class="hover:text-white transition-colors">Home</a>
+                <span>/</span>
+                <a href="/services" class="hover:text-white transition-colors">Services</a>
+                <span>/</span>
+                <span class="text-cyan-400">{serviceName}</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+                    OVERVIEW
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+                    {overviewTitle || `What is ${serviceName}?`}
+                </h2>
+                <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                    {overviewDescription}
+                </p>
+            </div>
+
+            {overviewPoints.length > 0 && (
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {overviewPoints.map((point, index) => (
+                        <div class="group flex gap-4 p-6 bg-slate-50 hover:bg-white rounded-2xl border border-slate-100 hover:border-cyan-200 hover:shadow-xl transition-all duration-300">
+                            <div class="flex-shrink-0 w-12 h-12 bg-cyan-500 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">
+                                {String(index + 1).padStart(2, '0')}
+                            </div>
+                            <p class="text-slate-700 leading-relaxed">{point}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 lg:py-32 bg-slate-950">
+        <!-- Background -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px); background-size: 80px 80px;"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-semibold mb-6">
+                    WHAT'S INCLUDED
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+                    Our <span class="text-cyan-400">{serviceName}</span> Services
+                </h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                    Everything you get when you work with us
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                {services.map((service, index) => (
+                    <div class="group bg-slate-900/60 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all duration-300">
+                        <div class="flex items-start gap-5">
+                            <div class="flex-shrink-0 w-14 h-14 bg-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                {String(index + 1).padStart(2, '0')}
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                                    {service.title}
+                                </h3>
+                                <p class="text-slate-400 leading-relaxed">
+                                    {service.description}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    {approachPoints.length > 0 && (
+        <section class="py-20 lg:py-32 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
+                            OUR APPROACH
+                        </span>
+                        <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+                            {approachTitle}
+                        </h2>
+                        {approachDescription && (
+                            <p class="text-xl text-slate-600 leading-relaxed">
+                                {approachDescription}
+                            </p>
+                        )}
+                    </div>
+
+                    <div class="space-y-5">
+                        {approachPoints.map((point, index) => (
+                            <div class="group flex gap-5 p-6 bg-white rounded-2xl border border-slate-200 hover:border-orange-300 shadow-sm hover:shadow-xl transition-all duration-300">
+                                <div class="flex-shrink-0 w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    {index + 1}
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-2 text-lg">{point.title}</h4>
+                                    <p class="text-slate-600 leading-relaxed">{point.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    )}
+
+    <!-- Process Section -->
+    <section class="py-24 lg:py-36 bg-slate-950 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(6, 182, 212, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.2) 1px, transparent 1px); background-size: 80px 80px;"></div>
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-semibold mb-8">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                    OUR PROCESS
+                </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    How We <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Work</span>
+                </h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    A proven process that delivers results consistently
+                </p>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="relative">
+                <!-- Connection Line (Desktop) -->
+                <div class="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/20 via-cyan-500/40 to-cyan-500/20"></div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                    {process.map((step, index) => (
+                        <div class="relative group">
+                            <!-- Card -->
+                            <div class="bg-slate-900/80 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/50 rounded-3xl p-8 h-full transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10">
+                                <!-- Step Number -->
+                                <div class="relative mb-8">
+                                    <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                                    <div class="relative w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-lg shadow-cyan-500/25">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                                    {step.title}
+                                </h3>
+                                <p class="text-slate-400 leading-relaxed mb-6 text-sm">
+                                    {step.description}
+                                </p>
+
+                                {step.details && step.details.length > 0 && (
+                                    <ul class="space-y-3 pt-4 border-t border-slate-800">
+                                        {step.details.map((detail) => (
+                                            <li class="flex items-start gap-3 text-sm">
+                                                <div class="w-5 h-5 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                    <svg class="w-3 h-3 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-slate-500">{detail}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 border border-green-200 rounded-full text-green-700 text-sm font-semibold mb-6">
+                    WHY CODEBRAND
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+                    Why Choose <span class="text-orange-500">Us</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    What makes us different for {serviceName.toLowerCase()}
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {benefits.map((benefit) => (
+                    <div class="group text-center p-8 bg-slate-50 hover:bg-white rounded-3xl border border-slate-100 hover:border-slate-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-20 h-20 bg-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <span class="text-3xl">{benefit.icon || '✓'}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
+                        <p class="text-slate-600 leading-relaxed">{benefit.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    {packages.length > 0 && (
+        <section class="py-20 lg:py-32 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+                        PRICING
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+                        {serviceName} <span class="text-cyan-600">Packages</span>
+                    </h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                        Transparent pricing with no hidden fees
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    {packages.map((pkg) => (
+                        <div class:list={[
+                            "relative rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2",
+                            pkg.popular
+                                ? "bg-cyan-800 text-white shadow-2xl scale-105 z-10"
+                                : "bg-white border border-slate-200 hover:border-cyan-300 hover:shadow-xl"
+                        ]}>
+                            {pkg.popular && (
+                                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+                                    Most Popular
+                                </span>
+                            )}
+
+                            <h3 class={pkg.popular ? "text-2xl font-bold mb-2 text-white" : "text-2xl font-bold mb-2 text-slate-900"}>
+                                {pkg.name}
+                            </h3>
+
+                            <p class={pkg.popular ? "text-sm mb-6 text-cyan-100" : "text-sm mb-6 text-slate-600"}>
+                                {pkg.description}
+                            </p>
+
+                            <div class={pkg.popular ? "text-5xl font-black mb-8 text-white" : "text-5xl font-black mb-8 text-cyan-800"}>
+                                {pkg.price}
+                            </div>
+
+                            <ul class="space-y-4 mb-8">
+                                {pkg.features.map((feature) => (
+                                    <li class="flex items-start gap-3 text-sm">
+                                        <svg class={pkg.popular ? "w-5 h-5 flex-shrink-0 mt-0.5 text-green-400" : "w-5 h-5 flex-shrink-0 mt-0.5 text-green-500"} fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class={pkg.popular ? "text-cyan-100" : "text-slate-700"}>
+                                            {feature}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <a
+                                href={`/contact?service=${serviceName.toLowerCase().replace(/\s+/g, '-')}&package=${pkg.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                class={pkg.popular
+                                    ? "block w-full py-4 text-center font-bold rounded-xl bg-white text-cyan-800 hover:bg-orange-500 hover:text-white shadow-lg transition-all duration-300"
+                                    : "block w-full py-4 text-center font-bold rounded-xl bg-slate-900 text-white hover:bg-cyan-700 transition-all duration-300"
+                                }
+                            >
+                                Get Started
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )}
+
+    <!-- FAQ Section -->
+    {faqs.length > 0 && (
+        <section class="py-20 lg:py-32 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-full text-slate-700 text-sm font-semibold mb-6">
+                        FAQ
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
+                        Common <span class="text-orange-500">Questions</span>
+                    </h2>
+                    <p class="text-xl text-slate-600">
+                        Everything you need to know about our {serviceName.toLowerCase()} services
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    {faqs.map((faq) => (
+                        <details class="group bg-slate-50 hover:bg-white rounded-2xl border border-slate-100 hover:border-slate-200 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                <h3 class="font-semibold text-slate-900 pr-4 text-lg">{faq.question}</h3>
+                                <div class="flex-shrink-0 w-10 h-10 bg-slate-200 group-hover:bg-orange-100 rounded-full flex items-center justify-center transition-colors">
+                                    <svg class="w-5 h-5 text-slate-600 group-hover:text-orange-600 group-open:rotate-180 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </div>
+                            </summary>
+                            <div class="px-6 pb-6 text-slate-600 leading-relaxed border-t border-slate-100">
+                                <p class="pt-4">{faq.answer}</p>
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )}
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-36 relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-slate-950">
+            <div class="absolute inset-0" style="background-image: linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px); background-size: 60px 60px;"></div>
+        </div>
+
+        <!-- Gradient Orbs -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-orange-500/20 via-amber-500/20 to-yellow-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- CTA Card -->
+            <div class="relative">
+                <!-- Card Glow -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-3xl blur-xl opacity-30"></div>
+
+                <div class="relative bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 rounded-3xl p-12 lg:p-16 text-center overflow-hidden">
+                    <!-- Pattern Overlay -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+
+                    <!-- Decorative Elements -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-800/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+                    <div class="relative z-10">
+                        <!-- Icon -->
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-8 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                            {ctaTitle}
+                        </h2>
+                        <p class="text-lg lg:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+                            {ctaDescription}
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                            <a
+                                href="/contact"
+                                class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-orange-600 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transform hover:-translate-y-1 transition-all duration-300 shadow-2xl shadow-orange-900/30"
+                            >
+                                Start Your Project
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                            <a
+                                href="tel:+16893169102"
+                                class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-sm text-white rounded-2xl font-bold text-lg border-2 border-white/30 hover:bg-white hover:text-orange-600 hover:border-white transition-all duration-300"
+                            >
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                Call Us Now
+                            </a>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="flex flex-wrap items-center justify-center gap-6 text-white/80 text-sm">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Free consultation</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>No commitment</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Response in 24h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+</style>
