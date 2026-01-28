@@ -1,48 +1,157 @@
-# E-Commerce Solutions
+# Codebrand Solutions
 
-## 📌 Proyecto: solutions.codebrand.es
+Sitio web corporativo y plataforma de servicios digitales de **Codebrand**, desarrollado con Astro 5 y desplegado en Netlify.
 
-Este es un proyecto de comercio electrónico desarrollado y gestionado por **CodeBrand**.  
-Está alojado en un **VPS de Hostinger**, asegurando un alto rendimiento, seguridad y escalabilidad.
-
-## 🚀 Tecnologías Utilizadas
-
-- **Front-end:** Astro + React + TailwindCSS
-- **Back-end:** Node.js + Express (o NestJS según necesidad)
-- **Base de Datos:** PostgreSQL / MongoDB
-- **Autenticación:** JWT / OAuth2
-- **Almacenamiento de Archivos:** S3 / Cloudinary
-- **Despliegue:** Docker + Nginx + CI/CD con GitHub Actions
-- **Seguridad:** SSL, CSRF, CORS, Rate Limiting
-- **Monitorización:** Prometheus + Grafana
-
-## 🌍 Configuración del VPS en Hostinger
-
-- **Proveedor:** Hostinger VPS
-- **Sistema Operativo:** Ubuntu 22.04
-- **Servidor Web:** Nginx (como proxy inverso)
-- **Gestor de Procesos:** PM2 / Docker
-- **Firewall:** UFW (activado)
-- **Certificados SSL:** Let's Encrypt (Certbot)
-
-## 📥 Instalación y Configuración
-
-Este repositorio es **privado** y solo accesible por el equipo de **CodeBrand**.  
-La configuración del entorno se gestiona de forma interna y **no se incluyen archivos sensibles** como `.env`.
-
-## 🚀 Despliegue en VPS de Hostinger
-
-El despliegue se gestiona a través de procesos internos y **CI/CD automatizado**.
-
-## 🛠 Mantenimiento y Monitorización
-
-- **Acceso al VPS:** Solo autorizado para el equipo de CodeBrand.
-- **Monitoreo:** Implementado con herramientas de observabilidad y seguridad.
-
-## 📄 Licencia
-
-Este proyecto es propiedad de **CodeBrand** y no está disponible para uso público o distribución.
+**URL de produccion:** [codebrand.us](https://codebrand.us)
 
 ---
 
-Para más información, contactar con el equipo en [info@codebrand.es](mailto:info@codebrand.es).
+## Stack Tecnologico
+
+| Categoria | Tecnologia |
+|-----------|------------|
+| Framework | Astro 5 (SSR) |
+| UI Components | React 18 |
+| Styling | TailwindCSS 4 |
+| Animations | Framer Motion, GSAP |
+| Database | Turso (LibSQL) |
+| Email | Resend |
+| Deployment | Netlify (Edge Functions) |
+| Image Optimization | Sharp |
+
+---
+
+## Estructura del Proyecto
+
+```
+src/
+├── assets/          # Logos y assets estaticos
+├── components/      # Componentes Astro y React
+│   ├── magicui/     # Componentes de animacion
+│   ├── service-sections/  # Secciones reutilizables para paginas de servicios
+│   └── ui/          # Componentes base (Button, Card, Badge)
+├── configs/         # Configuraciones de servicios
+│   └── services/    # Configs individuales por servicio
+├── content/         # Contenido Markdown/MDX
+│   ├── blog/        # Articulos del blog
+│   ├── countryareas/  # Paginas por pais
+│   ├── products/    # Descripciones de servicios
+│   └── projects/    # Casos de estudio
+├── data/            # Datos estaticos JSON
+├── layouts/         # Layouts de pagina
+├── lib/             # Utilidades y helpers
+├── pages/           # Rutas del sitio
+├── styles/          # Estilos globales
+└── utils/           # Funciones utilitarias
+```
+
+---
+
+## Requisitos
+
+- Node.js 18.14.1 o superior
+- npm o pnpm
+
+---
+
+## Instalacion Local
+
+```bash
+# Clonar el repositorio
+git clone [repo-url]
+
+# Instalar dependencias
+npm install --legacy-peer-deps
+
+# Copiar variables de entorno
+cp .env.example .env
+```
+
+### Variables de Entorno Requeridas
+
+```env
+TURSO_DATABASE_URL=       # URL de la base de datos Turso
+TURSO_AUTH_TOKEN=         # Token de autenticacion Turso
+RESEND_API_KEY=           # API key de Resend para emails
+```
+
+---
+
+## Scripts Disponibles
+
+| Comando | Descripcion |
+|---------|-------------|
+| `npm run dev` | Inicia servidor de desarrollo en `localhost:4321` |
+| `npm run build` | Genera build de produccion |
+| `npm run preview` | Previsualiza build de produccion localmente |
+| `npm run optimize-images` | Optimiza imagenes del proyecto |
+
+---
+
+## Deployment
+
+El sitio se despliega automaticamente en **Netlify** con cada push a la rama `master`.
+
+### Configuracion de Netlify
+
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **Functions directory:** `.netlify/functions-internal`
+- **Edge Functions:** Habilitadas
+
+La configuracion completa esta en `netlify.toml`.
+
+---
+
+## Caracteristicas del Sitio
+
+- **SSR (Server-Side Rendering)** para mejor SEO y rendimiento
+- **Sitemap automatico** con prioridades por tipo de pagina
+- **Blog con MDX** para contenido rico
+- **Formularios de contacto** integrados con Resend
+- **Base de datos Turso** para almacenamiento de leads
+- **Paginas de servicios modulares** con configuracion centralizada
+- **Soporte multi-region** (USA, Latinoamerica, Espana)
+- **Optimizacion de imagenes** con Sharp
+
+---
+
+## Servicios Ofrecidos
+
+El sitio presenta los siguientes servicios de Codebrand:
+
+- Web Development
+- E-commerce
+- Branding & Identidad Visual
+- UX/UI Design
+- SEO
+- Animacion 2D/3D
+- Renders 3D
+- Video Production
+- Social Media Design
+- Productos Promocionales
+
+---
+
+## Documentacion Adicional
+
+- **[.business-logic.md](./.business-logic.md)** - Modelo de negocio, precios, terminos y condiciones
+- **[CHANGELOG.md](./CHANGELOG.md)** - Historial de cambios
+
+---
+
+## Contacto
+
+| | |
+|--|--|
+| **Web** | [codebrand.us](https://codebrand.us) |
+| **Email** | info@codebrand.es |
+| **Telefono** | +504 3272-2973 |
+
+---
+
+## Licencia
+
+Este proyecto es propiedad de **Codebrand** y no esta disponible para uso publico o distribucion.
+
+Copyright 2025 Codebrand. Todos los derechos reservados.
