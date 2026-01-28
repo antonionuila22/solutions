@@ -404,3 +404,29 @@ html {
         display: block;
     }
 }
+
+/* ================================
+   MOBILE ANIMATION OPTIMIZATIONS
+   ================================ */
+
+/* Slow down pulse animation on mobile to save battery */
+@media (max-width: 640px) {
+    .animate-pulse {
+        animation-duration: 3s;
+    }
+
+    /* Reduce marquee animation complexity on small screens */
+    .animate-marquee {
+        animation-duration: calc(var(--duration) * 1.5);
+    }
+}
+
+/* Touch feedback for interactive elements on mobile */
+@media (hover: none) {
+    button:active,
+    a:active,
+    [role="button"]:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}

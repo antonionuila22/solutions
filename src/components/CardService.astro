@@ -10,9 +10,9 @@ const { icon, title, description, learnMoreUrl } = Astro.props;
 ---
 
 <div
-    class="container-card-service w-full max-w-screen-xl p-6 rounded-xl border border-gray-300
+    class="container-card-service w-full max-w-screen-xl p-4 sm:p-6 rounded-xl border border-gray-300
           cursor-pointer transition-all duration-300
-         bg-white hover:bg-gradient-to-r from-[#f48200] to-[#faa732] hover:shadow-sm hover:scale-105 flex flex-col items-start gap-4 group"
+         bg-white hover:bg-gradient-to-r from-[#f48200] to-[#faa732] hover:shadow-sm hover:scale-105 active:scale-[1.02] flex flex-col items-start gap-3 sm:gap-4 group"
 >
     <!-- Ícono -->
     <div
@@ -22,20 +22,23 @@ const { icon, title, description, learnMoreUrl } = Astro.props;
     </div>
 
     <!-- Título -->
-    <h3 class="text-lg font-bold text-black group-hover:text-white">{title}</h3>
+    <h3 class="text-base sm:text-lg font-bold text-black group-hover:text-white">{title}</h3>
 
     <!-- Descripción -->
-    <p class="text-black text-sm mt-2 group-hover:text-white">{description}</p>
+    <p class="text-black text-xs sm:text-sm mt-1 sm:mt-2 group-hover:text-white leading-relaxed">{description}</p>
 
-    <!-- Botón dinámico visible solo en hover -->
+    <!-- Botón dinámico - visible siempre en mobile, hover en desktop -->
     <div
-        class="learn-more-btn opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        class="learn-more-btn opacity-100 sm:opacity-0 transition-opacity duration-300 sm:group-hover:opacity-100 mt-auto pt-2"
     >
         <a
             href={learnMoreUrl}
-            class="mt-4 inline-block text-black font-semibold group-hover:text-white hover:underline"
+            class="inline-flex items-center gap-1 text-sm font-semibold text-black group-hover:text-white hover:underline py-2"
         >
-            Learn More →
+            Learn More
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
         </a>
     </div>
 </div>
