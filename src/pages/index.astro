@@ -15,7 +15,6 @@ import DesignRushSection from "../components/DesignRushSection.astro";
 import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
 import HowWeWork from "../components/HowWeWork.astro";
 import ValueProposition from "../components/ValueProposition.astro";
-import StickyCTA from "../components/StickyCTA";
 
 // LocalBusiness Schema for local SEO
 const localBusinessSchema = {
@@ -178,7 +177,7 @@ const reviewsSchema = {
         </p>
       </div>
     </div>
-    <Testimonial client:idle />
+    <Testimonial client:visible />
   </section>
 
   <TrustBadges />
@@ -187,30 +186,40 @@ const reviewsSchema = {
   <TechMarquee />
   <!-- Services Section -->
   <section
-    class="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50"
+    class="py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-white via-slate-50/50 to-slate-100/80 relative overflow-hidden"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-200/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-10 sm:mb-14">
+      <div class="text-center mb-12 sm:mb-16">
         <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full mb-6"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 rounded-full mb-6 shadow-sm"
         >
-          <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-          <span class="text-sm font-medium text-orange-600">Full-Service Digital Agency</span>
+          <span class="flex items-center justify-center w-5 h-5 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full">
+            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </span>
+          <span class="text-sm font-semibold text-orange-700">Full-Service Digital Agency</span>
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-          Everything Your Brand Needs <span class="text-orange-500">to Grow</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-5 leading-tight">
+          Everything Your Brand Needs
+          <span class="block sm:inline"> </span>
+          <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">to Grow</span>
         </h2>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
           From web development to branding, video production to 3D rendering — we handle it all under one roof.
         </p>
       </div>
 
       <!-- Services Grid -->
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7"
       >
       <CardService
         icon="./icons/interfaz-de-usuario.webp"
@@ -277,17 +286,19 @@ const reviewsSchema = {
       </div>
 
       <!-- CTA after services -->
-      <div class="text-center mt-10 sm:mt-14">
-        <p class="text-slate-600 mb-4">Need something specific?</p>
-        <a
-          href="/contact"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-all duration-200 active:scale-[0.98]"
-        >
-          Let's Talk About Your Project
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+      <div class="text-center mt-14 sm:mt-16 lg:mt-20">
+        <div class="inline-flex flex-col items-center gap-4 p-6 sm:p-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-lg">
+          <p class="text-slate-700 font-medium">Need something specific?</p>
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-3 px-7 py-3.5 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white font-semibold rounded-xl shadow-lg shadow-slate-900/20 hover:shadow-xl hover:shadow-slate-900/30 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
+          >
+            Let's Talk About Your Project
+            <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -742,8 +753,6 @@ const reviewsSchema = {
 
   <Faq />
 
-  <!-- Sticky CTA for mobile -->
-  <StickyCTA client:idle text="Get Free Quote" href="/contact" />
 </Layout>
 
 <style>

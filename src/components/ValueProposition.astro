@@ -427,73 +427,85 @@
 
 <script>
   // Dynamically import GSAP only when needed for better performance
+  // Skip animations on mobile for better performance
   const initAnimations = async () => {
-    const { gsap } = await import("gsap");
-    const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+    // Skip GSAP on mobile devices for performance
+    if (window.innerWidth < 768) return;
 
-    gsap.registerPlugin(ScrollTrigger);
+    // Check for reduced motion preference
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // Animate header on load
-    gsap.from(".value-header", {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: "power3.out",
-    });
+    try {
+      const { gsap } = await import("gsap");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
 
-    // Animate stats cards with stagger
-    gsap.from(".stat-card", {
-      scrollTrigger: {
-        trigger: ".stats-grid",
-        start: "top 80%",
-      },
-      opacity: 0,
-      y: 50,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: "power3.out",
-    });
+      gsap.registerPlugin(ScrollTrigger);
 
-    // Animate benefits list items
-    gsap.from(".benefit-item", {
-      scrollTrigger: {
-        trigger: ".benefits-list",
-        start: "top 80%",
-      },
-      opacity: 0,
-      x: -30,
-      stagger: 0.1,
-      duration: 0.6,
-      ease: "power2.out",
-    });
+      // Animate header on load
+      gsap.from(".value-header", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out",
+      });
 
-    // Animate price comparison
-    gsap.from(".price-comparison", {
-      scrollTrigger: {
-        trigger: ".content-grid",
-        start: "top 70%",
-      },
-      opacity: 0,
-      x: 50,
-      duration: 0.8,
-      ease: "power3.out",
-    });
+      // Animate stats cards with stagger
+      gsap.from(".stat-card", {
+        scrollTrigger: {
+          trigger: ".stats-grid",
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 50,
+        stagger: 0.15,
+        duration: 0.8,
+        ease: "power3.out",
+      });
 
-    // Animate CTA
-    gsap.from(".cta-section", {
-      scrollTrigger: {
-        trigger: ".cta-section",
-        start: "top 90%",
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: "power3.out",
-    });
+      // Animate benefits list items
+      gsap.from(".benefit-item", {
+        scrollTrigger: {
+          trigger: ".benefits-list",
+          start: "top 80%",
+        },
+        opacity: 0,
+        x: -30,
+        stagger: 0.1,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+
+      // Animate price comparison
+      gsap.from(".price-comparison", {
+        scrollTrigger: {
+          trigger: ".content-grid",
+          start: "top 70%",
+        },
+        opacity: 0,
+        x: 50,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      // Animate CTA
+      gsap.from(".cta-section", {
+        scrollTrigger: {
+          trigger: ".cta-section",
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+    } catch (error) {
+      // GSAP failed to load, elements are already visible by default
+      console.warn("GSAP animations skipped");
+    }
   };
 
   // Use Intersection Observer to only load GSAP when section is near viewport
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window && window.innerWidth >= 768) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -508,8 +520,5 @@
 
     const section = document.querySelector("#value-proposition");
     if (section) observer.observe(section);
-  } else {
-    // Fallback for browsers without IntersectionObserver
-    initAnimations();
   }
 </script>

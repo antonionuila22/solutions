@@ -6,8 +6,8 @@ import AnimatedCounter from "./AnimatedCounter";
 <section
   class="relative min-h-screen flex items-center py-40 lg:py-36 justify-center overflow-hidden bg-slate-950"
 >
-  <!-- Animated Grid Background -->
-  <div class="absolute inset-0 opacity-20">
+  <!-- Animated Grid Background - Hidden on mobile for performance -->
+  <div class="hidden sm:block absolute inset-0 opacity-20">
     <div
       class="absolute inset-0"
       style="background-image: linear-gradient(rgba(6, 182, 212, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.3) 1px, transparent 1px); background-size: 50px 50px;"
@@ -15,16 +15,18 @@ import AnimatedCounter from "./AnimatedCounter";
     </div>
   </div>
 
-  <!-- Gradient Orbs - Responsive sizes -->
+  <!-- Gradient Orbs - Hidden on mobile for performance, visible on tablet+ -->
   <div
-    class="absolute top-1/4 left-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
+    class="hidden sm:block absolute top-1/4 left-1/4 w-72 lg:w-96 h-72 lg:h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse will-change-transform"
   >
   </div>
   <div
-    class="absolute bottom-1/4 right-1/4 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse"
+    class="hidden sm:block absolute bottom-1/4 right-1/4 w-72 lg:w-96 h-72 lg:h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse will-change-transform"
     style="animation-delay: 1s;"
   >
   </div>
+  <!-- Mobile: Simple gradient background instead of animated orbs -->
+  <div class="sm:hidden absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-orange-500/10"></div>
 
   <!-- Floating Code Elements -->
   <div
@@ -191,21 +193,22 @@ import AnimatedCounter from "./AnimatedCounter";
 
       <!-- CTA Buttons -->
       <div
-        class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in px-4 sm:px-0"
+        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 animate-fade-in px-4 sm:px-0"
         style="animation-delay: 0.3s;"
         transition:name="hero-cta"
         transition:animate="slide"
       >
         <a
           href="/contact"
-          class="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-1 active:scale-[0.98] transition-all duration-200"
+          class="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white text-sm sm:text-base font-bold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 sm:hover:-translate-y-1 active:scale-[0.98] transition-all duration-200"
         >
           Get Your Free Quote
           <svg
-            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+            class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
@@ -216,13 +219,14 @@ import AnimatedCounter from "./AnimatedCounter";
         </a>
         <a
           href="/projects"
-          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold rounded-xl border border-slate-700 hover:border-slate-600 active:scale-[0.98] transition-all duration-200"
+          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white text-sm sm:text-base font-semibold rounded-xl border border-slate-700 hover:border-slate-600 active:scale-[0.98] transition-all duration-200"
         >
           <svg
-            class="w-5 h-5"
+            class="w-4 h-4 sm:w-5 sm:h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
