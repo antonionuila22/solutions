@@ -109,48 +109,124 @@ html {
     font-family: 'Poppins Fallback', 'Poppins', ui-sans-serif, system-ui, sans-serif;
 }
 
-@layer utilities {
-    /* Fade-in animation without transform to prevent CLS */
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
+/* ================================
+   ANIMATIONS - Safari Compatible
+   Moved outside @layer for Safari support
+   ================================ */
 
-        to {
-            opacity: 1;
-        }
-    }
-
-    .animate-fade-in {
+/* Fade-in animation */
+@-webkit-keyframes fade-in {
+    0% {
         opacity: 0;
-        animation: fade-in 0.6s ease-out forwards;
     }
+    100% {
+        opacity: 1;
+    }
+}
 
-    @keyframes marquee {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(calc(-100% - var(--gap)));
-        }
+@keyframes fade-in {
+    0% {
+        opacity: 0;
     }
+    100% {
+        opacity: 1;
+    }
+}
 
-    @keyframes marquee-vertical {
-        from {
-            transform: translateY(0);
-        }
-        to {
-            transform: translateY(calc(-100% - var(--gap)));
-        }
+/* Fade-in with slide up */
+@-webkit-keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
     }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
 
-    .animate-marquee {
-        animation: marquee var(--duration) linear infinite;
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
     }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
 
-    .animate-marquee-vertical {
-        animation: marquee-vertical var(--duration) linear infinite;
+/* Marquee horizontal */
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
+    100% {
+        -webkit-transform: translateX(calc(-100% - var(--gap)));
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+@keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-100% - var(--gap)));
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+/* Marquee vertical */
+@-webkit-keyframes marquee-vertical {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(calc(-100% - var(--gap)));
+        transform: translateY(calc(-100% - var(--gap)));
+    }
+}
+
+@keyframes marquee-vertical {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(calc(-100% - var(--gap)));
+        transform: translateY(calc(-100% - var(--gap)));
+    }
+}
+
+/* Animation classes */
+.animate-fade-in {
+    opacity: 0;
+    -webkit-animation: fade-in 0.6s ease-out forwards;
+    animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    opacity: 0;
+    -webkit-animation: fade-in-up 0.6s ease-out forwards;
+    animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-marquee {
+    -webkit-animation: marquee var(--duration) linear infinite;
+    animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+    -webkit-animation: marquee-vertical var(--duration) linear infinite;
+    animation: marquee-vertical var(--duration) linear infinite;
 }
 
 /* Cambiando el color del thumb y la pista */
@@ -505,48 +581,66 @@ html {
 }
 
 /* ================================
-   MOBILE: OPTIMIZED ANIMATIONS
+   MOBILE: OPTIMIZED ANIMATIONS - Safari Compatible
    Lightweight animations for mobile, disable heavy ones
    ================================ */
-@media (max-width: 640px) {
-    /* Mobile-optimized fade animation */
-    @keyframes fade-in-mobile {
-        from {
-            opacity: 0;
-            transform: translateY(8px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
-    /* Keep fade animations working on mobile */
+/* Mobile fade animation - defined outside media query for Safari */
+@-webkit-keyframes fade-in-mobile {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(8px);
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-mobile {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(8px);
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    /* Keep fade animations working on mobile - Safari compatible */
     .animate-fade-in {
         opacity: 0;
+        -webkit-animation: fade-in-mobile 0.4s ease-out forwards;
         animation: fade-in-mobile 0.4s ease-out forwards;
     }
 
     /* Disable only heavy/complex animations */
     .animate-float {
+        -webkit-animation: none !important;
         animation: none !important;
     }
 
     /* Keep ping animation but slower for battery */
     .animate-ping {
+        -webkit-animation-duration: 2s;
         animation-duration: 2s;
     }
 
     /* Keep pulse but slower */
     .animate-pulse {
+        -webkit-animation-duration: 3s;
         animation-duration: 3s;
     }
 
     /* Faster animation delays on mobile */
-    .animate-fade-in[style*="animation-delay: 0.1s"],
-    .animate-fade-in[style*="animation-delay: 0.2s"],
-    .animate-fade-in[style*="animation-delay: 0.3s"],
-    .animate-fade-in[style*="animation-delay: 0.4s"] {
+    .animate-fade-in[style*="animation-delay"] {
+        -webkit-animation-delay: 0.1s !important;
         animation-delay: 0.1s !important;
     }
 

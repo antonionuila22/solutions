@@ -1,85 +1,161 @@
 /**
  * Global animations for Codebrand Solutions
  * Shared across all pages to maintain consistency and reduce duplication
+ * Safari-compatible with -webkit- prefixes
  *
  * NOTE: Animations for above-the-fold content use opacity-only to prevent CLS
  * Transform-based animations are only for interactive/scroll-triggered elements
  */
 
 /* Fade In Animation - CLS Safe (opacity only) */
+@-webkit-keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Slide Up Animation - Use only for below-fold/scroll-triggered content */
-@keyframes slide-up {
-  from {
+@-webkit-keyframes slide-up {
+  0% {
     opacity: 0;
+    -webkit-transform: translateY(30px);
     transform: translateY(30px);
   }
-  to {
+  100% {
     opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 
 /* Slide In from Left - Use only for below-fold/scroll-triggered content */
-@keyframes slide-in-left {
-  from {
+@-webkit-keyframes slide-in-left {
+  0% {
     opacity: 0;
+    -webkit-transform: translateX(-30px);
     transform: translateX(-30px);
   }
-  to {
+  100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
 }
 
 /* Slide In from Right - Use only for below-fold/scroll-triggered content */
-@keyframes slide-in-right {
-  from {
+@-webkit-keyframes slide-in-right {
+  0% {
     opacity: 0;
+    -webkit-transform: translateX(30px);
     transform: translateX(30px);
   }
-  to {
+  100% {
     opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
 }
 
 /* Scale In Animation - CLS Safe (doesn't affect layout) */
-@keyframes scale-in {
-  from {
+@-webkit-keyframes scale-in {
+  0% {
     opacity: 0;
+    -webkit-transform: scale(0.95);
     transform: scale(0.95);
   }
-  to {
+  100% {
     opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
 
 /* Pulse Animation - CLS Safe */
+@-webkit-keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 /* Bounce Animation - Use only for fixed-position elements */
-@keyframes bounce {
+@-webkit-keyframes bounce {
   0%, 100% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
   50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
   }
 }
@@ -89,86 +165,105 @@
 /* CLS-Safe fade-in - USE THIS for above-the-fold content */
 .animate-fade-in {
   opacity: 0;
+  -webkit-animation: fade-in 0.6s ease-out forwards;
   animation: fade-in 0.6s ease-out forwards;
 }
 
 /* Use slide-up ONLY for below-fold or scroll-triggered content */
 .animate-slide-up {
-  animation: slide-up 0.8s ease-out forwards;
   opacity: 0;
+  -webkit-animation: slide-up 0.8s ease-out forwards;
+  animation: slide-up 0.8s ease-out forwards;
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out forwards;
   opacity: 0;
+  -webkit-animation: slide-in-left 0.8s ease-out forwards;
+  animation: slide-in-left 0.8s ease-out forwards;
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out forwards;
   opacity: 0;
+  -webkit-animation: slide-in-right 0.8s ease-out forwards;
+  animation: slide-in-right 0.8s ease-out forwards;
 }
 
 .animate-scale-in {
-  animation: scale-in 0.6s ease-out forwards;
   opacity: 0;
+  -webkit-animation: scale-in 0.6s ease-out forwards;
+  animation: scale-in 0.6s ease-out forwards;
 }
 
 .animate-pulse {
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .animate-bounce {
+  -webkit-animation: bounce 1s infinite;
   animation: bounce 1s infinite;
 }
 
-/* Animation Delays */
+/* Animation Delays - Safari compatible */
 .delay-100 {
+  -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
 
 .delay-200 {
+  -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
 
 .delay-300 {
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 
 .delay-500 {
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 
 .delay-1000 {
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 
 /* Hover Animations - Safe for interaction */
 .hover-lift {
+  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
+  -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .hover-scale {
+  -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
 }
 
 .hover-scale:hover {
+  -webkit-transform: scale(1.05);
   transform: scale(1.05);
 }
 
 /* Scroll Reveal - for elements that should animate on scroll (below-fold only) */
 .scroll-reveal {
   opacity: 0;
+  -webkit-transform: translateY(30px);
   transform: translateY(30px);
+  -webkit-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .scroll-reveal.is-visible {
   opacity: 1;
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -182,8 +277,11 @@
   *,
   *::before,
   *::after {
+    -webkit-animation-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
@@ -195,7 +293,9 @@
   .animate-slide-in-right,
   .animate-scale-in {
     opacity: 1;
+    -webkit-transform: none;
     transform: none;
+    -webkit-animation: none;
     animation: none;
   }
 
@@ -203,25 +303,30 @@
   .animate-pulse,
   .animate-bounce,
   .animate-float {
+    -webkit-animation: none;
     animation: none;
   }
 
   /* Disable hover animations */
   .hover-lift:hover,
   .hover-scale:hover {
+    -webkit-transform: none;
     transform: none;
   }
 
   /* Make scroll-reveal elements visible immediately */
   .scroll-reveal {
     opacity: 1;
+    -webkit-transform: none;
     transform: none;
+    -webkit-transition: none;
     transition: none;
   }
 
   /* Disable marquee animations */
   .animate-marquee,
   .animate-marquee-vertical {
+    -webkit-animation: none;
     animation: none;
   }
 }

@@ -324,32 +324,72 @@ import AnimatedCounter from "./AnimatedCounter";
 </section>
 
 <style>
-  @keyframes float {
-    0%,
-    100% {
+  /* Float animation - Safari compatible */
+  @-webkit-keyframes float {
+    0%, 100% {
+      -webkit-transform: translateY(0px);
       transform: translateY(0px);
     }
     50% {
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+    50% {
+      -webkit-transform: translateY(-20px);
       transform: translateY(-20px);
     }
   }
 
   .animate-float {
+    -webkit-animation: float 6s ease-in-out infinite;
     animation: float 6s ease-in-out infinite;
   }
 
-  /* Fade-in animation without transform to prevent CLS */
-  @keyframes fade-in {
-    from {
+  /* Fade-in animation - Safari compatible */
+  @-webkit-keyframes hero-fade-in {
+    0% {
       opacity: 0;
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px);
     }
-    to {
+    100% {
       opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-fade-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
     }
   }
 
   .animate-fade-in {
     opacity: 0;
-    animation: fade-in 0.6s ease-out forwards;
+    -webkit-animation: hero-fade-in 0.6s ease-out forwards;
+    animation: hero-fade-in 0.6s ease-out forwards;
+  }
+
+  /* Safari-specific fix for animation-fill-mode */
+  @supports (-webkit-touch-callout: none) {
+    .animate-fade-in {
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
   }
 </style>
