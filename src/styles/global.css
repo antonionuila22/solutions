@@ -505,21 +505,62 @@ html {
 }
 
 /* ================================
-   MOBILE: DISABLE OPACITY ANIMATIONS
-   Prevents content from being hidden if animations fail
+   MOBILE: OPTIMIZED ANIMATIONS
+   Lightweight animations for mobile, disable heavy ones
    ================================ */
 @media (max-width: 640px) {
-    /* Force visibility on animated elements */
-    .animate-fade-in,
-    .animate-fade-in-up,
-    .animate-scale-in,
-    .animate-slide-up,
+    /* Mobile-optimized fade animation */
+    @keyframes fade-in-mobile {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Keep fade animations working on mobile */
+    .animate-fade-in {
+        opacity: 0;
+        animation: fade-in-mobile 0.4s ease-out forwards;
+    }
+
+    /* Disable only heavy/complex animations */
+    .animate-float {
+        animation: none !important;
+    }
+
+    /* Keep ping animation but slower for battery */
+    .animate-ping {
+        animation-duration: 2s;
+    }
+
+    /* Keep pulse but slower */
+    .animate-pulse {
+        animation-duration: 3s;
+    }
+
+    /* Faster animation delays on mobile */
+    .animate-fade-in[style*="animation-delay: 0.1s"],
+    .animate-fade-in[style*="animation-delay: 0.2s"],
+    .animate-fade-in[style*="animation-delay: 0.3s"],
+    .animate-fade-in[style*="animation-delay: 0.4s"] {
+        animation-delay: 0.1s !important;
+    }
+
+    /* Ensure pricing cards are visible */
     .pricing-card,
     .stat-card,
-    .benefit-item,
-    [class*="animate-"] {
-        opacity: 1 !important;
-        transform: none !important;
-        animation-delay: 0s !important;
+    .benefit-item {
+        opacity: 1;
+    }
+
+    /* Better touch targets */
+    button,
+    a,
+    [role="button"] {
+        min-height: 44px;
     }
 }

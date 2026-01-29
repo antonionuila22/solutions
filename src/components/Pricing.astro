@@ -185,11 +185,11 @@ const plans: Plan[] = [
 
 <section
   id="pricing"
-  class="py-20 md:py-32 bg-gradient-to-b from-white via-gray-50 to-white"
+  class="py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white via-gray-50 to-white"
 >
   <div class="mx-auto px-4 sm:px-6">
     <!-- Header -->
-    <div class="text-center mb-20 animate-fade-in-up">
+    <div class="text-center mb-10 sm:mb-14 md:mb-20 animate-fade-in-up">
       <div
         class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#f48200]/20 rounded-full mb-6 shadow-sm animate-scale-in"
       >
@@ -213,7 +213,7 @@ const plans: Plan[] = [
       </div>
 
       <h2
-        class="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight"
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0"
       >
         Build with Confidence.<br />
         <span class="bg-gradient-to-r from-[#007BFF] to-[#00BCD4] bg-clip-text"
@@ -221,18 +221,18 @@ const plans: Plan[] = [
         >
       </h2>
 
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
         Transparent pricing designed for growing businesses. Pay monthly, get
         premium results.
       </p>
 
-      <div class="flex flex-wrap justify-center gap-8 mt-10">
-        <div class="flex items-center gap-3">
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-10 px-2 sm:px-0">
+        <div class="flex items-center gap-2 sm:gap-3">
           <div
-            class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full"
+            class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-emerald-100 rounded-full"
           >
             <svg
-              class="w-5 h-5 text-emerald-600"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -242,15 +242,15 @@ const plans: Plan[] = [
                 clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-base text-gray-700 font-medium">6-month partnership</span
+          <span class="text-sm sm:text-base text-gray-700 font-medium">6-month partnership</span
           >
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3">
           <div
-            class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full"
+            class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-emerald-100 rounded-full"
           >
             <svg
-              class="w-5 h-5 text-emerald-600"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -260,14 +260,14 @@ const plans: Plan[] = [
                 clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-base text-gray-700 font-medium">Transparent pricing</span>
+          <span class="text-sm sm:text-base text-gray-700 font-medium">Transparent pricing</span>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3">
           <div
-            class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full"
+            class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-emerald-100 rounded-full"
           >
             <svg
-              class="w-5 h-5 text-emerald-600"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -277,7 +277,7 @@ const plans: Plan[] = [
                 clip-rule="evenodd"></path>
             </svg>
           </div>
-          <span class="text-base text-gray-700 font-medium"
+          <span class="text-sm sm:text-base text-gray-700 font-medium"
             >Dedicated support</span
           >
         </div>
@@ -286,7 +286,7 @@ const plans: Plan[] = [
 
     <!-- Cards -->
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto mb-16"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto mb-10 sm:mb-16"
     >
       {
         plans.map((p, index) => (
@@ -303,7 +303,7 @@ const plans: Plan[] = [
               <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#f48200] via-[#faa732] to-[#f48200] animate-shimmer" />
             )}
 
-            <div class={`p-8 lg:p-10 ${p.highlight ? "pt-10 lg:pt-12" : ""}`}>
+            <div class={`p-5 sm:p-6 lg:p-10 ${p.highlight ? "pt-6 sm:pt-8 lg:pt-12" : ""}`}>
               {p.highlight && (
                 <div class="absolute top-6 right-6 animate-float popular-badge">
                   <div class="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-[#f48200] to-[#faa732] text-white text-xs font-bold rounded-full shadow-md">

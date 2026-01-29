@@ -143,30 +143,30 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "group relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-slate-700 bg-slate-800/50 hover:bg-slate-800 backdrop-blur-sm transition-all duration-300"
+        "group relative h-full w-[260px] sm:w-[280px] md:w-64 cursor-pointer overflow-hidden rounded-xl border p-3 sm:p-4",
+        "border-slate-700 bg-slate-800/60 hover:bg-slate-800 backdrop-blur-sm transition-all duration-300"
       )}
     >
       <div className="flex flex-row items-center gap-2">
         <Avatar name={name} img={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-white">
+          <figcaption className="text-xs sm:text-sm font-medium text-white">
             {name}
           </figcaption>
           <div className="flex items-center gap-1">
             <StarRating />
-            <span className="text-xs text-slate-500">• {username}</span>
+            <span className="text-[10px] sm:text-xs text-slate-500">• {username}</span>
           </div>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm text-slate-300">
+      <blockquote className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
         <span className={cn(
-          isLongText && "line-clamp-3 group-hover:line-clamp-none transition-all duration-300"
+          isLongText && "line-clamp-3 sm:group-hover:line-clamp-none transition-all duration-300"
         )}>
           {body}
         </span>
         {isLongText && (
-          <span className="block mt-1 text-xs text-cyan-400 group-hover:hidden">
+          <span className="hidden sm:block mt-1 text-xs text-cyan-400 group-hover:hidden">
             Hover to read more...
           </span>
         )}
@@ -177,19 +177,19 @@ const ReviewCard = ({
 
 export default function MarqueeDemo() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:20s]">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-3 sm:gap-4">
+      <Marquee pauseOnHover className="[--duration:25s] sm:[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      <Marquee reverse pauseOnHover className="[--duration:25s] sm:[--duration:20s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 sm:w-1/4 bg-gradient-to-r from-slate-950 to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 sm:w-1/4 bg-gradient-to-l from-slate-950 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-1/6 lg:w-1/4 bg-gradient-to-r from-slate-950 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-1/6 lg:w-1/4 bg-gradient-to-l from-slate-950 to-transparent"></div>
     </div>
   );
 }

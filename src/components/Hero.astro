@@ -4,7 +4,7 @@ import AnimatedCounter from "./AnimatedCounter";
 ---
 
 <section
-  class="relative min-h-screen flex items-center py-40 lg:py-36 justify-center overflow-hidden bg-slate-950"
+  class="relative min-h-screen flex items-center py-20 sm:py-28 lg:py-36 justify-center overflow-hidden bg-slate-950"
 >
   <!-- Animated Grid Background - Hidden on mobile for performance -->
   <div class="hidden sm:block absolute inset-0 opacity-20">
@@ -25,8 +25,10 @@ import AnimatedCounter from "./AnimatedCounter";
     style="animation-delay: 1s;"
   >
   </div>
-  <!-- Mobile: Simple gradient background instead of animated orbs -->
-  <div class="sm:hidden absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-orange-500/10"></div>
+  <!-- Mobile: Enhanced gradient background -->
+  <div class="sm:hidden absolute inset-0 bg-gradient-to-br from-cyan-500/15 via-slate-950 to-orange-500/15"></div>
+  <div class="sm:hidden absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-cyan-500/10 to-transparent"></div>
+  <div class="sm:hidden absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-orange-500/10 to-transparent"></div>
 
   <!-- Floating Code Elements -->
   <div
@@ -57,7 +59,7 @@ import AnimatedCounter from "./AnimatedCounter";
     <div class="max-w-5xl mx-auto text-center">
       <!-- Badge -->
       <div
-        class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-cyan-500/30 rounded-full mb-8 animate-fade-in"
+        class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-800/90 border border-cyan-500/40 rounded-full mb-5 sm:mb-8 animate-fade-in"
       >
         <span class="relative flex h-2 w-2">
           <span
@@ -66,24 +68,24 @@ import AnimatedCounter from "./AnimatedCounter";
           <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"
           ></span>
         </span>
-        <span class="text-sm font-medium text-cyan-400"
+        <span class="text-xs sm:text-sm font-medium text-cyan-400"
           >US-Quality · Smart Pricing</span
         >
       </div>
 
       <!-- Main Headline -->
       <h1
-        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight"
+        class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight px-2 sm:px-0"
         transition:name="hero-headline"
         transition:animate="fade"
       >
         Affordable Web Development Agency
-        <span class="block mt-2 text-cyan-400">US Quality, Smart Pricing</span>
+        <span class="block mt-1 sm:mt-2 text-cyan-400">US Quality, Smart Pricing</span>
       </h1>
 
       <!-- Subheadline -->
       <p
-        class="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in"
+        class="text-base sm:text-lg md:text-xl text-slate-200 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed animate-fade-in px-2 sm:px-0"
         style="animation-delay: 0.1s;"
       >
         Honduras-based web development team serving US businesses. Get
@@ -93,15 +95,15 @@ import AnimatedCounter from "./AnimatedCounter";
 
       <!-- Stats Row -->
       <div
-        class="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 sm:gap-8 mb-10 animate-fade-in"
+        class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-6 md:gap-8 mb-8 sm:mb-10 px-2 sm:px-0 animate-fade-in"
         style="animation-delay: 0.2s;"
       >
-        <div class="flex items-center gap-2 justify-center sm:justify-start">
+        <div class="flex items-center gap-2 sm:gap-3 bg-slate-800/50 sm:bg-transparent rounded-xl p-3 sm:p-0 border border-slate-700/50 sm:border-0">
           <div
-            class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30"
+            class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30"
           >
             <svg
-              class="w-5 h-5 text-cyan-400"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -115,19 +117,19 @@ import AnimatedCounter from "./AnimatedCounter";
             </svg>
           </div>
           <div class="text-left">
-            <p class="text-2xl font-bold text-white">
+            <p class="text-xl sm:text-2xl font-bold text-white">
               <AnimatedCounter client:visible end={5} suffix="+" duration={1500} />
             </p>
-            <p class="text-xs text-slate-300">Years Experience</p>
+            <p class="text-[10px] sm:text-xs text-slate-300">Years Experience</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-2 justify-center sm:justify-start">
+        <div class="flex items-center gap-2 sm:gap-3 bg-slate-800/50 sm:bg-transparent rounded-xl p-3 sm:p-0 border border-slate-700/50 sm:border-0">
           <div
-            class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500/20 border border-orange-500/30"
+            class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-orange-500/20 border border-orange-500/30"
           >
             <svg
-              class="w-5 h-5 text-orange-400"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-orange-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -140,17 +142,17 @@ import AnimatedCounter from "./AnimatedCounter";
             </svg>
           </div>
           <div class="text-left">
-            <p class="text-2xl font-bold text-white">EN/ES</p>
-            <p class="text-xs text-slate-300">Bilingual Support</p>
+            <p class="text-xl sm:text-2xl font-bold text-white">EN/ES</p>
+            <p class="text-[10px] sm:text-xs text-slate-300">Bilingual Support</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-2 justify-center sm:justify-start">
+        <div class="flex items-center gap-2 sm:gap-3 bg-slate-800/50 sm:bg-transparent rounded-xl p-3 sm:p-0 border border-slate-700/50 sm:border-0">
           <div
-            class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30"
+            class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30"
           >
             <svg
-              class="w-5 h-5 text-cyan-400"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -163,17 +165,17 @@ import AnimatedCounter from "./AnimatedCounter";
             </svg>
           </div>
           <div class="text-left">
-            <p class="text-2xl font-bold text-white">Fast</p>
-            <p class="text-xs text-slate-300">Response Time</p>
+            <p class="text-xl sm:text-2xl font-bold text-white">Fast</p>
+            <p class="text-[10px] sm:text-xs text-slate-300">Response Time</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-2 justify-center sm:justify-start">
+        <div class="flex items-center gap-2 sm:gap-3 bg-slate-800/50 sm:bg-transparent rounded-xl p-3 sm:p-0 border border-slate-700/50 sm:border-0">
           <div
-            class="flex items-center justify-center w-10 h-10 rounded-lg bg-orange-500/20 border border-orange-500/30"
+            class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-orange-500/20 border border-orange-500/30"
           >
             <svg
-              class="w-5 h-5 text-orange-400"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-orange-400"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -183,28 +185,28 @@ import AnimatedCounter from "./AnimatedCounter";
             </svg>
           </div>
           <div class="text-left">
-            <p class="text-2xl font-bold text-white">
+            <p class="text-xl sm:text-2xl font-bold text-white">
               <AnimatedCounter client:visible end={5} suffix="/5" duration={1500} />
             </p>
-            <p class="text-xs text-slate-300">Client Rating</p>
+            <p class="text-[10px] sm:text-xs text-slate-300">Client Rating</p>
           </div>
         </div>
       </div>
 
       <!-- CTA Buttons -->
       <div
-        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 animate-fade-in px-4 sm:px-0"
+        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 animate-fade-in px-4 sm:px-0"
         style="animation-delay: 0.3s;"
         transition:name="hero-cta"
         transition:animate="slide"
       >
         <a
           href="/contact"
-          class="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white text-sm sm:text-base font-bold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 sm:hover:-translate-y-1 active:scale-[0.98] transition-all duration-200"
+          class="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white text-base sm:text-base font-bold rounded-xl shadow-lg shadow-orange-500/30 hover:shadow-orange-500/40 hover:-translate-y-0.5 sm:hover:-translate-y-1 active:scale-[0.97] transition-all duration-200"
         >
           Get Your Free Quote
           <svg
-            class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -219,10 +221,10 @@ import AnimatedCounter from "./AnimatedCounter";
         </a>
         <a
           href="/projects"
-          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white text-sm sm:text-base font-semibold rounded-xl border border-slate-700 hover:border-slate-600 active:scale-[0.98] transition-all duration-200"
+          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-4 bg-slate-800/90 hover:bg-slate-700/90 text-white text-base sm:text-base font-semibold rounded-xl border border-slate-600 hover:border-slate-500 active:scale-[0.97] transition-all duration-200"
         >
           <svg
-            class="w-4 h-4 sm:w-5 sm:h-5"
+            class="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -240,70 +242,70 @@ import AnimatedCounter from "./AnimatedCounter";
       </div>
 
       <!-- Tech Stack Preview -->
-      <div class="animate-fade-in" style="animation-delay: 0.4s;">
-        <p class="text-sm text-slate-400 mb-4 uppercase tracking-wider">
+      <div class="animate-fade-in px-4 sm:px-0" style="animation-delay: 0.4s;">
+        <p class="text-xs sm:text-sm text-slate-400 mb-3 sm:mb-4 uppercase tracking-wider">
           Trusted Technologies
         </p>
         <div
-          class="flex flex-wrap justify-center items-center gap-6 opacity-60 hover:opacity-100 transition-opacity duration-300"
+          class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 opacity-70 sm:opacity-60 sm:hover:opacity-100 transition-opacity duration-300"
         >
           <img
             src="/icons/react-svgrepo-com.svg"
             alt="React"
-            width="32"
-            height="32"
-            class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300"
+            width="28"
+            height="28"
+            class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
             src="/icons/nextjs-svgrepo-com.svg"
             alt="Next.js"
-            width="32"
-            height="32"
-            class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300 invert"
+            width="28"
+            height="28"
+            class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300 invert"
           />
           <img
             src="/icons/typescript-official-svgrepo-com.svg"
             alt="TypeScript"
-            width="32"
-            height="32"
-            class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300"
+            width="28"
+            height="28"
+            class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
             src="/icons/nodejs-svgrepo-com.svg"
             alt="Node.js"
-            width="32"
-            height="32"
-            class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300"
+            width="28"
+            height="28"
+            class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
             src="/icons/tailwindcss-svgrepo-com.svg"
             alt="Tailwind CSS"
-            width="32"
-            height="32"
-            class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300"
+            width="28"
+            height="28"
+            class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
             src="/icons/aws-svgrepo-com.svg"
             alt="AWS"
-            width="32"
-            height="32"
-            class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300"
+            width="28"
+            height="28"
+            class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
             src="/icons/figma.svg"
             alt="Figma"
-            width="32"
-            height="32"
-            class="h-8 w-8 grayscale hover:grayscale-0 transition-all duration-300"
+            width="28"
+            height="28"
+            class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Scroll Indicator - Subtle animation -->
+  <!-- Scroll Indicator - Hidden on mobile, subtle animation on desktop -->
   <div
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-pulse opacity-70"
+    class="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-pulse opacity-70"
     aria-hidden="true"
   >
     <svg

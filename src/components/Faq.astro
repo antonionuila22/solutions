@@ -67,43 +67,43 @@ const faqs: FAQItem[] = [
     })} />
 )}
 
-<section class="py-12 sm:py-16 lg:py-24 bg-white">
+<section class="py-10 sm:py-12 md:py-16 lg:py-24 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
-        <div class="text-center mb-10 sm:mb-12">
+        <div class="text-center mb-8 sm:mb-10 md:mb-12">
             <span
-                class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-50 border border-cyan-200 rounded-full mb-6"
+                class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-cyan-50 border border-cyan-200 rounded-full mb-4 sm:mb-6"
             >
-                <svg class="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span class="text-sm font-medium text-cyan-700">Got Questions?</span>
+                <span class="text-xs sm:text-sm font-medium text-cyan-700">Got Questions?</span>
             </span>
             <h2
-                class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4"
+                class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 px-2 sm:px-0"
             >
                 Common Questions <span class="text-orange-500">Answered</span>
             </h2>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-2 sm:px-0">
                 Everything you need to know about working with us. Can't find your answer? <a href="/contact" class="text-cyan-600 hover:underline font-medium">Contact us</a>.
             </p>
         </div>
 
-        <!-- Debug: Rendering FAQs directly -->
-        <div class="w-full flex flex-col gap-3">
+        <!-- FAQ Accordions -->
+        <div class="w-full flex flex-col gap-2 sm:gap-3">
             {faqs.map((faq, index) => (
                 <details class="group rounded-xl border border-slate-200 bg-white overflow-hidden">
-                    <summary class="w-full text-left px-5 py-4 flex justify-between items-center gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <span class="text-base font-semibold text-slate-800 group-open:text-orange-600">
+                    <summary class="w-full text-left px-4 sm:px-5 py-3 sm:py-4 flex justify-between items-center gap-3 sm:gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <span class="text-sm sm:text-base font-semibold text-slate-800 group-open:text-orange-600 leading-snug">
                             {faq.question}
                         </span>
                         <span class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 group-open:bg-orange-500 group-open:text-white transition-colors">
-                            <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </span>
                     </summary>
-                    <div class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                    <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-xs sm:text-sm leading-relaxed">
                         {faq.answer}
                     </div>
                 </details>
