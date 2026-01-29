@@ -75,187 +75,48 @@ const plans: Plan[] = [
 ---
 
 <style>
-  /* Safari-compatible animations */
-  @-webkit-keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(30px);
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(30px);
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-
-  @-webkit-keyframes float {
-    0%, 100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    50% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    50% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
-    }
-  }
-
-  @-webkit-keyframes shimmer {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
-
+  /* Shimmer animation - unique to pricing */
   @keyframes shimmer {
-    0% {
-      background-position: -200% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
-
-  @-webkit-keyframes scaleIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: scale(0.95);
-      transform: scale(0.95);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  }
-
-  @keyframes scaleIn {
-    0% {
-      opacity: 0;
-      -webkit-transform: scale(0.95);
-      transform: scale(0.95);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  }
-
-  .animate-fade-in-up {
-    -webkit-animation: fadeInUp 0.6s ease-out forwards;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  .animate-float {
-    -webkit-animation: float 3s ease-in-out infinite;
-    animation: float 3s ease-in-out infinite;
+    from { background-position: -200% center; }
+    to { background-position: 200% center; }
   }
 
   .animate-shimmer {
     background-size: 200% 100%;
-    -webkit-animation: shimmer 3s linear infinite;
     animation: shimmer 3s linear infinite;
   }
 
-  .animate-scale-in {
-    -webkit-animation: scaleIn 0.5s ease-out forwards;
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-
+  /* Pricing card stagger animation */
   .pricing-card {
-    -webkit-animation: fadeInUp 0.6s ease-out forwards;
-    animation: fadeInUp 0.6s ease-out forwards;
-    -webkit-animation-delay: calc(var(--card-index) * 0.1s);
+    animation: fade-in-up 0.6s ease-out forwards;
     animation-delay: calc(var(--card-index) * 0.1s);
     opacity: 0;
   }
 
-  .popular-badge {
-    will-change: transform;
-    -webkit-will-change: transform;
-  }
-
+  /* CTA button gradient shift */
   .cta-button {
-    background-size: 200% 100%;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    @apply bg-[length:200%_100%] transition-all duration-300;
   }
 
   .cta-button:hover {
     background-position: right center;
   }
 
-  /* Respect reduced motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    .animate-fade-in-up,
-    .animate-scale-in,
-    .pricing-card {
-      -webkit-animation: none;
-      animation: none;
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-
-    .animate-float,
-    .animate-shimmer {
-      -webkit-animation: none;
-      animation: none;
-    }
-
-    .cta-button {
-      -webkit-transition: none;
-      transition: none;
-    }
-
-    .cta-button:hover {
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-
-  /* Mobile: ensure cards are visible */
+  /* Mobile: show cards immediately */
   @media (max-width: 640px) {
     .pricing-card {
       opacity: 1;
-      -webkit-animation: fadeInUp 0.4s ease-out forwards;
-      animation: fadeInUp 0.4s ease-out forwards;
-      -webkit-animation-delay: 0s;
       animation-delay: 0s;
     }
   }
 
-  /* Enhanced focus states for pricing CTAs */
-  .cta-button:focus-visible {
-    outline: 3px solid #06b6d4;
-    outline-offset: 2px;
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-card,
+    .animate-shimmer {
+      animation: none;
+      opacity: 1;
+    }
   }
 </style>
 

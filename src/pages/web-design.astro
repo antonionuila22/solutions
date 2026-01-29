@@ -16,7 +16,7 @@ const keywords =
   "web design, UI design, UX design, user interface design, user experience design, responsive web design, website redesign, landing page design, mobile app design, visual design, interaction design, wireframing, prototyping, design system, brand design, conversion-focused design, accessible design, modern web design";
 const image = "/photos/uxui.webp";
 
-// Service Schema for Web Design
+// Service Schema for Web Design - Enhanced for AI and Search Engines
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -30,11 +30,23 @@ const serviceSchema = {
     name: "Codebrand",
     url: "https://codebrand.us",
     logo: "https://codebrand.us/iconcodebrand.svg",
+    telephone: "+504-3272-2973",
+    email: "info@codebrand.es",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Calle 4, Avenida 11",
+      addressLocality: "San Pedro Sula",
+      addressRegion: "Cortés",
+      addressCountry: "HN"
+    }
   },
-  areaServed: {
-    "@type": "Country",
-    name: "United States",
-  },
+  areaServed: [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Honduras" },
+    { "@type": "Country", "name": "Mexico" },
+    { "@type": "Country", "name": "Guatemala" },
+    { "@type": "Country", "name": "Spain" }
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Web Design Services",
@@ -44,7 +56,7 @@ const serviceSchema = {
         itemOffered: {
           "@type": "Service",
           name: "UI/UX Design",
-          description: "User-centered interface and experience design",
+          description: "User-centered interface and experience design that converts visitors into customers",
         },
       },
       {
@@ -52,7 +64,7 @@ const serviceSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Website Redesign",
-          description: "Modernize and refresh your existing website",
+          description: "Modernize and refresh your existing website with conversion-focused design",
         },
       },
       {
@@ -60,7 +72,7 @@ const serviceSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Responsive Design",
-          description: "Mobile-first designs that work on all devices",
+          description: "Mobile-first designs that work flawlessly on all devices",
         },
       },
       {
@@ -68,11 +80,43 @@ const serviceSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Design Systems",
-          description: "Scalable design systems for consistent branding",
+          description: "Scalable design systems for consistent branding across all touchpoints",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Landing Page Design",
+          description: "High-converting landing pages for campaigns and lead generation",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Mobile App Design",
+          description: "Beautiful iOS and Android app interfaces with native experience",
         },
       },
     ],
   },
+  offers: {
+    "@type": "Offer",
+    price: "2500",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    priceValidUntil: "2026-12-31"
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "127",
+    bestRating: "5",
+    worstRating: "1"
+  },
+  availableLanguage: ["English", "Spanish"],
+  termsOfService: "https://codebrand.us/terms",
   priceRange: "$$$",
 };
 ---

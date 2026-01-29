@@ -12,7 +12,10 @@
       "Bash(npm run dev:*)",
       "Bash(timeout:*)",
       "Bash(curl:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:astro.build)",
+      "Bash(.astro$ \")",
+      "Bash(del \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\styles\\\\animations.css\")"
     ]
   }
 }

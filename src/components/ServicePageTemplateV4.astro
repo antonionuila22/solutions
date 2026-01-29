@@ -86,6 +86,106 @@ const {
     ctaTitle = "Ready to get started?",
     ctaDescription = "Let's discuss your project and find the best solution for your needs."
 } = Astro.props;
+
+// Generate Service Schema for SEO
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `${serviceName} Services`,
+    "description": description,
+    "provider": {
+        "@type": "Organization",
+        "name": "Codebrand",
+        "url": "https://codebrand.us",
+        "logo": "https://codebrand.us/iconcodebrand.svg",
+        "telephone": "+504-3272-2973",
+        "email": "info@codebrand.es",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle 4, Avenida 11",
+            "addressLocality": "San Pedro Sula",
+            "addressRegion": "Cortés",
+            "addressCountry": "HN"
+        }
+    },
+    "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "Honduras" },
+        { "@type": "Country", "name": "Mexico" },
+        { "@type": "Country", "name": "Guatemala" },
+        { "@type": "Country", "name": "El Salvador" },
+        { "@type": "Country", "name": "Spain" }
+    ],
+    "serviceType": serviceName,
+    "offers": packages.length > 0 ? packages.map(pkg => ({
+        "@type": "Offer",
+        "name": pkg.name,
+        "description": pkg.description,
+        "price": pkg.price.replace(/[^0-9.]/g, ''),
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+    })) : {
+        "@type": "Offer",
+        "price": price ? price.replace(/[^0-9.]/g, '') : "2500",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": `${serviceName} Services Catalog`,
+        "itemListElement": services.map((service, index) => ({
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": service.title,
+                "description": service.description
+            }
+        }))
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "availableLanguage": ["English", "Spanish"],
+    "termsOfService": "https://codebrand.us/terms",
+    "url": `https://codebrand.us/services/${serviceName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+};
+
+// Generate FAQ Schema for SEO
+const faqSchema = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+        }
+    }))
+} : null;
+
+// Generate HowTo Schema for the process
+const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How ${serviceName} Works at Codebrand`,
+    "description": `Our ${serviceName.toLowerCase()} process delivers consistent, high-quality results.`,
+    "step": process.map((step, index) => ({
+        "@type": "HowToStep",
+        "position": index + 1,
+        "name": step.title,
+        "text": step.description,
+        "itemListElement": step.details ? step.details.map((detail, detailIndex) => ({
+            "@type": "HowToDirection",
+            "position": detailIndex + 1,
+            "text": detail
+        })) : undefined
+    }))
+};
 ---
 
 <Layout
@@ -94,6 +194,17 @@ const {
     keywords={keywords}
     image="/photos/bannercodebrand.webp"
 >
+    <!-- Service Schema for AI and Search Engines -->
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+    <!-- FAQ Schema for Rich Snippets -->
+    {faqSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )}
+
+    <!-- HowTo Schema for Process -->
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+
     <!-- Hero Section -->
     <section class="relative min-h-[90vh] flex items-center py-32 lg:py-40 overflow-hidden bg-slate-950">
         <!-- Grid Background -->

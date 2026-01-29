@@ -1,5 +1,4 @@
 ---
-import Button from "../components/Button.astro";
 import AnimatedCounter from "./AnimatedCounter";
 ---
 
@@ -15,14 +14,16 @@ import AnimatedCounter from "./AnimatedCounter";
     </div>
   </div>
 
-  <!-- Gradient Orbs - Hidden on mobile for performance, visible on tablet+ -->
+  <!-- Gradient Orbs - Hidden on mobile for performance, reduced blur for better GPU perf -->
   <div
-    class="hidden sm:block absolute top-1/4 left-1/4 w-72 lg:w-96 h-72 lg:h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse will-change-transform"
+    class="hidden sm:block absolute top-1/4 left-1/4 w-72 lg:w-96 h-72 lg:h-96 bg-cyan-500/20 rounded-full blur-2xl motion-safe:animate-pulse will-change-transform"
+    aria-hidden="true"
   >
   </div>
   <div
-    class="hidden sm:block absolute bottom-1/4 right-1/4 w-72 lg:w-96 h-72 lg:h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse will-change-transform"
+    class="hidden sm:block absolute bottom-1/4 right-1/4 w-72 lg:w-96 h-72 lg:h-96 bg-orange-500/20 rounded-full blur-2xl motion-safe:animate-pulse will-change-transform"
     style="animation-delay: 1s;"
+    aria-hidden="true"
   >
   </div>
   <!-- Mobile: Enhanced gradient background -->
@@ -248,12 +249,16 @@ import AnimatedCounter from "./AnimatedCounter";
         </p>
         <div
           class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 opacity-70 sm:opacity-60 sm:hover:opacity-100 transition-opacity duration-300"
+          role="list"
+          aria-label="Technologies we use"
         >
           <img
             src="/icons/react-svgrepo-com.svg"
             alt="React"
             width="28"
             height="28"
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
@@ -261,6 +266,8 @@ import AnimatedCounter from "./AnimatedCounter";
             alt="Next.js"
             width="28"
             height="28"
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300 invert"
           />
           <img
@@ -268,6 +275,8 @@ import AnimatedCounter from "./AnimatedCounter";
             alt="TypeScript"
             width="28"
             height="28"
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
@@ -275,6 +284,8 @@ import AnimatedCounter from "./AnimatedCounter";
             alt="Node.js"
             width="28"
             height="28"
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
@@ -282,6 +293,8 @@ import AnimatedCounter from "./AnimatedCounter";
             alt="Tailwind CSS"
             width="28"
             height="28"
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
@@ -289,6 +302,8 @@ import AnimatedCounter from "./AnimatedCounter";
             alt="AWS"
             width="28"
             height="28"
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
           <img
@@ -296,6 +311,8 @@ import AnimatedCounter from "./AnimatedCounter";
             alt="Figma"
             width="28"
             height="28"
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 sm:h-8 sm:w-8 sm:grayscale sm:hover:grayscale-0 transition-all duration-300"
           />
         </div>

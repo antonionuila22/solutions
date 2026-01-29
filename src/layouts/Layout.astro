@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import "../styles/animations.css";
+/* animations.css removed - consolidated into global.css (DRY principle) */
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/NavbarAstro.astro";
 import Footer from "../components/Footer.astro";
@@ -94,8 +94,8 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 
     <!-- Canonical and Alternative URLs -->
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="en" href={canonicalUrl} />
-    <link rel="alternate" hreflang="es" href={canonicalUrl} />
+    <!-- hreflang: Primary language is English, x-default for international users -->
+    <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
     <!-- RSS Feed -->
