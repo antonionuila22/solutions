@@ -26,7 +26,7 @@ let {
 // Valores por defecto mejorados
 title =
   title ||
-  "Codebrand - Digital Agency | Web Development, Automations, Design,  & Marketing";
+  "Codebrand - Digital Agency | Web Development, Automations, Design & Marketing";
 description =
   description ||
   "Transform your business with Codebrand's expert web development, UI/UX design, and digital marketing services. Get custom solutions that drive real results. Contact us for a free consultation.";
@@ -39,7 +39,7 @@ image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 const canonicalUrl =
   canonicalOverride || Astro.url?.href || "https://codebrand.us";
 const siteName = "Codebrand Digital Agency";
-const twitterHandle = "@codebrand_es";
+const twitterHandle = "@codebrand_us";
 
 // Format article dates for Open Graph
 let formattedPublishedTime = "";
@@ -203,11 +203,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 
     <!-- Fonts with optimized loading - using display=optional for faster mobile -->
     <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"
       as="style"
@@ -236,7 +231,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         "image": "https://codebrand.us/photos/bannercodebrand.webp",
         "description": "Modern web development agency helping growing businesses build websites and software that scale. US-quality work, bilingual team, smart pricing. Based in Honduras, serving clients worldwide.",
         "slogan": "Modern Web Development For Growing Businesses",
-        "email": "info@codebrand.es",
+        "email": "info@codebrand.us",
         "telephone": "+504-3272-2973",
         "foundingDate": "2020",
         "numberOfEmployees": {

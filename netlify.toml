@@ -42,12 +42,12 @@
 [[headers]]
   for = "/*.ttf"
   [headers.values]
-    Cache-Control = "public, max-age=3153600000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
   for = "/*.otf"
   [headers.values]
-    Cache-Control = "public, max-age=3153600000, immutable"
+    Cache-Control = "public, max-age=315360000, immutable"
 
 # ===========================================
 # IMAGES - Long-term caching (1 year)
@@ -56,15 +56,10 @@
 [[headers]]
   for = "/icons/*"
   [headers.values]
-    Cache-Control = "public, max-age=3153600000, immutable"
-
-[[headers]]
-  for = "/photos/*"
-  [headers.values]
     Cache-Control = "public, max-age=315360000, immutable"
 
 [[headers]]
-  for = "/*.webp"
+  for = "/photos/*"
   [headers.values]
     Cache-Control = "public, max-age=315360000, immutable"
 
@@ -146,12 +141,12 @@
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=100000, must-revalidate"
+    Cache-Control = "public, max-age=86400, must-revalidate"
 
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "public, max-age=100000, must-revalidate"
+    Cache-Control = "public, max-age=86400, must-revalidate"
 
 # ===========================================
 # SECURITY HEADERS - All pages
