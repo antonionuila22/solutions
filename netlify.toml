@@ -3,173 +3,223 @@
   publish = "dist"
 
 # ===========================================
-# STATIC ASSETS - Long-term caching (1 year)
+# ASTRO BUNDLED ASSETS (with content hashes)
+# Maximum caching - these files never change
 # ===========================================
 
-# JavaScript files (bundled with hashes)
 [[headers]]
-  for = "/*.js"
+  for = "/_astro/*"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
+    CDN-Cache-Control = "public, max-age=31536000, immutable"
+
+# ===========================================
+# STATIC ASSETS - Fonts (1 year, immutable)
+# ===========================================
 
 [[headers]]
-  for = "/_astro/*.js"
+  for = "/fonts/*"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-# CSS files (bundled with hashes)
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-[[headers]]
-  for = "/_astro/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-# Fonts
-[[headers]]
-  for = "/*.woff"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
+    CDN-Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*.woff2"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
+    CDN-Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/*.ttf"
+  for = "/*.woff"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-[[headers]]
-  for = "/*.otf"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # ===========================================
-# IMAGES - Long-term caching (1 year)
+# IMAGES - Long-term caching with revalidation
 # ===========================================
 
+# Icons directory (SVGs, favicons)
 [[headers]]
   for = "/icons/*"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
+    CDN-Cache-Control = "public, max-age=31536000"
 
+# Photos directory
 [[headers]]
   for = "/photos/*"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
+    CDN-Cache-Control = "public, max-age=31536000"
 
+# Image formats
 [[headers]]
   for = "/*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-[[headers]]
-  for = "/*.jpg"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-[[headers]]
-  for = "/*.jpeg"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-[[headers]]
-  for = "/*.svg"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-[[headers]]
-  for = "/*.gif"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
-
-[[headers]]
-  for = "/*.ico"
-  [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.avif"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.png"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
 
-# Astro bundled assets (all have content hashes)
 [[headers]]
-  for = "/_astro/*"
+  for = "/*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=315360000, immutable"
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, stale-while-revalidate=86400"
 
 # ===========================================
 # DOCUMENTS & DATA
 # ===========================================
 
-# PDF files
 [[headers]]
   for = "/*.pdf"
   [headers.values]
-    Cache-Control = "public, max-age=864000, stale-while-revalidate=604800"
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
-# JSON data files
 [[headers]]
   for = "/*.json"
   [headers.values]
-    Cache-Control = "public, max-age=360000, stale-while-revalidate=864000"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
-# Manifest
 [[headers]]
   for = "/manifest.json"
   [headers.values]
-    Cache-Control = "public, max-age=864000, stale-while-revalidate=604800"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
 
 # ===========================================
-# SEO FILES - Moderate caching
+# SEO FILES
 # ===========================================
 
 [[headers]]
   for = "/sitemap*.xml"
   [headers.values]
-    Cache-Control = "public, max-age=3600, stale-while-revalidate=864000"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/robots.txt"
   [headers.values]
-    Cache-Control = "public, max-age=864000, stale-while-revalidate=604800"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
 
 # ===========================================
-# HTML PAGES - Short caching with revalidation
+# HTML PAGES - Short cache with background revalidation
+# Allows fast loads while keeping content fresh
 # ===========================================
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=86400, must-revalidate"
 
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "public, max-age=86400, must-revalidate"
+    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+    CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+    Link = "</fonts/poppins-v20-latin-regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </_astro/>; rel=preconnect"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+    CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# High-traffic pages - more aggressive CDN caching
+[[headers]]
+  for = "/contact"
+  [headers.values]
+    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+    CDN-Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/services/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+    CDN-Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/blog/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+    CDN-Cache-Control = "public, max-age=3600"
 
 # ===========================================
-# SECURITY HEADERS - All pages
+# SECURITY & PERFORMANCE HEADERS - All pages
 # ===========================================
 
 [[headers]]
   for = "/*"
   [headers.values]
+    # Security
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     Content-Security-Policy = "frame-ancestors 'none'"
-    Strict-Transport-Security = "max-age=315360000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Performance hints
+    X-DNS-Prefetch-Control = "on"
+
+# ===========================================
+# PRECONNECT & PRELOAD for external resources
+# ===========================================
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = '''
+      <https://fonts.googleapis.com>; rel=preconnect,
+      <https://fonts.gstatic.com>; rel=preconnect; crossorigin,
+      <https://www.googletagmanager.com>; rel=preconnect
+    '''
+
+# ===========================================
+# API & DYNAMIC ROUTES - No caching
+# ===========================================
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
+    CDN-Cache-Control = "no-store"
+
+# ===========================================
+# NETLIFY FUNCTIONS
+# ===========================================
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# ===========================================
+# REDIRECTS (if needed)
+# ===========================================
+
+# Example: Redirect www to non-www
+# [[redirects]]
+#   from = "https://www.codebrand.us/*"
+#   to = "https://codebrand.us/:splat"
+#   status = 301
+#   force = true
