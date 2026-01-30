@@ -1,0 +1,970 @@
+---
+/**
+ * Nearshore Development Services Page
+ * Premium landing page targeting US companies looking for nearshore development partners
+ * Keywords: nearshore software development, nearshore development company, LATAM development team
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqDark from "../components/FaqDark.tsx";
+
+// SEO
+const title = "Nearshore Development Agency | US Timezone LATAM Team - Codebrand";
+const description = "Nearshore software development with a LATAM team in your timezone. Senior engineers, English-fluent, 60% cost savings vs US agencies. React, Node.js, TypeScript experts.";
+const keywords = "nearshore software development, nearshore development company, nearshore development team, LATAM development team, nearshore outsourcing, nearshore vs offshore, nearshore software development services, US timezone developers, Central America development team, nearshore web development, nearshore app development, hire nearshore developers, nearshore software agency, nearshore development partner, software development outsourcing LATAM";
+
+// Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Codebrand Nearshore Development",
+  url: "https://codebrand.us/nearshore-development",
+  description: description,
+  areaServed: {
+    "@type": "Country",
+    name: "United States"
+  },
+  provider: {
+    "@type": "Organization",
+    name: "Codebrand",
+    url: "https://codebrand.us"
+  }
+};
+
+// FAQ Data for SEO
+const faqs = [
+  {
+    question: "What is nearshore software development?",
+    answer: "Nearshore software development means partnering with a development team in a nearby country with similar timezones. For US companies, this typically means working with teams in Latin America (LATAM). Unlike offshore development (India, Eastern Europe), nearshore teams work during your business hours, enabling real-time collaboration, faster communication, and cultural alignment. You get the cost benefits of outsourcing without the timezone and communication challenges."
+  },
+  {
+    question: "Why choose nearshore over offshore development?",
+    answer: "Nearshore development offers three key advantages over offshore: (1) Timezone alignment—our team works US business hours (Central Time), so you get real-time collaboration instead of waiting 12+ hours for responses. (2) Cultural fit—Latin American business culture aligns closely with the US, making communication more natural and reducing misunderstandings. (3) Travel accessibility—if you ever need to meet in person, it's a short flight vs. 20+ hours to Asia. The cost savings are comparable to offshore, but the workflow is significantly smoother."
+  },
+  {
+    question: "What timezone does your nearshore team work in?",
+    answer: "Our team works US Central Time (CST/CDT), which overlaps with all US business hours. We're available 8 AM - 6 PM Central, which means full overlap with East Coast (9 AM - 7 PM ET) and significant overlap with West Coast (6 AM - 4 PM PT). This enables real-time Slack communication, live standups, and same-day code reviews—something impossible with offshore teams in drastically different timezones."
+  },
+  {
+    question: "How much can I save with nearshore development?",
+    answer: "Most clients save 50-60% compared to hiring US-based developers. A senior US developer costs $150,000-$200,000/year fully loaded (salary + benefits + equipment + overhead). Our nearshore rates of $45-95/hour translate to significant savings while maintaining the same quality standards. You also avoid recruitment costs, onboarding time, and the risk of a bad hire. Scale up or down as needed without long-term commitments."
+  },
+  {
+    question: "Is your team fluent in English?",
+    answer: "Yes, all our developers are fluent in English—both written and spoken. We communicate daily with US clients via Slack, Zoom, and written documentation. Our team members have worked with US companies for years and understand American business communication styles. No language barriers, no lost-in-translation moments. You'll feel like you're working with a local team."
+  },
+  {
+    question: "What technologies does your nearshore team specialize in?",
+    answer: "We specialize in modern web technologies: React, Next.js, Node.js, TypeScript, and Tailwind CSS for frontend and full-stack development. For databases, we work with PostgreSQL, MongoDB, and Redis. We're experienced with AWS, Vercel, and Netlify for deployment. For e-commerce, we build with Shopify (Liquid, Hydrogen) and headless commerce solutions. We adapt to your existing tech stack rather than forcing you to change."
+  },
+  {
+    question: "How do you ensure code quality in a nearshore setup?",
+    answer: "Code quality is non-negotiable. Every pull request goes through peer review before merging. We use TypeScript for type safety, ESLint for consistency, and Prettier for formatting. We write unit tests for critical functionality and integration tests for APIs. Our CI/CD pipelines catch issues before they reach production. You receive clean, documented, maintainable code that your team can easily work with—the same standards as any top US agency."
+  },
+  {
+    question: "How fast can your nearshore team start on a project?",
+    answer: "We can typically start within 1-2 weeks for most projects. For urgent needs, we have Rush availability that can begin same-day. Our process: (1) 30-minute discovery call to understand your needs, (2) proposal within 24 hours, (3) onboarding and tool setup within 2-3 days. We maintain bench capacity specifically to handle new client needs without long wait times."
+  },
+  {
+    question: "What's the difference between nearshore and onshore development?",
+    answer: "Onshore means working with developers in your same country (US developers for US companies). Nearshore means nearby countries with similar timezones (LATAM for US). The main differences: (1) Cost—nearshore is typically 50-60% less expensive than onshore. (2) Talent pool—nearshore gives you access to a larger pool of skilled developers. (3) Scalability—easier to scale teams up/down with nearshore. Quality can be identical when you work with the right partner. We deliver the same standards as US agencies at a fraction of the cost."
+  },
+  {
+    question: "Do you sign NDAs and protect intellectual property?",
+    answer: "Absolutely. We sign NDAs before any project discussion and our contracts include strong IP protections. All code we write belongs to you—full ownership, no strings attached. We can work under your company's standard agreements if preferred. We also follow security best practices: encrypted communications, secure code repositories, and access controls. Your IP is protected."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer }
+  }))
+};
+
+// Comparison: Nearshore vs Offshore vs Onshore
+const comparison = [
+  {
+    aspect: "Timezone Overlap",
+    nearshore: "Full overlap with US business hours (8+ hours daily)",
+    offshore: "Minimal overlap (1-3 hours, often at odd hours)",
+    onshore: "Full overlap (same timezone)"
+  },
+  {
+    aspect: "Communication",
+    nearshore: "Real-time Slack/video, same-day responses",
+    offshore: "Async mostly, 12-24 hour response cycles",
+    onshore: "Real-time, immediate responses"
+  },
+  {
+    aspect: "Cost (Senior Dev)",
+    nearshore: "$45-65/hour (~$80-115k/year)",
+    offshore: "$25-45/hour (~$45-80k/year)",
+    onshore: "$100-150/hour (~$180-270k/year)"
+  },
+  {
+    aspect: "Cultural Alignment",
+    nearshore: "High—similar business culture to US",
+    offshore: "Variable—different work culture, holidays, communication styles",
+    onshore: "Identical—same culture"
+  },
+  {
+    aspect: "Travel Time",
+    nearshore: "3-5 hour flight from most US cities",
+    offshore: "15-24 hour journey",
+    onshore: "Domestic travel"
+  },
+  {
+    aspect: "English Fluency",
+    nearshore: "Fluent—daily business English",
+    offshore: "Varies widely by region and individual",
+    onshore: "Native speakers"
+  }
+];
+
+// Process steps
+const processDetailed = [
+  {
+    num: "01",
+    title: "Discovery Call",
+    desc: "30-minute call to understand your project, technical requirements, and timeline. We'll discuss your challenges and how nearshore development can help.",
+    details: ["Project scope", "Tech stack review", "Timeline planning", "Team sizing"]
+  },
+  {
+    num: "02",
+    title: "Proposal & Match",
+    desc: "Within 24 hours, receive a detailed proposal with developer profiles, pricing, and project approach tailored to your specific needs.",
+    details: ["Developer profiles", "Detailed pricing", "Milestone planning", "Communication plan"]
+  },
+  {
+    num: "03",
+    title: "Onboarding",
+    desc: "Quick setup—tool access, codebase review, workflow integration. We adapt to your processes, project management tools, and communication style.",
+    details: ["Tool integration", "Codebase review", "Process alignment", "Slack/Teams setup"]
+  },
+  {
+    num: "04",
+    title: "Build & Deliver",
+    desc: "Agile development with daily standups, continuous delivery, and transparent progress. You have full visibility and can adjust priorities anytime.",
+    details: ["Daily standups", "Sprint reviews", "Code reviews", "Continuous deployment"]
+  }
+];
+
+// Stats
+const stats = [
+  { value: "CST", label: "US Timezone" },
+  { value: "60%", label: "Cost Savings" },
+  { value: "24h", label: "Response Time" },
+  { value: "5+", label: "Years Experience" }
+];
+
+// Benefits of Nearshore
+const benefits = [
+  {
+    icon: "🕐",
+    title: "Same Timezone",
+    desc: "Work US Central Time hours. Real-time collaboration, live standups, same-day code reviews."
+  },
+  {
+    icon: "💬",
+    title: "English Fluent",
+    desc: "Native-level English communication. No language barriers or misunderstandings."
+  },
+  {
+    icon: "💰",
+    title: "60% Cost Savings",
+    desc: "Senior developer quality at a fraction of US rates. No hidden fees."
+  },
+  {
+    icon: "⚡",
+    title: "Fast Delivery",
+    desc: "2-3 week average project turnaround. Rush options available."
+  },
+  {
+    icon: "👨‍💻",
+    title: "Senior Engineers",
+    desc: "5+ years experience. React, Node.js, TypeScript experts."
+  },
+  {
+    icon: "🔄",
+    title: "Flexible Scaling",
+    desc: "Scale team up or down instantly based on project needs."
+  }
+];
+
+// Showcase project types
+const showcase = [
+  { title: "Web Applications", color: "from-cyan-500 to-blue-600" },
+  { title: "E-commerce Platforms", color: "from-emerald-500 to-teal-600" },
+  { title: "SaaS Products", color: "from-violet-500 to-purple-600" },
+  { title: "Mobile Apps", color: "from-orange-500 to-amber-500" }
+];
+
+// Pricing
+const pricing = [
+  {
+    title: "Standard",
+    price: "$45",
+    period: "/hour",
+    desc: "Quality nearshore development",
+    features: ["48h response time", "Code reviews included", "Full source code ownership", "Email support"],
+    highlighted: false
+  },
+  {
+    title: "Priority",
+    price: "$65",
+    period: "/hour",
+    desc: "Dedicated attention",
+    features: ["24h response time", "Dedicated developer", "Daily standups", "Slack direct access", "Priority queue"],
+    highlighted: true
+  },
+  {
+    title: "Rush",
+    price: "$95",
+    period: "/hour",
+    desc: "Urgent projects",
+    features: ["Same-day start", "12h turnaround", "Direct communication", "Weekend availability", "Emergency support"],
+    highlighted: false
+  }
+];
+
+// Technologies
+const technologies = [
+  "React", "Next.js", "Node.js", "TypeScript", "Tailwind CSS", "PostgreSQL",
+  "MongoDB", "AWS", "Vercel", "GraphQL", "REST APIs", "Shopify"
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/nearshore-development"
+>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(serviceSchema)}
+  />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+  />
+
+  <style>
+    .page-bg {
+      background: #030303;
+    }
+
+    /* Animated gradient orbs */
+    .gradient-orbs {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: float 20s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 600px;
+      height: 600px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      top: -200px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      top: 50%;
+      right: -150px;
+      animation-delay: -7s;
+    }
+    .orb-3 {
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      bottom: -100px;
+      left: 30%;
+      animation-delay: -14s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* Noise texture */
+    .noise {
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Typography */
+    .text-display {
+      font-size: clamp(3.5rem, 15vw, 12rem);
+      line-height: 0.85;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-animate {
+      background: linear-gradient(135deg, #22d3ee, #3b82f6, #8b5cf6, #22d3ee);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-shift 8s ease infinite;
+    }
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Glass card */
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+    }
+    .glass-hover {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-hover:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-8px);
+      box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    }
+
+    /* Bento grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+    }
+    .bento-grid .col-span-7 { grid-column: span 7; }
+    .bento-grid .col-span-5 { grid-column: span 5; }
+    @media (min-width: 1024px) {
+      .bento-grid { gap: 1.5rem; }
+    }
+    @media (max-width: 768px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-grid > * { grid-column: span 1 !important; }
+    }
+
+    /* Showcase cards */
+    .showcase-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 300px;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @media (min-width: 769px) { .showcase-card { min-height: 340px; } }
+    @media (min-width: 1024px) { .showcase-card { min-height: 400px; } }
+    @media (max-width: 768px) { .showcase-card { aspect-ratio: 4/3; min-height: auto; } }
+
+    .showcase-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+      opacity: 0.8;
+      transition: opacity 0.4s;
+    }
+    .showcase-card:hover {
+      transform: scale(1.03) translateY(-8px);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    }
+    .showcase-card:hover::after { opacity: 1; }
+    .showcase-card .card-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+    .showcase-card .card-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease 0.1s;
+    }
+    .showcase-card:hover .card-tag {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .showcase-card .card-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      transform: translateY(10px);
+      transition: transform 0.4s ease;
+    }
+    .showcase-card:hover .card-title { transform: translateY(0); }
+
+    /* Service icon */
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      transition: all 0.4s ease;
+    }
+    .glass-hover:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(59, 130, 246, 0.3));
+    }
+
+    /* Premium buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      color: #fff;
+      font-weight: 600;
+      padding: 1.25rem 3rem;
+      border-radius: 100px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px -3px rgba(6, 182, 212, 0.4);
+    }
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #22d3ee, #60a5fa);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.5);
+    }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-ghost {
+      color: #fff;
+      font-weight: 500;
+      padding: 1.25rem 3rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(6, 182, 212, 0.5);
+      background: rgba(6, 182, 212, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Marquee */
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      mask-image: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
+    }
+    .marquee-content {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 25s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.15s; }
+    .delay-2 { transition-delay: 0.3s; }
+    .delay-3 { transition-delay: 0.45s; }
+    .delay-4 { transition-delay: 0.6s; }
+    .delay-5 { transition-delay: 0.75s; }
+
+    /* Stats */
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .stat-number {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    /* Pricing card */
+    .pricing-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card.featured {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+    .pricing-card.featured::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+    }
+
+    /* Tech pill */
+    .tech-pill {
+      padding: 0.625rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+    .tech-pill:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      color: #22d3ee;
+      background: rgba(6, 182, 212, 0.1);
+    }
+
+    /* Glow effect */
+    .glow {
+      position: relative;
+    }
+    .glow::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      filter: blur(15px);
+      transition: opacity 0.4s;
+    }
+    .glow:hover::before { opacity: 0.5; }
+
+    /* Comparison table highlight */
+    .highlight-col {
+      background: rgba(6, 182, 212, 0.05);
+    }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <!-- Animated background -->
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- ==================== HERO ==================== -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <!-- Badge -->
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-cyan-500/20">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span class="text-cyan-300 text-sm font-medium tracking-wide">Nearshore Development Partner</span>
+            </span>
+          </div>
+
+          <!-- Display headline -->
+          <h1 class="text-display mb-6">
+            <span class="fade-up delay-1 block text-white">Nearshore</span>
+            <span class="fade-up delay-2 block text-gradient-animate">Development</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="fade-up delay-3 text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            US timezone. English fluent. 60% cost savings.<br class="hidden md:block" />
+            Senior LATAM developers for your next project.
+          </p>
+
+          <!-- CTAs -->
+          <div class="fade-up delay-4 flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary glow"><span>Get Started</span></a>
+            <a href="#comparison" class="btn-ghost">Compare Options</a>
+          </div>
+
+          <!-- Stats -->
+          <div class="fade-up delay-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {stats.map((stat) => (
+              <div class="stat-card glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Marquee -->
+      <div class="py-8 border-y border-white/5">
+        <div class="marquee">
+          <div class="marquee-content">
+            {[...Array(2)].map(() => (
+              <>
+                {technologies.map((tech, i) => (
+                  <>
+                    <span class="text-2xl font-bold text-white/10 whitespace-nowrap">{tech}</span>
+                    <span class={`${i % 3 === 0 ? 'text-cyan-500' : i % 3 === 1 ? 'text-blue-500' : 'text-violet-500'}`}>◆</span>
+                  </>
+                ))}
+              </>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== WHAT IS NEARSHORE ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">What is Nearshore Development?</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">The best of both worlds</h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                <strong class="text-white">Nearshore software development</strong> means partnering with a development team in a nearby country with similar timezones. For US companies, this typically means working with skilled teams in Latin America (LATAM)—countries like Honduras, Mexico, Costa Rica, and Colombia.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Unlike <strong class="text-white">offshore development</strong> (India, Philippines, Eastern Europe) where timezone differences create 12-24 hour communication delays, nearshore teams work during your business hours. You get real-time collaboration, live code reviews, and immediate responses—just like working with a local team. Learn more about <a href="/outsource-web-development" class="text-cyan-400 hover:text-cyan-300 underline">outsourcing web development</a> options.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                The cost advantage is significant: <strong class="text-white">save 50-60% compared to US rates</strong> while maintaining the same quality standards. Senior developers with 5+ years of experience, fluent English, and expertise in modern technologies like <a href="/react-development-agency" class="text-cyan-400 hover:text-cyan-300 underline">React</a>, Node.js, and TypeScript. Whether you need <a href="/custom-web-development-services" class="text-cyan-400 hover:text-cyan-300 underline">custom web development</a> or <a href="/ecommerce-development-agency" class="text-cyan-400 hover:text-cyan-300 underline">e-commerce solutions</a>, our team delivers.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                <strong class="text-white">Why companies choose nearshore:</strong> Real-time collaboration, cultural alignment, cost savings, and no timezone headaches. You get offshore prices with onshore workflow. Ready to <a href="/hire-remote-developers" class="text-cyan-400 hover:text-cyan-300 underline">hire remote developers</a>? We're here to help.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== BENEFITS ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Why Nearshore</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white">The Codebrand advantage</h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {benefits.map((benefit, i) => (
+              <div
+                class="fade-up glass glass-hover p-8"
+                style={`transition-delay: ${i * 0.08}s`}
+              >
+                <div class="service-icon mb-6">{benefit.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
+                <p class="text-neutral-400 leading-relaxed">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== COMPARISON TABLE ==================== -->
+      <section id="comparison" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Compare Options</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Nearshore vs Offshore vs Onshore</h2>
+            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+              See how nearshore development compares to other outsourcing options. The data speaks for itself.
+            </p>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="fade-up mt-16 overflow-x-auto">
+            <table class="w-full min-w-[800px]">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Aspect</th>
+                  <th class="text-left py-4 px-4 text-cyan-400 font-semibold highlight-col rounded-t-lg">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                      Nearshore (LATAM)
+                    </span>
+                  </th>
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Offshore (Asia/Europe)</th>
+                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Onshore (US)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row) => (
+                  <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                    <td class="py-5 px-4 text-white font-medium">{row.aspect}</td>
+                    <td class="py-5 px-4 text-cyan-300 text-sm font-medium highlight-col">{row.nearshore}</td>
+                    <td class="py-5 px-4 text-neutral-400 text-sm">{row.offshore}</td>
+                    <td class="py-5 px-4 text-neutral-400 text-sm">{row.onshore}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Summary boxes -->
+          <div class="grid md:grid-cols-3 gap-5 mt-12">
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.1s">
+              <div class="text-3xl font-bold text-gradient mb-2">8+ hrs</div>
+              <p class="text-neutral-400 text-sm">Daily timezone overlap with US clients</p>
+            </div>
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.2s">
+              <div class="text-3xl font-bold text-white mb-2">60%</div>
+              <p class="text-neutral-400 text-sm">Cost savings vs US development rates</p>
+            </div>
+            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.3s">
+              <div class="text-3xl font-bold text-white mb-2">3-5 hrs</div>
+              <p class="text-neutral-400 text-sm">Flight time from most US cities</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PROJECT TYPES ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <p class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">What We Build</p>
+              <h2 class="text-4xl md:text-6xl font-bold text-white">
+                Code that<br />
+                <span class="text-gradient">scales.</span>
+              </h2>
+            </div>
+            <p class="text-neutral-400 max-w-sm">
+              From MVPs to enterprise platforms—nearshore development that drives growth.
+            </p>
+          </div>
+
+          <!-- Bento showcase -->
+          <div class="bento-grid">
+            {[
+              { ...showcase[0], span: "col-span-7", tag: "Applications" },
+              { ...showcase[1], span: "col-span-5", tag: "Commerce" },
+              { ...showcase[2], span: "col-span-5", tag: "SaaS" },
+              { ...showcase[3], span: "col-span-7", tag: "Mobile" }
+            ].map((item, i) => (
+              <div
+                class={`fade-up ${item.span} showcase-card`}
+                style={`transition-delay: ${0.1 + i * 0.1}s`}
+              >
+                <div class={`absolute inset-0 bg-gradient-to-br ${item.color}`}></div>
+                <div class="card-content">
+                  <span class="card-tag text-white">{item.tag}</span>
+                  <span class="card-title text-white">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== HOW IT WORKS ==================== -->
+      <section class="py-32 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">How It Works</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">From call to code</h2>
+            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+              Our streamlined process gets you from first contact to working code fast.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-16">
+            {processDetailed.map((step, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.1}s`}>
+                <div class="flex items-start gap-6">
+                  <div class="w-14 h-14 flex-shrink-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-300 font-bold">
+                    {step.num}
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
+                    <p class="text-neutral-400 mb-4 leading-relaxed">{step.desc}</p>
+                    <ul class="grid grid-cols-2 gap-2">
+                      {step.details.map((detail) => (
+                        <li class="flex items-center gap-2 text-sm text-neutral-400">
+                          <span class="w-1 h-1 rounded-full bg-cyan-400"></span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PRICING ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Pricing</span>
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Simple, transparent</h2>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5">
+            {pricing.map((plan, i) => (
+              <div
+                class={`fade-up glass glass-hover pricing-card p-8 ${plan.highlighted ? "featured" : ""}`}
+                style={`transition-delay: ${i * 0.12}s`}
+              >
+                {plan.highlighted && (
+                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-500/20 px-3 py-1.5 rounded-full mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                    Most Popular
+                  </span>
+                )}
+                <h3 class="text-2xl font-bold text-white mb-2">{plan.title}</h3>
+                <p class="text-neutral-400 mb-6">{plan.desc}</p>
+                <div class="mb-8">
+                  <span class="text-5xl font-bold text-white">{plan.price}</span>
+                  <span class="text-neutral-400 text-lg">{plan.period}</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                  {plan.features.map((feature) => (
+                    <li class="flex items-center gap-3 text-neutral-300">
+                      <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/contact"
+                  class={plan.highlighted ? "btn-primary w-full text-center block" : "btn-ghost w-full text-center block"}
+                >
+                  <span>Get Started</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TECHNOLOGIES ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Tech Stack</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Technologies we master</h2>
+            <p class="text-neutral-400 text-lg">We adapt to your stack, not the other way around.</p>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {technologies.map((tech) => (
+              <span class="tech-pill">{tech}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== FAQ ==================== -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-8">
+            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Frequently Asked Questions</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Everything you need to know</h2>
+            <p class="text-neutral-400 text-lg">Can't find what you're looking for? <a href="/contact" class="text-cyan-400 hover:text-cyan-300 underline">Contact us</a> and we'll get back to you within 24 hours.</p>
+          </div>
+          <div class="fade-up mt-12">
+            <FaqDark faqs={faqs} client:visible />
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CTA ==================== -->
+      <section class="py-40 px-6 relative overflow-hidden">
+        <!-- Glow effect -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[0.9]">
+              Ready for<br />
+              <span class="text-gradient-animate">nearshore?</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-neutral-400 mb-12 max-w-xl mx-auto">
+              Free 30-min consultation. Discover how nearshore development can transform your business.
+            </p>
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5 glow">
+              <span>Book a Call</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scroll animations -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</Layout>

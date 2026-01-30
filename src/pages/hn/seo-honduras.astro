@@ -1,0 +1,197 @@
+---
+/**
+ * SEO Honduras - Posicionamiento Web Landing Page
+ * Keywords: seo honduras, posicionamiento web honduras, marketing digital honduras
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import FAQ from "../../components/FAQ.tsx";
+
+const title = "SEO Honduras | Posicionamiento Web en Google - Codebrand";
+const description = "Servicios de SEO y posicionamiento web en Honduras. Aparezca en las primeras páginas de Google. Aumente su visibilidad y atraiga más clientes. Desde L. 5,000/mes.";
+const keywords = "seo honduras, posicionamiento web honduras, marketing digital honduras, aparecer en google honduras, optimizacion web honduras, agencia seo honduras, posicionamiento google honduras";
+
+const faqs = [
+  {
+    question: "¿Qué es el SEO y por qué lo necesito?",
+    answer: "SEO (Search Engine Optimization) es el proceso de optimizar su sitio web para aparecer en los primeros resultados de Google. Cuando alguien busca 'restaurantes en Tegucigalpa' o 'abogados en San Pedro Sula', el SEO ayuda a que su negocio aparezca. Más visibilidad = más clientes potenciales."
+  },
+  {
+    question: "¿Cuánto tiempo toma ver resultados?",
+    answer: "El SEO es una estrategia a mediano/largo plazo. Típicamente se empiezan a ver mejoras en 3-6 meses, con resultados significativos en 6-12 meses. Sin embargo, esto depende de la competencia en su industria y el estado actual de su sitio web."
+  },
+  {
+    question: "¿Cuánto cuesta el servicio de SEO?",
+    answer: "Nuestros planes de SEO comienzan en L. 5,000/mes (~$200 USD). El precio depende de la competencia en su industria, cantidad de palabras clave a posicionar, y alcance geográfico (local, nacional o regional). Ofrecemos evaluaciones gratuitas."
+  },
+  {
+    question: "¿Garantizan el primer lugar en Google?",
+    answer: "Ninguna agencia seria puede garantizar el primer lugar, ya que Google controla sus algoritmos. Lo que sí garantizamos es aplicar las mejores prácticas, trabajo constante, y reportes mensuales de progreso. Nuestros clientes ven mejoras consistentes en su posicionamiento."
+  },
+  {
+    question: "¿Qué incluye el servicio de SEO?",
+    answer: "Incluye: análisis de palabras clave, optimización técnica del sitio, creación/optimización de contenido, construcción de enlaces, SEO local (Google Maps), y reportes mensuales de rendimiento. También incluimos recomendaciones de mejora continua."
+  },
+  {
+    question: "¿Necesito un sitio web para hacer SEO?",
+    answer: "Sí, necesita un sitio web para implementar SEO. Si no tiene uno, podemos crear su sitio web optimizado desde el inicio. También ofrecemos optimización de perfiles de Google Business (antes Google My Business) para negocios locales."
+  }
+];
+
+const services = [
+  { icon: "🔍", title: "Análisis de Palabras Clave", desc: "Identificamos las búsquedas que usan sus clientes potenciales" },
+  { icon: "⚙️", title: "SEO Técnico", desc: "Optimizamos velocidad, estructura y código de su sitio" },
+  { icon: "📝", title: "Contenido SEO", desc: "Creamos contenido que posiciona y convierte" },
+  { icon: "🔗", title: "Link Building", desc: "Construimos autoridad con enlaces de calidad" },
+  { icon: "📍", title: "SEO Local", desc: "Posicionamiento en Google Maps y búsquedas locales" },
+  { icon: "📊", title: "Reportes Mensuales", desc: "Seguimiento transparente de resultados" }
+];
+
+const stats = [
+  { value: "1ra", label: "Página de Google" },
+  { value: "300%", label: "Más Tráfico" },
+  { value: "24/7", label: "Visibilidad" },
+  { value: "ROI", label: "Medible" }
+];
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/hn/seo-honduras"
+>
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #f59e0b, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #f59e0b); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #f59e0b 0%, #06b6d4 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.4s ease; }
+    .btn-whatsapp:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(245, 158, 11, 0.5); background: rgba(245, 158, 11, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- HERO -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-amber-500/20">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              <span class="text-amber-300 text-sm font-medium">Posicionamiento Web Honduras</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">SEO</span>
+            <span class="fade-up block text-gradient">Honduras</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            Aparezca en Google cuando sus clientes lo busquen.<br class="hidden md:block" />
+            Posicionamiento web desde L. 5,000/mes.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20el%20servicio%20de%20SEO" class="btn-whatsapp" target="_blank" rel="noopener">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Evaluación Gratis
+            </a>
+            <a href="/hn/desarrollo-web-honduras" class="btn-ghost">Ver más servicios</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Nuestros Servicios SEO</h2>
+            <p class="text-neutral-400 text-xl mt-4">Estrategia completa para dominar Google</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{s.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
+                <p class="text-neutral-400">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up glass p-12 text-center">
+            <span class="text-amber-400 text-sm font-medium uppercase tracking-widest">Planes SEO</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-8">Desde L. 5,000/mes</h2>
+            <p class="text-neutral-400 text-lg mb-8 max-w-2xl mx-auto">
+              El precio depende de la competencia en su industria y objetivos. Solicite una evaluación gratuita para recibir una propuesta personalizada.
+            </p>
+            <ul class="text-left max-w-md mx-auto space-y-4 mb-10">
+              {["Análisis de competencia", "Investigación de palabras clave", "Optimización on-page", "Contenido optimizado", "Link building", "SEO local / Google Maps", "Reportes mensuales", "Soporte continuo"].map((item) => (
+                <li class="flex items-center gap-3 text-neutral-300">
+                  <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="https://wa.me/50432722973?text=Hola,%20quiero%20una%20evaluación%20SEO%20gratuita" class="btn-whatsapp" target="_blank" rel="noopener">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Evaluación Gratuita
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="fade-up">
+            <FAQ faqs={faqs} theme="dark" client:visible />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</HnLayout>

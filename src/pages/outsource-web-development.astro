@@ -1,0 +1,241 @@
+---
+/**
+ * Outsource Web Development Landing Page
+ * Keywords: outsource web development, web development outsourcing, outsource website development
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqDark from "../components/FaqDark.tsx";
+
+const title = "Outsource Web Development | Reliable Development Partner - Codebrand";
+const description = "Outsource your web development to a reliable partner. Senior developers, US timezone, transparent pricing. Save 60% vs US agencies while maintaining quality.";
+const keywords = "outsource web development, web development outsourcing, outsource website development, outsource software development, offshore web development, outsourcing development partner, outsource coding, outsource programming";
+
+const faqs = [
+  {
+    question: "Why should I outsource web development?",
+    answer: "Outsourcing web development offers significant advantages: (1) Cost savings of 50-60% compared to in-house or local agencies. (2) Access to specialized skills without long-term hiring commitments. (3) Faster delivery through experienced teams. (4) Scalability—add or reduce capacity as needed. (5) Focus on your core business while experts handle development."
+  },
+  {
+    question: "How do I ensure quality when outsourcing?",
+    answer: "Quality depends on choosing the right partner. Look for: clear communication (same timezone helps), proven portfolio, code review processes, comprehensive testing, and transparent pricing. We guarantee quality through peer code reviews, TypeScript for type safety, automated testing, and regular demo sessions so you see progress throughout."
+  },
+  {
+    question: "What's the difference between outsourcing and hiring?",
+    answer: "Hiring means adding permanent employees with salaries, benefits, equipment, and management overhead—plus the risk of a bad hire. Outsourcing means paying for work completed, with no long-term commitment. You can scale up or down instantly, access specialized skills for specific projects, and avoid the time and cost of recruiting."
+  },
+  {
+    question: "How do you handle communication across timezones?",
+    answer: "We work US timezone hours (Central Time) specifically to enable real-time collaboration. You get instant Slack responses during business hours, live video calls when needed, and same-day code reviews. This is a key advantage over offshore teams in drastically different timezones that create 12-24 hour communication delays."
+  },
+  {
+    question: "What types of projects can I outsource?",
+    answer: "We handle all types of web development: custom websites, web applications, e-commerce stores, SaaS platforms, mobile apps, API development, and ongoing maintenance. Whether you need a complete project built from scratch or developers to augment your existing team, we can help."
+  },
+  {
+    question: "How do you protect my intellectual property?",
+    answer: "We sign NDAs before any project discussion. All code we write belongs to you—full ownership with no licensing fees. We use secure repositories, encrypted communication, and access controls. Our contracts include strong IP protection clauses. Your business ideas and code are completely protected."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer }
+  }))
+};
+
+const benefits = [
+  { icon: "💰", title: "60% Cost Savings", desc: "Senior developer quality at a fraction of US agency rates" },
+  { icon: "🕐", title: "US Timezone", desc: "Real-time collaboration during your business hours" },
+  { icon: "📈", title: "Scale On Demand", desc: "Add or reduce capacity instantly as needs change" },
+  { icon: "🎯", title: "Focus on Core Business", desc: "Let experts handle development while you grow" },
+  { icon: "⚡", title: "Faster Time to Market", desc: "Experienced teams deliver faster than new hires" },
+  { icon: "🔒", title: "Full IP Protection", desc: "NDA, secure repos, and 100% code ownership" }
+];
+
+const comparison = [
+  { aspect: "Cost", outsource: "$45-95/hr", inhouse: "$150-200/hr equiv." },
+  { aspect: "Start Time", outsource: "1-2 weeks", inhouse: "3-6 months" },
+  { aspect: "Scalability", outsource: "Instant", inhouse: "Slow & expensive" },
+  { aspect: "Risk", outsource: "Pay per project", inhouse: "Long-term commitment" }
+];
+
+const stats = [
+  { value: "60%", label: "Cost Savings" },
+  { value: "1-2", label: "Weeks to Start" },
+  { value: "500+", label: "Projects Done" },
+  { value: "98%", label: "Satisfaction" }
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/outsource-web-development"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #f59e0b, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #f59e0b); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #f59e0b 0%, #06b6d4 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-primary { background: linear-gradient(135deg, #f59e0b, #06b6d4); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; transition: all 0.4s ease; }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(245, 158, 11, 0.5); background: rgba(245, 158, 11, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-amber-500/20">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              <span class="text-amber-300 text-sm font-medium">Outsource Web Development</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Outsource</span>
+            <span class="fade-up block text-gradient">Development</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            Reliable development partner for your projects.<br class="hidden md:block" />
+            Save 60% while maintaining quality.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary"><span>Start Outsourcing</span></a>
+            <a href="#benefits" class="btn-ghost">Why Outsource</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Smart businesses outsource</h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Building an in-house development team is expensive. Salaries, benefits, equipment, office space, management overhead—it adds up fast. And if your needs change, you're stuck with fixed costs. <a href="/nearshore-development" class="text-amber-400 hover:text-amber-300 underline">Nearshore development</a> offers a better path.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                <strong class="text-white">Outsourcing gives you flexibility.</strong> Access senior developers when you need them, scale up for big projects, scale down when work slows. Pay for results, not overhead. <a href="/hire-remote-developers" class="text-amber-400 hover:text-amber-300 underline">Hire remote developers</a> for any project size.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                The key is choosing the right partner. We work <strong class="text-white">US timezone hours</strong> for real-time collaboration, communicate in fluent English, and deliver quality code with transparent pricing. Whether you need <a href="/react-development-agency" class="text-amber-400 hover:text-amber-300 underline">React development</a>, <a href="/ecommerce-development-agency" class="text-amber-400 hover:text-amber-300 underline">e-commerce</a>, or <a href="/custom-web-development-services" class="text-amber-400 hover:text-amber-300 underline">custom solutions</a>—it's outsourcing done right.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Benefits of Outsourcing</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {benefits.map((b, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{b.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
+                <p class="text-neutral-400">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Outsourcing vs In-House</h2>
+          </div>
+          <div class="fade-up glass p-8">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-4 text-neutral-400">Aspect</th>
+                  <th class="text-left py-4 text-amber-400">Outsourcing</th>
+                  <th class="text-left py-4 text-neutral-400">In-House</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row) => (
+                  <tr class="border-b border-white/5">
+                    <td class="py-4 text-white">{row.aspect}</td>
+                    <td class="py-4 text-amber-300">{row.outsource}</td>
+                    <td class="py-4 text-neutral-400">{row.inhouse}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
+          </div>
+          <div class="fade-up">
+            <FaqDark faqs={faqs} client:visible />
+          </div>
+        </div>
+      </section>
+
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-amber-500/20 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">Ready to<br /><span class="text-gradient">outsource?</span></h2>
+            <p class="text-xl text-neutral-400 mb-12">Free consultation. See how much you can save.</p>
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5"><span>Get Started</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</Layout>

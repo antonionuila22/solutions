@@ -142,7 +142,7 @@ const technologies: Tech[] = [
   .marquee-track {
     display: flex;
     gap: 1rem;
-    animation: marquee 40s linear infinite;
+    animation: tech-marquee 40s linear infinite;
     will-change: transform;
     /* Use GPU acceleration */
     transform: translateZ(0);
@@ -157,7 +157,7 @@ const technologies: Tech[] = [
     flex-shrink: 0;
   }
 
-  @keyframes marquee {
+  @keyframes tech-marquee {
     0% {
       transform: translate3d(0, 0, 0);
     }
@@ -181,7 +181,7 @@ const technologies: Tech[] = [
   /* Reduce motion for accessibility */
   @media (prefers-reduced-motion: reduce) {
     .marquee-track {
-      animation: none;
+      animation: none !important;
     }
   }
 </style>

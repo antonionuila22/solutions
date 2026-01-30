@@ -1,0 +1,220 @@
+---
+/**
+ * React Development Agency Landing Page
+ * Keywords: react development agency, react developers, react js development
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqDark from "../components/FaqDark.tsx";
+
+const title = "React Development Agency | Expert React Developers - Codebrand";
+const description = "React development agency with senior engineers. Custom React applications, Next.js development, and React Native mobile apps. US timezone, 60% cost savings vs US agencies.";
+const keywords = "react development agency, react developers for hire, react js development company, react development services, next js development agency, react native development, react consulting, react experts, senior react developers";
+
+const faqs = [
+  {
+    question: "Why should I choose React for my project?",
+    answer: "React is the most popular frontend framework, used by Meta, Netflix, Airbnb, and thousands of companies. Benefits include: reusable component architecture, excellent performance with virtual DOM, massive ecosystem of libraries, strong community support, and easy testing. It's ideal for complex UIs, single-page applications, and projects that need to scale."
+  },
+  {
+    question: "Do you work with Next.js?",
+    answer: "Yes, Next.js is our primary React framework. It adds server-side rendering, static site generation, API routes, and optimized performance out of the box. We use Next.js for most production React projects because it provides better SEO, faster page loads, and a superior developer experience compared to vanilla React."
+  },
+  {
+    question: "Can you build mobile apps with React?",
+    answer: "Yes, we build cross-platform mobile apps using React Native. One codebase runs on both iOS and Android, reducing development time by 40-50% compared to native development. React Native apps are performant and indistinguishable from native apps for most use cases."
+  },
+  {
+    question: "What's your React development process?",
+    answer: "We follow agile methodology with 1-2 week sprints. Each sprint includes planning, development, code review, and demo. We use TypeScript for type safety, write comprehensive tests, and follow React best practices (hooks, functional components, proper state management). You see working code every sprint."
+  },
+  {
+    question: "How much do React developers cost?",
+    answer: "Our senior React developers work at $45-95/hour, depending on project tier. This is 50-60% less than US agencies charging $150-200/hour for equivalent experience. You get the same quality—5+ years React experience, TypeScript expertise, testing skills—at significantly lower rates."
+  },
+  {
+    question: "Can you work with our existing React codebase?",
+    answer: "Absolutely. We regularly join existing projects for feature development, bug fixes, performance optimization, or team augmentation. We'll review your codebase, understand your patterns, and integrate seamlessly with your workflow and coding standards."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer }
+  }))
+};
+
+const services = [
+  { icon: "⚛️", title: "React Web Apps", desc: "Complex single-page applications with modern React patterns" },
+  { icon: "▲", title: "Next.js Development", desc: "Server-rendered React apps with optimal SEO and performance" },
+  { icon: "📱", title: "React Native", desc: "Cross-platform mobile apps for iOS and Android" },
+  { icon: "🔄", title: "Migration to React", desc: "Modernize legacy apps by migrating to React" },
+  { icon: "🧪", title: "Testing & QA", desc: "Comprehensive testing with Jest, React Testing Library, Cypress" },
+  { icon: "🚀", title: "Performance Tuning", desc: "Optimize existing React apps for speed and efficiency" }
+];
+
+const stats = [
+  { value: "100+", label: "React Projects" },
+  { value: "5+", label: "Years React Exp" },
+  { value: "TypeScript", label: "First" },
+  { value: "CST", label: "Timezone" }
+];
+
+const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zustand", "TanStack Query", "Tailwind CSS", "Jest", "Cypress"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/react-development-agency"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #61dafb, #3b82f6); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #61dafb); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #61dafb 0%, #3b82f6 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-primary { background: linear-gradient(135deg, #61dafb, #3b82f6); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; transition: all 0.4s ease; }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(97, 218, 251, 0.5); background: rgba(97, 218, 251, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1; }
+    .tech-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-sky-400/20">
+              <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+              <span class="text-sky-300 text-sm font-medium">React Development Agency</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">React</span>
+            <span class="fade-up block text-gradient">Development</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            Senior React developers for your next project.<br class="hidden md:block" />
+            React, Next.js, React Native. US timezone.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary"><span>Hire React Devs</span></a>
+            <a href="#services" class="btn-ghost">Our Services</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Expert React development</h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                React powers some of the world's most sophisticated web applications. But building with React effectively requires deep expertise—<strong class="text-white">component architecture, state management, performance optimization, and testing</strong>. Our <a href="/nearshore-development" class="text-sky-400 hover:text-sky-300 underline">nearshore team</a> specializes in complex React projects.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Our React developers have <strong class="text-white">5+ years of production experience</strong>. We've built dashboards, SaaS platforms, <a href="/ecommerce-development-agency" class="text-sky-400 hover:text-sky-300 underline">e-commerce stores</a>, and mobile apps. We write TypeScript by default, test thoroughly, and follow best practices.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Whether you need a <strong class="text-white">new React application, Next.js website, React Native mobile app</strong>, or help with an existing codebase, we deliver production-ready code at <strong class="text-white">60% less than US agency rates</strong>. <a href="/hire-remote-developers" class="text-sky-400 hover:text-sky-300 underline">Hire our developers</a> or explore our <a href="/custom-web-development-services" class="text-sky-400 hover:text-sky-300 underline">custom development services</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">React Services</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{s.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
+                <p class="text-neutral-400">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Our React Stack</h2>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {stack.map((t) => (<span class="tech-pill">{t}</span>))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
+          </div>
+          <div class="fade-up">
+            <FaqDark faqs={faqs} client:visible />
+          </div>
+        </div>
+      </section>
+
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-sky-500/20 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">Need React<br /><span class="text-gradient">developers?</span></h2>
+            <p class="text-xl text-neutral-400 mb-12">Free consultation. Start building in days.</p>
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5"><span>Get Started</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</Layout>

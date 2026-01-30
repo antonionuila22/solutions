@@ -1,0 +1,198 @@
+---
+/**
+ * Tienda Online Honduras - E-commerce Landing Page
+ * Keywords: tienda online honduras, ecommerce honduras, vender en linea honduras
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import FAQ from "../../components/FAQ.tsx";
+
+const title = "Tienda Online Honduras | E-commerce Profesional - Codebrand";
+const description = "Creamos tiendas online profesionales en Honduras. Venda sus productos 24/7 con carrito de compras, pagos en línea y gestión de inventario. Desde L. 62,500.";
+const keywords = "tienda online honduras, ecommerce honduras, crear tienda online honduras, vender en linea honduras, tienda virtual honduras, carrito de compras honduras, pagos en linea honduras";
+
+const faqs = [
+  {
+    question: "¿Cuánto cuesta crear una tienda online en Honduras?",
+    answer: "Una tienda online profesional comienza en L. 62,500 (~$2,500 USD). Incluye catálogo de productos, carrito de compras, integración de pagos, gestión de inventario y panel de administración. El precio puede variar según funcionalidades adicionales."
+  },
+  {
+    question: "¿Qué métodos de pago puedo aceptar?",
+    answer: "Podemos integrar múltiples métodos: tarjetas de crédito/débito (Visa, Mastercard), transferencias bancarias (BAC, Banpais, Ficohsa), PayPal, y pago contra entrega. También podemos integrar pasarelas locales según disponibilidad."
+  },
+  {
+    question: "¿Puedo manejar mi tienda yo mismo?",
+    answer: "Sí. Todas nuestras tiendas incluyen un panel de administración fácil de usar donde puede agregar productos, gestionar inventario, ver pedidos y actualizar precios. Le damos capacitación completa."
+  },
+  {
+    question: "¿Cómo manejan los envíos?",
+    answer: "Configuramos zonas de envío con tarifas fijas o calculadas. Puede ofrecer envío gratis sobre cierto monto, envío express, o recogida en tienda. Integramos con servicios de mensajería locales."
+  },
+  {
+    question: "¿Mi tienda será segura?",
+    answer: "Sí. Todas las tiendas incluyen certificado SSL, protección contra fraudes, y cumplimiento PCI para pagos con tarjeta. Sus clientes pueden comprar con total confianza."
+  },
+  {
+    question: "¿Cuántos productos puedo vender?",
+    answer: "No hay límite en la cantidad de productos. Puede tener desde 10 hasta miles de productos. El sistema está diseñado para escalar con su negocio."
+  }
+];
+
+const features = [
+  { icon: "🛒", title: "Carrito de Compras", desc: "Carrito intuitivo con actualizaciones en tiempo real" },
+  { icon: "💳", title: "Pagos Seguros", desc: "Visa, Mastercard, PayPal, transferencias bancarias" },
+  { icon: "📦", title: "Gestión de Inventario", desc: "Control de stock, alertas de bajo inventario" },
+  { icon: "🚚", title: "Envíos Configurables", desc: "Zonas, tarifas, seguimiento de pedidos" },
+  { icon: "📊", title: "Panel Admin", desc: "Gestione productos, pedidos y clientes fácilmente" },
+  { icon: "📱", title: "100% Responsive", desc: "Perfecta en celulares, tablets y computadoras" }
+];
+
+const stats = [
+  { value: "50+", label: "Tiendas Creadas" },
+  { value: "24/7", label: "Ventas Automáticas" },
+  { value: "100%", label: "Personalizable" },
+  { value: "SSL", label: "Seguridad Incluida" }
+];
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/hn/tienda-online-honduras"
+>
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #10b981, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #10b981); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.4s ease; }
+    .btn-whatsapp:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- HERO -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-emerald-500/20">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-emerald-300 text-sm font-medium">E-commerce Honduras</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Tienda</span>
+            <span class="fade-up block text-gradient">Online</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            Venda sus productos en línea 24/7.<br class="hidden md:block" />
+            E-commerce profesional desde L. 62,500.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20crear%20una%20tienda%20online" class="btn-whatsapp" target="_blank" rel="noopener">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Cotizar Tienda
+            </a>
+            <a href="/hn/desarrollo-web-honduras" class="btn-ghost">Ver más servicios</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Todo lo que necesita</h2>
+            <p class="text-neutral-400 text-xl mt-4">Funcionalidades completas para vender en línea</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {features.map((f, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{f.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{f.title}</h3>
+                <p class="text-neutral-400">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up glass p-12 text-center">
+            <span class="text-emerald-400 text-sm font-medium uppercase tracking-widest">Inversión</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">Tienda Online Completa</h2>
+            <div class="mb-8">
+              <span class="text-6xl font-bold text-white">L. 62,500</span>
+              <span class="text-neutral-400 text-xl"> (~$2,500 USD)</span>
+            </div>
+            <ul class="text-left max-w-md mx-auto space-y-4 mb-10">
+              {["Catálogo ilimitado de productos", "Carrito de compras", "Pagos con tarjeta y transferencia", "Gestión de inventario", "Panel de administración", "Diseño 100% responsive", "Hosting y dominio 1 año", "Soporte técnico 6 meses"].map((item) => (
+                <li class="flex items-center gap-3 text-neutral-300">
+                  <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="https://wa.me/50432722973?text=Hola,%20quiero%20cotizar%20una%20tienda%20online" class="btn-whatsapp" target="_blank" rel="noopener">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Solicitar Cotización
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="fade-up">
+            <FAQ faqs={faqs} theme="dark" client:visible />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</HnLayout>

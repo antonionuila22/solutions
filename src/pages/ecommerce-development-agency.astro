@@ -1,0 +1,221 @@
+---
+/**
+ * E-commerce Development Agency Landing Page
+ * Keywords: ecommerce development agency, online store development, shopify development
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqDark from "../components/FaqDark.tsx";
+
+const title = "E-commerce Development Agency | Online Store Experts - Codebrand";
+const description = "E-commerce development agency specializing in Shopify, custom stores, and headless commerce. Boost sales with a high-converting online store. US timezone, 60% cost savings.";
+const keywords = "ecommerce development agency, online store development, shopify development agency, ecommerce website development, custom ecommerce development, headless commerce development, woocommerce development, online shop development, ecommerce solutions";
+
+const faqs = [
+  {
+    question: "What e-commerce platforms do you work with?",
+    answer: "We specialize in Shopify (including Shopify Plus), custom e-commerce solutions built with React/Next.js, and headless commerce architectures. We also work with WooCommerce for WordPress-based stores. We recommend the best platform based on your specific needs, product catalog size, and growth plans."
+  },
+  {
+    question: "How much does e-commerce development cost?",
+    answer: "E-commerce projects typically range from $5,000 to $50,000+. Basic Shopify stores start around $5,000-$10,000. Custom e-commerce with advanced features ranges from $15,000-$30,000. Enterprise headless commerce solutions can exceed $50,000. We provide detailed quotes based on your specific requirements."
+  },
+  {
+    question: "How long does it take to build an online store?",
+    answer: "Timeline depends on complexity. A standard Shopify store takes 3-6 weeks. Custom e-commerce solutions take 8-12 weeks. Complex multi-vendor marketplaces or headless implementations can take 3-6 months. We work in sprints, delivering working features regularly."
+  },
+  {
+    question: "Can you migrate my existing store?",
+    answer: "Yes. We handle complete migrations from any platform to Shopify or custom solutions. This includes product data, customer accounts, order history, and SEO preservation (redirects, URLs). We ensure zero downtime and no loss of search rankings during migration."
+  },
+  {
+    question: "What payment gateways can you integrate?",
+    answer: "We integrate all major payment gateways: Stripe, PayPal, Square, Authorize.net, and Shopify Payments. We also set up Apple Pay, Google Pay, and buy-now-pay-later options like Klarna and Affirm. For international stores, we configure multi-currency support."
+  },
+  {
+    question: "Do you provide ongoing e-commerce support?",
+    answer: "Yes. We offer e-commerce maintenance packages that include: performance monitoring, security updates, conversion optimization, new feature development, and technical support. Many clients retain us for ongoing growth and optimization work."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer }
+  }))
+};
+
+const services = [
+  { icon: "🛍️", title: "Shopify Development", desc: "Custom Shopify themes, apps, and Shopify Plus enterprise solutions" },
+  { icon: "⚡", title: "Headless Commerce", desc: "Decoupled frontends with Shopify, BigCommerce, or custom backends" },
+  { icon: "🎨", title: "Custom Stores", desc: "Fully custom e-commerce built with React and Node.js" },
+  { icon: "📦", title: "Inventory & Fulfillment", desc: "Integration with inventory systems, 3PLs, and shipping carriers" },
+  { icon: "💳", title: "Payment Integration", desc: "All major gateways, multi-currency, and BNPL options" },
+  { icon: "📈", title: "Conversion Optimization", desc: "A/B testing, checkout optimization, and growth strategies" }
+];
+
+const stats = [
+  { value: "50+", label: "Stores Launched" },
+  { value: "300%", label: "Avg Revenue Growth" },
+  { value: "98%", label: "Client Retention" },
+  { value: "24h", label: "Support Response" }
+];
+
+const platforms = ["Shopify", "Shopify Plus", "Headless Commerce", "WooCommerce", "Custom Solutions", "BigCommerce"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/ecommerce-development-agency"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #10b981, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #10b981); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-primary { background: linear-gradient(135deg, #10b981, #06b6d4); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; transition: all 0.4s ease; }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
+    .platform-pill { padding: 0.75rem 1.5rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.7); font-size: 0.875rem; transition: all 0.3s ease; }
+    .platform-pill:hover { border-color: rgba(16, 185, 129, 0.5); color: #34d399; background: rgba(16, 185, 129, 0.1); }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-emerald-500/20">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-emerald-300 text-sm font-medium">E-commerce Development Agency</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">E-commerce</span>
+            <span class="fade-up block text-gradient">Development</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            Online stores that convert visitors into customers.<br class="hidden md:block" />
+            Shopify, custom builds, and headless commerce.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary"><span>Launch Your Store</span></a>
+            <a href="#services" class="btn-ghost">Our Services</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">E-commerce that drives revenue</h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Your online store is your 24/7 salesperson. A poorly designed store loses sales every day—slow loading, confusing navigation, and checkout friction drive customers to competitors. <strong class="text-white">We build stores that convert.</strong> Our <a href="/nearshore-development" class="text-emerald-400 hover:text-emerald-300 underline">nearshore team</a> specializes in high-performance e-commerce.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Whether you need a <strong class="text-white">Shopify store</strong> with custom functionality, a <strong class="text-white">headless commerce</strong> solution for ultimate flexibility, or a <a href="/custom-web-development-services" class="text-emerald-400 hover:text-emerald-300 underline">fully custom e-commerce platform</a>, we have the expertise to deliver. Built with <a href="/react-development-agency" class="text-emerald-400 hover:text-emerald-300 underline">React and Next.js</a> for optimal performance.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Our e-commerce clients see an average of <strong class="text-white">300% revenue growth</strong> after launch. We focus on conversion optimization, fast page loads, seamless checkout, and mobile-first design—the factors that actually drive sales. <a href="/hire-remote-developers" class="text-emerald-400 hover:text-emerald-300 underline">Hire our developers</a> to build your store.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">E-commerce Services</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{s.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
+                <p class="text-neutral-400">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Platforms We Work With</h2>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {platforms.map((p) => (<span class="platform-pill">{p}</span>))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
+          </div>
+          <div class="fade-up">
+            <FaqDark faqs={faqs} client:visible />
+          </div>
+        </div>
+      </section>
+
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-emerald-500/20 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">Ready to<br /><span class="text-gradient">sell online?</span></h2>
+            <p class="text-xl text-neutral-400 mb-12">Free e-commerce consultation. Let's grow your revenue.</p>
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5"><span>Get Started</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</Layout>

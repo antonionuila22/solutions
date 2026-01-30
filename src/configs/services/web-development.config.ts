@@ -277,7 +277,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
     ctaPrimary: "Get Free Consultation",
     ctaPrimaryUrl: "/contact",
     ctaSecondary: "Email Us",
-    ctaSecondaryUrl: "mailto:info@codebrand.es",
+    ctaSecondaryUrl: "mailto:info@codebrand.us",
     features: "🚀 Fast turnaround times · 💯 Quality guaranteed · 🤝 Dedicated support",
   },
 

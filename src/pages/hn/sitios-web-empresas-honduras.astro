@@ -1,0 +1,273 @@
+---
+/**
+ * Sitios Web para Empresas Honduras
+ * Keywords: sitios web empresas honduras, paginas web empresariales honduras
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import FAQ from "../../components/FAQ.tsx";
+
+const title = "Sitios Web para Empresas Honduras | Páginas Web Profesionales - Codebrand";
+const description = "Diseño de sitios web profesionales para empresas en Honduras. Páginas web corporativas que generan confianza y atraen clientes. Desde L. 12,500.";
+const keywords = "sitios web empresas honduras, paginas web empresariales honduras, diseño web corporativo honduras, paginas web profesionales honduras, web empresarial tegucigalpa, sitios web san pedro sula";
+
+const faqs = [
+  {
+    question: "¿Por qué mi empresa necesita un sitio web profesional?",
+    answer: "En 2025, más del 80% de los clientes buscan empresas en internet antes de contactarlas. Un sitio web profesional genera confianza, muestra profesionalismo, está disponible 24/7, y permite que clientes potenciales lo encuentren en Google. Sin presencia web, está perdiendo clientes frente a su competencia."
+  },
+  {
+    question: "¿Qué diferencia hay entre un sitio básico y uno empresarial?",
+    answer: "Un sitio básico (5 páginas) es ideal para emprendimientos y negocios pequeños. Un sitio empresarial incluye más páginas, blog integrado, múltiples formularios, integración con redes sociales, analytics avanzado, y funcionalidades como cotizadores o portales de clientes. La inversión mayor se traduce en más funcionalidad y presencia más robusta."
+  },
+  {
+    question: "¿Puedo actualizar el contenido yo mismo?",
+    answer: "Sí. Todos nuestros sitios empresariales incluyen un panel de administración fácil de usar donde puede actualizar textos, imágenes, publicar en el blog, y gestionar formularios sin conocimientos técnicos. También incluimos capacitación."
+  },
+  {
+    question: "¿El sitio funcionará bien en celulares?",
+    answer: "Absolutamente. Todos nuestros sitios son 100% responsive, es decir, se adaptan perfectamente a celulares, tablets y computadoras. Además, optimizamos la velocidad de carga para móviles, factor importante para Google y la experiencia del usuario."
+  },
+  {
+    question: "¿Incluyen dominio y hosting?",
+    answer: "Sí. Todos nuestros planes incluyen dominio (.com, .hn o el de su preferencia) y hosting profesional por 1 año. Después del primer año, el costo de renovación es aproximadamente L. 2,500/año."
+  },
+  {
+    question: "¿Qué pasa si necesito cambios después de lanzar?",
+    answer: "Ofrecemos planes de mantenimiento que incluyen cambios menores, actualizaciones de seguridad y soporte técnico. También puede contratar horas de desarrollo para cambios mayores. Estamos aquí para apoyarle a largo plazo."
+  }
+];
+
+const benefits = [
+  { icon: "🏢", title: "Imagen Profesional", desc: "Transmita confianza y credibilidad a sus clientes" },
+  { icon: "🔍", title: "Visibilidad en Google", desc: "Sea encontrado cuando busquen sus servicios" },
+  { icon: "📱", title: "100% Responsive", desc: "Perfecto en celulares, tablets y computadoras" },
+  { icon: "⚡", title: "Carga Rápida", desc: "Velocidad optimizada para mejor experiencia" },
+  { icon: "🔒", title: "Seguridad SSL", desc: "Conexión segura para sus visitantes" },
+  { icon: "📊", title: "Analytics Incluido", desc: "Mida visitas, comportamiento y conversiones" }
+];
+
+const industries = [
+  "Abogados y Notarías", "Clínicas y Médicos", "Restaurantes", "Constructoras",
+  "Inmobiliarias", "Consultorías", "Contadores", "Escuelas y Colegios",
+  "Hoteles", "Gimnasios", "Salones de Belleza", "Talleres Automotrices"
+];
+
+const stats = [
+  { value: "500+", label: "Empresas Atendidas" },
+  { value: "98%", label: "Satisfacción" },
+  { value: "24h", label: "Respuesta" },
+  { value: "5+", label: "Años" }
+];
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/hn/sitios-web-empresas-honduras"
+>
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #3b82f6, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #3b82f6); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(2.5rem, 10vw, 8rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.4s ease; }
+    .btn-whatsapp:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(59, 130, 246, 0.5); background: rgba(59, 130, 246, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
+    .industry-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; transition: all 0.3s ease; }
+    .industry-pill:hover { border-color: rgba(59, 130, 246, 0.5); color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- HERO -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-blue-500/20">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+              <span class="text-blue-300 text-sm font-medium">Sitios Web Empresariales Honduras</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Sitios Web</span>
+            <span class="fade-up block text-gradient">para Empresas</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            Páginas web profesionales que generan confianza.<br class="hidden md:block" />
+            Diseño corporativo desde L. 12,500.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="https://wa.me/50432722973?text=Hola,%20necesito%20un%20sitio%20web%20para%20mi%20empresa" class="btn-whatsapp" target="_blank" rel="noopener">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Cotizar Mi Sitio
+            </a>
+            <a href="/hn/desarrollo-web-honduras" class="btn-ghost">Ver todos los servicios</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS -->
+      <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">¿Por qué necesita un sitio web?</h2>
+            <p class="text-neutral-400 text-xl mt-4">Beneficios de tener presencia digital profesional</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {benefits.map((b, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{b.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
+                <p class="text-neutral-400">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- INDUSTRIES -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Industrias que atendemos</h2>
+            <p class="text-neutral-400 text-lg">Experiencia en múltiples sectores empresariales</p>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {industries.map((ind) => (
+              <span class="industry-pill">{ind}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Planes para Empresas</h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="fade-up glass glass-hover p-8">
+              <h3 class="text-2xl font-bold text-white mb-2">Sitio Web Básico</h3>
+              <p class="text-neutral-400 mb-6">Ideal para pequeñas empresas y profesionales</p>
+              <div class="mb-6">
+                <span class="text-4xl font-bold text-white">L. 12,500</span>
+                <span class="text-neutral-400"> (~$500 USD)</span>
+              </div>
+              <ul class="space-y-3 mb-8">
+                {["5 páginas", "Diseño profesional", "100% responsive", "SEO básico", "Hosting 1 año", "Dominio incluido", "SSL seguro"].map((item) => (
+                  <li class="flex items-center gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20el%20Sitio%20Web%20Básico" class="btn-ghost w-full text-center block" target="_blank" rel="noopener">
+                Cotizar
+              </a>
+            </div>
+
+            <div class="fade-up glass glass-hover p-8 border-blue-500/30" style="transition-delay: 0.1s">
+              <span class="inline-block text-xs font-semibold text-blue-300 bg-blue-500/20 px-3 py-1.5 rounded-full mb-6">Recomendado</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Sitio Empresarial</h3>
+              <p class="text-neutral-400 mb-6">Para empresas que quieren destacar</p>
+              <div class="mb-6">
+                <span class="text-4xl font-bold text-white">L. 37,500</span>
+                <span class="text-neutral-400"> (~$1,500 USD)</span>
+              </div>
+              <ul class="space-y-3 mb-8">
+                {["10+ páginas", "Diseño premium", "Blog integrado", "SEO avanzado", "Formularios múltiples", "Analytics completo", "Hosting 1 año", "Soporte 3 meses"].map((item) => (
+                  <li class="flex items-center gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20el%20Sitio%20Empresarial" class="btn-whatsapp w-full justify-center" target="_blank" rel="noopener">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Cotizar
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="fade-up">
+            <FAQ faqs={faqs} theme="dark" client:visible />
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+              Su empresa merece<br />
+              <span class="text-gradient">presencia digital</span>
+            </h2>
+            <p class="text-xl text-neutral-400 mb-12 max-w-xl mx-auto">
+              Consulta gratis. Cotización en 24 horas.
+            </p>
+            <a href="https://wa.me/50432722973?text=Hola,%20quiero%20cotizar%20un%20sitio%20web%20empresarial" class="btn-whatsapp inline-flex text-lg px-10 py-5" target="_blank" rel="noopener">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Contactar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</HnLayout>

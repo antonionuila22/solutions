@@ -1,0 +1,419 @@
+---
+/**
+ * Honduras Layout (Spanish)
+ * Layout optimizado para el mercado hondureño con contenido en español
+ */
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import Navbar from "../components/NavbarAstro.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppWidget from "../components/WhatsAppWidget.astro";
+import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
+
+// Props
+let {
+  title,
+  description,
+  keywords,
+  image,
+  article,
+  noindex,
+  author,
+  publishedTime,
+  tags,
+  categories,
+  breadcrumbNames,
+  canonicalOverride,
+} = Astro.props;
+
+// Valores por defecto en español
+title = title || "Codebrand - Agencia de Desarrollo Web Honduras | Diseño Web Profesional";
+description = description || "Agencia de desarrollo web en Honduras. Sitios web profesionales, tiendas online, aplicaciones web y marketing digital. Calidad internacional con atención local. Contacta por WhatsApp.";
+keywords = keywords || "desarrollo web honduras, diseño web honduras, agencia digital honduras, tienda online honduras, páginas web honduras, desarrollo software honduras, marketing digital honduras";
+image = image || "https://codebrand.us/photos/bannercodebrand.webp";
+
+// URLs
+const canonicalUrl = canonicalOverride || Astro.url?.href || "https://codebrand.us";
+const englishUrl = canonicalUrl.replace("/hn/", "/");
+const siteName = "Codebrand - Agencia Digital Honduras";
+const twitterHandle = "@codebrand_us";
+
+// Format article dates
+let formattedPublishedTime = "";
+if (publishedTime) {
+  if (publishedTime instanceof Date) {
+    formattedPublishedTime = publishedTime.toISOString();
+  } else if (typeof publishedTime === "string") {
+    const dateObj = new Date(publishedTime);
+    if (!isNaN(dateObj.getTime())) {
+      formattedPublishedTime = dateObj.toISOString();
+    }
+  }
+}
+
+// Breadcrumbs
+const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
+  canonicalUrl,
+  "https://codebrand.us",
+  breadcrumbNames || {}
+);
+---
+
+<!doctype html>
+<html lang="es-HN">
+  <head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Codebrand Honduras" />
+    <meta name="publisher" content="Codebrand" />
+
+    <meta
+      name="robots"
+      content={noindex
+        ? "noindex, nofollow"
+        : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+    />
+    <meta
+      name="googlebot"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
+
+    <!-- Canonical and hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es-HN" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en-US" href={englishUrl} />
+    <link rel="alternate" hreflang="x-default" href={englishUrl} />
+
+    <!-- RSS Feed -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Codebrand Blog RSS Feed"
+      href="/rss.xml"
+    />
+
+    <!-- Theme and Application -->
+    <meta name="theme-color" content="#0D9488" />
+    <meta name="color-scheme" content="light" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Codebrand HN" />
+    <meta name="application-name" content="Codebrand Honduras" />
+    <meta name="msapplication-TileColor" content="#0D9488" />
+
+    <!-- Open Graph Protocol - Spanish locale -->
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="es_HN" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    {
+      article && formattedPublishedTime && (
+        <>
+          <meta property="article:published_time" content={formattedPublishedTime} />
+          {author && <meta property="article:author" content={author} />}
+          {categories && Array.isArray(categories) && categories.map((cat: string) => (
+            <meta property="article:section" content={cat} />
+          ))}
+          {tags && Array.isArray(tags) && tags.map((tag: string) => (
+            <meta property="article:tag" content={tag} />
+          ))}
+        </>
+      )
+    }
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twitterHandle} />
+    <meta name="twitter:creator" content={twitterHandle} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={title} />
+
+    <!-- Geo Tags - Honduras -->
+    <meta name="geo.region" content="HN" />
+    <meta name="geo.placename" content="Honduras" />
+    <meta name="geo.position" content="14.0723;-87.1921" />
+    <meta name="ICBM" content="14.0723, -87.1921" />
+
+    <!-- Links and Resources -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/iconcodebrand.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/iconcodebrand.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- DNS Prefetch and Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <!-- Preload Critical Resources -->
+    <link
+      rel="preload"
+      as="image"
+      href="/photos/bannercodebrand.webp"
+      fetchpriority="high"
+    />
+
+    <!-- Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Honduras Business Schema -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Codebrand - Agencia de Desarrollo Web Honduras",
+        "alternateName": ["Codebrand Honduras", "Codebrand HN"],
+        "url": "https://codebrand.us/hn/desarrollo-web-honduras",
+        "logo": "https://codebrand.us/iconcodebrand.svg",
+        "image": "https://codebrand.us/photos/bannercodebrand.webp",
+        "description": "Agencia de desarrollo web profesional en Honduras. Creamos sitios web, tiendas online, aplicaciones web y ofrecemos marketing digital. Calidad internacional con atención local.",
+        "slogan": "Calidad internacional con atención local",
+        "email": "info@codebrand.us",
+        "telephone": "+504-3272-2973",
+        "foundingDate": "2020",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Colonia Tepeyac",
+          "addressLocality": "Tegucigalpa",
+          "addressRegion": "Francisco Morazán",
+          "addressCountry": "HN",
+          "postalCode": "11101"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 14.0723,
+          "longitude": -87.1921
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Honduras"
+          },
+          {
+            "@type": "City",
+            "name": "Tegucigalpa"
+          },
+          {
+            "@type": "City",
+            "name": "San Pedro Sula"
+          }
+        ],
+        "priceRange": "L. 12,500 - L. 250,000",
+        "currenciesAccepted": ["HNL", "USD"],
+        "paymentAccepted": ["Transferencia Bancaria", "Tarjeta de Crédito", "Efectivo"],
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+504-3272-2973",
+          "contactType": "Ventas",
+          "availableLanguage": ["Spanish", "English"],
+          "areaServed": "HN"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/codebrand-es",
+          "https://x.com/Codebrand_es",
+          "https://www.facebook.com/p/Codebrand-100087321501519/",
+          "https://wa.me/50432722973"
+        ],
+        "knowsAbout": [
+          "Desarrollo Web",
+          "Diseño Web",
+          "Tiendas Online",
+          "E-commerce",
+          "SEO",
+          "Marketing Digital",
+          "Aplicaciones Web",
+          "React",
+          "WordPress",
+          "Shopify"
+        ],
+        "knowsLanguage": ["Spanish", "English"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Desarrollo Web",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sitio Web Básico",
+                "description": "Página web profesional de 5 páginas con diseño responsive"
+              },
+              "price": "12500",
+              "priceCurrency": "HNL"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sitio Web Empresarial",
+                "description": "Sitio web completo con múltiples secciones y funcionalidades"
+              },
+              "price": "37500",
+              "priceCurrency": "HNL"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tienda Online",
+                "description": "E-commerce completo con carrito, pagos y gestión de inventario"
+              },
+              "price": "62500",
+              "priceCurrency": "HNL"
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+    </script>
+
+    <ClientRouter />
+  </head>
+  <body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-to-content">
+      Saltar al contenido principal
+    </a>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TJCP2CWN"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+
+    <Navbar />
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppWidget />
+
+    <!-- Deferred Analytics -->
+    <script is:inline>
+      function loadTrackingScripts() {
+        (function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TJCP2CWN');
+
+        var ga=document.createElement('script');ga.async=true;
+        ga.src='https://www.googletagmanager.com/gtag/js?id=G-T9HKBF45M9';
+        document.head.appendChild(ga);
+        gtag('js',new Date());gtag('config','G-T9HKBF45M9');
+
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init','823190717423799');fbq('track','PageView');
+      }
+
+      var trackingLoaded=false;
+      function triggerTracking(){
+        if(trackingLoaded)return;
+        trackingLoaded=true;
+        if('requestIdleCallback' in window){
+          requestIdleCallback(loadTrackingScripts,{timeout:2000});
+        }else{
+          setTimeout(loadTrackingScripts,100);
+        }
+      }
+
+      ['scroll','click','touchstart','keydown'].forEach(function(e){
+        document.addEventListener(e,triggerTracking,{once:true,passive:true});
+      });
+
+      setTimeout(triggerTracking,4000);
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" />
+    </noscript>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+  }
+
+  .skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 1rem 2rem;
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: top 0.3s ease;
+  }
+
+  .skip-to-content:focus {
+    top: 0;
+    outline: 3px solid #06b6d4;
+    outline-offset: 2px;
+  }
+
+  main:focus {
+    outline: none;
+  }
+</style>

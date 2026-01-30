@@ -1,0 +1,223 @@
+---
+/**
+ * Hire Remote Developers Landing Page
+ * Keywords: hire remote developers, remote development team, offshore developers
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqDark from "../components/FaqDark.tsx";
+
+const title = "Hire Remote Developers | Dedicated Development Team - Codebrand";
+const description = "Hire remote developers for your team. Senior engineers, US timezone, English fluent. React, Node.js, TypeScript experts. Staff augmentation and dedicated teams available.";
+const keywords = "hire remote developers, remote development team, hire offshore developers, staff augmentation, dedicated development team, remote software developers, hire developers, remote engineering team, outsource developers";
+
+const faqs = [
+  {
+    question: "How does hiring remote developers work?",
+    answer: "We offer two models: (1) Staff augmentation—our developers join your existing team, use your tools, and work under your direction. (2) Dedicated team—we provide a complete team that works on your project with our project management. Both models include developers who work your timezone hours with direct communication access."
+  },
+  {
+    question: "What skills do your remote developers have?",
+    answer: "Our developers are full-stack engineers with expertise in React, Next.js, Node.js, TypeScript, and modern databases (PostgreSQL, MongoDB). Most have 5+ years of experience and have worked with US companies. We also have specialists in mobile development (React Native), DevOps, and e-commerce (Shopify)."
+  },
+  {
+    question: "What timezone do your developers work?",
+    answer: "Our team works US Central Time (CST/CDT) hours, providing full overlap with US East Coast and significant overlap with West Coast. This enables real-time collaboration through Slack, video calls, and instant code reviews—unlike offshore teams with 12-hour delays."
+  },
+  {
+    question: "How much does it cost to hire remote developers?",
+    answer: "Our rates range from $45-95/hour depending on seniority and engagement type. This represents 50-60% savings compared to US developer rates of $100-200/hour. For dedicated monthly engagements, we offer discounted rates. You pay only for productive work hours with detailed time tracking."
+  },
+  {
+    question: "How quickly can developers start?",
+    answer: "For staff augmentation, we can typically onboard developers within 1-2 weeks. We have pre-vetted developers ready to go, so there's no lengthy recruitment process. For dedicated teams, we can assemble a team within 2-3 weeks depending on skill requirements."
+  },
+  {
+    question: "How do you ensure quality and communication?",
+    answer: "Quality: All code goes through peer review, we use TypeScript for type safety, and we follow testing best practices. Communication: Direct Slack access to developers, daily standups (async or live), and weekly progress reports. You have full visibility into work through your preferred project management tool."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer }
+  }))
+};
+
+const benefits = [
+  { icon: "🕐", title: "US Timezone", desc: "Work Central Time hours for real-time collaboration" },
+  { icon: "💬", title: "English Fluent", desc: "Clear communication, no language barriers" },
+  { icon: "💰", title: "60% Cost Savings", desc: "Senior talent at a fraction of US rates" },
+  { icon: "⚡", title: "Fast Onboarding", desc: "Start in 1-2 weeks, not months" },
+  { icon: "📈", title: "Scalable", desc: "Scale team up or down as needed" },
+  { icon: "🔄", title: "Flexible Engagement", desc: "Staff aug, dedicated team, or project-based" }
+];
+
+const roles = [
+  "Full-Stack Developers", "React Developers", "Node.js Developers", "TypeScript Engineers",
+  "Mobile Developers", "DevOps Engineers", "UI/UX Designers", "QA Engineers"
+];
+
+const stats = [
+  { value: "50+", label: "Active Developers" },
+  { value: "1-2", label: "Weeks to Start" },
+  { value: "5+", label: "Years Avg Experience" },
+  { value: "CST", label: "Timezone" }
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/hire-remote-developers"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #8b5cf6, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #f59e0b, #8b5cf6); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-primary { background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; transition: all 0.4s ease; }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(139, 92, 246, 0.5); background: rgba(139, 92, 246, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
+    .role-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-violet-500/20">
+              <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+              <span class="text-violet-300 text-sm font-medium">Hire Remote Developers</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Hire</span>
+            <span class="fade-up block text-gradient">Developers</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            Senior remote developers for your team.<br class="hidden md:block" />
+            US timezone. English fluent. 60% cost savings.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary"><span>Hire Developers</span></a>
+            <a href="#benefits" class="btn-ghost">Learn More</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Scale your team without the hassle</h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                Hiring developers is expensive and slow. Between recruiting, interviewing, and onboarding, it takes months to add capacity. And if the project ends or needs change, you're stuck with fixed costs. That's why many companies choose to <a href="/outsource-web-development" class="text-violet-400 hover:text-violet-300 underline">outsource web development</a>.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                <strong class="text-white">Remote developers solve this.</strong> Add senior engineers to your team in 1-2 weeks. Scale up for busy periods, scale down when work slows. Pay only for productive hours with no long-term commitments. Our <a href="/nearshore-development" class="text-violet-400 hover:text-violet-300 underline">nearshore development</a> model makes this possible.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Our developers work <strong class="text-white">US timezone hours</strong>, communicate in fluent English, and integrate seamlessly with your existing workflow. Whether you need <a href="/react-development-agency" class="text-violet-400 hover:text-violet-300 underline">React developers</a>, <a href="/ecommerce-development-agency" class="text-violet-400 hover:text-violet-300 underline">e-commerce specialists</a>, or <a href="/custom-web-development-services" class="text-violet-400 hover:text-violet-300 underline">custom development</a>, it's like having local talent at 60% of the cost.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Why hire through Codebrand</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {benefits.map((b, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{b.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
+                <p class="text-neutral-400">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Available Roles</h2>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {roles.map((r) => (<span class="role-pill">{r}</span>))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
+          </div>
+          <div class="fade-up">
+            <FaqDark faqs={faqs} client:visible />
+          </div>
+        </div>
+      </section>
+
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-violet-500/20 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">Ready to<br /><span class="text-gradient">scale?</span></h2>
+            <p class="text-xl text-neutral-400 mb-12">Free consultation. Start in 1-2 weeks.</p>
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5"><span>Get Started</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</Layout>

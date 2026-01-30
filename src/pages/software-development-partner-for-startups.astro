@@ -1,0 +1,232 @@
+---
+/**
+ * Software Development Partner for Startups Landing Page
+ * Keywords: software development partner startups, startup development agency, MVP development
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqDark from "../components/FaqDark.tsx";
+
+const title = "Software Development Partner for Startups | MVP Experts - Codebrand";
+const description = "Software development partner built for startups. MVP development, rapid prototyping, and scalable architecture. Startup-friendly pricing, US timezone, fast delivery.";
+const keywords = "software development partner startups, startup development agency, MVP development, startup software development, tech partner for startups, startup web development, build MVP, startup technical partner, early stage startup development";
+
+const faqs = [
+  {
+    question: "Why do startups need a development partner?",
+    answer: "Most startup founders aren't technical, and hiring a CTO or in-house team is expensive and time-consuming. A development partner gives you instant access to senior engineering talent, startup-experienced developers who understand MVP thinking, and the flexibility to scale without long-term commitments. We've helped dozens of startups go from idea to funded product."
+  },
+  {
+    question: "How much does MVP development cost?",
+    answer: "MVPs typically range from $10,000 to $50,000 depending on complexity. A simple MVP (landing page + waitlist + basic features) can be $10,000-$20,000. A functional MVP with user accounts, core features, and basic analytics runs $20,000-$35,000. More complex MVPs with multiple user types or integrations can reach $50,000+. We focus on building only what you need to validate your hypothesis."
+  },
+  {
+    question: "How long does it take to build an MVP?",
+    answer: "Most MVPs take 6-12 weeks from kick-off to launch. We work in 2-week sprints, delivering working features throughout. Week 1-2: design and architecture. Week 3-8: core development. Week 9-12: polish, testing, and launch prep. We prioritize ruthlessly to get you to market fast—additional features can come after validation."
+  },
+  {
+    question: "What happens after the MVP launches?",
+    answer: "After launch, we help you iterate based on user feedback. Most startups need 2-3 iteration cycles before finding product-market fit. We offer ongoing development retainers for continuous improvement, analytics implementation to measure what's working, and scaling support when you're ready to grow. Many clients stay with us through funding rounds and beyond."
+  },
+  {
+    question: "Do you work with pre-funded startups?",
+    answer: "Yes, we work with startups at all stages—from bootstrapped founders to Series B companies. For pre-funded startups, we offer flexible payment terms and can work within tight budgets by carefully scoping what's truly essential for your MVP. We've helped several clients build MVPs that led to successful funding rounds."
+  },
+  {
+    question: "Can you help with technical due diligence?",
+    answer: "Absolutely. We provide clean, well-documented code that stands up to investor scrutiny. Our architecture decisions are made with scalability in mind, so when investors ask 'can this scale?', the answer is yes. We've helped clients prepare for technical due diligence and can provide documentation to support your fundraising."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer }
+  }))
+};
+
+const services = [
+  { icon: "🚀", title: "MVP Development", desc: "Validate your idea fast with a focused minimum viable product" },
+  { icon: "🎨", title: "Product Design", desc: "User research, wireframes, and UI design before coding" },
+  { icon: "⚡", title: "Rapid Prototyping", desc: "Interactive prototypes to test with users and investors" },
+  { icon: "📈", title: "Scalable Architecture", desc: "Built to grow—no rewrites needed when you scale" },
+  { icon: "🔄", title: "Iteration Support", desc: "Continuous improvement based on user feedback" },
+  { icon: "💼", title: "Investor-Ready Code", desc: "Clean code that passes technical due diligence" }
+];
+
+const process = [
+  { num: "01", title: "Discovery", desc: "Understand your vision, users, and what 'success' looks like" },
+  { num: "02", title: "Scope MVP", desc: "Identify the minimum features needed to validate your hypothesis" },
+  { num: "03", title: "Design Sprint", desc: "Wireframes and UI design—approved before coding starts" },
+  { num: "04", title: "Build & Launch", desc: "2-week sprints with demos, shipping working software fast" }
+];
+
+const stats = [
+  { value: "30+", label: "Startups Helped" },
+  { value: "6-12", label: "Weeks to MVP" },
+  { value: "$10k", label: "MVP Starting" },
+  { value: "5", label: "Funded Clients" }
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://codebrand.us/software-development-partner-for-startups"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #ec4899, #8b5cf6); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #06b6d4, #ec4899); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-primary { background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; transition: all 0.4s ease; }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(236, 72, 153, 0.5); background: rgba(236, 72, 153, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-pink-500/20">
+              <span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
+              <span class="text-pink-300 text-sm font-medium">Development Partner for Startups</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Startup</span>
+            <span class="fade-up block text-gradient">Partner</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
+            From idea to funded product.<br class="hidden md:block" />
+            MVP development that investors love.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-24">
+            <a href="/contact" class="btn-primary"><span>Build Your MVP</span></a>
+            <a href="#services" class="btn-ghost">How We Help</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Your technical co-founder, on demand</h2>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                You have the vision. You know the market. You have customers waiting. But building the product? That's where most non-technical founders get stuck. Our <a href="/nearshore-development" class="text-pink-400 hover:text-pink-300 underline">nearshore team</a> is here to help.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                <strong class="text-white">We've helped 30+ startups go from idea to launch.</strong> We understand startup constraints—limited budget, tight timelines, and the need to validate before scaling. We won't over-engineer or build features you don't need yet. Our <a href="/react-development-agency" class="text-pink-400 hover:text-pink-300 underline">React developers</a> build lean, scalable MVPs.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Our job is to get your MVP into users' hands fast, with clean code that scales when you're ready. Several of our clients have gone on to raise funding—and we're still their development partner. Need <a href="/custom-web-development-services" class="text-pink-400 hover:text-pink-300 underline">custom development</a> or <a href="/ecommerce-development-agency" class="text-pink-400 hover:text-pink-300 underline">e-commerce</a>? We've got you covered.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">How We Help Startups</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
+                <div class="text-4xl mb-4">{s.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
+                <p class="text-neutral-400">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Our Process</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {process.map((step, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.1}s`}>
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500/20 to-violet-500/20 border border-pink-500/30 flex items-center justify-center text-pink-300 font-bold mb-6">
+                  {step.num}
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
+                <p class="text-neutral-400">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
+          </div>
+          <div class="fade-up">
+            <FaqDark faqs={faqs} client:visible />
+          </div>
+        </div>
+      </section>
+
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-pink-500/20 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">Ready to<br /><span class="text-gradient">launch?</span></h2>
+            <p class="text-xl text-neutral-400 mb-12">Free startup consultation. Let's discuss your vision.</p>
+            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5"><span>Let's Talk</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</Layout>

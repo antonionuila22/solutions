@@ -369,44 +369,9 @@ import AnimatedCounter from "./AnimatedCounter";
     animation: float 6s ease-in-out infinite;
   }
 
-  /* Fade-in animation - Safari compatible */
-  @-webkit-keyframes hero-fade-in {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes hero-fade-in {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    opacity: 0;
-    -webkit-animation: hero-fade-in 0.6s ease-out forwards;
-    animation: hero-fade-in 0.6s ease-out forwards;
-  }
-
-  /* Safari-specific fix for animation-fill-mode */
-  @supports (-webkit-touch-callout: none) {
-    .animate-fade-in {
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-    }
-  }
+  /*
+   * Note: .animate-fade-in is defined in global.css
+   * Using fade-in-up animation from global styles for consistency
+   * Safari compatibility is handled in global.css
+   */
 </style>
