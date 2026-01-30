@@ -429,9 +429,6 @@
   // Dynamically import GSAP only when needed for better performance
   // Skip animations on mobile for better performance
   const initAnimations = async () => {
-    // Skip GSAP on mobile devices for performance
-    if (window.innerWidth < 768) return;
-
     // Check for reduced motion preference
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -505,20 +502,26 @@
   };
 
   // Use Intersection Observer to only load GSAP when section is near viewport
-  if ("IntersectionObserver" in window && window.innerWidth >= 768) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            initAnimations();
-            observer.disconnect();
-          }
-        });
-      },
-      { rootMargin: "100px" }
-    );
+  // Defer width check to avoid forced reflow during page load
+  if ("IntersectionObserver" in window) {
+    // Use matchMedia instead of innerWidth to avoid forced reflow
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 
-    const section = document.querySelector("#value-proposition");
-    if (section) observer.observe(section);
+    if (isDesktop) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              initAnimations();
+              observer.disconnect();
+            }
+          });
+        },
+        { rootMargin: "100px" }
+      );
+
+      const section = document.querySelector("#value-proposition");
+      if (section) observer.observe(section);
+    }
   }
 </script>

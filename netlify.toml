@@ -98,6 +98,17 @@
   [headers.values]
     Cache-Control = "public, max-age=315360000, immutable"
 
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=315360000, immutable"
+
+# Astro bundled assets (all have content hashes)
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=315360000, immutable"
+
 # ===========================================
 # DOCUMENTS & DATA
 # ===========================================

@@ -66,11 +66,11 @@ const menuItems: MenuItem[] = [
 ---
 
 <header
-  class="navbar-header fixed top-0 left-0 right-0 z-50 px-4 py-3"
+  class="navbar-header fixed top-0 left-0 right-0 z-50 px-2 sm:px-4 py-2 sm:py-3"
   role="banner"
 >
   <nav
-    class="navbar-glass max-w-7xl mx-auto flex justify-between items-center px-6 py-3 rounded-2xl"
+    class="navbar-glass max-w-7xl mx-auto flex justify-between items-center px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl"
     role="navigation"
     aria-label="Main navigation"
   >
@@ -161,13 +161,13 @@ const menuItems: MenuItem[] = [
     <!-- Mobile Menu Button -->
     <button
       type="button"
-      class="lg:hidden mobile-menu-btn p-3 -mr-1 rounded-xl hover:bg-slate-100/80 transition-colors"
+      class="lg:hidden mobile-menu-btn p-2 sm:p-3 -mr-0.5 sm:-mr-1 rounded-lg sm:rounded-xl hover:bg-slate-100/80 transition-colors"
       aria-label="Open mobile menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
       <svg
-        class="h-6 w-6 text-slate-700 hamburger-icon"
+        class="h-5 w-5 sm:h-6 sm:w-6 text-slate-700 hamburger-icon"
         fill="none"
         stroke="currentColor"
         stroke-width="2"
@@ -179,7 +179,7 @@ const menuItems: MenuItem[] = [
           d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
       <svg
-        class="h-6 w-6 text-slate-700 close-icon hidden"
+        class="h-5 w-5 sm:h-6 sm:w-6 text-slate-700 close-icon hidden"
         fill="none"
         stroke="currentColor"
         stroke-width="2"
@@ -196,12 +196,12 @@ const menuItems: MenuItem[] = [
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="mobile-menu lg:hidden mt-2 mx-auto max-w-7xl"
+    class="mobile-menu lg:hidden mt-1 sm:mt-2 mx-2 sm:mx-auto max-w-7xl"
     role="menu"
     aria-label="Mobile navigation menu"
   >
     <div
-      class="mobile-menu-glass rounded-2xl px-4 py-5 shadow-xl shadow-slate-200/50"
+      class="mobile-menu-glass rounded-xl sm:rounded-2xl px-3 sm:px-4 py-4 sm:py-5 shadow-xl shadow-slate-200/50"
     >
       <div class="flex flex-col gap-1">
         {
@@ -211,11 +211,11 @@ const menuItems: MenuItem[] = [
                 <div class="mobile-dropdown">
                   <button
                     type="button"
-                    class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3.5 rounded-xl text-slate-700 hover:bg-slate-50 transition-colors"
+                    class="mobile-dropdown-btn w-full flex justify-between items-center px-3 sm:px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl text-slate-700 hover:bg-slate-50 transition-colors"
                     aria-expanded="false"
                     aria-controls={`mobile-submenu-${index}`}
                   >
-                    <span class="font-medium text-base">{item.name}</span>
+                    <span class="font-medium text-sm sm:text-base">{item.name}</span>
                     <svg
                       class="w-4 h-4 opacity-50 transition-transform duration-200 dropdown-arrow"
                       fill="none"
@@ -237,14 +237,14 @@ const menuItems: MenuItem[] = [
                     role="menu"
                     aria-label={`${item.name} submenu`}
                   >
-                    <div class="py-2 pl-4 pr-2 space-y-0.5">
+                    <div class="py-1.5 sm:py-2 pl-2 sm:pl-4 pr-1 sm:pr-2 space-y-0.5">
                       {item.subItems?.map((subItem) => (
                         <a
                           href={subItem.link}
-                          class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all"
+                          class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all"
                           role="menuitem"
                         >
-                          <span class="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                          <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-300" />
                           {subItem.name}
                         </a>
                       ))}
@@ -254,7 +254,7 @@ const menuItems: MenuItem[] = [
               ) : (
                 <a
                   href={item.link}
-                  class="block px-4 py-3.5 rounded-xl text-slate-700 font-medium text-base hover:bg-slate-50 transition-colors"
+                  class="block px-3 sm:px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl text-slate-700 font-medium text-sm sm:text-base hover:bg-slate-50 transition-colors"
                   role="menuitem"
                 >
                   {item.name}
@@ -266,10 +266,10 @@ const menuItems: MenuItem[] = [
       </div>
 
       <!-- Mobile CTA -->
-      <div class="mt-4 pt-4 border-t border-slate-100">
+      <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-slate-100">
         <a
           href="/contact"
-          class="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-200"
+          class="flex items-center justify-center gap-2 w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-200"
           aria-label="Contact us for a free consultation"
         >
           Talk to us
@@ -487,13 +487,30 @@ const menuItems: MenuItem[] = [
       });
     });
 
-    // Scroll detection
+    // Scroll detection - optimized to prevent forced reflow
+    let ticking = false;
+    let lastScrollY = 0;
+
+    const updateHeader = (): void => {
+      header?.classList.toggle("scrolled", lastScrollY > 20);
+      ticking = false;
+    };
+
     const handleScroll = (): void => {
-      header?.classList.toggle("scrolled", window.scrollY > 20);
+      lastScrollY = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+
+    // Initial check - defer to next frame to avoid forced reflow
+    requestAnimationFrame(() => {
+      lastScrollY = window.scrollY;
+      updateHeader();
+    });
 
     // Close mobile menu on link click
     mobileMenu?.querySelectorAll('a[role="menuitem"]').forEach((link) => {
