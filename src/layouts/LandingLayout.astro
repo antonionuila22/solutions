@@ -4,7 +4,7 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 
 // Props individuales
-let { title, description, keywords, image, article, noindex } = Astro.props;
+let { title, description, keywords, image, article, noindex, disableGsap = false } = Astro.props;
 
 // Valores por defecto mejorados
 title = title || "Codebrand - Landing Page";
@@ -67,51 +67,16 @@ const localBusinessSchema = {
 <!doctype html>
 <html lang="en-US">
   <head>
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "823190717423799");
-      fbq("track", "PageView");
-    </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1"
-      /></noscript
-    >
-    <!-- End Meta Pixel Code -->
-    <script
-      src="https://analytics.ahrefs.com/analytics.js"
-      data-key="JekMc+iUh7qv8b6i7VSQFw"
-      async></script>
-    <!-- Essential Meta Tags -->
+    <!-- Essential Meta Tags (render-blocking optimized) -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Preconnect to external domains for faster resource loading -->
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin />
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin />
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
 
     <!-- SEO Meta Tags -->
     <title>{title}</title>
@@ -169,11 +134,12 @@ const localBusinessSchema = {
 
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
 
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
+    <!-- Preload critical fonts (WOFF2 primary, TTF fallback) -->
+    <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
@@ -182,6 +148,38 @@ const localBusinessSchema = {
   </head>
   <body class="font-poppins">
     <slot />
+
+    <!-- Deferred Analytics - loaded after main content -->
+    <script is:inline>
+      // Load analytics after page is interactive
+      if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(function() {
+          loadAnalytics();
+        });
+      } else {
+        setTimeout(loadAnalytics, 2000);
+      }
+
+      function loadAnalytics() {
+        // Meta Pixel
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '823190717423799');
+        fbq('track', 'PageView');
+
+        // Ahrefs Analytics
+        var ahrefsScript = document.createElement('script');
+        ahrefsScript.src = 'https://analytics.ahrefs.com/analytics.js';
+        ahrefsScript.setAttribute('data-key', 'JekMc+iUh7qv8b6i7VSQFw');
+        ahrefsScript.async = true;
+        document.body.appendChild(ahrefsScript);
+      }
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" /></noscript>
+
     <!-- Service Worker Registration -->
     <script is:inline>
       if ('serviceWorker' in navigator) {
@@ -191,11 +189,13 @@ const localBusinessSchema = {
         });
       }
     </script>
-    <!-- GSAP -->
-    <script>
-      import gsap from "gsap";
-      window.gsap = gsap;
-    </script>
+
+    {!disableGsap && (
+      <script>
+        import gsap from "gsap";
+        window.gsap = gsap;
+      </script>
+    )}
   </body>
 
   <style is:global>

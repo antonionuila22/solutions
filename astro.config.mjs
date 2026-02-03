@@ -24,6 +24,15 @@ export default defineConfig({
           drop_debugger: true,
         },
       },
+      // Optimize chunk splitting for better caching
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Separate React into its own chunk for better caching
+            react: ['react', 'react-dom'],
+          },
+        },
+      },
     },
   },
 
@@ -35,6 +44,12 @@ export default defineConfig({
         limitInputPixels: false,
       },
     },
+  },
+
+  // Astro 5 prefetch for faster navigation
+  prefetch: {
+    prefetchAll: false, // Only prefetch on hover/focus for landing pages
+    defaultStrategy: 'hover',
   },
 
   output: 'server',

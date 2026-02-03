@@ -121,18 +121,14 @@
 
 /* ================================
    LOCAL FONTS - Self-hosted Poppins
+   WOFF2 primary (50-70% smaller), TTF fallback
    ================================ */
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
 
+/* Critical fonts - loaded first (used in landing pages) */
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  src: url('/fonts/Poppins-Regular.woff2') format('woff2'),
+       url('/fonts/Poppins-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -140,7 +136,8 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  src: url('/fonts/Poppins-Medium.woff2') format('woff2'),
+       url('/fonts/Poppins-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -148,7 +145,8 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+  src: url('/fonts/Poppins-SemiBold.woff2') format('woff2'),
+       url('/fonts/Poppins-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -156,7 +154,8 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  src: url('/fonts/Poppins-Bold.woff2') format('woff2'),
+       url('/fonts/Poppins-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -164,15 +163,27 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  src: url('/fonts/Poppins-ExtraBold.woff2') format('woff2'),
+       url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
   font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Secondary fonts - loaded on demand */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Light.woff2') format('woff2'),
+       url('/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Black.ttf') format('truetype');
+  src: url('/fonts/Poppins-Black.woff2') format('woff2'),
+       url('/fonts/Poppins-Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;

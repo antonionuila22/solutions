@@ -2481,6 +2481,69 @@ const getIcon = (name: string) => {
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* ===== MOBILE PERFORMANCE OPTIMIZATIONS ===== */
+  @media (max-width: 768px) {
+    /* Hide decorative orbs on mobile - heavy blur filter impacts performance */
+    .orb {
+      display: none;
+    }
+
+    /* Reduce backdrop blur on mobile - very expensive on low-end devices */
+    .nav-blur {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      background: rgba(0, 0, 0, 0.95);
+    }
+
+    .form-card {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      background: rgba(15, 15, 15, 0.98);
+    }
+
+    /* Disable form glow animation on mobile */
+    .form-glow {
+      display: none;
+    }
+
+    /* Disable gradient animation on mobile to save CPU */
+    .text-gradient,
+    .text-gradient-cyan {
+      animation: none;
+      background-size: 100% auto;
+    }
+
+    /* Reduce hover effects complexity on mobile */
+    .stat-card:hover,
+    .pricing-card:hover,
+    .feature-card:hover,
+    .package-card:hover {
+      transform: none;
+    }
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .orb {
+      animation: none;
+    }
+
+    .text-gradient,
+    .text-gradient-cyan {
+      animation: none;
+    }
+
+    .form-glow {
+      display: none;
+    }
+
+    [data-animate] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
 </style>
 
 <script>
