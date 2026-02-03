@@ -144,6 +144,12 @@ const localBusinessSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
     <slot name="head" />
+
+    <!-- Enable JS-dependent animations -->
+    <script is:inline>
+      document.documentElement.classList.add('js-enabled');
+    </script>
+
     <ClientRouter />
   </head>
   <body class="font-poppins">

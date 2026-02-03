@@ -22,7 +22,9 @@
       "WebSearch",
       "Bash(node scripts/download-woff2-fonts.js:*)",
       "Bash(dir /O:-S Poppins-Regular* Poppins-Bold* Poppins-SemiBold*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\" && grep -A5 \"\"is:inline\"\" {} | grep -E \"\"\\(import |from \\)\"\" | head -5')",
+      "Bash(done)"
     ]
   }
 }

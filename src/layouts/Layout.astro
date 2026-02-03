@@ -472,6 +472,11 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       function gtag() { dataLayer.push(arguments); }
     </script>
 
+    <!-- Enable JS-dependent animations -->
+    <script is:inline>
+      document.documentElement.classList.add('js-enabled');
+    </script>
+
     <ClientRouter />
   </head>
   <body>

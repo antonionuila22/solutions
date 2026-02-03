@@ -28,8 +28,8 @@ export async function GET(context: APIContext) {
     customData: `
       <language>en-us</language>
       <copyright>Copyright ${new Date().getFullYear()} Codebrand. All rights reserved.</copyright>
-      <managingEditor>contact@codebrand.us (Codebrand Team)</managingEditor>
-      <webMaster>contact@codebrand.us (Codebrand Team)</webMaster>
+      <managingEditor>info@codebrand.es (Codebrand Team)</managingEditor>
+      <webMaster>info@codebrand.es (Codebrand Team)</webMaster>
       <ttl>60</ttl>
       <image>
         <url>https://codebrand.us/favicon.svg</url>

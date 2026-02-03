@@ -378,6 +378,54 @@ html {
 }
 
 /* ================================
+   SCROLL ANIMATION FALLBACKS
+   Content visible by default, JS adds animations
+   ================================ */
+
+/* Default visible state for common scroll animations */
+.fade-up,
+.scroll-animate,
+[data-animate] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Only apply animation setup when JS is enabled */
+.js-enabled .fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-enabled .fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-enabled .scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-enabled .scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile: show content immediately, disable heavy animations */
+@media (max-width: 768px) {
+  .js-enabled .fade-up,
+  .js-enabled .scroll-animate,
+  .js-enabled [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ================================
    REDUCED MOTION
    ================================ */
 @media (prefers-reduced-motion: reduce) {
@@ -387,5 +435,17 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* Ensure all animated content is visible */
+  .fade-up,
+  .scroll-animate,
+  [data-animate],
+  .js-enabled .fade-up,
+  .js-enabled .scroll-animate,
+  .js-enabled [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
