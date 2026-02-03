@@ -31,3 +31,5 @@ business-logic.md
 Explicacion.txt
 
 .gitignore
+
+.claude/

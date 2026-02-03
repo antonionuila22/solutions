@@ -159,8 +159,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="manifest" href="/manifest.json" />
 
     <!-- DNS Prefetch and Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Preload Critical Resources -->
@@ -171,19 +169,10 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       fetchpriority="high"
     />
 
-    <!-- Fonts -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=optional"
-        rel="stylesheet"
-      />
-    </noscript>
+    <!-- Preload critical fonts for better LCP -->
+    <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
 
     <!-- Honduras Business Schema -->
     <script type="application/ld+json" is:inline>
@@ -340,6 +329,16 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     </main>
     <Footer />
     <WhatsAppWidget />
+
+    <!-- Service Worker Registration -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .catch(() => { /* SW registration failed silently */ });
+        });
+      }
+    </script>
 
     <!-- Deferred Analytics -->
     <script is:inline>

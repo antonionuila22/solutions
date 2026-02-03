@@ -410,24 +410,47 @@ export function createArticleSchema(options: ArticleSchemaOptions) {
 }
 
 /**
+ * HowTo step with name and description
+ */
+export interface HowToStep {
+  name: string;
+  text: string;
+  url?: string;
+  image?: string;
+}
+
+/**
  * Creates HowTo schema for tutorial/guide content
+ * Supports both simple string arrays and detailed step objects
  *
  * @param name - Title of the how-to guide
  * @param description - Description of what will be accomplished
- * @param steps - Array of step descriptions
+ * @param steps - Array of step descriptions (strings) or detailed step objects
  * @param image - Optional image URL
  * @param totalTime - Optional total time in ISO 8601 duration format (e.g., "PT30M")
  * @returns Complete HowTo Schema.org object
  *
  * @example
+ * // Simple usage with strings
  * const howToSchema = createHowToSchema(
  *   "How to Build a React Website",
  *   "Learn to build a modern React website from scratch",
  *   [
  *     "Install Node.js and npm",
- *     "Create a new React project with create-react-app",
- *     "Build your components",
+ *     "Create a new React project",
  *     "Deploy to production"
+ *   ]
+ * );
+ *
+ * @example
+ * // Advanced usage with step objects
+ * const howToSchema = createHowToSchema(
+ *   "How to Build a React Website",
+ *   "Learn to build a modern React website from scratch",
+ *   [
+ *     { name: "Setup Environment", text: "Install Node.js and npm" },
+ *     { name: "Create Project", text: "Run create-react-app" },
+ *     { name: "Deploy", text: "Deploy to production" }
  *   ],
  *   "https://codebrand.us/photos/react-tutorial.webp",
  *   "PT2H"
@@ -436,7 +459,7 @@ export function createArticleSchema(options: ArticleSchemaOptions) {
 export function createHowToSchema(
   name: string,
   description: string,
-  steps: string[],
+  steps: (string | HowToStep)[],
   image?: string,
   totalTime?: string
 ) {
@@ -445,15 +468,43 @@ export function createHowToSchema(
     "@type": "HowTo",
     name,
     description,
-    ...(image && { image }),
+    ...(image && {
+      image: {
+        "@type": "ImageObject",
+        url: image,
+      },
+    }),
     ...(totalTime && { totalTime }),
-    step: steps.map((stepText, index) => ({
-      "@type": "HowToStep",
-      position: index + 1,
-      name: `Step ${index + 1}`,
-      text: stepText,
-    })),
+    step: steps.map((step, index) => {
+      const isObject = typeof step === "object";
+      const stepName = isObject ? step.name : extractStepName(step);
+      const stepText = isObject ? step.text : step;
+
+      return {
+        "@type": "HowToStep",
+        position: index + 1,
+        name: stepName,
+        text: stepText,
+        ...(isObject && step.url && { url: step.url }),
+        ...(isObject && step.image && {
+          image: { "@type": "ImageObject", url: step.image },
+        }),
+      };
+    }),
   };
+}
+
+/**
+ * Extracts a step name from the step text (takes text before colon or first sentence)
+ */
+function extractStepName(stepText: string): string {
+  // If text has a colon, use the part before it as the name
+  const colonIndex = stepText.indexOf(":");
+  if (colonIndex > 0 && colonIndex < 50) {
+    return stepText.substring(0, colonIndex).trim();
+  }
+  // Otherwise, use first 50 chars or full text if shorter
+  return stepText.length > 50 ? stepText.substring(0, 50).trim() + "..." : stepText;
 }
 
 /**

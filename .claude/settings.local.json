@@ -17,7 +17,8 @@
       "Bash(.astro$ \")",
       "Bash(del \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\styles\\\\animations.css\")",
       "Bash(dir \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\" -maxdepth 1)",
-      "WebFetch(domain:www.codebrand.us)"
+      "WebFetch(domain:www.codebrand.us)",
+      "Bash(tree:*)"
     ]
   }
 }
