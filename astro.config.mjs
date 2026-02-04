@@ -30,17 +30,11 @@ export default defineConfig({
           drop_debugger: true,
         },
       },
-      // Optimize chunk splitting - bundle React + JSX runtime together
+      // Let Astro handle chunk splitting automatically
       rollupOptions: {
         output: {
-          manualChunks: (id) => {
-            // Bundle all React-related modules together to avoid waterfall
-            if (id.includes('node_modules/react') ||
-                id.includes('node_modules/react-dom') ||
-                id.includes('jsx-runtime') ||
-                id.includes('jsx-dev-runtime')) {
-              return 'react-bundle';
-            }
+          manualChunks: {
+            react: ['react', 'react-dom'],
           },
         },
       },
