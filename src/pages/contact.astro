@@ -166,7 +166,8 @@ const industries = [
         </div>
       </div>
 
-      <!-- Contact Form -->
+      <!-- Contact Form (Web Component for async submit) -->
+      <contact-form data-endpoint="/api/contact">
       <form
         action="/api/contact"
         method="POST"
@@ -386,13 +387,19 @@ const industries = [
           <div class="md:col-span-2">
             <button
               type="submit"
-              class="w-full bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-700 transition-colors duration-200"
+              class="w-full bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Send Message
             </button>
           </div>
+
+          <!-- Response Message -->
+          <div class="md:col-span-2">
+            <p data-response class="text-sm font-medium hidden"></p>
+          </div>
         </div>
       </form>
+      </contact-form>
     </div>
 
     <!-- Calendly Section -->
@@ -415,12 +422,70 @@ const industries = [
       >
       </div>
       <script
+        is:inline
         type="text/javascript"
         src="https://assets.calendly.com/assets/external/widget.js"
         async></script>
     </div>
   </section>
 </Layout>
+
+<script>
+  class ContactForm extends HTMLElement {
+    connectedCallback() {
+      const endpoint = this.dataset.endpoint!;
+      const form = this.querySelector<HTMLFormElement>("form");
+      const responseEl = this.querySelector<HTMLParagraphElement>("[data-response]");
+      const submitBtn = this.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+      if (!form || !responseEl || !submitBtn) return;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const email = formData.get("email") as string;
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          responseEl.textContent = "Please enter a valid email address.";
+          responseEl.className = "md:col-span-2 text-sm font-medium text-red-600";
+          responseEl.classList.remove("hidden");
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        try {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            body: formData,
+          });
+
+          const text = await response.text();
+
+          if (response.ok) {
+            responseEl.textContent = "Message sent successfully! We'll get back to you soon.";
+            responseEl.className = "md:col-span-2 text-sm font-medium text-green-600";
+            form.reset();
+          } else {
+            responseEl.textContent = text || "Something went wrong. Please try again.";
+            responseEl.className = "md:col-span-2 text-sm font-medium text-red-600";
+          }
+        } catch {
+          responseEl.textContent = "Network error. Please check your connection and try again.";
+          responseEl.className = "md:col-span-2 text-sm font-medium text-red-600";
+        } finally {
+          responseEl.classList.remove("hidden");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send Message";
+        }
+      });
+    }
+  }
+
+  customElements.define("contact-form", ContactForm);
+</script>
 
 <style>
   .form-input {

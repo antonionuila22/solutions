@@ -13,6 +13,12 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+  // Dev Toolbar configuration (Astro 5.17+)
+  // Persists across team members and environments
+  devToolbar: {
+    placement: 'bottom-left',
+  },
+
   // Inline small stylesheets to reduce render-blocking CSS
   // 'auto' inlines CSS under 4kb, larger files are still external but preloaded
   build: {
@@ -42,11 +48,13 @@ export default defineConfig({
   },
 
   // Image optimization (native Astro 5 support)
+  // kernel: 'lanczos3' provides best quality for image resizing (Astro 5.17+)
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp',
       config: {
         limitInputPixels: false,
+        kernel: 'lanczos3',
       },
     },
   },

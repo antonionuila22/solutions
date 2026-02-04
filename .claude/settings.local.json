@@ -46,7 +46,10 @@
       "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions add astro.config.mjs)",
       "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions commit -m \"$\\(cat <<''EOF''\nperf: bundle React + JSX runtime to eliminate module waterfall\n\nCombine react, react-dom, and jsx-runtime into single chunk\nto prevent sequential loading \\(1.5s + 1.6s + 1.6s cascade\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "WebFetch(domain:www.google.com)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "WebFetch(domain:docs.astro.build)",
+      "Bash(if exist \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\pages\\\\js\" rmdir \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\pages\\\\js\")",
+      "Bash(npx astro build)"
     ]
   }
 }
