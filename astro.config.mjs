@@ -13,6 +13,12 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+  // Inline small stylesheets to reduce render-blocking CSS
+  // 'auto' inlines CSS under 4kb, larger files are still external but preloaded
+  build: {
+    inlineStylesheets: 'auto',
+  },
+
   vite: {
     plugins: [tailwindcss()],
     build: {

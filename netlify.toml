@@ -136,7 +136,11 @@
   [headers.values]
     Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
     CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
-    Link = "</fonts/poppins-v20-latin-regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </_astro/>; rel=preconnect"
+    # Preload critical resources: fonts first, then CSS
+    Link = '''
+      </fonts/Poppins-Regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin,
+      </fonts/Poppins-SemiBold.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+    '''
 
 [[headers]]
   for = "/*.html"
