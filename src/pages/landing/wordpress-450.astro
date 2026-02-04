@@ -1,64 +1,227 @@
 ---
 import LandingLayout from "../../layouts/LandingLayout.astro";
-import Testimonial from "../../components/testimonial.tsx";
 import logoWhite from "../../assets/codebrand-white.svg";
 
-const pageTitle = "Professional WordPress Landing Page $450 | Save 70% vs US Agencies";
+// Bilingual SEO - Spanish as primary
+const pageTitle = "Landing Page WordPress Profesional $450 | Ahorra 70% vs Agencias USA";
 const pageDescription =
-  "Get a stunning WordPress landing page for only $450. US agencies charge $1,500-$3,000. Fast 7-day delivery, bilingual team in your timezone, mobile responsive. Free quote today!";
+  "Obtén una landing page WordPress profesional por solo $450. Las agencias de USA cobran $1,500-$3,000. Entrega en 7 días, equipo bilingüe en tu zona horaria. ¡Cotización gratis!";
 const pageKeywords =
-  "affordable landing page USA, wordpress landing page design, cheap landing page development, one page website, business landing page, small business website, landing page $450, web design agency USA";
+  "landing page económica, diseño landing page wordpress, desarrollo web económico, página web negocio, landing page $450, agencia web Honduras, diseño web profesional, landing page barata";
 
 // SEO structured data
 const canonicalUrl = "https://codebrand.us/landing/wordpress-450";
 const ogImage = "https://codebrand.us/og/wordpress-450.png";
 
-const industries = [
-  "Automotive",
-  "Construction",
-  "Content Creators",
-  "E-commerce",
-  "Fitness",
-  "Healthcare",
-  "Law Firms",
-  "Real Estate",
-  "Restaurants",
-  "Travel Agency",
-  "Other",
-];
+// Bilingual industries
+const industries = {
+  es: ["Automotriz", "Construcción", "Creadores de Contenido", "E-commerce", "Fitness", "Salud", "Abogados", "Bienes Raíces", "Restaurantes", "Agencia de Viajes", "Otro"],
+  en: ["Automotive", "Construction", "Content Creators", "E-commerce", "Fitness", "Healthcare", "Law Firms", "Real Estate", "Restaurants", "Travel Agency", "Other"],
+};
 
-const features = [
-  {
-    title: "Custom Design",
-    desc: "Unique design tailored to your brand identity",
-    icon: "palette",
+// Bilingual features
+const features = {
+  es: [
+    { title: "Diseño Personalizado", desc: "Diseño único adaptado a tu identidad de marca", icon: "palette" },
+    { title: "100% Responsive", desc: "Experiencia perfecta en todos los dispositivos", icon: "mobile" },
+    { title: "Ultra Rápida", desc: "Optimizada para velocidad y Core Web Vitals", icon: "bolt" },
+    { title: "SEO Optimizado", desc: "Meta tags, schema markup y sitemap incluidos", icon: "search" },
+    { title: "Captura de Leads", desc: "Formularios que envían leads a tu correo", icon: "mail" },
+    { title: "Analytics Listo", desc: "Integración con Google Analytics 4 incluida", icon: "chart" },
+  ],
+  en: [
+    { title: "Custom Design", desc: "Unique design tailored to your brand identity", icon: "palette" },
+    { title: "Mobile Responsive", desc: "Perfect experience on all devices and screens", icon: "mobile" },
+    { title: "Lightning Fast", desc: "Optimized for speed and Core Web Vitals", icon: "bolt" },
+    { title: "SEO Optimized", desc: "Meta tags, schema markup, and sitemap included", icon: "search" },
+    { title: "Lead Capture", desc: "Contact forms that send leads to your inbox", icon: "mail" },
+    { title: "Analytics Ready", desc: "Google Analytics 4 integration included", icon: "chart" },
+  ],
+};
+
+// Bilingual pricing comparison
+const pricingComparison = {
+  es: [
+    { name: "Agencia USA", price: "$2,000 - $5,000", time: "3-6 semanas", featured: false },
+    { name: "Freelancer USA", price: "$800 - $1,500", time: "2-3 semanas", featured: false },
+    { name: "Fiverr/Upwork", price: "$300 - $800", time: "1-2 semanas", featured: false, warning: true, warningText: "Los freelancers suelen desaparecer después de entregar" },
+    { name: "Codebrand", price: "$450", time: "7 días", featured: true, badge: "Mejor Valor" },
+  ],
+  en: [
+    { name: "US Agency", price: "$2,000 - $5,000", time: "3-6 weeks", featured: false },
+    { name: "US Freelancer", price: "$800 - $1,500", time: "2-3 weeks", featured: false },
+    { name: "Fiverr/Upwork", price: "$300 - $800", time: "1-2 weeks", featured: false, warning: true, warningText: "Freelancers often disappear after delivery" },
+    { name: "Codebrand", price: "$450", time: "7 days", featured: true, badge: "Best Value" },
+  ],
+};
+
+// Bilingual process steps
+const processSteps = {
+  es: [
+    { num: "01", title: "Envía tu Solicitud", desc: "Completa el formulario con los detalles de tu proyecto.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>` },
+    { num: "02", title: "Recibe Cotización", desc: "Te respondemos en 2 horas con una propuesta.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>` },
+    { num: "03", title: "Lanzamiento", desc: "Tu página estará lista en 7 días o menos.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>` },
+  ],
+  en: [
+    { num: "01", title: "Submit Request", desc: "Fill out the form with your project details.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>` },
+    { num: "02", title: "Get Quote", desc: "We respond within 2 hours with a proposal.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>` },
+    { num: "03", title: "Launch", desc: "Your page goes live in 7 days or less.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>` },
+  ],
+};
+
+// Bilingual FAQ
+const faqItems = {
+  es: [
+    { q: "¿Por qué es más barato que las agencias de USA?", a: "Operamos desde Honduras con costos operativos más bajos, pero nuestro equipo está capacitado en USA y trabaja en tu zona horaria. Obtienes la misma calidad a mejor precio." },
+    { q: "¿Qué pasa si no estoy satisfecho?", a: "Incluimos revisiones durante el desarrollo hasta que estés satisfecho. Reembolso completo disponible antes de comenzar el trabajo (menos 10% de tarifa administrativa). Consulta nuestros términos." },
+    { q: "¿Cómo funciona el pago?", a: "50% por adelantado para comenzar, 50% al entregar. Aceptamos todas las tarjetas principales, PayPal y transferencias bancarias." },
+    { q: "¿Soy dueño del sitio web?", a: "Sí, 100%. Todos los archivos, código y contenido son tuyos para siempre." },
+  ],
+  en: [
+    { q: "Why is it cheaper than US agencies?", a: "We're based in Honduras with lower operational costs, but our team is US-trained and works in your timezone. You get the same quality at a better price." },
+    { q: "What if I'm not satisfied?", a: "We include revisions during development until you're satisfied. Full refund available before work begins (minus 10% admin fee). See our terms for details." },
+    { q: "How does payment work?", a: "50% upfront to start, 50% on delivery. We accept all major credit cards, PayPal, and bank transfers." },
+    { q: "Do I own the website?", a: "Yes, 100%. All files, code, and content are yours forever." },
+  ],
+};
+
+// Bilingual testimonials (real Google reviews)
+const testimonials = {
+  es: [
+    {
+      name: "Serling Topete",
+      role: "CEO, Travel Up Agency",
+      text: "Lo que más disfrutamos fue el profesionalismo y el orden con el que manejaron el proyecto. Con Codebrand sentimos un acompañamiento real; las llamadas constantes para revisar avances nos dieron mucha tranquilidad. Empezamos a recibir clientes reales a través de Google apenas se lanzó el sitio.",
+      rating: 5,
+      verified: true
+    },
+    {
+      name: "Oscar Gomez",
+      role: "CEO, Esabep · Construcción",
+      text: "Superaron nuestras expectativas. Nosotros buscábamos algo sencillo y ellos nos entregaron un sitio web genial, con una calidad increíble y en los tiempos acordados. Su profesionalismo es de lo mejor en Honduras.",
+      rating: 5,
+      verified: true
+    },
+    {
+      name: "Ana Ruth Medina",
+      role: "Cliente Verificada",
+      text: "Excelente compañía de software. Muy profesionales y comprometidos con la calidad de su trabajo.",
+      rating: 5,
+      verified: true
+    },
+  ],
+  en: [
+    {
+      name: "Serling Topete",
+      role: "CEO, Travel Up Agency",
+      text: "What we enjoyed most was the professionalism and organization in handling the project. With Codebrand we felt real support; the constant calls to review progress gave us peace of mind. We started receiving real clients through Google as soon as the site launched.",
+      rating: 5,
+      verified: true
+    },
+    {
+      name: "Oscar Gomez",
+      role: "CEO, Esabep · Construction",
+      text: "They exceeded our expectations. We were looking for something simple and they delivered an amazing website, with incredible quality and on time. Their professionalism is the best in Honduras.",
+      rating: 5,
+      verified: true
+    },
+    {
+      name: "Ana Ruth Medina",
+      role: "Verified Client",
+      text: "Excellent software company. Very professional and committed to the quality of their work.",
+      rating: 5,
+      verified: true
+    },
+  ],
+};
+
+// Bilingual packages
+const packages = {
+  standard: {
+    es: {
+      badge: "Rápido y Fácil",
+      name: "Estándar",
+      payment: "Pago único",
+      features: [
+        "WordPress CMS",
+        "Fácil de editar tú mismo",
+        "Listo en 7 días",
+        "Diseño responsive",
+        "Formulario de contacto incluido",
+        "Configuración SEO básica",
+        "1 ronda de revisiones",
+      ],
+      bestFor: "Ideal para: Pequeños negocios que inician online",
+      cta: "Comenzar",
+    },
+    en: {
+      badge: "Quick & Easy",
+      name: "Standard",
+      payment: "One-time payment",
+      features: [
+        "WordPress CMS",
+        "Easy to edit yourself",
+        "Ready in 7 days",
+        "Mobile responsive",
+        "Contact form included",
+        "Basic SEO setup",
+        "1 round of revisions",
+      ],
+      bestFor: "Best for: Small businesses getting started online",
+      cta: "Get Started",
+    },
   },
-  {
-    title: "Mobile Responsive",
-    desc: "Perfect experience on all devices and screens",
-    icon: "mobile",
+  performance: {
+    es: {
+      badge: "Máximo Rendimiento",
+      name: "Performance",
+      payment: "Pago único",
+      features: [
+        "Código Personalizado (Astro/Next.js)",
+        "Velocidad de carga extrema",
+        "Mejores prácticas SEO incluidas",
+        "Sin mantenimiento de plugins",
+        "Core Web Vitals perfectos",
+        "Animaciones premium",
+        "Revisiones incluidas",
+      ],
+      bestFor: "Ideal para: Negocios que priorizan el rendimiento SEO",
+      cta: "Comenzar",
+    },
+    en: {
+      badge: "Maximum Performance",
+      name: "Performance",
+      payment: "One-time payment",
+      features: [
+        "Custom Code (Astro/Next.js)",
+        "Extreme loading speed",
+        "SEO best practices included",
+        "No plugin maintenance needed",
+        "Perfect Core Web Vitals",
+        "Premium animations",
+        "Revisions included",
+      ],
+      bestFor: "Best for: Businesses that prioritize SEO performance",
+      cta: "Get Started",
+    },
   },
-  {
-    title: "Lightning Fast",
-    desc: "Optimized for speed and Core Web Vitals",
-    icon: "bolt",
-  },
-  {
-    title: "SEO Optimized",
-    desc: "Meta tags, schema markup, and sitemap included",
-    icon: "search",
-  },
-  {
-    title: "Lead Capture",
-    desc: "Contact forms that send leads to your inbox",
-    icon: "mail",
-  },
-  {
-    title: "Analytics Ready",
-    desc: "Google Analytics 4 integration included",
-    icon: "chart",
-  },
-];
+};
+
+// Bilingual "why cheaper" badges
+const whyBadges = {
+  es: [
+    { label: "Misma Calidad", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+    { label: "Tu Zona Horaria", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+    { label: "Equipo Bilingüe", icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" },
+    { label: "Calidad Garantizada", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+  ],
+  en: [
+    { label: "Same Quality", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+    { label: "Your Timezone", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+    { label: "Bilingual Team", icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" },
+    { label: "Quality Assured", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+  ],
+};
 
 const getIcon = (name: string) => {
   const icons: Record<string, string> = {
@@ -201,42 +364,95 @@ const getIcon = (name: string) => {
             <img src={logoWhite.src} alt="Codebrand" width="110" height="32" />
           </a>
           <div class="hidden md:flex items-center gap-8">
-            <a href="#pricing" class="nav-link">Pricing</a>
-            <a href="#features" class="nav-link">Features</a>
-            <a href="#process" class="nav-link">Process</a>
-            <a href="#portfolio" class="nav-link">Portfolio</a>
-            <a href="#reviews" class="nav-link">Reviews</a>
+            <a href="#pricing" class="nav-link" data-i18n="nav.pricing">Precios</a>
+            <a href="#features" class="nav-link" data-i18n="nav.features">Incluye</a>
+            <a href="#process" class="nav-link" data-i18n="nav.process">Proceso</a>
+            <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portafolio</a>
+            <a href="#reviews" class="nav-link" data-i18n="nav.reviews">Reseñas</a>
           </div>
-          <a href="#contact" class="btn-primary text-sm">
-            Get Started
-            <svg
-              class="w-4 h-4 ml-1.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div class="flex items-center gap-3">
+            <!-- Language Toggle -->
+            <button
+              id="lang-toggle"
+              class="lang-toggle"
+              aria-label="Cambiar idioma"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
+              <span class="lang-option" data-lang="es">ES</span>
+              <span class="lang-separator">|</span>
+              <span class="lang-option" data-lang="en">EN</span>
+            </button>
+            <a href="#contact" class="btn-primary text-sm">
+              <span data-i18n="nav.cta">Comenzar</span>
+              <svg
+                class="w-4 h-4 ml-1.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
+
+    <!-- Countdown Ribbon -->
+    <div class="countdown-ribbon">
+      <div class="countdown-ribbon-shine"></div>
+      <div class="countdown-ribbon-inner">
+        <div class="countdown-left">
+          <div class="countdown-icon-wrapper">
+            <svg class="countdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <span class="countdown-label" data-i18n="hero.urgency">Oferta especial termina en</span>
+        </div>
+        <div class="countdown-timer" id="countdown">
+          <div class="countdown-block">
+            <span class="countdown-number" id="countdown-days">10</span>
+            <span class="countdown-unit" data-i18n="countdown.days">Días</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-block">
+            <span class="countdown-number" id="countdown-hours">12</span>
+            <span class="countdown-unit" data-i18n="countdown.hours">Hrs</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-block">
+            <span class="countdown-number" id="countdown-mins">45</span>
+            <span class="countdown-unit" data-i18n="countdown.mins">Min</span>
+          </div>
+          <span class="countdown-separator">:</span>
+          <div class="countdown-block">
+            <span class="countdown-number countdown-seconds" id="countdown-secs">00</span>
+            <span class="countdown-unit" data-i18n="countdown.secs">Seg</span>
+          </div>
+        </div>
+        <div class="countdown-spots-wrapper">
+          <span class="countdown-spots-pulse"></span>
+          <span class="countdown-spots" data-i18n="hero.badge">Solo quedan <strong>5 cupos</strong></span>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section
       class="relative min-h-screen flex items-center section-spacing-top"
     >
-      <div class="hero-container">
+      <div class="hero-container py-32 lg:py-40">
         <div class="hero-grid">
           <!-- Left Content -->
           <div class="hero-content">
             <!-- Badge -->
             <div
-              class="inline-flex items-center gap-3 px-4 py-2 rounded-full badge-glow mb-8"
+              class="inline-flex items-center gap-3 px-4 py-2 rounded-full badge-glow mb-6"
             >
               <span class="relative flex h-2.5 w-2.5">
                 <span
@@ -246,8 +462,8 @@ const getIcon = (name: string) => {
                   class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"
                 ></span>
               </span>
-              <span class="text-sm font-medium text-white/80"
-                >Limited spots available this month</span
+              <span class="text-sm font-medium text-white/80" data-i18n="hero.availableBadge"
+                >Aceptando nuevos clientes</span
               >
             </div>
 
@@ -255,19 +471,23 @@ const getIcon = (name: string) => {
             <h1
               class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
             >
+              <span class="block text-white" data-i18n="hero.title1">Landing Page</span>
               <span class="block text-white">WordPress</span>
-              <span class="block text-white">Landing Page</span>
-              <span class="block text-gradient mt-1">$450</span>
+              <span class="block mt-1">
+                <span class="price-original" data-i18n="hero.priceOriginal">$1,500</span>
+                <span class="text-gradient price-current">$450</span>
+              </span>
             </h1>
 
             <!-- Subheadline -->
             <p
               class="text-base sm:text-lg lg:text-xl text-white/55 leading-relaxed max-w-lg mb-10"
+              data-i18n="hero.subtitle"
             >
-              US agencies charge <span class="text-white/90 font-medium"
+              Las agencias de USA cobran <span class="text-white/90 font-medium"
                 >$1,500 - $3,000</span
-              > for the same quality. Get premium results at <span
-                class="text-orange-400 font-semibold">70% less</span
+              > por la misma calidad. Obtén resultados premium con <span
+                class="text-orange-400 font-semibold">70% menos</span
               >.
             </p>
 
@@ -276,16 +496,16 @@ const getIcon = (name: string) => {
               <div class="stat-card">
                 <div class="stat-card-inner">
                   <span class="stat-value" data-count="10">0</span>
-                  <span class="stat-unit">days</span>
+                  <span class="stat-unit" data-i18n="hero.stats.days">días</span>
                 </div>
-                <p class="stat-desc">Fast Delivery</p>
+                <p class="stat-desc" data-i18n="hero.stats.delivery">Entrega Rápida</p>
               </div>
               <div class="stat-card">
                 <div class="stat-card-inner">
                   <span class="stat-value" data-count="50">0</span>
                   <span class="stat-unit">+</span>
                 </div>
-                <p class="stat-desc">US Clients</p>
+                <p class="stat-desc" data-i18n="hero.stats.clients">Clientes USA</p>
               </div>
               <div class="stat-card stat-card-highlight">
                 <div class="stat-card-inner">
@@ -295,34 +515,30 @@ const getIcon = (name: string) => {
                     data-suffix="%">0%</span
                   >
                 </div>
-                <p class="stat-desc">Cost Savings</p>
+                <p class="stat-desc" data-i18n="hero.stats.savings">Ahorro</p>
               </div>
             </div>
 
             <!-- Trust Badges -->
             <div class="flex flex-wrap gap-2.5">
-              {
-                ["US Timezone", "Bilingual Team", "Satisfaction Guaranteed"].map(
-                  (badge) => (
-                    <span class="trust-badge">
-                      <svg
-                        class="w-3.5 h-3.5 text-emerald-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2.5"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      {badge}
-                    </span>
-                  )
-                )
-              }
+              <span class="trust-badge">
+                <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <span data-i18n="hero.badges.timezone">Zona Horaria USA</span>
+              </span>
+              <span class="trust-badge">
+                <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <span data-i18n="hero.badges.bilingual">Equipo Bilingüe</span>
+              </span>
+              <span class="trust-badge">
+                <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <span data-i18n="hero.badges.guarantee">Satisfacción Garantizada</span>
+              </span>
             </div>
           </div>
 
@@ -351,135 +567,92 @@ const getIcon = (name: string) => {
                     </svg>
                   </div>
                   <div>
-                    <h3 class="text-lg font-bold text-white">
-                      Get Your Free Quote
+                    <h3 class="text-lg font-bold text-white" data-i18n="form.title">
+                      Cotización Gratis
                     </h3>
-                    <p class="text-xs text-white/45 mt-0.5">
-                      Response within 2 hours
+                    <p class="text-xs text-white/45 mt-0.5" data-i18n="form.response">
+                      Respuesta en 2 horas
                     </p>
                   </div>
                 </div>
 
                 <div class="divider-gradient mb-6"></div>
 
-                <form action="/api/contact" method="POST" class="space-y-4">
-                  <input
-                    type="text"
-                    name="honey"
-                    class="hidden"
-                    tabindex="-1"
-                    autocomplete="off"
-                  />
+                <form action="/api/contact" method="POST" class="space-y-4" id="contact-form">
+                  <input type="text" name="honey" class="hidden" tabindex="-1" autocomplete="off" />
+                  <input type="hidden" name="subject" value="WordPress Landing Page $450 - New Lead" />
+                  <input type="hidden" name="services" value="Web Development" />
 
-                  <div class="grid grid-cols-2 gap-3">
-                    <div>
-                      <label class="form-label">Name *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        placeholder="John Doe"
-                        class="form-input"
-                      />
+                  <!-- Step 1: Essential fields only -->
+                  <div class="form-step active" id="form-step-1">
+                    <div class="space-y-3">
+                      <div>
+                        <label class="form-label" data-i18n="form.name">Nombre *</label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          placeholder="Juan Pérez"
+                          data-placeholder-es="Juan Pérez"
+                          data-placeholder-en="John Doe"
+                          class="form-input form-input-lg"
+                        />
+                      </div>
+                      <div>
+                        <label class="form-label" data-i18n="form.email">Correo *</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          placeholder="juan@correo.com"
+                          data-placeholder-es="juan@correo.com"
+                          data-placeholder-en="john@email.com"
+                          class="form-input form-input-lg"
+                        />
+                      </div>
+                      <div>
+                        <label class="form-label" data-i18n="form.phone">WhatsApp / Teléfono *</label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          required
+                          placeholder="+1 (555) 000-0000"
+                          class="form-input form-input-lg"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label class="form-label">Email *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="john@email.com"
-                        class="form-input"
-                      />
-                    </div>
+
+                    <button type="submit" class="btn-submit-new group mt-4">
+                      <span class="btn-submit-content">
+                        <span data-i18n="form.submit">Recibir Mi Cotización</span>
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                      </span>
+                      <span class="btn-submit-shine"></span>
+                    </button>
                   </div>
 
-                  <div class="grid grid-cols-2 gap-3">
-                    <div>
-                      <label class="form-label">Phone *</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        placeholder="+1 (555) 000-0000"
-                        class="form-input"
-                      />
-                    </div>
-                    <div>
-                      <label class="form-label">Industry *</label>
-                      <select
-                        name="industry"
-                        required
-                        class="form-input form-select"
-                      >
-                        <option value="" disabled selected>Select...</option>
-                        {industries.map((i) => <option value={i}>{i}</option>)}
-                      </select>
-                    </div>
-                  </div>
-
-                  <input
-                    type="hidden"
-                    name="subject"
-                    value="WordPress Landing Page $450 - New Lead"
-                  />
-                  <input
-                    type="hidden"
-                    name="services"
-                    value="Web Development"
-                  />
-
-                  <div>
-                    <label class="form-label"
-                      >Tell us about your project *</label
-                    >
-                    <textarea
-                      name="message"
-                      required
-                      rows="3"
-                      placeholder="What does your business do?"
-                      class="form-input resize-none"></textarea>
-                  </div>
-
-                  <button type="submit" class="btn-submit group">
-                    <span>Get My $450 Landing Page</span>
-                    <svg
-                      class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </button>
-
-                  <div
-                    class="flex items-center justify-center gap-3 text-[11px] text-white/35 pt-1"
-                  >
-                    <span class="flex items-center gap-1">
-                      <svg
-                        class="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                        ></path>
+                  <!-- Form guarantees -->
+                  <div class="form-guarantees">
+                    <div class="guarantee-item">
+                      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
-                      Secure
-                    </span>
-                    <span class="text-white/20">|</span>
-                    <span>credit card</span>
-                    <span class="text-white/20">|</span>
-                    <span>100% free quote</span>
+                      <span data-i18n="form.guarantee1">Respuesta garantizada en 2 horas</span>
+                    </div>
+                    <div class="guarantee-item">
+                      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span data-i18n="form.guarantee2">Sin compromiso, 100% gratis</span>
+                    </div>
+                    <div class="guarantee-item">
+                      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span data-i18n="form.guarantee3">Atención en español e inglés</span>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -503,224 +676,283 @@ const getIcon = (name: string) => {
       </div>
     </section>
 
+    <!-- Social Proof Bar -->
+    <section class="social-proof-bar">
+      <div class="container-main">
+        <div class="social-proof-content">
+          <!-- Rating Badge -->
+          <div class="proof-rating">
+            <div class="rating-stars">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="rating-text">
+              <strong>5.0</strong> <span data-i18n="social.rating">en Google Reviews</span>
+            </span>
+          </div>
+
+          <!-- Divider -->
+          <div class="proof-divider"></div>
+
+          <!-- Stats -->
+          <div class="proof-stats">
+            <div class="proof-stat">
+              <span class="proof-stat-number">50+</span>
+              <span class="proof-stat-label" data-i18n="social.clients">Clientes USA</span>
+            </div>
+            <div class="proof-stat">
+              <span class="proof-stat-number">7</span>
+              <span class="proof-stat-label" data-i18n="social.days">Días Entrega</span>
+            </div>
+            <div class="proof-stat">
+              <span class="proof-stat-number">100%</span>
+              <span class="proof-stat-label" data-i18n="social.satisfaction">Satisfacción</span>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="proof-divider hidden lg:block"></div>
+
+          <!-- Trusted by text -->
+          <div class="proof-trusted hidden lg:flex">
+            <span class="text-white/40 text-xs uppercase tracking-wider" data-i18n="social.trusted">Confían en nosotros</span>
+            <div class="trusted-logos">
+              <div class="trusted-logo">🏢</div>
+              <div class="trusted-logo">🏪</div>
+              <div class="trusted-logo">🏥</div>
+              <div class="trusted-logo">⚖️</div>
+              <div class="trusted-logo">🏋️</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Pricing Comparison -->
     <section class="section-spacing relative" id="pricing">
       <div class="container-main">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-tag">Transparent Pricing</span>
-          <h2 class="section-title">
-            Compare <span class="text-gradient">&</span> Save
+          <span class="section-tag" data-i18n="pricing.tag">Precios Transparentes</span>
+          <h2 class="section-title" data-i18n="pricing.title">
+            Compara <span class="text-gradient">&</span> Ahorra
           </h2>
-          <p class="section-subtitle">
-            See why smart business owners choose Codebrand.
+          <p class="section-subtitle" data-i18n="pricing.subtitle">
+            Descubre por qué los empresarios inteligentes eligen Codebrand.
           </p>
         </div>
 
-        <div
-          class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
-          data-animate="fade-up"
-          data-delay="150"
-        >
-          {
-            [
-              {
-                name: "US Agency",
-                price: "$2,000 - $5,000",
-                time: "3-6 weeks",
-                featured: false,
-              },
-              {
-                name: "US Freelancer",
-                price: "$800 - $1,500",
-                time: "2-3 weeks",
-                featured: false,
-              },
-              {
-                name: "Fiverr/Upwork",
-                price: "$300 - $800",
-                time: "1-2 weeks",
-                featured: false,
-                warning: true,
-              },
-              {
-                name: "Codebrand",
-                price: "$450",
-                time: "7 days",
-                featured: true,
-              },
-            ].map((item) => (
-              <div
-                class={`pricing-card ${item.featured ? "pricing-card-featured" : ""} ${item.warning ? "pricing-card-warning" : ""}`}
-              >
-                {item.featured && (
-                  <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10">
-                    <span class="px-3 py-0.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wide">
-                      Best Value
+        <div class="comparison-container" data-animate="fade-up" data-delay="150">
+          <!-- Competitors Column -->
+          <div class="comparison-competitors">
+            <div class="comparison-header-label" data-i18n="pricing.others">Otros</div>
+
+            {pricingComparison.es.slice(0, 3).map((item, idx) => (
+              <div class={`competitor-row ${item.warning ? 'competitor-warning' : ''}`}>
+                <div class="competitor-info">
+                  <span class="competitor-name" data-es={item.name} data-en={pricingComparison.en[idx].name}>
+                    {item.name}
+                  </span>
+                  {item.warning && (
+                    <span class="competitor-warning-badge">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                      </svg>
                     </span>
-                  </div>
-                )}
+                  )}
+                </div>
+                <div class="competitor-details">
+                  <span class="competitor-price">{item.price}</span>
+                  <span class="competitor-time">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span data-es={item.time} data-en={pricingComparison.en[idx].time}>{item.time}</span>
+                  </span>
+                </div>
                 {item.warning && (
-                  <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 z-10">
-                    <span class="px-3 py-0.5 bg-red-500/80 text-white text-[10px] font-bold rounded-full uppercase tracking-wide">
-                      Risky
-                    </span>
-                  </div>
-                )}
-                <p
-                  class={`text-sm font-medium mb-2 ${item.featured ? "text-white" : "text-white/45"}`}
-                >
-                  {item.name}
-                </p>
-                <p
-                  class={`text-xl sm:text-2xl font-bold mb-1.5 ${item.featured ? "text-gradient" : "text-white"}`}
-                >
-                  {item.price}
-                </p>
-                <p class="text-white/35 text-xs flex items-center gap-1.5">
-                  <svg
-                    class="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.5"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  {item.time}
-                </p>
-                {item.warning && (
-                  <p class="text-red-400/70 text-[10px] mt-2 leading-tight">
-                    Freelancers often disappear after delivery
+                  <p class="competitor-warning-text" data-es={item.warningText} data-en={pricingComparison.en[idx].warningText}>
+                    {item.warningText}
                   </p>
                 )}
               </div>
-            ))
-          }
+            ))}
+          </div>
+
+          <!-- VS Divider -->
+          <div class="comparison-vs">
+            <span>VS</span>
+          </div>
+
+          <!-- Codebrand Column (Featured) -->
+          <div class="comparison-featured">
+            <div class="featured-badge-top">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"/>
+              </svg>
+              <span data-i18n="pricing.recommended">Recomendado</span>
+            </div>
+
+            <div class="featured-content">
+              <div class="featured-logo">
+                <img src={logoWhite.src} alt="Codebrand" width="100" height="28" />
+              </div>
+
+              <div class="featured-price-container">
+                <span class="featured-price-old">$1,500</span>
+                <span class="featured-price">$450</span>
+              </div>
+
+              <div class="featured-time">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <span data-i18n="pricing.delivery">Entrega en 7 días</span>
+              </div>
+
+              <ul class="featured-benefits">
+                <li>
+                  <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span data-i18n="pricing.benefit1">Calidad de agencia USA</span>
+                </li>
+                <li>
+                  <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span data-i18n="pricing.benefit2">Soporte post-lanzamiento</span>
+                </li>
+                <li>
+                  <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span data-i18n="pricing.benefit3">Equipo bilingüe</span>
+                </li>
+              </ul>
+
+              <div class="featured-savings">
+                <span class="savings-label" data-i18n="pricing.youSave">Ahorras</span>
+                <span class="savings-amount">$1,050+</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Package Comparison Table -->
-        <div
-          class="packages-section mt-12 sm:mt-16"
-          data-animate="fade-up"
-          data-delay="200"
-        >
-          <h3 class="text-xl sm:text-2xl font-bold text-center text-white mb-8">
-            Choose Your <span class="text-gradient">Package</span>
-          </h3>
+        <!-- Package Selection -->
+        <div class="packages-section mt-12 sm:mt-16" data-animate="fade-up" data-delay="200">
+          <div class="packages-header">
+            <h3 class="packages-title" data-i18n="pricing.choosePackage">
+              Elige Tu <span class="text-gradient">Paquete</span>
+            </h3>
+            <p class="packages-subtitle" data-i18n="pricing.packageSubtitle">
+              Dos opciones diseñadas para diferentes necesidades
+            </p>
+          </div>
 
-          <div class="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+          <div class="packages-grid">
             <!-- Standard Package -->
-            <div class="package-card package-card-premium">
-              <div class="package-glow"></div>
-              <div class="package-header relative z-10">
-                <span class="package-badge-premium">Quick & Easy</span>
-                <h4 class="text-lg font-bold text-white mt-3">Standard</h4>
-                <div class="flex items-baseline gap-1 mt-2">
-                  <span class="text-3xl sm:text-4xl font-bold text-gradient"
-                    >$450</span
-                  >
+            <div class="pkg-card">
+              <div class="pkg-badge pkg-badge-standard">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <span data-es={packages.standard.es.badge} data-en={packages.standard.en.badge}>{packages.standard.es.badge}</span>
+              </div>
+
+              <div class="pkg-header">
+                <h4 class="pkg-name" data-es={packages.standard.es.name} data-en={packages.standard.en.name}>
+                  {packages.standard.es.name}
+                </h4>
+                <div class="pkg-price-row">
+                  <span class="pkg-price">$450</span>
+                  <span class="pkg-price-label" data-es={packages.standard.es.payment} data-en={packages.standard.en.payment}>
+                    {packages.standard.es.payment}
+                  </span>
                 </div>
-                <p class="text-white/45 text-sm mt-2">One-time payment</p>
               </div>
 
-              <div class="package-features relative z-10">
-                <ul class="space-y-3">
-                  {
-                    [
-                      "WordPress CMS",
-                      "Easy to edit yourself",
-                      "Ready in 7 days",
-                      "Mobile responsive",
-                      "Contact form included",
-                      "Basic SEO setup",
-                      "1 round of revisions",
-                    ].map((feature) => (
-                      <li class="flex items-start gap-2.5 text-sm text-white/70">
-                        <svg
-                          class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2.5"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
+              <div class="pkg-divider"></div>
 
-              <div class="package-footer relative z-10">
-                <p class="text-xs text-white/35 mb-3">
-                  Best for: Small businesses getting started online
+              <ul class="pkg-features">
+                {packages.standard.es.features.map((feature, idx) => (
+                  <li>
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span data-es={feature} data-en={packages.standard.en.features[idx]}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="pkg-footer">
+                <p class="pkg-best-for" data-es={packages.standard.es.bestFor} data-en={packages.standard.en.bestFor}>
+                  {packages.standard.es.bestFor}
                 </p>
-                <a href="#contact" class="btn-package-premium">Get Started</a>
+                <a href="#contact" class="pkg-btn pkg-btn-standard">
+                  <span data-es={packages.standard.es.cta} data-en={packages.standard.en.cta}>{packages.standard.es.cta}</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </a>
               </div>
             </div>
 
-            <!-- Performance Package -->
-            <div class="package-card package-card-premium">
-              <div class="package-glow"></div>
-              <div class="package-header relative z-10">
-                <span class="package-badge-premium">Maximum Performance</span>
-                <h4 class="text-lg font-bold text-white mt-3">Performance</h4>
-                <div class="flex items-baseline gap-1 mt-2">
-                  <span class="text-3xl sm:text-4xl font-bold text-gradient"
-                    >$1,200</span
-                  >
-                  <span class="text-white/45 text-sm">+</span>
+            <!-- Performance Package (Popular) -->
+            <div class="pkg-card pkg-card-featured">
+              <div class="pkg-popular-badge">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span data-i18n="pricing.popular">Más Popular</span>
+              </div>
+
+              <div class="pkg-badge pkg-badge-performance">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                </svg>
+                <span data-es={packages.performance.es.badge} data-en={packages.performance.en.badge}>{packages.performance.es.badge}</span>
+              </div>
+
+              <div class="pkg-header">
+                <h4 class="pkg-name" data-es={packages.performance.es.name} data-en={packages.performance.en.name}>
+                  {packages.performance.es.name}
+                </h4>
+                <div class="pkg-price-row">
+                  <span class="pkg-price pkg-price-gradient">$1,200</span>
+                  <span class="pkg-price-plus">+</span>
+                  <span class="pkg-price-label" data-es={packages.performance.es.payment} data-en={packages.performance.en.payment}>
+                    {packages.performance.es.payment}
+                  </span>
                 </div>
-                <p class="text-white/45 text-sm mt-2">One-time payment</p>
               </div>
 
-              <div class="package-features relative z-10">
-                <ul class="space-y-3">
-                  {
-                    [
-                      "Custom Code (Astro/Next.js)",
-                      "Extreme loading speed",
-                      "SEO best practices included",
-                      "No plugin maintenance needed",
-                      "Perfect Core Web Vitals",
-                      "Premium animations",
-                      "Revisions included",
-                    ].map((feature) => (
-                      <li class="flex items-start gap-2.5 text-sm text-white/70">
-                        <svg
-                          class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2.5"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
+              <div class="pkg-divider pkg-divider-gradient"></div>
 
-              <div class="package-footer relative z-10">
-                <p class="text-xs text-white/35 mb-3">
-                  Best for: Businesses that prioritize SEO performance
+              <ul class="pkg-features">
+                {packages.performance.es.features.map((feature, idx) => (
+                  <li>
+                    <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span data-es={feature} data-en={packages.performance.en.features[idx]}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="pkg-footer">
+                <p class="pkg-best-for" data-es={packages.performance.es.bestFor} data-en={packages.performance.en.bestFor}>
+                  {packages.performance.es.bestFor}
                 </p>
-                <a href="#contact" class="btn-package-premium">Get Started</a>
+                <a href="#contact" class="pkg-btn pkg-btn-featured">
+                  <span data-es={packages.performance.es.cta} data-en={packages.performance.en.cta}>{packages.performance.es.cta}</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -753,37 +985,20 @@ const getIcon = (name: string) => {
                 </svg>
               </div>
               <div>
-                <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
-                  Why can we offer these prices?
+                <h3 class="text-lg sm:text-xl font-bold text-white mb-2" data-i18n="pricing.whyTitle">
+                  ¿Por qué podemos ofrecer estos precios?
                 </h3>
-                <p class="text-sm sm:text-base text-white/50 leading-relaxed">
-                  We're a US-facing agency based in Honduras. Lower costs, same
-                  quality. Our bilingual team works in <span
-                    class="text-white/80 font-medium">your timezone</span
-                  > and delivers US-standard work.
+                <p class="text-sm sm:text-base text-white/50 leading-relaxed" data-i18n="pricing.whyDesc">
+                  Somos una agencia enfocada en USA basada en Honduras. Costos más bajos, misma
+                  calidad. Nuestro equipo bilingüe trabaja en <span
+                    class="text-white/80 font-medium">tu zona horaria</span
+                  > y entrega trabajo de estándar estadounidense.
                 </p>
               </div>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {
-                [
-                  {
-                    label: "Same Quality",
-                    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-                  },
-                  {
-                    label: "Your Timezone",
-                    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-                  },
-                  {
-                    label: "Bilingual Team",
-                    icon: "M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129",
-                  },
-                  {
-                    label: "Quality Assured",
-                    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                  },
-                ].map((item) => (
+                whyBadges.es.map((item, idx) => (
                   <div class="why-badge">
                     <svg
                       class="w-4 h-4 text-emerald-400"
@@ -798,7 +1013,7 @@ const getIcon = (name: string) => {
                         d={item.icon}
                       />
                     </svg>
-                    <span>{item.label}</span>
+                    <span data-es={item.label} data-en={whyBadges.en[idx].label}>{item.label}</span>
                   </div>
                 ))
               }
@@ -812,12 +1027,12 @@ const getIcon = (name: string) => {
     <section class="section-spacing relative" id="features">
       <div class="container-main">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-tag">What's Included</span>
-          <h2 class="section-title">
-            Everything You <span class="text-gradient">Need</span>
+          <span class="section-tag" data-i18n="features.tag">Qué Incluye</span>
+          <h2 class="section-title" data-i18n="features.title">
+            Todo Lo Que <span class="text-gradient">Necesitas</span>
           </h2>
-          <p class="section-subtitle">
-            No hidden fees. Here's exactly what you get for $450.
+          <p class="section-subtitle" data-i18n="features.subtitle">
+            Sin costos ocultos. Esto es exactamente lo que obtienes por $450.
           </p>
         </div>
 
@@ -825,9 +1040,10 @@ const getIcon = (name: string) => {
           class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
           data-animate="fade-up"
           data-delay="150"
+          id="features-grid"
         >
           {
-            features.map((item) => (
+            features.es.map((item, idx) => (
               <div class="feature-card group">
                 <div class="feature-icon">
                   <svg
@@ -838,10 +1054,14 @@ const getIcon = (name: string) => {
                     set:html={getIcon(item.icon)}
                   />
                 </div>
-                <h3 class="text-base font-semibold mb-1.5 text-white group-hover:text-orange-400 transition-colors">
+                <h3 class="text-base font-semibold mb-1.5 text-white group-hover:text-orange-400 transition-colors"
+                    data-es={item.title}
+                    data-en={features.en[idx].title}>
                   {item.title}
                 </h3>
-                <p class="text-white/45 text-sm leading-relaxed">{item.desc}</p>
+                <p class="text-white/45 text-sm leading-relaxed"
+                   data-es={item.desc}
+                   data-en={features.en[idx].desc}>{item.desc}</p>
               </div>
             ))
           }
@@ -851,60 +1071,42 @@ const getIcon = (name: string) => {
 
     <!-- Process -->
     <section class="section-spacing relative" id="process">
-      <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="container-main">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-tag">How It Works</span>
-          <h2 class="section-title">
-            Simple <span class="text-gradient">3-Step</span> Process
+          <span class="section-tag" data-i18n="process.tag">Cómo Funciona</span>
+          <h2 class="section-title" data-i18n="process.title">
+            Proceso <span class="text-gradient">Simple</span> en 3 Pasos
           </h2>
         </div>
 
-        <div class="relative" data-animate="fade-up" data-delay="150">
-          <!-- Connection Line -->
-          <div
-            class="hidden lg:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-orange-500/70 to-transparent"
-          >
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8 lg:gap-6">
+        <div class="process-wrapper" data-animate="fade-up" data-delay="150">
+          <div class="process-grid">
             {
-              [
-                {
-                  num: "01",
-                  title: "Submit Request",
-                  desc: "Fill out the form with your project details.",
-                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`,
-                },
-                {
-                  num: "02",
-                  title: "Get Quote",
-                  desc: "We respond within 2 hours with a proposal.",
-                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>`,
-                },
-                {
-                  num: "03",
-                  title: "Launch",
-                  desc: "Your page goes live in 7 days or less.",
-                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>`,
-                },
-              ].map((step) => (
-                <div class="process-card">
-                  <div class="process-number">{step.num}</div>
-                  <div class="process-icon">
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      set:html={step.icon}
-                    />
+              processSteps.es.map((step, idx) => (
+                <div class="process-card-new">
+                  <div class="process-step-number">{step.num}</div>
+                  <div class="process-card-content">
+                    <div class="process-icon-new">
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        set:html={step.icon}
+                      />
+                    </div>
+                    <h3 class="process-title"
+                        data-es={step.title}
+                        data-en={processSteps.en[idx].title}>
+                      {step.title}
+                    </h3>
+                    <p class="process-desc"
+                       data-es={step.desc}
+                       data-en={processSteps.en[idx].desc}>
+                      {step.desc}
+                    </p>
                   </div>
-                  <h3 class="text-lg font-bold mt-5 mb-2 text-white">
-                    {step.title}
-                  </h3>
-                  <p class="text-white/45 text-sm leading-relaxed">
-                    {step.desc}
-                  </p>
+                  {idx < 2 && <div class="process-connector"></div>}
                 </div>
               ))
             }
@@ -917,17 +1119,61 @@ const getIcon = (name: string) => {
     <section class="section-spacing relative" id="reviews">
       <div class="container-main">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-tag">Testimonials</span>
-          <h2 class="section-title">
-            What Clients <span class="text-gradient">Say</span>
+          <span class="section-tag" data-i18n="reviews.tag">Testimonios</span>
+          <h2 class="section-title" data-i18n="reviews.title">
+            Lo Que Dicen <span class="text-gradient">Nuestros Clientes</span>
           </h2>
-          <p class="section-subtitle">
-            Real feedback from businesses we've helped grow.
+          <p class="section-subtitle" data-i18n="reviews.subtitle">
+            Opiniones reales de negocios que hemos ayudado a crecer.
           </p>
         </div>
-      </div>
-      <div data-animate="fade-up" data-delay="150">
-        <Testimonial client:visible />
+
+        <div class="grid md:grid-cols-3 gap-4 sm:gap-6" data-animate="fade-up" data-delay="150">
+          {
+            testimonials.es.map((review, idx) => (
+              <div class="testimonial-card">
+                <!-- Google verified badge -->
+                {review.verified && (
+                  <div class="google-badge mb-3">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <span data-i18n="reviews.verified">Reseña verificada de Google</span>
+                  </div>
+                )}
+                <!-- Stars -->
+                <div class="flex items-center gap-1 mb-3">
+                  {[...Array(review.rating)].map(() => (
+                    <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <!-- Review text -->
+                <p class="text-white/70 text-sm leading-relaxed mb-4"
+                   data-es={review.text}
+                   data-en={testimonials.en[idx].text}>
+                  "{review.text}"
+                </p>
+                <!-- Author -->
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white font-bold text-sm">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p class="text-white font-medium text-sm">{review.name}</p>
+                    <p class="text-white/45 text-xs"
+                       data-es={review.role}
+                       data-en={testimonials.en[idx].role}>{review.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
 
@@ -935,12 +1181,12 @@ const getIcon = (name: string) => {
     <section class="section-spacing relative" id="portfolio">
       <div class="container-main">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-tag">Our Work</span>
-          <h2 class="section-title">
-            Recent <span class="text-gradient">Projects</span>
+          <span class="section-tag" data-i18n="portfolio.tag">Nuestro Trabajo</span>
+          <h2 class="section-title" data-i18n="portfolio.title">
+            Proyectos <span class="text-gradient">Recientes</span>
           </h2>
-          <p class="section-subtitle">
-            Real WordPress landing pages we've built for US businesses.
+          <p class="section-subtitle" data-i18n="portfolio.subtitle">
+            Landing pages WordPress reales que hemos creado para negocios en USA.
           </p>
         </div>
 
@@ -1025,35 +1271,20 @@ const getIcon = (name: string) => {
     <section class="section-spacing relative">
       <div class="max-w-2xl mx-auto px-5 sm:px-6 lg:px-8">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-tag">Questions?</span>
-          <h2 class="section-title">
-            Frequently <span class="text-gradient">Asked</span>
+          <span class="section-tag" data-i18n="faq.tag">¿Preguntas?</span>
+          <h2 class="section-title" data-i18n="faq.title">
+            Preguntas <span class="text-gradient">Frecuentes</span>
           </h2>
         </div>
 
         <div class="space-y-3" data-animate="fade-up" data-delay="150">
           {
-            [
-              {
-                q: "Why is it cheaper than US agencies?",
-                a: "We're based in Honduras with lower operational costs, but our team is US-trained and works in your timezone. You get the same quality at a better price.",
-              },
-              {
-                q: "What if I'm not satisfied?",
-                a: "We include revisions during development until you're satisfied. Full refund available before work begins (minus 10% admin fee). See our terms for details.",
-              },
-              {
-                q: "How does payment work?",
-                a: "50% upfront to start, 50% on delivery. We accept all major credit cards, PayPal, and bank transfers.",
-              },
-              {
-                q: "Do I own the website?",
-                a: "Yes, 100%. All files, code, and content are yours forever.",
-              },
-            ].map((item) => (
+            faqItems.es.map((item, idx) => (
               <details class="faq-item group">
                 <summary class="faq-question">
-                  <span class="flex-1 pr-4 text-sm sm:text-base">{item.q}</span>
+                  <span class="flex-1 pr-4 text-sm sm:text-base"
+                        data-es={item.q}
+                        data-en={faqItems.en[idx].q}>{item.q}</span>
                   <div class="faq-icon">
                     <svg
                       class="w-4 h-4"
@@ -1071,7 +1302,9 @@ const getIcon = (name: string) => {
                   </div>
                 </summary>
                 <div class="faq-answer">
-                  <p class="text-sm">{item.a}</p>
+                  <p class="text-sm"
+                     data-es={item.a}
+                     data-en={faqItems.en[idx].a}>{item.a}</p>
                 </div>
               </details>
             ))
@@ -1088,32 +1321,29 @@ const getIcon = (name: string) => {
           <div class="relative z-10">
             <div class="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <span class="section-tag">Post-Launch Support</span>
-                <h3 class="text-2xl sm:text-3xl font-bold text-white mt-3 mb-4">
-                  Keep Your Site <span class="text-gradient">Secure & Fast</span
-                  >
+                <span class="section-tag" data-i18n="maintenance.tag">Mantenimiento Web</span>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mt-3 mb-4" data-i18n="maintenance.title">
+                  Mantenimiento <span class="text-gradient">Básico</span>
                 </h3>
-                <p class="text-white/50 leading-relaxed mb-6">
-                  WordPress sites need regular care. Our maintenance plan
-                  handles everything so you can focus on your business.
+                <p class="text-white/50 leading-relaxed mb-6" data-i18n="maintenance.desc">
+                  Mantén tu sitio web seguro y funcionando sin problemas con nuestro
+                  plan de mantenimiento básico mensual.
                 </p>
 
                 <div class="flex items-baseline gap-2 mb-6">
                   <span class="text-4xl sm:text-5xl font-bold text-gradient"
-                    >$29</span
+                    >$150</span
                   >
-                  <span class="text-white/45">/month</span>
+                  <span class="text-white/45" data-i18n="maintenance.month">/mes</span>
                 </div>
 
                 <ul class="space-y-3 mb-6">
                   {
                     [
-                      "Daily automated backups",
-                      "WordPress & plugin updates",
-                      "Security monitoring & malware scans",
-                      "SSL certificate management",
-                      "Uptime monitoring (99.9%)",
-                      "Priority email support",
+                      { es: "Actualizaciones de seguridad", en: "Security updates" },
+                      { es: "Respaldos semanales", en: "Weekly backups" },
+                      { es: "Monitoreo de uptime", en: "Uptime monitoring" },
+                      { es: "1 hora de cambios menores", en: "1 hour of minor changes" },
                     ].map((feature) => (
                       <li class="flex items-center gap-2.5 text-sm text-white/70">
                         <svg
@@ -1129,7 +1359,7 @@ const getIcon = (name: string) => {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        {feature}
+                        <span data-es={feature.es} data-en={feature.en}>{feature.es}</span>
                       </li>
                     ))
                   }
@@ -1139,7 +1369,7 @@ const getIcon = (name: string) => {
                   href="#contact"
                   class="btn-maintenance inline-flex items-center"
                 >
-                  <span>Add to Your Package</span>
+                  <span data-i18n="maintenance.cta">Agregar a Tu Paquete</span>
                   <svg
                     class="w-4 h-4 ml-2"
                     fill="none"
@@ -1171,7 +1401,7 @@ const getIcon = (name: string) => {
                         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                       ></path>
                     </svg>
-                    <span>Security</span>
+                    <span data-i18n="maintenance.security">Seguridad</span>
                   </div>
                   <div class="maintenance-icon-item">
                     <svg
@@ -1187,7 +1417,7 @@ const getIcon = (name: string) => {
                         d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                       ></path>
                     </svg>
-                    <span>Updates</span>
+                    <span data-i18n="maintenance.updates">Actualizaciones</span>
                   </div>
                   <div class="maintenance-icon-item">
                     <svg
@@ -1203,7 +1433,7 @@ const getIcon = (name: string) => {
                         d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
                       ></path>
                     </svg>
-                    <span>Backups</span>
+                    <span data-i18n="maintenance.backups">Respaldos</span>
                   </div>
                   <div class="maintenance-icon-item">
                     <svg
@@ -1218,7 +1448,7 @@ const getIcon = (name: string) => {
                         stroke-width="1.5"
                         d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
-                    <span>Speed</span>
+                    <span data-i18n="maintenance.speed">Velocidad</span>
                   </div>
                 </div>
               </div>
@@ -1239,19 +1469,20 @@ const getIcon = (name: string) => {
         class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center relative z-10"
         data-animate="fade-up"
       >
-        <span class="section-tag">Ready to Start?</span>
+        <span class="section-tag" data-i18n="cta.tag">¿Listo para Empezar?</span>
         <h2
           class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-5 text-white leading-tight"
+          data-i18n="cta.title"
         >
-          Get Your Professional<br />
-          <span class="text-gradient">Landing Page Today</span>
+          Obtén Tu Landing Page<br />
+          <span class="text-gradient">Profesional Hoy</span>
         </h2>
-        <p class="text-base sm:text-lg text-white/45 mb-8 max-w-xl mx-auto">
-          Join 50+ US businesses that chose quality over price.
+        <p class="text-base sm:text-lg text-white/45 mb-8 max-w-xl mx-auto" data-i18n="cta.desc">
+          Únete a más de 50 negocios en USA que eligieron calidad sobre precio.
         </p>
 
         <a href="#contact" class="btn-cta group">
-          <span>Get Your Free Quote</span>
+          <span data-i18n="cta.button">Obtener Cotización Gratis</span>
           <svg
             class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
             fill="none"
@@ -1271,9 +1502,9 @@ const getIcon = (name: string) => {
         >
           {
             [
-              "Satisfaction guaranteed",
-              "7-day delivery",
-              "30 days free support",
+              { es: "Satisfacción garantizada", en: "Satisfaction guaranteed" },
+              { es: "Entrega en 7 días", en: "7-day delivery" },
+              { es: "30 días de soporte gratis", en: "30 days free support" },
             ].map((item) => (
               <span class="flex items-center gap-1.5">
                 <svg
@@ -1289,7 +1520,7 @@ const getIcon = (name: string) => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                {item}
+                <span data-es={item.es} data-en={item.en}>{item.es}</span>
               </span>
             ))
           }
@@ -1594,6 +1825,34 @@ const getIcon = (name: string) => {
 
   .nav-link:hover {
     color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    .nav-blur .container-main {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .nav-blur img {
+      width: 90px;
+      height: auto;
+    }
+
+    .nav-blur .btn-primary {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .nav-blur .btn-primary svg {
+      width: 0.875rem;
+      height: 0.875rem;
+      margin-left: 0.25rem;
+    }
+
+    .lang-toggle {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+    }
   }
 
   /* ===== BUTTONS ===== */
@@ -1916,227 +2175,580 @@ const getIcon = (name: string) => {
     color: #fff;
   }
 
-  /* ===== PRICING CARDS ===== */
-  .pricing-card {
-    position: relative;
-    padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 0.875rem;
-    transition: all 0.3s;
+  /* ===== COMPARISON SECTION ===== */
+  .comparison-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 56rem;
+    margin: 0 auto;
   }
 
-  @media (min-width: 640px) {
-    .pricing-card {
-      padding: 1.5rem;
+  @media (min-width: 768px) {
+    .comparison-container {
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0;
     }
   }
 
-  .pricing-card:hover {
-    transform: translateY(-3px);
+  /* Competitors Column */
+  .comparison-competitors {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .comparison-competitors {
+      padding-right: 1.5rem;
+    }
+  }
+
+  .comparison-header-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.5rem;
+  }
+
+  .competitor-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+  }
+
+  .competitor-row:hover {
+    background: rgba(255, 255, 255, 0.03);
     border-color: rgba(255, 255, 255, 0.08);
   }
 
-  .pricing-card-featured {
-    background: rgba(249, 115, 22, 0.03);
-    border-color: rgba(249, 115, 22, 0.12);
+  .competitor-warning {
+    background: rgba(239, 68, 68, 0.03);
+    border-color: rgba(239, 68, 68, 0.1);
   }
 
-  .pricing-card-featured:hover {
-    border-color: rgba(249, 115, 22, 0.2);
-  }
-
-  .pricing-card-warning {
+  .competitor-warning:hover {
     border-color: rgba(239, 68, 68, 0.15);
   }
 
-  .pricing-card-warning:hover {
-    border-color: rgba(239, 68, 68, 0.25);
+  .competitor-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  /* ===== PACKAGE CARDS ===== */
-  .package-card {
+  .competitor-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .competitor-warning-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: 50%;
+    color: #f87171;
+  }
+
+  .competitor-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .competitor-price {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .competitor-warning .competitor-price {
+    text-decoration: line-through;
+    text-decoration-color: rgba(239, 68, 68, 0.5);
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .competitor-time {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .competitor-warning-text {
+    font-size: 0.7rem;
+    color: rgba(248, 113, 113, 0.7);
+    line-height: 1.4;
+  }
+
+  /* VS Divider */
+  .comparison-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+
+  .comparison-vs span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (min-width: 768px) {
+    .comparison-vs {
+      padding: 0 1rem;
+    }
+    .comparison-vs span {
+      width: 3rem;
+      height: 3rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  /* Featured (Codebrand) Column */
+  .comparison-featured {
     position: relative;
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex: 1;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(234, 88, 12, 0.04) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.2);
     border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .comparison-featured {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .featured-badge-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.5rem;
+    background: linear-gradient(90deg, #f97316, #ea580c);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .featured-content {
     padding: 1.5rem;
-    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .featured-logo {
+    margin-bottom: 1.25rem;
+    opacity: 0.9;
+  }
+
+  .featured-price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .featured-price-old {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: line-through;
+    text-decoration-color: rgba(239, 68, 68, 0.5);
+  }
+
+  .featured-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   @media (min-width: 640px) {
-    .package-card {
+    .featured-price {
+      font-size: 3rem;
+    }
+  }
+
+  .featured-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #10b981;
+    margin-bottom: 1.25rem;
+  }
+
+  .featured-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .featured-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .featured-savings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+  }
+
+  .savings-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .savings-amount {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #10b981;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 767px) {
+    .comparison-competitors {
+      order: 2;
+    }
+    .comparison-vs {
+      order: 1;
+    }
+    .comparison-featured {
+      order: 0;
+    }
+    .competitor-row {
+      padding: 0.875rem 1rem;
+    }
+    .featured-content {
+      padding: 1.25rem;
+    }
+    .featured-price {
+      font-size: 2.25rem;
+    }
+    .featured-benefits li {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* ===== PACKAGES SECTION ===== */
+  .packages-section {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .packages-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .packages-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .packages-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  .packages-subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .packages-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  /* Package Card Base */
+  .pkg-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  @media (min-width: 640px) {
+    .pkg-card {
       padding: 2rem;
     }
   }
 
-  .package-card:hover {
+  .pkg-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   }
 
-  .package-card-standard {
-    background: rgba(16, 185, 129, 0.03);
-    border-color: rgba(16, 185, 129, 0.15);
-    overflow: hidden;
+  /* Featured Card */
+  .pkg-card-featured {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.06) 0%, rgba(234, 88, 12, 0.03) 100%);
+    border-color: rgba(249, 115, 22, 0.2);
   }
 
-  .package-card-standard:hover {
-    border-color: rgba(16, 185, 129, 0.25);
+  .pkg-card-featured:hover {
+    border-color: rgba(249, 115, 22, 0.35);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
   }
 
-  .package-glow-emerald {
+  /* Popular Badge */
+  .pkg-popular-badge {
     position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-      circle,
-      rgba(16, 185, 129, 0.08) 0%,
-      transparent 50%
-    );
-    pointer-events: none;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
   }
 
-  .text-gradient-emerald {
-    background: linear-gradient(135deg, #10b981, #34d399, #10b981);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-move 4s ease infinite;
-  }
-
-  .btn-package-standard {
+  /* Package Badge */
+  .pkg-badge {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #10b981, #059669);
-    border: none;
+    gap: 0.375rem;
+    padding: 0.375rem 0.75rem;
     border-radius: 0.5rem;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.875rem;
-    transition: all 0.25s;
-    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
-  }
-
-  .btn-package-standard:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(16, 185, 129, 0.4);
-  }
-
-  .package-card-premium {
-    background: rgba(249, 115, 22, 0.03);
-    border-color: rgba(249, 115, 22, 0.15);
-    overflow: hidden;
-  }
-
-  .package-card-premium:hover {
-    border-color: rgba(249, 115, 22, 0.25);
-  }
-
-  .package-glow {
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-      circle,
-      rgba(249, 115, 22, 0.08) 0%,
-      transparent 50%
-    );
-    pointer-events: none;
-  }
-
-  .package-header {
-    text-align: center;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 1.5rem;
-  }
-
-  .package-badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 9999px;
-    font-size: 0.6875rem;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .pkg-badge-standard {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
     color: #10b981;
   }
 
-  .package-badge-premium {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: linear-gradient(
-      135deg,
-      rgba(249, 115, 22, 0.2),
-      rgba(251, 191, 36, 0.2)
-    );
-    border: 1px solid rgba(249, 115, 22, 0.3);
-    border-radius: 9999px;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .pkg-badge-performance {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
     color: #f97316;
   }
 
-  .package-features {
+  /* Package Header */
+  .pkg-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .pkg-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .pkg-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.375rem;
+    flex-wrap: wrap;
+  }
+
+  .pkg-price {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .pkg-price-gradient {
+    background: linear-gradient(135deg, #f97316, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .pkg-price-plus {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .pkg-price-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Divider */
+  .pkg-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin-bottom: 1.25rem;
+  }
+
+  .pkg-divider-gradient {
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.3), rgba(249, 115, 22, 0.1), transparent);
+  }
+
+  /* Features List */
+  .pkg-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-bottom: 1.5rem;
+    flex: 1;
   }
 
-  .package-footer {
-    text-align: center;
+  .pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
   }
 
-  .btn-package {
-    display: inline-flex;
+  .pkg-features li svg {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  /* Footer */
+  .pkg-footer {
+    margin-top: auto;
+  }
+
+  .pkg-best-for {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.875rem;
+    font-style: italic;
+  }
+
+  /* Buttons */
+  .pkg-btn {
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     width: 100%;
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .pkg-btn-standard {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
     color: #fff;
-    font-weight: 600;
-    font-size: 0.875rem;
-    transition: all 0.25s;
   }
 
-  .btn-package:hover {
+  .pkg-btn-standard:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .btn-package-premium {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, var(--color-orange), #ea580c);
-    border: none;
-    border-radius: 0.5rem;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.875rem;
-    transition: all 0.25s;
-    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
-  }
-
-  .btn-package-premium:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(249, 115, 22, 0.4);
+  }
+
+  .pkg-btn-featured {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35);
+  }
+
+  .pkg-btn-featured:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.45);
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 640px) {
+    .pkg-card {
+      padding: 1.25rem;
+    }
+    .pkg-card-featured {
+      margin-top: 1rem;
+    }
+    .pkg-price {
+      font-size: 2rem;
+    }
+    .pkg-features li {
+      font-size: 0.8rem;
+    }
+    .pkg-btn {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.8rem;
+    }
   }
 
   /* ===== PORTFOLIO CARDS ===== */
@@ -2336,37 +2948,140 @@ const getIcon = (name: string) => {
     transform: scale(1.05);
   }
 
-  /* ===== PROCESS CARDS ===== */
-  .process-card {
-    text-align: center;
-    padding: 1rem;
+  /* ===== PROCESS SECTION ===== */
+  .process-wrapper {
+    max-width: 56rem;
+    margin: 0 auto;
   }
 
-  .process-number {
-    font-size: 2.5rem;
-    font-weight: 900;
-    line-height: 1;
-    background: linear-gradient(
-      180deg,
-      rgba(249, 115, 22, 1) 0%,
-      transparent 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.75rem;
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .process-icon {
+  @media (min-width: 768px) {
+    .process-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .process-card-new {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  @media (min-width: 768px) {
+    .process-card-new {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem 1.25rem 2rem;
+    }
+  }
+
+  .process-card-new:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(249, 115, 22, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .process-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--color-orange);
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 0.625rem;
+  }
+
+  @media (min-width: 768px) {
+    .process-step-number {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .process-card-content {
+    flex: 1;
+  }
+
+  .process-icon-new {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
     background: linear-gradient(135deg, var(--color-orange), #ea580c);
     border-radius: 0.75rem;
     color: #fff;
-    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.25);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.25);
+    margin-bottom: 0.875rem;
+  }
+
+  @media (max-width: 767px) {
+    .process-icon-new {
+      display: none;
+    }
+  }
+
+  .process-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.375rem;
+  }
+
+  @media (min-width: 768px) {
+    .process-title {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .process-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .process-desc {
+      font-size: 0.875rem;
+    }
+  }
+
+  .process-connector {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .process-connector {
+      display: block;
+      position: absolute;
+      top: 1.5rem;
+      right: -0.75rem;
+      width: 1.5rem;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(249, 115, 22, 0.5), rgba(249, 115, 22, 0.1));
+    }
   }
 
   /* ===== FAQ ===== */
@@ -2569,26 +3284,6 @@ const getIcon = (name: string) => {
       transform: none;
     }
 
-    /* Better mobile hero spacing */
-    .section-spacing-top {
-      padding-top: calc(var(--section-spacing) + 2rem);
-    }
-
-    /* Improve hero grid on mobile */
-    .hero-grid {
-      gap: 2rem;
-    }
-
-    /* Better stat card sizing on mobile */
-    .stat-value {
-      font-size: 1.75rem;
-    }
-
-    /* Improve form on mobile */
-    .form-card {
-      padding: 1.25rem;
-    }
-
     /* Better pricing cards on mobile */
     .pricing-card {
       padding: 1rem;
@@ -2630,6 +3325,292 @@ const getIcon = (name: string) => {
     }
   }
 
+  /* ===== MOBILE LAYOUT IMPROVEMENTS ===== */
+  @media (max-width: 640px) {
+    /* Root spacing adjustments */
+    :root {
+      --section-spacing: 3rem;
+    }
+
+    /* Container padding */
+    .container-main {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .hero-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Hero section with ribbon offset */
+    .hero-container.py-32 {
+      padding-top: 1.5rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    /* Hero grid spacing */
+    .hero-grid {
+      gap: 2rem;
+    }
+
+    /* Hero content adjustments */
+    .hero-content {
+      padding-top: 0;
+    }
+
+    /* Badge adjustment */
+    .badge-glow {
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge-glow span.text-sm {
+      font-size: 0.75rem;
+    }
+
+    /* Hero headline mobile */
+    .hero-content h1 {
+      font-size: 2rem !important;
+      line-height: 1.1 !important;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h1 .price-original {
+      font-size: 0.45em;
+    }
+
+    .hero-content h1 .price-current {
+      font-size: 1em;
+    }
+
+    /* Subheadline mobile */
+    .hero-content p.text-base {
+      font-size: 0.9rem !important;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Stats grid mobile */
+    .hero-content .grid-cols-3 {
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      padding: 0.625rem 0.5rem;
+      border-radius: 0.625rem;
+    }
+
+    .stat-value {
+      font-size: 1.375rem !important;
+    }
+
+    .stat-unit {
+      font-size: 0.7rem;
+    }
+
+    .stat-desc {
+      font-size: 0.6rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Trust badges mobile - horizontal scroll */
+    .hero-content .flex-wrap {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      margin: 0 -1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      gap: 0.5rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .hero-content .flex-wrap::-webkit-scrollbar {
+      display: none;
+    }
+
+    .trust-badge {
+      flex-shrink: 0;
+      padding: 0.3rem 0.625rem;
+      font-size: 0.675rem;
+      white-space: nowrap;
+    }
+
+    .trust-badge svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    /* Form card mobile */
+    .form-card {
+      padding: 1.25rem;
+      border-radius: 1rem;
+    }
+
+    .form-card .flex.items-center.gap-3 {
+      gap: 0.625rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-card .w-11 {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .form-card .w-11 svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
+    .form-card .text-lg {
+      font-size: 1rem;
+    }
+
+    .form-card .text-xs {
+      font-size: 0.675rem;
+    }
+
+    /* Form inputs mobile */
+    .form-label {
+      font-size: 0.7rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .form-input {
+      padding: 0.625rem 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    /* Submit button mobile */
+    .btn-submit {
+      padding: 0.875rem 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    /* Form footer mobile */
+    .form-card .flex.items-center.justify-center.gap-4.text-xs {
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    /* Section headers mobile */
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      font-size: 0.625rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem !important;
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+    }
+
+    /* Feature cards mobile */
+    .feature-card {
+      padding: 1rem;
+    }
+
+    .feature-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Pricing comparison mobile */
+    .pricing-card {
+      padding: 0.875rem;
+    }
+
+    /* Package cards mobile */
+    .package-card {
+      padding: 1.25rem;
+    }
+
+    /* Process cards mobile */
+    .process-card {
+      padding: 0.75rem;
+    }
+
+    .process-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+
+    /* Portfolio cards mobile */
+    .portfolio-card {
+      border-radius: 0.875rem;
+    }
+
+    /* FAQ mobile */
+    .faq-question {
+      padding: 0.875rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .faq-answer {
+      padding: 0 1rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* Why badges mobile */
+    .why-badge {
+      padding: 0.625rem 0.875rem;
+      font-size: 0.75rem;
+    }
+
+    /* Testimonial cards mobile */
+    .testimonial-card {
+      padding: 1.25rem;
+    }
+
+    /* Footer mobile */
+    footer {
+      padding: 2rem 0;
+    }
+  }
+
+  /* ===== EXTRA SMALL SCREENS ===== */
+  @media (max-width: 380px) {
+    .hero-content h1 {
+      font-size: 1.75rem !important;
+    }
+
+    .stat-value {
+      font-size: 1.25rem !important;
+    }
+
+    .stat-desc {
+      font-size: 0.55rem;
+      letter-spacing: 0.02em;
+    }
+
+    .countdown-block {
+      min-width: 2rem;
+      padding: 0.25rem 0.25rem;
+    }
+
+    .countdown-number {
+      font-size: 0.9rem;
+    }
+
+    .countdown-unit {
+      font-size: 0.4rem;
+    }
+
+    .countdown-spots {
+      font-size: 0.6rem;
+      padding: 0.2rem 0.4rem;
+    }
+  }
+
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -2667,11 +3648,1108 @@ const getIcon = (name: string) => {
       transform: none !important;
     }
   }
+
+  /* ===== COUNTDOWN RIBBON ===== */
+  .countdown-ribbon {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .countdown-ribbon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      rgba(249, 115, 22, 0.08) 0%,
+      rgba(239, 68, 68, 0.12) 50%,
+      rgba(249, 115, 22, 0.08) 100%
+    );
+    pointer-events: none;
+  }
+
+  .countdown-ribbon-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.03) 50%,
+      transparent 100%
+    );
+    animation: ribbon-shine 6s ease-in-out infinite;
+  }
+
+  @keyframes ribbon-shine {
+    0% { left: -100%; }
+    50%, 100% { left: 200%; }
+  }
+
+  .countdown-ribbon-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .countdown-left {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .countdown-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-radius: 50%;
+    animation: icon-pulse 2s ease-in-out infinite;
+  }
+
+  .countdown-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    color: #f97316;
+  }
+
+  @keyframes icon-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(249, 115, 22, 0); }
+  }
+
+  .countdown-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .countdown-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .countdown-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 3rem;
+    padding: 0.5rem 0.625rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .countdown-number {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .countdown-seconds {
+    color: #f97316;
+    animation: seconds-glow 1s ease-in-out infinite;
+  }
+
+  @keyframes seconds-glow {
+    0%, 100% { text-shadow: 0 0 6px rgba(249, 115, 22, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(249, 115, 22, 0.7); }
+  }
+
+  .countdown-unit {
+    font-size: 0.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.25rem;
+  }
+
+  .countdown-separator {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.3);
+    animation: blink 1s ease-in-out infinite;
+    margin: 0 0.25rem;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .countdown-spots-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .countdown-spots-pulse {
+    position: absolute;
+    inset: -2px;
+    background: rgba(249, 115, 22, 0.2);
+    border-radius: 9999px;
+    animation: spots-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes spots-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.15); opacity: 0; }
+  }
+
+  .countdown-spots {
+    position: relative;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.375rem 0.875rem;
+    background: rgba(249, 115, 22, 0.15);
+    border-radius: 9999px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+  }
+
+  .countdown-spots strong {
+    color: #f97316;
+    font-weight: 700;
+  }
+
+  /* Adjust hero section to account for ribbon */
+  .section-spacing-top {
+    padding-top: 8.5rem !important;
+  }
+
+  @media (max-width: 768px) {
+    .countdown-ribbon {
+      top: 3.5rem;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      background: rgba(0, 0, 0, 0.9);
+    }
+    .countdown-ribbon-inner {
+      gap: 0.625rem;
+      padding: 0.5rem 0.75rem;
+      justify-content: center;
+    }
+    .countdown-left {
+      display: none;
+    }
+    .countdown-timer {
+      gap: 0.25rem;
+    }
+    .countdown-block {
+      min-width: 2.375rem;
+      padding: 0.35rem 0.4rem;
+    }
+    .countdown-number {
+      font-size: 1rem;
+    }
+    .countdown-unit {
+      font-size: 0.5rem;
+      margin-top: 0.125rem;
+    }
+    .countdown-separator {
+      font-size: 0.875rem;
+      margin: 0 0.125rem;
+    }
+    .countdown-spots {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.5rem;
+    }
+    .countdown-spots-pulse {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .countdown-ribbon {
+      top: 3.25rem;
+    }
+    .countdown-ribbon-inner {
+      gap: 0.375rem;
+      padding: 0.375rem 0.5rem;
+    }
+    .countdown-timer {
+      gap: 0.125rem;
+    }
+    .countdown-block {
+      min-width: 2rem;
+      padding: 0.25rem 0.3rem;
+      border-radius: 0.375rem;
+    }
+    .countdown-number {
+      font-size: 0.875rem;
+    }
+    .countdown-unit {
+      font-size: 0.4rem;
+      margin-top: 0.0625rem;
+    }
+    .countdown-separator {
+      font-size: 0.75rem;
+      margin: 0 0.0625rem;
+    }
+    .countdown-spots {
+      font-size: 0.575rem;
+      padding: 0.2rem 0.4rem;
+    }
+  }
+
+  /* ===== PRICE STYLES ===== */
+  .price-original {
+    font-size: 0.5em;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: line-through;
+    text-decoration-color: rgba(239, 68, 68, 0.7);
+    margin-right: 0.5rem;
+  }
+
+
+  /* ===== IMPROVED FORM ===== */
+  .form-input-lg {
+    padding: 0.875rem 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  .btn-submit-new {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-submit-new:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+  }
+
+  .btn-submit-new:active {
+    transform: translateY(0);
+  }
+
+  .btn-submit-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-submit-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: btn-shine 3s ease-in-out infinite;
+  }
+
+  @keyframes btn-shine {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+  }
+
+  .form-guarantees {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 0.5rem;
+  }
+
+  .guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ===== SOCIAL PROOF BAR ===== */
+  .social-proof-bar {
+    position: relative;
+    padding: 1.5rem 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(249,115,22,0.03) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .social-proof-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .social-proof-content {
+      justify-content: space-between;
+    }
+  }
+
+  .proof-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .rating-stars {
+    display: flex;
+    gap: 0.125rem;
+  }
+
+  .rating-text {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .rating-text strong {
+    color: #fbbf24;
+  }
+
+  .proof-divider {
+    width: 1px;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .proof-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .proof-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.125rem;
+  }
+
+  .proof-stat-number {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  .proof-stat-label {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .proof-trusted {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .trusted-logos {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .trusted-logo {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* ===== ENHANCED CARDS ===== */
+  .feature-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-orange), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feature-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(249, 115, 22, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+
+  .feature-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(251, 191, 36, 0.1));
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 0.75rem;
+    color: var(--color-orange);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.25), rgba(251, 191, 36, 0.2));
+  }
+
+  /* ===== PROCESS CARDS ===== */
+  .process-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .process-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  }
+
+  .process-number {
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+  }
+
+  .process-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    margin: 0 auto;
+    color: var(--color-orange);
+    transition: all 0.3s ease;
+  }
+
+  .process-card:hover .process-icon {
+    transform: scale(1.1);
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+
+  /* ===== PRICING CARDS ===== */
+  .pricing-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .pricing-card-featured {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(251, 191, 36, 0.05));
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: scale(1.02);
+  }
+
+  .pricing-card-featured:hover {
+    transform: scale(1.02) translateY(-4px);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+  }
+
+  .pricing-card-warning {
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+
+  /* ===== PACKAGE CARDS ===== */
+  .package-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .package-card-premium {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(249, 115, 22, 0.02));
+  }
+
+  .package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .package-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .package-card:hover .package-glow {
+    opacity: 1;
+  }
+
+  .package-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .package-badge-premium {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(251, 191, 36, 0.15));
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-orange);
+  }
+
+  .package-features {
+    padding: 1.5rem;
+  }
+
+  .package-footer {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+
+  .btn-package-premium {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-align: center;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  }
+
+  .btn-package-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+  }
+
+  /* ===== LANGUAGE TOGGLE ===== */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .lang-option {
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    color: rgba(255, 255, 255, 0.45);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .lang-option:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .lang-option.active {
+    background: linear-gradient(135deg, var(--color-orange), #ea580c);
+    color: #fff;
+  }
+
+  .lang-separator {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* ===== TESTIMONIAL CARDS ===== */
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .testimonial-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.625rem;
+    background: rgba(66, 133, 244, 0.1);
+    border: 1px solid rgba(66, 133, 244, 0.2);
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* ===== FAQ IMPROVED ===== */
+  .faq-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-item[open] {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(249, 115, 22, 0.2);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    transition: color 0.2s ease;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    color: var(--color-orange);
+  }
+
+  .faq-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-icon {
+    background: var(--color-orange);
+    color: white;
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  /* ===== WHY BADGE IMPROVED ===== */
+  .why-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.625rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+  }
+
+  .why-badge:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(16, 185, 129, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* ===== MAINTENANCE CARD IMPROVED ===== */
+  .maintenance-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.02), rgba(6, 182, 212, 0.015));
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .maintenance-card {
+      padding: 2.5rem;
+    }
+  }
+
+  .maintenance-glow {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .maintenance-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maintenance-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .maintenance-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    color: var(--color-emerald);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+
+  .maintenance-icon-item:hover {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .maintenance-icon-item span {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .btn-maintenance {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-emerald), #059669);
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  }
+
+  .btn-maintenance:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+  }
 </style>
 
 <script>
   import gsap from "gsap";
 
+  // ===== I18N SYSTEM =====
+  const translations: Record<string, Record<string, string>> = {
+    // Navigation
+    "nav.pricing": { es: "Precios", en: "Pricing" },
+    "nav.features": { es: "Incluye", en: "Features" },
+    "nav.process": { es: "Proceso", en: "Process" },
+    "nav.portfolio": { es: "Portafolio", en: "Portfolio" },
+    "nav.reviews": { es: "Reseñas", en: "Reviews" },
+    "nav.cta": { es: "Comenzar", en: "Get Started" },
+
+    // Hero
+    "hero.urgency": { es: "Oferta especial termina en", en: "Special offer ends in" },
+    "countdown.days": { es: "Días", en: "Days" },
+    "countdown.hours": { es: "Hrs", en: "Hrs" },
+    "countdown.mins": { es: "Min", en: "Min" },
+    "countdown.secs": { es: "Seg", en: "Sec" },
+    "hero.badge": { es: "Solo quedan <strong>5 cupos</strong>", en: "Only <strong>5 spots</strong> left" },
+    "hero.availableBadge": { es: "Aceptando nuevos clientes", en: "Accepting new clients" },
+    "hero.priceOriginal": { es: "$1,500", en: "$1,500" },
+    "hero.title1": { es: "Landing Page", en: "Landing Page" },
+    "hero.subtitle": {
+      es: "Las agencias de USA cobran <span class='text-white/90 font-medium'>$1,500 - $3,000</span> por la misma calidad. Obtén resultados premium con <span class='text-orange-400 font-semibold'>70% menos</span>.",
+      en: "US agencies charge <span class='text-white/90 font-medium'>$1,500 - $3,000</span> for the same quality. Get premium results at <span class='text-orange-400 font-semibold'>70% less</span>."
+    },
+    "hero.stats.days": { es: "días", en: "days" },
+    "hero.stats.delivery": { es: "Entrega Rápida", en: "Fast Delivery" },
+    "hero.stats.clients": { es: "Clientes USA", en: "US Clients" },
+    "hero.stats.savings": { es: "Ahorro", en: "Savings" },
+    "hero.badges.timezone": { es: "Zona Horaria USA", en: "US Timezone" },
+    "hero.badges.bilingual": { es: "Equipo Bilingüe", en: "Bilingual Team" },
+    "hero.badges.guarantee": { es: "Satisfacción Garantizada", en: "Satisfaction Guaranteed" },
+
+    // Form
+    "form.title": { es: "Cotización Gratis", en: "Get Your Free Quote" },
+    "form.response": { es: "Respuesta en 2 horas", en: "Response within 2 hours" },
+    "form.name": { es: "Nombre *", en: "Name *" },
+    "form.email": { es: "Correo *", en: "Email *" },
+    "form.phone": { es: "Teléfono *", en: "Phone *" },
+    "form.industry": { es: "Industria *", en: "Industry *" },
+    "form.select": { es: "Seleccionar...", en: "Select..." },
+    "form.message": { es: "Cuéntanos sobre tu proyecto *", en: "Tell us about your project *" },
+    "form.submit": { es: "Recibir Mi Cotización", en: "Get My Quote" },
+    "form.guarantee1": { es: "Respuesta garantizada en 2 horas", en: "Guaranteed response in 2 hours" },
+    "form.guarantee2": { es: "Sin compromiso, 100% gratis", en: "No commitment, 100% free" },
+    "form.guarantee3": { es: "Atención en español e inglés", en: "Support in Spanish & English" },
+
+    // Social Proof
+    "social.rating": { es: "en Google Reviews", en: "on Google Reviews" },
+    "social.clients": { es: "Clientes USA", en: "US Clients" },
+    "social.days": { es: "Días Entrega", en: "Days Delivery" },
+    "social.satisfaction": { es: "Satisfacción", en: "Satisfaction" },
+    "social.trusted": { es: "Confían en nosotros", en: "Trusted by" },
+    "form.secure": { es: "Seguro", en: "Secure" },
+    "form.nocard": { es: "sin tarjeta", en: "no card" },
+    "form.free": { es: "100% gratis", en: "100% free" },
+
+    // Pricing
+    "pricing.tag": { es: "Precios Transparentes", en: "Transparent Pricing" },
+    "pricing.title": { es: "Compara <span class='text-gradient'>&</span> Ahorra", en: "Compare <span class='text-gradient'>&</span> Save" },
+    "pricing.subtitle": { es: "Descubre por qué los empresarios inteligentes eligen Codebrand.", en: "See why smart business owners choose Codebrand." },
+    "pricing.others": { es: "Otros", en: "Others" },
+    "pricing.recommended": { es: "Recomendado", en: "Recommended" },
+    "pricing.delivery": { es: "Entrega en 7 días", en: "Delivery in 7 days" },
+    "pricing.benefit1": { es: "Calidad de agencia USA", en: "US agency quality" },
+    "pricing.benefit2": { es: "Soporte post-lanzamiento", en: "Post-launch support" },
+    "pricing.benefit3": { es: "Equipo bilingüe", en: "Bilingual team" },
+    "pricing.youSave": { es: "Ahorras", en: "You save" },
+    "pricing.risky": { es: "Riesgoso", en: "Risky" },
+    "pricing.choosePackage": { es: "Elige Tu <span class='text-gradient'>Paquete</span>", en: "Choose Your <span class='text-gradient'>Package</span>" },
+    "pricing.packageSubtitle": { es: "Dos opciones diseñadas para diferentes necesidades", en: "Two options designed for different needs" },
+    "pricing.popular": { es: "Más Popular", en: "Most Popular" },
+    "pricing.whyTitle": { es: "¿Por qué podemos ofrecer estos precios?", en: "Why can we offer these prices?" },
+    "pricing.whyDesc": {
+      es: "Somos una agencia enfocada en USA basada en Honduras. Costos más bajos, misma calidad. Nuestro equipo bilingüe trabaja en <span class='text-white/80 font-medium'>tu zona horaria</span> y entrega trabajo de estándar estadounidense.",
+      en: "We're a US-facing agency based in Honduras. Lower costs, same quality. Our bilingual team works in <span class='text-white/80 font-medium'>your timezone</span> and delivers US-standard work."
+    },
+
+    // Features
+    "features.tag": { es: "Qué Incluye", en: "What's Included" },
+    "features.title": { es: "Todo Lo Que <span class='text-gradient'>Necesitas</span>", en: "Everything You <span class='text-gradient'>Need</span>" },
+    "features.subtitle": { es: "Sin costos ocultos. Esto es exactamente lo que obtienes por $450.", en: "No hidden fees. Here's exactly what you get for $450." },
+
+    // Process
+    "process.tag": { es: "Cómo Funciona", en: "How It Works" },
+    "process.title": { es: "Proceso <span class='text-gradient'>Simple</span> en 3 Pasos", en: "Simple <span class='text-gradient'>3-Step</span> Process" },
+
+    // Reviews
+    "reviews.tag": { es: "Testimonios", en: "Testimonials" },
+    "reviews.title": { es: "Lo Que Dicen <span class='text-gradient'>Nuestros Clientes</span>", en: "What Clients <span class='text-gradient'>Say</span>" },
+    "reviews.subtitle": { es: "Opiniones reales de negocios que hemos ayudado a crecer.", en: "Real feedback from businesses we've helped grow." },
+    "reviews.verified": { es: "Reseña verificada de Google", en: "Verified Google Review" },
+
+    // Portfolio
+    "portfolio.tag": { es: "Nuestro Trabajo", en: "Our Work" },
+    "portfolio.title": { es: "Proyectos <span class='text-gradient'>Recientes</span>", en: "Recent <span class='text-gradient'>Projects</span>" },
+    "portfolio.subtitle": { es: "Landing pages WordPress reales que hemos creado para negocios en USA.", en: "Real WordPress landing pages we've built for US businesses." },
+
+    // FAQ
+    "faq.tag": { es: "¿Preguntas?", en: "Questions?" },
+    "faq.title": { es: "Preguntas <span class='text-gradient'>Frecuentes</span>", en: "Frequently <span class='text-gradient'>Asked</span>" },
+
+    // Maintenance
+    "maintenance.tag": { es: "Mantenimiento Web", en: "Web Maintenance" },
+    "maintenance.title": { es: "Mantenimiento <span class='text-gradient'>Básico</span>", en: "<span class='text-gradient'>Basic</span> Maintenance" },
+    "maintenance.desc": { es: "Mantén tu sitio web seguro y funcionando sin problemas con nuestro plan de mantenimiento básico mensual.", en: "Keep your website secure and running smoothly with our basic monthly maintenance plan." },
+    "maintenance.month": { es: "/mes", en: "/month" },
+    "maintenance.cta": { es: "Agregar a Tu Paquete", en: "Add to Your Package" },
+    "maintenance.security": { es: "Seguridad", en: "Security" },
+    "maintenance.updates": { es: "Actualizaciones", en: "Updates" },
+    "maintenance.backups": { es: "Respaldos", en: "Backups" },
+    "maintenance.speed": { es: "Velocidad", en: "Speed" },
+
+    // CTA
+    "cta.tag": { es: "¿Listo para Empezar?", en: "Ready to Start?" },
+    "cta.title": { es: "Obtén Tu Landing Page<br /><span class='text-gradient'>Profesional Hoy</span>", en: "Get Your Professional<br /><span class='text-gradient'>Landing Page Today</span>" },
+    "cta.desc": { es: "Únete a más de 50 negocios en USA que eligieron calidad sobre precio.", en: "Join 50+ US businesses that chose quality over price." },
+    "cta.button": { es: "Obtener Cotización Gratis", en: "Get Your Free Quote" },
+  };
+
+  // Get saved language or detect from browser
+  function getInitialLanguage(): 'es' | 'en' {
+    const saved = localStorage.getItem('codebrand-lang');
+    if (saved === 'es' || saved === 'en') return saved;
+
+    // Detect browser language
+    const browserLang = navigator.language.toLowerCase();
+    if (browserLang.startsWith('es')) return 'es';
+    return 'en';
+  }
+
+  let currentLang: 'es' | 'en' = getInitialLanguage();
+
+  function setLanguage(lang: 'es' | 'en') {
+    currentLang = lang;
+    localStorage.setItem('codebrand-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+
+    // Update toggle UI
+    document.querySelectorAll('.lang-option').forEach(el => {
+      const elLang = (el as HTMLElement).dataset.lang;
+      el.classList.toggle('active', elLang === lang);
+    });
+
+    // Update all elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = (el as HTMLElement).dataset.i18n;
+      if (key && translations[key]) {
+        el.innerHTML = translations[key][lang];
+      }
+    });
+
+    // Update all elements with data-es/data-en attributes
+    document.querySelectorAll('[data-es][data-en]').forEach(el => {
+      const htmlEl = el as HTMLElement;
+      const text = htmlEl.dataset[lang];
+      if (text) {
+        htmlEl.textContent = text;
+      }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
+      const input = el as HTMLInputElement | HTMLTextAreaElement;
+      const placeholder = input.dataset[`placeholder${lang.charAt(0).toUpperCase() + lang.slice(1)}` as 'placeholderEs' | 'placeholderEn'];
+      if (placeholder) {
+        input.placeholder = placeholder;
+      }
+    });
+
+    // Update select options
+    document.querySelectorAll('#industry-select option[data-es][data-en]').forEach(el => {
+      const option = el as HTMLOptionElement;
+      const text = option.dataset[lang];
+      if (text) {
+        option.textContent = text;
+      }
+    });
+  }
+
+  // Initialize language toggle
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.classList.contains('lang-option')) {
+        const newLang = target.dataset.lang as 'es' | 'en';
+        if (newLang && newLang !== currentLang) {
+          setLanguage(newLang);
+        }
+      }
+    });
+  }
+
+  // Set initial language
+  setLanguage(currentLang);
+
+  // ===== ANIMATIONS =====
   // Feature detection
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -2748,5 +4826,57 @@ const getIcon = (name: string) => {
       ease: "power2.out",
       delay: 0.4,
     });
+
+    // Social proof bar animation
+    gsap.from(".social-proof-bar", {
+      y: 20,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power2.out",
+      delay: 0.8,
+    });
   }
+
+  // ===== COUNTDOWN TIMER =====
+  // Fixed end date: February 13, 2026 at 23:59:59 (10 days from Feb 3, 2026)
+  const OFFER_END_DATE = new Date('2026-02-13T23:59:59');
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = OFFER_END_DATE.getTime() - now.getTime();
+
+    if (diff <= 0) {
+      // Offer expired - show zeros
+      const daysEl = document.getElementById('countdown-days');
+      const hoursEl = document.getElementById('countdown-hours');
+      const minsEl = document.getElementById('countdown-mins');
+      const secsEl = document.getElementById('countdown-secs');
+      if (daysEl) daysEl.textContent = '00';
+      if (hoursEl) hoursEl.textContent = '00';
+      if (minsEl) minsEl.textContent = '00';
+      if (secsEl) secsEl.textContent = '00';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const daysEl = document.getElementById('countdown-days');
+    const hoursEl = document.getElementById('countdown-hours');
+    const minsEl = document.getElementById('countdown-mins');
+    const secsEl = document.getElementById('countdown-secs');
+
+    if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+    if (minsEl) minsEl.textContent = String(mins).padStart(2, '0');
+    if (secsEl) secsEl.textContent = String(secs).padStart(2, '0');
+  }
+
+  // Initial update
+  updateCountdown();
+  // Update every second for live countdown
+  setInterval(updateCountdown, 1000);
+
 </script>

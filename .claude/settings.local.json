@@ -24,7 +24,29 @@
       "Bash(dir /O:-S Poppins-Regular* Poppins-Bold* Poppins-SemiBold*)",
       "Bash(findstr:*)",
       "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\" && grep -A5 \"\"is:inline\"\" {} | grep -E \"\"\\(import |from \\)\"\" | head -5')",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions status)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions diff public/sw.js)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions log --oneline -3)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions add public/sw.js)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions commit -m \"$\\(cat <<''EOF''\nfix: resolve Response body already used error in service worker\n\nClone response before consuming body in staleWhileRevalidate strategy.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions push origin master)",
+      "Bash(gh api:*)",
+      "Bash(npm audit fix:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfix: update dependencies to resolve security vulnerabilities\n\nFixes 2 high severity vulnerabilities:\n- fast-xml-parser: RangeError DoS\n- tar: Arbitrary File Creation via Hardlink Path Traversal\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "WebFetch(domain:codebrand.us)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions show 08cd970 --name-only)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions add public/sw.js src/styles/global.css)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions commit -m \"$\\(cat <<''EOF''\nfix: resolve animation visibility issues on Chrome iOS mobile\n\n- Replace CSS variable animations with direct keyframe references for \n  better Safari/Chrome iOS compatibility\n- Extend mobile breakpoint from 640px to 767px to match GSAP threshold\n- Force visibility on all GSAP-animated elements on mobile\n- Bump service worker version to clear cached CSS\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions commit -m \"$\\(cat <<''EOF''\nperf: cache third-party scripts with stale-while-revalidate\n\n- Add THIRD_PARTY_CACHE for Facebook, Ahrefs, GTM scripts\n- Cache Google profile images from lh3.googleusercontent.com\n- Only exclude tracking pixels/beacons \\(not scripts\\) from cache\n- Improves repeat visit performance for analytics scripts\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions add astro.config.mjs netlify.toml)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions commit -m \"$\\(cat <<''EOF''\nperf: reduce render-blocking CSS with inline stylesheets\n\n- Enable Astro''s inlineStylesheets: ''auto'' to inline CSS under 4kb\n- Update font preload hints to use correct WOFF2 paths\n- Larger CSS files will be preloaded instead of blocking render\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions add astro.config.mjs)",
+      "Bash(git -C /Users/ramonnuila/Documents/GitHub/codebrand/solutions commit -m \"$\\(cat <<''EOF''\nperf: bundle React + JSX runtime to eliminate module waterfall\n\nCombine react, react-dom, and jsx-runtime into single chunk\nto prevent sequential loading \\(1.5s + 1.6s + 1.6s cascade\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "WebFetch(domain:www.google.com)",
+      "Bash(lsof:*)"
     ]
   }
 }
