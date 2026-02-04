@@ -1,7 +1,7 @@
-// Codebrand Service Worker v1.0.0
+// Codebrand Service Worker v1.0.1
 // Cache-first strategy for static assets, network-first for dynamic content
 
-const CACHE_VERSION = 'codebrand-v1';
+const CACHE_VERSION = 'codebrand-v1.0.1';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
@@ -173,8 +173,9 @@ async function staleWhileRevalidate(request, cacheName) {
   const fetchPromise = fetch(request)
     .then((networkResponse) => {
       if (networkResponse.ok) {
+        const responseToCache = networkResponse.clone();
         caches.open(cacheName).then((cache) => {
-          cache.put(request, networkResponse.clone());
+          cache.put(request, responseToCache);
         });
       }
       return networkResponse;
