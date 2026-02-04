@@ -30,12 +30,17 @@ export default defineConfig({
           drop_debugger: true,
         },
       },
-      // Optimize chunk splitting for better caching
+      // Optimize chunk splitting - bundle React + JSX runtime together
       rollupOptions: {
         output: {
-          manualChunks: {
-            // Separate React into its own chunk for better caching
-            react: ['react', 'react-dom'],
+          manualChunks: (id) => {
+            // Bundle all React-related modules together to avoid waterfall
+            if (id.includes('node_modules/react') ||
+                id.includes('node_modules/react-dom') ||
+                id.includes('jsx-runtime') ||
+                id.includes('jsx-dev-runtime')) {
+              return 'react-bundle';
+            }
           },
         },
       },
