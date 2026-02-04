@@ -1,10 +1,11 @@
-// Codebrand Service Worker v1.0.2
+// Codebrand Service Worker v1.0.3
 // Cache-first strategy for static assets, network-first for dynamic content
 
-const CACHE_VERSION = 'codebrand-v1.0.2';
+const CACHE_VERSION = 'codebrand-v1.0.3';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
+const THIRD_PARTY_CACHE = `${CACHE_VERSION}-third-party`;
 
 // Assets to precache on install
 const PRECACHE_ASSETS = [
@@ -25,14 +26,23 @@ const IMAGE_PATTERNS = [
   /\.(png|jpg|jpeg|webp|avif|gif|svg|ico)$/i
 ];
 
-// Never cache these patterns
+// Third-party scripts to cache with stale-while-revalidate (24h)
+const THIRD_PARTY_SCRIPTS = [
+  /connect\.facebook\.net\/.*\.js$/i,       // fbevents.js
+  /connect\.facebook\.net\/.*config/i,       // FB config
+  /analytics\.ahrefs\.com\/analytics\.js$/i, // Ahrefs
+  /googletagmanager\.com\/gtm\.js/i,         // GTM
+  /googletagmanager\.com\/gtag/i,            // gtag
+  /lh3\.googleusercontent\.com/i             // Google profile images
+];
+
+// Never cache these patterns (tracking pixels/beacons that send data)
 const NEVER_CACHE = [
   /\/api\//,
-  /googletagmanager/,
-  /google-analytics/,
-  /facebook\.net/,
-  /analytics/,
-  /gtag/
+  /\/tr\/?(\?|$)/i,           // Facebook pixel beacon
+  /\/collect(\?|$)/i,          // GA collect endpoint
+  /google-analytics\.com\/g\/collect/i,
+  /analytics\.google\.com/i
 ];
 
 // Install event - precache essential assets
@@ -48,12 +58,13 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean old caches
 self.addEventListener('activate', (event) => {
+  const currentCaches = [STATIC_CACHE, DYNAMIC_CACHE, IMAGE_CACHE, THIRD_PARTY_CACHE];
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
           cacheNames
-            .filter((name) => name.startsWith('codebrand-') && name !== STATIC_CACHE && name !== DYNAMIC_CACHE && name !== IMAGE_CACHE)
+            .filter((name) => name.startsWith('codebrand-') && !currentCaches.includes(name))
             .map((name) => caches.delete(name))
         );
       })
@@ -69,15 +80,21 @@ self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (request.method !== 'GET') return;
 
-  // Skip cross-origin requests except for fonts and CDN
-  if (url.origin !== self.location.origin &&
-      !url.hostname.includes('fonts.googleapis.com') &&
-      !url.hostname.includes('fonts.gstatic.com')) {
+  // Never cache tracking pixels/beacons
+  if (NEVER_CACHE.some(pattern => pattern.test(url.href))) {
     return;
   }
 
-  // Never cache analytics and tracking
-  if (NEVER_CACHE.some(pattern => pattern.test(url.href))) {
+  // Handle third-party scripts with stale-while-revalidate (24h cache)
+  if (THIRD_PARTY_SCRIPTS.some(pattern => pattern.test(url.href))) {
+    event.respondWith(staleWhileRevalidate(request, THIRD_PARTY_CACHE));
+    return;
+  }
+
+  // Skip other cross-origin requests except for fonts
+  if (url.origin !== self.location.origin &&
+      !url.hostname.includes('fonts.googleapis.com') &&
+      !url.hostname.includes('fonts.gstatic.com')) {
     return;
   }
 
