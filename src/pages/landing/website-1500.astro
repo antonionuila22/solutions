@@ -27,6 +27,12 @@ const industries = [
   "Other",
 ];
 
+const services = [
+  "Web Development", "UX/UI Design", "Branding", "SEO",
+  "Social Media", "Video Editing", "3D Rendering", "Animation",
+  "Graphic Design", "Photography",
+];
+
 const features = [
   {
     title: "10 Custom Pages",
@@ -351,162 +357,77 @@ const getIcon = (name: string) => {
 
           <!-- Right: Form -->
           <div id="contact" class="hero-form-wrapper">
-            <div class="form-card">
-              <div class="form-glow"></div>
-
-              <div class="relative z-10">
-                <!-- Form Header -->
-                <div class="flex items-center gap-3 mb-6">
-                  <div
-                    class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20"
-                  >
-                    <svg
-                      class="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="text-lg font-bold text-white">
-                      Get Your Free Quote
-                    </h3>
-                    <p class="text-xs text-white/45 mt-0.5">
-                      Response within 2 hours
-                    </p>
-                  </div>
+            <contact-form data-endpoint="/api/contact">
+              <form action="/api/contact" method="POST" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
+                <input type="hidden" name="subject" value="10-Page Website $1,500 - New Lead" />
+                <input type="hidden" name="services" value="Web Development" />
+                <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+                  <label for="w15-honey">Leave empty</label>
+                  <input type="text" name="honey" id="w15-honey" tabindex="-1" autocomplete="new-password" />
                 </div>
-
-                <div class="divider-gradient mb-6"></div>
-
-                <form action="/api/contact" method="POST" class="space-y-4">
-                  <input
-                    type="text"
-                    name="honey"
-                    class="hidden"
-                    tabindex="-1"
-                    autocomplete="off"
-                  />
-
-                  <div class="grid grid-cols-2 gap-3">
+                <div class="space-y-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label class="form-label">Name *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        placeholder="John Doe"
-                        class="form-input"
-                      />
+                      <label for="w15-name" class="w15-form-label">Name *</label>
+                      <input id="w15-name" name="name" type="text" required autocomplete="name" placeholder="John Doe" class="w15-form-input" maxlength="60" minlength="2" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+" />
                     </div>
                     <div>
-                      <label class="form-label">Email *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="john@email.com"
-                        class="form-input"
-                      />
+                      <label for="w15-email" class="w15-form-label">Email *</label>
+                      <input id="w15-email" name="email" type="email" required autocomplete="email" placeholder="john@company.com" class="w15-form-input" maxlength="254" />
                     </div>
                   </div>
-
-                  <div class="grid grid-cols-2 gap-3">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label class="form-label">Phone *</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        placeholder="+1 (555) 000-0000"
-                        class="form-input"
-                      />
+                      <label for="w15-phone" class="w15-form-label">Phone *</label>
+                      <input id="w15-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+1 (555) 000-0000" class="w15-form-input" maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
                     </div>
                     <div>
-                      <label class="form-label">Industry *</label>
-                      <select
-                        name="industry"
-                        required
-                        class="form-input form-select"
-                      >
-                        <option value="" disabled selected>Select...</option>
-                        {industries.map((i) => <option value={i}>{i}</option>)}
-                      </select>
+                      <label for="w15-industry" class="w15-form-label">Industry *</label>
+                      <div class="relative">
+                        <select id="w15-industry" name="industry" required class="w15-form-input appearance-none pr-8">
+                          <option value="" disabled selected>Select</option>
+                          {industries.map((i) => <option value={i}>{i}</option>)}
+                        </select>
+                        <svg class="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                      </div>
                     </div>
                   </div>
-
-                  <input
-                    type="hidden"
-                    name="subject"
-                    value="10-Page Website $1,500 - New Lead"
-                  />
-                  <input
-                    type="hidden"
-                    name="services"
-                    value="Web Development"
-                  />
-
                   <div>
-                    <label class="form-label"
-                      >Tell us about your project *</label
-                    >
-                    <textarea
-                      name="message"
-                      required
-                      rows="3"
-                      placeholder="What does your business do? What pages do you need?"
-                      class="form-input resize-none"></textarea>
+                    <label for="w15-message" class="w15-form-label">Tell us about your project *</label>
+                    <textarea id="w15-message" name="message" rows="3" required placeholder="What does your business do? What pages do you need?" class="w15-form-input resize-none" maxlength="2000" minlength="10"></textarea>
                   </div>
-
-                  <button type="submit" class="btn-submit group">
-                    <span>Get My Free Proposal</span>
-                    <svg
-                      class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </button>
-
-                  <div
-                    class="flex items-center justify-center gap-3 text-[11px] text-white/35 pt-1"
-                  >
-                    <span class="flex items-center gap-1">
-                      <svg
-                        class="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                        ></path>
-                      </svg>
-                      Secure
+                  <div>
+                    <label class="w15-form-label">Services <span class="text-slate-400 font-normal">(optional)</span></label>
+                    <div class="flex flex-wrap gap-1.5">
+                      {services.map((s) => (
+                        <label class="cursor-pointer inline-block px-2.5 py-1 text-xs rounded-full border border-slate-200 text-slate-500 bg-slate-50/80 transition-all duration-150 select-none has-[:checked]:bg-orange-50 has-[:checked]:border-orange-300 has-[:checked]:text-orange-600 has-[:checked]:font-medium hover:border-slate-300">
+                          <input type="checkbox" name="services" value={s} class="sr-only" />
+                          {s}
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <label class="flex items-start gap-2 cursor-pointer">
+                    <input type="checkbox" name="terms" required class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
+                    <span class="text-xs text-slate-400 leading-relaxed">
+                      I agree to the <a href="/terms" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Terms</a>
+                      and <a href="/privacy" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Privacy Policy</a>.
                     </span>
-                    <span class="text-white/20">|</span>
-                    <span>No credit card</span>
-                    <span class="text-white/20">|</span>
-                    <span>100% free quote</span>
+                  </label>
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+                    <button type="submit" class="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold py-2.5 px-6 rounded-lg shadow-md shadow-orange-500/20 hover:shadow-orange-500/30 hover:-translate-y-px active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0">
+                      <span>Get Free Consultation</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </button>
+                    <span class="flex items-center gap-1 text-[11px] text-slate-400">
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                      Secure &middot; Never shared
+                    </span>
                   </div>
-                </form>
-              </div>
-            </div>
+                  <p data-response class="text-xs font-medium hidden rounded-lg px-3 py-2"></p>
+                </div>
+              </form>
+            </contact-form>
           </div>
         </div>
       </div>
@@ -2729,4 +2650,49 @@ const getIcon = (name: string) => {
       delay: 0.4,
     });
   }
+
+  // ===== CONTACT FORM WEB COMPONENT =====
+  class ContactForm extends HTMLElement {
+    connectedCallback() {
+      const endpoint = this.dataset.endpoint!;
+      const form = this.querySelector<HTMLFormElement>("form");
+      const responseEl = this.querySelector<HTMLParagraphElement>("[data-response]");
+      const submitBtn = this.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (!form || !responseEl || !submitBtn) return;
+      const originalHtml = submitBtn.innerHTML;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const email = fd.get("email") as string;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          responseEl.textContent = "Please enter a valid email address.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
+          responseEl.classList.remove("hidden"); return;
+        }
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg><span>Sending...</span>`;
+        try {
+          const res = await fetch(endpoint, { method: "POST", body: fd });
+          if (res.ok) { window.location.href = "/thank-you"; return; }
+          const text = await res.text();
+          responseEl.textContent = text || "Something went wrong. Please try again.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
+        } catch {
+          responseEl.textContent = "Network error. Check your connection and try again.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
+        } finally {
+          responseEl.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.innerHTML = originalHtml;
+        }
+      });
+    }
+  }
+  if (!customElements.get("contact-form")) { customElements.define("contact-form", ContactForm); }
 </script>
+
+<style>
+  .w15-form-label { display: block; font-size: 0.75rem; font-weight: 500; color: #64748b; margin-bottom: 0.375rem; letter-spacing: 0.01em; }
+  .w15-form-input { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 0.8125rem; color: #1e293b; background-color: #fafbfc; transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s; outline: none; }
+  .w15-form-input:hover { border-color: #cbd5e1; background-color: #fff; }
+  .w15-form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
+  .w15-form-input::placeholder { color: #94a3b8; }
+</style>

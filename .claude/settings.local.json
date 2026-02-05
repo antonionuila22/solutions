@@ -49,7 +49,8 @@
       "Bash(lsof:*)",
       "WebFetch(domain:docs.astro.build)",
       "Bash(if exist \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\pages\\\\js\" rmdir \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\pages\\\\js\")",
-      "Bash(npx astro build)"
+      "Bash(npx astro build)",
+      "Bash(npx astro check:*)"
     ]
   }
 }

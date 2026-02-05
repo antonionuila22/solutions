@@ -15,8 +15,16 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY);
 const CONTACT_EMAIL = import.meta.env.CONTACT_RECIPIENT_EMAIL;
 const FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL || "Codebrand <onboarding@resend.dev>";
 
+// Allowed origins for CSRF protection
+const ALLOWED_ORIGINS = [
+    "https://codebrand.us",
+    "https://www.codebrand.us",
+];
+if (import.meta.env.DEV) {
+    ALLOWED_ORIGINS.push("http://localhost:4321", "http://localhost:3000");
+}
+
 // Simple in-memory rate limiting (resets on server restart)
-// For production, use Redis or similar
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX = 5; // Max 5 requests per minute per IP
@@ -50,6 +58,21 @@ setInterval(() => {
 
 export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
     try {
+        // CSRF protection: verify Origin header
+        const origin = request.headers.get("origin");
+        if (!origin || !ALLOWED_ORIGINS.includes(origin)) {
+            return new Response("Forbidden.", { status: 403 });
+        }
+
+        // Content-Type validation
+        const contentType = request.headers.get("content-type") || "";
+        if (
+            !contentType.includes("multipart/form-data") &&
+            !contentType.includes("application/x-www-form-urlencoded")
+        ) {
+            return new Response("Invalid content type.", { status: 415 });
+        }
+
         // Rate limiting check
         const ip = clientAddress || request.headers.get('x-forwarded-for') || 'unknown';
         if (isRateLimited(ip)) {
@@ -68,7 +91,7 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
             return redirect("/thank-you", 303);
         }
 
-        // Extract and sanitize all fields
+        // Extract and clean all fields (no HTML escaping yet)
         const name = sanitize(data.get("name"));
         const email = sanitize(data.get("email"));
         const phone = sanitize(data.get("phone"));
@@ -76,7 +99,7 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
         const subject = sanitize(data.get("subject"));
         const message = sanitize(data.get("message"));
 
-        // Validate all fields
+        // Validate all fields (against clean, unescaped input)
         const validation = validateContactForm({
             name, email, phone, industry, subject, message
         });
@@ -85,7 +108,7 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
             return new Response(validation.error || "Invalid form data.", { status: 400 });
         }
 
-        // Sanitize for specific contexts
+        // Sanitize for specific contexts (email/phone safe formats)
         const safeEmail = sanitizeEmail(email);
         const safePhone = sanitizePhone(phone);
 
@@ -93,10 +116,10 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
         const rawServices = data.getAll("services");
         const services = rawServices
             .map((s) => sanitize(s))
-            .filter((s) => s.length > 0 && s.length <= 50); // Limit service name length
+            .filter((s) => s.length > 0 && s.length <= 50);
         const servicesString = services.length > 0 ? services.join(", ") : "No services selected";
 
-        // Save to database
+        // Save to database (parameterized query — safe from SQL injection)
         try {
             await turso.execute({
                 sql: `INSERT INTO contacts (name, email, phone, industry, subject, message, services, created_at)
@@ -104,11 +127,10 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
                 args: [name, safeEmail, safePhone, industry, subject, message, servicesString],
             });
         } catch (dbError) {
-            // Log error internally but continue with email
             console.error("Database error:", dbError instanceof Error ? dbError.message : "Unknown");
         }
 
-        // Send email notification
+        // Send email notification (escapeHtml at output time)
         try {
             await resend.emails.send({
                 from: FROM_EMAIL,
@@ -116,34 +138,30 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
                 replyTo: safeEmail,
                 subject: `New Contact: ${escapeHtml(subject.substring(0, 100))}`,
                 html: generateEmailHtml({
-                    name,
-                    email: safeEmail,
-                    phone: safePhone,
-                    industry,
-                    subject,
-                    message,
-                    services: servicesString,
+                    name: escapeHtml(name),
+                    email: escapeHtml(safeEmail),
+                    phone: escapeHtml(safePhone),
+                    industry: escapeHtml(industry),
+                    subject: escapeHtml(subject),
+                    message: escapeHtml(message),
+                    services: escapeHtml(servicesString),
                 }),
             });
         } catch (emailError) {
-            // Log error internally but don't expose to client
             console.error("Email error:", emailError instanceof Error ? emailError.message : "Unknown");
         }
 
-        return redirect("/thank-you", 303);
+        return new Response("OK", { status: 200 });
 
     } catch (err) {
-        // Log the actual error for debugging
         console.error("Contact form error:", err instanceof Error ? err.message : "Unknown");
-
-        // Return generic error to client (don't expose internal details)
         return new Response("An error occurred. Please try again later.", { status: 500 });
     }
 };
 
 /**
- * Generates safe HTML email template
- * All dynamic content is already escaped via sanitize()
+ * Generates safe HTML email template.
+ * All dynamic content MUST be pre-escaped with escapeHtml() before passing here.
  */
 function generateEmailHtml(data: {
     name: string;

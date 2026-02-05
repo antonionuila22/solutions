@@ -65,8 +65,8 @@ export function escapeHtml(input: string): string {
 }
 
 /**
- * Sanitizes and escapes input for safe HTML rendering
- * Use this for any user-provided content displayed in HTML
+ * Cleans raw input: trims whitespace and removes dangerous control characters.
+ * Does NOT escape HTML — escaping must happen at output time (email, HTML rendering).
  */
 export function sanitize(input: FormDataEntryValue | null): string {
     if (!input) return "";
@@ -76,22 +76,19 @@ export function sanitize(input: FormDataEntryValue | null): string {
     // Remove null bytes and other control characters (except newlines/tabs)
     value = value.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
 
-    // Escape HTML special characters
-    return escapeHtml(value);
+    return value;
 }
 
 /**
- * Sanitizes input specifically for use in HTML attributes
- * More aggressive escaping for attribute context
+ * Sanitizes input specifically for use in HTML attributes.
+ * Escapes HTML and removes dangerous URL schemes.
  */
 export function sanitizeForAttribute(input: string): string {
     if (!input) return "";
 
-    // First do standard sanitization
-    let value = sanitize(input);
+    let value = escapeHtml(input);
 
-    // Additional escaping for attribute context
-    // Remove any javascript: or data: URLs
+    // Remove dangerous URL schemes
     value = value.replace(/javascript:/gi, '');
     value = value.replace(/data:/gi, '');
     value = value.replace(/vbscript:/gi, '');

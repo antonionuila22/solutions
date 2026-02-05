@@ -1,431 +1,222 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// Industrias disponibles
 const industries = [
-  "Automotive",
-  "Construction",
-  "Content Creators",
-  "E-commerce",
-  "Fitness",
-  "Healthcare",
-  "Law Firms",
-  "Real Estate",
-  "Restaurants",
-  "Travel Agency",
-  "Other",
+  "Automotive", "Construction", "Content Creators", "E-commerce",
+  "Fitness", "Healthcare", "Law Firms", "Real Estate",
+  "Restaurants", "Travel Agency", "Other",
+];
+
+const services = [
+  "Web Development", "UX/UI Design", "Branding", "SEO",
+  "Social Media", "Video Editing", "3D Rendering", "Animation",
+  "Graphic Design", "Photography",
 ];
 ---
 
 <Layout
   title="Contact Codebrand | Free Consultation - Digital Agency"
-  description="Get a free consultation with Codebrand digital agency. Offering web development, UI/UX design, branding, SEO, and marketing services in San Pedro Sula, Honduras. Contact us today!"
-  keywords="contact codebrand, free consultation, digital agency contact, web development services Honduras, SEO agency San Pedro Sula, branding consultation, UX/UI design quote, digital marketing contact, agency consultation, get a quote, contact web developer, Honduras digital agency"
+  description="Get a free consultation with Codebrand digital agency. Offering web development, UI/UX design, branding, SEO, and marketing services. Contact us today!"
+  keywords="contact codebrand, free consultation, digital agency contact, web development services Honduras, branding consultation, UX/UI design quote, digital marketing contact"
   image="/photos/bannercodebrand.webp"
 >
-  <!-- ContactPoint Schema -->
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
+    "@context": "https://schema.org", "@type": "ContactPage",
     "name": "Contact Codebrand",
-    "description": "Get a free consultation with Codebrand digital agency. Offering web development, UI/UX design, branding, SEO, and marketing services.",
     "url": "https://codebrand.us/contact",
     "mainEntity": {
-      "@type": "Organization",
-      "name": "Codebrand",
-      "url": "https://codebrand.us",
-      "logo": "https://codebrand.us/photos/bannercodebrand.webp",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+504-3272-2973",
-          "contactType": "customer service",
-          "email": "info@codebrand.us",
-          "areaServed": ["US", "HN", "GT", "SV", "MX"],
-          "availableLanguage": ["English", "Spanish"],
-          "hoursAvailable": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "09:00",
-              "closes": "18:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Saturday",
-              "opens": "10:00",
-              "closes": "14:00"
-            }
-          ]
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Calle 4, Avenida 11",
-        "addressLocality": "San Pedro Sula",
-        "addressRegion": "Cortés",
-        "addressCountry": "HN"
-      }
+      "@type": "Organization", "name": "Codebrand", "url": "https://codebrand.us",
+      "contactPoint": [{ "@type": "ContactPoint", "telephone": "+504-3272-2973", "contactType": "customer service", "email": "info@codebrand.us", "areaServed": ["US","HN","GT","SV","MX"], "availableLanguage": ["English","Spanish"] }],
+      "address": { "@type": "PostalAddress", "addressLocality": "San Pedro Sula", "addressRegion": "Cortés", "addressCountry": "HN" }
     }
   })} />
 
-  <!-- Hero Section -->
-  <section class="relative bg-gray-50 font-poppins pt-32 sm:pt-36 lg:pt-28 pb-12">
-    <!-- Hero Header -->
-    <div class="max-w-7xl mx-auto px-6 py-16">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Contact Us
-        </h1>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Have a question or want to work together? Fill out the form below and
-          we'll get back to you shortly. Whether you need <a
-            href="/services/web-development"
-            class="text-cyan-600 hover:text-cyan-700 font-semibold"
-            >web development</a
-          >, <a
-            href="/digital-marketing"
-            class="text-cyan-600 hover:text-cyan-700 font-semibold"
-            >digital marketing</a
-          >, or <a
-            href="/services/branding"
-            class="text-cyan-600 hover:text-cyan-700 font-semibold"
-            >branding services</a
-          >, our team is here to help.
-        </p>
-      </div>
+  <!-- ===== MAIN: Dark split layout ===== -->
+  <section class="relative bg-slate-950 font-poppins pt-28 sm:pt-32 lg:pt-24 pb-16 sm:pb-20 overflow-hidden">
+    <!-- Orbs -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute w-72 lg:w-80 h-72 lg:h-80 bg-cyan-500/10 rounded-full blur-3xl -top-32 right-1/4 motion-safe:animate-pulse"></div>
+      <div class="absolute w-64 h-64 bg-orange-500/8 rounded-full blur-3xl bottom-0 left-10 motion-safe:animate-pulse" style="animation-delay:1s;"></div>
     </div>
 
-    <!-- Main Content -->
-    <div
-      class="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 lg:grid-cols-3 gap-12"
-    >
-      <!-- Contact Information -->
-      <div class="lg:col-span-1">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-        <p class="text-gray-600 mb-8 leading-relaxed">
-          Whether you have a question or need a quote, our team is ready to
-          assist you. Explore our <a
-            href="/services"
-            class="text-cyan-600 hover:text-cyan-700 font-semibold"
-            >complete service offerings</a
-          > or learn more about <a
-            href="/team"
-            class="text-cyan-600 hover:text-cyan-700 font-semibold"
-            >our expert team</a
-          >.
-        </p>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
 
-        <!-- Contact Details -->
-        <div class="space-y-6">
-          <div class="border-l-4 border-orange-500 pl-4">
-            <h3 class="font-semibold text-gray-900 mb-1">Location</h3>
-            <p class="text-gray-600 text-sm">
-              San Pedro Sula, Cortés, Honduras<br />
-              Calle 4, Avenida 11, Codebrand
-            </p>
+        <!-- LEFT: Copy + Info -->
+        <div class="lg:col-span-2 lg:sticky lg:top-28 lg:self-start pt-4 sm:pt-8">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-cyan-500/30 mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            </span>
+            <span class="text-xs text-slate-400 font-medium">We respond immediately</span>
           </div>
 
-          <div class="border-l-4 border-orange-500 pl-4">
-            <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
-            <a
-              href="mailto:info@codebrand.us"
-              class="text-orange-600 hover:text-orange-700 text-sm"
-            >
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug mb-3">
+            Let's talk about<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">your project</span>
+          </h1>
+          <p class="text-sm text-slate-400 leading-relaxed mb-8 max-w-sm">
+            Free consultation, no strings attached. Tell us what you need and we'll get back to you with a plan.
+          </p>
+
+          <!-- Contact info -->
+          <div class="space-y-3 mb-8">
+            <a href="mailto:info@codebrand.us" class="flex items-center gap-2.5 text-sm text-slate-400 hover:text-orange-400 transition-colors">
+              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               info@codebrand.us
             </a>
-          </div>
-
-          <div class="border-l-4 border-orange-500 pl-4">
-            <h3 class="font-semibold text-gray-900 mb-1">Phone</h3>
-            <a
-              href="tel:+504-3272-2973"
-              class="text-orange-600 hover:text-orange-700 text-sm"
-            >
-              +504-3272-2973
+            <a href="tel:+504-3272-2973" class="flex items-center gap-2.5 text-sm text-slate-400 hover:text-orange-400 transition-colors">
+              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              +504 3272-2973
             </a>
-          </div>
-
-          <div class="bg-gray-100 p-6 rounded-lg mt-8">
-            <h3 class="font-semibold text-gray-900 mb-3">Business Hours</h3>
-            <div class="space-y-2 text-sm text-gray-600">
-              <div class="flex justify-between">
-                <span>Monday - Friday</span>
-                <span>9:00 AM – 6:00 PM</span>
-              </div>
-              <div class="flex justify-between">
-                <span>Saturday</span>
-                <span>10:00 AM – 2:00 PM</span>
-              </div>
-              <div class="flex justify-between">
-                <span>Sunday</span>
-                <span>Closed</span>
-              </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-500">
+              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Mon–Fri 9AM–6PM &middot; Sat 10AM–2PM
             </div>
           </div>
+
+          <!-- Testimonial -->
+          <div class="border-l-2 border-slate-800 pl-4">
+            <div class="flex gap-0.5 mb-2">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-3 h-3 text-orange-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed italic mb-2">
+              "Delivered in 10 days. Quality exceeded expectations. Communication was excellent."
+            </p>
+            <p class="text-xs text-slate-600 font-medium">Michael R. <span class="text-slate-700 font-normal">&middot; Austin, TX</span></p>
+          </div>
         </div>
+
+        <!-- RIGHT: Form card -->
+        <div class="lg:col-span-3">
+          <contact-form data-endpoint="/api/contact">
+            <form action="/api/contact" method="POST" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
+
+              <!-- Honeypot -->
+              <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+                <label for="contact-website">Leave empty</label>
+                <input type="text" name="honey" id="contact-website" tabindex="-1" autocomplete="new-password" />
+              </div>
+
+              <div class="space-y-4">
+                <!-- Row: Name + Email -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="form-label">Name *</label>
+                    <input id="name" name="name" type="text" required autocomplete="name"
+                      placeholder="John Doe" class="form-input"
+                      maxlength="60" minlength="2"
+                      pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+"
+                      title="Only letters, spaces, hyphens and apostrophes" />
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">Email *</label>
+                    <input id="email" name="email" type="email" required autocomplete="email"
+                      placeholder="john@company.com" class="form-input" maxlength="254" />
+                  </div>
+                </div>
+
+                <!-- Row: Phone + Industry -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="phone" class="form-label">Phone *</label>
+                    <input id="phone" name="phone" type="tel" required autocomplete="tel"
+                      placeholder="+1 (555) 000-0000" class="form-input"
+                      maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
+                  </div>
+                  <div>
+                    <label for="industry" class="form-label">Industry *</label>
+                    <div class="relative">
+                      <select id="industry" name="industry" required class="form-input appearance-none pr-8">
+                        <option value="" disabled selected>Select</option>
+                        {industries.map((ind) => <option value={ind}>{ind}</option>)}
+                      </select>
+                      <svg class="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Subject -->
+                <div>
+                  <label for="subject" class="form-label">Subject *</label>
+                  <input id="subject" name="subject" type="text" required
+                    placeholder="How can we help?" class="form-input"
+                    maxlength="100" minlength="3"
+                    pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+" />
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label for="message" class="form-label">Message *</label>
+                  <textarea id="message" name="message" rows="3" required
+                    placeholder="Project details, goals, timeline..."
+                    class="form-input resize-none"
+                    maxlength="2000" minlength="10"></textarea>
+                </div>
+
+                <!-- Services -->
+                <div>
+                  <label class="form-label">Services <span class="text-slate-400 font-normal">(optional)</span></label>
+                  <div class="flex flex-wrap gap-1.5">
+                    {services.map((s) => (
+                      <label class="cursor-pointer inline-block px-2.5 py-1 text-xs rounded-full border border-slate-200 text-slate-500 bg-slate-50/80 transition-all duration-150 select-none has-[:checked]:bg-orange-50 has-[:checked]:border-orange-300 has-[:checked]:text-orange-600 has-[:checked]:font-medium hover:border-slate-300 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-orange-500">
+                        <input type="checkbox" name="services" value={s} class="sr-only" />
+                        {s}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <!-- Terms -->
+                <label class="flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" name="terms" required
+                    class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
+                  <span class="text-xs text-slate-400 leading-relaxed">
+                    I agree to the <a href="/terms" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Terms</a>
+                    and <a href="/privacy" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Privacy Policy</a>.
+                  </span>
+                </label>
+
+                <!-- Submit -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+                  <button type="submit"
+                    class="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold py-2.5 px-6 rounded-lg shadow-md shadow-orange-500/20 hover:shadow-orange-500/30 hover:-translate-y-px active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0">
+                    <span>Get Free Consultation</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </button>
+                  <span class="flex items-center gap-1 text-[11px] text-slate-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    Secure &middot; Never shared
+                  </span>
+                </div>
+
+                <!-- Response -->
+                <p data-response class="text-xs font-medium hidden rounded-lg px-3 py-2"></p>
+              </div>
+            </form>
+          </contact-form>
+        </div>
+
       </div>
-
-      <!-- Contact Form (Web Component for async submit) -->
-      <contact-form data-endpoint="/api/contact">
-      <form
-        action="/api/contact"
-        method="POST"
-        class="lg:col-span-2 bg-white p-8 rounded-lg shadow-md border border-gray-200"
-      >
-
-        <!-- Honeypot - hidden off-screen -->
-        <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
-          <label for="contact-website">Leave empty</label>
-          <input
-            type="text"
-            name="honey"
-            id="contact-website"
-            tabindex="-1"
-            autocomplete="new-password"
-          />
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Name -->
-          <div>
-            <label
-              for="name"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Name <span aria-hidden="true">*</span>
-              <span class="sr-only">(required)</span>
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              autocomplete="name"
-              placeholder="John Doe"
-              class="form-input"
-              aria-required="true"
-              maxlength="60"
-              minlength="2"
-              pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+"
-              title="Only letters, spaces, hyphens and apostrophes"
-            />
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label
-              for="email"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Email <span aria-hidden="true">*</span>
-              <span class="sr-only">(required)</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              autocomplete="email"
-              placeholder="john@example.com"
-              class="form-input"
-              aria-required="true"
-              maxlength="254"
-              pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z]{2,10})+"
-            />
-          </div>
-
-          <!-- Phone -->
-          <div>
-            <label
-              for="phone"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Phone <span aria-hidden="true">*</span>
-              <span class="sr-only">(required)</span>
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              autocomplete="tel"
-              placeholder="+1 (555) 000-0000"
-              class="form-input"
-              aria-required="true"
-              maxlength="20"
-              minlength="7"
-              pattern="[\d\s\-\+\(\)]+"
-            />
-          </div>
-
-          <!-- Industry -->
-          <div>
-            <label
-              for="industry"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Industry <span aria-hidden="true">*</span>
-              <span class="sr-only">(required)</span>
-            </label>
-            <select id="industry" name="industry" required class="form-input" aria-required="true">
-              <option value="" disabled selected>Select your industry</option>
-              {
-                industries.map((industry) => (
-                  <option value={industry}>{industry}</option>
-                ))
-              }
-            </select>
-          </div>
-
-          <!-- Subject -->
-          <div class="md:col-span-2">
-            <label
-              for="subject"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Subject <span aria-hidden="true">*</span>
-              <span class="sr-only">(required)</span>
-            </label>
-            <input
-              id="subject"
-              name="subject"
-              type="text"
-              required
-              placeholder="How can we help you?"
-              class="form-input"
-              aria-required="true"
-              maxlength="100"
-              minlength="3"
-              pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+"
-              title="Only letters, numbers and basic punctuation"
-            />
-          </div>
-
-          <!-- Message -->
-          <div class="md:col-span-2">
-            <label
-              for="message"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Message <span aria-hidden="true">*</span>
-              <span class="sr-only">(required)</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              placeholder="Tell us about your project..."
-              class="form-input resize-none"
-              aria-required="true"
-              maxlength="2000"
-              minlength="10"></textarea>
-          </div>
-
-          <!-- Services -->
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium text-gray-700 mb-3">
-              Services Interested In
-            </label>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-              {
-                [
-                  "Animation",
-                  "Data Entry",
-                  "Web Development",
-                  "SEO",
-                  "Promotional Products",
-                  "Video Editing",
-                  "Social Media",
-                  "3D Rendering",
-                  "UX/UI Design",
-                  "Graphic Design",
-                  "Branding",
-                  "Photography",
-                ].map((service) => (
-                  <label class="flex items-center gap-2 text-sm">
-                    <input
-                      type="checkbox"
-                      name="services"
-                      value={service}
-                      class="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
-                    />
-                    <span class="text-gray-700">{service}</span>
-                  </label>
-                ))
-              }
-            </div>
-          </div>
-
-          <!-- Terms and Conditions -->
-          <div class="md:col-span-2">
-            <label class="flex items-start gap-3 text-sm cursor-pointer">
-              <input
-                type="checkbox"
-                name="terms"
-                required
-                class="w-4 h-4 mt-0.5 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
-              />
-              <span class="text-gray-600">
-                I have read and agree to the <a
-                  href="/terms"
-                  target="_blank"
-                  class="text-orange-600 hover:text-orange-700 underline font-medium"
-                  >Terms and Conditions</a
-                > and <a
-                  href="/privacy"
-                  target="_blank"
-                  class="text-orange-600 hover:text-orange-700 underline font-medium"
-                  >Privacy Policy</a
-                >. *
-              </span>
-            </label>
-          </div>
-
-          <!-- Submit Button -->
-          <div class="md:col-span-2">
-            <button
-              type="submit"
-              class="w-full bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Send Message
-            </button>
-          </div>
-
-          <!-- Response Message -->
-          <div class="md:col-span-2">
-            <p data-response class="text-sm font-medium hidden"></p>
-          </div>
-        </div>
-      </form>
-      </contact-form>
     </div>
+  </section>
 
-    <!-- Calendly Section -->
-    <div class="max-w-4xl mx-auto px-6 pb-24">
+  <!-- ===== CALENDLY ===== -->
+  <section class="bg-white font-poppins py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
-          Schedule a Free Consultation
-        </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Prefer to talk directly? Book a free consultation call with our team
-          to discuss your project and how we can help you achieve your goals.
-        </p>
+        <p class="text-xs uppercase tracking-widest text-orange-500 font-semibold mb-2">Prefer a call?</p>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Schedule a Free Consultation</h2>
+        <p class="text-sm text-slate-500 max-w-md mx-auto">Book a call to discuss your project in detail. No commitment required.</p>
       </div>
-
-      <!-- Calendly Widget -->
-      <div
-        class="calendly-inline-widget"
+      <div class="calendly-inline-widget rounded-xl overflow-hidden border border-slate-200"
         data-url="https://calendly.com/agencycodebrand?hide_landing_page_details=1&hide_gdpr_banner=1"
-        style="min-width:320px;height:700px;"
-      >
-      </div>
-      <script
-        is:inline
-        type="text/javascript"
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async></script>
+        style="min-width:320px;height:650px;"></div>
+      <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
   </section>
 </Layout>
@@ -439,90 +230,64 @@ const industries = [
       const submitBtn = this.querySelector<HTMLButtonElement>('button[type="submit"]');
 
       if (!form || !responseEl || !submitBtn) return;
+      const originalHtml = submitBtn.innerHTML;
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
-
-        const formData = new FormData(form);
-        const email = formData.get("email") as string;
+        const fd = new FormData(form);
+        const email = fd.get("email") as string;
 
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           responseEl.textContent = "Please enter a valid email address.";
-          responseEl.className = "md:col-span-2 text-sm font-medium text-red-600";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
           responseEl.classList.remove("hidden");
           return;
         }
 
         submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
+        submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg><span>Sending...</span>`;
 
         try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            body: formData,
-          });
-
-          const text = await response.text();
-
-          if (response.ok) {
-            responseEl.textContent = "Message sent successfully! We'll get back to you soon.";
-            responseEl.className = "md:col-span-2 text-sm font-medium text-green-600";
-            form.reset();
-          } else {
-            responseEl.textContent = text || "Something went wrong. Please try again.";
-            responseEl.className = "md:col-span-2 text-sm font-medium text-red-600";
-          }
+          const res = await fetch(endpoint, { method: "POST", body: fd });
+          if (res.ok) { window.location.href = "/thank-you"; return; }
+          const text = await res.text();
+          responseEl.textContent = text || "Something went wrong. Please try again.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
         } catch {
-          responseEl.textContent = "Network error. Please check your connection and try again.";
-          responseEl.className = "md:col-span-2 text-sm font-medium text-red-600";
+          responseEl.textContent = "Network error. Check your connection and try again.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
         } finally {
           responseEl.classList.remove("hidden");
           submitBtn.disabled = false;
-          submitBtn.textContent = "Send Message";
+          submitBtn.innerHTML = originalHtml;
         }
       });
     }
   }
-
   customElements.define("contact-form", ContactForm);
 </script>
 
 <style>
+  .form-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 0.375rem;
+    letter-spacing: 0.01em;
+  }
   .form-input {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
-    font-size: 0.938rem;
-    transition:
-      border-color 0.2s,
-      box-shadow 0.2s;
+    font-size: 0.8125rem;
+    color: #1e293b;
+    background-color: #fafbfc;
+    transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
     outline: none;
   }
-
-  .form-input:focus {
-    border-color: #ea580c;
-    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
-  }
-
-  .form-input:focus-visible {
-    border-color: #06b6d4;
-    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
-  }
-
-  .form-input::placeholder {
-    color: #9ca3af;
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
+  .form-input:hover { border-color: #cbd5e1; background-color: #fff; }
+  .form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
+  .form-input::placeholder { color: #94a3b8; }
 </style>

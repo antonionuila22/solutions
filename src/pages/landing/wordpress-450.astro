@@ -19,6 +19,12 @@ const industries = {
   en: ["Automotive", "Construction", "Content Creators", "E-commerce", "Fitness", "Healthcare", "Law Firms", "Real Estate", "Restaurants", "Travel Agency", "Other"],
 };
 
+const services = [
+  "Web Development", "UX/UI Design", "Branding", "SEO",
+  "Social Media", "Video Editing", "3D Rendering", "Animation",
+  "Graphic Design", "Photography",
+];
+
 // Bilingual features
 const features = {
   es: [
@@ -544,149 +550,77 @@ const getIcon = (name: string) => {
 
           <!-- Right: Form -->
           <div id="contact" class="hero-form-wrapper">
-            <div class="form-card">
-              <div class="form-glow"></div>
-
-              <div class="relative z-10">
-                <!-- Form Header -->
-                <div class="flex items-center gap-3 mb-6">
-                  <div
-                    class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20"
-                  >
-                    <svg
-                      class="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
+            <contact-form data-endpoint="/api/contact">
+              <form action="/api/contact" method="POST" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
+                <input type="hidden" name="subject" value="WordPress Landing Page $450 - New Lead" />
+                <input type="hidden" name="services" value="Web Development" />
+                <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+                  <label for="wp-honey">Leave empty</label>
+                  <input type="text" name="honey" id="wp-honey" tabindex="-1" autocomplete="new-password" />
+                </div>
+                <div class="space-y-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="wp-name" class="wp-form-label" data-i18n="form.name">Nombre *</label>
+                      <input id="wp-name" name="name" type="text" required autocomplete="name" placeholder="Juan Pérez" data-placeholder-es="Juan Pérez" data-placeholder-en="John Doe" class="wp-form-input" maxlength="60" minlength="2" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+" />
+                    </div>
+                    <div>
+                      <label for="wp-email" class="wp-form-label" data-i18n="form.email">Correo *</label>
+                      <input id="wp-email" name="email" type="email" required autocomplete="email" placeholder="juan@correo.com" data-placeholder-es="juan@correo.com" data-placeholder-en="john@email.com" class="wp-form-input" maxlength="254" />
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="wp-phone" class="wp-form-label" data-i18n="form.phone">WhatsApp / Teléfono *</label>
+                      <input id="wp-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+1 (555) 000-0000" class="wp-form-input" maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
+                    </div>
+                    <div>
+                      <label for="wp-industry" class="wp-form-label">Industria *</label>
+                      <div class="relative">
+                        <select id="wp-industry" name="industry" required class="wp-form-input appearance-none pr-8">
+                          <option value="" disabled selected>Seleccionar</option>
+                          {industries.es.map((ind) => <option value={ind}>{ind}</option>)}
+                        </select>
+                        <svg class="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                      </div>
+                    </div>
                   </div>
                   <div>
-                    <h3 class="text-lg font-bold text-white" data-i18n="form.title">
-                      Cotización Gratis
-                    </h3>
-                    <p class="text-xs text-white/45 mt-0.5" data-i18n="form.response">
-                      Respuesta en 2 horas
-                    </p>
+                    <label for="wp-message" class="wp-form-label">Mensaje *</label>
+                    <textarea id="wp-message" name="message" rows="3" required placeholder="Cuéntanos sobre tu proyecto..." class="wp-form-input resize-none" maxlength="2000" minlength="10"></textarea>
                   </div>
-                </div>
-
-                <div class="divider-gradient mb-6"></div>
-
-                <form action="/api/contact" method="POST" class="space-y-4" id="contact-form">
-                  <input type="text" name="honey" class="hidden" tabindex="-1" autocomplete="off" />
-                  <input type="hidden" name="subject" value="WordPress Landing Page $450 - New Lead" />
-                  <input type="hidden" name="services" value="Web Development" />
-
-                  <!-- Step 1: Essential fields only -->
-                  <div class="form-step active" id="form-step-1">
-                    <div class="space-y-3">
-                      <div class="form-group">
-                        <label class="form-label" data-i18n="form.name">Nombre *</label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="input-name"
-                          required
-                          autocomplete="name"
-                          placeholder="Juan Pérez"
-                          data-placeholder-es="Juan Pérez"
-                          data-placeholder-en="John Doe"
-                          class="form-input form-input-lg"
-                        />
-                        <span class="form-error-message" id="error-name">
-                          <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-                          <span data-i18n="form.error.name">Por favor ingresa tu nombre</span>
-                        </span>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label" data-i18n="form.email">Correo *</label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="input-email"
-                          required
-                          autocomplete="email"
-                          placeholder="juan@correo.com"
-                          data-placeholder-es="juan@correo.com"
-                          data-placeholder-en="john@email.com"
-                          class="form-input form-input-lg"
-                        />
-                        <span class="form-error-message" id="error-email">
-                          <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-                          <span data-i18n="form.error.email">Por favor ingresa un correo válido</span>
-                        </span>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-label" data-i18n="form.phone">WhatsApp / Teléfono *</label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          id="input-phone"
-                          required
-                          autocomplete="tel"
-                          placeholder="+1 (555) 000-0000"
-                          class="form-input form-input-lg"
-                        />
-                        <span class="form-error-message" id="error-phone">
-                          <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-                          <span data-i18n="form.error.phone">Por favor ingresa tu teléfono</span>
-                        </span>
-                      </div>
+                  <div>
+                    <label class="wp-form-label">Servicios <span class="text-slate-400 font-normal">(opcional)</span></label>
+                    <div class="flex flex-wrap gap-1.5">
+                      {services.map((s) => (
+                        <label class="cursor-pointer inline-block px-2.5 py-1 text-xs rounded-full border border-slate-200 text-slate-500 bg-slate-50/80 transition-all duration-150 select-none has-[:checked]:bg-orange-50 has-[:checked]:border-orange-300 has-[:checked]:text-orange-600 has-[:checked]:font-medium hover:border-slate-300">
+                          <input type="checkbox" name="services" value={s} class="sr-only" />
+                          {s}
+                        </label>
+                      ))}
                     </div>
-
-                    <button type="submit" class="btn-submit-new group mt-4" id="btn-submit">
-                      <span class="btn-submit-content">
-                        <span data-i18n="form.submit">Recibir Mi Cotización</span>
-                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                      </span>
-                      <span class="btn-loading-spinner"></span>
-                      <span class="btn-submit-shine"></span>
+                  </div>
+                  <label class="flex items-start gap-2 cursor-pointer">
+                    <input type="checkbox" name="terms" required class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
+                    <span class="text-xs text-slate-400 leading-relaxed">
+                      Acepto los <a href="/terms" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Términos</a>
+                      y la <a href="/privacy" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Política de Privacidad</a>.
+                    </span>
+                  </label>
+                  <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+                    <button type="submit" class="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold py-2.5 px-6 rounded-lg shadow-md shadow-orange-500/20 hover:shadow-orange-500/30 hover:-translate-y-px active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0">
+                      <span data-i18n="form.submit">Recibir Mi Cotización</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </button>
+                    <span class="flex items-center gap-1 text-[11px] text-slate-400">
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                      Seguro &middot; Sin spam
+                    </span>
                   </div>
-
-                  <!-- Success message -->
-                  <div class="form-success-message" id="form-success">
-                    <div class="success-icon">
-                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                    </div>
-                    <h4 data-i18n="form.success.title">¡Solicitud Enviada!</h4>
-                    <p data-i18n="form.success.message">Te contactaremos en menos de 2 horas.</p>
-                  </div>
-
-                  <!-- Form guarantees -->
-                  <div class="form-guarantees">
-                    <div class="guarantee-item">
-                      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span data-i18n="form.guarantee1">Respuesta garantizada en 2 horas</span>
-                    </div>
-                    <div class="guarantee-item">
-                      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span data-i18n="form.guarantee2">Sin compromiso, 100% gratis</span>
-                    </div>
-                    <div class="guarantee-item">
-                      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span data-i18n="form.guarantee3">Atención en español e inglés</span>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
+                  <p data-response class="text-xs font-medium hidden rounded-lg px-3 py-2"></p>
+                </div>
+              </form>
+            </contact-form>
           </div>
         </div>
       </div>
@@ -3985,7 +3919,7 @@ const getIcon = (name: string) => {
 
   @media (max-width: 768px) {
     .countdown-ribbon {
-      top: 3.5rem;
+      top: 68px;
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(15, 10, 5, 0.95) 100%);
@@ -4046,7 +3980,7 @@ const getIcon = (name: string) => {
 
   @media (max-width: 480px) {
     .countdown-ribbon {
-      top: 3.5rem;
+      top: 68px;
     }
     .countdown-ribbon-inner {
       gap: 0.5rem;
@@ -4800,6 +4734,12 @@ const getIcon = (name: string) => {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
   }
+
+  .wp-form-label { display: block; font-size: 0.75rem; font-weight: 500; color: #64748b; margin-bottom: 0.375rem; letter-spacing: 0.01em; }
+  .wp-form-input { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 0.8125rem; color: #1e293b; background-color: #fafbfc; transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s; outline: none; }
+  .wp-form-input:hover { border-color: #cbd5e1; background-color: #fff; }
+  .wp-form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
+  .wp-form-input::placeholder { color: #94a3b8; }
 </style>
 
 <script>
@@ -5166,128 +5106,41 @@ const getIcon = (name: string) => {
   // Initial WhatsApp link update
   updateWhatsAppLink();
 
-  // ===== FORM VALIDATION =====
-  const contactForm = document.getElementById('contact-form') as HTMLFormElement;
-  const formStep = document.getElementById('form-step-1');
-  const formSuccess = document.getElementById('form-success');
-  const formGuarantees = document.querySelector('.form-guarantees');
-  const submitBtn = document.getElementById('btn-submit');
-
-  const inputs = {
-    name: document.getElementById('input-name') as HTMLInputElement,
-    email: document.getElementById('input-email') as HTMLInputElement,
-    phone: document.getElementById('input-phone') as HTMLInputElement
-  };
-
-  const errors = {
-    name: document.getElementById('error-name'),
-    email: document.getElementById('error-email'),
-    phone: document.getElementById('error-phone')
-  };
-
-  function validateEmail(email: string): boolean {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
-
-  function showError(field: 'name' | 'email' | 'phone') {
-    inputs[field]?.classList.add('input-error');
-    inputs[field]?.classList.remove('input-success');
-    errors[field]?.classList.add('visible');
-  }
-
-  function hideError(field: 'name' | 'email' | 'phone') {
-    inputs[field]?.classList.remove('input-error');
-    errors[field]?.classList.remove('visible');
-  }
-
-  function showSuccess(field: 'name' | 'email' | 'phone') {
-    inputs[field]?.classList.add('input-success');
-    inputs[field]?.classList.remove('input-error');
-    errors[field]?.classList.remove('visible');
-  }
-
-  // Real-time validation on blur
-  Object.keys(inputs).forEach((field) => {
-    const key = field as 'name' | 'email' | 'phone';
-    inputs[key]?.addEventListener('blur', () => {
-      const value = inputs[key]?.value.trim() || '';
-      if (key === 'email') {
-        if (!value || !validateEmail(value)) {
-          showError(key);
-        } else {
-          showSuccess(key);
+  // ===== CONTACT FORM WEB COMPONENT =====
+  class ContactForm extends HTMLElement {
+    connectedCallback() {
+      const endpoint = this.dataset.endpoint!;
+      const form = this.querySelector<HTMLFormElement>("form");
+      const responseEl = this.querySelector<HTMLParagraphElement>("[data-response]");
+      const submitBtn = this.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (!form || !responseEl || !submitBtn) return;
+      const originalHtml = submitBtn.innerHTML;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const email = fd.get("email") as string;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          responseEl.textContent = "Please enter a valid email address.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
+          responseEl.classList.remove("hidden"); return;
         }
-      } else {
-        if (!value) {
-          showError(key);
-        } else {
-          showSuccess(key);
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg><span>Enviando...</span>`;
+        try {
+          const res = await fetch(endpoint, { method: "POST", body: fd });
+          if (res.ok) { window.location.href = "/thank-you"; return; }
+          const text = await res.text();
+          responseEl.textContent = text || "Algo salió mal. Inténtalo de nuevo.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
+        } catch {
+          responseEl.textContent = "Error de red. Verifica tu conexión e inténtalo de nuevo.";
+          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
+        } finally {
+          responseEl.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.innerHTML = originalHtml;
         }
-      }
-    });
-
-    // Clear error on input
-    inputs[key]?.addEventListener('input', () => {
-      hideError(key);
-    });
-  });
-
-  // Form submission
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Validate all fields
-      let isValid = true;
-
-      if (!inputs.name?.value.trim()) {
-        showError('name');
-        isValid = false;
-      }
-
-      if (!inputs.email?.value.trim() || !validateEmail(inputs.email.value)) {
-        showError('email');
-        isValid = false;
-      }
-
-      if (!inputs.phone?.value.trim()) {
-        showError('phone');
-        isValid = false;
-      }
-
-      if (!isValid) {
-        // Focus first error field
-        const firstError = document.querySelector('.input-error') as HTMLInputElement;
-        firstError?.focus();
-        return;
-      }
-
-      // Show loading state
-      submitBtn?.classList.add('loading');
-
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          body: formData
-        });
-
-        if (response.ok) {
-          // Show success message
-          formStep?.classList.remove('active');
-          formStep?.style.setProperty('display', 'none');
-          formGuarantees?.style.setProperty('display', 'none');
-          formSuccess?.classList.add('visible');
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        // Reset loading state on error
-        submitBtn?.classList.remove('loading');
-        console.error('Form submission error:', error);
-      }
-    });
+      });
+    }
   }
+  if (!customElements.get("contact-form")) { customElements.define("contact-form", ContactForm); }
 
 </script>
