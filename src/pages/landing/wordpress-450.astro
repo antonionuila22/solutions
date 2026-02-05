@@ -5106,7 +5106,10 @@ const getIcon = (name: string) => {
   // Initial WhatsApp link update
   updateWhatsAppLink();
 
-  // ===== CONTACT FORM WEB COMPONENT =====
+
+</script>
+
+<script>
   class ContactForm extends HTMLElement {
     connectedCallback() {
       const endpoint = this.dataset.endpoint!;
@@ -5120,7 +5123,7 @@ const getIcon = (name: string) => {
         const fd = new FormData(form);
         const email = fd.get("email") as string;
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          responseEl.textContent = "Please enter a valid email address.";
+          responseEl.textContent = "Por favor ingresa un correo válido.";
           responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
           responseEl.classList.remove("hidden"); return;
         }
@@ -5142,5 +5145,4 @@ const getIcon = (name: string) => {
     }
   }
   if (!customElements.get("contact-form")) { customElements.define("contact-form", ContactForm); }
-
 </script>
