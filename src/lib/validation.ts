@@ -21,8 +21,8 @@ export const MAX_LENGTHS = {
 export const PATTERNS = {
     // Names: letters, spaces, hyphens, apostrophes (for names like O'Brien, Mary-Jane)
     name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$/,
-    // Subject: letters, numbers, spaces, basic punctuation
-    subject: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+$/,
+    // Subject: letters, numbers, spaces, common punctuation (allow most printable chars except angle brackets)
+    subject: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?'":;@#$%&*()\[\]/+=_]+$/,
     // Message: letters, numbers, spaces, common punctuation (no code/scripts)
     message: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?;:'"()\n\r]+$/,
     // Industry: letters, spaces, hyphens
