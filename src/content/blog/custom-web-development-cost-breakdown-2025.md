@@ -3,7 +3,7 @@ title: "Custom Web Development Cost Breakdown 2025: Real Pricing Data & What to 
 description: "Comprehensive guide to custom web development costs in 2025. Detailed pricing breakdown by project type, region, and complexity. Real data from 200+ projects to help you budget accurately."
 author: "Ramon Nuila"
 readtime: 18
-img: /photos/blog/office-calculator-2024-12-02-02-19-42-utc.avif
+img: /photos/blog/webcosthn.avif
 imageAlt: "Web development cost breakdown with calculator and pricing chart"
 date: 2025-01-29
 categories:

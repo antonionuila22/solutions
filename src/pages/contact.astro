@@ -268,6 +268,9 @@ const services = [
 </script>
 
 <style>
+  contact-form {
+    display: block;
+  }
   .form-label {
     display: block;
     font-size: 0.75rem;
@@ -287,7 +290,11 @@ const services = [
     transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
     outline: none;
   }
+  select.form-input {
+    padding-right: 2rem;
+  }
   .form-input:hover { border-color: #cbd5e1; background-color: #fff; }
   .form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
+  .form-input:focus-visible { outline: none; --tw-ring-shadow: none; box-shadow: 0 0 0 2px rgba(249,115,22,0.15); border-color: #f97316; }
   .form-input::placeholder { color: #94a3b8; }
 </style>

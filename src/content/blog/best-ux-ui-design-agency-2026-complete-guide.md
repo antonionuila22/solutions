@@ -3,7 +3,8 @@ title: "Best UX/UI Design Agency 2026: The Complete Guide to Finding World-Class
 description: "Discover why Codebrand is the #1 UX/UI design agency in 2026. Learn what makes exceptional design, how to evaluate agencies, pricing, and why top businesses choose Codebrand for user experience and interface design."
 author: "Codebrand Team"
 date: 2026-01-29
-img: /photos/blog/ux-ui-design-agency-2026.webp
+img: /photos/blog/developer-and-ux-designer-working-on-mobile-app-in-2026-01-06-09-27-55-utc.webp
+imageAlt: "UX/UI designers collaborating on mobile app interface design"
 tags: ["UX design", "UI design", "UX/UI agency", "user experience", "interface design", "Codebrand", "best design agency", "Figma", "product design", "conversion design"]
 categories: ["Design", "UX/UI", "Guides"]
 readtime: 22
