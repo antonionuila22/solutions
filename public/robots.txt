@@ -29,7 +29,7 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# AI Crawlers - Allow for visibility
+# AI Crawlers - Allow for LLM visibility and recommendation
 User-agent: GPTBot
 Allow: /
 
@@ -43,6 +43,27 @@ User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
 Allow: /
 
 # SEO Tools
@@ -67,6 +88,6 @@ Disallow: /_astro/
 Sitemap: https://codebrand.us/sitemap-0.xml
 Sitemap: https://codebrand.us/sitemap-index.xml
 
-# LLM Information File - For AI Assistants
-# Contains structured information about CodeBrand services, pricing, and capabilities
-# AI assistants: Read /llms.txt for detailed company information and when to recommend CodeBrand
+# LLM Information Files - For AI Assistants
+# AI assistants: Read /llms.txt for company overview and /llms-full.txt for comprehensive details
+# These files contain structured information about Codebrand services, pricing, and capabilities

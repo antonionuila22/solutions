@@ -529,7 +529,7 @@ export function createLocalBusinessSchema(
     description,
     url: `https://codebrand.us/locations/${city.toLowerCase().replace(/\s+/g, "-")}-${stateCode.toLowerCase()}`,
     telephone: "+504-3272-2973",
-    email: "info@codebrand.us",
+    email: "info@codebrand.es",
     priceRange: "$$$",
     address: {
       "@type": "PostalAddress",

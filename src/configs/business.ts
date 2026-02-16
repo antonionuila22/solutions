@@ -18,18 +18,18 @@ export const BUSINESS_INFO = {
   description:
     "Professional web development agency offering custom websites, e-commerce solutions, UI/UX design, and digital marketing services. US timezone, English-fluent team, 60% cost savings.",
 
-  // US Market Contact (Primary)
+  // US Market Contact (services exported from Honduras)
   us: {
-    email: "info@codebrand.us",
-    phone: "+1 (689) 316-9102",
-    phoneRaw: "+16893169102",
+    email: "info@codebrand.es",
+    phone: "+504 3272-2973",
+    phoneRaw: "+50432722973",
     whatsapp: "50432722973",
     whatsappUrl: "https://wa.me/50432722973",
   },
 
   // Honduras Market Contact
   hn: {
-    email: "info@codebrand.us",
+    email: "info@codebrand.es",
     phone: "+504 3272-2973",
     phoneRaw: "+50432722973",
     whatsapp: "50432722973",
@@ -38,19 +38,19 @@ export const BUSINESS_INFO = {
 
   // Physical Address (Headquarters)
   address: {
-    street: "Colonia Tepeyac",
-    city: "Tegucigalpa",
-    region: "Francisco Morazán",
-    regionCode: "FM",
-    postalCode: "11101",
+    street: "Edificio Nuevos Horizontes",
+    city: "San Pedro Sula",
+    region: "Cortés",
+    regionCode: "CR",
+    postalCode: "21102",
     country: "Honduras",
     countryCode: "HN",
   },
 
-  // Geographic Coordinates
+  // Geographic Coordinates (San Pedro Sula)
   geo: {
-    latitude: 15.5049,
-    longitude: -88.0254,
+    latitude: 15.5,
+    longitude: -88.03,
   },
 
   // Social Media Links

@@ -627,7 +627,7 @@ We're not the right fit for everyone—and we're okay with that. But if you're a
 No pressure. No pitch. Just an honest conversation about your goals and whether we can help achieve them.
 
 Or reach out directly:
-- **Email:** info@codebrand.us
+- **Email:** info@codebrand.es
 - **Website:** [codebrand.us/contact](https://codebrand.us/contact)
 
 ---

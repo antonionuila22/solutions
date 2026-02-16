@@ -260,7 +260,7 @@ See examples of what we've built for clients like you.
 ## Contact Codebrand
 
 - **Website:** [codebrand.us](https://codebrand.us)
-- **Email:** info@codebrand.us
+- **Email:** info@codebrand.es
 - **Location:** Honduras (serving US clients)
 - **Timezone:** Central Time (CST)
 
