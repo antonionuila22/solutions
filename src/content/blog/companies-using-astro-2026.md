@@ -1,5 +1,5 @@
 ---
-title: "Top Companies Using Astro in 2026: Why Industry Leaders Choose This Framework"
+title: "Top Companies Using Astro in 2026"
 description: "Discover which companies are using Astro for their websites in 2026. From tech giants to agencies, learn why organizations choose Astro and how it transforms their web presence."
 author: "Ramon Nuila"
 readtime: 18

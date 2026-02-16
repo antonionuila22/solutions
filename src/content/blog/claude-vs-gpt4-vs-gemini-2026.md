@@ -1,5 +1,5 @@
 ---
-title: "Claude vs GPT-4 vs Gemini 2026: Which AI Is Best for Your Business?"
+title: "Claude vs GPT-4 vs Gemini: AI Comparison 2026"
 description: "Comprehensive comparison of Claude, GPT-4, and Gemini in 2026. Analyze capabilities, pricing, use cases, and real-world performance to choose the right AI for your needs."
 author: "Ramon Nuila"
 readtime: 18

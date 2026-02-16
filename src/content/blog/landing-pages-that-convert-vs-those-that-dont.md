@@ -1,11 +1,13 @@
 ---
-title: "Landing Pages That Convert vs. Those That Don't: A Complete Analysis"
+title: "Landing Pages That Convert vs. Those That Don't"
 description: "Detailed comparison between landing pages that convert and those that fail. Learn what elements make the difference, common mistakes, and clear recommendations to improve your results."
 author: "Ramon Nuila"
 readtime: 10
 img: /photos/blog/uxservice.webp
 imageAlt: "Visual comparison of two landing pages with different conversion rates"
 date: 2024-03-28
+categories: ["Marketing", "Web Design"]
+tags: ["landing pages", "conversion", "CRO", "web design", "lead generation"]
 ---
 
 ## Landing Pages That Convert vs. Those That Don't: What Separates Winners from Losers

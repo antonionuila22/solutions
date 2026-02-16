@@ -1,5 +1,5 @@
 ---
-title: "WordPress Maintenance SOP: The Complete Guide to Managing Your Own Website in 2026"
+title: "WordPress Maintenance: Complete Guide (2026)"
 description: "Learn how to manage and maintain your WordPress website yourself. Step-by-step SOPs for updating plugins, creating blog posts, building pages with Elementor, and more."
 author: "Codebrand Team"
 readtime: 22

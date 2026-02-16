@@ -1,11 +1,13 @@
 ---
-title: "Nearshore Software Development: Complete Guide 2024 (Benefits, Costs & Best Practices)"
+title: "Nearshore Software Development Guide 2024"
 description: "Discover why nearshore software development in Honduras and Central America offers US companies 60% cost savings with same-timezone collaboration. Complete guide with pricing, benefits, and how to choose the right nearshore partner."
 author: "Ramon Nuila"
 readtime: 15
 img: /photos/blog/colleagues-discussing-image-on-laptop-in-team-2025-09-10-00-01-35-utc.avif
 imageAlt: "Nearshore software development team collaborating with US clients via video call"
 date: 2025-11-16
+categories: ["Web Development", "Nearshore"]
+tags: ["nearshore", "software development", "outsourcing", "Central America", "cost savings"]
 ---
 
 ## Nearshore Software Development: Your Complete 2024 Guide

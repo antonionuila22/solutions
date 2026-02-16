@@ -6,6 +6,8 @@ readtime: 9
 img: /photos/blog/website-cheap.webp
 imageAlt: "5 design mistakes that make your website look cheap"
 date: 2025-03-28
+categories: ["Web Design", "Tips"]
+tags: ["web design", "website mistakes", "UX", "design tips", "branding"]
 ---
 
 ## 5 Design Mistakes That Make Your Website Look Cheap (And How to Fix Them)

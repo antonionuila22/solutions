@@ -1,5 +1,5 @@
 ---
-title: "Netlify Complete Guide 2026: From Zero to Production in Minutes"
+title: "Netlify Guide 2026: Zero to Production Fast"
 description: "Master Netlify hosting in 2026. Learn deployment, serverless functions, forms, edge functions, and advanced features. Complete tutorial with real-world examples."
 author: "Ramon Nuila"
 readtime: 22

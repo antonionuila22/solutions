@@ -1,5 +1,5 @@
 ---
-title: "AI Automation for Business: The Complete Guide to Automating Your Operations in 2026"
+title: "AI Automation for Business: Complete Guide 2026"
 description: "Learn how to leverage AI automation to streamline business processes, reduce costs, and scale operations. Practical strategies for implementing AI-powered workflows in your company."
 author: "Ramon Nuila"
 readtime: 14

@@ -1,11 +1,13 @@
 ---
-title: "Web Development Cost Comparison: USA vs Honduras 2024 (Real Pricing Guide)"
+title: "Web Dev Costs: USA vs Honduras Pricing Guide"
 description: "Complete web development cost comparison between USA and Honduras agencies. Discover how to save 60% on your next project without sacrificing quality. Includes real pricing for e-commerce, custom apps, and more."
 author: "Ramon Nuila"
 readtime: 14
 img: /photos/blog/webcosthn.avif
 imageAlt: "Cost comparison chart showing USA vs Honduras web development pricing"
 date: 2025-11-18
+categories: ["Web Development", "Nearshore"]
+tags: ["web development cost", "USA vs Honduras", "pricing", "nearshore", "outsourcing"]
 ---
 
 ## Web Development Cost Comparison: The Truth About USA vs Honduras Pricing

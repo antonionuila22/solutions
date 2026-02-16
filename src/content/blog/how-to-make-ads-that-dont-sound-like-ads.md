@@ -1,11 +1,13 @@
 ---
-title: "How to Make Ads That Don't Sound Like Ads (And Actually Get Results)"
+title: "Ads That Don't Sound Like Ads (Get Results)"
 description: "Learn to create effective ads that connect with your audience without feeling invasive. Storytelling techniques, social proof, natural language, and useful content to sell without pushing."
 author: "Ramon Nuila"
 readtime: 10
 img: /photos/blog/ads.webp
 imageAlt: "Marketing strategy showing how to create ads that feel like organic content"
 date: 2025-03-28
+categories: ["Marketing", "Tips"]
+tags: ["advertising", "content marketing", "copywriting", "storytelling", "social media"]
 ---
 
 ## How to Make Ads That Don't Sound Like Ads (The Secret to Marketing People Actually Like)

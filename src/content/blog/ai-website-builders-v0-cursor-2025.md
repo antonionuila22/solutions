@@ -1,5 +1,5 @@
 ---
-title: "AI Website Builders 2025: v0, Cursor, and the Future of No-Code"
+title: "AI Website Builders 2025: v0, Cursor & No-Code"
 description: "Complete guide to AI website builders in 2025. Honest review of Vercel v0, Cursor, Bolt, and others. What they can actually build, their limitations, and when you still need a professional developer."
 author: "Ramon Nuila"
 readtime: 14

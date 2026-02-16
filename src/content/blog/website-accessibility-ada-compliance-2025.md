@@ -1,5 +1,5 @@
 ---
-title: "Website Accessibility & ADA Compliance 2025: The Complete Business Guide"
+title: "Website Accessibility & ADA Compliance (2025)"
 description: "Everything businesses need to know about website accessibility in 2025. ADA lawsuit trends, WCAG requirements, how to become compliant, and why accessibility overlays don't work. Protect your business."
 author: "Ramon Nuila"
 readtime: 16

@@ -30,7 +30,22 @@
     }
   ],
   "categories": ["business", "productivity", "design"],
-  "screenshots": [],
+  "screenshots": [
+    {
+      "src": "/photos/bannercodebrand.webp",
+      "sizes": "1200x800",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Codebrand - Professional Web Development Agency"
+    },
+    {
+      "src": "/iconcodebrand.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "Codebrand - Mobile View"
+    }
+  ],
   "shortcuts": [
     {
       "name": "Contact Us",

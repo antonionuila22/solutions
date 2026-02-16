@@ -1,5 +1,5 @@
 ---
-title: "UI/UX Design Principles: The Complete Guide for 2026"
+title: "UI/UX Design Principles Guide (2026)"
 description: "Master the essential UI/UX design principles that create exceptional user experiences. Learn visual hierarchy, accessibility, interaction design, and psychology-based patterns with practical examples."
 author: "Ramon Nuila"
 readtime: 22

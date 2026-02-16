@@ -1,5 +1,5 @@
 ---
-title: "React Performance Optimization: Real Case Study with 85% Load Time Reduction"
+title: "React Performance: 85% Load Time Reduction"
 description: "Detailed case study showing how we optimized a React application from 8.2s to 1.2s load time. Learn the exact techniques, code patterns, and architectural decisions that achieved 85% performance improvement."
 author: "Ramon Nuila"
 readtime: 14

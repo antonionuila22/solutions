@@ -1,5 +1,5 @@
 ---
-title: "The Complete Guide to Hiring a Web Development Agency in 2025"
+title: "Guide to Hiring a Web Development Agency 2025"
 description: "Everything you need to know before hiring a web development agency. Learn how to evaluate agencies, what questions to ask, red flags to avoid, and how to ensure your project succeeds."
 author: "Ramon Nuila"
 readtime: 18

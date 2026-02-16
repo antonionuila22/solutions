@@ -199,10 +199,10 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="prefetch" href="/photos/section.webp" />
     <link rel="prefetch" href="/iconcodebrand.svg" />
 
-    <!-- Preload critical fonts for better LCP -->
-    <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
+    <!-- Preload critical fonts for better LCP (WOFF2 = ~8KB vs TTF ~155KB) -->
+    <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Enhanced Structured Data -->
     <script type="application/ld+json" is:inline>

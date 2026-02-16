@@ -1,5 +1,5 @@
 ---
-title: "Website Security Best Practices 2026: The Complete Protection Guide"
+title: "Website Security Best Practices (2026)"
 description: "Comprehensive website security guide for 2026. Learn HTTPS, CSP, authentication, SQL injection prevention, XSS protection, and security headers. Protect your website from modern threats."
 author: "Ramon Nuila"
 readtime: 25

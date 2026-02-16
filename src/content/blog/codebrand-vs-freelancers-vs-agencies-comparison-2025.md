@@ -1,5 +1,5 @@
 ---
-title: "Codebrand vs Freelancers vs Big Agencies: An Honest Comparison"
+title: "Codebrand vs Freelancers vs Agencies Comparison"
 description: "Trying to decide between a freelancer, a big agency, or a boutique agency like Codebrand? Here's an honest breakdown of pros, cons, and when each option makes sense."
 author: "Ramon Nuila"
 readtime: 10

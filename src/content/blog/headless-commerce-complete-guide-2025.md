@@ -1,5 +1,5 @@
 ---
-title: "Headless Commerce: La Arquitectura Que Está Transformando el E-commerce en 2025"
+title: "Headless Commerce: Transformando E-commerce"
 description: "Guía completa sobre Headless Commerce. Descubre qué es, cómo funciona, cuándo implementarlo y por qué las marcas más exitosas están migrando a esta arquitectura. Casos reales, costos y estrategia de implementación."
 author: "Ramon Nuila"
 readtime: 12

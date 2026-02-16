@@ -1,5 +1,5 @@
 ---
-title: "REST API Design Best Practices 2026: Build APIs Developers Love"
+title: "REST API Design Best Practices (2026)"
 description: "Complete guide to REST API design best practices in 2026. Learn URL structure, HTTP methods, status codes, versioning, pagination, error handling, and documentation. Build professional, maintainable APIs."
 author: "Ramon Nuila"
 readtime: 24

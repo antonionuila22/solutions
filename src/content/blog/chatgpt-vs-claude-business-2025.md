@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT vs Claude 2025: Which AI Is Better for Your Business?"
+title: "ChatGPT vs Claude: Best AI for Business (2025)"
 description: "Comprehensive comparison of ChatGPT and Claude for business use in 2025. Real data on enterprise adoption, pricing, features, and which AI is best for coding, writing, analysis, and workflow automation."
 author: "Ramon Nuila"
 readtime: 15

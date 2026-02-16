@@ -1,5 +1,5 @@
 ---
-title: "E-commerce Website Development: The Complete Guide for 2025"
+title: "E-commerce Website Development Guide (2025)"
 description: "Everything you need to know about building a successful e-commerce website in 2025. Platform comparisons, costs, features, SEO, and technical requirements for online stores that actually sell."
 author: "Ramon Nuila"
 readtime: 24

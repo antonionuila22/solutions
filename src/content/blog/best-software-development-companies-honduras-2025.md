@@ -1,11 +1,13 @@
 ---
-title: "Best Software Development Companies in Honduras 2025 (Expert Rankings & Reviews)"
+title: "Best Software Dev Companies in Honduras 2025"
 description: "Discover the top software development companies in Honduras for US businesses. Compare pricing, services, certifications, and client reviews. Expert rankings based on quality, cost, and reliability."
 author: "Ramon Nuila"
 readtime: 16
 img: /photos/blog/teamcode.webp
 imageAlt: "Top software development companies in Honduras serving US clients"
 date: 2025-11-19
+categories: ["Web Development", "Nearshore"]
+tags: ["Honduras", "software development", "nearshore", "outsourcing", "agency rankings"]
 ---
 
 ## Best Software Development Companies in Honduras: 2025 Expert Rankings

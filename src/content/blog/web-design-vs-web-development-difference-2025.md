@@ -1,5 +1,5 @@
 ---
-title: "Web Design vs Web Development: What's the Difference? (2025 Guide)"
+title: "Web Design vs Web Development: The Difference"
 description: "Understand the real difference between web design and web development. Learn when you need a designer, a developer, or both—and how to avoid paying for the wrong service."
 author: "Ramon Nuila"
 readtime: 8

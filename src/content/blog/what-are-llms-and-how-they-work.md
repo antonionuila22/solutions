@@ -1,11 +1,13 @@
 ---
-title: "What Are LLMs and How Do They Work? (Complete Guide for Business Owners)"
+title: "What Are LLMs? Complete Business Owner Guide"
 description: "Discover what Large Language Models (LLMs) are, how they work, their real-world business applications, benefits, challenges, and how to leverage AI in your business strategy."
 author: "Ramon Nuila"
 readtime: 11
 img: /photos/blog/LLM.webp
 imageAlt: "Artificial intelligence illustration with language model processing data"
 date: 2025-06-24
+categories: ["Technology", "AI"]
+tags: ["LLM", "artificial intelligence", "ChatGPT", "AI for business", "machine learning"]
 ---
 
 ## What Are LLMs and How Do They Work? (Everything Business Owners Need to Know)

@@ -1,5 +1,5 @@
 ---
-title: "Vercel vs Netlify vs Cloudflare Pages 2026: The Definitive Comparison"
+title: "Vercel vs Netlify vs Cloudflare Pages (2026)"
 description: "Complete comparison of Vercel, Netlify, and Cloudflare Pages in 2026. Analyze pricing, features, performance, and real-world use cases. Find the best hosting platform for your project."
 author: "Ramon Nuila"
 readtime: 25

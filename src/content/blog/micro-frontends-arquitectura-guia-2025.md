@@ -1,5 +1,5 @@
 ---
-title: "Micro Frontends: La Arquitectura Que Usan Amazon, Spotify y IKEA (Guía 2025)"
+title: "Micro Frontends: Guía de Arquitectura (2025)"
 description: "Todo sobre arquitectura de micro frontends. Qué son, cuándo usarlos, patrones de implementación, herramientas modernas, y casos reales. Guía técnica y estratégica para equipos que escalan."
 author: "Ramon Nuila"
 readtime: 15

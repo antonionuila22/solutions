@@ -1,5 +1,5 @@
 ---
-title: "Nearshore vs Offshore Development: Complete 2025 Guide for US Companies"
+title: "Nearshore vs Offshore Development Guide (2025)"
 description: "Comprehensive comparison of nearshore vs offshore software development for US companies. Real data on costs, quality, communication, and outcomes to help you choose the right outsourcing model."
 author: "Ramon Nuila"
 readtime: 22

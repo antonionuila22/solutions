@@ -6,6 +6,8 @@ readtime: 11
 img: /photos/blog/website-value.webp
 imageAlt: "Visual warning about hiring low-cost marketing agencies"
 date: 2025-03-28
+categories: ["Business Strategy", "Tips"]
+tags: ["cheap agency", "web agency", "hiring tips", "business mistakes", "quality vs price"]
 ---
 
 ## What No One Tells You Before Paying for a Cheap Agency (And Why It Might Be the Costliest Mistake You Make)

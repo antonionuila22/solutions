@@ -1,11 +1,13 @@
 ---
-title: "How to Build a Professional Contact Form in Astro with Turso Database and Resend Email Notifications"
+title: "Astro Contact Form with Turso & Resend Guide"
 description: "Complete step-by-step guide to implementing a professional contact form in Astro that stores submissions in Turso database and sends automatic email notifications using Resend. Perfect for modern, fast websites."
 author: "Ramon Nuila"
 readtime: 12
 img: /photos/blog/astro-form-turso.webp
 imageAlt: "Astro form with database storage and email delivery"
 date: 2024-03-28
+categories: ["Web Development", "Tutorials"]
+tags: ["Astro", "Turso", "Resend", "contact form", "tutorial"]
 ---
 
 ## How to Build a Professional Contact Form in Astro with Turso + Resend (Complete Guide)

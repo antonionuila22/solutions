@@ -1,5 +1,5 @@
 ---
-title: "AI Agents for Business: How Autonomous AI Is Transforming Operations in 2026"
+title: "AI Agents for Business: Operations Guide 2026"
 description: "Learn how AI agents are revolutionizing business operations. From customer service to sales automation, discover practical applications and implementation strategies for your company."
 author: "Ramon Nuila"
 readtime: 16

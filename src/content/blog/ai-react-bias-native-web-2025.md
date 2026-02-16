@@ -1,5 +1,5 @@
 ---
-title: "The AI React Bias Problem: Why Your Coding Assistant Keeps Ignoring Native Web"
+title: "AI React Bias: Why Assistants Ignore Native Web"
 description: "AI coding tools default to React for almost everything. Learn why this happens, when it hurts your projects, and how modern CSS and native browser APIs often provide better solutions in 2025."
 author: "Ramon Nuila"
 readtime: 15

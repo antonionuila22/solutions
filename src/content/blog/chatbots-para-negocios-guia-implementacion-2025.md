@@ -1,5 +1,5 @@
 ---
-title: "Chatbots Para Negocios: Guía Completa de Implementación (2025)"
+title: "Chatbots Para Negocios: Guía de Implementación"
 description: "Todo lo que necesitas saber para implementar un chatbot en tu negocio. Tipos de chatbots, plataformas, costos reales, errores comunes, y cómo medir el ROI. Con ejemplos prácticos y casos de éxito."
 author: "Ramon Nuila"
 readtime: 16
