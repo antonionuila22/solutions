@@ -3,7 +3,7 @@ title: "Astro vs Next.js: ¿Cuál Elegir Para Tu Proyecto en 2025?"
 description: "Comparativa técnica y práctica entre Astro y Next.js. Benchmarks de rendimiento, casos de uso ideales, SEO, developer experience. Guía para elegir el framework correcto para tu próximo proyecto web."
 author: "Ramon Nuila"
 readtime: 14
-img: /photos/blog/astro-vs-nextjs-2025.png
+img: /photos/blog/astro-vs-nextjs-2025.webp
 imageAlt: "Comparación de frameworks Astro y Next.js para desarrollo web"
 date: 2025-12-09
 categories:

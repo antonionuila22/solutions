@@ -3,7 +3,7 @@ title: "Micro Frontends: La Arquitectura Que Usan Amazon, Spotify y IKEA (Guía 
 description: "Todo sobre arquitectura de micro frontends. Qué son, cuándo usarlos, patrones de implementación, herramientas modernas, y casos reales. Guía técnica y estratégica para equipos que escalan."
 author: "Ramon Nuila"
 readtime: 15
-img: /photos/blog/micro-frontends-architecture.png
+img: /photos/blog/micro-frontends-architecture.webp
 imageAlt: "Diagrama de arquitectura micro frontends con componentes modulares"
 date: 2025-12-09
 categories:

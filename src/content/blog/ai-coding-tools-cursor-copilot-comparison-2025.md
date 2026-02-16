@@ -3,7 +3,7 @@ title: "Cursor vs GitHub Copilot vs Claude: La Batalla de las Herramientas de C�
 description: "Comparativa exhaustiva de las mejores herramientas de programación con IA. Analizamos Cursor, GitHub Copilot, Claude, Codeium y más. Benchmarks reales, precios, y cuál elegir según tu caso de uso."
 author: "Ramon Nuila"
 readtime: 15
-img: /photos/blog/ai-coding-tools-comparison.png
+img: /photos/blog/ai-coding-tools-comparison.webp
 imageAlt: "Comparación de herramientas de programación con inteligencia artificial"
 date: 2025-12-09
 categories:

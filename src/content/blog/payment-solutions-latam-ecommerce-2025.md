@@ -3,7 +3,7 @@ title: "Pagos en Latinoamérica: La Guía Definitiva Para Vender Online en LATAM
 description: "Todo lo que necesitas saber sobre procesamiento de pagos en Latinoamérica. Métodos locales, pasarelas, regulaciones y estrategias para maximizar conversiones en México, Colombia, Argentina, Brasil y más."
 author: "Ramon Nuila"
 readtime: 14
-img: /photos/blog/Payment-Latam.png
+img: /photos/blog/Payment-Latam.webp
 imageAlt: "Métodos de pago populares en Latinoamérica para e-commerce"
 date: 2025-12-09
 categories:

@@ -3,7 +3,7 @@ title: "Headless Commerce: La Arquitectura Que Está Transformando el E-commerce
 description: "Guía completa sobre Headless Commerce. Descubre qué es, cómo funciona, cuándo implementarlo y por qué las marcas más exitosas están migrando a esta arquitectura. Casos reales, costos y estrategia de implementación."
 author: "Ramon Nuila"
 readtime: 12
-img: /photos/blog/Headless-commerce.png
+img: /photos/blog/Headless-commerce.webp
 imageAlt: "Arquitectura headless commerce separando frontend y backend"
 date: 2025-12-09
 categories:

@@ -7,8 +7,8 @@ import FaqDark from "../../components/FaqDark.tsx";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 // SEO Configuration
-const title = "Digital Services | Web Development, Design, SEO & Marketing | Codebrand";
-const description = "Professional digital services including custom web development, UX/UI design, SEO optimization, branding, video production, and more. Transform your business with our expert team. Get a free quote today.";
+const title = "Digital Services | Web Dev, Design & SEO | Codebrand";
+const description = "Custom web development, UX/UI design, SEO, branding, video production, and more. Transform your business with our expert team.";
 const keywords = "digital services, web development services, UX UI design agency, SEO services, branding agency, video production company, social media marketing, e-commerce development, 3D rendering services, animation services, digital marketing agency, custom web applications, responsive web design, mobile app development";
 
 // Schema.org - Service List
@@ -32,22 +32,7 @@ const servicesSchema = {
   ]
 };
 
-// Organization Schema
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Codebrand",
-  "url": "https://codebrand.us",
-  "logo": "https://codebrand.us/iconcodebrand.svg",
-  "description": "Full-service digital agency specializing in web development, design, and marketing",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "US"
-  },
-  "priceRange": "$$",
-  "serviceType": ["Web Development", "UX/UI Design", "SEO", "Branding", "Video Production"],
-  "areaServed": ["United States", "Latin America", "Spain"]
-};
+// Organization Schema removed - already provided by Layout.astro globally
 
 // Breadcrumb Schema
 const breadcrumbSchema = createBreadcrumbSchema([
@@ -217,7 +202,7 @@ const benefits = [
 >
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(servicesSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
+  <!-- Organization schema provided by Layout.astro -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 

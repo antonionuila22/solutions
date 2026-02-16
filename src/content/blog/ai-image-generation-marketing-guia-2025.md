@@ -3,7 +3,7 @@ title: "Generación de Imágenes con IA Para Marketing: Guía Práctica (2025)"
 description: "Aprende a usar herramientas de generación de imágenes con IA para tu negocio. Midjourney, DALL-E, Stable Diffusion explicados. Casos de uso, prompts efectivos, limitaciones legales y flujos de trabajo profesionales."
 author: "Ramon Nuila"
 readtime: 13
-img: /photos/blog/image-gen (2).png
+img: /photos/blog/image-gen-2.webp
 imageAlt: "Generación de imágenes con inteligencia artificial para marketing digital"
 date: 2025-12-09
 categories:

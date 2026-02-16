@@ -3,7 +3,7 @@ title: "Cómo Integrar IA en Tu Sitio Web: Guía Práctica Para Negocios (2025)"
 description: "Aprende a implementar inteligencia artificial en tu sitio web de forma práctica. Chatbots, personalización, búsqueda inteligente, generación de contenido y más. Costos reales, herramientas y casos de éxito."
 author: "Ramon Nuila"
 readtime: 13
-img: /photos/blog/ai-website-integration.png
+img: /photos/blog/ai-website-integration.webp
 imageAlt: "Integración de inteligencia artificial en sitios web empresariales"
 date: 2025-12-09
 categories:

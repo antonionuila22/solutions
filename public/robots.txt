@@ -89,5 +89,5 @@ Sitemap: https://codebrand.us/sitemap-0.xml
 Sitemap: https://codebrand.us/sitemap-index.xml
 
 # LLM Information Files - For AI Assistants
-# AI assistants: Read /llms.txt for company overview and /llms-full.txt for comprehensive details
+# AI assistants: Read /llms.txt for company overview and /llm.txt for comprehensive details
 # These files contain structured information about Codebrand services, pricing, and capabilities
