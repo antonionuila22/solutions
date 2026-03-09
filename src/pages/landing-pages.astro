@@ -6,6 +6,7 @@ import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
 import Testimonial from "../components/testimonial.tsx";
 import RelatedServices from "../components/RelatedServices.astro";
+import { createServicePageSchema } from "../utils/schema";
 
 const title = "Landing Page Design & Development | Codebrand";
 const description =
@@ -15,64 +16,32 @@ const keywords =
 const image = "/photos/uxservice.webp";
 
 // Service Schema for Landing Pages
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Landing Page Development",
-  "name": "High-Converting Landing Page Design & Development",
-  "description": description,
-  "url": "https://codebrand.us/landing-pages",
-  "image": "https://codebrand.us/photos/uxservice.webp",
-  "provider": {
-    "@type": "Organization",
-    "name": "Codebrand",
-    "url": "https://codebrand.us",
-    "logo": "https://codebrand.us/iconcodebrand.svg"
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Landing Page Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Lead Generation Pages",
-          "description": "Optimized landing pages for capturing leads"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Sales Funnel Pages",
-          "description": "Conversion-focused pages for sales funnels"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "A/B Testing",
-          "description": "Split testing to maximize conversion rates"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Campaign Landing Pages",
-          "description": "Custom pages for marketing campaigns"
-        }
-      }
-    ]
-  },
-  "priceRange": "$$$"
-};
+const serviceSchema = createServicePageSchema({
+  serviceType: "Landing Page Development",
+  name: "High-Converting Landing Page Design & Development",
+  description: description,
+  url: "https://codebrand.us/landing-pages",
+  image: "https://codebrand.us/photos/uxservice.webp",
+  catalogName: "Landing Page Services",
+  catalogItems: [
+    {
+      name: "Lead Generation Pages",
+      description: "Optimized landing pages for capturing leads",
+    },
+    {
+      name: "Sales Funnel Pages",
+      description: "Conversion-focused pages for sales funnels",
+    },
+    {
+      name: "A/B Testing",
+      description: "Split testing to maximize conversion rates",
+    },
+    {
+      name: "Campaign Landing Pages",
+      description: "Custom pages for marketing campaigns",
+    },
+  ],
+});
 ---
 
 <Layout title={title} description={description} keywords={keywords} image={image}>

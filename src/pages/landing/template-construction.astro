@@ -1,27 +1,10 @@
 ---
-import LandingLayout from "../../layouts/LandingLayout.astro";
+import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import Logo from "../../components/logo.astro";
-
-const pageTitle = "BuildCo Construction | Expert Builders & Contractors";
-const pageDescription =
-  "Professional construction services. Residential & commercial building, renovations, and remodeling. Quality craftsmanship. Free quotes.";
-const pageKeywords =
-  "construction company, building contractor, home builder, commercial construction, renovations, remodeling, buildco construction, residential construction, construction services";
-const pageImage = "/photos/bannercodebrand.webp";
+import { config } from "../../configs/landing/construction.config";
 ---
 
-<LandingLayout
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}
-  image={pageImage}
-  noindex={true}
->
-  <meta property="og:title" content={pageTitle} slot="head" />
-  <meta property="og:description" content={pageDescription} slot="head" />
-  <meta property="og:image" content={pageImage} slot="head" />
-
-  <div class="relative w-full overflow-hidden bg-black">
+<LandingPageTemplate config={config}><div class="relative w-full overflow-hidden bg-black">
     <!-- Hero Section -->
     <header
       class="relative min-h-screen bg-cover bg-center"
@@ -636,8 +619,7 @@ const pageImage = "/photos/bannercodebrand.webp";
       </div>
     </section>
   </div>
-</LandingLayout>
-
+</LandingPageTemplate>
 <style>
   .warning-stripes {
     position: absolute;

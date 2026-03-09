@@ -3,6 +3,8 @@
  * Generates standardized Schema.org markup for services
  */
 
+import { BUSINESS_INFO } from "../configs/business";
+
 interface ServiceOffer {
   name: string;
   description: string;
@@ -22,6 +24,7 @@ interface SchemaOfferCatalog {
 
 /**
  * Organization data - single source of truth
+ * Note: Uses banner image as logo for existing createServiceSchema callers
  */
 const ORGANIZATION_DATA = {
   "@type": "Organization",
@@ -39,6 +42,82 @@ const DEFAULT_OFFER = {
   price: "0",
   priceCurrency: "USD",
 } as const;
+
+/**
+ * Configuration for creating a service page schema
+ */
+export interface ServicePageSchemaConfig {
+  /** The type of service (e.g., "Branding Services") */
+  serviceType: string;
+  /** Display name of the service (e.g., "Professional Branding & Logo Design Services") */
+  name: string;
+  /** Service description for SEO */
+  description: string;
+  /** Full URL of the service page (e.g., "https://codebrand.us/branding") */
+  url: string;
+  /** Full URL of the service image */
+  image: string;
+  /** Name for the offer catalog */
+  catalogName: string;
+  /** Array of service offerings in the catalog */
+  catalogItems: ServiceOffer[];
+}
+
+/**
+ * Creates a standardized Schema.org Service markup for service pages
+ * Matches the exact structure used across all service pages with
+ * provider, areaServed, hasOfferCatalog, and priceRange
+ *
+ * @param config - Service page schema configuration
+ * @returns Complete Schema.org object ready for JSON-LD
+ *
+ * @example
+ * const schema = createServicePageSchema({
+ *   serviceType: "Branding Services",
+ *   name: "Professional Branding & Logo Design Services",
+ *   description: "Build a powerful brand...",
+ *   url: "https://codebrand.us/branding",
+ *   image: "https://codebrand.us/photos/Branding.webp",
+ *   catalogName: "Branding Services",
+ *   catalogItems: [
+ *     { name: "Logo Design", description: "Custom logo design..." },
+ *   ],
+ * });
+ */
+export function createServicePageSchema(config: ServicePageSchemaConfig) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: config.serviceType,
+    name: config.name,
+    description: config.description,
+    url: config.url,
+    image: config.image,
+    provider: {
+      "@type": "Organization",
+      name: BUSINESS_INFO.name,
+      url: BUSINESS_INFO.baseUrl,
+      logo: BUSINESS_INFO.logoUrl,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: config.catalogName,
+      itemListElement: config.catalogItems.map((item) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: item.name,
+          description: item.description,
+        },
+      })),
+    },
+    priceRange: BUSINESS_INFO.priceRange,
+  };
+}
 
 /**
  * Creates a standardized Schema.org Service markup

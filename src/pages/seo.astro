@@ -7,6 +7,7 @@ import Button from "../components/Button.astro";
 import Testimonial from "../components/testimonial.tsx";
 import RelatedServices from "../components/RelatedServices.astro";
 import TrustBadges from "../components/TrustBadges.astro";
+import { createServicePageSchema } from "../utils/schema";
 
 const title = "SEO Services | Boost Your Rankings | Codebrand";
 const description =
@@ -16,66 +17,34 @@ const keywords =
 const image = "/photos/seo.webp";
 
 // Service Schema for SEO
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceSchema = createServicePageSchema({
   serviceType: "SEO Services",
   name: "Professional Search Engine Optimization Services",
   description: description,
   url: "https://codebrand.us/seo",
   image: "https://codebrand.us/photos/seo.webp",
-  provider: {
-    "@type": "Organization",
-    name: "Codebrand",
-    url: "https://codebrand.us",
-    logo: "https://codebrand.us/iconcodebrand.svg",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "United States",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "SEO Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Technical SEO",
-          description:
-            "Site speed optimization, crawlability, and technical audits",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "On-Page SEO",
-          description: "Content optimization, meta tags, and keyword targeting",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Link Building",
-          description: "White-hat backlink strategies for authority building",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Local SEO",
-          description:
-            "Google Business Profile optimization and local rankings",
-        },
-      },
-    ],
-  },
-  priceRange: "$$$",
-};
+  catalogName: "SEO Services",
+  catalogItems: [
+    {
+      name: "Technical SEO",
+      description:
+        "Site speed optimization, crawlability, and technical audits",
+    },
+    {
+      name: "On-Page SEO",
+      description: "Content optimization, meta tags, and keyword targeting",
+    },
+    {
+      name: "Link Building",
+      description: "White-hat backlink strategies for authority building",
+    },
+    {
+      name: "Local SEO",
+      description:
+        "Google Business Profile optimization and local rankings",
+    },
+  ],
+});
 ---
 
 <Layout

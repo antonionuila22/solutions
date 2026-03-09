@@ -5,7 +5,7 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
-import FaqDark from "../../components/FaqDark.tsx";
+import FAQ from "../../components/FAQ.tsx";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title = "Gym & Fitness Website Design | Studio Solutions | Codebrand";
@@ -1528,7 +1528,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
           Common questions about our gym and fitness website development
         </p>
       </div>
-      <FaqDark faqs={fitnessFaqs} client:visible />
+      <FAQ faqs={fitnessFaqs} theme="dark" client:visible />
     </div>
   </section>
 

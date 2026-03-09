@@ -1,22 +1,10 @@
 ---
-import LandingLayout from "../../layouts/LandingLayout.astro";
+import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import Testimonial from "../../components/testimonial.tsx";
-
-const pageTitle = "Maya Rivers | Content Creator & Digital Storyteller";
-const pageDescription =
-  "Award-winning content creator specializing in lifestyle, tech, and travel. 2.5M+ followers across platforms.";
-const pageKeywords =
-  "content creator, digital storyteller, lifestyle influencer, tech content, travel blogger, social media influencer, creator portfolio, digital content, influencer marketing";
-const pageImage = "/photos/bannercodebrand.webp";
+import { config } from "../../configs/landing/content-creators.config";
 ---
 
-<LandingLayout
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}
-  image={pageImage}
-  noindex={true}
->
+<LandingPageTemplate config={config}>
   <style>
     @keyframes gradientShift {
       0%,
@@ -824,4 +812,4 @@ const pageImage = "/photos/bannercodebrand.webp";
       </div>
     </div>
   </section>
-</LandingLayout>
+</LandingPageTemplate>

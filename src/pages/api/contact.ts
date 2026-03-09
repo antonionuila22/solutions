@@ -24,37 +24,53 @@ if (import.meta.env.DEV) {
     ALLOWED_ORIGINS.push("http://localhost:4321", "http://localhost:3000");
 }
 
-// Simple in-memory rate limiting (resets on server restart)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX = 5; // Max 5 requests per minute per IP
+// Rate limiting backed by Turso (works in serverless/Netlify Functions).
+// Requires a table: CREATE TABLE IF NOT EXISTS rate_limits (ip TEXT NOT NULL, ts INTEGER NOT NULL);
+// The table and old entries are managed automatically below.
+const RATE_LIMIT_WINDOW_SEC = 60; // 1 minute window
+const RATE_LIMIT_MAX = 5; // Max 5 requests per window per IP
 
-function isRateLimited(ip: string): boolean {
-    const now = Date.now();
-    const record = rateLimitMap.get(ip);
+let rateLimitTableReady = false;
 
-    if (!record || now > record.resetTime) {
-        rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-        return false;
+async function ensureRateLimitTable(): Promise<void> {
+    if (rateLimitTableReady) return;
+    try {
+        await turso.execute(
+            `CREATE TABLE IF NOT EXISTS rate_limits (ip TEXT NOT NULL, ts INTEGER NOT NULL)`
+        );
+        rateLimitTableReady = true;
+    } catch (err) {
+        console.error('[RateLimit] Failed to ensure rate_limits table:', err instanceof Error ? err.message : 'Unknown');
     }
-
-    if (record.count >= RATE_LIMIT_MAX) {
-        return true;
-    }
-
-    record.count++;
-    return false;
 }
 
-// Clean up old rate limit entries periodically
-setInterval(() => {
-    const now = Date.now();
-    for (const [ip, record] of rateLimitMap.entries()) {
-        if (now > record.resetTime) {
-            rateLimitMap.delete(ip);
-        }
+async function isRateLimited(ip: string): Promise<boolean> {
+    try {
+        await ensureRateLimitTable();
+
+        const nowSec = Math.floor(Date.now() / 1000);
+        const windowStart = nowSec - RATE_LIMIT_WINDOW_SEC;
+
+        // Clean up expired entries for this IP and record the new request in one batch
+        await turso.batch([
+            { sql: `DELETE FROM rate_limits WHERE ts < ?`, args: [windowStart] },
+            { sql: `INSERT INTO rate_limits (ip, ts) VALUES (?, ?)`, args: [ip, nowSec] },
+        ]);
+
+        // Count requests in the current window
+        const result = await turso.execute({
+            sql: `SELECT COUNT(*) AS cnt FROM rate_limits WHERE ip = ? AND ts >= ?`,
+            args: [ip, windowStart],
+        });
+
+        const count = Number(result.rows[0]?.cnt ?? 0);
+        return count > RATE_LIMIT_MAX;
+    } catch (err) {
+        // If the database is unavailable, allow the request (fail-open) and log
+        console.error('[RateLimit] Check failed, allowing request:', err instanceof Error ? err.message : 'Unknown');
+        return false;
     }
-}, 60 * 1000);
+}
 
 export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
     try {
@@ -75,7 +91,7 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 
         // Rate limiting check
         const ip = clientAddress || request.headers.get('x-forwarded-for') || 'unknown';
-        if (isRateLimited(ip)) {
+        if (await isRateLimited(ip)) {
             return new Response("Too many requests. Please try again later.", {
                 status: 429,
                 headers: { 'Retry-After': '60' }

@@ -1,28 +1,10 @@
 ---
-import LandingLayout from "../../layouts/LandingLayout.astro";
+import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import Logo from "../../components/logo.astro";
-
-const pageTitle =
-  "PrimeCare Medical Center | Compassionate Healthcare in Boston";
-const pageDescription =
-  "Comprehensive primary care and specialty services in Boston. Board-certified physicians, same-day appointments, and patient-centered care.";
-const pageKeywords =
-  "medical center Boston, primary care, family doctor, healthcare clinic, medical services, urgent care, pediatrics, board-certified physicians, healthcare Boston, medical center";
-const pageImage = "/photos/bannercodebrand.webp";
+import { config } from "../../configs/landing/healthcare.config";
 ---
 
-<LandingLayout
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}
-  image={pageImage}
-  noindex={true}
->
-  <meta property="og:title" content={pageTitle} slot="head" />
-  <meta property="og:description" content={pageDescription} slot="head" />
-  <meta property="og:image" content={pageImage} slot="head" />
-
-  <div class="relative w-full overflow-hidden bg-white">
+<LandingPageTemplate config={config}><div class="relative w-full overflow-hidden bg-white">
     <!-- Fixed Navigation -->
     <nav
       class="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b border-blue-100 shadow-sm"
@@ -1127,8 +1109,7 @@ const pageImage = "/photos/bannercodebrand.webp";
       </div>
     </section>
   </div>
-</LandingLayout>
-
+</LandingPageTemplate>
 <style>
   /* Slide Up Animation */
   .animate-slide-up {

@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FaqDark from "../components/FaqDark.tsx";
+import FAQ from "../components/FAQ.tsx";
 
 const title = "E-commerce Agency | Store Experts | Codebrand";
 const description = "Shopify, custom stores, and headless commerce. High-converting online stores. US timezone, 60% cost savings vs US agencies.";
@@ -192,7 +192,7 @@ const platforms = ["Shopify", "Shopify Plus", "Headless Commerce", "WooCommerce"
             <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
           </div>
           <div class="fade-up">
-            <FaqDark faqs={faqs} client:visible />
+            <FAQ faqs={faqs} theme="dark" client:visible />
           </div>
         </div>
       </section>

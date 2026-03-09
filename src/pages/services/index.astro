@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
-import FaqDark from "../../components/FaqDark.tsx";
+import FAQ from "../../components/FAQ.tsx";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 // SEO Configuration
@@ -616,7 +616,7 @@ const benefits = [
           Common questions about our services and how we work
         </p>
       </div>
-      <FaqDark faqs={serviceFaqs} client:visible />
+      <FAQ faqs={serviceFaqs} theme="dark" client:visible />
     </div>
   </section>
 

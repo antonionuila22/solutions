@@ -1,26 +1,10 @@
 ---
-import LandingLayout from "../../layouts/LandingLayout.astro";
+import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import Logo from "../../components/logo.astro";
-
-const pageTitle = "Sterling & Associates | Trusted Legal Counsel Since 1985";
-const pageDescription =
-  "Experienced attorneys providing comprehensive legal services in New York. Corporate law, litigation, family law, and estate planning. Schedule a consultation today.";
-const pageKeywords =
-  "law firm New York, attorneys, lawyers, legal services, corporate law, family law, litigation, estate planning";
-const pageImage = "/photos/bannercodebrand.webp";
+import { config } from "../../configs/landing/law-firms.config";
 ---
 
-<LandingLayout
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}
-  image={pageImage}
-  noindex={true}
->
-  <meta property="og:title" content={pageTitle} slot="head" />
-  <meta property="og:description" content={pageDescription} slot="head" />
-
-  <div class="relative w-full overflow-hidden bg-white">
+<LandingPageTemplate config={config}><div class="relative w-full overflow-hidden bg-white">
     <!-- Fixed Navigation -->
     <nav
       class="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b border-slate-200 shadow-sm"
@@ -1040,8 +1024,7 @@ const pageImage = "/photos/bannercodebrand.webp";
       </div>
     </section>
   </div>
-</LandingLayout>
-
+</LandingPageTemplate>
 <style>
   /* Slide Up Animation */
   .animate-slide-up {

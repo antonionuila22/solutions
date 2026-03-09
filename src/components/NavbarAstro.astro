@@ -357,8 +357,11 @@ const menuItems: MenuItem[] = [
     transform: translateY(8px);
   }
 
-  .group:hover .dropdown-container {
+  .group:hover .dropdown-container,
+  .group.dropdown-open .dropdown-container {
     transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   /* Mobile menu animations */
@@ -397,6 +400,11 @@ const menuItems: MenuItem[] = [
   }
 
   /* Icon toggle */
+  /* Desktop dropdown chevron rotation on keyboard open */
+  .group.dropdown-open > a > svg {
+    transform: rotate(180deg);
+  }
+
   .mobile-menu-btn .close-icon {
     display: none;
   }
@@ -436,7 +444,8 @@ const menuItems: MenuItem[] = [
       transition: none;
     }
 
-    .group:hover .dropdown-container {
+    .group:hover .dropdown-container,
+    .group.dropdown-open .dropdown-container {
       transform: none;
     }
 
@@ -510,6 +519,119 @@ const menuItems: MenuItem[] = [
     requestAnimationFrame(() => {
       lastScrollY = window.scrollY;
       updateHeader();
+    });
+
+    // Desktop dropdown keyboard navigation
+    const desktopMenu = document.querySelector<HTMLUListElement>(
+      'ul[role="menubar"]'
+    );
+    const desktopDropdownGroups = desktopMenu?.querySelectorAll<HTMLLIElement>(
+      "li.group"
+    );
+
+    function closeAllDesktopDropdowns(): void {
+      desktopDropdownGroups?.forEach((group) => {
+        group.classList.remove("dropdown-open");
+        const trigger = group.querySelector<HTMLAnchorElement>(
+          'a[aria-haspopup="true"]'
+        );
+        trigger?.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    function openDesktopDropdown(group: HTMLLIElement): void {
+      closeAllDesktopDropdowns();
+      group.classList.add("dropdown-open");
+      const trigger = group.querySelector<HTMLAnchorElement>(
+        'a[aria-haspopup="true"]'
+      );
+      trigger?.setAttribute("aria-expanded", "true");
+    }
+
+    function getDropdownItems(group: HTMLLIElement): HTMLAnchorElement[] {
+      return Array.from(
+        group.querySelectorAll<HTMLAnchorElement>(
+          'ul[role="menu"] a[role="menuitem"]'
+        )
+      );
+    }
+
+    desktopDropdownGroups?.forEach((group) => {
+      const trigger = group.querySelector<HTMLAnchorElement>(
+        'a[aria-haspopup="true"]'
+      );
+      if (!trigger) return;
+
+      // Set initial aria-expanded
+      trigger.setAttribute("aria-expanded", "false");
+
+      trigger.addEventListener("keydown", (e: KeyboardEvent) => {
+        const isOpen = group.classList.contains("dropdown-open");
+
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (isOpen) {
+            closeAllDesktopDropdowns();
+            trigger.focus();
+          } else {
+            openDesktopDropdown(group);
+            const items = getDropdownItems(group);
+            if (items.length > 0) items[0].focus();
+          }
+        } else if (e.key === "ArrowDown") {
+          e.preventDefault();
+          if (!isOpen) openDesktopDropdown(group);
+          const items = getDropdownItems(group);
+          if (items.length > 0) items[0].focus();
+        } else if (e.key === "Escape" && isOpen) {
+          e.preventDefault();
+          closeAllDesktopDropdowns();
+          trigger.focus();
+        }
+      });
+
+      // Keyboard navigation within dropdown items
+      const dropdownContainer = group.querySelector<HTMLDivElement>(
+        ".dropdown-container"
+      );
+      dropdownContainer?.addEventListener("keydown", (e: KeyboardEvent) => {
+        const items = getDropdownItems(group);
+        const currentIndex = items.indexOf(
+          document.activeElement as HTMLAnchorElement
+        );
+
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          const nextIndex =
+            currentIndex < items.length - 1 ? currentIndex + 1 : 0;
+          items[nextIndex]?.focus();
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          if (currentIndex <= 0) {
+            // Move focus back to trigger
+            closeAllDesktopDropdowns();
+            trigger.focus();
+          } else {
+            items[currentIndex - 1]?.focus();
+          }
+        } else if (e.key === "Escape") {
+          e.preventDefault();
+          closeAllDesktopDropdowns();
+          trigger.focus();
+        }
+      });
+    });
+
+    // Close desktop dropdowns when focus leaves the nav
+    desktopMenu?.addEventListener("focusout", (e: FocusEvent) => {
+      requestAnimationFrame(() => {
+        if (
+          desktopMenu &&
+          !desktopMenu.contains(document.activeElement)
+        ) {
+          closeAllDesktopDropdowns();
+        }
+      });
     });
 
     // Close mobile menu on link click

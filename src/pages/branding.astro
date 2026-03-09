@@ -7,6 +7,7 @@ import Button from "../components/Button.astro";
 import Testimonial from "../components/testimonial.tsx";
 import RelatedServices from "../components/RelatedServices.astro";
 import TrustBadges from "../components/TrustBadges.astro";
+import { createServicePageSchema } from "../utils/schema";
 
 const title =
   "Branding Services | Logo & Identity | Codebrand";
@@ -17,66 +18,34 @@ const keywords =
 const image = "/photos/Branding.webp";
 
 // Service Schema for Branding
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceSchema = createServicePageSchema({
   serviceType: "Branding Services",
   name: "Professional Branding & Logo Design Services",
   description: description,
   url: "https://codebrand.us/branding",
   image: "https://codebrand.us/photos/Branding.webp",
-  provider: {
-    "@type": "Organization",
-    name: "Codebrand",
-    url: "https://codebrand.us",
-    logo: "https://codebrand.us/iconcodebrand.svg",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "United States",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Branding Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Logo Design",
-          description: "Custom logo design that captures your brand essence",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Brand Identity",
-          description:
-            "Complete visual identity system including colors, typography, and guidelines",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Brand Strategy",
-          description: "Strategic brand positioning and messaging framework",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Brand Guidelines",
-          description:
-            "Comprehensive brand style guide for consistent application",
-        },
-      },
-    ],
-  },
-  priceRange: "$$$",
-};
+  catalogName: "Branding Services",
+  catalogItems: [
+    {
+      name: "Logo Design",
+      description: "Custom logo design that captures your brand essence",
+    },
+    {
+      name: "Brand Identity",
+      description:
+        "Complete visual identity system including colors, typography, and guidelines",
+    },
+    {
+      name: "Brand Strategy",
+      description: "Strategic brand positioning and messaging framework",
+    },
+    {
+      name: "Brand Guidelines",
+      description:
+        "Comprehensive brand style guide for consistent application",
+    },
+  ],
+});
 ---
 
 <Layout

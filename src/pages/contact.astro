@@ -94,7 +94,7 @@ const services = [
         <!-- RIGHT: Form card -->
         <div class="lg:col-span-3">
           <contact-form data-endpoint="/api/contact">
-            <form action="/api/contact" method="POST" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
+            <form action="/api/contact" method="POST" aria-label="Contact form" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
 
               <!-- Honeypot -->
               <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
@@ -195,7 +195,7 @@ const services = [
                 </div>
 
                 <!-- Response -->
-                <p data-response class="text-xs font-medium hidden rounded-lg px-3 py-2"></p>
+                <p data-response role="alert" aria-live="assertive" aria-atomic="true" class="text-xs font-medium hidden rounded-lg px-3 py-2"></p>
               </div>
             </form>
           </contact-form>
@@ -232,6 +232,70 @@ const services = [
       if (!form || !responseEl || !submitBtn) return;
       const originalHtml = submitBtn.innerHTML;
 
+      /* ── Inline real-time validation ── */
+      const validationRules: { id: string; validate: (v: string) => boolean; msg: string }[] = [
+        { id: "name",     validate: (v) => /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']{2,}$/.test(v.trim()), msg: "Name is required (min 2 characters, letters only)" },
+        { id: "email",    validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),                  msg: "Please enter a valid email address" },
+        { id: "phone",    validate: (v) => /^[\d\s\-\+\(\)]{7,}$/.test(v.trim()),                 msg: "Please enter a valid phone number (min 7 digits)" },
+        { id: "industry", validate: (v) => v !== "",                                               msg: "Please select an industry" },
+        { id: "subject",  validate: (v) => /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']{3,}$/.test(v.trim()), msg: "Subject is required (min 3 characters)" },
+        { id: "message",  validate: (v) => v.trim().length >= 10,                                 msg: "Message must be at least 10 characters" },
+      ];
+
+      validationRules.forEach(({ id, validate, msg }) => {
+        const input = form.querySelector<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(`#${id}`);
+        if (!input) return;
+
+        // Create error message element
+        const errorEl = document.createElement("p");
+        errorEl.className = "field-error";
+        errorEl.textContent = msg;
+        errorEl.setAttribute("aria-live", "polite");
+
+        // Insert after the input (or after the select wrapper div for industry)
+        const insertTarget = id === "industry" ? input.closest(".relative") || input : input;
+        insertTarget.parentNode!.insertBefore(errorEl, insertTarget.nextSibling);
+
+        const showError = () => {
+          input.classList.add("field-invalid");
+          input.classList.remove("field-valid");
+          errorEl.classList.add("visible");
+        };
+
+        const showValid = () => {
+          input.classList.remove("field-invalid");
+          input.classList.add("field-valid");
+          errorEl.classList.remove("visible");
+        };
+
+        const clearState = () => {
+          input.classList.remove("field-invalid");
+          errorEl.classList.remove("visible");
+        };
+
+        // Validate on blur
+        input.addEventListener("blur", () => {
+          const val = input.value;
+          // Don't validate empty optional-looking fields that haven't been touched
+          if (val === "" && !input.hasAttribute("required")) return;
+          if (val === "" && input.hasAttribute("required")) { showError(); return; }
+          if (!validate(val)) { showError(); } else { showValid(); }
+        });
+
+        // Clear error state on input/change
+        const clearEvent = input.tagName === "SELECT" ? "change" : "input";
+        input.addEventListener(clearEvent, () => {
+          clearState();
+        });
+
+        // Also re-validate on change for select
+        if (input.tagName === "SELECT") {
+          input.addEventListener("change", () => {
+            if (validate(input.value)) { showValid(); }
+          });
+        }
+      });
+
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const fd = new FormData(form);
@@ -241,10 +305,12 @@ const services = [
           responseEl.textContent = "Please enter a valid email address.";
           responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
           responseEl.classList.remove("hidden");
+          submitBtn.setAttribute("aria-busy", "false");
           return;
         }
 
         submitBtn.disabled = true;
+        submitBtn.setAttribute("aria-busy", "true");
         submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg><span>Sending...</span>`;
 
         try {
@@ -259,6 +325,7 @@ const services = [
         } finally {
           responseEl.classList.remove("hidden");
           submitBtn.disabled = false;
+          submitBtn.setAttribute("aria-busy", "false");
           submitBtn.innerHTML = originalHtml;
         }
       });
@@ -297,4 +364,27 @@ const services = [
   .form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
   .form-input:focus-visible { outline: none; --tw-ring-shadow: none; box-shadow: 0 0 0 2px rgba(249,115,22,0.15); border-color: #f97316; }
   .form-input::placeholder { color: #94a3b8; }
+
+  /* Inline validation states */
+  .form-input.field-invalid { border-color: #ef4444; background-color: #fef2f2; }
+  .form-input.field-invalid:focus { border-color: #ef4444; box-shadow: 0 0 0 2px rgba(239,68,68,0.12); }
+  .form-input.field-valid { border-color: #22c55e; }
+  .form-input.field-valid:focus { border-color: #22c55e; box-shadow: 0 0 0 2px rgba(34,197,94,0.12); }
+
+  .field-error {
+    font-size: 0.6875rem;
+    color: #ef4444;
+    margin-top: 0.25rem;
+    line-height: 1.2;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease, opacity 0.2s ease, margin-top 0.2s ease;
+    margin-top: 0;
+  }
+  .field-error.visible {
+    max-height: 2rem;
+    opacity: 1;
+    margin-top: 0.25rem;
+  }
 </style>

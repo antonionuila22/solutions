@@ -110,5 +110,3 @@ export default function FAQ({ faqs, theme = "light" }: Props) {
   );
 }
 
-// Re-export for backwards compatibility
-export { FAQ as Faqcomp, FAQ as FaqDark };

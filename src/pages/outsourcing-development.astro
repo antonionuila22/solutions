@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FaqDark from "../components/FaqDark.tsx";
+import FAQ from "../components/FAQ.tsx";
 
 // SEO
 const title =
@@ -891,7 +891,7 @@ const technologies = [
             <p class="text-neutral-400 text-lg">Can't find what you're looking for? <a href="/contact" class="text-cyan-400 hover:text-cyan-300 underline">Contact us</a> and we'll get back to you within 24 hours.</p>
           </div>
           <div class="fade-up mt-12">
-            <FaqDark faqs={faqs} client:visible />
+            <FAQ faqs={faqs} theme="dark" client:visible />
           </div>
         </div>
       </section>

@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Whyus from "../components/whyus.astro";
-import Faqcomp from "../components/Faqcomp.tsx";
+import FAQ from "../components/FAQ.tsx";
 import RelatedServices from "../components/RelatedServices.astro";
 import Testimonial from "../components/testimonial.tsx";
 import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
+import { createServicePageSchema } from "../utils/schema";
 
 const title = "Web Development Services | Codebrand";
 const description =
@@ -74,64 +75,32 @@ const faqSchema = {
 
 
 // Service Schema for Web Development
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Web Development Services",
-  "name": "Professional Web Development & Custom Website Design",
-  "description": description,
-  "url": "https://codebrand.us/web-development",
-  "image": "https://codebrand.us/photos/webservice.webp",
-  "provider": {
-    "@type": "Organization",
-    "name": "Codebrand",
-    "url": "https://codebrand.us",
-    "logo": "https://codebrand.us/iconcodebrand.svg"
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Web Development Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Custom Web Development",
-          "description": "Tailored web applications built with React, Next.js, or Astro"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Responsive Website Design",
-          "description": "Mobile-friendly websites that work on all devices"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Full-Stack Development",
-          "description": "End-to-end web application development with modern technologies"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "API Development",
-          "description": "RESTful and GraphQL API development and integration"
-        }
-      }
-    ]
-  },
-  "priceRange": "$$$"
-};
+const serviceSchema = createServicePageSchema({
+  serviceType: "Web Development Services",
+  name: "Professional Web Development & Custom Website Design",
+  description: description,
+  url: "https://codebrand.us/web-development",
+  image: "https://codebrand.us/photos/webservice.webp",
+  catalogName: "Web Development Services",
+  catalogItems: [
+    {
+      name: "Custom Web Development",
+      description: "Tailored web applications built with React, Next.js, or Astro",
+    },
+    {
+      name: "Responsive Website Design",
+      description: "Mobile-friendly websites that work on all devices",
+    },
+    {
+      name: "Full-Stack Development",
+      description: "End-to-end web application development with modern technologies",
+    },
+    {
+      name: "API Development",
+      description: "RESTful and GraphQL API development and integration",
+    },
+  ],
+});
 ---
 
 <Layout title={title} description={description} keywords={keywords} image={image}>
@@ -767,7 +736,7 @@ const serviceSchema = {
           Common questions about our web development services, pricing, and process.
         </p>
       </div>
-      <Faqcomp faqs={webDevFaqs} client:visible />
+      <FAQ faqs={webDevFaqs} client:visible />
     </div>
   </section>
 </Layout>

@@ -6,7 +6,8 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FaqDark from "../components/FaqDark.tsx";
+import FAQ from "../components/FAQ.tsx";
+import { createServicePageSchema } from "../utils/schema";
 
 // SEO
 const title = "Web Development Agency | Codebrand";
@@ -14,27 +15,32 @@ const description = "Custom websites, web apps, and e-commerce solutions. Senior
 const keywords = "web development agency, web development company, custom web development, professional web development, web development services, website development agency, web app development, custom website development, full stack development agency, web development firm, digital agency web development, enterprise web development, startup web development, small business web development, affordable web development agency";
 
 // Schema
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceSchema = createServicePageSchema({
+  serviceType: "Web Development Agency",
   name: "Codebrand Web Development Agency",
-  url: "https://codebrand.us/web-development-agency",
   description: description,
-  areaServed: {
-    "@type": "Country",
-    name: "United States"
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Web Development Services",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Web Development" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web Application Development" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-commerce Development" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "UI/UX Design" } }
-    ]
-  }
-};
+  url: "https://codebrand.us/web-development-agency",
+  image: "https://codebrand.us/photos/webservice.webp",
+  catalogName: "Web Development Services",
+  catalogItems: [
+    {
+      name: "Custom Web Development",
+      description: "Tailored websites and web solutions built to your specifications",
+    },
+    {
+      name: "Web Application Development",
+      description: "Full-featured web applications with modern architecture",
+    },
+    {
+      name: "E-commerce Development",
+      description: "Online stores and e-commerce platforms that drive sales",
+    },
+    {
+      name: "UI/UX Design",
+      description: "User-centered interface and experience design",
+    },
+  ],
+});
 
 // FAQ Data
 const faqs = [
@@ -592,7 +598,7 @@ const whyUs = [
             <p class="text-neutral-400 text-lg">Everything you need to know about working with us.</p>
           </div>
           <div class="fade-up mt-12">
-            <FaqDark faqs={faqs} client:visible />
+            <FAQ faqs={faqs} theme="dark" client:visible />
           </div>
         </div>
       </section>

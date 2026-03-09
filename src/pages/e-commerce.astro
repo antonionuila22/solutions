@@ -6,6 +6,7 @@ import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
 import Testimonial from "../components/testimonial.tsx";
 import RelatedServices from "../components/RelatedServices.astro";
+import { createServicePageSchema } from "../utils/schema";
 
 const title = "E-commerce Development | Codebrand";
 const description =
@@ -15,65 +16,33 @@ const keywords =
 const image = "/photos/diseñoweb.webp";
 
 // Service Schema for E-commerce
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceSchema = createServicePageSchema({
   serviceType: "E-commerce Development",
   name: "E-commerce Development & Online Store Design",
   description: description,
   url: "https://codebrand.us/e-commerce",
   image: "https://codebrand.us/photos/diseñoweb.webp",
-  provider: {
-    "@type": "Organization",
-    name: "Codebrand",
-    url: "https://codebrand.us",
-    logo: "https://codebrand.us/iconcodebrand.svg",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "United States",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "E-commerce Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Shopify Development",
-          description: "Custom Shopify stores with premium themes and apps",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "WooCommerce Development",
-          description: "WordPress-based e-commerce solutions",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Payment Gateway Integration",
-          description:
-            "Secure payment processing with Stripe, PayPal, and more",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Custom E-commerce Platforms",
-          description: "Tailored online stores for unique business needs",
-        },
-      },
-    ],
-  },
-  priceRange: "$$$",
-};
+  catalogName: "E-commerce Services",
+  catalogItems: [
+    {
+      name: "Shopify Development",
+      description: "Custom Shopify stores with premium themes and apps",
+    },
+    {
+      name: "WooCommerce Development",
+      description: "WordPress-based e-commerce solutions",
+    },
+    {
+      name: "Payment Gateway Integration",
+      description:
+        "Secure payment processing with Stripe, PayPal, and more",
+    },
+    {
+      name: "Custom E-commerce Platforms",
+      description: "Tailored online stores for unique business needs",
+    },
+  ],
+});
 ---
 
 <Layout

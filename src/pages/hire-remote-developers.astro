@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FaqDark from "../components/FaqDark.tsx";
+import FAQ from "../components/FAQ.tsx";
 
 const title = "Hire Remote Developers | Codebrand";
 const description = "Hire senior remote developers. US timezone, English fluent. React, Node.js, TypeScript. Staff augmentation and dedicated teams.";
@@ -194,7 +194,7 @@ const stats = [
             <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
           </div>
           <div class="fade-up">
-            <FaqDark faqs={faqs} client:visible />
+            <FAQ faqs={faqs} theme="dark" client:visible />
           </div>
         </div>
       </section>

@@ -1,26 +1,9 @@
 ---
-import LandingLayout from "../../layouts/LandingLayout.astro";
-
-const pageTitle = "Premier Realty Group | Luxury Real Estate in Miami";
-const pageDescription =
-  "Leading real estate agency in Miami specializing in luxury homes, waterfront properties, and commercial real estate. Expert agents, exceptional service.";
-const pageKeywords =
-  "Miami real estate, luxury homes Miami, waterfront property, real estate agent, buy sell home Miami, commercial real estate, premier realty, Miami properties, real estate Miami, luxury real estate";
-const pageImage = "/photos/bannercodebrand.webp";
+import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
+import { config } from "../../configs/landing/real-estate.config";
 ---
 
-<LandingLayout
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}
-  image={pageImage}
-  noindex={true}
->
-  <meta property="og:title" content={pageTitle} slot="head" />
-  <meta property="og:description" content={pageDescription} slot="head" />
-  <meta property="og:image" content={pageImage} slot="head" />
-
-  <div class="relative w-full overflow-hidden bg-white">
+<LandingPageTemplate config={config}><div class="relative w-full overflow-hidden bg-white">
     <!-- Fixed Navigation -->
     <nav
       class="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b border-gray-200 shadow-sm"
@@ -814,8 +797,7 @@ const pageImage = "/photos/bannercodebrand.webp";
       </div>
     </section>
   </div>
-</LandingLayout>
-
+</LandingPageTemplate>
 <style>
   /* Slide Up Animation */
   .animate-slide-up {

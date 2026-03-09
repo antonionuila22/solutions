@@ -1,22 +1,10 @@
 ---
-import LandingLayout from "../../layouts/LandingLayout.astro";
+import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import Testimonial from "../../components/testimonial.tsx";
-
-const pageTitle = "Urban Thread | Premium Streetwear & Modern Fashion";
-const pageDescription =
-  "Discover the latest in urban fashion. Free shipping on orders over $100. Shop now and elevate your style.";
-const pageKeywords =
-  "streetwear, urban fashion, fashion store, online clothing, premium fashion, modern fashion, urban thread, fashion ecommerce, clothing store, trendy fashion";
-const pageImage = "/photos/bannercodebrand.webp";
+import { config } from "../../configs/landing/ecommerce.config";
 ---
 
-<LandingLayout
-  title={pageTitle}
-  description={pageDescription}
-  keywords={pageKeywords}
-  image={pageImage}
-  noindex={true}
->
+<LandingPageTemplate config={config}>
   <style>
     /* Smooth Scrolling */
     html {
@@ -1179,4 +1167,4 @@ const pageImage = "/photos/bannercodebrand.webp";
       </div>
     </div>
   </section>
-</LandingLayout>
+</LandingPageTemplate>

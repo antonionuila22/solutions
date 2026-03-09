@@ -1,0 +1,41 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+
+export interface LandingPageConfig {
+  pageTitle: string;
+  pageDescription: string;
+  pageKeywords: string;
+  pageImage: string;
+  /** Whether to include OG meta tags in the head slot. Defaults to false. */
+  hasOgMeta?: boolean;
+  /** Whether to include og:image in addition to og:title and og:description. Defaults to true when hasOgMeta is true. */
+  hasOgImage?: boolean;
+}
+
+interface Props {
+  config: LandingPageConfig;
+}
+
+const { config } = Astro.props;
+const {
+  pageTitle,
+  pageDescription,
+  pageKeywords,
+  pageImage,
+  hasOgMeta = false,
+  hasOgImage = true,
+} = config;
+---
+
+<LandingLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  image={pageImage}
+  noindex={true}
+>
+  {hasOgMeta && <meta property="og:title" content={pageTitle} slot="head" />}
+  {hasOgMeta && <meta property="og:description" content={pageDescription} slot="head" />}
+  {hasOgMeta && hasOgImage && <meta property="og:image" content={pageImage} slot="head" />}
+  <slot />
+</LandingLayout>

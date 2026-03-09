@@ -5,7 +5,7 @@ import Whyus from "../../components/whyus.astro";
 import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
-import FaqDark from "../../components/FaqDark.tsx";
+import FAQ from "../../components/FAQ.tsx";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const title = "E-commerce Development & Online Store Solutions | CodeBrand";
@@ -592,7 +592,7 @@ const stats = [
           Common questions about our e-commerce development services
         </p>
       </div>
-      <FaqDark faqs={ecommerceFaqs} client:visible />
+      <FAQ faqs={ecommerceFaqs} theme="dark" client:visible />
     </div>
   </section>
 

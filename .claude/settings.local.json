@@ -50,7 +50,11 @@
       "WebFetch(domain:docs.astro.build)",
       "Bash(if exist \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\pages\\\\js\" rmdir \"C:\\\\Users\\\\RamonNuila\\\\Documents\\\\GitHub\\\\solutions\\\\src\\\\pages\\\\js\")",
       "Bash(npx astro build)",
-      "Bash(npx astro check:*)"
+      "Bash(npx astro check:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(for f in src/pages/landing/template-*.astro)",
+      "Bash(do echo \"=== $f \\(last 5 lines\\) ===\")",
+      "Read(//c/Users/RamonNuila/Documents/GitHub/solutions/**)"
     ]
   }
 }
