@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const locations = await getCollection("locations", ({ data }) => !data.draft);
 
   return locations.map((location) => ({
-    params: { slug: location.slug },
+    params: { id: location.id },
     props: { location },
   }));
 }
@@ -94,7 +94,7 @@ const structuredData = {
     }
   },
   "description": description,
-  "url": `${baseUrl}/locations/${location.slug}`,
+  "url": `${baseUrl}/locations/${location.id}`,
   "image": absoluteImage
 };
 

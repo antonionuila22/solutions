@@ -91,165 +91,140 @@ const technologies = ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL",
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <style>
-    .page-bg { background: #030303; }
-    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
-    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #06b6d4, #3b82f6); top: -200px; left: -100px; }
-    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #06b6d4); top: 50%; right: -150px; animation-delay: -7s; }
-    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
-    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
-    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
-    .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
-    .glass-hover { transition: all 0.5s ease; }
-    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
-    .btn-primary { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; transition: all 0.4s ease; }
-    .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
-    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
-    .btn-ghost:hover { border-color: rgba(6, 182, 212, 0.5); background: rgba(6, 182, 212, 0.1); }
-    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
-    .tech-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; }
-  </style>
-
-  <div class="page-bg min-h-screen relative overflow-hidden text-white">
-    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-    <div class="noise"></div>
-
-    <div class="relative z-10">
-      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
-        <div class="max-w-7xl mx-auto w-full">
-          <div class="fade-up mb-10">
-            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-cyan-500/20">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span class="text-cyan-300 text-sm font-medium">Custom Web Development</span>
-            </span>
-          </div>
-
-          <h1 class="text-display mb-6">
-            <span class="fade-up block text-white">Custom</span>
-            <span class="fade-up block text-gradient">Development</span>
-          </h1>
-
-          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
-            Tailored web solutions built from scratch.<br class="hidden md:block" />
-            Your vision, your features, your code.
-          </p>
-
-          <div class="fade-up flex flex-wrap gap-5 mb-24">
-            <a href="/contact" class="btn-primary"><span>Start Your Project</span></a>
-            <a href="#services" class="btn-ghost">Our Approach</a>
-          </div>
-
-          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
-            {stats.map((stat) => (
-              <div class="text-center p-6 glass rounded-2xl">
-                <div class="stat-number text-gradient">{stat.value}</div>
-                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 text-orange-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          Custom Web Development
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Custom <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Development</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Tailored web solutions built from scratch.
+          Your vision, your features, your code.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Start Your Project
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            Our Approach
+          </a>
         </div>
-      </section>
 
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Why custom development?</h2>
-            <div class="prose prose-lg prose-invert max-w-none">
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                <strong class="text-white">Templates limit your business.</strong> They force you into pre-built structures, bloat your site with unused features, and make you look like everyone else. When your competitors use the same template, differentiation becomes impossible. That's why businesses choose <a href="/nearshore-development" class="text-indigo-400 hover:text-indigo-300 underline">custom development</a>.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                <strong class="text-white">Custom development gives you freedom.</strong> Every feature is designed around your specific workflows. Your design reflects your unique brand. Performance is optimized because there's no bloat. And as your business evolves, your website evolves with it. Our <a href="/react-development-agency" class="text-indigo-400 hover:text-indigo-300 underline">React experts</a> make it happen.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed">
-                We build <strong class="text-white">web applications, SaaS platforms, <a href="/ecommerce-development-agency" class="text-indigo-400 hover:text-indigo-300 underline">e-commerce stores</a>, and corporate websites</strong> from the ground up. Using modern technologies like React, Next.js, and Node.js, we create solutions that are fast, secure, and built to scale. <a href="/hire-remote-developers" class="text-indigo-400 hover:text-indigo-300 underline">Hire our developers</a> for your next project.
-              </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
-
-      <section id="services" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold text-white">What we deliver</h2>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((s, i) => (
-              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
-                <div class="text-4xl mb-4">{s.icon}</div>
-                <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
-                <p class="text-neutral-400">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold text-white">Our process</h2>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {process.map((step, i) => (
-              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.1}s`}>
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-300 font-bold mb-6">
-                  {step.num}
-                </div>
-                <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
-                <p class="text-neutral-400">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-          <div class="fade-up mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Technologies</h2>
-          </div>
-          <div class="fade-up flex flex-wrap justify-center gap-3">
-            {technologies.map((tech) => (<span class="tech-pill">{tech}</span>))}
-          </div>
-        </div>
-      </section>
-
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="fade-up text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
-          </div>
-          <div class="fade-up">
-            <FAQ faqs={faqs} theme="dark" client:visible />
-          </div>
-        </div>
-      </section>
-
-      <section class="py-40 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
-        </div>
-        <div class="max-w-4xl mx-auto text-center relative">
-          <div class="fade-up">
-            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">Ready for<br /><span class="text-gradient">custom?</span></h2>
-            <p class="text-xl text-neutral-400 mb-12">Free consultation. Detailed quote within 48 hours.</p>
-            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5"><span>Get Started</span></a>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
-  </script>
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">Why custom development?</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+        <p>
+          <strong class="text-slate-900">Templates limit your business.</strong> They force you into pre-built structures, bloat your site with unused features, and make you look like everyone else. When your competitors use the same template, differentiation becomes impossible. That's why businesses choose <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom development</a>.
+        </p>
+        <p>
+          <strong class="text-slate-900">Custom development gives you freedom.</strong> Every feature is designed around your specific workflows. Your design reflects your unique brand. Performance is optimized because there's no bloat. And as your business evolves, your website evolves with it. Our <a href="/react-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">React experts</a> make it happen.
+        </p>
+        <p>
+          We build <strong class="text-slate-900">web applications, SaaS platforms, <a href="/ecommerce-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce stores</a>, and corporate websites</strong> from the ground up. Using modern technologies like React, Next.js, and Node.js, we create solutions that are fast, secure, and built to scale. <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">Hire our developers</a> for your next project.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          What We <span class="text-orange-500">Deliver</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Our <span class="text-orange-500">Process</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {process.map((step) => (
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold mb-6">
+              {step.num}
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{step.title}</h3>
+            <p class="text-slate-600">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+        <span class="text-orange-500">Technologies</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10">
+        {technologies.map((tech) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{tech}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Custom Development <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FAQ faqs={faqs} client:visible />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready for <span class="text-orange-400">custom?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10">Free consultation. Detailed quote within 48 hours.</p>
+      <a href="/contact" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
 </Layout>

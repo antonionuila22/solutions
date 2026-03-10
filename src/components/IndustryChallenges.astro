@@ -1,0 +1,53 @@
+---
+interface Challenge {
+  problem: string;
+  description: string;
+  solution: string;
+}
+
+interface Props {
+  title: string;
+  titleAccent: string;
+  subtitle: string;
+  challenges: Challenge[];
+}
+
+const { title, titleAccent, subtitle, challenges } = Astro.props;
+---
+
+<section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        {title} <span class="bg-gradient-to-r from-orange-500 to-cyan-500 bg-clip-text text-transparent">{titleAccent}</span>
+      </h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {challenges.map((challenge) => (
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-100">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 mb-2 text-lg">Problem: {challenge.problem}</h3>
+              <p class="text-slate-600 text-sm mb-4">{challenge.description}</p>
+              <div class="flex gap-3 items-start">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-sm text-slate-700"><strong class="text-orange-600">Solution:</strong> {challenge.solution}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -107,7 +107,7 @@ const services = [
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="name" class="form-label">Name *</label>
-                    <input id="name" name="name" type="text" required autocomplete="name"
+                    <input id="name" name="name" type="text" required aria-required="true" aria-describedby="name-error" autocomplete="name"
                       placeholder="John Doe" class="form-input"
                       maxlength="60" minlength="2"
                       pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+"
@@ -115,7 +115,7 @@ const services = [
                   </div>
                   <div>
                     <label for="email" class="form-label">Email *</label>
-                    <input id="email" name="email" type="email" required autocomplete="email"
+                    <input id="email" name="email" type="email" required aria-required="true" aria-describedby="email-error" autocomplete="email"
                       placeholder="john@company.com" class="form-input" maxlength="254" />
                   </div>
                 </div>
@@ -124,14 +124,14 @@ const services = [
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="phone" class="form-label">Phone *</label>
-                    <input id="phone" name="phone" type="tel" required autocomplete="tel"
+                    <input id="phone" name="phone" type="tel" required aria-required="true" aria-describedby="phone-error" autocomplete="tel"
                       placeholder="+1 (555) 000-0000" class="form-input"
                       maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
                   </div>
                   <div>
                     <label for="industry" class="form-label">Industry *</label>
                     <div class="relative">
-                      <select id="industry" name="industry" required class="form-input appearance-none pr-8">
+                      <select id="industry" name="industry" required aria-required="true" aria-describedby="industry-error" class="form-input appearance-none pr-8">
                         <option value="" disabled selected>Select</option>
                         {industries.map((ind) => <option value={ind}>{ind}</option>)}
                       </select>
@@ -143,7 +143,7 @@ const services = [
                 <!-- Subject -->
                 <div>
                   <label for="subject" class="form-label">Subject *</label>
-                  <input id="subject" name="subject" type="text" required
+                  <input id="subject" name="subject" type="text" required aria-required="true" aria-describedby="subject-error"
                     placeholder="How can we help?" class="form-input"
                     maxlength="100" minlength="3"
                     pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+" />
@@ -152,7 +152,7 @@ const services = [
                 <!-- Message -->
                 <div>
                   <label for="message" class="form-label">Message *</label>
-                  <textarea id="message" name="message" rows="3" required
+                  <textarea id="message" name="message" rows="3" required aria-required="true" aria-describedby="message-error"
                     placeholder="Project details, goals, timeline..."
                     class="form-input resize-none"
                     maxlength="2000" minlength="10"></textarea>
@@ -173,7 +173,7 @@ const services = [
 
                 <!-- Terms -->
                 <label class="flex items-start gap-2 cursor-pointer">
-                  <input type="checkbox" name="terms" required
+                  <input type="checkbox" name="terms" required aria-required="true"
                     class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
                   <span class="text-xs text-slate-400 leading-relaxed">
                     I agree to the <a href="/terms" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Terms</a>
@@ -213,6 +213,7 @@ const services = [
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Schedule a Free Consultation</h2>
         <p class="text-sm text-slate-500 max-w-md mx-auto">Book a call to discuss your project in detail. No commitment required.</p>
       </div>
+      <h2 class="sr-only">Schedule a Free Consultation</h2>
       <div class="calendly-inline-widget rounded-xl overflow-hidden border border-slate-200"
         data-url="https://calendly.com/agencycodebrand?hide_landing_page_details=1&hide_gdpr_banner=1"
         style="min-width:320px;height:650px;"></div>
@@ -249,6 +250,7 @@ const services = [
         // Create error message element
         const errorEl = document.createElement("p");
         errorEl.className = "field-error";
+        errorEl.id = `${id}-error`;
         errorEl.textContent = msg;
         errorEl.setAttribute("aria-live", "polite");
 

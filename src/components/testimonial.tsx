@@ -94,7 +94,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "group relative h-full w-[280px] sm:w-[300px] md:w-[320px] cursor-pointer overflow-hidden rounded-2xl border p-4 sm:p-5",
+        "group relative h-full w-[280px] sm:w-[300px] md:w-[320px] cursor-pointer overflow-hidden rounded-2xl border p-5 sm:p-6",
         "border-slate-700/80 bg-slate-800/70 hover:bg-slate-800 backdrop-blur-sm transition-all duration-300"
       )}
     >

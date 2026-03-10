@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const posts = await getCollection("books"); // ← aquí es donde corregimos
 
   return posts.map((post) => ({
-    params: { id: post.slug },
+    params: { id: post.id },
     props: { post },
   }));
 }
@@ -36,7 +36,7 @@ const bookSchema = {
   "name": title,
   "description": description,
   "image": absoluteImage,
-  "url": `${baseUrl}/books/${post.slug}`,
+  "url": `${baseUrl}/books/${post.id}`,
   "author": author ? {
     "@type": "Person",
     "name": author

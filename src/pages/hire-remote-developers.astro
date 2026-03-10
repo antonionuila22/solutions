@@ -78,146 +78,175 @@ const stats = [
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <style>
-    .page-bg { background: #030303; }
-    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
-    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #8b5cf6, #06b6d4); top: -200px; left: -100px; }
-    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #f59e0b, #8b5cf6); top: 50%; right: -150px; animation-delay: -7s; }
-    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
-    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
-    .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
-    .text-gradient { background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
-    .glass-hover { transition: all 0.5s ease; }
-    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
-    .btn-primary { background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; transition: all 0.4s ease; }
-    .btn-primary:hover { transform: translateY(-3px) scale(1.02); }
-    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
-    .btn-ghost:hover { border-color: rgba(139, 92, 246, 0.5); background: rgba(139, 92, 246, 0.1); }
-    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; }
-    .role-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; }
-  </style>
+  <!-- ==================== HERO ==================== -->
+  <section class="relative min-h-[90vh] flex items-center py-16 sm:py-20 lg:py-28 overflow-hidden bg-slate-950">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(6, 182, 212, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    </div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
 
-  <div class="page-bg min-h-screen relative overflow-hidden text-white">
-    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-    <div class="noise"></div>
-
-    <div class="relative z-10">
-      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
-        <div class="max-w-7xl mx-auto w-full">
-          <div class="fade-up mb-10">
-            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-violet-500/20">
-              <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
-              <span class="text-violet-300 text-sm font-medium">Hire Remote Developers</span>
-            </span>
-          </div>
-
-          <h1 class="text-display mb-6">
-            <span class="fade-up block text-white">Hire</span>
-            <span class="fade-up block text-gradient">Developers</span>
-          </h1>
-
-          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
-            Senior remote developers for your team.<br class="hidden md:block" />
-            US timezone. English fluent. 60% cost savings.
-          </p>
-
-          <div class="fade-up flex flex-wrap gap-5 mb-24">
-            <a href="/contact" class="btn-primary"><span>Hire Developers</span></a>
-            <a href="#benefits" class="btn-ghost">Learn More</a>
-          </div>
-
-          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
-            {stats.map((stat) => (
-              <div class="text-center p-6 glass rounded-2xl">
-                <div class="stat-number text-gradient">{stat.value}</div>
-                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div class="max-w-4xl">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-cyan-500/30 rounded-full mb-8 backdrop-blur-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+          </span>
+          <span class="text-sm font-medium text-cyan-400">Hire Remote Developers</span>
         </div>
-      </section>
 
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Scale your team without the hassle</h2>
-            <div class="prose prose-lg prose-invert max-w-none">
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                Hiring developers is expensive and slow. Between recruiting, interviewing, and onboarding, it takes months to add capacity. And if the project ends or needs change, you're stuck with fixed costs. That's why many companies choose to <a href="/outsource-web-development" class="text-violet-400 hover:text-violet-300 underline">outsource web development</a>.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                <strong class="text-white">Remote developers solve this.</strong> Add senior engineers to your team in 1-2 weeks. Scale up for busy periods, scale down when work slows. Pay only for productive hours with no long-term commitments. Our <a href="/nearshore-development" class="text-violet-400 hover:text-violet-300 underline">nearshore development</a> model makes this possible.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed">
-                Our developers work <strong class="text-white">US timezone hours</strong>, communicate in fluent English, and integrate seamlessly with your existing workflow. Whether you need <a href="/react-development-agency" class="text-violet-400 hover:text-violet-300 underline">React developers</a>, <a href="/ecommerce-development-agency" class="text-violet-400 hover:text-violet-300 underline">e-commerce specialists</a>, or <a href="/custom-web-development-services" class="text-violet-400 hover:text-violet-300 underline">custom development</a>, it's like having local talent at 60% of the cost.
-              </p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-poppins">
+          Hire <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Developers</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
+          Senior remote developers for your team.<br class="hidden md:block" />
+          US timezone. English fluent. 60% cost savings.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 mb-16">
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1"
+          >
+            Hire Developers
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a
+            href="#benefits"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold rounded-2xl border border-slate-700 hover:border-slate-600 transition-all duration-300"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OVERVIEW ==================== -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+        OVERVIEW
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">Scale your team without the hassle</h2>
+      <div class="prose prose-lg max-w-none text-slate-600 space-y-6">
+        <p>
+          Hiring developers is expensive and slow. Between recruiting, interviewing, and onboarding, it takes months to add capacity. And if the project ends or needs change, you're stuck with fixed costs. That's why many companies choose to <a href="/outsource-web-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">outsource web development</a>.
+        </p>
+        <p>
+          <strong class="text-slate-900">Remote developers solve this.</strong> Add senior engineers to your team in 1-2 weeks. Scale up for busy periods, scale down when work slows. Pay only for productive hours with no long-term commitments. Our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> model makes this possible.
+        </p>
+        <p>
+          Our developers work <strong class="text-slate-900">US timezone hours</strong>, communicate in fluent English, and integrate seamlessly with your existing workflow. Whether you need <a href="/react-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">React developers</a>, <a href="/ecommerce-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce specialists</a>, or <a href="/custom-web-development-services" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom development</a>, it's like having local talent at 60% of the cost.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BENEFITS ==================== -->
+  <section id="benefits" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
+          WHY CODEBRAND
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">Why hire through <span class="text-orange-500">Codebrand</span></h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {benefits.map((b) => (
+          <div class="group bg-white hover:bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-slate-200 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <span class="text-2xl">{b.icon}</span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{b.title}</h3>
+            <p class="text-slate-600 leading-relaxed">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AVAILABLE ROLES ==================== -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+        ROLES
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Available <span class="text-orange-500">Roles</span></h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10">
+        {roles.map((r) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 text-slate-600 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">
+            {r}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 border border-slate-300 rounded-full text-slate-700 text-sm font-semibold mb-6">
+          FAQ
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Common <span class="text-orange-500">Questions</span></h2>
+      </div>
+      <div>
+        <FAQ faqs={faqs} client:visible />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 bg-slate-950">
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    </div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-orange-500/20 via-amber-500/20 to-yellow-500/20 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative">
+        <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 rounded-3xl blur-xl opacity-30"></div>
+        <div class="relative bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 rounded-3xl p-12 lg:p-16 text-center overflow-hidden">
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+          <div class="relative z-10">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight font-poppins">
+              Ready to scale?
+            </h2>
+            <p class="text-lg lg:text-xl text-white/90 mb-10 max-w-xl mx-auto">
+              Free consultation. Start in 1-2 weeks.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-orange-600 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transform hover:-translate-y-1 transition-all duration-300 shadow-2xl"
+              >
+                Get Started
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="benefits" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-bold text-white">Why hire through Codebrand</h2>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {benefits.map((b, i) => (
-              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
-                <div class="text-4xl mb-4">{b.icon}</div>
-                <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
-                <p class="text-neutral-400">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-          <div class="fade-up mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Available Roles</h2>
-          </div>
-          <div class="fade-up flex flex-wrap justify-center gap-3">
-            {roles.map((r) => (<span class="role-pill">{r}</span>))}
-          </div>
-        </div>
-      </section>
-
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="fade-up text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold text-white">FAQ</h2>
-          </div>
-          <div class="fade-up">
-            <FAQ faqs={faqs} theme="dark" client:visible />
-          </div>
-        </div>
-      </section>
-
-      <section class="py-40 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-[600px] h-[600px] bg-violet-500/20 rounded-full blur-[120px]"></div>
-        </div>
-        <div class="max-w-4xl mx-auto text-center relative">
-          <div class="fade-up">
-            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">Ready to<br /><span class="text-gradient">scale?</span></h2>
-            <p class="text-xl text-neutral-400 mb-12">Free consultation. Start in 1-2 weeks.</p>
-            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5"><span>Get Started</span></a>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-  </div>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
-  </script>
+  </section>
 </Layout>

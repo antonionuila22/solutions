@@ -15,6 +15,8 @@ import DesignRushSection from "../components/DesignRushSection.astro";
 import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
 import HowWeWork from "../components/HowWeWork.astro";
 import ValueProposition from "../components/ValueProposition.astro";
+import CaseStudies from "../components/CaseStudies.astro";
+
 
 // Review Schema for Google rich snippets - individual reviews
 const reviewsSchema = {
@@ -132,6 +134,8 @@ const services = [
 
   <TrustBadges />
 
+  <CaseStudies />
+
   <ValueProposition />
   <TechMarquee />
   <!-- Services Section -->
@@ -167,76 +171,113 @@ const services = [
         </p>
       </div>
 
-      <!-- Services Grid -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
-      >
-      <CardService
-        icon="./icons/interfaz-de-usuario.webp"
-        title="UX/UI Design"
-        description="Intuitive interfaces that convert visitors into customers. User-centered design that keeps people engaged."
-        learnMoreUrl="/services/ux-ui"
-      />
+      <!-- Core Services: What We Do Best -->
+      <div class="mb-6 sm:mb-8">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-900 text-white rounded-full text-xs font-semibold tracking-wide uppercase">
+          <svg class="w-3.5 h-3.5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          What We Do Best
+        </span>
+      </div>
 
-      <CardService
-        icon="./icons/sitio-web.webp"
-        title="Web & App Development"
-        description="Fast, SEO-ready websites and mobile apps. React, Next.js, and Expo for web, iOS, and Android."
-        learnMoreUrl="/services/web-development"
-      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
+        <CardService
+          icon="./icons/sitio-web.webp"
+          title="Web & App Development"
+          description="Fast, SEO-ready websites and mobile apps. React, Next.js, and Expo for web, iOS, and Android."
+          learnMoreUrl="/services/web-development"
+        />
 
-      <CardService
-        icon="./icons/diseno-grafico.webp"
-        title="Branding & Identity"
-        description="Logos, color systems, and brand guides that make your business memorable and professional."
-        learnMoreUrl="/services/branding"
-      />
+        <CardService
+          icon="./icons/interfaz-de-usuario.webp"
+          title="UX/UI Design"
+          description="Intuitive interfaces that convert visitors into customers. User-centered design that keeps people engaged."
+          learnMoreUrl="/services/ux-ui"
+        />
 
-      <CardService
-        icon="./icons/seo.webp"
-        title="SEO Optimization"
-        description="Rank higher on Google with technical SEO, content strategy, and performance optimization."
-        learnMoreUrl="/services/seo"
-      />
+        <CardService
+          icon="./icons/diseno-grafico.webp"
+          title="Branding & Identity"
+          description="Logos, color systems, and brand guides that make your business memorable and professional."
+          learnMoreUrl="/services/branding"
+        />
+      </div>
 
-      <CardService
-        icon="./icons/redes-sociales.webp"
-        title="Social Media Marketing"
-        description="Content creation, ad campaigns, and community management that grow your audience."
-        learnMoreUrl="/services/social-media"
-      />
+      <!-- Separator -->
+      <div class="my-10 sm:my-12 lg:my-14 flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+      </div>
 
-      <CardService
-        icon="./icons/edicion-de-video.webp"
-        title="Video Production"
-        description="Professional video editing, commercials, and social content that captures attention."
-        learnMoreUrl="/services/video-production"
-      />
+      <!-- Extended Services: More Services -->
+      <div class="mb-6 sm:mb-8">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 border border-slate-200/80 text-slate-600 rounded-full text-xs font-semibold tracking-wide uppercase">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+          More Services
+        </span>
+      </div>
 
-      <CardService
-        icon="./icons/animacion.webp"
-        title="Motion & Animation"
-        description="2D/3D animations, motion graphics, and explainer videos that bring ideas to life."
-        learnMoreUrl="/services/animation"
-      />
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+        <CardService
+          icon="./icons/seo.webp"
+          title="SEO Optimization"
+          description="Rank higher on Google with technical SEO, content strategy, and performance optimization."
+          learnMoreUrl="/services/seo"
+        />
 
-      <CardService
-        icon="./icons/modelo-3d.webp"
-        title="3D Rendering"
-        description="Photorealistic renders for architecture, products, and marketing visualizations."
-        learnMoreUrl="/services/3d-rendering"
-      />
+        <CardService
+          icon="./icons/redes-sociales.webp"
+          title="Social Media Marketing"
+          description="Content creation, ad campaigns, and community management that grow your audience."
+          learnMoreUrl="/services/social-media"
+        />
 
-      <CardService
-        icon="./icons/camiseta.webp"
-        title="Branded Merchandise"
-        description="Custom promotional products with sublimation, digital print, and laser engraving."
-        learnMoreUrl="/services/promotional-products"
-      />
+        <CardService
+          icon="./icons/edicion-de-video.webp"
+          title="Video Production"
+          description="Professional video editing, commercials, and social content that captures attention."
+          learnMoreUrl="/services/video-production"
+        />
+
+        <CardService
+          icon="./icons/animacion.webp"
+          title="Motion & Animation"
+          description="2D/3D animations, motion graphics, and explainer videos that bring ideas to life."
+          learnMoreUrl="/services/animation"
+        />
+
+        <CardService
+          icon="./icons/modelo-3d.webp"
+          title="3D Rendering"
+          description="Photorealistic renders for architecture, products, and marketing visualizations."
+          learnMoreUrl="/services/3d-rendering"
+        />
+
+        <CardService
+          icon="./icons/camiseta.webp"
+          title="Branded Merchandise"
+          description="Custom promotional products with sublimation, digital print, and laser engraving."
+          learnMoreUrl="/services/promotional-products"
+        />
+      </div>
+
+      <!-- View All Services link -->
+      <div class="text-center mt-8 sm:mt-10">
+        <a
+          href="/services"
+          class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors duration-300"
+        >
+          View All Services
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
 
       <!-- CTA after services -->
-      <div class="text-center mt-10 sm:mt-14 lg:mt-20 px-2 sm:px-0">
+      <div class="text-center mt-10 sm:mt-14 lg:mt-16 px-2 sm:px-0">
         <div class="inline-flex flex-col items-center gap-3 sm:gap-4 p-5 sm:p-6 md:p-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-lg">
           <p class="text-sm sm:text-base text-slate-700 font-medium">Need something specific?</p>
           <a
@@ -280,7 +321,7 @@ const services = [
   <Pricing />
 
   <!-- Contact Form Section -->
-  <section id="contact" class="relative bg-slate-950 font-poppins py-16 sm:py-20 lg:py-24 overflow-hidden">
+  <section id="contact" class="relative bg-slate-950 font-poppins py-16 sm:py-20 lg:py-28 overflow-hidden">
     <!-- Orbs -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div class="absolute w-72 lg:w-80 h-72 lg:h-80 bg-cyan-500/10 rounded-full blur-3xl -top-32 right-1/4 motion-safe:animate-pulse"></div>
@@ -342,7 +383,7 @@ const services = [
         <!-- RIGHT: Form card -->
         <div class="lg:col-span-3">
           <contact-form data-endpoint="/api/contact">
-            <form action="/api/contact" method="POST" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
+            <form action="/api/contact" method="POST" aria-label="Contact form" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
 
               <!-- Honeypot -->
               <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
@@ -355,7 +396,7 @@ const services = [
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="home-name" class="home-form-label">Name *</label>
-                    <input id="home-name" name="name" type="text" required autocomplete="name"
+                    <input id="home-name" name="name" type="text" required aria-required="true" autocomplete="name"
                       placeholder="John Doe" class="home-form-input"
                       maxlength="60" minlength="2"
                       pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+"
@@ -363,7 +404,7 @@ const services = [
                   </div>
                   <div>
                     <label for="home-email" class="home-form-label">Email *</label>
-                    <input id="home-email" name="email" type="email" required autocomplete="email"
+                    <input id="home-email" name="email" type="email" required aria-required="true" autocomplete="email"
                       placeholder="john@company.com" class="home-form-input" maxlength="254" />
                   </div>
                 </div>
@@ -372,14 +413,14 @@ const services = [
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="home-phone" class="home-form-label">Phone *</label>
-                    <input id="home-phone" name="phone" type="tel" required autocomplete="tel"
+                    <input id="home-phone" name="phone" type="tel" required aria-required="true" autocomplete="tel"
                       placeholder="+1 (555) 000-0000" class="home-form-input"
                       maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
                   </div>
                   <div>
                     <label for="home-industry" class="home-form-label">Industry *</label>
                     <div class="relative">
-                      <select id="home-industry" name="industry" required class="home-form-input appearance-none pr-8">
+                      <select id="home-industry" name="industry" required aria-required="true" class="home-form-input appearance-none pr-8">
                         <option value="" disabled selected>Select</option>
                         {industries.map((ind) => <option value={ind}>{ind}</option>)}
                       </select>
@@ -391,7 +432,7 @@ const services = [
                 <!-- Subject -->
                 <div>
                   <label for="home-subject" class="home-form-label">Subject *</label>
-                  <input id="home-subject" name="subject" type="text" required
+                  <input id="home-subject" name="subject" type="text" required aria-required="true"
                     placeholder="How can we help?" class="home-form-input"
                     maxlength="100" minlength="3"
                     pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+" />
@@ -400,7 +441,7 @@ const services = [
                 <!-- Message -->
                 <div>
                   <label for="home-message" class="home-form-label">Message *</label>
-                  <textarea id="home-message" name="message" rows="3" required
+                  <textarea id="home-message" name="message" rows="3" required aria-required="true"
                     placeholder="Project details, goals, timeline..."
                     class="home-form-input resize-none"
                     maxlength="2000" minlength="10"></textarea>
@@ -421,7 +462,7 @@ const services = [
 
                 <!-- Terms -->
                 <label class="flex items-start gap-2 cursor-pointer">
-                  <input type="checkbox" name="terms" required
+                  <input type="checkbox" name="terms" required aria-required="true"
                     class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
                   <span class="text-xs text-slate-400 leading-relaxed">
                     I agree to the <a href="/terms" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Terms</a>
@@ -432,7 +473,7 @@ const services = [
                 <!-- Submit -->
                 <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
                   <button type="submit"
-                    class="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold py-2.5 px-6 rounded-lg shadow-md shadow-orange-500/20 hover:shadow-orange-500/30 hover:-translate-y-px active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0">
+                    class="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold py-3.5 px-8 rounded-2xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/30 hover:-translate-y-px active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0">
                     <span>Get Free Consultation</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                   </button>

@@ -1,8 +1,8 @@
-// content/config.ts
+// content.config.ts - Astro 6 content collections with loaders
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-// Esquema base reutilizable
+// Reusable base schema
 const searchable = z.object({
     title: z.string(),
     author: z.string().optional(),
@@ -12,6 +12,7 @@ const searchable = z.object({
 
 // Blog
 const blog = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
     schema: searchable.extend({
         date: z.date().optional(),
         img: z.string().optional(),
@@ -20,12 +21,13 @@ const blog = defineCollection({
         tags: z.array(z.string()).optional(),
         complexity: z.number().default(1),
         hideToc: z.boolean().default(false),
-        draft: z.boolean().default(false), // true = not published, false = published
+        draft: z.boolean().default(false),
     }),
 });
 
 // Books
 const books = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/books" }),
     schema: searchable.extend({
         img: z.string(),
         date: z.string(),
@@ -35,12 +37,13 @@ const books = defineCollection({
 
 // Country Areas
 const countryareas = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/countryareas" }),
     schema: z.object({
         title: z.string(),
         img: z.string().optional(),
         description: z.string(),
         name: z.string(),
-        code: z.string(), // Ej: "USA", "ARG"
+        code: z.string(),
         region: z.string().optional(),
         draft: z.boolean().default(false),
     }),
@@ -48,6 +51,7 @@ const countryareas = defineCollection({
 
 // Products
 const products = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/products" }),
     schema: searchable.extend({
         img: z.string(),
         price: z.string(),
@@ -58,56 +62,21 @@ const products = defineCollection({
 
 // Projects
 const projects = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
     schema: searchable.extend({
         img: z.string(),
-        category: z.string(), // Web Development, Branding, Social Media, etc.
+        category: z.string(),
         tags: z.array(z.string()),
         client: z.string().optional(),
         date: z.date(),
         featured: z.boolean().default(false),
-        link: z.string().optional(), // External link to live project
+        link: z.string().optional(),
         results: z.object({
             metric1: z.string().optional(),
             metric2: z.string().optional(),
             metric3: z.string().optional(),
         }).optional(),
         draft: z.boolean().default(false),
-    }),
-});
-
-// Regions (States, Departments, Provinces - intermediate level between country and city)
-const regions = defineCollection({
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        name: z.string(), // "Florida", "Cortés", "Jalisco"
-        code: z.string(), // "FL", "COR", "JAL"
-        country: z.string(), // slug of countryarea: "usa", "honduras", "mexico"
-        img: z.string().optional(),
-        imageAlt: z.string().optional(),
-        population: z.string().optional(),
-        capital: z.string().optional(), // Capital city of the region
-        timezone: z.string().optional(),
-        keywords: z.array(z.string()).optional(),
-        featured: z.boolean().default(false),
-        draft: z.boolean().default(false),
-        // SEO Enhancement Fields for Regions
-        longDescription: z.string().optional(), // Extended description for SEO
-        industries: z.array(z.object({
-            name: z.string(),
-            description: z.string().optional(),
-        })).optional(), // Key industries in the region
-        marketHighlights: z.array(z.string()).optional(), // Bullet points about regional market
-        faqs: z.array(z.object({
-            question: z.string(),
-            answer: z.string(),
-        })).optional(), // Region-specific FAQs
-        majorCities: z.array(z.string()).optional(), // Major cities in the region
-        regionalStats: z.object({
-            gdp: z.string().optional(),
-            techCompanies: z.string().optional(),
-            businessGrowth: z.string().optional(),
-        }).optional(),
     }),
 });
 
@@ -123,16 +92,50 @@ const industrySchema = z.object({
     description: z.string().optional(),
 });
 
+// Regions (States, Departments, Provinces)
+const regions = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/regions" }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        name: z.string(),
+        code: z.string(),
+        country: z.string(),
+        img: z.string().optional(),
+        imageAlt: z.string().optional(),
+        population: z.string().optional(),
+        capital: z.string().optional(),
+        timezone: z.string().optional(),
+        keywords: z.array(z.string()).optional(),
+        featured: z.boolean().default(false),
+        draft: z.boolean().default(false),
+        longDescription: z.string().optional(),
+        industries: z.array(z.object({
+            name: z.string(),
+            description: z.string().optional(),
+        })).optional(),
+        marketHighlights: z.array(z.string()).optional(),
+        faqs: z.array(faqItemSchema).optional(),
+        majorCities: z.array(z.string()).optional(),
+        regionalStats: z.object({
+            gdp: z.string().optional(),
+            techCompanies: z.string().optional(),
+            businessGrowth: z.string().optional(),
+        }).optional(),
+    }),
+});
+
 // Locations (City Landing Pages for SEO)
 const locations = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/locations" }),
     schema: z.object({
         title: z.string(),
         description: z.string(),
         city: z.string(),
-        state: z.string(), // Full name: "Florida", "Cortés"
-        stateCode: z.string(), // "FL", "COR", etc.
-        country: z.string(), // slug of countryarea: "usa", "honduras"
-        region: z.string().optional(), // slug of region (for linking)
+        state: z.string(),
+        stateCode: z.string(),
+        country: z.string(),
+        region: z.string().optional(),
         img: z.string(),
         imageAlt: z.string(),
         population: z.string().optional(),
@@ -140,17 +143,16 @@ const locations = defineCollection({
         keywords: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
         draft: z.boolean().default(false),
-        // SEO Enhancement Fields
-        metaTitle: z.string().optional(), // Custom meta title for SEO
-        longDescription: z.string().optional(), // Extended description for SEO
-        industries: z.array(industrySchema).optional(), // Key industries in the city
-        marketHighlights: z.array(z.string()).optional(), // Bullet points about local market
-        faqs: z.array(faqItemSchema).optional(), // City-specific FAQs
+        metaTitle: z.string().optional(),
+        longDescription: z.string().optional(),
+        industries: z.array(industrySchema).optional(),
+        marketHighlights: z.array(z.string()).optional(),
+        faqs: z.array(faqItemSchema).optional(),
         whyChooseUs: z.array(z.object({
             title: z.string(),
             description: z.string(),
-        })).optional(), // City-specific benefits
-        nearbyAreas: z.array(z.string()).optional(), // Nearby cities/areas served
+        })).optional(),
+        nearbyAreas: z.array(z.string()).optional(),
         localStats: z.object({
             techCompanies: z.string().optional(),
             averageProjectCost: z.string().optional(),
@@ -159,7 +161,6 @@ const locations = defineCollection({
     }),
 });
 
-// Exportá todas las colecciones
 export const collections = {
     blog,
     books,

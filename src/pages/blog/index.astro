@@ -99,7 +99,7 @@ const totalReadTime = posts.reduce(
 
           <article class="grid lg:grid-cols-2 gap-10 bg-gradient-to-br from-slate-50 to-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 group">
             <a
-              href={`/blog/${featuredPost.slug}`}
+              href={`/blog/${featuredPost.id}`}
               class="block relative h-full min-h-[400px] lg:min-h-[500px] overflow-hidden"
             >
               {featuredPost.data.img && (
@@ -151,7 +151,7 @@ const totalReadTime = posts.reduce(
               </div>
 
               <h2 class="text-3xl lg:text-4xl font-bold text-cyan-900 mb-4 leading-tight group-hover:text-orange-400 transition-colors">
-                <a href={`/blog/${featuredPost.slug}`}>
+                <a href={`/blog/${featuredPost.id}`}>
                   {featuredPost.data.title}
                 </a>
               </h2>
@@ -175,7 +175,7 @@ const totalReadTime = posts.reduce(
               )}
 
               <a
-                href={`/blog/${featuredPost.slug}`}
+                href={`/blog/${featuredPost.id}`}
                 class="inline-flex items-center gap-2 text-orange-400 font-bold text-lg group-hover:gap-4 transition-all duration-300"
               >
                 Read Full Article
@@ -210,7 +210,7 @@ const totalReadTime = posts.reduce(
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
           regularPosts.map((post) => {
-            const { slug, data } = post;
+            const { data } = post;
             const {
               title,
               description,
@@ -223,7 +223,7 @@ const totalReadTime = posts.reduce(
 
             return (
               <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col">
-                <a href={`/blog/${slug}`} class="block">
+                <a href={`/blog/${post.id}`} class="block">
                   {img && (
                     <div class="overflow-hidden relative h-56">
                       <img

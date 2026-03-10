@@ -93,7 +93,7 @@ const localBusinessSchema = {
 
     <!-- Canonical and Alternative URLs -->
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="es" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
     <!-- Geographic Meta Tags -->
@@ -116,7 +116,10 @@ const localBusinessSchema = {
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="es_MX" />
+    <meta property="og:locale:alternate" content="es_HN" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

@@ -2,11 +2,26 @@
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Whyus from "../../components/whyus.astro";
-import Testimonial from "../../components/testimonial.tsx";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
-import FAQ from "../../components/FAQ.tsx";
+import IndustryHero from "../../components/IndustryHero.astro";
+import IndustryIntro from "../../components/IndustryIntro.astro";
+import IndustryServices from "../../components/IndustryServices.astro";
+import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
+import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
+import IndustryTechStack from "../../components/IndustryTechStack.astro";
+import IndustryChallenges from "../../components/IndustryChallenges.astro";
+import IndustryFAQ from "../../components/IndustryFAQ.astro";
+import IndustryCTA from "../../components/IndustryCTA.astro";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
+
+const stats = [
+  { value: "500+", label: "Creators Launched" },
+  { value: "10x", label: "Brand Visibility" },
+  { value: "100%", label: "Custom Design" },
+  { value: "24/7", label: "Portfolio Live" }
+];
 
 const title = "Content Creator Website Design | Influencer Sites | Codebrand";
 const description =
@@ -74,6 +89,126 @@ const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Industries", url: "https://codebrand.us/industries" },
   { name: "Content Creators", url: "https://codebrand.us/industries/content-creators" }
 ]);
+
+const accentGradient = "from-pink-500 to-rose-500";
+
+const introHighlights = [
+  { value: "380%", label: "More Email Signups", gradient: "from-green-500 to-green-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "$45K+", label: "Monthly Merch Revenue", gradient: "from-blue-500 to-blue-600", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
+  { value: "1,200+", label: "Creators Served", gradient: "from-orange-500 to-orange-600", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" }
+];
+
+const services = [
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>',
+    title: "Creator Portfolio Websites",
+    description: "Stunning, brand-focused websites that showcase your best content, highlight your achievements, display media kits for sponsors, and serve as your professional digital headquarters. SEO-optimized to rank for your name and niche.",
+    features: ["Custom branding and design", "Video gallery and portfolio showcase", "Press kit and media resources"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>',
+    title: "Merch Store Integration",
+    description: "Integrated e-commerce stores where you can sell merchandise, digital products, courses, and exclusive content directly to your fans. Keep 100% of profits (minus payment processing) with no platform fees or middlemen.",
+    features: ["Print-on-demand integration", "Digital product delivery", "Secure payment processing"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+    title: "Membership & Subscription Platform",
+    description: "Create your own Patreon-style membership platform. Offer exclusive content, behind-the-scenes videos, early access, and community features to superfans. Recurring revenue without platform fees.",
+    features: ["Tiered membership levels", "Exclusive content gating", "Recurring billing management"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>',
+    title: "Sponsorship Landing Pages",
+    description: "Professional landing pages designed to attract sponsors and brand deals. Display your stats, demographics, engagement rates, previous partnerships, and packages. Make it easy for brands to say yes.",
+    features: ["Audience demographics showcase", "Sponsorship package builder", "Case studies and testimonials"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>',
+    title: "Email List Building",
+    description: "Build and own your email list\u2014your most valuable asset as a creator. Integrated email capture, lead magnets, automated welcome sequences, and newsletter management. Convert subscribers into customers.",
+    features: ["Lead magnet creation and delivery", "Email marketing automation", "Subscriber segmentation"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>',
+    title: "Content Hub & Video Gallery",
+    description: "Centralized content hub that aggregates your latest videos, podcasts, blog posts, and social media in one place. Beautiful video galleries with YouTube/Vimeo embedding and categorization.",
+    features: ["Auto-sync with YouTube/Twitch", "Content categorization and search", "SEO-optimized video pages"]
+  }
+];
+
+const processSteps = [
+  { title: "Brand & Audience Analysis", description: "We analyze your brand, content style, target audience, and monetization goals. We review your existing platforms to understand what resonates with your community and how to translate that to your website." },
+  { title: "Custom Brand Design", description: "Our designers create a stunning website that reflects your unique brand identity, color scheme, and personality. Every element is designed to convert visitors into fans, subscribers, and customers." },
+  { title: "Monetization Integration", description: "We integrate all your monetization streams\u2014merch stores, memberships, digital products, sponsors, and affiliate links. Everything works seamlessly to maximize revenue." },
+  { title: "Launch & Promotion Strategy", description: "We help you launch your website with maximum impact. This includes announcement templates, email sequences, and social media promotion strategies to drive traffic from day one." },
+  { title: "Optimization & Growth", description: "We track conversion rates, analyze user behavior, and continuously optimize your website for better results. As you grow, we add new features and revenue streams to scale with you." }
+];
+
+const whyChooseReasons = [
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>',
+    title: "Creator Economy Experts",
+    description: "We've built websites for 1,200+ creators across YouTube, Twitch, Instagram, TikTok, and podcasting. We understand your monetization challenges and opportunities."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>',
+    title: "Multiple Revenue Streams",
+    description: "We help you diversify beyond AdSense/ad revenue. Merch, memberships, digital products, courses, and sponsorships\u2014all integrated seamlessly."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>',
+    title: "Own Your Audience",
+    description: "Platforms can delete your channel tomorrow. We help you build an email list, membership community, and direct fan relationships that you control forever."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>',
+    title: "Brand Deal Magnet",
+    description: "A professional website increases your perceived value to sponsors. Our sponsorship pages showcase your stats and make it easy for brands to partner with you."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>',
+    title: "Creator-Friendly Pricing",
+    description: "Flexible payment plans designed for creators. Start small and scale as your channel grows. We grow when you grow\u2014we're partners in your success."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path></svg>',
+    title: "Always Available Support",
+    description: "Creator schedules are unpredictable. Our support team is available when you need us\u2014nights, weekends, whenever you're working on your content."
+  }
+];
+
+const technologies = [
+  { name: "React", icon: "\u269B\uFE0F" },
+  { name: "Next.js", icon: "\uD83D\uDE80" },
+  { name: "Video APIs", icon: "\uD83C\uDFAC" },
+  { name: "Stripe", icon: "\uD83D\uDCB3" },
+  { name: "AWS", icon: "\u2601\uFE0F" },
+  { name: "Email Tools", icon: "\uD83D\uDCE7" }
+];
+
+const challenges = [
+  {
+    problem: "Platform Dependency",
+    description: "Your entire livelihood depends on YouTube/TikTok/Instagram algorithms you can't control. One algorithm change or policy violation can destroy years of work overnight.",
+    solution: "Your own website and platform where YOU own the audience, the content, and the monetization. Build an email list and direct fan relationships that platforms can't take away."
+  },
+  {
+    problem: "Low AdSense Revenue",
+    description: "Ad revenue alone isn't enough to build a sustainable career. CPMs fluctuate, demonetization happens, and you need millions of views to make decent money.",
+    solution: "Diversify income with merch, memberships, digital products, courses, and direct sponsorships. Many creators earn more from their website than from platform ads."
+  },
+  {
+    problem: "Missing Sponsorship Opportunities",
+    description: "Brands want to work with professional creators, but without a website, media kit, or easy way to contact you, you're leaving money on the table.",
+    solution: "Professional sponsorship pages with demographics, engagement stats, package options, and easy inquiry forms. Attract premium brand deals and command higher rates."
+  },
+  {
+    problem: "No Direct Fan Relationship",
+    description: "You have millions of \"followers\" but can't reach them directly. Platforms control the feed, and organic reach keeps declining. You need to email them to stay connected.",
+    solution: "Email list building with lead magnets, freebies, and exclusive content. Email delivers 10x better ROI than social media and you own the list forever."
+  }
+];
 ---
 
 <Layout
@@ -86,72 +221,18 @@ const breadcrumbSchema = createBreadcrumbSchema([
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <!-- Hero Section -->
-  <section
-    class="relative bg-white py-32 sm:py-24 lg:py-32 font-poppins overflow-hidden"
-  >
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div
-        class="absolute inset-0"
-        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
-      >
-      </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="text-center max-w-4xl mx-auto">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
-            ></path>
-          </svg>
-          Creator Economy Solutions
-        </span>
-        <h1
-          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
-        >
-          Build Your Creator Empire with <span class="text-orange-500"
-            >CodeBrand</span
-          >
-        </h1>
-        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
-          Professional websites for YouTubers, streamers, and content creators.
-          Showcase your portfolio, sell merch, offer memberships, and own your
-          audience beyond platform algorithms.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Get Started Today
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-          <a
-            href="#services"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200"
-          >
-            View Our Services
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <IndustryHero
+    badgeText="Creator Technology Solutions"
+    headingTop="Elevate Your"
+    headingBottom="Creator Brand"
+    subtitle="Portfolio sites, media kits, monetization platforms, and fan engagement tools designed to help content creators build their brand and grow their audience."
+    stats={stats}
+    accentGradient="from-pink-400 via-rose-400 to-fuchsia-400"
+    buttonGradient="from-pink-500 to-rose-500"
+    buttonHoverGradient="hover:from-pink-600 hover:to-rose-600"
+    buttonShadow="shadow-pink-500/25"
+    buttonHoverShadow="hover:shadow-pink-500/40"
+  />
 
   <Breadcrumbs
     items={[
@@ -160,1409 +241,76 @@ const breadcrumbSchema = createBreadcrumbSchema([
       { name: "Content Creators", href: "" }
     ]}
     variant="transparent"
-    class="bg-gray-50 border-y border-gray-100"
+    class="bg-slate-900 border-y border-slate-800"
   />
 
-  <!-- Trust Badges Section -->
   <TrustBadges />
 
-  <!-- Introduction Section -->
-  <section class="py-16 lg:py-24 bg-white font-poppins">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
-          >
-            Own Your Digital Presence as a Creator
-          </h2>
-          <div class="prose prose-lg text-gray-700 space-y-4">
-            <p>
-              Algorithm changes. Demonetization. Platform dependency. As a
-              content creator, you know that relying solely on YouTube, Twitch,
-              or Instagram puts your entire career at risk. At CodeBrand, we
-              help creators build independent digital platforms they truly own.
-            </p>
-            <p>
-              Your website becomes your digital headquarters—a place to showcase
-              your best content, sell products directly (no platform fees),
-              offer exclusive memberships, collect email addresses, and convert
-              casual viewers into loyal fans. When you own the platform, you own
-              the relationship.
-            </p>
-            <p>
-              We've worked with YouTubers, Twitch streamers, podcasters,
-              Instagram influencers, and TikTok creators across every niche—from
-              gaming and beauty to education and finance. We understand the
-              creator economy and build technology that helps you monetize,
-              grow, and protect your brand.
-            </p>
-          </div>
-        </div>
-        <div class="relative">
-          <div
-            class="relative bg-slate-100 rounded-3xl p-8 shadow-xl"
-          >
-            <div class="space-y-4">
-              <div
-                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
-              >
-                <div class="flex items-center gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 bg-cyan-900 rounded-xl flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="text-2xl font-bold text-cyan-900">380%</div>
-                    <div class="text-sm text-gray-600">More Email Signups</div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
-              >
-                <div class="flex items-center gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 bg-cyan-900 rounded-xl flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="text-2xl font-bold text-cyan-900">$45K+</div>
-                    <div class="text-sm text-gray-600">
-                      Monthly Merch Revenue
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
-              >
-                <div class="flex items-center gap-4">
-                  <div
-                    class="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center"
-                  >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="text-2xl font-bold text-cyan-900">1,200+</div>
-                    <div class="text-sm text-gray-600">Creators Served</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <IndustryIntro
+    title="Own Your Digital Presence as a Creator"
+    paragraphs={[
+      "Algorithm changes. Demonetization. Platform dependency. As a content creator, you know that relying solely on YouTube, Twitch, or Instagram puts your entire career at risk. At CodeBrand, we help creators build independent digital platforms they truly own.",
+      "Your website becomes your digital headquarters\u2014a place to showcase your best content, sell products directly (no platform fees), offer exclusive memberships, collect email addresses, and convert casual viewers into loyal fans. When you own the platform, you own the relationship.",
+      "We've worked with YouTubers, Twitch streamers, podcasters, Instagram influencers, and TikTok creators across every niche\u2014from gaming and beauty to education and finance. We understand the creator economy and build technology that helps you monetize, grow, and protect your brand."
+    ]}
+    highlights={introHighlights}
+  />
 
-  <!-- Services Section -->
-  <section
-    id="services"
-    class="py-16 lg:py-24 bg-white font-poppins"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Specialized Services for Content Creators
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Everything you need to own your audience and monetize beyond platform
-          revenue
-        </p>
-      </div>
+  <IndustryServices
+    title="Specialized Services for"
+    titleAccent="Content Creators"
+    subtitle="Everything you need to own your audience and monetize beyond platform revenue"
+    services={services}
+    accentGradient={accentGradient}
+  />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-cyan-900 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Creator Portfolio Websites
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Stunning, brand-focused websites that showcase your best content,
-            highlight your achievements, display media kits for sponsors, and
-            serve as your professional digital headquarters. SEO-optimized to
-            rank for your name and niche.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Custom branding and design</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Video gallery and portfolio showcase</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Press kit and media resources</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
+  <IndustryProcess
+    title="Our Creator-Focused"
+    titleAccent="Development Process"
+    subtitle="We understand creators and design technology that amplifies your brand"
+    steps={processSteps}
+    accentGradient={accentGradient}
+  />
 
-        <!-- Service 2 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Merch Store Integration
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Integrated e-commerce stores where you can sell merchandise, digital
-            products, courses, and exclusive content directly to your fans. Keep
-            100% of profits (minus payment processing) with no platform fees or
-            middlemen.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Print-on-demand integration</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Digital product delivery</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Secure payment processing</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
+  <IndustryWhyChoose
+    title="Why Content Creators Choose"
+    titleAccent="CodeBrand"
+    subtitle="We're creator economy specialists who understand your business model"
+    reasons={whyChooseReasons}
+    accentGradient={accentGradient}
+  />
 
-        <!-- Service 3 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-cyan-900 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Membership & Subscription Platform
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Create your own Patreon-style membership platform. Offer exclusive
-            content, behind-the-scenes videos, early access, and community
-            features to superfans. Recurring revenue without platform fees.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Tiered membership levels</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Exclusive content gating</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Recurring billing management</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
+  <IndustryTestimonials />
 
-        <!-- Service 4 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-cyan-900 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Sponsorship Landing Pages
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Professional landing pages designed to attract sponsors and brand
-            deals. Display your stats, demographics, engagement rates, previous
-            partnerships, and packages. Make it easy for brands to say yes.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Audience demographics showcase</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Sponsorship package builder</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Case studies and testimonials</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
+  <IndustryTechStack
+    title="Built with"
+    titleAccent="Creator-Friendly Technology"
+    subtitle="Modern, fast-loading platforms that integrate with all your creator tools"
+    technologies={technologies}
+  />
 
-        <!-- Service 5 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-cyan-900 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Email List Building
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Build and own your email list—your most valuable asset as a creator.
-            Integrated email capture, lead magnets, automated welcome sequences,
-            and newsletter management. Convert subscribers into customers.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600 mb-6">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Lead magnet creation and delivery</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Email marketing automation</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Subscriber segmentation</span>
-            </li>
-          </ul>
-          <a
-            href="/services/web-development"
-            class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold text-sm group"
-          >
-            Learn More
-            <svg
-              class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
+  <IndustryChallenges
+    title="Common Challenges"
+    titleAccent="We Solve"
+    subtitle="Creator-specific problems require specialized solutions"
+    challenges={challenges}
+  />
 
-        <!-- Service 6 -->
-        <div
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-6"
-          >
-            <svg
-              class="w-7 h-7 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-cyan-900 mb-4">
-            Content Hub & Video Gallery
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Centralized content hub that aggregates your latest videos,
-            podcasts, blog posts, and social media in one place. Beautiful video
-            galleries with YouTube/Vimeo embedding and categorization.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Auto-sync with YouTube/Twitch</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Content categorization and search</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>SEO-optimized video pages</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <IndustryCTA
+    title="Ready to Own Your Creator Business?"
+    subtitle="Stop depending on platforms. Build your digital headquarters, diversify your income, and create a sustainable creator career. Schedule a free consultation with our creator economy specialists today."
+    supportText="Free strategy session \u2022 Creator-friendly pricing \u2022 Response within 24 hours"
+    ctaGradient="from-pink-600 via-rose-600 to-fuchsia-600"
+  />
 
-  <!-- Mid-CTA Section -->
-  <section
-    class="py-16 bg-cyan-900 font-poppins"
-  >
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-        Stop Being Dependent on Platform Algorithms
-      </h2>
-      <p class="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
-        YouTube, TikTok, and Instagram can change their algorithms overnight and
-        destroy your reach. Your website is the only platform you truly own.
-        Build it once, own it forever.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-      >
-        Claim Your Digital Independence
-        <svg
-          class="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section class="py-16 lg:py-24 bg-white font-poppins">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Our Creator-Focused Development Process
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          We understand creators and design technology that amplifies your brand
-        </p>
-      </div>
-
-      <div class="relative">
-        <!-- Timeline line -->
-        <div
-          class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-cyan-900"
-        >
-        </div>
-
-        <div class="space-y-12">
-          <!-- Step 1 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right lg:pr-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-cyan-900 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                1
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Brand & Audience Analysis
-              </h3>
-              <p class="text-gray-600">
-                We analyze your brand, content style, target audience, and
-                monetization goals. We review your existing platforms to
-                understand what resonates with your community and how to
-                translate that to your website.
-              </p>
-            </div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-cyan-900 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              1
-            </div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-orange-500 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              2
-            </div>
-            <div class="lg:w-1/2 lg:pl-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-orange-500 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                2
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Custom Brand Design
-              </h3>
-              <p class="text-gray-600">
-                Our designers create a stunning website that reflects your
-                unique brand identity, color scheme, and personality. Every
-                element is designed to convert visitors into fans, subscribers,
-                and customers.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right lg:pr-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-cyan-900 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                3
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Monetization Integration
-              </h3>
-              <p class="text-gray-600">
-                We integrate all your monetization streams—merch stores,
-                memberships, digital products, sponsors, and affiliate links.
-                Everything works seamlessly to maximize revenue.
-              </p>
-            </div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-cyan-900 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              3
-            </div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-orange-500 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              4
-            </div>
-            <div class="lg:w-1/2 lg:pl-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-orange-500 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                4
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Launch & Promotion Strategy
-              </h3>
-              <p class="text-gray-600">
-                We help you launch your website with maximum impact. This
-                includes announcement templates, email sequences, and social
-                media promotion strategies to drive traffic from day one.
-              </p>
-            </div>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="relative flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right lg:pr-12">
-              <div
-                class="inline-flex items-center justify-center w-12 h-12 bg-cyan-900 text-white rounded-full font-bold text-xl mb-4 lg:hidden"
-              >
-                5
-              </div>
-              <h3 class="text-2xl font-bold text-cyan-900 mb-3">
-                Optimization & Growth
-              </h3>
-              <p class="text-gray-600">
-                We track conversion rates, analyze user behavior, and
-                continuously optimize your website for better results. As you
-                grow, we add new features and revenue streams to scale with you.
-              </p>
-            </div>
-            <div
-              class="hidden lg:flex items-center justify-center w-16 h-16 bg-cyan-900 text-white rounded-full font-bold text-2xl shadow-xl z-10"
-            >
-              5
-            </div>
-            <div class="lg:w-1/2"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section
-    class="py-16 lg:py-24 bg-cyan-900 text-white font-poppins"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-          Why Content Creators Choose CodeBrand
-        </h2>
-        <p class="text-xl text-cyan-100 max-w-3xl mx-auto">
-          We're creator economy specialists who understand your business model
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Creator Economy Experts</h3>
-          <p class="text-cyan-100">
-            We've built websites for 1,200+ creators across YouTube, Twitch,
-            Instagram, TikTok, and podcasting. We understand your monetization
-            challenges and opportunities.
-          </p>
-        </div>
-
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Multiple Revenue Streams</h3>
-          <p class="text-cyan-100">
-            We help you diversify beyond AdSense/ad revenue. Merch, memberships,
-            digital products, courses, and sponsorships—all integrated
-            seamlessly.
-          </p>
-        </div>
-
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Own Your Audience</h3>
-          <p class="text-cyan-100">
-            Platforms can delete your channel tomorrow. We help you build an
-            email list, membership community, and direct fan relationships that
-            you control forever.
-          </p>
-        </div>
-
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Brand Deal Magnet</h3>
-          <p class="text-cyan-100">
-            A professional website increases your perceived value to sponsors.
-            Our sponsorship pages showcase your stats and make it easy for
-            brands to partner with you.
-          </p>
-        </div>
-
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-              <path
-                fill-rule="evenodd"
-                d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Creator-Friendly Pricing</h3>
-          <p class="text-cyan-100">
-            Flexible payment plans designed for creators. Start small and scale
-            as your channel grows. We grow when you grow—we're partners in your
-            success.
-          </p>
-        </div>
-
-        <div
-          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
-        >
-          <div
-            class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Always Available Support</h3>
-          <p class="text-cyan-100">
-            Creator schedules are unpredictable. Our support team is available
-            when you need us—nights, weekends, whenever you're working on your
-            content.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Google Reviews Section -->
-  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
-        >
-          <svg
-            class="w-4 h-4 text-cyan-400"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-            ></path>
-          </svg>
-          <span class="text-sm font-medium text-cyan-400">Google Reviews</span>
-        </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-          What Our <span class="text-orange-500">Clients Say</span>
-        </h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-          Real reviews from our satisfied clients
-        </p>
-      </div>
-    </div>
-    <Testimonial client:visible />
-  </section>
-
-  <!-- Technologies Section -->
-  <section class="py-16 lg:py-24 bg-white font-poppins">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Built with Creator-Friendly Technology
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Modern, fast-loading platforms that integrate with all your creator
-          tools
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">⚛️</div>
-          <div class="text-sm font-semibold text-gray-700">React</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">🚀</div>
-          <div class="text-sm font-semibold text-gray-700">Next.js</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">🎬</div>
-          <div class="text-sm font-semibold text-gray-700">Video APIs</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">💳</div>
-          <div class="text-sm font-semibold text-gray-700">Stripe</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">☁️</div>
-          <div class="text-sm font-semibold text-gray-700">AWS</div>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
-        >
-          <div class="text-4xl mb-3">📧</div>
-          <div class="text-sm font-semibold text-gray-700">Email Tools</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Common Challenges Section -->
-  <section
-    class="py-16 lg:py-24 bg-white font-poppins"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-4"
-        >
-          Common Challenges We Solve
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Creator-specific problems require specialized solutions
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: Platform Dependency
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                Your entire livelihood depends on YouTube/TikTok/Instagram
-                algorithms you can't control. One algorithm change or policy
-                violation can destroy years of work overnight.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Your own website and platform where
-                  YOU own the audience, the content, and the monetization. Build
-                  an email list and direct fan relationships that platforms can't
-                  take away.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: Low AdSense Revenue
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                Ad revenue alone isn't enough to build a sustainable career.
-                CPMs fluctuate, demonetization happens, and you need millions of
-                views to make decent money.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Diversify income with merch, memberships,
-                  digital products, courses, and direct sponsorships. Many creators
-                  earn more from their website than from platform ads.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: Missing Sponsorship Opportunities
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                Brands want to work with professional creators, but without a
-                website, media kit, or easy way to contact you, you're leaving
-                money on the table.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Professional sponsorship pages with
-                  demographics, engagement stats, package options, and easy inquiry
-                  forms. Attract premium brand deals and command higher rates.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow"
-        >
-          <div class="flex gap-4">
-            <div class="flex-shrink-0">
-              <div
-                class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center"
-              >
-                <svg
-                  class="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-bold text-cyan-900 mb-2">
-                Problem: No Direct Fan Relationship
-              </h3>
-              <p class="text-gray-600 text-sm mb-2">
-                You have millions of "followers" but can't reach them directly.
-                Platforms control the feed, and organic reach keeps declining.
-                You need to email them to stay connected.
-              </p>
-              <div class="flex gap-2">
-                <svg
-                  class="w-5 h-5 text-green-500 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <p class="text-sm text-gray-700">
-                  <strong>Solution:</strong> Email list building with lead magnets,
-                  freebies, and exclusive content. Email delivers 10x better ROI
-                  than social media and you own the list forever.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section
-    class="py-16 lg:py-24 bg-cyan-900 text-white font-poppins"
-  >
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-        Ready to Own Your Creator Business?
-      </h2>
-      <p class="text-xl text-cyan-100 mb-8 leading-relaxed">
-        Stop depending on platforms. Build your digital headquarters, diversify
-        your income, and create a sustainable creator career. Schedule a free
-        consultation with our creator economy specialists today.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="/contact"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-        >
-          Schedule Free Consultation
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            ></path>
-          </svg>
-        </a>
-        <a
-          href="tel:+1234567890"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-lg text-white rounded-xl font-bold text-lg border-2 border-white/30 transition-all duration-200"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-            ></path>
-          </svg>
-          Call Us Now
-        </a>
-      </div>
-      <p class="mt-6 text-sm text-cyan-200">
-        Free strategy session • Creator-friendly pricing • Response within 24
-        hours
-      </p>
-    </div>
-  </section>
-
-  <!-- Content Creator FAQ Section -->
-  <section class="py-16 lg:py-24 bg-slate-950 font-poppins">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-          Creator Website <span class="text-orange-500">FAQ</span>
-        </h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-          Common questions about our content creator website development
-        </p>
-      </div>
-      <FAQ faqs={creatorFaqs} theme="dark" client:visible />
-    </div>
-  </section>
+  <IndustryFAQ
+    title="Creator Website"
+    titleAccent="FAQ"
+    subtitle="Common questions about our content creator website development"
+    faqs={creatorFaqs}
+  />
 
   <Whyus />
 
-  <!-- Related Services Section -->
   <RelatedServices currentService="social-media" />
 </Layout>

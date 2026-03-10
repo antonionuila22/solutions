@@ -13,12 +13,12 @@ export async function getStaticPaths() {
 
     return countries.map((country) => {
         // Get regions for this country
-        const countryRegions = regions.filter(r => r.data.country === country.slug);
+        const countryRegions = regions.filter(r => r.data.country === country.id);
         // Get cities for this country
-        const countryCities = locations.filter(l => l.data.country === country.slug);
+        const countryCities = locations.filter(l => l.data.country === country.id);
 
         return {
-            params: { id: country.slug },
+            params: { id: country.id },
             props: { country, countries, regions: countryRegions, cities: countryCities },
         };
     });
@@ -134,10 +134,10 @@ const getCityCount = (regionSlug: string) => {
 
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {sortedRegions.map((regionItem) => {
-                            const cityCount = getCityCount(regionItem.slug);
+                            const cityCount = getCityCount(regionItem.id);
                             return (
                                 <a
-                                    href={`/regions/${regionItem.slug}`}
+                                    href={`/regions/${regionItem.id}`}
                                     class="group bg-white p-5 rounded-xl shadow-sm hover:shadow-lg border border-gray-100 hover:border-orange-300 transition-all duration-300"
                                 >
                                     <div class="flex items-center justify-between mb-2">
@@ -192,7 +192,7 @@ const getCityCount = (regionSlug: string) => {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {featuredCities.map((city) => (
                         <a
-                            href={`/locations/${city.slug}`}
+                            href={`/locations/${city.id}`}
                             class="group bg-gradient-to-br from-white to-cyan-50 p-6 rounded-2xl shadow-md hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300"
                         >
                             <div class="flex items-start justify-between mb-3">
@@ -260,9 +260,9 @@ const getCityCount = (regionSlug: string) => {
                 <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                     {
                         countries
-                            .filter(({ slug }) => slug !== Astro.params.id)
+                            .filter(({ id }) => id !== Astro.params.id)
                             .slice(0, 6)
-                            .map(({ slug, data }) => {
+                            .map(({ id, data }) => {
                                 const {
                                     title,
                                     name,
@@ -275,7 +275,7 @@ const getCityCount = (regionSlug: string) => {
                                 return (
                                     <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
                                         <a
-                                            href={`/countryareas/${slug}`}
+                                            href={`/countryareas/${id}`}
                                             class="block h-full"
                                             aria-label={`Ver información de ${title}`}
                                         >

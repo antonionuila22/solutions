@@ -63,7 +63,7 @@ const itemListSchema = {
     "@type": "ListItem",
     "position": index + 1,
     "name": `Web Development ${location.data.city}, ${location.data.stateCode}`,
-    "url": `${baseUrl}/locations/${location.slug}`,
+    "url": `${baseUrl}/locations/${location.id}`,
   })),
 };
 ---
@@ -116,7 +116,7 @@ const itemListSchema = {
   <section class="py-16 lg:py-24 bg-white font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {Object.entries(locationsByCountry).map(([countrySlug, countryLocations]) => {
-        const country = countries.find(c => c.slug === countrySlug);
+        const country = countries.find(c => c.id === countrySlug);
         return (
           <div class="mb-16">
             <div class="flex items-center gap-4 mb-8">
@@ -135,7 +135,7 @@ const itemListSchema = {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {countryLocations.map((location) => (
           <a
-            href={`/locations/${location.slug}`}
+            href={`/locations/${location.id}`}
             class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300 transform hover:-translate-y-1"
           >
             <div class="flex items-start justify-between mb-4">

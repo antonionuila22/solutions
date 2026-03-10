@@ -1,0 +1,50 @@
+---
+interface HighlightStat {
+  value: string;
+  label: string;
+  gradient: string; // e.g. "from-green-500 to-green-600"
+  iconPath: string; // SVG path
+}
+
+interface Props {
+  title: string;
+  paragraphs: string[];
+  highlights: HighlightStat[];
+}
+
+const { title, paragraphs, highlights } = Astro.props;
+---
+
+<section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">{title}</h2>
+        <div class="prose prose-lg text-slate-600 space-y-4">
+          {paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+      <div class="relative">
+        <div class="relative bg-slate-50 rounded-3xl p-8 shadow-xl">
+          <div class="space-y-4">
+            {highlights.map((stat) => (
+              <div class="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-0.5 transition-transform duration-300">
+                <div class="flex items-center gap-4">
+                  <div class={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${stat.gradient} rounded-xl flex items-center justify-center`}>
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d={stat.iconPath} clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-2xl font-bold text-slate-900">{stat.value}</div>
+                    <div class="text-sm text-slate-500">{stat.label}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

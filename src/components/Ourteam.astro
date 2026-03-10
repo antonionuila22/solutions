@@ -74,11 +74,11 @@ const iconColor = (i: number) => (i % 2 === 0 ? "text-orange-400 group-hover:tex
 ---
 
 <!-- Team Members Section -->
-<section class="py-24 px-6 max-w-7xl mx-auto">
+<section class="py-16 sm:py-20 lg:py-28 px-6 max-w-7xl mx-auto">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {members.map((m, i) => (
       <div class="group flex relative" aria-label={`Team member: ${m.name}`}>
-        <div class="relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+        <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
           <!-- Image Container -->
           <div class={`relative h-80 overflow-hidden bg-gradient-to-br ${bgGrad(i)}`}>
             <img
@@ -89,11 +89,11 @@ const iconColor = (i: number) => (i % 2 === 0 ? "text-orange-400 group-hover:tex
               decoding="async"
             />
             <!-- Overlay on Hover -->
-            <div class="absolute inset-0 bg-gradient-to-t from-cyan-400/50 via-cyan-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-cyan-400/50 via-cyan-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             <!-- Social Links (appear on hover) -->
             {( (m.linkedin && m.linkedin !== '#') || (m.github && m.github !== '#') ) && (
-              <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                 {m.linkedin && m.linkedin !== '#' && (
                   <a
                     href={m.linkedin}

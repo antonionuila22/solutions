@@ -36,14 +36,7 @@ export default defineConfig({
           drop_debugger: true,
         },
       },
-      // Let Astro handle chunk splitting automatically
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            react: ['react', 'react-dom'],
-          },
-        },
-      },
+      // Astro 6 handles chunk splitting automatically
     },
   },
 

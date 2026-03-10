@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const products = await getCollection("products", ({ data }) => !data.draft);
 
   return products.map((product) => ({
-    params: { id: product.slug },
+    params: { id: product.id },
     props: { product },
   }));
 }
@@ -52,7 +52,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 3,
       "name": title,
-      "item": `https://codebrand.us/products/${product.slug}`
+      "item": `https://codebrand.us/products/${product.id}`
     }
   ]
 };
@@ -64,7 +64,7 @@ const productSchema = {
   "name": title,
   "description": description,
   "image": img ? `${baseUrl}${img}` : `${baseUrl}/photos/bannercodebrand.webp`,
-  "url": `${baseUrl}/products/${product.slug}`,
+  "url": `${baseUrl}/products/${product.id}`,
   "brand": {
     "@type": "Brand",
     "name": "Codebrand"
@@ -74,7 +74,7 @@ const productSchema = {
     "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
     "price": numericPrice,
     "priceCurrency": "USD",
-    "url": `${baseUrl}/products/${product.slug}`,
+    "url": `${baseUrl}/products/${product.id}`,
     "seller": {
       "@type": "Organization",
       "name": "Codebrand"

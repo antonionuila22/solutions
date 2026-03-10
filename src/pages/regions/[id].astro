@@ -14,12 +14,12 @@ export async function getStaticPaths() {
 
   return regions.map((region) => {
     // Get cities in this region
-    const regionCities = locations.filter(loc => loc.data.region === region.slug);
+    const regionCities = locations.filter(loc => loc.data.region === region.id);
     // Get country info
-    const country = countries.find(c => c.slug === region.data.country);
+    const country = countries.find(c => c.id === region.data.country);
 
     return {
-      params: { slug: region.slug },
+      params: { id: region.id },
       props: { region, cities: regionCities, country },
     };
   });
@@ -68,7 +68,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: baseUrl },
   { name: "Locations", url: `${baseUrl}/countryareas` },
   { name: country?.data.name || "Country", url: `${baseUrl}/countryareas/${region.data.country}` },
-  { name: name, url: `${baseUrl}/regions/${region.slug}` },
+  { name: name, url: `${baseUrl}/regions/${region.id}` },
 ]);
 
 // ItemList schema for cities
@@ -82,7 +82,7 @@ const citiesListSchema = {
     "@type": "ListItem",
     "position": index + 1,
     "name": `Web Development ${city.data.city}, ${code}`,
-    "url": `${baseUrl}/locations/${city.slug}`,
+    "url": `${baseUrl}/locations/${city.id}`,
   })),
 };
 
@@ -291,7 +291,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sortedCities.map((city) => (
             <a
-              href={`/locations/${city.slug}`}
+              href={`/locations/${city.id}`}
               class="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300 transform hover:-translate-y-1"
             >
               <div class="flex items-start justify-between mb-3">

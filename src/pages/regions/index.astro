@@ -86,7 +86,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
   <section class="py-16 lg:py-24 bg-white font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {Object.entries(regionsByCountry).map(([countrySlug, countryRegions]) => {
-        const country = countries.find(c => c.slug === countrySlug);
+        const country = countries.find(c => c.id === countrySlug);
         const sortedRegions = countryRegions.sort((a, b) => {
           if (a.data.featured && !b.data.featured) return -1;
           if (!a.data.featured && b.data.featured) return 1;
@@ -109,10 +109,10 @@ const breadcrumbSchema = createBreadcrumbSchema([
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {sortedRegions.map((region) => {
-                const cityCount = getCityCount(region.slug);
+                const cityCount = getCityCount(region.id);
                 return (
                   <a
-                    href={`/regions/${region.slug}`}
+                    href={`/regions/${region.id}`}
                     class="group bg-white p-6 rounded-xl shadow-md hover:shadow-lg border border-cyan-100 hover:border-orange-300 transition-all duration-300"
                   >
                     <div class="flex items-center justify-between mb-3">

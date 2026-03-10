@@ -5,6 +5,7 @@ interface SubItem {
   name: string;
   link: string;
   icon?: string;
+  category?: string;
 }
 
 interface MenuItem {
@@ -20,15 +21,16 @@ const menuItems: MenuItem[] = [
     link: "/services",
     hasDropdown: true,
     subItems: [
-      { name: "UX/UI Design", link: "/services/ux-ui" },
-      { name: "Branding", link: "/services/branding" },
-      { name: "Web Development", link: "/services/web-development" },
-      { name: "SEO", link: "/services/seo" },
-      { name: "Social Media", link: "/services/social-media" },
-      { name: "3D Rendering", link: "/services/3d-rendering" },
-      { name: "Animation", link: "/services/animation" },
-      { name: "Video Production", link: "/services/video-production" },
-      { name: "Promotional Products", link: "/services/promotional-products" },
+      { name: "Web Development", link: "/services/web-development", category: "Development" },
+      { name: "E-Commerce", link: "/services/ecommerce", category: "Development" },
+      { name: "UX/UI Design", link: "/services/ux-ui", category: "Design" },
+      { name: "Branding", link: "/services/branding", category: "Design" },
+      { name: "SEO", link: "/services/seo", category: "Marketing" },
+      { name: "Social Media", link: "/services/social-media", category: "Marketing" },
+      { name: "3D Rendering", link: "/services/3d-rendering", category: "Production" },
+      { name: "Animation", link: "/services/animation", category: "Production" },
+      { name: "Video Production", link: "/services/video-production", category: "Production" },
+      { name: "Promotional Products", link: "/services/promotional-products", category: "Production" },
     ],
   },
   {
@@ -36,16 +38,16 @@ const menuItems: MenuItem[] = [
     link: "/industries",
     hasDropdown: true,
     subItems: [
-      { name: "Construction", link: "/industries/construction" },
-      { name: "Travel", link: "/industries/travel-agency" },
-      { name: "E-Commerce", link: "/industries/ecommerce" },
-      { name: "Healthcare", link: "/industries/healthcare" },
-      { name: "Real Estate", link: "/industries/real-estate" },
-      { name: "Restaurants", link: "/industries/restaurants" },
-      { name: "Law Firms", link: "/industries/law-firms" },
-      { name: "Automotive", link: "/industries/automotive" },
-      { name: "Fitness", link: "/industries/fitness" },
-      { name: "Content Creators", link: "/industries/content-creators" },
+      { name: "Healthcare", link: "/industries/healthcare", category: "Professional Services" },
+      { name: "Law Firms", link: "/industries/law-firms", category: "Professional Services" },
+      { name: "Real Estate", link: "/industries/real-estate", category: "Professional Services" },
+      { name: "E-Commerce", link: "/industries/ecommerce", category: "Retail & Food" },
+      { name: "Restaurants", link: "/industries/restaurants", category: "Retail & Food" },
+      { name: "Fitness", link: "/industries/fitness", category: "Lifestyle" },
+      { name: "Travel", link: "/industries/travel-agency", category: "Lifestyle" },
+      { name: "Content Creators", link: "/industries/content-creators", category: "Lifestyle" },
+      { name: "Construction", link: "/industries/construction", category: "Trade" },
+      { name: "Automotive", link: "/industries/automotive", category: "Trade" },
     ],
   },
   {
@@ -63,6 +65,20 @@ const menuItems: MenuItem[] = [
   { name: "Products", link: "/products", hasDropdown: false },
   { name: "Contact", link: "/contact", hasDropdown: false },
 ];
+
+function groupByCategory(items: SubItem[]): { category: string; items: SubItem[] }[] {
+  const groups: { category: string; items: SubItem[] }[] = [];
+  const seen = new Set<string>();
+  for (const item of items) {
+    const cat = item.category || "";
+    if (!seen.has(cat)) {
+      seen.add(cat);
+      groups.push({ category: cat, items: [] });
+    }
+    groups.find((g) => g.category === cat)!.items.push(item);
+  }
+  return groups;
+}
 ---
 
 <header
@@ -109,21 +125,33 @@ const menuItems: MenuItem[] = [
             {item.hasDropdown && item.subItems && (
               <div class="dropdown-container absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <ul
-                  class="dropdown-glass rounded-2xl py-3 px-2 min-w-[240px] shadow-xl shadow-slate-200/50"
+                  class="dropdown-glass rounded-2xl py-3 px-2 min-w-[280px] shadow-xl shadow-slate-200/50"
                   role="menu"
                   aria-label={`${item.name} submenu`}
                 >
-                  {item.subItems.map((sub) => (
-                    <li role="none">
-                      <a
-                        href={sub.link}
-                        class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/70 transition-all duration-150"
-                        role="menuitem"
-                      >
-                        <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        {sub.name}
-                      </a>
-                    </li>
+                  {groupByCategory(item.subItems).map((group, groupIdx) => (
+                    <>
+                      {groupIdx > 0 && (
+                        <li role="none" class="my-1.5 mx-3 border-t border-slate-100" aria-hidden="true" />
+                      )}
+                      {group.category && (
+                        <li role="none" class="px-4 pt-2 pb-1">
+                          <span class="text-xs uppercase text-slate-400 font-semibold tracking-wider">{group.category}</span>
+                        </li>
+                      )}
+                      {group.items.map((sub) => (
+                        <li role="none">
+                          <a
+                            href={sub.link}
+                            class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/70 transition-all duration-150"
+                            role="menuitem"
+                          >
+                            <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            {sub.name}
+                          </a>
+                        </li>
+                      ))}
+                    </>
                   ))}
                 </ul>
               </div>
@@ -238,15 +266,22 @@ const menuItems: MenuItem[] = [
                     aria-label={`${item.name} submenu`}
                   >
                     <div class="py-1.5 sm:py-2 pl-2 sm:pl-4 pr-1 sm:pr-2 space-y-0.5">
-                      {item.subItems?.map((subItem) => (
-                        <a
-                          href={subItem.link}
-                          class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all"
-                          role="menuitem"
-                        >
-                          <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-300" />
-                          {subItem.name}
-                        </a>
+                      {item.subItems && groupByCategory(item.subItems).map((group, groupIdx) => (
+                        <>
+                          {groupIdx > 0 && (
+                            <div class="my-1 mx-3 border-t border-slate-100" aria-hidden="true" />
+                          )}
+                          {group.items.map((subItem) => (
+                            <a
+                              href={subItem.link}
+                              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all"
+                              role="menuitem"
+                            >
+                              <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-300" />
+                              {subItem.name}
+                            </a>
+                          ))}
+                        </>
                       ))}
                     </div>
                   </div>

@@ -1,0 +1,57 @@
+---
+interface ProcessStep {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  titleAccent: string;
+  subtitle: string;
+  steps: ProcessStep[];
+  accentGradient?: string;
+}
+
+const {
+  title,
+  titleAccent,
+  subtitle,
+  steps,
+  accentGradient = "from-orange-500 to-cyan-500",
+} = Astro.props;
+---
+
+<section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-semibold rounded-full mb-6">Our Process</div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        {title} <span class={`bg-gradient-to-r ${accentGradient} bg-clip-text text-transparent`}>{titleAccent}</span>
+      </h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
+    </div>
+
+    <div class="relative">
+      <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-orange-500 via-cyan-500 to-orange-500"></div>
+      <div class="space-y-8 sm:space-y-12">
+        {steps.map((step, index) => (
+          <div class={`relative flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+            <div class={`lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right lg:pr-16' : 'lg:text-left lg:pl-16'}`}>
+              <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
+                <div class={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br ${accentGradient} text-white rounded-2xl font-bold text-lg mb-4`}>
+                  {index + 1}
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">{step.title}</h3>
+                <p class="text-slate-600">{step.description}</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex items-center justify-center w-6 h-6 bg-gradient-to-br from-orange-500 to-cyan-500 rounded-full shadow-lg shadow-orange-500/30 z-10">
+              <div class="w-2 h-2 bg-white rounded-full"></div>
+            </div>
+            <div class="lg:w-1/2"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

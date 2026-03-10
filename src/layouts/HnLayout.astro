@@ -120,6 +120,8 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="es_HN" />
     <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="es_MX" />
 
     {
       article && formattedPublishedTime && (
@@ -170,9 +172,9 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     />
 
     <!-- Preload critical fonts for better LCP -->
-    <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Honduras Business Schema -->
     <script type="application/ld+json" is:inline>

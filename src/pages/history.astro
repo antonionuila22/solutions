@@ -62,7 +62,7 @@ import ButtonCustom from "../components/Button.astro";
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
       <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
@@ -103,7 +103,10 @@ import ButtonCustom from "../components/Button.astro";
             </div>
           </div>
           <div class="md:w-5/12">
-            <img src="/photos/teamcode.webp" alt="The beginning" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <figure>
+              <img src="/photos/teamcode.webp" alt="The beginning of Codebrand" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <figcaption class="sr-only">Codebrand was born from a vision to create brands that truly resonate with people.</figcaption>
+            </figure>
           </div>
         </div>
 
@@ -126,7 +129,10 @@ import ButtonCustom from "../components/Button.astro";
             </div>
           </div>
           <div class="md:w-5/12">
-            <img src="/photos/developers-searching-for-bugs-2025-01-29-14-44-32-utc.webp" alt="Growth" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <figure>
+              <img src="/photos/developers-searching-for-bugs-2025-01-29-14-44-32-utc.webp" alt="Building the dream team" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <figcaption class="sr-only">Six specialists united by one purpose: delivering world-class quality with speed, strategy, and vision.</figcaption>
+            </figure>
           </div>
         </div>
 
@@ -149,7 +155,10 @@ import ButtonCustom from "../components/Button.astro";
             </div>
           </div>
           <div class="md:w-5/12">
-            <img src="/photos/diseñoweb.webp" alt="Global expansion" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <figure>
+              <img src="/photos/diseñoweb.webp" alt="Global expansion" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <figcaption class="sr-only">From local projects to international brands across 5+ countries.</figcaption>
+            </figure>
           </div>
         </div>
 
@@ -172,7 +181,10 @@ import ButtonCustom from "../components/Button.astro";
             </div>
           </div>
           <div class="md:w-5/12">
-            <img src="/photos/developer-explaining-details-in-code-2025-01-29-08-07-23-utc.webp" alt="Today" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <figure>
+              <img src="/photos/developer-explaining-details-in-code-2025-01-29-08-07-23-utc.webp" alt="Codebrand today" class="rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <figcaption class="sr-only">Creative partners turning ambitious visions into powerful realities, one brand at a time.</figcaption>
+            </figure>
           </div>
         </div>
       </div>

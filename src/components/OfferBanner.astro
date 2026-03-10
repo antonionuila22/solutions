@@ -1,0 +1,346 @@
+---
+interface Props {
+  offerEndDate: string;
+  offerUrl: string;
+  label?: string;
+  spotsText?: string;
+  ctaText?: string;
+}
+
+const {
+  offerEndDate,
+  offerUrl,
+  label = "Limited offer ends in",
+  spotsText = 'Only <strong>5 spots</strong> left',
+  ctaText = "$450",
+} = Astro.props;
+---
+
+<a href={offerUrl} class="offer-banner" aria-label={`${label} - ${ctaText} - Click to view offer`}>
+  <div class="offer-banner-shine" aria-hidden="true"></div>
+  <div class="offer-banner-inner">
+    <div class="offer-banner-left">
+      <div class="offer-banner-icon" aria-hidden="true">
+        <svg class="w-[1.125rem] h-[1.125rem] text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12,6 12,12 16,14"/>
+        </svg>
+      </div>
+      <span class="offer-banner-label">{label}</span>
+    </div>
+    <div class="offer-banner-timer" id="offer-countdown">
+      <div class="offer-banner-block">
+        <span class="offer-banner-number" data-unit="days">00</span>
+        <span class="offer-banner-unit">Days</span>
+      </div>
+      <span class="offer-banner-sep" aria-hidden="true">:</span>
+      <div class="offer-banner-block">
+        <span class="offer-banner-number" data-unit="hours">00</span>
+        <span class="offer-banner-unit">Hrs</span>
+      </div>
+      <span class="offer-banner-sep" aria-hidden="true">:</span>
+      <div class="offer-banner-block">
+        <span class="offer-banner-number" data-unit="mins">00</span>
+        <span class="offer-banner-unit">Min</span>
+      </div>
+      <span class="offer-banner-sep" aria-hidden="true">:</span>
+      <div class="offer-banner-block">
+        <span class="offer-banner-number offer-banner-secs" data-unit="secs">00</span>
+        <span class="offer-banner-unit">Sec</span>
+      </div>
+    </div>
+    <div class="offer-banner-cta-group">
+      <span class="offer-banner-spots-pulse" aria-hidden="true"></span>
+      <span class="offer-banner-spots" set:html={spotsText} />
+      <span class="offer-banner-cta">{ctaText}<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+    </div>
+  </div>
+</a>
+
+<script is:inline define:vars={{ offerEndDate }}>
+  (function initOfferBanner() {
+    const END = new Date(offerEndDate).getTime();
+    const container = document.getElementById('offer-countdown');
+    if (!container) return;
+
+    const els = {
+      days: container.querySelector('[data-unit="days"]'),
+      hours: container.querySelector('[data-unit="hours"]'),
+      mins: container.querySelector('[data-unit="mins"]'),
+      secs: container.querySelector('[data-unit="secs"]'),
+    };
+
+    function update() {
+      const diff = END - Date.now();
+      if (diff <= 0) {
+        Object.values(els).forEach(el => { if (el) el.textContent = '00'; });
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      if (els.days) els.days.textContent = String(d).padStart(2, '0');
+      if (els.hours) els.hours.textContent = String(h).padStart(2, '0');
+      if (els.mins) els.mins.textContent = String(m).padStart(2, '0');
+      if (els.secs) els.secs.textContent = String(s).padStart(2, '0');
+    }
+
+    update();
+    setInterval(update, 1000);
+  })();
+</script>
+
+<style>
+  .offer-banner {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    transition: background 0.3s;
+  }
+
+  .offer-banner:hover {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .offer-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      rgba(249, 115, 22, 0.08) 0%,
+      rgba(239, 68, 68, 0.12) 50%,
+      rgba(249, 115, 22, 0.08) 100%
+    );
+    pointer-events: none;
+  }
+
+  .offer-banner-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+    animation: offer-shine 5s ease-in-out infinite;
+  }
+
+  @keyframes offer-shine {
+    0% { left: -100%; }
+    50%, 100% { left: 200%; }
+  }
+
+  .offer-banner-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0.625rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .offer-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .offer-banner-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-radius: 50%;
+    animation: offer-icon-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes offer-icon-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(249, 115, 22, 0); }
+  }
+
+  .offer-banner-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .offer-banner-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .offer-banner-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 2.625rem;
+    padding: 0.375rem 0.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0.375rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .offer-banner-number {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .offer-banner-secs {
+    color: #f97316;
+    animation: offer-secs-glow 1s ease-in-out infinite;
+  }
+
+  @keyframes offer-secs-glow {
+    0%, 100% { text-shadow: 0 0 4px rgba(249, 115, 22, 0.4); }
+    50% { text-shadow: 0 0 10px rgba(249, 115, 22, 0.7); }
+  }
+
+  .offer-banner-unit {
+    font-size: 0.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 0.2rem;
+  }
+
+  .offer-banner-sep {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.25);
+    animation: offer-blink 1s ease-in-out infinite;
+  }
+
+  @keyframes offer-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .offer-banner-cta-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .offer-banner-spots-pulse {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    bottom: -2px;
+    width: calc(100% - 4rem);
+    background: rgba(249, 115, 22, 0.2);
+    border-radius: 9999px;
+    animation: offer-spots-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes offer-spots-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0; }
+  }
+
+  .offer-banner-spots {
+    position: relative;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.3rem 0.75rem;
+    background: rgba(249, 115, 22, 0.12);
+    border-radius: 9999px;
+    border: 1px solid rgba(249, 115, 22, 0.25);
+  }
+
+  .offer-banner-spots :global(strong) {
+    color: #f97316;
+    font-weight: 700;
+  }
+
+  .offer-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.375rem 0.875rem;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+
+  .offer-banner:hover .offer-banner-cta {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.45);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .offer-banner {
+      top: 68px;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(15, 10, 5, 0.95));
+      border-bottom: 1px solid rgba(249, 115, 22, 0.15);
+    }
+
+    .offer-banner-shine { display: none; }
+
+    .offer-banner-inner {
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      flex-wrap: nowrap;
+    }
+
+    .offer-banner-left { display: none; }
+
+    .offer-banner-block {
+      min-width: 2.25rem;
+      padding: 0.3rem 0.375rem;
+      background: rgba(249, 115, 22, 0.08);
+      border-color: rgba(249, 115, 22, 0.15);
+    }
+
+    .offer-banner-number { font-size: 0.9375rem; font-weight: 800; }
+    .offer-banner-unit { font-size: 0.4375rem; }
+    .offer-banner-sep { font-size: 0.875rem; margin: 0 0.125rem; color: rgba(249, 115, 22, 0.4); }
+
+    .offer-banner-spots { font-size: 0.625rem; padding: 0.25rem 0.5rem; }
+    .offer-banner-spots-pulse { display: none; }
+    .offer-banner-cta { font-size: 0.625rem; padding: 0.3rem 0.625rem; }
+  }
+
+  @media (max-width: 480px) {
+    .offer-banner-inner { gap: 0.375rem; padding: 0.4375rem 0.5rem; }
+    .offer-banner-timer { gap: 0.2rem; }
+    .offer-banner-block { min-width: 1.875rem; padding: 0.25rem 0.3rem; border-radius: 0.25rem; }
+    .offer-banner-number { font-size: 0.8125rem; }
+    .offer-banner-unit { font-size: 0.375rem; }
+    .offer-banner-sep { font-size: 0.75rem; }
+    .offer-banner-spots { display: none; }
+    .offer-banner-cta { font-size: 0.625rem; padding: 0.3rem 0.625rem; }
+  }
+</style>

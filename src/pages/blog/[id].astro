@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const blog = await getCollection("blog", ({ data }) => !data.draft);
 
   return blog.map((post) => ({
-    params: { id: post.slug },
+    params: { id: post.id },
     props: { post, blog },
   }));
 }
@@ -93,7 +93,7 @@ const isoDate =
       : new Date().toISOString();
 
 // Article URL
-const articleUrl = `${baseUrl}/blog/${post.slug}`;
+const articleUrl = `${baseUrl}/blog/${post.id}`;
 
 // Enhanced Structured Data using schema utility
 const structuredData = createArticleSchema({
