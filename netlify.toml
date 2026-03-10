@@ -2,6 +2,11 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  # These server-side secrets are intentionally inlined by Vite into the SSR
+  # bundle. They are NOT exposed to the client — only used in serverless functions.
+  SECRETS_SCAN_OMIT_KEYS = "TURSO_AUTH_TOKEN,TURSO_DATABASE_URL,RESEND_API_KEY,RESEND_FROM_EMAIL,CONTACT_RECIPIENT_EMAIL"
+
 # ===========================================
 # ASTRO BUNDLED ASSETS (with content hashes)
 # Maximum caching - these files never change

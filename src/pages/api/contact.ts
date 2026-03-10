@@ -11,9 +11,9 @@ import {
     escapeHtml,
 } from "../../lib/validation";
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-const CONTACT_EMAIL = import.meta.env.CONTACT_RECIPIENT_EMAIL;
-const FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL || "Codebrand <onboarding@resend.dev>";
+const resend = new Resend(process.env.RESEND_API_KEY || import.meta.env.RESEND_API_KEY);
+const CONTACT_EMAIL = process.env.CONTACT_RECIPIENT_EMAIL || import.meta.env.CONTACT_RECIPIENT_EMAIL;
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || import.meta.env.RESEND_FROM_EMAIL || "Codebrand <onboarding@resend.dev>";
 
 // Allowed origins for CSRF protection
 const ALLOWED_ORIGINS = [

@@ -1,8 +1,8 @@
 // src/turso.ts
 import { createClient } from "@libsql/client"; // o "@libsql/client/web" según tu entorno
 
-const dbUrl = import.meta.env.TURSO_DATABASE_URL;
-const authToken = import.meta.env.TURSO_AUTH_TOKEN;
+const dbUrl = process.env.TURSO_DATABASE_URL || import.meta.env.TURSO_DATABASE_URL;
+const authToken = process.env.TURSO_AUTH_TOKEN || import.meta.env.TURSO_AUTH_TOKEN;
 
 if (!dbUrl || !authToken) {
     console.warn('[Turso] Missing database configuration. Database features will not work.');
