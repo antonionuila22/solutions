@@ -85,6 +85,8 @@ const iconColor = (i: number) => (i % 2 === 0 ? "text-orange-400 group-hover:tex
               src={m.image}
               alt={m.name}
               class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+              width="400"
+              height="400"
               loading="lazy"
               decoding="async"
             />
@@ -146,7 +148,7 @@ const iconColor = (i: number) => (i % 2 === 0 ? "text-orange-400 group-hover:tex
               </div>
             </div>
 
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
               {m.description}
             </p>
 

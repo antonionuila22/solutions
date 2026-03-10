@@ -32,6 +32,12 @@ const RATE_LIMIT_MAX = 5; // Max 5 requests per window per IP
 
 let rateLimitTableReady = false;
 
+const SECURITY_HEADERS = {
+    'Content-Type': 'application/json',
+    'X-Content-Type-Options': 'nosniff',
+    'Cache-Control': 'no-store, no-cache, must-revalidate',
+};
+
 async function ensureRateLimitTable(): Promise<void> {
     if (rateLimitTableReady) return;
     try {
@@ -77,7 +83,10 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
         // CSRF protection: verify Origin header
         const origin = request.headers.get("origin");
         if (!origin || !ALLOWED_ORIGINS.includes(origin)) {
-            return new Response("Forbidden.", { status: 403 });
+            return new Response(JSON.stringify({ error: "Forbidden." }), {
+                status: 403,
+                headers: SECURITY_HEADERS,
+            });
         }
 
         // Content-Type validation
@@ -86,15 +95,18 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
             !contentType.includes("multipart/form-data") &&
             !contentType.includes("application/x-www-form-urlencoded")
         ) {
-            return new Response("Invalid content type.", { status: 415 });
+            return new Response(JSON.stringify({ error: "Invalid content type." }), {
+                status: 415,
+                headers: SECURITY_HEADERS,
+            });
         }
 
         // Rate limiting check
         const ip = clientAddress || request.headers.get('x-forwarded-for') || 'unknown';
         if (await isRateLimited(ip)) {
-            return new Response("Too many requests. Please try again later.", {
+            return new Response(JSON.stringify({ error: "Too many requests. Please try again later." }), {
                 status: 429,
-                headers: { 'Retry-After': '60' }
+                headers: { ...SECURITY_HEADERS, 'Retry-After': '60' },
             });
         }
 
@@ -121,7 +133,10 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
         });
 
         if (!validation.valid) {
-            return new Response(validation.error || "Invalid form data.", { status: 400 });
+            return new Response(JSON.stringify({ error: validation.error || "Invalid form data." }), {
+                status: 400,
+                headers: SECURITY_HEADERS,
+            });
         }
 
         // Sanitize for specific contexts (email/phone safe formats)
@@ -167,11 +182,17 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
             console.error("Email error:", emailError instanceof Error ? emailError.message : "Unknown");
         }
 
-        return new Response("OK", { status: 200 });
+        return new Response(JSON.stringify({ success: true }), {
+            status: 200,
+            headers: SECURITY_HEADERS,
+        });
 
     } catch (err) {
         console.error("Contact form error:", err instanceof Error ? err.message : "Unknown");
-        return new Response("An error occurred. Please try again later.", { status: 500 });
+        return new Response(JSON.stringify({ error: "An error occurred. Please try again later." }), {
+            status: 500,
+            headers: SECURITY_HEADERS,
+        });
     }
 };
 

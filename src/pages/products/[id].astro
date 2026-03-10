@@ -121,13 +121,16 @@ const productSchema = {
                   alt={title}
                   class="w-full h-auto object-cover rounded-2xl"
                   loading="eager"
+                  decoding="async"
+                  width="600"
+                  height="400"
                 />
               </div>
             </div>
 
             <!-- Info rápida en card -->
             <div
-              class="hidden lg:block bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+              class="hidden lg:block bg-white rounded-2xl p-6 shadow-lg border border-slate-100"
             >
               <div class="flex items-start gap-4">
                 <div
@@ -148,10 +151,10 @@ const productSchema = {
                   </svg>
                 </div>
                 <div class="flex-1">
-                  <h3 class="text-sm font-semibold text-gray-900 mb-2">
+                  <h3 class="text-sm font-semibold text-slate-900 mb-2">
                     Product information
                   </h3>
-                  <div class="space-y-2 text-sm text-gray-600">
+                  <div class="space-y-2 text-sm text-slate-600">
                     {
                       author && (
                         <div class="flex items-center gap-2">
@@ -225,14 +228,14 @@ const productSchema = {
             </h1>
 
             <!-- Descripción -->
-            <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
+            <p class="text-lg sm:text-xl text-slate-700 leading-relaxed">
               {description}
             </p>
 
             <!-- Metadata en móvil -->
             {
               (author || readtime) && (
-                <div class="lg:hidden flex flex-wrap items-center gap-4 pt-2 text-sm text-gray-600 border-t border-gray-200">
+                <div class="lg:hidden flex flex-wrap items-center gap-4 pt-2 text-sm text-slate-600 border-t border-slate-200">
                   {author && (
                     <div class="flex items-center gap-2">
                       <svg
@@ -277,7 +280,7 @@ const productSchema = {
             >
             </div>
             <div
-              class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden"
+              class="relative bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden"
             >
               <div class="p-8 space-y-6">
                 <!-- Precio destacado -->
@@ -289,13 +292,13 @@ const productSchema = {
                       {price}
                     </span>
                   </div>
-                  <p class="text-sm text-gray-600">
+                  <p class="text-sm text-slate-600">
                     One-time investment to transform your business
                   </p>
                 </div>
 
                 <div
-                  class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"
+                  class="h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"
                 >
                 </div>
 
@@ -312,7 +315,7 @@ const productSchema = {
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                         clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-sm text-gray-700"
+                    <span class="text-sm text-slate-700"
                       >Professional support included</span
                     >
                   </li>
@@ -327,7 +330,7 @@ const productSchema = {
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                         clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-sm text-gray-700"
+                    <span class="text-sm text-slate-700"
                       >Fast and guaranteed delivery</span
                     >
                   </li>
@@ -342,7 +345,7 @@ const productSchema = {
                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                         clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-sm text-gray-700"
+                    <span class="text-sm text-slate-700"
                       >Personalized consulting</span
                     >
                   </li>
@@ -352,7 +355,7 @@ const productSchema = {
                 <div class="pt-4 space-y-3">
                   <a
                     href="/contact"
-                    class="group relative w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-base shadow-lg hover:shadow-2xl transform hover:-translate-y-0.5 transition-all duration-200"
+                    class="group relative w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-base shadow-lg hover:shadow-2xl transform hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <svg
                       class="w-5 h-5"
@@ -381,7 +384,7 @@ const productSchema = {
                         d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                   </a>
-                  <p class="text-center text-xs text-gray-500">
+                  <p class="text-center text-xs text-slate-500">
                     Response within 24 hours
                   </p>
                 </div>

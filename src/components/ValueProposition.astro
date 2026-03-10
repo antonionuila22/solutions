@@ -8,7 +8,7 @@
 ---
 
 <section
-  class="py-16 sm:py-20 lg:py-32 bg-white font-poppins overflow-hidden"
+  class="py-16 sm:py-20 lg:py-28 bg-white font-poppins overflow-hidden"
   id="value-proposition"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +152,7 @@
 
         <div class="space-y-4 benefits-list">
           <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
+            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
           >
             <div
               class="flex-shrink-0 w-10 h-10 bg-cyan-900 rounded-lg flex items-center justify-center"
@@ -179,7 +179,7 @@
           </div>
 
           <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
+            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
           >
             <div
               class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center"
@@ -207,7 +207,7 @@
           </div>
 
           <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
+            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
           >
             <div
               class="flex-shrink-0 w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center"
@@ -234,7 +234,7 @@
           </div>
 
           <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
+            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
           >
             <div
               class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center"
@@ -262,7 +262,7 @@
           </div>
 
           <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200"
+            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
           >
             <div
               class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center"
@@ -425,103 +425,56 @@
   </div>
 </section>
 
+<style>
+  .value-header, .stat-card, .benefit-item, .price-comparison, .cta-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .benefit-item { transform: translateX(-30px); }
+  .price-comparison { transform: translateX(50px); }
+  .animate-visible {
+    opacity: 1 !important;
+    transform: translateY(0) translateX(0) !important;
+  }
+</style>
+
 <script>
-  // Dynamically import GSAP only when needed for better performance
-  // Skip animations on mobile for better performance
-  const initAnimations = async () => {
-    // Check for reduced motion preference
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    try {
-      const { gsap } = await import("gsap");
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Animate header on load
-      gsap.from(".value-header", {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-
-      // Animate stats cards with stagger
-      gsap.from(".stat-card", {
-        scrollTrigger: {
-          trigger: ".stats-grid",
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 50,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-
-      // Animate benefits list items
-      gsap.from(".benefit-item", {
-        scrollTrigger: {
-          trigger: ".benefits-list",
-          start: "top 80%",
-        },
-        opacity: 0,
-        x: -30,
-        stagger: 0.1,
-        duration: 0.6,
-        ease: "power2.out",
-      });
-
-      // Animate price comparison
-      gsap.from(".price-comparison", {
-        scrollTrigger: {
-          trigger: ".content-grid",
-          start: "top 70%",
-        },
-        opacity: 0,
-        x: 50,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-
-      // Animate CTA
-      gsap.from(".cta-section", {
-        scrollTrigger: {
-          trigger: ".cta-section",
-          start: "top 90%",
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    } catch (error) {
-      // GSAP failed to load, elements are already visible by default
-      console.warn("GSAP animations skipped");
-    }
-  };
-
-  // Use Intersection Observer to only load GSAP when section is near viewport
-  // Defer width check to avoid forced reflow during page load
-  if ("IntersectionObserver" in window) {
-    // Use matchMedia instead of innerWidth to avoid forced reflow
+  // Check for reduced motion preference
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Only animate on desktop (768px+)
     const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 
-    if (isDesktop) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              initAnimations();
-              observer.disconnect();
-            }
-          });
-        },
-        { rootMargin: "100px" }
-      );
+    if (isDesktop && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            el.classList.add('animate-visible');
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
 
-      const section = document.querySelector("#value-proposition");
-      if (section) observer.observe(section);
+      document.querySelectorAll('.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section')
+        .forEach((el, i) => {
+          el.style.transitionDelay = `${i * 0.1}s`;
+          observer.observe(el);
+        });
+    } else {
+      // Mobile or no IntersectionObserver: show elements immediately
+      document.querySelectorAll('.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section')
+        .forEach((el) => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
     }
+  } else {
+    // Reduced motion: show elements immediately
+    document.querySelectorAll('.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section')
+      .forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
   }
 </script>

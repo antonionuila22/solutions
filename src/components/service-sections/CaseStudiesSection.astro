@@ -34,13 +34,13 @@ const {
 ---
 
 {caseStudies.length > 0 && (
-  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
           {title} <span class="text-orange-500">{titleHighlight}</span>
         </h2>
-        <p class="text-lg text-gray-700">{subtitle}</p>
+        <p class="text-lg text-slate-700">{subtitle}</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -70,12 +70,12 @@ const {
               <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">
                 {study.title}
               </h3>
-              <p class="text-gray-600 mb-4">{study.description}</p>
+              <p class="text-slate-600 mb-4">{study.description}</p>
               <div class="flex flex-wrap gap-4 text-sm">
                 {study.metrics.map((metric) => (
                   <div>
                     <div class="font-bold text-orange-500">{metric.value}</div>
-                    <div class="text-gray-500">{metric.label}</div>
+                    <div class="text-slate-500">{metric.label}</div>
                   </div>
                 ))}
               </div>

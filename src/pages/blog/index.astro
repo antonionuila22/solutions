@@ -75,7 +75,7 @@ const totalReadTime = posts.reduce(
         </h1>
 
         <p
-          class="text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed animate-fade-in"
+          class="text-lg md:text-xl text-slate-700 max-w-3xl leading-relaxed animate-fade-in"
         >
           Expert insights on web development, digital marketing, design trends,
           and business growth strategies. Learn from our experience building
@@ -97,7 +97,7 @@ const totalReadTime = posts.reduce(
             <div class="h-px flex-1 bg-gradient-to-r from-orange-400 to-transparent" />
           </div>
 
-          <article class="grid lg:grid-cols-2 gap-10 bg-gradient-to-br from-slate-50 to-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 group">
+          <article class="grid lg:grid-cols-2 gap-10 bg-gradient-to-br from-slate-50 to-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 group">
             <a
               href={`/blog/${featuredPost.id}`}
               class="block relative h-full min-h-[400px] lg:min-h-[500px] overflow-hidden"
@@ -123,7 +123,7 @@ const totalReadTime = posts.reduce(
             </a>
 
             <div class="p-8 lg:p-12 flex flex-col justify-center">
-              <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+              <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
                 <span class="flex items-center gap-2">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -156,7 +156,7 @@ const totalReadTime = posts.reduce(
                 </a>
               </h2>
 
-              <p class="text-gray-700 text-lg leading-relaxed mb-6 line-clamp-4">
+              <p class="text-slate-700 text-lg leading-relaxed mb-6 line-clamp-4">
                 {featuredPost.data.description}
               </p>
 
@@ -166,10 +166,10 @@ const totalReadTime = posts.reduce(
                     {featuredPost.data.author.charAt(0)}
                   </div>
                   <div>
-                    <div class="font-semibold text-gray-900">
+                    <div class="font-semibold text-slate-900">
                       {featuredPost.data.author}
                     </div>
-                    <div class="text-sm text-gray-500">Author</div>
+                    <div class="text-sm text-slate-500">Author</div>
                   </div>
                 </div>
               )}
@@ -222,7 +222,7 @@ const totalReadTime = posts.reduce(
             } = data;
 
             return (
-              <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col">
+              <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col">
                 <a href={`/blog/${post.id}`} class="block">
                   {img && (
                     <div class="overflow-hidden relative h-56">
@@ -232,13 +232,15 @@ const totalReadTime = posts.reduce(
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         loading="lazy"
                         decoding="async"
+                        width="400"
+                        height="250"
                       />
                       <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   )}
 
                   <div class="p-6 flex flex-col gap-3 flex-1">
-                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                    <div class="flex items-center gap-3 text-xs text-slate-500">
                       <span class="flex items-center gap-1">
                         <svg
                           class="w-3.5 h-3.5"
@@ -278,16 +280,16 @@ const totalReadTime = posts.reduce(
                       {title}
                     </h3>
 
-                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-3 flex-1">
+                    <p class="text-sm text-slate-600 leading-relaxed line-clamp-3 flex-1">
                       {description}
                     </p>
 
                     {author && (
-                      <div class="flex items-center gap-2 pt-3 border-t border-gray-100">
+                      <div class="flex items-center gap-2 pt-3 border-t border-slate-100">
                         <div class="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-white text-xs font-bold">
                           {author.charAt(0)}
                         </div>
-                        <span class="text-xs text-gray-600 font-medium">
+                        <span class="text-xs text-slate-600 font-medium">
                           {author}
                         </span>
                       </div>
@@ -328,7 +330,7 @@ const totalReadTime = posts.reduce(
         <h2 class="text-4xl font-bold text-cyan-900 leading-tight mt-2">
           Explore by Category
         </h2>
-        <p class="mt-4 text-lg text-gray-600">
+        <p class="mt-4 text-lg text-slate-600">
           Deep dives into the subjects that matter most for your digital
           success.
         </p>
@@ -337,7 +339,7 @@ const totalReadTime = posts.reduce(
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <a
           href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
         >
           <div class="text-4xl mb-3">💻</div>
           <h3
@@ -345,12 +347,12 @@ const totalReadTime = posts.reduce(
           >
             Web Development
           </h3>
-          <p class="text-sm text-gray-600 mt-2">{posts.length} articles</p>
+          <p class="text-sm text-slate-600 mt-2">{posts.length} articles</p>
         </a>
 
         <a
           href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
         >
           <div class="text-4xl mb-3">🎨</div>
           <h3
@@ -358,12 +360,12 @@ const totalReadTime = posts.reduce(
           >
             Design & UX
           </h3>
-          <p class="text-sm text-gray-600 mt-2">Expert tips</p>
+          <p class="text-sm text-slate-600 mt-2">Expert tips</p>
         </a>
 
         <a
           href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
         >
           <div class="text-4xl mb-3">📈</div>
           <h3
@@ -371,12 +373,12 @@ const totalReadTime = posts.reduce(
           >
             Digital Marketing
           </h3>
-          <p class="text-sm text-gray-600 mt-2">Growth strategies</p>
+          <p class="text-sm text-slate-600 mt-2">Growth strategies</p>
         </a>
 
         <a
           href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
         >
           <div class="text-4xl mb-3">🚀</div>
           <h3
@@ -384,7 +386,7 @@ const totalReadTime = posts.reduce(
           >
             Business Growth
           </h3>
-          <p class="text-sm text-gray-600 mt-2">Scaling tips</p>
+          <p class="text-sm text-slate-600 mt-2">Scaling tips</p>
         </a>
       </div>
     </div>
@@ -396,7 +398,7 @@ const totalReadTime = posts.reduce(
       <h2 class="text-4xl md:text-5xl font-bold text-cyan-900 mb-6">
         Ready to Transform Your Digital Presence?
       </h2>
-      <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+      <p class="text-xl text-slate-700 mb-8 max-w-2xl mx-auto">
         Stop reading and start building. Let's create something amazing
         together.
       </p>

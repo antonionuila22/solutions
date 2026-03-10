@@ -111,14 +111,14 @@ const relatedServices = allServices[currentService] || [];
 ---
 
 {relatedServices.length > 0 && (
-  <section class="py-16 lg:py-24 bg-white font-poppins">
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">{subtitle}</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mt-2">
           {title}
         </h2>
-        <p class="text-gray-600 mt-4">
+        <p class="text-slate-600 mt-4">
           Discover other services that complement your project and help you achieve better results.
         </p>
       </div>
@@ -127,20 +127,23 @@ const relatedServices = allServices[currentService] || [];
         {relatedServices.map((service) => (
           <a
             href={service.href}
-            class="group p-6 bg-gray-50 rounded-2xl border border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            class="group p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
             <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-white shadow-sm mb-4 group-hover:bg-orange-50 transition-colors">
               <img
                 src={service.icon}
                 alt={`${service.title} service icon`}
                 class="w-10 h-10"
+                width="32"
+                height="32"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <h3 class="text-xl font-bold text-cyan-900 mb-2 group-hover:text-orange-500 transition-colors">
               {service.title}
             </h3>
-            <p class="text-gray-600 text-sm mb-4">
+            <p class="text-slate-600 text-sm mb-4">
               {service.description}
             </p>
             <span class="inline-flex items-center text-orange-500 font-semibold text-sm group-hover:gap-2 transition-all">

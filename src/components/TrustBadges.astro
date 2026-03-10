@@ -61,7 +61,7 @@ const { title = "As Featured On", badges = defaultBadges } = Astro.props;
               href={badge.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="slider-item flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-200"
+              class="slider-item flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300"
               title={`View Codebrand on ${badge.name}`}
             >
               <img
@@ -69,8 +69,9 @@ const { title = "As Featured On", badges = defaultBadges } = Astro.props;
                 alt={badge.name}
                 width="120"
                 height="40"
-                class="h-10 sm:h-12 lg:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-200"
+                class="h-10 sm:h-12 lg:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-300"
                 loading="lazy"
+                decoding="async"
               />
             </a>
           ))
@@ -81,7 +82,7 @@ const { title = "As Featured On", badges = defaultBadges } = Astro.props;
               href={badge.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="slider-item flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-200"
+              class="slider-item flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300"
               title={`View Codebrand on ${badge.name}`}
             >
               <img
@@ -89,8 +90,9 @@ const { title = "As Featured On", badges = defaultBadges } = Astro.props;
                 alt={badge.name}
                 width="120"
                 height="40"
-                class="h-10 sm:h-12 lg:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-200"
+                class="h-10 sm:h-12 lg:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-300"
                 loading="lazy"
+                decoding="async"
               />
             </a>
           ))

@@ -146,23 +146,23 @@ export default function Quoter() {
     <div className="w-full max-w-6xl mx-auto">
       {/* Tabs */}
       <div className="flex justify-center mb-8">
-        <div className="inline-flex bg-gray-100 rounded-xl p-1.5">
+        <div className="inline-flex bg-slate-100 rounded-xl p-1.5">
           <button
             onClick={() => setActiveTab("one-time")}
-            className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 ${
+            className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
               activeTab === "one-time"
-                ? "bg-white text-gray-900 shadow-md"
-                : "text-gray-600 hover:text-gray-900"
+                ? "bg-white text-slate-900 shadow-md"
+                : "text-slate-600 hover:text-slate-900"
             }`}
           >
             One-Time Projects
           </button>
           <button
             onClick={() => setActiveTab("monthly")}
-            className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 ${
+            className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
               activeTab === "monthly"
-                ? "bg-white text-gray-900 shadow-md"
-                : "text-gray-600 hover:text-gray-900"
+                ? "bg-white text-slate-900 shadow-md"
+                : "text-slate-600 hover:text-slate-900"
             }`}
           >
             Monthly Plans
@@ -175,13 +175,13 @@ export default function Quoter() {
         <div className="lg:col-span-2">
           {activeTab === "one-time" ? (
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">
                 Select Services
               </h3>
               {serviceCategories.map((category) => (
                 <div
                   key={category.id}
-                  className="border border-gray-200 rounded-xl overflow-hidden bg-white"
+                  className="border border-slate-200 rounded-xl overflow-hidden bg-white"
                 >
                   <button
                     onClick={() =>
@@ -189,24 +189,24 @@ export default function Quoter() {
                         expandedCategory === category.id ? null : category.id
                       )
                     }
-                    className="w-full px-5 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    className="w-full px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#f48200]/20 to-[#007BFF]/20 flex items-center justify-center text-[#f48200]">
                         {getIcon(category.icon)}
                       </div>
-                      <span className="font-semibold text-gray-900">
+                      <span className="font-semibold text-slate-900">
                         {category.name}
                       </span>
                     </div>
-                    <span className={`text-gray-400 transition-transform duration-200 ${
+                    <span className={`text-slate-400 transition-transform duration-300 ${
                         expandedCategory === category.id ? "rotate-180" : ""
                       }`}>
                       <Icons.chevronDown />
                     </span>
                   </button>
                   {expandedCategory === category.id && (
-                    <div className="border-t border-gray-100 p-4 space-y-3 bg-gray-50/50">
+                    <div className="border-t border-slate-100 p-4 space-y-3 bg-slate-50/50">
                       {(() => {
                         // Check if any option from this category is already selected
                         const selectedOptionInCategory = selectedServices.find(
@@ -224,12 +224,12 @@ export default function Quoter() {
                           return (
                             <div
                               key={option.id}
-                              className={`p-4 rounded-lg border-2 transition-all duration-200 ${
+                              className={`p-4 rounded-lg border-2 transition-all duration-300 ${
                                 isLocked
-                                  ? "border-gray-100 bg-gray-50 opacity-50 cursor-not-allowed"
+                                  ? "border-slate-100 bg-slate-50 opacity-50 cursor-not-allowed"
                                   : isSelected
                                   ? "border-[#f48200] bg-[#f48200]/5 cursor-pointer"
-                                  : "border-gray-200 bg-white hover:border-[#007BFF]/50 cursor-pointer"
+                                  : "border-slate-200 bg-white hover:border-[#007BFF]/50 cursor-pointer"
                               }`}
                               onClick={() => {
                                 if (!isLocked) {
@@ -240,16 +240,16 @@ export default function Quoter() {
                               <div className="flex items-start justify-between">
                                 <div className="flex-1">
                                   <div className="flex items-center gap-2">
-                                    <h4 className={`font-semibold ${isLocked ? "text-gray-400" : "text-gray-900"}`}>
+                                    <h4 className={`font-semibold ${isLocked ? "text-slate-400" : "text-slate-900"}`}>
                                       {option.name}
                                     </h4>
                                     {isLocked && (
-                                      <span className="px-2 py-0.5 text-xs font-medium bg-gray-200 text-gray-500 rounded-full">
+                                      <span className="px-2 py-0.5 text-xs font-medium bg-slate-200 text-slate-500 rounded-full">
                                         Locked
                                       </span>
                                     )}
                                   </div>
-                                  <p className={`text-sm mt-1 ${isLocked ? "text-gray-400" : "text-gray-600"}`}>
+                                  <p className={`text-sm mt-1 ${isLocked ? "text-slate-400" : "text-slate-600"}`}>
                                     {option.description}
                                   </p>
                                   {isLocked && (
@@ -259,11 +259,11 @@ export default function Quoter() {
                                   )}
                                 </div>
                                 <div className="text-right ml-4">
-                                  <span className={`font-bold ${isLocked ? "text-gray-400" : "text-[#007BFF]"}`}>
+                                  <span className={`font-bold ${isLocked ? "text-slate-400" : "text-[#007BFF]"}`}>
                                     {formatPrice(option.price, option.isStartingPrice)}
                                   </span>
                                   {!isLocked && option.maxQuantity > 1 && (
-                                    <p className="text-xs text-gray-400 mt-0.5">
+                                    <p className="text-xs text-slate-400 mt-0.5">
                                       Max: {option.maxQuantity}
                                     </p>
                                   )}
@@ -287,7 +287,7 @@ export default function Quoter() {
             </div>
           ) : (
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">
                 Select a Plan
               </h3>
               <div className="grid gap-4">
@@ -297,18 +297,18 @@ export default function Quoter() {
                     <div
                       key={plan.id}
                       onClick={() => setSelectedPlan(plan)}
-                      className={`p-6 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
+                      className={`p-6 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
                         isSelected
                           ? "border-[#f48200] bg-[#f48200]/5 shadow-lg"
                           : plan.highlight
                           ? "border-[#007BFF]/30 bg-white hover:border-[#007BFF]"
-                          : "border-gray-200 bg-white hover:border-gray-300"
+                          : "border-slate-200 bg-white hover:border-slate-300"
                       }`}
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div>
                           <div className="flex items-center gap-2">
-                            <h4 className="text-xl font-bold text-gray-900">
+                            <h4 className="text-xl font-bold text-slate-900">
                               {plan.name}
                             </h4>
                             {plan.highlight && (
@@ -317,22 +317,22 @@ export default function Quoter() {
                               </span>
                             )}
                           </div>
-                          <p className="text-sm text-gray-600 mt-1">
+                          <p className="text-sm text-slate-600 mt-1">
                             {plan.description}
                           </p>
                         </div>
                         <div className="text-right">
-                          <div className="text-3xl font-black text-gray-900">
+                          <div className="text-3xl font-black text-slate-900">
                             ${plan.price.toLocaleString()}
                           </div>
-                          <div className="text-sm text-gray-500">/month</div>
+                          <div className="text-sm text-slate-500">/month</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-4 mb-4 text-sm">
                         <span className="px-3 py-1 bg-[#007BFF]/10 text-[#007BFF] rounded-full font-medium">
                           {plan.hoursPerWeek}h/week
                         </span>
-                        <span className="text-gray-600">
+                        <span className="text-slate-600">
                           {plan.hoursPerDay}h/day × 5 days
                         </span>
                       </div>
@@ -340,7 +340,7 @@ export default function Quoter() {
                         {plan.features.slice(1, 6).map((feature, idx) => (
                           <li
                             key={idx}
-                            className="flex items-start gap-2 text-sm text-gray-700"
+                            className="flex items-start gap-2 text-sm text-slate-700"
                           >
                             <span className="text-[#f48200] mt-0.5">
                               <Icons.check />
@@ -349,7 +349,7 @@ export default function Quoter() {
                           </li>
                         ))}
                         {plan.features.length > 6 && (
-                          <li className="text-sm text-gray-500 pl-6">
+                          <li className="text-sm text-slate-500 pl-6">
                             +{plan.features.length - 6} more features
                           </li>
                         )}
@@ -371,8 +371,8 @@ export default function Quoter() {
 
         {/* Right: Summary */}
         <div className="lg:col-span-1">
-          <div className="sticky top-8 bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-gray-900 to-[#007BFF] px-6 py-4">
+          <div className="sticky top-8 bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden">
+            <div className="bg-gradient-to-r from-slate-900 to-[#007BFF] px-6 py-4">
               <h3 className="text-lg font-bold text-white">Quote Summary</h3>
               <p className="text-sm text-white/70">
                 {activeTab === "one-time" ? "One-time payment" : "Monthly subscription"}
@@ -385,16 +385,16 @@ export default function Quoter() {
                   {selectedServices.map((service) => (
                     <div
                       key={service.option.id}
-                      className="flex items-start justify-between gap-2 pb-3 border-b border-gray-100"
+                      className="flex items-start justify-between gap-2 pb-3 border-b border-slate-100"
                     >
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-gray-900 truncate">
+                        <p className="text-sm font-medium text-slate-900 truncate">
                           {service.option.name}
                         </p>
-                        <p className="text-xs text-gray-500">{service.categoryName}</p>
+                        <p className="text-xs text-slate-500">{service.categoryName}</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="flex items-center border border-gray-200 rounded-lg">
+                        <div className="flex items-center border border-slate-200 rounded-lg">
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
@@ -403,8 +403,8 @@ export default function Quoter() {
                             disabled={service.quantity <= service.option.minQuantity}
                             className={`p-1.5 rounded-l-lg transition-colors ${
                               service.quantity <= service.option.minQuantity
-                                ? "text-gray-300 cursor-not-allowed"
-                                : "hover:bg-gray-100"
+                                ? "text-slate-300 cursor-not-allowed"
+                                : "hover:bg-slate-100"
                             }`}
                           >
                             <Icons.minus />
@@ -420,8 +420,8 @@ export default function Quoter() {
                             disabled={service.quantity >= service.option.maxQuantity}
                             className={`p-1.5 rounded-r-lg transition-colors ${
                               service.quantity >= service.option.maxQuantity
-                                ? "text-gray-300 cursor-not-allowed"
-                                : "hover:bg-gray-100"
+                                ? "text-slate-300 cursor-not-allowed"
+                                : "hover:bg-slate-100"
                             }`}
                           >
                             <Icons.plus />
@@ -441,23 +441,23 @@ export default function Quoter() {
                   ))}
                 </div>
               ) : activeTab === "monthly" && selectedPlan ? (
-                <div className="mb-6 pb-4 border-b border-gray-100">
+                <div className="mb-6 pb-4 border-b border-slate-100">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-slate-900">
                         {selectedPlan.name} Plan
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-slate-500">
                         {selectedPlan.hoursPerWeek}h/week
                       </p>
                     </div>
-                    <p className="font-bold text-gray-900">
+                    <p className="font-bold text-slate-900">
                       ${selectedPlan.price.toLocaleString()}
                     </p>
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-8 text-gray-500">
+                <div className="text-center py-8 text-slate-500">
                   <p className="text-sm">No items selected</p>
                   <p className="text-xs mt-1">
                     {activeTab === "one-time"
@@ -511,24 +511,24 @@ export default function Quoter() {
                 <>
                   <div className="space-y-2 mb-6">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Subtotal</span>
-                      <span className="font-medium text-gray-900">
+                      <span className="text-slate-600">Subtotal</span>
+                      <span className="font-medium text-slate-900">
                         ${currentTotal.subtotal.toLocaleString()}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">ISR ({(ISR_RATE * 100).toFixed(1)}%)</span>
-                      <span className="font-medium text-gray-900">
+                      <span className="text-slate-600">ISR ({(ISR_RATE * 100).toFixed(1)}%)</span>
+                      <span className="font-medium text-slate-900">
                         ${currentTotal.isr.toLocaleString()}
                       </span>
                     </div>
-                    <div className="pt-3 border-t border-gray-200">
+                    <div className="pt-3 border-t border-slate-200">
                       <div className="flex justify-between">
-                        <span className="text-lg font-bold text-gray-900">Total</span>
+                        <span className="text-lg font-bold text-slate-900">Total</span>
                         <span className="text-lg font-bold text-[#f48200]">
                           ${currentTotal.total.toLocaleString()}
                           {activeTab === "monthly" && (
-                            <span className="text-sm font-normal text-gray-500">/mo</span>
+                            <span className="text-sm font-normal text-slate-500">/mo</span>
                           )}
                         </span>
                       </div>
@@ -537,14 +537,14 @@ export default function Quoter() {
 
                   <button
                     onClick={handleContactRedirect}
-                    className="w-full py-4 px-6 bg-gradient-to-r from-[#f48200] to-[#faa732] hover:from-[#007BFF] hover:to-[#00BCD4] text-white font-bold rounded-xl transition-all duration-200 transform hover:scale-[1.02] shadow-lg"
+                    className="w-full py-4 px-6 bg-gradient-to-r from-[#f48200] to-[#faa732] hover:from-[#007BFF] hover:to-[#00BCD4] text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
                   >
                     Request Quote
                   </button>
 
                   <button
                     onClick={clearAll}
-                    className="w-full mt-3 py-2 text-sm text-gray-500 hover:text-gray-700 transition-colors"
+                    className="w-full mt-3 py-2 text-sm text-slate-500 hover:text-slate-700 transition-colors"
                   >
                     Clear selection
                   </button>
@@ -552,8 +552,8 @@ export default function Quoter() {
               )}
             </div>
 
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
-              <p className="text-xs text-gray-500 text-center">
+            <div className="px-6 py-4 bg-slate-50 border-t border-slate-100">
+              <p className="text-xs text-slate-500 text-center">
                 Prices shown are estimates. Final quote may vary based on project specifics.
               </p>
             </div>

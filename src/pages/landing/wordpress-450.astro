@@ -367,7 +367,7 @@ const getIcon = (name: string) => {
       <div class="container-main py-4">
         <div class="flex items-center justify-between">
           <a href="/" class="flex-shrink-0" aria-label="Codebrand">
-            <img src={logoWhite.src} alt="Codebrand" width="110" height="32" />
+            <img src={logoWhite.src} alt="Codebrand" width="110" height="32" loading="eager" decoding="async" />
           </a>
           <div class="hidden md:flex items-center gap-8">
             <a href="#pricing" class="nav-link" data-i18n="nav.pricing">Precios</a>
@@ -603,8 +603,8 @@ const getIcon = (name: string) => {
                   <label class="flex items-start gap-2 cursor-pointer">
                     <input type="checkbox" name="terms" required class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
                     <span class="text-xs text-slate-400 leading-relaxed">
-                      Acepto los <a href="/terms" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Términos</a>
-                      y la <a href="/privacy" target="_blank" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Política de Privacidad</a>.
+                      Acepto los <a href="/terms" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Términos</a>
+                      y la <a href="/privacy" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Política de Privacidad</a>.
                     </span>
                   </label>
                   <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
@@ -761,7 +761,7 @@ const getIcon = (name: string) => {
 
             <div class="featured-content">
               <div class="featured-logo">
-                <img src={logoWhite.src} alt="Codebrand" width="100" height="28" />
+                <img src={logoWhite.src} alt="Codebrand" width="100" height="28" loading="eager" decoding="async" />
               </div>
 
               <div class="featured-price-container">
@@ -1211,6 +1211,9 @@ const getIcon = (name: string) => {
                     alt={project.name}
                     class="w-full h-full object-cover"
                     loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="300"
                   />
                   <div class="portfolio-overlay">
                     <span class="portfolio-industry">{project.industry}</span>
@@ -1499,13 +1502,13 @@ const getIcon = (name: string) => {
           class="flex flex-col sm:flex-row items-center justify-between gap-5"
         >
           <a href="/" class="shrink-0" aria-label="Codebrand">
-            <img src={logoWhite.src} alt="Codebrand" width="120" height="35" />
+            <img src={logoWhite.src} alt="Codebrand" width="120" height="35" loading="lazy" decoding="async" />
           </a>
           <div class="flex items-center gap-3">
             <a
               href="https://x.com/Codebrand_es"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="social-link"
               aria-label="Twitter"
             >
@@ -1518,7 +1521,7 @@ const getIcon = (name: string) => {
             <a
               href="https://www.facebook.com/p/Codebrand-100087321501519/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="social-link"
               aria-label="Facebook"
             >
@@ -1531,7 +1534,7 @@ const getIcon = (name: string) => {
             <a
               href="https://es.linkedin.com/company/codebrand-es"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="social-link"
               aria-label="LinkedIn"
             >
@@ -1554,7 +1557,7 @@ const getIcon = (name: string) => {
       id="whatsapp-link"
       href="https://wa.me/50432722973?text=Hola%2C%20me%20interesa%20la%20landing%20page%20WordPress%20de%20%24450"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       class="whatsapp-btn"
       aria-label="WhatsApp"
     >
@@ -1846,6 +1849,7 @@ const getIcon = (name: string) => {
     padding: 0.875rem 1.5rem;
     background: linear-gradient(135deg, var(--color-orange), #ea580c);
     color: #fff;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
     font-weight: 700;
     font-size: 0.9375rem;
     border-radius: 0.625rem;
@@ -2098,6 +2102,7 @@ const getIcon = (name: string) => {
 
   .form-label {
     display: block;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 0.375rem;
@@ -2105,6 +2110,7 @@ const getIcon = (name: string) => {
 
   .form-input {
     width: 100%;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
     padding: 0.625rem 0.875rem;
     background: rgba(255, 255, 255, 0.015);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -2144,6 +2150,7 @@ const getIcon = (name: string) => {
 
   .form-error-message {
     display: none;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
     font-size: 0.75rem;
     color: #f87171;
     margin-top: 0.25rem;
@@ -3327,7 +3334,7 @@ const getIcon = (name: string) => {
       background-size: 100% auto;
     }
 
-    /* Disable GSAP animations on mobile - content shows immediately */
+    /* Disable animations on mobile - content shows immediately */
     .js-enabled [data-animate] {
       opacity: 1;
       transform: none;
@@ -4058,6 +4065,7 @@ const getIcon = (name: string) => {
     padding: 1rem 1.5rem;
     background: linear-gradient(135deg, var(--color-orange), #ea580c);
     color: #fff;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
     font-weight: 700;
     font-size: 1rem;
     border-radius: 0.75rem;
@@ -4735,16 +4743,14 @@ const getIcon = (name: string) => {
     box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
   }
 
-  .wp-form-label { display: block; font-size: 0.75rem; font-weight: 500; color: #64748b; margin-bottom: 0.375rem; letter-spacing: 0.01em; }
-  .wp-form-input { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 0.8125rem; color: #1e293b; background-color: #fafbfc; transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s; outline: none; }
+  .wp-form-label { display: block; font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; color: #64748b; margin-bottom: 0.375rem; letter-spacing: 0.01em; }
+  .wp-form-input { width: 100%; font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 0.8125rem; color: #1e293b; background-color: #fafbfc; transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s; outline: none; }
   .wp-form-input:hover { border-color: #cbd5e1; background-color: #fff; }
   .wp-form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
   .wp-form-input::placeholder { color: #94a3b8; }
 </style>
 
 <script>
-  import gsap from "gsap";
-
   // ===== I18N SYSTEM =====
   const translations: Record<string, Record<string, string>> = {
     // Navigation
@@ -4971,7 +4977,20 @@ const getIcon = (name: string) => {
 
   document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
 
-  // Counter animation - simple version for mobile, GSAP for desktop
+  // Counter animation using requestAnimationFrame (replaces GSAP)
+  function animateCounter(el: HTMLElement, target: number, suffix: string, duration: number) {
+    const start = performance.now();
+    function update(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out quadratic (matches power2.out)
+      const eased = 1 - (1 - progress) * (1 - progress);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
   const counterObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -4981,19 +5000,8 @@ const getIcon = (name: string) => {
           const suffix = el.dataset.suffix || "";
 
           if (shouldAnimate) {
-            gsap.to(
-              { val: 0 },
-              {
-                val: target,
-                duration: 1.8,
-                ease: "power2.out",
-                onUpdate: function () {
-                  el.textContent = Math.round(this.targets()[0].val) + suffix;
-                },
-              }
-            );
+            animateCounter(el, target, suffix, 1800);
           } else {
-            // Instant update on mobile/reduced motion
             el.textContent = target + suffix;
           }
           counterObserver.unobserve(el);
@@ -5005,33 +5013,42 @@ const getIcon = (name: string) => {
 
   document.querySelectorAll("[data-count]").forEach((el) => counterObserver.observe(el));
 
-  // Hero entrance animations - only on desktop
+  // Hero entrance animations - CSS-driven, only on desktop
   if (shouldAnimate) {
-    gsap.from(".hero-content > *", {
-      y: 25,
-      opacity: 0,
-      duration: 0.7,
-      stagger: 0.12,
-      ease: "power2.out",
-      delay: 0.2,
+    const heroChildren = document.querySelectorAll(".hero-content > *");
+    heroChildren.forEach((el, i) => {
+      const htmlEl = el as HTMLElement;
+      htmlEl.style.opacity = "0";
+      htmlEl.style.transform = "translateY(25px)";
+      htmlEl.style.transition = "opacity 0.7s cubic-bezier(0.33, 1, 0.68, 1), transform 0.7s cubic-bezier(0.33, 1, 0.68, 1)";
+      setTimeout(() => {
+        htmlEl.style.opacity = "1";
+        htmlEl.style.transform = "translateY(0)";
+      }, 200 + i * 120);
     });
 
-    gsap.from(".form-card", {
-      x: 40,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      delay: 0.4,
-    });
+    const formCard = document.querySelector(".form-card") as HTMLElement | null;
+    if (formCard) {
+      formCard.style.opacity = "0";
+      formCard.style.transform = "translateX(40px)";
+      formCard.style.transition = "opacity 0.8s cubic-bezier(0.33, 1, 0.68, 1), transform 0.8s cubic-bezier(0.33, 1, 0.68, 1)";
+      setTimeout(() => {
+        formCard.style.opacity = "1";
+        formCard.style.transform = "translateX(0)";
+      }, 400);
+    }
 
     // Social proof bar animation
-    gsap.from(".social-proof-bar", {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      ease: "power2.out",
-      delay: 0.8,
-    });
+    const socialBar = document.querySelector(".social-proof-bar") as HTMLElement | null;
+    if (socialBar) {
+      socialBar.style.opacity = "0";
+      socialBar.style.transform = "translateY(20px)";
+      socialBar.style.transition = "opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1), transform 0.6s cubic-bezier(0.33, 1, 0.68, 1)";
+      setTimeout(() => {
+        socialBar.style.opacity = "1";
+        socialBar.style.transform = "translateY(0)";
+      }, 800);
+    }
   }
 
   // ===== COUNTDOWN TIMER =====

@@ -4,7 +4,7 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 
 // Props individuales
-let { title, description, keywords, image, article, noindex, disableGsap = false } = Astro.props;
+let { title, description, keywords, image, article, noindex } = Astro.props;
 
 // Valores por defecto mejorados
 title = title || "Codebrand - Landing Page";
@@ -199,12 +199,6 @@ const localBusinessSchema = {
       }
     </script>
 
-    {!disableGsap && (
-      <script>
-        import gsap from "gsap";
-        window.gsap = gsap;
-      </script>
-    )}
   </body>
 
   <style is:global>

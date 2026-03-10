@@ -46,6 +46,10 @@ const products = await getCollection("products", ({ data }) => !data.draft);
                                                 src={img}
                                                 alt={title}
                                                 class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500 ease-out rounded-t-2xl"
+                                                loading="lazy"
+                                                decoding="async"
+                                                width="400"
+                                                height="300"
                                             />
                                             <div class="absolute inset-0 bg-gradient-to-tr from-cyan-900/10 to-orange-100/10 group-hover:opacity-100 transition-opacity duration-500" />
                                         </div>
@@ -56,11 +60,11 @@ const products = await getCollection("products", ({ data }) => !data.draft);
                                             {title}
                                         </h3>
 
-                                        <p class="text-sm text-gray-700 mt-1 leading-relaxed line-clamp-3">
+                                        <p class="text-sm text-slate-700 mt-1 leading-relaxed line-clamp-3">
                                             {description}
                                         </p>
 
-                                        <div class="flex items-center justify-between text-sm mt-4 pt-4 border-t border-gray-200">
+                                        <div class="flex items-center justify-between text-sm mt-4 pt-4 border-t border-slate-200">
                                             <span class="text-orange-500 font-bold">
                                                 {price}
                                             </span>

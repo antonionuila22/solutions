@@ -29,10 +29,11 @@ const { title, subtitle, description, imgUrl } = Astro.props;
                 <!-- Imagen 3D -->
                 <img
                     loading="lazy"
+                    decoding="async"
                     src={imgUrl}
                     alt={`${title} - Codebrand professional services`}
-                    width="400"
-                    height="400"
+                    width="512"
+                    height="512"
                     class="z-10 w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[360px] md:h-[360px] lg:w-[400px] lg:h-[400px] object-cover rounded-[28px]
           transform-3d
           transition-all duration-700 hover:scale-105"

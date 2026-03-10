@@ -263,7 +263,7 @@ export default function NeedsQuiz() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors duration-300"
             >
               Get a Free Quote
               <svg
@@ -282,7 +282,7 @@ export default function NeedsQuiz() {
             </a>
             <a
               href="/quoter"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl transition-colors duration-300"
             >
               <svg
                 className="w-4 h-4"
@@ -353,7 +353,7 @@ export default function NeedsQuiz() {
               key={index}
               onClick={() => handleAnswer(index)}
               disabled={isAnimating}
-              className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${
+              className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-300 ${
                 selectedOption === index
                   ? "border-orange-500 bg-orange-500/20"
                   : "border-slate-600 bg-slate-800/50 hover:border-slate-500 hover:bg-slate-800"

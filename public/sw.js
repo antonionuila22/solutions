@@ -1,11 +1,14 @@
-// Codebrand Service Worker v1.0.3
+// Codebrand Service Worker v1.1.0
 // Cache-first strategy for static assets, network-first for dynamic content
 
-const CACHE_VERSION = 'codebrand-v1.0.3';
+const CACHE_VERSION = 'codebrand-v1.1.0';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const THIRD_PARTY_CACHE = `${CACHE_VERSION}-third-party`;
+
+// Max age for third-party scripts: 1 hour (security measure)
+const THIRD_PARTY_MAX_AGE = 60 * 60 * 1000;
 
 // Assets to precache on install
 const PRECACHE_ASSETS = [
@@ -26,7 +29,7 @@ const IMAGE_PATTERNS = [
   /\.(png|jpg|jpeg|webp|avif|gif|svg|ico)$/i
 ];
 
-// Third-party scripts to cache with stale-while-revalidate (24h)
+// Third-party scripts to cache with stale-while-revalidate (1h max)
 const THIRD_PARTY_SCRIPTS = [
   /connect\.facebook\.net\/.*\.js$/i,       // fbevents.js
   /connect\.facebook\.net\/.*config/i,       // FB config
@@ -36,9 +39,10 @@ const THIRD_PARTY_SCRIPTS = [
   /lh3\.googleusercontent\.com/i             // Google profile images
 ];
 
-// Never cache these patterns (tracking pixels/beacons that send data)
+// Never cache these patterns (API routes, tracking pixels/beacons)
 const NEVER_CACHE = [
-  /\/api\//,
+  /\/api(\/|$)/,               // API routes (with or without trailing slash)
+  /\/_actions(\/|$)/,          // Astro server actions
   /\/tr\/?(\?|$)/i,           // Facebook pixel beacon
   /\/collect(\?|$)/i,          // GA collect endpoint
   /google-analytics\.com\/g\/collect/i,
@@ -54,6 +58,13 @@ self.addEventListener('install', (event) => {
       })
       .then(() => self.skipWaiting())
   );
+});
+
+// Handle messages from the registration script
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 // Activate event - clean old caches
@@ -85,9 +96,9 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Handle third-party scripts with stale-while-revalidate (24h cache)
+  // Handle third-party scripts with stale-while-revalidate (1h TTL)
   if (THIRD_PARTY_SCRIPTS.some(pattern => pattern.test(url.href))) {
-    event.respondWith(staleWhileRevalidate(request, THIRD_PARTY_CACHE));
+    event.respondWith(staleWhileRevalidateWithTTL(request, THIRD_PARTY_CACHE, THIRD_PARTY_MAX_AGE));
     return;
   }
 
@@ -200,4 +211,41 @@ async function staleWhileRevalidate(request, cacheName) {
     .catch(() => cachedResponse);
 
   return cachedResponse || fetchPromise;
+}
+
+// Stale-while-revalidate with TTL (for third-party scripts)
+// Returns cached response only if younger than maxAge; always revalidates in background
+async function staleWhileRevalidateWithTTL(request, cacheName, maxAge) {
+  const cache = await caches.open(cacheName);
+  const cachedResponse = await cache.match(request);
+
+  // Check if cached response is still within TTL
+  let cachedIsValid = false;
+  if (cachedResponse) {
+    const cachedDate = cachedResponse.headers.get('sw-cached-at');
+    if (cachedDate) {
+      const age = Date.now() - parseInt(cachedDate, 10);
+      cachedIsValid = age < maxAge;
+    }
+  }
+
+  const fetchPromise = fetch(request)
+    .then((networkResponse) => {
+      if (networkResponse.ok) {
+        // Clone and add a timestamp header to track cache age
+        const headers = new Headers(networkResponse.headers);
+        headers.set('sw-cached-at', Date.now().toString());
+        const timedResponse = new Response(networkResponse.clone().body, {
+          status: networkResponse.status,
+          statusText: networkResponse.statusText,
+          headers: headers
+        });
+        cache.put(request, timedResponse);
+      }
+      return networkResponse;
+    })
+    .catch(() => cachedResponse);
+
+  // Return cached response only if valid; otherwise wait for network
+  return (cachedIsValid && cachedResponse) ? cachedResponse : fetchPromise;
 }

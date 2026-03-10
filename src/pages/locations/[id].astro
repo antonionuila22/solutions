@@ -150,17 +150,17 @@ const faqSchema = faqs?.length ? {
         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight">
           Professional Web Development in <span class="text-orange-500">{city}, {state}</span>
         </h1>
-        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+        <p class="text-xl sm:text-2xl text-slate-700 mb-8 leading-relaxed">
           {description}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
             Get Free Quote
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </a>
-          <a href="#why-codebrand" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-cyan-900 rounded-xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-200">
+          <a href="#why-codebrand" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-300">
             Why Choose Us
           </a>
         </div>
@@ -170,13 +170,13 @@ const faqSchema = faqs?.length ? {
 
   <!-- Extended Description Section (SEO Content) -->
   {longDescription && (
-    <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+    <section class="py-16 lg:py-24 bg-slate-50 font-poppins">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="prose prose-lg prose-cyan max-w-none">
           <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-8 text-center">
             Web Development Services in {city}, {state}
           </h2>
-          <div class="text-gray-700 leading-relaxed text-lg space-y-6" set:html={sanitizeHtml(longDescription || '')} />
+          <div class="text-slate-700 leading-relaxed text-lg space-y-6" set:html={sanitizeHtml(longDescription || '')} />
         </div>
       </div>
     </section>
@@ -190,16 +190,16 @@ const faqSchema = faqs?.length ? {
           <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
             Industries We Serve in {city}
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
             We understand the unique digital needs of {city}'s diverse business landscape.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((industry) => (
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-cyan-200 hover:shadow-md transition-all">
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-cyan-200 hover:shadow-md transition-all">
               <h3 class="text-xl font-bold text-cyan-900 mb-2">{industry.name}</h3>
               {industry.description && (
-                <p class="text-gray-600">{industry.description}</p>
+                <p class="text-slate-600">{industry.description}</p>
               )}
             </div>
           ))}
@@ -235,25 +235,25 @@ const faqSchema = faqs?.length ? {
 
   <!-- Local Stats Section -->
   {localStats && (localStats.techCompanies || localStats.averageProjectCost || localStats.businessGrowth) && (
-    <section class="py-12 bg-white font-poppins border-b border-gray-100">
+    <section class="py-12 bg-white font-poppins border-b border-slate-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {localStats.techCompanies && (
             <div>
               <div class="text-4xl font-bold text-orange-500 mb-2">{localStats.techCompanies}</div>
-              <div class="text-gray-600">Tech Companies in {city}</div>
+              <div class="text-slate-600">Tech Companies in {city}</div>
             </div>
           )}
           {localStats.averageProjectCost && (
             <div>
               <div class="text-4xl font-bold text-orange-500 mb-2">{localStats.averageProjectCost}</div>
-              <div class="text-gray-600">Avg. Local Agency Cost</div>
+              <div class="text-slate-600">Avg. Local Agency Cost</div>
             </div>
           )}
           {localStats.businessGrowth && (
             <div>
               <div class="text-4xl font-bold text-orange-500 mb-2">{localStats.businessGrowth}</div>
-              <div class="text-gray-600">Business Growth Rate</div>
+              <div class="text-slate-600">Business Growth Rate</div>
             </div>
           )}
         </div>
@@ -268,7 +268,7 @@ const faqSchema = faqs?.length ? {
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
           Why {city} Businesses Choose Codebrand
         </h2>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        <p class="text-xl text-slate-700 max-w-3xl mx-auto">
           We're a Honduras-based web development agency serving {city} businesses with premium quality at 60% less than US rates. Same timezone, bilingual team, export-quality work.
         </p>
       </div>
@@ -282,7 +282,7 @@ const faqSchema = faqs?.length ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">60% Cost Savings</h3>
-          <p class="text-gray-700">
+          <p class="text-slate-700">
             Get the same quality as {city} agencies at a fraction of the cost. A $15,000 project costs $6,000 with us—without compromising quality.
           </p>
         </div>
@@ -295,7 +295,7 @@ const faqSchema = faqs?.length ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Same Timezone</h3>
-          <p class="text-gray-700">
+          <p class="text-slate-700">
             Honduras operates on CST, similar to {city}. Real-time collaboration, instant communication, no waiting overnight for responses.
           </p>
         </div>
@@ -308,7 +308,7 @@ const faqSchema = faqs?.length ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Fluent English</h3>
-          <p class="text-gray-700">
+          <p class="text-slate-700">
             Our entire team speaks fluent English. Clear communication, no language barriers, seamless project management.
           </p>
         </div>
@@ -321,7 +321,7 @@ const faqSchema = faqs?.length ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">Latest Technologies</h3>
-          <p class="text-gray-700">
+          <p class="text-slate-700">
             React, Next.js, Astro, Node.js, TypeScript—we use the same modern stack as top {city} development shops.
           </p>
         </div>
@@ -334,7 +334,7 @@ const faqSchema = faqs?.length ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">500+ Projects Delivered</h3>
-          <p class="text-gray-700">
+          <p class="text-slate-700">
             We've successfully completed projects for US businesses across industries. Certified team (Udemy, Platzi, Adobe).
           </p>
         </div>
@@ -347,7 +347,7 @@ const faqSchema = faqs?.length ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-3">You Own Everything</h3>
-          <p class="text-gray-700">
+          <p class="text-slate-700">
             Complete source code ownership, no vendor lock-in. Your website, your code, your freedom to modify or move it.
           </p>
         </div>
@@ -356,13 +356,13 @@ const faqSchema = faqs?.length ? {
   </section>
 
   <!-- Our Services -->
-  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+  <section class="py-16 lg:py-24 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
           Web Development Services for {city} Businesses
         </h2>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        <p class="text-xl text-slate-700 max-w-3xl mx-auto">
           From startups to established companies, we provide comprehensive web development solutions tailored to {city}'s business landscape.
         </p>
       </div>
@@ -370,7 +370,7 @@ const faqSchema = faqs?.length ? {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white p-8 rounded-2xl shadow-lg">
           <h3 class="text-2xl font-bold text-cyan-900 mb-4">Custom Web Development</h3>
-          <p class="text-gray-700 mb-6">
+          <p class="text-slate-700 mb-6">
             Tailored web applications built with React, Next.js, or Astro. Scalable, fast, and designed for your specific business needs.
           </p>
           <a href="/web-development" class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2">
@@ -383,7 +383,7 @@ const faqSchema = faqs?.length ? {
 
         <div class="bg-white p-8 rounded-2xl shadow-lg">
           <h3 class="text-2xl font-bold text-cyan-900 mb-4">E-commerce Development</h3>
-          <p class="text-gray-700 mb-6">
+          <p class="text-slate-700 mb-6">
             Full-featured online stores with Shopify, WooCommerce, or custom platforms. Payment gateways, inventory management, and more.
           </p>
           <a href="/e-commerce" class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2">
@@ -396,7 +396,7 @@ const faqSchema = faqs?.length ? {
 
         <div class="bg-white p-8 rounded-2xl shadow-lg">
           <h3 class="text-2xl font-bold text-cyan-900 mb-4">Web Design & UI/UX</h3>
-          <p class="text-gray-700 mb-6">
+          <p class="text-slate-700 mb-6">
             Beautiful, conversion-focused designs that represent your {city} brand professionally and drive real business results.
           </p>
           <a href="/web-design" class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2">
@@ -423,13 +423,13 @@ const faqSchema = faqs?.length ? {
         Get a free consultation and detailed project quote. No commitment required.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
           Get Free Quote
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
-        <a href="/projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-cyan-900 rounded-xl font-bold text-lg shadow-lg transition-all duration-200">
+        <a href="/projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View Our Work
         </a>
       </div>
@@ -438,18 +438,18 @@ const faqSchema = faqs?.length ? {
 
   <!-- Nearby Areas Section -->
   {nearbyAreas && nearbyAreas.length > 0 && (
-    <section class="py-12 bg-gray-50 font-poppins">
+    <section class="py-12 bg-slate-50 font-poppins">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h2 class="text-2xl font-bold text-cyan-900 mb-4">
             Also Serving Nearby Areas
           </h2>
-          <p class="text-gray-600 mb-6">
+          <p class="text-slate-600 mb-6">
             We provide web development services throughout the {city} metropolitan area.
           </p>
           <div class="flex flex-wrap justify-center gap-3">
             {nearbyAreas.map((area) => (
-              <span class="px-4 py-2 bg-white rounded-full text-gray-700 border border-gray-200 hover:border-cyan-300 transition-colors">
+              <span class="px-4 py-2 bg-white rounded-full text-slate-700 border border-slate-200 hover:border-cyan-300 transition-colors">
                 {area}
               </span>
             ))}
@@ -467,20 +467,20 @@ const faqSchema = faqs?.length ? {
           <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
             Frequently Asked Questions About Web Development in {city}
           </h2>
-          <p class="text-xl text-gray-600">
+          <p class="text-xl text-slate-600">
             Common questions from {city} businesses about our web development services.
           </p>
         </div>
         <div class="space-y-6">
           {faqs.map((faq, index) => (
-            <details class="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
-              <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-cyan-900 hover:bg-gray-100 transition-colors">
+            <details class="group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-cyan-900 hover:bg-slate-100 transition-colors">
                 <span class="pr-4">{faq.question}</span>
                 <svg class="w-5 h-5 text-cyan-600 transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </summary>
-              <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+              <div class="px-6 pb-6 text-slate-700 leading-relaxed">
                 {faq.answer}
               </div>
             </details>

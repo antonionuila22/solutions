@@ -42,7 +42,7 @@ const countryGroups = countries.reduce(
         </h1>
 
         <p
-          class="text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed animate-fade-in"
+          class="text-lg md:text-xl text-slate-700 max-w-3xl leading-relaxed animate-fade-in"
         >
           From North America to Latin America, Codebrand delivers cutting-edge
           digital solutions tailored to each market. We understand local
@@ -70,19 +70,19 @@ const countryGroups = countries.reduce(
           <div class="text-5xl font-bold text-orange-400 mb-2">
             {countries.length}+
           </div>
-          <div class="text-gray-600 font-medium">Countries Served</div>
+          <div class="text-slate-600 font-medium">Countries Served</div>
         </div>
         <div class="flex flex-col items-center">
           <div class="text-5xl font-bold text-orange-400 mb-2">500+</div>
-          <div class="text-gray-600 font-medium">Projects Delivered</div>
+          <div class="text-slate-600 font-medium">Projects Delivered</div>
         </div>
         <div class="flex flex-col items-center">
           <div class="text-5xl font-bold text-orange-400 mb-2">24/7</div>
-          <div class="text-gray-600 font-medium">Support Available</div>
+          <div class="text-slate-600 font-medium">Support Available</div>
         </div>
         <div class="flex flex-col items-center">
           <div class="text-5xl font-bold text-orange-400 mb-2">98%</div>
-          <div class="text-gray-600 font-medium">Client Satisfaction</div>
+          <div class="text-slate-600 font-medium">Client Satisfaction</div>
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ const countryGroups = countries.reduce(
         <h2 class="text-4xl font-bold text-slate-900 leading-tight mt-2">
           Local Knowledge, International Standards
         </h2>
-        <p class="mt-4 text-lg text-gray-600">
+        <p class="mt-4 text-lg text-slate-600">
           We combine deep understanding of local markets with world-class
           technology and best practices.
         </p>
@@ -115,12 +115,16 @@ const countryGroups = countries.reduce(
               src="/icons/collaboration-svgrepo-com.svg"
               alt="Cultural Understanding"
               class="w-10 h-10"
+              loading="lazy"
+              decoding="async"
+              width="40"
+              height="40"
             />
           </div>
           <h3 class="text-2xl font-bold text-slate-900">
             Cultural Understanding
           </h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             We understand the cultural nuances and business practices of each
             region we serve, ensuring your message resonates with local
             audiences.
@@ -137,10 +141,14 @@ const countryGroups = countries.reduce(
               src="/icons/cpu-processor-hardware-chip-microchip-svgrepo-com.svg"
               alt="Advanced Technology"
               class="w-10 h-10"
+              loading="lazy"
+              decoding="async"
+              width="40"
+              height="40"
             />
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Advanced Technology</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             Access to the same cutting-edge tools and frameworks used by Fortune
             500 companies, regardless of your location.
           </p>
@@ -156,10 +164,14 @@ const countryGroups = countries.reduce(
               src="/icons/support-svgrepo-com.svg"
               alt="Time Zone Coverage"
               class="w-10 h-10"
+              loading="lazy"
+              decoding="async"
+              width="40"
+              height="40"
             />
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Time Zone Coverage</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             With teams across multiple time zones, we provide faster response
             times and continuous development cycles.
           </p>
@@ -175,10 +187,14 @@ const countryGroups = countries.reduce(
               src="/icons/creativity-svgrepo-com.svg"
               alt="Multilingual Support"
               class="w-10 h-10"
+              loading="lazy"
+              decoding="async"
+              width="40"
+              height="40"
             />
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Multilingual Support</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             Communicate in your preferred language—English, Spanish, or
             Portuguese—for seamless collaboration and understanding.
           </p>
@@ -197,7 +213,7 @@ const countryGroups = countries.reduce(
             </svg>
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Proven Track Record</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             Successfully delivered projects across diverse markets, from
             startups to enterprise-level organizations.
           </p>
@@ -219,7 +235,7 @@ const countryGroups = countries.reduce(
           <h3 class="text-2xl font-bold text-slate-900">
             Compliance & Standards
           </h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             We adhere to international standards and local regulations, ensuring
             your digital solutions are compliant and secure.
           </p>
@@ -246,7 +262,7 @@ const countryGroups = countries.reduce(
         <h2 class="text-4xl font-bold text-slate-900 leading-tight mt-2">
           Countries We Serve
         </h2>
-        <p class="mt-4 text-lg text-gray-600">
+        <p class="mt-4 text-lg text-slate-600">
           Click on any country to learn more about our services, local
           expertise, and success stories in that market.
         </p>
@@ -278,6 +294,10 @@ const countryGroups = countries.reduce(
                           src={img}
                           alt={`Codebrand services in ${name}`}
                           class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          loading="lazy"
+                          decoding="async"
+                          width="400"
+                          height="300"
                         />
                       )}
                       <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent" />
@@ -318,7 +338,7 @@ const countryGroups = countries.reduce(
                     </div>
 
                     <div class="p-6">
-                      <p class="text-gray-700 leading-relaxed text-sm line-clamp-2 group-hover:text-gray-900 transition-colors">
+                      <p class="text-slate-700 leading-relaxed text-sm line-clamp-2 group-hover:text-slate-900 transition-colors">
                         {description}
                       </p>
 
@@ -363,97 +383,97 @@ const countryGroups = countries.reduce(
         <h2 class="text-4xl font-bold text-slate-900 leading-tight mt-2">
           Services Available in All Markets
         </h2>
-        <p class="mt-4 text-lg text-gray-600">
+        <p class="mt-4 text-lg text-slate-600">
           Consistent quality, tailored approach—no matter where you are.
         </p>
       </header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">🌐</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">Web Development</h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             Custom websites, web apps, and e-commerce platforms built with
             modern technologies.
           </p>
         </div>
 
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">📱</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">Mobile Apps & PWAs</h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             Mobile-first web applications that work offline and feel like native apps.
           </p>
         </div>
 
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">🎨</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">UI/UX Design</h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             User-centered design that looks great and converts visitors into
             customers.
           </p>
         </div>
 
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">🚀</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">
             Digital Marketing
           </h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             SEO, PPC, social media, and content marketing strategies tailored to
             your market.
           </p>
         </div>
 
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">🛒</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">E-Commerce</h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             Complete online store solutions with payment gateways and inventory
             management.
           </p>
         </div>
 
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">⚙️</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">Automation</h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             Process automation, integrations, and workflow optimization to save
             time.
           </p>
         </div>
 
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">☁️</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">Cloud Solutions</h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             Scalable cloud infrastructure, hosting, and DevOps services.
           </p>
         </div>
 
         <div
-          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-gray-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
+          class="p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 hover:shadow-lg"
         >
           <div class="text-orange-400 text-4xl mb-4">🔒</div>
           <h4 class="text-xl font-bold text-slate-900 mb-2">
             Security & Support
           </h4>
-          <p class="text-gray-600 text-sm">
+          <p class="text-slate-600 text-sm">
             24/7 monitoring, maintenance, and security updates for peace of
             mind.
           </p>

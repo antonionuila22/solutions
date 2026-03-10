@@ -21,12 +21,12 @@ type Props = {
 const themes = {
   light: {
     container: "w-full flex flex-col gap-3",
-    item: "rounded-xl border border-slate-200 bg-white overflow-hidden transition-all duration-200",
+    item: "rounded-xl border border-slate-200 bg-white overflow-hidden transition-all duration-300",
     itemOpen: "border-orange-300 bg-orange-50 shadow-md",
     button: "w-full text-left px-4 sm:px-5 py-3 sm:py-4 flex justify-between items-center gap-3 sm:gap-4",
     question: "text-sm sm:text-base font-semibold text-slate-800 leading-snug",
     questionOpen: "text-orange-600",
-    icon: "flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 transition-all duration-200",
+    icon: "flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 transition-all duration-300",
     iconOpen: "bg-orange-500 text-white rotate-180",
     answer: "px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-xs sm:text-sm leading-relaxed",
   },
@@ -73,7 +73,7 @@ export default function FAQ({ faqs, theme = "light" }: Props) {
               </span>
               <span className={`${t.icon} ${isOpen ? t.iconOpen : ""}`}>
                 <svg
-                  className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-200"
+                  className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

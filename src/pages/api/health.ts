@@ -6,6 +6,10 @@ export const GET: APIRoute = async () => {
     timestamp: new Date().toISOString(),
   }), {
     status: 200,
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Content-Type-Options': 'nosniff',
+      'Cache-Control': 'no-store, no-cache, must-revalidate',
+    },
   });
 };

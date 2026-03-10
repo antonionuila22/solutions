@@ -131,12 +131,12 @@ const faqSchema = faqs && faqs.length > 0 ? {
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-cyan-900 mb-6 leading-tight">
           Web Development in <span class="text-orange-500">{name}</span>
         </h1>
-        <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+        <p class="text-xl sm:text-2xl text-slate-700 mb-8 leading-relaxed max-w-3xl mx-auto">
           {description}
         </p>
 
         <!-- Quick Stats -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8">
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-600 mb-8">
           {population && (
             <span class="flex items-center gap-2">
               <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,7 +164,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
             Get Free Quote
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -183,36 +183,36 @@ const faqSchema = faqs && faqs.length > 0 ? {
       { name: name, href: "" }
     ]}
     variant="transparent"
-    class="bg-gray-50 border-y border-gray-100"
+    class="bg-slate-50 border-y border-slate-100"
   />
 
   <!-- Extended Description Section -->
   {longDescription && (
     <section class="py-12 lg:py-16 bg-white font-poppins">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed" set:html={sanitizeHtml(longDescription || '')} />
+        <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed" set:html={sanitizeHtml(longDescription || '')} />
       </div>
     </section>
   )}
 
   <!-- Industries Section -->
   {industries && industries.length > 0 && (
-    <section class="py-12 lg:py-16 bg-gray-50 font-poppins">
+    <section class="py-12 lg:py-16 bg-slate-50 font-poppins">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
           <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
             Industries We Serve in {name}
           </h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p class="text-xl text-slate-600 max-w-2xl mx-auto">
             Specialized web development for {name}'s key economic sectors.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((industry) => (
-            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100">
               <h3 class="text-lg font-bold text-cyan-900 mb-2">{industry.name}</h3>
               {industry.description && (
-                <p class="text-gray-600 text-sm">{industry.description}</p>
+                <p class="text-slate-600 text-sm">{industry.description}</p>
               )}
             </div>
           ))}
@@ -237,7 +237,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
                     <svg class="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-gray-700">{highlight}</span>
+                    <span class="text-slate-700">{highlight}</span>
                   </li>
                 ))}
               </ul>
@@ -252,19 +252,19 @@ const faqSchema = faqs && faqs.length > 0 ? {
                 {regionalStats.gdp && (
                   <div class="bg-cyan-50 p-4 rounded-xl text-center">
                     <div class="text-2xl font-bold text-cyan-900">{regionalStats.gdp}</div>
-                    <div class="text-sm text-gray-600">State GDP</div>
+                    <div class="text-sm text-slate-600">State GDP</div>
                   </div>
                 )}
                 {regionalStats.techCompanies && (
                   <div class="bg-cyan-50 p-4 rounded-xl text-center">
                     <div class="text-2xl font-bold text-cyan-900">{regionalStats.techCompanies}</div>
-                    <div class="text-sm text-gray-600">Tech Companies</div>
+                    <div class="text-sm text-slate-600">Tech Companies</div>
                   </div>
                 )}
                 {regionalStats.businessGrowth && (
                   <div class="bg-cyan-50 p-4 rounded-xl text-center">
                     <div class="text-2xl font-bold text-cyan-900">{regionalStats.businessGrowth}</div>
-                    <div class="text-sm text-gray-600">Business Growth</div>
+                    <div class="text-sm text-slate-600">Business Growth</div>
                   </div>
                 )}
               </div>
@@ -283,7 +283,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
           <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
             Cities We Serve in {name}
           </h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p class="text-xl text-slate-600 max-w-2xl mx-auto">
             Select your city for localized web development services and information.
           </p>
         </div>
@@ -311,12 +311,12 @@ const faqSchema = faqs && faqs.length > 0 ? {
                 {city.data.city}
               </h3>
 
-              <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+              <p class="text-slate-600 text-sm mb-3 line-clamp-2">
                 {city.data.description}
               </p>
 
               {city.data.population && (
-                <p class="text-xs text-gray-500 mb-3">
+                <p class="text-xs text-slate-500 mb-3">
                   Population: {city.data.population}
                 </p>
               )}
@@ -335,13 +335,13 @@ const faqSchema = faqs && faqs.length > 0 ? {
   )}
 
   <!-- Why Choose Us -->
-  <section class="py-16 lg:py-24 bg-gray-50 font-poppins">
+  <section class="py-16 lg:py-24 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
           Why {name} Businesses Choose Codebrand
         </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
           Nearshore development with all the benefits of a local team.
         </p>
       </div>
@@ -354,7 +354,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Cost-Effective</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             Competitive rates compared to local {name} agencies.
           </p>
         </div>
@@ -366,7 +366,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Timezone Compatible</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             Honduras CST aligns with {name}'s {timezone} timezone for real-time collaboration.
           </p>
         </div>
@@ -378,7 +378,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
             </svg>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Bilingual Team</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             Fluent English communication with no language barriers.
           </p>
         </div>
@@ -394,15 +394,15 @@ const faqSchema = faqs && faqs.length > 0 ? {
           <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p class="text-xl text-gray-600">
+          <p class="text-xl text-slate-600">
             Common questions about web development services in {name}.
           </p>
         </div>
         <div class="space-y-6">
           {faqs.map((faq) => (
-            <div class="bg-gray-50 rounded-xl p-6">
+            <div class="bg-slate-50 rounded-xl p-6">
               <h3 class="text-lg font-bold text-cyan-900 mb-3">{faq.question}</h3>
-              <p class="text-gray-700 leading-relaxed">{faq.answer}</p>
+              <p class="text-slate-700 leading-relaxed">{faq.answer}</p>
             </div>
           ))}
         </div>
@@ -420,10 +420,10 @@ const faqSchema = faqs && faqs.length > 0 ? {
         Get a free consultation and detailed project quote. No commitment required.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-200">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           Get Free Quote
         </a>
-        <a href="/projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-cyan-900 rounded-xl font-bold text-lg shadow-lg transition-all duration-200">
+        <a href="/projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View Our Work
         </a>
       </div>

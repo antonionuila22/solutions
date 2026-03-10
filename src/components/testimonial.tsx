@@ -57,6 +57,7 @@ const Avatar = ({ name, img }: { name: string; img?: string }) => {
       alt={`${name} profile photo`}
       src={img}
       loading="lazy"
+      decoding="async"
       onError={() => setImgError(true)}
     />
   );

@@ -97,6 +97,9 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- hreflang: Primary language is English, x-default for international users -->
     <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    {(Astro.url?.pathname?.includes("/hn/") || Astro.url?.pathname?.includes("honduras")) && (
+      <link rel="alternate" hreflang="es" href={canonicalUrl} />
+    )}
 
     <!-- RSS Feed -->
     <link
@@ -181,7 +184,9 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="apple-touch-icon" sizes="180x180" href="/iconcodebrand.svg" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- DNS Prefetch for Performance -->
+    <!-- Preconnect & DNS Prefetch for Performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://analytics.ahrefs.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
     <link rel="dns-prefetch" href="https://www.google.com" />
@@ -201,6 +206,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 
     <!-- Preload critical fonts for better LCP (WOFF2 = ~8KB vs TTF ~155KB) -->
     <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -506,12 +512,30 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <Footer />
     <WhatsAppWidget />
 
-    <!-- Service Worker Registration -->
+    <!-- Service Worker Registration (production only) -->
     <script is:inline>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
+      if ('serviceWorker' in navigator && location.hostname !== 'localhost' && !location.hostname.startsWith('192.168')) {
+        window.addEventListener('load', function() {
           navigator.serviceWorker.register('/sw.js', { scope: '/' })
-            .catch(() => { /* SW registration failed silently */ });
+            .then(function(reg) {
+              // Check for SW updates periodically (every 30 min)
+              setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+
+              // Handle new SW waiting to activate
+              reg.addEventListener('updatefound', function() {
+                var newWorker = reg.installing;
+                if (!newWorker) return;
+                newWorker.addEventListener('statechange', function() {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New SW ready - activate on next navigation (safe for View Transitions)
+                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                  }
+                });
+              });
+            })
+            .catch(function(err) {
+              if (typeof console !== 'undefined') console.warn('SW registration failed:', err);
+            });
         });
       }
     </script>

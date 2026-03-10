@@ -50,7 +50,7 @@ const gridCols = {
       >
         {title}
       </h2>
-      <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+      <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
         {description}
       </p>
     </div>
@@ -58,7 +58,7 @@ const gridCols = {
     <div class={`grid grid-cols-1 ${gridCols[columns]} gap-6 md:gap-8`}>
       {
         benefits.map((benefit) => (
-          <div class="bg-white rounded-2xl md:rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover-lift">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover-lift">
             <div class="text-5xl mb-4">
               {benefit.icon.startsWith("/") ||
               benefit.icon.startsWith("http") ? (
@@ -66,7 +66,10 @@ const gridCols = {
                   src={benefit.icon}
                   alt={benefit.title}
                   class="w-16 h-16 object-contain"
+                  width="64"
+                  height="64"
                   loading="lazy"
+                  decoding="async"
                 />
               ) : (
                 benefit.icon
@@ -75,7 +78,7 @@ const gridCols = {
             <h3 class="text-xl md:text-2xl font-bold text-cyan-900 mb-3">
               {benefit.title}
             </h3>
-            <p class="text-gray-600 leading-relaxed">{benefit.description}</p>
+            <p class="text-slate-600 leading-relaxed">{benefit.description}</p>
           </div>
         ))
       }

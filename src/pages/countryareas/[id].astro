@@ -65,6 +65,11 @@ const getCityCount = (regionSlug: string) => {
                     src={`${img}`}
                     alt={name}
                     class="w-full object-cover max-h-96"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                    width="800"
+                    height="500"
                 />
             </div>
 
@@ -75,24 +80,24 @@ const getCityCount = (regionSlug: string) => {
                 >
                     Perfil geográfico
                 </span>
-                <h1 class="text-4xl font-bold text-gray-900">{title}</h1>
-                <p class="text-lg text-gray-700 leading-relaxed">
+                <h1 class="text-4xl font-bold text-slate-900">{title}</h1>
+                <p class="text-lg text-slate-700 leading-relaxed">
                     {description}
                 </p>
 
-                <ul class="text-base text-gray-800 space-y-1 pt-2">
+                <ul class="text-base text-slate-800 space-y-1 pt-2">
                     <li>
-                        <strong class="text-gray-600">Nombre:</strong>
+                        <strong class="text-slate-600">Nombre:</strong>
                         {name}
                     </li>
                     <li>
-                        <strong class="text-gray-600">Código:</strong>
+                        <strong class="text-slate-600">Código:</strong>
                         {code}
                     </li>
                     {
                         region && (
                             <li>
-                                <strong class="text-gray-600">Región:</strong>{" "}
+                                <strong class="text-slate-600">Región:</strong>{" "}
                                 {region}
                             </li>
                         )
@@ -108,7 +113,7 @@ const getCityCount = (regionSlug: string) => {
                 { name: name, href: "" }
             ]}
             variant="transparent"
-            class="bg-gray-50 border-y border-gray-100 -mx-4 sm:-mx-6 lg:-mx-8"
+            class="bg-slate-50 border-y border-slate-100 -mx-4 sm:-mx-6 lg:-mx-8"
         />
 
         <!-- Markdown Content -->
@@ -127,7 +132,7 @@ const getCityCount = (regionSlug: string) => {
                         <h2 class="text-3xl font-bold text-cyan-900 mt-2">
                             {code === "EN" ? "States" : "Regions"} We Serve in {name}
                         </h2>
-                        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                        <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
                             Select a {code === "EN" ? "state" : "region"} to find web development services and cities in that area.
                         </p>
                     </div>
@@ -138,7 +143,7 @@ const getCityCount = (regionSlug: string) => {
                             return (
                                 <a
                                     href={`/regions/${regionItem.id}`}
-                                    class="group bg-white p-5 rounded-xl shadow-sm hover:shadow-lg border border-gray-100 hover:border-orange-300 transition-all duration-300"
+                                    class="group bg-white p-5 rounded-xl shadow-sm hover:shadow-lg border border-slate-100 hover:border-orange-300 transition-all duration-300"
                                 >
                                     <div class="flex items-center justify-between mb-2">
                                         <span class="text-xl font-bold text-cyan-600 group-hover:text-orange-500 transition-colors">
@@ -148,10 +153,10 @@ const getCityCount = (regionSlug: string) => {
                                             <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
                                         )}
                                     </div>
-                                    <h3 class="text-base font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
+                                    <h3 class="text-base font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
                                         {regionItem.data.name}
                                     </h3>
-                                    <p class="text-xs text-gray-500 mt-1">
+                                    <p class="text-xs text-slate-500 mt-1">
                                         {cityCount} {cityCount === 1 ? 'city' : 'cities'}
                                     </p>
                                 </a>
@@ -184,7 +189,7 @@ const getCityCount = (regionSlug: string) => {
                     <h2 class="text-3xl font-bold text-cyan-900 mt-2">
                         Featured Cities in {name}
                     </h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
                         Explore web development services in our most popular cities.
                     </p>
                 </div>
@@ -210,12 +215,12 @@ const getCityCount = (regionSlug: string) => {
                                 {city.data.city}
                             </h3>
 
-                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                            <p class="text-slate-600 text-sm mb-3 line-clamp-2">
                                 {city.data.description}
                             </p>
 
                             {city.data.population && (
-                                <p class="text-xs text-gray-500 mb-3">
+                                <p class="text-xs text-slate-500 mb-3">
                                     Population: {city.data.population}
                                 </p>
                             )}
@@ -248,10 +253,10 @@ const getCityCount = (regionSlug: string) => {
         <section class="bg-white py-20 font-poppins w-full">
             <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
                 <div class="text-center">
-                    <h2 class="text-4xl font-bold text-gray-900">
+                    <h2 class="text-4xl font-bold text-slate-900">
                         Explorá otras áreas
                     </h2>
-                    <p class="mt-2 text-base text-gray-600 max-w-2xl mx-auto">
+                    <p class="mt-2 text-base text-slate-600 max-w-2xl mx-auto">
                         Descubrí más regiones con historias, datos curiosos y
                         cultura única.
                     </p>
@@ -273,7 +278,7 @@ const getCityCount = (regionSlug: string) => {
                                 } = data;
 
                                 return (
-                                    <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                                    <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
                                         <a
                                             href={`/countryareas/${id}`}
                                             class="block h-full"
@@ -285,6 +290,10 @@ const getCityCount = (regionSlug: string) => {
                                                         src={`${img}`}
                                                         alt={name}
                                                         class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                        width="600"
+                                                        height="400"
                                                     />
                                                 </div>
                                             )}
@@ -294,11 +303,11 @@ const getCityCount = (regionSlug: string) => {
                                                     {title}
                                                 </h3>
 
-                                                <p class="text-sm text-gray-700 mt-1 line-clamp-3">
+                                                <p class="text-sm text-slate-700 mt-1 line-clamp-3">
                                                     {description}
                                                 </p>
 
-                                                <ul class="text-xs text-gray-500 mt-2">
+                                                <ul class="text-xs text-slate-500 mt-2">
                                                     <li>
                                                         <strong>País:</strong>{" "}
                                                         {name}
@@ -334,7 +343,7 @@ const getCityCount = (regionSlug: string) => {
                 <h2 class="text-2xl font-bold text-orange-700">
                     ¿Querés seguir explorando?
                 </h2>
-                <p class="text-gray-700">
+                <p class="text-slate-700">
                     Hay muchas regiones fascinantes por descubrir.
                 </p>
             </div>

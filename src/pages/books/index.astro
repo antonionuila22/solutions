@@ -80,7 +80,7 @@ const categories = [
         <h2 class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4">
           Why These Books?
         </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
+        <p class="text-slate-600 max-w-2xl mx-auto">
           Every book in our collection has been read, tested, and recommended by our team.
         </p>
       </div>
@@ -91,7 +91,7 @@ const categories = [
             <span class="text-3xl">🎯</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Practical Knowledge</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             We focus on books with actionable insights you can apply immediately to your projects.
           </p>
         </div>
@@ -101,7 +101,7 @@ const categories = [
             <span class="text-3xl">⭐</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Expert Curated</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             Each book is vetted by professionals with years of experience in their respective fields.
           </p>
         </div>
@@ -111,7 +111,7 @@ const categories = [
             <span class="text-3xl">🚀</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Career Growth</h3>
-          <p class="text-gray-600">
+          <p class="text-slate-600">
             These resources helped us grow our careers and can do the same for you.
           </p>
         </div>
@@ -129,7 +129,7 @@ const categories = [
         <h2 class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4">
           Our Book Collection
         </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
+        <p class="text-slate-600 max-w-2xl mx-auto">
           Explore our carefully selected books covering development, marketing, design, and business.
         </p>
       </div>
@@ -142,7 +142,7 @@ const categories = [
             const { title, author, img, readtime, description } = data;
 
             return (
-              <article class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
+              <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
                 <a href={`/books/${slug}`} class="block h-full">
                   <div class="relative overflow-hidden">
                     <img
@@ -162,17 +162,17 @@ const categories = [
                     <h3 class="text-xl font-bold text-cyan-900 group-hover:text-orange-500 transition-colors line-clamp-2">
                       {title}
                     </h3>
-                    <p class="text-sm text-gray-500 flex items-center gap-2">
+                    <p class="text-sm text-slate-500 flex items-center gap-2">
                       <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
                       </svg>
                       by {author}
                     </p>
-                    <p class="text-gray-600 text-sm line-clamp-3 leading-relaxed">
+                    <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed">
                       {description}
                     </p>
 
-                    <div class="mt-auto pt-4 flex justify-between items-center border-t border-gray-100">
+                    <div class="mt-auto pt-4 flex justify-between items-center border-t border-slate-100">
                       <span class="inline-flex items-center gap-1 bg-cyan-50 text-cyan-700 px-3 py-1.5 rounded-full text-xs font-medium">
                         <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
@@ -197,11 +197,11 @@ const categories = [
       <!-- Coming Soon Placeholder -->
       {books.length < 6 && (
         <div class="mt-12 text-center">
-          <div class="inline-flex items-center gap-3 px-6 py-4 bg-slate-100 rounded-2xl border border-gray-200">
+          <div class="inline-flex items-center gap-3 px-6 py-4 bg-slate-100 rounded-2xl border border-slate-200">
             <span class="text-2xl">📚</span>
             <div class="text-left">
               <p class="font-semibold text-cyan-900">More books coming soon!</p>
-              <p class="text-sm text-gray-600">We're always adding new recommendations.</p>
+              <p class="text-sm text-slate-600">We're always adding new recommendations.</p>
             </div>
           </div>
         </div>
@@ -228,7 +228,7 @@ const categories = [
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="/blog"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" />
@@ -237,7 +237,7 @@ const categories = [
         </a>
         <a
           href="/contact"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold text-lg transition-all duration-200 border border-white/30"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold text-lg transition-all duration-300 border border-white/30"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
