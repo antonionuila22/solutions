@@ -14,7 +14,6 @@ import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 let {
   title,
   description,
-  keywords,
   image,
   article,
   noindex,
@@ -29,7 +28,6 @@ let {
 // Valores por defecto en español
 title = title || "Codebrand - Agencia de Desarrollo Web Honduras | Diseño Web Profesional";
 description = description || "Agencia de desarrollo web en Honduras. Sitios web profesionales, tiendas online, aplicaciones web y marketing digital. Calidad internacional con atención local. Contacta por WhatsApp.";
-keywords = keywords || "desarrollo web honduras, diseño web honduras, agencia digital honduras, tienda online honduras, páginas web honduras, desarrollo software honduras, marketing digital honduras";
 image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 
 // URLs
@@ -70,7 +68,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="author" content="Codebrand Honduras" />
     <meta name="publisher" content="Codebrand" />
 

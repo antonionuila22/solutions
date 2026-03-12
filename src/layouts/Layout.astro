@@ -11,7 +11,6 @@ import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 let {
   title,
   description,
-  keywords,
   image,
   article,
   noindex,
@@ -30,9 +29,6 @@ title =
 description =
   description ||
   "Expert web development, UI/UX design, and digital marketing. Custom solutions that drive real results. Get a free consultation today.";
-keywords =
-  keywords ||
-  "web development agency, UI/UX design services, digital marketing agency, custom web development, mobile app development, SEO optimization, social media marketing, branding agency, e-commerce development, graphic design services";
 image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 
 // URL dinámica y mejoras SEO (permite override para páginas duplicadas)
@@ -73,7 +69,6 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="author" content="Codebrand Digital Agency" />
     <meta name="publisher" content="Codebrand" />
 
@@ -171,9 +166,9 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content={title} />
 
-    <!-- Geo Tags - Primary market US, operations in Honduras -->
-    <meta name="geo.region" content="US" />
-    <meta name="geo.placename" content="United States" />
+    <!-- Geo Tags - Operations in Honduras, serving US market -->
+    <meta name="geo.region" content="HN-CR" />
+    <meta name="geo.placename" content="San Pedro Sula, Honduras" />
     <meta name="geo.position" content="15.5049;-88.0254" />
     <meta name="ICBM" content="15.5049, -88.0254" />
 
@@ -192,16 +187,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <link rel="dns-prefetch" href="https://www.google.com" />
     <link rel="dns-prefetch" href="https://www.gstatic.com" />
 
-    <!-- Preload Critical Resources for LCP optimization -->
-    <link
-      rel="preload"
-      as="image"
-      href="/photos/bannercodebrand.webp"
-      fetchpriority="high"
-    />
-
     <!-- Resource Hints for better loading -->
-    <link rel="prefetch" href="/photos/section.webp" />
     <link rel="prefetch" href="/iconcodebrand.svg" />
 
     <!-- Preload critical fonts for better LCP (WOFF2 = ~8KB vs TTF ~155KB) -->
@@ -451,21 +437,13 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       set:html={JSON.stringify(breadcrumbSchema)}
     />
 
-    <!-- WebSite Schema with Search -->
+    <!-- WebSite Schema -->
     <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Codebrand Digital Agency",
-        "url": "https://codebrand.us",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://codebrand.us/search?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "url": "https://codebrand.us"
       }
     </script>
 

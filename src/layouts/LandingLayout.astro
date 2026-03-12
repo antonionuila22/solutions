@@ -4,14 +4,13 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 
 // Props individuales
-let { title, description, keywords, image, article, noindex } = Astro.props;
+let { title, description, image, article, noindex } = Astro.props;
 
 // Valores por defecto mejorados
 title = title || "Codebrand - Landing Page";
 description =
   description ||
   "Transform your business with Codebrand's expert web development services.";
-keywords = keywords || "web development, UI/UX design, digital marketing, SEO";
 image = image || "https://codebrand.us/photos/bannercodebrand.webp";
 
 // URL dinámica y mejoras SEO
@@ -81,7 +80,6 @@ const localBusinessSchema = {
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="author" content="Codebrand Digital Agency" />
     <meta name="publisher" content="Codebrand" />
     <meta
