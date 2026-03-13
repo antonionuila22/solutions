@@ -1,0 +1,514 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { BUSINESS_INFO } from "../../configs/business";
+
+const profile = {
+  name: "Ramon Nuila",
+  role: "CEO & Founder",
+  tagline: "Full Stack Developer, UX/UI designer, and digital strategist.",
+  image: "/photos/team-code/RamonNuila.webp",
+  experience: "4+ years",
+  companySince: "2020",
+  projects: "500+",
+  rating: "4.9/5",
+  location: "San Pedro Sula, Honduras",
+  about:
+    "Ramon Nuila is the founder of Codebrand, a Full Stack Developer, and a UX/UI-focused builder who creates modern, high-performing websites for businesses in Honduras and abroad. His work combines clean design, usability, technical SEO, and scalable development to help brands stand out online and grow with confidence.",
+  approach:
+    "His approach combines technical depth with commercial thinking. Every project is designed to look sharp, load fast, rank better in search, and create a smoother path from visitor to customer.",
+  skills: [
+    "React",
+    "Next.js",
+    "Astro",
+    "WordPress",
+    "Webflow",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "MongoDB",
+    "PostgreSQL",
+    "Supabase",
+    "Strapi",
+    "Turso",
+    "UX/UI",
+    "SEO Strategy",
+    "Digital Growth",
+  ],
+  highlights: [
+    "Founded Codebrand in 2020 and helped grow it into a 500+ project agency.",
+    "Builds websites with React, Next.js, Astro, Node.js, WordPress, Webflow, and modern CMS tools.",
+    "Works with companies across Honduras, the US, Latin America, and Europe.",
+  ],
+  education: "Computer Systems Engineering",
+  personalEmail: "ramonnuila22@gmail.com",
+  techStack:
+    "MongoDB, Turso, Supabase, React, Astro, Next.js, Strapi, WordPress, Webflow, Node.js, JavaScript, and TypeScript.",
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: `${profile.role}, Full Stack Developer, Digital Strategy Lead`,
+  image: `${BUSINESS_INFO.baseUrl}${profile.image}`,
+  description: profile.about,
+  url: `${BUSINESS_INFO.baseUrl}/team/ramon-nuila`,
+  email: BUSINESS_INFO.us.email,
+  telephone: BUSINESS_INFO.us.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: BUSINESS_INFO.address.city,
+    addressRegion: BUSINESS_INFO.address.region,
+    addressCountry: BUSINESS_INFO.address.country,
+  },
+  sameAs: [
+    BUSINESS_INFO.social.linkedin,
+    BUSINESS_INFO.social.instagram,
+    BUSINESS_INFO.social.facebook,
+  ],
+  knowsAbout: profile.skills,
+  worksFor: {
+    "@type": "Organization",
+    name: BUSINESS_INFO.name,
+    url: BUSINESS_INFO.baseUrl,
+  },
+};
+---
+
+<Layout
+  title="Ramon Nuila | CEO & Founder at Codebrand"
+  description="Meet Ramon Nuila, CEO & Founder of Codebrand. Full Stack Developer, UX/UI designer, and digital strategist helping businesses grow with high-performance websites, technical SEO, and modern web solutions."
+  keywords="Ramon Nuila, Codebrand founder, CEO Codebrand, full stack developer Honduras, UX UI designer Honduras, WordPress expert Honduras, React developer Honduras, web development expert Honduras"
+  image={profile.image}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+  <section class="relative overflow-hidden bg-[#08111f] text-white">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.22),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(251,146,60,0.2),_transparent_28%)]"></div>
+    <div class="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] [background-size:34px_34px]"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-18 md:pb-24">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-white/5 px-5 py-2 text-sm font-semibold tracking-[0.18em] uppercase text-cyan-200">
+            <span class="h-2.5 w-2.5 rounded-full bg-orange-400"></span>
+            Personal Profile
+          </div>
+
+          <div class="space-y-5">
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-orange-300">
+              {profile.role}
+            </p>
+            <h1 class="max-w-4xl text-5xl md:text-7xl font-black leading-[0.94] tracking-[-0.04em]">
+              Ramon
+              <span class="block text-cyan-300">Nuila</span>
+            </h1>
+            <p class="max-w-2xl text-lg md:text-2xl leading-relaxed text-slate-300">
+              {profile.tagline}
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a
+              href={`https://wa.me/${BUSINESS_INFO.us.whatsapp}?text=Hola%20Ramon,%20quiero%20hablar%20sobre%20un%20proyecto`}
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact on WhatsApp
+            </a>
+            <a href={`mailto:${BUSINESS_INFO.us.email}`} class="btn-secondary">
+              Send Email
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+            <div class="stat-card">
+              <span class="stat-value">{profile.experience}</span>
+              <span class="stat-label">Web Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">{profile.companySince}</span>
+              <span class="stat-label">Founded</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">{profile.projects}</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">{profile.rating}</span>
+              <span class="stat-label">Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -top-6 -right-6 h-44 w-44 rounded-[2rem] bg-orange-400/20 blur-2xl"></div>
+          <div class="absolute -bottom-8 -left-6 h-52 w-52 rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/6 p-4 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+            <div class="overflow-hidden rounded-[1.6rem]">
+              <img
+                src={profile.image}
+                alt="Ramon Nuila portrait"
+                class="h-full w-full object-cover object-top"
+                width="900"
+                height="1100"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+
+            <div class="profile-card">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.22em] text-cyan-700">
+                  Based in Honduras
+                </p>
+                <h2 class="mt-1 text-2xl font-black text-slate-900">{profile.name}</h2>
+                <p class="mt-1 text-sm text-slate-600">{profile.location}</p>
+                <p class="text-xs text-slate-500">{profile.education}</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <a href={BUSINESS_INFO.social.linkedin} class="mini-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href={BUSINESS_INFO.social.instagram} class="mini-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="/contact" class="mini-link">Book a Call</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#f6f7fb] py-18 md:py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12">
+      <aside class="space-y-6">
+        <div class="info-panel">
+          <p class="eyebrow">Quick Intro</p>
+          <h2 class="section-title">A professional profile built for trust.</h2>
+          <p class="body-text">
+            This page works as a digital business card, founder profile, and direct contact point for prospects, partners, and clients who want to learn more about Ramon Nuila and his work.
+          </p>
+        </div>
+
+        <div class="info-panel">
+          <p class="eyebrow">Core Skills</p>
+          <div class="flex flex-wrap gap-2.5">
+            {profile.skills.map((skill) => (
+              <span class="skill-pill">{skill}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="info-panel">
+          <p class="eyebrow">Tech Stack</p>
+          <p class="body-text mt-0">
+            {profile.techStack}
+          </p>
+        </div>
+
+        <div class="info-panel">
+          <p class="eyebrow">Contact</p>
+          <div class="space-y-3 text-slate-700">
+            <a href={`mailto:${profile.personalEmail}`} class="contact-row">
+              <span>Personal Email</span>
+              <strong>{profile.personalEmail}</strong>
+            </a>
+            <a href={`mailto:${BUSINESS_INFO.us.email}`} class="contact-row">
+              <span>Business Email</span>
+              <strong>{BUSINESS_INFO.us.email}</strong>
+            </a>
+            <a
+              href={BUSINESS_INFO.us.whatsappUrl}
+              class="contact-row"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>WhatsApp</span>
+              <strong>{BUSINESS_INFO.us.phone}</strong>
+            </a>
+            <div class="contact-row">
+              <span>Location</span>
+              <strong>{profile.location}</strong>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="space-y-6">
+        <article class="content-card">
+          <p class="eyebrow">About Ramon</p>
+          <h2 class="section-title">Full Stack development with design and growth in mind.</h2>
+          <p class="body-text">{profile.about}</p>
+          <p class="body-text">{profile.approach}</p>
+        </article>
+
+        <article class="content-card">
+          <p class="eyebrow">What He Brings</p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="feature-card">
+              <h3>Technical Leadership</h3>
+              <p>Modern web architecture, technical SEO, and hands-on development across frontend, backend, CMS, and performance optimization.</p>
+            </div>
+            <div class="feature-card">
+              <h3>UX/UI and Usability</h3>
+              <p>Clear interfaces, strong structure, and user-focused design decisions that improve engagement and retention.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Commercial Thinking</h3>
+              <p>Projects built to support positioning, lead generation, customer trust, and measurable business outcomes.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <p class="eyebrow">Highlights</p>
+          <div class="space-y-3">
+            {profile.highlights.map((item) => (
+              <div class="highlight-row">
+                <span class="highlight-dot"></span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="content-card">
+          <p class="eyebrow">Background</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="feature-card">
+              <h3>Professional Experience</h3>
+              <p>Experience across web development, freelance execution, graphic production, and social media design, with work for brands such as Work Ninjas, Nail Marketing, Roof Squad, and Support Labs.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Services</h3>
+              <p>Web development, UX/UI design, technical and local SEO, e-commerce development, branding support, and conversion-focused digital execution.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card cta-card">
+          <div>
+            <p class="eyebrow">Let&apos;s Connect</p>
+            <h2 class="section-title text-white">Need a high-level conversation about your next digital project?</h2>
+            <p class="mt-4 text-slate-300 max-w-2xl">
+              Reach out directly to discuss websites, software, branding, growth strategy, or a custom digital solution for your business.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a
+              href={`https://wa.me/${BUSINESS_INFO.us.whatsapp}?text=Hola%20Ramon,%20me%20gustaria%20hablar%20sobre%20un%20proyecto`}
+              class="btn-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start on WhatsApp
+            </a>
+            <a href="/contact" class="btn-outline-light">Go to Contact Page</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .btn-primary,
+  .btn-secondary,
+  .btn-white,
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 999px;
+    padding: 0.95rem 1.5rem;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+    color: #06202f;
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.22);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-white:hover,
+  .btn-outline-light:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+  }
+
+  .btn-white {
+    background: white;
+    color: #08111f;
+  }
+
+  .btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    background: transparent;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(186 230 253 / 0.78);
+  }
+
+  .profile-card {
+    position: absolute;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 1.4rem;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 1rem 1.1rem;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.18);
+  }
+
+  .mini-link {
+    border-radius: 999px;
+    background: #e2f3ff;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0c4a6e;
+  }
+
+  .info-panel,
+  .content-card {
+    border-radius: 1.8rem;
+    background: white;
+    padding: 1.6rem;
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+  }
+
+  .eyebrow {
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f97316;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+  }
+
+  .body-text {
+    margin-top: 1rem;
+    color: #475569;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+
+  .skill-pill {
+    border-radius: 999px;
+    background: #ecfeff;
+    border: 1px solid #bae6fd;
+    color: #155e75;
+    font-size: 0.86rem;
+    font-weight: 700;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 1rem;
+    background: #f8fafc;
+    padding: 0.95rem 1rem;
+  }
+
+  .feature-card {
+    border-radius: 1.4rem;
+    background: linear-gradient(180deg, #f8fbff 0%, #f1f5f9 100%);
+    padding: 1.25rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .feature-card p {
+    margin-top: 0.75rem;
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.96rem;
+  }
+
+  .highlight-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.85rem;
+    align-items: start;
+  }
+
+  .highlight-row p {
+    color: #334155;
+    line-height: 1.75;
+  }
+
+  .highlight-dot {
+    margin-top: 0.65rem;
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #22d3ee, #fb923c);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, #08111f 0%, #0f2542 100%);
+  }
+
+  @media (max-width: 768px) {
+    .profile-card {
+      position: static;
+      margin-top: 1rem;
+    }
+
+    .contact-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
