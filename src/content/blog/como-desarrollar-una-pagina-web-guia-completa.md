@@ -5,7 +5,7 @@ author: "Ramon Nuila"
 readtime: 14
 img: /photos/blog/web-development-guide.webp
 imageAlt: "Guía completa para desarrollar una página web profesional"
-date: 2025-03-20
+date: 2026-03-20
 categories: ["Web Design", "Tips"]
 tags: ["web design", "website mistakes", "UX", "design tips", "branding"]
 ---
