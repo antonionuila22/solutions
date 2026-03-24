@@ -561,12 +561,3 @@ If you're considering a PWA, start with a clear analysis of what capabilities yo
 ---
 
 *Ready to explore whether a PWA is right for your business? [Contact us](/contact) for a free consultation and technical assessment.*
-
----
-
-**Sources:**
-
-- [web.dev: Progressive Web Apps](https://web.dev/progressive-web-apps/)
-- [Google Developers: PWA Case Studies](https://developers.google.com/web/showcase)
-- [PWA Stats: Real-world PWA data](https://www.pwastats.com/)
-- [MDN: Progressive Web Apps](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)

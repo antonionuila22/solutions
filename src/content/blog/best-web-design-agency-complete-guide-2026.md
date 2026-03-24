@@ -517,21 +517,6 @@ You've seen what separates the best from the rest. **Codebrand delivers:**
 
 **Call us:** +504 3272-2973
 
----
-
-## What Clients Say About Codebrand
-
-> "Codebrand delivered a website that exceeded every expectation. The design is stunning, it loads instantly, and our conversion rate has never been higher. They're not just an agency—they're a strategic partner."
-> — **Amanda R., Marketing Director**
-
-> "After being burned by two agencies that over-promised and under-delivered, Codebrand was a breath of fresh air. Professional, responsive, and the quality speaks for itself."
-> — **Robert K., Business Owner**
-
-> "The best investment we've made in our digital presence. Codebrand understood our vision and brought it to life beautifully. 10/10 would recommend."
-> — **Patricia L., Founder**
-
----
-
 *Codebrand is the #1 web design agency for businesses that demand excellence. 500+ projects delivered. 4.9/5 client satisfaction. Premium quality at smart prices.*
 
 *Last updated: January 2026*

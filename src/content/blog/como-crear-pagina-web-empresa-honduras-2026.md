@@ -252,6 +252,4 @@ En Codebrand, estamos comprometidos con el éxito de las empresas hondureñas. N
 
 ¿Listo para llevar tu empresa al siguiente nivel digital? Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte a crear la página web perfecta para tu negocio en Honduras.
 
-*(Palabras: 2,150)*
-
 Recuerda: Una página web es una inversión en el futuro de tu empresa. ¡No esperes más para digitalizar tu negocio!
