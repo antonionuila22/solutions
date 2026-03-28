@@ -581,7 +581,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
            TRUST BADGES
       ══════════════════════════════════════════════════════ -->
       <div class="py-12 px-6 border-y border-white/5">
-        <p class="section-label justify-center mb-8">Reconocidos por las principales plataformas de agencias globales</p>
+        <p class="section-label justify-center mb-8">Verificados en plataformas internacionales</p>
         <div class="trust-wrap max-w-5xl mx-auto">
           <div class="trust-track flex items-center gap-14 sm:gap-20">
             {[
@@ -632,16 +632,34 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
               </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
+            <div class="space-y-4">
               {[
-                { num: "500+", label: "Proyectos entregados globalmente" },
-                { num: "127+", label: "Reseñas de 5 estrellas verificadas" },
-                { num: "5+",   label: "Años de experiencia en el mercado" },
-                { num: "90+",  label: "Puntuación promedio en PageSpeed" },
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+                  title: "Ve el diseño antes de pagar",
+                  desc: "Aprueba el prototipo completo en Figma antes de que escribamos una sola línea de código. Cero sorpresas al final."
+                },
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
+                  title: "Código propio — usted es el dueño",
+                  desc: "Entregamos el código fuente completo. Sin lock-in, sin plataformas propietarias. Su sitio es suyo para siempre."
+                },
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>`,
+                  title: "WhatsApp directo con su equipo",
+                  desc: "Habla con el desarrollador y diseñador que trabaja en su proyecto — no con un account manager. Respuesta en horas, no días."
+                },
               ].map((item, i) => (
-                <div class={`fade-up glass card-accent-top rounded-2xl p-6 text-center stagger-${i+1}`}>
-                  <div class="text-3xl xl:text-4xl font-extrabold text-gradient leading-none mb-2">{item.num}</div>
-                  <div class="text-neutral-500 text-xs leading-snug">{item.label}</div>
+                <div class={`fade-up glass card-lift rounded-2xl p-5 stagger-${i+1}`}>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center shrink-0 mt-0.5">
+                      <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon}></svg>
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-sm mb-1">{item.title}</h4>
+                      <p class="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -945,41 +963,8 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
               </a>
             </div>
 
-            <!-- Plan 2 (featured) -->
-            <div class="fade-up glass card-lift card-accent-top price-featured p-8 rounded-2xl stagger-2">
-              <div class="flex items-center justify-between mb-4">
-                <p class="text-xs font-semibold tracking-widest uppercase text-cyan-500">Crecimiento Empresarial</p>
-                <span class="inline-flex items-center gap-1.5 bg-cyan-500/15 border border-cyan-500/30 rounded-full px-3 py-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                  <span class="text-[10px] font-bold text-cyan-400 tracking-wide">Más popular</span>
-                </span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-1">Sitio Empresarial</h3>
-              <p class="text-neutral-400 text-sm mb-6">Para empresas que quieren crecer, posicionarse y generar más clientes.</p>
-              <div class="mb-1">
-                <span class="text-5xl font-extrabold text-white tracking-tight">$3,500</span>
-                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
-              </div>
-              <p class="text-neutral-500 text-xs mb-7 flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Entrega en 8–12 semanas
-              </p>
-              <ul class="space-y-2.5 mb-8">
-                {["Hasta 10 páginas con sistema de diseño", "CMS para editar contenido sin código", "SEO avanzado — técnico + on-page", "Blog o sección de noticias", "Integraciones (CRM, email, formularios)", "Google Analytics + Search Console", "3 meses de soporte post-lanzamiento"].map((item) => (
-                  <li class="flex items-center gap-2.5 text-neutral-200 text-sm">
-                    <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a href={`${WA}?text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Empresarial%20de%20$3,500`} class="btn-primary w-full justify-center glow-ring" target="_blank" rel="noopener noreferrer">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
-                Cotizar este plan
-              </a>
-            </div>
-
-            <!-- Plan 3 -->
-            <div class="fade-up glass card-lift card-accent-top p-8 rounded-2xl stagger-3">
+            <!-- Plan 2 -->
+            <div class="fade-up glass card-lift card-accent-top p-8 rounded-2xl stagger-2">
               <p class="text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">E-Commerce</p>
               <h3 class="text-xl font-bold text-white mb-1">Tienda Online</h3>
               <p class="text-neutral-500 text-sm mb-6">E-commerce completo para vender productos en línea en Honduras y el mundo.</p>
@@ -1000,6 +985,39 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
                 ))}
               </ul>
               <a href={`${WA}?text=Hola,%20me%20interesa%20cotizar%20una%20Tienda%20Online%20de%20$2,900`} class="btn-outline w-full justify-center" target="_blank" rel="noopener noreferrer">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+                Cotizar este plan
+              </a>
+            </div>
+
+            <!-- Plan 3 (featured) -->
+            <div class="fade-up glass card-lift card-accent-top price-featured p-8 rounded-2xl stagger-3">
+              <div class="flex items-center justify-between mb-4">
+                <p class="text-xs font-semibold tracking-widest uppercase text-cyan-500">Crecimiento Empresarial</p>
+                <span class="inline-flex items-center gap-1.5 bg-cyan-500/15 border border-cyan-500/30 rounded-full px-3 py-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                  <span class="text-[10px] font-bold text-cyan-400 tracking-wide">Más popular</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-1">Sitio Empresarial</h3>
+              <p class="text-neutral-400 text-sm mb-6">Para empresas que quieren crecer, posicionarse y generar más clientes en línea.</p>
+              <div class="mb-1">
+                <span class="text-5xl font-extrabold text-white tracking-tight">$3,500</span>
+                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
+              </div>
+              <p class="text-neutral-500 text-xs mb-7 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Entrega en 8–12 semanas
+              </p>
+              <ul class="space-y-2.5 mb-8">
+                {["Hasta 10 páginas con sistema de diseño", "CMS para editar contenido sin código", "SEO avanzado — técnico + on-page", "Blog o sección de noticias", "Integraciones (CRM, email, formularios)", "Google Analytics + Search Console", "3 meses de soporte post-lanzamiento"].map((item) => (
+                  <li class="flex items-center gap-2.5 text-neutral-200 text-sm">
+                    <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${WA}?text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Empresarial%20de%20$3,500`} class="btn-primary w-full justify-center glow-ring" target="_blank" rel="noopener noreferrer">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
                 Cotizar este plan
               </a>
@@ -1098,10 +1116,6 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
                 ))}
               </div>
 
-              <p class="text-neutral-600 text-xs text-center pt-2">
-                (English) Looking for US-market work?{" "}
-                <a href="/web-development-agency" class="text-cyan-500 hover:text-cyan-400 underline underline-offset-2">Visit our English site →</a>
-              </p>
             </div>
 
           </div>
