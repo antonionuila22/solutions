@@ -2,88 +2,77 @@
 title: Professional Graphic Design & Branding – Unique and Memorable Visual Identities
 img: /photos/diseñobranding.webp
 readtime: 5
-price: $250 - $950
+price: From $450
 inStock: true
-description: Professional branding and graphic design services. We create strong and coherent visual identities that connect with your audience—logos, color palettes, typography, visual applications, and more. Pricing based on project scope.
+description: Professional branding and graphic design services. We build strong, cohesive visual identities — logos, color systems, typography, brand guidelines, and visual applications — that make your business look like it means business.
 date: 2025-01-01
 author: Codebrand Team
 ---
 
 ## Professional Graphic Design & Branding
 
-### We create brands with personality, purpose, and visual consistency
+### A brand that looks the part closes more deals
 
-At **Codebrand**, we help entrepreneurs, startups, and businesses build an **authentic, functional, and memorable** visual identity. Our **branding and graphic design** service combines strategy, creativity, and thoughtful execution to create brands that leave a lasting impression.
+At **Codebrand**, we help entrepreneurs, startups, and growing businesses build visual identities that are authentic, consistent, and memorable. Our branding process combines strategy, creativity, and precision execution — so you don't just look good, you look right for your market.
 
-From your main logo to essential graphic elements, we help you communicate with clarity, professionalism, and consistency.
-
----
-
-## What’s included in this service?
-
-- ✅ Primary logo design + alternative versions (horizontal, icon, monochrome)  
-- ✅ Strategic color palette development  
-- ✅ Professional typography selection  
-- ✅ Visual identity system (correct/incorrect usage)  
-- ✅ Design of visual applications: business cards, email signature, social media posts, presentations, etc.  
-- ✅ Brand guideline PDF (basic brandbook)  
-- ✅ Editable files ready for print and digital use
+From your primary logo to every touchpoint where your brand shows up, we make sure it communicates with clarity and confidence.
 
 ---
 
-## How we work
+## What's Included
 
-Our process includes:
-
-1. **Creative brief** – We gather key info about your vision, values, target audience, and style  
-2. **Visual exploration** – Research and moodboard creation to define your visual direction  
-3. **Identity proposal** – Delivery of initial logo and identity concepts  
-4. **Review & refinement** – 1 to 2 rounds of adjustments  
-5. **Final delivery** – Brandbook + editable files + agreed visual assets
+- Primary logo + alternative versions (horizontal, icon, monochrome)
+- Strategic color palette development
+- Professional typography selection and pairing
+- Visual identity system with correct/incorrect usage guidelines
+- Visual applications: business cards, email signature, social media headers, presentations
+- Brand guideline PDF (brandbook)
+- Editable files ready for print and digital
 
 ---
 
 ## Packages & Pricing
 
-| Package                      | Description                                                                                       | Price USD  |
-|-----------------------------|---------------------------------------------------------------------------------------------------|------------|
-| **Basic Visual Identity**   | Logo + palette + typography + 1 visual application + basic brandbook                             | $390       |
-| **Professional Branding**   | All of the above + 4 visual applications + identity system + logo variations                     | $690       |
-| **Corporate Branding**      | Includes professional branding + extended graphic line + stationery + templates + presentations  | From $950  |
+| Package | What You Get | Price |
+|---------|--------------|-------|
+| **Basic Visual Identity** | Logo + palette + typography + 1 visual application + brandbook | $450 |
+| **Professional Branding** | All above + 4 visual applications + identity system + logo variations | $800 |
+| **Corporate Branding** | Professional Branding + extended graphic line + stationery + templates | From $1,100 |
 
-> Visual applications may include: business cards, email signature, social media headers, story templates, and more.
-
----
-
-## Tools & Deliverables
-
-- 🖼️ Deliverable files: .AI, .EPS, .PDF, .webp, .JPG, .SVG  
-- 📦 Brand guideline PDF  
-- 🎨 Color palette in HEX and CMYK  
-- 🔤 Licensed or recommended fonts  
-- 📁 Organized folder with your complete brand system
+> Visual applications include: business cards, email signature, social media headers, story templates, and more. Additional applications quoted separately.
 
 ---
 
-## Benefits of working with Codebrand
+## How We Work
 
-- 🧠 Strategic—not just aesthetic—approach  
-- 🎯 Purpose-driven branding with clear direction  
-- 📱 Adaptable identity for both digital and print  
-- 💡 Visual ideas aligned with your positioning  
-- ✨ Clean, professional, and original design  
-- 🤝 Collaborative process with clear communication
-
----
-
-## Why choose us?
-
-At **Codebrand**, we understand that graphic design isn’t just “making a logo,” but **laying the visual foundation of your brand**. Our design team creates visual identities with vision, consistency, and attention to detail — ready to grow with you.
+1. **Creative brief** — We gather your vision, values, target audience, and style references.
+2. **Visual exploration** — Research and moodboard to define the right visual direction.
+3. **Identity proposal** — Logo concepts and initial identity presented for feedback.
+4. **Review & refinement** — 1 to 2 rounds of adjustments until it's right.
+5. **Final delivery** — Brandbook + editable files + all agreed visual assets.
 
 ---
 
-## Ready for your brand to look like it truly deserves?
+## Deliverables
 
-> Contact us and let us help you build a strong visual identity that represents your essence and connects with your audience.
+- Editable files: .AI, .EPS, .PDF, .PNG, .JPG, .SVG
+- Brand guideline PDF
+- Color palette in HEX and CMYK
+- Licensed or recommended fonts
+- Organized folder with your complete brand system
 
 ---
+
+## Why Work with Codebrand
+
+- Strategic approach — not just aesthetic, but aligned with your positioning
+- Purpose-driven branding with clear business direction
+- Adaptable identity for both digital and print
+- Clean, professional, and 100% original design
+- Collaborative process with transparent communication throughout
+
+---
+
+## Ready to build a brand that stands out?
+
+> Tell us about your business and we'll send you a custom proposal. Great branding starts with a conversation.

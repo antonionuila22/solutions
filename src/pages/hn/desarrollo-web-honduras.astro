@@ -7,45 +7,46 @@
 
 import HnLayout from "../../layouts/HnLayout.astro";
 import FAQ from "../../components/FAQ.tsx";
+import TechMarquee from "../../components/TechMarquee.astro";
 
 // SEO
 const title = "Desarrollo y Diseño Web en Honduras | Páginas Web para Empresas - Codebrand";
-const description = "Agencia de desarrollo y diseño web en Honduras. Creamos páginas web, tiendas online y sistemas web para empresas en Tegucigalpa, San Pedro Sula y todo el país. Desde $650 USD.";
+const description = "Agencia de desarrollo y diseño web en Honduras. Creamos páginas web, tiendas online y sistemas web para empresas en Tegucigalpa, San Pedro Sula y todo el país. Desde $1,500 USD.";
 const keywords = "desarrollo web honduras, diseño web honduras, páginas web honduras, sitios web honduras, agencia web honduras, páginas web para empresas honduras, crear página web honduras, diseño de páginas web tegucigalpa, desarrollo web san pedro sula, tiendas online honduras";
 
 // FAQs
 const faqs = [
   {
     question: "¿Cuánto cuesta crear una página web en Honduras?",
-    answer: "Los precios varían según la complejidad del proyecto. Un sitio web básico (5 páginas) comienza en $650 USD. Un sitio web empresarial completo ronda los $1,800 USD. Una tienda online con carrito de compras parte de $2,900 USD. Ofrecemos cotizaciones personalizadas sin compromiso."
+    answer: "Los precios varían según la complejidad. Un sitio web básico de 5 páginas comienza en $1,500 USD. Un sitio empresarial completo con CMS, blog e integraciones ronda los $3,500 USD. Una tienda online con carrito de compras y pagos en línea parte de $2,900 USD. Ofrecemos cotizaciones personalizadas sin compromiso — contáctenos y le respondemos en menos de 24 horas."
   },
   {
     question: "¿Qué incluye el desarrollo de un sitio web?",
-    answer: "Nuestros sitios web incluyen diseño personalizado, versión responsive para celulares y computadoras, optimización SEO básica para Google, certificado SSL, formularios de contacto, capacitación para actualizar contenido y soporte técnico post-lanzamiento."
+    answer: "Nuestros sitios incluyen: diseño personalizado en Figma (usted aprueba antes de programar), desarrollo responsive para celulares y computadoras, SEO técnico desde el inicio, certificado SSL, formularios de contacto, integración con Google Analytics, capacitación para gestionar su contenido y 30 días de soporte post-lanzamiento."
   },
   {
     question: "¿Cuánto tiempo toma crear un sitio web?",
-    answer: "El tiempo depende del proyecto. Un sitio web básico toma 2-3 semanas. Un sitio empresarial de 4-6 semanas. Una tienda online completa de 6-8 semanas. Trabajamos con entregas parciales para que vea el avance y pueda dar retroalimentación durante el proceso."
+    answer: "Un sitio básico de 5 páginas toma entre 5 y 7 semanas. Un sitio empresarial de 8 a 12 semanas. Una tienda online completa de 12 a 18 semanas. Estos tiempos incluyen fases de diseño, revisiones y pruebas — así entregamos proyectos de calidad, sin apuros que comprometan el resultado."
   },
   {
-    question: "¿Trabajan con empresas pequeñas?",
-    answer: "Sí, trabajamos con empresas de todos los tamaños. Desde emprendedores que lanzan su primer negocio hasta PyMEs y corporaciones establecidas en Tegucigalpa, San Pedro Sula y otras ciudades de Honduras. Ofrecemos facilidades de pago."
+    question: "¿Trabajan con empresas pequeñas y emprendedores?",
+    answer: "Sí. Trabajamos con negocios de todos los tamaños: emprendedores lanzando su primera página web, PyMEs en crecimiento y corporaciones establecidas en Tegucigalpa, San Pedro Sula, La Ceiba y otras ciudades de Honduras. Ofrecemos facilidades de pago y planes adaptados a cada presupuesto."
   },
   {
     question: "¿Pueden ayudarme a aparecer en Google?",
-    answer: "Sí. Todos nuestros sitios se desarrollan con buenas prácticas de SEO técnico y contenido optimizado. Además, ofrecemos servicios de posicionamiento SEO para ayudarle a aparecer en Google cuando sus clientes busquen sus servicios en Honduras."
+    answer: "Sí. Todos nuestros sitios se construyen con SEO técnico integrado: estructura de encabezados correcta, meta etiquetas, velocidad de carga optimizada, schema markup y URLs amigables. También ofrecemos servicios de posicionamiento SEO para ayudarle a aparecer en los primeros resultados cuando sus clientes busquen sus servicios en Honduras."
   },
   {
     question: "¿Ofrecen mantenimiento después del lanzamiento?",
-    answer: "Sí. Ofrecemos planes de mantenimiento mensual que incluyen: actualizaciones de seguridad, respaldos periódicos, cambios menores de contenido, soporte técnico, y monitoreo del sitio. Los planes comienzan desde $95 USD/mes."
+    answer: "Sí. Ofrecemos planes de mantenimiento mensual que incluyen: actualizaciones de seguridad, respaldos automáticos, cambios menores de contenido, soporte técnico y monitoreo del sitio. Los planes comienzan desde $95 USD/mes."
   },
   {
     question: "¿Qué formas de pago aceptan?",
-    answer: "Aceptamos múltiples formas de pago: transferencia bancaria (BAC, Banpais, Ficohsa, Atlántida), tarjeta de crédito/débito, efectivo, y PayPal para pagos internacionales. Ofrecemos facilidades de pago: 70% al inicio y 20% al entregar y 10% de garantia por 30 dias despues del lanzamiento para asegurar su satisfacción."
+    answer: "Aceptamos transferencia bancaria (BAC, Banpais, Ficohsa, Atlántida), tarjeta de crédito/débito, efectivo y PayPal. La estructura de pago estándar es: 50% al firmar el contrato, 50% al lanzamiento. Para proyectos grandes podemos acordar un plan de pagos en etapas."
   },
   {
-    question: "¿Puedo ver ejemplos de su trabajo?",
-    answer: "Sí, tenemos un portafolio completo de proyectos realizados para clientes en Honduras y el extranjero. Visite nuestra sección de proyectos o contáctenos para mostrarle casos específicos de su industria."
+    question: "¿Puedo actualizar el contenido yo mismo?",
+    answer: "Sí. Para la mayoría de proyectos integramos un CMS (sistema de gestión de contenido) que le permite editar textos, imágenes y agregar páginas sin tocar código. Le capacitamos y le dejamos documentación para que pueda hacerlo con confianza."
   }
 ];
 
@@ -64,67 +65,96 @@ const services = [
   {
     icon: "🌐",
     title: "Sitios Web Corporativos",
-    desc: "Diseño de páginas web para empresas en Honduras, optimizadas para transmitir confianza, generar contactos y vender más.",
-    price: "Desde $650 USD"
+    desc: "Diseño exclusivo aprobado en Figma, desarrollo con código limpio y rápido, SEO técnico incluido. Sin plantillas — su marca, su identidad.",
+    price: "Desde $1,500 USD"
   },
   {
     icon: "🛒",
     title: "Tiendas Online",
-    desc: "Creamos tiendas online en Honduras con catálogo, carrito de compras, pagos en línea y administración de inventario.",
+    desc: "E-commerce completo con catálogo, carrito, pagos en línea (PixelPay, BAC Credomatic, Stripe), inventario y panel administrativo.",
     price: "Desde $2,900 USD"
   },
   {
-    icon: "📱",
+    icon: "⚙️",
     title: "Aplicaciones Web",
-    desc: "Desarrollo de sistemas web a medida para empresas: facturación, inventarios, CRM, portales de clientes y más.",
+    desc: "Sistemas a medida: facturación, CRM, portales de clientes, agendamiento. Automatice procesos y escale su negocio sin límites.",
     price: "Cotización personalizada"
   },
   {
-    icon: "🎨",
-    title: "Diseño UI/UX",
-    desc: "Diseño UI/UX para páginas web y plataformas digitales con enfoque en claridad, conversión y experiencia del usuario.",
-    price: "Desde $450 USD"
+    icon: "✏️",
+    title: "Diseño UI/UX en Figma",
+    desc: "Ve y aprueba cómo quedará su sitio antes de que inicie el desarrollo. Prototipos interactivos listos para entregar al equipo técnico.",
+    price: "Desde $530 USD/página"
   },
   {
     icon: "📈",
-    title: "SEO y Marketing",
-    desc: "SEO en Honduras, posicionamiento en Google, estrategia de contenido y campañas digitales para atraer clientes.",
-    price: "Desde $450 USD/mes"
+    title: "SEO y Google",
+    desc: "Posicionamiento orgánico para que sus clientes lo encuentren primero. Auditoría técnica, correcciones on-page y estrategia de contenido.",
+    price: "Desde $370 USD"
   },
   {
-    icon: "🔧",
+    icon: "🛡️",
     title: "Mantenimiento Web",
-    desc: "Mantenimiento web con actualizaciones, respaldos, seguridad y soporte técnico continuo para su sitio o tienda online.",
+    desc: "Actualizaciones, respaldos automáticos, seguridad y soporte continuo. Su sitio siempre rápido, seguro y disponible — sin preocupaciones.",
     price: "Desde $95 USD/mes"
   }
 ];
 
+// Industries
+const industries = [
+  { icon: "⚖️", name: "Abogados y Notarías" },
+  { icon: "🏥", name: "Clínicas y Salud" },
+  { icon: "🍽️", name: "Restaurantes" },
+  { icon: "🏗️", name: "Constructoras" },
+  { icon: "🏠", name: "Inmobiliarias" },
+  { icon: "📊", name: "Consultorías" },
+  { icon: "🎓", name: "Educación" },
+  { icon: "🏨", name: "Hoteles y Turismo" },
+  { icon: "💪", name: "Fitness y Wellness" },
+  { icon: "🚗", name: "Automotriz" },
+  { icon: "💄", name: "Belleza y Estética" },
+  { icon: "📦", name: "Retail y E-commerce" },
+];
+
 // Why us
 const benefits = [
-  { icon: "🇭🇳", title: "Empresa Local", desc: "Somos hondureños. Entendemos el mercado local y estamos disponibles para reuniones presenciales." },
-  { icon: "🌟", title: "Calidad Internacional", desc: "Aplicamos los mismos estándares que usamos con clientes en Estados Unidos y Europa." },
-  { icon: "💬", title: "Comunicación Directa", desc: "Hable directamente con el equipo de desarrollo. Sin intermediarios ni burocracia." },
-  { icon: "💰", title: "Precios Justos", desc: "Calidad premium a precios accesibles para el mercado hondureño." },
-  { icon: "📱", title: "WhatsApp Directo", desc: "Comuníquese fácilmente por WhatsApp para consultas y seguimiento de proyectos." },
-  { icon: "✅", title: "Garantía de Satisfacción", desc: "Si no está satisfecho, trabajamos hasta que lo esté. Su éxito es nuestro éxito." }
+  { title: "Equipo 100% hondureño", desc: "Somos de aquí. Entendemos el mercado, los procesos del país y estamos disponibles para reuniones presenciales en San Pedro Sula y Tegucigalpa." },
+  { title: "Estándar internacional", desc: "Las mismas tecnologías y metodologías que usamos con clientes en Estados Unidos. Calidad global, precio local." },
+  { title: "Sin intermediarios", desc: "Habla directamente con el desarrollador o diseñador asignado. Sin capas de burocracia, sin demoras, sin malentendidos." },
+  { title: "SEO desde el día uno", desc: "Cada página se construye optimizada para Google: velocidad, estructura, meta etiquetas y schema markup incluidos en todos los proyectos." },
+  { title: "Comunicación por WhatsApp", desc: "Seguimiento ágil durante todo el proyecto. Respuesta en horas hábiles — no días — y siempre en español." },
+  { title: "Diseño aprobado antes de programar", desc: "Usted ve y aprueba el diseño completo en Figma antes de que escribamos una sola línea de código. Cero sorpresas." },
 ];
 
 // Process
 const process = [
-  { num: "01", title: "Consulta Gratis", desc: "Conversamos sobre su proyecto, necesidades y presupuesto. Sin compromiso." },
-  { num: "02", title: "Propuesta", desc: "Recibe una cotización detallada con alcance, tiempo y precio en 24-48 horas." },
-  { num: "03", title: "Diseño", desc: "Creamos el diseño visual. Usted aprueba antes de que comencemos a programar." },
-  { num: "04", title: "Desarrollo", desc: "Construimos su sitio con entregas parciales para que vea el avance." },
-  { num: "05", title: "Lanzamiento", desc: "Publicamos su sitio, lo capacitamos y le damos soporte post-lanzamiento." }
+  { num: "01", title: "Consulta Gratis", desc: "Conversamos sobre su proyecto y objetivos. Respuesta en menos de 24 horas." },
+  { num: "02", title: "Propuesta", desc: "Cotización con alcance exacto, cronograma y precio fijo. Sin letra pequeña." },
+  { num: "03", title: "Diseño en Figma", desc: "Creamos el diseño completo. Usted aprueba antes de que inicie el desarrollo." },
+  { num: "04", title: "Desarrollo", desc: "Código moderno, rápido y seguro. Avances regulares para que esté siempre informado." },
+  { num: "05", title: "Lanzamiento", desc: "Publicación, Analytics, capacitación y 30 días de soporte post-lanzamiento." }
 ];
 
 // Stats
 const stats = [
-  { value: "500+", label: "Proyectos Entregados" },
-  { value: "98%", label: "Clientes Satisfechos" },
-  { value: "5+", label: "Años de Experiencia" },
-  { value: "24h", label: "Tiempo de Respuesta" }
+  { value: "500+", label: "Proyectos entregados" },
+  { value: "127+", label: "Reseñas 5 estrellas" },
+  { value: "5+", label: "Años de experiencia" },
+  { value: "24h", label: "Tiempo de respuesta" }
 ];
+
+// Comparison
+const comparison = [
+  { feature: "Diseño personalizado", codebrand: true, plantilla: false, freelancer: "partial" },
+  { feature: "SEO técnico incluido", codebrand: true, plantilla: false, freelancer: "partial" },
+  { feature: "Velocidad 90+ PageSpeed", codebrand: true, plantilla: false, freelancer: "partial" },
+  { feature: "Código propio (sin lock-in)", codebrand: true, plantilla: false, freelancer: true },
+  { feature: "Soporte post-lanzamiento", codebrand: true, plantilla: false, freelancer: false },
+  { feature: "Equipo completo (dev + diseño)", codebrand: true, plantilla: false, freelancer: false },
+];
+
+const WA = "https://wa.me/50432722973";
+const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z`;
 ---
 
 <HnLayout
@@ -140,198 +170,237 @@ const stats = [
   />
 
   <style>
-    .page-bg { background: #030303; }
-    .gradient-orbs {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.5;
-      animation: float 20s ease-in-out infinite;
-    }
-    .orb-1 {
-      width: 600px;
-      height: 600px;
-      background: linear-gradient(135deg, #06b6d4, #3b82f6);
-      top: -200px;
-      left: -100px;
-    }
-    .orb-2 {
-      width: 500px;
-      height: 500px;
-      background: linear-gradient(135deg, #8b5cf6, #06b6d4);
-      top: 50%;
-      right: -150px;
-      animation-delay: -7s;
-    }
-    .orb-3 {
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(135deg, #10b981, #06b6d4);
-      bottom: -100px;
-      left: 30%;
-      animation-delay: -14s;
-    }
+    /* ─── Base ─────────────────────────────────────────────── */
+    .page-bg { background: #050508; }
+
+    /* ─── Orbs ─────────────────────────────────────────────── */
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(100px); animation: float 22s ease-in-out infinite; }
+    .orb-1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(6,182,212,0.35), rgba(59,130,246,0.2)); top: -250px; left: -150px; }
+    .orb-2 { width: 550px; height: 550px; background: radial-gradient(circle, rgba(139,92,246,0.3), rgba(6,182,212,0.15)); top: 45%; right: -180px; animation-delay: -8s; }
+    .orb-3 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(16,185,129,0.2), rgba(6,182,212,0.15)); bottom: -120px; left: 35%; animation-delay: -16s; }
     @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -30px) scale(1.05); }
-      66% { transform: translate(-20px, 20px) scale(0.95); }
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33%  { transform: translate(25px,-25px) scale(1.04); }
+      66%  { transform: translate(-18px,18px) scale(0.96); }
     }
     .noise {
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      opacity: 0.03;
-      pointer-events: none;
-      z-index: 1;
+      position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
+
+    /* ─── Typography ────────────────────────────────────────── */
     .text-display {
-      font-size: clamp(3rem, 12vw, 10rem);
-      line-height: 0.9;
-      letter-spacing: -0.04em;
+      font-size: clamp(2rem, 4.5vw, 3.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
       font-weight: 800;
     }
     .text-gradient {
-      background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #8b5cf6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 55%, #818cf8 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .text-gradient-animate {
-      background: linear-gradient(135deg, #22d3ee, #3b82f6, #8b5cf6, #22d3ee);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradient-shift 8s ease infinite;
+      background: linear-gradient(130deg, #22d3ee, #3b82f6, #8b5cf6, #22d3ee);
+      background-size: 280% 280%;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      animation: grad-shift 9s ease infinite;
     }
-    @keyframes gradient-shift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    @keyframes grad-shift {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
     }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: #22d3ee; margin-bottom: 1.25rem;
+    }
+    .section-label::before {
+      content: ""; display: block; width: 2rem; height: 1.5px;
+      background: linear-gradient(90deg, #22d3ee, #3b82f6);
+      border-radius: 2px; flex-shrink: 0;
+    }
+
+    /* ─── Glass ─────────────────────────────────────────────── */
     .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
+      background: rgba(255,255,255,0.028);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
     }
-    .glass-hover {
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    .card-lift {
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.45s cubic-bezier(0.4,0,0.2,1),
+                  border-color 0.45s ease,
+                  background 0.45s ease;
     }
-    .glass-hover:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px -12px rgba(0,0,0,0.55);
+      border-color: rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.05);
     }
-    .service-icon {
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      transition: all 0.4s ease;
+    .card-accent-top {
+      position: relative; overflow: hidden;
     }
-    .glass-hover:hover .service-icon {
-      transform: scale(1.1) rotate(5deg);
+    .card-accent-top::before {
+      content: ""; position: absolute; top: 0; inset-x: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(6,182,212,0.7), rgba(139,92,246,0.5), transparent);
     }
+
+    /* ─── Buttons ───────────────────────────────────────────── */
     .btn-primary {
-      background: linear-gradient(135deg, #06b6d4, #3b82f6);
-      color: #fff;
-      font-weight: 600;
-      padding: 1.25rem 3rem;
-      border-radius: 100px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px -3px rgba(6, 182, 212, 0.4);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      background: linear-gradient(135deg, #0891b2, #2563eb);
+      color: #fff; font-weight: 600; border-radius: 100px;
+      padding: 1.1rem 2.5rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 0 4px 20px -4px rgba(6,182,212,0.45);
     }
-    .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.5);
-    }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 40px -8px rgba(6,182,212,0.55); }
     .btn-whatsapp {
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: #fff;
-      font-weight: 600;
-      padding: 1.25rem 3rem;
-      border-radius: 100px;
-      transition: all 0.4s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      box-shadow: 0 4px 15px -3px rgba(37, 211, 102, 0.4);
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff; font-weight: 600; border-radius: 100px;
+      padding: 1.1rem 2.5rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 20px -4px rgba(34,197,94,0.45);
     }
-    .btn-whatsapp:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 20px 40px -10px rgba(37, 211, 102, 0.5);
-    }
+    .btn-whatsapp:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 40px -8px rgba(34,197,94,0.55); }
     .btn-ghost {
-      color: #fff;
-      font-weight: 500;
-      padding: 1.25rem 3rem;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.4s ease;
+      color: rgba(255,255,255,0.8); font-weight: 500; border-radius: 100px;
+      padding: 1.1rem 2.5rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      transition: all 0.35s ease;
     }
-    .btn-ghost:hover {
-      border-color: rgba(6, 182, 212, 0.5);
-      background: rgba(6, 182, 212, 0.1);
+    .btn-ghost:hover { border-color: rgba(34,211,238,0.45); background: rgba(34,211,238,0.07); color: #fff; }
+    .btn-outline {
+      color: #fff; font-weight: 600; border-radius: 100px;
+      padding: 1.1rem 2.5rem;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.04);
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      transition: all 0.35s ease;
     }
-    .fade-up {
-      opacity: 0;
-      transform: translateY(60px);
-      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    .btn-outline:hover { border-color: rgba(34,211,238,0.7); background: rgba(34,211,238,0.1); color: #22d3ee; }
+
+    /* ─── Animations ────────────────────────────────────────── */
+    @keyframes heroUp {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
+    .hero-in { animation: heroUp 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+    .d0 { animation-delay: 0s; }
+    .d1 { animation-delay: 0.12s; }
+    .d2 { animation-delay: 0.24s; }
+    .d3 { animation-delay: 0.36s; }
+    .d4 { animation-delay: 0.5s; }
+    .fade-up { opacity: 0; transform: translateY(50px); transition: opacity 1.1s cubic-bezier(0.16,1,0.3,1), transform 1.1s cubic-bezier(0.16,1,0.3,1); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .delay-1 { transition-delay: 0.15s; }
-    .delay-2 { transition-delay: 0.3s; }
-    .delay-3 { transition-delay: 0.45s; }
-    .delay-4 { transition-delay: 0.6s; }
-    .stat-card { text-align: center; padding: 2rem 1rem; }
-    .stat-number {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 800;
-      line-height: 1;
-    }
-    .price-tag {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      background: rgba(6, 182, 212, 0.2);
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      border-radius: 100px;
-      font-size: 0.875rem;
-      color: #22d3ee;
-      margin-top: 1rem;
-    }
-    .glow { position: relative; }
-    .glow::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+    .stagger-5 { transition-delay: 0.40s; }
+    .stagger-6 { transition-delay: 0.48s; }
+
+    /* ─── Misc ──────────────────────────────────────────────── */
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent); }
+    .glow-ring::before {
+      content: ""; position: absolute; inset: -1px;
       background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6);
-      border-radius: inherit;
-      z-index: -1;
-      opacity: 0;
-      filter: blur(15px);
-      transition: opacity 0.4s;
+      border-radius: inherit; z-index: -1; opacity: 0;
+      filter: blur(14px); transition: opacity 0.4s;
     }
-    .glow:hover::before { opacity: 0.5; }
+    .glow-ring:hover::before { opacity: 0.45; }
+    .glow-ring { position: relative; }
+    .price-chip {
+      display: inline-flex; align-items: center;
+      padding: 0.3rem 0.85rem; border-radius: 100px;
+      background: rgba(6,182,212,0.12); border: 1px solid rgba(6,182,212,0.25);
+      font-size: 0.8rem; color: #22d3ee; font-weight: 500;
+    }
+    .check  { color: #34d399; }
+    .cross  { color: rgba(255,255,255,0.18); }
+    .partial { color: #fbbf24; }
+    .scroll-anchor { scroll-margin-top: 5rem; }
+
+    /* ─── Trust marquee ─────────────────────────────────────── */
+    .trust-wrap {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    }
+    .trust-track { animation: trust-scroll 30s linear infinite; width: max-content; }
+    .trust-track:hover { animation-play-state: paused; }
+    @keyframes trust-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ─── Performance widget ────────────────────────────────── */
+    .perf-card {
+      background: rgba(10,10,18,0.85);
+      border: 1px solid rgba(255,255,255,0.09);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+    .perf-topbar {
+      background: rgba(255,255,255,0.025);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .perf-tab {
+      color: rgba(255,255,255,0.3);
+      transition: all 0.2s ease;
+    }
+    .perf-tab.active {
+      background: rgba(6,182,212,0.15);
+      border: 1px solid rgba(6,182,212,0.3);
+      color: #22d3ee;
+    }
+    /* ring + counter driven by JS IntersectionObserver */
+    .perf-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.75rem; height: 1.75rem; border-radius: 50%;
+      font-size: 0.6rem; font-weight: 800;
+    }
+    .perf-badge.green {
+      background: rgba(12,206,107,0.12);
+      border: 1px solid rgba(12,206,107,0.3);
+      color: #0CCE6B;
+    }
+    .cwv-dot {
+      width: 0.45rem; height: 0.45rem; border-radius: 50%; flex-shrink: 0;
+    }
+    .cwv-dot.green { background: #0CCE6B; box-shadow: 0 0 6px rgba(12,206,107,0.6); }
+    .cwv-dot.orange { background: #FFA400; }
+    .cwv-dot.red { background: #FF4E42; }
+
+    /* ─── Process ───────────────────────────────────────────── */
+    .process-num {
+      width: 3rem; height: 3rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 800; letter-spacing: 0.05em;
+      background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(59,130,246,0.15));
+      border: 1px solid rgba(6,182,212,0.35);
+      color: #67e8f9; flex-shrink: 0;
+    }
+
+    /* ─── Pricing ───────────────────────────────────────────── */
+    .price-featured {
+      background: linear-gradient(160deg, rgba(6,182,212,0.1), rgba(59,130,246,0.07), rgba(139,92,246,0.05));
+      border-color: rgba(6,182,212,0.5);
+      box-shadow: 0 0 80px -20px rgba(6,182,212,0.25), inset 0 1px 0 rgba(6,182,212,0.3);
+    }
   </style>
 
-  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+  <!-- Prevent white flash: set body bg before any content renders -->
+  <style is:global>
+    body { background: #050508; }
+  </style>
+
+  <div class="page-bg min-h-screen relative text-white overflow-x-hidden">
     <div class="gradient-orbs">
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
@@ -340,220 +409,631 @@ const stats = [
     <div class="noise"></div>
 
     <div class="relative z-10">
-      <!-- HERO -->
-      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+
+      <!-- ══════════════════════════════════════════════════════
+           HERO
+      ══════════════════════════════════════════════════════ -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-28 pb-16 lg:pt-32">
         <div class="max-w-7xl mx-auto w-full">
-          <div class="fade-up mb-10">
-            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-cyan-500/20">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span class="text-cyan-300 text-sm font-medium">Agencia de Diseño y Desarrollo Web en Honduras</span>
-            </span>
-          </div>
+          <div class="grid lg:grid-cols-2 xl:grid-cols-[1fr_480px] gap-16 xl:gap-20 items-center">
 
-          <h1 class="text-display mb-6">
-            <span class="fade-up delay-1 block text-white">Diseño y</span>
-            <span class="fade-up delay-2 block text-gradient-animate">Desarrollo Web en Honduras</span>
-          </h1>
-
-          <p class="fade-up delay-3 text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
-            Creamos páginas web para empresas, emprendedores y marcas en Honduras.<br class="hidden md:block" />
-            Diseño web profesional, tiendas online y sistemas web desde $650 USD.
-          </p>
-
-          <div class="fade-up delay-4 flex flex-wrap gap-5 mb-24">
-            <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20información%20sobre%20desarrollo%20web" class="btn-whatsapp glow" target="_blank" rel="noopener noreferrer">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp Directo
-            </a>
-            <a href="/contact" class="btn-ghost">Ver Portafolio</a>
-          </div>
-
-          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {stats.map((stat) => (
-              <div class="stat-card glass rounded-2xl">
-                <div class="stat-number text-gradient">{stat.value}</div>
-                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+            <!-- Left: copy -->
+            <div>
+              <div class="hero-in d0 mb-7">
+                <span class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-semibold tracking-wide text-cyan-300 border border-cyan-500/20 bg-cyan-500/5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Agencia digital · San Pedro Sula, Honduras
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <!-- ABOUT -->
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="fade-up">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Sobre Nosotros</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Agencia de diseño y desarrollo web en Honduras</h2>
-            <div class="prose prose-lg prose-invert max-w-none">
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                Somos una <strong class="text-white">agencia de diseño y desarrollo web en Honduras</strong> con más de 5 años de experiencia creando páginas web, sitios corporativos y aplicaciones para empresas locales e internacionales. Combinamos <strong class="text-white">estándares internacionales de calidad</strong> con un profundo conocimiento del mercado hondureño. También ofrecemos <a href="/hn/tienda-online-honduras" class="text-cyan-400 hover:text-cyan-300 underline">tiendas online</a> y <a href="/hn/seo-honduras" class="text-cyan-400 hover:text-cyan-300 underline">servicios de SEO</a>.
+              <h1 class="text-display mb-6">
+                <span class="hero-in d1 block text-white">Páginas Web que</span>
+                <span class="hero-in d2 block text-gradient-animate">Consiguen Clientes</span>
+                <span class="hero-in d3 block text-white/90">para su Empresa</span>
+              </h1>
+
+              <p class="hero-in d3 text-lg md:text-xl text-neutral-400 max-w-xl mb-10 leading-relaxed">
+                Diseño profesional, código rápido y SEO incluido desde el primer día.
+                No plantillas — cada proyecto es único y hecho a medida.
               </p>
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                Nuestro equipo está basado en Honduras, lo que significa que puede <strong class="text-white">reunirse con nosotros presencialmente</strong>, comunicarse fácilmente por WhatsApp y recibir atención personalizada en español. Trabajamos con negocios en Tegucigalpa, San Pedro Sula, La Ceiba y otras ciudades del país. Entendemos las necesidades de las empresas hondureñas y ofrecemos soluciones adaptadas a su realidad. Vea nuestros <a href="/hn/sitios-web-empresas-honduras" class="text-cyan-400 hover:text-cyan-300 underline">sitios web para empresas</a>.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                Trabajamos con empresas de todos los tamaños: desde emprendedores que buscan crear su primera página web hasta corporaciones que necesitan modernizar su presencia digital. Desarrollamos sitios web pensados para generar confianza, atraer prospectos y convertir visitas en oportunidades reales de venta.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed">
-                <strong class="text-white">Nuestro compromiso:</strong> entregar páginas web profesionales que no solo se vean bien, sino que también le ayuden a conseguir más clientes, más ventas y más crecimiento en Honduras. <span class="text-neutral-500 text-sm">(English: <a href="/web-development-agency" class="text-cyan-400 hover:text-cyan-300 underline">Web Development Agency</a>)</span>
-              </p>
+
+              <div class="hero-in d4 flex flex-wrap gap-3 mb-12">
+                <a href={`${WA}?text=Hola,%20me%20interesa%20cotizar%20un%20sitio%20web`} class="btn-whatsapp glow-ring" target="_blank" rel="noopener noreferrer">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+                  Cotizar por WhatsApp
+                </a>
+                <a href="#servicios" class="btn-ghost">
+                  Ver servicios
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </a>
+              </div>
+
+              <!-- Stats row -->
+              <div class="hero-in d4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {stats.map((s) => (
+                  <div class="glass rounded-2xl px-4 py-5 text-center">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-gradient leading-none mb-1">{s.value}</div>
+                    <div class="text-neutral-500 text-xs leading-snug">{s.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- SERVICES -->
-      <section class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Servicios</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white">Servicios de desarrollo web en Honduras</h2>
-          </div>
+            <!-- Right: performance widget (desktop only) -->
+            <div class="hidden lg:block hero-in d3" id="perf-widget">
+              <div class="perf-card rounded-3xl overflow-hidden shadow-2xl relative">
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((service, i) => (
-              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
-                <div class="service-icon mb-6">{service.icon}</div>
-                <h3 class="text-xl font-semibold text-white mb-3">{service.title}</h3>
-                <p class="text-neutral-400 leading-relaxed">{service.desc}</p>
-                <span class="price-tag">{service.price}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- WHY US -->
-      <section class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Por Qué Elegirnos</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white">Por qué elegir nuestra agencia web en Honduras</h2>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {benefits.map((item, i) => (
-              <div class="fade-up glass p-8" style={`transition-delay: ${i * 0.08}s`}>
-                <div class="text-3xl mb-4">{item.icon}</div>
-                <h3 class="text-xl font-semibold text-white mb-3">{item.title}</h3>
-                <p class="text-neutral-400 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- PROCESS -->
-      <section class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Proceso</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Cómo trabajamos en su proyecto web</h2>
-            <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
-              Un proceso claro para diseñar y desarrollar su sitio web en Honduras, de principio a fin.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {process.map((step, i) => (
-              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.1}s`}>
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-300 font-bold mb-6">
-                  {step.num}
+                <!-- Verified ribbon -->
+                <div class="absolute top-3.5 right-3.5 z-10 flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-2.5 py-1">
+                  <svg class="w-2.5 h-2.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span class="text-[9px] font-bold text-emerald-400 tracking-wide">Resultado verificado</span>
                 </div>
-                <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
-                <p class="text-neutral-400 leading-relaxed">{step.desc}</p>
+
+                <!-- Browser chrome -->
+                <div class="perf-topbar px-4 py-2.5 flex items-center gap-3">
+                  <div class="flex items-center gap-1.5 shrink-0">
+                    <div class="w-2 h-2 rounded-full bg-red-400/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-amber-400/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-emerald-400/50"></div>
+                  </div>
+                  <div class="flex items-center gap-1.5 bg-white/5 rounded-md px-2.5 py-1 flex-1 min-w-0">
+                    <svg class="w-2.5 h-2.5 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                    <span class="text-[10px] text-neutral-500 font-mono truncate">pagespeed.web.dev · suempresa.com</span>
+                  </div>
+                </div>
+
+                <!-- Main score — centered and dominant -->
+                <div class="px-6 pt-6 pb-4 text-center">
+                  <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-600 mb-5">Auditoría de Rendimiento · Mobile</p>
+
+                  <!-- Glow + ring -->
+                  <div class="relative inline-flex items-center justify-center mb-5">
+                    <div class="absolute w-40 h-40 rounded-full bg-emerald-500/8 blur-2xl pointer-events-none"></div>
+                    <svg class="w-36 h-36 -rotate-90 relative z-10" viewBox="0 0 120 120">
+                      <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="7"/>
+                      <circle cx="60" cy="60" r="52" fill="none" stroke="url(#pgMain)" stroke-width="7"
+                        stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"
+                        id="perf-ring" style="transition: stroke-dashoffset 1.8s cubic-bezier(0.16,1,0.3,1) 0.3s"/>
+                      <defs>
+                        <linearGradient id="pgMain" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#0CCE6B"/>
+                          <stop offset="55%" stop-color="#22d3ee"/>
+                          <stop offset="100%" stop-color="#3b82f6"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                      <span id="perf-counter" class="text-4xl font-black text-white leading-none tabular-nums">0</span>
+                      <span class="text-[10px] text-neutral-500 mt-1 tracking-wider">/ 100</span>
+                    </div>
+                  </div>
+
+                  <!-- 4 category scores -->
+                  <div class="grid grid-cols-4 gap-2">
+                    {[
+                      { score: 98,  label: "Rendimiento" },
+                      { score: 100, label: "Accesibilidad" },
+                      { score: 95,  label: "Buenas prácticas" },
+                      { score: 100, label: "SEO" },
+                    ].map((cat) => (
+                      <div class="flex flex-col items-center gap-1.5">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center">
+                          <span class="text-xs font-extrabold text-emerald-400">{cat.score}</span>
+                        </div>
+                        <span class="text-[8px] text-neutral-600 leading-tight text-center">{cat.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="mx-5 h-px bg-white/5"></div>
+
+                <!-- Core Web Vitals -->
+                <div class="px-5 py-4 space-y-3">
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-600">Core Web Vitals</p>
+                    <span class="flex items-center gap-1 text-[9px] text-emerald-500 font-semibold">
+                      <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                      Aprobado
+                    </span>
+                  </div>
+                  {[
+                    { short: "FCP", label: "Carga inicial",      value: "0.6s",  pct: 94 },
+                    { short: "LCP", label: "Carga principal",    value: "1.1s",  pct: 89 },
+                    { short: "TBT", label: "Bloqueo total",      value: "0 ms",  pct: 100 },
+                    { short: "CLS", label: "Estabilidad visual", value: "0.001", pct: 100 },
+                  ].map((m) => (
+                    <div class="flex items-center gap-2.5">
+                      <span class="cwv-dot green shrink-0"></span>
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-center justify-between gap-1 mb-1">
+                          <div class="flex items-center gap-1.5 min-w-0">
+                            <span class="text-[9px] font-bold text-neutral-500 shrink-0">{m.short}</span>
+                            <span class="text-[10px] text-neutral-400 truncate">{m.label}</span>
+                          </div>
+                          <span class="text-[10px] font-bold text-emerald-400 shrink-0">{m.value}</span>
+                        </div>
+                        <div class="h-0.75 bg-white/5 rounded-full overflow-hidden">
+                          <div class="h-full bg-linear-to-r from-emerald-500 to-cyan-400 rounded-full" style={`width:${m.pct}%`}></div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <!-- Footer -->
+                <div class="px-5 py-2.5 border-t border-white/5 flex items-center justify-between bg-white/1.5">
+                  <div class="flex items-center gap-1.5 text-neutral-600">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <span class="text-[9px]">Google Lighthouse · Codebrand 2026</span>
+                  </div>
+                  <span class="text-[9px] font-semibold text-emerald-400">✓ Verificado</span>
+                </div>
+
               </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           TRUST BADGES
+      ══════════════════════════════════════════════════════ -->
+      <div class="py-12 px-6 border-y border-white/5">
+        <p class="section-label justify-center mb-8">Reconocidos por las principales plataformas de agencias globales</p>
+        <div class="trust-wrap max-w-5xl mx-auto">
+          <div class="trust-track flex items-center gap-14 sm:gap-20">
+            {[
+              { name: "Clutch",       url: "https://clutch.co/profile/codebrand",                  logo: "/photos/clutch.webp" },
+              { name: "GoodFirms",    url: "https://www.goodfirms.co/company/codebrand",            logo: "/photos/gf-logo-horizontal.webp" },
+              { name: "DesignRush",   url: "https://www.designrush.com/agency/profile/codebrand",   logo: "/photos/designrush.webp" },
+              { name: "TechBehemoths",url: "https://techbehemoths.com/company/codebrand",           logo: "/photos/techbehemoths_logo.webp" },
+              { name: "Google",       url: "https://g.page/r/codebrand/review",                     logo: "/photos/Google-Review-Logo.webp" },
+              { name: "Sortlist",     url: "https://www.sortlist.com/agency/codebrand",             logo: "/photos/sorlistlogo.webp" },
+              { name: "Clutch",       url: "https://clutch.co/profile/codebrand",                  logo: "/photos/clutch.webp" },
+              { name: "GoodFirms",    url: "https://www.goodfirms.co/company/codebrand",            logo: "/photos/gf-logo-horizontal.webp" },
+              { name: "DesignRush",   url: "https://www.designrush.com/agency/profile/codebrand",   logo: "/photos/designrush.webp" },
+              { name: "TechBehemoths",url: "https://techbehemoths.com/company/codebrand",           logo: "/photos/techbehemoths_logo.webp" },
+              { name: "Google",       url: "https://g.page/r/codebrand/review",                     logo: "/photos/Google-Review-Logo.webp" },
+              { name: "Sortlist",     url: "https://www.sortlist.com/agency/codebrand",             logo: "/photos/sorlistlogo.webp" },
+            ].map((b) => (
+              <a href={b.url} target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-25 hover:opacity-55 transition-opacity duration-300" title={b.name}>
+                <img src={b.logo} alt={b.name} width="110" height="36" class="h-7 sm:h-8 w-auto" style="filter:brightness(0) invert(1)" loading="lazy" decoding="async"/>
+              </a>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- PRICING -->
-      <section class="py-32 px-6">
+      <!-- ══════════════════════════════════════════════════════
+           ABOUT
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-28 px-6">
         <div class="max-w-6xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Precios</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Inversión transparente</h2>
-            <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
-              Precios claros sin sorpresas. Facilidades de pago disponibles.
-            </p>
-          </div>
+          <div class="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
 
-          <div class="grid md:grid-cols-3 gap-6">
-            <div class="fade-up glass glass-hover p-8">
-              <h3 class="text-2xl font-bold text-white mb-2">Sitio Web Básico</h3>
-              <p class="text-neutral-400 mb-6">Ideal para emprendedores y negocios pequeños</p>
-              <div class="mb-6">
-                <span class="text-4xl font-bold text-white">$650 USD</span>
-              </div>
-              <ul class="space-y-3 mb-8">
-                {["5 páginas", "Diseño responsive", "SEO básico", "Hosting 1 año", "Dominio incluido", "Certificado SSL"].map((item) => (
-                  <li class="flex items-center gap-3 text-neutral-300">
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
+            <div class="fade-up">
+              <span class="section-label">Quiénes somos</span>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.12] mb-6">
+                Diseño de clase mundial.<br/>
+                <span class="text-gradient">Precio local.</span>
+              </h2>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-5">
+                Somos una <strong class="text-white font-semibold">agencia de desarrollo web hondureña</strong> con más de 5 años construyendo páginas web, tiendas online y aplicaciones para empresas locales e internacionales. Usamos las mismas tecnologías y metodologías que las mejores agencias del mundo.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                Trabajamos con empresas en Tegucigalpa, San Pedro Sula, La Ceiba y todo Honduras. Puede <strong class="text-white font-semibold">reunirse con nosotros en persona</strong>, comunicarse por WhatsApp y recibir atención directa en español — sin intermediarios.
+              </p>
+              <div class="flex flex-wrap gap-2.5">
+                {["🇭🇳 Equipo local", "⚡ 90+ PageSpeed", "🔍 SEO incluido", "📱 100% Responsive", "✅ Sin plantillas"].map((t) => (
+                  <span class="glass rounded-full px-4 py-1.5 text-sm text-neutral-300">{t}</span>
                 ))}
-              </ul>
-              <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20el%20plan%20Sitio%20Web%20Básico" class="btn-ghost w-full text-center block" target="_blank" rel="noopener noreferrer">
-                Cotizar
-              </a>
+              </div>
             </div>
 
-            <div class="fade-up glass glass-hover p-8 border-cyan-500/30" style="transition-delay: 0.1s">
-              <span class="inline-block text-xs font-semibold text-cyan-300 bg-cyan-500/20 px-3 py-1.5 rounded-full mb-6">Más Popular</span>
-              <h3 class="text-2xl font-bold text-white mb-2">Sitio Empresarial</h3>
-              <p class="text-neutral-400 mb-6">Para empresas que quieren destacar</p>
-              <div class="mb-6">
-                <span class="text-4xl font-bold text-white">$1,800 USD</span>
-              </div>
-              <ul class="space-y-3 mb-8">
-                {["10+ páginas", "Diseño premium", "SEO avanzado", "Blog integrado", "Formularios", "Analytics", "Hosting 1 año", "Soporte 3 meses"].map((item) => (
-                  <li class="flex items-center gap-3 text-neutral-300">
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20el%20plan%20Sitio%20Empresarial" class="btn-primary w-full text-center block" target="_blank" rel="noopener noreferrer">
-                Cotizar
-              </a>
+            <div class="grid grid-cols-2 gap-3">
+              {[
+                { num: "500+", label: "Proyectos entregados globalmente" },
+                { num: "127+", label: "Reseñas de 5 estrellas verificadas" },
+                { num: "5+",   label: "Años de experiencia en el mercado" },
+                { num: "90+",  label: "Puntuación promedio en PageSpeed" },
+              ].map((item, i) => (
+                <div class={`fade-up glass card-accent-top rounded-2xl p-6 text-center stagger-${i+1}`}>
+                  <div class="text-3xl xl:text-4xl font-extrabold text-gradient leading-none mb-2">{item.num}</div>
+                  <div class="text-neutral-500 text-xs leading-snug">{item.label}</div>
+                </div>
+              ))}
             </div>
 
-            <div class="fade-up glass glass-hover p-8" style="transition-delay: 0.2s">
-              <h3 class="text-2xl font-bold text-white mb-2">Tienda Online</h3>
-              <p class="text-neutral-400 mb-6">E-commerce completo para vender en línea</p>
-              <div class="mb-6">
-                <span class="text-4xl font-bold text-white">$2,900 USD</span>
-              </div>
-              <ul class="space-y-3 mb-8">
-                {["Catálogo productos", "Carrito de compras", "Pagos en línea", "Gestión inventario", "Envíos", "Panel admin", "Hosting 1 año", "Soporte 6 meses"].map((item) => (
-                  <li class="flex items-center gap-3 text-neutral-300">
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a href="https://wa.me/50432722973?text=Hola,%20me%20interesa%20el%20plan%20Tienda%20Online" class="btn-ghost w-full text-center block" target="_blank" rel="noopener noreferrer">
-                Cotizar
-              </a>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SERVICES
+      ══════════════════════════════════════════════════════ -->
+      <section id="servicios" class="py-28 px-6 scroll-anchor">
+        <div class="max-w-7xl mx-auto">
+
+          <div class="fade-up text-center mb-16">
+            <span class="section-label justify-center">Servicios</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Todo lo que necesita,<br/><span class="text-gradient">bajo un mismo techo</span>
+            </h2>
+            <p class="text-neutral-400 text-lg max-w-xl mx-auto">
+              Desde su primera página hasta sistemas empresariales complejos — con diseño, código y estrategia integrados.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.map((s, i) => (
+              <div class={`fade-up glass card-lift card-accent-top p-8 stagger-${i+1}`}>
+                <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center text-xl bg-linear-to-br from-cyan-500/15 to-blue-500/15 border border-white/8">
+                  {s.icon}
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">{s.title}</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed mb-5">{s.desc}</p>
+                <span class="price-chip">{s.price}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="fade-up text-center mt-10">
+            <p class="text-neutral-500 text-sm">
+              ¿Busca algo diferente?{" "}
+              <a href={`${WA}?text=Hola,%20tengo%20un%20proyecto%20que%20quisiera%20cotizar`} class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors" target="_blank" rel="noopener noreferrer">
+                Cuéntenos su proyecto
+              </a>{" "}
+              — le damos solución en 24 horas.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           INDUSTRIES
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+
           <div class="fade-up text-center mb-12">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Preguntas Frecuentes</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Resolvemos tus dudas</h2>
+            <span class="section-label justify-center">Industrias</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Su industria,<br/><span class="text-gradient">nuestra especialidad</span>
+            </h2>
+            <p class="text-neutral-400 text-base max-w-md mx-auto">
+              Más de 500 proyectos en todos los sectores del mercado hondureño.
+            </p>
+          </div>
+
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {industries.map((ind) => (
+              <div class="glass rounded-full px-5 py-3 flex items-center gap-2.5">
+                <span class="text-lg leading-none">{ind.icon}</span>
+                <span class="text-neutral-300 text-sm font-medium whitespace-nowrap">{ind.name}</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           WHY US
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-[360px_1fr] xl:grid-cols-[420px_1fr] gap-16 items-start">
+
+            <!-- Left: intro -->
+            <div class="fade-up lg:sticky lg:top-28">
+              <span class="section-label">Por qué elegirnos</span>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.12] mb-5">
+                No somos una agencia más.<br/>
+                <span class="text-gradient">Somos su equipo.</span>
+              </h2>
+              <p class="text-neutral-400 text-base leading-relaxed mb-8">
+                En Codebrand no asignamos account managers que hablan por teléfono. Habla directo con quien diseña y programa su proyecto, desde el primer día hasta el lanzamiento.
+              </p>
+              <a href={`${WA}?text=Hola,%20me%20interesa%20trabajar%20con%20Codebrand`} class="btn-primary glow-ring" target="_blank" rel="noopener noreferrer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+                Hablar con el equipo
+              </a>
+            </div>
+
+            <!-- Right: benefit list -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              {benefits.map((b, i) => (
+                <div class={`fade-up glass card-lift p-6 rounded-2xl stagger-${i+1}`}>
+                  <div class="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/25 flex items-center justify-center mb-4">
+                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <h3 class="text-base font-bold text-white mb-2">{b.title}</h3>
+                  <p class="text-neutral-400 text-sm leading-relaxed">{b.desc}</p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           COMPARISON
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+
+          <div class="fade-up text-center mb-14">
+            <span class="section-label justify-center">Comparativa</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Codebrand vs<br/><span class="text-gradient">otras opciones</span>
+            </h2>
+            <p class="text-neutral-400 text-base max-w-sm mx-auto">Antes de decidir, vea qué incluye cada opción.</p>
+          </div>
+
+          <!-- Mobile: cards -->
+          <div class="lg:hidden grid sm:grid-cols-3 gap-3 fade-up">
+            {[
+              { label: "Codebrand",    colorClass: "text-cyan-400", borderClass: "border-cyan-500/40 bg-cyan-500/5", key: "codebrand" },
+              { label: "Plantilla Web", colorClass: "text-neutral-400", borderClass: "border-white/8",               key: "plantilla" },
+              { label: "Freelancer",   colorClass: "text-neutral-400", borderClass: "border-white/8",               key: "freelancer" },
+            ].map((col) => (
+              <div class={`glass rounded-2xl overflow-hidden border ${col.borderClass}`}>
+                <div class="px-4 py-3 text-center border-b border-white/5">
+                  <span class={`text-sm font-bold ${col.colorClass}`}>{col.label}</span>
+                </div>
+                <ul class="divide-y divide-white/5">
+                  {comparison.map((row) => {
+                    const val = row[col.key as keyof typeof row];
+                    return (
+                      <li class="px-4 py-3 flex items-center justify-between gap-2">
+                        <span class="text-neutral-400 text-xs">{row.feature}</span>
+                        <span class={val === true ? 'check font-bold' : val === false ? 'cross font-bold' : 'partial font-bold'}>
+                          {val === true ? '✓' : val === false ? '✕' : '~'}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <!-- Desktop: table -->
+          <div class="hidden lg:block fade-up glass overflow-hidden rounded-2xl">
+            <!-- Header -->
+            <div class="grid grid-cols-4 px-6 py-4 border-b border-white/6">
+              <div class="text-neutral-500 text-xs font-semibold uppercase tracking-wider">Característica</div>
+              <div class="text-center">
+                <span class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-400 text-xs font-bold">Codebrand</span>
+              </div>
+              <div class="text-center text-neutral-500 text-xs font-semibold">Plantilla Web</div>
+              <div class="text-center text-neutral-500 text-xs font-semibold">Freelancer</div>
+            </div>
+            {comparison.map((row, i) => (
+              <div class={`grid grid-cols-4 px-6 py-4 text-sm border-b border-white/4 ${i % 2 === 0 ? 'bg-white/1.5' : ''}`}>
+                <div class="text-neutral-300 flex items-center">{row.feature}</div>
+                <div class="flex items-center justify-center">
+                  <span class="w-6 h-6 rounded-full bg-emerald-500/15 flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                </div>
+                <div class="flex items-center justify-center">
+                  {row.plantilla === false && <span class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></span>}
+                  {row.plantilla === true  && <span class="w-6 h-6 rounded-full bg-emerald-500/15 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>}
+                </div>
+                <div class="flex items-center justify-center">
+                  {row.freelancer === false    && <span class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></span>}
+                  {row.freelancer === true     && <span class="w-6 h-6 rounded-full bg-emerald-500/15 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>}
+                  {row.freelancer === "partial" && <span class="w-6 h-6 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400 text-xs font-bold">~</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="text-center text-neutral-600 text-xs mt-3">~ = Depende del freelancer específico</p>
+
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           PROCESS
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+
+          <div class="fade-up text-center mb-16">
+            <span class="section-label justify-center">Proceso</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              De la idea al lanzamiento<br/><span class="text-gradient">sin sorpresas</span>
+            </h2>
+            <p class="text-neutral-400 text-lg max-w-lg mx-auto">
+              Un proceso claro y colaborativo, en 5 pasos, de principio a fin.
+            </p>
+          </div>
+
+          <!-- Mobile/tablet: vertical timeline -->
+          <div class="lg:hidden grid lg:grid-cols-5 space-y-4 mb-0 fade-up">
+            {process.map((step, i) => (
+              <div class="flex gap-5 items-start">
+                <div class="flex flex-col items-center">
+                  <div class="process-num">{step.num}</div>
+                  {i < process.length - 1 && <div class="w-px flex-1 min-h-10 bg-linear-to-b from-cyan-500/30 to-transparent mt-2"></div>}
+                </div>
+                <div class="glass card-lift p-5 rounded-2xl flex-1 mb-1">
+                  <h3 class="text-base font-bold text-white mb-1">{step.title}</h3>
+                  <p class="text-neutral-400 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Desktop: horizontal cards -->
+          <div class="hidden lg:block relative">
+            <div class="absolute top-6 left-[calc(10%+24px)] right-[calc(10%+24px)] h-px bg-linear-to-r from-transparent via-cyan-500/25 to-transparent pointer-events-none"></div>
+            <div class="grid grid-cols-5 gap-4">
+              {process.map((step, i) => (
+                <div class={`fade-up glass card-lift p-5 rounded-2xl text-center stagger-${i+1}`}>
+                  <div class="process-num mx-auto mb-4">{step.num}</div>
+                  <h3 class="text-sm font-bold text-white mb-2">{step.title}</h3>
+                  <p class="text-neutral-400 text-xs leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           TECH MARQUEE
+      ══════════════════════════════════════════════════════ -->
+      <TechMarquee />
+
+      <!-- ══════════════════════════════════════════════════════
+           PRICING
+      ══════════════════════════════════════════════════════ -->
+      <section id="precios" class="py-28 px-6 scroll-anchor">
+        <div class="max-w-6xl mx-auto">
+
+          <div class="fade-up text-center mb-16">
+            <span class="section-label justify-center">Precios</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Inversión clara.<br/><span class="text-gradient">Sin letra pequeña.</span>
+            </h2>
+            <p class="text-neutral-400 text-lg max-w-lg mx-auto">
+              Precio fijo desde el primer día. Facilidades de pago disponibles. Cotización personalizada en 24 horas.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 items-start">
+
+            <!-- Plan 1 -->
+            <div class="fade-up glass card-lift card-accent-top p-8 rounded-2xl">
+              <p class="text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">Presencia Básica</p>
+              <h3 class="text-xl font-bold text-white mb-1">Sitio Web</h3>
+              <p class="text-neutral-500 text-sm mb-6">Para emprendedores y negocios que necesitan presencia digital profesional.</p>
+              <div class="mb-1">
+                <span class="text-5xl font-extrabold text-white tracking-tight">$1,500</span>
+                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
+              </div>
+              <p class="text-neutral-600 text-xs mb-7 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Entrega en 5–7 semanas
+              </p>
+              <ul class="space-y-2.5 mb-8">
+                {["5 páginas con diseño en Figma", "Diseño responsive (móvil + escritorio)", "SEO técnico completo", "Formulario de contacto", "Google Analytics integrado", "Certificado SSL", "30 días de soporte"].map((item) => (
+                  <li class="flex items-center gap-2.5 text-neutral-300 text-sm">
+                    <svg class="w-4 h-4 text-cyan-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${WA}?text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Web%20de%20$1,500`} class="btn-outline w-full justify-center" target="_blank" rel="noopener noreferrer">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+                Cotizar este plan
+              </a>
+            </div>
+
+            <!-- Plan 2 (featured) -->
+            <div class="fade-up glass card-lift card-accent-top price-featured p-8 rounded-2xl stagger-2">
+              <div class="flex items-center justify-between mb-4">
+                <p class="text-xs font-semibold tracking-widest uppercase text-cyan-500">Crecimiento Empresarial</p>
+                <span class="inline-flex items-center gap-1.5 bg-cyan-500/15 border border-cyan-500/30 rounded-full px-3 py-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                  <span class="text-[10px] font-bold text-cyan-400 tracking-wide">Más popular</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-1">Sitio Empresarial</h3>
+              <p class="text-neutral-400 text-sm mb-6">Para empresas que quieren crecer, posicionarse y generar más clientes.</p>
+              <div class="mb-1">
+                <span class="text-5xl font-extrabold text-white tracking-tight">$3,500</span>
+                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
+              </div>
+              <p class="text-neutral-500 text-xs mb-7 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Entrega en 8–12 semanas
+              </p>
+              <ul class="space-y-2.5 mb-8">
+                {["Hasta 10 páginas con sistema de diseño", "CMS para editar contenido sin código", "SEO avanzado — técnico + on-page", "Blog o sección de noticias", "Integraciones (CRM, email, formularios)", "Google Analytics + Search Console", "3 meses de soporte post-lanzamiento"].map((item) => (
+                  <li class="flex items-center gap-2.5 text-neutral-200 text-sm">
+                    <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${WA}?text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Empresarial%20de%20$3,500`} class="btn-primary w-full justify-center glow-ring" target="_blank" rel="noopener noreferrer">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+                Cotizar este plan
+              </a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="fade-up glass card-lift card-accent-top p-8 rounded-2xl stagger-3">
+              <p class="text-xs font-semibold tracking-widest uppercase text-neutral-500 mb-4">E-Commerce</p>
+              <h3 class="text-xl font-bold text-white mb-1">Tienda Online</h3>
+              <p class="text-neutral-500 text-sm mb-6">E-commerce completo para vender productos en línea en Honduras y el mundo.</p>
+              <div class="mb-1">
+                <span class="text-5xl font-extrabold text-white tracking-tight">$2,900</span>
+                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
+              </div>
+              <p class="text-neutral-600 text-xs mb-7 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Entrega en 12–18 semanas
+              </p>
+              <ul class="space-y-2.5 mb-8">
+                {["Catálogo de productos con variantes", "Carrito y checkout optimizado", "Pagos: PixelPay, BAC Credomatic, Stripe", "Gestión de inventario y pedidos", "Cálculo automático de envíos", "Panel administrativo completo", "6 meses de soporte post-lanzamiento"].map((item) => (
+                  <li class="flex items-center gap-2.5 text-neutral-300 text-sm">
+                    <svg class="w-4 h-4 text-cyan-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${WA}?text=Hola,%20me%20interesa%20cotizar%20una%20Tienda%20Online%20de%20$2,900`} class="btn-outline w-full justify-center" target="_blank" rel="noopener noreferrer">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+                Cotizar este plan
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Custom quote strip -->
+          <div class="fade-up mt-6">
+            <div class="glass rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-white/6">
+              <div>
+                <p class="text-white font-semibold text-sm">¿Proyecto personalizado o fuera de estos rangos?</p>
+                <p class="text-neutral-500 text-xs mt-0.5">Aplicaciones, sistemas empresariales, tiendas con catálogos avanzados — cotizamos sin compromiso.</p>
+              </div>
+              <a href={`${WA}?text=Hola,%20tengo%20un%20proyecto%20personalizado%20que%20quisiera%20cotizar`} class="btn-whatsapp whitespace-nowrap text-sm py-3 px-6 shrink-0" target="_blank" rel="noopener noreferrer">
+                Cotización a medida
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════
+           FAQ
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <span class="section-label justify-center">Preguntas frecuentes</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">Todo lo que necesita saber</h2>
+            <p class="text-neutral-400">Respuestas honestas antes de empezar su proyecto.</p>
           </div>
           <div class="fade-up">
             <FAQ faqs={faqs} theme="dark" client:visible />
@@ -561,42 +1041,157 @@ const stats = [
         </div>
       </section>
 
-      <!-- CTA -->
-      <section class="py-40 px-6 relative overflow-hidden">
+      <!-- ══════════════════════════════════════════════════════
+           CTA FINAL
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-32 px-6 relative overflow-hidden">
+        <!-- Glow bg -->
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
+          <div class="w-225 h-125 bg-cyan-600/10 rounded-full blur-[140px]"></div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-125 h-75 bg-blue-600/8 rounded-full blur-[100px]"></div>
         </div>
 
-        <div class="max-w-4xl mx-auto text-center relative">
-          <div class="fade-up">
-            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8 leading-[0.9]">
-              ¿Listo para<br />
-              <span class="text-gradient-animate">empezar?</span>
-            </h2>
-            <p class="text-xl md:text-2xl text-neutral-400 mb-12 max-w-xl mx-auto">
-              Consulta gratis. Cotización en 24 horas. Sin compromiso.
-            </p>
-            <a href="https://wa.me/50432722973?text=Hola,%20quiero%20cotizar%20un%20sitio%20web" class="btn-whatsapp inline-flex text-lg px-10 py-5 glow" target="_blank" rel="noopener noreferrer">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Contactar por WhatsApp
-            </a>
+        <div class="max-w-5xl mx-auto relative">
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <!-- Left: copy -->
+            <div class="fade-up">
+              <span class="section-label">Empiece hoy</span>
+              <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.06] mb-6">
+                ¿Listo para la<br/><span class="text-gradient-animate">mejor página web</span><br/>de su industria?
+              </h2>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Cuéntenos su proyecto por WhatsApp y le respondemos con una cotización detallada en menos de 24 horas. Sin compromiso, sin presión.
+              </p>
+            </div>
+
+            <!-- Right: action panel -->
+            <div class="fade-up glass card-accent-top rounded-3xl p-8 space-y-4 stagger-2">
+              <div class="flex items-center gap-3 mb-6">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                <span class="text-neutral-300 text-sm font-medium">Disponible ahora · Respuesta en menos de 24h</span>
+              </div>
+
+              <a href={`${WA}?text=Hola,%20quiero%20cotizar%20un%20sitio%20web%20para%20mi%20empresa`} class="btn-whatsapp w-full justify-center py-4 text-base glow-ring" target="_blank" rel="noopener noreferrer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+                Escribir por WhatsApp
+              </a>
+
+              <a href="/contact" class="btn-ghost w-full justify-center py-4 text-base">
+                Formulario de contacto
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+
+              <div class="pt-4 border-t border-white/6 space-y-3">
+                {[
+                  { icon: "✓", text: "Consulta inicial 100% gratuita" },
+                  { icon: "✓", text: "Precio fijo — sin cobros sorpresa" },
+                  { icon: "✓", text: "Pago en cuotas disponible" },
+                  { icon: "✓", text: "30 días de soporte post-lanzamiento" },
+                ].map((item) => (
+                  <div class="flex items-center gap-3 text-neutral-400 text-sm">
+                    <span class="text-emerald-400 font-bold shrink-0">{item.icon}</span>
+                    {item.text}
+                  </div>
+                ))}
+              </div>
+
+              <p class="text-neutral-600 text-xs text-center pt-2">
+                (English) Looking for US-market work?{" "}
+                <a href="/web-development-agency" class="text-cyan-500 hover:text-cyan-400 underline underline-offset-2">Visit our English site →</a>
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
+
+    </div>
+  </div>
+
+  <!-- ── STICKY MOBILE CTA ── -->
+  <div id="sticky-cta" class="fixed bottom-0 inset-x-0 z-50 lg:hidden translate-y-full transition-transform duration-300 ease-out">
+    <div class="bg-[#050508]/95 backdrop-blur-xl border-t border-white/8 px-4 py-3">
+      <a href={`${WA}?text=Hola,%20quiero%20cotizar%20un%20sitio%20web%20para%20mi%20empresa`}
+        class="flex items-center justify-center gap-2.5 w-full bg-linear-to-r from-[#22c55e] to-[#16a34a] text-white font-semibold py-3.5 rounded-2xl text-sm shadow-lg"
+        target="_blank" rel="noopener noreferrer">
+        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
+        Cotizar por WhatsApp — Respuesta en 24h
+      </a>
     </div>
   </div>
 
   <script>
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+    // @ts-nocheck
+    function initPage() {
+      // ── Fade-up observer ──────────────────────────────────────
+      const fadeObs = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            fadeObs.unobserve(e.target);
           }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+        }),
+        { threshold: 0.07, rootMargin: "0px 0px -40px 0px" }
+      );
+      document.querySelectorAll(".fade-up").forEach((el) => {
+        // If already in viewport (e.g. on resize / fast load), mark visible immediately
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add("visible");
+        } else {
+          fadeObs.observe(el);
+        }
+      });
+
+      // ── Performance widget: ring + counter ────────────────────
+      const ring    = document.getElementById("perf-ring");
+      const counter = document.getElementById("perf-counter");
+      const widget  = document.getElementById("perf-widget");
+      if (ring && counter && widget) {
+        // Reset state on each page load so animation replays
+        ring.style.strokeDashoffset = "326.7";
+        counter.textContent = "0";
+        const TARGET       = 98;
+        const CIRCUMFERENCE = 326.7;
+        const endOffset    = CIRCUMFERENCE * (1 - TARGET / 100);
+        const perfObs = new IntersectionObserver(function(entries) {
+          if (!entries[0].isIntersecting) return;
+          perfObs.disconnect();
+          ring.style.strokeDashoffset = String(endOffset);
+          var duration = 1600;
+          var start    = performance.now();
+          function tick(now) {
+            var elapsed = Math.min(now - start, duration);
+            var ease    = 1 - Math.pow(1 - elapsed / duration, 4);
+            counter.textContent = String(Math.round(ease * TARGET));
+            if (elapsed < duration) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }, { threshold: 0.4 });
+        perfObs.observe(widget);
+      }
+
+      // ── Sticky mobile CTA ─────────────────────────────────────
+      var cta  = document.getElementById("sticky-cta");
+      var hero = document.querySelector("section");
+      if (cta && hero) {
+        var ctaObs = new IntersectionObserver(function(entries) {
+          cta.classList.toggle("translate-y-full", entries[0].isIntersecting);
+        }, { threshold: 0.1 });
+        ctaObs.observe(hero);
+      }
+    }
+
+    // Run on hard load AND on Astro view-transition navigation
+    document.addEventListener("astro:page-load", initPage);
+    // Fallback for pages without view transitions
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initPage);
+    } else {
+      initPage();
+    }
   </script>
 </HnLayout>

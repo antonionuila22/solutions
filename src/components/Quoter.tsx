@@ -4,7 +4,6 @@ import {
   monthlyPlans,
   calculateWithISR,
   formatPrice,
-  ISR_RATE,
   getDependenciesForServices,
   type ServiceOption,
   type MonthlyPlan,
@@ -510,21 +509,9 @@ export default function Quoter() {
               {hasSelection && (
                 <>
                   <div className="space-y-2 mb-6">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-600">Subtotal</span>
-                      <span className="font-medium text-slate-900">
-                        ${currentTotal.subtotal.toLocaleString()}
-                      </span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-600">ISR ({(ISR_RATE * 100).toFixed(1)}%)</span>
-                      <span className="font-medium text-slate-900">
-                        ${currentTotal.isr.toLocaleString()}
-                      </span>
-                    </div>
                     <div className="pt-3 border-t border-slate-200">
                       <div className="flex justify-between">
-                        <span className="text-lg font-bold text-slate-900">Total</span>
+                        <span className="text-lg font-bold text-slate-900">Estimated Total</span>
                         <span className="text-lg font-bold text-[#f48200]">
                           ${currentTotal.total.toLocaleString()}
                           {activeTab === "monthly" && (

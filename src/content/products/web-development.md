@@ -2,91 +2,82 @@
 title: Full Stack Web Development – Modern, Scalable & Custom-Built Websites
 img: /photos/webservice.webp
 readtime: 6
-price: $350 - $900 (per page)
+price: From $650/page
 inStock: true
-description: Professional full stack web development services with per-page pricing based on complexity. We build fast, scalable, and fully manageable websites using technologies like WordPress, Webflow, Astro, React, Next.js, and Strapi.
+description: Custom full stack web development with per-page pricing. Fast, SEO-optimized sites built with Astro, React, Next.js, and Strapi. No templates. No bloated builders. Just clean, performant code.
 date: 2025-01-01
 author: Codebrand Team
 ---
 
-## Professional Full Stack Web Development
+## Full Stack Web Development
 
 ### Custom websites built for performance, scalability, and growth
 
-At **Codebrand**, we build websites that combine clean design, high performance, and future-ready scalability — tailored to your business goals.  
-We use modern technologies such as **WordPress, Webflow, Astro, React, Next.js, and Strapi** depending on your needs and use case.
+At **Codebrand**, we build websites that combine clean design, high performance, and future-ready architecture — tailored to your business goals. We use modern technologies like **Astro, React, Next.js, and Strapi** depending on your needs, not just what's trending.
+
+No templates. No page builders. No technical debt handed off to you at the end.
 
 ---
 
-## ✅ What’s Included
+## What's Included
 
-- Fully responsive and modular frontend development  
-- Functional backend (if required), with database integration  
-- Custom CMS via WordPress, Webflow, or Strapi  
-- Contact forms, subscription flows, or login systems  
-- Basic technical SEO  
-- Deployment on hosting, server, or cloud platforms  
-- Admin user guide for content management (if applicable)
-
----
-
-## 💵 Per-Page Pricing (Based on Complexity)
-
-> We quote **per page**, depending on required functionality and technical complexity. Each project is tailored based on the number and level of pages involved.
-
-| Page Type                    | Description                                                                                 | Price (USD)     |
-|-----------------------------|---------------------------------------------------------------------------------------------|-----------------|
-| **Standard Page**           | Up to 8 sections, responsive design, basic form                                             | From $350       |
-| **CMS-Editable Page**       | Editable via WordPress, Webflow, or Strapi                                                  | From $350       |
-| **Page with Integrations**  | API connections, dynamic forms, filters, data handling                                     | From $450       |
-| **Advanced Page**           | Custom animations, multiple integrations, technical SEO, React/Astro components            | From $900       |
-
-> 💡 *Example: A 5-page website with standard pages starts at $1,500 USD. Pages with CMS, backend, or animations are priced based on additional complexity.*
+- Fully responsive and modular frontend development
+- Functional backend (when required) with database integration
+- Custom CMS via Strapi, Sanity, or WordPress
+- Contact forms, subscription flows, or authentication systems
+- Technical SEO built into every page
+- Deployment on hosting, server, or cloud platform of your choice
+- Admin guide for content management
 
 ---
 
-## 🧪 Technologies We Use
+## Per-Page Pricing
 
-- **Visual CMS:** WordPress, Webflow  
-- **Headless CMS:** Strapi  
-- **Frontend:** React.js, Astro, Next.js, HTML/CSS/JS  
-- **Backend:** Node.js, Express.js  
-- **Databases:** PostgreSQL, MongoDB, MySQL  
-- **Styling:** Tailwind CSS, Bootstrap  
-- **Deployment:** Netlify, Hostinger, DigitalOcean, AWS  
+We quote **per page**, based on functionality and complexity — so you only pay for what you actually need.
 
----
+| Page Type | Description | Price |
+|-----------|-------------|-------|
+| **Standard Page** | Up to 8 sections, responsive design, basic form | From $650 |
+| **CMS-Editable Page** | Editable via Strapi, Sanity, or WordPress | From $650 |
+| **Page with Integrations** | API connections, dynamic forms, filters, data handling | From $820 |
+| **Advanced Page** | Custom animations, multiple integrations, React/Astro components | From $1,050 |
 
-## 🎯 Why Work with Codebrand
-
-- 🧩 Fully custom solutions, no generic templates  
-- ⚡ Optimized for speed, SEO, and growth  
-- 🔐 Built with security and performance in mind  
-- 📱 100% responsive across desktop, mobile, and tablet  
-- 👨‍💻 Experienced frontend, backend, and CMS team  
-- 💬 Technical support throughout and after the project
+> Example: a 5-page website with standard pages starts at $3,250. Pages with CMS, backend, or custom animations are scoped based on complexity.
 
 ---
 
-## 📦 Deliverables
+## Technologies We Use
 
-- Source code (when applicable)  
-- Live, fully functional website deployed on your domain  
-- CMS access credentials (if applicable)  
-- Admin user manual  
-- Basic technical documentation  
+- **Frontend:** Astro, React, Next.js, TypeScript
+- **Styling:** Tailwind CSS
+- **CMS:** Strapi, Sanity, WordPress
+- **Backend:** Node.js, Supabase, Turso (LibSQL)
+- **Hosting:** Netlify, Vercel, Cloudflare, AWS
+
+---
+
+## Why Work with Codebrand
+
+- Fully custom solutions — no generic templates or page builders
+- 90+ Google PageSpeed scores on every site we build
+- SEO built into every page from day one
+- 100% responsive across desktop, tablet, and mobile
+- You own the code — no vendor lock-in, no proprietary platforms
+- Technical support throughout and after the project
+
+---
+
+## Deliverables
+
+- Source code (full ownership, no lock-in)
+- Live website deployed on your domain
+- CMS access and credentials (if applicable)
+- Admin user manual
+- Basic technical documentation
 - 15 days of post-launch support
 
 ---
 
-## 🤝 Why Choose Us?
+## Ready to quote your project?
 
-At **Codebrand**, we don’t just build websites — we **create platforms that help your business grow**.  
-We tailor our process to your goals with transparent communication, modern tech, and a results-driven mindset.
-
----
-
-## 🚀 Ready to quote your project?
-
-> Send us the number of pages and complexity level for each.  
-> We’ll get back to you with a clear and customized proposal — no fluff, just real solutions.
+> Tell us the number of pages and what each one needs to do. We'll get back with a clear, itemized proposal — no fluff, just a real plan.

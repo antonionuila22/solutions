@@ -1,7 +1,6 @@
 ---
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import Banner from "../components/Banner.astro";
 import CardService from "../components/CardService.astro";
 import Pricing from "../components/Pricing.astro";
 import Faq from "../components/Faq.astro";
@@ -124,7 +123,7 @@ const services = [
           Web Development <span class="text-orange-500">Client Reviews</span>
         </h2>
         <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto px-2 sm:px-0">
-          50+ US businesses trust our Honduras-based development team
+          127 reviews from US businesses across healthcare, e-commerce, law, real estate, and more
         </p>
       </div>
     </div>
@@ -301,18 +300,65 @@ const services = [
 
   <!-- Transition gradient from light to dark -->
 
-  <BannerSecond
-    subtitle="We boost your brand"
-    title="Transform Your Vision into Reality"
-    description="Ready to grow? It's time to take action. We create digital experiences that convert potential into measurable results through strategic design and smart technology. Your brand deserves more than just maintenance—it deserves momentum."
-    imgUrl="/photos/bannercodebrand.webp"
-  />
+  <!-- Why Nearshore Section -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6">
+          <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+          <span class="text-sm font-medium text-cyan-400">Why businesses choose Codebrand</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          The Nearshore Advantage —<br class="hidden sm:block" />
+          <span class="text-orange-400">Quality Without the Overhead</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+          US agencies charge $150–$300/hr. Offshore teams create timezone and communication headaches. We're the third option: a dedicated, CST-aligned team with zero compromise on quality.
+        </p>
+      </div>
 
-  <Banner
-    subtitle="More Than Creatives—We're Your Partners"
-    title="Your Design and Technology Expert Team"
-    description="At Codebrand, we don't just execute ideas—we refine and elevate them. We help your company set new standards in style, performance, and impact through exceptional design, strategic branding, and results-driven digital marketing."
-    imgUrl="/photos/section.webp"
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Card 1 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
+          <div class="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">Same Timezone. Real-Time Collaboration.</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">CST-aligned hours mean you're not waiting overnight for answers. Daily standups, Slack access, and meetings that fit your schedule.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-orange-500/40 transition-colors duration-300 md:border-orange-500/20">
+          <div class="w-12 h-12 bg-orange-500/10 border border-orange-500/20 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">40–60% Less Than US Agency Rates</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">The same React, TypeScript, and Figma skills — without the San Francisco overhead. Your budget goes further without sacrificing results.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
+          <div class="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-2">127 Reviews. Zero Offshore Surprises.</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Fluent English communication, US business practices, and a proven track record with clients across Austin, Miami, New York, and beyond.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <BannerSecond
+    subtitle="Ready to get started?"
+    title="Get a Custom Quote in 24 Hours"
+    description="Tell us about your project and we'll come back with a clear plan, timeline, and price — no vague estimates, no hidden fees. Most projects start within a week of approval."
+    imgUrl="/photos/bannercodebrand.webp"
   />
 
   <PartnershipBanner />
@@ -342,26 +388,26 @@ const services = [
           </div>
 
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug mb-3">
-            Get a Free<br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Web Development Quote</span>
+            Tell Us About<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Your Project</span>
           </h2>
           <p class="text-sm text-slate-300 leading-relaxed mb-8 max-w-sm">
-            Free consultation, no strings attached. Tell us what you need and we'll get back to you with a plan.
+            Free consultation, no strings attached. We'll respond within 24 hours with a clear plan and honest pricing.
           </p>
 
           <!-- Contact info -->
           <div class="space-y-3 mb-8">
-            <a href="mailto:info@codebrand.es" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-orange-400 transition-colors">
+            <a href="mailto:info@codebrand.us" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-orange-400 transition-colors">
               <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              info@codebrand.es
-            </a>
-            <a href="tel:+504-3272-2973" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-orange-400 transition-colors">
-              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              +504 3272-2973
+              info@codebrand.us
             </a>
             <div class="flex items-center gap-2.5 text-sm text-slate-500">
               <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Mon–Fri 9AM–6PM &middot; Sat 10AM–2PM
+              Mon–Fri 9AM–6PM CST &middot; Sat 10AM–2PM CST
+            </div>
+            <div class="flex items-center gap-2.5 text-sm text-slate-500">
+              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Typical first response: under 2 hours
             </div>
           </div>
 
@@ -411,8 +457,8 @@ const services = [
                 <!-- Row: Phone + Industry -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label for="home-phone" class="home-form-label">Phone *</label>
-                    <input id="home-phone" name="phone" type="tel" required aria-required="true" autocomplete="tel"
+                    <label for="home-phone" class="home-form-label">Phone <span class="text-slate-400 font-normal">(optional)</span></label>
+                    <input id="home-phone" name="phone" type="tel" autocomplete="tel"
                       placeholder="+1 (555) 000-0000" class="home-form-input"
                       maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
                   </div>

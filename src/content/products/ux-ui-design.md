@@ -2,86 +2,71 @@
 title: Professional UX/UI Website Design in Figma – Modern & Efficient Prototypes
 img: /photos/uxservice.webp
 readtime: 5
-price: $180 - $800
+price: $530/page
 inStock: true
-description: Professional UX/UI design service in Figma. We create modern, functional prototypes tailored to your business goals. Ideal for websites with up to 10 sections per screen. Pricing varies based on complexity and number of screens.
+description: Professional UX/UI design in Figma. We create modern, functional prototypes tailored to your business goals — responsive, developer-ready, and built around how your users actually think.
 date: 2025-01-01
 author: Codebrand Team
 ---
 
 ## Professional UX/UI Website Design in Figma
 
-### Turn your idea into an effective and engaging digital experience
+### A prototype your developers will actually love to build from
 
-In today’s digital world, a beautiful website is no longer enough — **user experience (UX)** and **intuitive interface design (UI)** are key to keeping visitors engaged. This service is designed to help you do exactly that.
+A beautiful website that's confusing to navigate doesn't convert. At **Codebrand**, we design UX/UI prototypes in Figma that are strategically structured, visually polished, and built with development handoff in mind — so nothing gets lost between design and code.
 
-We offer **high-quality, customized UX/UI prototypes in Figma**, crafted to convert visitors into customers. Ideal for web projects that require structure, functionality, and clean visual design.
-
----
-
-## ✅ What’s Included
-
-- **Complete prototype design in Figma**  
-  A fully branded, functional layout — perfect for developers and marketing teams.
-
-- **Up to 8 sections per page**  
-  Clear and effective content structure to maximize visual impact and usability.
-
-- **Responsive design**  
-  Prototypes will be tailored for desktop, tablet, and mobile screens.
-
-- **Organized delivery by screen/page**  
-  Developer-friendly structure with technical clarity.
-
-- **1 revision round included**  
-  To ensure the final design matches your expectations and goals.
+Each page is designed mobile-first, with up to 8 responsive sections, and delivered with interactive prototype links and developer documentation.
 
 ---
 
-## 🚀 Benefits of Our UX/UI Service
+## What's Included
 
-- Enhanced **user experience**  
-- **Strategic design**, not just aesthetics  
-- Saves time during development  
-- Fully **responsive & mobile-ready**  
-- Aligned with your **brand identity**  
-- Modular and **scalable** design
-
----
-
-## Frequently Asked Questions
-
-### Who is this service for?
-
-- Entrepreneurs who want to validate an idea before development  
-- Startups needing a sleek and functional prototype to pitch to investors  
-- Agencies or freelancers looking to outsource UX/UI design  
-- Businesses aiming to modernize their website with a user-focused approach
+- Complete prototype design in Figma — fully branded and functional
+- Up to 8 sections per page (hero, features, CTA, forms, etc.)
+- Responsive versions: desktop, tablet, and mobile
+- Organized delivery by screen/page — developer-friendly structure
+- Interactive prototype link for stakeholder review
+- 1 revision round included
 
 ---
 
-### Why work with us?
+## Pricing
 
-We are **Codebrand** — a team with over **8 years of experience** in UX/UI and strategic user-centered design. We specialize in creating visual solutions that not only **look great, but perform well**. We use Figma as our main tool for its speed, flexibility, and compatibility with modern development workflows.
+**$530 per page**
 
----
-
-## 📦 Deliverables
-
-- Editable design files in Figma  
-- Interactive prototype link  
-- Basic development documentation (if needed)  
-- Post-delivery support for specific questions
+Need multiple pages? Each additional page is quoted at the same rate. If you need additional screens, complex interactions, or a full design system, we'll scope those as add-ons.
 
 ---
 
-## 💵 Service Price
+## Who Is This Service For?
 
-**Fixed price: $459 USD**
-This includes all features, deliverables, and one round of revisions. If you need additional screens, sections, or more complex changes, we’ll quote those separately as add-ons.
+- **Startups** validating an idea before committing to development
+- **Businesses** modernizing their website with a user-centered approach
+- **Agencies and freelancers** outsourcing UX/UI to a reliable design team
+- **Founders** who need investor-ready prototypes before their pitch
 
 ---
 
-## Ready to take your digital presence to the next level?
+## Deliverables
 
-> **Request your custom UX/UI prototype today and turn your vision into a functional, beautiful experience.**
+- Editable design files in Figma
+- Interactive prototype link
+- Component structure organized for developer handoff
+- Basic development documentation included
+- Post-delivery support for design questions
+
+---
+
+## Why Work with Codebrand
+
+- We design for conversion, not just aesthetics
+- Every layout decision is backed by UX best practices
+- Figma-native workflow — compatible with any development stack
+- Fast turnaround without cutting corners on quality
+- Seamless handoff to our development team if you need it built too
+
+---
+
+## Ready to see your idea come to life before a single line of code?
+
+> Tell us how many pages you need and what the site should accomplish. We'll get back with a detailed proposal.
