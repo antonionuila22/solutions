@@ -2,7 +2,7 @@
 title: ESABEP — Sitio Web para Empresa de Perforación de Pozos en Honduras
 description: Diseñamos y desarrollamos el sitio web corporativo de ESABEP, empresa hondureña con 27 años de experiencia en perforación de pozos y soluciones hídricas. El nuevo sitio les permitió generar leads calificados en línea y proyectar la credibilidad que su trayectoria merece.
 author: Codebrand Team
-img: /projects/esabep-Construccion-Pozos.avif
+img: photos/projects/esabep-Construccion-Pozos.avif
 category: Web Development
 tags:
   - Construcción
@@ -18,7 +18,6 @@ results:
   metric1: 27 años de experiencia
   metric2: +1,100 pozos completados
   metric3: Presencia digital profesional
-draft: false
 ---
 
 ## Presentación
