@@ -6,74 +6,82 @@
 import HnLayout from "../../layouts/HnLayout.astro";
 import { BUSINESS_INFO } from "../../configs/business";
 
-const title = "Codebrand Honduras | Desarrollo Web y Diseño Profesional";
-const description = "Agencia de desarrollo web en Honduras. Creamos sitios web profesionales, tiendas online, SEO y marketing digital. Calidad internacional con atención local. Precios en Lempiras.";
-const keywords = "desarrollo web honduras, agencia digital honduras, diseño web tegucigalpa, tienda online honduras, seo honduras, páginas web honduras, desarrollo software honduras";
+const title = "Codebrand Honduras | Agencia Digital Full-Service — Web, Branding y SEO";
+const description = "Agencia digital en Honduras con estándares de calidad americana. Creamos sitios web, tiendas online, branding, SEO y marketing digital para empresas hondureñas. 127+ reseñas 5 estrellas. Precios en Lempiras.";
+const keywords = "agencia digital honduras, desarrollo web honduras, diseño web tegucigalpa, tienda online honduras, seo honduras, páginas web honduras, branding honduras, marketing digital honduras, diseño web san pedro sula";
 
 const services = [
   {
-    title: "Desarrollo Web Honduras",
-    description: "Sitios web profesionales y aplicaciones web a medida. Diseño moderno, rápido y optimizado para móviles.",
-    href: "/hn/desarrollo-web-honduras",
+    title: "Sitios Web Profesionales",
+    description: "Páginas web empresariales rápidas, modernas y optimizadas para Google. Diseño a medida que transmite confianza y convierte visitantes en clientes.",
+    href: "/hn/sitios-web-empresas-honduras",
     icon: "💻",
-    price: "Desde L. 15,500"
+    price: "Desde L. 12,500"
   },
   {
     title: "Tienda Online Honduras",
-    description: "E-commerce completo con carrito de compras, pagos en línea, inventario y envíos. Vende 24/7.",
+    description: "E-commerce completo con carrito de compras, pagos en línea e inventario. Vende tus productos o servicios las 24 horas del día.",
     href: "/hn/tienda-online-honduras",
     icon: "🛒",
     price: "Desde L. 62,500"
   },
   {
     title: "SEO Honduras",
-    description: "Posicionamiento en Google para que tus clientes te encuentren. Más tráfico, más ventas.",
+    description: "Posicionamiento en Google para que tus clientes te encuentren primero. Estrategia local, nacional o regional con reportes mensuales.",
     href: "/hn/seo-honduras",
     icon: "🔍",
-    price: "Desde L. 7,500/mes"
+    price: "Desde L. 5,000/mes"
   },
   {
-    title: "Sitios Web para Empresas",
-    description: "Presencia digital profesional para empresas hondureñas. Corporativo, institucional y comercial.",
-    href: "/hn/sitios-web-empresas-honduras",
-    icon: "🏢",
-    price: "Desde L. 37,500"
+    title: "Diseño, Branding y Marketing",
+    description: "Logotipo, identidad de marca, redes sociales, video y diseño gráfico. Todo lo que necesita tu negocio para destacar, bajo un mismo equipo.",
+    href: "/contact",
+    icon: "🎨",
+    price: "Cotización personalizada"
   }
 ];
 
 const benefits = [
-  { icon: "🇭🇳", title: "Atención Local", desc: "Comunicación directa por WhatsApp en tu idioma y zona horaria" },
-  { icon: "🌎", title: "Calidad Internacional", desc: "Estándares de desarrollo de clase mundial con tecnologías modernas" },
-  { icon: "💰", title: "Precios Accesibles", desc: "Costos competitivos en Lempiras, adaptados al mercado local" },
-  { icon: "⚡", title: "Entrega Rápida", desc: "Proyectos entregados en semanas, no meses" },
-  { icon: "📱", title: "100% Responsive", desc: "Todos nuestros sitios funcionan perfectamente en celulares" },
-  { icon: "🔒", title: "Seguro y Confiable", desc: "Hosting seguro, SSL incluido y respaldos automáticos" }
+  { icon: "🏆", title: "Calidad de Agencia Americana", desc: "Trabajamos con los mismos estándares que agencias de EE.UU., con más de 127 reseñas de 5 estrellas que lo respaldan." },
+  { icon: "💬", title: "Comunicación en Español", desc: "Sin intermediarios ni barreras. WhatsApp directo, en tu idioma y en tu zona horaria." },
+  { icon: "💰", title: "Precios en Lempiras", desc: "Costos transparentes en HNL, sin sorpresas cambiarias ni conversiones. Planes de pago flexibles." },
+  { icon: "⚡", title: "Entrega en Semanas", desc: "Sitios web en 2-4 semanas, no meses. Revisiones semanales para que veas el avance." },
+  { icon: "🔧", title: "Agencia Full-Service", desc: "Web, SEO, branding, redes sociales y video bajo un mismo equipo. No necesitas contratar a varios proveedores." },
+  { icon: "🔒", title: "Soporte Post-Entrega", desc: "No desaparecemos al entregar el proyecto. Planes de mantenimiento, actualizaciones y soporte técnico continuo." }
 ];
 
 const faqs = [
   {
     question: "¿Cuánto cuesta un sitio web en Honduras?",
-    answer: "Los precios varían según el tipo de proyecto. Un sitio web básico empieza en L. 12,500. Un sitio empresarial con más páginas y funcionalidades desde L. 37,500. Una tienda online completa desde L. 62,500. Ofrecemos planes de pago flexibles."
+    answer: "Los precios varían según el tipo de proyecto. Un sitio web básico comienza en L. 12,500. Un sitio empresarial con más páginas y funcionalidades desde L. 37,500. Una tienda online completa desde L. 62,500. Todos los precios incluyen dominio, hosting y SSL por 1 año. Ofrecemos planes de pago flexibles."
   },
   {
     question: "¿En cuánto tiempo entregan un sitio web?",
-    answer: "Un sitio web básico lo entregamos en 2-3 semanas. Un sitio empresarial en 4-6 semanas. Una tienda online en 6-8 semanas. Trabajamos con entregas parciales para que veas el avance cada semana."
+    answer: "Un sitio web básico lo entregamos en 2-3 semanas. Un sitio empresarial en 4-6 semanas. Una tienda online en 6-8 semanas. Trabajamos con revisiones semanales para que veas el avance en todo momento."
   },
   {
     question: "¿Puedo pagar en Lempiras?",
-    answer: "Sí, todos nuestros precios están en Lempiras. Aceptamos transferencias bancarias, depósitos y pagos con tarjeta. Ofrecemos facilidades de pago para proyectos grandes."
+    answer: "Sí, todos nuestros precios están en Lempiras hondureños. Aceptamos transferencias bancarias, depósitos y pagos con tarjeta. Ofrecemos facilidades de pago para proyectos grandes."
   },
   {
     question: "¿Qué incluye el precio del sitio web?",
-    answer: "Incluye: diseño personalizado, desarrollo, dominio por 1 año, hosting por 1 año, SSL (candado verde), capacitación para actualizar contenido, y soporte técnico por 3 meses después de la entrega."
+    answer: "Incluye: diseño personalizado, desarrollo completo, dominio por 1 año, hosting profesional por 1 año, SSL (candado de seguridad), capacitación para administrar tu contenido, y soporte técnico por 3 meses después del lanzamiento."
+  },
+  {
+    question: "¿Cuánto cuesta el SEO en Honduras?",
+    answer: "Nuestros planes de SEO comienzan en L. 5,000/mes e incluyen análisis de palabras clave, optimización técnica, creación de contenido, SEO local en Google Maps y reportes mensuales. El precio varía según la competencia de tu industria y alcance geográfico. Ofrecemos evaluaciones gratuitas."
+  },
+  {
+    question: "¿Solo hacen sitios web o también otros servicios digitales?",
+    answer: "Somos una agencia full-service. Además de sitios web y e-commerce, ofrecemos SEO, branding, diseño de logotipos, redes sociales, producción de video, animación y diseño gráfico. Puedes contratar servicios por separado o un paquete completo."
   },
   {
     question: "¿Cómo es el proceso de trabajo?",
-    answer: "1) Nos contactas por WhatsApp. 2) Agendamos una llamada para entender tu proyecto. 3) Te enviamos propuesta y precio. 4) Diseñamos y desarrollamos con revisiones semanales. 5) Lanzamos tu sitio y te capacitamos."
+    answer: "1) Nos contactas por WhatsApp. 2) Agendamos una llamada para entender tu proyecto. 3) Te enviamos propuesta y precio detallado. 4) Diseñamos y desarrollamos con revisiones semanales. 5) Lanzamos tu sitio y te capacitamos para administrarlo."
   },
   {
     question: "¿Ofrecen mantenimiento después de la entrega?",
-    answer: "Sí, ofrecemos planes de mantenimiento desde L. 2,500/mes que incluyen actualizaciones de seguridad, respaldos, soporte técnico y cambios menores de contenido."
+    answer: "Sí, ofrecemos planes de mantenimiento desde L. 2,500/mes que incluyen actualizaciones de seguridad, respaldos automáticos, soporte técnico y cambios menores de contenido. No te dejamos solo después del lanzamiento."
   }
 ];
 
@@ -174,8 +182,8 @@ const localBusinessSchema = {
           </h1>
 
           <p class="fade-up text-xl md:text-2xl text-neutral-300 max-w-2xl mb-12 leading-relaxed">
-            Creamos sitios web profesionales para empresas hondureñas.<br class="hidden md:block" />
-            <strong class="text-white">Calidad internacional, atención local.</strong>
+            Sitios web, tiendas online, branding y marketing digital para empresas hondureñas.<br class="hidden md:block" />
+            <strong class="text-white">Calidad de agencia americana, precios en Lempiras.</strong>
           </p>
 
           <div class="fade-up flex flex-wrap gap-4 mb-16">
@@ -191,20 +199,20 @@ const localBusinessSchema = {
           <!-- Quick Stats -->
           <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="text-center p-5 glass rounded-2xl">
-              <div class="text-3xl md:text-4xl font-bold text-gradient">50+</div>
-              <div class="text-neutral-400 text-sm mt-1">Clientes en Honduras</div>
+              <div class="text-3xl md:text-4xl font-bold text-gradient">127+</div>
+              <div class="text-neutral-400 text-sm mt-1">Reseñas 5 Estrellas</div>
             </div>
             <div class="text-center p-5 glass rounded-2xl">
-              <div class="text-3xl md:text-4xl font-bold text-gradient">L.15,500</div>
+              <div class="text-3xl md:text-4xl font-bold text-gradient">5+</div>
+              <div class="text-neutral-400 text-sm mt-1">Años de Experiencia</div>
+            </div>
+            <div class="text-center p-5 glass rounded-2xl">
+              <div class="text-3xl md:text-4xl font-bold text-gradient">&lt;24h</div>
+              <div class="text-neutral-400 text-sm mt-1">Primera Respuesta</div>
+            </div>
+            <div class="text-center p-5 glass rounded-2xl">
+              <div class="text-3xl md:text-4xl font-bold text-gradient">L.12,500</div>
               <div class="text-neutral-400 text-sm mt-1">Precio Inicial</div>
-            </div>
-            <div class="text-center p-5 glass rounded-2xl">
-              <div class="text-3xl md:text-4xl font-bold text-gradient">2-3</div>
-              <div class="text-neutral-400 text-sm mt-1">Semanas Entrega</div>
-            </div>
-            <div class="text-center p-5 glass rounded-2xl">
-              <div class="text-3xl md:text-4xl font-bold text-gradient">100%</div>
-              <div class="text-neutral-400 text-sm mt-1">Responsive</div>
             </div>
           </div>
         </div>
@@ -214,9 +222,9 @@ const localBusinessSchema = {
       <section id="servicios" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
           <div class="fade-up text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Nuestros Servicios</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Todo lo que tu negocio necesita</h2>
             <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
-              Soluciones digitales completas para empresas hondureñas
+              Soluciones digitales completas bajo un mismo equipo, sin necesidad de múltiples proveedores
             </p>
           </div>
 
@@ -249,8 +257,8 @@ const localBusinessSchema = {
       <section class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
           <div class="fade-up text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">¿Por Qué Elegirnos?</h2>
-            <p class="text-xl text-neutral-400">Calidad internacional con atención local</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">¿Por Qué Codebrand?</h2>
+            <p class="text-xl text-neutral-400">Calidad de agencia americana con la cercanía y precios del mercado hondureño</p>
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -269,22 +277,22 @@ const localBusinessSchema = {
       <section class="py-24 px-6">
         <div class="max-w-4xl mx-auto">
           <div class="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Desarrollo Web Profesional en Honduras</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Agencia Digital en Honduras con Estándares Internacionales</h2>
             <div class="prose prose-lg prose-invert max-w-none space-y-6">
               <p class="text-neutral-300 leading-relaxed">
-                En <strong class="text-white">Codebrand Honduras</strong> nos especializamos en crear soluciones digitales de alta calidad para empresas hondureñas. Entendemos las necesidades del mercado local y ofrecemos servicios de <a href="/hn/desarrollo-web-honduras" class="text-cyan-400 hover:text-cyan-300">desarrollo web</a> que combinan estándares internacionales con atención personalizada en tu idioma y zona horaria.
+                En <strong class="text-white">Codebrand</strong> somos una agencia digital con sede en San Pedro Sula que trabaja para clientes en EE.UU., Latinoamérica y Honduras. Eso significa que traemos los mismos procesos, tecnologías y estándares de calidad que usamos con nuestros clientes americanos — pero con atención directa en español, precios en Lempiras y comunicación en tu zona horaria.
               </p>
               <p class="text-neutral-300 leading-relaxed">
-                Ya sea que necesites un <strong class="text-white">sitio web para tu empresa</strong>, una <a href="/hn/tienda-online-honduras" class="text-cyan-400 hover:text-cyan-300">tienda online</a> para vender tus productos, o mejorar tu <a href="/hn/seo-honduras" class="text-cyan-400 hover:text-cyan-300">posicionamiento en Google</a>, tenemos la experiencia y las herramientas para ayudarte a crecer en el mundo digital.
+                Nuestro equipo ha completado <strong class="text-white">más de 127 proyectos con calificación de 5 estrellas</strong> para empresas de salud, e-commerce, bienes raíces, restaurantes, y más. Ya sea que necesites un <a href="/hn/sitios-web-empresas-honduras" class="text-cyan-400 hover:text-cyan-300">sitio web para tu empresa</a>, una <a href="/hn/tienda-online-honduras" class="text-cyan-400 hover:text-cyan-300">tienda online</a> o mejorar tu <a href="/hn/seo-honduras" class="text-cyan-400 hover:text-cyan-300">posicionamiento en Google</a>, tenemos la experiencia para hacerlo bien.
               </p>
               <p class="text-neutral-300 leading-relaxed">
-                Trabajamos con las últimas tecnologías: <strong class="text-white">React, Next.js, Astro, y Shopify</strong>, garantizando que tu sitio web sea rápido, seguro y fácil de administrar. Todos nuestros proyectos incluyen diseño responsivo para que se vean perfectos en celulares y computadoras.
+                Desarrollamos con tecnologías modernas — <strong class="text-white">React, Next.js, TypeScript y Node.js</strong> — garantizando que tu sitio sea rápido, seguro, escalable y fácil de administrar. No usamos plantillas genéricas; cada proyecto es diseñado y desarrollado a medida para reflejar tu marca y atraer a tus clientes.
               </p>
               <p class="text-neutral-300 leading-relaxed">
-                Nuestros precios están en <strong class="text-white">Lempiras</strong> y ofrecemos planes de pago flexibles para adaptarnos a tu presupuesto. La comunicación es directa por <strong class="text-white">WhatsApp</strong>, sin intermediarios, para resolver tus dudas de forma rápida y eficiente.
+                Además del desarrollo web, ofrecemos <strong class="text-white">branding, diseño de logotipos, redes sociales, producción de video y SEO</strong> — todo bajo el mismo equipo para que no tengas que coordinar con múltiples proveedores. Un socio digital completo para hacer crecer tu negocio en Honduras.
               </p>
               <p class="text-neutral-300 leading-relaxed">
-                Desde San Pedro Sula atendemos a clientes en todo Honduras: Tegucigalpa, La Ceiba, Choluteca, Comayagua, y más. No importa dónde estés, podemos trabajar contigo de forma remota para crear el sitio web que tu negocio necesita.
+                Desde San Pedro Sula atendemos a clientes en todo Honduras: Tegucigalpa, La Ceiba, Choluteca, Comayagua, Santa Rosa de Copán y más. Trabajamos 100% de forma remota por WhatsApp y videollamada, sin necesidad de reuniones presenciales.
               </p>
             </div>
           </div>
