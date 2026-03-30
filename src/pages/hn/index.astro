@@ -98,10 +98,10 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://codebrand.us/hn/#organization",
+  "@id": "https://www.codebrand.us/hn/#organization",
   name: "Codebrand Honduras",
   description: description,
-  url: "https://codebrand.us/hn/",
+  url: "https://www.codebrand.us/hn/",
   telephone: BUSINESS_INFO.hn.phone,
   email: BUSINESS_INFO.hn.email,
   address: {
@@ -130,7 +130,7 @@ const localBusinessSchema = {
   title={title}
   description={description}
   keywords={keywords}
-  canonicalOverride="https://codebrand.us/hn/"
+  canonicalOverride="https://www.codebrand.us/hn/"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />

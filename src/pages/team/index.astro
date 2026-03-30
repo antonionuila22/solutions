@@ -48,18 +48,18 @@ const teamSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Codebrand",
-  "url": "https://codebrand.us",
-  "logo": "https://codebrand.us/photos/bannercodebrand.webp",
+  "url": "https://www.codebrand.us",
+  "logo": "https://www.codebrand.us/photos/bannercodebrand.webp",
   "employee": teamMembers.map(member => ({
     "@type": "Person",
     "name": member.name,
     "jobTitle": member.jobTitle,
-    "image": `https://codebrand.us${member.image}`,
+    "image": `https://www.codebrand.us${member.image}`,
     "description": member.description,
     "worksFor": {
       "@type": "Organization",
       "name": "Codebrand",
-      "url": "https://codebrand.us"
+      "url": "https://www.codebrand.us"
     }
   }))
 };

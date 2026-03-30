@@ -28,10 +28,10 @@ let {
 // Valores por defecto en español
 title = title || "Codebrand - Agencia de Desarrollo Web Honduras | Diseño Web Profesional";
 description = description || "Agencia de desarrollo web en Honduras. Sitios web profesionales, tiendas online, aplicaciones web y marketing digital. Calidad internacional con atención local. Contacta por WhatsApp.";
-image = image || "https://codebrand.us/photos/bannercodebrand.webp";
+image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
 
 // URLs
-const canonicalUrl = canonicalOverride || Astro.url?.href || "https://codebrand.us";
+const canonicalUrl = canonicalOverride || Astro.url?.href || "https://www.codebrand.us";
 const englishUrl = canonicalUrl.replace("/hn/", "/");
 const siteName = "Codebrand - Agencia Digital Honduras";
 const twitterHandle = "@codebrand_us";
@@ -52,7 +52,7 @@ if (publishedTime) {
 // Breadcrumbs
 const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
   canonicalUrl,
-  "https://codebrand.us",
+  "https://www.codebrand.us",
   breadcrumbNames || {}
 );
 ---
@@ -180,9 +180,9 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         "@type": "ProfessionalService",
         "name": "Codebrand - Agencia de Desarrollo Web Honduras",
         "alternateName": ["Codebrand Honduras", "Codebrand HN"],
-        "url": "https://codebrand.us/hn/desarrollo-web-honduras",
-        "logo": "https://codebrand.us/iconcodebrand.svg",
-        "image": "https://codebrand.us/photos/bannercodebrand.webp",
+        "url": "https://www.codebrand.us/hn/desarrollo-web-honduras",
+        "logo": "https://www.codebrand.us/iconcodebrand.svg",
+        "image": "https://www.codebrand.us/photos/bannercodebrand.webp",
         "description": "Agencia de desarrollo web profesional en Honduras. Creamos sitios web, tiendas online, aplicaciones web y ofrecemos marketing digital. Calidad internacional con atención local.",
         "slogan": "Calidad internacional con atención local",
         "email": "info@codebrand.es",

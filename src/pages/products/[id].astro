@@ -21,7 +21,7 @@ const { title, description, img, readtime, author, price, inStock } = data;
 const { Content } = await render(product);
 
 // SEO optimization
-const baseUrl = "https://codebrand.us";
+const baseUrl = "https://www.codebrand.us";
 const seoTitle = `${title} | Codebrand Digital Services`;
 const seoDescription =
   description ||
@@ -40,19 +40,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://codebrand.us"
+      "item": "https://www.codebrand.us"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Products",
-      "item": "https://codebrand.us/products"
+      "item": "https://www.codebrand.us/products"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": title,
-      "item": `https://codebrand.us/products/${product.id}`
+      "item": `https://www.codebrand.us/products/${product.id}`
     }
   ]
 };

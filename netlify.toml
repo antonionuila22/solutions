@@ -233,3 +233,15 @@
 #   to = "https://codebrand.us/:splat"
 #   status = 301
 #   force = true
+
+[[redirects]]
+  from = "/desarrollo-web-honduras"
+  to = "/hn/desarrollo-web-honduras"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work"
+  to = "/projects"
+  status = 301
+  force = true

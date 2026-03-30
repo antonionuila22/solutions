@@ -20,7 +20,7 @@ const { title, description, img, readtime, author, date } = data;
 const { Content } = await render(post);
 
 // SEO optimization
-const baseUrl = "https://codebrand.us";
+const baseUrl = "https://www.codebrand.us";
 const seoTitle = `${title} | Codebrand Books`;
 const seoDescription = description || `Read ${title} by ${author || 'Codebrand'}. Discover insights on web development, design, and digital marketing.`;
 const seoKeywords = `${title.toLowerCase()}, ${author ? author.toLowerCase() : ''}, codebrand books, web development books, digital marketing books, design books`;

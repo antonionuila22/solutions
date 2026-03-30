@@ -29,11 +29,11 @@ title =
 description =
   description ||
   "Expert web development, UI/UX design, and digital marketing. Custom solutions that drive real results. Get a free consultation today.";
-image = image || "https://codebrand.us/photos/bannercodebrand.webp";
+image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
 
 // URL dinámica y mejoras SEO (permite override para páginas duplicadas)
 const canonicalUrl =
-  canonicalOverride || Astro.url?.href || "https://codebrand.us";
+  canonicalOverride || Astro.url?.href || "https://www.codebrand.us";
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_us";
 
@@ -53,7 +53,7 @@ if (publishedTime) {
 // Generate dynamic breadcrumbs based on current URL
 const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
   canonicalUrl,
-  "https://codebrand.us",
+  "https://www.codebrand.us",
   breadcrumbNames || {},
 );
 ---
@@ -207,9 +207,9 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
           "Codebrand Digital Agency",
           "Codebrand Honduras"
         ],
-        "url": "https://codebrand.us",
-        "logo": "https://codebrand.us/iconcodebrand.svg",
-        "image": "https://codebrand.us/photos/bannercodebrand.webp",
+        "url": "https://www.codebrand.us",
+        "logo": "https://www.codebrand.us/iconcodebrand.svg",
+        "image": "https://www.codebrand.us/photos/bannercodebrand.webp",
         "description": "Modern web development agency helping growing businesses build websites and software that scale. US-quality work, bilingual team, smart pricing. Based in Honduras, serving clients worldwide.",
         "slogan": "Modern Web Development For Growing Businesses",
         "email": "info@codebrand.es",
@@ -443,7 +443,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Codebrand Digital Agency",
-        "url": "https://codebrand.us"
+        "url": "https://www.codebrand.us"
       }
     </script>
 
