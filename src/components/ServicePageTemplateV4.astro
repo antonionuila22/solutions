@@ -94,7 +94,7 @@ const serviceSchema = {
     "name": `${serviceName} Services`,
     "description": description,
     "provider": {
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "Codebrand",
         "url": "https://www.codebrand.us",
         "logo": "https://www.codebrand.us/iconcodebrand.svg",
@@ -106,6 +106,13 @@ const serviceSchema = {
             "addressLocality": "San Pedro Sula",
             "addressRegion": "Cortés",
             "addressCountry": "HN"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
         }
     },
     "areaServed": [
@@ -141,13 +148,6 @@ const serviceSchema = {
                 "description": service.description
             }
         }))
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
     },
     "availableLanguage": ["English", "Spanish"],
     "termsOfService": "https://www.codebrand.us/terms",
