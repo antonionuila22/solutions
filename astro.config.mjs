@@ -27,9 +27,19 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    css: {
+      transformer: 'lightningcss',
+      lightningcss: {
+        // Generate rgb() fallbacks for oklch() — required for iOS < 15.4
+        targets: {
+          safari: (14 << 16) | (0 << 8),
+          ios_saf: (14 << 16) | (0 << 8),
+        },
+      },
+    },
     build: {
       minify: 'terser',
-      cssMinify: true,
+      cssMinify: 'lightningcss',
       terserOptions: {
         compress: {
           drop_console: true,
