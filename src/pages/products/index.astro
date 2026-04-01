@@ -30,14 +30,14 @@ const products = await getCollection("products", ({ data }) => !data.draft);
             <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                 {
                     products.map((product) => {
-                        const { slug, data } = product;
+                        const { id, data } = product;
                         const { title, description, img, price, inStock } =
                             data;
 
                         return (
                             <article class="bg-white rounded-2xl border border-orange-100 shadow-md hover:shadow-orange-300 transition-shadow duration-300 group overflow-hidden">
                                 <a
-                                    href={`/products/${slug}`}
+                                    href={`/products/${id}`}
                                     class="block h-full"
                                 >
                                     {img && (

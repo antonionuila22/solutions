@@ -54,7 +54,8 @@
       "WebFetch(domain:localhost)",
       "Bash(for f in src/pages/landing/template-*.astro)",
       "Bash(do echo \"=== $f \\(last 5 lines\\) ===\")",
-      "Read(//c/Users/RamonNuila/Documents/GitHub/solutions/**)"
+      "Read(//c/Users/RamonNuila/Documents/GitHub/solutions/**)",
+      "Bash(astro build:*)"
     ]
   }
 }
