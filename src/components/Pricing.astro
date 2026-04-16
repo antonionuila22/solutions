@@ -11,71 +11,98 @@ type Plan = {
   color: string;
 };
 
-const plans: Plan[] = [
-  {
-    name: "Starter",
-    priceMonthly: 2200,
-    desc: "One dedicated developer, mornings M–F",
-    icon: "rocket",
-    color: "cyan",
-    features: [
-      "Dedicated developer (20h/week)",
-      "Professional website — 3 to 5 pages",
-      "UX/UI design in Figma",
-      "React / Astro frontend",
-      "CMS for easy content updates",
-      "Contact forms + email notifications",
-      "1 revision round/month",
-      "Email support — reply within 24h",
-      "3-month minimum · month-to-month after",
-    ],
-    ctaHref: "/contact",
-    ctaText: "Get Started",
-  },
-  {
-    name: "Growth",
-    priceMonthly: 5200,
-    desc: "Full-time senior developer, dedicated to you",
-    highlight: true,
-    icon: "chart",
-    color: "orange",
-    features: [
-      "Senior developer full-time (40h/week)",
-      "Custom website or web app — 5 to 10 pages",
-      "Advanced UX/UI design + interactive prototype",
-      "React / Next.js + Headless CMS",
-      "API integrations (CRM, email, payments)",
-      "Backend + database (Supabase / Turso)",
-      "Custom animations & micro-interactions",
-      "2 revision rounds/month",
-      "Priority support — reply within 4h",
-      "6-month partnership",
-    ],
-    ctaHref: "/contact",
-    ctaText: "Most Popular",
-  },
-  {
-    name: "Scale",
-    priceMonthly: 9500,
-    desc: "Senior developer + UI designer, fully dedicated",
-    icon: "building",
-    color: "violet",
-    features: [
-      "Senior developer + UI designer (40h/week team)",
-      "Full web app or advanced e-commerce",
-      "Complete design system in Figma",
-      "Full-stack Next.js + Supabase",
-      "E-commerce with payments & inventory",
-      "Custom admin dashboard",
-      "Complex API & third-party integrations",
-      "Unlimited revision rounds",
-      "Same-day support + weekly strategy calls",
-      "6-month partnership",
-    ],
-    ctaHref: "/contact",
-    ctaText: "Contact Sales",
-  },
-];
+interface PricingConfig {
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  plans: Plan[];
+  ctaTitle: string;
+  ctaSubtitle: string;
+  ctaButton: string;
+}
+
+interface Props {
+  config?: Partial<PricingConfig>;
+}
+
+const defaults: PricingConfig = {
+  badge: "Simple, Transparent Pricing",
+  title: "Invest in Your",
+  titleHighlight: "Digital Growth",
+  subtitle: "Monthly partnerships for businesses ready to build something great. No hidden fees. No surprise invoices. Cancel after your commitment period.",
+  plans: [
+    {
+      name: "Starter",
+      priceMonthly: 2200,
+      desc: "One dedicated developer, mornings M–F",
+      icon: "rocket",
+      color: "cyan",
+      features: [
+        "Dedicated developer (20h/week)",
+        "Professional website — 3 to 5 pages",
+        "UX/UI design in Figma",
+        "React / Astro frontend",
+        "CMS for easy content updates",
+        "Contact forms + email notifications",
+        "1 revision round/month",
+        "Email support — reply within 24h",
+        "3-month minimum · month-to-month after",
+      ],
+      ctaHref: "/contact",
+      ctaText: "Get Started",
+    },
+    {
+      name: "Growth",
+      priceMonthly: 5200,
+      desc: "Full-time senior developer, dedicated to you",
+      highlight: true,
+      icon: "chart",
+      color: "orange",
+      features: [
+        "Senior developer full-time (40h/week)",
+        "Custom website or web app — 5 to 10 pages",
+        "Advanced UX/UI design + interactive prototype",
+        "React / Next.js + Headless CMS",
+        "API integrations (CRM, email, payments)",
+        "Backend + database (Supabase / Turso)",
+        "Custom animations & micro-interactions",
+        "2 revision rounds/month",
+        "Priority support — reply within 4h",
+        "6-month partnership",
+      ],
+      ctaHref: "/contact",
+      ctaText: "Most Popular",
+    },
+    {
+      name: "Scale",
+      priceMonthly: 9500,
+      desc: "Senior developer + UI designer, fully dedicated",
+      icon: "building",
+      color: "violet",
+      features: [
+        "Senior developer + UI designer (40h/week team)",
+        "Full web app or advanced e-commerce",
+        "Complete design system in Figma",
+        "Full-stack Next.js + Supabase",
+        "E-commerce with payments & inventory",
+        "Custom admin dashboard",
+        "Complex API & third-party integrations",
+        "Unlimited revision rounds",
+        "Same-day support + weekly strategy calls",
+        "6-month partnership",
+      ],
+      ctaHref: "/contact",
+      ctaText: "Contact Sales",
+    },
+  ],
+  ctaTitle: "Not sure which plan is right?",
+  ctaSubtitle: "Book a free 30-minute consultation call",
+  ctaButton: "Schedule a Call",
+};
+
+const c = { ...defaults, ...Astro.props.config };
+const plans = c.plans;
 ---
 
 <section id="pricing" class="py-16 sm:py-20 lg:py-28 bg-slate-950 relative overflow-hidden">
@@ -94,17 +121,16 @@ const plans: Plan[] = [
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
         </span>
-        <span class="text-sm font-medium text-cyan-400">Simple, Transparent Pricing</span>
+        <span class="text-sm font-medium text-cyan-400">{c.badge}</span>
       </div>
 
       <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-        Invest in Your
-        <span class="bg-gradient-to-r from-cyan-400 via-orange-400 to-orange-500 bg-clip-text text-transparent"> Digital Growth</span>
+        {c.title}
+        <span class="bg-gradient-to-r from-cyan-400 via-orange-400 to-orange-500 bg-clip-text text-transparent"> {c.titleHighlight}</span>
       </h2>
 
       <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto">
-        Monthly partnerships for businesses ready to build something great.
-        No hidden fees. No surprise invoices. Cancel after your commitment period.
+        {c.subtitle}
       </p>
     </div>
 
@@ -250,14 +276,14 @@ const plans: Plan[] = [
     <div class="mt-16 sm:mt-20 text-center">
       <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-6 sm:p-8 bg-slate-900/50 border border-slate-700/50 rounded-2xl backdrop-blur-sm">
         <div class="text-center sm:text-left">
-          <h4 class="text-lg font-semibold text-white mb-1">Not sure which plan is right?</h4>
-          <p class="text-sm text-slate-400">Book a free 30-minute consultation call</p>
+          <h4 class="text-lg font-semibold text-white mb-1">{c.ctaTitle}</h4>
+          <p class="text-sm text-slate-400">{c.ctaSubtitle}</p>
         </div>
         <a
           href="/contact"
           class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5"
         >
-          Schedule a Call
+          {c.ctaButton}
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>

@@ -1,10 +1,67 @@
 ---
-// ValueProposition.astro - Honduras to USA Value Proposition Section
-// Price research sources (2025):
-// - US Agency average: $12,000 - $45,000 for small business websites
-// - Corporate sites: $10,000 - $50,000
-// - Average Clutch project: $66,499
-// Math: $25,000 (US) - $10,000 (Codebrand) = $15,000 savings (60%)
+interface ValuePropConfig {
+  flagLeft: string;
+  flagRight: string;
+  flagLabel: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  stats: { value: string; title: string; description: string }[];
+  benefitsTitle: string;
+  benefits: { title: string; description: string }[];
+  priceComparison: {
+    competitorLabel: string;
+    competitorPrice: string;
+    competitorNote: string;
+    ourLabel: string;
+    ourPrice: string;
+    ourNote: string;
+    savingsAmount: string;
+    savingsPercent: string;
+  };
+  ctaText: string;
+  ctaSubtext: string;
+}
+
+interface Props {
+  config?: Partial<ValuePropConfig>;
+}
+
+const defaults: ValuePropConfig = {
+  flagLeft: "\u{1F1ED}\u{1F1F3}",
+  flagRight: "\u{1F1FA}\u{1F1F8}",
+  flagLabel: "Honduras → United States",
+  title: "Premium Web Development",
+  titleHighlight: "at 60% Lower Cost",
+  subtitle: 'Why pay $25,000+ for <a href="/services/web-development" class="text-cyan-500 hover:text-cyan-600 font-semibold">web development</a> in the US when you can get the same professional quality from our certified team in Honduras for a fraction of the cost?',
+  stats: [
+    { value: "60%", title: "Cost Savings", description: "Save thousands compared to US agency rates while maintaining the same professional quality standards." },
+    { value: "100%", title: "Same Quality", description: "Our certified professionals deliver the exact same quality as US agencies. Same standards, better prices." },
+    { value: "CST", title: "US Time Zone", description: "Work seamlessly with our bilingual team. Honduras operates in Central Time (CST) for real-time collaboration." },
+  ],
+  benefitsTitle: "Why US Companies Choose Codebrand",
+  benefits: [
+    { title: "Certified Professional Team", description: "Our developers hold certifications from Udemy, Platzi, and Adobe, ensuring cutting-edge expertise in modern technologies." },
+    { title: "Export-Quality Services", description: "We specialize in serving international clients with the same standards expected by Fortune 500 companies." },
+    { title: "Managed Honduran Talent", description: "We handle all talent management, so you get premium results without the overhead costs." },
+    { title: "Bilingual Communication", description: "Fluent English-speaking team ensures clear communication throughout your project lifecycle." },
+    { title: "Proven Track Record", description: "50+ successful projects delivered to international clients across various industries." },
+  ],
+  priceComparison: {
+    competitorLabel: "US Agency",
+    competitorPrice: "$25,000",
+    competitorNote: "Average US market rate for custom websites",
+    ourLabel: "Codebrand",
+    ourPrice: "$10,000",
+    ourNote: "Top quality, Honduras pricing",
+    savingsAmount: "$15,000+",
+    savingsPercent: "60% cost reduction",
+  },
+  ctaText: "Get Your Free Quote Today",
+  ctaSubtext: "Join 50+ US businesses saving thousands on quality web development",
+};
+
+const c = { ...defaults, ...Astro.props.config };
 ---
 
 <section
@@ -17,127 +74,47 @@
       <div
         class="inline-flex items-center gap-3 px-5 py-2.5 bg-slate-100 rounded-full mb-6"
       >
-        <span class="text-2xl">🇭🇳</span>
+        <span class="text-2xl">{c.flagLeft}</span>
         <span
           class="text-sm font-semibold text-slate-700 uppercase tracking-wide"
         >
-          Honduras → United States
+          {c.flagLabel}
         </span>
-        <span class="text-2xl">🇺🇸</span>
+        <span class="text-2xl">{c.flagRight}</span>
       </div>
       <h2
         class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0"
       >
-        Premium Web Development<br />
-        <span class="text-cyan-600">at 60% Lower Cost</span>
+        {c.title}<br />
+        <span class="text-cyan-600">{c.titleHighlight}</span>
       </h2>
       <p
         class="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
       >
-        Why pay $25,000+ for <a
-          href="/services/web-development"
-          class="text-cyan-500 hover:text-cyan-600 font-semibold"
-          >web development</a
-        > in the US when you can get the same professional quality from our certified
-        team in Honduras for a fraction of the cost?
+        <Fragment set:html={c.subtitle} />
       </p>
     </div>
 
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16 lg:mb-20 stats-grid">
-      <div class="stat-card group">
-        <div
-          class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-5 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 h-full"
-        >
+      {c.stats.map((stat, i) => (
+        <div class="stat-card group">
           <div
-            class="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-cyan-900 rounded-xl mb-4 sm:mb-5 lg:mb-6 group-hover:scale-110 transition-transform duration-300"
+            class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-5 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 h-full"
           >
-            <svg
-              class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <div
+              class={`flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ${i === 1 ? "bg-orange-500" : "bg-cyan-900"} rounded-xl mb-4 sm:mb-5 lg:mb-6 group-hover:scale-110 transition-transform duration-300`}
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-              ></path>
-            </svg>
+              <svg class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="text-4xl sm:text-5xl font-bold text-slate-900 mb-2 sm:mb-3">{stat.value}</div>
+            <h3 class="text-lg sm:text-xl font-semibold text-slate-900 mb-1 sm:mb-2">{stat.title}</h3>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">{stat.description}</p>
           </div>
-          <div class="text-4xl sm:text-5xl font-bold text-slate-900 mb-2 sm:mb-3">60%</div>
-          <h3 class="text-lg sm:text-xl font-semibold text-slate-900 mb-1 sm:mb-2">
-            Cost Savings
-          </h3>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Save thousands compared to US agency rates while maintaining the
-            same professional quality standards.
-          </p>
         </div>
-      </div>
-
-      <div class="stat-card group">
-        <div
-          class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-5 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 h-full"
-        >
-          <div
-            class="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-orange-500 rounded-xl mb-4 sm:mb-5 lg:mb-6 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <div class="text-4xl sm:text-5xl font-bold text-slate-900 mb-2 sm:mb-3">100%</div>
-          <h3 class="text-lg sm:text-xl font-semibold text-slate-900 mb-1 sm:mb-2">
-            Same Quality
-          </h3>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Our certified professionals deliver the exact same quality as US
-            agencies. Same standards, better prices.
-          </p>
-        </div>
-      </div>
-
-      <div class="stat-card group">
-        <div
-          class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-5 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 h-full"
-        >
-          <div
-            class="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-cyan-900 rounded-xl mb-4 sm:mb-5 lg:mb-6 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <div class="text-4xl sm:text-5xl font-bold text-slate-900 mb-2 sm:mb-3">CST</div>
-          <h3 class="text-lg sm:text-xl font-semibold text-slate-900 mb-1 sm:mb-2">
-            US Time Zone
-          </h3>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Work seamlessly with our bilingual team. Honduras operates in
-            Central Time (CST) for real-time collaboration.
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
 
     <!-- Main Content Grid -->
@@ -147,148 +124,23 @@
       <!-- Why Choose Us -->
       <div class="lg:col-span-3 space-y-6">
         <h3 class="text-3xl font-semibold text-slate-900 mb-8">
-          Why US Companies Choose Codebrand
+          {c.benefitsTitle}
         </h3>
 
         <div class="space-y-4 benefits-list">
-          <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
-          >
-            <div
-              class="flex-shrink-0 w-10 h-10 bg-cyan-900 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
-                ></path>
-              </svg>
+          {c.benefits.map((benefit) => (
+            <div class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300">
+              <div class="flex-shrink-0 w-10 h-10 bg-cyan-900 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-1">{benefit.title}</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">{benefit.description}</p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-semibold text-slate-900 mb-1">
-                Certified Professional Team
-              </h4>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                Our developers hold certifications from Udemy, Platzi, and
-                Adobe, ensuring cutting-edge expertise in modern technologies.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
-          >
-            <div
-              class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-900 mb-1">
-                Export-Quality Services
-              </h4>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                We specialize in serving international clients with the same
-                standards expected by Fortune 500 companies.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
-          >
-            <div
-              class="flex-shrink-0 w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-900 mb-1">
-                Managed Honduran Talent
-              </h4>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                We handle all talent management, so you get premium results
-                without the overhead costs.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
-          >
-            <div
-              class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-900 mb-1">
-                Bilingual Communication
-              </h4>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                Fluent English-speaking team ensures clear communication
-                throughout your project lifecycle.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="benefit-item flex items-start gap-4 p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
-          >
-            <div
-              class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                <path
-                  fill-rule="evenodd"
-                  d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-900 mb-1">
-                Proven Track Record
-              </h4>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                50+ successful projects delivered to international clients
-                across various industries.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -313,9 +165,9 @@
               >
                 <div class="flex items-center justify-between mb-3">
                   <div>
-                    <p class="text-sm text-slate-500 mb-1">US Agency</p>
+                    <p class="text-sm text-slate-500 mb-1">{c.priceComparison.competitorLabel}</p>
                     <p class="text-3xl font-bold text-slate-900">
-                      $25,000<span class="text-lg text-slate-400">+</span>
+                      {c.priceComparison.competitorPrice}<span class="text-lg text-slate-400">+</span>
                     </p>
                   </div>
                   <div
@@ -336,7 +188,7 @@
                   </div>
                 </div>
                 <p class="text-xs text-slate-500">
-                  Average US market rate for custom websites
+                  {c.priceComparison.competitorNote}
                 </p>
               </div>
 
@@ -360,8 +212,8 @@
               >
                 <div class="flex items-center justify-between mb-3">
                   <div>
-                    <p class="text-sm text-cyan-100 mb-1">Codebrand</p>
-                    <p class="text-3xl font-bold text-white">$10,000</p>
+                    <p class="text-sm text-cyan-100 mb-1">{c.priceComparison.ourLabel}</p>
+                    <p class="text-3xl font-bold text-white">{c.priceComparison.ourPrice}</p>
                   </div>
                   <div
                     class="flex items-center justify-center w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm"
@@ -379,7 +231,7 @@
                   </div>
                 </div>
                 <p class="text-xs text-cyan-100">
-                  Top quality, Honduras pricing
+                  {c.priceComparison.ourNote}
                 </p>
               </div>
 
@@ -388,8 +240,8 @@
               >
                 <div class="text-center">
                   <p class="text-sm text-slate-600 mb-2">You Save</p>
-                  <p class="text-4xl font-bold text-green-600 mb-1">$15,000+</p>
-                  <p class="text-xs text-slate-500">60% cost reduction</p>
+                  <p class="text-4xl font-bold text-green-600 mb-1">{c.priceComparison.savingsAmount}</p>
+                  <p class="text-xs text-slate-500">{c.priceComparison.savingsPercent}</p>
                 </div>
               </div>
             </div>
@@ -404,7 +256,7 @@
         href="/contact"
         class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-bold text-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-1 transition-all duration-300"
       >
-        Get Your Free Quote Today
+        {c.ctaText}
         <svg
           class="w-5 h-5"
           fill="none"
@@ -419,7 +271,7 @@
         </svg>
       </a>
       <p class="text-slate-500 mt-5 text-sm">
-        Join 50+ US businesses saving thousands on quality web development
+        {c.ctaSubtext}
       </p>
     </div>
   </div>

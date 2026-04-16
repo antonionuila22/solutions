@@ -1,21 +1,58 @@
 ---
-// HowWeWork.astro - Process Section matching site style
 import { createHowToSchema } from "../utils/schema";
 
-// HowTo Schema for rich snippets - helps Google understand this is a process
-const howToSchema = createHowToSchema(
-  "How Codebrand Builds Your Website",
-  "Our proven 6-step web development process from discovery to launch, ensuring quality and transparency at every stage.",
-  [
-    "Discovery Call: Schedule a free 30-minute consultation to discuss your business goals, target audience, and project requirements.",
-    "Proposal: Receive a detailed proposal with clear scope, fixed pricing, and realistic timeline within 2-5 business days.",
-    "UX/UI Design: Review and approve interactive Figma prototypes for all devices before any code is written (1-2 weeks).",
-    "Development: We build your website with clean, performant code exactly to spec, with weekly video progress updates (2-4 weeks).",
-    "Review & QA: Test everything thoroughly across all devices while we fix, refine, and polish until perfect (3-5 days).",
-    "Launch: We deploy your site, transfer all files and credentials to you, and provide 30 days of free post-launch support.",
+interface HowWeWorkStep {
+  number: number;
+  title: string;
+  time: string;
+  description: string;
+  hoverColor: string;
+  bgColor: string;
+}
+
+interface HowWeWorkConfig {
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  steps: HowWeWorkStep[];
+  schemaTitle: string;
+  schemaDescription: string;
+  ctaText: string;
+  ctaSubtext: string;
+}
+
+interface Props {
+  config?: Partial<HowWeWorkConfig>;
+}
+
+const defaults: HowWeWorkConfig = {
+  badge: "Our Process",
+  title: "How We",
+  titleHighlight: "Work",
+  subtitle: "A transparent, milestone-driven process from first call to launch",
+  steps: [
+    { number: 1, title: "Discovery Call", time: "30 min • Free", description: "Free consultation to understand your business, goals, and define the complete project scope together.", hoverColor: "hover:border-cyan-500/50 active:border-cyan-500/70", bgColor: "bg-cyan-500" },
+    { number: 2, title: "Proposal", time: "2-5 days", description: "Clear scope, fixed pricing, and realistic timeline. No surprises — you know exactly what you're getting.", hoverColor: "hover:border-orange-500/50 active:border-orange-500/70", bgColor: "bg-orange-500" },
+    { number: 3, title: "UX/UI Design", time: "1-2 weeks", description: "Interactive Figma prototypes for all devices. You approve the design before we write any code.", hoverColor: "hover:border-violet-500/50 active:border-violet-500/70", bgColor: "bg-violet-500" },
+    { number: 4, title: "Development", time: "2-4 weeks", description: "Clean, performant code built exactly to spec. Weekly video updates via Loom keep you in the loop.", hoverColor: "hover:border-emerald-500/50 active:border-emerald-500/70", bgColor: "bg-emerald-500" },
+    { number: 5, title: "Review & QA", time: "3-5 days", description: "You test everything thoroughly. We fix, refine, and polish until it's perfect across all devices.", hoverColor: "hover:border-blue-500/50 active:border-blue-500/70", bgColor: "bg-blue-500" },
+    { number: 6, title: "Launch", time: "+ 30 days support", description: "We deploy, transfer all files and credentials to you, and provide 30 days of free post-launch support.", hoverColor: "hover:border-amber-500/50 active:border-amber-500/70", bgColor: "bg-amber-500" },
   ],
+  schemaTitle: "How Codebrand Builds Your Website",
+  schemaDescription: "Our proven 6-step web development process from discovery to launch, ensuring quality and transparency at every stage.",
+  ctaText: "Start Your Project",
+  ctaSubtext: "Free discovery call • No commitment required",
+};
+
+const c = { ...defaults, ...Astro.props.config };
+
+const howToSchema = createHowToSchema(
+  c.schemaTitle,
+  c.schemaDescription,
+  c.steps.map(s => `${s.title}: ${s.description}`),
   "https://www.codebrand.us/photos/bannercodebrand.webp",
-  "PT6W" // Approximate total duration: 6 weeks
+  "PT6W"
 );
 ---
 
@@ -43,155 +80,40 @@ const howToSchema = createHowToSchema(
             d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
             clip-rule="evenodd"></path>
         </svg>
-        <span class="text-sm font-medium text-cyan-400">Our Process</span>
+        <span class="text-sm font-medium text-cyan-400">{c.badge}</span>
       </span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-        How We <span class="text-orange-500">Work</span>
+        {c.title} <span class="text-orange-500">{c.titleHighlight}</span>
       </h2>
       <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-        A transparent, milestone-driven process from first call to launch
+        {c.subtitle}
       </p>
     </div>
 
     <!-- Process Steps Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-      <!-- Step 1 -->
-      <div class="group">
-        <div
-          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/50 active:border-cyan-500/70 transition-all duration-300 h-full"
-        >
-          <div class="flex items-center gap-4 mb-5">
-            <div
-              class="flex items-center justify-center w-12 h-12 bg-cyan-500 rounded-xl text-white font-bold text-xl"
-            >
-              1
+      {c.steps.map((step) => (
+        <div class="group">
+          <div
+            class={`bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 ${step.hoverColor} transition-all duration-300 h-full`}
+          >
+            <div class="flex items-center gap-4 mb-5">
+              <div
+                class={`flex items-center justify-center w-12 h-12 ${step.bgColor} rounded-xl text-white font-bold text-xl`}
+              >
+                {step.number}
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">{step.title}</h3>
+                <span class="text-sm text-slate-400">{step.time}</span>
+              </div>
             </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white">Discovery Call</h3>
-              <span class="text-sm text-cyan-400">30 min • Free</span>
-            </div>
+            <p class="text-slate-400 leading-relaxed">
+              {step.description}
+            </p>
           </div>
-          <p class="text-slate-400 leading-relaxed">
-            Free consultation to understand your business, goals, and define the
-            complete project scope together.
-          </p>
         </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="group">
-        <div
-          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-orange-500/50 active:border-orange-500/70 transition-all duration-300 h-full"
-        >
-          <div class="flex items-center gap-4 mb-5">
-            <div
-              class="flex items-center justify-center w-12 h-12 bg-orange-500 rounded-xl text-white font-bold text-xl"
-            >
-              2
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white">Proposal</h3>
-              <span class="text-sm text-orange-400">2-5 days</span>
-            </div>
-          </div>
-          <p class="text-slate-400 leading-relaxed">
-            Clear scope, fixed pricing, and realistic timeline. No surprises —
-            you know exactly what you're getting.
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="group">
-        <div
-          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-violet-500/50 active:border-violet-500/70 transition-all duration-300 h-full"
-        >
-          <div class="flex items-center gap-4 mb-5">
-            <div
-              class="flex items-center justify-center w-12 h-12 bg-violet-500 rounded-xl text-white font-bold text-xl"
-            >
-              3
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white">UX/UI Design</h3>
-              <span class="text-sm text-violet-400">1-2 weeks</span>
-            </div>
-          </div>
-          <p class="text-slate-400 leading-relaxed">
-            Interactive Figma prototypes for all devices. You approve the design
-            before we write any code.
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="group">
-        <div
-          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-emerald-500/50 active:border-emerald-500/70 transition-all duration-300 h-full"
-        >
-          <div class="flex items-center gap-4 mb-5">
-            <div
-              class="flex items-center justify-center w-12 h-12 bg-emerald-500 rounded-xl text-white font-bold text-xl"
-            >
-              4
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white">Development</h3>
-              <span class="text-sm text-emerald-400">2-4 weeks</span>
-            </div>
-          </div>
-          <p class="text-slate-400 leading-relaxed">
-            Clean, performant code built exactly to spec. Weekly video updates
-            via Loom keep you in the loop.
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 5 -->
-      <div class="group">
-        <div
-          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-blue-500/50 active:border-blue-500/70 transition-all duration-300 h-full"
-        >
-          <div class="flex items-center gap-4 mb-5">
-            <div
-              class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-xl text-white font-bold text-xl"
-            >
-              5
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white">Review & QA</h3>
-              <span class="text-sm text-blue-400">3-5 days</span>
-            </div>
-          </div>
-          <p class="text-slate-400 leading-relaxed">
-            You test everything thoroughly. We fix, refine, and polish until
-            it's perfect across all devices.
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 6 -->
-      <div class="group">
-        <div
-          class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-2xl p-6 lg:p-8 hover:border-amber-500/50 active:border-amber-500/70 transition-all duration-300 h-full"
-        >
-          <div class="flex items-center gap-4 mb-5">
-            <div
-              class="flex items-center justify-center w-12 h-12 bg-amber-500 rounded-xl text-white font-bold text-xl"
-            >
-              6
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white">Launch</h3>
-              <span class="text-sm text-amber-400">+ 30 days support</span>
-            </div>
-          </div>
-          <p class="text-slate-400 leading-relaxed">
-            We deploy, transfer all files and credentials to you, and provide 30
-            days of free post-launch support.
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
 
     <!-- What's Included -->
@@ -279,7 +201,7 @@ const howToSchema = createHowToSchema(
         href="/contact"
         class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
       >
-        Start Your Project
+        {c.ctaText}
         <svg
           class="w-5 h-5"
           fill="none"
@@ -294,7 +216,7 @@ const howToSchema = createHowToSchema(
         </svg>
       </a>
       <p class="text-slate-500 mt-4 text-sm">
-        Free discovery call • No commitment required
+        {c.ctaSubtext}
       </p>
     </div>
   </div>

@@ -1,57 +1,74 @@
 ---
 import type { FAQItem } from "../components/FAQ.tsx";
 
-interface Props {
-    includeFaqSchema?: boolean;
+interface FaqConfig {
+    includeFaqSchema: boolean;
+    badge: string;
+    title: string;
+    titleHighlight: string;
+    subtitle: string;
+    faqs: FAQItem[];
 }
 
-const { includeFaqSchema = true } = Astro.props;
+interface Props {
+    config?: Partial<FaqConfig>;
+}
 
-const faqs: FAQItem[] = [
-    {
-        question: "How much does a website cost with Codebrand?",
-        answer: "Our websites start at $2,500 for a professional 5-page site. E-commerce and custom platforms range from $5,000-$25,000 depending on complexity. We provide detailed quotes after understanding your specific needs—no hidden fees.",
-    },
-    {
-        question: "How long does it take to build a website?",
-        answer: "A standard business website takes 4-6 weeks. E-commerce sites take 6-10 weeks. Custom web applications vary based on complexity. We set clear milestones and deliver on schedule.",
-    },
-    {
-        question: "What technologies do you use and why?",
-        answer: "We use Astro, React, and Next.js for fast, modern websites. For e-commerce, we customize WooCommerce or build headless solutions. For simpler sites, WordPress works great. We choose based on your needs—not trends.",
-    },
-    {
-        question: "Is Codebrand good for small businesses?",
-        answer: "Yes. Most of our clients are small to medium businesses looking to grow. We've helped local service providers, e-commerce stores, and startups build professional websites that actually convert visitors into customers.",
-    },
-    {
-        question: "How is Codebrand different from hiring a freelancer?",
-        answer: "With us, you get a full team: designers, developers, and project management. No single point of failure. We also provide ongoing support, clear contracts, and accountability. Freelancers are great for small tasks; we handle complete projects.",
-    },
-    {
-        question: "Do you work with clients outside Honduras?",
-        answer: "Yes. We work with clients across the US, Latin America, and Spain. We're in the Central timezone (CST), so we overlap with US business hours. Our team is fully bilingual (English/Spanish).",
-    },
-    {
-        question: "What happens after my website launches?",
-        answer: "Every project includes 30-90 days of post-launch support for bug fixes and adjustments. We also offer monthly maintenance plans for ongoing updates, security, and improvements. Your website shouldn't be abandoned after launch.",
-    },
-    {
-        question: "Do I own my website and code?",
-        answer: "Yes, 100%. You own everything: domain, hosting account, design files, and source code. We don't lock you in. If you want to leave, you take everything with you.",
-    },
-    {
-        question: "Can you help with SEO and marketing?",
-        answer: "Yes. We build websites with SEO best practices from day one. We also offer ongoing SEO services, content strategy, and can integrate with your marketing tools (Google Analytics, Meta Pixel, CRMs).",
-    },
-    {
-        question: "How do I get started?",
-        answer: "Contact us through the form or WhatsApp. We'll schedule a quick call to understand your project, then send you a detailed proposal with scope, timeline, and pricing. No commitment until you're ready.",
-    },
-];
+const defaults: FaqConfig = {
+    includeFaqSchema: true,
+    badge: "Got Questions?",
+    title: "Common Questions",
+    titleHighlight: "Answered",
+    subtitle: 'Everything you need to know about working with us. Can\'t find your answer? <a href="/contact" class="text-cyan-600 hover:underline font-medium">Contact us</a>.',
+    faqs: [
+        {
+            question: "How much does a website cost with Codebrand?",
+            answer: "Our websites start at $2,500 for a professional 5-page site. E-commerce and custom platforms range from $5,000-$25,000 depending on complexity. We provide detailed quotes after understanding your specific needs—no hidden fees.",
+        },
+        {
+            question: "How long does it take to build a website?",
+            answer: "A standard business website takes 4-6 weeks. E-commerce sites take 6-10 weeks. Custom web applications vary based on complexity. We set clear milestones and deliver on schedule.",
+        },
+        {
+            question: "What technologies do you use and why?",
+            answer: "We use Astro, React, and Next.js for fast, modern websites. For e-commerce, we customize WooCommerce or build headless solutions. For simpler sites, WordPress works great. We choose based on your needs—not trends.",
+        },
+        {
+            question: "Is Codebrand good for small businesses?",
+            answer: "Yes. Most of our clients are small to medium businesses looking to grow. We've helped local service providers, e-commerce stores, and startups build professional websites that actually convert visitors into customers.",
+        },
+        {
+            question: "How is Codebrand different from hiring a freelancer?",
+            answer: "With us, you get a full team: designers, developers, and project management. No single point of failure. We also provide ongoing support, clear contracts, and accountability. Freelancers are great for small tasks; we handle complete projects.",
+        },
+        {
+            question: "Do you work with clients outside Honduras?",
+            answer: "Yes. We work with clients across the US, Latin America, and Spain. We're in the Central timezone (CST), so we overlap with US business hours. Our team is fully bilingual (English/Spanish).",
+        },
+        {
+            question: "What happens after my website launches?",
+            answer: "Every project includes 30-90 days of post-launch support for bug fixes and adjustments. We also offer monthly maintenance plans for ongoing updates, security, and improvements. Your website shouldn't be abandoned after launch.",
+        },
+        {
+            question: "Do I own my website and code?",
+            answer: "Yes, 100%. You own everything: domain, hosting account, design files, and source code. We don't lock you in. If you want to leave, you take everything with you.",
+        },
+        {
+            question: "Can you help with SEO and marketing?",
+            answer: "Yes. We build websites with SEO best practices from day one. We also offer ongoing SEO services, content strategy, and can integrate with your marketing tools (Google Analytics, Meta Pixel, CRMs).",
+        },
+        {
+            question: "How do I get started?",
+            answer: "Contact us through the form or WhatsApp. We'll schedule a quick call to understand your project, then send you a detailed proposal with scope, timeline, and pricing. No commitment until you're ready.",
+        },
+    ],
+};
+
+const c = { ...defaults, ...Astro.props.config };
+const faqs = c.faqs;
 ---
 
-{includeFaqSchema && (
+{c.includeFaqSchema && (
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -76,15 +93,15 @@ const faqs: FAQItem[] = [
                 <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span class="text-xs sm:text-sm font-medium text-cyan-700">Got Questions?</span>
+                <span class="text-xs sm:text-sm font-medium text-cyan-700">{c.badge}</span>
             </span>
             <h2
                 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 px-2 sm:px-0"
             >
-                Common Questions <span class="text-orange-500">Answered</span>
+                {c.title} <span class="text-orange-500">{c.titleHighlight}</span>
             </h2>
             <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-2 sm:px-0">
-                Everything you need to know about working with us. Can't find your answer? <a href="/contact" class="text-cyan-600 hover:underline font-medium">Contact us</a>.
+                <Fragment set:html={c.subtitle} />
             </p>
         </div>
 

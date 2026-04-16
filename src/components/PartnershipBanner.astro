@@ -1,10 +1,43 @@
 ---
-// Partnership Banner Component - Codebrand x Zeed Agency
-interface Props {
-  compact?: boolean; // Optional: use a more compact version
+interface PartnerBenefit {
+  title: string;
+  description: string;
 }
 
-const { compact = false } = Astro.props;
+interface PartnershipConfig {
+  compact: boolean;
+  badgeText: string;
+  title: string;
+  subtitle: string;
+  benefits: PartnerBenefit[];
+  partnerLogo: string;
+  partnerLogoAlt: string;
+  ctaText: string;
+  ctaHref: string;
+}
+
+interface Props {
+  config?: Partial<PartnershipConfig>;
+}
+
+const defaults: PartnershipConfig = {
+  compact: false,
+  badgeText: "STRATEGIC PARTNERSHIP",
+  title: 'Codebrand <span class="text-orange-400">+</span> Zeed Agency',
+  subtitle: 'We\'ve strategically partnered with <span class="font-bold text-slate-900">Zeed Agency</span> to deliver data-driven growth, high-impact creative, and premium lead generation systems. Together, we provide comprehensive digital solutions that drive measurable results across every channel.',
+  benefits: [
+    { title: "Digital 360° Performance", description: "Data-driven growth across Meta, Google, and multi-channel campaigns—powered by advanced tracking, conversion APIs, CRM integration, and continuous optimization for measurable results." },
+    { title: "Creative Strategy & Content", description: "High-impact creative that drives performance. From storytelling to motion, social assets, and AI-enhanced visuals—strategic messaging designed to capture attention and convert." },
+    { title: "High-Ticket Lead Generation", description: "Proven systems to attract, qualify, and convert premium clients using landing pages, automation, WhatsApp bots, and CRM flows—ideal for real estate, medical, and high-value industries." },
+  ],
+  partnerLogo: "/partners/image.png",
+  partnerLogoAlt: "Zeed Agency Logo",
+  ctaText: "Learn More About Our Partnership",
+  ctaHref: "https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true",
+};
+
+const c = { ...defaults, ...Astro.props.config };
+const compact = c.compact;
 ---
 
 <section
@@ -47,7 +80,7 @@ const { compact = false } = Astro.props;
               d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
             ></path>
           </svg>
-          STRATEGIC PARTNERSHIP
+          {c.badgeText}
         </span>
       </div>
 
@@ -56,17 +89,13 @@ const { compact = false } = Astro.props;
         <h2
           class={`font-black text-cyan-900 leading-tight ${compact ? "text-2xl md:text-3xl lg:text-4xl" : "text-3xl md:text-4xl lg:text-5xl xl:text-6xl"}`}
         >
-          Codebrand <span class="text-orange-400">+</span> Zeed Agency
+          <Fragment set:html={c.title} />
         </h2>
 
         <p
           class={`text-slate-700 max-w-4xl mx-auto leading-relaxed ${compact ? "text-sm md:text-base" : "text-base md:text-lg lg:text-xl"}`}
         >
-          We've strategically partnered with <span
-            class="font-bold text-slate-900">Zeed Agency</span
-          > to deliver data-driven growth, high-impact creative, and premium lead
-          generation systems. Together, we provide comprehensive digital solutions
-          that drive measurable results across every channel.
+          <Fragment set:html={c.subtitle} />
         </p>
       </div>
 
@@ -74,122 +103,26 @@ const { compact = false } = Astro.props;
       <div
         class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl pt-4 md:pt-6 animate-fade-in delay-200"
       >
-        <!-- Benefit 1: Digital 360° Performance -->
-        <div
-          class="group relative bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 hover:bg-white hover:border-orange-400 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-        >
+        {c.benefits.map((benefit) => (
           <div
-            class="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"
-          >
-          </div>
-          <div
-            class="relative space-y-3 flex flex-col items-center text-center"
+            class="group relative bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 hover:bg-white hover:border-orange-400 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
           >
             <div
-              class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <svg
-                class="w-6 h-6 md:w-7 md:h-7 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              class="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"
+            />
+            <div class="relative space-y-3 flex flex-col items-center text-center">
+              <div
+                class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
+                <svg class="w-6 h-6 md:w-7 md:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-slate-900">{benefit.title}</h3>
+              <p class="text-sm md:text-base text-slate-600">{benefit.description}</p>
             </div>
-            <h3 class="text-lg md:text-xl font-bold text-slate-900">
-              Digital 360° Performance
-            </h3>
-            <p class="text-sm md:text-base text-slate-600">
-              Data-driven growth across Meta, Google, and multi-channel
-              campaigns—powered by advanced tracking, conversion APIs, CRM
-              integration, and continuous optimization for measurable results.
-            </p>
           </div>
-        </div>
-
-        <!-- Benefit 2: Creative Strategy -->
-        <div
-          class="group relative bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 hover:bg-white hover:border-orange-400 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"
-          >
-          </div>
-          <div
-            class="relative space-y-3 flex flex-col items-center text-center"
-          >
-            <div
-              class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <svg
-                class="w-6 h-6 md:w-7 md:h-7 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-lg md:text-xl font-bold text-slate-900">
-              Creative Strategy & Content
-            </h3>
-            <p class="text-sm md:text-base text-slate-600">
-              High-impact creative that drives performance. From storytelling to
-              motion, social assets, and AI-enhanced visuals—strategic messaging
-              designed to capture attention and convert.
-            </p>
-          </div>
-        </div>
-
-        <!-- Benefit 3: High-Ticket Lead Generation -->
-        <div
-          class="group relative bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 hover:bg-white hover:border-orange-400 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"
-          >
-          </div>
-          <div
-            class="relative space-y-3 flex flex-col items-center text-center"
-          >
-            <div
-              class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <svg
-                class="w-6 h-6 md:w-7 md:h-7 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-lg md:text-xl font-bold text-slate-900">
-              High-Ticket Lead Generation
-            </h3>
-            <p class="text-sm md:text-base text-slate-600">
-              Proven systems to attract, qualify, and convert premium clients
-              using landing pages, automation, WhatsApp bots, and CRM
-              flows—ideal for real estate, medical, and high-value industries.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
 
       <!-- Partnership Logos -->
@@ -229,8 +162,8 @@ const { compact = false } = Astro.props;
           class="flex items-center justify-center p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
           <img
-            src="/partners/image.png"
-            alt="Zeed Agency Logo"
+            src={c.partnerLogo}
+            alt={c.partnerLogoAlt}
             class="h-12 md:h-16 lg:h-20 w-auto object-contain"
             width="200"
             height="80"
@@ -245,10 +178,10 @@ const { compact = false } = Astro.props;
         !compact && (
           <div class="pt-4 md:pt-6 animate-slide-up delay-100">
             <a
-              href="https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true"
+              href={c.ctaHref}
               class="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm lg:text-lg"
             >
-              <span>Learn More About Our Partnership</span>
+              <span>{c.ctaText}</span>
               <svg
                 class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
                 fill="none"

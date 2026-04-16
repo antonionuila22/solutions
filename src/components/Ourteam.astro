@@ -10,7 +10,11 @@ type Member = {
   github?: string;
 };
 
-const members: Member[] = [
+interface Props {
+  config?: { members?: Member[] };
+}
+
+const defaultMembers: Member[] = [
   {
     name: "Ramon Nuila",
     role: "CEO & Founder",
@@ -60,6 +64,8 @@ const members: Member[] = [
     skills: ["Full Stack developer", "PHP", "Laravel"],
   },
 ];
+
+const members = Astro.props.config?.members ?? defaultMembers;
 
 const bgGrad = (i: number) =>
   i % 2 === 0 ? "from-cyan-50 to-orange-50" : "from-orange-50 to-cyan-50";

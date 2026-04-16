@@ -1,13 +1,23 @@
 ---
-// TechMarquee.astro - Infinite scrolling logo marquee
-// Modern CSS-only animation for optimal performance
-
 interface Tech {
   name: string;
   icon: string;
 }
 
-const technologies: Tech[] = [
+interface TechMarqueeConfig {
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  technologies: Tech[];
+  stats: { value: string; label: string; color: string }[];
+}
+
+interface Props {
+  config?: Partial<TechMarqueeConfig>;
+}
+
+const defaultTechnologies: Tech[] = [
   { name: "React", icon: "/icons/react-svgrepo-com.svg" },
   { name: "Next.js", icon: "/icons/nextjs-svgrepo-com.svg" },
   { name: "Node.js", icon: "/icons/nodejs-svgrepo-com.svg" },
@@ -25,6 +35,23 @@ const technologies: Tech[] = [
   { name: "WordPress", icon: "/icons/wordpress.svg" },
   { name: "Flutter", icon: "/icons/flutter-svgrepo-com.svg" },
 ];
+
+const defaults: TechMarqueeConfig = {
+  badge: "Tech Stack",
+  title: "Built With",
+  titleHighlight: "Modern Technologies",
+  subtitle: "We use industry-leading tools and frameworks to deliver fast, scalable, and maintainable solutions",
+  technologies: defaultTechnologies,
+  stats: [
+    { value: "20+", label: "Technologies", color: "text-cyan-400" },
+    { value: "50+", label: "Projects Delivered", color: "text-orange-500" },
+    { value: "100%", label: "Client Satisfaction", color: "text-emerald-400" },
+    { value: "24h", label: "Response Time", color: "text-violet-400" },
+  ],
+};
+
+const c = { ...defaults, ...Astro.props.config };
+const technologies = c.technologies;
 ---
 
 <section class="py-16 sm:py-20 lg:py-24 bg-slate-950 overflow-hidden">
@@ -39,13 +66,13 @@ const technologies: Tech[] = [
             d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
             clip-rule="evenodd"></path>
         </svg>
-        <span class="text-sm font-medium text-cyan-400">Tech Stack</span>
+        <span class="text-sm font-medium text-cyan-400">{c.badge}</span>
       </span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-        Built With <span class="text-orange-500">Modern Technologies</span>
+        {c.title} <span class="text-orange-500">{c.titleHighlight}</span>
       </h2>
       <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-        We use industry-leading tools and frameworks to deliver fast, scalable, and maintainable solutions
+        {c.subtitle}
       </p>
     </div>
   </div>
@@ -118,22 +145,12 @@ const technologies: Tech[] = [
   <!-- Stats Row -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-bold text-cyan-400 mb-1">20+</div>
-        <div class="text-sm text-slate-400">Technologies</div>
-      </div>
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-bold text-orange-500 mb-1">50+</div>
-        <div class="text-sm text-slate-400">Projects Delivered</div>
-      </div>
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-bold text-emerald-400 mb-1">100%</div>
-        <div class="text-sm text-slate-400">Client Satisfaction</div>
-      </div>
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-bold text-violet-400 mb-1">24h</div>
-        <div class="text-sm text-slate-400">Response Time</div>
-      </div>
+      {c.stats.map((stat) => (
+        <div class="p-4">
+          <div class={`text-3xl sm:text-4xl font-bold ${stat.color} mb-1`}>{stat.value}</div>
+          <div class="text-sm text-slate-400">{stat.label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

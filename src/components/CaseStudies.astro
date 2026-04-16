@@ -13,47 +13,67 @@ interface CaseStudy {
   badgeColor: string;
 }
 
-const caseStudies: CaseStudy[] = [
-  {
-    industry: "Restaurant",
-    headline: "200% Increase in Online Orders",
-    description:
-      "Built a custom online ordering platform replacing third-party apps. Zero commission fees meant the client kept 100% of profits.",
-    metrics: [
-      { label: "Monthly Orders", value: "2,400+" },
-      { label: "Commission Saved", value: "$18K/yr" },
-      { label: "Launch Time", value: "3 weeks" },
-    ],
-    gradient: "from-orange-500 to-amber-500",
-    badgeColor: "bg-orange-50 text-orange-700 border-orange-200",
-  },
-  {
-    industry: "Healthcare",
-    headline: "45% Less Admin Time",
-    description:
-      "HIPAA-compliant patient portal with automated scheduling, reminders, and billing integration for a multi-location clinic.",
-    metrics: [
-      { label: "Patients Served", value: "12,000+" },
-      { label: "No-Show Rate", value: "-60%" },
-      { label: "Staff Hours Saved", value: "25hrs/wk" },
-    ],
-    gradient: "from-cyan-500 to-blue-500",
-    badgeColor: "bg-cyan-50 text-cyan-700 border-cyan-200",
-  },
-  {
-    industry: "E-Commerce",
-    headline: "3x Revenue in 6 Months",
-    description:
-      "Full e-commerce rebuild with SEO optimization, faster checkout, and mobile-first design that tripled monthly revenue.",
-    metrics: [
-      { label: "Monthly Revenue", value: "$85K+" },
-      { label: "Conversion Rate", value: "+180%" },
-      { label: "Page Speed", value: "95/100" },
-    ],
-    gradient: "from-violet-500 to-purple-500",
-    badgeColor: "bg-violet-50 text-violet-700 border-violet-200",
-  },
-];
+interface CaseStudiesConfig {
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  studies: CaseStudy[];
+}
+
+interface Props {
+  config?: Partial<CaseStudiesConfig>;
+}
+
+const defaults: CaseStudiesConfig = {
+  badge: "Results & Case Studies",
+  title: "Real Outcomes for",
+  titleHighlight: "Real Businesses",
+  subtitle: "Every project is built to deliver measurable impact. Here's what our clients achieved.",
+  studies: [
+    {
+      industry: "Restaurant",
+      headline: "200% Increase in Online Orders",
+      description:
+        "Built a custom online ordering platform replacing third-party apps. Zero commission fees meant the client kept 100% of profits.",
+      metrics: [
+        { label: "Monthly Orders", value: "2,400+" },
+        { label: "Commission Saved", value: "$18K/yr" },
+        { label: "Launch Time", value: "3 weeks" },
+      ],
+      gradient: "from-orange-500 to-amber-500",
+      badgeColor: "bg-orange-50 text-orange-700 border-orange-200",
+    },
+    {
+      industry: "Healthcare",
+      headline: "45% Less Admin Time",
+      description:
+        "HIPAA-compliant patient portal with automated scheduling, reminders, and billing integration for a multi-location clinic.",
+      metrics: [
+        { label: "Patients Served", value: "12,000+" },
+        { label: "No-Show Rate", value: "-60%" },
+        { label: "Staff Hours Saved", value: "25hrs/wk" },
+      ],
+      gradient: "from-cyan-500 to-blue-500",
+      badgeColor: "bg-cyan-50 text-cyan-700 border-cyan-200",
+    },
+    {
+      industry: "E-Commerce",
+      headline: "3x Revenue in 6 Months",
+      description:
+        "Full e-commerce rebuild with SEO optimization, faster checkout, and mobile-first design that tripled monthly revenue.",
+      metrics: [
+        { label: "Monthly Revenue", value: "$85K+" },
+        { label: "Conversion Rate", value: "+180%" },
+        { label: "Page Speed", value: "95/100" },
+      ],
+      gradient: "from-violet-500 to-purple-500",
+      badgeColor: "bg-violet-50 text-violet-700 border-violet-200",
+    },
+  ],
+};
+
+const c = { ...defaults, ...Astro.props.config };
 ---
 
 <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
@@ -81,30 +101,29 @@ const caseStudies: CaseStudy[] = [
           </svg>
         </span>
         <span class="text-sm font-semibold text-orange-700"
-          >Results & Case Studies</span
+          >{c.badge}</span
         >
       </span>
       <h2
         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-5 leading-tight px-2 sm:px-0"
       >
-        Real Outcomes for
+        {c.title}
         <span
           class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent"
-          >Real Businesses</span
+          >{c.titleHighlight}</span
         >
       </h2>
       <p
         class="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
       >
-        Every project is built to deliver measurable impact. Here's what our
-        clients achieved.
+        {c.subtitle}
       </p>
     </div>
 
     <!-- Case Study Cards Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
       {
-        caseStudies.map((study) => (
+        c.studies.map((study) => (
           <div class="group relative bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-slate-300/80 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
             {/* Accent top border */}
             <div
