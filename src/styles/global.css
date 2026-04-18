@@ -16,28 +16,21 @@
   --animate-marquee: marquee var(--duration) linear infinite;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   --animate-float: float 3s ease-in-out infinite;
+  --animate-float-lg: float-lg 6s ease-in-out infinite;
+  --animate-float-orb: float-orb 20s ease-in-out infinite;
 }
 
 /* ================================
    KEYFRAMES (Outside @layer for Safari)
    ================================ */
-/* Safari-compatible keyframes with vendor prefixes */
-@-webkit-keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@-webkit-keyframes fade-in-up {
-  from { opacity: 0; -webkit-transform: translateY(10px); transform: translateY(10px); }
-  to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
-}
 @keyframes fade-in-up {
-  from { opacity: 0; -webkit-transform: translateY(10px); transform: translateY(10px); }
-  to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slide-up {
@@ -50,27 +43,30 @@
   to { opacity: 1; transform: scale(1); }
 }
 
-@-webkit-keyframes marquee {
-  from { -webkit-transform: translateX(0); transform: translateX(0); }
-  to { -webkit-transform: translateX(calc(-100% - var(--gap, 1rem))); transform: translateX(calc(-100% - var(--gap, 1rem))); }
-}
 @keyframes marquee {
-  from { -webkit-transform: translateX(0); transform: translateX(0); }
-  to { -webkit-transform: translateX(calc(-100% - var(--gap, 1rem))); transform: translateX(calc(-100% - var(--gap, 1rem))); }
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap, 1rem))); }
 }
 
-@-webkit-keyframes marquee-vertical {
-  from { -webkit-transform: translateY(0); transform: translateY(0); }
-  to { -webkit-transform: translateY(calc(-100% - var(--gap, 1rem))); transform: translateY(calc(-100% - var(--gap, 1rem))); }
-}
 @keyframes marquee-vertical {
-  from { -webkit-transform: translateY(0); transform: translateY(0); }
-  to { -webkit-transform: translateY(calc(-100% - var(--gap, 1rem))); transform: translateY(calc(-100% - var(--gap, 1rem))); }
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(-100% - var(--gap, 1rem))); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
+}
+
+@keyframes float-lg {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
 }
 
 /* Animation utilities - Safari/Chrome iOS compatible */
@@ -422,14 +418,25 @@ footer *:focus-visible {
   transform: translateY(0);
 }
 
-/* Mobile: show content immediately, disable heavy animations */
+/* Mobile: lighter scroll animations (fade only, no transform for GPU perf) */
 @media (max-width: 768px) {
-  .js-enabled .fade-up,
-  .js-enabled .scroll-animate,
-  .js-enabled [data-animate] {
+  .js-enabled .fade-up {
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.5s ease;
+  }
+  .js-enabled .fade-up.visible {
     opacity: 1;
     transform: none;
-    transition: none;
+  }
+  .js-enabled .scroll-animate {
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.4s ease;
+  }
+  .js-enabled .scroll-animate.animate-in {
+    opacity: 1;
+    transform: none;
   }
 }
 

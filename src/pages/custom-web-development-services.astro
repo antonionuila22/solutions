@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FAQ from "../components/FAQ.tsx";
+import FaqAccordion from "../components/FaqAccordion.astro";
 
 const title = "Custom Web Development | Codebrand";
 const description = "Bespoke websites and web applications tailored to your business. Senior developers, US timezone, transparent pricing.";
@@ -87,7 +87,7 @@ const technologies = ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL",
   title={title}
   description={description}
   keywords={keywords}
-  canonicalOverride="https://www.codebrand.us/custom-web-development-services"
+  canonicalOverride="https://www.codebrand.us/services/web-development"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -210,7 +210,7 @@ const technologies = ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL",
           Custom Development <span class="text-orange-500">FAQ</span>
         </h2>
       </div>
-      <FAQ faqs={faqs} client:visible />
+      <FaqAccordion faqs={faqs} />
     </div>
   </section>
 

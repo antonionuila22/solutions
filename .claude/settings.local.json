@@ -55,7 +55,16 @@
       "Bash(for f in src/pages/landing/template-*.astro)",
       "Bash(do echo \"=== $f \\(last 5 lines\\) ===\")",
       "Read(//c/Users/RamonNuila/Documents/GitHub/solutions/**)",
-      "Bash(astro build:*)"
+      "Bash(astro build:*)",
+      "Bash(npx astro *)",
+      "Bash(kill %1)",
+      "Bash(xargs basename *)",
+      "Bash(xargs -I {} basename {})",
+      "Bash(read path *)",
+      "Bash([ ! -f \"/Users/ramonnuila/Documents/GitHub/codebrand/solutions/public$path\" ])",
+      "Bash(sed -i '' 's/\"worstRating\": \"5\"/\"worstRating\": \"1\"/g' src/layouts/HnLayout.astro src/layouts/Layout.astro src/layouts/LandingLayout.astro src/pages/hn/index.astro src/pages/index.astro src/components/ServicePageTemplateV4.astro)",
+      "Bash(sed -i '' 's/\"worstRating\": \"5\"/\"worstRating\": \"1\"/g' 'src/pages/products/[id].astro')",
+      "Bash(pkill -f \"astro dev\")"
     ]
   }
 }

@@ -6,7 +6,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FAQ from "../components/FAQ.tsx";
+import FaqAccordion from "../components/FaqAccordion.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 // SEO
@@ -187,7 +187,7 @@ const whyUs = [
   title={title}
   description={description}
   keywords={keywords}
-  canonicalOverride="https://www.codebrand.us/web-development-agency"
+  canonicalOverride="https://www.codebrand.us/services/web-development"
 >
   <script
     is:inline
@@ -216,7 +216,7 @@ const whyUs = [
       border-radius: 50%;
       filter: blur(80px);
       opacity: 0.5;
-      animation: float 20s ease-in-out infinite;
+      animation: float-orb 20s ease-in-out infinite;
     }
     .orb-1 {
       width: 600px;
@@ -241,7 +241,7 @@ const whyUs = [
       left: 30%;
       animation-delay: -14s;
     }
-    @keyframes float {
+    @keyframes float-orb {
       0%, 100% { transform: translate(0, 0) scale(1); }
       33% { transform: translate(30px, -30px) scale(1.05); }
       66% { transform: translate(-20px, 20px) scale(0.95); }
@@ -598,7 +598,7 @@ const whyUs = [
             <p class="text-neutral-400 text-lg">Everything you need to know about working with us.</p>
           </div>
           <div class="fade-up mt-12">
-            <FAQ faqs={faqs} theme="dark" client:visible />
+            <FaqAccordion faqs={faqs} theme="dark" />
           </div>
         </div>
       </section>

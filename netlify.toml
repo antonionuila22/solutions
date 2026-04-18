@@ -139,8 +139,8 @@
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400"
-    CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=0, s-maxage=60, stale-while-revalidate=60"
+    CDN-Cache-Control = "public, max-age=60, stale-while-revalidate=60"
     # Preload critical resources: fonts first, then CSS
     Link = '''
       </fonts/Poppins-Regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin,
@@ -150,27 +150,27 @@
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400"
-    CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=0, s-maxage=60, stale-while-revalidate=60"
+    CDN-Cache-Control = "public, max-age=60, stale-while-revalidate=60"
 
-# High-traffic pages - more aggressive CDN caching
+# High-traffic pages
 [[headers]]
   for = "/contact"
   [headers.values]
-    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400"
-    CDN-Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, s-maxage=60, stale-while-revalidate=60"
+    CDN-Cache-Control = "public, max-age=60"
 
 [[headers]]
   for = "/services/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400"
-    CDN-Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, s-maxage=60, stale-while-revalidate=60"
+    CDN-Cache-Control = "public, max-age=60"
 
 [[headers]]
   for = "/blog/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
-    CDN-Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=0, s-maxage=60, stale-while-revalidate=60"
+    CDN-Cache-Control = "public, max-age=60"
 
 # ===========================================
 # SECURITY & PERFORMANCE HEADERS - All pages

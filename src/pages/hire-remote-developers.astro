@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FAQ from "../components/FAQ.tsx";
+import FaqAccordion from "../components/FaqAccordion.astro";
 
 const title = "Hire Remote Developers | Codebrand";
 const description = "Hire senior remote developers. US timezone, English fluent. React, Node.js, TypeScript. Staff augmentation and dedicated teams.";
@@ -209,7 +209,7 @@ const stats = [
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Common <span class="text-orange-500">Questions</span></h2>
       </div>
       <div>
-        <FAQ faqs={faqs} client:visible />
+        <FaqAccordion faqs={faqs} />
       </div>
     </div>
   </section>

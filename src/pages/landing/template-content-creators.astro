@@ -1,6 +1,6 @@
 ---
 import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
-import Testimonial from "../../components/testimonial.tsx";
+import Testimonial from "../../components/Testimonial.astro";
 import { config } from "../../configs/landing/content-creators.config";
 ---
 
@@ -16,15 +16,6 @@ import { config } from "../../configs/landing/content-creators.config";
       }
     }
 
-    @keyframes float {
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
 
     @keyframes sparkle {
       0%,
@@ -45,7 +36,7 @@ import { config } from "../../configs/landing/content-creators.config";
     }
 
     .float-animation {
-      animation: float 6s ease-in-out infinite;
+      animation: float-lg 6s ease-in-out infinite;
     }
 
     .sparkle {
@@ -652,7 +643,7 @@ import { config } from "../../configs/landing/content-creators.config";
         </p>
       </div>
     </div>
-    <Testimonial client:visible />
+    <Testimonial />
   </section>
 
   <!-- Contact -->

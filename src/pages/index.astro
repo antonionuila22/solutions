@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import CardService from "../components/CardService.astro";
 import Pricing from "../components/Pricing.astro";
 import Faq from "../components/Faq.astro";
-import Testimonial from "../components/testimonial.tsx";
+import Testimonial from "../components/Testimonial.astro";
 import TechMarquee from "../components/TechMarquee.astro";
 import Ourteam from "@/components/Ourteam.astro";
 import PartnershipBanner from "@/components/PartnershipBanner.astro";
@@ -17,7 +17,7 @@ import ValueProposition from "../components/ValueProposition.astro";
 import CaseStudies from "../components/CaseStudies.astro";
 
 
-// Review Schema for Google rich snippets - individual reviews
+// Review Schema for Google rich snippets - real Google reviews
 const reviewsSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -26,51 +26,51 @@ const reviewsSchema = {
   "review": [
     {
       "@type": "Review",
-      "author": { "@type": "Person", "name": "Astrid Euceda" },
+      "author": { "@type": "Person", "name": "Cesar Franco" },
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Code Brand ofrece un excelente servicio en el desarrollo técnico y creativo. Lograron cumplir con mis necesidades entregando un resultado mejor de lo esperado.",
+      "reviewBody": "¡ESTA GENTE SI SABE LO QUE YO QUIERO! ¡EXCELENTE TRABAJO! Me hicieron un trabajo súper profesional y creativo para mi diseño en la página web.",
+      "datePublished": "2024-11-15"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Serling Topete" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Contratamos a Codebrand para que nos hiciera nuestra página web desde cero y el resultado ha sido asombroso. No solo diseñan la página, sino que se involucran en todo el proceso.",
+      "datePublished": "2024-10-20"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Tepeu Guerrero" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Muy sorprendido con su trabajo, hicieron una página web para mi lavandería por solo $600. Por su calidad y precio los recomiendo al 100.",
+      "datePublished": "2024-09-10"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Elvin Amador" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Excelente experiencia con Codebrand. Destacan por su profesionalismo, creatividad y atención al detalle. Los recomiendo totalmente.",
       "datePublished": "2024-08-15"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Luis Rios" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Buen servicio, el equipo brinda excelente atención al cliente. Muy recomendable si necesitas un experto que maneje tu sitio web.",
+      "datePublished": "2024-07-22"
     },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Cindy Serrano" },
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Thanks, I'm in Mexico and they gave me excellent service",
+      "reviewBody": "Gracias, estoy en México y me dieron un excelente servicio.",
       "datePublished": "2024-09-20"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Virginia Denisse Alfaro Reyes" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Excelente trabajo creando sitios webs",
-      "datePublished": "2024-07-10"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Nelson Nuñez" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Excelente Servicio, Eficaz y Responsables.",
-      "datePublished": "2024-10-05"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Mayelin Canelas" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Excelente !!",
-      "datePublished": "2024-06-28"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Jose Castro Urquia" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Lo mejor de lo mejor..",
-      "datePublished": "2024-11-12"
     }
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127",
+    "ratingValue": "5.0",
+    "reviewCount": "25",
     "bestRating": "5",
     "worstRating": "1"
   }
@@ -91,7 +91,7 @@ const services = [
 
 <Layout
   title="Web Development Agency | Custom Websites & Apps | Codebrand"
-  description="Full-service web development agency building custom websites, apps, and e-commerce solutions. Bilingual React & Next.js experts with 5+ years and 127 five-star reviews. Free consultation."
+  description="Full-service web development agency building custom websites, apps, and e-commerce solutions. Bilingual React & Next.js experts with 5+ years and 25 five-star Google reviews. Free consultation."
   image="/photos/bannercodebrand.webp"
 >
   <!-- Reviews Schema for Google rich snippets -->
@@ -119,15 +119,15 @@ const services = [
             >Client Success Stories</span
           >
         </span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-2 sm:px-0">
+        <h2 class="fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-2 sm:px-0">
           Web Development <span class="text-orange-500">Client Reviews</span>
         </h2>
         <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto px-2 sm:px-0">
-          127 reviews from US businesses across healthcare, e-commerce, law, real estate, and more
+          25 verified Google reviews from real clients across web development, e-commerce, and design
         </p>
       </div>
     </div>
-    <Testimonial client:visible />
+    <Testimonial />
   </section>
 
   <TrustBadges />
@@ -159,7 +159,7 @@ const services = [
           </span>
           <span class="text-sm font-semibold text-orange-700">Full-Service Digital Agency</span>
         </span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 sm:mb-5 leading-tight px-2 sm:px-0">
+        <h2 class="fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 sm:mb-5 leading-tight px-2 sm:px-0">
           Everything Your Brand Needs
           <span class="block sm:inline"> </span>
           <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">to Grow</span>
@@ -217,7 +217,7 @@ const services = [
         </span>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
         <CardService
           icon="./icons/seo.webp"
           title="SEO Optimization"
@@ -308,7 +308,7 @@ const services = [
           <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
           <span class="text-sm font-medium text-cyan-400">Why businesses choose Codebrand</span>
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <h2 class="fade-up text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
           The Nearshore Advantage —<br class="hidden sm:block" />
           <span class="text-orange-400">Quality Without the Overhead</span>
         </h2>
@@ -319,7 +319,7 @@ const services = [
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         <!-- Card 1 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
+        <div class="fade-up bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
           <div class="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -330,7 +330,7 @@ const services = [
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-orange-500/40 transition-colors duration-300 md:border-orange-500/20">
+        <div class="fade-up bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-orange-500/40 transition-colors duration-300 md:border-orange-500/20">
           <div class="w-12 h-12 bg-orange-500/10 border border-orange-500/20 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -341,13 +341,13 @@ const services = [
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
+        <div class="fade-up bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
           <div class="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
             </svg>
           </div>
-          <h3 class="text-white font-bold text-lg mb-2">127 Reviews. Zero Offshore Surprises.</h3>
+          <h3 class="text-white font-bold text-lg mb-2">25+ Reviews. Zero Offshore Surprises.</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Fluent English communication, US business practices, and a proven track record with clients across Austin, Miami, New York, and beyond.</p>
         </div>
       </div>
@@ -387,7 +387,7 @@ const services = [
             <span class="text-xs text-slate-300 font-medium">We respond immediately</span>
           </div>
 
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug mb-3">
+          <h2 class="fade-up text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug mb-3">
             Tell Us About<br />
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Your Project</span>
           </h2>

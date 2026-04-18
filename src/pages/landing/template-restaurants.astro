@@ -1,6 +1,6 @@
 ---
 import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
-import Testimonial from "../../components/testimonial.tsx";
+import Testimonial from "../../components/Testimonial.astro";
 import { config } from "../../configs/landing/restaurants.config";
 ---
 
@@ -201,19 +201,9 @@ import { config } from "../../configs/landing/restaurants.config";
       transform: translateY(-5px);
     }
 
-    /* Floating Animation for Icon */
-    @keyframes float {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
 
     .float-animation {
-      animation: float 3s ease-in-out infinite;
+      animation: float-lg 3s ease-in-out infinite;
     }
 
     /* Elegant Border Animation */
@@ -774,7 +764,7 @@ import { config } from "../../configs/landing/restaurants.config";
         </p>
       </div>
     </div>
-    <Testimonial client:visible />
+    <Testimonial />
   </section>
 
   <!-- Reservations -->

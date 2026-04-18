@@ -6,7 +6,7 @@
  */
 
 import HnLayout from "../../layouts/HnLayout.astro";
-import FAQ from "../../components/FAQ.tsx";
+import FaqAccordion from "../../components/FaqAccordion.astro";
 import TechMarquee from "../../components/TechMarquee.astro";
 
 // SEO
@@ -138,7 +138,7 @@ const process = [
 // Stats
 const stats = [
   { value: "500+", label: "Proyectos entregados" },
-  { value: "127+", label: "Reseñas 5 estrellas" },
+  { value: "25+", label: "Reseñas 5 estrellas" },
   { value: "5+", label: "Años de experiencia" },
   { value: "24h", label: "Tiempo de respuesta" }
 ];
@@ -175,11 +175,11 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
 
     /* ─── Orbs ─────────────────────────────────────────────── */
     .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(100px); animation: float 22s ease-in-out infinite; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(100px); animation: float-orb 22s ease-in-out infinite; }
     .orb-1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(6,182,212,0.35), rgba(59,130,246,0.2)); top: -250px; left: -150px; }
     .orb-2 { width: 550px; height: 550px; background: radial-gradient(circle, rgba(139,92,246,0.3), rgba(6,182,212,0.15)); top: 45%; right: -180px; animation-delay: -8s; }
     .orb-3 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(16,185,129,0.2), rgba(6,182,212,0.15)); bottom: -120px; left: 35%; animation-delay: -16s; }
-    @keyframes float {
+    @keyframes float-orb {
       0%, 100% { transform: translate(0,0) scale(1); }
       33%  { transform: translate(25px,-25px) scale(1.04); }
       66%  { transform: translate(-18px,18px) scale(0.96); }
@@ -1054,7 +1054,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
             <p class="text-neutral-400">Respuestas honestas antes de empezar su proyecto.</p>
           </div>
           <div class="fade-up">
-            <FAQ faqs={faqs} theme="dark" client:visible />
+            <FaqAccordion faqs={faqs} theme="dark" />
           </div>
         </div>
       </section>

@@ -70,18 +70,19 @@ export default defineConfig({
 
   output: 'server',
 
-  site: 'https://codebrand.us',
+  site: 'https://www.codebrand.us',
 
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !page.includes('/thank-you') && !page.includes('/404'),
+      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/website-1500') && !page.includes('/landing/wordpress-450') && !page.includes('/landing/business-starter-2500') && !page.includes('/landing/seo-plans') && !page.includes('/landing/maintenance-plans'),
       changefreq: 'weekly',
       priority: 0.7,
       serialize: (item) => {
+        const lastmod = new Date().toISOString();
         // High priority for main pages
-        if (item.url === 'https://codebrand.us/') {
-          return { ...item, priority: 1.0, changefreq: 'daily' };
+        if (item.url === 'https://www.codebrand.us/') {
+          return { ...item, lastmod, priority: 1.0, changefreq: 'daily' };
         }
         // Service pages
         if (
@@ -94,25 +95,25 @@ export default defineConfig({
           item.url.includes('/landing-pages') ||
           item.url.includes('/copywriting')
         ) {
-          return { ...item, priority: 0.9, changefreq: 'weekly' };
+          return { ...item, lastmod, priority: 0.9, changefreq: 'weekly' };
         }
         // Location pages (cities)
         if (item.url.includes('/locations/')) {
-          return { ...item, priority: 0.8, changefreq: 'monthly' };
+          return { ...item, lastmod, priority: 0.8, changefreq: 'monthly' };
         }
         // Region pages (states/departments)
         if (item.url.includes('/regions/')) {
-          return { ...item, priority: 0.8, changefreq: 'monthly' };
+          return { ...item, lastmod, priority: 0.8, changefreq: 'monthly' };
         }
         // Blog posts
         if (item.url.includes('/blog/')) {
-          return { ...item, priority: 0.7, changefreq: 'weekly' };
+          return { ...item, lastmod, priority: 0.7, changefreq: 'weekly' };
         }
         // Projects
         if (item.url.includes('/projects/')) {
-          return { ...item, priority: 0.6, changefreq: 'monthly' };
+          return { ...item, lastmod, priority: 0.6, changefreq: 'monthly' };
         }
-        return item;
+        return { ...item, lastmod };
       },
     }),
     mdx()

@@ -29,8 +29,8 @@ interface SchemaOfferCatalog {
 const ORGANIZATION_DATA = {
   "@type": "Organization",
   name: "Codebrand",
-  url: "https://codebrand.us",
-  logo: "https://codebrand.us/photos/bannercodebrand.webp",
+  url: "https://www.codebrand.us",
+  logo: "https://www.codebrand.us/photos/bannercodebrand.webp",
 } as const;
 
 /**
@@ -53,7 +53,7 @@ export interface ServicePageSchemaConfig {
   name: string;
   /** Service description for SEO */
   description: string;
-  /** Full URL of the service page (e.g., "https://codebrand.us/branding") */
+  /** Full URL of the service page (e.g., "https://www.codebrand.us/branding") */
   url: string;
   /** Full URL of the service image */
   image: string;
@@ -76,8 +76,8 @@ export interface ServicePageSchemaConfig {
  *   serviceType: "Branding Services",
  *   name: "Professional Branding & Logo Design Services",
  *   description: "Build a powerful brand...",
- *   url: "https://codebrand.us/branding",
- *   image: "https://codebrand.us/photos/Branding.webp",
+ *   url: "https://www.codebrand.us/branding",
+ *   image: "https://www.codebrand.us/photos/Branding.webp",
  *   catalogName: "Branding Services",
  *   catalogItems: [
  *     { name: "Logo Design", description: "Custom logo design..." },
@@ -282,9 +282,9 @@ export interface BreadcrumbItem {
  *
  * @example
  * const breadcrumbs = createBreadcrumbSchema([
- *   { name: "Home", url: "https://codebrand.us" },
- *   { name: "Services", url: "https://codebrand.us/services" },
- *   { name: "Web Development", url: "https://codebrand.us/services/web-development" }
+ *   { name: "Home", url: "https://www.codebrand.us" },
+ *   { name: "Services", url: "https://www.codebrand.us/services" },
+ *   { name: "Web Development", url: "https://www.codebrand.us/services/web-development" }
  * ]);
  */
 export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
@@ -304,20 +304,20 @@ export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
  * Automatically generates breadcrumbs from a URL path
  *
  * @param currentUrl - The current page URL
- * @param baseUrl - The site base URL (default: https://codebrand.us)
+ * @param baseUrl - The site base URL (default: https://www.codebrand.us)
  * @param customNames - Optional object mapping path segments to display names
  * @returns Complete BreadcrumbList Schema.org object
  *
  * @example
  * const breadcrumbs = createBreadcrumbSchemaFromUrl(
- *   "https://codebrand.us/services/web-development",
- *   "https://codebrand.us",
+ *   "https://www.codebrand.us/services/web-development",
+ *   "https://www.codebrand.us",
  *   { "web-development": "Web Development", "services": "Services" }
  * );
  */
 export function createBreadcrumbSchemaFromUrl(
   currentUrl: string,
-  baseUrl: string = "https://codebrand.us",
+  baseUrl: string = "https://www.codebrand.us",
   customNames?: Record<string, string>
 ) {
   const url = new URL(currentUrl);
@@ -416,11 +416,11 @@ export interface ArticleSchemaOptions {
  * const articleSchema = createArticleSchema({
  *   headline: "10 Best Practices for Web Development in 2025",
  *   description: "Learn the top web development practices...",
- *   image: "https://codebrand.us/photos/blog/article.webp",
+ *   image: "https://www.codebrand.us/photos/blog/article.webp",
  *   datePublished: "2025-01-15T10:00:00Z",
  *   dateModified: "2025-01-20T14:30:00Z",
  *   author: "John Doe",
- *   url: "https://codebrand.us/blog/web-development-best-practices",
+ *   url: "https://www.codebrand.us/blog/web-development-best-practices",
  *   keywords: ["web development", "best practices", "2025"],
  *   wordCount: 2500,
  *   readingTime: 10
@@ -458,14 +458,14 @@ export function createArticleSchema(options: ArticleSchemaOptions) {
     author: {
       "@type": "Person",
       name: author || "Codebrand Team",
-      url: authorUrl || "https://codebrand.us/team",
+      url: authorUrl || "https://www.codebrand.us/team",
     },
     publisher: {
       "@type": "Organization",
       name: "Codebrand Digital Agency",
       logo: {
         "@type": "ImageObject",
-        url: "https://codebrand.us/iconcodebrand.svg",
+        url: "https://www.codebrand.us/iconcodebrand.svg",
         width: 512,
         height: 512,
       },
@@ -531,7 +531,7 @@ export interface HowToStep {
  *     { name: "Create Project", text: "Run create-react-app" },
  *     { name: "Deploy", text: "Deploy to production" }
  *   ],
- *   "https://codebrand.us/photos/react-tutorial.webp",
+ *   "https://www.codebrand.us/photos/react-tutorial.webp",
  *   "PT2H"
  * );
  */
@@ -606,7 +606,7 @@ export function createLocalBusinessSchema(
     "@type": "ProfessionalService",
     name: `Codebrand - Web Development ${city}`,
     description,
-    url: `https://codebrand.us/locations/${city.toLowerCase().replace(/\s+/g, "-")}-${stateCode.toLowerCase()}`,
+    url: `https://www.codebrand.us/locations/${city.toLowerCase().replace(/\s+/g, "-")}-${stateCode.toLowerCase()}`,
     telephone: "+504-3272-2973",
     email: "info@codebrand.es",
     priceRange: "$$$",

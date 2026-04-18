@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FAQ from "../components/FAQ.tsx";
+import FaqAccordion from "../components/FaqAccordion.astro";
 
 const title = "Outsource Web Development | Codebrand";
 const description = "Outsource your web development to a reliable partner. Senior developers, US timezone, transparent pricing. Save 60% vs US agencies while maintaining quality.";
@@ -226,7 +226,7 @@ const stats = [
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Common <span class="text-orange-500">Questions</span></h2>
       </div>
       <div>
-        <FAQ faqs={faqs} client:visible />
+        <FaqAccordion faqs={faqs} />
       </div>
     </div>
   </section>

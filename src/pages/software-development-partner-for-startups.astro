@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FAQ from "../components/FAQ.tsx";
+import FaqAccordion from "../components/FaqAccordion.astro";
 
 const title = "Startup Dev Partner | MVP Experts | Codebrand";
 const description = "Software development partner for startups. MVP development, rapid prototyping, and scalable architecture. Startup-friendly pricing.";
@@ -185,7 +185,7 @@ const stats = [
           Startup <span class="text-orange-500">FAQ</span>
         </h2>
       </div>
-      <FAQ faqs={faqs} client:visible />
+      <FaqAccordion faqs={faqs} />
     </div>
   </section>
 

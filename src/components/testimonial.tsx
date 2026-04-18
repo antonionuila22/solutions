@@ -90,14 +90,16 @@ const ReviewCard = ({
   username: string;
   body: string;
 }) => {
+  const [expanded, setExpanded] = React.useState(false);
   const isLongText = body.length > 120;
 
   return (
     <figure
       className={cn(
-        "group relative h-full w-[280px] sm:w-[300px] md:w-[320px] cursor-pointer overflow-hidden rounded-2xl border p-5 sm:p-6",
+        "group relative h-full w-[260px] sm:w-[300px] md:w-[320px] cursor-pointer overflow-hidden rounded-2xl border p-4 sm:p-6",
         "border-slate-700/80 bg-slate-800/70 hover:bg-slate-800 backdrop-blur-sm transition-all duration-300"
       )}
+      onClick={() => isLongText && setExpanded(!expanded)}
     >
       <div className="flex flex-row items-center gap-3">
         <Avatar name={name} img={img} />
@@ -113,13 +115,14 @@ const ReviewCard = ({
       </div>
       <blockquote className="mt-3 text-sm text-slate-300 leading-relaxed">
         <span className={cn(
-          isLongText && "line-clamp-4 sm:group-hover:line-clamp-none transition-all duration-300"
+          isLongText && !expanded && "line-clamp-4",
+          isLongText && "sm:group-hover:line-clamp-none transition-all duration-300"
         )}>
           {body}
         </span>
-        {isLongText && (
-          <span className="hidden sm:block mt-2 text-xs text-cyan-400 group-hover:hidden">
-            Hover to read more...
+        {isLongText && !expanded && (
+          <span className="mt-2 text-xs text-cyan-400 block sm:group-hover:hidden">
+            Tap to read more
           </span>
         )}
       </blockquote>

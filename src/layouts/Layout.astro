@@ -20,6 +20,7 @@ let {
   categories,
   breadcrumbNames,
   canonicalOverride,
+  keywords,
 } = Astro.props;
 
 // Valores por defecto mejorados
@@ -56,6 +57,17 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
   "https://www.codebrand.us",
   breadcrumbNames || {},
 );
+
+// hreflang: map English pages to their Spanish /hn/ equivalents
+const hnMap: Record<string, string> = {
+  "/": "/hn/",
+  "/web-development": "/hn/desarrollo-web-honduras",
+  "/e-commerce": "/hn/tienda-online-honduras",
+  "/seo": "/hn/seo-honduras",
+};
+const currentPath = Astro.url?.pathname || "";
+const hnEquivalent = hnMap[currentPath];
+const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
 ---
 
 <!doctype html>
@@ -71,6 +83,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta name="description" content={description} />
     <meta name="author" content="Codebrand Digital Agency" />
     <meta name="publisher" content="Codebrand" />
+    {keywords && <meta name="keywords" content={keywords} />}
 
     <meta
       name="robots"
@@ -89,12 +102,10 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 
     <!-- Canonical and Alternative URLs -->
     <link rel="canonical" href={canonicalUrl} />
-    <!-- hreflang: Primary language is English, x-default for international users -->
+    <!-- hreflang: Bidirectional linking between English and Spanish pages -->
     <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
-    {(Astro.url?.pathname?.includes("/hn/") || Astro.url?.pathname?.includes("honduras")) && (
-      <link rel="alternate" hreflang="es" href={canonicalUrl} />
-    )}
+    {hnHref && <link rel="alternate" hreflang="es-HN" href={hnHref} />}
 
     <!-- RSS Feed -->
     <link
@@ -281,7 +292,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
           "https://www.linkedin.com/company/codebrand-es",
           "https://x.com/Codebrand_es",
           "https://www.facebook.com/p/Codebrand-100087321501519/",
-          "https://www.instagram.com/codebrand.es"
+          "https://www.instagram.com/codebrand.us"
         ],
         "knowsAbout": [
           "Web Development",
@@ -401,8 +412,8 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "127",
+          "ratingValue": "5.0",
+          "reviewCount": "25",
           "bestRating": "5",
           "worstRating": "1"
         },
@@ -515,6 +526,28 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
               if (typeof console !== 'undefined') console.warn('SW registration failed:', err);
             });
         });
+      }
+    </script>
+
+    <!-- Global scroll-triggered animations (works on mobile + desktop) -->
+    <script is:inline>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+        var scrollObs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible', 'animate-in');
+              scrollObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        function observeScrollElements() {
+          document.querySelectorAll('.fade-up, .scroll-animate').forEach(function(el) {
+            scrollObs.observe(el);
+          });
+        }
+        observeScrollElements();
+        document.addEventListener('astro:page-load', observeScrollElements);
       }
     </script>
 

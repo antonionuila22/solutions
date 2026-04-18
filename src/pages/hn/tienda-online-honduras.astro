@@ -5,7 +5,7 @@
  */
 
 import HnLayout from "../../layouts/HnLayout.astro";
-import FAQ from "../../components/FAQ.tsx";
+import FaqAccordion from "../../components/FaqAccordion.astro";
 
 const title = "Tienda Online Honduras | E-commerce Profesional - Codebrand";
 const description = "Creamos tiendas online profesionales en Honduras. Venda sus productos 24/7 con carrito de compras, pagos en línea y gestión de inventario. Desde L. 62,500.";
@@ -64,10 +64,10 @@ const stats = [
   <style>
     .page-bg { background: #030303; }
     .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float 20s ease-in-out infinite; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float-orb 20s ease-in-out infinite; }
     .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #10b981, #06b6d4); top: -200px; left: -100px; }
     .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #8b5cf6, #10b981); top: 50%; right: -150px; animation-delay: -7s; }
-    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    @keyframes float-orb { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
     .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
     .text-display { font-size: clamp(3rem, 12vw, 10rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 800; }
     .text-gradient { background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -182,7 +182,7 @@ const stats = [
             <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
           </div>
           <div class="fade-up">
-            <FAQ faqs={faqs} theme="dark" client:visible />
+            <FaqAccordion faqs={faqs} theme="dark" />
           </div>
         </div>
       </section>

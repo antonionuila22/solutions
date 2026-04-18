@@ -246,6 +246,7 @@ const getIcon = (name: string) => {
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
+  noindex={true}
 >
   <!-- Canonical URL -->
   <link rel="canonical" href={canonicalUrl} slot="head" />
@@ -5147,10 +5148,9 @@ const getIcon = (name: string) => {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg><span>Enviando...</span>`;
         try {
-          const res = await fetch(endpoint, { method: "POST", body: fd });
+          const controller = new AbortController(); const timeoutId = setTimeout(() => controller.abort(), 10000); const res = await fetch(endpoint, { method: "POST", body: fd, signal: controller.signal }); clearTimeout(timeoutId);
           if (res.ok) { window.location.href = "/thank-you"; return; }
-          const text = await res.text();
-          responseEl.textContent = text || "Algo salió mal. Inténtalo de nuevo.";
+          responseEl.textContent = "Algo salió mal. Inténtalo de nuevo.";
           responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
         } catch {
           responseEl.textContent = "Error de red. Verifica tu conexión e inténtalo de nuevo.";

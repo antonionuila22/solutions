@@ -1,5 +1,5 @@
 ---
-import FAQ from "./FAQ.tsx";
+import FaqAccordion from "./FaqAccordion.astro";
 
 interface FAQItem {
   question: string;
@@ -24,6 +24,6 @@ const { title, titleAccent, subtitle, faqs } = Astro.props;
       </h2>
       <p class="text-lg text-slate-300 max-w-2xl mx-auto">{subtitle}</p>
     </div>
-    <FAQ faqs={faqs} theme="dark" client:visible />
+    <FaqAccordion faqs={faqs} theme="dark" />
   </div>
 </section>

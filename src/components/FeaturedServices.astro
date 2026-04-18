@@ -94,9 +94,8 @@ const featuredServices: FeaturedService[] = [
                         <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                             <img
                                 src={service.icon}
-                                alt=""
+                                alt={`${service.title} icon`}
                                 class="w-8 h-8 brightness-0 invert"
-                                aria-hidden="true"
                                 width="48"
                                 height="48"
                                 loading="lazy"

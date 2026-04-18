@@ -21,7 +21,7 @@ const defaults: HeroConfig = {
   subheadline: 'We build <span class="text-white font-semibold">fast, scalable websites and apps</span> for US businesses — with the same quality you\'d expect from a $200/hr agency, at rates that actually make sense. CST-aligned team. No language barriers. No offshore delays.',
   stats: [
     { value: "5+", label: "Years Experience", color: "cyan" },
-    { value: "127+", label: "5-Star Reviews", color: "orange" },
+    { value: "25+", label: "5-Star Reviews", color: "orange" },
     { value: "< 24h", label: "First Response", color: "cyan" },
     { value: "5/5", label: "Client Rating", color: "orange" },
   ],
@@ -34,7 +34,7 @@ const c = { ...defaults, ...Astro.props.config };
 ---
 
 <section
-  class="relative min-h-screen flex items-center py-40 sm:py-40 lg:py-36 justify-center overflow-hidden bg-slate-950"
+  class="relative min-h-[100svh] flex items-center py-24 sm:py-32 lg:py-36 justify-center overflow-hidden bg-slate-950"
 >
   <!-- Animated Grid Background - Hidden on mobile for performance -->
   <div class="hidden sm:block absolute inset-0 opacity-20" aria-hidden="true">
@@ -325,32 +325,8 @@ const c = { ...defaults, ...Astro.props.config };
 </section>
 
 <style>
-  /* Float animation - Safari compatible */
-  @-webkit-keyframes float {
-    0%, 100% {
-      -webkit-transform: translateY(0px);
-      transform: translateY(0px);
-    }
-    50% {
-      -webkit-transform: translateY(-20px);
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      -webkit-transform: translateY(0px);
-      transform: translateY(0px);
-    }
-    50% {
-      -webkit-transform: translateY(-20px);
-      transform: translateY(-20px);
-    }
-  }
-
   .animate-float {
-    -webkit-animation: float 6s ease-in-out infinite;
-    animation: float 6s ease-in-out infinite;
+    animation: float-lg 6s ease-in-out infinite;
   }
 
   /*

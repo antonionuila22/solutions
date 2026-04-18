@@ -6,7 +6,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FAQ from "../components/FAQ.tsx";
+import FaqAccordion from "../components/FaqAccordion.astro";
 
 // SEO
 const title = "Nearshore Development | LATAM Team | Codebrand";
@@ -593,7 +593,7 @@ const technologies = [
         <p class="text-slate-600 text-lg">Can't find what you're looking for? <a href="/contact" class="text-orange-500 hover:text-orange-600 font-semibold">Contact us</a> and we'll get back to you within 24 hours.</p>
       </div>
       <div>
-        <FAQ faqs={faqs} client:visible />
+        <FaqAccordion faqs={faqs} />
       </div>
     </div>
   </section>

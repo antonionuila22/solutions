@@ -5,7 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
-import FAQ from "../components/FAQ.tsx";
+import FaqAccordion from "../components/FaqAccordion.astro";
 
 const title = "React Development Agency | Codebrand";
 const description = "Senior React engineers. Custom React apps, Next.js development, and React Native mobile apps. US timezone, 60% cost savings.";
@@ -172,7 +172,7 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
           React Development <span class="text-orange-500">FAQ</span>
         </h2>
       </div>
-      <FAQ faqs={faqs} client:visible />
+      <FaqAccordion faqs={faqs} />
     </div>
   </section>
 

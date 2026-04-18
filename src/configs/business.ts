@@ -62,9 +62,9 @@ export const BUSINESS_INFO = {
   },
 
   // URLs
-  baseUrl: "https://codebrand.us",
-  logoUrl: "https://codebrand.us/iconcodebrand.svg",
-  bannerUrl: "https://codebrand.us/photos/bannercodebrand.webp",
+  baseUrl: "https://www.codebrand.us",
+  logoUrl: "https://www.codebrand.us/iconcodebrand.svg",
+  bannerUrl: "https://www.codebrand.us/photos/bannercodebrand.webp",
 
   // Business Details
   priceRange: "$$$",
@@ -103,8 +103,8 @@ export const BUSINESS_INFO = {
 
   // Ratings
   aggregateRating: {
-    ratingValue: 4.9,
-    reviewCount: 127,
+    ratingValue: 5.0,
+    reviewCount: 25,
     bestRating: 5,
     worstRating: 1,
   },

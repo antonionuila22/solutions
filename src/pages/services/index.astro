@@ -2,8 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Whyus from "../../components/whyus.astro";
-import Testimonial from "../../components/testimonial.tsx";
-import FAQ from "../../components/FAQ.tsx";
+import Testimonial from "../../components/Testimonial.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 // SEO Configuration
@@ -593,7 +593,7 @@ const benefits = [
         </p>
       </div>
     </div>
-    <Testimonial client:visible />
+    <Testimonial />
   </section>
 
   <!-- Why Us Component -->
@@ -616,7 +616,7 @@ const benefits = [
           Common questions about our services and how we work
         </p>
       </div>
-      <FAQ faqs={serviceFaqs} theme="dark" client:visible />
+      <FaqAccordion faqs={serviceFaqs} theme="dark" />
     </div>
   </section>
 
@@ -666,11 +666,6 @@ const benefits = [
 </Layout>
 
 <style>
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-  }
-
   @keyframes scroll-down {
     0% { opacity: 1; transform: translateY(0); }
     100% { opacity: 0; transform: translateY(6px); }
@@ -687,7 +682,7 @@ const benefits = [
   }
 
   .animate-float {
-    animation: float 8s ease-in-out infinite;
+    animation: float-lg 8s ease-in-out infinite;
   }
 
   .animate-scroll-down {

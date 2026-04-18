@@ -1,0 +1,133 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQItem[];
+  theme?: "light" | "dark";
+}
+
+const { faqs, theme = "light" } = Astro.props;
+
+const themes = {
+  light: {
+    container: "w-full flex flex-col gap-3",
+    item: "rounded-xl border border-slate-200 bg-white overflow-hidden transition-all duration-300",
+    button: "w-full text-left px-4 sm:px-5 py-3 sm:py-4 flex justify-between items-center gap-3 sm:gap-4",
+    question: "text-sm sm:text-base font-semibold text-slate-800 leading-snug",
+    icon: "flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 transition-all duration-300",
+    answer: "px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-xs sm:text-sm leading-relaxed",
+  },
+  dark: {
+    container: "w-full divide-y divide-white/[0.06]",
+    item: "group",
+    button: "w-full text-left py-5 sm:py-6 flex justify-between items-start gap-6 sm:gap-8 focus:outline-none",
+    question: "text-base sm:text-lg font-medium leading-relaxed text-neutral-300 group-hover:text-white transition-colors duration-300",
+    icon: "flex-shrink-0 mt-1 w-6 h-6 flex items-center justify-center text-neutral-500 group-hover:text-neutral-400 transition-all duration-300",
+    answer: "overflow-hidden text-neutral-400 leading-relaxed pr-8 sm:pr-14",
+  },
+};
+
+const t = themes[theme];
+---
+
+<faq-accordion data-theme={theme}>
+  <div class={t.container}>
+    {faqs.map((faq, index) => (
+      <div class={t.item} data-faq-item>
+        <button
+          type="button"
+          class={t.button}
+          aria-expanded="false"
+          aria-controls={`faq-answer-${index}`}
+          data-faq-trigger
+        >
+          <span class={`${t.question} faq-question`}>
+            {faq.question}
+          </span>
+          <span class={`${t.icon} faq-icon`}>
+            <svg
+              class="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          id={`faq-answer-${index}`}
+          class="grid transition-all duration-300 ease-out grid-rows-[0fr] opacity-0"
+          data-faq-panel
+        >
+          <div class="overflow-hidden">
+            <div class={t.answer}>
+              {faq.answer}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</faq-accordion>
+
+<script>
+  class FaqAccordion extends HTMLElement {
+    connectedCallback() {
+      const theme = this.dataset.theme as "light" | "dark";
+      const openClasses = {
+        light: {
+          item: ["border-orange-300", "bg-orange-50", "shadow-md"],
+          question: ["text-orange-600"],
+          icon: ["bg-orange-500", "text-white", "rotate-180"],
+        },
+        dark: {
+          item: [],
+          question: ["text-white"],
+          icon: ["text-white", "rotate-180"],
+        },
+      };
+      const t = openClasses[theme] || openClasses.light;
+
+      this.querySelectorAll<HTMLButtonElement>("[data-faq-trigger]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest("[data-faq-item]")!;
+          const panel = item.querySelector<HTMLElement>("[data-faq-panel]")!;
+          const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+          this.querySelectorAll("[data-faq-item]").forEach((other) => {
+            const otherBtn = other.querySelector<HTMLButtonElement>("[data-faq-trigger]")!;
+            const otherPanel = other.querySelector<HTMLElement>("[data-faq-panel]")!;
+            otherBtn.setAttribute("aria-expanded", "false");
+            otherPanel.classList.remove("grid-rows-[1fr]", "opacity-100");
+            otherPanel.classList.add("grid-rows-[0fr]", "opacity-0");
+            t.item.forEach((c: string) => other.classList.remove(c));
+            t.question.forEach((c: string) => other.querySelector(".faq-question")?.classList.remove(c));
+            t.icon.forEach((c: string) => other.querySelector(".faq-icon")?.classList.remove(c));
+          });
+
+          if (!isOpen) {
+            btn.setAttribute("aria-expanded", "true");
+            panel.classList.remove("grid-rows-[0fr]", "opacity-0");
+            panel.classList.add("grid-rows-[1fr]", "opacity-100");
+            t.item.forEach((c: string) => item.classList.add(c));
+            t.question.forEach((c: string) => item.querySelector(".faq-question")?.classList.add(c));
+            t.icon.forEach((c: string) => item.querySelector(".faq-icon")?.classList.add(c));
+          }
+        });
+      });
+    }
+  }
+  if (!customElements.get("faq-accordion")) {
+    customElements.define("faq-accordion", FaqAccordion);
+  }
+</script>

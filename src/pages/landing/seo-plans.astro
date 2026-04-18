@@ -123,7 +123,7 @@ const formServices = [
 ];
 ---
 
-<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} noindex={true}>
   <meta property="og:title" content={pageTitle} slot="head" />
   <meta property="og:description" content={pageDescription} slot="head" />
   <meta property="og:type" content="website" slot="head" />
@@ -865,10 +865,9 @@ const formServices = [
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg><span>Sending...</span>`;
         try {
-          const res = await fetch(endpoint, { method: "POST", body: fd });
+          const controller = new AbortController(); const timeoutId = setTimeout(() => controller.abort(), 10000); const res = await fetch(endpoint, { method: "POST", body: fd, signal: controller.signal }); clearTimeout(timeoutId);
           if (res.ok) { window.location.href = "/thank-you"; return; }
-          const text = await res.text();
-          responseEl.textContent = text || "Something went wrong. Please try again.";
+          responseEl.textContent = "Something went wrong. Please try again.";
           responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
         } catch {
           responseEl.textContent = "Network error. Check your connection and try again.";

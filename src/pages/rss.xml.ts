@@ -15,7 +15,7 @@ export async function GET(context: APIContext) {
   return rss({
     title: 'Codebrand Blog | Web Development, SEO & Digital Marketing Insights',
     description: 'Expert insights on web development, SEO, digital marketing, branding, and software development. Learn from industry professionals at Codebrand.',
-    site: context.site ?? 'https://codebrand.us',
+    site: context.site ?? 'https://www.codebrand.us',
     items: sortedPosts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date ? new Date(post.data.date) : new Date(),
@@ -23,7 +23,7 @@ export async function GET(context: APIContext) {
       link: `/blog/${post.id}/`,
       author: post.data.author ?? 'Codebrand Team',
       categories: post.data.categories ?? [],
-      customData: post.data.img ? `<media:content url="https://codebrand.us${post.data.img}" medium="image" />` : '',
+      customData: post.data.img ? `<media:content url="https://www.codebrand.us${post.data.img}" medium="image" />` : '',
     })),
     customData: `
       <language>en-us</language>
@@ -32,9 +32,9 @@ export async function GET(context: APIContext) {
       <webMaster>info@codebrand.es (Codebrand Team)</webMaster>
       <ttl>60</ttl>
       <image>
-        <url>https://codebrand.us/favicon.svg</url>
+        <url>https://www.codebrand.us/favicon.svg</url>
         <title>Codebrand Blog</title>
-        <link>https://codebrand.us/blog</link>
+        <link>https://www.codebrand.us/blog</link>
       </image>
     `,
     xmlns: {
