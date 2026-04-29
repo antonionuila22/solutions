@@ -64,7 +64,8 @@
       "Bash([ ! -f \"/Users/ramonnuila/Documents/GitHub/codebrand/solutions/public$path\" ])",
       "Bash(sed -i '' 's/\"worstRating\": \"5\"/\"worstRating\": \"1\"/g' src/layouts/HnLayout.astro src/layouts/Layout.astro src/layouts/LandingLayout.astro src/pages/hn/index.astro src/pages/index.astro src/components/ServicePageTemplateV4.astro)",
       "Bash(sed -i '' 's/\"worstRating\": \"5\"/\"worstRating\": \"1\"/g' 'src/pages/products/[id].astro')",
-      "Bash(pkill -f \"astro dev\")"
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(awk '{print $6, $7, $9}')"
     ]
   }
 }

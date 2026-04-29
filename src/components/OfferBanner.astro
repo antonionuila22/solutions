@@ -57,11 +57,15 @@ const {
   </div>
 </a>
 
-<script is:inline define:vars={{ offerEndDate }}>
+<script is:inline define:vars={{ offerEndDate }} data-astro-rerun>
   (function initOfferBanner() {
     const END = new Date(offerEndDate).getTime();
     const container = document.getElementById('offer-countdown');
     if (!container) return;
+
+    if (container.dataset.intervalId) {
+      clearInterval(Number(container.dataset.intervalId));
+    }
 
     const els = {
       days: container.querySelector('[data-unit="days"]'),
@@ -87,7 +91,7 @@ const {
     }
 
     update();
-    setInterval(update, 1000);
+    container.dataset.intervalId = String(setInterval(update, 1000));
   })();
 </script>
 

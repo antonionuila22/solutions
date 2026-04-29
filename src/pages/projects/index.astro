@@ -430,76 +430,67 @@ const categories = ["All", ...allCategories.sort()];
   </section>
 </Layout>
 
-<script is:inline>
-  // Category Filter Functionality
-  (function () {
-    function initProjectFilters() {
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const projectCards = document.querySelectorAll(".project-card");
+<script>
+  function initProjectFilters() {
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+    const projectCards = document.querySelectorAll<HTMLElement>(".project-card");
 
-      if (!filterButtons.length || !projectCards.length) {
-        return;
-      }
+    if (!filterButtons.length || !projectCards.length) {
+      return;
+    }
 
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const category = button.getAttribute("data-category");
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.getAttribute("data-category");
 
-          // Update active button
-          filterButtons.forEach((btn) => {
-            btn.classList.remove(
-              "bg-gradient-to-r",
-              "from-orange-400",
-              "to-orange-600",
-              "text-white",
-              "shadow-lg"
-            );
-            btn.classList.add(
-              "bg-slate-100",
-              "text-slate-700",
-              "hover:bg-slate-200"
-            );
-          });
-
-          button.classList.remove(
-            "bg-slate-100",
-            "text-slate-700",
-            "hover:bg-slate-200"
-          );
-          button.classList.add(
+        filterButtons.forEach((btn) => {
+          btn.classList.remove(
             "bg-gradient-to-r",
             "from-orange-400",
             "to-orange-600",
             "text-white",
             "shadow-lg"
           );
+          btn.classList.add(
+            "bg-slate-100",
+            "text-slate-700",
+            "hover:bg-slate-200"
+          );
+        });
 
-          // Filter projects with animation
-          projectCards.forEach((card, index) => {
-            const cardCategory = card.getAttribute("data-category");
+        button.classList.remove(
+          "bg-slate-100",
+          "text-slate-700",
+          "hover:bg-slate-200"
+        );
+        button.classList.add(
+          "bg-gradient-to-r",
+          "from-orange-400",
+          "to-orange-600",
+          "text-white",
+          "shadow-lg"
+        );
 
-            if (category === "All" || cardCategory === category) {
-              card.style.display = "block";
-              card.style.animation = "none";
-              setTimeout(() => {
-                card.style.animation =
-                  "fade-in 0.6s ease-out forwards " + index * 0.1 + "s";
-              }, 10);
-            } else {
-              card.style.display = "none";
-            }
-          });
+        projectCards.forEach((card, index) => {
+          const cardCategory = card.getAttribute("data-category");
+
+          if (category === "All" || cardCategory === category) {
+            card.style.display = "block";
+            card.style.animation = "none";
+            setTimeout(() => {
+              card.style.animation =
+                "fade-in 0.6s ease-out forwards " + index * 0.1 + "s";
+            }, 10);
+          } else {
+            card.style.display = "none";
+          }
         });
       });
-    }
+    });
+  }
 
-    // Initialize when DOM is ready
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initProjectFilters);
-    } else {
-      initProjectFilters();
-    }
-  })();
+  initProjectFilters();
+  document.addEventListener("astro:page-load", initProjectFilters);
 </script>
 
 <style>

@@ -291,42 +291,38 @@ const c = { ...defaults, ...Astro.props.config };
   }
 </style>
 
-<script is:inline>
-  // Check for reduced motion preference
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    // Only animate on desktop (768px+)
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+<script>
+  function initValuePropositionAnimations() {
+    const selector = '.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section';
+    const elements = document.querySelectorAll<HTMLElement>(selector);
+    if (!elements.length) return;
 
-    if (isDesktop && "IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            el.classList.add('animate-visible');
-            observer.unobserve(el);
-          }
-        });
-      }, { threshold: 0.1 });
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
-      document.querySelectorAll('.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section')
-        .forEach((el, i) => {
-          el.style.transitionDelay = `${i * 0.1}s`;
-          observer.observe(el);
-        });
-    } else {
-      // Mobile or no IntersectionObserver: show elements immediately
-      document.querySelectorAll('.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section')
-        .forEach((el) => {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
-        });
-    }
-  } else {
-    // Reduced motion: show elements immediately
-    document.querySelectorAll('.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section')
-      .forEach((el) => {
+    if (reducedMotion || !isDesktop || !('IntersectionObserver' in window)) {
+      elements.forEach((el) => {
         el.style.opacity = '1';
         el.style.transform = 'none';
       });
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.1}s`;
+      observer.observe(el);
+    });
   }
+
+  initValuePropositionAnimations();
+  document.addEventListener('astro:page-load', initValuePropositionAnimations);
 </script>

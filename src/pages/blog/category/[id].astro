@@ -1,0 +1,254 @@
+---
+export const prerender = true;
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+
+type BlogPost = CollectionEntry<"blog">;
+
+export async function getStaticPaths() {
+  const slugify = (s: string): string =>
+    s
+      .toLowerCase()
+      .replace(/[\/\s&]+/g, "-")
+      .replace(/[^a-z0-9-]/g, "")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
+
+  const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+
+  const categoryMap = new Map<string, { name: string; posts: BlogPost[] }>();
+  for (const post of allPosts) {
+    for (const cat of post.data.categories ?? []) {
+      const slug = slugify(cat);
+      if (!categoryMap.has(slug)) {
+        categoryMap.set(slug, { name: cat, posts: [] });
+      }
+      categoryMap.get(slug)!.posts.push(post);
+    }
+  }
+
+  return Array.from(categoryMap.entries()).map(([slug, { name, posts }]) => ({
+    params: { id: slug },
+    props: { category: name, posts },
+  }));
+}
+
+interface Props {
+  category: string;
+  posts: BlogPost[];
+}
+
+const { category, posts } = Astro.props;
+
+const sortedPosts = posts.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+
+const seoTitle = `${category} Articles | Codebrand Blog`;
+const seoDescription = `Browse all ${posts.length} articles in the ${category} category. Expert insights on web development, design, and digital marketing from the Codebrand team.`;
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={`${category}, web development blog, digital marketing, codebrand, ${category.toLowerCase()} articles`}
+  image="/photos/bannercodebrand.webp"
+>
+  <!-- Hero Section -->
+  <section
+    class="relative flex items-center justify-center flex-col bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden pt-28 sm:pt-24 lg:pt-20"
+  >
+    <div class="absolute inset-0 opacity-30">
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-orange-400/20 rounded-full blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl"
+      >
+      </div>
+    </div>
+
+    <div
+      class="container relative px-4 py-20 lg:py-24 flex items-center justify-center w-full"
+    >
+      <article
+        class="flex w-full text-center gap-6 items-center justify-center flex-col max-w-5xl"
+      >
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Blog", href: "/blog" },
+            { name: category, href: "" },
+          ]}
+          variant="transparent"
+        />
+
+        <span
+          class="text-orange-400 font-semibold text-lg md:text-xl uppercase tracking-wide"
+        >
+          Category
+        </span>
+
+        <h1
+          class="text-cyan-900 font-bold text-4xl lg:text-6xl md:text-5xl sm:text-5xl leading-tight"
+        >
+          {category}
+        </h1>
+
+        <p class="text-lg md:text-xl text-slate-700 max-w-3xl leading-relaxed">
+          {posts.length}
+          {posts.length === 1 ? "article" : "articles"} in this category
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Posts Grid -->
+  <section class="bg-gradient-to-b from-white to-slate-50 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          sortedPosts.map((post) => {
+            const { data } = post;
+            const {
+              title,
+              description,
+              img,
+              imageAlt,
+              date,
+              readtime,
+              author,
+            } = data;
+
+            return (
+              <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col">
+                <a href={`/blog/${post.id}`} class="block">
+                  {img && (
+                    <div class="overflow-hidden relative h-56">
+                      <img
+                        src={img}
+                        alt={imageAlt || title}
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        decoding="async"
+                        width="400"
+                        height="250"
+                      />
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  )}
+
+                  <div class="p-6 flex flex-col gap-3 flex-1">
+                    <div class="flex items-center gap-3 text-xs text-slate-500">
+                      <span class="flex items-center gap-1">
+                        <svg
+                          class="w-3.5 h-3.5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        {date?.toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                      <span>•</span>
+                      <span class="flex items-center gap-1">
+                        <svg
+                          class="w-3.5 h-3.5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        {readtime || 5} min
+                      </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-cyan-900 group-hover:text-orange-400 transition-colors leading-tight line-clamp-2">
+                      {title}
+                    </h3>
+
+                    <p class="text-sm text-slate-600 leading-relaxed line-clamp-3 flex-1">
+                      {description}
+                    </p>
+
+                    {author && (
+                      <div class="flex items-center gap-2 pt-3 border-t border-slate-100">
+                        <div class="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-white text-xs font-bold">
+                          {author.charAt(0)}
+                        </div>
+                        <span class="text-xs text-slate-600 font-medium">
+                          {author}
+                        </span>
+                      </div>
+                    )}
+
+                    <div class="flex items-center justify-between pt-3">
+                      <span class="text-sm font-semibold text-orange-400 group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-1">
+                        Read more
+                        <svg
+                          class="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            );
+          })
+        }
+      </div>
+
+      <div class="mt-16 text-center">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-cyan-900 hover:text-orange-400 font-semibold transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to all articles
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

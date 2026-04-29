@@ -5,6 +5,52 @@ import Button from "../../components/Button.astro";
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 
+const slugifyCategory = (s: string): string =>
+  s
+    .toLowerCase()
+    .replace(/[\/\s&]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+
+// Build category counts for the "Explore by Category" section
+const categoryCounts = new Map<string, { name: string; count: number }>();
+for (const post of allPosts) {
+  for (const cat of post.data.categories ?? []) {
+    const slug = slugifyCategory(cat);
+    const entry = categoryCounts.get(slug);
+    if (entry) {
+      entry.count += 1;
+    } else {
+      categoryCounts.set(slug, { name: cat, count: 1 });
+    }
+  }
+}
+
+const topCategories = Array.from(categoryCounts.entries())
+  .map(([slug, { name, count }]) => ({ slug, name, count }))
+  .sort((a, b) => b.count - a.count)
+  .slice(0, 4);
+
+const categoryEmoji: Record<string, string> = {
+  "web-development": "💻",
+  "web-design": "🎨",
+  design: "🎨",
+  "ux-ui": "🎨",
+  marketing: "📈",
+  seo: "🔍",
+  technology: "🚀",
+  ai: "🤖",
+  guides: "📚",
+  tutorials: "📖",
+  tips: "💡",
+  comparisons: "⚖️",
+  "business-strategy": "📊",
+  codebrand: "🏢",
+  nearshore: "🌎",
+  partnerships: "🤝",
+};
+
 // Sort posts by date (newest first)
 const posts = allPosts.sort((a, b) => {
   // Handle both Date objects and date strings
@@ -337,57 +383,22 @@ const totalReadTime = posts.reduce(
       </header>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <a
-          href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
-        >
-          <div class="text-4xl mb-3">💻</div>
-          <h3
-            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
-          >
-            Web Development
-          </h3>
-          <p class="text-sm text-slate-600 mt-2">{posts.length} articles</p>
-        </a>
-
-        <a
-          href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
-        >
-          <div class="text-4xl mb-3">🎨</div>
-          <h3
-            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
-          >
-            Design & UX
-          </h3>
-          <p class="text-sm text-slate-600 mt-2">Expert tips</p>
-        </a>
-
-        <a
-          href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
-        >
-          <div class="text-4xl mb-3">📈</div>
-          <h3
-            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
-          >
-            Digital Marketing
-          </h3>
-          <p class="text-sm text-slate-600 mt-2">Growth strategies</p>
-        </a>
-
-        <a
-          href="/blog"
-          class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
-        >
-          <div class="text-4xl mb-3">🚀</div>
-          <h3
-            class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors"
-          >
-            Business Growth
-          </h3>
-          <p class="text-sm text-slate-600 mt-2">Scaling tips</p>
-        </a>
+        {
+          topCategories.map(({ slug, name, count }) => (
+            <a
+              href={`/blog/category/${slug}`}
+              class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <div class="text-4xl mb-3">{categoryEmoji[slug] ?? "📝"}</div>
+              <h3 class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
+                {name}
+              </h3>
+              <p class="text-sm text-slate-600 mt-2">
+                {count} {count === 1 ? "article" : "articles"}
+              </p>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>

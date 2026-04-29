@@ -101,14 +101,6 @@ export const BUSINESS_INFO = {
     "Web Maintenance",
   ],
 
-  // Ratings
-  aggregateRating: {
-    ratingValue: 5.0,
-    reviewCount: 25,
-    bestRating: 5,
-    worstRating: 1,
-  },
-
   // Languages
   languages: ["English", "Spanish"],
 } as const;
