@@ -31,7 +31,11 @@ export default function Quoter() {
   const [activeTab, setActiveTab] = useState<TabType>("one-time");
   const [selectedServices, setSelectedServices] = useState<SelectedService[]>([]);
   const [selectedPlan, setSelectedPlan] = useState<MonthlyPlan | null>(null);
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  // Expand the first category on first paint so users see options immediately
+  // (otherwise the page looks like a list of empty buttons with no prices).
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(
+    serviceCategories[0]?.id ?? null,
+  );
 
   // Calculate totals for one-time projects
   const oneTimeCalculation = useMemo(() => {

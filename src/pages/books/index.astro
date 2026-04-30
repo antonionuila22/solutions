@@ -138,12 +138,12 @@ const categories = [
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
           books.map((book) => {
-            const { slug, data } = book;
+            const { id, data } = book;
             const { title, author, img, readtime, description } = data;
 
             return (
               <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                <a href={`/books/${slug}`} class="block h-full">
+                <a href={`/books/${id}`} class="block h-full">
                   <div class="relative overflow-hidden">
                     <img
                       loading="lazy"

@@ -75,7 +75,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/website-1500') && !page.includes('/landing/wordpress-450') && !page.includes('/landing/business-starter-2500') && !page.includes('/landing/seo-plans') && !page.includes('/landing/maintenance-plans'),
+      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/web-development-agency'),
       changefreq: 'weekly',
       priority: 0.7,
       serialize: (item) => {

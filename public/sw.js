@@ -1,7 +1,7 @@
-// Codebrand Service Worker v1.1.0
+// Codebrand Service Worker v1.2.0
 // Cache-first strategy for static assets, network-first for dynamic content
 
-const CACHE_VERSION = 'codebrand-v1.1.0';
+const CACHE_VERSION = 'codebrand-v1.2.0';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;

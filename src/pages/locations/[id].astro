@@ -45,9 +45,12 @@ const {
 // Check if we have enhanced content
 const hasEnhancedContent = longDescription || industries?.length || marketHighlights?.length || faqs?.length;
 
-// SEO optimization
-const seoTitle = `${title} | Codebrand`;
-const seoDescription = description;
+// SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
+// to satisfy Google's snippet limits and SE Ranking guidelines.
+const seoTitle = metaTitle || `Web Development in ${city}, ${stateCode} | Codebrand`;
+const seoDescription = description.length > 160
+  ? description.slice(0, 157).trimEnd() + "…"
+  : description;
 const seoKeywords = [
   `web development ${city}`,
   `web development company ${city}`,

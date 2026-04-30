@@ -4,6 +4,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import RelatedPosts from "../../components/RelatedPosts.astro";
 import {
   createArticleSchema,
   createBreadcrumbSchema,
@@ -61,11 +62,15 @@ if (date instanceof Date && !isNaN(date.getTime())) {
   formattedDate = "Fecha no válida";
 }
 
-// SEO optimization
-const seoTitle = `${title} | Codebrand Blog`;
-const seoDescription =
+// SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
+const rawTitle = `${title} | Codebrand Blog`;
+const seoTitle = rawTitle.length > 70 ? title : rawTitle;
+const rawDesc =
   description ||
   `Read about ${title} on Codebrand's blog. ${author ? `Written by ${author}.` : ""} ${readtime ? `${readtime} min read.` : ""}`;
+const seoDescription = rawDesc.length > 160
+  ? rawDesc.slice(0, 157).trimEnd() + "…"
+  : rawDesc;
 const seoKeywords = [
   title.toLowerCase(),
   "codebrand blog",
@@ -211,6 +216,14 @@ const breadcrumbData = createBreadcrumbSchema([
         <Content />
       </div>
     </section>
+
+    <RelatedPosts
+      currentId={post.id}
+      posts={blog}
+      categories={categories}
+      tags={tags}
+      limit={4}
+    />
 
     <!-- CTA -->
     <section

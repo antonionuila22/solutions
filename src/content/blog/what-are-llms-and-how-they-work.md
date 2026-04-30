@@ -162,7 +162,7 @@ Want AI-powered customer experiences for your business? [Our digital solutions](
 
 **Example**: A marketing agency uses LLMs to draft client blog posts, social media captions, and email sequences—cutting content production time by 70%.
 
-Need help creating consistent, high-quality content? [Our copywriting services](/copywriting) combine AI efficiency with human creativity.
+Need help creating consistent, high-quality content? [Our content marketing services](/digital-marketing) combine AI efficiency with human creativity.
 
 ---
 

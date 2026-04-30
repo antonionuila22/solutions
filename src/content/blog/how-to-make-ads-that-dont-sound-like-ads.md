@@ -125,7 +125,7 @@ This storytelling approach is also powerful on [landing pages](/blog/landing-pag
 **Example:**
 "Look, we get it. You're tired of software that promises everything and delivers nothing. We built this tool because we had the same frustration. It does one thing really well instead of doing ten things poorly. Give it a try. If you hate it, just let us know."
 
-Need help creating copy that actually sounds human? [Our copywriting services](/copywriting) specialize in conversational, conversion-focused messaging that connects with your audience.
+Need help creating copy that actually sounds human? [Our content marketing services](/digital-marketing) specialize in conversational, conversion-focused messaging that connects with your audience.
 
 ---
 

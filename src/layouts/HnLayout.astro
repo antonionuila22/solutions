@@ -32,7 +32,19 @@ image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
 
 // URLs
 const canonicalUrl = canonicalOverride || Astro.url?.href || "https://www.codebrand.us";
-const englishUrl = canonicalUrl.replace("/hn/", "/");
+
+// Map Honduras pages to their English equivalents (URLs are NOT 1:1 translations)
+const enMap: Record<string, string> = {
+  "/hn/": "/",
+  "/hn/desarrollo-web-honduras": "/web-development",
+  "/hn/tienda-online-honduras": "/e-commerce",
+  "/hn/seo-honduras": "/seo",
+};
+const currentPath = Astro.url?.pathname?.replace(/\/$/, "") || "";
+const normalizedPath = currentPath === "/hn" ? "/hn/" : currentPath;
+const enEquivalent = enMap[normalizedPath];
+const englishUrl = enEquivalent ? `https://www.codebrand.us${enEquivalent}` : null;
+
 const siteName = "Codebrand - Agencia Digital Honduras";
 const twitterHandle = "@codebrand_us";
 
@@ -85,8 +97,8 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- Canonical and hreflang -->
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="es-HN" href={canonicalUrl} />
-    <link rel="alternate" hreflang="en-US" href={englishUrl} />
-    <link rel="alternate" hreflang="x-default" href={englishUrl} />
+    {englishUrl && <link rel="alternate" hreflang="en-US" href={englishUrl} />}
+    <link rel="alternate" hreflang="x-default" href={englishUrl || canonicalUrl} />
 
     <!-- RSS Feed -->
     <link

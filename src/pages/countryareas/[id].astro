@@ -29,6 +29,11 @@ const { country, countries, regions: countryRegions, cities: countryCities } = A
 const { data } = country;
 const { title, name, region, code, img, description } = data;
 
+// SEO title is more descriptive than the on-page H1 to avoid title-too-short
+// and identical-title-and-H1 issues flagged by SE Ranking.
+const seoTitle = `Web Development & Digital Agency in ${name} | Codebrand`;
+const h1Heading = `${title} — Web Development in ${name}`;
+
 const { Content } = await render(country);
 
 // Sort regions and cities
@@ -49,7 +54,7 @@ const getCityCount = (regionSlug: string) => {
 };
 ---
 
-<Layout title={title}>
+<Layout title={seoTitle} description={description}>
     <div
         class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 font-poppins space-y-20"
     >
@@ -80,7 +85,7 @@ const getCityCount = (regionSlug: string) => {
                 >
                     Perfil geográfico
                 </span>
-                <h1 class="text-4xl font-bold text-slate-900">{title}</h1>
+                <h1 class="text-4xl font-bold text-slate-900">{h1Heading}</h1>
                 <p class="text-lg text-slate-700 leading-relaxed">
                     {description}
                 </p>

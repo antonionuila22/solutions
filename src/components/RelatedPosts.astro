@@ -1,0 +1,115 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  currentId: string;
+  posts: CollectionEntry<"blog">[];
+  categories?: string[];
+  tags?: string[];
+  limit?: number;
+}
+
+const { currentId, posts, categories = [], tags = [], limit = 4 } = Astro.props;
+
+const currentCategories = new Set(categories);
+const currentTags = new Set(tags);
+
+// Score posts by shared categories (1pt) + shared tags (0.5pt). Newer posts win ties.
+const scored = posts
+  .filter((p) => p.id !== currentId && !p.data.draft)
+  .map((p) => {
+    let score = 0;
+    for (const c of p.data.categories || []) {
+      if (currentCategories.has(c)) score += 1;
+    }
+    for (const t of p.data.tags || []) {
+      if (currentTags.has(t)) score += 0.5;
+    }
+    const ts = p.data.date ? new Date(p.data.date).getTime() : 0;
+    return { post: p, score, ts };
+  })
+  .sort((a, b) => b.score - a.score || b.ts - a.ts);
+
+// Take top scored matches; if fewer than limit, pad with most recent unrelated posts.
+const topRelated = scored.slice(0, limit).map((s) => s.post);
+const related = topRelated.length === limit
+  ? topRelated
+  : [
+      ...topRelated,
+      ...scored
+        .slice(limit)
+        .sort((a, b) => b.ts - a.ts)
+        .slice(0, limit - topRelated.length)
+        .map((s) => s.post),
+    ];
+
+const formatDate = (date: Date | string | undefined) => {
+  if (!date) return "";
+  const d = date instanceof Date ? date : new Date(date);
+  return isNaN(d.getTime())
+    ? ""
+    : d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+};
+---
+
+{
+  related.length > 0 && (
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-100">
+      <div class="mb-10">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
+          Keep reading
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-cyan-900 mt-2">
+          Related Articles
+        </h2>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {related.map((p) => {
+          const { id, data } = p;
+          const { title, description, img, readtime, categories: cats, date } = data;
+          const cover = img
+            ? img.startsWith("http") || img.startsWith("/")
+              ? img
+              : `/${img}`
+            : "/photos/bannercodebrand.webp";
+          return (
+            <a
+              href={`/blog/${id}`}
+              class="group bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg hover:border-orange-300 transition-all duration-300 flex flex-col"
+            >
+              <div class="overflow-hidden aspect-[16/9] bg-slate-100">
+                <img
+                  src={cover}
+                  alt={title}
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="225"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-5 flex flex-col gap-2 flex-1">
+                {cats && cats.length > 0 && (
+                  <span class="text-xs font-semibold text-orange-600 uppercase tracking-wider">
+                    {cats[0]}
+                  </span>
+                )}
+                <h3 class="text-base font-bold text-cyan-900 group-hover:text-orange-600 transition-colors line-clamp-2">
+                  {title}
+                </h3>
+                {description && (
+                  <p class="text-sm text-slate-600 line-clamp-2">{description}</p>
+                )}
+                <div class="mt-auto pt-3 flex items-center justify-between text-xs text-slate-500 border-t border-slate-100">
+                  {formatDate(date) && <span>{formatDate(date)}</span>}
+                  {readtime && <span>{readtime} min read</span>}
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  )
+}

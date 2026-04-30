@@ -12,6 +12,10 @@ const services = [
   "Social Media", "Video Editing", "3D Rendering", "Animation",
   "Graphic Design", "Photography",
 ];
+
+// Pre-filled variants (?service=X&package=Y) duplicate the canonical /contact page;
+// noindex them and canonicalize to /contact so search engines see only one version.
+const hasPrefillParams = Astro.url?.search?.length > 0;
 ---
 
 <Layout
@@ -19,6 +23,8 @@ const services = [
   description="Get a free consultation. Web development, UI/UX design, branding, SEO, and marketing services. Contact us today."
   keywords="contact codebrand, free consultation, digital agency contact, web development services Honduras, branding consultation, UX/UI design quote, digital marketing contact"
   image="/photos/bannercodebrand.webp"
+  noindex={hasPrefillParams}
+  canonicalOverride="https://www.codebrand.us/contact"
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org", "@type": "ContactPage",

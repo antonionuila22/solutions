@@ -292,7 +292,7 @@ You don't need a huge blog. You just need **content that answers the questions y
 
 **How often to publish**: Even **one quality article per month** makes a difference. Consistency beats volume.
 
-Need help creating SEO-optimized content that actually ranks? [Our copywriting services](/copywriting) include keyword-targeted blog posts and service pages that drive traffic and conversions.
+Need help creating SEO-optimized content that actually ranks? [Our SEO services](/seo) include keyword-targeted blog posts and service pages that drive traffic and conversions.
 
 ---
 

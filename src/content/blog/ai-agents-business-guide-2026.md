@@ -90,7 +90,7 @@ Unlike traditional automation (if X, then Y), agents handle unpredictable situat
 Companies report **60% reduction** in support costs and **45% faster** resolution times.
 
 **How Codebrand Helps:**
-We build custom support agents integrated with your CRM, help desk, and knowledge base. [See our AI integration services →](/services/ai-integration)
+We build custom support agents integrated with your CRM, help desk, and knowledge base. [See our custom development services →](/custom-web-development-services)
 
 ### 2. Sales Development Agents
 
@@ -114,7 +114,7 @@ Sales teams using AI agents spend **3x more time** in actual sales conversations
 - Coordinate between departments
 
 **Perfect For:**
-Businesses drowning in repetitive operational tasks. [Learn about our automation solutions →](/services/software-development)
+Businesses drowning in repetitive operational tasks. [Learn about our automation solutions →](/custom-web-development-services)
 
 ### 4. Research Agents
 

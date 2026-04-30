@@ -8,7 +8,7 @@ imageAlt: "Astro.js Framework Guide"
 date: '2025-01-15'
 ---
 
-# 🚀 Learn Astro.js - The Complete Guide
+## 🚀 Learn Astro.js - The Complete Guide
 
 Welcome to the complete guide to Astro.js! Whether you're a seasoned developer or just starting your web development journey, this guide will teach you everything you need to know to build blazing-fast websites with Astro.
 

@@ -65,7 +65,16 @@
       "Bash(sed -i '' 's/\"worstRating\": \"5\"/\"worstRating\": \"1\"/g' src/layouts/HnLayout.astro src/layouts/Layout.astro src/layouts/LandingLayout.astro src/pages/hn/index.astro src/pages/index.astro src/components/ServicePageTemplateV4.astro)",
       "Bash(sed -i '' 's/\"worstRating\": \"5\"/\"worstRating\": \"1\"/g' 'src/pages/products/[id].astro')",
       "Bash(pkill -f \"astro dev\")",
-      "Bash(awk '{print $6, $7, $9}')"
+      "Bash(awk '{print $6, $7, $9}')",
+      "Bash(brew list *)",
+      "Bash(brew --prefix)",
+      "Bash(python3 -c \"import pypdf; print\\(pypdf.__version__\\)\")",
+      "Bash(python3 -c \"import PyPDF2; print\\(PyPDF2.__version__\\)\")",
+      "Bash(python3 -c \"import pdfplumber; print\\(pdfplumber.__version__\\)\")",
+      "Bash(command -v node)",
+      "Bash(node -e \"console.log\\(require\\('pdf-parse'\\)\\)\")",
+      "Read(//tmp/**)",
+      "Bash(git status *)"
     ]
   }
 }

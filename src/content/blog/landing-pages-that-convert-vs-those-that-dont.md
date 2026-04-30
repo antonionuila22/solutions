@@ -65,7 +65,7 @@ See the difference? The first tells you exactly what you get and who it's for. T
 
 **Pro tip**: Read your headline to someone unfamiliar with your business. If they can't immediately explain what you're offering and why they'd want it, rewrite it.
 
-Need help crafting a compelling value proposition that converts? [Our copywriting services](/copywriting) specialize in creating headlines that grab attention and drive action.
+Need help crafting a compelling value proposition that converts? [Our content marketing services](/digital-marketing) specialize in creating headlines that grab attention and drive action.
 
 ---
 

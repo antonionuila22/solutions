@@ -53,8 +53,13 @@ const sortedCities = cities.sort((a, b) => {
   return a.data.city.localeCompare(b.data.city);
 });
 
-// SEO
+// SEO — keep title ≤ 70 chars and description ≤ 160 chars
 const baseUrl = "https://www.codebrand.us";
+const rawTitle = title;
+const seoTitle = rawTitle.length > 70 ? `Web Development in ${name} | Codebrand` : rawTitle;
+const seoDescription = description.length > 160
+  ? description.slice(0, 157).trimEnd() + "…"
+  : description;
 const seoKeywords = [
   `web development ${name}`,
   `${name} web development company`,
@@ -102,8 +107,8 @@ const faqSchema = faqs && faqs.length > 0 ? {
 ---
 
 <Layout
-  title={title}
-  description={description}
+  title={seoTitle}
+  description={seoDescription}
   keywords={seoKeywords}
   image={img || "/photos/webservice.webp"}
 >

@@ -248,7 +248,7 @@ Specialized agencies (or those with specialized team members) deliver dramatical
 
 **The hidden cost**: Mediocre results, missed opportunities, and wondering why "marketing isn't working" when the real problem is lack of expertise.
 
-Our team includes specialists in [web design](/web-design), [development](/web-development), [copywriting](/copywriting), [SEO](/seo), and [paid advertising](/digital-marketing)—each person focused on what they do best, working together strategically.
+Our team includes specialists in [web design](/web-design), [development](/web-development), [branding](/branding), [SEO](/seo), and [paid advertising](/digital-marketing)—each person focused on what they do best, working together strategically.
 
 ---
 
