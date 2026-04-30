@@ -74,7 +74,13 @@
       "Bash(command -v node)",
       "Bash(node -e \"console.log\\(require\\('pdf-parse'\\)\\)\")",
       "Read(//tmp/**)",
-      "Bash(git status *)"
+      "Bash(git status *)",
+      "Bash(npm ls:*)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/vite/package.json'\\).version\\)\")",
+      "Bash(npx vite:*)",
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(npm audit:*)"
     ]
   }
 }
