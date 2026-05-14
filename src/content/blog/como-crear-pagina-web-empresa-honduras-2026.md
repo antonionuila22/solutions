@@ -23,7 +23,7 @@ Antes de entrar en detalles técnicos, entendamos el contexto hondureño y por q
 #### El Mercado Digital en Honduras
 
 - **Crecimiento del E-commerce**: Según datos de 2026, el comercio electrónico en Honduras creció un 45% anual, con más de 2.5 millones de compradores en línea.
-- **Penetración de Internet**: 70% de la población hondureña tiene acceso a internet, con un aumento significativo en dispositivos móviles.
+- **Penetración de Internet**:[Segun el Instituto Nacional de Estadistica de honduras](https://ine.gob.hn/wp-content/uploads/2025/12/Conectividad-digital-en-Honduras-julio-2025.pdf)). Para mediados de 2025, aproximadamente el 62% de la población hondureña (5.8 millones de personas) de 5 años o más tenía acceso a internet. La conectividad es mayoritariamente móvil, con un 93.4% de los hogares reportando el uso de celulares, aunque persiste una brecha digital entre zonas urbanas y rurales.
 - **Competencia Global**: Empresas hondureñas compiten no solo localmente, sino internacionalmente a través de plataformas globales.
 
 #### Beneficios Específicos para Empresas Hondureñas
@@ -67,7 +67,7 @@ Contratar desarrolladores individuales en plataformas como Upwork, Fiverr o loca
 
 **Dónde Encontrar Freelancers en Honduras:**
 - **Redes Sociales**: Grupos de Facebook como "Desarrolladores Web Honduras"
-- **Plataformas Locales**: Mercado Libre, OLX
+- **Plataformas Locales**: SENPRENDE, OLX
 - **Comunidades Técnicas**: Meetups en Tegucigalpa y San Pedro Sula
 
 **Ventajas:**
@@ -88,7 +88,7 @@ Contratar desarrolladores individuales en plataformas como Upwork, Fiverr o loca
 Empresas especializadas en desarrollo web con equipos profesionales.
 
 **Agencias Locales Destacadas:**
-- **Codebrand**: Especialistas en UX/UI, desarrollo web y software
+- **Codebrand**: Especialistas en UX/UI, desarrollo web y desarrollo de software personalizado.
 - **Agencias en Tegucigalpa**: Varias opciones con experiencia en mercados locales
 - **Agencias Internacionales**: Con presencia en Honduras
 
@@ -194,7 +194,6 @@ En Codebrand, somos expertos en diseñar software, páginas web, UX/UI y solucio
 
 #### Casos de Éxito en Honduras
 
-- **Empresa de Servicios Financieros**: Aumentamos leads en 300% con una página web optimizada
 - **Tienda Online de Productos Locales**: Multiplicamos ventas con e-commerce personalizado
 - **Empresa de Turismo**: Mejoramos reservas con sitio responsivo y SEO local
 
