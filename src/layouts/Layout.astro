@@ -5,6 +5,7 @@ import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/NavbarAstro.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppWidget from "../components/WhatsAppWidget.astro";
+import Animations from "../components/Animations.astro";
 import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 
 // Props individuales
@@ -464,6 +465,15 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
     <!-- Enable JS-dependent animations -->
     <script is:inline>
       document.documentElement.classList.add('js-enabled');
+      // Hide GSAP-animated elements before first paint (no flash of fully-shown
+      // content). Only when JS runs AND motion is allowed — so no-JS and
+      // reduced-motion users always see content. The engine adds `gsap-ready`
+      // once it has set each element's start state, lifting this blanket.
+      try {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('gsap-anim');
+        }
+      } catch (e) {}
     </script>
 
     <ClientRouter />
@@ -493,6 +503,7 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
     </main>
     <Footer />
     <WhatsAppWidget />
+    <Animations />
 
     <!-- Service Worker Registration (production only) -->
     <script is:inline>

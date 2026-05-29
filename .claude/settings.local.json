@@ -110,7 +110,11 @@
       "WebFetch(domain:www.forbes.com)",
       "WebFetch(domain:constructiondaily.news)",
       "WebFetch(domain:www.bls.gov)",
-      "WebFetch(domain:improveandgrow.com)"
+      "WebFetch(domain:improveandgrow.com)",
+      "Read(//Users/ramonnuila/Desktop/Projectos de referencia/**)",
+      "Bash(grep -rl \"gsap\\\\|useGSAP\\\\|@gsap\" \"Aixor v1.0/source/src\")",
+      "Bash(grep -rl \"gsap\\\\|useGSAP\\\\|@gsap\" \"Dixor v1.7/dixor-en/src\")",
+      "Bash(grep -rl \"gsap\\\\|useGSAP\\\\|@gsap\" \"Orisa-react-v3.0.0-unzip-first/1.Orisa-reactjs/src\")"
     ]
   }
 }

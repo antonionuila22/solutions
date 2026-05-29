@@ -84,12 +84,15 @@ const c = { ...defaults, ...Astro.props.config };
       </div>
       <h2
         class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0"
+        data-anim="heading"
       >
         {c.title}<br />
         <span class="text-cyan-600">{c.titleHighlight}</span>
       </h2>
       <p
         class="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
+        data-anim="fade"
+        data-delay="0.15"
       >
         <Fragment set:html={c.subtitle} />
       </p>
@@ -98,7 +101,7 @@ const c = { ...defaults, ...Astro.props.config };
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16 lg:mb-20 stats-grid">
       {c.stats.map((stat, i) => (
-        <div class="stat-card group">
+        <div class="stat-card group" data-anim="fade" data-anim-group="vp-stats" data-stagger="0.14" data-fade-offset="50">
           <div
             class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-5 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 h-full"
           >

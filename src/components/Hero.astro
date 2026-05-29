@@ -66,6 +66,8 @@ const c = { ...defaults, ...Astro.props.config };
   <div
     class="absolute top-20 left-10 text-cyan-500/20 font-mono text-sm hidden lg:block animate-float"
     aria-hidden="true"
+    data-parallax
+    data-parallax-speed="0.6"
   >
     <pre>&lt;code&gt;</pre>
   </div>
@@ -73,6 +75,8 @@ const c = { ...defaults, ...Astro.props.config };
     class="absolute top-40 right-20 text-cyan-500/20 font-mono text-sm hidden lg:block animate-float"
     style="animation-delay: 0.5s;"
     aria-hidden="true"
+    data-parallax
+    data-parallax-speed="-0.4"
   >
     <pre>{ }</pre>
   </div>
@@ -80,6 +84,8 @@ const c = { ...defaults, ...Astro.props.config };
     class="absolute bottom-40 left-20 text-orange-500/20 font-mono text-sm hidden lg:block animate-float"
     style="animation-delay: 1s;"
     aria-hidden="true"
+    data-parallax
+    data-parallax-speed="0.5"
   >
     <pre>&lt;/&gt;</pre>
   </div>
@@ -87,6 +93,8 @@ const c = { ...defaults, ...Astro.props.config };
     class="absolute bottom-20 right-10 text-orange-500/20 font-mono text-sm hidden lg:block animate-float"
     style="animation-delay: 1.5s;"
     aria-hidden="true"
+    data-parallax
+    data-parallax-speed="-0.6"
   >
     <pre>( )</pre>
   </div>
@@ -167,6 +175,8 @@ const c = { ...defaults, ...Astro.props.config };
       >
         <a
           href={c.ctaPrimary.href}
+          data-magnetic
+          data-magnetic-strength="0.4"
           class="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white text-base sm:text-base font-bold rounded-2xl shadow-lg shadow-orange-500/30 hover:shadow-orange-500/40 hover:-translate-y-0.5 sm:hover:-translate-y-1 active:scale-[0.97] transition-all duration-300"
         >
           {c.ctaPrimary.text}
@@ -186,6 +196,8 @@ const c = { ...defaults, ...Astro.props.config };
         </a>
         <a
           href={c.ctaSecondary.href}
+          data-magnetic
+          data-magnetic-strength="0.3"
           class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-4 bg-slate-800/90 hover:bg-slate-700/90 text-white text-base sm:text-base font-semibold rounded-2xl border border-slate-600 hover:border-slate-500 active:scale-[0.97] transition-all duration-300"
         >
           <svg

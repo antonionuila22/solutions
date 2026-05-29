@@ -1,0 +1,16 @@
+---
+/**
+ * Mounts the GSAP + Lenis animation engine. Drop once near the end of a layout.
+ * The script is processed & bundled by Astro (GSAP/Lenis tree-shaken), and runs
+ * a single time — it wires into the Astro View Transition lifecycle itself.
+ *
+ * Animate elements purely from markup via data-attributes:
+ *   data-anim="heading|fade|chars"   data-parallax   data-counter
+ *   data-magnetic   data-marquee   data-sticky-cards   data-cursor
+ * See src/scripts/animations/effects/* for each effect's options.
+ */
+---
+
+<script>
+  import "../scripts/animations/index";
+</script>
