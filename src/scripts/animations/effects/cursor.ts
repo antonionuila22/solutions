@@ -24,6 +24,11 @@ export const cursorEffect: Effect = ({ gsap, reducedMotion, hasPointer }) => {
     document.body.appendChild(dot);
     document.documentElement.classList.add("cb-has-cursor");
 
+    // Center each element on the pointer via the transform. quickTo animates the
+    // px translation (x/y) and composes with these percentage offsets, so the
+    // circle stays centered at every size — including the hover grow.
+    gsap.set([dot, ring], { xPercent: -50, yPercent: -50 });
+
     const dotX = gsap.quickTo(dot, "x", { duration: 0.15, ease: "power3.out" });
     const dotY = gsap.quickTo(dot, "y", { duration: 0.15, ease: "power3.out" });
     const ringX = gsap.quickTo(ring, "x", { duration: 0.5, ease: "power3.out" });
