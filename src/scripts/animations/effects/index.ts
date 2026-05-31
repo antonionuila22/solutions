@@ -7,7 +7,6 @@ import { counterEffect } from "./counter";
 import { magneticEffect } from "./magnetic";
 import { marqueeEffect } from "./marquee";
 import { stickyCardsEffect } from "./stickyCards";
-import { cursorEffect } from "./cursor";
 
 /** Run order doesn't matter much, but reveals first feels tidiest. */
 export const effects: Effect[] = [
@@ -19,5 +18,4 @@ export const effects: Effect[] = [
   stickyCardsEffect,
   marqueeEffect,
   magneticEffect,
-  cursorEffect,
 ];

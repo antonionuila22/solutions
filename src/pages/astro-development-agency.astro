@@ -1,0 +1,251 @@
+---
+/**
+ * Astro Development Agency Landing Page
+ * Keywords: astro development agency, astro js developers, astro website,
+ * astro migration, hire astro developers, astro vs nextjs
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Astro Development Agency | Codebrand";
+const description =
+  "Codebrand is an Astro development agency building blazing-fast, SEO-friendly websites with Astro — including this one. Astro builds, WordPress migrations, and headless CMS. US timezone.";
+const keywords =
+  "astro development agency, astro js developers, hire astro developers, astro website development, astro migration, astro vs nextjs, astro headless cms, fast website development, astro seo";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Astro Development Services",
+  name: "Astro Development Agency — Fast, SEO-First Websites",
+  description:
+    "Astro development services: high-performance marketing sites, blogs and content sites, WordPress-to-Astro migrations, Astro with a headless CMS, React/Vue islands, and Core Web Vitals optimization. Ships near-zero JavaScript by default.",
+  url: "https://www.codebrand.us/astro-development-agency",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Astro Development Services",
+  catalogItems: [
+    {
+      name: "Astro Websites",
+      description:
+        "Fast, modern marketing and business sites that score high on Core Web Vitals out of the box.",
+    },
+    {
+      name: "Content & Blog Sites",
+      description:
+        "Content collections, MDX, and dynamic routes for blogs, docs, and programmatic SEO at scale.",
+    },
+    {
+      name: "WordPress-to-Astro Migration",
+      description:
+        "Move off slow, plugin-heavy WordPress to a fast, secure, low-maintenance Astro site.",
+    },
+    {
+      name: "Astro + Headless CMS",
+      description:
+        "Astro paired with a CMS your team can edit — Sanity, Strapi, or Storyblok — without touching code.",
+    },
+    {
+      name: "React & Vue Islands",
+      description:
+        "Interactive components where you need them, static HTML everywhere else — the islands architecture.",
+    },
+    {
+      name: "Performance Optimization",
+      description:
+        "Rescue slow sites: ship less JavaScript, optimize images and fonts, and fix Core Web Vitals.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "What is Astro and why does it matter?",
+    answer:
+      "Astro is a modern web framework built for content-driven sites that need to be fast. Its key idea is shipping near-zero JavaScript by default — pages render to static HTML, and interactive 'islands' only load JS where it's actually needed. The result is sites that load faster, score higher on Google's Core Web Vitals, and are easier to maintain. Codebrand is an Astro development agency, and this very website is built with Astro.",
+  },
+  {
+    question: "Why should I choose Astro for my website?",
+    answer:
+      "Astro is ideal for marketing sites, blogs, documentation, e-commerce storefronts, and any content-heavy site where speed and SEO matter. Benefits include: excellent performance (less JavaScript means faster loads), strong SEO out of the box, the freedom to use React, Vue, or Svelte components together, content collections for managing markdown at scale, and lower hosting costs. For content-first sites it often outperforms heavier frameworks.",
+  },
+  {
+    question: "Astro vs Next.js — which should I use?",
+    answer:
+      "Use Astro when your site is mostly content (marketing, blog, docs, brochure, storefront) and you want maximum speed and SEO with minimal JavaScript. Use Next.js when you're building a highly interactive web application (dashboards, SaaS, complex authenticated flows). They're not enemies — Astro is the better default for content sites, Next.js for app-like products. We build with both and will recommend honestly based on your project. See our full comparison on the blog.",
+  },
+  {
+    question: "Can you migrate my WordPress site to Astro?",
+    answer:
+      "Yes — WordPress-to-Astro migration is one of our most requested services. We move your content into Astro, rebuild the design (or keep it), set up a headless CMS so your team can still edit content easily, and put redirects in place so you keep your SEO rankings. The payoff is a site that's dramatically faster, more secure (no plugin vulnerabilities), and far cheaper to maintain.",
+  },
+  {
+    question: "Is Astro good for SEO?",
+    answer:
+      "Very. Astro renders real HTML on the server, loads fast, and gives you full control over meta tags, structured data, sitemaps, and canonical URLs — all the things search engines and AI crawlers reward. Its near-zero-JS output means strong Core Web Vitals, which is a Google ranking factor. It's also excellent for programmatic SEO, generating hundreds of location or topic pages from data.",
+  },
+  {
+    question: "When is Astro NOT the right choice?",
+    answer:
+      "Astro isn't the best fit for highly interactive, app-like products where almost every screen is dynamic and authenticated — think a full SaaS dashboard or a real-time collaboration tool. For those, a framework like Next.js is usually better. We'll tell you honestly if your project is a better fit for something other than Astro rather than forcing the wrong tool.",
+  },
+  {
+    question: "Can you add a CMS so my team can edit content?",
+    answer:
+      "Yes. We pair Astro with a headless CMS (such as Sanity, Strapi, or Storyblok) so non-technical team members can update text, images, and blog posts through a friendly editor — no code required. You get the speed of a static site with the editing convenience of a traditional CMS.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  { icon: "🚀", title: "Astro Websites", desc: "Fast, modern sites that ace Core Web Vitals out of the box." },
+  { icon: "📝", title: "Content & Blog Sites", desc: "Content collections, MDX, and programmatic SEO at scale." },
+  { icon: "🔄", title: "WordPress → Astro", desc: "Migrate off slow, plugin-heavy WordPress to a fast, secure site." },
+  { icon: "🧱", title: "Astro + Headless CMS", desc: "Astro paired with a CMS your team can edit without code." },
+  { icon: "🏝️", title: "React & Vue Islands", desc: "Interactivity where needed, static HTML everywhere else." },
+  { icon: "⚡", title: "Performance Tuning", desc: "Rescue slow sites and fix Core Web Vitals." },
+];
+
+const stats = [
+  { value: "~0kb", label: "JS by Default" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "40-60%", label: "vs US Cost" },
+];
+
+const stack = ["Astro", "TypeScript", "Tailwind CSS", "React", "MDX", "Sanity", "Strapi", "Netlify", "Vercel"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/astro-development-agency"
+  breadcrumbNames={{ "astro-development-agency": "Astro Development Agency" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 text-orange-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          Astro Development Agency
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Astro <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Development</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Blazing-fast, SEO-first websites built with Astro — the framework
+          this very site runs on. Less JavaScript, higher rankings.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Build with Astro
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            Our Services
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">We build with Astro — including this site</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+        <p>
+          <strong class="text-slate-900">Codebrand is an Astro development agency</strong>, and the site you're reading right now is built with Astro. That's not a coincidence — for content-driven sites, Astro is hard to beat. It ships <strong class="text-slate-900">near-zero JavaScript by default</strong>, renders real HTML for search engines and AI crawlers, and loads fast enough to win on Core Web Vitals, which Google uses as a ranking factor.
+        </p>
+        <p>
+          We build marketing sites, blogs, documentation, and storefronts, and we migrate slow <strong class="text-slate-900">WordPress sites to Astro</strong> — keeping your rankings with proper redirects while cutting load times and maintenance costs. Astro's islands architecture lets us drop in <strong class="text-slate-900">React or Vue components</strong> exactly where interactivity is needed and keep everything else static. Curious how it compares? Read <a href="/blog/astro-vs-nextjs-cual-elegir-2025" class="text-cyan-600 hover:text-cyan-700 font-semibold">Astro vs Next.js</a>, <a href="/blog/fastest-web-tech-stack-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold">the fastest web stack in 2026</a>, and <a href="/blog/companies-using-astro-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold">companies using Astro</a>.
+        </p>
+        <p>
+          Working in <strong class="text-slate-900">US timezone</strong> at <strong class="text-slate-900">40–60% less than US agencies</strong>, you get a senior Astro team without the senior-agency invoice. Need something more app-like? We're also a full <a href="/web-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">web development</a> and <a href="/custom-web-development-services" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom development</a> shop and will recommend the right tool honestly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Astro <span class="text-orange-500">Services</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+        Our Astro <span class="text-orange-500">Stack</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Astro Development <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Want a site this <span class="text-orange-400">fast?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10">Free consultation. We'll show you what Astro could do for your speed and SEO.</p>
+      <a href="/contact" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

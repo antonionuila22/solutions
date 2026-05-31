@@ -12,9 +12,11 @@ description =
   description ||
   "Transform your business with Codebrand's expert web development services.";
 image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
+// og/twitter image must be an absolute URL on the production domain.
+const ogImage = image.startsWith("http") ? image : new URL(image, Astro.site ?? "https://www.codebrand.us").href;
 
-// URL dinámica y mejoras SEO
-const canonicalUrl = Astro.url?.href || "https://www.codebrand.us";
+// URL dinámica y mejoras SEO — canonical anclado al dominio de producción (www), sin query.
+const canonicalUrl = new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href;
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_es";
 
@@ -102,7 +104,7 @@ const localBusinessSchema = {
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
@@ -118,7 +120,7 @@ const localBusinessSchema = {
     <meta name="twitter:creator" content={twitterHandle} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={title} />
 
     <!-- Links and Resources -->

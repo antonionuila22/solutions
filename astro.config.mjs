@@ -11,6 +11,8 @@ import sitemap from '@astrojs/sitemap';
 
 import mdx from '@astrojs/mdx';
 
+import { isLongtailGeoUrl } from './src/lib/seo/geo-tiers';
+
 // https://astro.build/config
 export default defineConfig({
   // Dev Toolbar configuration (Astro 5.17+)
@@ -75,7 +77,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/web-development-agency'),
+      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/web-development-agency') && !page.includes('/blog/category/') && !isLongtailGeoUrl(page),
       changefreq: 'weekly',
       priority: 0.7,
       serialize: (item) => {

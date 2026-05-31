@@ -1,0 +1,292 @@
+---
+/**
+ * AI Automation Agency Landing Page
+ * Keywords: ai automation agency, ai automation services, custom ai agents,
+ * workflow automation, business process automation, ai integration
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "AI Automation Agency | Codebrand";
+const description =
+  "Codebrand is an AI automation agency that builds custom AI agents, workflow automation, and chatbots that connect to your existing tools. US timezone, custom-built, no lock-in.";
+const keywords =
+  "ai automation agency, ai automation services, custom ai agents, business process automation, workflow automation agency, ai chatbot development, ai integration services, ai consulting agency, hire ai automation experts";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "AI Automation Services",
+  name: "AI Automation Agency — Custom AI Agents & Workflow Automation",
+  description:
+    "Custom AI automation services: AI agents and assistants, workflow and back-office automation, support chatbots, document and data processing, and AI integrations with your existing CRM, email, and tools. Custom-built, owned by you, no platform lock-in.",
+  url: "https://www.codebrand.us/ai-automation-agency",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "AI Automation Services",
+  catalogItems: [
+    {
+      name: "AI Agents & Assistants",
+      description:
+        "Custom AI agents that read your data, make decisions, and take actions across your tools — not just chat.",
+    },
+    {
+      name: "Workflow & Process Automation",
+      description:
+        "Automate repetitive back-office work: lead routing, data entry, reporting, and multi-step workflows with n8n, Make, and custom code.",
+    },
+    {
+      name: "AI Support Chatbots",
+      description:
+        "Retrieval-augmented chatbots that answer from your own documents, products, and policies — on your website or WhatsApp.",
+    },
+    {
+      name: "Document & Data Processing",
+      description:
+        "Extract, classify, summarize, and route information from PDFs, invoices, emails, and forms automatically.",
+    },
+    {
+      name: "CRM & Email Automation",
+      description:
+        "Automatic lead follow-up, qualification, enrichment, and CRM updates so nothing falls through the cracks.",
+    },
+    {
+      name: "AI Integrations & APIs",
+      description:
+        "Connect AI to the systems you already use — HubSpot, Slack, Sheets, Stripe, Shopify, and custom APIs.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "What is an AI automation agency?",
+    answer:
+      "An AI automation agency designs and builds software that uses artificial intelligence to do repetitive or decision-heavy work for a business — things like answering customer questions, processing documents, routing leads, updating a CRM, or running multi-step workflows without a person clicking through them. Codebrand is an AI automation agency that builds these systems custom for each client and integrates them with the tools the business already uses, so you own the solution outright with no platform lock-in.",
+  },
+  {
+    question: "What business processes can you automate with AI?",
+    answer:
+      "Common high-ROI automations include: customer support chatbots that answer from your own documents, lead capture and follow-up, invoice and document processing (extracting and classifying data from PDFs and forms), email and CRM updates, report generation, content drafting, data enrichment, and internal assistants that search across your knowledge base. If a task is repetitive, rule-based, or involves reading and summarizing text, it's usually a strong candidate for automation.",
+  },
+  {
+    question: "How much does AI automation cost?",
+    answer:
+      "It depends on scope. A focused single-workflow automation or chatbot is typically a few thousand dollars, while a custom AI agent that connects multiple systems and makes decisions runs higher. Because our team is based in Honduras and works in US timezone, you get senior-level work at roughly 40–60% less than comparable US agencies. We scope each project up front with a fixed price and an estimate of the hours or cost it will save you, so the investment is tied to real ROI.",
+  },
+  {
+    question: "Do you build custom AI agents, or just use no-code tools?",
+    answer:
+      "Both, and we pick the right tool for the job. For straightforward connections we use proven platforms like n8n, Make, and Zapier to ship fast and keep costs low. For more complex needs — agents that reason over your data, retrieval-augmented chatbots, or anything that has to scale and integrate deeply — we write custom code with the OpenAI and Anthropic (Claude) APIs, frameworks like LangChain, and vector databases. You're never locked into a no-code vendor when custom code is the better long-term choice.",
+  },
+  {
+    question: "Can you integrate AI with our existing systems?",
+    answer:
+      "Yes. Integration is the core of most automation projects. We connect AI to the tools you already run — CRMs like HubSpot and Salesforce, email, Slack, Google Sheets and Workspace, Stripe, Shopify, WhatsApp, and custom internal APIs. The goal is automation that fits into your current workflow instead of forcing your team to learn a new platform.",
+  },
+  {
+    question: "What AI models and tools do you use?",
+    answer:
+      "We work with the leading models — OpenAI's GPT family and Anthropic's Claude — and choose per use case based on quality, speed, and cost. Our stack includes LangChain for agent orchestration, vector databases (pgvector, Pinecone, Supabase) for retrieval, n8n / Make / Zapier for connections, and Python and Node.js for custom logic. We stay model-agnostic so your automation isn't tied to a single provider's pricing or availability.",
+  },
+  {
+    question: "How long does it take to build an AI automation?",
+    answer:
+      "A focused automation or chatbot can often be live in 1–3 weeks. Larger custom AI agents that span several systems typically take 4–8 weeks. We start with a short discovery to map the process, ship a working first version quickly so you can validate it on real data, then expand from there.",
+  },
+  {
+    question: "What's the ROI of AI automation?",
+    answer:
+      "The return usually comes from three places: hours saved on manual work, faster response and follow-up (which converts more leads), and fewer errors. Before we build, we estimate how much time or money a given automation should save so you can judge it against the cost. We prioritize the workflows with the clearest payback first rather than automating for its own sake.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  {
+    icon: "🤖",
+    title: "AI Agents & Assistants",
+    desc: "Custom agents that read your data, decide, and act across your tools — not just chat.",
+  },
+  {
+    icon: "🔄",
+    title: "Workflow Automation",
+    desc: "Automate lead routing, data entry, reporting, and multi-step back-office processes.",
+  },
+  {
+    icon: "💬",
+    title: "Support Chatbots",
+    desc: "Retrieval chatbots that answer from your own docs and products — web or WhatsApp.",
+  },
+  {
+    icon: "📄",
+    title: "Document Processing",
+    desc: "Extract, classify, and summarize data from PDFs, invoices, emails, and forms.",
+  },
+  {
+    icon: "📨",
+    title: "CRM & Email Automation",
+    desc: "Automatic follow-up, lead qualification, enrichment, and CRM updates.",
+  },
+  {
+    icon: "🔌",
+    title: "AI Integrations",
+    desc: "Connect AI to HubSpot, Slack, Sheets, Stripe, Shopify, and custom APIs.",
+  },
+];
+
+const stats = [
+  { value: "24/7", label: "Always-On" },
+  { value: "Custom", label: "No Templates" },
+  { value: "CST", label: "US Timezone" },
+  { value: "40-60%", label: "vs US Cost" },
+];
+
+const stack = [
+  "OpenAI GPT",
+  "Anthropic Claude",
+  "LangChain",
+  "n8n",
+  "Make",
+  "Zapier",
+  "Python",
+  "Node.js",
+  "pgvector / Pinecone",
+  "Supabase",
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/ai-automation-agency"
+  breadcrumbNames={{ "ai-automation-agency": "AI Automation Agency" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 text-orange-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          AI Automation Agency
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          AI <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Automation</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Custom AI agents, workflows, and chatbots that plug into the tools
+          you already use. Built to save real hours — not to demo well.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Automate a Workflow
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            What We Automate
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">AI automation that fits your business</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+        <p>
+          <strong class="text-slate-900">Codebrand is an AI automation agency</strong> that builds custom AI agents, workflow automation, and chatbots for growing businesses. Most teams don't need a flashy demo — they need the repetitive work to stop eating their day: <strong class="text-slate-900">answering the same questions, copying data between tools, chasing leads, processing documents</strong>. That's what we automate.
+        </p>
+        <p>
+          We pick the right tool for each job. For straightforward connections we ship fast with <strong class="text-slate-900">n8n, Make, and Zapier</strong>. When you need an agent that reasons over your data or a chatbot that answers from your own documents, we write custom code with the <strong class="text-slate-900">OpenAI and Anthropic (Claude) APIs</strong>, LangChain, and vector databases. You own the result — no no-code vendor holding your business hostage. Learn more in our <a href="/blog/ai-automation-business-guide-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold">guide to AI automation for business</a> and our <a href="/blog/ai-agents-business-guide-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold">guide to AI agents</a>.
+        </p>
+        <p>
+          Because our team works in <strong class="text-slate-900">US timezone</strong> at roughly <strong class="text-slate-900">40–60% less than US agencies</strong>, automation that used to be out of budget becomes an easy yes. Need more than automation? We also build <a href="/custom-web-development-services" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom web applications</a> and act as a <a href="/software-development-partner-for-startups" class="text-cyan-600 hover:text-cyan-700 font-semibold">development partner</a> for the software around your automations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          What We <span class="text-orange-500">Automate</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+        Our AI <span class="text-orange-500">Stack</span>
+      </h2>
+      <p class="text-slate-600 max-w-2xl mx-auto">Model-agnostic by design — we choose per use case for the best quality, speed, and cost.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-10">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          AI Automation <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        What's eating your <span class="text-orange-400">team's time?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10">Tell us the repetitive task. We'll tell you if AI can take it off your plate — free consultation.</p>
+      <a href="/contact" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

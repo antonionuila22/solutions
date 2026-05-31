@@ -1,0 +1,251 @@
+---
+/**
+ * UX/UI Design Agency Landing Page
+ * Keywords: ux/ui design agency, ux design services, ui design agency,
+ * product design, user research, design systems, figma design agency
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "UX/UI Design Agency | Codebrand";
+const description =
+  "Codebrand is a UX/UI design agency that turns research into interfaces people actually use — user research, wireframes, design systems, and conversion-focused UI in Figma. US timezone.";
+const keywords =
+  "ux/ui design agency, ux design services, ui design agency, product design agency, user research, wireframing, design systems, figma design agency, conversion focused design, usability testing";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "UX/UI Design Services",
+  name: "UX/UI Design Agency — User Research, UI Design & Design Systems",
+  description:
+    "End-to-end UX/UI design: user research, information architecture, wireframing and interactive prototyping, high-fidelity UI design, design systems, and usability testing — built to improve conversion and retention.",
+  url: "https://www.codebrand.us/ux-ui-design-agency",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "UX/UI Design Services",
+  catalogItems: [
+    {
+      name: "User Research & Analysis",
+      description:
+        "Interviews, surveys, analytics review, and competitive analysis to base design on evidence, not guesses.",
+    },
+    {
+      name: "Wireframing & Prototyping",
+      description:
+        "Information architecture, low-fidelity wireframes, and interactive Figma prototypes you can test before development.",
+    },
+    {
+      name: "UI & Visual Design",
+      description:
+        "High-fidelity, on-brand interface design with attention to hierarchy, spacing, accessibility, and detail.",
+    },
+    {
+      name: "Design Systems",
+      description:
+        "Reusable component libraries and design tokens that keep your product consistent and faster to build.",
+    },
+    {
+      name: "Usability Testing",
+      description:
+        "Testing designs with real users to find friction before it costs you conversions.",
+    },
+    {
+      name: "Conversion-Focused Design",
+      description:
+        "Landing pages and flows designed around a clear path from visitor to customer.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "What does a UX/UI design agency do?",
+    answer:
+      "A UX/UI design agency designs how a product looks and works before it gets built. UX (user experience) covers the structure, flows, and logic — how someone moves through your product and gets things done. UI (user interface) covers the visual layer — typography, color, spacing, components, and states. Codebrand handles the full process: research, wireframes, interactive prototypes, high-fidelity UI, and a design system, then hands off clean specs to developers (or builds it ourselves).",
+  },
+  {
+    question: "What's the difference between UX and UI design?",
+    answer:
+      "UX is about how it works; UI is about how it looks. UX design decides what screens exist, what goes on them, and how users flow between them — it's grounded in research and problem-solving. UI design makes those screens beautiful, consistent, and clear — color, type, iconography, spacing, and interaction states. Great products need both: a gorgeous interface on a confusing flow still fails, and a logical flow that looks dated won't earn trust. We do both together.",
+  },
+  {
+    question: "How much does UX/UI design cost?",
+    answer:
+      "It depends on scope. A focused landing-page or single-flow design is a few thousand dollars; a full product design with research, a design system, and many screens is more. Because our team works in US timezone from Honduras, you get senior design work at roughly 40–60% less than comparable US agencies. We scope each project up front with a fixed price so there are no surprises.",
+  },
+  {
+    question: "What's your design process?",
+    answer:
+      "We start with discovery and research to understand your users and goals. Then information architecture and wireframes to get the structure right, followed by interactive prototypes you can click through and test. Once the flow is validated, we move to high-fidelity UI and a design system. You review and approve at each stage — no big reveal at the end, no surprises.",
+  },
+  {
+    question: "Do you design in Figma?",
+    answer:
+      "Yes, Figma is our primary design tool. You get access to the working files, interactive prototypes, and an organized design system with reusable components and tokens. Designing in Figma also makes developer handoff clean — engineers can inspect spacing, colors, and assets directly, which reduces back-and-forth during build.",
+  },
+  {
+    question: "Can you redesign our existing product or website?",
+    answer:
+      "Absolutely. Redesigns are a large part of what we do. We audit your current product, review analytics and user feedback to find where people struggle, and redesign with clear goals — usually higher conversion, better retention, or a more modern, trustworthy look. We can redesign incrementally so you're not forced into a risky all-at-once relaunch.",
+  },
+  {
+    question: "Do you only design, or can you build it too?",
+    answer:
+      "Both. Many clients come to us for design and then have us build it, since we're also a development team. That removes the usual friction of handing designs to a separate agency. If you have your own developers, we deliver clean Figma files, a documented design system, and specs they can implement directly. Explore our web development and custom software services to see the full picture.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  { icon: "🔍", title: "User Research", desc: "Interviews, surveys, and analytics to design on evidence, not guesses." },
+  { icon: "📐", title: "Wireframing & Prototyping", desc: "Information architecture and clickable Figma prototypes you can test." },
+  { icon: "🎨", title: "UI & Visual Design", desc: "High-fidelity, on-brand interfaces with attention to every detail." },
+  { icon: "🧩", title: "Design Systems", desc: "Reusable components and tokens that keep your product consistent." },
+  { icon: "🧪", title: "Usability Testing", desc: "Find friction with real users before it costs you conversions." },
+  { icon: "📈", title: "Conversion-Focused Design", desc: "Flows designed around a clear path from visitor to customer." },
+];
+
+const stats = [
+  { value: "User-First", label: "Approach" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "40-60%", label: "vs US Cost" },
+];
+
+const stack = ["Figma", "FigJam", "Adobe XD", "Photoshop", "Illustrator", "Framer", "Design Tokens", "Storybook"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/ux-ui-design-agency"
+  breadcrumbNames={{ "ux-ui-design-agency": "UX/UI Design Agency" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 text-orange-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          UX/UI Design Agency
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          UX/UI <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Design</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Research-driven product design that turns confused visitors into
+          confident customers. Beautiful interfaces on flows that actually work.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Start a Design Project
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            Our Services
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">Design that earns trust and converts</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+        <p>
+          <strong class="text-slate-900">Codebrand is a UX/UI design agency</strong> that designs products around the people who use them. A pretty interface on a confusing flow still loses customers — so we start with <strong class="text-slate-900">research and structure</strong>, then layer on a clean, on-brand visual design. The result looks sharp and removes the friction between a visitor and the action you want them to take.
+        </p>
+        <p>
+          Our process is collaborative and staged: discovery, <strong class="text-slate-900">wireframes and interactive prototypes</strong> you can test, then high-fidelity UI and a reusable <strong class="text-slate-900">design system</strong>. You review at every step. Want the thinking behind it? Read our <a href="/blog/ui-ux-design-principles-guide-2026" class="text-cyan-600 hover:text-cyan-700 font-semibold">UI/UX design principles guide</a> and our breakdown of <a href="/blog/best-ux-ui-design-agency-2026-complete-guide" class="text-cyan-600 hover:text-cyan-700 font-semibold">how to choose a UX/UI agency</a>.
+        </p>
+        <p>
+          Because we're also a development team, design doesn't die at handoff. We can <a href="/web-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">build what we design</a>, or hand your engineers clean Figma files and specs. Working in <strong class="text-slate-900">US timezone</strong> at <strong class="text-slate-900">40–60% less than US agencies</strong>, senior design becomes affordable. See our <a href="/web-design" class="text-cyan-600 hover:text-cyan-700 font-semibold">web design</a> and <a href="/custom-web-development-services" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom development</a> services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Design <span class="text-orange-500">Services</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+        Our Design <span class="text-orange-500">Toolkit</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          UX/UI Design <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Ready to design something <span class="text-orange-400">people love?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10">Free consultation. We'll review your product and where it's losing users.</p>
+      <a href="/contact" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

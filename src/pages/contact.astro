@@ -13,9 +13,21 @@ const services = [
   "Graphic Design", "Photography",
 ];
 
-// Pre-filled variants (?service=X&package=Y) duplicate the canonical /contact page;
+// Pre-filled variants (?subject=...&services=...&total=...) duplicate the canonical /contact page;
 // noindex them and canonicalize to /contact so search engines see only one version.
 const hasPrefillParams = Astro.url?.search?.length > 0;
+
+// Quote-builder handoff: prefill the form from the query string the Quoter sends.
+const sp = Astro.url?.searchParams;
+const prefillSubject = sp?.get("subject") ?? "";
+const prefillServicesRaw = sp?.get("services") ?? "";
+const prefillTotal = (sp?.get("total") ?? "").replace(/\s*\(incl\.\s*ISR\)/i, "").trim();
+const prefillSelectedServices = prefillServicesRaw
+  ? services.filter((s) => prefillServicesRaw.toLowerCase().includes(s.toLowerCase()))
+  : [];
+const prefillMessage = prefillServicesRaw
+  ? `From the quote builder:\n${prefillServicesRaw}${prefillTotal ? `\n\nEstimated total: ${prefillTotal}` : ""}`
+  : "";
 ---
 
 <Layout
@@ -108,12 +120,18 @@ const hasPrefillParams = Astro.url?.search?.length > 0;
                 <input type="text" name="honey" id="contact-website" tabindex="-1" autocomplete="new-password" />
               </div>
 
+              {prefillTotal && (
+                <div class="mb-4 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-sm text-orange-800">
+                  <strong>Your estimate:</strong> {prefillTotal}. We'll confirm the details below.
+                </div>
+              )}
+
               <div class="space-y-4">
                 <!-- Row: Name + Email -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="name" class="form-label">Name *</label>
-                    <input id="name" name="name" type="text" required aria-required="true" aria-describedby="name-error" autocomplete="name"
+                    <input id="name" name="name" type="text" required aria-required="true" autocomplete="name"
                       placeholder="John Doe" class="form-input"
                       maxlength="60" minlength="2"
                       pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+"
@@ -121,7 +139,7 @@ const hasPrefillParams = Astro.url?.search?.length > 0;
                   </div>
                   <div>
                     <label for="email" class="form-label">Email *</label>
-                    <input id="email" name="email" type="email" required aria-required="true" aria-describedby="email-error" autocomplete="email"
+                    <input id="email" name="email" type="email" required aria-required="true" autocomplete="email"
                       placeholder="john@company.com" class="form-input" maxlength="254" />
                   </div>
                 </div>
@@ -130,14 +148,14 @@ const hasPrefillParams = Astro.url?.search?.length > 0;
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label for="phone" class="form-label">Phone *</label>
-                    <input id="phone" name="phone" type="tel" required aria-required="true" aria-describedby="phone-error" autocomplete="tel"
+                    <input id="phone" name="phone" type="tel" required aria-required="true" autocomplete="tel"
                       placeholder="+1 (555) 000-0000" class="form-input"
                       maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
                   </div>
                   <div>
                     <label for="industry" class="form-label">Industry *</label>
                     <div class="relative">
-                      <select id="industry" name="industry" required aria-required="true" aria-describedby="industry-error" class="form-input appearance-none pr-8">
+                      <select id="industry" name="industry" required aria-required="true" class="form-input appearance-none pr-8">
                         <option value="" disabled selected>Select</option>
                         {industries.map((ind) => <option value={ind}>{ind}</option>)}
                       </select>
@@ -149,7 +167,8 @@ const hasPrefillParams = Astro.url?.search?.length > 0;
                 <!-- Subject -->
                 <div>
                   <label for="subject" class="form-label">Subject *</label>
-                  <input id="subject" name="subject" type="text" required aria-required="true" aria-describedby="subject-error"
+                  <input id="subject" name="subject" type="text" required aria-required="true"
+                    value={prefillSubject}
                     placeholder="How can we help?" class="form-input"
                     maxlength="100" minlength="3"
                     pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+" />
@@ -158,10 +177,10 @@ const hasPrefillParams = Astro.url?.search?.length > 0;
                 <!-- Message -->
                 <div>
                   <label for="message" class="form-label">Message *</label>
-                  <textarea id="message" name="message" rows="3" required aria-required="true" aria-describedby="message-error"
+                  <textarea id="message" name="message" rows="3" required aria-required="true"
                     placeholder="Project details, goals, timeline..."
                     class="form-input resize-none"
-                    maxlength="2000" minlength="10"></textarea>
+                    maxlength="2000" minlength="10">{prefillMessage}</textarea>
                 </div>
 
                 <!-- Services -->
@@ -170,7 +189,7 @@ const hasPrefillParams = Astro.url?.search?.length > 0;
                   <div class="flex flex-wrap gap-1.5">
                     {services.map((s) => (
                       <label class="cursor-pointer inline-block px-2.5 py-1 text-xs rounded-full border border-slate-200 text-slate-500 bg-slate-50/80 transition-all duration-300 select-none has-[:checked]:bg-orange-50 has-[:checked]:border-orange-300 has-[:checked]:text-orange-600 has-[:checked]:font-medium hover:border-slate-300 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-orange-500">
-                        <input type="checkbox" name="services" value={s} class="sr-only" />
+                        <input type="checkbox" name="services" value={s} checked={prefillSelectedServices.includes(s)} class="sr-only" />
                         {s}
                       </label>
                     ))}
@@ -319,7 +338,7 @@ const hasPrefillParams = Astro.url?.search?.length > 0;
   .form-input:hover { border-color: #cbd5e1; background-color: #fff; }
   .form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
   .form-input:focus-visible { outline: none; --tw-ring-shadow: none; box-shadow: 0 0 0 2px rgba(249,115,22,0.15); border-color: #f97316; }
-  .form-input::placeholder { color: #94a3b8; }
+  .form-input::placeholder { color: #64748b; }
 
   /* Inline validation states */
   .form-input.field-invalid { border-color: #ef4444; background-color: #fef2f2; }

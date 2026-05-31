@@ -32,10 +32,15 @@ description =
   description ||
   "Expert web development, UI/UX design, and digital marketing. Custom solutions that drive real results. Get a free consultation today.";
 image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
+// og/twitter image must be an absolute URL on the production domain.
+const ogImage = image.startsWith("http") ? image : new URL(image, Astro.site ?? "https://www.codebrand.us").href;
 
 // URL dinámica y mejoras SEO (permite override para páginas duplicadas)
+// Canonical is always anchored to the configured production domain (www.codebrand.us)
+// — never the request host — and excludes query strings.
 const canonicalUrl =
-  canonicalOverride || Astro.url?.href || "https://www.codebrand.us";
+  canonicalOverride ||
+  new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href;
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_us";
 
@@ -89,16 +94,16 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
     <meta
       name="robots"
       content={noindex
-        ? "noindex, nofollow"
+        ? "noindex, follow"
         : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
     />
     <meta
       name="googlebot"
-      content={noindex ? "noindex, nofollow" : "index, follow"}
+      content={noindex ? "noindex, follow" : "index, follow"}
     />
     <meta
       name="bingbot"
-      content={noindex ? "noindex, nofollow" : "index, follow"}
+      content={noindex ? "noindex, follow" : "index, follow"}
     />
 
     <!-- Canonical and Alternative URLs -->
@@ -137,7 +142,7 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
@@ -175,7 +180,7 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
     <meta name="twitter:creator" content={twitterHandle} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={title} />
 
     <!-- Geo Tags - Operations in Honduras, serving US market -->
@@ -213,6 +218,7 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://www.codebrand.us/#organization",
         "name": "Codebrand - Honduras Software Development Agency",
         "alternateName": [
           "Codebrand Solutions",
@@ -227,13 +233,9 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
         "email": "info@codebrand.es",
         "telephone": "+504-3272-2973",
         "foundingDate": "2020",
-        "numberOfEmployees": {
-          "@type": "QuantitativeValue",
-          "value": "25"
-        },
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Calle 4, Avenida 11",
+          "streetAddress": "Edificio Nuevos Horizontes",
           "addressLocality": "San Pedro Sula",
           "addressRegion": "Cortés",
           "addressCountry": "HN",
@@ -324,10 +326,6 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
           "Bilingual Software Teams"
         ],
         "knowsLanguage": ["English", "Spanish"],
-        "award": [
-          "Top Rated Web Development Agency Honduras 2025",
-          "500+ Successful International Projects"
-        ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Software Development Services",
@@ -447,8 +445,10 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://www.codebrand.us/#website",
         "name": "Codebrand Digital Agency",
-        "url": "https://www.codebrand.us"
+        "url": "https://www.codebrand.us",
+        "publisher": { "@id": "https://www.codebrand.us/#organization" }
       }
     </script>
 

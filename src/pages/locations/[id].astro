@@ -8,6 +8,7 @@ import Whyus from "../../components/whyus.astro";
 import Faq from "../../components/Faq.astro";
 import { createLocalBusinessSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
+import { isLocationHub } from "../../lib/seo/geo-tiers";
 
 export async function getStaticPaths() {
   const locations = await getCollection("locations", ({ data }) => !data.draft);
@@ -124,6 +125,7 @@ const faqSchema = faqs?.length ? {
   description={seoDescription}
   keywords={seoKeywords}
   image={absoluteImage}
+  noindex={!isLocationHub(location.id)}
 >
   <!-- Service Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />

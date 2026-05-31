@@ -245,3 +245,38 @@
   to = "/projects"
   status = 301
   force = true
+
+# --- SEO fixes: 404s & legacy slugs → final canonical (www handled by Netlify primary domain) ---
+
+# Spanish e-commerce landing lives under the /hn/ locale
+[[redirects]]
+  from = "/tienda-online-honduras"
+  to = "/hn/tienda-online-honduras"
+  status = 301
+  force = true
+
+# Removed service page → closest live service
+[[redirects]]
+  from = "/copywriting"
+  to = "/digital-marketing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/copywriting/"
+  to = "/digital-marketing"
+  status = 301
+  force = true
+
+# Renamed location slugs (old indexed URLs → current files)
+[[redirects]]
+  from = "/locations/liberia-gu"
+  to = "/locations/liberia-cr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/la-chorrera-po"
+  to = "/locations/la-chorrera"
+  status = 301
+  force = true

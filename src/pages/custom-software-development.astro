@@ -1,0 +1,256 @@
+---
+/**
+ * Custom Software Development Landing Page
+ * Keywords: custom software development, custom software company, web app development,
+ * saas development, internal tools, api development, bespoke software
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Custom Software Development | Codebrand";
+const description =
+  "Codebrand builds custom software — web apps, internal tools, SaaS MVPs, APIs, and integrations — tailored to how your business actually works. You own 100% of the code. US timezone.";
+const keywords =
+  "custom software development, custom software company, bespoke software development, web application development, saas development, internal tools development, api development, software development services";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Custom Software Development",
+  name: "Custom Software Development — Web Apps, SaaS & Internal Tools",
+  description:
+    "Custom software development built around your business: web applications, internal tools and dashboards, SaaS MVPs, API development, third-party integrations, and database design. Full code ownership, no platform lock-in.",
+  url: "https://www.codebrand.us/custom-software-development",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Custom Software Development Services",
+  catalogItems: [
+    {
+      name: "Web Application Development",
+      description:
+        "Full-stack web apps — from customer portals to complex platforms — built with modern, maintainable code.",
+    },
+    {
+      name: "Internal Tools & Dashboards",
+      description:
+        "Admin panels, dashboards, and internal tools that replace fragile spreadsheets and manual processes.",
+    },
+    {
+      name: "SaaS MVP Development",
+      description:
+        "Get your software product to market fast with a focused, scalable MVP built for real users.",
+    },
+    {
+      name: "API Development",
+      description:
+        "REST and GraphQL APIs that are documented, secure, and ready for your apps and partners to consume.",
+    },
+    {
+      name: "System Integrations",
+      description:
+        "Connect the tools you already use — payments, CRMs, ERPs, and third-party services — into one workflow.",
+    },
+    {
+      name: "Database Design",
+      description:
+        "Well-modeled, performant databases that keep your data clean, consistent, and ready to scale.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "What is custom software development?",
+    answer:
+      "Custom software is built specifically for your business instead of bought off the shelf. Rather than bending your processes to fit a generic tool, the software fits how you actually work. Codebrand builds custom web applications, internal tools, SaaS products, APIs, and integrations — and you own 100% of the resulting code, with no vendor lock-in and no monthly hostage fees.",
+  },
+  {
+    question: "Off-the-shelf software vs custom — which do I need?",
+    answer:
+      "Off-the-shelf tools are great when your needs are standard and a product already fits — start there to save money. Custom software makes sense when no tool fits your workflow, when you're stitching together several tools with manual work, when per-seat SaaS fees are ballooning as you grow, or when your software is a competitive advantage. A common pattern is custom software that automates the gaps between your existing tools.",
+  },
+  {
+    question: "How much does custom software cost?",
+    answer:
+      "It depends entirely on scope. A focused internal tool or MVP can be built for a relatively modest budget; a complex multi-user platform costs more and is best built in phases. Because our team works in US timezone from Honduras, you get senior engineering at roughly 40–60% less than comparable US firms. We scope each project in phases with clear pricing, so you can start small, validate, and expand.",
+  },
+  {
+    question: "What kinds of software do you build?",
+    answer:
+      "Web applications, customer portals, internal dashboards and admin tools, SaaS products, booking and management systems, API backends, and integrations between existing systems. If it runs in a browser and solves a business problem, it's in scope. For AI-powered features and automations, we also build AI agents and workflow automation as a dedicated service.",
+  },
+  {
+    question: "What technologies do you use?",
+    answer:
+      "We build with a modern, proven stack: React and Next.js on the frontend; Node.js and Python on the backend; PostgreSQL and MongoDB for data; and TypeScript throughout for reliability. We choose technologies based on what fits your project and what will be maintainable long-term — never trendy choices that leave you stranded.",
+  },
+  {
+    question: "Who owns the code when the project is done?",
+    answer:
+      "You do — 100%. When a project is complete, you receive all the code, the repository, and the related assets and documentation. There's no proprietary platform you're locked into and no ongoing license required to use what we built. You can host it anywhere and have any developer continue the work.",
+  },
+  {
+    question: "Do you maintain the software after launch?",
+    answer:
+      "Yes. Software needs care after launch — security updates, bug fixes, and new features as your business grows. We offer ongoing maintenance and support, or we can hand off cleanly to your internal team with documentation. Either way you're not abandoned at launch.",
+  },
+  {
+    question: "How long does a custom software project take?",
+    answer:
+      "A focused MVP or internal tool is typically 4–10 weeks; larger platforms run longer and are built in phases. We start with discovery to define the smallest version that delivers real value, ship that first so you can validate with users, then iterate. You see working software early instead of waiting months for a big reveal.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  { icon: "🖥️", title: "Web Applications", desc: "Full-stack apps from customer portals to complex platforms." },
+  { icon: "📊", title: "Internal Tools & Dashboards", desc: "Replace fragile spreadsheets and manual processes." },
+  { icon: "🚀", title: "SaaS MVP Development", desc: "Get your product to market fast with a scalable MVP." },
+  { icon: "🔗", title: "API Development", desc: "Documented, secure REST and GraphQL APIs." },
+  { icon: "🔌", title: "System Integrations", desc: "Connect payments, CRMs, ERPs, and third-party tools." },
+  { icon: "🗄️", title: "Database Design", desc: "Performant, well-modeled data ready to scale." },
+];
+
+const stats = [
+  { value: "100%", label: "Code Ownership" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "40-60%", label: "vs US Cost" },
+];
+
+const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQL", "MongoDB", "Supabase", "REST / GraphQL"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/custom-software-development"
+  breadcrumbNames={{ "custom-software-development": "Custom Software Development" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 text-orange-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          Custom Software Development
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Custom <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Software</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Software built around how your business actually works — not the
+          other way around. Web apps, internal tools, and SaaS. You own it all.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Scope Your Project
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            What We Build
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">Software that fits your business</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+        <p>
+          <strong class="text-slate-900">Codebrand builds custom software</strong> for businesses that have outgrown off-the-shelf tools. When you're stitching together five apps with manual copy-paste, paying per-seat fees that climb every quarter, or running the business on a spreadsheet that's one wrong click from disaster — that's when custom software pays for itself. We build it to match how you already work.
+        </p>
+        <p>
+          That means <strong class="text-slate-900">web applications, internal dashboards, SaaS MVPs, APIs, and integrations</strong> — built on a modern, maintainable stack (React, Next.js, Node.js, Python, PostgreSQL). And critically, <strong class="text-slate-900">you own 100% of the code</strong>: no proprietary platform, no lock-in, no monthly hostage fees. Need to automate the busywork between your tools? See our <a href="/ai-automation-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">AI automation</a> service.
+        </p>
+        <p>
+          We work in phases so you can start small, validate with real users, and expand with confidence — not gamble a huge budget on a big-bang launch. Operating in <strong class="text-slate-900">US timezone</strong> at <strong class="text-slate-900">40–60% less than US firms</strong>, senior engineering fits more budgets. Building a product from scratch? We're also a <a href="/software-development-partner-for-startups" class="text-cyan-600 hover:text-cyan-700 font-semibold">development partner for startups</a> and offer <a href="/custom-web-development-services" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom web development</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          What We <span class="text-orange-500">Build</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+        Our Development <span class="text-orange-500">Stack</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Custom Software <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Outgrown your <span class="text-orange-400">spreadsheets?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10">Free consultation. Tell us the problem and we'll scope a path to custom software.</p>
+      <a href="/contact" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

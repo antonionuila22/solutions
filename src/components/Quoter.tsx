@@ -127,11 +127,11 @@ export default function Quoter() {
         .join(", ");
       params.set("subject", "Quote Request - One-Time Projects");
       params.set("services", servicesText);
-      params.set("total", `$${oneTimeCalculation.total.toLocaleString()} (incl. ISR)`);
+      params.set("total", `$${oneTimeCalculation.total.toLocaleString()}`);
     } else if (activeTab === "monthly" && selectedPlan) {
       params.set("subject", `Quote Request - ${selectedPlan.name} Plan`);
       params.set("services", `Monthly Plan: ${selectedPlan.name}`);
-      params.set("total", `$${monthlyCalculation.total.toLocaleString()}/month (incl. ISR)`);
+      params.set("total", `$${monthlyCalculation.total.toLocaleString()}/month`);
     }
 
     window.location.href = `/contact?${params.toString()}`;

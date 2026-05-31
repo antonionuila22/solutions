@@ -29,9 +29,13 @@ let {
 title = title || "Codebrand - Agencia de Desarrollo Web Honduras | Diseño Web Profesional";
 description = description || "Agencia de desarrollo web en Honduras. Sitios web profesionales, tiendas online, aplicaciones web y marketing digital. Calidad internacional con atención local. Contacta por WhatsApp.";
 image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
+// og/twitter image must be an absolute URL on the production domain.
+const ogImage = image.startsWith("http") ? image : new URL(image, Astro.site ?? "https://www.codebrand.us").href;
 
 // URLs
-const canonicalUrl = canonicalOverride || Astro.url?.href || "https://www.codebrand.us";
+const canonicalUrl =
+  canonicalOverride ||
+  new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href;
 
 // Map Honduras pages to their English equivalents (URLs are NOT 1:1 translations)
 const enMap: Record<string, string> = {
@@ -86,12 +90,12 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta
       name="robots"
       content={noindex
-        ? "noindex, nofollow"
+        ? "noindex, follow"
         : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
     />
     <meta
       name="googlebot"
-      content={noindex ? "noindex, nofollow" : "index, follow"}
+      content={noindex ? "noindex, follow" : "index, follow"}
     />
 
     <!-- Canonical and hreflang -->
@@ -122,7 +126,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
@@ -153,7 +157,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <meta name="twitter:creator" content={twitterHandle} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={title} />
 
     <!-- Geo Tags - Honduras -->
@@ -190,6 +194,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://www.codebrand.us/#organization",
         "name": "Codebrand - Agencia de Desarrollo Web Honduras",
         "alternateName": ["Codebrand Honduras", "Codebrand HN"],
         "url": "https://www.codebrand.us/hn/desarrollo-web-honduras",
@@ -210,8 +215,8 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 14.0723,
-          "longitude": -87.1921
+          "latitude": 15.5049,
+          "longitude": -88.0254
         },
         "areaServed": [
           {

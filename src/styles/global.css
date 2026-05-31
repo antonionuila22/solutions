@@ -500,49 +500,6 @@ html.gsap-anim:not(.gsap-ready) [data-anim] {
   will-change: transform;
 }
 
-/* ---- Custom cursor ---- */
-html.cb-has-cursor {
-  cursor: none;
-}
-html.cb-has-cursor a,
-html.cb-has-cursor button,
-html.cb-has-cursor [data-cursor],
-html.cb-has-cursor [data-magnetic] {
-  cursor: none;
-}
-.cb-cursor-dot,
-.cb-cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 9999px;
-  opacity: 0;
-  visibility: hidden;
-}
-.cb-cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: #06b6d4;
-}
-.cb-cursor-ring {
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid rgba(6, 182, 212, 0.6);
-  transition:
-    width 0.3s ease,
-    height 0.3s ease,
-    background-color 0.3s ease,
-    border-color 0.3s ease;
-}
-.cb-cursor-ring.is-active {
-  width: 64px;
-  height: 64px;
-  background: rgba(6, 182, 212, 0.12);
-  border-color: rgba(6, 182, 212, 0.9);
-}
-
 /* Lenis smooth scroll baseline (see https://lenis.darkroom.engineering). */
 html.lenis,
 html.lenis body {
@@ -573,13 +530,5 @@ html.lenis body {
   /* Engine is skipped entirely, but guard the blanket just in case. */
   html.gsap-anim [data-anim] {
     opacity: 1 !important;
-  }
-  html.cb-has-cursor,
-  html.cb-has-cursor * {
-    cursor: auto;
-  }
-  .cb-cursor-dot,
-  .cb-cursor-ring {
-    display: none;
   }
 }

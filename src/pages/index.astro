@@ -21,6 +21,7 @@ import CaseStudies from "../components/CaseStudies.astro";
 const reviewsSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.codebrand.us/#organization",
   "name": "Codebrand",
   "url": "https://www.codebrand.us",
   "review": [
@@ -70,7 +71,7 @@ const reviewsSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "25",
+    "reviewCount": "50",
     "bestRating": "5",
     "worstRating": "1"
   }
@@ -91,7 +92,7 @@ const services = [
 
 <Layout
   title="Web Development Agency | Custom Websites & Apps | Codebrand"
-  description="Full-service web development agency. Custom websites, apps, and e-commerce. Bilingual React & Next.js experts with 25 five-star reviews. Free consultation."
+  description="Full-service web development agency. Custom websites, apps, and e-commerce. Bilingual React & Next.js experts with 50 five-star reviews. Free consultation."
   image="/photos/bannercodebrand.webp"
 >
   <!-- Reviews Schema for Google rich snippets -->
@@ -123,7 +124,7 @@ const services = [
           Web Development <span class="text-orange-500">Client Reviews</span>
         </h2>
         <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto px-2 sm:px-0">
-          25 verified Google reviews from real clients across web development, e-commerce, and design
+          50 verified Google reviews from real clients across web development, e-commerce, and design
         </p>
       </div>
     </div>
@@ -347,7 +348,7 @@ const services = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
             </svg>
           </div>
-          <h3 class="text-white font-bold text-lg mb-2">25+ Reviews. Zero Offshore Surprises.</h3>
+          <h3 class="text-white font-bold text-lg mb-2">50+ Reviews. Zero Offshore Surprises.</h3>
           <p class="text-slate-400 text-sm leading-relaxed">Fluent English communication, US business practices, and a proven track record with clients across Austin, Miami, New York, and beyond.</p>
         </div>
       </div>
@@ -397,9 +398,9 @@ const services = [
 
           <!-- Contact info -->
           <div class="space-y-3 mb-8">
-            <a href="mailto:info@codebrand.us" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-orange-400 transition-colors">
+            <a href="mailto:info@codebrand.es" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-orange-400 transition-colors">
               <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              info@codebrand.us
+              info@codebrand.es
             </a>
             <div class="flex items-center gap-2.5 text-sm text-slate-500">
               <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -635,5 +636,5 @@ const services = [
   .home-form-input:hover { border-color: #cbd5e1; background-color: #fff; }
   .home-form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
   .home-form-input:focus-visible { outline: none; --tw-ring-shadow: none; box-shadow: 0 0 0 2px rgba(249,115,22,0.15); border-color: #f97316; }
-  .home-form-input::placeholder { color: #94a3b8; }
+  .home-form-input::placeholder { color: #64748b; }
 </style>

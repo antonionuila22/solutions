@@ -6,6 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
+import { isRegionHub } from "../../lib/seo/geo-tiers";
 
 export async function getStaticPaths() {
   const regions = await getCollection("regions", ({ data }) => !data.draft);
@@ -111,6 +112,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
   description={seoDescription}
   keywords={seoKeywords}
   image={img || "/photos/webservice.webp"}
+  noindex={!isRegionHub(region.id)}
 >
   <!-- Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
