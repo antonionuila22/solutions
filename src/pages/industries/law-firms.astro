@@ -85,30 +85,30 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "100%", label: "Confidential & Secure" },
-  { value: "40%", label: "Less Admin Time" },
-  { value: "200+", label: "Legal Professionals" },
-  { value: "24/7", label: "Client Portal Access" }
+  { value: "5.0★", label: "Google Rating" },
+  { value: "Secure", label: "Client Intake" },
+  { value: "Confidential", label: "Case Portals" },
+  { value: "100%", label: "Custom-Built" }
 ];
 
 const accentGradient = "from-indigo-500 to-purple-500";
 
 const introHighlights = [
   {
-    value: "45%",
-    label: "More Billable Hours",
+    value: "5.0★",
+    label: "Google Reviews",
     gradient: "from-green-500 to-green-600",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
   {
-    value: "92%",
-    label: "Client Satisfaction",
+    value: "8+ yrs",
+    label: "Development Experience",
     gradient: "from-blue-500 to-blue-600",
     iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
   },
   {
-    value: "300+",
-    label: "Law Firms Served",
+    value: "Case",
+    label: "Management Tools",
     gradient: "from-orange-500 to-orange-600",
     iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
   }
@@ -117,7 +117,7 @@ const introHighlights = [
 const introParagraphs = [
   "The legal profession demands precision, security, and efficiency. At CodeBrand, we understand the unique challenges law firms face\u2014from managing complex case files and tracking billable hours to maintaining client confidentiality and building a strong professional reputation online.",
   "We specialize in creating custom legal technology solutions that address the specific needs of modern law practices. Whether you're a solo practitioner, boutique firm, or large law office, our software solutions help you practice law more efficiently while enhancing client satisfaction.",
-  "Our team has worked with law firms across multiple practice areas\u2014from personal injury and family law to corporate law and criminal defense. We know that every practice is unique, which is why we don't believe in one-size-fits-all solutions. Instead, we create technology that adapts to your specific workflows and practice management style."
+  "We build for law firms across multiple practice areas\u2014from personal injury and family law to corporate law and criminal defense. We know that every practice is unique, which is why we don't believe in one-size-fits-all solutions. Instead, we create technology that adapts to your specific workflows and practice management style."
 ];
 
 const services = [
@@ -185,24 +185,24 @@ const services = [
 
 const processSteps = [
   {
-    title: "Practice Analysis & Consultation",
-    description: "We begin with a comprehensive analysis of your law practice, understanding your practice areas, workflows, pain points, and technology goals. This includes reviewing current systems, identifying inefficiencies, and defining success metrics."
+    title: "Practice Area & Matter Workflow Mapping",
+    description: "We start by mapping how your firm actually runs matters—from intake and conflict checks through discovery, filings, and closeout. We document your practice areas (personal injury, family, corporate, criminal defense), identify where work stalls, and audit whether you're on Clio, MyCase, PracticePanther, or spreadsheets so we know exactly what to integrate or replace."
   },
   {
-    title: "Security & Compliance Planning",
-    description: "Legal technology requires the highest security standards. We design a security architecture that protects attorney-client privilege, ensures data confidentiality, and meets all regulatory compliance requirements for your jurisdiction."
+    title: "Confidentiality, Conflicts & Ethics Architecture",
+    description: "Attorney-client privilege drives every design decision we make. We architect role-based access controls, conflict-of-interest checks, encrypted document storage, and audit trails that align with ABA Model Rules and your state bar's advertising and data-handling requirements. Trust accounting flows are designed to keep IOLTA funds segregated and reconcilable."
   },
   {
-    title: "Custom Development & Integration",
-    description: "Our development team builds your legal technology solution using secure, enterprise-grade technologies. We integrate with your existing tools (calendar systems, accounting software, document storage) and provide regular demos throughout development."
+    title: "Build, Calendar Rules & Practice Software Integration",
+    description: "We build your case management portal, client intake forms, and attorney website on secure infrastructure, then wire in the integrations that matter. That means court-rules-based deadline calculation for statutes of limitation and filing dates, two-way sync with Clio or PracticePanther, e-signature via DocuSign, and calendar integration so no hearing or response date is ever missed."
   },
   {
-    title: "Training & Seamless Deployment",
-    description: "We provide comprehensive training for attorneys, paralegals, and support staff. Our deployment process is carefully planned to ensure minimal disruption to your practice, with data migration support and go-live assistance."
+    title: "Data Migration, Conflict-Check Validation & Staff Training",
+    description: "We migrate existing matters, contacts, and documents from your legacy system and validate that conflict-check and deadline data carried over cleanly. Then we train attorneys, paralegals, and intake staff on the client portal, secure messaging, time capture, and document automation so the whole firm is confident before go-live."
   },
   {
-    title: "Ongoing Support & Maintenance",
-    description: "Your practice evolves, and so should your technology. We provide ongoing support, security updates, and feature enhancements. Our team is always available to help you maximize the value of your legal technology investment."
+    title: "Ongoing Compliance Updates & Filing-Season Support",
+    description: "Court rules, e-filing requirements, and bar regulations change, and your platform changes with them. We provide security patching, deadline-rule updates, and feature enhancements, plus priority support during trial prep and filing deadlines when downtime is not an option."
   }
 ];
 
@@ -220,7 +220,7 @@ const whyChooseReasons = [
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>',
     title: "Increase Billable Hours",
-    description: "Our time-saving automation tools help attorneys focus on billable work instead of administrative tasks. Clients report 30-50% more billable hours captured."
+    description: "Our time-saving automation tools help attorneys focus on billable work instead of administrative tasks, so fewer billable minutes slip through the cracks."
   },
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>',

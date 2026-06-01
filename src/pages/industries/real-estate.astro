@@ -85,30 +85,30 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "156%", label: "More Leads" },
-  { value: "MLS", label: "IDX Integrated" },
-  { value: "500+", label: "Properties Listed" },
-  { value: "3D", label: "Virtual Tours" }
+  { value: "5.0★", label: "Google Rating" },
+  { value: "IDX", label: "MLS Listings" },
+  { value: "24/7", label: "Lead Capture" },
+  { value: "100%", label: "Custom-Built" }
 ];
 
 const accentGradient = "from-amber-500 to-orange-500";
 
 const introHighlights = [
   {
-    value: "3.5x",
-    label: "More Qualified Leads",
+    value: "5.0★",
+    label: "Google Reviews",
     gradient: "from-green-500 to-green-600",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
   {
-    value: "85%",
-    label: "Lead Response Rate",
+    value: "8+ yrs",
+    label: "Development Experience",
     gradient: "from-blue-500 to-blue-600",
     iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
   },
   {
-    value: "500+",
-    label: "Real Estate Sites Built",
+    value: "MLS",
+    label: "Integrations",
     gradient: "from-orange-500 to-orange-600",
     iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
   }
@@ -117,7 +117,7 @@ const introHighlights = [
 const introParagraphs = [
   "The real estate industry is increasingly digital, and success requires more than just great properties\u2014you need technology that showcases listings beautifully, captures leads effectively, and streamlines your entire sales process. At CodeBrand, we specialize in creating custom real estate software for agents, brokers, property managers, and real estate companies.",
   "We build stunning property listing websites with MLS/IDX integration, virtual tour capabilities, and advanced search features that help buyers find their dream properties. Our CRM and lead management systems ensure no opportunity slips through the cracks, while our property management platforms streamline operations for landlords and property managers.",
-  "Our team understands the real estate industry's unique needs\u2014from IDX compliance and MLS data feeds to virtual staging and 3D walkthroughs. We've worked with independent agents, large brokerages, property management companies, and real estate developers to create technology solutions that drive results."
+  "Our team understands the real estate industry's unique needs\u2014from IDX compliance and MLS data feeds to virtual staging and 3D walkthroughs. We build specifically for independent agents, brokerages, property management companies, and real estate developers, creating technology solutions tailored to how each one works."
 ];
 
 const services = [
@@ -185,24 +185,24 @@ const services = [
 
 const processSteps = [
   {
-    title: "Market Research & Strategy",
-    description: "We analyze your target market, competition, and unique value proposition. Understanding local real estate trends and buyer behavior helps us create a strategy that positions you for success in your specific market."
+    title: "MLS Board & Farm Area Discovery",
+    description: "We map your local MLS board, the IDX/RESO Web API feed you have access to, and the neighborhoods and price points you farm. We review how you currently handle listings, buyer leads, and your CRM (Follow Up Boss, kvCORE, or similar) so the site fits your existing workflow instead of forcing a new one."
   },
   {
-    title: "Design & User Experience",
-    description: "Our designers create stunning, conversion-focused layouts that showcase properties beautifully. We design intuitive search experiences, engaging property detail pages, and compelling calls-to-action that turn visitors into leads."
+    title: "Listing & Search UX Design",
+    description: "We design property detail pages, gallery layouts, and map-based search around how buyers actually shop—filtering by school district, beds/baths, lot size, and commute. Saved-search and favorites flows, agent profile pages, and clear Fair Housing-compliant disclosures are built in from the first mockup."
   },
   {
-    title: "MLS/IDX Integration & Development",
-    description: "We integrate with your MLS provider for automatic listing updates, ensuring your site always shows current inventory. Our developers build fast, SEO-optimized platforms with advanced search capabilities and mobile responsiveness."
+    title: "IDX Feed Integration & Build",
+    description: "We connect your RESO Web API or IDX provider so active, pending, and sold listings sync automatically and stale inventory never lingers. We build fast property search, embed Matterport 3D tours and 360° galleries, and wire in mortgage calculators and map clustering for thousands of listings without slowing the page down."
   },
   {
-    title: "SEO & Lead Capture Setup",
-    description: "We optimize every page for search engines and implement strategic lead capture forms. Property-specific SEO, local search optimization, and conversion-optimized contact forms ensure maximum visibility and lead generation."
+    title: "Lead Routing & Local SEO Setup",
+    description: "We connect every lead form, property inquiry, and saved-search alert to your CRM with instant notifications so no buyer waits for a reply. We optimize neighborhood and listing pages for \"homes for sale in [your city]\" searches with schema markup, local landing pages, and Google Business Profile alignment."
   },
   {
-    title: "Launch & Ongoing Optimization",
-    description: "After thorough testing, we launch your site and monitor performance closely. We provide analytics insights, A/B test improvements, and continuously optimize to increase leads and conversions over time."
+    title: "Launch, Compliance & Maintenance",
+    description: "We verify IDX display rules and your MLS board's compliance requirements before going live, then launch and monitor feed health and lead delivery. Ongoing, we keep the IDX connection stable through MLS data changes, refresh featured listings, and tune search and lead capture as your market shifts."
   }
 ];
 
@@ -210,7 +210,7 @@ const whyChooseReasons = [
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>',
     title: "Real Estate Specialists",
-    description: "We've built 500+ real estate websites and understand MLS/IDX requirements, local search SEO, and what converts property searchers into leads."
+    description: "We build specifically for real estate agencies and agents, with deep knowledge of MLS/IDX requirements, local search SEO, and what converts property searchers into leads."
   },
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>',
@@ -220,7 +220,7 @@ const whyChooseReasons = [
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>',
     title: "Advanced Lead Capture",
-    description: "Strategic lead forms, property alerts, and automated follow-ups that capture 3.5x more qualified leads than industry averages."
+    description: "Strategic lead forms, property alerts, and automated follow-ups designed to capture more qualified leads and route them straight into your CRM for fast follow-up."
   },
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>',

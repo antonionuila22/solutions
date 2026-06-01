@@ -84,35 +84,35 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "200%", label: "Online Order Increase" },
-  { value: "60%", label: "Fewer No-Shows" },
-  { value: "24/7", label: "Online Ordering" },
-  { value: "0%", label: "Commission Fees" }
+  { value: "5.0★", label: "Google Rating" },
+  { value: "Online", label: "Ordering" },
+  { value: "0%", label: "Commission Fees" },
+  { value: "100%", label: "Custom-Built" }
 ];
 
 // Introduction section data
 const introParagraphs = [
   "The restaurant industry has transformed dramatically. Today's diners expect to browse menus online, order from their phones, and book tables with a tap. At CodeBrand, we build custom technology solutions that help restaurants thrive in this digital era\u2014from stunning websites to complete online ordering platforms.",
   "We create beautiful, mobile-responsive restaurant websites that showcase your menu, atmosphere, and story. Our online ordering systems integrate seamlessly with your operations, accepting orders 24/7 without third-party commissions. Digital QR code menus, reservation systems, and loyalty programs complete your digital transformation.",
-  "Whether you run a fine dining establishment, casual restaurant, cafe, bar, ghost kitchen, or food truck, our solutions are tailored to your unique needs. We've helped restaurants increase online orders by 200%, reduce no-shows by 60%, and build direct relationships with customers."
+  "Whether you run a fine dining establishment, casual restaurant, cafe, bar, ghost kitchen, or food truck, our solutions are tailored to your unique needs. We build specifically for restaurants and food-service businesses, helping you grow online orders, cut down on no-shows, and build direct relationships with your customers."
 ];
 
 const introHighlights = [
   {
-    value: "200%",
-    label: "More Online Orders",
+    value: "5.0★",
+    label: "Google Reviews",
     gradient: "from-green-500 to-green-600",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
   {
-    value: "0%",
-    label: "Third-Party Fees",
+    value: "8+ yrs",
+    label: "Development Experience",
     gradient: "from-blue-500 to-blue-600",
     iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
   },
   {
-    value: "800+",
-    label: "Restaurants Served",
+    value: "POS",
+    label: "System Integrations",
     gradient: "from-orange-500 to-orange-600",
     iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
   }
@@ -160,11 +160,11 @@ const services = [
 
 // Process steps
 const processSteps = [
-  { title: "Menu & Operations Review", description: "We study your menu, ordering workflow, kitchen operations, and current tech setup to design the perfect solution." },
-  { title: "Custom Design & Branding", description: "Beautiful designs that match your restaurant's personality — from colors and fonts to food photography layouts." },
-  { title: "Development & Integration", description: "Building your site and ordering platform with POS integration, payment processing, and delivery zone configuration." },
-  { title: "Testing & Menu Setup", description: "Thorough testing of order flows, payment processing, and menu accuracy before launch. Staff training included." },
-  { title: "Launch & Ongoing Support", description: "Go live with monitoring, real-time support during peak hours, and ongoing menu updates as your business grows." }
+  { title: "Menu & Kitchen Workflow Audit", description: "We sit down with you to map your full menu, modifiers, and combos alongside how tickets actually move from order to expo. We review your current POS (Toast, Square, Clover, or Lightspeed), delivery radius, prep times, and peak-hour bottlenecks so the platform fits your real service flow." },
+  { title: "Brand & Menu Photography Design", description: "We design a mobile-first site and ordering flow that reflects your restaurant's atmosphere, from plating-forward food photography to dish descriptions and allergen tags. Layouts are built so hungry diners can browse the menu, see specials, and start an order in just a few taps." },
+  { title: "Ordering & POS Integration Build", description: "We build your commission-free online ordering platform with Stripe or Square payments, delivery-zone and pickup-window logic, and modifier-aware menu items. Orders sync straight into your POS or kitchen display, and we wire up reservations via OpenTable, Resy, or a custom table-management system." },
+  { title: "Menu Loading & Service Testing", description: "We load every item, price, modifier, and tax rule, then test order flows end to end across pickup, delivery, and dine-in scenarios on real phones. We train your front-of-house and kitchen staff on managing orders, 86-ing items, and handling rush-hour volume before you go live." },
+  { title: "Launch & Peak-Hour Support", description: "We launch your site and ordering system with monitoring in place and stay reachable during your busiest dinner and weekend rushes. As your menu, hours, and seasonal specials change, we handle ongoing updates so your digital storefront always matches what's coming out of the kitchen." }
 ];
 
 // Technologies
@@ -192,7 +192,7 @@ const challenges = [
   {
     problem: "No-Shows & Empty Tables",
     description: "Phone-only reservations lead to forgotten bookings, no-shows, and revenue loss from empty tables.",
-    solution: "Online reservation systems with automated SMS confirmations and reminders that reduce no-shows by 60%."
+    solution: "Online reservation systems with automated SMS confirmations and reminders that help reduce no-shows and keep tables full."
   },
   {
     problem: "Inefficient Order Management",
@@ -206,7 +206,7 @@ const whyChooseReasons = [
   {
     icon: `<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"></path></svg>`,
     title: "Restaurant Specialists",
-    description: "We've built 800+ restaurant websites and ordering systems. We understand food service operations, POS integration, and what drives orders."
+    description: "We build specifically for restaurants and food-service businesses. We understand food service operations, POS integration, and what drives orders."
   },
   {
     icon: `<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>`,

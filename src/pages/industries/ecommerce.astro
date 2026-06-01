@@ -88,29 +88,29 @@ const breadcrumbSchema = createBreadcrumbSchema([
 
 // Stats for hero
 const stats = [
-  { value: "200+", label: "Stores Launched" },
-  { value: "87%", label: "Conversion Boost" },
-  { value: "$50M+", label: "Revenue Generated" },
-  { value: "99.9%", label: "Uptime SLA" }
+  { value: "5.0★", label: "Google Rating" },
+  { value: "Stripe +", label: "PayPal Checkout" },
+  { value: "Mobile", label: "Conversion-Optimized" },
+  { value: "100%", label: "Custom-Built" }
 ];
 
 // Intro highlights
 const introHighlights = [
   {
-    value: "87%",
-    label: "Conversion Rate Boost",
+    value: "5.0★",
+    label: "Google Reviews",
     gradient: "from-emerald-500 to-teal-500",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
   {
-    value: "99.9%",
-    label: "Uptime Guarantee",
+    value: "8+ yrs",
+    label: "Development Experience",
     gradient: "from-blue-500 to-indigo-500",
     iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
   },
   {
-    value: "200+",
-    label: "Stores Launched",
+    value: "Shopify +",
+    label: "Custom Storefronts",
     gradient: "from-orange-500 to-red-500",
     iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
   }
@@ -158,11 +158,11 @@ const services = [
 
 // Process steps
 const processSteps = [
-  { title: "Discovery & Strategy", description: "We analyze your products, target audience, and competitors to develop a comprehensive e-commerce strategy." },
-  { title: "UX Design & Prototyping", description: "Our designers create intuitive shopping experiences optimized for conversions." },
-  { title: "Development & Integration", description: "We build your store using best-in-class platforms, integrating payments and third-party tools." },
-  { title: "Testing & Launch", description: "Comprehensive testing ensures flawless functionality before executing a smooth launch." },
-  { title: "Optimization & Growth", description: "Post-launch, we continuously monitor and optimize for better conversions." }
+  { title: "Catalog & Platform Audit", description: "We map your product catalog, SKU variants, and collections, then decide whether Shopify, WooCommerce, or a custom headless storefront best fits your margins and volume. We review your current checkout funnel, shipping rules, and tax setup to find where orders are leaking." },
+  { title: "Storefront UX & Product Pages", description: "We design product detail pages, collection filters, and a frictionless cart-to-checkout flow that work mobile-first, since most store traffic is on phones. Layouts are built around clear product imagery, trust badges, and a guest checkout path to reduce cart abandonment." },
+  { title: "Payments & Integration Build", description: "We connect Stripe, PayPal, and Apple Pay / Google Pay checkout, then wire your store to inventory, ERP, and shipping carriers so stock and orders stay in sync. Every payment path is PCI-DSS compliant, and we set up product feeds for Google Shopping and Meta where relevant." },
+  { title: "QA, PCI & Storefront Launch", description: "We test the full purchase journey across devices and browsers, including discount codes, tax calculation, and abandoned-cart recovery emails. After verifying SSL, payment security, and live transactions in test mode, we migrate the catalog and launch with redirects in place to protect SEO." },
+  { title: "Conversion Tracking & Optimization", description: "Post-launch we configure GA4 e-commerce events, Meta Pixel, and conversion tracking so you can see exactly where buyers drop off. We run A/B tests on product pages and checkout, monitor Core Web Vitals, and refine the funnel to lift conversion over time." }
 ];
 
 // Why choose us reasons
@@ -170,12 +170,12 @@ const whyChooseReasons = [
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>`,
     title: "E-commerce Specialists",
-    description: "We live and breathe e-commerce. Our team has launched 200+ online stores and knows exactly what drives sales."
+    description: "We live and breathe e-commerce. We build specifically for online stores and e-commerce brands, and we know exactly what drives sales."
   },
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>`,
     title: "Lightning-Fast Performance",
-    description: "Every second counts in e-commerce. Our stores load in under 2 seconds, improving SEO and conversions."
+    description: "Every second counts in e-commerce. We optimize Core Web Vitals and page speed so your store loads fast, improving SEO and conversions."
   },
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>`,
@@ -194,8 +194,8 @@ const whyChooseReasons = [
   },
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>`,
-    title: "Proven ROI",
-    description: "Our clients see an average 87% increase in conversion rates within 6 months of launching."
+    title: "Built for ROI",
+    description: "We build stores around conversion-focused checkout, analytics, and A/B testing so your investment is geared toward driving real sales."
   }
 ];
 

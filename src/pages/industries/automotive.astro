@@ -17,10 +17,10 @@ import IndustryCTA from "../../components/IndustryCTA.astro";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const stats = [
-  { value: "150+", label: "Dealerships Served" },
-  { value: "85%", label: "More Online Leads" },
-  { value: "3x", label: "Faster Inventory" },
-  { value: "24/7", label: "VDP Access" }
+  { value: "5.0★", label: "Google Rating" },
+  { value: "24/7", label: "Lead Capture" },
+  { value: "Live", label: "Inventory Sync" },
+  { value: "100%", label: "Custom-Built" }
 ];
 
 const title =
@@ -120,9 +120,9 @@ const breadcrumbSchema = createBreadcrumbSchema([
 const accentGradient = "from-cyan-500 to-blue-500";
 
 const introHighlights = [
-  { value: "250%", label: "More Online Leads", gradient: "from-green-500 to-green-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
-  { value: "85%", label: "Lead Response Rate", gradient: "from-blue-500 to-blue-600", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
-  { value: "450+", label: "Dealerships Served", gradient: "from-orange-500 to-orange-600", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" }
+  { value: "5.0★", label: "Google Reviews", gradient: "from-green-500 to-green-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "8+ yrs", label: "Development Experience", gradient: "from-blue-500 to-blue-600", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
+  { value: "DMS", label: "Dealer System Integrations", gradient: "from-orange-500 to-orange-600", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" }
 ];
 
 const services = [
@@ -165,23 +165,23 @@ const services = [
 ];
 
 const processSteps = [
-  { title: "Dealership Discovery", description: "We start by understanding your dealership, target market, brand positioning, and competitive landscape. We'll review your current website analytics, inventory system, and lead sources to identify opportunities for improvement." },
-  { title: "Design & User Experience", description: "Our design team creates stunning, conversion-focused designs that showcase your inventory beautifully. We design with mobile users in mind (70% of car shoppers browse on mobile) and optimize every page for lead generation." },
-  { title: "Development & Integration", description: "We build your solution using modern, fast-loading technologies and integrate with your DMS, inventory feeds, CRM, and lead providers. All systems work together seamlessly to maximize efficiency and lead flow." },
-  { title: "Testing & Launch", description: "We rigorously test every feature, form, and integration. Your team receives comprehensive training on managing inventory, responding to leads, and using all features. Launch is carefully coordinated for minimal disruption." },
-  { title: "Optimization & Support", description: "After launch, we monitor performance, analyze lead conversion data, and continuously optimize for better results. Our support team is always available to help with updates, inventory management, and new feature additions." }
+  { title: "Inventory & DMS Audit", description: "We start by mapping how your dealership operates today: which DMS you run (CDK, Reynolds and Reynolds, Dealertrack, or RouteOne), how your inventory feed is structured, and where your leads currently come from. We review your new, pre-owned, and certified pre-owned stock alongside your F&I and service workflows so the build fits the way you actually sell cars." },
+  { title: "VDP & Showroom Design", description: "We design vehicle detail pages and inventory search around how shoppers really browse, with HD photo galleries, video walkarounds, window sticker details, and prominent finance and test-drive calls to action. Every layout is built mobile-first, since most car shoppers research and compare vehicles from their phones before ever stepping onto the lot." },
+  { title: "Feed & Integration Build", description: "We connect your website to your DMS and inventory feed so new, pre-owned, and CPO listings, pricing, and photos sync automatically without manual re-entry. We wire up credit application routing to your F&I team, lead delivery into automotive CRMs like VinSolutions, DealerSocket, or Elead, and syndication to AutoTrader and Cars.com." },
+  { title: "Lead Flow & Launch", description: "Before going live we test every credit application, trade-in valuation, service scheduler, and click-to-call path to confirm leads land in the right inbox and CRM with full source tracking. We train your sales, F&I, and service teams on managing inventory and responding to leads, then coordinate launch so your current site traffic and rankings transfer cleanly." },
+  { title: "Inventory & Conversion Tuning", description: "After launch we watch how VDPs, finance calculators, and service booking forms convert, and refine search filters and lead capture to turn more browsers into showroom and service-bay appointments. We keep your DMS integration, third-party syndication, and inventory photos running smoothly and add new features as your dealership grows." }
 ];
 
 const whyChooseReasons = [
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path></svg>',
     title: "Automotive Industry Experts",
-    description: "We've built solutions for over 450 dealerships and understand DMS systems, inventory feeds, automotive SEO, and dealership operations inside and out."
+    description: "We build specifically for car dealerships and understand DMS systems, inventory feeds, automotive SEO, and dealership operations inside and out."
   },
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>',
-    title: "Proven Lead Generation",
-    description: "Our dealership websites generate 2-3x more qualified leads than template solutions. We optimize every element for maximum conversions and test drive appointments."
+    title: "Built for Lead Generation",
+    description: "Our dealership websites are built to turn browsers into qualified leads, not just look good. We optimize every element for conversions and test drive appointments."
   },
   {
     icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>',

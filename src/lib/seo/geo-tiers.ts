@@ -1,38 +1,37 @@
 /**
  * Geo SEO tiers — controls indexability of programmatic location/region pages.
  *
- * Problem: ~200 thin, near-duplicate geo pages were flagged "Crawled – currently
- * not indexed" by Google (same ~490-word template, only the place name changes).
+ * Decision (2026-06): every location and region service-area page is now ENRICHED
+ * with unique, substantial local content (longDescription, local industries,
+ * market highlights, local FAQs, regional stats, major cities). They are therefore
+ * INDEXED by default — index,follow + included in the sitemap.
  *
- * Fix: only pages with genuinely UNIQUE, substantial local content are "hubs"
- * (index,follow + included in sitemap). Everything else is "longtail"
- * (noindex,follow + excluded from sitemap) to protect crawl budget and site
- * quality. Quality > quantity.
- *
- * HOW TO PROMOTE A PAGE TO A HUB:
- *   Only after its markdown has real, unique local content (local market context,
- *   city-specific FAQs/stats, local proof/case studies), add its slug — the
- *   markdown filename without extension — to the matching set below.
- *
- * Both sets start empty: every geo page is noindexed until it earns hub status.
+ * Quality gate: a page should only ship indexed if it has genuinely unique local
+ * content. To keep a specific page OUT of the index (a thin draft, or a market we
+ * don't yet serve), add its slug — the markdown filename without the extension —
+ * to the matching EXCLUDED_* set below. Empty sets = every geo page is indexed.
  */
 
-/** Location slugs (src/content/locations/<slug>.md) that are enriched + indexable. */
-export const HUB_LOCATIONS = new Set<string>([
-  // e.g. "san-pedro-sula", "new-york-city" — add ONLY after the page has unique content
+/** Location slugs (src/content/locations/<slug>.md) to keep NOINDEXED. Empty = all indexed. */
+export const EXCLUDED_LOCATIONS = new Set<string>([
+  // e.g. "some-thin-city" — add ONLY to keep a page out of the index
 ]);
 
-/** Region slugs (src/content/regions/<slug>.md) that are enriched + indexable. */
-export const HUB_REGIONS = new Set<string>([
-  // add ONLY after the page has unique content
+/** Region slugs (src/content/regions/<slug>.md) to keep NOINDEXED. Empty = all indexed. */
+export const EXCLUDED_REGIONS = new Set<string>([
+  // e.g. "some-thin-region" — add ONLY to keep a page out of the index
 ]);
 
-export const isLocationHub = (slug: string): boolean => HUB_LOCATIONS.has(slug);
-export const isRegionHub = (slug: string): boolean => HUB_REGIONS.has(slug);
+/** A location page is a hub (indexable) unless explicitly excluded. */
+export const isLocationHub = (slug: string): boolean => !EXCLUDED_LOCATIONS.has(slug);
+
+/** A region page is a hub (indexable) unless explicitly excluded. */
+export const isRegionHub = (slug: string): boolean => !EXCLUDED_REGIONS.has(slug);
 
 /**
- * True when a sitemap URL is a NON-hub geo page that must be excluded from the
- * sitemap (so we never advertise a noindexed thin page to Google).
+ * True when a sitemap URL is an EXCLUDED geo page that must be left out of the
+ * sitemap (so we never advertise a noindexed page to Google). With both EXCLUDED_*
+ * sets empty, this returns false for every geo URL (all are advertised).
  */
 export function isLongtailGeoUrl(url: string): boolean {
   const loc = url.match(/\/locations\/([^/]+)\/?$/);

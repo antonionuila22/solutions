@@ -430,7 +430,7 @@ The question isn't *whether* your practice needs professional digital marketing,
 
 ## How Codebrand Can Help
 
-At [Codebrand](https://codebrand.us), we specialize in helping healthcare practices and medical organizations build the digital infrastructure that turns online visibility into patient volume.
+At [Codebrand](https://www.codebrand.us), we specialize in helping healthcare practices and medical organizations build the digital infrastructure that turns online visibility into patient volume.
 
 We're not a generic marketing agency that happens to work with doctors. We're a **digital consulting firm** that understands both healthcare technology and regulatory compliance:
 

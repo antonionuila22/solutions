@@ -83,17 +83,17 @@ const breadcrumbSchema = createBreadcrumbSchema([
 
 // Hero stats
 const stats = [
-  { value: "100%", label: "HIPAA Compliant" },
-  { value: "45%", label: "Reduced Admin Time" },
-  { value: "150+", label: "Healthcare Providers" },
-  { value: "24/7", label: "Critical Support" }
+  { value: "5.0★", label: "Google Rating" },
+  { value: "HIPAA", label: "Compliant" },
+  { value: "24/7", label: "Online Scheduling" },
+  { value: "100%", label: "Custom-Built" }
 ];
 
 // Intro highlights
 const introHighlights = [
-  { value: "100%", label: "HIPAA Compliant", gradient: "from-green-500 to-emerald-500", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
-  { value: "45%", label: "Reduced Admin Time", gradient: "from-blue-500 to-indigo-500", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
-  { value: "150+", label: "Healthcare Providers", gradient: "from-orange-500 to-red-500", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" },
+  { value: "5.0★", label: "Google Reviews", gradient: "from-green-500 to-emerald-500", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "8+ yrs", label: "Development Experience", gradient: "from-blue-500 to-indigo-500", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
+  { value: "EHR", label: "System Integrations", gradient: "from-orange-500 to-red-500", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" },
   { value: "24/7", label: "Critical Support", gradient: "from-cyan-500 to-blue-500", iconPath: "M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" }
 ];
 
@@ -139,11 +139,11 @@ const services = [
 
 // Process steps
 const processSteps = [
-  { title: "Compliance & Requirements", description: "Thorough assessment of clinical workflows, regulatory requirements, and HIPAA compliance needs." },
-  { title: "User-Centered Design", description: "Intuitive interfaces optimized for healthcare professionals and patients with accessibility in mind." },
-  { title: "Secure Development", description: "Healthcare-grade security practices with encrypted data and industry-standard integrations." },
-  { title: "Testing & Validation", description: "Rigorous testing including penetration testing, HIPAA compliance audits, and usability testing." },
-  { title: "Training & Support", description: "Comprehensive training, documentation, and 24/7 support to ensure smooth operations." }
+  { title: "Clinical Workflow & HIPAA Discovery", description: "We sit down with providers, front-desk staff, and billing coordinators to map your real patient journey, from intake forms and insurance verification to charting and follow-ups. We document PHI touchpoints, required Business Associate Agreements, and how your current EHR (Epic, Cerner, athenahealth, or DrChrono) fits into the picture." },
+  { title: "Patient & Provider Experience Design", description: "We design portals and scheduling flows that work for anxious patients and time-pressed clinicians alike, with large touch targets, plain-language consent forms, and accessible interfaces that meet WCAG and ADA expectations. Every screen is prototyped for both the waiting-room tablet and the physician's mobile device before a line of code is written." },
+  { title: "Secure, Interoperable Build", description: "We build on HIPAA-eligible infrastructure with AES-256 encryption at rest, TLS in transit, role-based access controls, and full audit logging of every PHI view. Integrations use HL7 and FHIR APIs to sync appointments, lab results, and demographics with your existing EHR and clearinghouse so staff never double-enter data." },
+  { title: "Compliance Testing & Validation", description: "Before launch we run penetration testing, access-control reviews, and a HIPAA Security Rule audit covering encryption, audit trails, and breach-notification readiness. We validate e-prescribing, eligibility checks, and EHR data flow with your clinical team using realistic test patient records, never live PHI." },
+  { title: "Staff Training & Ongoing Compliance Support", description: "We train front-desk, clinical, and billing teams with role-specific walkthroughs and quick-reference guides, then provide 24/7 monitoring for systems patients depend on around the clock. Ongoing support includes security patching, dependency updates, and compliance reviews as HIPAA guidance and your EHR integrations evolve." }
 ];
 
 // Why choose reasons
@@ -155,8 +155,8 @@ const whyChooseReasons = [
   },
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>`,
-    title: "Healthcare Industry Experience",
-    description: "We've worked with hospitals, clinics, and specialists. Our team understands clinical workflows and medical operations."
+    title: "Healthcare Industry Focus",
+    description: "We build specifically for hospitals, clinics, and specialty practices. Our team studies clinical workflows and medical operations so the software fits how your staff actually work."
   },
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>`,
@@ -165,8 +165,8 @@ const whyChooseReasons = [
   },
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>`,
-    title: "Proven Results",
-    description: "Our clients report 45% reduction in administrative time, 30% fewer no-shows, and improved patient satisfaction."
+    title: "Built to Reduce Busywork",
+    description: "We focus on automating the administrative load that slows clinics down, fewer manual schedules, fewer no-shows from missed reminders, and a smoother experience for patients and staff alike."
   },
   {
     icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path></svg>`,
@@ -195,7 +195,7 @@ const challenges = [
   {
     problem: "Administrative Burden",
     description: "Excessive paperwork, phone tag with patients, manual scheduling, and insurance verification consume hours.",
-    solution: "Automated workflows, online scheduling, patient portals, and integrated billing systems that reduce admin work by 45%."
+    solution: "Automated workflows, online scheduling, patient portals, and integrated billing systems that take repetitive admin work off your staff's plate."
   },
   {
     problem: "Poor Patient Engagement",
