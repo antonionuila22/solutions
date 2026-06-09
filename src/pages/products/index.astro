@@ -69,7 +69,7 @@ const products = await getCollection("products", ({ data }) => !data.draft);
                                                 {price}
                                             </span>
                                             <span
-                                                class={`font-medium ${inStock ? "text-green-600" : "text-red-600"}`}
+                                                class={`font-medium ${inStock ? "text-teal-600" : "text-red-600"}`}
                                             >
                                                 {inStock
                                                     ? "Available"

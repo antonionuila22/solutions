@@ -258,7 +258,7 @@ const pricingPlans = [
         <div class="flex flex-wrap gap-4 mb-16">
           <a
             href="/contact"
-            class="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1"
+            data-magnetic data-magnetic-strength="0.3" class="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1"
           >
             Start Creating
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -267,14 +267,14 @@ const pricingPlans = [
           </a>
           <a
             href="#work"
-            class="inline-flex items-center gap-2 px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold rounded-2xl border border-slate-700 hover:border-slate-600 transition-all duration-300"
+            data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold rounded-2xl border border-slate-700 hover:border-slate-600 transition-all duration-300"
           >
             View Our Work
           </a>
         </div>
 
         <!-- Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-anim="fade" data-anim-trigger="load" data-delay="0.2">
           {designStats.map((stat) => (
             <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
               <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
@@ -298,7 +298,7 @@ const pricingPlans = [
           <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-semibold mb-6">
             WHAT WE CREATE
           </span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 data-anim="heading" class="text-display-2 font-bold text-white">
             Work that <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">converts</span>
           </h2>
         </div>
@@ -307,7 +307,7 @@ const pricingPlans = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-6" data-anim="fade">
         {showcase.map((item, i) => (
           <div class="group bg-slate-900/60 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-start gap-5">
@@ -332,12 +332,12 @@ const pricingPlans = [
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
           SERVICES
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900">
           Everything you <span class="text-orange-500">need</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-anim="fade">
         {services.map((service) => (
           <div class="group bg-white hover:bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-slate-200 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
             <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -358,7 +358,7 @@ const pricingPlans = [
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
           HOW IT WORKS
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
           From brief to <span class="text-orange-500">delivery</span>
         </h2>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -366,7 +366,7 @@ const pricingPlans = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-6" data-anim="fade">
         {processDetailed.map((step) => (
           <div class="group bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
             <div class="flex items-start gap-6">
@@ -399,7 +399,7 @@ const pricingPlans = [
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
           COMPARE OPTIONS
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
           Why outsource <span class="text-orange-500">design?</span>
         </h2>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -437,7 +437,7 @@ const pricingPlans = [
       </div>
 
       <!-- Summary boxes -->
-      <div class="grid md:grid-cols-3 gap-6 mt-12">
+      <div class="grid md:grid-cols-3 gap-6 mt-12" data-anim="fade">
         <div class="bg-slate-50 rounded-2xl border border-slate-100 p-6 text-center">
           <div class="text-3xl font-bold text-orange-500 mb-2">70%</div>
           <p class="text-slate-600 text-sm">Average cost savings vs in-house designer</p>
@@ -461,12 +461,12 @@ const pricingPlans = [
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
           PRICING
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900">
           Simple, <span class="text-orange-500">transparent</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6" data-anim="fade">
         {pricingPlans.map((plan) => (
           <div class:list={[
             "relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2",
@@ -488,7 +488,7 @@ const pricingPlans = [
             <ul class="space-y-4 mb-8">
               {plan.features.map((feature) => (
                 <li class="flex items-center gap-3">
-                  <svg class={plan.highlighted ? "w-5 h-5 text-green-400 flex-shrink-0" : "w-5 h-5 text-green-500 flex-shrink-0"} fill="currentColor" viewBox="0 0 20 20">
+                  <svg class={plan.highlighted ? "w-5 h-5 text-teal-400 flex-shrink-0" : "w-5 h-5 text-teal-500 flex-shrink-0"} fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
                   <span class={plan.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
@@ -516,10 +516,10 @@ const pricingPlans = [
       <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
         WHY CODEBRAND
       </span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">
         Your design team, without the overhead
       </h2>
-      <div class="prose prose-lg max-w-none text-slate-600 space-y-6">
+      <div class="prose prose-lg max-w-none text-slate-600 space-y-6" data-anim="fade" data-delay="0.1">
         <p>
           Finding reliable design talent is hard. Managing them is harder. Between recruiting, onboarding, providing feedback, and ensuring quality—running an in-house design operation can drain resources you'd rather spend on growth. That's where design outsourcing changes the game.
         </p>
@@ -543,7 +543,7 @@ const pricingPlans = [
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 border border-slate-300 rounded-full text-slate-700 text-sm font-semibold mb-6">
           FAQ
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Common <span class="text-orange-500">Questions</span></h2>
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-4">Common <span class="text-orange-500">Questions</span></h2>
         <p class="text-slate-600 text-lg">Can't find what you're looking for? <a href="/contact" class="text-orange-500 hover:text-orange-600 font-semibold">Contact us</a> and we'll get back to you within 24 hours.</p>
       </div>
       <div>
@@ -565,16 +565,16 @@ const pricingPlans = [
         <div class="relative bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 rounded-3xl p-12 lg:p-16 text-center overflow-hidden">
           <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
           <div class="relative z-10">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight font-poppins">
+            <h2 data-anim="heading" class="text-display-2 font-bold text-white mb-6 leading-tight font-poppins">
               Let's create something great.
             </h2>
-            <p class="text-lg lg:text-xl text-white/90 mb-10 max-w-xl mx-auto">
+            <p class="text-lg lg:text-xl text-white/90 mb-10 max-w-xl mx-auto" data-anim="fade" data-delay="0.1">
               Send us a brief. Get a quote in 24 hours.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-orange-600 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transform hover:-translate-y-1 transition-all duration-300 shadow-2xl"
+                data-magnetic data-magnetic-strength="0.3" class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-orange-600 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transform hover:-translate-y-1 transition-all duration-300 shadow-2xl"
               >
                 Start a Project
                 <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -44,7 +44,7 @@ const resultIcons: Record<NonNullable<ResultType>, ReactNode> = {
   ),
   "ecommerce-advanced": (
     <svg
-      className="w-12 h-12 text-purple-400"
+      className="w-12 h-12 text-blue-400"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ const resultIcons: Record<NonNullable<ResultType>, ReactNode> = {
   ),
   enterprise: (
     <svg
-      className="w-12 h-12 text-purple-400"
+      className="w-12 h-12 text-blue-400"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -186,10 +186,10 @@ export default function NeedsQuiz() {
         badge: "bg-orange-500",
       },
       purple: {
-        bg: "bg-purple-500/20",
-        border: "border-purple-500/30",
-        text: "text-purple-400",
-        badge: "bg-purple-500",
+        bg: "bg-blue-500/20",
+        border: "border-blue-500/30",
+        text: "text-blue-400",
+        badge: "bg-blue-500",
       },
     };
     const colors = colorClasses[content.color as keyof typeof colorClasses];

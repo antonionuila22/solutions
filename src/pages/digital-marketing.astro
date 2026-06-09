@@ -6,6 +6,8 @@ import CardService from "../components/CardService.astro";
 import Button from "../components/Button.astro";
 import Testimonial from "../components/Testimonial.astro";
 import RelatedServices from "../components/RelatedServices.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title =
@@ -57,75 +59,19 @@ const serviceSchema = createServicePageSchema({
     set:html={JSON.stringify(serviceSchema)}
   />
   <!-- Hero Section -->
-  <section
-    class="relative bg-white pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-24 lg:pb-32 font-poppins overflow-hidden"
-  >
-    <div class="absolute inset-0 opacity-5">
-      <div
-        class="absolute inset-0"
-        style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
-      >
-      </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="text-center max-w-4xl mx-auto">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"
-            ></path>
-            <path
-              d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"
-            ></path>
-          </svg>
-          Digital Marketing Excellence
-        </span>
-        <h1
-          class="text-4xl sm:text-5xl lg:text-7xl font-bold text-cyan-900 mb-6 leading-tight"
-        >
-          Grow Your Business with <span
-            class="text-orange-500"
-            >Data-Driven Marketing</span
-          >
-        </h1>
-        <p class="text-xl sm:text-2xl text-slate-700 mb-8 leading-relaxed">
-          Transform your digital presence into a revenue-generating machine. We
-          create comprehensive marketing strategies that combine SEO, paid
-          advertising, social media, and content to drive qualified leads and
-          maximize ROI.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
-          >
-            Get Free Marketing Audit
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-          <a
-            href="#services"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg border-2 border-cyan-200 transition-all duration-300"
-          >
-            Explore Services
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Digital Marketing Excellence"
+    title='Grow Your Business with <span class="text-orange-400">Data-Driven Marketing</span>'
+    subtitle="Transform your digital presence into a revenue-generating machine — comprehensive marketing strategies that combine SEO, paid advertising, social media, and content to drive qualified leads and maximize ROI."
+    stats={[
+      { value: "5.0", label: "Client Rating", counterTo: 5, decimals: 1, color: "orange" },
+      { value: "50", label: "Five-Star Reviews", counterTo: 50, color: "cyan" },
+      { value: "8+", label: "Years Experience", counterTo: 8, suffix: "+", color: "cyan" },
+      { value: "100%", label: "Custom-Built", color: "orange" },
+    ]}
+    ctaPrimary={{ text: "Get Free Marketing Audit", href: "/contact" }}
+    ctaSecondary={{ text: "Explore Services", href: "#services" }}
+  />
 
   <!-- Introduction Section -->
   <section class="py-16 lg:py-24 bg-white font-poppins">
@@ -133,11 +79,12 @@ const serviceSchema = createServicePageSchema({
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
+            class="text-display-2 font-bold text-cyan-900 mb-6"
+            data-anim="heading"
           >
             Strategic Digital Marketing That Delivers Measurable Results
           </h2>
-          <div class="prose prose-lg text-slate-700 space-y-4">
+          <div class="prose prose-lg text-slate-700 space-y-4" data-anim="fade" data-delay="0.1">
             <p>
               Digital marketing has evolved far beyond simple banner ads and
               social media posts. In today's competitive landscape, successful
@@ -199,17 +146,20 @@ const serviceSchema = createServicePageSchema({
             </p>
           </div>
         </div>
-        <div class="relative">
+        <div class="relative" data-anim="fade" data-fade-from="right" data-delay="0.1">
           <div
             class="relative bg-slate-100 rounded-3xl p-8 shadow-xl"
+            data-parallax
+            data-parallax-speed="0.2"
+            data-parallax-range="44"
           >
             <div class="space-y-4">
               <div
-                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform"
+                class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-[1.03] transition-transform duration-300"
               >
                 <div class="flex items-center gap-4">
                   <div
-                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center"
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center"
                   >
                     <svg
                       class="w-6 h-6 text-white"
@@ -223,9 +173,9 @@ const serviceSchema = createServicePageSchema({
                     </svg>
                   </div>
                   <div>
-                    <div class="text-2xl font-bold text-cyan-900">340%</div>
+                    <div class="text-2xl font-bold text-cyan-900 tabular-nums"><span data-counter="8" data-counter-suffix="+">8+</span></div>
                     <div class="text-sm text-slate-600">
-                      Average ROI Increase
+                      Years of Experience
                     </div>
                   </div>
                 </div>
@@ -248,8 +198,8 @@ const serviceSchema = createServicePageSchema({
                     </svg>
                   </div>
                   <div>
-                    <div class="text-2xl font-bold text-cyan-900">500+</div>
-                    <div class="text-sm text-slate-600">Clients Served</div>
+                    <div class="text-2xl font-bold text-cyan-900 tabular-nums"><span data-counter="50">50</span></div>
+                    <div class="text-sm text-slate-600">Five-Star Reviews</div>
                   </div>
                 </div>
               </div>
@@ -271,8 +221,8 @@ const serviceSchema = createServicePageSchema({
                     </svg>
                   </div>
                   <div>
-                    <div class="text-2xl font-bold text-cyan-900">250%</div>
-                    <div class="text-sm text-slate-600">Lead Growth Average</div>
+                    <div class="text-2xl font-bold text-cyan-900">100%</div>
+                    <div class="text-sm text-slate-600">Custom-Built</div>
                   </div>
                 </div>
               </div>
@@ -286,22 +236,14 @@ const serviceSchema = createServicePageSchema({
   <!-- Services Section -->
   <section id="services" class="py-16 lg:py-24 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
-        >
-          Complete Digital Marketing <span class="text-orange-500"
-            >Services</span
-          >
-        </h2>
-        <p class="text-lg text-slate-700">
-          From strategy development to execution and optimization, we offer
-          full-service digital marketing solutions designed to grow your
-          business.
-        </p>
-      </div>
+      <SectionHeading
+        class="mb-12 sm:mb-16"
+        eyebrow="What We Offer"
+        title='Complete Digital Marketing <span class="text-orange-500">Services</span>'
+        subtitle="From strategy development to execution and optimization, we offer full-service digital marketing solutions designed to grow your business."
+      />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         <CardService
           icon="/icons/seo.webp"
           title="Search Engine Optimization (SEO)"
@@ -371,19 +313,14 @@ const serviceSchema = createServicePageSchema({
   <!-- Channels Section -->
   <section class="py-16 lg:py-24 bg-white font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
-        >
-          Multi-Channel <span class="text-orange-500">Marketing Expertise</span>
-        </h2>
-        <p class="text-lg text-slate-700">
-          We leverage the most effective marketing channels to reach your target
-          audience wherever they are online.
-        </p>
-      </div>
+      <SectionHeading
+        class="mb-12 sm:mb-16"
+        eyebrow="Channels"
+        title='Multi-Channel <span class="text-orange-500">Marketing Expertise</span>'
+        subtitle="We leverage the most effective marketing channels to reach your target audience wherever they are online."
+      />
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8" data-anim="fade">
         <div
           class="flex flex-col items-center gap-3 p-6 bg-slate-50 rounded-xl hover:shadow-lg transition-shadow"
         >
@@ -487,19 +424,14 @@ const serviceSchema = createServicePageSchema({
     class="py-16 lg:py-24 bg-slate-50 font-poppins"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6"
-        >
-          Our Marketing <span class="text-orange-500">Methodology</span>
-        </h2>
-        <p class="text-lg text-slate-700">
-          We follow a proven framework that delivers consistent results and
-          continuous improvement.
-        </p>
-      </div>
+      <SectionHeading
+        class="mb-12 sm:mb-16"
+        eyebrow="Our Process"
+        title='Our Marketing <span class="text-orange-500">Methodology</span>'
+        subtitle="We follow a proven framework that delivers consistent results and continuous improvement."
+      />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-anim="fade">
         <div class="bg-white rounded-2xl p-8 shadow-lg">
           <div
             class="w-12 h-12 bg-cyan-900 rounded-xl flex items-center justify-center mb-4"
@@ -550,7 +482,7 @@ const serviceSchema = createServicePageSchema({
 
         <div class="bg-white rounded-2xl p-8 shadow-lg">
           <div
-            class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+            class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-4"
           >
             <span class="text-2xl font-bold text-white">4</span>
           </div>
@@ -571,20 +503,14 @@ const serviceSchema = createServicePageSchema({
   <!-- Google Reviews Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8 sm:mb-12">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-yellow-500/30 rounded-full mb-6">
-          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-          </svg>
-          <span class="text-sm font-medium text-yellow-400">Google Reviews</span>
-        </span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
-          What Our <span class="text-orange-500">Clients Say</span>
-        </h2>
-        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
-          Real reviews from real clients on Google. See why businesses trust Codebrand for their digital marketing needs.
-        </p>
-      </div>
+      <SectionHeading
+        class="mb-8 sm:mb-12"
+        theme="dark"
+        eyebrowColor="orange"
+        eyebrow="Google Reviews"
+        title='What Our <span class="text-orange-500">Clients Say</span>'
+        subtitle="Real reviews from real clients on Google. See why businesses trust Codebrand for their digital marketing needs."
+      />
     </div>
     <Testimonial />
   </section>
@@ -592,25 +518,23 @@ const serviceSchema = createServicePageSchema({
   <!-- Case Studies Section -->
   <section class="py-16 lg:py-24 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-900 mb-6">
-          Marketing <span class="text-orange-500">Success Stories</span>
-        </h2>
-        <p class="text-lg text-slate-700">
-          Real ROI and business growth. See how our digital marketing strategies have transformed businesses.
-        </p>
-      </div>
+      <SectionHeading
+        class="mb-12 sm:mb-16"
+        eyebrow="Case Studies"
+        title='Marketing <span class="text-orange-500">Success Stories</span>'
+        subtitle="Real ROI and business growth. See how our digital marketing strategies have transformed businesses."
+      />
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-          <div class="h-48 bg-gradient-to-br from-pink-600 to-pink-800 flex items-center justify-center">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" data-anim="fade">
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-cyan-600 to-cyan-800 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
             <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
             </svg>
           </div>
           <div class="p-6">
-            <span class="text-xs font-semibold text-pink-600 uppercase tracking-wide">Social Media</span>
+            <span class="text-xs font-semibold text-cyan-700 uppercase tracking-wide">Social Media</span>
             <h3 class="text-xl font-bold text-cyan-900 mt-2 mb-3">Fashion Brand Campaign</h3>
             <p class="text-slate-600 mb-4">Multi-platform social media campaign for a fashion brand that generated massive engagement and direct sales through Instagram and TikTok.</p>
             <div class="flex gap-4 text-sm">
@@ -630,8 +554,8 @@ const serviceSchema = createServicePageSchema({
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-          <div class="h-48 bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center">
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
             <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
@@ -658,8 +582,8 @@ const serviceSchema = createServicePageSchema({
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-          <div class="h-48 bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center">
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
             <svg class="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
@@ -694,12 +618,12 @@ const serviceSchema = createServicePageSchema({
     class="py-16 lg:py-24 bg-cyan-900 font-poppins"
   >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+      <h2 class="text-display-2 font-bold text-white mb-6" data-anim="heading">
         Ready to Accelerate Your <span class="text-orange-400"
           >Business Growth?</span
         >
       </h2>
-      <p class="text-xl text-slate-200 mb-8">
+      <p class="text-xl text-slate-200 mb-8" data-anim="fade" data-delay="0.1">
         Let's create a digital marketing strategy that drives real results. Get
         a free marketing audit and discover how we can help you dominate your
         market. Explore our <a
@@ -712,10 +636,12 @@ const serviceSchema = createServicePageSchema({
           >brand development services</a
         >.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim="fade" data-delay="0.18">
         <Button text="Get Free Marketing Audit" href="/contact" />
         <a
           href="#services"
+          data-magnetic
+          data-magnetic-strength="0.3"
           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"
         >
           Explore All Services

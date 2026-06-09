@@ -87,8 +87,8 @@ const featuredServices = [
     href: "/services/ux-ui",
     icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z",
     description: "User-centered design that converts visitors into customers. Research-driven interfaces that are beautiful and functional.",
-    gradient: "from-purple-500 to-pink-600",
-    bgGradient: "from-purple-500/20 to-pink-500/20",
+    gradient: "from-blue-600 to-cyan-600",
+    bgGradient: "from-blue-500/20 to-cyan-500/20",
     price: "From $1,500",
     features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
   },
@@ -97,8 +97,8 @@ const featuredServices = [
     href: "/services/seo",
     icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
     description: "Data-driven SEO strategies that improve your search rankings and drive organic traffic. Technical audits, content optimization, and link building.",
-    gradient: "from-green-500 to-emerald-600",
-    bgGradient: "from-green-500/20 to-emerald-500/20",
+    gradient: "from-teal-500 to-cyan-600",
+    bgGradient: "from-teal-500/20 to-cyan-500/20",
     price: "From $500/mo",
     features: ["Technical Audits", "Keyword Research", "Content Strategy", "Link Building"]
   }
@@ -120,7 +120,7 @@ const serviceCategories = [
   {
     name: "Design & Branding",
     icon: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
-    color: "from-purple-500 to-pink-600",
+    color: "from-blue-600 to-cyan-600",
     services: [
       { name: "UX/UI Design", href: "/services/ux-ui", price: "From $1,500", description: "User research, wireframes, prototypes" },
       { name: "Branding", href: "/services/branding", price: "From $800", description: "Logo design, brand guidelines, identity" },
@@ -130,7 +130,7 @@ const serviceCategories = [
   {
     name: "Marketing",
     icon: "M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z",
-    color: "from-green-500 to-emerald-600",
+    color: "from-teal-500 to-cyan-600",
     services: [
       { name: "SEO", href: "/services/seo", price: "From $500/mo", description: "Technical audits, keyword research, optimization" },
       { name: "Social Media", href: "/services/social-media", price: "From $400/mo", description: "Content creation, community management" },
@@ -140,7 +140,7 @@ const serviceCategories = [
   {
     name: "Creative Production",
     icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z",
-    color: "from-orange-500 to-red-600",
+    color: "from-orange-500 to-amber-600",
     services: [
       { name: "Video Production", href: "/services/video-production", price: "From $500", description: "Promotional videos, editing, motion graphics" },
       { name: "Animation", href: "/services/animation", price: "From $800", description: "2D/3D animations, explainer videos" },
@@ -151,9 +151,9 @@ const serviceCategories = [
 
 // Stats
 const stats = [
-  { value: "200+", label: "Projects Completed", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" },
-  { value: "50+", label: "Happy Clients", icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-  { value: "98%", label: "Client Satisfaction", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
+  { value: "5.0", label: "Client Rating", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" },
+  { value: "50", label: "Five-Star Reviews", icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { value: "100%", label: "Custom-Built", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
   { value: "5+", label: "Years Experience", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" }
 ];
 
@@ -177,7 +177,7 @@ const benefits = [
     title: "Results-Driven",
     description: "Every decision is backed by data. We focus on metrics that matter to your business.",
     icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-    color: "from-green-500 to-emerald-600"
+    color: "from-teal-500 to-cyan-600"
   },
   {
     title: "Transparent Pricing",
@@ -189,7 +189,7 @@ const benefits = [
     title: "Dedicated Support",
     description: "We're here for you before, during, and after launch with responsive support.",
     icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
-    color: "from-purple-500 to-pink-600"
+    color: "from-blue-600 to-cyan-600"
   }
 ];
 ---
@@ -213,7 +213,7 @@ const benefits = [
       <!-- Main gradient orbs -->
       <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-cyan-500/30 to-blue-500/20 rounded-full blur-[120px] animate-float"></div>
       <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-orange-500/25 to-amber-500/15 rounded-full blur-[100px] animate-float" style="animation-delay: 2s;"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-[150px]"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/10 to-orange-500/10 rounded-full blur-[150px]"></div>
 
       <!-- Grid Pattern -->
       <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 80px 80px;"></div>
@@ -221,8 +221,8 @@ const benefits = [
       <!-- Floating particles -->
       <div class="absolute top-20 left-[10%] w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
       <div class="absolute top-[30%] right-[15%] w-3 h-3 bg-orange-400 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
-      <div class="absolute bottom-[25%] left-[20%] w-2 h-2 bg-purple-400 rounded-full animate-ping" style="animation-delay: 1s;"></div>
-      <div class="absolute top-[60%] right-[25%] w-2 h-2 bg-green-400 rounded-full animate-ping" style="animation-delay: 1.5s;"></div>
+      <div class="absolute bottom-[25%] left-[20%] w-2 h-2 bg-blue-400 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+      <div class="absolute top-[60%] right-[25%] w-2 h-2 bg-teal-400 rounded-full animate-ping" style="animation-delay: 1.5s;"></div>
 
       <!-- Decorative lines -->
       <div class="absolute top-1/3 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
@@ -292,7 +292,7 @@ const benefits = [
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto">
             {stats.map((stat) => (
               <div class="group relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 <div class="relative bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-2xl p-5 lg:p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300">
                   <div class="flex items-center justify-center gap-3 mb-2">
                     <svg class="w-5 h-5 text-cyan-400 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -490,14 +490,14 @@ const benefits = [
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-16 lg:mb-20">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-semibold mb-6">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-semibold mb-6">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
           </svg>
           HOW WE WORK
         </span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-          Our <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Process</span>
+          Our <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Process</span>
         </h2>
         <p class="text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto">
           A proven methodology that delivers results on time and within budget
@@ -520,7 +520,7 @@ const benefits = [
               </div>
 
               <!-- Icon -->
-              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon}></path>
                 </svg>
@@ -540,14 +540,14 @@ const benefits = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-sm font-semibold mb-6">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-400 text-sm font-semibold mb-6">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
           </svg>
           WHY CODEBRAND
         </span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-          Why Work <span class="text-green-400">With Us</span>
+          Why Work <span class="text-orange-400">With Us</span>
         </h2>
         <p class="text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto">
           We're not just another agency. Here's what makes us different.
@@ -648,7 +648,7 @@ const benefits = [
           </svg>
         </a>
         <a
-          href="tel:+50432722973"
+          href="tel:+50487380714"
           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-2xl font-bold text-lg border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

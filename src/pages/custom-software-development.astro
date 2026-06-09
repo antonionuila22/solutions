@@ -143,8 +143,8 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
   <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center max-w-4xl mx-auto">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 text-orange-400 text-sm font-semibold rounded-full mb-6">
-          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
           Custom Software Development
         </span>
         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
@@ -155,11 +155,11 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
           other way around. Web apps, internal tools, and SaaS. You own it all.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
             Scope Your Project
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
           </a>
-          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+          <a href="#services" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
             What We Build
           </a>
         </div>
@@ -179,8 +179,8 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
   <!-- Content Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8">Software that fits your business</h2>
-      <div class="prose prose-lg max-w-none text-slate-700 space-y-6">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">Software that fits your business</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
         <p>
           <strong class="text-slate-900">Codebrand builds custom software</strong> for businesses that have outgrown off-the-shelf tools. When you're stitching together five apps with manual copy-paste, paying per-seat fees that climb every quarter, or running the business on a spreadsheet that's one wrong click from disaster — that's when custom software pays for itself. We build it to match how you already work.
         </p>
@@ -198,11 +198,11 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
   <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
           What We <span class="text-orange-500">Build</span>
         </h2>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
             <div class="text-4xl mb-4">{s.icon}</div>
@@ -217,10 +217,10 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
   <!-- Tech Stack Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
         Our Development <span class="text-orange-500">Stack</span>
       </h2>
-      <div class="flex flex-wrap justify-center gap-3 mt-10">
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
         {stack.map((t) => (
           <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
         ))}
@@ -232,7 +232,7 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
   <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
           Custom Software <span class="text-orange-500">FAQ</span>
         </h2>
       </div>
@@ -243,11 +243,11 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
   <!-- CTA Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
         Outgrown your <span class="text-orange-400">spreadsheets?</span>
       </h2>
-      <p class="text-xl text-slate-300 mb-10">Free consultation. Tell us the problem and we'll scope a path to custom software.</p>
-      <a href="/contact" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us the problem and we'll scope a path to custom software.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
         Get Started
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
       </a>

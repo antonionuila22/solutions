@@ -15,8 +15,8 @@
 [[headers]]
   for = "/_astro/*"
   [headers.values]
-    Cache-Control = "public, max-age=315360, immutable"
-    CDN-Cache-Control = "public, max-age=315360, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
+    CDN-Cache-Control = "public, max-age=31536000, immutable"
 
 # ===========================================
 # STATIC ASSETS - Fonts (1 year, immutable)
@@ -25,78 +25,78 @@
 [[headers]]
   for = "/fonts/*"
   [headers.values]
-    Cache-Control = "public, max-age=315360, immutable"
-    CDN-Cache-Control = "public, max-age=315360, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
+    CDN-Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*.woff2"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-    CDN-Cache-Control = "public, max-age=315360, immutable"
+    CDN-Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*.woff"
   [headers.values]
-    Cache-Control = "public, max-age=315360, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # ===========================================
-# IMAGES - Max 24h caching
+# IMAGES - 30-day caching (filenames aren't content-hashed; rename on visual change)
 # ===========================================
 
 # Icons directory (SVGs, favicons)
 [[headers]]
   for = "/icons/*"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
-    CDN-Cache-Control = "public, max-age=8640"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+    CDN-Cache-Control = "public, max-age=2592000"
 
 # Photos directory
 [[headers]]
   for = "/photos/*"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
-    CDN-Cache-Control = "public, max-age=8640"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+    CDN-Cache-Control = "public, max-age=2592000"
 
 # Image formats
 [[headers]]
   for = "/*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.avif"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.png"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.jpeg"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.gif"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.ico"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 # ===========================================
 # DOCUMENTS & DATA
@@ -105,7 +105,7 @@
 [[headers]]
   for = "/*.pdf"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/*.json"
@@ -115,7 +115,7 @@
 [[headers]]
   for = "/manifest.json"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=86400"
 
 # ===========================================
 # SEO FILES
@@ -129,7 +129,7 @@
 [[headers]]
   for = "/robots.txt"
   [headers.values]
-    Cache-Control = "public, max-age=8640, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=86400"
 
 # ===========================================
 # HTML PAGES - Short cache with background revalidation

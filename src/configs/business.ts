@@ -21,19 +21,19 @@ export const BUSINESS_INFO = {
   // US Market Contact (services exported from Honduras)
   us: {
     email: "info@codebrand.es",
-    phone: "+504 3272-2973",
-    phoneRaw: "+50432722973",
-    whatsapp: "50432722973",
-    whatsappUrl: "https://wa.me/50432722973",
+    phone: "+504 8738-0714",
+    phoneRaw: "+50487380714",
+    whatsapp: "50487380714",
+    whatsappUrl: "https://wa.me/50487380714",
   },
 
   // Honduras Market Contact
   hn: {
     email: "info@codebrand.es",
-    phone: "+504 3272-2973",
-    phoneRaw: "+50432722973",
-    whatsapp: "50432722973",
-    whatsappUrl: "https://wa.me/50432722973",
+    phone: "+504 8738-0714",
+    phoneRaw: "+50487380714",
+    whatsapp: "50487380714",
+    whatsappUrl: "https://wa.me/50487380714",
   },
 
   // Physical Address (Headquarters)

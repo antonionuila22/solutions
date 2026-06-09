@@ -4,6 +4,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
 import { isRegionHub } from "../../lib/seo/geo-tiers";
@@ -122,65 +123,42 @@ const faqSchema = faqs && faqs.length > 0 ? {
   )}
 
   <!-- Hero Section -->
-  <section class="relative bg-white py-16 sm:py-24 font-poppins overflow-hidden">
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220%200%2060%2060%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="text-center max-w-4xl mx-auto">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-6">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-          </svg>
-          {code} · {cities.length} {cities.length === 1 ? 'City' : 'Cities'} Served
-        </span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-cyan-900 mb-6 leading-tight">
-          Web Development in <span class="text-orange-500">{name}</span>
-        </h1>
-        <p class="text-xl sm:text-2xl text-slate-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-          {description}
-        </p>
-
-        <!-- Quick Stats -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-600 mb-8">
-          {population && (
-            <span class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-              </svg>
-              Population: {population}
-            </span>
-          )}
-          {capital && (
-            <span class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-              </svg>
-              Capital: {capital}
-            </span>
-          )}
-          {timezone && (
-            <span class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              Timezone: {timezone}
-            </span>
-          )}
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
-            Get Free Quote
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-        </div>
+  <PageHero
+    eyebrow={`${code} · ${cities.length} ${cities.length === 1 ? 'City' : 'Cities'} Served`}
+    title={`Web Development in <span class="text-orange-400">${name}</span>`}
+    subtitle={description}
+    stats={[
+      { value: "5.0", label: "Client Rating", counterTo: 5, decimals: 1, color: "orange" },
+      { value: "50", label: "Five-Star Reviews", counterTo: 50, color: "cyan" },
+      { value: "8+", label: "Years Experience", counterTo: 8, suffix: "+", color: "cyan" },
+      { value: "100%", label: "Custom-Built", color: "orange" },
+    ]}
+    ctaPrimary={{ text: "Get Free Quote", href: "/contact" }}
+    ctaSecondary={{ text: "View Our Work", href: "/projects" }}
+  >
+    {(population || capital || timezone) && (
+      <div class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-400">
+        {population && (
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            Population: {population}
+          </span>
+        )}
+        {capital && (
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            Capital: {capital}
+          </span>
+        )}
+        {timezone && (
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Timezone: {timezone}
+          </span>
+        )}
       </div>
-    </div>
-  </section>
+    )}
+  </PageHero>
 
   <Breadcrumbs
     items={[
@@ -197,7 +175,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
   {longDescription && (
     <section class="py-12 lg:py-16 bg-white font-poppins">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed" set:html={sanitizeHtml(longDescription || '')} />
+        <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed" data-anim="fade" set:html={sanitizeHtml(longDescription || '')} />
       </div>
     </section>
   )}
@@ -207,14 +185,14 @@ const faqSchema = faqs && faqs.length > 0 ? {
     <section class="py-12 lg:py-16 bg-slate-50 font-poppins">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
-          <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
+          <h2 class="text-display-2 font-bold text-cyan-900 mb-4" data-anim="heading">
             Industries We Serve in {name}
           </h2>
-          <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p class="text-xl text-slate-600 max-w-2xl mx-auto" data-anim="fade" data-delay="0.1">
             Specialized web development for {name}'s key economic sectors.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-anim="fade">
           {industries.map((industry) => (
             <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100">
               <h3 class="text-lg font-bold text-cyan-900 mb-2">{industry.name}</h3>
@@ -235,10 +213,10 @@ const faqSchema = faqs && faqs.length > 0 ? {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {marketHighlights && marketHighlights.length > 0 && (
             <div>
-              <h2 class="text-2xl font-bold text-cyan-900 mb-6">
+              <h2 class="text-2xl font-bold text-cyan-900 mb-6" data-anim="heading">
                 {name} Market Highlights
               </h2>
-              <ul class="space-y-3">
+              <ul class="space-y-3" data-anim="fade" data-delay="0.1">
                 {marketHighlights.map((highlight) => (
                   <li class="flex items-start gap-3">
                     <svg class="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -252,10 +230,10 @@ const faqSchema = faqs && faqs.length > 0 ? {
           )}
           {regionalStats && (
             <div>
-              <h2 class="text-2xl font-bold text-cyan-900 mb-6">
+              <h2 class="text-2xl font-bold text-cyan-900 mb-6" data-anim="heading">
                 Regional Statistics
               </h2>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" data-anim="fade" data-delay="0.1">
                 {regionalStats.gdp && (
                   <div class="bg-cyan-50 p-4 rounded-xl text-center">
                     <div class="text-2xl font-bold text-cyan-900">{regionalStats.gdp}</div>
@@ -287,15 +265,15 @@ const faqSchema = faqs && faqs.length > 0 ? {
     <section class="py-16 lg:py-24 bg-white font-poppins">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
+          <h2 class="text-display-2 font-bold text-cyan-900 mb-4" data-anim="heading">
             Cities We Serve in {name}
           </h2>
-          <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p class="text-xl text-slate-600 max-w-2xl mx-auto" data-anim="fade" data-delay="0.1">
             Select your city for localized web development services and information.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-anim="fade">
           {sortedCities.map((city) => (
             <a
               href={`/locations/${city.id}`}
@@ -345,15 +323,15 @@ const faqSchema = faqs && faqs.length > 0 ? {
   <section class="py-16 lg:py-24 bg-slate-50 font-poppins">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
+        <h2 class="text-display-2 font-bold text-cyan-900 mb-4" data-anim="heading">
           Why {name} Businesses Choose Codebrand
         </h2>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto" data-anim="fade" data-delay="0.1">
           Nearshore development with all the benefits of a local team.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         <div class="bg-white p-8 rounded-2xl shadow-md">
           <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -398,14 +376,14 @@ const faqSchema = faqs && faqs.length > 0 ? {
     <section class="py-16 lg:py-24 bg-white font-poppins">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-cyan-900 mb-4">
+          <h2 class="text-display-2 font-bold text-cyan-900 mb-4" data-anim="heading">
             Frequently Asked Questions
           </h2>
-          <p class="text-xl text-slate-600">
+          <p class="text-xl text-slate-600" data-anim="fade" data-delay="0.1">
             Common questions about web development services in {name}.
           </p>
         </div>
-        <div class="space-y-6">
+        <div class="space-y-6" data-anim="fade">
           {faqs.map((faq) => (
             <div class="bg-slate-50 rounded-xl p-6">
               <h3 class="text-lg font-bold text-cyan-900 mb-3">{faq.question}</h3>
@@ -420,17 +398,17 @@ const faqSchema = faqs && faqs.length > 0 ? {
   <!-- CTA -->
   <section class="py-16 lg:py-24 bg-gradient-to-br from-cyan-900 to-cyan-800 font-poppins">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+      <h2 class="text-display-2 font-bold text-white mb-6" data-anim="heading">
         Ready to Start Your {name} Project?
       </h2>
-      <p class="text-xl text-cyan-100 mb-8">
+      <p class="text-xl text-cyan-100 mb-8" data-anim="fade" data-delay="0.1">
         Get a free consultation and detailed project quote. No commitment required.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim="fade" data-delay="0.18">
+        <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           Get Free Quote
         </a>
-        <a href="/projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
+        <a href="/projects" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View Our Work
         </a>
       </div>

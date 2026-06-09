@@ -607,7 +607,7 @@ export function createLocalBusinessSchema(
     name: `Codebrand - Web Development ${city}`,
     description,
     url: `https://www.codebrand.us/locations/${city.toLowerCase().replace(/\s+/g, "-")}-${stateCode.toLowerCase()}`,
-    telephone: "+504-3272-2973",
+    telephone: "+504-8738-0714",
     email: "info@codebrand.es",
     priceRange: "$$$",
     address: {

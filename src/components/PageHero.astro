@@ -1,0 +1,243 @@
+---
+/**
+ * PageHero — the reusable, rich, animated hero for interior pages.
+ *
+ * Brings every page up to the home page's bar: dark slate-950 stage, masked
+ * grid + parallax orbs, a word-mask headline reveal, a real animated stat strip
+ * (count-ups, honest numbers only), and magnetic CTAs. All motion runs through
+ * the shared GSAP engine (src/scripts/animations) via data-attributes — nothing
+ * to wire per page, and it's reduced-motion + View-Transitions safe.
+ *
+ *   <PageHero
+ *     eyebrow="Award-Winning Web Design"
+ *     title='Beautiful Web Designs That <span class="text-orange-400">Convert</span>'
+ *     subtitle="User-centered design that turns visitors into customers."
+ *     stats={[{ value: "5.0", label: "Client Rating", counterTo: 5, decimals: 1, color: "orange" }]}
+ *     ctaPrimary={{ text: "Start Your Project", href: "/contact" }}
+ *     ctaSecondary={{ text: "View Our Work", href: "/projects" }}
+ *   />
+ */
+interface Stat {
+  value: string; // display string (inline HTML allowed): "50+", "5.0", "100%", "< 24h"
+  label: string;
+  counterTo?: number; // if set, animates 0 → counterTo (must match `value`)
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+  color?: "cyan" | "orange";
+}
+interface Cta {
+  text: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string; // inline HTML allowed (highlight a phrase with <span class="text-orange-400">)
+  subtitle?: string; // inline HTML allowed
+  stats?: Stat[];
+  ctaPrimary?: Cta;
+  ctaSecondary?: Cta;
+  align?: "center" | "left";
+  compact?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  stats = [],
+  ctaPrimary,
+  ctaSecondary,
+  align = "center",
+  compact = false,
+} = Astro.props as Props;
+
+const isCenter = align === "center";
+---
+
+<section
+  class:list={[
+    "page-hero relative isolate overflow-hidden bg-slate-950",
+    compact ? "py-24 sm:py-28 lg:py-32" : "py-28 sm:py-32 lg:py-40",
+  ]}
+>
+  <!-- Top spotlight — a sense of light source from above gives the dark stage
+       depth and a premium, "lit" feel instead of a flat fill. -->
+  <div
+    class="absolute inset-x-0 top-0 h-[70%] pointer-events-none"
+    style="background:radial-gradient(ellipse 55% 80% at 50% 0%, rgba(34,211,238,0.10), rgba(34,211,238,0.04) 40%, transparent 72%);"
+    aria-hidden="true"
+  >
+  </div>
+  <!-- Edge vignette — darkens the corners so content reads as the focal point. -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background:radial-gradient(ellipse 90% 75% at 50% 42%, transparent 55%, rgba(2,6,23,0.55) 100%);"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Masked grid -->
+  <div class="hidden sm:block absolute inset-0 opacity-[0.18]" aria-hidden="true">
+    <div
+      class="absolute inset-0"
+      style="background-image:linear-gradient(rgba(6,182,212,0.35) 1px,transparent 1px),linear-gradient(90deg,rgba(6,182,212,0.35) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 75% 60% at 50% 35%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 75% 60% at 50% 35%,#000 35%,transparent 100%);"
+    >
+    </div>
+  </div>
+
+  <!-- Parallax orbs -->
+  <div
+    class="hidden sm:block absolute -top-24 left-1/4 w-80 lg:w-[28rem] h-80 lg:h-[28rem] bg-cyan-500/20 rounded-full blur-3xl will-change-transform"
+    aria-hidden="true"
+    data-parallax
+    data-parallax-speed="0.3"
+    data-parallax-range="90"
+  >
+  </div>
+  <div
+    class="hidden sm:block absolute -bottom-28 right-1/4 w-80 lg:w-[28rem] h-80 lg:h-[28rem] bg-orange-500/15 rounded-full blur-3xl will-change-transform"
+    aria-hidden="true"
+    data-parallax
+    data-parallax-speed="-0.35"
+    data-parallax-range="90"
+  >
+  </div>
+  <!-- Mobile gradient wash -->
+  <div
+    class="sm:hidden absolute inset-0 bg-gradient-to-br from-cyan-500/12 via-slate-950 to-orange-500/12"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class:list={["max-w-4xl", isCenter ? "mx-auto text-center" : "text-left"]}>
+      {
+        eyebrow && (
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-slate-800/60 backdrop-blur-md border border-cyan-500/40 rounded-full mb-6 sm:mb-8 shadow-sm shadow-cyan-500/10 animate-fade-in"
+          >
+            <span class="relative flex h-2 w-2">
+              <span class="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
+            </span>
+            <span class="text-xs sm:text-sm font-semibold tracking-wide text-cyan-300">
+              {eyebrow}
+            </span>
+          </div>
+        )
+      }
+
+      <!-- Hero headline renders instantly (no JS-gated reveal) so it stays the
+           LCP element. Supporting copy animates in via lightweight CSS below. -->
+      <h1
+        class="text-hero text-white text-balance mb-5 sm:mb-6"
+        set:html={title}
+      />
+
+      {
+        subtitle && (
+          <p
+            class:list={[
+              "text-lead text-slate-300 mb-8 sm:mb-10 animate-fade-in-up",
+              isCenter ? "max-w-2xl mx-auto" : "max-w-2xl",
+            ]}
+            style="animation-delay:0.1s;"
+            set:html={subtitle}
+          />
+        )
+      }
+
+      {
+        (ctaPrimary || ctaSecondary) && (
+          <div
+            class:list={[
+              "flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up",
+              isCenter ? "justify-center items-center" : "items-start",
+            ]}
+            style="animation-delay:0.2s;"
+          >
+            {ctaPrimary && (
+              <a
+                href={ctaPrimary.href}
+                data-magnetic
+                data-magnetic-strength="0.4"
+                class="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-bold rounded-2xl shadow-lg shadow-orange-500/30 hover:shadow-orange-500/40 transition-all duration-300"
+              >
+                {ctaPrimary.text}
+                <svg
+                  class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </a>
+            )}
+            {ctaSecondary && (
+              <a
+                href={ctaSecondary.href}
+                data-magnetic
+                data-magnetic-strength="0.3"
+                class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold rounded-2xl border border-slate-600 hover:border-cyan-500/50 transition-all duration-300"
+              >
+                {ctaSecondary.text}
+              </a>
+            )}
+          </div>
+        )
+      }
+
+      {
+        stats.length > 0 && (
+          <div
+            class:list={[
+              "mt-12 sm:mt-16 grid grid-cols-2 gap-x-6 gap-y-7 sm:flex sm:flex-wrap sm:gap-x-12 sm:gap-y-7 animate-fade-in-up",
+              isCenter ? "sm:justify-center" : "",
+            ]}
+            style="animation-delay:0.3s;"
+          >
+            {stats.map((s) => (
+              <div
+                class:list={[
+                  "flex flex-col",
+                  isCenter ? "items-center sm:items-start" : "items-start",
+                ]}
+              >
+                <span
+                  class:list={[
+                    "text-3xl sm:text-4xl font-extrabold tabular-nums leading-none",
+                    s.color === "orange" ? "text-orange-400" : "text-cyan-400",
+                  ]}
+                >
+                  {typeof s.counterTo === "number" ? (
+                    <span
+                      data-counter={String(s.counterTo)}
+                      data-counter-suffix={s.suffix ?? ""}
+                      data-counter-prefix={s.prefix ?? ""}
+                      data-counter-decimals={String(s.decimals ?? 0)}
+                      set:html={s.value}
+                    />
+                  ) : (
+                    <span set:html={s.value} />
+                  )}
+                </span>
+                <span class="mt-2 text-xs sm:text-sm text-slate-400">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        )
+      }
+
+      <slot />
+    </div>
+  </div>
+</section>

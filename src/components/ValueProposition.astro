@@ -170,7 +170,7 @@ const c = { ...defaults, ...Astro.props.config };
                   <div>
                     <p class="text-sm text-slate-500 mb-1">{c.priceComparison.competitorLabel}</p>
                     <p class="text-3xl font-bold text-slate-900">
-                      {c.priceComparison.competitorPrice}<span class="text-lg text-slate-400">+</span>
+                      {c.priceComparison.competitorPrice}<span class="text-lg text-slate-500">+</span>
                     </p>
                   </div>
                   <div
@@ -239,11 +239,11 @@ const c = { ...defaults, ...Astro.props.config };
               </div>
 
               <div
-                class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-6 border-2 border-green-200"
+                class="bg-gradient-to-r from-teal-50 to-teal-50 rounded-xl p-6 border-2 border-teal-200"
               >
                 <div class="text-center">
                   <p class="text-sm text-slate-600 mb-2">You Save</p>
-                  <p class="text-4xl font-bold text-green-600 mb-1">{c.priceComparison.savingsAmount}</p>
+                  <p class="text-4xl font-bold text-teal-600 mb-1">{c.priceComparison.savingsAmount}</p>
                   <p class="text-xs text-slate-500">{c.priceComparison.savingsPercent}</p>
                 </div>
               </div>

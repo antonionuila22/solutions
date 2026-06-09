@@ -6,16 +6,17 @@ import { testimonials } from "../data/testimonials";
 const firstRow = testimonials.slice(0, testimonials.length / 2);
 const secondRow = testimonials.slice(testimonials.length / 2);
 
-// Colores de fondo para avatares (estilo Google)
+// On-brand avatar backgrounds — dark enough for AA contrast with white text
+// (the off-brand red/yellow/purple/pink palette failed WCAG with white initials).
 const avatarColors = [
-  "bg-red-500",
-  "bg-blue-500",
-  "bg-green-500",
-  "bg-yellow-500",
-  "bg-purple-500",
-  "bg-pink-500",
-  "bg-indigo-500",
-  "bg-teal-500",
+  "bg-cyan-700",
+  "bg-teal-700",
+  "bg-blue-700",
+  "bg-orange-700",
+  "bg-slate-700",
+  "bg-cyan-800",
+  "bg-blue-600",
+  "bg-teal-800",
 ];
 
 const getInitials = (name: string) => {

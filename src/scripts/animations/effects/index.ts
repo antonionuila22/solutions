@@ -8,12 +8,17 @@ import { magneticEffect } from "./magnetic";
 import { marqueeEffect } from "./marquee";
 import { stickyCardsEffect } from "./stickyCards";
 
-/** Run order doesn't matter much, but reveals first feels tidiest. */
+/**
+ * Order matters for reflow: the IntersectionObserver-driven, writes-only
+ * effects (heading/fade/counter) run FIRST so all DOM mutation + start-state
+ * writes happen before the ScrollTrigger-based effects (chars/parallax/sticky/
+ * marquee) measure layout. Keeps writes and reads from interleaving.
+ */
 export const effects: Effect[] = [
   headingEffect,
   fadeEffect,
-  charsEffect,
   counterEffect,
+  charsEffect,
   parallaxEffect,
   stickyCardsEffect,
   marqueeEffect,
