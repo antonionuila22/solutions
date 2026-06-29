@@ -1,0 +1,347 @@
+---
+import ServiciosLayout from "../../layouts/ServiciosLayout.astro";
+import logoWhite from "../../assets/codebrand-white.svg";
+import WhatsAppWidget from "../../components/WhatsAppWidget.astro";
+
+import ServiceWizard from "../../components/expo-producciones/ServiceWizard.tsx";
+import ServicesCatalog from "../../components/expo-producciones/ServicesCatalog.tsx";
+import CodebrandSalesShowcase from "../../components/expo-producciones/CodebrandSalesShowcase.tsx";
+import ServiciosFaq from "../../components/expo-producciones/ServiciosFaq.tsx";
+
+import {
+  PROCESS_STEPS,
+  TESTIMONIALS,
+  TRUST_STATS,
+  BRAND,
+} from "../../data/expoProducciones";
+
+const pageTitle =
+  "Servicios Digitales a la Medida | Desarrollo, Sistemas, CRM y Branding · Codebrand";
+const pageDescription =
+  "Todos los servicios de Codebrand en un solo lugar: desarrollo web y apps, sistemas a medida, automatizaciones, CRM, SEO y branding. Selecciona lo que necesitas y recibe tu cotización.";
+---
+
+<ServiciosLayout title={pageTitle} description={pageDescription} noindex={true}>
+  <!-- Decorative animated background -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="ep-grid"></div>
+    <div class="ep-orb ep-orb-1"></div>
+    <div class="ep-orb ep-orb-2"></div>
+    <div class="ep-orb ep-orb-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 inset-x-0 z-50 ep-nav">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <a href="/" class="flex-shrink-0" aria-label="Codebrand inicio">
+        <img src={logoWhite.src} alt="Codebrand" width="118" height="34" loading="eager" decoding="async" />
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-white/70">
+        <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+        <a href="#producto" class="hover:text-white transition-colors">Codebrand Sales</a>
+        <a href="#proceso" class="hover:text-white transition-colors">Cómo trabajamos</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+      <a href="#cotizar" class="ep-btn-primary text-sm">
+        Cotizar
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-start">
+        <!-- Copy -->
+        <div class="lg:pt-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+            </span>
+            <span class="text-xs sm:text-sm text-white/70">Aceptando nuevos proyectos</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+            <span class="block">Todo lo que tu</span>
+            <span class="block">negocio necesita,</span>
+            <span class="block ep-text-gradient">en un solo equipo.</span>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg text-white/55 leading-relaxed max-w-xl">
+            Desarrollo web y apps, sistemas a medida, automatizaciones, CRM, SEO y branding.
+            <span class="text-white/85 font-medium">Elige los servicios que quieras</span> y recibe una cotización clara y personalizada.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#cotizar" class="ep-btn-primary">
+              Armar mi cotización
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#servicios" class="ep-btn-ghost">Ver servicios</a>
+          </div>
+
+          <!-- Trust stats -->
+          <dl class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl">
+            {TRUST_STATS.map((s) => (
+              <div class="rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3">
+                <dt class="text-xl sm:text-2xl font-bold ep-text-gradient">{s.value}</dt>
+                <dd class="text-[11px] sm:text-xs text-white/45 mt-0.5">{s.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <!-- Wizard (centerpiece) -->
+        <div id="cotizar" class="scroll-mt-24 lg:sticky lg:top-24">
+          <ServiceWizard client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof bar -->
+  <section class="border-y border-white/10 bg-white/[0.02]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
+      <div class="flex items-center gap-2">
+        <div class="flex">
+          {[1,2,3,4,5].map(() => (
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.17 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12l-2.8-2.03c-.79-.57-.39-1.81.58-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg>
+          ))}
+        </div>
+        <span class="text-white/70"><strong class="text-white">5.0</strong> en Google Reviews</span>
+      </div>
+      <span class="hidden sm:inline text-white/20">•</span>
+      <span class="text-white/60">Equipo bilingüe en tu zona horaria</span>
+      <span class="hidden sm:inline text-white/20">•</span>
+      <span class="text-white/60">Acompañamiento real en cada etapa</span>
+    </div>
+  </section>
+
+  <!-- Services catalog (component owns its <section id="servicios"> + header) -->
+  <ServicesCatalog
+    client:visible
+    eyebrow="Nuestros servicios"
+    title="Soluciones para cada etapa de tu negocio"
+    subtitle="Cada servicio incluye precio de referencia, qué incluye y cómo trabajamos. Combina los que necesites."
+  />
+
+  <!-- Codebrand Sales (component owns its <section> + padding) -->
+  <div class="bg-white/[0.02] border-y border-white/10">
+    <CodebrandSalesShowcase client:visible id="producto" />
+  </div>
+
+  <!-- Process: Cómo trabajamos -->
+  <section id="proceso" class="scroll-mt-24 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16">
+        <span class="ep-tag">Cómo trabajamos</span>
+        <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          Un proceso <span class="ep-text-gradient">claro</span>, de principio a fin
+        </h2>
+      </div>
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {PROCESS_STEPS.map((step) => (
+          <li class="relative rounded-2xl bg-white/[0.03] border border-white/10 p-6">
+            <span class="text-3xl font-bold text-white/10">{step.num}</span>
+            <h3 class="mt-2 text-lg font-semibold text-white">{step.title}</h3>
+            <p class="mt-2 text-sm text-white/50 leading-relaxed">{step.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 sm:py-28 bg-white/[0.02] border-y border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16">
+        <span class="ep-tag">Testimonios</span>
+        <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          Lo que dicen <span class="ep-text-gradient">nuestros clientes</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        {TESTIMONIALS.map((t) => (
+          <figure class="rounded-2xl bg-white/[0.03] border border-white/10 p-6 flex flex-col">
+            <div class="flex mb-3">
+              {Array.from({ length: t.rating }).map(() => (
+                <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.07 3.29a1 1 0 00.95.69h3.46c.97 0 1.37 1.24.59 1.81l-2.8 2.03a1 1 0 00-.37 1.12l1.07 3.29c.3.92-.75 1.69-1.54 1.12l-2.8-2.03a1 1 0 00-1.17 0l-2.8 2.03c-.78.57-1.84-.2-1.54-1.12l1.07-3.29a1 1 0 00-.36-1.12l-2.8-2.03c-.79-.57-.39-1.81.58-1.81h3.46a1 1 0 00.95-.69l1.07-3.29z"/></svg>
+              ))}
+            </div>
+            <blockquote class="text-sm text-white/70 leading-relaxed flex-1">"{t.text}"</blockquote>
+            <figcaption class="mt-4 pt-4 border-t border-white/10">
+              <div class="font-semibold text-white text-sm">{t.name}</div>
+              <div class="text-xs text-white/45">{t.role}</div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (component owns its <section> + header) -->
+  <div id="faq">
+    <ServiciosFaq client:visible />
+  </div>
+
+  <!-- Final CTA -->
+  <section class="py-20 sm:py-28">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-orange-500/10 via-white/[0.03] to-teal-500/10 p-10 sm:p-14 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          ¿Listo para <span class="ep-text-gradient">empezar</span>?
+        </h2>
+        <p class="mt-4 text-white/60 text-base sm:text-lg max-w-xl mx-auto">
+          Selecciona tus servicios y recibe una cotización personalizada. Sin compromiso.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#cotizar" class="ep-btn-primary">
+            Armar mi cotización
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href={`${BRAND.whatsappUrl}?text=${encodeURIComponent("Hola, quiero información sobre sus servicios.")}`} target="_blank" rel="noopener noreferrer" class="ep-btn-ghost">
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <img src={logoWhite.src} alt="Codebrand" width="110" height="32" loading="lazy" decoding="async" />
+      <p class="text-xs text-white/40">© 2026 Codebrand. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-4 text-xs text-white/50">
+        <a href="/terms" class="hover:text-white transition-colors">Términos</a>
+        <a href="/privacy" class="hover:text-white transition-colors">Privacidad</a>
+        <a href={`mailto:${BRAND.email}`} class="hover:text-white transition-colors">{BRAND.email}</a>
+      </div>
+    </div>
+  </footer>
+
+  <WhatsAppWidget />
+</ServiciosLayout>
+
+<style>
+  .ep-nav {
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .ep-text-gradient {
+    background: linear-gradient(100deg, #fb923c, #f97316 45%, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ep-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2dd4bf;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    background: rgba(45, 212, 191, 0.08);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+  }
+
+  .ep-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.7rem;
+    background: linear-gradient(100deg, #f97316, #ea580c);
+    box-shadow: 0 8px 24px -8px rgba(249, 115, 22, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  }
+  .ep-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px -8px rgba(249, 115, 22, 0.6);
+    filter: brightness(1.05);
+  }
+  .ep-btn-primary:focus-visible {
+    outline: 2px solid #fb923c;
+    outline-offset: 2px;
+  }
+
+  .ep-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.7rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .ep-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  /* Background decoration */
+  .ep-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 75%);
+  }
+  .ep-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.35;
+    will-change: transform;
+  }
+  .ep-orb-1 {
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.45), transparent 70%);
+    top: -120px; right: -80px;
+    animation: ep-float-a 18s ease-in-out infinite;
+  }
+  .ep-orb-2 {
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.4), transparent 70%);
+    top: 40%; left: -120px;
+    animation: ep-float-b 22s ease-in-out infinite;
+  }
+  .ep-orb-3 {
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 70%);
+    bottom: -100px; left: 45%;
+    animation: ep-float-a 26s ease-in-out infinite;
+  }
+  @keyframes ep-float-a {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 40px); }
+  }
+  @keyframes ep-float-b {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(40px, -30px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ep-orb { animation: none; }
+  }
+</style>
+
+<style is:global>
+  /* Offset anchors for the fixed nav (ids live inside React islands) */
+  #servicios, #producto, #faq, #cotizar { scroll-margin-top: 6rem; }
+</style>

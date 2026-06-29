@@ -1,0 +1,251 @@
+---
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import { SERVICES } from "../data/expoProducciones";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Servicios de Codebrand | Desarrollo Web, Sistemas a Medida y Marketing Digital",
+  description = "Agencia digital Codebrand: desarrollo web y apps, sistemas a medida, automatizaciones con n8n, CRM, SEO y branding. Solicita tu cotización personalizada.",
+  image = "https://www.codebrand.us/photos/bannercodebrand.webp",
+  noindex = false,
+}: Props = Astro.props;
+
+// og/twitter image must be an absolute URL on the production domain.
+const ogImage = image.startsWith("http")
+  ? image
+  : new URL(image, Astro.site ?? "https://www.codebrand.us").href;
+
+// canonical anclado al dominio de producción (www), sin query.
+const canonicalUrl = new URL(
+  Astro.url?.pathname ?? "/",
+  Astro.site ?? "https://www.codebrand.us"
+).href;
+const siteName = "Codebrand Digital Agency";
+const twitterHandle = "@codebrand_es";
+
+// Deriva el precio numérico desde "Desde $450" → "450"
+const parsePrice = (priceFrom: string): string =>
+  (priceFrom.match(/[\d.,]+/)?.[0] ?? "").replace(/,/g, "");
+
+// Schema.org — ProfessionalService (Organización Codebrand)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Codebrand Digital Agency",
+  "description": description,
+  "url": "https://www.codebrand.us",
+  "logo": "https://www.codebrand.us/iconcodebrand.svg",
+  "image": ogImage,
+  "telephone": "+504-8738-0714",
+  "email": "info@codebrand.es",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Pedro Sula",
+    "addressRegion": "Cortés",
+    "addressCountry": "HN",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "14.0723",
+    "longitude": "-87.1921",
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Honduras" },
+    { "@type": "Country", "name": "Spain" },
+    { "@type": "Country", "name": "Mexico" },
+  ],
+  "serviceType": [
+    "Web Development",
+    "Custom Software",
+    "Workflow Automation",
+    "CRM Integration",
+    "SEO",
+    "Branding",
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/codebrand-es",
+    "https://x.com/Codebrand_es",
+    "https://www.facebook.com/p/Codebrand-100087321501519/",
+  ],
+};
+
+// Schema.org — ItemList con todos los servicios
+const servicesListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Servicios de Codebrand",
+  "itemListElement": SERVICES.map((service, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Service",
+      "name": service.title,
+      "description": service.description,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Codebrand Digital Agency",
+        "url": "https://www.codebrand.us",
+      },
+      "areaServed": ["US", "HN", "ES", "MX"],
+      "offers": {
+        "@type": "Offer",
+        "price": parsePrice(service.priceFrom),
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+      },
+    },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Preconnect to external domains for faster resource loading -->
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin />
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Codebrand Digital Agency" />
+    <meta name="publisher" content="Codebrand" />
+    <meta
+      name="robots"
+      content={noindex
+        ? "noindex, nofollow"
+        : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+    />
+
+    <!-- Canonical and Alternative URLs -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es-ES" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
+    <!-- Geographic Meta Tags -->
+    <meta name="geo.region" content="HN-FM" />
+    <meta name="geo.placename" content="San Pedro Sula" />
+    <meta name="ICBM" content="14.0723, -87.1921" />
+    <meta name="geo.position" content="14.0723;-87.1921" />
+
+    <!-- Theme and Application -->
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="es_MX" />
+    <meta property="og:locale:alternate" content="es_HN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twitterHandle} />
+    <meta name="twitter:creator" content={twitterHandle} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+
+    <!-- Links and Resources -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/iconcodebrand.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/iconcodebrand.svg" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+
+    <!-- Preload critical fonts (WOFF2) -->
+    <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(servicesListSchema)} />
+
+    <slot name="head" />
+
+    <!-- Enable JS-dependent animations -->
+    <script is:inline>
+      document.documentElement.classList.add('js-enabled');
+    </script>
+
+    <ClientRouter />
+  </head>
+  <body class="font-poppins bg-[#0a0a0f] text-white antialiased">
+    <slot />
+
+    <!-- Deferred Analytics - loaded after main content -->
+    <script is:inline>
+      // Load analytics after page is interactive
+      if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(function() {
+          loadAnalytics();
+        });
+      } else {
+        setTimeout(loadAnalytics, 2000);
+      }
+
+      function loadAnalytics() {
+        // Meta Pixel
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '823190717423799');
+        fbq('track', 'PageView');
+
+        // Ahrefs Analytics
+        var ahrefsScript = document.createElement('script');
+        ahrefsScript.src = 'https://analytics.ahrefs.com/analytics.js';
+        ahrefsScript.setAttribute('data-key', 'JekMc+iUh7qv8b6i7VSQFw');
+        ahrefsScript.async = true;
+        document.body.appendChild(ahrefsScript);
+      }
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" /></noscript>
+
+    <!-- Service Worker Registration -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .catch(() => { /* SW registration failed silently */ });
+        });
+      }
+    </script>
+
+  </body>
+
+  <style is:global>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</html>
