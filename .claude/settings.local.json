@@ -114,7 +114,13 @@
       "Read(//Users/ramonnuila/Desktop/Projectos de referencia/**)",
       "Bash(grep -rl \"gsap\\\\|useGSAP\\\\|@gsap\" \"Aixor v1.0/source/src\")",
       "Bash(grep -rl \"gsap\\\\|useGSAP\\\\|@gsap\" \"Dixor v1.7/dixor-en/src\")",
-      "Bash(grep -rl \"gsap\\\\|useGSAP\\\\|@gsap\" \"Orisa-react-v3.0.0-unzip-first/1.Orisa-reactjs/src\")"
+      "Bash(grep -rl \"gsap\\\\|useGSAP\\\\|@gsap\" \"Orisa-react-v3.0.0-unzip-first/1.Orisa-reactjs/src\")",
+      "Bash(git checkout *)",
+      "Bash(npm -v)",
+      "Bash(echo \"npm:  $\\(npm -v\\)\")",
+      "Bash(pnpm -v)",
+      "Bash(echo \"pnpm: $\\(pnpm -v 2>/dev/null || echo 'no instalado'\\)\")",
+      "Bash(corepack --version)"
     ]
   }
 }

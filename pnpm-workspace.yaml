@@ -1,0 +1,26 @@
+# pnpm 11 reads these settings here (no longer from the "pnpm" field in package.json).
+
+# Allow these deps to run install/postinstall scripts. pnpm 11 blocks lifecycle
+# scripts by default — without this, sharp's libvips and esbuild's platform
+# binary are skipped and the Netlify build fails silently.
+allowBuilds:
+  sharp: true
+  esbuild: true
+  "@parcel/watcher": true
+
+minimumReleaseAgeExclude:
+  - resend@6.16.0
+
+# Pinned transitive versions (relocated from npm's top-level "overrides")
+# plus security patches for transitive Netlify build-tooling deps.
+overrides:
+  picomatch: ^4.0.4
+  uuid: ^14.0.0
+  # REQUIRED: @netlify/otel pins @opentelemetry/core to exactly 2.7.1, which is
+  # still vulnerable (GHSA-8988-4f7v-96qf, W3C Baggage unbounded memory). A 2.x
+  # minor bump is safe and interoperates with the otel siblings at 2.7.1.
+  "@opentelemetry/core": ^2.8.0
+  # Optional, safe leaf-level security patches (dev/build-only tooling).
+  esbuild: ^0.28.1
+  tmp: ^0.2.7
+  tar: ^7.5.16

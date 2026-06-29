@@ -3,6 +3,8 @@
   publish = "dist"
 
 [build.environment]
+  # Astro 7 / @astrojs/netlify 8 / react 6 / mdx 7 require Node >=22.12.0.
+  NODE_VERSION = "22"
   # These server-side secrets are intentionally inlined by Vite into the SSR
   # bundle. They are NOT exposed to the client — only used in serverless functions.
   SECRETS_SCAN_OMIT_KEYS = "TURSO_AUTH_TOKEN,TURSO_DATABASE_URL,RESEND_API_KEY,RESEND_FROM_EMAIL,CONTACT_RECIPIENT_EMAIL"

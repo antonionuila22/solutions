@@ -10,24 +10,24 @@
     "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.4",
-    "@astrojs/netlify": "^7.0.8",
-    "@astrojs/react": "^5.0.4",
+    "@astrojs/mdx": "^7.0.0",
+    "@astrojs/netlify": "^8.0.0",
+    "@astrojs/react": "^6.0.0",
     "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
-    "@libsql/client": "^0.15.4",
-    "@radix-ui/react-slot": "^1.2.3",
+    "@astrojs/sitemap": "^3.7.3",
+    "@libsql/client": "^0.17.4",
+    "@radix-ui/react-slot": "^1.3.0",
     "@tailwindcss/vite": "^4.1.11",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "astro": "^6.2.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^7.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gsap": "^3.14.2",
     "lenis": "^1.3.23",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "resend": "^4.4.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "resend": "^6.16.0",
     "tailwind-merge": "^3.2.0",
     "tailwindcss": "^4.1.11"
   },
@@ -35,8 +35,5 @@
     "sharp": "^0.34.4",
     "terser": "^5.44.1"
   },
-  "overrides": {
-    "picomatch": "^4.0.4",
-    "uuid": "^14.0.0"
-  }
+  "packageManager": "pnpm@11.9.0"
 }
