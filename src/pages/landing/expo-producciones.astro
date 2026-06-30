@@ -78,13 +78,13 @@ const eyebrow =
     <div class="fixed inset-0 -z-10 overflow-hidden point
     er-events-none" aria-hidden="true">
       <div class="absolute inset-0 bg-[linear-gradient(rgb(255_255_255/0.022)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255/0.022)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_90%_55%_at_50%_-5%,#000_35%,transparent_72%)]"></div>
-      <div class="absolute -top-[260px] left-1/2 -translate-x-1/2 w-[760px] h-[540px] rounded-full blur-[110px] bg-[radial-gradient(circle,rgb(249_115_22/0.16),transparent_70%)]"></div>
-      <div class="absolute -bottom-[200px] -left-[160px] w-[540px] h-[540px] rounded-full blur-[110px] bg-[radial-gradient(circle,rgb(45_212_191/0.07),transparent_70%)]"></div>
+      <div class="absolute -top-[260px] left-1/2 -translate-x-1/2 w-[760px] h-[540px] rounded-full bg-[radial-gradient(circle,rgb(249_115_22/0.12),transparent_70%)]"></div>
+      <div class="absolute -bottom-[200px] -left-[160px] w-[540px] h-[540px] rounded-full bg-[radial-gradient(circle,rgb(45_212_191/0.06),transparent_70%)]"></div>
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,transparent_55%,rgb(0_0_0/0.45)_100%)]"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 inset-x-0 z-50 bg-[#08080c]/80 backdrop-blur-xl border-b border-white/[0.06]">
+    <nav class="fixed top-0 inset-x-0 z-50 bg-[#08080c] border-b border-white/[0.08]">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center justify-between">
         <a href="/" class="shrink-0" aria-label="Codebrand inicio">
           <img src={logoWhite.src} alt="Codebrand" width="118" height="34" loading="eager" decoding="async" />
@@ -129,7 +129,7 @@ const eyebrow =
 
           <!-- Quick-pick: empieza por un servicio -->
           <div class="lg:col-span-5">
-            <div class="relative rounded-3xl border border-white/[0.09] bg-gradient-to-b from-white/[0.045] to-white/[0.02] backdrop-blur-md p-5 sm:p-6 shadow-[inset_0_1px_0_rgb(255_255_255/0.06),0_30px_80px_-40px_rgb(0_0_0/0.9)]">
+            <div class="relative rounded-3xl border border-white/[0.09] bg-[#121219] p-5 sm:p-6 shadow-[inset_0_1px_0_rgb(255_255_255/0.06),0_30px_80px_-40px_rgb(0_0_0/0.9)]">
               <div class="flex items-baseline justify-between gap-3 px-1">
                 <div class="min-w-0">
                   <h2 class="text-base font-semibold text-white">Empieza por un servicio</h2>
@@ -159,7 +159,6 @@ const eyebrow =
                       <span class="flex-1 min-w-0">
                         <span class="block text-sm font-medium text-white truncate">{s.shortLabel}</span>
                       </span>
-                      <span class="text-xs font-semibold text-orange-300/90 whitespace-nowrap">{s.priceFrom}</span>
                       <svg class="h-4 w-4 shrink-0 text-white/25 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-hover:text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                       </svg>
@@ -240,7 +239,7 @@ const eyebrow =
         </div>
         <div class="grid md:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t) => (
-            <figure class="relative flex flex-col h-full rounded-[1.25rem] border border-white/[0.08] bg-white/[0.025] p-6 sm:p-7 transition duration-300 hover:border-white/15 hover:bg-white/[0.04] hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+            <figure class="relative flex flex-col h-full rounded-[1.25rem] border border-white/[0.08] bg-[#101015] p-6 sm:p-7 transition duration-300 hover:border-white/15 hover:bg-[#15151b] hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <svg class="h-6 w-6 text-orange-500/55 mb-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 7C6.46 7 4 9.46 4 12.5V18h6v-6H7.5c0-1.38 1.12-2.5 2.5-2.5V7zm10 0c-3.04 0-5.5 2.46-5.5 5.5V18h6v-6h-2.5c0-1.38 1.12-2.5 2.5-2.5V7z"/></svg>
               <blockquote class="text-[0.95rem] text-white/75 leading-relaxed flex-1">{t.text}</blockquote>
               <figcaption class="mt-6 pt-5 border-t border-white/[0.08] flex items-center gap-3">
@@ -269,9 +268,9 @@ const eyebrow =
     <!-- ───────────────────────── Final CTA ───────────────────────── -->
     <section class="py-20 sm:py-28">
       <div class="mx-auto max-w-5xl px-4 sm:px-6">
-        <div class="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-8 sm:p-14">
+        <div class="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0f0f15] p-8 sm:p-14">
           <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(120%_120%_at_0%_0%,rgb(249_115_22/0.12),transparent_55%)]"></div>
-          <div aria-hidden="true" class="absolute -top-[40%] -right-[10%] w-[460px] h-[460px] rounded-full blur-[60px] bg-[radial-gradient(circle,rgb(249_115_22/0.22),transparent_70%)] pointer-events-none"></div>
+          <div aria-hidden="true" class="absolute -top-[40%] -right-[10%] w-[460px] h-[460px] rounded-full bg-[radial-gradient(circle,rgb(249_115_22/0.18),transparent_70%)] pointer-events-none"></div>
           <div class="relative">
             <h2 class="text-display-2 text-balance max-w-2xl">¿Listo para llevar tu negocio al siguiente nivel?</h2>
             <p class="mt-4 text-white/60 text-base sm:text-lg max-w-xl">

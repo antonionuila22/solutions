@@ -1,6 +1,6 @@
 ---
-title: "Turso Database Guide 2026: Edge Revolution"
-description: "Complete guide to Turso, the SQLite-based edge database. Learn setup, replication, Drizzle ORM integration, and why companies are switching from traditional databases. Includes real implementation examples."
+title: "Turso Database Guide 2026: SQLite at the Edge (Tutorial)"
+description: "Step-by-step Turso guide: set up the SQLite edge database, configure global replication, integrate Drizzle ORM, and see why teams switch from Postgres/MySQL."
 author: "Ramon Nuila"
 readtime: 20
 img: /photos/blog/young-serious-female-programmer-using-tablet-again-2026-01-09-01-21-14-utc.webp

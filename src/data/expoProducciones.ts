@@ -44,7 +44,8 @@ export type IconName =
   | "crm"
   | "seo"
   | "brand"
-  | "saas";
+  | "saas"
+  | "social";
 
 /**
  * Paths SVG (viewBox 0 0 24 24, stroke="currentColor", fill="none",
@@ -61,6 +62,7 @@ export const ICON_PATHS: Record<IconName, string> = {
   brand:
     "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.34M11 7.34l1.66-1.66a2 2 0 012.82 0l2.83 2.83a2 2 0 010 2.82L11.66 19M7 17h.01",
   saas: "M9 17v-2a4 4 0 014-4h4m0 0l-3-3m3 3l-3 3M3 5h12a2 2 0 012 2v3M3 5v10a2 2 0 002 2h4M3 5l4 4",
+  social: "M18 8a3 3 0 100-6 3 3 0 000 6zM6 15a3 3 0 100-6 3 3 0 000 6zm12 7a3 3 0 100-6 3 3 0 000 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4",
 };
 
 export interface ServiceProcessStep {
@@ -230,28 +232,54 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "branding-diseno",
     shortLabel: "Branding y Diseno",
-    title: "Branding, Diseño y Social Media",
-    tagline: "Identidad, contenido y diseño que vende.",
+    title: "Branding y Diseño",
+    tagline: "Identidad y diseño que vende.",
     description:
-      "Construimos tu marca de principio a fin: branding, diseño gráfico, packaging y gestión de redes sociales con contenido que conecta y convierte.",
+      "Construimos tu marca de principio a fin: branding, diseño gráfico y packaging con una identidad que conecta y te diferencia de la competencia.",
     priceFrom: "Desde $400",
     priceNote: "por proyecto",
-    tech: ["Branding", "Diseño Gráfico", "Packaging", "Social Media"],
+    tech: ["Branding", "Diseño Gráfico", "Packaging", "Identidad Visual"],
     includes: [
       "Identidad de marca (logo, colores, tipografía)",
       "Manual de marca",
       "Diseño gráfico para impresos y digital",
       "Diseño de packaging",
-      "Gestión y contenido para redes sociales",
-      "Plantillas editables para tu equipo",
+      "Piezas editables para tu equipo",
+      "Plantillas listas para usar",
     ],
     process: [
       { title: "Inmersión", desc: "Conocemos tu negocio, tu público y tu competencia." },
-      { title: "Creación", desc: "Diseñamos identidad, piezas y contenido alineados a tu marca." },
+      { title: "Creación", desc: "Diseñamos identidad y piezas alineadas a tu marca." },
       { title: "Entrega", desc: "Te damos los archivos y plantillas listos para usar." },
     ],
     icon: "brand",
     accent: "from-pink-500 to-rose-500",
+  },
+  {
+    id: "social-media",
+    shortLabel: "Social Media",
+    title: "Gestión de Social Media",
+    tagline: "Contenido y comunidad que conectan y convierten.",
+    description:
+      "Gestionamos tus redes sociales de principio a fin: estrategia de contenido, diseño de publicaciones, calendario y community management para hacer crecer tu marca y tus ventas.",
+    priceFrom: "Desde $250",
+    priceNote: "/mes",
+    tech: ["Instagram", "Facebook", "TikTok", "LinkedIn"],
+    includes: [
+      "Estrategia de contenido mensual",
+      "Diseño de publicaciones y stories",
+      "Calendario y programación de posts",
+      "Community management y respuestas",
+      "Redacción de copys y hashtags",
+      "Reporte mensual de métricas",
+    ],
+    process: [
+      { title: "Estrategia", desc: "Definimos tu voz, tu público y los objetivos de cada red." },
+      { title: "Producción", desc: "Creamos y programamos el contenido mes a mes." },
+      { title: "Crecimiento", desc: "Medimos resultados y ajustamos para crecer cada mes." },
+    ],
+    icon: "social",
+    accent: "from-fuchsia-500 to-purple-500",
   },
 ];
 
@@ -347,8 +375,8 @@ export const FAQ_ITEMS: FaqItem[] = [
     a: "Sí. La mayoría de nuestros clientes combina servicios, por ejemplo desarrollo web con branding y SEO. En el formulario puedes seleccionar todos los que necesites y armamos una propuesta integral.",
   },
   {
-    q: "¿Los precios 'Desde' son finales?",
-    a: "Son precios base de referencia. El costo final depende del alcance de tu proyecto; por eso, tras tu solicitud, te enviamos una cotización personalizada y transparente.",
+    q: "¿Cómo sé cuánto costará mi proyecto?",
+    a: "Cada proyecto es distinto, por eso no manejamos precios fijos. Cuéntanos lo que necesitas en el formulario y te enviamos una cotización personalizada y transparente, sin compromiso.",
   },
   {
     q: "¿Cuánto tarda en estar listo mi proyecto?",

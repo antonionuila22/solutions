@@ -114,14 +114,7 @@ export default function CodebrandSalesShowcase({
             {CODEBRAND_SALES.description}
           </p>
 
-          <div className="mt-6 flex items-end gap-2">
-            <span className="text-3xl font-bold text-white sm:text-4xl">
-              {CODEBRAND_SALES.priceFrom}
-            </span>
-            <span className="pb-1 text-sm text-white/45">{CODEBRAND_SALES.priceNote}</span>
-          </div>
-
-          <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+          <ul className="mt-8 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
             {CODEBRAND_SALES.includes.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-white/80">
                 <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-teal-400/15 text-teal-400">
@@ -172,7 +165,7 @@ export default function CodebrandSalesShowcase({
             {CODEBRAND_SALES.features.map((feature) => (
               <div
                 key={feature.title}
-                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.05]"
+                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#111117] p-4 transition-colors duration-300 hover:border-white/20 hover:bg-[#17171e]"
               >
                 <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-300">
                   <Icon name={feature.icon} className="h-5 w-5" />
@@ -191,10 +184,10 @@ export default function CodebrandSalesShowcase({
         {/* ── Columna derecha: mock Kanban ── */}
         <div className="relative">
           <div
-            className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-orange-500/10 via-transparent to-teal-400/10 blur-2xl"
+            className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-orange-500/10 via-transparent to-teal-400/10"
             aria-hidden="true"
           />
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/40 backdrop-blur">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#111117] shadow-2xl shadow-black/40">
             {/* barra de ventana */}
             <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
               <span className="h-3 w-3 rounded-full bg-red-400/80" aria-hidden="true" />
@@ -262,7 +255,7 @@ export default function CodebrandSalesShowcase({
                           <article
                             key={deal}
                             style={cardStyle}
-                            className={`ep-cbsales-card group cursor-default rounded-xl border border-white/10 bg-white/[0.05] p-3 backdrop-blur transition-all duration-300 ${
+                            className={`ep-cbsales-card group cursor-default rounded-xl border border-white/10 bg-[#1a1a22] p-3 transition-all duration-300 ${
                               isActive
                                 ? "border-white/20 shadow-lg shadow-black/30"
                                 : "hover:border-white/20"

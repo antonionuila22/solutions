@@ -98,11 +98,20 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       content={noindex ? "noindex, follow" : "index, follow"}
     />
 
-    <!-- Canonical and hreflang -->
+    <!-- Canonical (self-referential, always www + https, no query string) -->
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="es-HN" href={canonicalUrl} />
-    {englishUrl && <link rel="alternate" hreflang="en-US" href={englishUrl} />}
-    <link rel="alternate" hreflang="x-default" href={englishUrl || canonicalUrl} />
+    <!--
+      hreflang: emitted ONLY when this page has a real English equivalent, as a
+      complete reciprocal cluster (self + alternate + x-default → English). Spanish
+      pages without an English counterpart carry NO hreflang to avoid conflicts.
+    -->
+    {englishUrl && (
+      <>
+        <link rel="alternate" hreflang="es-HN" href={canonicalUrl} />
+        <link rel="alternate" hreflang="en-US" href={englishUrl} />
+        <link rel="alternate" hreflang="x-default" href={englishUrl} />
+      </>
+    )}
 
     <!-- RSS Feed -->
     <link

@@ -52,7 +52,7 @@ export default function ServiciosFaq({
           return (
             <li
               key={item.q}
-              className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur transition-colors duration-300 hover:border-white/20"
+              className="overflow-hidden rounded-2xl border border-white/10 bg-[#111117] transition-colors duration-300 hover:border-white/20"
             >
               <h3>
                 <button

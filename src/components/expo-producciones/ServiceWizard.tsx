@@ -292,7 +292,7 @@ export default function ServiceWizard({
   // ── Clases dependientes de la variante ───────────────────────────────
   const rootClass = isModal
     ? "w-full flex flex-col text-white font-poppins"
-    : "w-full max-w-3xl mx-auto rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-5 sm:p-8 text-white font-poppins shadow-2xl shadow-black/40";
+    : "w-full max-w-3xl mx-auto rounded-2xl border border-white/10 bg-[#14141c] p-5 sm:p-8 text-white font-poppins shadow-2xl shadow-black/40";
   const padX = isModal ? "px-6 sm:px-8" : "";
   const progressClass = isModal
     ? `ep-wz-bar sticky top-0 z-20 ${padX} pt-5 pb-4 bg-[#14141c]`
@@ -428,9 +428,6 @@ export default function ServiceWizard({
                     <span className="flex-1 min-w-0">
                       <span className="block font-semibold text-white leading-snug">
                         {opt.label}
-                      </span>
-                      <span className="mt-0.5 block text-sm text-white/50">
-                        {opt.priceFrom}
                       </span>
                     </span>
                     <span

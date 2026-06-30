@@ -76,9 +76,9 @@ function ServiceCard({ service }: { service: ServiceItem }) {
     <article
       className={[
         "group relative flex h-full flex-col overflow-hidden rounded-2xl",
-        "border border-white/[0.08] bg-white/[0.025] backdrop-blur",
+        "border border-white/[0.08] bg-[#101015]",
         "transition-all duration-300 ease-out",
-        "hover:-translate-y-1 hover:border-orange-500/25 hover:bg-white/[0.04]",
+        "hover:-translate-y-1 hover:border-orange-500/25 hover:bg-[#15151b]",
         "hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.8)]",
         "motion-reduce:transition-none motion-reduce:hover:translate-y-0",
       ].join(" ")}
@@ -95,17 +95,11 @@ function ServiceCard({ service }: { service: ServiceItem }) {
       />
 
       <div className="flex flex-1 flex-col p-6">
-        {/* Encabezado: icono + precio */}
-        <div className="flex items-start justify-between gap-4">
+        {/* Encabezado: icono */}
+        <div className="flex items-start gap-4">
           <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-300 transition-colors duration-300 group-hover:bg-orange-500/[0.16] group-hover:text-orange-200">
             <Icon name={service.icon} className="h-6 w-6" />
           </span>
-          <div className="text-right">
-            <p className="text-lg font-bold leading-tight text-white">
-              {service.priceFrom}
-            </p>
-            <p className="text-xs text-white/45">{service.priceNote}</p>
-          </div>
         </div>
 
         {/* Título + gancho */}

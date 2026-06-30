@@ -261,7 +261,7 @@ export default function QuoteModal() {
         ref={backdropRef}
         data-state={state}
         aria-hidden="true"
-        className="ep-modal-backdrop absolute inset-0 bg-[#05050a]/80 backdrop-blur-sm"
+        className="ep-modal-backdrop absolute inset-0 bg-[#05050a]/80"
       />
 
       <div

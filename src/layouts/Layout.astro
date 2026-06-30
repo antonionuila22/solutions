@@ -35,12 +35,30 @@ image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
 // og/twitter image must be an absolute URL on the production domain.
 const ogImage = image.startsWith("http") ? image : new URL(image, Astro.site ?? "https://www.codebrand.us").href;
 
+// Enforce the site-wide trailing-slash policy so the canonical ALWAYS matches the
+// actually-served URL (Netlify serves these static pages with a trailing slash).
+// Hardcoded canonicalOverride values were written without the slash, so the canonical
+// pointed at a URL that 301-redirects — the root cause of the "Google chose a
+// different canonical" reports. Normalizing here fixes every page at one point.
+const ensureTrailingSlash = (href: string): string => {
+  try {
+    const u = new URL(href);
+    if (!u.pathname.endsWith("/") && !/\.[a-z0-9]+$/i.test(u.pathname)) {
+      u.pathname += "/";
+    }
+    return u.href;
+  } catch {
+    return href;
+  }
+};
+
 // URL dinámica y mejoras SEO (permite override para páginas duplicadas)
 // Canonical is always anchored to the configured production domain (www.codebrand.us)
 // — never the request host — and excludes query strings.
-const canonicalUrl =
+const canonicalUrl = ensureTrailingSlash(
   canonicalOverride ||
-  new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href;
+  new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href,
+);
 const siteName = "Codebrand Digital Agency";
 const twitterHandle = "@codebrand_us";
 
@@ -106,12 +124,21 @@ const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
       content={noindex ? "noindex, follow" : "index, follow"}
     />
 
-    <!-- Canonical and Alternative URLs -->
+    <!-- Canonical (self-referential, always www + https, no query string) -->
     <link rel="canonical" href={canonicalUrl} />
-    <!-- hreflang: Bidirectional linking between English and Spanish pages -->
-    <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
-    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
-    {hnHref && <link rel="alternate" hreflang="es-HN" href={hnHref} />}
+    <!--
+      hreflang: emitted ONLY when this page has a real Spanish equivalent, as a
+      complete reciprocal cluster (self + alternate + x-default). Pages without an
+      alternate language carry NO hreflang at all — a self-referential en-US/x-default
+      with no other cluster member is what Semrush flags as a conflict.
+    -->
+    {hnHref && (
+      <>
+        <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
+        <link rel="alternate" hreflang="es-HN" href={hnHref} />
+        <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+      </>
+    )}
 
     <!-- RSS Feed -->
     <link
