@@ -120,7 +120,9 @@
       "Bash(echo \"npm:  $\\(npm -v\\)\")",
       "Bash(pnpm -v)",
       "Bash(echo \"pnpm: $\\(pnpm -v 2>/dev/null || echo 'no instalado'\\)\")",
-      "Bash(corepack --version)"
+      "Bash(corepack --version)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/tailwindcss/package.json'\\).version\\)\")",
+      "Bash(npx --yes @tailwindcss/cli@4.1.18 -i ./in.css)"
     ]
   }
 }

@@ -26,10 +26,11 @@ interface CodebrandSalesShowcaseProps {
   id?: string;
 }
 
+// Acentos de etapa on-brand: naranja en el flujo, teal para "Ganados" (éxito).
 const stageAccents = [
   "from-orange-400 to-amber-400",
-  "from-cyan-400 to-teal-400",
-  "from-violet-400 to-fuchsia-400",
+  "from-orange-400 to-amber-400",
+  "from-orange-400 to-amber-400",
   "from-teal-400 to-emerald-400",
 ];
 
@@ -94,14 +95,13 @@ export default function CodebrandSalesShowcase({
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
         {/* ── Columna izquierda ── */}
         <div className="flex flex-col">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-orange-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-orange-400" aria-hidden="true" />
+          <span className="inline-flex w-fit items-center rounded-full border border-orange-500/18 bg-orange-500/[0.08] px-3 py-1 text-xs font-semibold text-orange-300">
             {CODEBRAND_SALES.badge}
           </span>
 
           <h2
             id="cbsales-heading"
-            className="mt-5 bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl lg:text-5xl"
+            className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
           >
             {CODEBRAND_SALES.name}
           </h2>
@@ -142,9 +142,16 @@ export default function CodebrandSalesShowcase({
           </ul>
 
           <div className="mt-8">
-            <a
-              href="#cotizar"
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-orange-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]"
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(
+                  new CustomEvent("ep:open-quote", {
+                    detail: { serviceId: "codebrand-sales" },
+                  }),
+                )
+              }
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-orange-500/40 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0f]"
             >
               Quiero Codebrand Sales
               <svg
@@ -157,7 +164,7 @@ export default function CodebrandSalesShowcase({
               >
                 <path d="M5 12h14m-6-6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
+            </button>
           </div>
 
           {/* features mini-grid */}
@@ -167,7 +174,7 @@ export default function CodebrandSalesShowcase({
                 key={feature.title}
                 className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.05]"
               >
-                <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-teal-400/20 to-cyan-500/20 text-teal-300">
+                <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-300">
                   <Icon name={feature.icon} className="h-5 w-5" />
                 </span>
                 <div className="min-w-0">
@@ -195,7 +202,7 @@ export default function CodebrandSalesShowcase({
               <span className="h-3 w-3 rounded-full bg-green-400/80" aria-hidden="true" />
               <div className="ml-3 flex items-center gap-2 text-xs font-medium text-white/50">
                 <Icon name="saas" className="h-3.5 w-3.5 text-teal-400" />
-                <span>Codebrand Sales — Pipeline</span>
+                <span>Codebrand Sales · Pipeline</span>
               </div>
             </div>
 

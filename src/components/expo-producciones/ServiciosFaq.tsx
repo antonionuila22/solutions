@@ -2,14 +2,11 @@ import { useId, useState } from "react";
 import { FAQ_ITEMS } from "../../data/expoProducciones";
 
 interface ServiciosFaqProps {
-  /** Texto del encabezado (opcional). */
-  eyebrow?: string;
   title?: string;
   subtitle?: string;
 }
 
 export default function ServiciosFaq({
-  eyebrow = "Preguntas frecuentes",
   title = "Resolvemos tus dudas",
   subtitle = "Todo lo que necesitas saber antes de empezar tu proyecto con nosotros.",
 }: ServiciosFaqProps) {
@@ -35,16 +32,13 @@ export default function ServiciosFaq({
       `}</style>
 
       <header className="mb-10 text-center">
-        <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-teal-400 backdrop-blur">
-          {eyebrow}
-        </span>
         <h2
           id={`${baseId}-heading`}
-          className="mt-4 bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-3xl font-semibold text-transparent sm:text-4xl"
+          className="text-display-2 text-white text-balance"
         >
           {title}
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm text-white/70 sm:text-base">
+        <p className="mx-auto mt-3 max-w-xl text-sm text-white/60 sm:text-base">
           {subtitle}
         </p>
       </header>

@@ -346,12 +346,24 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 
     <!-- Service Worker Registration -->
     <script is:inline>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
+      (function () {
+        if (!('serviceWorker' in navigator)) return;
+        var host = location.hostname;
+        var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0' || host.endsWith('.local');
+        if (isLocal) {
+          navigator.serviceWorker.getRegistrations().then(function (rs) {
+            rs.forEach(function (r) { r.unregister(); });
+          });
+          if (window.caches && caches.keys) {
+            caches.keys().then(function (keys) { keys.forEach(function (k) { caches.delete(k); }); });
+          }
+          return;
+        }
+        window.addEventListener('load', function () {
           navigator.serviceWorker.register('/sw.js', { scope: '/' })
-            .catch(() => { /* SW registration failed silently */ });
+            .catch(function () { /* SW registration failed silently */ });
         });
-      }
+      })();
     </script>
 
     <!-- Deferred Analytics -->

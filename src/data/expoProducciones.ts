@@ -344,7 +344,7 @@ export interface FaqItem {
 export const FAQ_ITEMS: FaqItem[] = [
   {
     q: "¿Puedo combinar varios servicios en un mismo proyecto?",
-    a: "Sí. La mayoría de nuestros clientes combina servicios — por ejemplo, desarrollo web con branding y SEO. En el formulario puedes seleccionar todos los que necesites y armamos una propuesta integral.",
+    a: "Sí. La mayoría de nuestros clientes combina servicios, por ejemplo desarrollo web con branding y SEO. En el formulario puedes seleccionar todos los que necesites y armamos una propuesta integral.",
   },
   {
     q: "¿Los precios 'Desde' son finales?",
