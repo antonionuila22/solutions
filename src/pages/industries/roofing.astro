@@ -1,0 +1,317 @@
+---
+export const prerender = true;
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import IndustryHero from "../../components/IndustryHero.astro";
+import Whyus from "../../components/whyus.astro";
+import TrustBadges from "../../components/TrustBadges.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
+import IndustryIntro from "../../components/IndustryIntro.astro";
+import IndustryServices from "../../components/IndustryServices.astro";
+import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
+import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
+import IndustryTechStack from "../../components/IndustryTechStack.astro";
+import IndustryChallenges from "../../components/IndustryChallenges.astro";
+import IndustryFAQ from "../../components/IndustryFAQ.astro";
+import IndustryCTA from "../../components/IndustryCTA.astro";
+import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
+
+const title =
+  "Roofing Company Websites & Software Development | CodeBrand";
+const description =
+  "Custom websites and software for roofing contractors. Instant roof estimate tools, lead capture, aerial measurement integrations, CRM, and job management systems built to book more roofing jobs.";
+const keywords =
+  "roofing website development, roofing contractor software, roofing company website design, roof estimate calculator, roofing lead generation, roofing CRM, roofing SEO, roofing job management software, storm damage lead capture, EagleView integration, roofing quote software, roofer marketing website";
+const image = "/photos/bannercodebrand.webp";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Roofing Software & Website Development",
+  "name": "Roofing Company Websites & Software Development",
+  "description": description,
+  "url": "https://www.codebrand.us/industries/roofing",
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://www.codebrand.us",
+    "logo": "https://www.codebrand.us/iconcodebrand.svg"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roofing Web Solutions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roofing Contractor Websites", "description": "High-converting websites for roofing companies" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instant Roof Estimate Tools", "description": "Online roof measurement and quote calculators" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roofing Job Management Software", "description": "Lead-to-job workflow and crew scheduling systems" }}
+    ]
+  }
+};
+
+// Roofing FAQ data
+const roofingFaqs = [
+  {
+    question: "How much does a roofing company website cost?",
+    answer: "A professional roofing website with lead forms, service pages, and a photo gallery starts at $3,500. Sites with an instant roof estimate tool or booking system range from $8,000-$20,000. Full job management platforms with CRM and crew scheduling are $25,000+. We quote based on your goals and service area."
+  },
+  {
+    question: "Can you build an instant roof estimate or quote tool?",
+    answer: "Yes. We build online estimate tools that let homeowners get a ballpark price from their address and roof details. We can integrate aerial measurement data (EagleView, Nearmap, Google) so the numbers are accurate, and route qualified leads straight to your sales team."
+  },
+  {
+    question: "Will my roofing website generate more leads?",
+    answer: "That's the goal. We build for conversions—click-to-call, fast quote forms, storm-damage landing pages, financing offers, and local SEO so you rank for 'roofers near me.' Every page is designed to turn traffic into booked inspections."
+  },
+  {
+    question: "Do you integrate with roofing tools like JobNimbus or AccuLynx?",
+    answer: "Absolutely. We integrate with industry platforms including JobNimbus, AccuLynx, CompanyCam, EagleView, and QuickBooks. Leads, measurements, photos, and invoices flow between your website and the tools your crews already use."
+  },
+  {
+    question: "Can homeowners book a free roof inspection online?",
+    answer: "Yes. We add real-time scheduling so homeowners pick an inspection slot that syncs with your team's calendar. Automated reminders reduce no-shows and keep your sales pipeline full."
+  },
+  {
+    question: "How fast can you launch a roofing website?",
+    answer: "A professional roofing website launches in 4-6 weeks. Sites with estimate tools or booking systems take 8-12 weeks. Full custom job management platforms take 16-24 weeks depending on scope and integrations."
+  }
+];
+
+const faqSchema = createFAQSchema(roofingFaqs);
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Home", url: "https://www.codebrand.us" },
+  { name: "Industries", url: "https://www.codebrand.us/industries" },
+  { name: "Roofing", url: "https://www.codebrand.us/industries/roofing" }
+]);
+
+const stats = [
+  { value: "5.0★", label: "Google Rating" },
+  { value: "Instant", label: "Roof Estimates" },
+  { value: "Local", label: "SEO Optimized" },
+  { value: "100%", label: "Custom-Built" }
+];
+
+const accentGradient = "from-red-500 to-orange-500";
+
+const introHighlights = [
+  { value: "5.0★", label: "Google Reviews", gradient: "from-teal-500 to-teal-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "8+ yrs", label: "Development Experience", gradient: "from-blue-500 to-blue-600", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
+  { value: "Estimate", label: "& Booking Tools", gradient: "from-orange-500 to-orange-600", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" }
+];
+
+const services = [
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>',
+    title: "High-Converting Roofing Websites",
+    description: "Modern, mobile-first websites that make roofing companies look established and trustworthy. Fast-loading service pages, storm-damage landing pages, click-to-call, and quote forms designed to turn visitors into booked inspections.",
+    features: ["Click-to-call & instant quote forms", "Storm & service-area landing pages", "Mobile-first, lightning fast"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>',
+    title: "Instant Roof Estimate Tools",
+    description: "Let homeowners get a price without waiting for a callback. We build online estimate calculators that pull roof size from aerial imagery and generate ballpark quotes automatically, capturing hot leads while they're ready to buy.",
+    features: ["Aerial roof measurement integration", "Automated ballpark pricing", "Instant lead capture & routing"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>',
+    title: "Lead & Job Management (CRM)",
+    description: "Stop losing leads in text threads and sticky notes. We build custom pipelines that track every lead from first click to signed contract—assign reps, schedule inspections, send proposals, and know exactly where every job stands.",
+    features: ["Lead pipeline & follow-up automation", "Inspection & crew scheduling", "Proposal and contract tracking"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>',
+    title: "Field & Crew Mobile Apps",
+    description: "Give your crews and estimators tools that work on the roof and in the truck. Capture inspection photos, log measurements, upload before/after shots, and update job status from the field—synced instantly with the office.",
+    features: ["Photo documentation & annotations", "Offline field data capture", "Real-time job status updates"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>',
+    title: "Local SEO & Google Rankings",
+    description: "When someone searches 'roof repair near me,' you need to be at the top. We optimize your site for local search, build service-area pages for every city you cover, and manage Google Business Profile so you own your market.",
+    features: ["“Roofers near me” local SEO", "City & service-area landing pages", "Google Business Profile optimization"]
+  },
+  {
+    icon: '<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>',
+    title: "Custom Integrations",
+    description: "Connect your website to the roofing tools you already run. We wire up JobNimbus, AccuLynx, CompanyCam, EagleView, financing partners, and QuickBooks so leads, measurements, and payments flow automatically—no double entry.",
+    features: ["JobNimbus & AccuLynx sync", "EagleView / CompanyCam integration", "QuickBooks & financing connections"]
+  }
+];
+
+const processSteps = [
+  { title: "Business & Lead-Flow Audit", description: "We map how leads reach you today—storm chasing, referrals, Google, door knocking—and where they leak out of your funnel. We look at how estimates get built, how inspections get scheduled, and how jobs move from signed contract to final invoice. The result is a clear scope built around booking more roofing jobs, not guesswork." },
+  { title: "Website & Estimate-Tool Design", description: "We design pages that convert homeowners in a stressful moment—after a storm or a leak. Prototypes cover your instant estimate flow, service-area pages, financing offers, and inspection booking so you can test the experience before we build. Every screen is optimized for mobile, since most roofing searches happen on a phone." },
+  { title: "Build & Integration", description: "We develop your site and platform and connect it to the tools you already use, such as JobNimbus, AccuLynx, CompanyCam, EagleView for aerial measurements, and QuickBooks for accounting. We wire estimate data into your CRM, sync inspection photos, and automate the lead-to-appointment handoff. Everything is tested against real quoting and scheduling scenarios." },
+  { title: "Launch, SEO & Data Migration", description: "We migrate your existing leads, reviews, and content so nothing is lost at launch. We optimize every service-area page for local search, set up conversion tracking, and train your office and sales team on the new system. Launch is timed so you don’t lose momentum during peak season." },
+  { title: "Ongoing Support & Seasonal Scaling", description: "Roofing demand spikes with every storm, so we keep your platform fast and ready for traffic surges. We monitor performance, run local SEO, add features as you expand into new cities or services, and scale capacity for peak season. As your crew count and territory grow, the system grows with you." }
+];
+
+const whyChooseReasons = [
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>',
+    title: "Roofing Industry Expertise",
+    description: "We build specifically for roofers and understand your world—storm surges, insurance jobs, aerial measurements, seasonal demand, and the race to reach leads first."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>',
+    title: "Built to Book Jobs",
+    description: "Pretty websites don't pay the bills—booked inspections do. Every page and tool we build is engineered to capture leads and turn them into signed roofing contracts."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>',
+    title: "Security First",
+    description: "Homeowner data, insurance details, and payment info are protected with enterprise-grade security, encryption, and regular audits."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path></svg>',
+    title: "Scales With Storm Season",
+    description: "Whether you run one crew or twenty, our platforms handle traffic surges after a storm and scale seamlessly as you expand into new territories."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path></svg>',
+    title: "Responsive Support",
+    description: "Storms don't wait for business hours, and neither do we. Our support team keeps your site and lead tools running whenever the leads come in."
+  },
+  {
+    icon: '<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>',
+    title: "Clear ROI",
+    description: "Transparent pricing and tools built to drive revenue. More leads captured, fewer jobs slipping through the cracks, less admin time wasted."
+  }
+];
+
+const technologies = [
+  { name: "React", icon: "⚛️" },
+  { name: "React Native", icon: "📱" },
+  { name: "Node.js", icon: "🟢" },
+  { name: "PostgreSQL", icon: "🔷" },
+  { name: "AWS", icon: "☁️" },
+  { name: "Security", icon: "🔐" }
+];
+
+const challenges = [
+  {
+    problem: "Slow Lead Response",
+    description: "Homeowners call three roofers and hire the first to respond. Leads sitting in an inbox for hours become someone else's job.",
+    solution: "Instant lead capture with automated follow-up, text alerts to your sales team, and online booking that lets homeowners self-schedule in seconds."
+  },
+  {
+    problem: "Website That Doesn't Convert",
+    description: "A slow, generic template site makes you look like every other roofer and sends visitors straight to a competitor.",
+    solution: "A fast, custom, conversion-focused website with click-to-call, instant estimates, real project photos, and reviews that build instant trust."
+  },
+  {
+    problem: "Invisible in Local Search",
+    description: "If you don't rank for 'roofers near me' and your service-area cities, you're invisible to homeowners actively searching for a roof.",
+    solution: "Local SEO, dedicated city and service-area pages, and Google Business Profile optimization that put you at the top of the map pack."
+  },
+  {
+    problem: "Chaos Between Office & Field",
+    description: "Leads, photos, measurements, and job status scattered across texts, emails, and paper cause missed follow-ups and blown deadlines.",
+    solution: "A unified CRM and field app that connects your website, crews, and office—one place for every lead, photo, estimate, and job."
+  }
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <IndustryHero
+    badgeText="Roofing Technology Solutions"
+    headingTop="Websites & Software That"
+    headingBottom="Book More Roofing Jobs"
+    subtitle="Instant roof estimate tools, high-converting websites, lead capture, and job management systems built specifically for roofing contractors, restoration companies, and roofing sales teams."
+    stats={stats}
+    accentGradient="from-red-400 via-red-400 to-orange-400"
+    buttonGradient="from-red-500 to-orange-500"
+    buttonHoverGradient="hover:from-red-600 hover:to-orange-600"
+    buttonShadow="shadow-red-500/25"
+    buttonHoverShadow="hover:shadow-red-500/40"
+  />
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Industries", href: "/industries" },
+      { name: "Roofing", href: "" }
+    ]}
+    variant="transparent"
+    class="bg-slate-900 border-y border-slate-800"
+  />
+
+  <TrustBadges />
+
+  <IndustryIntro
+    title="Digital Solutions Built for Roofing Contractors"
+    paragraphs={[
+      "The roofing business moves fast—a storm rolls through and hundreds of homeowners start searching for a roofer at once. The companies that win are the ones that show up first, look trustworthy, and make it effortless to get a quote and book an inspection. At CodeBrand, we build the websites and software that make that happen.",
+      "We've worked in the roofing space and understand what actually drives revenue: capturing leads before your competitors do, ranking for local searches, giving homeowners instant estimates, and keeping your crews and office in sync. We don't build generic template sites—we build conversion machines and job-management tools tailored to how roofing companies really operate.",
+      "Whether you're a residential roofer, a storm-restoration company, or a commercial roofing contractor, our solutions help you book more inspections, close more jobs, and run a tighter operation. From a single crew to a multi-city outfit, we build technology that grows with you."
+    ]}
+    highlights={introHighlights}
+  />
+
+  <IndustryServices
+    title="Specialized Services for"
+    titleAccent="Roofing Companies"
+    subtitle="Websites, tools, and software engineered to capture roofing leads and turn them into booked jobs"
+    services={services}
+    accentGradient={accentGradient}
+  />
+
+  <IndustryProcess
+    title="Our Proven"
+    titleAccent="Development Process"
+    subtitle="A transparent, collaborative approach that gets your roofing business online and booking jobs—on time"
+    steps={processSteps}
+    accentGradient={accentGradient}
+  />
+
+  <IndustryWhyChoose
+    title="Why Roofing Companies Choose"
+    titleAccent="CodeBrand"
+    subtitle="We're not just developers—we're your growth partners, focused on filling your sales pipeline"
+    reasons={whyChooseReasons}
+    accentGradient={accentGradient}
+  />
+
+  <IndustryTestimonials />
+
+  <IndustryTechStack
+    title="Built with Modern,"
+    titleAccent="Reliable Technology"
+    subtitle="We use cutting-edge tools and frameworks to build fast, secure, and scalable roofing solutions"
+    technologies={technologies}
+  />
+
+  <IndustryChallenges
+    title="Common Challenges"
+    titleAccent="We Solve"
+    subtitle="Roofing-specific problems require roofing-specific solutions"
+    challenges={challenges}
+  />
+
+  <IndustryCTA
+    title="Ready to Book More Roofing Jobs?"
+    subtitle="Let's talk about a website and software setup that captures more leads, ranks in your service area, and keeps your crews and office in sync. Schedule a free consultation with our team today."
+    ctaGradient="from-red-600 via-red-600 to-orange-600"
+  />
+
+  <IndustryFAQ
+    title="Roofing Development"
+    titleAccent="FAQ"
+    subtitle="Common questions about our roofing website and software development services"
+    faqs={roofingFaqs}
+  />
+
+  <Whyus />
+
+  <RelatedServices currentService="web-development" />
+</Layout>

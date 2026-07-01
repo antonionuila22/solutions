@@ -158,6 +158,27 @@ const locations = defineCollection({
             averageProjectCost: z.string().optional(),
             businessGrowth: z.string().optional(),
         }).optional(),
+        // ── Differentiation fields (populated per-city to make each page unique
+        //    in content AND structure, not a swapped-toponym template) ──
+        // A unique paragraph on the local tech / business scene.
+        techScene: z.string().optional(),
+        // City-specific services (overrides the generic 3-card block when present).
+        localServices: z.array(z.object({
+            title: z.string(),
+            description: z.string(),
+        })).optional(),
+        // A local, credible proof point.
+        localCaseStudy: z.object({
+            title: z.string(),
+            summary: z.string(),
+            metric: z.string().optional(),
+            metricLabel: z.string().optional(),
+        }).optional(),
+        localTestimonial: z.object({
+            quote: z.string(),
+            author: z.string(),
+            role: z.string().optional(),
+        }).optional(),
     }),
 });
 

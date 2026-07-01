@@ -32,22 +32,40 @@ image = image || "https://www.codebrand.us/photos/bannercodebrand.webp";
 // og/twitter image must be an absolute URL on the production domain.
 const ogImage = image.startsWith("http") ? image : new URL(image, Astro.site ?? "https://www.codebrand.us").href;
 
+// Enforce the site-wide trailing-slash policy so the canonical matches the served URL.
+const ensureTrailingSlash = (href: string): string => {
+  try {
+    const u = new URL(href);
+    if (!u.pathname.endsWith("/") && !/\.[a-z0-9]+$/i.test(u.pathname)) {
+      u.pathname += "/";
+    }
+    return u.href;
+  } catch {
+    return href;
+  }
+};
+
 // URLs
-const canonicalUrl =
+const canonicalUrl = ensureTrailingSlash(
   canonicalOverride ||
-  new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href;
+  new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href,
+);
 
 // Map Honduras pages to their English equivalents (URLs are NOT 1:1 translations)
+// Values must be the CANONICAL English URL (so the cluster is reciprocal with the
+// English side, which now anchors hreflang on /services/* canonicals).
 const enMap: Record<string, string> = {
   "/hn/": "/",
-  "/hn/desarrollo-web-honduras": "/web-development",
+  "/hn/desarrollo-web-honduras": "/services/web-development",
   "/hn/tienda-online-honduras": "/e-commerce",
-  "/hn/seo-honduras": "/seo",
+  "/hn/seo-honduras": "/services/seo",
 };
 const currentPath = Astro.url?.pathname?.replace(/\/$/, "") || "";
 const normalizedPath = currentPath === "/hn" ? "/hn/" : currentPath;
 const enEquivalent = enMap[normalizedPath];
-const englishUrl = enEquivalent ? `https://www.codebrand.us${enEquivalent}` : null;
+const englishUrl = enEquivalent
+  ? ensureTrailingSlash(`https://www.codebrand.us${enEquivalent}`)
+  : null;
 
 const siteName = "Codebrand - Agencia Digital Honduras";
 const twitterHandle = "@codebrand_us";

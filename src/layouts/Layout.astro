@@ -82,16 +82,23 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
   breadcrumbNames || {},
 );
 
-// hreflang: map English pages to their Spanish /hn/ equivalents
+// hreflang: map the CANONICAL English page to its Spanish /hn/ equivalent.
+// Keys must be the self-canonical English URL so the hreflang cluster lives on the
+// page Google actually indexes (e.g. /services/web-development, not the legacy
+// /web-development duplicate that 301-canonicalizes to it).
 const hnMap: Record<string, string> = {
   "/": "/hn/",
-  "/web-development": "/hn/desarrollo-web-honduras",
+  "/services/web-development": "/hn/desarrollo-web-honduras",
   "/e-commerce": "/hn/tienda-online-honduras",
-  "/seo": "/hn/seo-honduras",
+  "/services/seo": "/hn/seo-honduras",
 };
-const currentPath = Astro.url?.pathname || "";
+// Normalize away the trailing slash so the lookup matches whether the prerendered
+// pathname arrives as "/web-development" or "/web-development/".
+const currentPath = (Astro.url?.pathname || "/").replace(/\/+$/, "") || "/";
 const hnEquivalent = hnMap[currentPath];
-const hnHref = hnEquivalent ? `https://www.codebrand.us${hnEquivalent}` : null;
+const hnHref = hnEquivalent
+  ? ensureTrailingSlash(`https://www.codebrand.us${hnEquivalent}`)
+  : null;
 ---
 
 <!doctype html>

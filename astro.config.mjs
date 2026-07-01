@@ -13,6 +13,27 @@ import mdx from '@astrojs/mdx';
 
 import { isLongtailGeoUrl } from './src/lib/seo/geo-tiers';
 
+// Legacy/duplicate pages whose <link rel="canonical"> points to a DIFFERENT URL
+// (via canonicalOverride). They must NOT be advertised in the sitemap — we only
+// list canonical, indexable URLs. Compared by exact pathname (slash-insensitive).
+const NON_CANONICAL_DUPLICATES = new Set([
+  '/web-development',                  // → /services/web-development
+  '/web-development-agency',           // → /services/web-development
+  '/custom-web-development-services',  // → /services/web-development
+  '/seo',                              // → /services/seo
+  '/branding',                         // → /services/branding
+  '/web-design',                       // → /ux-ui-design-agency
+  '/ecommerce-development-agency',     // → /e-commerce
+]);
+const isNonCanonicalDuplicate = (page) => {
+  try {
+    const path = new URL(page).pathname.replace(/\/+$/, '') || '/';
+    return NON_CANONICAL_DUPLICATES.has(path);
+  } catch {
+    return false;
+  }
+};
+
 // https://astro.build/config
 export default defineConfig({
   // Dev Toolbar configuration (Astro 5.17+)
@@ -77,7 +98,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/web-development-agency') && !page.includes('/blog/category/') && !isLongtailGeoUrl(page),
+      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/blog/category/') && !isNonCanonicalDuplicate(page) && !isLongtailGeoUrl(page),
       changefreq: 'weekly',
       priority: 0.7,
       serialize: (item) => {
