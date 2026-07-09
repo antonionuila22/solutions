@@ -15,7 +15,7 @@ No test suite or linter is configured. Verify changes with `npm run build`.
 
 ## Architecture
 
-This is the **Codebrand** agency website — an Astro 6 SSR app deployed on Netlify. Site: codebrand.us. Two markets: US (English) and Honduras (Spanish, under `/hn/`).
+This is the **Codebrand** agency website — an Astro 7 SSR app deployed on Netlify. Site: codebrand.us. Two markets: US (English) and Honduras (Spanish, under `/hn/`).
 
 ### Rendering & Deployment
 
@@ -24,7 +24,7 @@ This is the **Codebrand** agency website — an Astro 6 SSR app deployed on Netl
 - CSS: TailwindCSS 4 via Vite plugin + lightningcss for minification and oklch fallbacks
 - React islands via `@astrojs/react` with `client:*` directives (used sparingly — most UI is Astro components)
 
-### Content Collections (Astro 6 glob loaders)
+### Content Collections (Astro 7 glob loaders)
 
 Defined in `src/content.config.ts`. Collections: `blog`, `books`, `products`, `countryareas`, `regions`, `projects`, `locations`. All use markdown files under `src/content/<collection>/`. Dynamic routes at `src/pages/<collection>/[id].astro`.
 
@@ -70,4 +70,4 @@ Programmatic location/region pages for local SEO across US, LATAM, and Spain. Co
 
 ### npm
 
-`.npmrc` has `legacy-peer-deps=true` — required for dependency resolution.
+pnpm 11 is the declared package manager (`packageManager` field). `.npmrc` sets `legacy-peer-deps=true` — required for dependency resolution, so installing with npm requires `--legacy-peer-deps`.

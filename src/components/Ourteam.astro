@@ -8,6 +8,7 @@ type Member = {
   skills: string[];
   linkedin?: string;
   github?: string;
+  profileUrl?: string;
 };
 
 interface Props {
@@ -22,14 +23,16 @@ const defaultMembers: Member[] = [
     description:
       "Full Stack Developer and digital strategist focused on business growth and scalable software. Zero excuses, always results-driven.",
     skills: ["Full Stack", "Strategy", "Leadership"],
+    profileUrl: "/team/ramon-nuila",
   },
   {
-    name: "Larisa Lopez",
+    name: "Catherine Morel",
     role: "UX/UI Expert",
     image: "/photos/team-code/Cmorel.webp",
     description:
       "Over 8 years creating functional and attractive digital experiences. Focus on research and user-centered design.",
     skills: ["UX/UI", "Research", "Figma"],
+    profileUrl: "/team/catherine-morel",
   },
   {
     name: "Enrique Pérez",
@@ -54,6 +57,7 @@ const defaultMembers: Member[] = [
     description:
       "Engineer passionate about optimizing time and resources. Expert in project management and delivering quality on time.",
     skills: ["Management", "Planning", "Agile"],
+    profileUrl: "/team/iris-gomez",
   },
   {
     name: "Diego Alvarez",
@@ -164,6 +168,20 @@ const iconColor = (i: number) => (i % 2 === 0 ? "text-orange-400 group-hover:tex
                 <span class={`px-3 py-1 rounded-full text-xs font-semibold ${badgeBg(i)}`}>{s}</span>
               ))}
             </div>
+
+            <!-- Profile Link -->
+            {m.profileUrl && (
+              <a
+                href={m.profileUrl}
+                class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-cyan-900 hover:text-orange-400 transition-colors"
+                aria-label={`View ${m.name}'s profile`}
+              >
+                View Profile
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            )}
           </div>
 
           <!-- Decorative Element -->

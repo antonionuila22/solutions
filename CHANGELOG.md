@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Team profile pages for Catherine Morel (UX/UI Expert) and Iris Gomez (Project Coordinator) at `/team/catherine-morel` and `/team/iris-gomez`, mirroring the Ramon Nuila profile (placeholder bio copy with TODOs pending real details)
+- "View Profile" links on team cards (`Ourteam.astro`), wiring Ramon, Catherine, and Iris cards to their profile pages via a new optional `profileUrl` field
+- `.env.example` documenting the required environment variables (Turso, Resend, contact recipient)
+
+### Changed
+- Renamed the "Larisa Lopez" team card to "Catherine Morel" (its photo `Cmorel.webp` already belonged to Catherine) across `Ourteam.astro` and the team page schema
+- WhatsApp floating widget now opens chats via `api.whatsapp.com/send/` (phone_number link) instead of `wa.me`
+- Improved copy readability (shorter sentences, plainer wording, scannable lists) on the Digital Marketing, E-commerce, Healthcare, Law Firms, Travel Agency, and Terms pages, per SEO audit — no structural, component, or legal-meaning changes
+- Synced README.md and CLAUDE.md to the real stack (Astro 7, React 19, GSAP + Lenis, Node 22)
+
+### Removed
+- Stray root-level `07167689-03ae-426e-8cfd-6632529e8319.html` artifact that had been committed accidentally
+
 ### Fixed
 - Updated all background gradient classes from `bg-linear-to-*` to `bg-gradient-to-*` for Tailwind CSS v4 compatibility
 - Resolved Git merge conflicts in all service pages

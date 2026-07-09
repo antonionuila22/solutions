@@ -4,7 +4,7 @@ const phoneNumber = "50487380714";
 const defaultMessage =
   "Hi! I'm interested in your web development services. Can we schedule a call?";
 const encodedMessage = encodeURIComponent(defaultMessage);
-const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}&type=phone_number&app_absent=0`;
 ---
 
 <div id="whatsapp-widget" class="whatsapp-widget" role="complementary" aria-label="WhatsApp contact">

@@ -1,0 +1,517 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { BUSINESS_INFO } from "../../configs/business";
+
+// ⚠️ PLACEHOLDER PROFILE — verify/replace the fields marked TODO before treating as final.
+//   Unverified: experience (years), location city, exact education (field of engineering),
+//   personalEmail, personal LinkedIn/socials, and tooling specifics.
+//   The About / Approach / Highlights / Background copy is professional placeholder
+//   written from Iris's Project Coordinator role — not fabricated personal history.
+const profile = {
+  name: "Iris Gomez",
+  role: "Project Coordinator",
+  tagline: "Project coordinator focused on planning, timelines, and delivering quality on time.",
+  image: "/photos/team-code/irispaola.webp",
+  experience: "5+ years", // TODO: confirm Iris's real years of experience
+  location: "Honduras", // TODO: confirm city (e.g., "San Pedro Sula, Honduras")
+  reviews: "50",
+  rating: "5.0★",
+  about:
+    "Iris Gomez is a project coordinator at Codebrand. She is an engineer who loves making the most of time and resources. She plans timelines, keeps tasks on track, and helps the team deliver quality work on schedule. She is the steady link between clients and the people building their projects.",
+  approach:
+    "Her approach is simple: clear plans, steady communication, and no surprises. She breaks work into clear steps, sets realistic dates, and keeps everyone aligned. When something changes, she adjusts the plan early so the project stays on track.",
+  skills: [
+    "Project Management",
+    "Planning",
+    "Agile",
+    "Scrum",
+    "Timeline Management",
+    "Client Communication",
+    "Resource Planning",
+    "Quality Assurance",
+    "Coordination",
+    "On-Time Delivery",
+  ], // TODO: trim to Iris's real, confirmed skills
+  highlights: [
+    "Coordinates project timelines and resources across Codebrand's team.",
+    "Keeps clients informed with clear, steady communication.",
+    "Focuses on on-time delivery without dropping quality.",
+  ],
+  education: "Engineering", // TODO: specify the field (e.g., "Industrial Engineering")
+  personalEmail: "", // TODO: add personal email (leave empty to hide the row)
+  techStack:
+    "Project management and collaboration tools for planning, tracking, and communication.", // TODO: list Iris's real tools (e.g., Jira, Trello, Notion)
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: `${profile.role}, Project Management Lead`,
+  image: `${BUSINESS_INFO.baseUrl}${profile.image}`,
+  description: profile.about,
+  url: `${BUSINESS_INFO.baseUrl}/team/iris-gomez`,
+  email: BUSINESS_INFO.us.email,
+  telephone: BUSINESS_INFO.us.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: BUSINESS_INFO.address.city,
+    addressRegion: BUSINESS_INFO.address.region,
+    addressCountry: BUSINESS_INFO.address.country,
+  },
+  sameAs: [
+    BUSINESS_INFO.social.linkedin,
+    BUSINESS_INFO.social.instagram,
+    BUSINESS_INFO.social.facebook,
+  ],
+  knowsAbout: profile.skills,
+  worksFor: {
+    "@type": "Organization",
+    name: BUSINESS_INFO.name,
+    url: BUSINESS_INFO.baseUrl,
+  },
+};
+---
+
+<Layout
+  title="Iris Gomez | Project Coordinator at Codebrand"
+  description="Meet Iris Gomez, Project Coordinator at Codebrand. An engineer focused on planning, timelines, and delivering quality projects on time for clients."
+  keywords="Iris Gomez, Codebrand project coordinator, project manager Honduras, agile coordinator, project planning, delivery management, engineering project management"
+  image={profile.image}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+  <section class="relative overflow-hidden bg-[#08111f] text-white">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.22),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(251,146,60,0.2),_transparent_28%)]"></div>
+    <div class="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] [background-size:34px_34px]"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-18 md:pb-24">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-white/5 px-5 py-2 text-sm font-semibold tracking-[0.18em] uppercase text-cyan-200">
+            <span class="h-2.5 w-2.5 rounded-full bg-orange-400"></span>
+            Personal Profile
+          </div>
+
+          <div class="space-y-5">
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-orange-300">
+              {profile.role}
+            </p>
+            <h1 class="max-w-4xl text-5xl md:text-7xl font-black leading-[0.94] tracking-[-0.04em]">
+              Iris
+              <span class="block text-cyan-300">Gomez</span>
+            </h1>
+            <p class="max-w-2xl text-lg md:text-2xl leading-relaxed text-slate-300">
+              {profile.tagline}
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a
+              href={`https://api.whatsapp.com/send/?phone=${BUSINESS_INFO.us.whatsapp}&text=Hola%20Iris,%20quiero%20hablar%20sobre%20un%20proyecto&type=phone_number&app_absent=0`}
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact on WhatsApp
+            </a>
+            <a href={`mailto:${BUSINESS_INFO.us.email}`} class="btn-secondary">
+              Send Email
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+            <div class="stat-card">
+              <span class="stat-value">{profile.experience}</span>
+              <span class="stat-label">PM Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">{profile.reviews}</span>
+              <span class="stat-label">Google Reviews</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">{profile.rating}</span>
+              <span class="stat-label">Google Rating</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Delivery Focus</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -top-6 -right-6 h-44 w-44 rounded-[2rem] bg-orange-400/20 blur-2xl"></div>
+          <div class="absolute -bottom-8 -left-6 h-52 w-52 rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/6 p-4 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+            <div class="overflow-hidden rounded-[1.6rem]">
+              <img
+                src={profile.image}
+                alt="Iris Gomez portrait"
+                class="h-full w-full object-cover object-top"
+                width="900"
+                height="1100"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+
+            <div class="profile-card">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.22em] text-cyan-700">
+                  Based in Honduras
+                </p>
+                <h2 class="mt-1 text-2xl font-black text-slate-900">{profile.name}</h2>
+                <p class="mt-1 text-sm text-slate-600">{profile.location}</p>
+                {profile.education && (
+                  <p class="text-xs text-slate-500">{profile.education}</p>
+                )}
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <a href={BUSINESS_INFO.social.linkedin} class="mini-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href={BUSINESS_INFO.social.instagram} class="mini-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="/contact" class="mini-link">Book a Call</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#f6f7fb] py-18 md:py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12">
+      <aside class="space-y-6">
+        <div class="info-panel">
+          <p class="eyebrow">Quick Intro</p>
+          <h2 class="section-title">A profile built for clarity and trust.</h2>
+          <p class="body-text">
+            This page works as a digital business card and direct contact point for clients and partners who want to learn more about Iris Gomez and how she keeps projects on track.
+          </p>
+        </div>
+
+        <div class="info-panel">
+          <p class="eyebrow">Core Skills</p>
+          <div class="flex flex-wrap gap-2.5">
+            {profile.skills.map((skill) => (
+              <span class="skill-pill">{skill}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="info-panel">
+          <p class="eyebrow">Tools</p>
+          <p class="body-text mt-0">
+            {profile.techStack}
+          </p>
+        </div>
+
+        <div class="info-panel">
+          <p class="eyebrow">Contact</p>
+          <div class="space-y-3 text-slate-700">
+            {profile.personalEmail && (
+              <a href={`mailto:${profile.personalEmail}`} class="contact-row">
+                <span>Personal Email</span>
+                <strong>{profile.personalEmail}</strong>
+              </a>
+            )}
+            <a href={`mailto:${BUSINESS_INFO.us.email}`} class="contact-row">
+              <span>Business Email</span>
+              <strong>{BUSINESS_INFO.us.email}</strong>
+            </a>
+            <a
+              href={BUSINESS_INFO.us.whatsappUrl}
+              class="contact-row"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>WhatsApp</span>
+              <strong>{BUSINESS_INFO.us.phone}</strong>
+            </a>
+            <div class="contact-row">
+              <span>Location</span>
+              <strong>{profile.location}</strong>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="space-y-6">
+        <article class="content-card">
+          <p class="eyebrow">About Iris</p>
+          <h2 class="section-title">Clear plans, steady delivery, quality on time.</h2>
+          <p class="body-text">{profile.about}</p>
+          <p class="body-text">{profile.approach}</p>
+        </article>
+
+        <article class="content-card">
+          <p class="eyebrow">What She Brings</p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="feature-card">
+              <h3>Planning &amp; Timelines</h3>
+              <p>Clear roadmaps, realistic dates, and well-scoped tasks that keep every project moving in the right direction.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Communication</h3>
+              <p>A steady link between clients and the team, with clear updates and quick answers at every stage.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Quality &amp; Delivery</h3>
+              <p>Agile coordination and quality checks that help the team ship on time without cutting corners.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <p class="eyebrow">Highlights</p>
+          <div class="space-y-3">
+            {profile.highlights.map((item) => (
+              <div class="highlight-row">
+                <span class="highlight-dot"></span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="content-card">
+          <p class="eyebrow">Background</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="feature-card">
+              {/* TODO: replace with Iris's real experience/history (companies, roles, years) */}
+              <h3>Professional Focus</h3>
+              <p>Engineering-minded project coordination — planning, resource management, and agile delivery for web and product work.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Services</h3>
+              <p>Project planning, timeline and resource management, client communication, agile coordination, and quality assurance.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="content-card cta-card">
+          <div>
+            <p class="eyebrow">Let&apos;s Connect</p>
+            <h2 class="section-title text-white">Need a project coordinated and delivered on time?</h2>
+            <p class="mt-4 text-slate-300 max-w-2xl">
+              Reach out to talk about planning, timelines, and how Codebrand keeps your project organized from kickoff to launch.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a
+              href={`https://api.whatsapp.com/send/?phone=${BUSINESS_INFO.us.whatsapp}&text=Hola%20Iris,%20me%20gustaria%20hablar%20sobre%20un%20proyecto&type=phone_number&app_absent=0`}
+              class="btn-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start on WhatsApp
+            </a>
+            <a href="/contact" class="btn-outline-light">Go to Contact Page</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .btn-primary,
+  .btn-secondary,
+  .btn-white,
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 999px;
+    padding: 0.95rem 1.5rem;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+    color: #06202f;
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.22);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-white:hover,
+  .btn-outline-light:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+  }
+
+  .btn-white {
+    background: white;
+    color: #08111f;
+  }
+
+  .btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    background: transparent;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(186 230 253 / 0.78);
+  }
+
+  .profile-card {
+    position: absolute;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 1.4rem;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 1rem 1.1rem;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.18);
+  }
+
+  .mini-link {
+    border-radius: 999px;
+    background: #e2f3ff;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0c4a6e;
+  }
+
+  .info-panel,
+  .content-card {
+    border-radius: 1.8rem;
+    background: white;
+    padding: 1.6rem;
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+  }
+
+  .eyebrow {
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f97316;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+  }
+
+  .body-text {
+    margin-top: 1rem;
+    color: #475569;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+
+  .skill-pill {
+    border-radius: 999px;
+    background: #ecfeff;
+    border: 1px solid #bae6fd;
+    color: #155e75;
+    font-size: 0.86rem;
+    font-weight: 700;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 1rem;
+    background: #f8fafc;
+    padding: 0.95rem 1rem;
+  }
+
+  .feature-card {
+    border-radius: 1.4rem;
+    background: linear-gradient(180deg, #f8fbff 0%, #f1f5f9 100%);
+    padding: 1.25rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .feature-card p {
+    margin-top: 0.75rem;
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.96rem;
+  }
+
+  .highlight-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.85rem;
+    align-items: start;
+  }
+
+  .highlight-row p {
+    color: #334155;
+    line-height: 1.75;
+  }
+
+  .highlight-dot {
+    margin-top: 0.65rem;
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #22d3ee, #fb923c);
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, #08111f 0%, #0f2542 100%);
+  }
+
+  @media (max-width: 768px) {
+    .profile-card {
+      position: static;
+      margin-top: 1rem;
+    }
+
+    .contact-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

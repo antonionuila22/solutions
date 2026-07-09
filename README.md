@@ -1,6 +1,6 @@
 # Codebrand Solutions
 
-Sitio web corporativo y plataforma de servicios digitales de **Codebrand**, desarrollado con Astro 5 y desplegado en Netlify.
+Sitio web corporativo y plataforma de servicios digitales de **Codebrand**, desarrollado con Astro 7 y desplegado en Netlify.
 
 **URL de produccion:** [codebrand.us](https://codebrand.us)
 
@@ -10,10 +10,10 @@ Sitio web corporativo y plataforma de servicios digitales de **Codebrand**, desa
 
 | Categoria | Tecnologia |
 |-----------|------------|
-| Framework | Astro 5 (SSR) |
-| UI Components | React 18 |
-| Styling | TailwindCSS 4 |
-| Animations | Framer Motion, GSAP |
+| Framework | Astro 7 (SSR) |
+| UI Components | React 19 |
+| Styling | TailwindCSS 4 (plugin de Vite + lightningcss) |
+| Animations | GSAP + Lenis (scroll suave) |
 | Database | Turso (LibSQL) |
 | Email | Resend |
 | Deployment | Netlify (Edge Functions) |
@@ -49,8 +49,11 @@ src/
 
 ## Requisitos
 
-- Node.js 18.14.1 o superior
-- npm o pnpm
+- Node.js 22.12 o superior (Netlify compila con Node 22)
+- pnpm 11 (gestor declarado en `packageManager`) o npm
+
+> El archivo `.npmrc` fija `legacy-peer-deps=true`, por lo que la instalacion
+> funciona tanto con `pnpm install` como con `npm install --legacy-peer-deps`.
 
 ---
 
@@ -60,10 +63,12 @@ src/
 # Clonar el repositorio
 git clone [repo-url]
 
-# Instalar dependencias
+# Instalar dependencias (elige uno)
+pnpm install
+# o bien
 npm install --legacy-peer-deps
 
-# Copiar variables de entorno
+# Copiar variables de entorno (parte de .env.example incluido en el repo)
 cp .env.example .env
 ```
 
@@ -73,6 +78,8 @@ cp .env.example .env
 TURSO_DATABASE_URL=       # URL de la base de datos Turso
 TURSO_AUTH_TOKEN=         # Token de autenticacion Turso
 RESEND_API_KEY=           # API key de Resend para emails
+RESEND_FROM_EMAIL=        # Remitente de los correos enviados con Resend
+CONTACT_RECIPIENT_EMAIL=  # Destinatario de los formularios de contacto
 ```
 
 ---
@@ -135,7 +142,6 @@ El sitio presenta los siguientes servicios de Codebrand:
 
 ## Documentacion Adicional
 
-- **[.business-logic.md](./.business-logic.md)** - Modelo de negocio, precios, terminos y condiciones
 - **[CHANGELOG.md](./CHANGELOG.md)** - Historial de cambios
 
 ---
