@@ -1,0 +1,494 @@
+---
+export const prerender = true;
+/**
+ * Equipo de Desarrollo Dedicado / Fábrica de Software — Honduras (cluster page)
+ * Keywords: equipo de desarrollo dedicado honduras, fabrica de software honduras,
+ * outsourcing de desarrollo honduras, staff augmentation honduras, desarrolladores dedicados honduras
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../../utils/schema";
+
+const title = "Equipo de Desarrollo Dedicado en Honduras | 5 Desarrolladores desde $11,900/mes - Codebrand";
+const description =
+  "Contrata un equipo de desarrollo dedicado en Honduras: 5 desarrolladores más un Project Manager desde $11,900/mes. Sprints semanales, reportes cada semana y código 100% tuyo. Tú priorizas el backlog.";
+const keywords =
+  "equipo de desarrollo dedicado honduras, fabrica de software honduras, outsourcing de desarrollo honduras, staff augmentation honduras, desarrolladores dedicados honduras, contratar programadores honduras, equipo de programadores dedicado, tercerizacion de software honduras";
+
+const canonical = "https://www.codebrand.us/hn/equipo-de-desarrollo-dedicado-honduras";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Equipo de Desarrollo Dedicado",
+  name: "Equipo de Desarrollo Dedicado en Honduras",
+  description:
+    "Equipo de desarrollo dedicado para empresas en Honduras: 5 desarrolladores más un Project Manager trabajando exclusivamente en tu software, con sprints semanales, reportes cada semana y código 100% del cliente. Desde $11,900 USD al mes.",
+  url: canonical,
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Modelos de Equipo Dedicado",
+  catalogItems: [
+    { name: "Equipo Dedicado Mensual", description: "5 desarrolladores más Project Manager dedicados a tu empresa, desde $11,900/mes con contrato mínimo de 6 meses." },
+    { name: "Sprints Semanales", description: "Ciclos de una semana con avances funcionando, demo y reporte al cierre de cada sprint." },
+    { name: "Gestión de Backlog", description: "Tú priorizas qué se construye cada semana; el Project Manager coordina y traduce a tareas técnicas." },
+    { name: "Proyecto de Alcance Cerrado", description: "Alternativa por cotización cuando el alcance ya está definido, con entregas por fases." },
+    { name: "Composición Flexible", description: "Lead, desarrolladores mid, junior y QA que se ajustan al tipo de proyecto y tecnología." },
+  ],
+});
+
+const faqs = [
+  {
+    question: "¿Puedo escalar o reducir el tamaño del equipo?",
+    answer: "Sí. El punto de partida son 5 desarrolladores más un Project Manager, pero al renovar el contrato podemos ajustar el equipo hacia arriba o hacia abajo según cómo evolucione tu proyecto. Si necesitas más capacidad para una fase intensa, sumamos perfiles; si el sistema ya está estable y solo requiere mantenimiento, conversamos un esquema más pequeño. Los cambios se coordinan con anticipación para no interrumpir los sprints en curso."
+  },
+  {
+    question: "¿El equipo trabaja en mi horario y zona horaria?",
+    answer: "Sí. Estamos en Honduras, así que compartimos tu horario y tu idioma; no hay diferencia de husos horarios ni barreras de comunicación como suele pasar con equipos en otros continentes. Las reuniones de planificación, las demos semanales y el contacto diario con el Project Manager ocurren dentro de tu jornada laboral."
+  },
+  {
+    question: "¿Firman acuerdo de confidencialidad (NDA)?",
+    answer: "Sí. Firmamos NDA y las cláusulas de confidencialidad que tu empresa necesite antes de empezar. Tu información, tus datos y tu propiedad intelectual quedan protegidos por contrato. Además, todo el código y la documentación que produce el equipo son 100% tuyos desde el primer día."
+  },
+  {
+    question: "¿Qué pasa cuando terminan los 6 meses del contrato?",
+    answer: "Al cumplirse los 6 meses tienes tres caminos: renovar mes a mes para seguir mejorando el sistema, ajustar el tamaño del equipo, o cerrar y quedarte con todo lo construido. Como el código, el repositorio y la documentación ya son tuyos, no quedas amarrado: puedes continuar con tu propio equipo interno o con cualquier otro proveedor sin depender de nosotros."
+  },
+  {
+    question: "¿En qué se diferencia de contratar a través de una consultora tradicional?",
+    answer: "Con una consultora tradicional muchas veces pagas por horas facturadas, con reportes opacos y sin saber cuánto avanzó tu proyecto. Nuestro modelo es una tarifa mensual fija con entregas visibles cada semana: ves software funcionando, no una factura de horas. Tú priorizas el backlog y decides qué se construye primero, sin intermediarios que diluyan tu control."
+  },
+  {
+    question: "¿Cómo mido el avance semana a semana?",
+    answer: "Cada semana cierra con una demo de lo que se construyó, un reporte de lo entregado y un plan de lo que sigue. No tienes que esperar meses para ver si el proyecto va bien: en 7 días ya sabes qué se hizo, qué funciona y qué viene. Si algo no te convence, lo corriges en el siguiente sprint, no al final del proyecto."
+  },
+  {
+    question: "¿Qué tecnologías usa el equipo?",
+    answer: "Trabajamos con un stack moderno y ampliamente soportado: React para las interfaces, Node.js y Python en el backend y PostgreSQL como base de datos. Son tecnologías estables, con mucho talento disponible en el mercado, lo que significa que tu sistema es fácil de mantener y de continuar por cualquier desarrollador en el futuro."
+  },
+  {
+    question: "¿Tienen experiencia real construyendo productos, no solo proyectos de clientes?",
+    answer: "Sí. Codebrand tiene su propio CRM, así que sabemos de primera mano lo que implica construir y sostener un producto de software en producción durante años. Esa experiencia de producto la aplicamos a tu equipo dedicado: arquitectura pensada para durar, pruebas serias y decisiones técnicas que evitan que el sistema se vuelva imposible de mantener."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const stats = [
+  { value: "5+1", label: "Devs + Project Manager" },
+  { value: "6 meses", label: "Contrato mínimo" },
+  { value: "Semanal", label: "Sprints y reportes" },
+  { value: "100%", label: "Tu código, sin amarres" }
+];
+
+const weekly = [
+  { icon: "🚀", title: "Avances funcionando", desc: "Cada sprint entrega funcionalidad real corriendo, no maquetas ni promesas para después." },
+  { icon: "🖥️", title: "Demo semanal", desc: "Te mostramos en vivo lo que se construyó para que lo veas, lo pruebes y des feedback." },
+  { icon: "📋", title: "Reporte de la semana", desc: "Un resumen claro de qué se entregó, qué está en curso y en qué se invirtió el tiempo." },
+  { icon: "🗺️", title: "Plan de la siguiente semana", desc: "Con base en tus prioridades del backlog, definimos juntos qué se construye a continuación." }
+];
+
+const howItWorks = [
+  { step: "01", title: "Arranque y NDA", desc: "Firmamos confidencialidad, conocemos tu negocio y armamos el backlog inicial contigo." },
+  { step: "02", title: "Tú priorizas el backlog", desc: "Tú decides qué es lo más importante; el Project Manager lo traduce a tareas técnicas." },
+  { step: "03", title: "Sprint de una semana", desc: "El equipo construye en ciclos de 7 días, con revisiones de código entre desarrolladores." },
+  { step: "04", title: "Demo y reporte", desc: "Al cierre del sprint ves el avance funcionando y recibes el reporte de la semana." },
+  { step: "05", title: "Ajuste y siguiente sprint", desc: "Tomamos tu feedback, reordenamos prioridades y arrancamos el siguiente ciclo." },
+  { step: "06", title: "Facturación mensual", desc: "Una tarifa fija al mes, sin cobros por hora ni sorpresas de fin de proyecto." }
+];
+
+const teamRoles = [
+  { icon: "🧭", title: "Tech Lead", desc: "Define la arquitectura, revisa el código y mantiene la calidad técnica del sistema." },
+  { icon: "⚙️", title: "Desarrolladores Mid", desc: "El motor del equipo: construyen las funcionalidades del backend y el frontend cada sprint." },
+  { icon: "🌱", title: "Desarrollador Junior", desc: "Apoya en tareas y crece con el equipo, siempre bajo la revisión del Tech Lead." },
+  { icon: "🧪", title: "QA", desc: "Prueba cada flujo antes de entregar para que llegue a producción sin sorpresas." },
+  { icon: "📈", title: "Project Manager", desc: "Tu punto de contacto: coordina el sprint, ordena el backlog y te entrega el reporte." },
+  { icon: "🔧", title: "Composición flexible", desc: "La mezcla exacta de perfiles se ajusta al tipo de proyecto, tecnología y fase." }
+];
+
+const comparison = [
+  {
+    label: "Equipo dedicado (Codebrand)",
+    featured: true,
+    points: [
+      "Tarifa mensual fija y predecible",
+      "Sin costos de prestaciones ni liquidaciones",
+      "Sin gastos ni tiempo de reclutamiento",
+      "Coordinación, QA y calidad incluidas",
+      "Reemplazos cubiertos por nosotros",
+      "Código 100% tuyo desde el inicio"
+    ]
+  },
+  {
+    label: "Contratar en planilla",
+    featured: false,
+    points: [
+      "Salarios más prestaciones e impuestos",
+      "Reclutar y filtrar toma semanas o meses",
+      "Riesgo de rotación y curva de aprendizaje",
+      "Tú cargas con equipo, licencias y gestión",
+      "Difícil escalar rápido para una fase intensa",
+      "Un solo dev es un cuello de botella"
+    ]
+  },
+  {
+    label: "Freelancers sueltos",
+    featured: false,
+    points: [
+      "Disponibilidad y compromiso variables",
+      "Sin coordinación entre ellos",
+      "Calidad y estándares desparejos",
+      "Nadie responde por el conjunto",
+      "Difícil dar continuidad si desaparecen",
+      "Tú terminas haciendo de gerente de proyecto"
+    ]
+  }
+];
+
+const included = [
+  "5 desarrolladores dedicados a tu empresa",
+  "Project Manager como punto de contacto",
+  "Sprints semanales con avances funcionando",
+  "Demo y reporte al cierre de cada semana",
+  "Tú priorizas el backlog cada sprint",
+  "Arquitectura, QA y revisiones de código incluidas",
+  "Stack moderno (React, Node.js, Python, PostgreSQL)",
+  "NDA y confidencialidad firmados",
+  "Código 100% tuyo, sin amarres ni licencias"
+];
+
+const industries = [
+  "Distribuidoras", "Retail y Comercio", "Logística y Transporte", "Clínicas y Salud",
+  "Manufactura", "Servicios Financieros", "Inmobiliarias", "Educación",
+  "Restaurantes y Cadenas", "Agroindustria"
+];
+
+const waBase = "https://api.whatsapp.com/send/?phone=50487380714";
+const waSuffix = "&type=phone_number&app_absent=0";
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride={canonical}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float-orb 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #3b82f6, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #2563eb, #3b82f6); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float-orb { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(2.5rem, 9vw, 7rem); line-height: 0.92; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #2563eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.4s ease; }
+    .btn-whatsapp:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(59, 130, 246, 0.5); background: rgba(59, 130, 246, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; line-height: 1; }
+    .industry-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; transition: all 0.3s ease; }
+    .industry-pill:hover { border-color: rgba(59, 130, 246, 0.5); color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
+    .step-num { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- HERO -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-blue-500/20">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+              <span class="text-blue-300 text-sm font-medium">Equipo de Desarrollo Dedicado · Honduras</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Un equipo dedicado</span>
+            <span class="fade-up block text-gradient">a tu software</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-3xl mb-12 leading-relaxed">
+            5 desarrolladores más un Project Manager trabajando <span class="text-white font-semibold">solo en tu empresa</span>,
+            con sprints semanales y código 100% tuyo. Tu propia fábrica de software en Honduras
+            <span class="text-white font-semibold">desde $11,900/mes</span>.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-20">
+            <a href={`${waBase}&text=Hola,%20quiero%20un%20equipo%20de%20desarrollo%20dedicado%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Armar mi equipo
+            </a>
+            <a href="#planes" class="btn-ghost">Ver el modelo y precio</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO / CONTEXT -->
+      <section class="py-28 px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="fade-up glass p-10 md:p-14">
+            <span class="text-blue-300 text-sm font-semibold uppercase tracking-wider">Tu fábrica de software</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mt-4 mb-6">Capacidad de desarrollo, sin montar un departamento</h2>
+            <div class="space-y-5 text-lg text-neutral-300 leading-relaxed">
+              <p>
+                Montar un equipo de desarrollo interno en Honduras es caro y lento: reclutar, entrevistar, pagar prestaciones, comprar equipo y esperar meses a que la gente rinda. Y si alguien se va, el proyecto se frena.
+              </p>
+              <p>
+                Con un equipo dedicado tienes capacidad de ingeniería lista desde el primer sprint. Nosotros ponemos a los desarrolladores, la coordinación y la calidad; tú pones las prioridades del negocio. Es <span class="text-white font-semibold">outsourcing de desarrollo con control real</span>: tú decides qué se construye, y lo ves funcionando cada semana.
+              </p>
+              <p>
+                Este modelo es parte de nuestro <a href="/hn/desarrollo-de-software-honduras" class="text-blue-400 underline underline-offset-4 hover:text-blue-300">servicio de desarrollo de software a la medida en Honduras</a>. Si lo que buscas es un producto específico, mira también cómo trabajamos el <a href="/hn/desarrollo-de-crm-honduras" class="text-blue-400 underline underline-offset-4 hover:text-blue-300">desarrollo de CRM a la medida</a> y los <a href="/hn/sistemas-empresariales-honduras" class="text-blue-400 underline underline-offset-4 hover:text-blue-300">sistemas empresariales de gestión</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW THE MODEL WORKS -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Cómo funciona el modelo</h2>
+            <p class="text-neutral-400 text-xl mt-4">Contrato de 6 meses, facturación mensual y tú al mando del backlog.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {howItWorks.map((p, i) => (
+              <div class="fade-up glass p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="step-num text-gradient mb-3">{p.step}</div>
+                <h3 class="text-xl font-semibold text-white mb-2">{p.title}</h3>
+                <p class="text-neutral-400">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT YOU GET EACH WEEK -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Qué recibes cada semana</h2>
+            <p class="text-neutral-400 text-xl mt-4">Nada de esperar meses a ciegas. Cada 7 días ves resultados.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {weekly.map((b, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="text-4xl mb-4">{b.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
+                <p class="text-neutral-400">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPARISON -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Equipo dedicado vs. planilla vs. freelancers</h2>
+            <p class="text-neutral-400 text-xl mt-4">Toda la capacidad, sin el peso ni el descontrol de las otras opciones.</p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 items-start">
+            {comparison.map((col, i) => (
+              <div class={`fade-up glass p-8 ${col.featured ? "border-blue-500/30" : ""}`} style={`transition-delay: ${i * 0.06}s`}>
+                <h3 class={`text-xl font-bold mb-6 ${col.featured ? "text-gradient" : "text-white"}`}>{col.label}</h3>
+                <ul class="space-y-3">
+                  {col.points.map((point) => (
+                    <li class="flex items-start gap-3 text-neutral-300">
+                      {col.featured ? (
+                        <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg class="w-5 h-5 text-neutral-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      )}
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM COMPOSITION -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Cómo se compone el equipo</h2>
+            <p class="text-neutral-400 text-xl mt-4">Perfiles complementarios, coordinados por un Project Manager. La mezcla se ajusta a tu proyecto.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {teamRoles.map((r, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="text-4xl mb-4">{r.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{r.title}</h3>
+                <p class="text-neutral-400">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANS / PRICING -->
+      <section id="planes" class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">El modelo y el precio</h2>
+            <p class="text-neutral-400 text-xl mt-4">Una tarifa fija al mes. Sin cobros por hora ni sorpresas.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 items-start">
+            <!-- Dedicated team (featured) -->
+            <div class="fade-up glass glass-hover p-8 border-blue-500/30" style="transition-delay: 0.1s">
+              <span class="inline-block text-xs font-semibold text-blue-300 bg-blue-500/20 px-3 py-1.5 rounded-full mb-6">Más elegido</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Equipo de Desarrollo Dedicado</h3>
+              <p class="text-neutral-400 mb-6">Tu equipo completo, cada semana, enfocado solo en tu empresa.</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">$11,900</span>
+                <span class="text-neutral-400"> USD / mes</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">Contrato mínimo de 6 meses · Facturación mensual · Sprints semanales</p>
+              <ul class="space-y-3 mb-8">
+                {included.map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20me%20interesa%20el%20Equipo%20de%20Desarrollo%20Dedicado%20de%20%2411%2C900%2Fmes${waSuffix}`} class="btn-whatsapp w-full justify-center" target="_blank" rel="noopener noreferrer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Empezar
+              </a>
+            </div>
+
+            <!-- Fixed-scope project -->
+            <div class="fade-up glass glass-hover p-8">
+              <span class="inline-block text-xs font-semibold text-neutral-300 bg-white/10 px-3 py-1.5 rounded-full mb-6">Alcance cerrado</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Proyecto por Cotización</h3>
+              <p class="text-neutral-400 mb-6">Cuando el alcance ya está definido y prefieres un precio cerrado.</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">Cotización</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">Precio por proyecto según alcance · Entregas por fases</p>
+              <ul class="space-y-3 mb-8">
+                {["Levantamiento de requerimientos", "Propuesta y precio cerrado", "Desarrollo por fases", "QA y pruebas incluidas", "Capacitación y entrega", "Código 100% tuyo"].map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20quiero%20una%20cotizaci%C3%B3n%20para%20un%20proyecto%20de%20software%20a%20la%20medida${waSuffix}`} class="btn-ghost w-full text-center block" target="_blank" rel="noopener noreferrer">
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
+
+          <p class="fade-up text-center text-neutral-500 text-sm mt-8 max-w-2xl mx-auto">
+            La composición del equipo (perfiles senior, mid, junior y QA) se ajusta según tu proyecto. Cuéntanos qué necesitas y armamos la propuesta.
+          </p>
+        </div>
+      </section>
+
+      <!-- INDUSTRIES -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Equipos para empresas de todo Honduras</h2>
+            <p class="text-neutral-400 text-lg">De San Pedro Sula a Tegucigalpa, en todos los sectores.</p>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {industries.map((ind) => (
+              <span class="industry-pill">{ind}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="fade-up">
+            <FaqAccordion faqs={faqs} theme="dark" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+              Tu equipo puede<br />
+              <span class="text-gradient">empezar este mes</span>
+            </h2>
+            <p class="text-xl text-neutral-400 mb-12 max-w-xl mx-auto">
+              Consulta gratis. Cuéntanos tu proyecto y te armamos la propuesta del equipo en 48 horas.
+            </p>
+            <a href={`${waBase}&text=Hola,%20quiero%20hablar%20sobre%20un%20equipo%20de%20desarrollo%20dedicado%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp inline-flex text-lg px-10 py-5" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Contactar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</HnLayout>

@@ -8,6 +8,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import TeamQuoter from "../components/TeamQuoter";
 
 // SEO
 const title = "Nearshore Development | LATAM Team | Codebrand";
@@ -207,27 +208,27 @@ const showcase = [
 // Pricing
 const pricing = [
   {
-    title: "Standard",
+    title: "Mid Developer",
     price: "$45",
     period: "/hour",
-    desc: "Quality nearshore development",
-    features: ["48h response time", "Code reviews included", "Full source code ownership", "Email support"],
+    desc: "3–5 yrs · ships features on their own",
+    features: ["Solid full-stack execution", "Code reviews included", "Full source code ownership", "US timezone overlap"],
     highlighted: false
   },
   {
-    title: "Priority",
+    title: "Senior Developer",
     price: "$65",
     period: "/hour",
-    desc: "Dedicated attention",
-    features: ["24h response time", "Dedicated developer", "Daily standups", "Slack direct access", "Priority queue"],
+    desc: "6+ yrs · architecture & ownership",
+    features: ["Leads technical decisions", "Mentors the team", "Daily standups & Slack access", "US timezone overlap"],
     highlighted: true
   },
   {
-    title: "Rush",
+    title: "Tech Lead / Architect",
     price: "$95",
     period: "/hour",
-    desc: "Urgent projects",
-    features: ["Same-day start", "12h turnaround", "Direct communication", "Weekend availability", "Emergency support"],
+    desc: "Owns delivery end to end",
+    features: ["System architecture", "Team coordination", "Roadmap & estimates", "Direct stakeholder comms"],
     highlighted: false
   }
 ];
@@ -565,6 +566,11 @@ const technologies = [
             </a>
           </div>
         ))}
+      </div>
+
+      <!-- Self-service team quote -->
+      <div class="mt-10" data-anim="fade">
+        <TeamQuoter client:visible />
       </div>
     </div>
   </section>

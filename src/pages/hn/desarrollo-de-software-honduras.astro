@@ -1,0 +1,397 @@
+---
+export const prerender = true;
+/**
+ * Desarrollo de Software a la Medida — Honduras (pillar page)
+ * Keywords: desarrollo de software honduras, software a la medida honduras,
+ * desarrollo de crm honduras, sistemas empresariales honduras, empresa de software honduras,
+ * equipo de desarrollo dedicado honduras
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../../utils/schema";
+
+const title = "Desarrollo de Software a la Medida en Honduras | CRM y Sistemas Empresariales - Codebrand";
+const description =
+  "Desarrollamos software personalizado para empresas en Honduras: CRM, sistemas de gestión y aplicaciones a la medida. Equipo dedicado de 5 desarrolladores desde $11,900/mes, sprints semanales y código 100% tuyo.";
+const keywords =
+  "desarrollo de software honduras, software a la medida honduras, desarrollo de crm honduras, sistemas empresariales honduras, empresa de software honduras, equipo de desarrollo dedicado, software personalizado tegucigalpa, software san pedro sula, fabrica de software honduras";
+
+const canonical = "https://www.codebrand.us/hn/desarrollo-de-software-honduras";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Desarrollo de Software a la Medida",
+  name: "Desarrollo de Software a la Medida en Honduras",
+  description:
+    "Desarrollo de software personalizado para empresas en Honduras: CRM a la medida, sistemas de gestión empresarial, aplicaciones web y automatización. Equipo dedicado de desarrolladores con sprints semanales y código 100% del cliente.",
+  url: canonical,
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Servicios de Desarrollo de Software",
+  catalogItems: [
+    { name: "Desarrollo de CRM a la Medida", description: "CRMs personalizados para gestión de clientes, ventas y seguimiento, construidos sobre nuestra experiencia con CRM propio." },
+    { name: "Sistemas Empresariales", description: "Sistemas de gestión, inventario, facturación y reportes hechos para cómo trabaja tu empresa." },
+    { name: "Aplicaciones Web a la Medida", description: "Plataformas y portales web full-stack con código moderno y mantenible." },
+    { name: "Equipo de Desarrollo Dedicado", description: "Un equipo de desarrolladores dedicado a tu empresa, con sprints semanales y entregas continuas." },
+    { name: "Integraciones y APIs", description: "Conectamos tus herramientas (pagos, ERP, CRM, terceros) en un solo flujo de trabajo." },
+  ],
+});
+
+const faqs = [
+  {
+    question: "¿Cuánto cuesta desarrollar software a la medida en Honduras?",
+    answer: "Nuestro modelo de equipo dedicado inicia en $11,900 USD al mes por un equipo de 5 desarrolladores más un Project Manager, con contrato mínimo de 6 meses y facturación mensual. Es una tarifa fija y predecible: no pagas por hora ni recibes sorpresas. Para proyectos con alcance cerrado (por ejemplo, un CRM específico) también damos cotización por proyecto. En ambos casos, el código es 100% tuyo."
+  },
+  {
+    question: "¿La inteligencia artificial no puede hacer el software gratis?",
+    answer: "La IA hoy escribe código y nos ayuda a ir más rápido; la usamos todos los días. Pero un sistema que maneja tus clientes, tu dinero y tus procesos no se improvisa con un prompt. Necesita ingeniería: entender tu negocio, diseñar la arquitectura, proteger tus datos, probar cada caso y darle mantenimiento en el tiempo. La IA es la herramienta; la ingeniería la ponemos nosotros. Esa es la diferencia entre un prototipo bonito y un software que tu empresa usa por años."
+  },
+  {
+    question: "¿Por qué un equipo de 5 desarrolladores y no uno solo?",
+    answer: "Un solo desarrollador es un cuello de botella y un riesgo: si se enferma o se va, tu proyecto se detiene. Un equipo de 5 combina distintos perfiles (backend, frontend, base de datos, QA) coordinados por un Project Manager. Avanzan en paralelo, se revisan entre sí y entregan más rápido y con mejor calidad."
+  },
+  {
+    question: "¿Qué son los sprints semanales?",
+    answer: "Trabajamos con metodología ágil en ciclos de una semana llamados sprints. Cada semana definimos qué se va a construir, lo desarrollamos y te lo presentamos funcionando. Así ves avances reales cada 7 días, das feedback temprano y nunca esperas meses para ver resultados. La transparencia es total."
+  },
+  {
+    question: "¿Por qué el contrato mínimo es de 6 meses?",
+    answer: "El software empresarial serio no se termina en dos semanas. Seis meses le dan al equipo el tiempo para entender tu negocio a fondo, construir una base sólida y entregar un sistema realmente útil, no un demo a medias. Es el mínimo para lograr un resultado de calidad. Después de los 6 meses puedes renovar mes a mes, escalar el equipo o recibir el sistema y seguir por tu cuenta."
+  },
+  {
+    question: "¿Son especialistas en CRM?",
+    answer: "Sí. Tenemos nuestro propio CRM, así que sabemos de primera mano lo que cuesta construir uno bueno. Sobre esa experiencia desarrollamos CRMs y sistemas a la medida para empresas: gestión de clientes, embudos de ventas, inventario, facturación y reportes, hechos para cómo trabaja tu empresa y no al revés."
+  },
+  {
+    question: "¿De quién es el código cuando termina el proyecto?",
+    answer: "Tuyo, 100%. Recibes todo el código, el repositorio, la documentación y los accesos. No hay plataforma propietaria que te amarre ni licencias mensuales para poder usar lo que construimos. Lo puedes alojar donde quieras y cualquier desarrollador puede continuarlo."
+  },
+  {
+    question: "¿Atienden empresas en toda Honduras?",
+    answer: "Sí. Trabajamos con empresas de San Pedro Sula, Tegucigalpa, La Ceiba, El Progreso, Choloma, Comayagua y todo el país. El trabajo es remoto y colaborativo, con reuniones y reportes cada semana, así que tu ubicación no es un límite."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const stats = [
+  { value: "5", label: "Desarrolladores dedicados" },
+  { value: "Semanal", label: "Sprints y entregas" },
+  { value: "CRM", label: "Propio + a la medida" },
+  { value: "100%", label: "Tu código, sin amarres" }
+];
+
+const process = [
+  { step: "01", title: "Descubrimiento", desc: "Entendemos tu negocio, tus procesos y qué problema debe resolver el software." },
+  { step: "02", title: "Arquitectura", desc: "Definimos la estructura técnica, la base de datos y el plan para que escale y sea seguro." },
+  { step: "03", title: "Diseño UX/UI", desc: "Diseñamos pantallas claras y fáciles de usar antes de escribir la primera línea." },
+  { step: "04", title: "Desarrollo por sprints", desc: "Construimos en ciclos semanales y te presentamos avances funcionando cada 7 días." },
+  { step: "05", title: "QA y pruebas", desc: "Probamos cada caso y cada flujo para entregar un sistema estable, no un demo frágil." },
+  { step: "06", title: "Despliegue y soporte", desc: "Publicamos el sistema y lo mantenemos: seguridad, mejoras y soporte continuo." }
+];
+
+const buildItems = [
+  { icon: "🤝", title: "CRM a la Medida", desc: "Gestión de clientes, embudos de ventas y seguimiento, sobre nuestra experiencia con CRM propio." },
+  { icon: "🏭", title: "Sistemas Empresariales", desc: "Inventario, facturación, órdenes, reportes y gestión interna, hechos para tu operación." },
+  { icon: "🖥️", title: "Aplicaciones Web", desc: "Portales, paneles y plataformas full-stack con código moderno y mantenible." },
+  { icon: "🔗", title: "Integraciones y APIs", desc: "Conectamos pagos, ERP, CRM y herramientas de terceros en un solo flujo." },
+  { icon: "📊", title: "Paneles y Reportes", desc: "Dashboards que reemplazan hojas de cálculo frágiles y dan datos en tiempo real." },
+  { icon: "⚙️", title: "Automatización", desc: "Eliminamos el trabajo manual repetitivo entre tus sistemas y equipos." }
+];
+
+const included = [
+  "5 desarrolladores dedicados a tu empresa",
+  "Project Manager y reportes semanales",
+  "Sprints semanales con avances funcionando",
+  "Arquitectura, QA y pruebas incluidas",
+  "Stack moderno (React, Node.js, Python, PostgreSQL)",
+  "Código 100% tuyo, sin amarres",
+  "Reuniones de seguimiento cada semana",
+  "Soporte durante todo el contrato"
+];
+
+const industries = [
+  "Distribuidoras", "Retail y Comercio", "Logística y Transporte", "Clínicas y Salud",
+  "Manufactura", "Servicios Financieros", "Inmobiliarias", "Educación",
+  "Restaurantes y Cadenas", "Agroindustria"
+];
+
+const waBase = "https://api.whatsapp.com/send/?phone=50487380714";
+const waSuffix = "&type=phone_number&app_absent=0";
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride={canonical}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float-orb 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #3b82f6, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #2563eb, #3b82f6); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float-orb { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(2.5rem, 9vw, 7rem); line-height: 0.92; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #2563eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.4s ease; }
+    .btn-whatsapp:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(59, 130, 246, 0.5); background: rgba(59, 130, 246, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; line-height: 1; }
+    .industry-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; transition: all 0.3s ease; }
+    .industry-pill:hover { border-color: rgba(59, 130, 246, 0.5); color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
+    .step-num { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- HERO -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-blue-500/20">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+              <span class="text-blue-300 text-sm font-medium">Software a la Medida · Honduras</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Desarrollo de</span>
+            <span class="fade-up block text-gradient">Software a la Medida</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-3xl mb-12 leading-relaxed">
+            Software personalizado para empresas en Honduras: CRM, sistemas de gestión y aplicaciones hechas para tu operación.
+            Un equipo dedicado de 5 desarrolladores <span class="text-white font-semibold">desde $11,900/mes</span>.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-20">
+            <a href={`${waBase}&text=Hola,%20quiero%20desarrollar%20un%20software%20a%20la%20medida%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Hablar de mi proyecto
+            </a>
+            <a href="#planes" class="btn-ghost">Ver el modelo y precio</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- AI + ENGINEERING -->
+      <section class="py-28 px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="fade-up glass p-10 md:p-14">
+            <span class="text-blue-300 text-sm font-semibold uppercase tracking-wider">La pregunta de 2026</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mt-4 mb-6">¿La IA puede desarrollar tu software?</h2>
+            <div class="space-y-5 text-lg text-neutral-300 leading-relaxed">
+              <p>
+                Sí y no. La inteligencia artificial hoy escribe código y nos ayuda a ir más rápido. La usamos todos los días.
+              </p>
+              <p>
+                Pero un sistema que maneja <span class="text-white font-semibold">tus clientes, tu dinero y tus procesos</span> no se improvisa con un prompt. Necesita ingeniería: entender tu negocio, diseñar la arquitectura, proteger tus datos, probar cada caso y darle mantenimiento en el tiempo.
+              </p>
+              <p>
+                La IA es la herramienta. <span class="text-white font-semibold">La ingeniería la ponemos nosotros.</span> Esa es la diferencia entre un prototipo bonito que falla en producción y un software que tu empresa usa con confianza por años.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT WE BUILD -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Qué construimos</h2>
+            <p class="text-neutral-400 text-xl mt-4">Especialistas en CRM. Tenemos el nuestro, y construimos el tuyo.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {buildItems.map((b, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="text-4xl mb-4">{b.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
+                <p class="text-neutral-400">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p class="fade-up text-center text-neutral-400 mt-12 max-w-3xl mx-auto">
+            Conoce en detalle nuestro <a href="/hn/desarrollo-de-crm-honduras" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">desarrollo de CRM a la medida</a>, los <a href="/hn/sistemas-empresariales-honduras" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">sistemas empresariales</a> que construimos, y cómo funciona un <a href="/hn/equipo-de-desarrollo-dedicado-honduras" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">equipo de desarrollo dedicado</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Cómo desarrollamos</h2>
+            <p class="text-neutral-400 text-xl mt-4">Proceso de ingeniería real, con avances cada semana.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {process.map((p, i) => (
+              <div class="fade-up glass p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="step-num text-gradient mb-3">{p.step}</div>
+                <h3 class="text-xl font-semibold text-white mb-2">{p.title}</h3>
+                <p class="text-neutral-400">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANS / PRICING -->
+      <section id="planes" class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">El modelo y el precio</h2>
+            <p class="text-neutral-400 text-xl mt-4">Claro y predecible. Sin cobros por hora ni sorpresas.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 items-start">
+            <!-- Dedicated team (featured) -->
+            <div class="fade-up glass glass-hover p-8 border-blue-500/30" style="transition-delay: 0.1s">
+              <span class="inline-block text-xs font-semibold text-blue-300 bg-blue-500/20 px-3 py-1.5 rounded-full mb-6">Más elegido</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Equipo de Desarrollo Dedicado</h3>
+              <p class="text-neutral-400 mb-6">Un equipo completo trabajando en tu software cada semana.</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">$11,900</span>
+                <span class="text-neutral-400"> USD / mes</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">Contrato mínimo de 6 meses · Facturación mensual · Sprints semanales</p>
+              <ul class="space-y-3 mb-8">
+                {included.map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20me%20interesa%20el%20Equipo%20de%20Desarrollo%20Dedicado%20de%20%2411%2C900%2Fmes${waSuffix}`} class="btn-whatsapp w-full justify-center" target="_blank" rel="noopener noreferrer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Empezar
+              </a>
+            </div>
+
+            <!-- Fixed-scope project -->
+            <div class="fade-up glass glass-hover p-8">
+              <span class="inline-block text-xs font-semibold text-neutral-300 bg-white/10 px-3 py-1.5 rounded-full mb-6">Alcance cerrado</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Proyecto a la Medida</h3>
+              <p class="text-neutral-400 mb-6">Ideal para un sistema o CRM con alcance ya definido.</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">Cotización</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">Precio por proyecto según alcance · Entregas por fases</p>
+              <ul class="space-y-3 mb-8">
+                {["Levantamiento de requerimientos", "Propuesta y precio cerrado", "Desarrollo por fases", "QA y pruebas incluidas", "Capacitación y entrega", "Código 100% tuyo"].map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20quiero%20una%20cotizaci%C3%B3n%20para%20un%20proyecto%20de%20software%20a%20la%20medida${waSuffix}`} class="btn-ghost w-full text-center block" target="_blank" rel="noopener noreferrer">
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
+
+          <p class="fade-up text-center text-neutral-500 text-sm mt-8 max-w-2xl mx-auto">
+            La composición del equipo (perfiles senior, mid y QA) se ajusta según tu proyecto. Cuéntanos qué necesitas y armamos la propuesta.
+          </p>
+        </div>
+      </section>
+
+      <!-- INDUSTRIES -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Para empresas de todo Honduras</h2>
+            <p class="text-neutral-400 text-lg">De San Pedro Sula a Tegucigalpa, en todos los sectores.</p>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {industries.map((ind) => (
+              <span class="industry-pill">{ind}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="fade-up">
+            <FaqAccordion faqs={faqs} theme="dark" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+              Tu empresa merece<br />
+              <span class="text-gradient">su propio software</span>
+            </h2>
+            <p class="text-xl text-neutral-400 mb-12 max-w-xl mx-auto">
+              Consulta gratis. Cuéntanos tu proceso y te armamos una propuesta en 48 horas.
+            </p>
+            <a href={`${waBase}&text=Hola,%20quiero%20hablar%20sobre%20desarrollo%20de%20software%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp inline-flex text-lg px-10 py-5" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Contactar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</HnLayout>

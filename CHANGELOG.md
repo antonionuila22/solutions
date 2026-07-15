@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Honduras software-development SEO cluster (Spanish, hub & spoke): pillar page `/hn/desarrollo-de-software-honduras` plus cluster pages `/hn/desarrollo-de-crm-honduras`, `/hn/sistemas-empresariales-honduras`, and `/hn/equipo-de-desarrollo-dedicado-honduras` — all fully cross-linked, with Service + FAQPage schema, and a dedicated-team offer (5 developers + PM) from $11,900/mo with weekly sprints and a 6-month minimum. Linked from the `/hn/desarrollo-web-honduras` services hub.
 - Team profile pages for Catherine Morel (UX/UI Expert) and Iris Gomez (Project Coordinator) at `/team/catherine-morel` and `/team/iris-gomez`, mirroring the Ramon Nuila profile (placeholder bio copy with TODOs pending real details)
 - "View Profile" links on team cards (`Ourteam.astro`), wiring Ramon, Catherine, and Iris cards to their profile pages via a new optional `profileUrl` field
 - `.env.example` documenting the required environment variables (Turso, Resend, contact recipient)

@@ -1,0 +1,433 @@
+---
+export const prerender = true;
+/**
+ * Desarrollo de CRM a la Medida — Honduras (cluster page)
+ * Keywords: desarrollo de crm honduras, crm a la medida honduras, crm personalizado,
+ * crm para empresas honduras, sistema crm honduras, software crm honduras
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../../utils/schema";
+
+const title = "Desarrollo de CRM a la Medida en Honduras | CRM Personalizado para Empresas - Codebrand";
+const description =
+  "Desarrollamos CRM a la medida para empresas en Honduras: gestión de clientes, embudos de ventas, cotizaciones y reportes. Tenemos CRM propio. Equipo dedicado desde $11,900/mes o proyecto por cotización.";
+const keywords =
+  "desarrollo de crm honduras, crm a la medida honduras, crm personalizado, crm para empresas honduras, sistema crm honduras, software crm honduras, crm tegucigalpa, crm san pedro sula, crm propio honduras";
+
+const canonical = "https://www.codebrand.us/hn/desarrollo-de-crm-honduras";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Desarrollo de CRM a la Medida",
+  name: "Desarrollo de CRM a la Medida en Honduras",
+  description:
+    "Desarrollo de CRM personalizado para empresas en Honduras: gestión de clientes y contactos, embudos de ventas, seguimiento y recordatorios, cotizaciones, historial, inventario y reportes. Construimos tu CRM sobre la experiencia de tener nuestro propio CRM.",
+  url: canonical,
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Servicios de Desarrollo de CRM",
+  catalogItems: [
+    { name: "CRM de Ventas", description: "Embudos, oportunidades, seguimiento y recordatorios para que ningún cliente se enfríe." },
+    { name: "CRM con Cotizaciones", description: "Genera cotizaciones, envíalas y conviértelas en pedidos sin salir del sistema." },
+    { name: "CRM con Facturación e Inventario", description: "Une clientes, stock y facturación en un solo lugar cuando tu operación lo necesita." },
+    { name: "Integración con WhatsApp y correo", description: "Conecta la conversación con el cliente al historial dentro del CRM." },
+    { name: "Reportes y Dashboards", description: "Métricas de ventas, embudo y desempeño del equipo en tiempo real." },
+  ],
+});
+
+const faqs = [
+  {
+    question: "¿Pueden migrar los datos que ya tengo en Excel o en otro CRM?",
+    answer: "Sí. La migración de datos es parte del proyecto. Tomamos tus clientes, contactos, historial y cotizaciones desde Excel, Google Sheets, un CRM enlatado u otro sistema, los limpiamos, los ordenamos y los cargamos al nuevo CRM. Arrancas trabajando con tu información real, no con una base vacía."
+  },
+  {
+    question: "¿El CRM se puede integrar con WhatsApp y con mi facturación?",
+    answer: "Sí. Podemos conectar el CRM con WhatsApp para registrar conversaciones y enviar mensajes, con tu correo, con pasarelas de pago y con tu sistema de facturación. La idea es que el vendedor no salte entre diez pestañas: cliente, conversación, cotización y factura viven en un solo flujo. Lo que se integra depende de qué herramientas usa tu empresa y lo definimos al inicio."
+  },
+  {
+    question: "¿Por qué un CRM a la medida y no Salesforce, HubSpot o Zoho?",
+    answer: "Los CRM enlatados son buenos, pero te cobran por usuario cada mes, vienen en inglés, están pensados para procesos genéricos y te obligan a trabajar como el software dice. Un CRM a la medida se adapta a tu proceso de ventas real, en español, sin pagar licencias eternas por cada persona que lo usa. Con el tiempo, dejar de pagar por usuario suele salir más barato, y el código es tuyo."
+  },
+  {
+    question: "¿Cuánto tarda en estar listo un CRM a la medida?",
+    answer: "Depende del alcance, pero como trabajamos con sprints semanales empiezas a ver módulos funcionando desde las primeras semanas. Un CRM de ventas con clientes, embudo y cotizaciones suele tener una primera versión usable en pocos sprints; los módulos de inventario, facturación e integraciones se agregan por fases después. No esperas meses a ciegas: cada semana ves avances reales."
+  },
+  {
+    question: "¿El código y los datos del CRM son míos?",
+    answer: "Sí, 100%. Recibes el código, el repositorio, la base de datos, la documentación y los accesos. No hay plataforma propietaria que te amarre ni licencias mensuales para poder usar tu propio CRM. Lo puedes alojar donde quieras y cualquier desarrollador puede continuarlo en el futuro."
+  },
+  {
+    question: "¿Cuántos usuarios puede tener el CRM?",
+    answer: "Los que necesites. A diferencia de los CRM enlatados, no cobramos por usuario. Puedes tener a todo tu equipo de ventas, soporte y administración dentro del sistema, con permisos por rol para que cada quien vea solo lo que le corresponde, sin que tu factura suba cada vez que contratas a alguien."
+  },
+  {
+    question: "¿Realmente tienen su propio CRM?",
+    answer: "Sí. Codebrand tiene su propio CRM, y eso cambia todo: no estamos aprendiendo con tu proyecto. Ya sabemos de primera mano lo que cuesta construir embudos, seguimiento, cotizaciones y reportes que de verdad se usen todos los días. Esa experiencia la aplicamos directamente a tu CRM."
+  },
+  {
+    question: "¿Puedo empezar con algo simple y crecer después?",
+    answer: "Sí, y es lo que recomendamos. Podemos arrancar con un CRM de ventas claro y funcional, y luego ir agregando cotizaciones, inventario, facturación, reportes avanzados o integraciones a medida que tu empresa lo pide. Como el sistema es tuyo y a la medida, crece contigo sin tener que cambiar de plataforma."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const stats = [
+  { value: "CRM", label: "Propio, no teoría" },
+  { value: "0", label: "Cobro por usuario" },
+  { value: "Semanal", label: "Sprints y avances" },
+  { value: "100%", label: "Tu código y tus datos" }
+];
+
+const manages = [
+  { icon: "👥", title: "Clientes y contactos", desc: "Toda tu cartera en un solo lugar: datos, empresa, responsable y estado, sin hojas de cálculo sueltas." },
+  { icon: "📈", title: "Embudos de ventas", desc: "Etapas de tu proceso real, arrastra oportunidades y ve dónde se estanca cada negocio." },
+  { icon: "⏰", title: "Seguimiento y recordatorios", desc: "Tareas y alertas para que ningún cliente se enfríe y cada vendedor sepa qué sigue." },
+  { icon: "📝", title: "Cotizaciones", desc: "Genera y envía cotizaciones desde el CRM y conviértelas en pedidos con un clic." },
+  { icon: "🗂️", title: "Historial completo", desc: "Cada llamada, correo, mensaje y cotización queda registrado en la ficha del cliente." },
+  { icon: "📦", title: "Inventario y facturación", desc: "Si tu operación lo pide, unimos stock y facturación al CRM en un solo flujo." },
+  { icon: "📊", title: "Reportes y métricas", desc: "Ventas por vendedor, tasa de cierre y salud del embudo en dashboards en vivo." },
+  { icon: "🔐", title: "Permisos por rol", desc: "Cada persona ve solo lo que le corresponde. Seguridad y orden en tu información." }
+];
+
+const process = [
+  { step: "01", title: "Entendemos tu proceso", desc: "Mapeamos cómo vende tu empresa hoy: etapas, roles, cotizaciones y puntos de fuga." },
+  { step: "02", title: "Diseño del CRM", desc: "Definimos módulos, campos y pantallas para que el sistema calce con tu forma de trabajar." },
+  { step: "03", title: "Migración de datos", desc: "Traemos y limpiamos tus clientes e historial desde Excel u otro CRM." },
+  { step: "04", title: "Desarrollo por sprints", desc: "Construimos el CRM en ciclos semanales y te lo mostramos funcionando cada 7 días." },
+  { step: "05", title: "Integraciones", desc: "Conectamos WhatsApp, correo, pagos y facturación según lo que uses." },
+  { step: "06", title: "Capacitación y soporte", desc: "Entrenamos a tu equipo, publicamos el sistema y le damos soporte continuo." }
+];
+
+const included = [
+  "5 desarrolladores dedicados a tu empresa",
+  "Project Manager y reportes semanales",
+  "Migración de tus clientes e historial",
+  "Módulos de clientes, embudo y cotizaciones",
+  "Integraciones (WhatsApp, correo, facturación)",
+  "Stack moderno (React, Node.js, Python, PostgreSQL)",
+  "Sin cobro por usuario, código 100% tuyo",
+  "Capacitación y soporte durante el contrato"
+];
+
+const industries = [
+  "Distribuidoras", "Retail y Comercio", "Inmobiliarias", "Servicios Financieros",
+  "Clínicas y Salud", "Logística y Transporte", "Manufactura", "Educación",
+  "Agencias y Servicios", "Agroindustria"
+];
+
+const waBase = "https://api.whatsapp.com/send/?phone=50487380714";
+const waSuffix = "&type=phone_number&app_absent=0";
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride={canonical}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float-orb 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #3b82f6, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #2563eb, #3b82f6); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float-orb { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(2.5rem, 9vw, 7rem); line-height: 0.92; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #2563eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.4s ease; }
+    .btn-whatsapp:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(59, 130, 246, 0.5); background: rgba(59, 130, 246, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; line-height: 1; }
+    .industry-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; transition: all 0.3s ease; }
+    .industry-pill:hover { border-color: rgba(59, 130, 246, 0.5); color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
+    .step-num { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+    .compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- HERO -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-blue-500/20">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+              <span class="text-blue-300 text-sm font-medium">CRM a la Medida · Honduras</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Un CRM hecho para</span>
+            <span class="fade-up block text-gradient">tu empresa</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-3xl mb-12 leading-relaxed">
+            El CRM se adapta a tu proceso de ventas, no tu empresa al software. Somos especialistas:
+            <span class="text-white font-semibold">tenemos nuestro propio CRM</span> y construimos el tuyo, en español y sin pagar por usuario.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-20">
+            <a href={`${waBase}&text=Hola,%20quiero%20un%20CRM%20a%20la%20medida%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Quiero mi CRM
+            </a>
+            <a href="#planes" class="btn-ghost">Ver el modelo y precio</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CUSTOM vs OFF-THE-SHELF -->
+      <section class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">CRM a la medida vs. CRM enlatado</h2>
+            <p class="text-neutral-400 text-xl mt-4">La misma palabra, dos caminos muy distintos para tu empresa.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 items-start">
+            <div class="fade-up glass p-8">
+              <h3 class="text-2xl font-bold text-white mb-6">CRM enlatado</h3>
+              <ul class="space-y-4 text-neutral-300">
+                <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✕</span> Salesforce, HubSpot o Zoho cobran <span class="text-white font-semibold">por cada usuario, cada mes, para siempre</span>.</li>
+                <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✕</span> Vienen en inglés y con procesos genéricos pensados en Estados Unidos.</li>
+                <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✕</span> Son rígidos: tu equipo se adapta al software, no al revés.</li>
+                <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✕</span> Las funciones que necesitas suelen estar en el plan más caro.</li>
+                <li class="flex items-start gap-3"><span class="text-red-400 mt-0.5">✕</span> Tus datos viven en su plataforma; salir es difícil.</li>
+              </ul>
+            </div>
+
+            <div class="fade-up glass glass-hover p-8 border-blue-500/30" style="transition-delay: 0.1s">
+              <h3 class="text-2xl font-bold text-gradient mb-6">CRM a la medida</h3>
+              <ul class="space-y-4 text-neutral-300">
+                <li class="flex items-start gap-3"><span class="text-blue-400 mt-0.5">✓</span> Sin licencias por usuario: agrega a todo tu equipo sin que suba la factura.</li>
+                <li class="flex items-start gap-3"><span class="text-blue-400 mt-0.5">✓</span> En español y con el vocabulario de tu empresa.</li>
+                <li class="flex items-start gap-3"><span class="text-blue-400 mt-0.5">✓</span> Se adapta a tu proceso de ventas real, etapa por etapa.</li>
+                <li class="flex items-start gap-3"><span class="text-blue-400 mt-0.5">✓</span> Solo las funciones que usas, sin pagar por lo que no ocupas.</li>
+                <li class="flex items-start gap-3"><span class="text-blue-400 mt-0.5">✓</span> El código y los datos son 100% tuyos, sin amarres.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="fade-up text-center text-neutral-400 text-lg mt-10 max-w-3xl mx-auto">
+            Un CRM propio es parte de una estrategia más amplia de <a href="/hn/desarrollo-de-software-honduras" class="text-blue-400 underline underline-offset-4 hover:text-blue-300">desarrollo de software a la medida en Honduras</a>: tecnología construida para cómo trabaja tu empresa.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHAT A CRM MANAGES -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Qué gestiona tu CRM</h2>
+            <p class="text-neutral-400 text-xl mt-4">Todo lo que hoy vive en Excel, WhatsApp y la memoria de tus vendedores, en un solo lugar.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {manages.map((m, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.05}s`}>
+                <div class="text-4xl mb-4">{m.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{m.title}</h3>
+                <p class="text-neutral-400 text-sm">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CODEBRAND -->
+      <section class="py-28 px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="fade-up glass p-10 md:p-14">
+            <span class="text-blue-300 text-sm font-semibold uppercase tracking-wider">Por qué Codebrand</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mt-4 mb-6">Tenemos nuestro propio CRM</h2>
+            <div class="space-y-5 text-lg text-neutral-300 leading-relaxed">
+              <p>
+                No hablamos de CRM en teoría. <span class="text-white font-semibold">Codebrand tiene su propio CRM</span>, el que usamos todos los días para gestionar clientes, oportunidades y seguimiento.
+              </p>
+              <p>
+                Eso significa que ya vivimos lo que cuesta construir un CRM que de verdad se use: qué campos sobran, qué reportes importan, cómo se ve un embudo cuando lo mira un vendedor a las 8 de la mañana y por qué la mitad de los CRM terminan abandonados. Esa experiencia la ponemos en el tuyo.
+              </p>
+              <p>
+                No estamos aprendiendo con tu proyecto. <span class="text-white font-semibold">Ya sabemos hacer uno bueno.</span> Construimos tu CRM sobre esa base y lo integramos, si lo necesitas, con tus <a href="/hn/sistemas-empresariales-honduras" class="text-blue-400 underline underline-offset-4 hover:text-blue-300">sistemas empresariales</a> de inventario y facturación.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Cómo construimos tu CRM</h2>
+            <p class="text-neutral-400 text-xl mt-4">Sprints semanales: ves módulos funcionando desde las primeras semanas.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {process.map((p, i) => (
+              <div class="fade-up glass p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="step-num text-gradient mb-3">{p.step}</div>
+                <h3 class="text-xl font-semibold text-white mb-2">{p.title}</h3>
+                <p class="text-neutral-400">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANS / PRICING -->
+      <section id="planes" class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">El modelo y el precio</h2>
+            <p class="text-neutral-400 text-xl mt-4">Dos formas de construir tu CRM. Sin cobros por hora ni sorpresas.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 items-start">
+            <!-- Dedicated team (featured) -->
+            <div class="fade-up glass glass-hover p-8 border-blue-500/30" style="transition-delay: 0.1s">
+              <span class="inline-block text-xs font-semibold text-blue-300 bg-blue-500/20 px-3 py-1.5 rounded-full mb-6">Más elegido</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Equipo de Desarrollo Dedicado</h3>
+              <p class="text-neutral-400 mb-6">Un equipo completo construyendo y mejorando tu CRM cada semana.</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">$11,900</span>
+                <span class="text-neutral-400"> USD / mes</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">5 desarrolladores + Project Manager · Contrato mínimo de 6 meses · Facturación mensual</p>
+              <ul class="space-y-3 mb-8">
+                {included.map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20me%20interesa%20un%20CRM%20con%20el%20Equipo%20de%20Desarrollo%20Dedicado%20de%20%2411%2C900%2Fmes${waSuffix}`} class="btn-whatsapp w-full justify-center" target="_blank" rel="noopener noreferrer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Empezar
+              </a>
+            </div>
+
+            <!-- Fixed-scope project -->
+            <div class="fade-up glass glass-hover p-8">
+              <span class="inline-block text-xs font-semibold text-neutral-300 bg-white/10 px-3 py-1.5 rounded-full mb-6">Alcance cerrado</span>
+              <h3 class="text-2xl font-bold text-white mb-2">CRM por Proyecto</h3>
+              <p class="text-neutral-400 mb-6">Ideal si ya tienes claro qué CRM quieres y su alcance.</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">Cotización</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">Precio por proyecto según alcance · Entregas por fases</p>
+              <ul class="space-y-3 mb-8">
+                {["Levantamiento de tu proceso de ventas", "Propuesta y precio cerrado", "Desarrollo por fases", "Migración de datos incluida", "Capacitación y entrega", "Código 100% tuyo"].map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20quiero%20una%20cotizaci%C3%B3n%20para%20un%20CRM%20a%20la%20medida${waSuffix}`} class="btn-ghost w-full text-center block" target="_blank" rel="noopener noreferrer">
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
+
+          <p class="fade-up text-center text-neutral-500 text-sm mt-8 max-w-2xl mx-auto">
+            ¿Quieres conocer a fondo cómo trabaja el equipo? Mira el modelo de <a href="/hn/equipo-de-desarrollo-dedicado-honduras" class="text-blue-400 underline underline-offset-4 hover:text-blue-300">equipo de desarrollo dedicado en Honduras</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- INDUSTRIES -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">CRM para empresas de todo Honduras</h2>
+            <p class="text-neutral-400 text-lg">De San Pedro Sula a Tegucigalpa, para todo equipo que vende.</p>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {industries.map((ind) => (
+              <span class="industry-pill">{ind}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="fade-up">
+            <FaqAccordion faqs={faqs} theme="dark" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+              Deja de pagar por usuario.<br />
+              <span class="text-gradient">Ten tu propio CRM</span>
+            </h2>
+            <p class="text-xl text-neutral-400 mb-12 max-w-xl mx-auto">
+              Consulta gratis. Cuéntanos cómo vendes hoy y te armamos una propuesta de CRM en 48 horas.
+            </p>
+            <a href={`${waBase}&text=Hola,%20quiero%20hablar%20sobre%20un%20CRM%20a%20la%20medida%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp inline-flex text-lg px-10 py-5" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Contactar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</HnLayout>

@@ -1,0 +1,523 @@
+---
+export const prerender = true;
+/**
+ * Sistemas Empresariales y Software de Gestión a la Medida — Honduras (cluster page)
+ * Keywords: sistemas empresariales honduras, software de gestion honduras,
+ * software empresarial a la medida, sistema de inventario honduras,
+ * software de facturacion honduras, erp a la medida honduras
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../../utils/schema";
+
+const title = "Sistemas Empresariales a la Medida en Honduras | Software de Gestión - Codebrand";
+const description =
+  "Sistemas empresariales y software de gestión a la medida en Honduras: inventario, facturación, compras, producción y reportes. Un sistema que se adapta a tu operación, no al revés. Equipo dedicado desde $11,900/mes.";
+const keywords =
+  "sistemas empresariales honduras, software de gestion honduras, software empresarial a la medida, sistema de inventario honduras, software de facturacion honduras, erp a la medida honduras, software de bodega honduras, sistema de compras honduras";
+
+const canonical = "https://www.codebrand.us/hn/sistemas-empresariales-honduras";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Sistemas Empresariales a la Medida",
+  name: "Sistemas Empresariales y Software de Gestión a la Medida en Honduras",
+  description:
+    "Desarrollo de sistemas empresariales a la medida para empresas en Honduras: inventario y bodega, facturación y cobros, órdenes y compras, producción, planilla y RRHH, portales y paneles de reportes. Software de gestión hecho para tu operación, con integraciones y sprints semanales.",
+  url: canonical,
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Sistemas Empresariales y Software de Gestión",
+  catalogItems: [
+    { name: "Sistema de Inventario y Bodega", description: "Control de existencias, kardex, ubicaciones y traslados en tiempo real, sin depender de hojas de cálculo." },
+    { name: "Facturación y Cobros", description: "Facturación, cuentas por cobrar, estados de cuenta y recordatorios, adaptados a tu operación en Honduras." },
+    { name: "Órdenes y Compras", description: "Órdenes de compra, cotizaciones a proveedores y recepción de mercadería en un solo flujo." },
+    { name: "Producción y Manufactura", description: "Órdenes de producción, consumo de materia prima y costeo para empresas que fabrican o ensamblan." },
+    { name: "Planilla y RRHH", description: "Módulos de planilla, deducciones, control de empleados y reportes para el área de recursos humanos." },
+    { name: "Paneles y Reportes (BI)", description: "Dashboards y reportes que reemplazan el trabajo manual y muestran los números al día." },
+  ],
+});
+
+const faqs = [
+  {
+    question: "¿El sistema se integra con mi facturación electrónica y el SAR?",
+    answer: "Sí. Diseñamos el sistema para que genere y controle tus facturas según los formatos y correlativos que exige el SAR en Honduras, y podemos conectarlo con tu proveedor de facturación electrónica mediante su API o exportando los archivos que necesites. La regla del país no cambia; lo que cambia es que dejas de llenar todo a mano. Si más adelante el SAR ajusta un requisito, el sistema es tuyo y se puede actualizar sin pagar una licencia nueva."
+  },
+  {
+    question: "¿Funciona con mi inventario actual? No quiero empezar de cero.",
+    answer: "No empiezas de cero. Cargamos tus productos, existencias, proveedores y saldos actuales desde tus archivos de Excel o desde tu sistema anterior mediante una migración de datos. Definimos juntos el corte, validamos que los números cuadren y a partir de ese día el nuevo sistema arranca con tu realidad, no con una base vacía. La migración de datos es parte del proceso, no un extra sorpresa."
+  },
+  {
+    question: "¿El sistema queda en la nube o instalado en mi empresa (local)?",
+    answer: "Como prefieras. Lo más común es alojarlo en la nube para que tu equipo entre desde cualquier sucursal o desde el celular, con respaldos automáticos y sin tener que administrar un servidor. Si tu operación necesita que quede instalado en un servidor dentro de tu empresa (por política interna o por conectividad), también lo hacemos. Como el código es 100% tuyo, no quedas amarrado a nuestra infraestructura ni a una renta obligatoria."
+  },
+  {
+    question: "¿Capacitan a mi equipo para usar el sistema?",
+    answer: "Sí, y no es un detalle menor: un buen sistema mal adoptado no sirve. Capacitamos a tus usuarios por rol (bodega, caja, contabilidad, gerencia), entregamos material de apoyo y acompañamos las primeras semanas de uso real para resolver dudas y ajustar detalles. La meta es que tu gente use el sistema con confianza, no que le tenga miedo."
+  },
+  {
+    question: "¿En qué se diferencia de un ERP enlatado como SAP u Odoo?",
+    answer: "Un ERP enlatado te obliga a acomodar tu forma de trabajar a como el software fue diseñado, cobra licencias por usuario cada mes y muchas veces necesita un consultor caro para cada cambio. Un sistema a la medida hace lo contrario: se construye alrededor de cómo opera tu empresa, sin módulos que no usas y sin renta por usuario. Somos honestos: si tu operación es estándar y te alcanza con un enlatado bien configurado, te lo decimos. El sistema a la medida brilla cuando tu proceso tiene algo particular que el software de caja no respeta."
+  },
+  {
+    question: "¿Puede manejar varias sucursales y bodegas al mismo tiempo?",
+    answer: "Sí. Modelamos el sistema para múltiples sucursales, bodegas y cajas, con existencias e informes separados por ubicación y una vista consolidada para la gerencia. Cada usuario ve solo lo que le corresponde según su rol y su sucursal, y la gerencia ve el panorama completo. Es una de las razones más frecuentes por las que las empresas dejan atrás las hojas de cálculo."
+  },
+  {
+    question: "¿Cuánto tarda en estar funcionando un sistema de gestión?",
+    answer: "Depende del alcance, pero con sprints semanales ves módulos funcionando desde las primeras semanas, no después de meses de silencio. Un primer módulo útil (por ejemplo inventario o facturación) suele estar operando pronto, y el resto se suma por fases. Preferimos poner en marcha algo real y sólido y crecer sobre eso, en lugar de esperar a un lanzamiento gigante que nunca llega."
+  },
+  {
+    question: "¿Qué pasa si mi empresa crece o cambia el proceso?",
+    answer: "El sistema crece contigo. Al ser a la medida y con el código en tus manos, agregar una sucursal nueva, un módulo, un reporte o un cambio de proceso es cuestión de desarrollarlo, no de pelear con una plataforma cerrada. Puedes mantener el equipo dedicado para evolución continua o pedir mejoras puntuales por proyecto cuando las necesites."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const stats = [
+  { value: "1", label: "Sistema, no 5 herramientas sueltas" },
+  { value: "Tiempo real", label: "Datos al día, sin re-digitar" },
+  { value: "A la medida", label: "Se adapta a tu operación" },
+  { value: "100%", label: "Tu código, sin licencias por usuario" }
+];
+
+const signals = [
+  { icon: "⚠️", title: "Todo vive en Excel", desc: "Hojas de cálculo enormes que solo una persona entiende y que se rompen con un clic mal dado." },
+  { icon: "🔁", title: "Datos duplicados", desc: "El mismo dato se escribe tres veces en tres archivos distintos, y ninguno coincide con el otro." },
+  { icon: "🧾", title: "Reportes a mano", desc: "Cada fin de mes alguien pasa horas copiando y pegando para armar un reporte que ya llegó tarde." },
+  { icon: "🔌", title: "Herramientas que no se hablan", desc: "Ventas por un lado, inventario por otro, contabilidad por otro; nada está conectado." },
+  { icon: "🕵️", title: "No sabes tu número real", desc: "Preguntas cuánto hay en bodega o cuánto te deben y nadie da una respuesta al instante." },
+  { icon: "😰", title: "Todo depende de una persona", desc: "Si esa persona falta, la operación se traba porque el conocimiento no está en un sistema." }
+];
+
+const buildSystems = [
+  { icon: "📦", title: "Inventario y Bodega", desc: "Existencias, kardex, ubicaciones, traslados entre sucursales y alertas de stock mínimo." },
+  { icon: "🧾", title: "Facturación y Cobros", desc: "Facturación acorde al SAR, cuentas por cobrar, estados de cuenta y recordatorios de pago." },
+  { icon: "🛒", title: "Órdenes y Compras", desc: "Cotizaciones, órdenes de compra a proveedores y recepción de mercadería en un flujo ordenado." },
+  { icon: "🏭", title: "Producción", desc: "Órdenes de producción, consumo de materia prima y costeo para quien fabrica o ensambla." },
+  { icon: "👥", title: "Planilla y RRHH", desc: "Control de empleados, planilla, deducciones y reportes para recursos humanos." },
+  { icon: "📊", title: "Portales y Paneles (BI)", desc: "Portales para clientes o proveedores y dashboards con los números al día para la gerencia." }
+];
+
+const included = [
+  "5 desarrolladores dedicados a tu sistema",
+  "Project Manager y reportes semanales",
+  "Migración de tus datos actuales (Excel o sistema previo)",
+  "Módulos por fases con avances funcionando",
+  "Stack moderno (React, Node.js, Python, PostgreSQL)",
+  "Capacitación a tu equipo por rol",
+  "Código 100% tuyo, sin licencias por usuario",
+  "Soporte durante todo el contrato"
+];
+
+const industries = [
+  "Distribuidoras", "Retail y Comercio", "Logística y Bodegas", "Manufactura",
+  "Agroindustria", "Ferreterías", "Farmacéuticas", "Importadoras",
+  "Restaurantes y Cadenas", "Constructoras"
+];
+
+const waBase = "https://api.whatsapp.com/send/?phone=50487380714";
+const waSuffix = "&type=phone_number&app_absent=0";
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride={canonical}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <style>
+    .page-bg { background: #030303; }
+    .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; animation: float-orb 20s ease-in-out infinite; }
+    .orb-1 { width: 600px; height: 600px; background: linear-gradient(135deg, #3b82f6, #06b6d4); top: -200px; left: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: linear-gradient(135deg, #2563eb, #3b82f6); top: 50%; right: -150px; animation-delay: -7s; }
+    @keyframes float-orb { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.05); } }
+    .noise { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1; }
+    .text-display { font-size: clamp(2.5rem, 9vw, 7rem); line-height: 0.92; letter-spacing: -0.04em; font-weight: 800; }
+    .text-gradient { background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #2563eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
+    .glass-hover { transition: all 0.5s ease; }
+    .glass-hover:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-8px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 600; padding: 1.25rem 3rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.4s ease; }
+    .btn-whatsapp:hover { transform: translateY(-3px) scale(1.02); }
+    .btn-ghost { color: #fff; font-weight: 500; padding: 1.25rem 3rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.4s ease; }
+    .btn-ghost:hover { border-color: rgba(59, 130, 246, 0.5); background: rgba(59, 130, 246, 0.1); }
+    .fade-up { opacity: 0; transform: translateY(60px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .stat-number { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; line-height: 1; }
+    .industry-pill { padding: 0.5rem 1rem; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; transition: all 0.3s ease; }
+    .industry-pill:hover { border-color: rgba(59, 130, 246, 0.5); color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
+    .step-num { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+    .link-inline { color: #60a5fa; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s ease; }
+    .link-inline:hover { color: #93c5fd; }
+    .compare-col { border-radius: 20px; padding: 2rem; }
+    .compare-canned { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .compare-custom { background: rgba(59, 130, 246, 0.06); border: 1px solid rgba(59, 130, 246, 0.25); }
+  </style>
+
+  <div class="page-bg min-h-screen relative overflow-hidden text-white">
+    <div class="gradient-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="noise"></div>
+
+    <div class="relative z-10">
+      <!-- HERO -->
+      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="fade-up mb-10">
+            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-blue-500/20">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+              <span class="text-blue-300 text-sm font-medium">Software de Gestión · Honduras</span>
+            </span>
+          </div>
+
+          <h1 class="text-display mb-6">
+            <span class="fade-up block text-white">Sistemas Empresariales</span>
+            <span class="fade-up block text-gradient">a la Medida</span>
+          </h1>
+
+          <p class="fade-up text-xl md:text-2xl text-neutral-400 max-w-3xl mb-12 leading-relaxed">
+            Cuando las hojas de cálculo y el software enlatado ya no alcanzan, tu empresa necesita un sistema hecho para
+            cómo trabaja de verdad: <span class="text-white font-semibold">inventario, facturación, compras, producción y reportes</span> en un solo lugar.
+          </p>
+
+          <div class="fade-up flex flex-wrap gap-5 mb-20">
+            <a href={`${waBase}&text=Hola,%20quiero%20un%20sistema%20de%20gesti%C3%B3n%20a%20la%20medida%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Hablar de mi operación
+            </a>
+            <a href="#planes" class="btn-ghost">Ver el modelo y precio</a>
+          </div>
+
+          <div class="fade-up grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div class="text-center p-6 glass rounded-2xl">
+                <div class="stat-number text-gradient">{stat.value}</div>
+                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNALS -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Señales de que necesitas un sistema</h2>
+            <p class="text-neutral-400 text-xl mt-4">Si te reconoces en varias de estas, tu operación ya superó al Excel.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {signals.map((s, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="text-4xl mb-4">{s.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
+                <p class="text-neutral-400">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p class="fade-up text-center text-neutral-400 text-lg mt-12 max-w-3xl mx-auto">
+            Un sistema empresarial a la medida ordena todo esto en una sola herramienta. Es una de las ramas de nuestro
+            <a href="/hn/desarrollo-de-software-honduras" class="link-inline">desarrollo de software en Honduras</a>,
+            junto al <a href="/hn/desarrollo-de-crm-honduras" class="link-inline">desarrollo de CRM</a> para gestión de clientes y ventas.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHAT WE BUILD -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Qué sistemas construimos</h2>
+            <p class="text-neutral-400 text-xl mt-4">Módulos que se conectan entre sí, no islas separadas.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {buildSystems.map((b, i) => (
+              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
+                <div class="text-4xl mb-4">{b.icon}</div>
+                <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
+                <p class="text-neutral-400">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- CUSTOM VS CANNED ERP -->
+      <section class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">A la medida vs. ERP enlatado</h2>
+            <p class="text-neutral-400 text-xl mt-4">SAP y Odoo son buenos productos, pero no siempre son para ti.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 items-start">
+            <div class="fade-up compare-col compare-canned" style="transition-delay: 0.05s">
+              <h3 class="text-2xl font-bold text-white mb-6">ERP enlatado (SAP / Odoo)</h3>
+              <ul class="space-y-4 text-neutral-300">
+                <li class="flex items-start gap-3">
+                  <span class="text-neutral-500 mt-1">✕</span>
+                  Tú cambias tu proceso para acomodarte al software.
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-neutral-500 mt-1">✕</span>
+                  Licencias mensuales por cada usuario que agregas.
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-neutral-500 mt-1">✕</span>
+                  Módulos que no usas, pero que igual pesan y confunden.
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-neutral-500 mt-1">✕</span>
+                  Cada personalización depende de un consultor externo caro.
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-neutral-500 mt-1">✕</span>
+                  Si dejas de pagar, pierdes acceso a la plataforma.
+                </li>
+              </ul>
+            </div>
+
+            <div class="fade-up compare-col compare-custom" style="transition-delay: 0.1s">
+              <h3 class="text-2xl font-bold text-white mb-6">Sistema a la medida (Codebrand)</h3>
+              <ul class="space-y-4 text-neutral-200">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  El software se adapta a cómo ya trabaja tu empresa.
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  Sin licencias por usuario: agregas gente sin pagar más.
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  Solo los módulos que tu operación necesita.
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  Cambios y mejoras con tu equipo dedicado, sin intermediarios.
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  El código es 100% tuyo: nadie te lo puede quitar.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="fade-up text-center text-neutral-500 text-sm mt-8 max-w-2xl mx-auto">
+            Somos honestos: si tu operación es estándar y un enlatado bien configurado te alcanza, te lo decimos. El sistema
+            a la medida vale la pena cuando tu proceso tiene algo propio que el software de caja no respeta.
+          </p>
+        </div>
+      </section>
+
+      <!-- INTEGRATIONS -->
+      <section class="py-28 px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="fade-up glass p-10 md:p-14">
+            <span class="text-blue-300 text-sm font-semibold uppercase tracking-wider">Integraciones</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mt-4 mb-6">Une lo que ya usas</h2>
+            <div class="space-y-5 text-lg text-neutral-300 leading-relaxed">
+              <p>
+                No tienes que botar todo lo que ya funciona. Conectamos tu sistema con tu
+                <span class="text-white font-semibold">facturación electrónica, tu banco, tu punto de venta y tus proveedores</span>
+                para que la información fluya sola en vez de re-digitarla.
+              </p>
+              <p>
+                El objetivo es simple: que un dato se escriba una sola vez y viaje solo por toda la operación. Menos errores,
+                menos horas perdidas y por fin un número que puedes creer.
+              </p>
+              <p>
+                Trabajamos con un stack moderno y probado — <span class="text-white font-semibold">React, Node.js, Python y PostgreSQL</span> —
+                para que el sistema sea rápido, seguro y fácil de mantener en el tiempo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS BY SPRINTS -->
+      <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">Lo construimos por sprints</h2>
+            <p class="text-neutral-400 text-xl mt-4">Ves módulos funcionando cada semana, no un lanzamiento lejano.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="fade-up glass p-8" style="transition-delay: 0s">
+              <div class="step-num text-gradient mb-3">01</div>
+              <h3 class="text-xl font-semibold text-white mb-2">Mapeo de tu operación</h3>
+              <p class="text-neutral-400">Recorremos tu proceso real: bodega, caja, compras, producción. Entendemos antes de programar.</p>
+            </div>
+            <div class="fade-up glass p-8" style="transition-delay: 0.06s">
+              <div class="step-num text-gradient mb-3">02</div>
+              <h3 class="text-xl font-semibold text-white mb-2">Módulo prioritario</h3>
+              <p class="text-neutral-400">Elegimos el módulo que más duele (inventario o facturación) y lo ponemos a funcionar primero.</p>
+            </div>
+            <div class="fade-up glass p-8" style="transition-delay: 0.12s">
+              <div class="step-num text-gradient mb-3">03</div>
+              <h3 class="text-xl font-semibold text-white mb-2">Migración de datos</h3>
+              <p class="text-neutral-400">Cargamos tus productos, saldos y proveedores desde Excel o tu sistema anterior. Arrancas con tu realidad.</p>
+            </div>
+            <div class="fade-up glass p-8" style="transition-delay: 0.18s">
+              <div class="step-num text-gradient mb-3">04</div>
+              <h3 class="text-xl font-semibold text-white mb-2">Sprints semanales</h3>
+              <p class="text-neutral-400">Sumamos módulos por fases y te presentamos avances funcionando cada 7 días.</p>
+            </div>
+            <div class="fade-up glass p-8" style="transition-delay: 0.24s">
+              <div class="step-num text-gradient mb-3">05</div>
+              <h3 class="text-xl font-semibold text-white mb-2">Capacitación por rol</h3>
+              <p class="text-neutral-400">Entrenamos a bodega, caja, contabilidad y gerencia para que cada quien use lo suyo con confianza.</p>
+            </div>
+            <div class="fade-up glass p-8" style="transition-delay: 0.3s">
+              <div class="step-num text-gradient mb-3">06</div>
+              <h3 class="text-xl font-semibold text-white mb-2">Soporte y evolución</h3>
+              <p class="text-neutral-400">El sistema crece contigo: nuevas sucursales, reportes y mejoras cuando tu empresa las necesita.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANS / PRICING -->
+      <section id="planes" class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold text-white">El modelo y el precio</h2>
+            <p class="text-neutral-400 text-xl mt-4">Claro y predecible. Sin licencias por usuario ni sorpresas.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 items-start">
+            <!-- Dedicated team (featured) -->
+            <div class="fade-up glass glass-hover p-8 border-blue-500/30" style="transition-delay: 0.1s">
+              <span class="inline-block text-xs font-semibold text-blue-300 bg-blue-500/20 px-3 py-1.5 rounded-full mb-6">Más elegido</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Equipo de Desarrollo Dedicado</h3>
+              <p class="text-neutral-400 mb-6">Un equipo completo construyendo tu sistema de gestión cada semana.</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">$11,900</span>
+                <span class="text-neutral-400"> USD / mes</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">Contrato mínimo de 6 meses · Facturación mensual · Sprints semanales</p>
+              <ul class="space-y-3 mb-8">
+                {included.map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20me%20interesa%20el%20Equipo%20de%20Desarrollo%20Dedicado%20para%20mi%20sistema%20empresarial${waSuffix}`} class="btn-whatsapp w-full justify-center" target="_blank" rel="noopener noreferrer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Empezar
+              </a>
+            </div>
+
+            <!-- Fixed-scope project -->
+            <div class="fade-up glass glass-hover p-8">
+              <span class="inline-block text-xs font-semibold text-neutral-300 bg-white/10 px-3 py-1.5 rounded-full mb-6">Alcance cerrado</span>
+              <h3 class="text-2xl font-bold text-white mb-2">Proyecto por Cotización</h3>
+              <p class="text-neutral-400 mb-6">Ideal para un sistema con alcance ya definido (por ejemplo, solo inventario).</p>
+              <div class="mb-6">
+                <span class="text-5xl font-bold text-white">Cotización</span>
+              </div>
+              <p class="text-sm text-neutral-500 mb-6">Precio por proyecto según alcance · Entregas por fases</p>
+              <ul class="space-y-3 mb-8">
+                {["Levantamiento de tu operación", "Propuesta y precio cerrado", "Desarrollo por fases", "Migración de datos incluida", "Capacitación y entrega", "Código 100% tuyo"].map((item) => (
+                  <li class="flex items-start gap-3 text-neutral-300">
+                    <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href={`${waBase}&text=Hola,%20quiero%20una%20cotizaci%C3%B3n%20para%20un%20sistema%20de%20gesti%C3%B3n%20a%20la%20medida${waSuffix}`} class="btn-ghost w-full text-center block" target="_blank" rel="noopener noreferrer">
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
+
+          <p class="fade-up text-center text-neutral-500 text-sm mt-8 max-w-2xl mx-auto">
+            ¿No sabes cuál te conviene? El
+            <a href="/hn/equipo-de-desarrollo-dedicado-honduras" class="link-inline">equipo de desarrollo dedicado</a>
+            rinde mejor para sistemas grandes o que van a crecer; el proyecto por cotización, para un módulo puntual. Te ayudamos a decidir.
+          </p>
+        </div>
+      </section>
+
+      <!-- INDUSTRIES -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="fade-up mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Sistemas para cada sector</h2>
+            <p class="text-neutral-400 text-lg">De la bodega en San Pedro Sula a la oficina en Tegucigalpa.</p>
+          </div>
+          <div class="fade-up flex flex-wrap justify-center gap-3">
+            {industries.map((ind) => (
+              <span class="industry-pill">{ind}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="fade-up text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+          </div>
+          <div class="fade-up">
+            <FaqAccordion faqs={faqs} theme="dark" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-40 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative">
+          <div class="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+              Deja el Excel atrás<br />
+              <span class="text-gradient">y ordena tu operación</span>
+            </h2>
+            <p class="text-xl text-neutral-400 mb-12 max-w-xl mx-auto">
+              Consulta gratis. Cuéntanos cómo trabajas hoy y te armamos una propuesta en 48 horas.
+            </p>
+            <a href={`${waBase}&text=Hola,%20quiero%20hablar%20sobre%20un%20sistema%20empresarial%20para%20mi%20empresa${waSuffix}`} class="btn-whatsapp inline-flex text-lg px-10 py-5" target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Contactar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+  </script>
+</HnLayout>
