@@ -281,13 +281,22 @@ const c = { ...defaults, ...Astro.props.config };
 </section>
 
 <style>
-  .value-header, .stat-card, .benefit-item, .price-comparison, .cta-section {
+  /* The reveal-on-scroll HIDDEN starting state is gated behind `.js-anim`
+     (added by the script below only once it runs). If JS never runs, or the
+     IntersectionObserver misfires, there is no `.js-anim`, so the content stays
+     VISIBLE by default — this section must never sit blank (it was rendering as
+     an empty white block on /hn). Animation is a pure enhancement. */
+  #value-proposition.js-anim .value-header,
+  #value-proposition.js-anim .stat-card,
+  #value-proposition.js-anim .benefit-item,
+  #value-proposition.js-anim .price-comparison,
+  #value-proposition.js-anim .cta-section {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-  .benefit-item { transform: translateX(-30px); }
-  .price-comparison { transform: translateX(50px); }
+  #value-proposition.js-anim .benefit-item { transform: translateX(-30px); }
+  #value-proposition.js-anim .price-comparison { transform: translateX(50px); }
   .animate-visible {
     opacity: 1 !important;
     transform: translateY(0) translateX(0) !important;
@@ -296,34 +305,43 @@ const c = { ...defaults, ...Astro.props.config };
 
 <script>
   function initValuePropositionAnimations() {
-    const selector = '.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section';
-    const elements = document.querySelectorAll<HTMLElement>(selector);
+    const section = document.getElementById('value-proposition');
+    if (!section) return;
+    const elements = section.querySelectorAll<HTMLElement>(
+      '.value-header, .stat-card, .benefit-item, .price-comparison, .cta-section'
+    );
     if (!elements.length) return;
 
+    // Only now (JS is running) do we opt into the hidden-then-animate state.
+    section.classList.add('js-anim');
+
+    const reveal = (el: Element) => el.classList.add('animate-visible');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
     if (reducedMotion || !isDesktop || !('IntersectionObserver' in window)) {
-      elements.forEach((el) => {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      });
+      elements.forEach(reveal);
       return;
     }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible');
+          reveal(entry.target);
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
 
     elements.forEach((el, i) => {
-      el.style.transitionDelay = `${i * 0.1}s`;
+      el.style.transitionDelay = `${i * 0.08}s`;
       observer.observe(el);
     });
+
+    // Safety net: if the observer never fires for some element (tab restored
+    // in the background, layout race, etc.), force everything visible after a
+    // short delay so the section can never stay blank.
+    window.setTimeout(() => elements.forEach(reveal), 1500);
   }
 
   initValuePropositionAnimations();

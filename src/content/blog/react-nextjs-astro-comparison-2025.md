@@ -1,6 +1,6 @@
 ---
-title: "React vs Next.js vs Astro (2025): Which Should You Use?"
-description: "React vs Next.js vs Astro compared: performance benchmarks, SEO, and exactly when to use each framework in 2025 — with real-world use cases to choose fast."
+title: "React vs Next.js vs Astro (2026): Which Should You Use?"
+description: "React vs Next.js vs Astro compared: performance benchmarks, SEO, and exactly when to use each framework in 2026 — with real-world use cases to choose fast."
 author: "Ramon Nuila"
 readtime: 20
 img: /photos/blog/team-of-app-developers-looking-at-coding-algorithm-2025-02-17-08-38-57-utc.avif

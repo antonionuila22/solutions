@@ -12,6 +12,7 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
 import { isLongtailGeoUrl } from './src/lib/seo/geo-tiers';
+import { LEGACY_REDIRECTS } from './src/lib/seo/legacy-redirects';
 
 // Legacy/duplicate pages whose <link rel="canonical"> points to a DIFFERENT URL
 // (via canonicalOverride). They must NOT be advertised in the sitemap — we only
@@ -92,6 +93,10 @@ export default defineConfig({
   },
 
   output: 'server',
+
+  // Legacy URL 301s (Search Console 404 fix): old /locations/{city}-{code} slugs,
+  // renamed service pages, and the moved HN store page. See src/lib/seo/legacy-redirects.ts.
+  redirects: LEGACY_REDIRECTS,
 
   site: 'https://www.codebrand.us',
 

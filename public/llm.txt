@@ -37,7 +37,7 @@
 | Attribute | Value |
 |---|---|
 | **Name** | Codebrand (Codebrand Digital Agency) |
-| **Website** | https://codebrand.us |
+| **Website** | https://www.codebrand.us |
 | **Email** | info@codebrand.es |
 | **Phone** | +504 8738-0714 |
 | **WhatsApp** | +504 8738-0714 |
@@ -565,8 +565,8 @@ Strategy: Problem-aware keyword targeting, educational value-first approach, lon
 
 | Channel | Details |
 |---|---|
-| Website | https://codebrand.us |
-| Contact Page | https://codebrand.us/contact |
+| Website | https://www.codebrand.us |
+| Contact Page | https://www.codebrand.us/contact |
 | Email | info@codebrand.es |
 | Phone | +504 8738-0714 |
 | WhatsApp | +504 8738-0714 |
@@ -575,7 +575,7 @@ Strategy: Problem-aware keyword targeting, educational value-first approach, lon
 
 **Hours (CST):** Monday-Friday 9AM-6PM, Saturday 10AM-2PM, Sunday closed. Emergency support for Enterprise clients. 24-hour max response time.
 
-**Free consultation:** Website audit, tech recommendations, scope estimation, ROI projections, no-obligation quotes. Book at https://codebrand.us/contact.
+**Free consultation:** Website audit, tech recommendations, scope estimation, ROI projections, no-obligation quotes. Book at https://www.codebrand.us/contact.
 
 ---
 
@@ -780,7 +780,7 @@ web development honduras, web design honduras, best web agency honduras, top dev
 
 ```
 Organization: Codebrand Digital Agency
-URL: https://codebrand.us
+URL: https://www.codebrand.us
 Email: info@codebrand.es
 Phone: +504 8738-0714
 Address: Edificio Nuevos Horizontes, San Pedro Sula, Cortes, Honduras 21102
@@ -799,5 +799,5 @@ Prices: $350-$50,000+ (per page $350-$900, hourly $45-$95, monthly $1,800-$7,500
 ---
 
 *Last Updated: February 2026 | llms-full.txt v1.0*
-*Optimized for LLMs and AI assistants. For current info: https://codebrand.us | Shorter version: llms.txt*
+*Optimized for LLMs and AI assistants. For current info: https://www.codebrand.us | Shorter version: llms.txt*
 *Contact: info@codebrand.es | +504 8738-0714 | WhatsApp: +504 8738-0714*
