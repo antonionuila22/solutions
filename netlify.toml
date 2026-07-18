@@ -236,6 +236,14 @@
 #   status = 301
 #   force = true
 
+# Conventional /sitemap.xml → serve the Astro-generated sitemap index as a 200
+# rewrite, so crawlers/tools that probe the default filename find it (robots.txt
+# already declares /sitemap-index.xml and /sitemap-0.xml too).
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 200
+
 [[redirects]]
   from = "/desarrollo-web-honduras"
   to = "/hn/desarrollo-web-honduras"
