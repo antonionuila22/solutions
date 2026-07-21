@@ -485,7 +485,7 @@ La pregunta no es si deberías tener un chatbot. Es cuándo y cómo implementarl
 
 Implementar un chatbot efectivo requiere más que elegir una plataforma y activarla. Necesitas estrategia, diseño de conversaciones, integración con tus sistemas, y optimización continua.
 
-En Code Brand, hemos implementado chatbots para negocios de todos los tamaños. Desde soluciones simples para PYMES hasta bots personalizados con IA para empresas que necesitan capacidades específicas.
+En Code Brand, hemos implementado chatbots para negocios de todos los tamaños. Desde soluciones simples para PYMES hasta bots con IA creados mediante [desarrollo de software a la medida](/custom-software-development) para empresas que necesitan capacidades específicas.
 
 **¿Quieres explorar si un chatbot es correcto para tu negocio?**
 

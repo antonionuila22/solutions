@@ -184,7 +184,7 @@ If your website collects any patient information — appointment requests, conta
 
 Yet **the majority of medical practice websites** built by generic web agencies or DIY builders **do not meet these requirements** ([Compliancy Group](https://compliancy-group.com/)). They look fine on the surface, but they're regulatory time bombs.
 
-This is exactly why healthcare practices need development partners who understand both web technology AND regulatory compliance — not just one or the other.
+This is exactly why healthcare practices need [custom software development](/custom-software-development) partners who understand both web technology AND regulatory compliance — not just one or the other.
 
 ---
 

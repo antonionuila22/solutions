@@ -202,7 +202,7 @@ Need help creating consistent, high-quality content? [Our content marketing serv
 
 **Example**: A startup uses an LLM to generate boilerplate code, write documentation, and debug issues—shipping features 40% faster.
 
-Need custom software or automation? [Our web development team](/web-development) leverages AI to build solutions faster and more efficiently.
+Need [custom software](/custom-software-development) or automation? [Our web development team](/web-development) leverages AI to build solutions faster and more efficiently.
 
 ---
 

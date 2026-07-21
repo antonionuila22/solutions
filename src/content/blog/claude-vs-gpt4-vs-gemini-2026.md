@@ -315,7 +315,7 @@ For most business applications we build at Codebrand, **Claude is our default ch
 
 ## Need Help Choosing?
 
-We've built AI solutions with all major models. Whether you need:
+Through [custom software development](/custom-software-development), we've built AI solutions with all major models. Whether you need:
 
 - **AI chatbots** for customer service
 - **Code automation** for development

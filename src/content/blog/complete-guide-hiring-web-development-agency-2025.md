@@ -378,7 +378,7 @@ Finding the right web development agency takes effort, but it's worth it. A grea
 - Free you to focus on what you do best
 - Become a long-term strategic asset
 
-Whether you choose a large US agency, a specialized boutique, a nearshore partner like Codebrand, or a talented freelancer—the key is finding the right fit for YOUR needs, budget, and working style.
+Whether you choose a large US agency, a specialized boutique, a [nearshore development company](/nearshore-development) like Codebrand, or a talented freelancer—the key is finding the right fit for YOUR needs, budget, and working style.
 
 ---
 

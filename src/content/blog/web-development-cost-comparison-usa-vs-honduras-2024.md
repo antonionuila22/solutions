@@ -12,9 +12,9 @@ tags: ["web development cost", "USA vs Honduras", "pricing", "nearshore", "outso
 
 ## Web Development Cost Comparison: The Truth About USA vs Honduras Pricing
 
-If you've ever gotten a quote for web development in the USA, you've probably experienced sticker shock: **$15,000 for a basic e-commerce site?** **$50,000 for a mobile app?** **$100,000+ for a custom platform?**
+If you've ever gotten a quote for web development in the USA, you've probably experienced sticker shock: **$15,000 for a basic e-commerce site?** **$50,000 for a mobile app?** **$100,000+ for a [custom platform](/custom-software-development)?**
 
-Here's what most business owners don't know: **You can get the exact same quality for 60% less** by working with certified development teams in Honduras.
+Here's what most business owners don't know: **You can get the exact same quality for 60% less** by working with [certified nearshore development teams in Honduras](/nearshore-development).
 
 Before you dismiss this as "you get what you pay for," consider this: **Honduras developers use the same technologies, follow the same best practices, and hold the same certifications** (Udemy, Platzi, AWS, Adobe) as US developers. The difference? **Lower cost of living = lower rates**, not lower quality.
 

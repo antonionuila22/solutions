@@ -405,7 +405,7 @@ La pregunta no es si deberías integrar IA. Es cuándo y cómo.
 
 Implementar IA puede parecer abrumador, pero no tienes que hacerlo solo.
 
-En Code Brand, ayudamos a negocios a integrar inteligencia artificial de forma práctica y efectiva. No vendemos hype—entregamos resultados.
+En Code Brand, ayudamos a negocios a integrar inteligencia artificial de forma práctica y efectiva mediante [desarrollo de software a la medida](/custom-software-development). No vendemos hype—entregamos resultados.
 
 **¿Quieres explorar cómo la IA puede transformar tu sitio web?**
 

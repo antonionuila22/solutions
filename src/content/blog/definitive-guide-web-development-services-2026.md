@@ -95,7 +95,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 
 **What it is:** Complex, interactive applications that run in the browser—dashboards, portals, SaaS products.
 
-**Best for:** Businesses needing custom software, internal tools, or customer portals.
+**Best for:** Businesses needing [custom software development](/custom-software-development), internal tools, or customer portals.
 
 **What Codebrand delivers:**
 - Full-stack development
@@ -290,7 +290,7 @@ Understanding pricing helps you budget appropriately and identify red flags.
 
 ### Codebrand Pricing Philosophy
 
-We believe in **premium quality at accessible prices**. Our nearshore model (based in Honduras, same timezone as US) allows us to deliver work that rivals top US agencies at 40-60% lower cost.
+We believe in **premium quality at accessible prices**. Our [nearshore development](/nearshore-development) model (based in Honduras, same timezone as US) allows us to deliver work that rivals top US agencies at 40-60% lower cost.
 
 **Codebrand starting prices:**
 - Landing Pages: From $1,500

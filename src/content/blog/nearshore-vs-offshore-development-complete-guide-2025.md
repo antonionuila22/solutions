@@ -126,7 +126,7 @@ When accounting for these factors, the effective cost picture changes:
 
 *Effective rate accounts for productivity, rework, and management overhead
 
-**Bottom line**: Nearshore delivers 40-60% savings vs onshore with comparable quality. Offshore savings often evaporate when accounting for hidden costs.
+**Bottom line**: [Nearshore development](/nearshore-development) delivers 40-60% savings vs onshore with comparable quality. Offshore savings often evaporate when accounting for hidden costs.
 
 ### Timezone and Communication
 
@@ -265,7 +265,7 @@ Final Weeks: Polish & Launch
 
 ### Staff Augmentation
 
-**What it is**: Our developers integrate with your existing team, working under your direction.
+**What it is**: Our developers integrate with your existing team, working under your direction — a [staff augmentation](/hire-remote-developers) model.
 
 **Best for**:
 - Teams that need extra capacity

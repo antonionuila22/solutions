@@ -224,7 +224,7 @@ Let's compare your options honestly.
 
 ### 1. The Perfect Middle Ground
 
-Codebrand occupies the sweet spot:
+Codebrand occupies the sweet spot of [nearshore development](/nearshore-development):
 
 - **Quality of top US agencies** - Premium design, modern technology, professional processes
 - **Cost efficiency of nearshore** - Honduras location reduces overhead, savings passed to you

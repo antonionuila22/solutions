@@ -301,7 +301,7 @@ This is where automation is heading in 2026 and beyond.
 
 ## Need Help Implementing AI Automation?
 
-At Codebrand, we help businesses design and implement AI automation systems that actually work. From simple workflow automation to complex AI-powered processes, we build solutions that save time and scale with your business.
+At Codebrand, we help businesses design and implement AI automation systems that actually work. From simple workflow automation to complex AI-powered processes, our [custom software development](/custom-software-development) team builds solutions that save time and scale with your business.
 
 [Let's discuss your automation needs →](/contact)
 

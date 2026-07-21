@@ -329,7 +329,7 @@ Learn from others' mistakes. Avoid agencies that exhibit these behaviors:
 
 <h2 id="nearshore-winning">Why Nearshore Development Is Winning in 2026</h2>
 
-The data is clear: nearshore development has emerged as the optimal choice for US businesses.
+The data is clear: a [nearshore development company](/nearshore-development) has emerged as the optimal choice for US businesses.
 
 ### Market Trends
 
@@ -492,7 +492,7 @@ We build high-performance online stores using modern headless architecture:
 
 ### Healthcare & Professional Services
 
-We create secure, compliant portals for service-based businesses:
+Through [custom software development](/custom-software-development), we create secure, compliant portals for service-based businesses:
 - **Technology:** Custom React applications with secure authentication
 - **Focus:** Patient/client portals, appointment booking, document management
 - **Compliance:** HIPAA-aware architecture for healthcare clients

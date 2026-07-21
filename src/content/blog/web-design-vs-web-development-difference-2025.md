@@ -153,7 +153,7 @@ You need a web designer when:
 You need a web developer when:
 
 - You have designs but need them built
-- You need custom functionality (booking system, calculators, integrations)
+- You need [custom functionality](/custom-software-development) (booking system, calculators, integrations)
 - Your site is slow and needs optimization
 - You need to connect to external systems (CRM, payment, APIs)
 - You're building a web application, not just a website

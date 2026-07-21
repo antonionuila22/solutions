@@ -160,7 +160,7 @@ We don't ask you to trust promises. We show you who we are:
 - **Building since 2020**, with 8+ years of founder experience in the craft.
 - **A team of specialists** (design, development, strategy) — not one person doing everything in a rush.
 - **Fully custom.** No recycled templates. Your business isn't generic; your website shouldn't be either.
-- **Nearshore from Honduras**, fully bilingual, just a couple of hours' time difference from your customers in the US.
+- **[Nearshore from Honduras](/nearshore-development)**, fully bilingual, just a couple of hours' time difference from your customers in the US.
 
 We use the most modern tools available, **AI included**, because they make us better and faster. But every decision is made by someone who understands your business and owns the result. That's the entire difference.
 

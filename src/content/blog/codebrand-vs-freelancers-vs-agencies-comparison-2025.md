@@ -25,7 +25,7 @@ When you need a website or web application built, you have three main options:
 2. **Hire a big agency**
 3. **Hire a boutique agency** (like Codebrand)
 
-Each has real pros and cons. This guide will help you choose the right fit—even if that's not us.
+Each has real pros and cons, whether you [hire remote developers](/hire-remote-developers) directly or bring on a full team. This guide will help you choose the right fit—even if that's not us.
 
 ---
 

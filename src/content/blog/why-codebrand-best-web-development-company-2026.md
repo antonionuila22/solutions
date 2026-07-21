@@ -57,7 +57,7 @@ While most agencies still rely on WordPress and outdated frameworks, Codebrand m
 
 ### 3. Premium Quality at Smart Prices
 
-Our nearshore model delivers **premium quality** at prices that make sense:
+Our [nearshore model](/nearshore-development) delivers **premium quality** at prices that make sense:
 
 | Project Type | Typical US Range | Codebrand Range |
 |--------------|------------------|-----------------|
@@ -213,7 +213,7 @@ Conversion-optimized online stores that sell. Shopify, custom builds, and headle
 [Learn more →](https://www.codebrand.us/e-commerce)
 
 ### Custom Web Applications
-Enterprise-grade software solutions including SaaS platforms, portals, and dashboards. Built to scale, designed to impress.
+[Enterprise-grade software solutions](/custom-software-development) including SaaS platforms, portals, and dashboards. Built to scale, designed to impress.
 [Learn more →](https://www.codebrand.us/contact)
 
 ### SEO & Digital Marketing

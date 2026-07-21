@@ -25,7 +25,7 @@ Here's what actually happens: You buy a $50/month tool. Then you spend hours ada
 
 **The $50 tool ends up costing $5,000/month in hidden expenses.**
 
-Let's talk about when custom software makes sense—and when it doesn't.
+Let's talk about when [custom software](/custom-software-development) makes sense—and when it doesn't.
 
 ---
 

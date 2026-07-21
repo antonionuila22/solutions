@@ -59,6 +59,8 @@ const enMap: Record<string, string> = {
   "/hn/desarrollo-web-honduras": "/services/web-development",
   "/hn/tienda-online-honduras": "/e-commerce",
   "/hn/seo-honduras": "/services/seo",
+  "/hn/equipo-de-desarrollo-dedicado-honduras": "/nearshore-development",
+  "/hn/desarrollo-de-software-honduras": "/custom-software-development",
 };
 const currentPath = Astro.url?.pathname?.replace(/\/$/, "") || "";
 const normalizedPath = currentPath === "/hn" ? "/hn/" : currentPath;
@@ -190,8 +192,8 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- Geo Tags - Honduras -->
     <meta name="geo.region" content="HN" />
     <meta name="geo.placename" content="Honduras" />
-    <meta name="geo.position" content="14.0723;-87.1921" />
-    <meta name="ICBM" content="14.0723, -87.1921" />
+    <meta name="geo.position" content="15.5049;-88.0254" />
+    <meta name="ICBM" content="15.5049, -88.0254" />
 
     <!-- Links and Resources -->
     <link rel="sitemap" href="/sitemap-index.xml" />

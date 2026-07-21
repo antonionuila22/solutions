@@ -2,6 +2,8 @@
 // Old /locations/{city}-{stateCode} slugs -> current /locations/{slug}/ (trailing slash = canonical),
 // plus renamed service pages and the moved HN store page. Wired into astro.config.mjs `redirects`.
 export const LEGACY_REDIRECTS: Record<string, string> = {
+  // Cannibalization consolidation: intent fully covered by the nearshore hub
+  "/outsource-web-development": "/nearshore-development/",
   "/services/social-media-design": "/services/social-media/",
   "/services/ux-ui-design": "/services/ux-ui/",
   "/tienda-online-honduras": "/hn/tienda-online-honduras/",

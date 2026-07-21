@@ -174,7 +174,7 @@ Los costos varían significativamente según la complejidad y la opción elegida
 
 ### Por Qué Elegir Codebrand para tu Página Web en Honduras
 
-En Codebrand, somos expertos en diseñar software, páginas web, UX/UI y soluciones digitales completas para empresas hondureñas. Nuestra experiencia local nos permite entender las necesidades específicas del mercado hondureño.
+En Codebrand, somos expertos en [desarrollo de software a la medida](/custom-software-development), páginas web, UX/UI y soluciones digitales completas para empresas hondureñas. Nuestra experiencia local nos permite entender las necesidades específicas del mercado hondureño.
 
 #### Nuestros Servicios Especializados
 

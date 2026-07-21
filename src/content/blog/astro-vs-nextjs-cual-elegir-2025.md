@@ -421,7 +421,7 @@ Tanto Astro como Next.js son herramientas extraordinarias. Ambas tienen equipos 
 
 La elección del framework correcto es solo el primer paso. La implementación, arquitectura, y optimización son donde realmente se diferencia un proyecto exitoso de uno mediocre.
 
-En Code Brand, hemos construido proyectos con ambos frameworks y podemos ayudarte a:
+En Code Brand, hemos construido proyectos con ambos frameworks, y como [agencia de desarrollo React](/react-development-agency) podemos ayudarte a:
 
 - Evaluar cuál es mejor para tu caso específico
 - Diseñar la arquitectura correcta

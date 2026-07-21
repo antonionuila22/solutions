@@ -692,4 +692,4 @@ The good news: all three are excellent choices backed by strong communities. You
 
 ---
 
-*Need help choosing or implementing the right framework? [Contact us](/contact) for a free technical consultation.*
+*Need help choosing or implementing the right framework? Whether you want to [hire React developers](/react-development-agency) or migrate to Astro, [contact us](/contact) for a free technical consultation.*

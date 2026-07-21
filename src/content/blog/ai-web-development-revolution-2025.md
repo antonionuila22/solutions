@@ -295,7 +295,7 @@ We've integrated AI into our workflow while maintaining quality:
 
 AI in web development isn't hype—it's here, and it's changing everything. The businesses that win will be those that embrace AI thoughtfully: leveraging its speed while maintaining human oversight for quality.
 
-Whether you're building a simple landing page or a complex web application, understanding how AI fits into the development process helps you make better decisions, set realistic expectations, and ultimately get a better product.
+Whether you're building a simple landing page or a complex web application through [custom software development](/custom-software-development), understanding how AI fits into the development process helps you make better decisions, set realistic expectations, and ultimately get a better product.
 
 The question isn't whether to use AI—it's how to use it wisely.
 

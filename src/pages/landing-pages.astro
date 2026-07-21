@@ -47,7 +47,7 @@ const serviceSchema = createServicePageSchema({
 });
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image}>
+<Layout title={title} description={description} keywords={keywords} image={image} breadcrumbNames={{ "landing-pages": "Landing Pages" }}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <!-- Hero Section -->
   <PageHero

@@ -32,7 +32,7 @@ In this comprehensive guide, we'll explore everything you need to know about nea
 
 ## What is Nearshore Software Development?
 
-**Nearshore software development** is the practice of outsourcing software development to companies in nearby countries—typically within the same or adjacent timezones. For US businesses, this means partnering with development teams in Latin America, particularly countries like Honduras, Mexico, Costa Rica, and Colombia.
+**Nearshore software development** is the practice of outsourcing software development to companies in nearby countries—typically within the same or adjacent timezones. For US businesses, this means partnering with a [nearshore development team](/nearshore-development) in Latin America, particularly countries like Honduras, Mexico, Costa Rica, and Colombia.
 
 ### Nearshore vs. Offshore vs. Onshore: The Key Differences
 
@@ -160,7 +160,7 @@ Let's look at actual project costs:
 
 ## How to Choose the Right Nearshore Development Partner
 
-Not all nearshore companies are created equal. Here's your checklist:
+Whether you want to [hire remote developers](/hire-remote-developers) for a single role or build out a full team, not all nearshore companies are created equal. Here's your checklist:
 
 ### ✅ **1. Verify Technical Expertise**
 

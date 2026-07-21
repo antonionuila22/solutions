@@ -401,7 +401,7 @@ When projects are billed hourly, here's what to expect:
 ### Best Value Strategies
 
 **For tight budgets:**
-- Consider nearshore agencies (same quality, lower cost)
+- Consider [nearshore agencies](/nearshore-development) (same quality, lower cost)
 - Start with MVP, expand later
 - Use proven platforms (Shopify, WordPress) instead of custom
 - Prioritize features ruthlessly

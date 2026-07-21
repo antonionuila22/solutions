@@ -414,7 +414,7 @@ Use this checklist to audit your own React application:
 
 ## Need Help Optimizing Your React App?
 
-At Codebrand, we specialize in React performance optimization. Our senior engineers have optimized dozens of React applications, from startups to enterprise.
+At Codebrand, a [React development agency](/react-development-agency), we specialize in React performance optimization. Our senior engineers have optimized dozens of React applications, from startups to enterprise.
 
 Whether you need a performance audit, hands-on optimization work, or ongoing performance monitoring, we can help.
 

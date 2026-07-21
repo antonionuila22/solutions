@@ -239,7 +239,7 @@ We deliver **premium quality at accessible prices**:
 - **Full UX/UI:** From $6,000
 - **Design Systems:** From $15,000
 
-**Why we can offer this:** Our Honduras-based team delivers US-quality work at nearshore prices—same timezone, native English, premium standards.
+**Why we can offer this:** Our Honduras-based [nearshore development team](/nearshore-development) delivers US-quality work at nearshore prices—same timezone, native English, premium standards.
 
 [Get a custom quote →](https://www.codebrand.us/contact)
 
