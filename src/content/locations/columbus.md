@@ -1,6 +1,7 @@
 ---
-title: "Web Development Company Columbus | Custom Website Design & Development OH"
-description: "Professional web development services for Columbus businesses. Custom websites, e-commerce platforms, and enterprise applications for retail, insurance, and education industries. Cost-effective nearshore development from Honduras."
+title: "Custom Websites for Columbus Businesses"
+metaTitle: "Columbus Web Development | Nearshore Partner OH"
+description: "Web development for Columbus retail, insurance, logistics, and startups. Nearshore team, Eastern-aligned hours, code you own. Get a free estimate."
 city: "Columbus"
 state: "Ohio"
 stateCode: "OH"
@@ -25,54 +26,71 @@ featured: true
 
 # SEO Enhanced Content
 longDescription: |
-  <p>Columbus—Ohio's capital and largest city, a growing hub for <strong>retail innovation, insurance, education, and technology</strong>. Home to Ohio State University and corporate headquarters like Nationwide and L Brands, Columbus combines Midwestern values with progressive business thinking.</p>
+  <p>Columbus is one of the fastest-growing large cities in the Midwest, and its economy is more layered than its reputation suggests. This is a retail-brand town at its core—the corporate lineage that built Victoria's Secret, Bath & Body Works, Abercrombie & Fitch, and Express still shapes a deep bench of merchandising, marketing, and e-commerce talent. It is also an insurance and financial-services capital, anchored by Nationwide's downtown headquarters, and a logistics crossroads whose central location and Rickenbacker intermodal hub make it a natural distribution point for the eastern half of the country. Codebrand builds websites and web applications for Columbus businesses that need to compete in those categories without paying big-agency rates.</p>
 
-  <p>At Codebrand, we help Columbus-area businesses build <strong>professional, effective websites</strong> at competitive rates. Our nearshore team in Honduras offers a cost-effective alternative that aligns well with Columbus's practical, innovation-minded business culture.</p>
+  <p>The city is changing quickly, and the demand for good web work is changing with it. Intel's massive semiconductor project in New Albany is drawing suppliers, contractors, and a wave of skilled workers to the northeast side, seeding a new manufacturing-and-tech corridor. Ohio State University—one of the largest universities in the country—keeps the metro young, educated, and full of founders, and the startup scene downtown and in the Short North has matured into a genuine ecosystem. Alongside all of it, Columbus's celebrated food scene, its healthcare systems like OhioHealth and Nationwide Children's, and a steady stream of professional-services firms round out a market where a fast, well-built website is table stakes.</p>
 
-  <p>Communication is easy: <strong>Honduras is just 1 hour behind Eastern Time</strong>. When you're starting work in Downtown Columbus, the Short North, or Dublin, we're ready to collaborate. Real-time Slack communication, video calls during your business hours, and responsive partnership throughout your project.</p>
+  <p>Codebrand is a nearshore studio based in San Pedro Sula, Honduras, and we work with Columbus companies the way a dependable local partner would—minus the local overhead. Our rates typically run 40 to 60 percent below a Short North or downtown agency, and we build with modern, maintainable tools: React, Next.js, Astro, and Node.js. Columbus business culture prizes practicality and follow-through over hype, and that suits us; we commit to clear timelines, communicate in fluent English throughout, and hand over the full source code at the end so the site is genuinely yours to keep and grow.</p>
 
-  <p>We understand Columbus's diverse economy. From <strong>retail and fashion companies</strong> to <strong>insurance and financial services</strong>, from <strong>education institutions</strong> to <strong>growing tech startups</strong>—we can help businesses create digital experiences that effectively serve their goals.</p>
+techScene: |
+  <p>Columbus has quietly become one of the Midwest's most talked-about tech markets, and the momentum is unmistakable. Intel's multi-billion-dollar semiconductor fabrication project in New Albany has reframed the region as a serious advanced-manufacturing player and is pulling an ecosystem of suppliers and technical firms toward the metro. Ohio State University supplies a steady pipeline of graduates in computer science and design, Battelle and the region's research institutions add deep R&D capacity, and the insurance and retail giants headquartered here run large in-house technology and e-commerce operations that spin off talent and startups. The result is a practical, growth-minded tech community—less concerned with buzz than with building things that work—where an outside development partner that ships reliable, production-grade code is a natural fit for Columbus firms scaling their digital presence.</p>
 
 industries:
-  - name: "Retail & Fashion"
-    description: "E-commerce platforms and brand websites for Columbus's significant retail sector."
+  - name: "Retail & E-commerce"
+    description: "Online stores and brand sites for Columbus's deep retail lineage, from apparel and beauty brands to independent merchants."
   - name: "Insurance & Financial Services"
-    description: "Corporate websites and client portals for Nationwide and other Columbus insurers."
-  - name: "Higher Education"
-    description: "Institutional websites and platforms for Ohio State and other Columbus institutions."
+    description: "Corporate sites, agent tools, and client portals for the insurers and financial firms anchored by Nationwide's downtown headquarters."
+  - name: "Logistics & Distribution"
+    description: "Tracking dashboards and B2B portals for the distribution and supply-chain operators built around Columbus's central location and Rickenbacker hub."
+  - name: "Advanced Manufacturing & Tech"
+    description: "Supplier and corporate websites for the firms drawn to the Intel semiconductor corridor rising in New Albany."
   - name: "Healthcare"
-    description: "Healthcare websites and patient portals for Columbus's medical sector."
-  - name: "Technology & Startups"
-    description: "Web applications and platforms for Columbus's growing tech ecosystem."
+    description: "Patient-facing sites and portals for OhioHealth-adjacent providers and the metro's clinics and practices."
   - name: "Food & Hospitality"
-    description: "Restaurant and hospitality websites for Columbus's renowned food scene."
+    description: "Menu, ordering, and reservation sites for Columbus's nationally recognized restaurant and food scene."
 
 marketHighlights:
-  - "Columbus is home to major retailers including L Brands (Victoria's Secret, Bath & Body Works)"
-  - "Nationwide Insurance headquarters is in Columbus"
-  - "Ohio State University is one of the largest universities in the US"
-  - "Columbus has been recognized as a top city for startups and tech talent"
-  - "The city's cost of living is significantly lower than coastal metros"
-  - "Columbus has a young, educated population driven by Ohio State"
+  - "Columbus is one of the fastest-growing large cities in the Midwest, kept young by Ohio State University"
+  - "The corporate lineage behind Victoria's Secret, Bath & Body Works, Abercrombie, and Express built deep retail and e-commerce talent here"
+  - "Nationwide's downtown headquarters anchors a major insurance and financial-services cluster"
+  - "Intel's semiconductor project in New Albany is seeding a new advanced-manufacturing and tech corridor"
+  - "A central location and the Rickenbacker intermodal hub make Columbus a logistics crossroads"
+  - "Operating costs well below coastal metros make nearshore development an easy value case for local firms"
 
 localStats:
-  techCompanies: "2,500+"
-  averageProjectCost: "$10,000-45,000"
-  businessGrowth: "+8% YoY"
+  averageProjectCost: "$2,000-$10,000"
+
+whyChooseUs:
+  - title: "40-60% Below a Short North Agency"
+    description: "Downtown and Short North studios carry Columbus overhead. Our nearshore Honduras model delivers comparable senior engineering for roughly half, which fits the practical, value-minded way Columbus firms buy."
+  - title: "E-commerce Depth for a Retail Town"
+    description: "Columbus is built on retail brands, and we build the storefronts, catalogs, and checkout flows that sector demands—fast, mobile-first, and made to convert rather than just to display."
+  - title: "Fully Overlapping Eastern Hours"
+    description: "We work on Central Time, an hour behind Eastern, so we cover your entire Columbus workday. Messages from downtown or Dublin get same-day answers instead of overnight delays."
+  - title: "Code You Keep"
+    description: "Every Columbus project ends with the complete, documented repository handed to you—no lock-in—so your insurance, retail, or startup team can host and extend the site on its own terms."
+
+localServices:
+  - title: "E-commerce & Brand Storefronts"
+    description: "Conversion-focused online stores for Columbus's retail brands and independent merchants, built mobile-first and fast."
+  - title: "Corporate Sites & Client Portals"
+    description: "Polished websites and secure portals for the insurance, financial, and professional-services firms clustered downtown."
+  - title: "Startup & MVP Development"
+    description: "Cost-effective first products for the founders coming out of Ohio State and the downtown and Short North startup scene."
 
 faqs:
-  - question: "How does timezone alignment work with Columbus?"
-    answer: "Honduras is on Central Standard Time, just 1 hour behind Eastern Time. This means we can collaborate during your entire business day. Calls, Slack messages, and video meetings work seamlessly throughout your working hours."
-  - question: "Can you help retail and e-commerce businesses?"
-    answer: "Yes. Columbus has a strong retail presence, and we can build e-commerce platforms, brand websites, and online shopping experiences. We help businesses sell products online effectively."
-  - question: "Do you work with insurance and financial services companies?"
-    answer: "Yes. We can build corporate websites, client portals, and professional platforms for insurance and financial services companies."
-  - question: "What about educational institutions?"
-    answer: "Yes. We can build institutional websites, program pages, and student-facing portals for educational organizations."
-  - question: "Can you help Columbus startups?"
-    answer: "Absolutely. Columbus has a growing startup ecosystem, and we help founders build their digital presence cost-effectively. Our pricing allows startups to get professional websites without overextending limited budgets."
-  - question: "How do Columbus clients typically work with your team?"
-    answer: "Most Columbus clients start with a discovery call, then we communicate via Slack and video calls throughout the project. Because we're just 1 hour off from Eastern Time, collaboration is straightforward."
+  - question: "Can you build a serious e-commerce store for a Columbus retail brand?"
+    answer: "Yes—it's a core strength given Columbus's retail heritage. We build conversion-focused storefronts, product catalogs, and checkout flows on platforms like Shopify or custom stacks, tuned to be fast and mobile-first for the apparel, beauty, and consumer brands the city is known for."
+  - question: "Do you work with insurance and financial-services firms here?"
+    answer: "Yes. Columbus is a Nationwide town with a dense insurance and financial cluster, and we build the corporate sites, agent-facing tools, and secure client portals those firms need, with appropriate protections for sensitive customer data."
+  - question: "How does collaborating across the timezone gap work?"
+    answer: "We run on Central Time, just one hour behind Columbus's Eastern Time, so our hours cover your full workday. A request from downtown, Dublin, or Worthington in the morning is answered the same day rather than waiting overnight."
+  - question: "Can you support suppliers moving into the Intel and New Albany corridor?"
+    answer: "Yes. The Intel semiconductor project is drawing manufacturers and technical-services firms to northeast Columbus, and we build the credible corporate sites and B2B supplier portals those companies need as they establish themselves in the new corridor."
+  - question: "Is professional development affordable for a Columbus startup or small business?"
+    answer: "It is. Because our nearshore rates run 40 to 60 percent below a local Columbus agency, founders coming out of Ohio State and small businesses across the metro can get genuinely professional sites without overextending a limited budget—and you own the code when it ships."
+  - question: "We run a restaurant in the Short North—can you handle online ordering and reservations?"
+    answer: "Yes. Columbus has a nationally recognized food scene, and we build menu, online-ordering, and reservation sites that let restaurants capture more orders directly instead of surrendering margin to third-party platforms."
 
 nearbyAreas:
   - "Downtown Columbus"

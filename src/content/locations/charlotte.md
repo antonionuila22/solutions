@@ -87,7 +87,7 @@ whyChooseUs:
 
 faqs:
   - question: "How does timezone alignment work with Charlotte?"
-    answer: "Honduras operates on Central Standard Time, just 1 hour behind Eastern Time. This means nearly complete overlap with your business day. When you message us at 10 AM, we respond within minutes. When you want a video call at 3 PM, we're available. It's essentially like working with a local team."
+    answer: "We work from Honduras on Central Time, only sixty minutes behind Charlotte's Eastern clock, which keeps our schedule and yours in near-constant overlap. When an Uptown banking team or a South End startup opens Slack first thing, we are already at our desks, ready to trade messages in real time or hop on a mid-afternoon call to walk through a build. That steady, same-day rhythm is exactly what a twelve-hour offshore gap can never give a Queen City project."
   - question: "Do you have experience with financial services and banking websites?"
     answer: "Yes. Charlotte is America's second-largest banking center, and financial services is a core focus for us. We build secure client portals, fintech platforms, and corporate sites for financial institutions. We understand compliance requirements, security best practices, and the professional presentation that banking clients expect."
   - question: "Can you help Charlotte's growing startup scene?"

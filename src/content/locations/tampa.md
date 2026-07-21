@@ -87,7 +87,7 @@ localStats:
 
 faqs:
   - question: "How does timezone alignment work with Tampa?"
-    answer: "Honduras operates on Central Standard Time, just 1 hour behind Eastern Time. This means nearly complete overlap with your business day. When you message us at 10 AM, we respond within minutes. When you want a video call at 3 PM, we're available. It's essentially like working with a local team."
+    answer: "Our San Pedro Sula office runs on Central Time, a single hour behind Tampa's Eastern zone, so your working day and ours line up almost end to end. A Westshore marketing lead who pings us at 9 AM hears back before the coffee cools, and a Water Street product team can book an afternoon video review without anyone stretching outside normal hours. Compared with an offshore shop that signs off just as Tampa Bay wakes up, the difference in momentum is night and day."
   - question: "Do you have experience with financial services websites?"
     answer: "Yes. Tampa's financial services sector is significant, and we've built secure client portals, fintech platforms, and corporate sites for financial companies. We understand compliance requirements, security best practices, and the professional presentation that financial services clients expect."
   - question: "Can you help Tampa Bay startups build MVPs?"

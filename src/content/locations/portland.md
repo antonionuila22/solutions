@@ -1,6 +1,7 @@
 ---
-title: "Web Development Company Portland | Custom Website Design & Development OR"
-description: "Innovative web development services for Portland businesses and tech startups. Custom websites, SaaS platforms, and sustainable business solutions. 60% cost savings with nearshore development. Bilingual team, modern tech stack."
+title: "Portland Web Design & Development | OR Studio"
+metaTitle: "Custom Websites for Portland Businesses | OR"
+description: "Design-forward web development for Portland brands in apparel, tech, and sustainability. Nearshore team at 40-60% less. Start your project today."
 city: "Portland"
 state: "Oregon"
 stateCode: "OR"
@@ -18,61 +19,78 @@ keywords:
   - "nearshore web development Portland"
   - "web development services Portland"
   - "sustainable web development"
-  - "Nike web development Portland"
+  - "athletic brand web development Portland"
   - "ecommerce development Portland"
-  - "creative web development Oregon"
+  - "Silicon Forest web development"
 featured: true
 
 # SEO Enhanced Content
 longDescription: |
-  <p>Portland—the City of Roses, a hub of <strong>creativity, sustainability, and independent spirit</strong>. Home to Nike, Intel, and a thriving startup ecosystem, Portland combines Pacific Northwest innovation with a unique culture that values authenticity, design, and doing things differently. Your digital presence needs to reflect that distinctive Portland character.</p>
+  <p>Portland has a reputation the rest of the country recognizes on sight: the City of Roses, a place that prizes <strong>design, craft, sustainability, and a stubborn independent streak</strong>. That culture is also an economic engine. The metro is the world capital of athletic and outdoor apparel—Nike is headquartered in Beaverton, Adidas runs its North American operations here, and Columbia Sportswear, Keen, and a constellation of activewear and gear brands cluster nearby. When a Portland company puts something online, the bar for taste and polish is unusually high, and a generic template simply won't pass. Codebrand builds websites and applications that meet Portland's design standards without carrying a Portland agency's price tag.</p>
 
-  <p>At Codebrand, we serve Portland's creative and tech-forward business community with <strong>high-quality web development at accessible rates</strong>. Our nearshore model from Honduras delivers the design-conscious, technically excellent work that Portland businesses expect—without the premium costs of local agencies.</p>
+  <p>Beyond footwear and outdoor gear, Portland's economy runs on two other strong currents. The first is the Silicon Forest—the semiconductor and hardware belt out in Washington County, where Intel is the region's largest private employer and firms like Lattice Semiconductor and a web of suppliers anchor a serious manufacturing and R&D base. The second is the city's creative and values-driven culture: world-famous advertising and design shops, a food, coffee, and craft-beverage scene with genuine commercial weight, and a deep bench of mission-led, sustainability-focused companies and B Corps. Oregon's lack of a sales tax gives local e-commerce an added edge. Across all of it, businesses need sites that are fast, beautiful, and built to tell a story.</p>
 
-  <p>While we're based in Honduras (2 hours ahead of Pacific Time), our workflow aligns with Portland business hours. We're available for calls from 7 AM to 5 PM your time. We use the same collaboration tools that Portland tech companies use—Slack, GitHub, Figma. And because we're nearshore rather than offshore, you avoid the massive timezone gaps that make Asian partnerships challenging.</p>
+  <p>Codebrand is a <strong>nearshore development studio based in San Pedro Sula, Honduras</strong>, and we build for Portland companies at roughly <strong>40 to 60 percent below the cost of a comparable Pearl District agency</strong>. We work in React, Next.js, Astro, and Node.js, and we execute pixel-perfect from Figma, because in Portland the design details are the difference. We sit two hours ahead of Pacific Time, which puts our workday squarely over yours—morning standups, afternoon reviews, and the same Slack, GitHub, and Figma workflow your team already lives in. Every engineer speaks fluent, professional English, and every project ships with full source-code ownership and no vendor lock-in.</p>
 
-  <p>We understand Portland's unique culture. From <strong>outdoor and athletic brands</strong> to <strong>sustainable businesses with values-driven missions</strong>, from <strong>creative agencies in the Pearl District</strong> to <strong>tech startups in the Silicon Forest</strong>—we build websites and applications that honor Portland's commitment to quality, design, and authenticity.</p>
+techScene: |
+  <p>Portland's technology story has two distinct halves that rarely get told together. Out west in the Silicon Forest, Washington County towns like Hillsboro and Beaverton form one of the country's older semiconductor clusters, with Intel anchoring a hardware, fabrication, and R&D ecosystem that quietly employs tens of thousands. Closer to the urban core, the scene is software, design, and startups—a community that leans open-source, sustainability-minded, and fiercely protective of craft, supported by accelerators and a talent pool drawn to Portland's quality of life. For a web partner, that split means the work ranges from B2B hardware-manufacturer sites to consumer e-commerce for outdoor brands and lean, design-obsessed startup MVPs. The common thread is that Portland expects the finished product to look and feel considered, not assembled.</p>
 
 industries:
-  - name: "Athletic & Outdoor"
-    description: "E-commerce platforms and brand websites for Portland's legendary athletic and outdoor industry."
-  - name: "Technology & Startups"
-    description: "MVPs, SaaS platforms, and web applications for Silicon Forest's tech ecosystem."
-  - name: "Sustainable & Green Business"
-    description: "Websites for eco-conscious brands and sustainability-focused companies."
-  - name: "Creative & Design"
-    description: "Portfolio sites and agency platforms for Portland's thriving creative services sector."
-  - name: "Food & Beverage"
-    description: "E-commerce and restaurant platforms for Portland's renowned food and craft beverage scene."
-  - name: "Manufacturing & Hardware"
-    description: "B2B portals and corporate sites for Portland's semiconductor and manufacturing sector."
+  - name: "Athletic & Outdoor Apparel"
+    description: "Visually rich e-commerce and brand sites for the Nike, Adidas, and Columbia-anchored activewear and outdoor-gear capital."
+  - name: "Semiconductor & Hardware"
+    description: "B2B portals and corporate sites for Intel and the Silicon Forest manufacturing cluster in Washington County."
+  - name: "Sustainability & B Corps"
+    description: "Impact-driven sites that communicate the mission and metrics of Portland's values-led and eco-conscious companies."
+  - name: "Creative & Advertising"
+    description: "Portfolio and agency platforms built to the exacting design standards of Portland's world-class ad and design shops."
+  - name: "Food, Coffee & Craft Beverage"
+    description: "E-commerce, ordering, and brand sites for Portland's renowned restaurant, roastery, and craft-brewing scene."
+  - name: "Startups & SaaS"
+    description: "Lean, design-forward MVPs and SaaS platforms for the city's open-source-leaning startup community."
 
 marketHighlights:
-  - "Portland is home to Nike, Columbia Sportswear, and Adidas North America"
-  - "The Silicon Forest hosts Intel, Tektronix, and a thriving tech ecosystem"
-  - "Portland ranks among the top cities for startups and entrepreneurship"
-  - "Oregon has no sales tax, creating e-commerce advantages"
-  - "The city is known for its creative culture and design-forward businesses"
-  - "Portland's sustainability focus attracts eco-conscious companies and talent"
+  - "Portland is the global headquarters city for athletic and outdoor apparel, led by Nike and Adidas North America"
+  - "The Silicon Forest in Washington County is anchored by Intel, the region's largest private employer"
+  - "Oregon has no sales tax, giving Portland e-commerce brands a structural pricing edge"
+  - "The city is a national capital for advertising, design, and creative craft"
+  - "Portland's food, coffee, and craft-beverage scene carries real commercial and brand weight"
+  - "A dense community of B Corps and sustainability-led companies calls the metro home"
 
 localStats:
-  techCompanies: "3,000+"
-  averageProjectCost: "$15,000-60,000"
-  businessGrowth: "+7% YoY"
+  averageProjectCost: "$5,000-$45,000"
+
+whyChooseUs:
+  - title: "40-60% Below Pearl District Rates"
+    description: "Portland's top creative and dev shops price for a premium market. Our nearshore Honduras model delivers the same senior engineering and design execution for 40 to 60 percent less, so a values-led brand or a bootstrapped startup keeps more of its budget for growth."
+  - title: "Design Execution Portland Respects"
+    description: "We build pixel-perfect from Figma and treat aesthetics as functionality, not decoration. In a city where taste is a competitive advantage, we ship sites that look considered and load fast—no templated shortcuts that a Portland audience spots instantly."
+  - title: "Two Hours Over Your Workday"
+    description: "From Central Time we sit two hours ahead of Pacific, which means our hours cover your entire Portland business day. Morning standups, afternoon design reviews, and end-of-day handoffs all happen in real time over the Slack, GitHub, and Figma tools your team already uses."
+  - title: "Full Code Ownership"
+    description: "Every project ships with complete source-code ownership and no vendor lock-in. The documented repository is yours—a natural fit for open-source-minded Portland teams that want to keep control of what they build."
+
+localServices:
+  - title: "Brand & Product E-commerce"
+    description: "High-craft storefronts for apparel, outdoor, and craft-beverage brands—fast, mobile-first, and conversion-tuned, with the visual polish Portland's design-literate customers expect and full sales-tax-free checkout flexibility."
+  - title: "Design-System Implementation"
+    description: "Precise, front-end builds from your Figma files, turning brand and design work into responsive, maintainable React and Astro code that honors every spacing, type, and motion decision."
+  - title: "Startup MVP Development"
+    description: "Lean, investor-ready MVPs for Portland founders—launched quickly, built to extend, and priced so your runway stretches further before the next raise."
 
 faqs:
-  - question: "How do you handle the 2-hour timezone difference with Portland?"
-    answer: "Honduras is on Central Time, 2 hours ahead of Pacific. We overlap with your business hours from 7 AM to 5 PM Portland time. Morning standups, afternoon planning sessions, end-of-day reviews—we can attend any of them. This is far better than offshore teams with 12+ hour gaps."
-  - question: "Do you work with athletic and outdoor brands?"
-    answer: "Yes. Portland is the global capital of athletic footwear and outdoor gear, and we understand the industry's needs: visually stunning e-commerce, product showcases, athlete endorsements, and performance-driven design. We build sites that match the quality expectations of this world-class industry."
-  - question: "Can you help Portland startups build MVPs?"
-    answer: "Absolutely. Portland's startup scene values efficiency and doing more with less. We help founders go from concept to launched MVP quickly and cost-effectively. Our cost structure means your seed funding stretches further—build more product before needing to raise additional capital."
-  - question: "What about sustainable and values-driven businesses?"
-    answer: "Portland attracts mission-driven companies, and we're proud to work with them. We can build websites that communicate your sustainability story, showcase your impact, and connect with conscious consumers. Your values matter, and your website should reflect them."
-  - question: "Do you have experience with design-focused projects?"
-    answer: "Yes. Portland has high design standards, and we meet them. We work closely with designers, execute pixel-perfect implementations from Figma, and understand that in Portland, aesthetics matter as much as functionality. We build beautiful, purposeful websites."
-  - question: "How do Portland clients typically work with your team?"
-    answer: "Most Portland clients do a kickoff video call, then daily Slack communication with weekly video syncs. We use project management tools so you always have clear visibility into progress. Because we're only 2 hours off from Pacific Time, collaboration feels natural."
+  - question: "Can you meet the design standards of Portland's brand and creative scene?"
+    answer: "Yes—it's central to how we work. Portland audiences notice a templated site immediately, so we build pixel-perfect from Figma and treat typography, spacing, and motion as core deliverables rather than afterthoughts. For the apparel, outdoor, and creative brands that define the city, we ship work that looks genuinely considered and still loads fast."
+  - question: "Do you work with Silicon Forest hardware and semiconductor companies?"
+    answer: "Yes. Out in Washington County, the Intel-anchored Silicon Forest is a very different market from Portland's consumer brands—it needs B2B portals, technical product catalogs, and corporate sites that integrate with existing systems. We build that kind of documentation-heavy, maintainable software and hand it over cleanly to your internal engineering team."
+  - question: "How do you handle the two-hour gap with Pacific Time?"
+    answer: "Being two hours ahead of Portland actually works in your favor: from Central Time, our day fully covers yours. We're online for your morning standups, your afternoon planning, and your end-of-day reviews, collaborating live over Slack, GitHub, and Figma. It's a world apart from offshore teams where a 12-hour gap turns every question into an overnight wait."
+  - question: "Can you help sustainability-focused and mission-driven Portland companies tell their story?"
+    answer: "Absolutely—Portland has one of the densest communities of B Corps and values-led companies anywhere, and their sites have to do more than sell. We build experiences that communicate impact clearly, showcase supply-chain and sustainability commitments, and connect with the conscious consumers who make up so much of the local market."
+  - question: "What does a Portland web project typically cost with your team?"
+    answer: "Most Portland projects run between $5,000 and $45,000 depending on scope—a design-forward marketing site for a craft brand sits toward the lower end, while a full brand e-commerce build or a SaaS MVP sits higher. Across the range, our nearshore model comes in 40 to 60 percent under a comparable Pearl District agency, with senior engineering throughout."
+  - question: "Are you comfortable with the tools Portland tech teams already use?"
+    answer: "Completely. We live in Slack, GitHub, and Figma every day, and we plug into whatever project-management setup your team runs. Because we're nearshore rather than offshore, the collaboration feels like an extension of your own studio—shared boards, live design reviews, and pull requests reviewed the same day, not the next."
 
 nearbyAreas:
   - "Downtown Portland"
