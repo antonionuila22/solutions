@@ -1,0 +1,313 @@
+---
+export const prerender = true;
+/**
+ * Nearshore Development for Switzerland Landing Page
+ * Keywords: nearshore development Switzerland, software development for Swiss companies,
+ * Swiss software outsourcing, nearshore engineers Switzerland, offshore development Switzerland
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Nearshore Development Switzerland | Codebrand";
+const description =
+  "Swiss-grade engineering without Swiss agency rates. Senior developers at $65/hr, precise, documented, tested. English working language. Book a free call.";
+const keywords =
+  "nearshore development Switzerland, software development for Swiss companies, Swiss software outsourcing, nearshore engineers Switzerland, dedicated development team, software developers Switzerland, offshore development Switzerland, software engineers for hire";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Nearshore Software Development for Switzerland",
+  name: "Nearshore Development for Swiss Companies",
+  description:
+    "Nearshore software development for companies in Switzerland: senior React, Next.js, Node.js, and Python engineers who work to Swiss quality expectations — rigorous code review, automated testing, thorough documentation, NDAs, and clean IP transfer. English is the working language, with a reliable daily overlap with Swiss business hours.",
+  url: "https://www.codebrand.us/nearshore-development-switzerland",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Nearshore Development Services for Switzerland",
+  catalogItems: [
+    {
+      name: "Dedicated Development Team",
+      description:
+        "A stable squad of senior engineers who work only on your product, embedded in your process and tooling.",
+    },
+    {
+      name: "Web & SaaS Engineering",
+      description:
+        "Production web applications and SaaS platforms built with React, Next.js, Node.js, and PostgreSQL.",
+    },
+    {
+      name: "API & Systems Integration",
+      description:
+        "Documented, well-tested APIs and integrations with the ERP, payment, and internal systems you already run.",
+    },
+    {
+      name: "Code Review & Quality Engineering",
+      description:
+        "Peer-reviewed pull requests, automated test suites, and CI pipelines that hold a Swiss quality bar.",
+    },
+    {
+      name: "IP Transfer & NDA-Backed Work",
+      description:
+        "NDAs up front and clean, documented handover — you own 100% of the source code and repositories.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "Under which law are our contracts and NDAs governed?",
+    answer:
+      "We're flexible on governing law. Many Swiss clients prefer contracts and NDAs governed by Swiss law with jurisdiction in their canton, and we're comfortable signing on those terms; others opt for a neutral framework or US law. We'll sign your NDA before any discovery work begins, and the master agreement always confirms that you own 100% of the code, repositories, and documentation we produce. Have your legal team send their preferred paper — we'll work from it.",
+  },
+  {
+    question: "Can you invoice in CHF, EUR, or USD?",
+    answer:
+      "Yes. We invoice in Swiss francs, euros, or US dollars — whichever is cleanest for your accounting. Rates are quoted per hour and billed against tracked, itemized time so every invoice reconciles line by line. We handle SEPA and international bank transfers, and our invoices include the detail your finance team needs for VAT and cost-center allocation.",
+  },
+  {
+    question: "How do you handle data privacy and GDPR / Swiss FADP?",
+    answer:
+      "We build to comply with both the EU GDPR and Switzerland's revised Federal Act on Data Protection (nFADP). In practice that means data-processing agreements where required, least-privilege access to your systems, encrypted secrets, and infrastructure hosted in the EU or Switzerland when residency matters to you. We don't move personal data to environments you haven't approved, and we document how and where data flows so your DPO can sign off.",
+  },
+  {
+    question: "Can you provide references and code samples?",
+    answer:
+      "Yes. Codebrand carries a 5.0-star Google rating across 50 reviews, and on request we'll arrange a reference call with a comparable client and walk you through representative code and architecture from projects we're cleared to share. For new engagements we're happy to start with a small paid pilot so you can judge our engineering quality against your standards before committing to a longer contract.",
+  },
+  {
+    question: "Do your engineers actually speak good English?",
+    answer:
+      "English is our working language — every commit message, pull-request comment, ticket, and sprint demo is in fluent English, and daily standups and calls run in English without an interpreter. Since most Swiss engineering teams already operate in English across their language regions, our developers slot straight into your existing Slack, Jira, and review workflow.",
+  },
+  {
+    question: "What does the time-zone overlap really look like?",
+    answer:
+      "We won't pretend to sit in your time zone — we're in San Pedro Sula, Honduras, on US Central Time (UTC-6), seven hours behind Switzerland. In practice that gives a dependable daily overlap from roughly 15:00 to 18:00 CET for live calls, pairing, and demos, while the rest of our day runs async: you review a pull request or leave feedback in the evening and wake to finished, tested work. Teams that lean on clear tickets and written updates find the rhythm genuinely productive.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const practices = [
+  { icon: "🔍", title: "Peer Code Review", desc: "Every change ships through a reviewed pull request — nothing lands unread." },
+  { icon: "🧪", title: "Automated Testing", desc: "Unit and integration tests plus CI, so regressions are caught before you see them." },
+  { icon: "📚", title: "Real Documentation", desc: "Architecture notes, READMEs, and API docs a Swiss team can maintain without us." },
+  { icon: "🎬", title: "Sprint Demos", desc: "Working software shown every sprint at the afternoon CET overlap — no surprises." },
+  { icon: "🔐", title: "NDAs & IP Transfer", desc: "Signed NDAs up front and clean, documented handover of code you fully own." },
+  { icon: "🗂️", title: "Traceable Delivery", desc: "Tickets, estimates, and itemized time so scope and spend stay transparent." },
+];
+
+const models = [
+  {
+    icon: "👥",
+    title: "Dedicated Team",
+    desc: "A fixed squad of senior engineers working only on your roadmap, embedded in your sprints, tooling, and standups. Best for ongoing product work where continuity and deep context matter.",
+  },
+  {
+    icon: "⏱️",
+    title: "Hourly Engagement",
+    desc: "Senior engineering billed against tracked, itemized hours — ideal for a defined scope, an audit, or augmenting your in-house team through a busy quarter. Scale up or down without renegotiating a fixed bid.",
+  },
+];
+
+const rates = [
+  { role: "Mid-Level Engineer", rate: "$45", note: "Solid delivery on well-defined work." },
+  { role: "Senior Engineer", rate: "$65", note: "Owns features end to end, sets the quality bar." },
+  { role: "Lead / Architect", rate: "$95", note: "System design, technical direction, and mentoring." },
+];
+
+const stats = [
+  { value: "$65/hr", label: "Senior Engineer" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "~15–18h", label: "CET Overlap" },
+  { value: "100%", label: "Code You Own" },
+];
+
+const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQL", "REST / GraphQL", "CI / CD"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/nearshore-development-switzerland"
+  breadcrumbNames={{ "nearshore-development-switzerland": "Switzerland" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Nearshore Development · Switzerland
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Swiss-Grade <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Engineering</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          The precision, testing, and documentation Swiss teams expect — from
+          senior engineers at $65 an hour, working in English on your stack.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Book a Free Call
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#quality" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            How We Meet Your Bar
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Swiss Cost / Quality Equation -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">The Swiss cost–quality equation</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          In Switzerland, a competent agency or independent contractor bills somewhere between <strong class="text-slate-900">CHF 120 and CHF 200+ an hour</strong> — and rightly so, given local salaries and cost of living. The trouble is that the rate rarely reflects the difficulty of the work. You pay Zürich prices for a straightforward feature just as readily as for a hard one.
+        </p>
+        <p>
+          Codebrand offers a different arithmetic. Our <strong class="text-slate-900">senior engineers bill $65 an hour</strong> from San Pedro Sula, Honduras, where costs are lower but the standards are not. We built this business around the expectations Swiss buyers actually hold: precise scoping, disciplined testing, documentation your own team can maintain, and code that reads like it was meant to last. Lower cost is the by-product of geography — not of cutting the corners you care about.
+        </p>
+        <p>
+          If you're weighing options across the continent, start at our <a href="/nearshore-development-europe" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development for Europe</a> hub, or read how the model works in general on our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> overview. Founded in 2020 with a 5.0-star Google rating, we're an established team — not a marketplace of strangers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Meet Swiss Quality Expectations -->
+  <section id="quality" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          How we meet <span class="text-orange-500">Swiss quality</span> expectations
+        </h2>
+        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">
+          Rigor isn't a slogan here — it's the daily process. This is what a Swiss buyer gets in practice.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {practices.map((p) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{p.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{p.title}</h3>
+            <p class="text-slate-600">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Models -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Two ways to <span class="text-orange-500">engage us</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8" data-anim="fade">
+        {models.map((m) => (
+          <div class="bg-slate-50 rounded-2xl shadow-lg p-8 border border-slate-200">
+            <div class="text-4xl mb-4">{m.icon}</div>
+            <h3 class="text-2xl font-semibold text-slate-900 mb-3">{m.title}</h3>
+            <p class="text-slate-600">{m.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-slate-600 mt-10 max-w-2xl mx-auto" data-anim="fade" data-delay="0.1">
+        Many Swiss clients begin with a dedicated squad after a short pilot — see our <a href="/dedicated-development-team" class="text-cyan-600 hover:text-cyan-700 font-semibold">dedicated development team</a> for how that model runs day to day.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rates -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Transparent <span class="text-orange-500">hourly rates</span>
+        </h2>
+        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">
+          One number per role, billed against itemized time. No monthly minimums, no lock-in.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
+        {rates.map((r) => (
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200 text-center hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">{r.role}</h3>
+            <div class="text-4xl font-bold text-orange-500 mb-1">{r.rate}<span class="text-lg text-slate-400 font-medium">/hr</span></div>
+            <p class="text-slate-600 text-sm mt-3">{r.note}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-slate-500 text-sm mt-8" data-anim="fade" data-delay="0.2">
+        Invoiced in CHF, EUR, or USD. Compare against CHF 120–200+ for local agency work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
+        Our Engineering <span class="text-orange-500">Stack</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Switzerland <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
+        Swiss standards, <span class="text-orange-400">sensible rates</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us what you're building and we'll propose a team and a plan.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Book a Free Call
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

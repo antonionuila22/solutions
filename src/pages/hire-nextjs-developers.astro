@@ -1,0 +1,256 @@
+---
+export const prerender = true;
+/**
+ * Hire Next.js Developers Landing Page
+ * Keywords: hire next.js developers, next js developers for hire, app router, rsc
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Hire Next.js Developers | App Router Experts | Codebrand";
+const description =
+  "Hire senior Next.js developers for App Router, RSC, SSR, and e-commerce builds. US timezone overlap, you own the code 100%. Get a free quote in 24 hours.";
+const keywords =
+  "hire next.js developers, next js developers for hire, app router development, react server components, next js ssr ssg, next js ecommerce, nearshore next js, next js migration";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Next.js Development",
+  name: "Hire Next.js Developers — App Router, RSC & E-commerce",
+  description:
+    "Dedicated senior Next.js developers for App Router applications, React Server Components, SSR/SSG rendering, headless e-commerce, and migrations off Create React App. US timezone overlap and full code ownership.",
+  url: "https://www.codebrand.us/hire-nextjs-developers",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Next.js Development Services",
+  catalogItems: [
+    {
+      name: "App Router Development",
+      description:
+        "Next.js apps built on the App Router with nested layouts, server components, and streaming for fast, modern UX.",
+    },
+    {
+      name: "SSR & SSG Rendering",
+      description:
+        "Server-side rendering, static generation, and incremental revalidation tuned for SEO and Core Web Vitals.",
+    },
+    {
+      name: "Headless E-commerce",
+      description:
+        "Fast storefronts wired to Shopify, commerce APIs, or a custom backend with cart, checkout, and payments.",
+    },
+    {
+      name: "Migration to Next.js",
+      description:
+        "Move legacy Create React App or Pages Router codebases to a modern App Router architecture, step by step.",
+    },
+    {
+      name: "API Routes & Backend",
+      description:
+        "Route handlers, server actions, and backend logic built directly into your Next.js application.",
+    },
+    {
+      name: "Deployment & Performance",
+      description:
+        "Production deploys on Vercel or Netlify with caching, edge functions, and measurable performance gains.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "Why hire dedicated Next.js developers instead of generalists?",
+    answer:
+      "Next.js has its own architecture that rewards specialists. The App Router, React Server Components, caching layers, and rendering strategies (SSR, SSG, ISR) all have sharp edges that trip up developers who only know client-side React. Our engineers ship Next.js in production every week, so they know when to render on the server, how to structure route segments, and how to avoid the hydration and caching bugs that quietly slow a site down.",
+  },
+  {
+    question: "What is the App Router and do you build with it?",
+    answer:
+      "The App Router is the modern routing system in Next.js, built around React Server Components, nested layouts, and streaming. It is our default for new projects because it reduces client-side JavaScript, improves time-to-first-byte, and makes data fetching cleaner. We also work comfortably in the older Pages Router when a project already uses it, and we can migrate you from Pages Router to App Router incrementally when it makes sense.",
+  },
+  {
+    question: "How does Next.js help SEO and performance?",
+    answer:
+      "Next.js renders HTML on the server or at build time, so search engines and users get fully-formed pages instead of a blank shell that fills in with JavaScript. That means faster First Contentful Paint, better Core Web Vitals, and content that ranks. We pair that with image optimization, route-level code splitting, static generation where possible, and careful caching, so pages load quickly and stay indexable.",
+  },
+  {
+    question: "Can you build e-commerce with Next.js?",
+    answer:
+      "Yes. Next.js is a strong fit for headless commerce because it gives you fast, statically-generated product pages plus dynamic cart and checkout flows. We connect Next.js storefronts to Shopify, commerce APIs, or a custom backend, and wire in payments, search, and account areas. You get storefront speed without being locked into a rigid platform theme.",
+  },
+  {
+    question: "Can you migrate our old React app to Next.js?",
+    answer:
+      "That is one of our most common projects. We move teams off Create React App and other legacy React setups into Next.js so they gain server rendering, better SEO, and a supported build pipeline. We migrate route by route rather than rewriting everything at once, keeping your app shippable throughout. If your project also needs a backend, our Node.js developers can build the API alongside it.",
+  },
+  {
+    question: "Do you deploy to Vercel or can we use another host?",
+    answer:
+      "Both. Vercel is the native home for Next.js and we deploy there often, but Next.js also runs well on Netlify and other platforms, and we set those up regularly. We are not tied to any single host, and because you own 100% of the code, you are free to move your deployment wherever you like later.",
+  },
+  {
+    question: "How much do your Next.js developers cost?",
+    answer:
+      "We bill hourly with transparent tiers: Mid-level engineers at $45/hour, Senior engineers at $65/hour, and Lead or Architect-level engineers at $95/hour. There are no monthly retainers required and no hidden fees — you pay for the hours worked, and you can scale the team up or down as your roadmap changes.",
+  },
+  {
+    question: "What are your working hours as a US client?",
+    answer:
+      "Codebrand is based in San Pedro Sula, Honduras, which sits in US Central Time (UTC-6). That gives you a full standard workday of real-time overlap — our team is online during your morning stand-ups, afternoon reviews, and everything in between. You get same-day communication instead of the overnight lag common with distant offshore teams.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  { icon: "🧭", title: "App Router Builds", desc: "Nested layouts, server components, and streaming for modern UX." },
+  { icon: "⚡", title: "SSR / SSG / ISR", desc: "Server rendering and static generation tuned for SEO and speed." },
+  { icon: "🛒", title: "Headless E-commerce", desc: "Fast storefronts with cart, checkout, and payments wired in." },
+  { icon: "🔄", title: "Migration to Next.js", desc: "Move off Create React App and legacy React, route by route." },
+  { icon: "🧩", title: "API Routes & Actions", desc: "Route handlers and server actions built into your app." },
+  { icon: "🚀", title: "Vercel & Netlify Deploys", desc: "Production deploys with caching, edge, and performance wins." },
+];
+
+const stats = [
+  { value: "$45–95", label: "Per Hour" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "100%", label: "Code You Own" },
+];
+
+const stack = ["Next.js 15", "App Router", "React 19", "React Server Components", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Vercel / Netlify"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/hire-nextjs-developers"
+  breadcrumbNames={{ "hire-nextjs-developers": "Hire Next.js Developers" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Next.js Developers for Hire
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Hire Next.js <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Developers</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Senior engineers who ship App Router, Server Components, and
+          headless commerce. US timezone overlap. You own every line.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Hire Next.js Devs
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            What We Build
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-anim="fade" data-anim-trigger="load" data-delay="0.2">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">Next.js specialists, not generalists</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          Next.js is the framework teams reach for when a React app needs to load fast, rank in search, and scale without falling apart. But it rewards developers who actually understand its internals — the <strong class="text-slate-900">App Router, React Server Components, caching layers, and rendering modes</strong>. Get those wrong and you ship a site that hydrates slowly and quietly breaks its own SEO. Our engineers build Next.js in production continuously, so you skip the learning curve. As a <a href="/react-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">React development agency</a>, Next.js is the framework we lean on most.
+        </p>
+        <p>
+          Bring us a greenfield idea or an existing codebase. We build <strong class="text-slate-900">App Router applications, server-rendered marketing sites, and headless e-commerce storefronts</strong>, and we migrate teams off Create React App and legacy Pages Router setups without freezing your roadmap. Need a backend behind it? Our <a href="/hire-nodejs-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">Node.js developers</a> build the API alongside the frontend so everything ships as one coherent system.
+        </p>
+        <p>
+          You get <strong class="text-slate-900">full-workday overlap in US Central Time</strong> and code you own outright — deploy it to Vercel, Netlify, or anywhere else. Pricing is hourly and transparent: <strong class="text-slate-900">Mid $45/hr, Senior $65/hr, Lead/Architect $95/hr</strong>. Our developers plug into your team through our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> model. If a lighter, content-first stack fits your project better, ask us about <a href="/astro-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">Astro development</a> too.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
+          Next.js <span class="text-orange-500">Services</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-4">
+        Our Next.js <span class="text-orange-500">Stack</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
+          Next.js Hiring <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 data-anim="heading" class="text-display-2 font-bold text-white mb-6">
+        Ready to hire <span class="text-orange-400">Next.js talent?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation and a quote in 24 hours. Start building this week.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,498 @@
+---
+export const prerender = true;
+/**
+ * Dedicated Development Team Landing Page
+ * Keywords: dedicated development team, dedicated software team, dedicated dev team model,
+ * long-term product team, embedded engineering team, dedicated team vs staff augmentation
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import TeamQuoter from "../components/TeamQuoter";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Dedicated Development Team | Codebrand";
+const description =
+  "Build a dedicated development team — devs plus a PM working only on your product, long-term. English-fluent, US timezone, $45–$95/hr. Get a free quote.";
+const keywords =
+  "dedicated development team, dedicated software development team, dedicated dev team, long-term product team, embedded engineering team, dedicated team model, dedicated team vs staff augmentation, hire dedicated developers";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Dedicated Development Team",
+  name: "Dedicated Development Team — Long-Term Product Engineering",
+  description:
+    "A stable, dedicated development team — engineers plus a project manager — that works exclusively on your product over the long term, embedded in your tools, rituals, and roadmap. Full code ownership, hourly billing, scale up or down as your product evolves.",
+  url: "https://www.codebrand.us/dedicated-development-team",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Dedicated Development Team Services",
+  catalogItems: [
+    {
+      name: "Product Engineers",
+      description:
+        "Frontend, backend, and full-stack developers assigned only to your product — no context-switching across other clients.",
+    },
+    {
+      name: "Dedicated Project Manager",
+      description:
+        "A PM who runs sprints, protects your roadmap, and keeps delivery predictable so you don't have to micromanage.",
+    },
+    {
+      name: "QA & Code Review",
+      description:
+        "Peer review and testing built into every sprint, so quality stays high as the team ships continuously.",
+    },
+    {
+      name: "Team Scaling",
+      description:
+        "Add or reduce engineers as your roadmap changes — ramp up for a big release, ramp down between phases.",
+    },
+    {
+      name: "Embedded Workflow",
+      description:
+        "The team joins your Slack, your repo, your board, and your standups — working as part of your company, not a vendor at arm's length.",
+    },
+    {
+      name: "Roadmap Ownership",
+      description:
+        "The team learns your product deeply over months, so estimates get sharper and every release builds on real context.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "How fast can we start with a dedicated team?",
+    answer:
+      "Most teams are up and running within 1–2 weeks. We start with a short discovery call to understand your product, roadmap, and the roles you need, then assemble a matched team and share profiles for your approval. Once you sign off, onboarding takes a few days: repo and tool access, a codebase walkthrough, and your first sprint planning. If your timeline is tight, we can often stand up a lead engineer sooner and grow the team from there.",
+  },
+  {
+    question: "Can I scale the team up or down?",
+    answer:
+      "Yes — that flexibility is the point of the model. Because you bill hourly by role, you can add engineers when a major release is coming, then reduce to a smaller maintenance crew once it ships. There's no fixed headcount you're locked into and no monthly seat minimum. We give reasonable notice on both sides so ramping is smooth, and because the core of the team stays stable, product knowledge is never lost when you change size.",
+  },
+  {
+    question: "Who manages the dedicated team day to day?",
+    answer:
+      "Your dedicated team includes a project manager who runs sprints, tracks progress, and is your single point of contact — so you get predictable delivery without managing individual developers yourself. That said, the team embeds directly in your workflow, so your product owner sets priorities and the team executes against your roadmap. It's your product and your direction; our PM handles the coordination, standups, and reporting so nothing slips.",
+  },
+  {
+    question: "Who owns the intellectual property and do you sign an NDA?",
+    answer:
+      "You own everything — 100% of the code, repositories, designs, and documentation the team produces. We sign an NDA before any detailed discussion and are happy to work under your company's standard contracts and IP assignment terms. Everything is built directly in your repositories and infrastructure, so there's no proprietary platform to escape and nothing you have to migrate away from later. Access is controlled and revocable, and the work is yours from the first commit.",
+  },
+  {
+    question: "What timezone does the team work in?",
+    answer:
+      "We're based in San Pedro Sula, Honduras, which runs on US Central Time (UTC−6). For US clients that means a full working-day overlap — live standups, real-time Slack, and same-day code review across every US timezone. For European clients we don't pretend to share your working hours: instead you get a reliable afternoon overlap of roughly 15:00–18:00 CET for live calls and reviews, backed by an async-friendly delivery rhythm so the team keeps moving even outside that window.",
+  },
+  {
+    question: "How is a dedicated team billed?",
+    answer:
+      "Billing is hourly, by role: Mid developers at $45/hr, Senior developers at $65/hr, and Lead/Architect at $95/hr. You pay for the hours the team actually works on your product, with transparent time reporting each period — there's no monthly retainer you owe regardless of activity. This keeps costs honest as the team scales up and down, and lets you mix roles to fit both your budget and the complexity of the work.",
+  },
+  {
+    question: "What if a developer isn't a good fit?",
+    answer:
+      "Tell us early and we'll replace them — no drama and no charge for the transition. We keep documentation, code standards, and shared context strong precisely so that a change in one person doesn't stall the team. Because a project manager and the rest of the team stay in place, product knowledge lives across the group rather than in a single head, so onboarding a replacement is quick and your roadmap keeps moving.",
+  },
+  {
+    question: "How is a dedicated team different from staff augmentation?",
+    answer:
+      "With staff augmentation you hire individual developers who plug into your existing team and you manage them directly — that's a great fit when you already have a strong engineering org and just need more hands, and it's what our hire-remote-developers service is for. A dedicated development team is a self-managed unit — engineers plus a PM — that works only on your product and owns delivery as a group. Choose augmentation to extend a team you run; choose a dedicated team when you want a partner to own an entire product or workstream.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const includes = [
+  { icon: "👨‍💻", title: "Product Engineers", desc: "Frontend, backend, and full-stack devs assigned only to your product." },
+  { icon: "🧭", title: "Dedicated Project Manager", desc: "Runs sprints and reporting so you don't manage devs one by one." },
+  { icon: "✅", title: "QA & Code Review", desc: "Peer review and testing baked into every sprint, not bolted on later." },
+  { icon: "🔄", title: "Flexible Scaling", desc: "Add or reduce engineers as your roadmap changes, by role." },
+  { icon: "🔌", title: "Embedded Workflow", desc: "The team joins your Slack, repo, board, and standups." },
+  { icon: "🗺️", title: "Roadmap Ownership", desc: "Deep product knowledge that compounds sprint after sprint." },
+];
+
+const comparison = [
+  {
+    aspect: "What you get",
+    dedicated: "A self-managed team (devs + PM) that owns a product",
+    staffaug: "Individual developers who join your existing team",
+    project: "A fixed-scope build delivered and handed off",
+  },
+  {
+    aspect: "Who manages it",
+    dedicated: "Our PM runs delivery; you set the roadmap",
+    staffaug: "You manage the developers directly",
+    project: "We manage it against an agreed spec",
+  },
+  {
+    aspect: "Best when",
+    dedicated: "You want a partner to own a product long-term",
+    staffaug: "You have a strong team and need more hands",
+    project: "Scope is well defined and won't change much",
+  },
+  {
+    aspect: "Product knowledge",
+    dedicated: "Compounds — the stable team learns it deeply",
+    staffaug: "Lives in your team; devs contribute to it",
+    project: "Transferred at handoff via documentation",
+  },
+  {
+    aspect: "Commitment",
+    dedicated: "Ongoing, scale up or down by role",
+    staffaug: "Per developer, flexible duration",
+    project: "Ends when the deliverable ships",
+  },
+  {
+    aspect: "Codebrand page",
+    dedicated: "This page",
+    staffaug: "hire-remote-developers",
+    project: "custom-software-development",
+  },
+];
+
+const onboarding = [
+  {
+    num: "01",
+    title: "Discovery & Team Design",
+    desc: "We map your product, roadmap, and the roles you need, then propose a team shape — how many engineers, which seniority, and whether a lead should anchor it.",
+    details: ["Product deep-dive", "Role sizing", "Seniority mix", "Success metrics"],
+  },
+  {
+    num: "02",
+    title: "Match & Approve",
+    desc: "You review profiles for the proposed team and approve who joins. We match for both technical fit and the way your product actually works.",
+    details: ["Developer profiles", "Skill matching", "Your sign-off", "Rate confirmation"],
+  },
+  {
+    num: "03",
+    title: "Embed (Week 1)",
+    desc: "The team plugs into your stack — repo, Slack, project board, and CI — and walks the codebase with your team so context transfers fast, not over months.",
+    details: ["Tool & repo access", "Codebase walkthrough", "Standup cadence", "Definition of done"],
+  },
+  {
+    num: "04",
+    title: "First Sprint (Week 2)",
+    desc: "We plan the first sprint against your priorities and start shipping. From here it's a steady rhythm of standups, reviews, and demos you can steer at any time.",
+    details: ["Sprint planning", "Daily standups", "Code reviews", "Sprint demo"],
+  },
+];
+
+const stats = [
+  { value: "Devs + PM", label: "Full Team" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "100%", label: "Code Ownership" },
+];
+
+const pricing = [
+  {
+    title: "Mid Developer",
+    price: "$45",
+    period: "/hour",
+    desc: "3–5 yrs · ships features independently",
+    features: ["Solid full-stack execution", "Works only on your product", "Full source code ownership", "US timezone overlap"],
+    highlighted: false,
+  },
+  {
+    title: "Senior Developer",
+    price: "$65",
+    period: "/hour",
+    desc: "6+ yrs · owns architecture & quality",
+    features: ["Leads technical decisions", "Mentors the team", "Daily standups & Slack", "US timezone overlap"],
+    highlighted: true,
+  },
+  {
+    title: "Lead / Architect",
+    price: "$95",
+    period: "/hour",
+    desc: "Anchors delivery for the whole team",
+    features: ["System architecture", "Team coordination", "Roadmap & estimates", "Direct stakeholder comms"],
+    highlighted: false,
+  },
+];
+
+const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQL", "MongoDB", "Supabase", "REST / GraphQL"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/dedicated-development-team"
+  breadcrumbNames={{ "dedicated-development-team": "Dedicated Development Team" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Dedicated Development Team
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Build Your Dedicated <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Team</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          A stable team of engineers and a project manager working only on your
+          product — long-term, embedded in your workflow. You own every line.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Build My Team
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#compare" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            Compare Models
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro / What It Is Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">One team, one product, over the long haul</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          <strong class="text-slate-900">A dedicated development team is a stable group of engineers plus a project manager who work only on your product</strong> — not split across a dozen clients, not rotating in and out every sprint. Over months, the same people learn your codebase, your users, and your business well enough that their estimates get sharper and every release builds on real context instead of a fresh briefing.
+        </p>
+        <p>
+          The team embeds inside <strong class="text-slate-900">your tools and rituals</strong>: your repository, your Slack, your board, your standups. You set priorities and own the roadmap; our project manager runs the sprints, reviews, and reporting so delivery stays predictable without you managing developers one at a time. It's the closest thing to an in-house team without the hiring, overhead, or long-term payroll risk. This model sits under our broader <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> practice.
+        </p>
+        <p>
+          Everything is billed <strong class="text-slate-900">hourly by role</strong> and <strong class="text-slate-900">you own 100% of the code</strong> — repositories, designs, and docs — from the first commit. If you'd rather hand off a fixed, well-scoped build, that's our <a href="/custom-software-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom software development</a> service; if you just need extra hands inside a team you already run, see <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">staff augmentation</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What a Dedicated Team Includes -->
+  <section id="includes" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          What a Dedicated Team <span class="text-orange-500">Includes</span>
+        </h2>
+        <p class="text-xl text-slate-600">Not a pile of freelancers — a coordinated unit built to own your product.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {includes.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated vs Staff-Aug vs Project Comparison -->
+  <section id="compare" class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+          DEDICATED TEAM VS STAFF AUGMENTATION
+        </span>
+        <h2 data-anim="heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Which engagement fits you?</h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          A dedicated team owns a product as a group. <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">Staff augmentation</a> adds individual developers to a team you already manage. Project outsourcing delivers a fixed build. Here's how they differ.
+        </p>
+      </div>
+
+      <div class="mt-12 overflow-x-auto">
+        <table class="w-full min-w-[800px]">
+          <thead>
+            <tr class="border-b-2 border-slate-200">
+              <th class="text-left py-4 px-4 text-slate-500 font-medium">Aspect</th>
+              <th class="text-left py-4 px-4 text-orange-600 font-semibold bg-orange-50 rounded-t-lg">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                  Dedicated Team
+                </span>
+              </th>
+              <th class="text-left py-4 px-4 text-slate-500 font-medium">Staff Augmentation</th>
+              <th class="text-left py-4 px-4 text-slate-500 font-medium">Project Outsourcing</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((row) => (
+              <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors duration-300">
+                <td class="py-5 px-4 text-slate-900 font-medium">{row.aspect}</td>
+                <td class="py-5 px-4 text-orange-700 text-sm font-medium bg-orange-50/50">{row.dedicated}</td>
+                <td class="py-5 px-4 text-slate-500 text-sm">{row.staffaug}</td>
+                <td class="py-5 px-4 text-slate-500 text-sm">{row.project}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-center text-slate-600 mt-10 max-w-3xl mx-auto" data-anim="fade">
+        Still unsure? If you already run a capable engineering org and just need throughput, <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire remote developers</a> to embed in it. If you want a partner to carry a product forward, a dedicated team is the better fit.
+      </p>
+    </div>
+  </section>
+
+  <!-- How Onboarding Works -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
+          HOW ONBOARDING WORKS
+        </span>
+        <h2 data-anim="heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">From intro to first sprint in <span class="text-orange-500">two weeks</span></h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">A structured ramp so the team is shipping against your roadmap fast — not still reading docs a month in.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6" data-anim="fade">
+        {onboarding.map((step) => (
+          <div class="group bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-6">
+              <div class="w-14 h-14 flex-shrink-0 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                {step.num}
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">{step.title}</h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">{step.desc}</p>
+                <ul class="grid grid-cols-2 gap-2">
+                  {step.details.map((detail) => (
+                    <li class="flex items-center gap-2 text-sm text-slate-500">
+                      <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing + TeamQuoter -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+          PRICING
+        </span>
+        <h2 data-anim="heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">Hourly by <span class="text-orange-500">role</span></h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto mt-6">Mix seniorities to fit your budget and your roadmap. Pay for hours worked — no monthly retainer.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" data-anim="fade">
+        {pricing.map((plan) => (
+          <div class:list={[
+            "relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2",
+            plan.highlighted
+              ? "bg-slate-900 text-white shadow-2xl scale-105 z-10"
+              : "bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl"
+          ]}>
+            {plan.highlighted && (
+              <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+                Most Popular
+              </span>
+            )}
+            <h3 class={plan.highlighted ? "text-2xl font-semibold mb-2 text-white" : "text-2xl font-semibold mb-2 text-slate-900"}>{plan.title}</h3>
+            <p class={plan.highlighted ? "text-sm mb-6 text-slate-300" : "text-sm mb-6 text-slate-600"}>{plan.desc}</p>
+            <div class="mb-8">
+              <span class={plan.highlighted ? "text-5xl font-bold text-white" : "text-5xl font-bold text-slate-900"}>{plan.price}</span>
+              <span class={plan.highlighted ? "text-slate-400 text-lg" : "text-slate-500 text-lg"}>{plan.period}</span>
+            </div>
+            <ul class="space-y-4 mb-8">
+              {plan.features.map((feature) => (
+                <li class="flex items-center gap-3">
+                  <svg class={plan.highlighted ? "w-5 h-5 text-teal-400 flex-shrink-0" : "w-5 h-5 text-teal-500 flex-shrink-0"} fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class={plan.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contact"
+              class={plan.highlighted
+                ? "block w-full py-4 text-center font-bold rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg transition-all duration-300"
+                : "block w-full py-4 text-center font-bold rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300"
+              }
+            >
+              Get Started
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- Self-service team quote -->
+      <div class="mt-10" data-anim="fade">
+        <TeamQuoter client:visible />
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
+        The Stack Your Team <span class="text-orange-500">Works In</span>
+      </h2>
+      <p class="text-slate-600 text-lg mt-4" data-anim="fade" data-delay="0.05">We adapt to your codebase, not the other way around.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Dedicated Team <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-slate-600 text-lg">Can't find your answer? <a href="/contact" class="text-orange-500 hover:text-orange-600 font-semibold">Contact us</a> and we'll reply within 24 hours.</p>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
+        Ready to build your <span class="text-orange-400">dedicated team?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us about your product and we'll propose a team shape and start date.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Build My Team
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,295 @@
+---
+export const prerender = true;
+/**
+ * Nearshore Development Netherlands Landing Page
+ * Keywords: nearshore development netherlands, hire developers netherlands,
+ * dutch software developers, react developers netherlands, senior developers netherlands
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Nearshore Development Netherlands | Codebrand";
+const description =
+  "Hire senior nearshore developers for your Dutch company at $65/hr — React, Next.js, Node. Reliable CET afternoon overlap, async delivery. Get a free quote.";
+const keywords =
+  "nearshore development netherlands, hire developers netherlands, dutch software developers, react developers netherlands, senior developers netherlands, nearshore software netherlands, remote developers netherlands, next.js developers netherlands";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Nearshore Software Development",
+  name: "Nearshore Development for Netherlands — Senior React, Next.js & Node Engineers",
+  description:
+    "Nearshore software development for Dutch companies: senior React, Next.js, and Node.js engineers at $65/hr with a reliable daily CET afternoon overlap and async-first delivery. English-fluent team, 100% client-owned code.",
+  url: "https://www.codebrand.us/nearshore-development-netherlands",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Nearshore Development Services for the Netherlands",
+  catalogItems: [
+    {
+      name: "Senior React & Next.js Engineers",
+      description:
+        "Senior front-end and full-stack engineers fluent in the React and Next.js stack that dominates Dutch SaaS and scale-up teams.",
+    },
+    {
+      name: "Node.js Backend Development",
+      description:
+        "TypeScript Node.js APIs, services, and integrations built by engineers who ship production code, not proofs of concept.",
+    },
+    {
+      name: "Team Extension for Scale-ups",
+      description:
+        "Add senior capacity to an existing Dutch product team without the six-month wait for a local hire.",
+    },
+    {
+      name: "Fintech & SaaS Product Work",
+      description:
+        "Feature delivery for regulated fintech and B2B SaaS products, with GDPR-aware data handling built in.",
+    },
+    {
+      name: "Async-first Delivery",
+      description:
+        "Documented tickets, pull requests, and weekly demos designed for teams that already work asynchronously.",
+    },
+    {
+      name: "Full-stack Product Squads",
+      description:
+        "Front-end, back-end, and database work coordinated as one squad against your roadmap and your definition of done.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "How does invoicing and BTW work for a Dutch client?",
+    answer:
+      "We invoice you as a foreign supplier from Honduras, so no Dutch BTW (VAT) is charged on our invoices. For most B2B engagements the reverse-charge mechanism applies on your side, and you account for the VAT in your own return the way you would for any non-EU service provider. We bill in EUR or USD, monthly, against tracked hours — your accountant handles it the same way they handle any other international software supplier. We are not tax advisors, so confirm the specifics with yours.",
+  },
+  {
+    question: "Are you GDPR-compliant when handling our data?",
+    answer:
+      "Yes. We work as your data processor under your instructions and sign a Data Processing Agreement before touching production data. In practice that means least-privilege access, no copying of personal data onto local machines, working inside your infrastructure and your cloud region, and following your retention and deletion rules. Because your code and data stay in your systems — you own 100% of the code we write — there is no lock-in and nothing sensitive parked on our side.",
+  },
+  {
+    question: "When do we actually overlap during the workday?",
+    answer:
+      "Honduras runs on US Central Time (UTC-6), so our late morning lands in your afternoon. You get a dependable window of roughly 15:00 to 18:00 CET every working day for standups, live pairing, code review, and decisions — after that we keep shipping while your office winds down. It is not a full-day timezone match, and we never pretend otherwise. What it is: a fixed daily block of real-time collaboration plus an async engineer working ahead of your morning, which is exactly how most Dutch product teams already operate.",
+  },
+  {
+    question: "Can you scale the team up or down as our roadmap changes?",
+    answer:
+      "That is the point of the model. Start with one senior engineer to prove the fit, then add front-end, back-end, or full-stack capacity as your roadmap demands — usually within a week or two rather than the months a local senior hire takes in the current Dutch market. If a project winds down, you scale back the same way. You pay for tracked hours at a fixed rate, with no recruitment fees, no notice periods, and no severance to manage.",
+  },
+  {
+    question: "Why nearshore to Honduras instead of hiring locally in the Netherlands?",
+    answer:
+      "Senior developer capacity in the Netherlands is scarce and expensive — Dutch freelance and agency seniors commonly bill €90–150 per hour, and a permanent senior hire can take months to find and onboard. Our senior engineers work at $65 per hour, English at a level Dutch teams find effortless, and an async-savvy culture that matches how you already work. You get the seniority and the capacity without the local bidding war or the hiring delay.",
+  },
+  {
+    question: "Is your English good enough for a Dutch team?",
+    answer:
+      "Dutch professionals are effectively English-native, and so is how we operate — our team is English-fluent across written and spoken work, which is where remote collaboration lives: tickets, pull request reviews, architecture discussions, and demos. There is no translation friction and no watered-down communication. For many Dutch buyers this is the deciding factor, because the usual nearshore language gap simply is not there.",
+  },
+  {
+    question: "What kind of companies do you work best with?",
+    answer:
+      "Dutch SaaS companies, fintechs, and funded scale-ups that need to add senior engineering capacity quickly and already run an async, documentation-first process. If you have a clear roadmap, a codebase in the React/Next.js/Node ecosystem, and a team that communicates in writing, this model fits cleanly. Codebrand was founded in 2020, is based in San Pedro Sula, and holds a 5.0-star Google rating across 50 reviews.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  { icon: "⚛️", title: "Senior React & Next.js", desc: "The stack Dutch SaaS teams already build on, staffed at senior level." },
+  { icon: "🛠️", title: "Node.js Backends", desc: "TypeScript APIs and services shipped to production, not prototypes." },
+  { icon: "📈", title: "Scale-up Team Extension", desc: "Add senior capacity in a week or two, not six months." },
+  { icon: "🏦", title: "Fintech & SaaS Work", desc: "Feature delivery for regulated products with GDPR-aware handling." },
+  { icon: "🔄", title: "Async-first Delivery", desc: "Tickets, pull requests, and weekly demos built for async teams." },
+  { icon: "🧩", title: "Full-stack Squads", desc: "Front-end, back-end, and data coordinated against your roadmap." },
+];
+
+const stats = [
+  { value: "$65/hr", label: "Senior Engineers" },
+  { value: "15–18h", label: "Daily CET Overlap" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "100%", label: "Code Ownership" },
+];
+
+const rates = [
+  { role: "Mid-level Engineer", rate: "$45/hr", desc: "Solid delivery on well-defined feature work and maintenance." },
+  { role: "Senior Engineer", rate: "$65/hr", desc: "Owns features end to end — vs. €90–150/hr for a Dutch senior." },
+  { role: "Lead / Architect", rate: "$95/hr", desc: "System design, technical direction, and mentoring for your squad." },
+];
+
+const stack = ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQL", "MongoDB", "REST / GraphQL"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/nearshore-development-netherlands"
+  breadcrumbNames={{ "nearshore-development-netherlands": "Netherlands" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Nearshore Development · Netherlands
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Senior Developers for <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Dutch</span> Teams
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Add senior React, Next.js, and Node capacity to your Dutch product
+          team at $65/hr — with a reliable CET afternoon overlap and async delivery.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Get a Free Quote
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#rates" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            See Rates
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capacity Problem + Cost Math Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">The Dutch senior-capacity squeeze</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          Every product leader in the Netherlands runs into the same wall: <strong class="text-slate-900">senior engineers are scarce, slow to hire, and expensive.</strong> A permanent senior developer can take months to find and onboard, and Dutch freelance or agency seniors routinely bill <strong class="text-slate-900">€90–150 per hour</strong>. When your roadmap needs more hands this quarter — not next year — the local market rarely cooperates.
+        </p>
+        <p>
+          Nearshore development closes that gap. Our <strong class="text-slate-900">senior engineers work at $65 per hour</strong>, roughly half of a comparable Dutch senior rate, and they can join your team in a week or two instead of a hiring cycle. This is the same model we run across the continent — see our <a href="/nearshore-development-europe" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development for Europe</a> overview and the broader <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> hub for how it works end to end.
+        </p>
+        <p>
+          The math is straightforward: a senior engineer at $65/hr over a full working month costs a fraction of the equivalent local senior, with no recruitment fee, no notice period, and no severance risk. You are buying <strong class="text-slate-900">senior output and real capacity</strong>, not a cheaper junior. Want to compare the pure team-extension angle? Read how to <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire remote developers</a> the way funded product teams do.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration Model Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">How we work with <span class="text-orange-500">CET teams</span></h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          Honduras sits in US Central Time (UTC-6), so we are honest about the overlap: it is not a full working day. What you get instead is a <strong class="text-slate-900">dependable daily window of roughly 15:00–18:00 CET</strong> for standups, live pairing, code review, and decisions — and an engineer who keeps shipping after your office logs off, so work is waiting for you the next morning.
+        </p>
+        <p>
+          That rhythm suits Dutch teams particularly well, because you are <strong class="text-slate-900">already async and documentation-first.</strong> We run against your board, open pull requests you review on your schedule, and hold a <strong class="text-slate-900">weekly demo</strong> so progress is visible without standing meetings. Async-savvy buyers get the most from this model — which is exactly the Dutch profile.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack Fit Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Built on the Stack <span class="text-orange-500">You Already Run</span>
+        </h2>
+        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">React, Next.js, and Node.js dominate Dutch SaaS and fintech — so our engineers drop straight into your codebase.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Rates Section -->
+  <section id="rates" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Transparent <span class="text-orange-500">Hourly Rates</span>
+        </h2>
+        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">Pay for tracked hours. No recruitment fees, no notice periods, no severance to manage.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
+        {rates.map((r) => (
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200 hover:-translate-y-1 transition-all duration-300 text-center">
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">{r.role}</h3>
+            <div class="text-4xl font-bold text-orange-500 mb-4">{r.rate}</div>
+            <p class="text-slate-600">{r.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
+        Our Development <span class="text-orange-500">Stack</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Netherlands Nearshore <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
+        Need senior capacity <span class="text-orange-400">this quarter?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us your roadmap and we'll scope the right senior engineers for your Dutch team.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get a Free Quote
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

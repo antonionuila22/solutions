@@ -1,0 +1,428 @@
+---
+export const prerender = true;
+/**
+ * Poland Nearshoring Alternative Landing Page
+ * Keywords: poland nearshoring alternative, latam vs poland developers,
+ * eastern europe nearshoring, poland developer rates, latam nearshore
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Poland Nearshore Alternative | Codebrand";
+const description =
+  "Comparing Poland nearshoring vs LATAM? Get senior engineers at $45-65/hr with real US-timezone overlap and reliable EU afternoons. Request a free quote.";
+const keywords =
+  "poland nearshoring alternative, latam vs poland, nearshore poland, eastern europe nearshoring, poland developer rates, latam nearshore developers, poland software outsourcing, latam alternative to poland";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Nearshore Software Development",
+  name: "LATAM Alternative to Polish Nearshoring",
+  description:
+    "A Latin American nearshore alternative to Polish development teams: senior engineers at $45-65/hr, full US-workday overlap, reliable daily overlap for European clients, and 100% code ownership. Fair comparison of rates, timezone fit, English, and talent-pool pressure.",
+  url: "https://www.codebrand.us/nearshore-development-poland",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "LATAM Nearshore Engagement Options",
+  catalogItems: [
+    {
+      name: "Senior LATAM Engineers",
+      description:
+        "Experienced full-stack developers with the seniority Polish teams are known for, billed hourly at $45-65.",
+    },
+    {
+      name: "US-Timezone Overlap",
+      description:
+        "Central Time working hours give US clients a full shared workday instead of a narrow late-day window.",
+    },
+    {
+      name: "Europe-Friendly Delivery",
+      description:
+        "A reliable afternoon overlap for European clients plus async-first handoffs that keep work moving overnight.",
+    },
+    {
+      name: "Capacity When Poland Is Tight",
+      description:
+        "Available senior capacity when high demand has stretched Polish teams thin or pushed bill rates up.",
+    },
+    {
+      name: "Full Code Ownership",
+      description:
+        "You keep 100% of the code and repositories — no platform lock-in and no proprietary tooling to unwind.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "Is Poland a good place to hire developers?",
+    answer:
+      "Yes — Poland is one of the strongest engineering hubs in the world, with deep computer-science education, mature agencies, and a well-earned reputation for quality. That reputation is exactly why it can be a tricky fit for some budgets: sustained demand from Western Europe and the US has pushed senior bill rates to Western clients into roughly the $55-100/hr range and kept the best people booked. If Polish teams fit your budget and calendar, hire them with confidence. When rates or availability get in the way, a Latin American team like ours gives you comparable seniority for less.",
+  },
+  {
+    question: "How do LATAM rates compare to Polish developer rates?",
+    answer:
+      "Polish senior engineers typically bill Western clients around $55-100/hr and those rates have been climbing as demand outpaces supply. Our senior LATAM engineers bill $45-65/hr, with mid-level developers at $45/hr and lead/architect roles at $95/hr. The seniority is comparable; the difference is that Latin American rates have not yet been bid up by a decade of concentrated Western demand. You are paying for the same caliber of engineer at an earlier point on the price curve.",
+  },
+  {
+    question: "Why would I choose LATAM over Poland for nearshoring?",
+    answer:
+      "Three honest reasons. First, timezone: for US companies a Central Time team shares a full working day, while a Polish team runs six-to-seven hours ahead of Eastern Time and overlaps mostly in your morning. Second, rates: comparable seniority at $45-65/hr versus $55-100/hr. Third, capacity: when Polish demand is high, senior availability tightens, whereas we hold bench capacity for new clients. None of this is a knock on Poland — it is simply where LATAM wins on fit.",
+  },
+  {
+    question: "Does the timezone difference with Poland actually matter?",
+    answer:
+      "It depends on where you sit. For US teams, yes — a Polish partner is largely offline by the time your afternoon starts, which pushes collaboration into async cycles. Our Central Time hours overlap your entire workday for live standups and same-day reviews. For European clients the calculus flips: Poland is a natural in-timezone fit. We do not claim timezone parity with Europe. Instead we offer a dependable daily afternoon overlap of roughly 15:00-18:00 CET plus async-friendly delivery, so European teams still get real-time touchpoints without waiting a full day.",
+  },
+  {
+    question: "Are LATAM developers as senior as Polish developers?",
+    answer:
+      "Seniority is about depth of experience, not geography. Our engineers have 5+ years shipping production software in the same modern stack Polish teams favour — React, Next.js, Node.js, Python, and PostgreSQL — and every pull request goes through peer review. The reason Poland earned its reputation is a strong engineering culture, and Latin America has been building that same culture as its tech sector matured. You should vet any partner on real work; on that basis LATAM seniors hold up.",
+  },
+  {
+    question: "When is Poland still the better choice?",
+    answer:
+      "When you are a European company that needs a partner sitting in or near your own timezone for hour-by-hour collaboration, Poland is hard to beat. It is also the natural pick if you already have Polish team members, need specific Central-and-Eastern-European language coverage, or have budget headroom for premium bill rates. We would rather tell you that plainly than oversell. Where we fit is US-timezone work, tighter budgets, and moments when Polish senior capacity is fully booked.",
+  },
+  {
+    question: "Do I own the code your team writes?",
+    answer:
+      "Yes — 100%. Everything we build is yours: the source code, the repositories, and the documentation. There is no proprietary platform to stay subscribed to and no license required to keep running what we deliver. You can host it anywhere and hand it to any developer, including an in-house or Polish team later, without friction.",
+  },
+  {
+    question: "How quickly can you start compared to a busy Polish agency?",
+    answer:
+      "Usually within one to two weeks. Because we hold bench capacity specifically for incoming clients, we can often start when a highly-booked Polish agency would quote a multi-week wait for its senior people to free up. The process is a short discovery call, a scoped proposal, then tool and codebase onboarding. If a stalled hiring pipeline or a capacity crunch is what brought you here, that speed is often the deciding factor.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const comparison = [
+  {
+    aspect: "Senior bill rate (to Western clients)",
+    poland: "~$55-100/hr and rising",
+    latam: "$45-65/hr",
+  },
+  {
+    aspect: "Timezone for US clients",
+    poland: "6-7 hrs ahead of ET — morning overlap only",
+    latam: "US Central Time — full shared workday",
+  },
+  {
+    aspect: "Timezone for EU clients",
+    poland: "In or near your timezone — natural fit",
+    latam: "Reliable ~15:00-18:00 CET overlap + async",
+  },
+  {
+    aspect: "English fluency",
+    poland: "Strong, widely fluent",
+    latam: "Fluent — daily business English",
+  },
+  {
+    aspect: "Talent-pool pressure",
+    poland: "High demand; senior capacity often booked",
+    latam: "Bench capacity held for new clients",
+  },
+  {
+    aspect: "Code ownership",
+    poland: "Varies by contract",
+    latam: "100% yours, no lock-in",
+  },
+];
+
+const polandRight = [
+  "You are a European company that needs a partner in or beside your own timezone.",
+  "You already have Polish team members or need Central-and-Eastern-European language coverage.",
+  "Your budget has room for premium senior bill rates and availability is not urgent.",
+];
+
+const usRight = [
+  "You are a US company that wants a full shared workday, not just a morning window.",
+  "Comparable seniority at $45-65/hr fits the budget better than $55-100/hr.",
+  "Polish senior capacity is booked out and you need to start in one to two weeks.",
+];
+
+const rates = [
+  {
+    title: "Mid Developer",
+    price: "$45",
+    period: "/hour",
+    desc: "3-5 yrs · ships features independently",
+    features: ["Solid full-stack delivery", "Peer-reviewed code", "Full code ownership", "US-timezone overlap"],
+    highlighted: false,
+  },
+  {
+    title: "Senior Developer",
+    price: "$65",
+    period: "/hour",
+    desc: "6+ yrs · the Polish-caliber seniority, for less",
+    features: ["Owns architecture decisions", "Mentors the team", "Live standups & reviews", "EU afternoon overlap"],
+    highlighted: true,
+  },
+  {
+    title: "Lead / Architect",
+    price: "$95",
+    period: "/hour",
+    desc: "Owns delivery end to end",
+    features: ["System architecture", "Team coordination", "Roadmap & estimates", "Direct stakeholder comms"],
+    highlighted: false,
+  },
+];
+
+const stats = [
+  { value: "$45-65", label: "Senior /hr" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "100%", label: "Code Ownership" },
+];
+
+const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQL", "REST / GraphQL"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/nearshore-development-poland"
+  breadcrumbNames={{ "nearshore-development-poland": "Poland Alternative" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          LATAM Alternative to Polish Nearshoring
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          The smart <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Poland alternative</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Poland is a superb dev hub — and its own success pushed rates up. Get
+          comparable senior talent from LATAM at $45-65/hr, with stronger US-timezone fit.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Get a Free Quote
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#compare" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            See the Comparison
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro / Honest Framing -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">Poland earned its reputation — and its price</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          Let's be clear up front: <strong class="text-slate-900">Poland is one of the best software-engineering hubs on the planet.</strong> Deep computer-science education, mature agencies, and a genuine culture of craft made it a default choice for Western companies for over a decade. If a Polish team fits your budget and your calendar, you will be in good hands.
+        </p>
+        <p>
+          That same success is what sends companies looking for an alternative. A decade of concentrated demand from Western Europe and the US has pushed <strong class="text-slate-900">senior bill rates to roughly $55-100 per hour and kept climbing,</strong> and the strongest engineers stay booked. When the numbers stop working or the best people aren't available, you need a partner with comparable seniority and more headroom.
+        </p>
+        <p>
+          That is where Latin America fits. Our senior engineers bill <strong class="text-slate-900">$45-65 per hour</strong>, work the same modern stack, and — for US teams — share a full working day instead of a narrow morning window. We're the <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> option that trades none of the quality and adds back the timezone and budget room. Prefer to keep the search inside Europe? Our <a href="/nearshore-development-europe" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development for European companies</a> page lays out how we serve EU clients honestly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section id="compare" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Poland vs <span class="text-orange-500">LATAM</span>, side by side
+        </h2>
+        <p class="text-xl text-slate-600">A fair look at the trade-offs — no spin, no trashing a great hub.</p>
+      </div>
+      <div class="overflow-x-auto" data-anim="fade" data-delay="0.1">
+        <table class="w-full min-w-[720px] bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+          <thead>
+            <tr class="border-b-2 border-slate-200">
+              <th class="text-left py-4 px-5 text-slate-500 font-medium">Factor</th>
+              <th class="text-left py-4 px-5 text-slate-700 font-semibold">Poland (Eastern Europe)</th>
+              <th class="text-left py-4 px-5 text-orange-600 font-semibold bg-orange-50">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                  Codebrand (LATAM)
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((row) => (
+              <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors duration-300">
+                <td class="py-5 px-5 text-slate-900 font-medium">{row.aspect}</td>
+                <td class="py-5 px-5 text-slate-500 text-sm">{row.poland}</td>
+                <td class="py-5 px-5 text-orange-700 text-sm font-medium bg-orange-50/50">{row.latam}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-sm text-slate-500 mt-6">Honduras runs on US Central Time (UTC-6). We claim a full workday overlap for US clients and a reliable daily afternoon overlap for European clients — never full timezone parity with Europe.</p>
+    </div>
+  </section>
+
+  <!-- When Poland vs When Us -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          When Poland wins — and when <span class="text-orange-500">we do</span>
+        </h2>
+        <p class="text-xl text-slate-600">The honest answer depends on where you sit and what you're optimizing for.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8" data-anim="fade">
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <h3 class="text-2xl font-semibold text-slate-900 mb-6">Choose Poland when</h3>
+          <ul class="space-y-4">
+            {polandRight.map((point) => (
+              <li class="flex items-start gap-3 text-slate-700">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-slate-400 flex-shrink-0"></span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-slate-900 rounded-2xl p-8 border border-slate-800 shadow-xl">
+          <h3 class="text-2xl font-semibold text-white mb-6">Choose Codebrand (LATAM) when</h3>
+          <ul class="space-y-4">
+            {usRight.map((point) => (
+              <li class="flex items-start gap-3 text-slate-300">
+                <svg class="w-5 h-5 text-teal-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p class="text-center text-slate-600 mt-10 max-w-3xl mx-auto" data-anim="fade" data-delay="0.1">
+        Need one senior engineer or a whole squad? Compare engagement models on our <a href="/dedicated-development-team" class="text-cyan-600 hover:text-cyan-700 font-semibold">dedicated development team</a> page.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rates Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
+          Transparent <span class="text-orange-500">hourly rates</span>
+        </h2>
+        <p class="text-xl text-slate-600" data-anim="fade" data-delay="0.1">Senior seniority in the Polish tradition, at a rate that hasn't been bid up.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6" data-anim="fade">
+        {rates.map((plan) => (
+          <div class:list={[
+            "relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2",
+            plan.highlighted
+              ? "bg-slate-900 text-white shadow-2xl scale-105 z-10"
+              : "bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl"
+          ]}>
+            {plan.highlighted && (
+              <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+                Most Popular
+              </span>
+            )}
+            <h3 class={plan.highlighted ? "text-2xl font-semibold mb-2 text-white" : "text-2xl font-semibold mb-2 text-slate-900"}>{plan.title}</h3>
+            <p class={plan.highlighted ? "text-sm mb-6 text-slate-300" : "text-sm mb-6 text-slate-600"}>{plan.desc}</p>
+            <div class="mb-8">
+              <span class={plan.highlighted ? "text-5xl font-bold text-white" : "text-5xl font-bold text-slate-900"}>{plan.price}</span>
+              <span class={plan.highlighted ? "text-slate-400 text-lg" : "text-slate-500 text-lg"}>{plan.period}</span>
+            </div>
+            <ul class="space-y-4 mb-8">
+              {plan.features.map((feature) => (
+                <li class="flex items-center gap-3">
+                  <svg class={plan.highlighted ? "w-5 h-5 text-teal-400 flex-shrink-0" : "w-5 h-5 text-teal-500 flex-shrink-0"} fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class={plan.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contact"
+              class={plan.highlighted
+                ? "block w-full py-4 text-center font-bold rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg transition-all duration-300"
+                : "block w-full py-4 text-center font-bold rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300"
+              }
+            >
+              Get Started
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
+        The same modern <span class="text-orange-500">stack</span>
+      </h2>
+      <p class="text-slate-600 text-lg mt-4" data-anim="fade" data-delay="0.1">The tools Polish teams reach for — and so do we.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.15">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Poland Alternative <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
+        Polish capacity tight or <span class="text-orange-400">budget stretched?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us your stack and timeline, and we'll show you the LATAM math.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get a Free Quote
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

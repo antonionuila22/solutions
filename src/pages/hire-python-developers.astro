@@ -1,0 +1,247 @@
+---
+export const prerender = true;
+/**
+ * Hire Python Developers Landing Page
+ * Keywords: hire python developers, python developers for hire, django developer,
+ * fastapi developer, python automation, python api development
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Hire Python Developers | Django & FastAPI | Codebrand";
+const description =
+  "Hire senior Python developers for Django, FastAPI, APIs, automation, and data pipelines. US-hours nearshore team, $45-95/hr. Get a free quote in 24 hours.";
+const keywords =
+  "hire python developers, python developers for hire, django developer, fastapi developer, python automation, python api development, python data pipelines, nearshore python team";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Python Development",
+  name: "Hire Python Developers — Django, FastAPI, APIs & Automation",
+  description:
+    "Senior Python engineers for hire: Django and FastAPI backends, REST APIs, automation and scripting, data pipelines, AI and LLM integrations, and PostgreSQL data work. US-hours nearshore delivery with full code ownership.",
+  url: "https://www.codebrand.us/hire-python-developers",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Python Development Services",
+  catalogItems: [
+    {
+      name: "Django & FastAPI Backends",
+      description:
+        "Production backends and admin interfaces built on Django or async FastAPI, tuned for reliability and speed.",
+    },
+    {
+      name: "REST & API Development",
+      description:
+        "Documented, versioned REST APIs with authentication, validation, and clear contracts your clients can trust.",
+    },
+    {
+      name: "Automation & Scripting",
+      description:
+        "Python scripts and jobs that replace manual work — scraping, batch processing, reporting, and scheduled tasks.",
+    },
+    {
+      name: "Data Pipelines",
+      description:
+        "ETL and ingestion pipelines that move, clean, and reshape data between systems on a dependable schedule.",
+    },
+    {
+      name: "AI & LLM Integrations",
+      description:
+        "Wiring OpenAI, Anthropic, and vector databases into your product — integration work, not model research.",
+    },
+    {
+      name: "Testing & PostgreSQL",
+      description:
+        "pytest coverage, CI checks, and well-modeled PostgreSQL schemas that keep your data clean as you scale.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "What can your Python developers build?",
+    answer:
+      "Backends and web services with Django and FastAPI, REST APIs, automation and scripting jobs, ETL and data pipelines, and integrations with third-party services and LLM providers. On the data layer we work primarily with PostgreSQL and write pytest suites so the code stays maintainable. If your problem is a running Python process, an API, or a scheduled job, it fits our team.",
+  },
+  {
+    question: "Django or FastAPI — which should I choose?",
+    answer:
+      "It depends on the shape of the project. Django is the fast path when you want a full-featured backend with an admin panel, ORM, auth, and conventions baked in — ideal for content-heavy apps and internal tools. FastAPI is our pick for high-throughput async APIs, microservices, and anything that mostly serves JSON to a separate frontend or mobile app. We help you decide during scoping rather than defaulting to one.",
+  },
+  {
+    question: "Do you do AI and machine learning work?",
+    answer:
+      "We do AI integration, not ML research. That means connecting your product to LLM APIs like OpenAI and Anthropic, building retrieval pipelines with vector databases, adding embeddings and semantic search, and shipping features such as summarization, extraction, and chat. We do not train custom models or run original ML research. For fuller automation projects, see our dedicated AI automation service.",
+  },
+  {
+    question: "How much do your Python developers cost?",
+    answer:
+      "We bill hourly by seniority: Mid-level developers at $45/hour, Senior developers at $65/hour, and Lead or Architect-level engineers at $95/hour. There is no monthly retainer or per-seat fee — you pay for hours worked. Because we operate from Honduras in US Central Time, you get senior engineering at a fraction of typical US agency rates.",
+  },
+  {
+    question: "What are your working hours?",
+    answer:
+      "Our team is based in San Pedro Sula, Honduras, which runs on US Central Time (UTC-6) year-round. That gives you a full overlapping workday with US teams — same-day standups, live pairing, and real-time responses on Slack or your tool of choice. No overnight handoffs, no waiting until tomorrow for an answer.",
+  },
+  {
+    question: "Can you join our existing Python codebase?",
+    answer:
+      "Yes. We regularly embed into existing projects to add features, fix bugs, improve test coverage, or handle performance and refactoring work. We start by reading your code, matching your patterns and conventions, and integrating with your CI and review process. You keep full ownership — all code we write is 100% yours to host and continue anywhere.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  { icon: "🐍", title: "Django & FastAPI", desc: "Robust backends and async APIs on the frameworks that fit your project." },
+  { icon: "🔗", title: "API Development", desc: "Versioned, documented REST APIs with auth and validation built in." },
+  { icon: "⚙️", title: "Automation & Scripting", desc: "Replace manual busywork with reliable scheduled Python jobs." },
+  { icon: "🧪", title: "Testing", desc: "pytest coverage and CI checks that keep releases safe." },
+  { icon: "🔀", title: "Data Pipelines", desc: "ETL and ingestion that moves and cleans data on schedule." },
+  { icon: "🤖", title: "AI & LLM Integrations", desc: "Connect LLMs, embeddings, and vector search into your product." },
+];
+
+const stats = [
+  { value: "$45-95", label: "Per Hour" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "100%", label: "Code Ownership" },
+];
+
+const stack = ["Python 3", "Django", "FastAPI", "Flask", "PostgreSQL", "SQLAlchemy", "Celery", "pytest", "REST APIs", "OpenAI / Anthropic"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/hire-python-developers"
+  breadcrumbNames={{ "hire-python-developers": "Hire Python Developers" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Hire Python Developers
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Python <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Developers</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Senior Python engineers for Django, FastAPI, APIs, automation, and
+          data work. Working your hours, at nearshore rates.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Hire Python Devs
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            What We Build
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-anim="fade" data-anim-trigger="load" data-delay="0.2">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">Python engineers who ship</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          Python runs the backends, glue, and data plumbing of modern products — and doing it well takes engineers who have shipped it in production, not tutorials. Our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development team</a> writes <strong class="text-slate-900">Django and FastAPI services, REST APIs, automation scripts, and data pipelines</strong> that hold up under real traffic. Every engineer works in US Central Time, so you get a full overlapping workday instead of overnight handoffs.
+        </p>
+        <p>
+          Beyond web backends, we handle the unglamorous work that keeps a business moving: <strong class="text-slate-900">scheduled jobs, scraping and batch processing, ETL between systems, and PostgreSQL schema design</strong>. We test with pytest and wire everything into your CI so releases stay boring. When your product needs to talk to an LLM, we integrate OpenAI or Anthropic, add embeddings and vector search, and ship features like summarization and extraction — honest integration work, not machine-learning research. For end-to-end workflow automation, see our <a href="/ai-automation-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">AI automation agency</a> service.
+        </p>
+        <p>
+          You can bring on one engineer or a small pod, and you pay by the hour — Mid at $45, Senior at $65, Lead/Architect at $95 — with no monthly retainer. All code we write is <strong class="text-slate-900">100% yours to own and host anywhere</strong>. Want a broader team or a full build? <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">Hire remote developers</a> across our stack, or explore <a href="/custom-software-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom software development</a> if you need a product built from the ground up.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          What Our Python Devs <span class="text-orange-500">Build</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
+        Our Python <span class="text-orange-500">Stack</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Hire Python Developers <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
+        Ready to hire a <span class="text-orange-400">Python developer?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us the work and we'll match you with the right engineer in days.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

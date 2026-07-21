@@ -1,0 +1,332 @@
+---
+export const prerender = true;
+/**
+ * Nearshore Development for Europe — EU hub landing page
+ * Keywords: nearshore development europe, nearshore development company europe,
+ * LATAM developers for europe, remote development team europe, GDPR-aware development
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Nearshore Development for Europe | Codebrand";
+const description =
+  "Nearshore development for European companies: senior engineers at $45–95/hr, English-fluent, daily CET overlap, GDPR-aware, EU contracts. Get a quote.";
+const keywords =
+  "nearshore development europe, nearshore development company europe, LATAM developers for europe, remote development team europe, GDPR-aware development, hire nearshore developers EU, nearshore vs local agency europe, english-fluent nearshore team";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Nearshore Development for Europe",
+  name: "Nearshore Development for European Companies",
+  description:
+    "Senior nearshore engineering for companies across Western Europe — React, Next.js, Node.js, Python and PostgreSQL delivered from Latin America. Reliable daily afternoon overlap with CET, async-first workflow, English-fluent teams, EU-friendly contracts, GDPR-aware development, and full code ownership at $45–95/hr.",
+  url: "https://www.codebrand.us/nearshore-development-europe",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Nearshore Development Services for Europe",
+  catalogItems: [
+    {
+      name: "Product & Web Application Engineering",
+      description:
+        "Full-stack teams that ship features on a modern React, Next.js, Node.js and Python stack for European product companies.",
+    },
+    {
+      name: "Team Augmentation",
+      description:
+        "Senior engineers who plug into your existing squad, tools and rituals — no ramp-up agency overhead.",
+    },
+    {
+      name: "GDPR-Aware Development",
+      description:
+        "Data-minimising design, EU-region hosting choices and privacy-by-default patterns built in from the first commit.",
+    },
+    {
+      name: "Async-First Delivery",
+      description:
+        "Written daily updates, documented decisions and weekly demos so progress never depends on a shared clock.",
+    },
+    {
+      name: "Legacy Modernisation",
+      description:
+        "Refactor, re-platform and stabilise aging systems without pulling your in-house team off the roadmap.",
+    },
+    {
+      name: "API & Integration Work",
+      description:
+        "Documented REST and GraphQL services that connect the payment, ERP and SaaS tools European businesses already run.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "How do you handle GDPR and data protection?",
+    answer:
+      "We build with privacy by default: collecting only the data a feature genuinely needs, keeping personal data out of logs, and choosing EU-region hosting and third-party services when your compliance posture calls for it. Our engineers work inside the access controls you define, sign your NDA and data-processing terms, and follow your instructions on where data may live. We are a development partner, not a data controller — the aim is to make your GDPR obligations easier to meet, and we defer to your Data Protection Officer or counsel on the legal specifics.",
+  },
+  {
+    question: "Can you contract and invoice in EUR?",
+    answer:
+      "Yes. We work under a straightforward services agreement that covers confidentiality, IP assignment and payment terms, and we can invoice in euros against agreed hourly rates. Many European clients prefer a monthly consolidated invoice tied to logged hours per engineer. We are flexible on the paperwork your finance and legal teams need — the commercial terms are transparent and there are no per-seat licences or lock-in.",
+  },
+  {
+    question: "When are meetings, given the timezone gap?",
+    answer:
+      "Honduras runs on US Central Time (UTC-6), so our working day reaches well into your afternoon. In practice that gives a dependable overlap of roughly 15:00–18:00 CET every day for live standups, planning and pair sessions. We schedule synchronous calls inside that window and run everything else async: written daily updates, recorded walkthroughs, and a weekly demo. You get real conversations when you need them without your team waiting on a distant clock.",
+  },
+  {
+    question: "What quality standards do you hold to?",
+    answer:
+      "Every change goes through pull-request review, we write tests around the logic that matters, and we keep CI green before anything merges. You get readable, documented code on a mainstream stack — React, Next.js, Node.js, Python, PostgreSQL — that any European engineer can pick up. Codebrand has held a 5.0-star Google rating across 50 reviews since founding in 2020, and we would rather ship a smaller scope well than a larger one that becomes a maintenance burden.",
+  },
+  {
+    question: "Under which law does IP transfer?",
+    answer:
+      "You own 100% of the work product. Our services agreement assigns all intellectual property in the code we write to you on payment, and we are comfortable having that agreement governed by the law of your jurisdiction — commonly the client's own country in Western Europe. Repositories, credentials and documentation stay in your accounts throughout, so ownership is a matter of record, not just contract language.",
+  },
+  {
+    question: "How is this different from hiring a local European agency?",
+    answer:
+      "The engineering is comparable; the cost structure is not. Local agencies and senior EU freelancers typically bill from around €90 to €200 or more per hour once overhead is included. Our hourly rates run $45–95 depending on seniority, and you still get English-fluent seniors, code you fully own, and a reliable daily overlap with your afternoon. It is the same modern stack and review discipline at a materially lower blended cost.",
+  },
+  {
+    question: "Which European countries do you work with?",
+    answer:
+      "We work with companies across Western Europe and beyond — the afternoon overlap holds from Lisbon to Warsaw. We publish focused pages for a few common markets, including Switzerland, the Netherlands and Poland, but the engagement model is the same wherever your team sits. If your country is not listed, the approach — afternoon overlap plus async-first delivery — still applies.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const collaboration = [
+  {
+    icon: "🕒",
+    title: "Afternoon overlap, every day",
+    desc: "Central Time reaches your afternoon — a dependable ~15:00–18:00 CET window for standups, planning and live pairing.",
+  },
+  {
+    icon: "✍️",
+    title: "Written by default",
+    desc: "Daily written updates and documented decisions mean progress is visible even when we're offline.",
+  },
+  {
+    icon: "🎥",
+    title: "Weekly demos",
+    desc: "A recorded or live demo each week keeps stakeholders aligned without filling calendars with calls.",
+  },
+  {
+    icon: "🔒",
+    title: "Privacy-aware delivery",
+    desc: "Data-minimising patterns and EU-region hosting choices baked in, working inside the access controls you set.",
+  },
+];
+
+const countries = [
+  {
+    flag: "🇨🇭",
+    name: "Switzerland",
+    desc: "Senior engineering for Swiss product and fintech teams, without Zurich-level agency rates.",
+    href: "/nearshore-development-switzerland",
+  },
+  {
+    flag: "🇳🇱",
+    name: "Netherlands",
+    desc: "Async-friendly delivery for Dutch scale-ups that already run on a modern JavaScript stack.",
+    href: "/nearshore-development-netherlands",
+  },
+  {
+    flag: "🇵🇱",
+    name: "Poland",
+    desc: "A complementary team for Polish companies that want extra senior capacity on demand.",
+    href: "/nearshore-development-poland",
+  },
+];
+
+const rates = [
+  { level: "Mid-Level Engineer", price: "$45", note: "Feature delivery on an established codebase and stack." },
+  { level: "Senior Engineer", price: "$65", note: "Owns complex work end to end and mentors within the squad." },
+  { level: "Lead / Architect", price: "$95", note: "System design, technical direction and hard trade-offs." },
+];
+
+const stats = [
+  { value: "$45–95/hr", label: "Our Hourly Rates" },
+  { value: "~3h", label: "Daily CET Overlap" },
+  { value: "GDPR", label: "Aware Practices" },
+  { value: "5.0★", label: "Google Rating" },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/nearshore-development-europe"
+  breadcrumbNames={{ "nearshore-development-europe": "Nearshore for Europe" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          For European Companies
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Nearshore Development for <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Europe</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Senior engineering from Latin America for teams across Western
+          Europe — a reliable afternoon overlap with CET, async by default,
+          and rates that undercut local agencies.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Get a Quote
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#rates" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            See Hourly Rates
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Cost Math Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">The cost math for European teams</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          A senior developer inside Western Europe — whether through a Zurich, Amsterdam or Munich agency, or as an independent contractor — usually bills somewhere between <strong class="text-slate-900">€90 and €200+ per hour</strong> once overhead, recruitment and margin are folded in. Those are real numbers, and they climb fast when you need two or three engineers rather than one.
+        </p>
+        <p>
+          Codebrand delivers the same modern stack — React, Next.js, Node.js, Python, PostgreSQL — for <strong class="text-slate-900">$45 to $95 per hour</strong> depending on seniority. We won't pretend to a false precision on savings, because your local rate varies by city and speciality, but the gap is large and consistent. You still get English-fluent seniors, pull-request review, and <strong class="text-slate-900">code you own 100%</strong>. Explore the wider model on our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development hub</a>.
+        </p>
+        <p>
+          For most European buyers the decision isn't nearshore versus in-house — it's how to add senior capacity without the agency premium or a slow local hire. A <a href="/dedicated-development-team" class="text-cyan-600 hover:text-cyan-700 font-semibold">dedicated development team</a> that plugs into your existing rituals lets you scale the roadmap up or down without long contracts, while your core team stays focused.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Collaboration Works Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          How collaboration across the <span class="text-orange-500">timezone gap</span> works
+        </h2>
+        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">
+          We're honest about this: Honduras is US Central Time (UTC-6), so we don't share your morning. What we do share is a dependable afternoon window — and a workflow built to make the rest of the day productive without you.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-anim="fade">
+        {collaboration.map((c) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{c.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{c.title}</h3>
+            <p class="text-slate-600">{c.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Country Cards Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Popular <span class="text-orange-500">European markets</span>
+        </h2>
+        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">
+          The engagement model is identical everywhere — here's where we've written it down in more detail.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
+        {countries.map((country) => (
+          <a href={country.href} class="block bg-slate-50 rounded-2xl shadow-lg p-8 border border-slate-200 hover:-translate-y-1 hover:border-orange-300 transition-all duration-300">
+            <div class="text-5xl mb-4">{country.flag}</div>
+            <h3 class="text-2xl font-semibold text-slate-900 mb-3">Nearshore for {country.name}</h3>
+            <p class="text-slate-600 mb-4">{country.desc}</p>
+            <span class="inline-flex items-center gap-2 text-cyan-600 font-semibold">
+              Learn more
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hourly Rates Section -->
+  <section id="rates" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Transparent <span class="text-orange-500">hourly rates</span>
+        </h2>
+        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">
+          You pay for logged hours per engineer — no seat licences, no lock-in. Invoiced in EUR against agreed rates.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
+        {rates.map((r) => (
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200 text-center hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">{r.level}</h3>
+            <div class="text-5xl font-bold text-orange-500 mb-1">{r.price}</div>
+            <div class="text-slate-400 text-sm mb-5">per hour</div>
+            <p class="text-slate-600 text-sm">{r.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Nearshore for Europe <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
+        Add senior capacity, <span class="text-orange-400">skip the agency premium</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us your roadmap and we'll propose a team and a rate — invoiced in EUR, IP yours.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

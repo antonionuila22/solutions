@@ -1,0 +1,251 @@
+---
+export const prerender = true;
+/**
+ * Hire Node.js Developers Landing Page
+ * Keywords: hire node.js developers, node developers for hire, nodejs api development
+ */
+
+import Layout from "../layouts/Layout.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import { createServicePageSchema } from "../utils/schema";
+
+const title = "Hire Node.js Developers | Nearshore API Devs | Codebrand";
+const description =
+  "Hire senior Node.js developers for Express, NestJS, and real-time APIs. TypeScript-first, US timezone overlap, code you fully own. Get a free quote in 24h.";
+const keywords =
+  "hire node.js developers, node developers for hire, nodejs api development, express developers, nestjs developers, node microservices, typescript backend, websocket developers";
+
+const serviceSchema = createServicePageSchema({
+  serviceType: "Node.js Development",
+  name: "Hire Node.js Developers — Express, NestJS & Real-Time APIs",
+  description:
+    "Senior Node.js engineers for hire: REST and GraphQL APIs with Express and NestJS, event-driven microservices, real-time WebSocket features, and TypeScript-first backends on PostgreSQL and MongoDB. Full code ownership, no lock-in.",
+  url: "https://www.codebrand.us/hire-nodejs-developers",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Node.js Development Services",
+  catalogItems: [
+    {
+      name: "REST & GraphQL API Development",
+      description:
+        "Documented, secure Node.js APIs built with Express or NestJS that your web, mobile, and partner apps can rely on.",
+    },
+    {
+      name: "Microservices Architecture",
+      description:
+        "Event-driven services with message queues, clean boundaries, and independent deploys that scale with load.",
+    },
+    {
+      name: "Real-Time Features",
+      description:
+        "WebSocket and Socket.IO systems for live chat, notifications, dashboards, and collaborative editing.",
+    },
+    {
+      name: "TypeScript Backends",
+      description:
+        "Strictly typed Node.js services that catch bugs at compile time and stay maintainable as the team grows.",
+    },
+    {
+      name: "Database & Data Layer",
+      description:
+        "PostgreSQL and MongoDB schemas, Prisma and Mongoose data layers, and query tuning for fast reads and writes.",
+    },
+    {
+      name: "Testing & CI",
+      description:
+        "Jest and Supertest suites, integration coverage, and CI pipelines so your API ships without regressions.",
+    },
+  ],
+});
+
+const faqs = [
+  {
+    question: "What kinds of projects are Node.js developers best for?",
+    answer:
+      "Node.js shines for I/O-heavy backends: JSON APIs, real-time apps, streaming services, and gateways that fan out to many downstream systems. We use it for REST and GraphQL APIs, chat and notification systems over WebSockets, dashboards that push live data, payment and webhook handlers, and microservice backends. Because Node shares one language with a React or Next.js frontend, a single team can move confidently across the whole stack.",
+  },
+  {
+    question: "Do you work with Express and NestJS?",
+    answer:
+      "Both. Express is our choice for lightweight services and focused APIs where we want minimal overhead and full control. NestJS is our default for larger systems that benefit from opinionated structure — dependency injection, modules, guards, and first-class TypeScript. We pick the framework that fits the project rather than forcing one on every codebase, and we can extend whichever one your team already runs.",
+  },
+  {
+    question: "How experienced are your Node.js engineers?",
+    answer:
+      "Our backend developers have shipped production Node.js services for years, not weekend projects. That means real experience with authentication and authorization, rate limiting, background jobs and queues, database transactions, error handling, and observability. They write TypeScript by default, cover critical paths with tests, and know the difference between code that demos well and code that survives real traffic.",
+  },
+  {
+    question: "Can Node.js developers join our existing team?",
+    answer:
+      "Yes — team augmentation is one of our most common engagements. We review your repository, adopt your branching model, coding standards, and review process, and work inside your sprints and stand-ups. You keep ownership of architecture decisions while we add senior capacity. Whether you need one engineer to unblock a roadmap or a small pod to build a new service, we integrate rather than silo.",
+  },
+  {
+    question: "How do you build real-time features?",
+    answer:
+      "For live functionality we use WebSockets, typically through Socket.IO or the native ws library, backed by Redis pub/sub when we need to scale across multiple instances. We handle reconnection, presence, room-based broadcasting, and back-pressure so connections stay stable under load. Common use cases include live chat, collaborative editing, real-time dashboards, order tracking, and instant notifications.",
+  },
+  {
+    question: "What does it cost to hire Node.js developers?",
+    answer:
+      "We bill by the hour, so you only pay for engineering you actually use: mid-level developers at $45/hour, senior developers at $65/hour, and lead or architect-level engineers at $95/hour. There are no monthly retainers or seat licenses, and you own 100% of the code we write. Because we work from Honduras in US Central Time, you get senior talent at a fraction of typical US agency rates.",
+  },
+  {
+    question: "Which databases do you use with Node.js?",
+    answer:
+      "Mostly PostgreSQL and MongoDB, chosen by the shape of the data. PostgreSQL is our default when relationships, transactions, and strong consistency matter, usually paired with Prisma or Drizzle. MongoDB fits flexible or document-heavy data, paired with Mongoose. We also work with Redis for caching, sessions, and pub/sub, and we design schemas and indexes carefully so your API stays fast as data grows.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const services = [
+  { icon: "🔗", title: "REST & GraphQL APIs", desc: "Express and NestJS APIs your apps and partners can trust." },
+  { icon: "🧩", title: "Microservices", desc: "Event-driven services with queues and independent deploys." },
+  { icon: "⚡", title: "Real-Time Systems", desc: "WebSocket chat, notifications, and live dashboards." },
+  { icon: "🛡️", title: "TypeScript Backends", desc: "Strictly typed services that catch bugs before they ship." },
+  { icon: "🗄️", title: "Data Layer", desc: "PostgreSQL and MongoDB schemas tuned for speed." },
+  { icon: "🧪", title: "Testing & CI", desc: "Jest and Supertest coverage with automated pipelines." },
+];
+
+const stats = [
+  { value: "TypeScript", label: "First" },
+  { value: "5.0★", label: "Google Rating" },
+  { value: "CST", label: "US Timezone" },
+  { value: "100%", label: "Code Ownership" },
+];
+
+const stack = ["Node.js", "Express", "NestJS", "TypeScript", "PostgreSQL", "MongoDB", "Prisma", "Socket.IO", "Redis", "Jest"];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride="https://www.codebrand.us/hire-nodejs-developers"
+  breadcrumbNames={{ "hire-nodejs-developers": "Hire Node.js Developers" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Hire Node.js Developers
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Node.js <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Developers</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Senior backend engineers for Express, NestJS, and real-time APIs.
+          TypeScript-first, US timezone overlap, code you own outright.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Hire Node.js Devs
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            What We Build
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-anim="fade" data-anim-trigger="load" data-delay="0.2">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">Backend engineers who know Node</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          Node.js runs the backends behind chat apps, streaming platforms, and APIs that serve millions of requests. Getting it right takes more than knowing JavaScript — it takes judgment about <strong class="text-slate-900">async flow, error handling, database design, and where a service will bottleneck</strong>. Our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore engineering team</a> builds Node backends that hold up in production, not just in a demo.
+        </p>
+        <p>
+          Every engineer we place has shipped real Node.js systems: <strong class="text-slate-900">Express and NestJS APIs, event-driven microservices, and real-time features over WebSockets</strong>. We write TypeScript from the first commit, model data carefully in PostgreSQL or MongoDB, and back critical paths with Jest and Supertest so your API ships without surprises. Pair a Node backend with a <a href="/react-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">React frontend team</a> and one group can own your entire stack.
+        </p>
+        <p>
+          You can <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire our developers</a> to build a new service or drop into your existing codebase for team augmentation. Rates are hourly — mid-level at $45, senior at $65, lead and architect at $95 — with no retainers and full code ownership. Building server-rendered React on the same backend? See our <a href="/hire-nextjs-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">Next.js developers</a> for full-stack coverage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
+          Node.js <span class="text-orange-500">Services</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-4">
+        Our Node.js <span class="text-orange-500">Stack</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+        {stack.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
+          Node.js Hiring <span class="text-orange-500">FAQ</span>
+        </h2>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 data-anim="heading" class="text-display-2 font-bold text-white mb-6">
+        Need Node.js <span class="text-orange-400">developers?</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Tell us your API and we'll match the right engineers.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Get Started
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>
