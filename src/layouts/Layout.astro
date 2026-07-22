@@ -502,11 +502,17 @@ const hnHref = hnEquivalent
     <script is:inline>
       document.documentElement.classList.add('js-enabled');
       // Hide GSAP-animated elements before first paint (no flash of fully-shown
-      // content). Only when JS runs AND motion is allowed — so no-JS and
-      // reduced-motion users always see content. The engine adds `gsap-ready`
-      // once it has set each element's start state, lifting this blanket.
+      // content). Only when JS runs AND motion is allowed AND the device has a
+      // fine pointer — the GSAP engine only loads there (see Animations.astro;
+      // keep both conditions in sync). On touch/mobile and reduced-motion the
+      // blanket never applies, so content is visible from first paint. The
+      // engine adds `gsap-ready` once it has set each element's start state,
+      // lifting this blanket.
       try {
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (
+          !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+          window.matchMedia('(hover: hover) and (pointer: fine)').matches
+        ) {
           document.documentElement.classList.add('gsap-anim');
         }
       } catch (e) {}

@@ -8,9 +8,36 @@
  *   data-anim="heading|fade|chars"   data-parallax   data-counter
  *   data-magnetic   data-marquee   data-sticky-cards   data-cursor
  * See src/scripts/animations/effects/* for each effect's options.
+ *
+ * PERF: the engine loads via dynamic import ONLY on fine-pointer devices that
+ * allow motion. On touch/mobile (and reduced-motion) the ~1.7s of GSAP + Lenis
+ * parse/exec is skipped entirely — content is simply visible from first paint
+ * (the `gsap-anim` CSS blanket in Layout.astro is gated by the SAME media
+ * queries; keep both conditions in sync).
  */
 ---
 
 <script>
-  import "../scripts/animations/index";
+  const allowsMotion = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (allowsMotion && finePointer) {
+    import("../scripts/animations/index");
+  } else {
+    // Engine skipped (touch device or reduced motion). The only FUNCTIONAL
+    // effect is [data-counter] — its markup ships "0" and relies on JS to
+    // write the real value — so render final values immediately. Everything
+    // else is decorative and simply stays static/visible.
+    const fixCounters = () => {
+      document.querySelectorAll("[data-counter]").forEach((el) => {
+        const value = parseFloat(el.getAttribute("data-counter") ?? "0");
+        const decimals = parseInt(el.getAttribute("data-counter-decimals") ?? "0", 10);
+        const prefix = el.getAttribute("data-counter-prefix") ?? "";
+        const suffix = el.getAttribute("data-counter-suffix") ?? "";
+        el.textContent = prefix + value.toFixed(decimals) + suffix;
+      });
+    };
+    fixCounters();
+    document.addEventListener("astro:page-load", fixCounters);
+  }
 </script>
