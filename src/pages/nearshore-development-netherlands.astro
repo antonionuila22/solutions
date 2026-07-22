@@ -8,6 +8,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Nearshore Development Netherlands | Codebrand";
@@ -107,12 +108,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "⚛️", title: "Senior React & Next.js", desc: "The stack Dutch SaaS teams already build on, staffed at senior level." },
-  { icon: "🛠️", title: "Node.js Backends", desc: "TypeScript APIs and services shipped to production, not prototypes." },
-  { icon: "📈", title: "Scale-up Team Extension", desc: "Add senior capacity in a week or two, not six months." },
-  { icon: "🏦", title: "Fintech & SaaS Work", desc: "Feature delivery for regulated products with GDPR-aware handling." },
-  { icon: "🔄", title: "Async-first Delivery", desc: "Tickets, pull requests, and weekly demos built for async teams." },
-  { icon: "🧩", title: "Full-stack Squads", desc: "Front-end, back-end, and data coordinated against your roadmap." },
+  { icon: "atom", title: "Senior React & Next.js", desc: "The stack Dutch SaaS teams already build on, staffed at senior level." },
+  { icon: "wrench", title: "Node.js Backends", desc: "TypeScript APIs and services shipped to production, not prototypes." },
+  { icon: "trending-up", title: "Scale-up Team Extension", desc: "Add senior capacity in a week or two, not six months." },
+  { icon: "building", title: "Fintech & SaaS Work", desc: "Feature delivery for regulated products with GDPR-aware handling." },
+  { icon: "refresh", title: "Async-first Delivery", desc: "Tickets, pull requests, and weekly demos built for async teams." },
+  { icon: "puzzle", title: "Full-stack Squads", desc: "Front-end, back-end, and data coordinated against your roadmap." },
 ];
 
 const stats = [
@@ -223,7 +224,7 @@ const stack = ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQ
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

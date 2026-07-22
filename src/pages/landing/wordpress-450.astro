@@ -1,6 +1,7 @@
 ---
 import LandingLayout from "../../layouts/LandingLayout.astro";
 import logoWhite from "../../assets/codebrand-white.svg";
+import Icon from "../../components/icons/Icon.astro";
 
 // Bilingual SEO - Spanish as primary
 const pageTitle = "Landing Page WordPress Profesional $450 | Ahorra 70% vs Agencias USA";
@@ -684,11 +685,11 @@ const getIcon = (name: string) => {
           <div class="proof-trusted hidden lg:flex">
             <span class="text-white/40 text-xs uppercase tracking-wider" data-i18n="social.trusted">Confían en nosotros</span>
             <div class="trusted-logos">
-              <div class="trusted-logo">🏢</div>
-              <div class="trusted-logo">🏪</div>
-              <div class="trusted-logo">🏥</div>
-              <div class="trusted-logo">⚖️</div>
-              <div class="trusted-logo">🏋️</div>
+              <div class="trusted-logo"><Icon name="building" class="w-4 h-4 text-white/70" /></div>
+              <div class="trusted-logo"><Icon name="shopping-cart" class="w-4 h-4 text-white/70" /></div>
+              <div class="trusted-logo"><Icon name="hospital" class="w-4 h-4 text-white/70" /></div>
+              <div class="trusted-logo"><Icon name="scale" class="w-4 h-4 text-white/70" /></div>
+              <div class="trusted-logo"><Icon name="heart" class="w-4 h-4 text-white/70" /></div>
             </div>
           </div>
         </div>

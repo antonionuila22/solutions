@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Button from "../../components/Button.astro";
+import Icon from "../../components/icons/Icon.astro";
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 
@@ -32,23 +33,23 @@ const topCategories = Array.from(categoryCounts.entries())
   .sort((a, b) => b.count - a.count)
   .slice(0, 4);
 
-const categoryEmoji: Record<string, string> = {
-  "web-development": "💻",
-  "web-design": "🎨",
-  design: "🎨",
-  "ux-ui": "🎨",
-  marketing: "📈",
-  seo: "🔍",
-  technology: "🚀",
-  ai: "🤖",
-  guides: "📚",
-  tutorials: "📖",
-  tips: "💡",
-  comparisons: "⚖️",
-  "business-strategy": "📊",
-  codebrand: "🏢",
-  nearshore: "🌎",
-  partnerships: "🤝",
+const categoryIcon: Record<string, string> = {
+  "web-development": "code",
+  "web-design": "palette",
+  design: "palette",
+  "ux-ui": "palette",
+  marketing: "trending-up",
+  seo: "search",
+  technology: "rocket",
+  ai: "bot",
+  guides: "book-open",
+  tutorials: "book-open",
+  tips: "lightbulb",
+  comparisons: "scale",
+  "business-strategy": "bar-chart",
+  codebrand: "building",
+  nearshore: "globe",
+  partnerships: "handshake",
 };
 
 // Sort posts by date (newest first)
@@ -389,7 +390,7 @@ const totalReadTime = posts.reduce(
               href={`/blog/category/${slug}`}
               class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
             >
-              <div class="text-4xl mb-3">{categoryEmoji[slug] ?? "📝"}</div>
+              <div class="mb-3 flex justify-center"><Icon name={categoryIcon[slug] ?? "file-text"} class="w-10 h-10 text-orange-500" /></div>
               <h3 class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
                 {name}
               </h3>

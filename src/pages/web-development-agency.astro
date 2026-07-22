@@ -8,6 +8,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 // SEO
@@ -100,32 +101,32 @@ const faqSchema = {
 // Services offered
 const services = [
   {
-    icon: "🌐",
+    icon: "globe",
     title: "Custom Websites",
     desc: "Marketing sites, corporate websites, and landing pages built for performance and conversion."
   },
   {
-    icon: "⚡",
+    icon: "zap",
     title: "Web Applications",
     desc: "SaaS platforms, dashboards, portals, and complex web apps with modern architecture."
   },
   {
-    icon: "🛒",
+    icon: "shopping-cart",
     title: "E-commerce",
     desc: "Shopify stores, headless commerce, and custom e-commerce solutions that scale."
   },
   {
-    icon: "🎨",
+    icon: "palette",
     title: "UI/UX Design",
     desc: "User research, wireframes, and pixel-perfect designs in Figma before we code."
   },
   {
-    icon: "📱",
+    icon: "smartphone",
     title: "Responsive Design",
     desc: "Mobile-first approach ensuring perfect experience on every device."
   },
   {
-    icon: "🔧",
+    icon: "wrench",
     title: "Maintenance",
     desc: "Ongoing support, updates, and improvements to keep your site running smoothly."
   }
@@ -509,7 +510,7 @@ const whyUs = [
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
-                <div class="service-icon mb-6">{service.icon}</div>
+                <div class="service-icon mb-6"><Icon name={service.icon} class="w-6 h-6 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{service.title}</h3>
                 <p class="text-neutral-400 leading-relaxed">{service.desc}</p>
               </div>

@@ -7,6 +7,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "Hire React Developers | Senior React Dev Agency | Codebrand";
 const description = "Hire senior React developers for custom apps, Next.js, and React Native. US timezone, bilingual team, 60% lower cost than US agencies. Free quote in 24h.";
@@ -50,12 +51,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "⚛️", title: "React Web Apps", desc: "Complex single-page applications with modern React patterns" },
-  { icon: "▲", title: "Next.js Development", desc: "Server-rendered React apps with optimal SEO and performance" },
-  { icon: "📱", title: "React Native", desc: "Cross-platform mobile apps for iOS and Android" },
-  { icon: "🔄", title: "Migration to React", desc: "Modernize legacy apps by migrating to React" },
-  { icon: "🧪", title: "Testing & QA", desc: "Comprehensive testing with Jest, React Testing Library, Cypress" },
-  { icon: "🚀", title: "Performance Tuning", desc: "Optimize existing React apps for speed and efficiency" }
+  { icon: "atom", title: "React Web Apps", desc: "Complex single-page applications with modern React patterns" },
+  { icon: "triangle", title: "Next.js Development", desc: "Server-rendered React apps with optimal SEO and performance" },
+  { icon: "smartphone", title: "React Native", desc: "Cross-platform mobile apps for iOS and Android" },
+  { icon: "refresh", title: "Migration to React", desc: "Modernize legacy apps by migrating to React" },
+  { icon: "flask", title: "Testing & QA", desc: "Comprehensive testing with Jest, React Testing Library, Cypress" },
+  { icon: "rocket", title: "Performance Tuning", desc: "Optimize existing React apps for speed and efficiency" }
 ];
 
 const stats = [
@@ -143,7 +144,7 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

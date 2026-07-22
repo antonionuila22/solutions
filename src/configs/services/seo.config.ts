@@ -221,14 +221,14 @@ export const seoConfig: ServicePageConfig = {
       "We use cutting-edge SEO tools and analytics platforms to deliver data-driven results.",
     columns: "4",
     items: [
-      { name: "Google Search Console", icon: "🔍" },
-      { name: "Google Analytics", icon: "📈" },
-      { name: "Ahrefs", icon: "🔗" },
-      { name: "SEMrush", icon: "🎯" },
-      { name: "Screaming Frog", icon: "🕷️" },
-      { name: "Moz Pro", icon: "📍" },
-      { name: "Yoast SEO", icon: "✅" },
-      { name: "Schema.org", icon: "🏷️" },
+      { name: "Google Search Console", icon: "search" },
+      { name: "Google Analytics", icon: "trending-up" },
+      { name: "Ahrefs", icon: "link" },
+      { name: "SEMrush", icon: "target" },
+      { name: "Screaming Frog", icon: "bug" },
+      { name: "Moz Pro", icon: "map-pin" },
+      { name: "Yoast SEO", icon: "check" },
+      { name: "Schema.org", icon: "tag" },
     ],
   },
 
@@ -241,19 +241,19 @@ export const seoConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "📊",
+        icon: "bar-chart",
         title: "Data-Driven Strategy",
         description:
           "Every decision is backed by comprehensive analytics, keyword data, and competitor insights for maximum impact.",
       },
       {
-        icon: "🎯",
+        icon: "target",
         title: "White-Hat Techniques",
         description:
           "Sustainable, ethical SEO practices that build long-term rankings without risking penalties from search engines.",
       },
       {
-        icon: "📈",
+        icon: "trending-up",
         title: "Transparent Reporting",
         description:
           "Clear monthly reports showing rankings, traffic, conversions, and ROI so you always know where you stand.",

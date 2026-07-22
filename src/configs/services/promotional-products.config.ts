@@ -220,14 +220,14 @@ export const promotionalProductsConfig: ServicePageConfig = {
       "We use advanced printing and engraving techniques to create high-quality branded products.",
     columns: "4",
     items: [
-      { name: "Sublimation", icon: "🎨" },
-      { name: "Digital Printing", icon: "🖨️" },
-      { name: "Laser Engraving", icon: "⚡" },
-      { name: "Screen Printing", icon: "🖼️" },
-      { name: "Embroidery", icon: "🧵" },
-      { name: "Vinyl Cutting", icon: "✂️" },
-      { name: "Heat Transfer", icon: "🔥" },
-      { name: "UV Printing", icon: "☀️" },
+      { name: "Sublimation", icon: "palette" },
+      { name: "Digital Printing", icon: "printer" },
+      { name: "Laser Engraving", icon: "zap" },
+      { name: "Screen Printing", icon: "image" },
+      { name: "Embroidery", icon: "shirt" },
+      { name: "Vinyl Cutting", icon: "scissors" },
+      { name: "Heat Transfer", icon: "flame" },
+      { name: "UV Printing", icon: "sun" },
     ],
   },
 
@@ -240,19 +240,19 @@ export const promotionalProductsConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "⭐",
+        icon: "star",
         title: "Premium Quality",
         description:
           "We use professional-grade materials and equipment to ensure your branded products look exceptional and last long.",
       },
       {
-        icon: "⚡",
+        icon: "zap",
         title: "Fast Production",
         description:
           "Efficient production processes and in-house manufacturing for quick turnaround times without compromising quality.",
       },
       {
-        icon: "📦",
+        icon: "package",
         title: "No Minimum Orders",
         description:
           "From single items to bulk orders, we accommodate projects of any size to meet your specific needs.",

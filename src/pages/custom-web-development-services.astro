@@ -7,6 +7,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "Custom Web Development | Codebrand";
 const description = "Bespoke websites and web applications tailored to your business. Senior developers, US timezone, transparent pricing.";
@@ -58,12 +59,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "🎯", title: "Tailored Design", desc: "Unique designs that perfectly match your brand and business goals" },
-  { icon: "⚡", title: "Custom Functionality", desc: "Features built exactly how you need them, no compromises" },
-  { icon: "🔗", title: "System Integration", desc: "Connect with CRMs, ERPs, payment systems, and third-party APIs" },
-  { icon: "📈", title: "Scalable Architecture", desc: "Built to grow with your business, handling increased traffic and features" },
-  { icon: "🔒", title: "Security First", desc: "Enterprise-grade security practices baked into every project" },
-  { icon: "📱", title: "Responsive & Fast", desc: "Optimized for all devices with exceptional performance" }
+  { icon: "target", title: "Tailored Design", desc: "Unique designs that perfectly match your brand and business goals" },
+  { icon: "zap", title: "Custom Functionality", desc: "Features built exactly how you need them, no compromises" },
+  { icon: "link", title: "System Integration", desc: "Connect with CRMs, ERPs, payment systems, and third-party APIs" },
+  { icon: "trending-up", title: "Scalable Architecture", desc: "Built to grow with your business, handling increased traffic and features" },
+  { icon: "lock", title: "Security First", desc: "Enterprise-grade security practices baked into every project" },
+  { icon: "smartphone", title: "Responsive & Fast", desc: "Optimized for all devices with exceptional performance" }
 ];
 
 const process = [
@@ -158,7 +159,7 @@ const technologies = ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL",
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

@@ -193,14 +193,14 @@ export const renderingConfig: ServicePageConfig = {
       "We use cutting-edge 3D rendering engines and modeling software for exceptional quality.",
     columns: "4",
     items: [
-      { name: "Blender", icon: "🎨" },
-      { name: "3ds Max", icon: "🏗️" },
-      { name: "V-Ray", icon: "💡" },
-      { name: "Corona Renderer", icon: "☀️" },
-      { name: "SketchUp", icon: "📐" },
-      { name: "Lumion", icon: "🌆" },
-      { name: "Photoshop", icon: "🖼️" },
-      { name: "After Effects", icon: "🎬" },
+      { name: "Blender", icon: "palette" },
+      { name: "3ds Max", icon: "building" },
+      { name: "V-Ray", icon: "lightbulb" },
+      { name: "Corona Renderer", icon: "sun" },
+      { name: "SketchUp", icon: "ruler" },
+      { name: "Lumion", icon: "building" },
+      { name: "Photoshop", icon: "image" },
+      { name: "After Effects", icon: "film" },
     ],
   },
 
@@ -213,19 +213,19 @@ export const renderingConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "🎯",
+        icon: "target",
         title: "Photorealistic Quality",
         description:
           "Industry-leading rendering techniques create images indistinguishable from photography, perfect for presentations and marketing.",
       },
       {
-        icon: "⚡",
+        icon: "zap",
         title: "Fast Delivery",
         description:
           "Efficient workflow and powerful rendering infrastructure ensure quick turnaround without sacrificing quality.",
       },
       {
-        icon: "🔄",
+        icon: "refresh",
         title: "Unlimited Revisions",
         description:
           "We work with you until you're completely satisfied. Revisions are included to ensure your vision is realized.",

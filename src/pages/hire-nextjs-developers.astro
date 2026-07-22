@@ -8,6 +8,7 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import { createServicePageSchema } from "../utils/schema";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "Hire Next.js Developers | App Router Experts | Codebrand";
 const description =
@@ -111,12 +112,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "🧭", title: "App Router Builds", desc: "Nested layouts, server components, and streaming for modern UX." },
-  { icon: "⚡", title: "SSR / SSG / ISR", desc: "Server rendering and static generation tuned for SEO and speed." },
-  { icon: "🛒", title: "Headless E-commerce", desc: "Fast storefronts with cart, checkout, and payments wired in." },
-  { icon: "🔄", title: "Migration to Next.js", desc: "Move off Create React App and legacy React, route by route." },
-  { icon: "🧩", title: "API Routes & Actions", desc: "Route handlers and server actions built into your app." },
-  { icon: "🚀", title: "Vercel & Netlify Deploys", desc: "Production deploys with caching, edge, and performance wins." },
+  { icon: "compass", title: "App Router Builds", desc: "Nested layouts, server components, and streaming for modern UX." },
+  { icon: "zap", title: "SSR / SSG / ISR", desc: "Server rendering and static generation tuned for SEO and speed." },
+  { icon: "shopping-cart", title: "Headless E-commerce", desc: "Fast storefronts with cart, checkout, and payments wired in." },
+  { icon: "refresh", title: "Migration to Next.js", desc: "Move off Create React App and legacy React, route by route." },
+  { icon: "puzzle", title: "API Routes & Actions", desc: "Route handlers and server actions built into your app." },
+  { icon: "rocket", title: "Vercel & Netlify Deploys", desc: "Production deploys with caching, edge, and performance wins." },
 ];
 
 const stats = [
@@ -205,7 +206,7 @@ const stack = ["Next.js 15", "App Router", "React 19", "React Server Components"
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

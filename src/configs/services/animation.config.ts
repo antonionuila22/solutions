@@ -220,14 +220,14 @@ export const animationConfig: ServicePageConfig = {
       "We use industry-leading animation software to create high-quality 2D and 3D content.",
     columns: "4",
     items: [
-      { name: "Adobe After Effects", icon: "🎬" },
-      { name: "Cinema 4D", icon: "🎭" },
-      { name: "Blender", icon: "🎨" },
-      { name: "Maya", icon: "🎯" },
-      { name: "3ds Max", icon: "📐" },
-      { name: "Houdini", icon: "⚡" },
-      { name: "Illustrator", icon: "✏️" },
-      { name: "Photoshop", icon: "🖼️" },
+      { name: "Adobe After Effects", icon: "film" },
+      { name: "Cinema 4D", icon: "palette" },
+      { name: "Blender", icon: "palette" },
+      { name: "Maya", icon: "target" },
+      { name: "3ds Max", icon: "ruler" },
+      { name: "Houdini", icon: "zap" },
+      { name: "Illustrator", icon: "pencil" },
+      { name: "Photoshop", icon: "image" },
     ],
   },
 
@@ -240,19 +240,19 @@ export const animationConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "🎬",
+        icon: "film",
         title: "Creative Storytelling",
         description:
           "We combine artistic vision with technical expertise to create animations that captivate audiences and communicate your message effectively.",
       },
       {
-        icon: "🎨",
+        icon: "palette",
         title: "Versatile Styles",
         description:
           "From minimalist 2D motion graphics to photorealistic 3D animations, we adapt our style to match your brand and goals.",
       },
       {
-        icon: "⭐",
+        icon: "star",
         title: "Industry Standards",
         description:
           "Professional animation pipeline using industry-leading software and techniques for broadcast-quality results.",

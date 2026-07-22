@@ -9,6 +9,7 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import TeamQuoter from "../components/TeamQuoter";
+import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Dedicated Development Team | Codebrand";
@@ -113,12 +114,12 @@ const faqSchema = {
 };
 
 const includes = [
-  { icon: "👨‍💻", title: "Product Engineers", desc: "Frontend, backend, and full-stack devs assigned only to your product." },
-  { icon: "🧭", title: "Dedicated Project Manager", desc: "Runs sprints and reporting so you don't manage devs one by one." },
-  { icon: "✅", title: "QA & Code Review", desc: "Peer review and testing baked into every sprint, not bolted on later." },
-  { icon: "🔄", title: "Flexible Scaling", desc: "Add or reduce engineers as your roadmap changes, by role." },
-  { icon: "🔌", title: "Embedded Workflow", desc: "The team joins your Slack, repo, board, and standups." },
-  { icon: "🗺️", title: "Roadmap Ownership", desc: "Deep product knowledge that compounds sprint after sprint." },
+  { icon: "code", title: "Product Engineers", desc: "Frontend, backend, and full-stack devs assigned only to your product." },
+  { icon: "compass", title: "Dedicated Project Manager", desc: "Runs sprints and reporting so you don't manage devs one by one." },
+  { icon: "shield-check", title: "QA & Code Review", desc: "Peer review and testing baked into every sprint, not bolted on later." },
+  { icon: "refresh", title: "Flexible Scaling", desc: "Add or reduce engineers as your roadmap changes, by role." },
+  { icon: "plug", title: "Embedded Workflow", desc: "The team joins your Slack, repo, board, and standups." },
+  { icon: "map-pin", title: "Roadmap Ownership", desc: "Deep product knowledge that compounds sprint after sprint." },
 ];
 
 const comparison = [
@@ -301,7 +302,7 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {includes.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

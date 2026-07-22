@@ -228,14 +228,14 @@ export const socialMediaConfig: ServicePageConfig = {
       "We use powerful social media management and analytics tools to maximize your social presence.",
     columns: "4",
     items: [
-      { name: "Meta Business Suite", icon: "📱" },
-      { name: "Hootsuite", icon: "🦉" },
-      { name: "Buffer", icon: "📊" },
-      { name: "Sprout Social", icon: "🌱" },
-      { name: "Canva", icon: "🎨" },
-      { name: "Later", icon: "📅" },
-      { name: "BuzzSumo", icon: "📈" },
-      { name: "Google Analytics", icon: "📉" },
+      { name: "Meta Business Suite", icon: "smartphone" },
+      { name: "Hootsuite", icon: "book-open" },
+      { name: "Buffer", icon: "bar-chart" },
+      { name: "Sprout Social", icon: "sprout" },
+      { name: "Canva", icon: "palette" },
+      { name: "Later", icon: "calendar" },
+      { name: "BuzzSumo", icon: "trending-up" },
+      { name: "Google Analytics", icon: "trending-down" },
     ],
   },
 
@@ -248,19 +248,19 @@ export const socialMediaConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "🎯",
+        icon: "target",
         title: "Targeted Approach",
         description:
           "We create platform-specific strategies tailored to your audience, ensuring every post resonates and drives engagement.",
       },
       {
-        icon: "📊",
+        icon: "bar-chart",
         title: "Data-Driven Decisions",
         description:
           "Every campaign is optimized using real-time analytics, A/B testing, and performance metrics to maximize ROI.",
       },
       {
-        icon: "🚀",
+        icon: "rocket",
         title: "Consistent Growth",
         description:
           "Proven strategies that build authentic followers, increase engagement rates, and convert social traffic into customers.",

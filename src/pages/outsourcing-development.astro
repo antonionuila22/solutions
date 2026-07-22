@@ -1,12 +1,14 @@
 ---
 export const prerender = true;
 /**
- * Development Outsourcing Services Page
- * Premium design with animated backgrounds, glass effects
+ * White-Label Development for Agencies Landing Page
+ * Keywords: white label development, development partner for agencies,
+ * white label web development, agency subcontracting, NDA development partner
  */
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 
 // SEO
 const title =
@@ -89,38 +91,33 @@ const faqSchema = {
   })),
 };
 
-// Comparison data for SEO
-const comparison = [
+// How white-label works — under your brand, NDA, managed delivery
+const howItWorks = [
   {
-    aspect: "Cost",
-    inHouse: "High ($80-150k/year salary + benefits + equipment)",
-    freelancer: "Variable ($50-200/hr, inconsistent availability)",
-    outsourcing: "Predictable ($45-95/hr, no overhead costs)",
+    icon: "tag",
+    title: "Built Under Your Brand",
+    desc: "Deliverables ship with your name on them. We can join client calls as your team — the work is yours to present and resell.",
   },
   {
-    aspect: "Scalability",
-    inHouse: "Slow hiring process, expensive to scale down",
-    freelancer: "Limited to individual capacity",
-    outsourcing: "Scale up/down instantly based on project needs",
+    icon: "shield-check",
+    title: "NDA-Backed & Invisible",
+    desc: "We sign an NDA before any detailed discussion and stay behind the scenes. Your clients never know a partner was involved.",
   },
   {
-    aspect: "Expertise",
-    inHouse: "Limited to hired skillset",
-    freelancer: "Single specialist, narrow focus",
-    outsourcing: "Full team with diverse skills and experience",
+    icon: "compass",
+    title: "Managed Delivery",
+    desc: "A project manager runs sprints, standups, and reporting inside your tools — Jira, Linear, Slack — so you don't micromanage devs.",
   },
-  {
-    aspect: "Availability",
-    inHouse: "Business hours only, affected by PTO/sick days",
-    freelancer: "Often juggling multiple clients",
-    outsourcing: "Consistent capacity with backup coverage",
-  },
-  {
-    aspect: "Code Quality",
-    inHouse: "Single perspective, potential blind spots",
-    freelancer: "Varies greatly by individual",
-    outsourcing: "Team code reviews, consistent standards",
-  },
+];
+
+// Services agencies can resell
+const services = [
+  { icon: "monitor", title: "Web Applications", desc: "Full-stack apps and portals your clients need — built to scale, delivered under your brand." },
+  { icon: "shopping-cart", title: "E-commerce & Shopify", desc: "Shopify (Liquid, Hydrogen) and headless commerce storefronts you can resell as your own." },
+  { icon: "rocket", title: "Marketing & Landing Pages", desc: "Pixel-perfect campaign sites and landing pages, Figma-to-code, on your timeline." },
+  { icon: "layers", title: "SaaS Platforms", desc: "Feature development and scaling for the SaaS products your clients are building." },
+  { icon: "link", title: "APIs & Integrations", desc: "Documented REST and GraphQL APIs plus integrations with the tools your clients already run." },
+  { icon: "users", title: "Staff Augmentation", desc: "Drop senior developers straight into your team when you need extra throughput fast." },
 ];
 
 // Detailed process steps
@@ -151,30 +148,22 @@ const processDetailed = [
   },
 ];
 
+// Why agencies partner with us
+const whyAgencies = [
+  { icon: "eye", title: "An Invisible Extension", desc: "We stay behind your brand and behind your NDA. Clients see only your team delivering great work." },
+  { icon: "star", title: "Senior Engineers", desc: "Developers who have shipped for Fortune 500s, YC startups, and agencies — brought to every project." },
+  { icon: "clock", title: "US Timezone Overlap", desc: "We work Central Time for real-time overlap, daily standups, and same-day reviews with North America." },
+  { icon: "shield-check", title: "Peer-Reviewed Quality", desc: "Every pull request goes through code review, with TypeScript, tests, and consistent standards." },
+  { icon: "trending-up", title: "Scale On Demand", desc: "Add or reduce capacity instantly — ramp up for a big client release, ramp down between projects." },
+  { icon: "key", title: "You Own The Code", desc: "Clean, documented, maintainable code with full source ownership — no lock-in, no dependency on us." },
+];
+
 // Stats
 const stats = [
   { value: "5.0★", label: "Google Rating" },
   { value: "24h", label: "Avg. Response Time" },
   { value: "50", label: "Five-Star Reviews" },
   { value: "8+", label: "Years Experience" },
-];
-
-// Who we work with
-const clients = [
-  { name: "Marketing Agencies", desc: "Landing pages, campaign sites, client projects", icon: "◆" },
-  { name: "Design Studios", desc: "Figma to code, pixel-perfect development", icon: "◐" },
-  { name: "SaaS Companies", desc: "Feature development, scaling teams", icon: "▲" },
-  { name: "Startups", desc: "MVP development, rapid prototyping", icon: "●" },
-  { name: "Consultancies", desc: "Technical implementation partner", icon: "■" },
-  { name: "E-commerce Brands", desc: "Shopify, headless commerce", icon: "✦" },
-];
-
-// Showcase
-const showcase = [
-  { title: "Web Applications", color: "from-cyan-500 to-blue-600" },
-  { title: "E-commerce Sites", color: "from-teal-500 to-cyan-600" },
-  { title: "Marketing Sites", color: "from-orange-500 to-amber-500" },
-  { title: "SaaS Platforms", color: "from-blue-600 to-cyan-500" },
 ];
 
 // Pricing
@@ -230,712 +219,256 @@ const technologies = [
     set:html={JSON.stringify(faqSchema)}
   />
 
-  <style>
-    .page-bg {
-      background: #030303;
-    }
-
-    /* Animated gradient orbs */
-    .gradient-orbs {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.5;
-      animation: float-orb 20s ease-in-out infinite;
-    }
-    .orb-1 {
-      width: 600px;
-      height: 600px;
-      background: linear-gradient(135deg, #06b6d4, #3b82f6);
-      top: -200px;
-      left: -100px;
-      animation-delay: 0s;
-    }
-    .orb-2 {
-      width: 500px;
-      height: 500px;
-      background: linear-gradient(135deg, #14b8a6, #06b6d4);
-      top: 50%;
-      right: -150px;
-      animation-delay: -7s;
-    }
-    .orb-3 {
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(135deg, #0d9488, #06b6d4);
-      bottom: -100px;
-      left: 30%;
-      animation-delay: -14s;
-    }
-    @keyframes float-orb {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -30px) scale(1.05); }
-      66% { transform: translate(-20px, 20px) scale(0.95); }
-    }
-
-    /* Noise texture */
-    .noise {
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      opacity: 0.03;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Typography */
-    .text-display {
-      font-size: clamp(4rem, 18vw, 14rem);
-      line-height: 0.85;
-      letter-spacing: -0.05em;
-      font-weight: 800;
-    }
-    .text-gradient {
-      background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #14b8a6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .text-gradient-animate {
-      background: linear-gradient(135deg, #f97316, #f59e0b, #fb923c, #f97316);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradient-shift 8s ease infinite;
-    }
-    @keyframes gradient-shift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    /* Glass card */
-    .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-    }
-    .glass-hover {
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-hover:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-8px);
-      box-shadow:
-        0 25px 50px -12px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-    }
-
-    /* Bento grid */
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 1.25rem;
-    }
-    .bento-grid .col-span-7 { grid-column: span 7; }
-    .bento-grid .col-span-5 { grid-column: span 5; }
-    @media (min-width: 1024px) {
-      .bento-grid { gap: 1.5rem; }
-    }
-    @media (max-width: 768px) {
-      .bento-grid { grid-template-columns: 1fr; }
-      .bento-grid > * { grid-column: span 1 !important; }
-    }
-
-    /* Showcase cards */
-    .showcase-card {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      cursor: pointer;
-      min-height: 300px;
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    @media (min-width: 769px) { .showcase-card { min-height: 340px; } }
-    @media (min-width: 1024px) { .showcase-card { min-height: 400px; } }
-    @media (max-width: 768px) { .showcase-card { aspect-ratio: 4/3; min-height: auto; } }
-
-    .showcase-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
-      opacity: 0.8;
-      transition: opacity 0.4s;
-    }
-    .showcase-card:hover {
-      transform: scale(1.03) translateY(-8px);
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
-    }
-    .showcase-card:hover::after { opacity: 1; }
-    .showcase-card .card-content {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 2rem;
-    }
-    .showcase-card .card-tag {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
-      width: fit-content;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.4s ease 0.1s;
-    }
-    .showcase-card:hover .card-tag {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .showcase-card .card-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      transform: translateY(10px);
-      transition: transform 0.4s ease;
-    }
-    .showcase-card:hover .card-title { transform: translateY(0); }
-
-    /* Service icon */
-    .service-icon {
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      color: #22d3ee;
-      transition: all 0.4s ease;
-    }
-    .glass-hover:hover .service-icon {
-      transform: scale(1.1) rotate(5deg);
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(59, 130, 246, 0.3));
-    }
-
-    /* Premium buttons */
-    .btn-primary {
-      background: linear-gradient(135deg, #f97316, #ea580c);
-      color: #fff;
-      font-weight: 600;
-      padding: 1.25rem 3rem;
-      border-radius: 100px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 15px -3px rgba(249, 115, 22, 0.4);
-    }
-    .btn-primary::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #fb923c, #fdba74);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.5);
-    }
-    .btn-primary:hover::before { opacity: 1; }
-    .btn-primary span { position: relative; z-index: 1; }
-
-    .btn-ghost {
-      color: #fff;
-      font-weight: 500;
-      padding: 1.25rem 3rem;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.4s ease;
-      backdrop-filter: blur(10px);
-    }
-    .btn-ghost:hover {
-      border-color: rgba(6, 182, 212, 0.5);
-      background: rgba(6, 182, 212, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Marquee */
-    .marquee {
-      display: flex;
-      overflow: hidden;
-      user-select: none;
-      mask-image: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
-    }
-    .marquee-content {
-      display: flex;
-      gap: 3rem;
-      animation: marquee 25s linear infinite;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* Animations */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(60px);
-      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .delay-1 { transition-delay: 0.15s; }
-    .delay-2 { transition-delay: 0.3s; }
-    .delay-3 { transition-delay: 0.45s; }
-    .delay-4 { transition-delay: 0.6s; }
-    .delay-5 { transition-delay: 0.75s; }
-
-    /* Stats */
-    .stat-card {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    .stat-number {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-
-    /* Pricing card */
-    .pricing-card {
-      position: relative;
-      overflow: hidden;
-    }
-    .pricing-card.featured {
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
-      border: 1px solid rgba(6, 182, 212, 0.3);
-    }
-    .pricing-card.featured::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #06b6d4, #3b82f6);
-    }
-
-    /* Tech pill */
-    .tech-pill {
-      padding: 0.625rem 1.25rem;
-      border-radius: 100px;
-      font-size: 0.875rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.6);
-      transition: all 0.3s ease;
-    }
-    .tech-pill:hover {
-      border-color: rgba(6, 182, 212, 0.4);
-      color: #22d3ee;
-      background: rgba(6, 182, 212, 0.1);
-    }
-
-    /* Glow effect */
-    .glow {
-      position: relative;
-    }
-    .glow::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      background: linear-gradient(135deg, #06b6d4, #3b82f6, #14b8a6);
-      border-radius: inherit;
-      z-index: -1;
-      opacity: 0;
-      filter: blur(15px);
-      transition: opacity 0.4s;
-    }
-    .glow:hover::before { opacity: 0.5; }
-  </style>
-
-  <div class="page-bg min-h-screen relative overflow-hidden text-white">
-    <!-- Animated background -->
-    <div class="gradient-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-    <div class="noise"></div>
-
-    <div class="relative z-10">
-      <!-- ==================== HERO ==================== -->
-      <section class="min-h-screen flex flex-col justify-center px-6 pt-32 pb-20">
-        <div class="max-w-7xl mx-auto w-full">
-          <!-- Badge -->
-          <div class="fade-up mb-10">
-            <span class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-cyan-500/20">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span class="text-cyan-300 text-sm font-medium tracking-wide">White-Label Development Partner</span>
-            </span>
-          </div>
-
-          <!-- Display headline -->
-          <h1 class="text-display mb-6">
-            <span class="fade-up delay-1 block text-white">Your White-Label</span>
-            <span class="fade-up delay-2 block text-gradient-animate">Dev Team</span>
-          </h1>
-
-          <!-- Subtitle -->
-          <p class="fade-up delay-3 text-xl md:text-2xl text-neutral-400 max-w-2xl mb-14 leading-relaxed">
-            We build under your brand for agencies and studios.<br class="hidden md:block" />
-            Your clients see only you. NDA-backed senior team.
-          </p>
-
-          <!-- CTAs -->
-          <div class="fade-up delay-4 flex flex-wrap gap-5 mb-24">
-            <a href="/contact" class="btn-primary glow"><span>Start Building →</span></a>
-            <a href="#work" class="btn-ghost">View Our Work</a>
-          </div>
-
-          <!-- Stats -->
-          <div class="fade-up delay-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {stats.map((stat) => (
-              <div class="stat-card glass rounded-2xl">
-                <div class="stat-number text-gradient">{stat.value}</div>
-                <div class="text-neutral-400 text-sm mt-2">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          White-Label Development Partner
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Your White-Label <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Dev Team</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+          We build under your brand for agencies and studios. Your clients see
+          only you — NDA-backed senior developers, US timezone.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            Start Building
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="#services" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
+            What You Can Resell
+          </a>
         </div>
-      </section>
 
-      <!-- Marquee -->
-      <div class="py-8 border-y border-white/5">
-        <div class="marquee">
-          <div class="marquee-content">
-            {[...Array(2)].map(() => (
-              <>
-                {technologies.map((tech, i) => (
-                  <>
-                    <span class="text-2xl font-bold text-white/10 whitespace-nowrap">{tech}</span>
-                    <span class={`${i % 3 === 0 ? 'text-cyan-500' : i % 3 === 1 ? 'text-blue-500' : 'text-teal-500'}`}>◆</span>
-                  </>
-                ))}
-              </>
-            ))}
-          </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
+              <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- ==================== WORK SHOWCASE ==================== -->
-      <section id="work" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="fade-up flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div>
-              <p class="text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">What We Build</p>
-              <h2 class="text-4xl md:text-6xl font-bold text-white">
-                Code that<br />
-                <span class="text-gradient-animate">scales.</span>
-              </h2>
+  <!-- What White-Label Means / Intro -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-8" data-anim="heading">Development you can resell as your own</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          <strong class="text-slate-900">Codebrand is a white-label development partner for agencies, studios, and consultancies.</strong> You win the client and own the relationship; we do the engineering behind your brand. Deliverables ship with your name on them, we sign an NDA before anything sensitive changes hands, and your clients never know a partner was involved.
+        </p>
+        <p>
+          We become <strong class="text-slate-900">an invisible extension of your team</strong> — working inside your project management tools, your communication channels, and your processes. A project manager runs the sprints and reporting so you get predictable delivery without managing developers one at a time. Because we operate as a time-zone-aligned <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development company</a>, your team gets real-time overlap and daily collaboration.
+        </p>
+        <p>
+          Every line goes through <strong class="text-slate-900">peer review</strong>, and you receive clean, documented code with <strong class="text-slate-900">full source ownership</strong> — no lock-in, no dependency on us. Start with a single pilot project to test the fit, then scale up when you're ready. No long-term contracts, no minimums, no risk.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-14" data-anim="fade" data-delay="0.15">
+        {howItWorks.map((item) => (
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:-translate-y-1 hover:border-cyan-200 transition-all duration-300">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-cyan-50 border border-cyan-100 mb-4">
+              <Icon name={item.icon} class="w-6 h-6 text-cyan-900" />
             </div>
-            <p class="text-neutral-400 max-w-sm">
-              From MVPs to enterprise platforms — development that drives growth.
-            </p>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-          <!-- Bento showcase -->
-          <div class="bento-grid">
-            {[
-              { ...showcase[0], span: "col-span-7", tag: "Applications" },
-              { ...showcase[1], span: "col-span-5", tag: "Commerce" },
-              { ...showcase[2], span: "col-span-5", tag: "Marketing" },
-              { ...showcase[3], span: "col-span-7", tag: "SaaS" },
-            ].map((item, i) => (
-              <div
-                class={`fade-up ${item.span} showcase-card`}
-                style={`transition-delay: ${0.1 + i * 0.1}s`}
-              >
-                <div class={`absolute inset-0 bg-gradient-to-br ${item.color}`}></div>
-                <div class="card-content">
-                  <span class="card-tag text-white">{item.tag}</span>
-                  <span class="card-title text-white">{item.title}</span>
-                </div>
+  <!-- Services You Can Resell -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+          WHAT YOU CAN RESELL
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Services Under <span class="text-orange-500">Your Brand</span>
+        </h2>
+        <p class="text-xl text-slate-600">Sell the full stack of development work to your clients — we deliver it invisibly.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {services.map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-50 border border-orange-100 mb-4">
+              <Icon name={s.icon} class="w-6 h-6 text-orange-500" />
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
+            <p class="text-slate-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works / Process -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
+          HOW IT WORKS
+        </span>
+        <h2 data-anim="heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">From call to code in <span class="text-orange-500">a week</span></h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">A streamlined process that gets you from first contact to working code fast. Here's exactly what to expect.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6" data-anim="fade">
+        {processDetailed.map((step) => (
+          <div class="group bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-6">
+              <div class="w-14 h-14 flex-shrink-0 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                {step.num}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== WHO WE WORK WITH ==================== -->
-      <section class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Who We Work With</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white">Built for your business</h2>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {clients.map((client, i) => (
-              <div
-                class="fade-up glass glass-hover p-8"
-                style={`transition-delay: ${i * 0.08}s`}
-              >
-                <div class="service-icon mb-6">{client.icon}</div>
-                <h3 class="text-xl font-semibold text-white mb-3">{client.name}</h3>
-                <p class="text-neutral-400 leading-relaxed">{client.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== HOW IT WORKS ==================== -->
-      <section class="py-32 px-6 overflow-hidden">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-up text-center mb-8">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">How It Works</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">From call to code</h2>
-            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
-              Our streamlined process gets you from first contact to working code fast. Here's exactly what to expect.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-6 mt-16">
-            {processDetailed.map((step, i) => (
-              <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.1}s`}>
-                <div class="flex items-start gap-6">
-                  <div class="w-14 h-14 flex-shrink-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-300 font-bold">
-                    {step.num}
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">{step.desc}</p>
-                    <ul class="grid grid-cols-2 gap-2">
-                      {step.details.map((detail) => (
-                        <li class="flex items-center gap-2 text-sm text-neutral-400">
-                          <span class="w-1 h-1 rounded-full bg-cyan-400"></span>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== COMPARISON ==================== -->
-      <section class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-up text-center mb-8">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Compare Options</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Why outsource development?</h2>
-            <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
-              Compare the real costs and benefits of hiring in-house, working with freelancers, or partnering with a dedicated development team.
-            </p>
-          </div>
-
-          <!-- Comparison Table -->
-          <div class="fade-up mt-16 overflow-x-auto">
-            <table class="w-full min-w-[700px]">
-              <thead>
-                <tr class="border-b border-white/10">
-                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Aspect</th>
-                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">In-House Developer</th>
-                  <th class="text-left py-4 px-4 text-neutral-400 font-medium">Freelancers</th>
-                  <th class="text-left py-4 px-4 text-cyan-400 font-semibold">
-                    <span class="flex items-center gap-2">
-                      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                      Dev Outsourcing
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.map((row) => (
-                  <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                    <td class="py-5 px-4 text-white font-medium">{row.aspect}</td>
-                    <td class="py-5 px-4 text-neutral-400 text-sm">{row.inHouse}</td>
-                    <td class="py-5 px-4 text-neutral-400 text-sm">{row.freelancer}</td>
-                    <td class="py-5 px-4 text-neutral-300 text-sm font-medium">{row.outsourcing}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Summary boxes -->
-          <div class="grid md:grid-cols-3 gap-5 mt-12">
-            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.1s">
-              <div class="text-3xl font-bold text-gradient mb-2">60%</div>
-              <p class="text-neutral-400 text-sm">Average cost savings vs in-house developer</p>
-            </div>
-            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.2s">
-              <div class="text-3xl font-bold text-white mb-2">2 weeks</div>
-              <p class="text-neutral-400 text-sm">Average time to start vs months for hiring</p>
-            </div>
-            <div class="fade-up glass p-6 text-center" style="transition-delay: 0.3s">
-              <div class="text-3xl font-bold text-white mb-2">∞</div>
-              <p class="text-neutral-400 text-sm">Scalability—add or reduce capacity instantly</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== PRICING ==================== -->
-      <section class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-          <div class="fade-up text-center mb-16">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Pricing</span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white">Simple, transparent</h2>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-5">
-            {pricing.map((plan, i) => (
-              <div
-                class={`fade-up glass glass-hover pricing-card p-8 ${plan.highlighted ? "featured" : ""}`}
-                style={`transition-delay: ${i * 0.12}s`}
-              >
-                {plan.highlighted && (
-                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-500/20 px-3 py-1.5 rounded-full mb-6">
-                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                    Most Popular
-                  </span>
-                )}
-                <h3 class="text-2xl font-bold text-white mb-2">{plan.title}</h3>
-                <p class="text-neutral-400 mb-6">{plan.desc}</p>
-                <div class="mb-8">
-                  <span class="text-5xl font-bold text-white">{plan.price}</span>
-                  <span class="text-neutral-400 text-lg">{plan.period}</span>
-                </div>
-                <ul class="space-y-4 mb-8">
-                  {plan.features.map((feature) => (
-                    <li class="flex items-center gap-3 text-neutral-300">
-                      <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      {feature}
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">{step.title}</h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">{step.desc}</p>
+                <ul class="grid grid-cols-2 gap-2">
+                  {step.details.map((detail) => (
+                    <li class="flex items-center gap-2 text-sm text-slate-500">
+                      <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                      {detail}
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="/contact"
-                  class={plan.highlighted ? "btn-primary w-full text-center block" : "btn-ghost w-full text-center block"}
-                >
-                  <span>Get Started</span>
-                </a>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== TECHNOLOGIES ==================== -->
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-          <div class="fade-up mb-12">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Tech Stack</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Technologies we master</h2>
-            <p class="text-neutral-400 text-lg">We adapt to your stack, not the other way around.</p>
-          </div>
-          <div class="fade-up flex flex-wrap justify-center gap-3">
-            {technologies.map((tech) => (
-              <span class="tech-pill">{tech}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== WHY CHOOSE US ==================== -->
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="fade-up">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Why Codebrand</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Your development team, without the overhead</h2>
-            <div class="prose prose-lg prose-invert max-w-none">
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                Hiring developers is expensive and time-consuming. Between recruiting, interviewing, onboarding, and managing—building an in-house development team can take months and cost significantly more than the salary alone. Benefits, equipment, software licenses, office space, and management overhead add up quickly.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                As your white-label development partner, we become an invisible extension of your team. We learn your codebase, understand your quality standards, and deliver work that integrates seamlessly with your existing systems. Your clients never know we exist—they just see great work delivered on time. Because we operate as a time-zone-aligned <a href="/nearshore-development" class="text-cyan-400 hover:text-cyan-300 underline">nearshore development company</a>, your team gets real-time overlap and daily collaboration.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed mb-6">
-                Our developers have shipped code for Fortune 500 companies, Y Combinator startups, and established agencies. We bring that experience to every project—whether it's a simple landing page or a complex web application. Every line of code goes through peer review, ensuring consistent quality.
-              </p>
-              <p class="text-neutral-400 text-lg leading-relaxed">
-                The best part? You can start with a single project to test the waters. See our code quality. Experience our communication. Then scale up when you're ready. No long-term contracts, no minimums, no risk. Just great development work when you need it.
-              </p>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <!-- ==================== FAQ ==================== -->
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="fade-up text-center mb-8">
-            <span class="inline-block text-cyan-400 text-sm font-medium tracking-widest uppercase mb-4">Frequently Asked Questions</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Everything you need to know</h2>
-            <p class="text-neutral-400 text-lg">Can't find what you're looking for? <a href="/contact" class="text-cyan-400 hover:text-cyan-300 underline">Contact us</a> and we'll get back to you within 24 hours.</p>
+  <!-- Why Agencies Partner With Us -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+          WHY CODEBRAND
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          Why Agencies <span class="text-orange-500">Partner With Us</span>
+        </h2>
+        <p class="text-xl text-slate-600">Your development team, without the hiring, overhead, or the risk of clients finding out.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
+        {whyAgencies.map((item) => (
+          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-cyan-50 border border-cyan-100 mb-4">
+              <Icon name={item.icon} class="w-6 h-6 text-cyan-900" />
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
+            <p class="text-slate-600">{item.desc}</p>
           </div>
-          <div class="fade-up mt-12">
-            <FaqAccordion faqs={faqs} theme="dark" />
-          </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <!-- ==================== CTA ==================== -->
-      <section class="py-40 px-6 relative overflow-hidden">
-        <!-- Glow effect -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
-        </div>
+  <!-- Pricing -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
+          PRICING
+        </span>
+        <h2 data-anim="heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">Simple, <span class="text-orange-500">transparent</span> hourly rates</h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto mt-6">Pay only for actual development time, with detailed tracking. Volume discounts for 40+ hours monthly.</p>
+      </div>
 
-        <div class="max-w-4xl mx-auto text-center relative">
-          <div class="fade-up">
-            <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[0.9]">
-              Let's build<br />
-              <span class="text-gradient-animate">something great.</span>
-            </h2>
-            <p class="text-xl md:text-2xl text-neutral-400 mb-12 max-w-xl mx-auto">
-              Free 30-min consultation. No commitment required.
-            </p>
-            <a href="/contact" class="btn-primary inline-block text-lg px-14 py-5 glow">
-              <span>Book a Call →</span>
+      <div class="grid md:grid-cols-3 gap-6" data-anim="fade">
+        {pricing.map((plan) => (
+          <div class:list={[
+            "relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2",
+            plan.highlighted
+              ? "bg-slate-900 text-white shadow-2xl scale-105 z-10"
+              : "bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl"
+          ]}>
+            {plan.highlighted && (
+              <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+                Most Popular
+              </span>
+            )}
+            <h3 class={plan.highlighted ? "text-2xl font-semibold mb-2 text-white" : "text-2xl font-semibold mb-2 text-slate-900"}>{plan.title}</h3>
+            <p class={plan.highlighted ? "text-sm mb-6 text-slate-300" : "text-sm mb-6 text-slate-600"}>{plan.desc}</p>
+            <div class="mb-8">
+              <span class={plan.highlighted ? "text-5xl font-bold text-white" : "text-5xl font-bold text-slate-900"}>{plan.price}</span>
+              <span class={plan.highlighted ? "text-slate-400 text-lg" : "text-slate-500 text-lg"}>{plan.period}</span>
+            </div>
+            <ul class="space-y-4 mb-8">
+              {plan.features.map((feature) => (
+                <li class="flex items-center gap-3">
+                  <svg class={plan.highlighted ? "w-5 h-5 text-teal-400 flex-shrink-0" : "w-5 h-5 text-teal-500 flex-shrink-0"} fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class={plan.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contact"
+              class={plan.highlighted
+                ? "block w-full py-4 text-center font-bold rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg transition-all duration-300"
+                : "block w-full py-4 text-center font-bold rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300"
+              }
+            >
+              Get Started
             </a>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Scroll animations -->
-  <script>
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
+  <!-- Tech Stack Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
+        Technologies We <span class="text-orange-500">Master</span>
+      </h2>
+      <p class="text-slate-600 text-lg mt-4" data-anim="fade" data-delay="0.05">We adapt to your stack, not the other way around.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+        {technologies.map((t) => (
+          <span class="px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
 
-    document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
-  </script>
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
+          White-Label <span class="text-orange-500">FAQ</span>
+        </h2>
+        <p class="text-slate-600 text-lg">Can't find your answer? <a href="/contact" class="text-orange-500 hover:text-orange-600 font-semibold">Contact us</a> and we'll reply within 24 hours.</p>
+      </div>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-anim="heading">
+        Let's build <span class="text-orange-400">something great.</span>
+      </h2>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free 30-minute consultation. No commitment required. Start with a pilot and scale when you're ready.</p>
+      <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        Book a Call
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+  </section>
 </Layout>

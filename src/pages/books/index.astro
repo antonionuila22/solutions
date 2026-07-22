@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Button from "../../components/Button.astro";
+import Icon from "../../components/icons/Icon.astro";
 
 const books = await getCollection("books");
 
@@ -11,11 +12,11 @@ const keywords = "books for developers, marketing books, web development books, 
 
 // Book categories for filtering
 const categories = [
-  { name: "All", icon: "📚" },
-  { name: "Development", icon: "💻" },
-  { name: "Marketing", icon: "📈" },
-  { name: "Design", icon: "🎨" },
-  { name: "Business", icon: "💼" },
+  { name: "All", icon: "book-open" },
+  { name: "Development", icon: "code" },
+  { name: "Marketing", icon: "trending-up" },
+  { name: "Design", icon: "palette" },
+  { name: "Business", icon: "briefcase" },
 ];
 ---
 
@@ -39,7 +40,7 @@ const categories = [
     <div class="relative max-w-6xl mx-auto px-6 text-center z-10">
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20">
-        <span class="text-2xl">📖</span>
+        <Icon name="book-open" class="w-6 h-6 text-orange-400" />
         <span class="text-white text-sm font-semibold uppercase tracking-wider">
           Curated Library
         </span>
@@ -88,7 +89,7 @@ const categories = [
       <div class="grid md:grid-cols-3 gap-8">
         <div class="text-center p-6">
           <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-3xl">🎯</span>
+            <Icon name="target" class="w-8 h-8 text-orange-500" />
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Practical Knowledge</h3>
           <p class="text-slate-600">
@@ -98,7 +99,7 @@ const categories = [
 
         <div class="text-center p-6">
           <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-3xl">⭐</span>
+            <Icon name="star" class="w-8 h-8 text-orange-500" />
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Expert Curated</h3>
           <p class="text-slate-600">
@@ -108,7 +109,7 @@ const categories = [
 
         <div class="text-center p-6">
           <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-3xl">🚀</span>
+            <Icon name="rocket" class="w-8 h-8 text-orange-500" />
           </div>
           <h3 class="text-xl font-bold text-cyan-900 mb-2">Career Growth</h3>
           <p class="text-slate-600">
@@ -198,7 +199,7 @@ const categories = [
       {books.length < 6 && (
         <div class="mt-12 text-center">
           <div class="inline-flex items-center gap-3 px-6 py-4 bg-slate-100 rounded-2xl border border-slate-200">
-            <span class="text-2xl">📚</span>
+            <Icon name="book-open" class="w-6 h-6 text-orange-500" />
             <div class="text-left">
               <p class="font-semibold text-cyan-900">More books coming soon!</p>
               <p class="text-sm text-slate-600">We're always adding new recommendations.</p>
@@ -213,7 +214,7 @@ const categories = [
   <section class="py-20 bg-cyan-900">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-6">
-        <span class="text-xl">💡</span>
+        <Icon name="lightbulb" class="w-5 h-5 text-orange-400" />
         <span class="text-white text-sm font-medium">Keep Learning</span>
       </div>
 

@@ -224,14 +224,14 @@ export const videoProductionConfig: ServicePageConfig = {
       "We use cutting-edge video production and editing tools for cinematic-quality results.",
     columns: "4",
     items: [
-      { name: "Adobe Premiere Pro", icon: "🎬" },
-      { name: "Adobe After Effects", icon: "🎞️" },
-      { name: "DaVinci Resolve", icon: "🎨" },
-      { name: "Final Cut Pro", icon: "✂️" },
-      { name: "Cinema 4D", icon: "🎭" },
-      { name: "Adobe Audition", icon: "🎵" },
-      { name: "Photoshop", icon: "🖼️" },
-      { name: "Illustrator", icon: "✏️" },
+      { name: "Adobe Premiere Pro", icon: "film" },
+      { name: "Adobe After Effects", icon: "film" },
+      { name: "DaVinci Resolve", icon: "palette" },
+      { name: "Final Cut Pro", icon: "scissors" },
+      { name: "Cinema 4D", icon: "palette" },
+      { name: "Adobe Audition", icon: "music" },
+      { name: "Photoshop", icon: "image" },
+      { name: "Illustrator", icon: "pencil" },
     ],
   },
 
@@ -244,19 +244,19 @@ export const videoProductionConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "🎥",
+        icon: "video",
         title: "Cinematic Quality",
         description:
           "Hollywood-grade editing techniques, color grading, and post-production that make your videos stand out.",
       },
       {
-        icon: "⚡",
+        icon: "zap",
         title: "Fast Turnaround",
         description:
           "Efficient workflow and project management ensures your videos are delivered on time without compromising quality.",
       },
       {
-        icon: "🎯",
+        icon: "target",
         title: "Platform Optimization",
         description:
           "Videos optimized for each platform's specifications, ensuring maximum engagement and performance.",

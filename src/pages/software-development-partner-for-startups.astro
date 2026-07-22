@@ -7,6 +7,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "Startup Dev Partner | MVP Experts | Codebrand";
 const description = "Software development partner for startups. MVP development, rapid prototyping, and scalable architecture. Startup-friendly pricing.";
@@ -50,12 +51,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "🚀", title: "MVP Development", desc: "Validate your idea fast with a focused minimum viable product" },
-  { icon: "🎨", title: "Product Design", desc: "User research, wireframes, and UI design before coding" },
-  { icon: "⚡", title: "Rapid Prototyping", desc: "Interactive prototypes to test with users and investors" },
-  { icon: "📈", title: "Scalable Architecture", desc: "Built to grow—no rewrites needed when you scale" },
-  { icon: "🔄", title: "Iteration Support", desc: "Continuous improvement based on user feedback" },
-  { icon: "💼", title: "Investor-Ready Code", desc: "Clean code that passes technical due diligence" }
+  { icon: "rocket", title: "MVP Development", desc: "Validate your idea fast with a focused minimum viable product" },
+  { icon: "palette", title: "Product Design", desc: "User research, wireframes, and UI design before coding" },
+  { icon: "zap", title: "Rapid Prototyping", desc: "Interactive prototypes to test with users and investors" },
+  { icon: "trending-up", title: "Scalable Architecture", desc: "Built to grow—no rewrites needed when you scale" },
+  { icon: "refresh", title: "Iteration Support", desc: "Continuous improvement based on user feedback" },
+  { icon: "briefcase", title: "Investor-Ready Code", desc: "Clean code that passes technical due diligence" }
 ];
 
 const process = [
@@ -148,7 +149,7 @@ const stats = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

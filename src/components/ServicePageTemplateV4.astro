@@ -5,6 +5,7 @@
  */
 
 import Layout from "../layouts/Layout.astro";
+import Icon from "./icons/Icon.astro";
 
 interface ServiceItem {
     title: string;
@@ -560,7 +561,7 @@ const howToSchema = {
                 {benefits.map((benefit) => (
                     <div class="group text-center p-8 bg-slate-50 hover:bg-white rounded-3xl border border-slate-100 hover:border-slate-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                         <div class="w-20 h-20 bg-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <span class="text-3xl">{benefit.icon || '✓'}</span>
+                            <Icon name={benefit.icon || 'check'} class="w-8 h-8 text-white" />
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
                         <p class="text-slate-600 leading-relaxed">{benefit.description}</p>

@@ -8,6 +8,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Custom Software Development | Codebrand";
@@ -112,12 +113,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "🖥️", title: "Web Applications", desc: "Full-stack apps from customer portals to complex platforms." },
-  { icon: "📊", title: "Internal Tools & Dashboards", desc: "Replace fragile spreadsheets and manual processes." },
-  { icon: "🚀", title: "SaaS MVP Development", desc: "Get your product to market fast with a scalable MVP." },
-  { icon: "🔗", title: "API Development", desc: "Documented, secure REST and GraphQL APIs." },
-  { icon: "🔌", title: "System Integrations", desc: "Connect payments, CRMs, ERPs, and third-party tools." },
-  { icon: "🗄️", title: "Database Design", desc: "Performant, well-modeled data ready to scale." },
+  { icon: "monitor", title: "Web Applications", desc: "Full-stack apps from customer portals to complex platforms." },
+  { icon: "bar-chart", title: "Internal Tools & Dashboards", desc: "Replace fragile spreadsheets and manual processes." },
+  { icon: "rocket", title: "SaaS MVP Development", desc: "Get your product to market fast with a scalable MVP." },
+  { icon: "link", title: "API Development", desc: "Documented, secure REST and GraphQL APIs." },
+  { icon: "plug", title: "System Integrations", desc: "Connect payments, CRMs, ERPs, and third-party tools." },
+  { icon: "database", title: "Database Design", desc: "Performant, well-modeled data ready to scale." },
 ];
 
 const stats = [
@@ -206,7 +207,7 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

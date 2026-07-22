@@ -9,6 +9,7 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import { createServicePageSchema } from "../utils/schema";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "AI Automation Agency | Codebrand";
 const description =
@@ -113,32 +114,32 @@ const faqSchema = {
 
 const services = [
   {
-    icon: "🤖",
+    icon: "bot",
     title: "AI Agents & Assistants",
     desc: "Custom agents that read your data, decide, and act across your tools — not just chat.",
   },
   {
-    icon: "🔄",
+    icon: "refresh",
     title: "Workflow Automation",
     desc: "Automate lead routing, data entry, reporting, and multi-step back-office processes.",
   },
   {
-    icon: "💬",
+    icon: "message-circle",
     title: "Support Chatbots",
     desc: "Retrieval chatbots that answer from your own docs and products — web or WhatsApp.",
   },
   {
-    icon: "📄",
+    icon: "file-text",
     title: "Document Processing",
     desc: "Extract, classify, and summarize data from PDFs, invoices, emails, and forms.",
   },
   {
-    icon: "📨",
+    icon: "mail",
     title: "CRM & Email Automation",
     desc: "Automatic follow-up, lead qualification, enrichment, and CRM updates.",
   },
   {
-    icon: "🔌",
+    icon: "plug",
     title: "AI Integrations",
     desc: "Connect AI to HubSpot, Slack, Sheets, Stripe, Shopify, and custom APIs.",
   },
@@ -241,7 +242,7 @@ const stack = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

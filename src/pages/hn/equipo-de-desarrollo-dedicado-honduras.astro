@@ -8,6 +8,7 @@ export const prerender = true;
 
 import HnLayout from "../../layouts/HnLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Icon from "../../components/icons/Icon.astro";
 import { createServicePageSchema } from "../../utils/schema";
 
 const title = "Equipo de Desarrollo Dedicado en Honduras | Codebrand";
@@ -88,10 +89,10 @@ const stats = [
 ];
 
 const weekly = [
-  { icon: "🚀", title: "Avances funcionando", desc: "Cada sprint entrega funcionalidad real corriendo, no maquetas ni promesas para después." },
-  { icon: "🖥️", title: "Demo semanal", desc: "Te mostramos en vivo lo que se construyó para que lo veas, lo pruebes y des feedback." },
-  { icon: "📋", title: "Reporte de la semana", desc: "Un resumen claro de qué se entregó, qué está en curso y en qué se invirtió el tiempo." },
-  { icon: "🗺️", title: "Plan de la siguiente semana", desc: "Con base en tus prioridades del backlog, definimos juntos qué se construye a continuación." }
+  { icon: "rocket", title: "Avances funcionando", desc: "Cada sprint entrega funcionalidad real corriendo, no maquetas ni promesas para después." },
+  { icon: "monitor", title: "Demo semanal", desc: "Te mostramos en vivo lo que se construyó para que lo veas, lo pruebes y des feedback." },
+  { icon: "clipboard", title: "Reporte de la semana", desc: "Un resumen claro de qué se entregó, qué está en curso y en qué se invirtió el tiempo." },
+  { icon: "map-pin", title: "Plan de la siguiente semana", desc: "Con base en tus prioridades del backlog, definimos juntos qué se construye a continuación." }
 ];
 
 const howItWorks = [
@@ -104,12 +105,12 @@ const howItWorks = [
 ];
 
 const teamRoles = [
-  { icon: "🧭", title: "Tech Lead", desc: "Define la arquitectura, revisa el código y mantiene la calidad técnica del sistema." },
-  { icon: "⚙️", title: "Desarrolladores Mid", desc: "El motor del equipo: construyen las funcionalidades del backend y el frontend cada sprint." },
-  { icon: "🌱", title: "Desarrollador Junior", desc: "Apoya en tareas y crece con el equipo, siempre bajo la revisión del Tech Lead." },
-  { icon: "🧪", title: "QA", desc: "Prueba cada flujo antes de entregar para que llegue a producción sin sorpresas." },
-  { icon: "📈", title: "Project Manager", desc: "Tu punto de contacto: coordina el sprint, ordena el backlog y te entrega el reporte." },
-  { icon: "🔧", title: "Composición flexible", desc: "La mezcla exacta de perfiles se ajusta al tipo de proyecto, tecnología y fase." }
+  { icon: "compass", title: "Tech Lead", desc: "Define la arquitectura, revisa el código y mantiene la calidad técnica del sistema." },
+  { icon: "settings", title: "Desarrolladores Mid", desc: "El motor del equipo: construyen las funcionalidades del backend y el frontend cada sprint." },
+  { icon: "sprout", title: "Desarrollador Junior", desc: "Apoya en tareas y crece con el equipo, siempre bajo la revisión del Tech Lead." },
+  { icon: "flask", title: "QA", desc: "Prueba cada flujo antes de entregar para que llegue a producción sin sorpresas." },
+  { icon: "trending-up", title: "Project Manager", desc: "Tu punto de contacto: coordina el sprint, ordena el backlog y te entrega el reporte." },
+  { icon: "wrench", title: "Composición flexible", desc: "La mezcla exacta de perfiles se ajusta al tipo de proyecto, tecnología y fase." }
 ];
 
 const comparison = [
@@ -304,7 +305,7 @@ const waSuffix = "&type=phone_number&app_absent=0";
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {weekly.map((b, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
-                <div class="text-4xl mb-4">{b.icon}</div>
+                <div class="mb-4"><Icon name={b.icon} class="w-9 h-9 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
                 <p class="text-neutral-400">{b.desc}</p>
               </div>
@@ -358,7 +359,7 @@ const waSuffix = "&type=phone_number&app_absent=0";
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {teamRoles.map((r, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
-                <div class="text-4xl mb-4">{r.icon}</div>
+                <div class="mb-4"><Icon name={r.icon} class="w-9 h-9 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{r.title}</h3>
                 <p class="text-neutral-400">{r.desc}</p>
               </div>

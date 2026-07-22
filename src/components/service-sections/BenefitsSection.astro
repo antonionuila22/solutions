@@ -4,10 +4,12 @@
  * Displays service benefits in cards
  */
 
+import Icon from "../icons/Icon.astro";
+
 interface Benefit {
   title: string;
   description: string;
-  icon: string; // emoji or image path
+  icon: string; // Icon name or image path
 }
 
 interface Props {
@@ -59,7 +61,7 @@ const gridCols = {
       {
         benefits.map((benefit) => (
           <div class="bg-white rounded-2xl md:rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover-lift">
-            <div class="text-5xl mb-4">
+            <div class="mb-4">
               {benefit.icon.startsWith("/") ||
               benefit.icon.startsWith("http") ? (
                 <img
@@ -72,7 +74,7 @@ const gridCols = {
                   decoding="async"
                 />
               ) : (
-                benefit.icon
+                <Icon name={benefit.icon} class="w-14 h-14 text-cyan-900" />
               )}
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-cyan-900 mb-3">

@@ -1,7 +1,9 @@
 ---
+import Icon from "./icons/Icon.astro";
+
 interface TechItem {
   name: string;
-  icon: string; // emoji
+  icon: string; // Icon name (e.g. "atom") or emoji (legacy)
 }
 
 interface Props {
@@ -12,6 +14,10 @@ interface Props {
 }
 
 const { title, titleAccent, subtitle, technologies } = Astro.props;
+
+// Backward-compatible: lowercase ASCII/hyphen values are Icon names; anything
+// else (emoji) renders as-is so pages not yet migrated keep working.
+const isIconName = (v: string) => /^[a-z][a-z-]*$/.test(v);
 ---
 
 <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
@@ -26,7 +32,11 @@ const { title, titleAccent, subtitle, technologies } = Astro.props;
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
       {technologies.map((tech) => (
         <div class="group flex flex-col items-center justify-center p-6 sm:p-8 bg-slate-50 rounded-2xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-cyan-50 border border-slate-100 hover:border-orange-200 transition-all duration-300">
-          <div class="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{tech.icon}</div>
+          <div class="mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+            {isIconName(tech.icon)
+              ? <Icon name={tech.icon} class="w-10 h-10 sm:w-12 sm:h-12 text-slate-700" />
+              : <span class="text-4xl sm:text-5xl">{tech.icon}</span>}
+          </div>
           <div class="text-xs sm:text-sm font-semibold text-slate-700">{tech.name}</div>
         </div>
       ))}

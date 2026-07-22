@@ -222,14 +222,14 @@ export const brandingConfig: ServicePageConfig = {
       "We leverage industry-leading design software to create exceptional brand identities.",
     columns: "4",
     items: [
-      { name: "Adobe Illustrator", icon: "🎨" },
-      { name: "Adobe Photoshop", icon: "🖼️" },
-      { name: "Adobe InDesign", icon: "📐" },
-      { name: "Figma", icon: "🎯" },
-      { name: "Sketch", icon: "✏️" },
-      { name: "CorelDRAW", icon: "🖌️" },
-      { name: "Affinity Designer", icon: "🎭" },
-      { name: "Procreate", icon: "🖍️" },
+      { name: "Adobe Illustrator", icon: "palette" },
+      { name: "Adobe Photoshop", icon: "image" },
+      { name: "Adobe InDesign", icon: "ruler" },
+      { name: "Figma", icon: "target" },
+      { name: "Sketch", icon: "pencil" },
+      { name: "CorelDRAW", icon: "pencil" },
+      { name: "Affinity Designer", icon: "palette" },
+      { name: "Procreate", icon: "pencil" },
     ],
   },
 
@@ -242,19 +242,19 @@ export const brandingConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "🎯",
+        icon: "target",
         title: "Strategic Approach",
         description:
           "We combine market research, competitor analysis, and audience insights to create brands that stand out and connect.",
       },
       {
-        icon: "⏱️",
+        icon: "clock",
         title: "Timeless Design",
         description:
           "Our designs are built to last, balancing contemporary trends with classic principles for long-term brand equity.",
       },
       {
-        icon: "📦",
+        icon: "package",
         title: "Complete Brand Systems",
         description:
           "We deliver comprehensive visual identities with detailed guidelines ensuring consistency across all applications.",

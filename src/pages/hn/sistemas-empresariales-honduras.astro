@@ -9,6 +9,7 @@ export const prerender = true;
 
 import HnLayout from "../../layouts/HnLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Icon from "../../components/icons/Icon.astro";
 import { createServicePageSchema } from "../../utils/schema";
 
 const title = "Sistemas Empresariales a la Medida en Honduras | Codebrand";
@@ -90,21 +91,21 @@ const stats = [
 ];
 
 const signals = [
-  { icon: "⚠️", title: "Todo vive en Excel", desc: "Hojas de cálculo enormes que solo una persona entiende y que se rompen con un clic mal dado." },
-  { icon: "🔁", title: "Datos duplicados", desc: "El mismo dato se escribe tres veces en tres archivos distintos, y ninguno coincide con el otro." },
-  { icon: "🧾", title: "Reportes a mano", desc: "Cada fin de mes alguien pasa horas copiando y pegando para armar un reporte que ya llegó tarde." },
-  { icon: "🔌", title: "Herramientas que no se hablan", desc: "Ventas por un lado, inventario por otro, contabilidad por otro; nada está conectado." },
-  { icon: "🕵️", title: "No sabes tu número real", desc: "Preguntas cuánto hay en bodega o cuánto te deben y nadie da una respuesta al instante." },
-  { icon: "😰", title: "Todo depende de una persona", desc: "Si esa persona falta, la operación se traba porque el conocimiento no está en un sistema." }
+  { icon: "alert-triangle", title: "Todo vive en Excel", desc: "Hojas de cálculo enormes que solo una persona entiende y que se rompen con un clic mal dado." },
+  { icon: "refresh", title: "Datos duplicados", desc: "El mismo dato se escribe tres veces en tres archivos distintos, y ninguno coincide con el otro." },
+  { icon: "file-text", title: "Reportes a mano", desc: "Cada fin de mes alguien pasa horas copiando y pegando para armar un reporte que ya llegó tarde." },
+  { icon: "plug", title: "Herramientas que no se hablan", desc: "Ventas por un lado, inventario por otro, contabilidad por otro; nada está conectado." },
+  { icon: "search", title: "No sabes tu número real", desc: "Preguntas cuánto hay en bodega o cuánto te deben y nadie da una respuesta al instante." },
+  { icon: "alert-triangle", title: "Todo depende de una persona", desc: "Si esa persona falta, la operación se traba porque el conocimiento no está en un sistema." }
 ];
 
 const buildSystems = [
-  { icon: "📦", title: "Inventario y Bodega", desc: "Existencias, kardex, ubicaciones, traslados entre sucursales y alertas de stock mínimo." },
-  { icon: "🧾", title: "Facturación y Cobros", desc: "Facturación acorde al SAR, cuentas por cobrar, estados de cuenta y recordatorios de pago." },
-  { icon: "🛒", title: "Órdenes y Compras", desc: "Cotizaciones, órdenes de compra a proveedores y recepción de mercadería en un flujo ordenado." },
-  { icon: "🏭", title: "Producción", desc: "Órdenes de producción, consumo de materia prima y costeo para quien fabrica o ensambla." },
-  { icon: "👥", title: "Planilla y RRHH", desc: "Control de empleados, planilla, deducciones y reportes para recursos humanos." },
-  { icon: "📊", title: "Portales y Paneles (BI)", desc: "Portales para clientes o proveedores y dashboards con los números al día para la gerencia." }
+  { icon: "package", title: "Inventario y Bodega", desc: "Existencias, kardex, ubicaciones, traslados entre sucursales y alertas de stock mínimo." },
+  { icon: "file-text", title: "Facturación y Cobros", desc: "Facturación acorde al SAR, cuentas por cobrar, estados de cuenta y recordatorios de pago." },
+  { icon: "shopping-cart", title: "Órdenes y Compras", desc: "Cotizaciones, órdenes de compra a proveedores y recepción de mercadería en un flujo ordenado." },
+  { icon: "factory", title: "Producción", desc: "Órdenes de producción, consumo de materia prima y costeo para quien fabrica o ensambla." },
+  { icon: "users", title: "Planilla y RRHH", desc: "Control de empleados, planilla, deducciones y reportes para recursos humanos." },
+  { icon: "bar-chart", title: "Portales y Paneles (BI)", desc: "Portales para clientes o proveedores y dashboards con los números al día para la gerencia." }
 ];
 
 const included = [
@@ -222,7 +223,7 @@ const waSuffix = "&type=phone_number&app_absent=0";
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {signals.map((s, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
-                <div class="text-4xl mb-4">{s.icon}</div>
+                <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
                 <p class="text-neutral-400">{s.desc}</p>
               </div>
@@ -248,7 +249,7 @@ const waSuffix = "&type=phone_number&app_absent=0";
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {buildSystems.map((b, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
-                <div class="text-4xl mb-4">{b.icon}</div>
+                <div class="mb-4"><Icon name={b.icon} class="w-9 h-9 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
                 <p class="text-neutral-400">{b.desc}</p>
               </div>

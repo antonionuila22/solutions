@@ -9,6 +9,7 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import { createServicePageSchema } from "../utils/schema";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "Astro Development Agency | Codebrand";
 const description =
@@ -107,12 +108,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "🚀", title: "Astro Websites", desc: "Fast, modern sites that ace Core Web Vitals out of the box." },
-  { icon: "📝", title: "Content & Blog Sites", desc: "Content collections, MDX, and programmatic SEO at scale." },
-  { icon: "🔄", title: "WordPress → Astro", desc: "Migrate off slow, plugin-heavy WordPress to a fast, secure site." },
-  { icon: "🧱", title: "Astro + Headless CMS", desc: "Astro paired with a CMS your team can edit without code." },
-  { icon: "🏝️", title: "React & Vue Islands", desc: "Interactivity where needed, static HTML everywhere else." },
-  { icon: "⚡", title: "Performance Tuning", desc: "Rescue slow sites and fix Core Web Vitals." },
+  { icon: "rocket", title: "Astro Websites", desc: "Fast, modern sites that ace Core Web Vitals out of the box." },
+  { icon: "pencil", title: "Content & Blog Sites", desc: "Content collections, MDX, and programmatic SEO at scale." },
+  { icon: "refresh", title: "WordPress → Astro", desc: "Migrate off slow, plugin-heavy WordPress to a fast, secure site." },
+  { icon: "building", title: "Astro + Headless CMS", desc: "Astro paired with a CMS your team can edit without code." },
+  { icon: "palmtree", title: "React & Vue Islands", desc: "Interactivity where needed, static HTML everywhere else." },
+  { icon: "zap", title: "Performance Tuning", desc: "Rescue slow sites and fix Core Web Vitals." },
 ];
 
 const stats = [
@@ -201,7 +202,7 @@ const stack = ["Astro", "TypeScript", "Tailwind CSS", "React", "MDX", "Sanity", 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

@@ -7,6 +7,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "Hire Remote Developers | Staff Augmentation | Codebrand";
 const description = "Hire vetted senior and mid developers who join your team. US timezone, fluent English, hourly rates, staff augmentation that scales. Get a free quote.";
@@ -50,12 +51,12 @@ const faqSchema = {
 };
 
 const benefits = [
-  { icon: "🕐", title: "US Timezone", desc: "Work Central Time hours for real-time collaboration" },
-  { icon: "💬", title: "English Fluent", desc: "Clear communication, no language barriers" },
-  { icon: "💰", title: "60% Cost Savings", desc: "Senior talent at a fraction of US rates" },
-  { icon: "⚡", title: "Fast Onboarding", desc: "Start in 1-2 weeks, not months" },
-  { icon: "📈", title: "Scalable", desc: "Scale team up or down as needed" },
-  { icon: "🔄", title: "Flexible Engagement", desc: "Staff aug, dedicated team, or project-based" }
+  { icon: "clock", title: "US Timezone", desc: "Work Central Time hours for real-time collaboration" },
+  { icon: "message-circle", title: "English Fluent", desc: "Clear communication, no language barriers" },
+  { icon: "dollar-sign", title: "60% Cost Savings", desc: "Senior talent at a fraction of US rates" },
+  { icon: "zap", title: "Fast Onboarding", desc: "Start in 1-2 weeks, not months" },
+  { icon: "trending-up", title: "Scalable", desc: "Scale team up or down as needed" },
+  { icon: "refresh", title: "Flexible Engagement", desc: "Staff aug, dedicated team, or project-based" }
 ];
 
 const roles = [
@@ -174,7 +175,7 @@ const stats = [
         {benefits.map((b) => (
           <div class="group bg-white hover:bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-slate-200 hover:border-orange-300 transition-all duration-300 hover:-translate-y-1">
             <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span class="text-2xl">{b.icon}</span>
+              <Icon name={b.icon} class="w-7 h-7 text-white" />
             </div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{b.title}</h3>
             <p class="text-slate-600 leading-relaxed">{b.desc}</p>

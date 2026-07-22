@@ -8,6 +8,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Hire Python Developers | Django & FastAPI | Codebrand";
@@ -102,12 +103,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "🐍", title: "Django & FastAPI", desc: "Robust backends and async APIs on the frameworks that fit your project." },
-  { icon: "🔗", title: "API Development", desc: "Versioned, documented REST APIs with auth and validation built in." },
-  { icon: "⚙️", title: "Automation & Scripting", desc: "Replace manual busywork with reliable scheduled Python jobs." },
-  { icon: "🧪", title: "Testing", desc: "pytest coverage and CI checks that keep releases safe." },
-  { icon: "🔀", title: "Data Pipelines", desc: "ETL and ingestion that moves and cleans data on schedule." },
-  { icon: "🤖", title: "AI & LLM Integrations", desc: "Connect LLMs, embeddings, and vector search into your product." },
+  { icon: "code", title: "Django & FastAPI", desc: "Robust backends and async APIs on the frameworks that fit your project." },
+  { icon: "link", title: "API Development", desc: "Versioned, documented REST APIs with auth and validation built in." },
+  { icon: "settings", title: "Automation & Scripting", desc: "Replace manual busywork with reliable scheduled Python jobs." },
+  { icon: "flask", title: "Testing", desc: "pytest coverage and CI checks that keep releases safe." },
+  { icon: "refresh", title: "Data Pipelines", desc: "ETL and ingestion that moves and cleans data on schedule." },
+  { icon: "bot", title: "AI & LLM Integrations", desc: "Connect LLMs, embeddings, and vector search into your product." },
 ];
 
 const stats = [
@@ -196,7 +197,7 @@ const stack = ["Python 3", "Django", "FastAPI", "Flask", "PostgreSQL", "SQLAlche
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

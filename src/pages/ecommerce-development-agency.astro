@@ -7,6 +7,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 
 const title = "E-commerce Agency | Store Experts | Codebrand";
 const description = "Shopify, custom stores, and headless commerce. High-converting online stores. US timezone, 60% cost savings vs US agencies.";
@@ -50,12 +51,12 @@ const faqSchema = {
 };
 
 const services = [
-  { icon: "🛍️", title: "Shopify Development", desc: "Custom Shopify themes, apps, and Shopify Plus enterprise solutions" },
-  { icon: "⚡", title: "Headless Commerce", desc: "Decoupled frontends with Shopify, BigCommerce, or custom backends" },
-  { icon: "🎨", title: "Custom Stores", desc: "Fully custom e-commerce built with React and Node.js" },
-  { icon: "📦", title: "Inventory & Fulfillment", desc: "Integration with inventory systems, 3PLs, and shipping carriers" },
-  { icon: "💳", title: "Payment Integration", desc: "All major gateways, multi-currency, and BNPL options" },
-  { icon: "📈", title: "Conversion Optimization", desc: "A/B testing, checkout optimization, and growth strategies" }
+  { icon: "shopping-cart", title: "Shopify Development", desc: "Custom Shopify themes, apps, and Shopify Plus enterprise solutions" },
+  { icon: "zap", title: "Headless Commerce", desc: "Decoupled frontends with Shopify, BigCommerce, or custom backends" },
+  { icon: "palette", title: "Custom Stores", desc: "Fully custom e-commerce built with React and Node.js" },
+  { icon: "package", title: "Inventory & Fulfillment", desc: "Integration with inventory systems, 3PLs, and shipping carriers" },
+  { icon: "credit-card", title: "Payment Integration", desc: "All major gateways, multi-currency, and BNPL options" },
+  { icon: "trending-up", title: "Conversion Optimization", desc: "A/B testing, checkout optimization, and growth strategies" }
 ];
 
 const stats = [
@@ -142,7 +143,7 @@ const platforms = ["Shopify", "Shopify Plus", "Headless Commerce", "WooCommerce"
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
+            <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>

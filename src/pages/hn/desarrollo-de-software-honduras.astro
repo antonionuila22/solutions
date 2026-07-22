@@ -9,6 +9,7 @@ export const prerender = true;
 
 import HnLayout from "../../layouts/HnLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Icon from "../../components/icons/Icon.astro";
 import { createServicePageSchema } from "../../utils/schema";
 
 const title = "Desarrollo de Software a la Medida en Honduras | Codebrand";
@@ -98,12 +99,12 @@ const process = [
 ];
 
 const buildItems = [
-  { icon: "🤝", title: "CRM a la Medida", desc: "Gestión de clientes, embudos de ventas y seguimiento, sobre nuestra experiencia con CRM propio." },
-  { icon: "🏭", title: "Sistemas Empresariales", desc: "Inventario, facturación, órdenes, reportes y gestión interna, hechos para tu operación." },
-  { icon: "🖥️", title: "Aplicaciones Web", desc: "Portales, paneles y plataformas full-stack con código moderno y mantenible." },
-  { icon: "🔗", title: "Integraciones y APIs", desc: "Conectamos pagos, ERP, CRM y herramientas de terceros en un solo flujo." },
-  { icon: "📊", title: "Paneles y Reportes", desc: "Dashboards que reemplazan hojas de cálculo frágiles y dan datos en tiempo real." },
-  { icon: "⚙️", title: "Automatización", desc: "Eliminamos el trabajo manual repetitivo entre tus sistemas y equipos." }
+  { icon: "handshake", title: "CRM a la Medida", desc: "Gestión de clientes, embudos de ventas y seguimiento, sobre nuestra experiencia con CRM propio." },
+  { icon: "factory", title: "Sistemas Empresariales", desc: "Inventario, facturación, órdenes, reportes y gestión interna, hechos para tu operación." },
+  { icon: "monitor", title: "Aplicaciones Web", desc: "Portales, paneles y plataformas full-stack con código moderno y mantenible." },
+  { icon: "link", title: "Integraciones y APIs", desc: "Conectamos pagos, ERP, CRM y herramientas de terceros en un solo flujo." },
+  { icon: "bar-chart", title: "Paneles y Reportes", desc: "Dashboards que reemplazan hojas de cálculo frágiles y dan datos en tiempo real." },
+  { icon: "settings", title: "Automatización", desc: "Eliminamos el trabajo manual repetitivo entre tus sistemas y equipos." }
 ];
 
 const included = [
@@ -237,7 +238,7 @@ const waSuffix = "&type=phone_number&app_absent=0";
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {buildItems.map((b, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.06}s`}>
-                <div class="text-4xl mb-4">{b.icon}</div>
+                <div class="mb-4"><Icon name={b.icon} class="w-9 h-9 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
                 <p class="text-neutral-400">{b.desc}</p>
               </div>

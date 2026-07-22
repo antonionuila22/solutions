@@ -6,6 +6,7 @@
 
 import HnLayout from "../../layouts/HnLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Icon from "../../components/icons/Icon.astro";
 
 const title = "SEO Honduras | Posicionamiento Web en Google | Codebrand";
 const description = "Servicios de SEO y posicionamiento web en Honduras. Aparezca en las primeras páginas de Google, gane visibilidad y atraiga más clientes. Cotiza gratis.";
@@ -39,12 +40,12 @@ const faqs = [
 ];
 
 const services = [
-  { icon: "🔍", title: "Análisis de Palabras Clave", desc: "Identificamos las búsquedas que usan sus clientes potenciales" },
-  { icon: "⚙️", title: "SEO Técnico", desc: "Optimizamos velocidad, estructura y código de su sitio" },
-  { icon: "📝", title: "Contenido SEO", desc: "Creamos contenido que posiciona y convierte" },
-  { icon: "🔗", title: "Link Building", desc: "Construimos autoridad con enlaces de calidad" },
-  { icon: "📍", title: "SEO Local", desc: "Posicionamiento en Google Maps y búsquedas locales" },
-  { icon: "📊", title: "Reportes Mensuales", desc: "Seguimiento transparente de resultados" }
+  { icon: "search", title: "Análisis de Palabras Clave", desc: "Identificamos las búsquedas que usan sus clientes potenciales" },
+  { icon: "settings", title: "SEO Técnico", desc: "Optimizamos velocidad, estructura y código de su sitio" },
+  { icon: "pencil", title: "Contenido SEO", desc: "Creamos contenido que posiciona y convierte" },
+  { icon: "link", title: "Link Building", desc: "Construimos autoridad con enlaces de calidad" },
+  { icon: "map-pin", title: "SEO Local", desc: "Posicionamiento en Google Maps y búsquedas locales" },
+  { icon: "bar-chart", title: "Reportes Mensuales", desc: "Seguimiento transparente de resultados" }
 ];
 
 const stats = [
@@ -138,7 +139,7 @@ const stats = [
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
-                <div class="text-4xl mb-4">{s.icon}</div>
+                <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-400" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{s.title}</h3>
                 <p class="text-neutral-400">{s.desc}</p>
               </div>

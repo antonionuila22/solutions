@@ -8,6 +8,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Nearshore Development Switzerland | Codebrand";
@@ -97,22 +98,22 @@ const faqSchema = {
 };
 
 const practices = [
-  { icon: "🔍", title: "Peer Code Review", desc: "Every change ships through a reviewed pull request — nothing lands unread." },
-  { icon: "🧪", title: "Automated Testing", desc: "Unit and integration tests plus CI, so regressions are caught before you see them." },
-  { icon: "📚", title: "Real Documentation", desc: "Architecture notes, READMEs, and API docs a Swiss team can maintain without us." },
-  { icon: "🎬", title: "Sprint Demos", desc: "Working software shown every sprint at the afternoon CET overlap — no surprises." },
-  { icon: "🔐", title: "NDAs & IP Transfer", desc: "Signed NDAs up front and clean, documented handover of code you fully own." },
-  { icon: "🗂️", title: "Traceable Delivery", desc: "Tickets, estimates, and itemized time so scope and spend stay transparent." },
+  { icon: "search", title: "Peer Code Review", desc: "Every change ships through a reviewed pull request — nothing lands unread." },
+  { icon: "flask", title: "Automated Testing", desc: "Unit and integration tests plus CI, so regressions are caught before you see them." },
+  { icon: "book-open", title: "Real Documentation", desc: "Architecture notes, READMEs, and API docs a Swiss team can maintain without us." },
+  { icon: "film", title: "Sprint Demos", desc: "Working software shown every sprint at the afternoon CET overlap — no surprises." },
+  { icon: "lock", title: "NDAs & IP Transfer", desc: "Signed NDAs up front and clean, documented handover of code you fully own." },
+  { icon: "folder", title: "Traceable Delivery", desc: "Tickets, estimates, and itemized time so scope and spend stay transparent." },
 ];
 
 const models = [
   {
-    icon: "👥",
+    icon: "users",
     title: "Dedicated Team",
     desc: "A fixed squad of senior engineers working only on your roadmap, embedded in your sprints, tooling, and standups. Best for ongoing product work where continuity and deep context matter.",
   },
   {
-    icon: "⏱️",
+    icon: "clock",
     title: "Hourly Engagement",
     desc: "Senior engineering billed against tracked, itemized hours — ideal for a defined scope, an audit, or augmenting your in-house team through a busy quarter. Scale up or down without renegotiating a fixed bid.",
   },
@@ -213,7 +214,7 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {practices.map((p) => (
           <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{p.icon}</div>
+            <div class="mb-4"><Icon name={p.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{p.title}</h3>
             <p class="text-slate-600">{p.desc}</p>
           </div>
@@ -233,7 +234,7 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
       <div class="grid md:grid-cols-2 gap-8" data-anim="fade">
         {models.map((m) => (
           <div class="bg-slate-50 rounded-2xl shadow-lg p-8 border border-slate-200">
-            <div class="text-4xl mb-4">{m.icon}</div>
+            <div class="mb-4"><Icon name={m.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-2xl font-semibold text-slate-900 mb-3">{m.title}</h3>
             <p class="text-slate-600">{m.desc}</p>
           </div>

@@ -222,14 +222,14 @@ export const webDevelopmentConfig: ServicePageConfig = {
       "We leverage the latest and most reliable technologies to ensure your web development project is fast, secure, and future-proof.",
     columns: "4",
     items: [
-      { name: "React.js", icon: "⚛️" },
-      { name: "Node.js", icon: "🟢" },
-      { name: "Next.js", icon: "▲" },
-      { name: "TypeScript", icon: "💙" },
-      { name: "Tailwind CSS", icon: "🎨" },
-      { name: "PostgreSQL", icon: "🐘" },
-      { name: "AWS / Netlify", icon: "☁️" },
-      { name: "GraphQL", icon: "◼️" },
+      { name: "React.js", icon: "atom" },
+      { name: "Node.js", icon: "sparkle" },
+      { name: "Next.js", icon: "triangle" },
+      { name: "TypeScript", icon: "heart" },
+      { name: "Tailwind CSS", icon: "palette" },
+      { name: "PostgreSQL", icon: "database" },
+      { name: "AWS / Netlify", icon: "cloud" },
+      { name: "GraphQL", icon: "box" },
     ],
   },
 
@@ -242,25 +242,25 @@ export const webDevelopmentConfig: ServicePageConfig = {
     columns: "2",
     items: [
       {
-        icon: "🚀",
+        icon: "rocket",
         title: "Lightning-Fast Performance",
         description:
           "Optimized code and modern technologies ensure your website loads in under 3 seconds, improving user experience and SEO rankings.",
       },
       {
-        icon: "📱",
+        icon: "smartphone",
         title: "100% Responsive Design",
         description:
           "Perfect display on all devices. Mobile-first approach ensures your website looks amazing on phones, tablets, and desktops.",
       },
       {
-        icon: "🛡️",
+        icon: "shield",
         title: "Security & Reliability",
         description:
           "Enterprise-level security measures, SSL encryption, regular backups, and 99.9% uptime guarantee for peace of mind.",
       },
       {
-        icon: "🎯",
+        icon: "target",
         title: "SEO-Ready from Day One",
         description:
           "Built-in SEO best practices, clean code structure, optimized meta tags, and schema markup for better search engine visibility.",
@@ -278,7 +278,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
     ctaPrimaryUrl: "/contact",
     ctaSecondary: "Email Us",
     ctaSecondaryUrl: "mailto:info@codebrand.es",
-    features: "🚀 Fast turnaround times · 💯 Quality guaranteed · 🤝 Dedicated support",
+    features: "Fast turnaround times · Quality guaranteed · Dedicated support",
   },
 
   // Related Services for internal linking

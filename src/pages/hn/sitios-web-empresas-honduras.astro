@@ -6,6 +6,7 @@
 
 import HnLayout from "../../layouts/HnLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Icon from "../../components/icons/Icon.astro";
 
 const title = "Sitios Web para Empresas Honduras | Codebrand";
 const description = "Diseño de sitios web profesionales para empresas en Honduras. Páginas web corporativas que generan confianza y atraen clientes. Desde L. 12,500.";
@@ -39,12 +40,12 @@ const faqs = [
 ];
 
 const benefits = [
-  { icon: "🏢", title: "Imagen Profesional", desc: "Transmita confianza y credibilidad a sus clientes" },
-  { icon: "🔍", title: "Visibilidad en Google", desc: "Sea encontrado cuando busquen sus servicios" },
-  { icon: "📱", title: "100% Responsive", desc: "Perfecto en celulares, tablets y computadoras" },
-  { icon: "⚡", title: "Carga Rápida", desc: "Velocidad optimizada para mejor experiencia" },
-  { icon: "🔒", title: "Seguridad SSL", desc: "Conexión segura para sus visitantes" },
-  { icon: "📊", title: "Analytics Incluido", desc: "Mida visitas, comportamiento y conversiones" }
+  { icon: "building", title: "Imagen Profesional", desc: "Transmita confianza y credibilidad a sus clientes" },
+  { icon: "search", title: "Visibilidad en Google", desc: "Sea encontrado cuando busquen sus servicios" },
+  { icon: "smartphone", title: "100% Responsive", desc: "Perfecto en celulares, tablets y computadoras" },
+  { icon: "zap", title: "Carga Rápida", desc: "Velocidad optimizada para mejor experiencia" },
+  { icon: "lock", title: "Seguridad SSL", desc: "Conexión segura para sus visitantes" },
+  { icon: "bar-chart", title: "Analytics Incluido", desc: "Mida visitas, comportamiento y conversiones" }
 ];
 
 const industries = [
@@ -146,7 +147,7 @@ const stats = [
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map((b, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.08}s`}>
-                <div class="text-4xl mb-4">{b.icon}</div>
+                <div class="mb-4"><Icon name={b.icon} class="w-9 h-9 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{b.title}</h3>
                 <p class="text-neutral-400">{b.desc}</p>
               </div>

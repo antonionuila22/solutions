@@ -8,6 +8,7 @@ export const prerender = true;
 
 import HnLayout from "../../layouts/HnLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import Icon from "../../components/icons/Icon.astro";
 import { createServicePageSchema } from "../../utils/schema";
 
 const title = "Desarrollo de CRM a la Medida en Honduras | Codebrand";
@@ -88,14 +89,14 @@ const stats = [
 ];
 
 const manages = [
-  { icon: "👥", title: "Clientes y contactos", desc: "Toda tu cartera en un solo lugar: datos, empresa, responsable y estado, sin hojas de cálculo sueltas." },
-  { icon: "📈", title: "Embudos de ventas", desc: "Etapas de tu proceso real, arrastra oportunidades y ve dónde se estanca cada negocio." },
-  { icon: "⏰", title: "Seguimiento y recordatorios", desc: "Tareas y alertas para que ningún cliente se enfríe y cada vendedor sepa qué sigue." },
-  { icon: "📝", title: "Cotizaciones", desc: "Genera y envía cotizaciones desde el CRM y conviértelas en pedidos con un clic." },
-  { icon: "🗂️", title: "Historial completo", desc: "Cada llamada, correo, mensaje y cotización queda registrado en la ficha del cliente." },
-  { icon: "📦", title: "Inventario y facturación", desc: "Si tu operación lo pide, unimos stock y facturación al CRM en un solo flujo." },
-  { icon: "📊", title: "Reportes y métricas", desc: "Ventas por vendedor, tasa de cierre y salud del embudo en dashboards en vivo." },
-  { icon: "🔐", title: "Permisos por rol", desc: "Cada persona ve solo lo que le corresponde. Seguridad y orden en tu información." }
+  { icon: "users", title: "Clientes y contactos", desc: "Toda tu cartera en un solo lugar: datos, empresa, responsable y estado, sin hojas de cálculo sueltas." },
+  { icon: "trending-up", title: "Embudos de ventas", desc: "Etapas de tu proceso real, arrastra oportunidades y ve dónde se estanca cada negocio." },
+  { icon: "clock", title: "Seguimiento y recordatorios", desc: "Tareas y alertas para que ningún cliente se enfríe y cada vendedor sepa qué sigue." },
+  { icon: "pencil", title: "Cotizaciones", desc: "Genera y envía cotizaciones desde el CRM y conviértelas en pedidos con un clic." },
+  { icon: "folder", title: "Historial completo", desc: "Cada llamada, correo, mensaje y cotización queda registrado en la ficha del cliente." },
+  { icon: "package", title: "Inventario y facturación", desc: "Si tu operación lo pide, unimos stock y facturación al CRM en un solo flujo." },
+  { icon: "bar-chart", title: "Reportes y métricas", desc: "Ventas por vendedor, tasa de cierre y salud del embudo en dashboards en vivo." },
+  { icon: "lock", title: "Permisos por rol", desc: "Cada persona ve solo lo que le corresponde. Seguridad y orden en tu información." }
 ];
 
 const process = [
@@ -256,7 +257,7 @@ const waSuffix = "&type=phone_number&app_absent=0";
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {manages.map((m, i) => (
               <div class="fade-up glass glass-hover p-8" style={`transition-delay: ${i * 0.05}s`}>
-                <div class="text-4xl mb-4">{m.icon}</div>
+                <div class="mb-4"><Icon name={m.icon} class="w-9 h-9 text-cyan-300" /></div>
                 <h3 class="text-xl font-semibold text-white mb-3">{m.title}</h3>
                 <p class="text-neutral-400 text-sm">{m.desc}</p>
               </div>

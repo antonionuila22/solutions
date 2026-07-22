@@ -220,14 +220,14 @@ export const uxUiConfig: ServicePageConfig = {
       "We use cutting-edge design tools to create, prototype, and collaborate on exceptional user experiences.",
     columns: "4",
     items: [
-      { name: "Figma", icon: "🎨" },
-      { name: "Adobe XD", icon: "🎯" },
-      { name: "Sketch", icon: "✏️" },
-      { name: "InVision", icon: "💡" },
-      { name: "Framer", icon: "🔷" },
-      { name: "Maze", icon: "🧭" },
-      { name: "Hotjar", icon: "🔥" },
-      { name: "Optimal Workshop", icon: "🧪" },
+      { name: "Figma", icon: "palette" },
+      { name: "Adobe XD", icon: "target" },
+      { name: "Sketch", icon: "pencil" },
+      { name: "InVision", icon: "lightbulb" },
+      { name: "Framer", icon: "box" },
+      { name: "Maze", icon: "compass" },
+      { name: "Hotjar", icon: "flame" },
+      { name: "Optimal Workshop", icon: "flask" },
     ],
   },
 
@@ -240,19 +240,19 @@ export const uxUiConfig: ServicePageConfig = {
     columns: "3",
     items: [
       {
-        icon: "🔬",
+        icon: "flask",
         title: "Research-Driven Design",
         description:
           "Every design decision is backed by user research, analytics, and testing to ensure we solve real user problems effectively.",
       },
       {
-        icon: "🎨",
+        icon: "palette",
         title: "Pixel-Perfect Execution",
         description:
           "Meticulous attention to detail in every aspect of design, from typography and spacing to micro-interactions and animations.",
       },
       {
-        icon: "📈",
+        icon: "trending-up",
         title: "Conversion-Focused",
         description:
           "Designs optimized for conversions through strategic placement of CTAs, friction reduction, and persuasive design patterns.",

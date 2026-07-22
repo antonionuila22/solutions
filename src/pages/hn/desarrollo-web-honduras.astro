@@ -8,6 +8,7 @@
 import HnLayout from "../../layouts/HnLayout.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
 import TechMarquee from "../../components/TechMarquee.astro";
+import Icon from "../../components/icons/Icon.astro";
 
 // SEO
 const title = "Desarrollo y Diseño Web en Honduras | Páginas Web para Empresas - Codebrand";
@@ -63,43 +64,43 @@ const faqSchema = {
 // Services
 const services = [
   {
-    icon: "🌐",
+    icon: "globe",
     title: "Sitios Web Corporativos",
     desc: "Diseño exclusivo aprobado en Figma, desarrollo con código limpio y rápido, SEO técnico incluido. Sin plantillas — su marca, su identidad.",
     price: "Desde $1,500 USD"
   },
   {
-    icon: "🛒",
+    icon: "shopping-cart",
     title: "Tiendas Online",
     desc: "E-commerce completo con catálogo, carrito, pagos en línea (PixelPay, BAC Credomatic, Stripe), inventario y panel administrativo.",
     price: "Desde $2,900 USD"
   },
   {
-    icon: "⚙️",
+    icon: "settings",
     title: "Aplicaciones Web",
     desc: "Sistemas a medida: facturación, CRM, portales de clientes, agendamiento. Automatice procesos y escale su negocio sin límites.",
     price: "Cotización personalizada"
   },
   {
-    icon: "🧩",
+    icon: "puzzle",
     title: "Software a la Medida y CRM",
     desc: "CRM, sistemas de gestión y aplicaciones empresariales con un equipo dedicado y sprints semanales. Especialistas en CRM — tenemos el nuestro.",
     price: "Equipo dedicado desde $11,900/mes"
   },
   {
-    icon: "✏️",
+    icon: "pencil",
     title: "Diseño UI/UX en Figma",
     desc: "Ve y aprueba cómo quedará su sitio antes de que inicie el desarrollo. Prototipos interactivos listos para entregar al equipo técnico.",
     price: "Desde $530 USD/página"
   },
   {
-    icon: "📈",
+    icon: "trending-up",
     title: "SEO y Google",
     desc: "Posicionamiento orgánico para que sus clientes lo encuentren primero. Auditoría técnica, correcciones on-page y estrategia de contenido.",
     price: "Desde $370 USD"
   },
   {
-    icon: "🛡️",
+    icon: "shield",
     title: "Mantenimiento Web",
     desc: "Actualizaciones, respaldos automáticos, seguridad y soporte continuo. Su sitio siempre rápido, seguro y disponible — sin preocupaciones.",
     price: "Desde $95 USD/mes"
@@ -108,18 +109,18 @@ const services = [
 
 // Industries
 const industries = [
-  { icon: "⚖️", name: "Abogados y Notarías" },
-  { icon: "🏥", name: "Clínicas y Salud" },
-  { icon: "🍽️", name: "Restaurantes" },
-  { icon: "🏗️", name: "Constructoras" },
-  { icon: "🏠", name: "Inmobiliarias" },
-  { icon: "📊", name: "Consultorías" },
-  { icon: "🎓", name: "Educación" },
-  { icon: "🏨", name: "Hoteles y Turismo" },
-  { icon: "💪", name: "Fitness y Wellness" },
-  { icon: "🚗", name: "Automotriz" },
-  { icon: "💄", name: "Belleza y Estética" },
-  { icon: "📦", name: "Retail y E-commerce" },
+  { icon: "scale", name: "Abogados y Notarías" },
+  { icon: "hospital", name: "Clínicas y Salud" },
+  { icon: "utensils", name: "Restaurantes" },
+  { icon: "building", name: "Constructoras" },
+  { icon: "home", name: "Inmobiliarias" },
+  { icon: "bar-chart", name: "Consultorías" },
+  { icon: "graduation-cap", name: "Educación" },
+  { icon: "palmtree", name: "Hoteles y Turismo" },
+  { icon: "zap", name: "Fitness y Wellness" },
+  { icon: "car", name: "Automotriz" },
+  { icon: "sparkle", name: "Belleza y Estética" },
+  { icon: "package", name: "Retail y E-commerce" },
 ];
 
 // Why us
@@ -632,7 +633,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
                 Trabajamos con empresas en Tegucigalpa, San Pedro Sula, La Ceiba y todo Honduras. Puede <strong class="text-white font-semibold">reunirse con nosotros en persona</strong>, comunicarse por WhatsApp y recibir atención directa en español — sin intermediarios.
               </p>
               <div class="flex flex-wrap gap-2.5">
-                {["🇭🇳 Equipo local", "⚡ 90+ PageSpeed", "🔍 SEO incluido", "📱 100% Responsive", "✅ Sin plantillas"].map((t) => (
+                {["🇭🇳 Equipo local", "90+ PageSpeed", "SEO incluido", "100% Responsive", "Sin plantillas"].map((t) => (
                   <span class="glass rounded-full px-4 py-1.5 text-sm text-neutral-300">{t}</span>
                 ))}
               </div>
@@ -695,8 +696,8 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <div class={`fade-up glass card-lift card-accent-top p-8 stagger-${i+1}`}>
-                <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center text-xl bg-linear-to-br from-cyan-500/15 to-blue-500/15 border border-white/8">
-                  {s.icon}
+                <div class="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center bg-linear-to-br from-cyan-500/15 to-blue-500/15 border border-white/8">
+                  <Icon name={s.icon} class="w-6 h-6 text-cyan-300" />
                 </div>
                 <h3 class="text-lg font-bold text-white mb-3">{s.title}</h3>
                 <p class="text-neutral-400 text-sm leading-relaxed mb-5">{s.desc}</p>
@@ -739,7 +740,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="fade-up flex flex-wrap justify-center gap-3">
             {industries.map((ind) => (
               <div class="glass rounded-full px-5 py-3 flex items-center gap-2.5">
-                <span class="text-lg leading-none">{ind.icon}</span>
+                <Icon name={ind.icon} class="w-4 h-4 text-cyan-300" />
                 <span class="text-neutral-300 text-sm font-medium whitespace-nowrap">{ind.name}</span>
               </div>
             ))}
@@ -1110,13 +1111,13 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
 
               <div class="pt-4 border-t border-white/6 space-y-3">
                 {[
-                  { icon: "✓", text: "Consulta inicial 100% gratuita" },
-                  { icon: "✓", text: "Precio fijo — sin cobros sorpresa" },
-                  { icon: "✓", text: "Pago en cuotas disponible" },
-                  { icon: "✓", text: "30 días de soporte post-lanzamiento" },
+                  { text: "Consulta inicial 100% gratuita" },
+                  { text: "Precio fijo — sin cobros sorpresa" },
+                  { text: "Pago en cuotas disponible" },
+                  { text: "30 días de soporte post-lanzamiento" },
                 ].map((item) => (
                   <div class="flex items-center gap-3 text-neutral-400 text-sm">
-                    <span class="text-teal-400 font-bold shrink-0">{item.icon}</span>
+                    <Icon name="check" class="w-4 h-4 text-teal-400 shrink-0" />
                     {item.text}
                   </div>
                 ))}

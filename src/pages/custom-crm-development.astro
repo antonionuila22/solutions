@@ -8,6 +8,7 @@ export const prerender = true;
 
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Custom CRM Development | Codebrand";
@@ -112,12 +113,12 @@ const faqSchema = {
 };
 
 const manages = [
-  { icon: "👥", title: "Contacts & Accounts", desc: "Leads, contacts, and companies in one organized source of truth." },
-  { icon: "📈", title: "Sales Pipeline", desc: "Stages and fields modeled on your real deal flow, not a template." },
-  { icon: "📄", title: "Quotes & Proposals", desc: "Generate branded quotes from CRM data and track them to signed." },
-  { icon: "🔔", title: "Follow-ups & Reminders", desc: "Automated tasks and sequences so no lead ever goes cold." },
-  { icon: "🧾", title: "Invoicing & Inventory", desc: "Sync with accounting, invoicing, and stock systems automatically." },
-  { icon: "📊", title: "Reports & Dashboards", desc: "Pipeline value, close rates, and rep performance on one screen." },
+  { icon: "users", title: "Contacts & Accounts", desc: "Leads, contacts, and companies in one organized source of truth." },
+  { icon: "trending-up", title: "Sales Pipeline", desc: "Stages and fields modeled on your real deal flow, not a template." },
+  { icon: "file-text", title: "Quotes & Proposals", desc: "Generate branded quotes from CRM data and track them to signed." },
+  { icon: "bell", title: "Follow-ups & Reminders", desc: "Automated tasks and sequences so no lead ever goes cold." },
+  { icon: "clipboard", title: "Invoicing & Inventory", desc: "Sync with accounting, invoicing, and stock systems automatically." },
+  { icon: "bar-chart", title: "Reports & Dashboards", desc: "Pipeline value, close rates, and rep performance on one screen." },
 ];
 
 const comparison = [
@@ -275,7 +276,7 @@ const stats = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {manages.map((m) => (
           <div class="bg-slate-50 rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl mb-4">{m.icon}</div>
+            <div class="mb-4"><Icon name={m.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{m.title}</h3>
             <p class="text-slate-600">{m.desc}</p>
           </div>
