@@ -48,6 +48,34 @@ const faqs = [
   {
     question: "¿Puedo actualizar el contenido yo mismo?",
     answer: "Sí. Para la mayoría de proyectos integramos un CMS (sistema de gestión de contenido) que le permite editar textos, imágenes y agregar páginas sin tocar código. Le capacitamos y le dejamos documentación para que pueda hacerlo con confianza."
+  },
+  {
+    question: "¿Por qué contratar una empresa de desarrollo web en Honduras y no una agencia del extranjero?",
+    answer: "Por costo total y por capacidad de respuesta. Una agencia fuera del país cobra en otro nivel de precios, trabaja en otro horario y le suma comisiones bancarias a cada pago internacional. Nosotros operamos en la zona horaria Central —la misma de su empresa y la del mercado estadounidense—, atendemos en español, podemos reunirnos con usted en persona y conocemos cómo compra el cliente hondureño. La calidad técnica es la misma que entregamos a clientes en Estados Unidos."
+  },
+  {
+    question: "¿Atienden empresas en San Pedro Sula y Tegucigalpa de forma presencial?",
+    answer: "Sí. Nuestra base está en San Pedro Sula y hacemos reuniones presenciales ahí y en Tegucigalpa. Con empresas de La Ceiba, Choloma, El Progreso, Comayagua y el resto del país trabajamos por videollamada y WhatsApp, con el mismo proceso, los mismos entregables y los mismos tiempos de respuesta."
+  },
+  {
+    question: "¿El dominio y el hosting están incluidos?",
+    answer: "Podemos comprarlos y configurarlos por usted: dominio, hosting, certificado SSL y correos corporativos, todo registrado a nombre de su empresa y con sus credenciales. El costo del dominio y del hosting es de terceros y se cotiza aparte, sin recargo nuestro. Si ya cuenta con proveedor, migramos el sitio sin que el actual deje de funcionar."
+  },
+  {
+    question: "¿De quién es el código y el diseño al terminar el proyecto?",
+    answer: "Suyo, en su totalidad. Al cierre entregamos código fuente, archivos de diseño, contenidos y todos los accesos. No trabajamos con plataformas cerradas ni con licencias que lo aten a nosotros: si algún día decide cambiar de proveedor, se lleva el proyecto completo sin pedirnos permiso."
+  },
+  {
+    question: "¿Cuánto tarda el sitio en posicionarse en Google?",
+    answer: "La indexación toma normalmente de días a un par de semanas, porque entregamos el sitio con sitemap, datos estructurados y Search Console configurados. Posicionarse en los primeros lugares para búsquedas competitivas es distinto: depende de la competencia de su sector y suele verse entre tres y seis meses de trabajo constante de contenido y SEO. Cualquiera que le prometa el primer lugar en semanas le está vendiendo humo."
+  },
+  {
+    question: "¿Necesito entregar los textos y las fotografías antes de empezar?",
+    answer: "No es requisito para arrancar. Iniciamos con contenido de referencia y le damos una lista concreta de qué texto y qué imágenes hace falta por sección. Si prefiere no encargarse, redactamos los textos con enfoque comercial y de búsqueda, y coordinamos fotografía o video como parte del proyecto."
+  },
+  {
+    question: "Ya tengo una página web. ¿Pueden rediseñarla en lugar de hacerla de cero?",
+    answer: "Sí, y en muchos casos es lo que recomendamos. Auditamos velocidad, estructura, contenido y posicionamiento del sitio actual, y le decimos con franqueza si conviene rediseñar completo, migrar a una base más moderna o solo corregir lo que está frenando los resultados. Si con corregir es suficiente, se lo decimos aunque signifique un proyecto más pequeño para nosotros."
   }
 ];
 
@@ -145,7 +173,7 @@ const process = [
 // Stats
 const stats = [
   { value: "500+", label: "Proyectos entregados" },
-  { value: "25+", label: "Reseñas 5 estrellas" },
+  { value: "50", label: "Reseñas 5 estrellas" },
   { value: "5+", label: "Años de experiencia" },
   { value: "24h", label: "Tiempo de respuesta" }
 ];
@@ -623,8 +651,8 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
             <div class="fade-up">
               <span class="section-label">Quiénes somos</span>
               <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.12] mb-6">
-                Diseño de clase mundial.<br/>
-                <span class="text-gradient">Precio local.</span>
+                Empresa de desarrollo web en Honduras<br/>
+                <span class="text-gradient">con estándar internacional</span>
               </h2>
               <p class="text-neutral-400 text-lg leading-relaxed mb-5">
                 Somos una <strong class="text-white font-semibold">agencia de desarrollo web hondureña</strong> con más de 5 años construyendo páginas web, tiendas online y aplicaciones para empresas locales e internacionales. Usamos las mismas tecnologías y metodologías que las mejores agencias del mundo.
@@ -686,7 +714,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="fade-up text-center mb-16">
             <span class="section-label justify-center">Servicios</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Todo lo que necesita,<br/><span class="text-gradient">bajo un mismo techo</span>
+              Servicios de desarrollo web<br/><span class="text-gradient">para empresas en Honduras</span>
             </h2>
             <p class="text-neutral-400 text-lg max-w-xl mx-auto">
               Desde su primera página hasta <a href="/hn/desarrollo-de-software-honduras" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">software a la medida y sistemas empresariales</a> — con diseño, código y estrategia integrados.
@@ -730,10 +758,10 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="fade-up text-center mb-12">
             <span class="section-label justify-center">Industrias</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Su industria,<br/><span class="text-gradient">nuestra especialidad</span>
+              Diseño web en Honduras<br/><span class="text-gradient">para su industria</span>
             </h2>
             <p class="text-neutral-400 text-base max-w-md mx-auto">
-              Más de 500 proyectos en todos los sectores del mercado hondureño.
+              Proyectos entregados en los principales sectores del mercado hondureño.
             </p>
           </div>
 
@@ -752,6 +780,70 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
       <div class="divider"></div>
 
       <!-- ══════════════════════════════════════════════════════
+           COBERTURA LOCAL
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+
+          <span class="section-label">Cobertura en Honduras</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.12] mb-8 max-w-3xl">
+            Desarrollo web en San Pedro Sula,<br/>
+            <span class="text-gradient">Tegucigalpa y todo el país</span>
+          </h2>
+
+          <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start">
+
+            <div class="space-y-5">
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Contratar una empresa de desarrollo web fuera del país tiene costos que nunca aparecen en la cotización. La diferencia horaria convierte una duda de cinco minutos en una espera de un día completo. Cada pago se va en comisiones y trámite bancario internacional. Y cuando hay que explicar cómo compra realmente un cliente en Honduras, usted termina traduciendo su propio mercado.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Con un equipo local nada de eso aplica. Trabajamos en la zona horaria Central, la misma en la que opera su empresa y también el mercado estadounidense: una reunión a las diez de la mañana es a las diez de la mañana para todos. La comunicación es en español y directa con la persona que diseña y programa su proyecto, no con un intermediario que traslada mensajes de un lado a otro.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Lo mismo con el dinero: facturamos y cobramos localmente. Transferencia a bancos hondureños, tarjeta, efectivo o PayPal, sin obligarlo a mover fondos al extranjero ni a esperar días de acreditación. Y cuando el proyecto lo amerita, nos sentamos a revisarlo en persona en
+                <a href="/locations/san-pedro-sula" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">San Pedro Sula</a>
+                o en
+                <a href="/locations/tegucigalpa" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">Tegucigalpa</a>.
+              </p>
+              <p class="text-neutral-400 text-lg leading-relaxed">
+                Conocer el mercado también cambia las decisiones técnicas. Sabemos que la mayoría de sus visitantes entra desde un celular y con datos móviles, no desde una computadora con fibra. Que el primer contacto rara vez es un formulario: es un WhatsApp. Que un catálogo con precios claros en lempiras convierte más que una galería elegante sin precios. Eso no se deduce leyendo un brief a distancia.
+              </p>
+            </div>
+
+            <div class="glass rounded-2xl p-8">
+              <h3 class="text-xl font-bold text-white mb-6">Qué obtiene una empresa hondureña al trabajar con una agencia local</h3>
+              <ul class="divide-y divide-white/6 border-t border-white/6">
+                <li class="py-4">
+                  <span class="block text-white font-semibold text-sm mb-1">Reuniones presenciales cuando hacen falta</span>
+                  <span class="block text-neutral-400 text-sm leading-relaxed">Arranque de proyecto, revisión de diseño y capacitación final se pueden hacer cara a cara en San Pedro Sula o Tegucigalpa.</span>
+                </li>
+                <li class="py-4">
+                  <span class="block text-white font-semibold text-sm mb-1">Sin diferencia horaria</span>
+                  <span class="block text-neutral-400 text-sm leading-relaxed">Zona horaria Central. Escribe a media mañana y recibe respuesta a media mañana, no al día siguiente.</span>
+                </li>
+                <li class="py-4">
+                  <span class="block text-white font-semibold text-sm mb-1">Soporte y documentación en español</span>
+                  <span class="block text-neutral-400 text-sm leading-relaxed">Manuales, capacitación y atención en el idioma en el que trabaja su equipo. Sin traducciones ni malentendidos técnicos.</span>
+                </li>
+                <li class="py-4">
+                  <span class="block text-white font-semibold text-sm mb-1">Pago y facturación local</span>
+                  <span class="block text-neutral-400 text-sm leading-relaxed">Transferencia bancaria local, tarjeta, efectivo o PayPal, con pagos por etapas ligados a hitos aprobados.</span>
+                </li>
+                <li class="py-4">
+                  <span class="block text-white font-semibold text-sm mb-1">Contexto de mercado incluido</span>
+                  <span class="block text-neutral-400 text-sm leading-relaxed">Diseñamos para móvil primero, con WhatsApp como canal principal de contacto y contenido pensado para búsquedas en español.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════
            WHY US
       ══════════════════════════════════════════════════════ -->
       <section class="py-28 px-6">
@@ -762,8 +854,8 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
             <div class="fade-up lg:sticky lg:top-28">
               <span class="section-label">Por qué elegirnos</span>
               <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.12] mb-5">
-                No somos una agencia más.<br/>
-                <span class="text-gradient">Somos su equipo.</span>
+                Por qué elegir nuestra empresa<br/>
+                <span class="text-gradient">de desarrollo web</span>
               </h2>
               <p class="text-neutral-400 text-base leading-relaxed mb-8">
                 En Codebrand no asignamos account managers que hablan por teléfono. Habla directo con quien diseña y programa su proyecto, desde el primer día hasta el lanzamiento.
@@ -800,7 +892,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="fade-up text-center mb-14">
             <span class="section-label justify-center">Comparativa</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Codebrand vs<br/><span class="text-gradient">otras opciones</span>
+              Agencia de desarrollo web,<br/><span class="text-gradient">plantilla o freelancer</span>
             </h2>
             <p class="text-neutral-400 text-base max-w-sm mx-auto">Antes de decidir, vea qué incluye cada opción.</p>
           </div>
@@ -880,7 +972,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="fade-up text-center mb-16">
             <span class="section-label justify-center">Proceso</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              De la idea al lanzamiento<br/><span class="text-gradient">sin sorpresas</span>
+              Proceso de desarrollo web<br/><span class="text-gradient">paso a paso, sin sorpresas</span>
             </h2>
             <p class="text-neutral-400 text-lg max-w-lg mx-auto">
               Un proceso claro y colaborativo, en 5 pasos, de principio a fin.
@@ -934,7 +1026,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="fade-up text-center mb-16">
             <span class="section-label justify-center">Precios</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Inversión clara.<br/><span class="text-gradient">Sin letra pequeña.</span>
+              Precios de desarrollo web<br/><span class="text-gradient">en Honduras</span>
             </h2>
             <p class="text-neutral-400 text-lg max-w-lg mx-auto">
               Precio fijo desde el primer día. Facilidades de pago disponibles. Cotización personalizada en 24 horas.
@@ -1051,13 +1143,121 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
       <div class="divider"></div>
 
       <!-- ══════════════════════════════════════════════════════
+           OBJECIONES + SERVICIOS RELACIONADOS
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-28 px-6">
+        <div class="max-w-6xl mx-auto">
+
+          <div class="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
+
+            <div>
+              <span class="section-label">Antes de decidir</span>
+              <h2 class="text-3xl sm:text-4xl font-bold text-white leading-[1.15] mb-8">
+                Lo que preocupa a quien contrata<br/>
+                <span class="text-gradient">desarrollo web por primera vez</span>
+              </h2>
+
+              <div class="space-y-7">
+                <div>
+                  <h3 class="text-white font-bold text-base mb-2">"El presupuesto se me va a disparar a mitad del proyecto"</h3>
+                  <p class="text-neutral-400 leading-relaxed">
+                    El precio se cierra por alcance antes de empezar y queda por escrito. Si usted pide algo nuevo durante el desarrollo, lo cotizamos aparte y decide si entra ahora o en una segunda fase. Si el retraso es nuestro, el precio no se mueve. Trabajamos contra hitos aprobados, no contra horas abiertas.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-white font-bold text-base mb-2">"No tengo a nadie que administre el sitio después"</h3>
+                  <p class="text-neutral-400 leading-relaxed">
+                    Por eso entregamos con capacitación y con un gestor de contenido pensado para alguien que no es técnico: cambiar un texto, subir una foto o publicar una promoción no debería requerir un desarrollador. Y si prefiere no ocuparse, existe el plan de mantenimiento mensual para que nosotros lo hagamos.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-white font-bold text-base mb-2">"Me hicieron una página antes y no sirvió de nada"</h3>
+                  <p class="text-neutral-400 leading-relaxed">
+                    Es la objeción más común y casi siempre tiene la misma raíz: se entregó un sitio bonito sin estructura de búsqueda, sin velocidad y sin una ruta clara hacia el contacto. Empezamos por definir qué acción debe realizar el visitante, y todo el diseño se ordena alrededor de eso. Un sitio que no genera consultas es un gasto, no una inversión.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-white font-bold text-base mb-2">"¿Y si desaparecen después de cobrar?"</h3>
+                  <p class="text-neutral-400 leading-relaxed">
+                    Somos una empresa establecida en San Pedro Sula desde 2020, con perfil verificado en Clutch, GoodFirms, DesignRush y Sortlist, y 50 reseñas de cinco estrellas en Google. Además usted queda con todos los accesos y el código desde el día del lanzamiento: su operación nunca depende de que nosotros contestemos.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:pt-14">
+              <div class="glass rounded-2xl p-8">
+                <h3 class="text-xl font-bold text-white mb-2">Servicios relacionados en Honduras</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                  El sitio web suele ser el primer paso. Estas son las áreas donde seguimos acompañando a nuestros clientes.
+                </p>
+                <ul class="divide-y divide-white/6 border-t border-white/6">
+                  <li class="py-3.5">
+                    <a href="/hn/sitios-web-empresas-honduras" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Sitios web para empresas</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Presencia corporativa con blog, integraciones y contenido editable.</span>
+                    </a>
+                  </li>
+                  <li class="py-3.5">
+                    <a href="/hn/tienda-online-honduras" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Tienda online y e-commerce</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Catálogo, carrito, inventario y pagos en línea listos para vender.</span>
+                    </a>
+                  </li>
+                  <li class="py-3.5">
+                    <a href="/hn/seo-honduras" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Posicionamiento SEO en Honduras</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Auditoría técnica, contenido y trabajo on-page sostenido.</span>
+                    </a>
+                  </li>
+                  <li class="py-3.5">
+                    <a href="/hn/desarrollo-de-software-honduras" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Software a la medida</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Sistemas que automatizan lo que hoy resuelve con hojas de cálculo.</span>
+                    </a>
+                  </li>
+                  <li class="py-3.5">
+                    <a href="/hn/desarrollo-de-crm-honduras" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Desarrollo de CRM</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Gestión de clientes y ventas. Operamos un CRM propio en producción.</span>
+                    </a>
+                  </li>
+                  <li class="py-3.5">
+                    <a href="/hn/sistemas-empresariales-honduras" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Sistemas empresariales</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Facturación, inventario y portales internos integrados.</span>
+                    </a>
+                  </li>
+                  <li class="py-3.5">
+                    <a href="/hn/equipo-de-desarrollo-dedicado-honduras" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Equipo de desarrollo dedicado</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Desarrolladores asignados por mes, con sprints y entregas semanales.</span>
+                    </a>
+                  </li>
+                  <li class="py-3.5">
+                    <a href="/hn/" class="group block">
+                      <span class="block text-white font-semibold text-sm group-hover:text-cyan-300 transition-colors">Agencia de desarrollo web en Honduras</span>
+                      <span class="block text-neutral-500 text-sm leading-relaxed mt-0.5">Todos nuestros servicios digitales en un solo lugar.</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════
            FAQ
       ══════════════════════════════════════════════════════ -->
       <section class="py-24 px-6">
         <div class="max-w-3xl mx-auto">
           <div class="fade-up text-center mb-12">
             <span class="section-label justify-center">Preguntas frecuentes</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">Todo lo que necesita saber</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">Preguntas frecuentes sobre desarrollo web en Honduras</h2>
             <p class="text-neutral-400">Respuestas honestas antes de empezar su proyecto.</p>
           </div>
           <div class="fade-up">

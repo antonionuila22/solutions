@@ -1,6 +1,6 @@
 ---
-title: "Turso Database Guide 2026: SQLite at the Edge (Tutorial)"
-description: "Step-by-step Turso guide: set up the SQLite edge database, configure global replication, integrate Drizzle ORM, and see why teams switch from Postgres/MySQL."
+title: "Turso Database 2026: Edge SQLite Setup, Costs & Pitfalls"
+description: "Set up Turso's edge SQLite in minutes, wire up Drizzle, and learn where embedded replicas break down — plus migration notes and when to pick Postgres."
 author: "Ramon Nuila"
 readtime: 20
 img: /photos/blog/young-serious-female-programmer-using-tablet-again-2026-01-09-01-21-14-utc.webp
@@ -26,7 +26,9 @@ Traditional databases have a problem: they live in one place. Your users are eve
 
 Turso solves this by bringing your database to the edge—replicating data across 35+ locations worldwide. The result? Database queries that complete in single-digit milliseconds, no matter where your users are.
 
-After implementing Turso in production projects, we've seen dramatic improvements in application performance. This guide shows you everything you need to know.
+After implementing Turso in production projects, we've seen dramatic improvements in application performance. This guide shows you everything you need to know—including the parts the marketing pages skip: replication lag, the single-writer primary, and the workloads where Turso is the wrong answer.
+
+*Last reviewed July 2026 against the current libSQL client and Drizzle Kit releases.*
 
 ---
 
@@ -273,31 +275,35 @@ const postsWithAuthors = await db
 
 ```typescript
 // drizzle.config.ts
-import type { Config } from "drizzle-kit";
+import { defineConfig } from "drizzle-kit";
 
-export default {
+export default defineConfig({
   schema: "./src/db/schema.ts",
   out: "./drizzle",
-  driver: "turso",
+  dialect: "turso",
   dbCredentials: {
     url: process.env.TURSO_DATABASE_URL!,
     authToken: process.env.TURSO_AUTH_TOKEN!,
   },
-} satisfies Config;
+});
 ```
+
+Note the `dialect` key. Older tutorials still show `driver: "turso"` with a plain `satisfies Config` export—that shape was retired in Drizzle Kit and will fail on any current version. The dialect-based `defineConfig` is what you want.
 
 **Run Migrations:**
 
 ```bash
 # Generate migration
-npx drizzle-kit generate:sqlite
+npx drizzle-kit generate
 
 # Push changes directly (development)
-npx drizzle-kit push:sqlite
+npx drizzle-kit push
 
 # View database in Drizzle Studio
 npx drizzle-kit studio
 ```
+
+The old `generate:sqlite` / `push:sqlite` command pairs were removed too—if you copied them from a 2024 blog post, drop the suffix.
 
 ---
 
@@ -334,12 +340,12 @@ await db.sync();
 
 | Scenario | Use Remote | Use Embedded Replica |
 |----------|------------|---------------------|
-| Serverless functions | ✅ | ❌ (no persistent storage) |
-| Long-running servers | ✅ | ✅ |
-| Desktop apps | ❌ | ✅ |
-| Mobile apps | ❌ | ✅ |
-| Read-heavy workloads | ✅ | ✅ (faster) |
-| Edge workers | ✅ | Depends on platform |
+| Serverless functions | Yes | No — no persistent storage |
+| Long-running servers | Yes | Yes |
+| Desktop apps | No | Yes |
+| Mobile apps | No | Yes |
+| Read-heavy workloads | Yes | Yes, and faster |
+| Edge workers | Yes | Depends on platform |
 
 ---
 
@@ -584,16 +590,47 @@ const usersWithPosts = await db
 
 ---
 
+## The Edge Reality Check: Replication, Writes, and When Not to Use Turso
+
+Everything above is the happy path. Here is what production actually teaches you.
+
+### Reads go to the edge. Writes do not.
+
+Turso replicates reads globally, but exactly one primary accepts writes. A user in Sydney reading from the Sydney replica gets single-digit latency. That same user submitting a form still pays the full round trip to your primary region—so a write-heavy app with a US primary and Asian users can feel *slower*, not faster, than a single regional Postgres sitting next to its users. Put the primary where the writes are, not where your team is.
+
+Replication is also asynchronous. A row written to the primary is not instantly visible on every replica, so read-after-write can return stale data. If a user updates their profile and the next page load hits a lagging replica, they see the old value and file a bug. The fix is architectural: route reads that must be fresh to the primary connection, and let everything else—catalogs, listings, docs, marketing content—come from the edge.
+
+### Embedded replicas have a cold-start bill
+
+`db.sync()` is not free. The first sync on a fresh machine pulls the whole database down; every sync after that transfers changed frames. On a long-running server that amortizes to nothing. On a container recycled every few minutes, you pay a full bootstrap over and over—and you are billed for those reads. Sync on an interval or after known write events, never once per request.
+
+Embedded replicas also need a writable, persistent filesystem. Most serverless runtimes give you neither.
+
+### When not to use Turso
+
+- **Write-heavy, single-region workloads.** SQLite serializes writers. Thousands of concurrent writes per second is a Postgres problem, not an edge problem.
+- **You depend on Postgres-specific features.** JSONB operators, PostGIS, materialized views, `LISTEN`/`NOTIFY`, the extension ecosystem. FTS5 covers search well; it does not cover the rest.
+- **Long analytical transactions.** SQLite's write lock does not tolerate a report that holds a transaction open for a minute.
+- **Strict data residency requirements.** Replicating rows to 35 locations is a feature right up until a regulator asks where the personal data physically lives.
+
+### Migration notes from PostgreSQL or MySQL
+
+Budget your time for the type system, not the data transfer. SQLite has no native boolean, no native date/time type, no `ENUM`, and no sequences. Drizzle papers over most of that with `integer({ mode: "boolean" })` and text timestamps, but every raw query, every reporting job, and every downstream integration written against the old schema needs revisiting. `UUID` columns become `TEXT`. Foreign key enforcement must be switched on explicitly. Anything relying on CTEs with `RETURNING`, window-function edge cases, or Postgres collations should be tested rather than assumed.
+
+Cutting over a live production database is where this stops being a weekend project. If you would rather not learn these lessons on your own users, this is precisely the kind of work our [custom software development](/custom-software-development) team handles, and our [nearshore development](/nearshore-development) model keeps engineers in US Central hours so the migration window lands inside a normal business day instead of at 3 a.m.
+
+---
+
 ## Turso vs Traditional Databases
 
 | Feature | Turso | PostgreSQL | PlanetScale |
 |---------|-------|------------|-------------|
-| Edge replication | ✅ 35+ locations | ❌ | ✅ Limited |
-| Embedded replicas | ✅ | ❌ | ❌ |
-| Serverless | ✅ | Requires setup | ✅ |
+| Edge replication | Yes, 35+ locations | No | Limited |
+| Embedded replicas | Yes | No | No |
+| Serverless | Yes | Requires setup | Yes |
 | SQL dialect | SQLite | PostgreSQL | MySQL |
-| Free tier | 9GB storage | Varies | 5GB storage |
-| Branching | ✅ | ❌ | ✅ |
+| Concurrent writers | Serialized | High | High |
+| Branching | Yes | No | Yes |
 | Cold starts | None | Possible | None |
 
 ### When to Choose Turso
@@ -613,6 +650,8 @@ const usersWithPosts = await db
 ---
 
 ## Pricing
+
+Plan limits move more often than the API does—treat the figures below as the shape of the pricing model and confirm the current numbers on Turso's own pricing page before you build a budget around them.
 
 ### Free Tier (Starter)
 
@@ -722,17 +761,15 @@ At **Codebrand**, we've adopted Turso as our primary database for new projects. 
 
 ### How We Can Help
 
-Whether you're migrating to Turso or building a new application, we can help you:
+Whether you're migrating to Turso or building on it from scratch, the work usually falls into four buckets:
 
-- **Architecture**: Design your database schema for optimal performance
-- **Migration**: Move from PostgreSQL, MySQL, or other databases to Turso
-- **Integration**: Connect Turso with Astro, Next.js, or your framework of choice
-- **Optimization**: Index tuning, query optimization, and replication strategy
-
-**Ready to supercharge your database performance?**
-
-[Contact us for a free consultation](/contact) and let's discuss how Turso can transform your application.
+- **Architecture**: schema design, primary placement, and deciding which reads may be stale
+- **Migration**: moving off PostgreSQL or MySQL without a painful cutover
+- **Integration**: wiring Turso into Astro, Next.js, or whatever framework you already run
+- **Optimization**: index tuning, query shape, sync cadence, and replication strategy
 
 ---
 
-*Need help implementing Turso? [Reach out to our team](/contact)—we've built production applications with Turso and know every optimization trick.*
+## Need help building this?
+
+If the edge-versus-primary tradeoffs above sound like decisions you'd rather make with someone who has already made them, that's what we do. Codebrand has been building production software from San Pedro Sula since 2020—including the CRM we run our own business on—and we work US Central hours as a [nearshore development](/nearshore-development) team, so you get real overlap instead of overnight ticket ping-pong. Tell us what you're building and we'll tell you honestly whether Turso is the right database for it: [get in touch](/contact).

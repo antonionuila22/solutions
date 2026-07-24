@@ -305,6 +305,34 @@ const steps = [
   },
 ];
 
+// ── Standard scope — what every build ships with, no upsell ──
+const included = [
+  {
+    title: "Core Web Vitals performance",
+    desc: "Server-rendered pages, optimized images and a Lighthouse audit on real mobile hardware before launch — not a desktop score screenshot.",
+  },
+  {
+    title: "On-page and technical SEO",
+    desc: "Semantic markup, metadata, structured data, XML sitemap, canonical tags and redirects mapped from the old site so rankings survive the move.",
+  },
+  {
+    title: "Mobile-first responsive design",
+    desc: "Every layout designed at 375px first and tested on real phones, because that is where most of your traffic actually arrives.",
+  },
+  {
+    title: "CMS and content handover",
+    desc: "A content management setup your team can run without calling us, plus a walkthrough recording of how to edit every section.",
+  },
+  {
+    title: "Analytics and conversion tracking",
+    desc: "Google Analytics, Search Console and event tracking wired to the actions that matter — forms, calls, checkouts — configured before go-live.",
+  },
+  {
+    title: "Hosting, deploys and monitoring",
+    desc: "Continuous deployment, SSL, backups and uptime monitoring on infrastructure you own, with the repository in your organization from day one.",
+  },
+];
+
 // ── Principles — the manifesto answer, engineering-voiced ──
 const principles = [
   { lead: "Source code you can read.", sub: "Clean, documented, and handed over on day one. No black boxes, no proprietary lock-in, no hostage clauses." },
@@ -568,7 +596,7 @@ const whatsappUrl =
       </div>
 
       <p class="mt-10 text-slate-500">
-        Most projects blend a few of these.
+        Most projects blend a few of these.{" "}
         <a href="/contact" class="font-semibold text-orange-600 hover:text-orange-700 transition-colors">Tell us the goal →</a>
       </p>
     </div>
@@ -608,11 +636,11 @@ const whatsappUrl =
       </div>
 
       <p class="mt-14 max-w-3xl text-slate-500 leading-relaxed border-t border-slate-200 pt-10">
-        Need the long version? Browse the
-        <a href="/services" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">full services directory</a>,
-        read how we approach
-        <a href="/custom-web-development-services" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">custom web development services</a>,
-        or price the whole scope yourself with the
+        Need the long version? Browse the{" "}
+        <a href="/services" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">full services directory</a>,{" "}
+        read how we approach{" "}
+        <a href="/custom-web-development-services" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">custom web development services</a>,{" "}
+        or price the whole scope yourself with the{" "}
         <a href="/quoter" class="font-semibold text-orange-600 hover:text-orange-700 transition-colors">project quoter →</a>
       </p>
     </div>
@@ -630,21 +658,26 @@ const whatsappUrl =
 
       <div class="mt-10 space-y-7 text-lg text-slate-600 leading-relaxed">
         <p>
-          Codebrand is a
-          <a href="/web-development-agency" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">web development agency</a>
+          Codebrand is a{" "}
+          <a href="/web-development-agency" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">web development agency</a>{" "}
           based in San Pedro Sula, Honduras, working entirely on US Central timezone hours. That single fact changes how a project feels: your developers are online when you are, standups happen at a civil hour for both sides, and a question asked at 9am is answered before lunch — not overnight, and not next week. Our engineers are bilingual, so nothing is lost between the brief and the build.
         </p>
         <p>
-          We build in React, Next.js and Astro, with Node, PostgreSQL and headless CMS work behind them. That covers marketing sites that have to rank, e-commerce development that has to convert, and
-          <a href="/custom-software-development" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">custom software development</a>
+          We build in React, Next.js and Astro, with Node, PostgreSQL and headless CMS work behind them. That covers marketing sites that have to rank, e-commerce development that has to convert, and{" "}
+          <a href="/custom-software-development" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">custom software development</a>{" "}
           for the internal systems a growing company outgrows its spreadsheets on. UX/UI design is not an add-on: every build starts in Figma, gets prototyped, and only then gets written.
         </p>
         <p>
-          The commercial case is simple. A US agency bills $150–$250 an hour for the same seniority we publish at $45–$95. You can
-          <a href="/hire-remote-developers" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">hire senior developers</a>
-          individually, or take a full
+          The commercial case is simple. A US agency bills $150–$250 an hour for the same seniority we publish at $45–$95. You can{" "}
+          <a href="/hire-remote-developers" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">hire senior developers</a>{" "}
+          individually, or take a full{" "}
           <a href="/nearshore-development" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">nearshore development team</a>
           — designer, engineers and a lead — embedded in your workflow on weekly sprints. No recruiter fees, no benefits overhead, no twelve-month minimum, and the code is yours from the first commit.
+        </p>
+        <p>
+          Cheap work that never ranks is not cheap. Every site we ship leaves with technical{" "}
+          <a href="/services/seo" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">SEO</a>{" "}
+          in place — clean semantic markup, structured data, fast server-rendered pages and Core Web Vitals measured on real mobile hardware, not a desktop score screenshot. That is why the case studies above quote traffic and conversions instead of adjectives.
         </p>
       </div>
 
@@ -717,6 +750,23 @@ const whatsappUrl =
           </div>
         ))}
       </div>
+
+      <!-- Standard scope — what ships with every web development project -->
+      <div class="mt-20 sm:mt-28 border-t border-slate-800 pt-14">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Standard scope</p>
+        <h3 class="mt-5 max-w-3xl text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight">
+          What ships with every <span class="text-orange-400">web development project.</span>
+        </h3>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 lg:gap-x-14 gap-y-10">
+          {included.map((inc) => (
+            <div data-anim="fade" data-anim-group="included" data-stagger="0.06" class="border-t border-slate-800 pt-6">
+              <h4 class="text-base font-bold text-white">{inc.title}</h4>
+              <p class="mt-3 text-sm text-slate-400 leading-relaxed">{inc.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 
@@ -768,7 +818,7 @@ const whatsappUrl =
       </p>
 
       <p class="mt-8 text-slate-500">
-        Not on the list? We have built for manufacturing, logistics, education and hospitality too.
+        Not on the list? We have built for manufacturing, logistics, education and hospitality too.{" "}
         <a href="/industries" class="font-semibold text-orange-600 hover:text-orange-700 transition-colors">See every industry →</a>
       </p>
     </div>

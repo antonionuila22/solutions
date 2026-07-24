@@ -15,28 +15,52 @@ const keywords = "react development agency, react developers for hire, react js 
 
 const faqs = [
   {
-    question: "Why should I choose React for my project?",
-    answer: "React is the most popular frontend framework, used by Meta, Netflix, Airbnb, and thousands of companies. Benefits include: reusable component architecture, excellent performance with virtual DOM, massive ecosystem of libraries, strong community support, and easy testing. It's ideal for complex UIs, single-page applications, and projects that need to scale."
+    question: "What does a React development agency actually do for us?",
+    answer: "We supply the engineering team and the judgement behind it. That means architecture decisions (routing, state, data fetching, rendering strategy), the actual implementation in React and TypeScript, code review, testing, performance work, and deployment. On most engagements we also help shape scope: a good agency will tell you which third of your backlog is not worth building yet. You keep product ownership; we handle delivery."
   },
   {
-    question: "Do you work with Next.js?",
-    answer: "Yes, Next.js is our primary React framework. It adds server-side rendering, static site generation, API routes, and optimized performance out of the box. We use Next.js for most production React projects because it provides better SEO, faster page loads, and a superior developer experience compared to vanilla React."
+    question: "How much does it cost to hire React developers?",
+    answer: "We bill hourly with published tiers: Mid-level engineers at $45/hour, Senior engineers at $65/hour, and Lead or Architect-level engineers at $95/hour. Most teams mix tiers — a Senior building features with a Lead reviewing architecture is common. A typical production React application lands between 300 and 900 hours depending on scope. There are no mandatory retainers and no setup fees, and you can scale hours up or down between sprints."
   },
   {
-    question: "Can you build mobile apps with React?",
-    answer: "Yes, we build cross-platform mobile apps using React Native. One codebase runs on both iOS and Android, reducing development time by 40-50% compared to native development. React Native apps are performant and indistinguishable from native apps for most use cases."
+    question: "How long does a React project take from kickoff to launch?",
+    answer: "A focused React dashboard or internal tool usually ships a usable version in 4 to 6 weeks and a production launch in 8 to 12. A multi-role SaaS product with billing, permissions, and an admin backend is more often 4 to 6 months. We work in one-week sprints and put a deployed preview environment in front of you from the first sprint, so you are never waiting until the end to see progress. Timelines slip mostly for one reason — undecided product decisions — so we front-load those in discovery."
   },
   {
-    question: "What's your React development process?",
-    answer: "We follow agile methodology with 1-2 week sprints. Each sprint includes planning, development, code review, and demo. We use TypeScript for type safety, write comprehensive tests, and follow React best practices (hooks, functional components, proper state management). You see working code every sprint."
-  },
-  {
-    question: "How much do React developers cost?",
-    answer: "Our senior React developers work at $45-95/hour, depending on project tier. This is 50-60% less than US agencies charging $150-200/hour for equivalent experience. You get the same quality—5+ years React experience, TypeScript expertise, testing skills—at significantly lower rates."
+    question: "How senior are the React developers on my project?",
+    answer: "Every engineer we assign to React work has production React experience, not tutorial experience — they have shipped, maintained, and debugged real applications under load. We do not hide juniors inside a team and bill them as seniors. You see who is on the project, at what tier, and how many hours each person books. If you want to interview them before starting, we set that up."
   },
   {
     question: "Can you work with our existing React codebase?",
-    answer: "Absolutely. We regularly join existing projects for feature development, bug fixes, performance optimization, or team augmentation. We'll review your codebase, understand your patterns, and integrate seamlessly with your workflow and coding standards."
+    answer: "Yes, and it is a large share of what we do. We start with a short read-only audit: dependency health, bundle size, render performance, state management patterns, test coverage, and the parts of the code everyone is afraid to touch. Then we work inside your conventions — your branch strategy, your linting rules, your review process — instead of imposing ours. No rewrite proposal unless the numbers genuinely justify one."
+  },
+  {
+    question: "Should we hire in-house React developers or work with an agency?",
+    answer: "Hire in-house when React is your permanent core competency and you can keep an engineer busy and growing for years. Work with an agency when you need capacity now, when the work has a defined end, or when you need a level of specialization you cannot justify hiring full-time. Realistically, filling a senior React role in the US takes 3 to 5 months and costs a salary plus benefits plus recruiting fees. We can start within two weeks. Many clients use us to build version one and then hire in-house to maintain it, and we hand over documentation to make that clean."
+  },
+  {
+    question: "Who owns the code and the intellectual property?",
+    answer: "You do, completely. IP transfers to you as work is delivered, not at the end of some payment schedule. Code lives in your repository, on your GitHub or GitLab organization, from day one. Infrastructure runs on your accounts — your Vercel, Netlify, AWS, or database provider. There is no proprietary framework, no license you have to keep paying for, and nothing that makes it painful to move on from us."
+  },
+  {
+    question: "Do you write tests, and what does QA look like?",
+    answer: "Yes. We use Jest and React Testing Library for unit and component tests, and Playwright or Cypress for end-to-end coverage of critical paths — authentication, checkout, anything that costs money when it breaks. We test behaviour a user can observe rather than implementation details, so tests survive refactors. We do not chase a coverage percentage for its own sake; we cover the flows where a regression would actually hurt, and we run the suite in CI on every pull request."
+  },
+  {
+    question: "Do you work with Next.js as well as plain React?",
+    answer: "Next.js is our default for anything public-facing. It adds server-side rendering, static generation, server components, route handlers, and image optimization on top of React, which means better SEO and faster first loads than a client-only single-page app. We use plain React with Vite when the product sits entirely behind a login and SEO is irrelevant — an internal dashboard does not need a server-rendering framework."
+  },
+  {
+    question: "Can you build mobile apps with React Native?",
+    answer: "Yes. React Native lets one team and one codebase cover iOS and Android, which typically cuts mobile development time meaningfully compared to building two native apps. It is an excellent fit for content, commerce, booking, internal field tools, and most CRUD-shaped products. We will tell you when it is the wrong call — apps built around heavy real-time graphics, deep platform-specific hardware access, or very demanding animation are often better served natively."
+  },
+  {
+    question: "How do you communicate, and what hours does your team work?",
+    answer: "We are in San Pedro Sula, Honduras, which sits in US Central Time. That is a full overlapping workday with every US timezone — your morning stand-up is our morning too, and questions get answered the same day instead of overnight. We work in your Slack or Teams channel, keep tickets in your tracker, and send a written weekly summary of what shipped, what is next, and what is blocked. The team is bilingual, English and Spanish."
+  },
+  {
+    question: "Our React app is slow. Can you audit and fix it?",
+    answer: "That is a standalone engagement we run often. We profile with React DevTools and Lighthouse, then report the actual causes ranked by impact — usually oversized bundles, unmemoized context providers re-rendering half the tree, waterfall data fetching, unoptimized images, or a state library being used as a cache. You get the findings and the estimated effort per fix as a document you own, whether or not you hire us to implement them."
   }
 ];
 
@@ -60,13 +84,95 @@ const services = [
 ];
 
 const stats = [
-  { value: "100+", label: "React Projects" },
-  { value: "5+", label: "Years React Exp" },
-  { value: "TypeScript", label: "First" },
-  { value: "CST", label: "Timezone" }
+  { value: "$45–95", label: "Per Hour" },
+  { value: "5.0★", label: "50 Google Reviews" },
+  { value: "CST", label: "US Timezone" },
+  { value: "100%", label: "Code You Own" }
 ];
 
-const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zustand", "TanStack Query", "Tailwind CSS", "Jest", "Cypress"];
+const builds = [
+  {
+    title: "React single-page applications",
+    desc: "Product interfaces where the whole experience lives in the browser — filters, drag-and-drop, optimistic updates, real-time state. We structure them around a real routing layer, server-state caching with TanStack Query, and component boundaries that survive a year of feature requests instead of collapsing into one thousand-line page component."
+  },
+  {
+    title: "React dashboards and internal tools",
+    desc: "Operations screens, admin panels, and analytics views that render heavy tables and charts without freezing the tab. This is where virtualization, memoization, and careful data shaping matter most. We have built these for logistics, accounting, and sales teams, and the constraint is always the same: a person uses this eight hours a day, so it has to be fast and quiet."
+  },
+  {
+    title: "React SaaS product development",
+    desc: "Multi-tenant products with authentication, role-based permissions, subscription billing, usage limits, and an admin backend. Usually built on Next.js so marketing pages, the app shell, and API routes live in one deployable codebase. We wire in Stripe or PayPal, transactional email, and the audit trails your first enterprise customer will ask about."
+  },
+  {
+    title: "React customer and partner portals",
+    desc: "Logged-in areas bolted onto an existing business: order history, document access, support tickets, quotes, invoices. These almost always mean integrating with systems that were not designed to be integrated with — an ERP, a legacy SQL database, a SOAP endpoint. We build the adapter layer as carefully as the interface."
+  },
+  {
+    title: "React Native mobile apps",
+    desc: "One codebase, iOS and Android, sharing types and business logic with your web application. Push notifications, offline caching, camera and location access, app store submission. When a feature genuinely needs native code we write the native module rather than pretending the limitation does not exist."
+  }
+];
+
+const standards = [
+  {
+    num: "01",
+    title: "React with TypeScript by default",
+    desc: "Every project is TypeScript from the first commit, with strict mode on. Props, API responses, and shared domain models are typed end to end, so a backend field rename becomes a compile error instead of a production incident. We do not scatter any types to make the build pass."
+  },
+  {
+    num: "02",
+    title: "React testing with Jest and React Testing Library",
+    desc: "Component and unit tests with Jest and React Testing Library, end-to-end coverage of revenue-critical paths with Playwright or Cypress. We test what a user can observe, not internal implementation, so the suite still passes after a refactor. Everything runs in CI on every pull request."
+  },
+  {
+    num: "03",
+    title: "React code review on every pull request",
+    desc: "No code reaches your main branch without a second engineer reading it. Reviews check architecture and readability, not just correctness — naming, component boundaries, dependency choices, accessibility. Small pull requests, reviewed within the working day, so nothing sits in a queue for a week."
+  },
+  {
+    num: "04",
+    title: "React performance budgets and Core Web Vitals",
+    desc: "We set a JavaScript budget per route at the start and enforce it. Bundles get analyzed, heavy dependencies get questioned, and routes get code-split. Public pages are held to Core Web Vitals thresholds; our own site scores 100/100 on Lighthouse mobile, and we hold client work to the same standard."
+  },
+  {
+    num: "05",
+    title: "React accessibility and semantic markup",
+    desc: "Semantic HTML first, ARIA only where it is genuinely needed. Keyboard navigation, focus management in modals and menus, visible focus states, and contrast that passes WCAG AA. Accessible components are also the ones that behave predictably for everyone else."
+  },
+  {
+    num: "06",
+    title: "React state management chosen, not defaulted",
+    desc: "Server state goes in TanStack Query. Client state goes in local state, context, or Zustand depending on how far it travels. We do not install Redux reflexively — most applications that reach for a global store actually have a data-fetching problem wearing a costume."
+  }
+];
+
+const engagement = [
+  {
+    label: "Hourly",
+    title: "Hire React developers by the hour",
+    desc: "Transparent tiers with no retainer: Mid-level $45/hour, Senior $65/hour, Lead or Architect $95/hour. You approve an hourly cap per sprint and see a detailed log of where the hours went. Best for defined projects, feature work, and audits."
+  },
+  {
+    label: "Dedicated",
+    title: "Dedicated React development team",
+    desc: "One or more engineers assigned to you full-time, in your stand-ups and your tracker, working only on your roadmap. Best when the work is continuous and you want the context to accumulate instead of resetting. Scale the team between sprints as priorities change."
+  },
+  {
+    label: "Cadence",
+    title: "React sprints, demos, and weekly reporting",
+    desc: "One-week sprints. Monday planning against your priorities, a deployed preview environment updated continuously, a Friday demo of working software, and a written summary of what shipped, what is next, and what is blocked. No surprise invoices and no month-long silences."
+  }
+];
+
+const timeline = [
+  { phase: "Week 0", title: "Discovery and React architecture plan", desc: "We map the product, agree on scope for version one, and choose the stack — rendering strategy, data layer, auth, hosting. You get a written architecture note and an hour estimate before anyone writes feature code." },
+  { phase: "Weeks 1–2", title: "React foundations and design system", desc: "Repository, CI, typed API client, authentication, routing, and the base component library. By the end of week two there is a deployed environment you can click through, even if it is mostly scaffolding." },
+  { phase: "Weeks 3–8", title: "React feature development in weekly sprints", desc: "The core screens get built, reviewed, tested, and shipped to preview every week. You use the product as it grows and re-prioritize the backlog each Monday based on what you actually see." },
+  { phase: "Weeks 9–10", title: "React performance and QA hardening", desc: "Bundle analysis, render profiling, image and font optimization, end-to-end test coverage on critical paths, accessibility pass, and error monitoring wired up before real users arrive." },
+  { phase: "Launch", title: "React deployment and handover", desc: "Production deploy on your infrastructure, environment and secrets documented, a README a new engineer can follow, and a walkthrough recording. You own the repository and every credential." }
+];
+
+const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack Query", "Zustand", "Tailwind CSS", "Jest + RTL", "Playwright"];
 ---
 
 <Layout
@@ -82,10 +188,7 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
   <section class="relative bg-slate-950 pt-32 sm:pt-36 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 font-poppins overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center max-w-4xl mx-auto">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full mb-6">
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-          React Development Agency
-        </span>
+        <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-6">React Development Agency</p>
         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
           React <span class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Development</span>
         </h1>
@@ -118,16 +221,19 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
   <!-- Content Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">Expert React development</h2>
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">React development agency for teams that need to ship</h2>
       <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
         <p>
-          React powers some of the world's most sophisticated web applications. But building with React effectively requires deep expertise—<strong class="text-slate-900">component architecture, state management, performance optimization, and testing</strong>. Our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore team</a> specializes in complex React projects.
+          React powers some of the world's most sophisticated web applications. Getting real value out of it, though, depends on decisions that happen before the first component is written — <strong class="text-slate-900">component architecture, state boundaries, data fetching, rendering strategy, and testing</strong>. Those decisions are what separate an application that stays pleasant to extend in year three from one that everybody is quietly afraid to touch by month eight. Our <a href="/nearshore-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development team</a> has been making them since 2020.
         </p>
         <p>
-          Our React developers have <strong class="text-slate-900">5+ years of production experience</strong>. We've built dashboards, SaaS platforms, <a href="/ecommerce-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce stores</a>, and mobile apps. We write TypeScript by default, test thoroughly, and follow best practices.
+          Codebrand is a React development agency based in San Pedro Sula, Honduras, working in US Central Time. Our engineers write TypeScript by default, review every pull request, and ship to a live preview environment weekly. We build new products, and we take over existing ones — including the ones that arrive with a slow bundle, a half-finished migration, and no tests. If you need the surrounding system too, our <a href="/custom-software-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom software development</a> practice covers the APIs, databases, and integrations behind the interface.
         </p>
         <p>
-          Whether you need a <strong class="text-slate-900">new React application, Next.js website, React Native mobile app</strong>, or help with an existing codebase, we deliver production-ready code at <strong class="text-slate-900">60% less than US agency rates</strong>. <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">Hire our developers</a> or explore our <a href="/custom-web-development-services" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom development services</a>.
+          You can engage us for a full build, for a <a href="/dedicated-development-team" class="text-cyan-600 hover:text-cyan-700 font-semibold">dedicated development team</a> that works only on your roadmap, or to <a href="/hire-remote-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire remote developers</a> who slot into the team you already have. Rates are published and hourly — Mid $45, Senior $65, Lead or Architect $95 — and you own one hundred percent of the code from the first commit.
+        </p>
+        <p>
+          One thing worth saying early: React is not always the right answer. A marketing site does not need a component framework shipping hundreds of kilobytes of JavaScript, and we will say so. We also build with <a href="/astro-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">Astro</a> and offer straightforward <a href="/services/web-development" class="text-cyan-600 hover:text-cyan-700 font-semibold">web development</a> when that is the honest fit. There is a section further down explaining exactly where we draw that line.
         </p>
       </div>
     </div>
@@ -138,7 +244,7 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
-          React <span class="text-orange-500">Services</span>
+          React development <span class="text-orange-500">services</span>
         </h2>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
@@ -148,6 +254,163 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What we build -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">What we build</p>
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">React web application development, by project type</h2>
+      <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mb-4">
+        React is one word covering five very different kinds of build. The architecture, the testing depth, and the cost of each are not comparable, so here is what we actually deliver and what changes between them. Selling online sits slightly apart and has its own page — see <a href="/ecommerce-development-agency" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce development</a>.
+      </p>
+      <div class="divide-y divide-slate-200 border-t border-slate-200 mt-12">
+        {builds.map((item) => (
+          <article class="grid md:grid-cols-[1fr_1.7fr] gap-4 md:gap-12 py-10">
+            <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 leading-snug">{item.title}</h3>
+            <p class="text-slate-600 text-lg leading-relaxed">{item.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering standards -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">How we work</p>
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">React engineering standards our developers follow</h2>
+      <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mb-4">
+        These are not aspirations we bring out for sales calls. They are the defaults on every engagement, and they are the reason our handovers do not come with an apology attached.
+      </p>
+      <div class="divide-y divide-slate-200 border-t border-slate-200 mt-12">
+        {standards.map((item) => (
+          <article class="grid md:grid-cols-[1fr_1.7fr] gap-4 md:gap-12 py-10">
+            <div>
+              <span class="text-xs tracking-[0.2em] uppercase text-slate-400 block mb-3">{item.num}</span>
+              <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 leading-snug">{item.title}</h3>
+            </div>
+            <p class="text-slate-600 text-lg leading-relaxed">{item.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Framework honesty -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">Choosing honestly</p>
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">React vs Next.js vs Astro: when React is the right call</h2>
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
+        <p>
+          Agencies that only sell React will tell you every project needs React. We build in three stacks, so we have no reason to push you toward the expensive one. Here is the decision we would make in your seat.
+        </p>
+      </div>
+
+      <div class="mt-12 space-y-12">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">React development is right when the interface carries the product</h3>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            Choose React when users spend real time inside the application: dashboards, editors, booking flows, anything with heavy interactive state, live updates, or complex forms that talk to each other. The component model and the ecosystem around it pay for their weight when the interface is genuinely the product. React is also the right call when you plan to share logic with a React Native mobile app later.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Next.js development is right when you need React plus search visibility</h3>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            If the same product needs public marketing pages, a blog, and a logged-in app, use <a href="/hire-nextjs-developers" class="text-cyan-600 hover:text-cyan-700 font-semibold">Next.js</a>. Server rendering and static generation mean crawlers and users get real HTML instead of an empty shell, and route handlers let the API live beside the interface. This is our default for anything customer-facing and it is where most of our React work lands.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Astro beats React when the page is mostly content</h3>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            For marketing sites, documentation, blogs, and brochure-style storefronts, an Astro build ships almost no JavaScript and loads faster than a React equivalent can, with interactive React components dropped in only where they are needed. Recommending Astro on a project like that costs us billable hours and saves you money — which is exactly why you should trust the recommendation. We wrote the full comparison, with benchmarks and use cases, in <a href="/blog/react-nextjs-astro-comparison-2025" class="text-cyan-600 hover:text-cyan-700 font-semibold">React vs Next.js vs Astro</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rescue and audit work -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">Existing codebases</p>
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">React performance optimization, audits, and migrations</h2>
+
+      <div class="space-y-12">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">React performance optimization for apps that got slow</h3>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            Slow React applications are slow for a small number of repeat reasons, and guessing at them wastes weeks. We profile first — React DevTools for render behaviour, Lighthouse and real user metrics for delivery — then fix in order of impact. The usual suspects: bundles nobody has analyzed since launch, context providers re-rendering entire trees, request waterfalls where parallel fetches belonged, lists rendering thousands of rows without virtualization, and images shipped at four times their display size. We documented one of these end to end in our <a href="/blog/react-performance-optimization-case-study-2025" class="text-cyan-600 hover:text-cyan-700 font-semibold">React performance case study</a>.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">React code audit before you commit to a rewrite</h3>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            A fixed-scope, read-only review of your codebase, usually a week. We report on architecture and component boundaries, state management, dependency and security health, test coverage, build and CI setup, accessibility, and the specific areas where change is risky. You get a prioritized list with effort estimates that you own outright and can hand to any team — us, your in-house engineers, or another vendor. Most audits end with a plan to fix rather than a plan to rewrite, because full rewrites fail far more often than teams expect.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Migration to React from legacy front ends</h3>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            jQuery, AngularJS, WordPress themes, Create React App, or a Pages Router application that has outgrown its structure. We migrate incrementally, route by route or screen by screen, so your product stays shippable the entire time and your team keeps releasing. Analytics, SEO redirects, and authentication are carried across deliberately, not rediscovered after launch. Big-bang rewrites are where roadmaps go to die, and we have inherited enough of them to avoid starting one.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">React team augmentation when you are simply short on hands</h3>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            Sometimes the code is fine and the roadmap is just longer than the team. Our engineers join your repository, your stand-ups, and your review process, follow your conventions rather than importing ours, and take tickets like any other team member. Ramp-up is typically a few days rather than weeks because they have seen most React codebases before.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement models -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">Engagement</p>
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">Hire React developers: how engagements work</h2>
+      <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mb-4">
+        No packages, no mandatory retainers, no fixed-bid theatre that punishes you for changing your mind. You buy engineering hours at a published rate and decide each sprint how many you want.
+      </p>
+      <div class="divide-y divide-slate-200 border-t border-slate-200 mt-12">
+        {engagement.map((item) => (
+          <article class="grid md:grid-cols-[1fr_1.7fr] gap-4 md:gap-12 py-10">
+            <div>
+              <span class="text-xs tracking-[0.2em] uppercase text-slate-400 block mb-3">{item.label}</span>
+              <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 leading-snug">{item.title}</h3>
+            </div>
+            <p class="text-slate-600 text-lg leading-relaxed">{item.desc}</p>
+          </article>
+        ))}
+      </div>
+      <p class="text-slate-600 text-lg leading-relaxed mt-12 max-w-3xl">
+        Every engagement runs through our own production CRM, so time logs, deliverables, and invoices come from the same place rather than three disconnected spreadsheets. If you would rather have engineers reporting directly to your own manager, the <a href="/dedicated-development-team" class="text-cyan-600 hover:text-cyan-700 font-semibold">dedicated team model</a> is built for exactly that. Work outside React is quoted the same way through our <a href="/custom-web-development-services" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom web development services</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">Timeline</p>
+      <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">React project timeline: what a typical build looks like</h2>
+      <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mb-4">
+        Below is the shape of a mid-sized React application — roughly a ten-week build. Larger products repeat the middle phase; audits and feature work compress it. What does not change is that you see deployed software every week.
+      </p>
+      <div class="divide-y divide-slate-200 border-t border-slate-200 mt-12">
+        {timeline.map((item) => (
+          <article class="grid md:grid-cols-[1fr_1.7fr] gap-4 md:gap-12 py-10">
+            <div>
+              <span class="text-xs tracking-[0.2em] uppercase text-slate-400 block mb-3">{item.phase}</span>
+              <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 leading-snug">{item.title}</h3>
+            </div>
+            <p class="text-slate-600 text-lg leading-relaxed">{item.desc}</p>
+          </article>
         ))}
       </div>
     </div>
@@ -172,7 +435,7 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">
-          React Development <span class="text-orange-500">FAQ</span>
+          React development agency <span class="text-orange-500">FAQ</span>
         </h2>
       </div>
       <FaqAccordion faqs={faqs} />
@@ -183,9 +446,9 @@ const stack = ["React 18", "Next.js 14", "TypeScript", "React Native", "Redux/Zu
   <section class="py-16 sm:py-20 lg:py-28 bg-slate-950 font-poppins">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 data-anim="heading" class="text-display-2 font-bold text-white mb-6">
-        Need React <span class="text-orange-400">developers?</span>
+        Hire React <span class="text-orange-400">developers</span>
       </h2>
-      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation. Start building in days.</p>
+      <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Free consultation and a quote in 24 hours. Start building in days.</p>
       <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
         Get Started
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
