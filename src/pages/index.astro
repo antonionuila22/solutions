@@ -1,22 +1,13 @@
 ---
 export const prerender = true;
-import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import CardService from "../components/CardService.astro";
-import Pricing from "../components/Pricing.astro";
-import Faq from "../components/Faq.astro";
-import Testimonial from "../components/Testimonial.astro";
-import TechMarquee from "../components/TechMarquee.astro";
+import Icon from "../components/icons/Icon.astro";
+import TeamQuoter from "../components/TeamQuoter";
 import Ourteam from "@/components/Ourteam.astro";
-import PartnershipBanner from "@/components/PartnershipBanner.astro";
-import BannerSecond from "../components/BannerSecondOptimized.astro";
+import Faq from "../components/Faq.astro";
+import TechMarquee from "../components/TechMarquee.astro";
+import Testimonial from "../components/Testimonial.astro";
 import TrustBadges from "../components/TrustBadges.astro";
-import DesignRushSection from "../components/DesignRushSection.astro";
-import WebsiteVsWebApp from "../components/WebsiteVsWebApp.astro";
-import HowWeWork from "../components/HowWeWork.astro";
-import ValueProposition from "../components/ValueProposition.astro";
-import CaseStudies from "../components/CaseStudies.astro";
-
 
 // Review Schema for Google rich snippets - real Google reviews
 const reviewsSchema = {
@@ -78,17 +69,150 @@ const reviewsSchema = {
   }
 };
 
-const industries = [
-  "Automotive", "Construction", "Content Creators", "E-commerce",
-  "Fitness", "Healthcare", "Law Firms", "Real Estate",
-  "Restaurants", "Travel Agency", "Other",
+// ── Selected work — real, documented client projects (see src/content/projects) ──
+const work = [
+  {
+    n: "01",
+    name: "Laboratory & Tech",
+    industry: "B2B · Lab Equipment",
+    desc: "Custom WooCommerce platform built from scratch — full catalog, CRM sync and a B2B quote system.",
+    metrics: ["7,900+ products", "Custom CRM plugin", "Full API integration"],
+    img: "/photos/projects/Laboratory.avif",
+    slug: "laboratory-equipment-platform",
+  },
+  {
+    n: "02",
+    name: "Zeed Marketing",
+    industry: "Digital Marketing Agency",
+    desc: "High-converting Astro + React site for a Meta Ads agency, engineered for speed and lead capture.",
+    metrics: ["139% traffic growth", "0 → 50 daily visitors", "Results in 30 days"],
+    img: "/photos/projects/zeed.avif",
+    slug: "zeed-meta-ads-agency",
+  },
+  {
+    n: "03",
+    name: "TravelUp",
+    industry: "Travel Agency · Honduras",
+    desc: "Complete online booking system with WhatsApp integration and SEO that scaled a local agency.",
+    metrics: ["10 → 20 daily clients", "Top agency positioning", "Full booking system"],
+    img: null,
+    slug: "landing-travel-agency",
+  },
+  {
+    n: "04",
+    name: "ESABEP",
+    industry: "Industrial · Well Drilling",
+    desc: "Corporate lead-generation site for a Honduran drilling company with 27 years of field experience.",
+    metrics: ["+1,100 wells drilled", "27 years of expertise", "Qualified online leads"],
+    img: "/photos/projects/esabep-Construccion-Pozos.avif",
+    slug: "esabep-construccion-pozos",
+  },
+  {
+    n: "05",
+    name: "GMJ Architectural Design",
+    industry: "Interior Design · USA",
+    desc: "Portfolio and booking site that took a St. Louis studio from local-only to nationwide reach.",
+    metrics: ["Local → nationwide", "Online booking system", "Portfolio showcase"],
+    img: "/photos/projects/GMJ.avif",
+    slug: "gmj-interior-design-website",
+  },
 ];
 
-const services = [
-  "Web Development", "UX/UI Design", "Branding", "SEO",
-  "Social Media", "Video Editing", "3D Rendering", "Animation",
-  "Graphic Design", "Photography",
+// ── Service pillars — each links to its real hub page ──
+const pillars = [
+  {
+    n: "01",
+    icon: "code",
+    title: "Web Development",
+    desc: "Fast, SEO-ready websites and web apps engineered to pass Core Web Vitals.",
+    chips: ["Astro", "React", "Next.js", "TypeScript"],
+    href: "/services/web-development",
+  },
+  {
+    n: "02",
+    icon: "database",
+    title: "Custom Software & CRM",
+    desc: "Internal tools, dashboards, and our own production CRM — built around your workflow.",
+    chips: ["Node.js", "PostgreSQL", "Prisma", "APIs"],
+    href: "/custom-software-development",
+  },
+  {
+    n: "03",
+    icon: "shopping-cart",
+    title: "E-commerce",
+    desc: "Storefronts that load fast and convert — from catalog to checkout to fulfillment.",
+    chips: ["Shopify", "WooCommerce", "Stripe", "PayPal"],
+    href: "/e-commerce",
+  },
+  {
+    n: "04",
+    icon: "palette",
+    title: "UX/UI Design",
+    desc: "Research-led interfaces and design systems that turn visitors into customers.",
+    chips: ["Figma", "Design Systems", "Prototyping"],
+    href: "/ux-ui-design-agency",
+  },
+  {
+    n: "05",
+    icon: "users",
+    title: "Nearshore Teams",
+    desc: "Senior engineers embedded in your team and aligned to US Central time.",
+    chips: ["US Timezone", "Senior Devs", "Weekly Sprints"],
+    href: "/nearshore-development",
+  },
 ];
+
+// ── How we work — real durations, real deliverables ──
+const steps = [
+  {
+    n: "01",
+    icon: "search",
+    title: "Discovery",
+    dur: "1 week",
+    items: ["Scope & requirements", "Technical roadmap", "Fixed, transparent quote"],
+  },
+  {
+    n: "02",
+    icon: "pencil",
+    title: "Design",
+    dur: "1–2 weeks",
+    items: ["Wireframes", "UI & design system", "Clickable prototype"],
+  },
+  {
+    n: "03",
+    icon: "code",
+    title: "Build",
+    dur: "Weekly sprints",
+    items: ["Production-grade code", "A demo every week", "Staging you can test"],
+  },
+  {
+    n: "04",
+    icon: "rocket",
+    title: "Launch & Support",
+    dur: "Ongoing",
+    items: ["Deploy & monitoring", "Performance tuning", "Iteration & support"],
+  },
+];
+
+// ── Principles — the manifesto answer, engineering-voiced ──
+const principles = [
+  { lead: "Code you can read.", sub: "Clean, documented, and handed over. No black boxes, no lock-in." },
+  { lead: "Deadlines you can trust.", sub: "Weekly sprint demos — you see progress every week, not just at the end." },
+  { lead: "Prices you can see.", sub: "Hourly rates published up front. No surprise invoices, no vague estimates." },
+  { lead: "Results you can measure.", sub: "We ship metrics, not promises — traffic, conversions, load times." },
+];
+
+// ── Hourly rates — the same numbers the quoter uses ──
+const rates = [
+  { role: "Mid-Level", price: "$45", desc: "Solid execution on well-defined work.", icon: "code", featured: false },
+  { role: "Senior", price: "$65", desc: "Architecture, hard problems, code review.", icon: "cpu", featured: true },
+  { role: "Lead", price: "$95", desc: "Technical direction and team ownership.", icon: "target", featured: false },
+];
+
+const whatsappUrl =
+  "https://api.whatsapp.com/send/?phone=50487380714&text=" +
+  encodeURIComponent("Hi Codebrand! I'd like to start a project.") +
+  "&type=phone_number&app_absent=0";
 ---
 
 <Layout
@@ -99,543 +223,457 @@ const services = [
   <!-- Reviews Schema for Google rich snippets -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewsSchema)} />
 
-  <Hero />
+  <!-- ============================================================= -->
+  <!-- ACT 1 · HERO — instant, typographic, LCP is the headline text -->
+  <!-- ============================================================= -->
+  <section class="relative overflow-hidden bg-slate-950 font-poppins">
+    <div class="hero-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute -top-40 right-0 w-[38rem] h-[38rem] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute -bottom-52 -left-24 w-[34rem] h-[34rem] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-  <!-- Social Proof - Testimonials (moved up for trust) -->
-  <section class="py-16 sm:py-20 lg:py-28 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8 sm:mb-12">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6"
-        >
-          <svg
-            class="w-4 h-4 text-cyan-400"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-            ></path>
-          </svg>
-          <span class="text-sm font-medium text-cyan-400"
-            >Client Success Stories</span
-          >
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24">
+      <!-- Eyebrow -->
+      <div class="flex flex-wrap items-center gap-3 mb-7">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-cyan-500/30 text-xs font-medium text-cyan-300 tracking-wide">
+          <span class="relative flex h-2 w-2">
+            <span class="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+          </span>
+          San Pedro Sula, Honduras 🇭🇳 · US Central Time
         </span>
-        <h2 class="fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-2 sm:px-0">
-          Web Development <span class="text-orange-500">Client Reviews</span>
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-orange-500/30 text-xs font-medium text-orange-300 tracking-wide">
+          <Icon name="star" class="w-3.5 h-3.5 text-orange-400" />
+          5.0 · 50 Google reviews
+        </span>
+      </div>
+
+      <!-- Headline: one gradient span max — this is the LCP element, no animation -->
+      <h1 class="max-w-4xl text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-[0.95]">
+        Built in Honduras.<br />
+        <span class="bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-transparent">Shipped worldwide.</span>
+      </h1>
+
+      <p class="mt-7 max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed">
+        Senior engineers on your timezone, building websites that sell and software that ships.
+        Transparent hourly rates from <span class="text-white font-semibold">$45/hr</span> — no bloated agency overhead, no offshore surprises.
+      </p>
+
+      <!-- Dual CTA -->
+      <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+        <a
+          href="/contact"
+          class="group inline-flex items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm sm:text-base font-semibold shadow-lg shadow-orange-500/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
+        >
+          Start your project
+          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a
+          href="#work"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-slate-900/70 border border-slate-700 hover:border-slate-500 text-slate-200 text-sm sm:text-base font-semibold transition-colors duration-300"
+        >
+          See our work
+        </a>
+      </div>
+
+      <!-- Speed-as-craft, classy one-liner -->
+      <p class="mt-6 flex items-center gap-2 text-xs text-slate-500">
+        <Icon name="zap" class="w-3.5 h-3.5 text-cyan-400" />
+        Rendered instantly — no boot screen, no spinner. That is the whole point.
+      </p>
+
+      <!-- Proof row — 4 stat cards, static numbers (always visible) -->
+      <div class="mt-12 sm:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-4xl">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-5">
+          <div class="flex items-center gap-1.5 mb-1">
+            <Icon name="star" class="w-5 h-5 text-orange-400" />
+            <span class="text-2xl sm:text-3xl font-bold text-white">5.0</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400">Google rating</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-5">
+          <span class="text-2xl sm:text-3xl font-bold text-white">50</span>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Verified reviews</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-5">
+          <span class="text-2xl sm:text-3xl font-bold text-white">6+</span>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Countries served</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-5">
+          <div class="flex items-baseline gap-1">
+            <span class="text-2xl sm:text-3xl font-bold text-white">99</span>
+            <span class="text-sm text-slate-500 font-semibold">/100</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Lighthouse (mobile)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- ACT 2 · MARQUEE — tech we build with                          -->
+  <!-- ============================================================= -->
+  <TechMarquee />
+
+  <!-- ============================================================= -->
+  <!-- ACT 3 · SELECTED WORK — curated, named, verifiable            -->
+  <!-- ============================================================= -->
+  <section id="work" class="relative bg-white font-poppins py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12 sm:mb-16">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200/70 text-[11px] font-semibold uppercase tracking-[0.18em] text-orange-600">
+          Selected Work
+        </span>
+        <h2 data-anim="heading" class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+          Real projects. <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">Real numbers.</span>
         </h2>
-        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto px-2 sm:px-0">
-          50 verified Google reviews from real clients across web development, e-commerce, and design
+        <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+          A curated few — each with results you can verify, not a wall of thumbnails.
         </p>
       </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {work.map((p) => (
+          <a
+            href={`/projects/${p.slug}`}
+            data-anim="fade"
+            data-anim-group="work"
+            data-stagger="0.08"
+            class="group relative flex flex-col rounded-2xl border border-slate-200 bg-slate-50/60 overflow-hidden hover:border-orange-300 hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-500 hover:-translate-y-1"
+          >
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+              {p.img ? (
+                <img
+                  src={p.img}
+                  alt={`${p.name} — ${p.industry}`}
+                  loading="lazy"
+                  width="640"
+                  height="400"
+                  class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900">
+                  <span class="text-4xl font-bold tracking-tight text-white/90">{p.name}</span>
+                </div>
+              )}
+              <span class="absolute top-3 left-3 text-xs font-bold text-white/70 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-md tabular-nums">{p.n}</span>
+            </div>
+
+            <div class="flex flex-col flex-1 p-5 sm:p-6">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-orange-600">{p.industry}</span>
+              <h3 class="mt-1.5 text-xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors">{p.name}</h3>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">{p.desc}</p>
+              <ul class="mt-4 flex flex-wrap gap-1.5">
+                {p.metrics.map((m) => (
+                  <li class="inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-2.5 py-1 text-xs font-medium text-slate-700">
+                    <Icon name="trending-up" class="w-3 h-3 text-cyan-600" />
+                    {m}
+                  </li>
+                ))}
+              </ul>
+              <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
+                View case study
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        ))}
+
+        <!-- 6th cell — honest "view all" tile, not a fabricated case -->
+        <a
+          href="/projects"
+          data-anim="fade"
+          data-anim-group="work"
+          class="group relative flex flex-col items-start justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-900 text-white p-7 sm:p-8 overflow-hidden hover:border-orange-400 transition-colors duration-500"
+        >
+          <div class="absolute -top-16 -right-16 w-48 h-48 bg-orange-500/15 rounded-full blur-3xl"></div>
+          <span class="relative text-5xl font-bold tracking-tight">16<span class="text-orange-400">+</span></span>
+          <p class="relative mt-2 text-lg font-semibold">documented projects</p>
+          <p class="relative mt-1 text-sm text-slate-400">United States · Honduras · LATAM</p>
+          <span class="relative mt-6 inline-flex items-center gap-2 text-sm font-semibold text-orange-400">
+            See all work
+            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SOCIAL PROOF — real Google reviews (schema above)             -->
+  <!-- ============================================================= -->
+  <section class="bg-slate-950 font-poppins py-16 sm:py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10 sm:mb-12">
+      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-cyan-500/30 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
+        5.0 from 50 reviews
+      </span>
+      <h2 data-anim="heading" class="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+        What clients actually <span class="text-orange-400">say</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+        Verified Google reviews from real clients across web development, e-commerce, and design.
+      </p>
     </div>
     <Testimonial />
   </section>
 
-  <TrustBadges />
-
-  <CaseStudies />
-
-  <ValueProposition />
-  <TechMarquee />
-  <!-- Services Section -->
-  <section
-    class="py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-white via-slate-50/50 to-slate-100/80 relative overflow-hidden"
-  >
-    <!-- Background decoration -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute -top-40 -right-40 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-200/20 rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <!-- Section Header -->
-      <div class="text-center mb-8 sm:mb-12 lg:mb-16">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 rounded-full mb-6 shadow-sm"
-        >
-          <span class="flex items-center justify-center w-5 h-5 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full">
-            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </span>
-          <span class="text-sm font-semibold text-orange-700">Full-Service Digital Agency</span>
+  <!-- ============================================================= -->
+  <!-- ACT 4 · SERVICES — 5 numbered pillars with tech chips         -->
+  <!-- ============================================================= -->
+  <section class="relative bg-slate-50 font-poppins py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12 sm:mb-16">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+          What we build
         </span>
-        <h2 class="fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 sm:mb-5 leading-tight px-2 sm:px-0">
-          Everything Your Brand Needs
-          <span class="block sm:inline"> </span>
-          <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">to Grow</span>
+        <h2 data-anim="heading" class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+          Five things, done <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">seriously well.</span>
         </h2>
-        <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-          From web development to branding, video production to 3D rendering — we handle it all under one roof.
+        <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+          Not a menu of everything. The stack we ship every week, at senior level.
         </p>
       </div>
 
-      <!-- Core Services: What We Do Best -->
-      <div class="mb-6 sm:mb-8">
-        <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-900 text-white rounded-full text-xs font-semibold tracking-wide uppercase">
-          <svg class="w-3.5 h-3.5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          What We Do Best
-        </span>
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {pillars.map((s) => (
+          <a
+            href={s.href}
+            data-anim="fade"
+            data-anim-group="pillars"
+            data-stagger="0.08"
+            class="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 hover:border-orange-300 hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-500 hover:-translate-y-1"
+          >
+            <div class="flex items-center justify-between">
+              <span class="flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                <Icon name={s.icon} class="w-6 h-6" />
+              </span>
+              <span class="text-sm font-bold text-slate-300 tabular-nums group-hover:text-orange-400 transition-colors">{s.n}</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-slate-900">{s.title}</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">{s.desc}</p>
+            <ul class="mt-4 flex flex-wrap gap-1.5">
+              {s.chips.map((c) => (
+                <li class="rounded-md bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-600">{c}</li>
+              ))}
+            </ul>
+            <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
+              Explore service
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+        ))}
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
-        <CardService
-          icon="./icons/sitio-web.webp"
-          title="Web & App Development"
-          description="Fast, SEO-ready websites and mobile apps. React, Next.js, and Expo for web, iOS, and Android."
-          learnMoreUrl="/services/web-development"
-        />
-
-        <CardService
-          icon="./icons/interfaz-de-usuario.webp"
-          title="UX/UI Design"
-          description="Intuitive interfaces that convert visitors into customers. User-centered design that keeps people engaged."
-          learnMoreUrl="/services/ux-ui"
-        />
-
-        <CardService
-          icon="./icons/diseno-grafico.webp"
-          title="Branding & Identity"
-          description="Logos, color systems, and brand guides that make your business memorable and professional."
-          learnMoreUrl="/services/branding"
-        />
-      </div>
-
-      <!-- Separator -->
-      <div class="my-10 sm:my-12 lg:my-14 flex items-center gap-4">
-        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
-      </div>
-
-      <!-- Extended Services: More Services -->
-      <div class="mb-6 sm:mb-8">
-        <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 border border-slate-200/80 text-slate-600 rounded-full text-xs font-semibold tracking-wide uppercase">
-          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-          </svg>
-          More Services
-        </span>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
-        <CardService
-          icon="./icons/seo.webp"
-          title="SEO Optimization"
-          description="Rank higher on Google with technical SEO, content strategy, and performance optimization."
-          learnMoreUrl="/services/seo"
-        />
-
-        <CardService
-          icon="./icons/redes-sociales.webp"
-          title="Social Media Marketing"
-          description="Content creation, ad campaigns, and community management that grow your audience."
-          learnMoreUrl="/services/social-media"
-        />
-
-        <CardService
-          icon="./icons/edicion-de-video.webp"
-          title="Video Production"
-          description="Professional video editing, commercials, and social content that captures attention."
-          learnMoreUrl="/services/video-production"
-        />
-
-        <CardService
-          icon="./icons/animacion.webp"
-          title="Motion & Animation"
-          description="2D/3D animations, motion graphics, and explainer videos that bring ideas to life."
-          learnMoreUrl="/services/animation"
-        />
-
-        <CardService
-          icon="./icons/modelo-3d.webp"
-          title="3D Rendering"
-          description="Photorealistic renders for architecture, products, and marketing visualizations."
-          learnMoreUrl="/services/3d-rendering"
-        />
-
-        <CardService
-          icon="./icons/camiseta.webp"
-          title="Branded Merchandise"
-          description="Custom promotional products with sublimation, digital print, and laser engraving."
-          learnMoreUrl="/services/promotional-products"
-        />
-      </div>
-
-      <!-- View All Services link -->
-      <div class="text-center mt-8 sm:mt-10">
-        <a
-          href="/services"
-          class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors duration-300"
-        >
-          View All Services
-          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-
-      <!-- CTA after services -->
-      <div class="text-center mt-10 sm:mt-14 lg:mt-16 px-2 sm:px-0">
-        <div class="inline-flex flex-col items-center gap-3 sm:gap-4 p-5 sm:p-6 md:p-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-lg">
-          <p class="text-sm sm:text-base text-slate-700 font-medium">Need something specific?</p>
+        <div class="relative flex flex-col justify-center rounded-2xl border border-slate-900 bg-slate-900 text-white p-6 sm:p-7 overflow-hidden">
+          <div class="absolute -bottom-16 -left-10 w-44 h-44 bg-cyan-500/15 rounded-full blur-3xl"></div>
+          <h3 class="relative text-xl font-bold">Need a mix?</h3>
+          <p class="relative mt-2 text-sm text-slate-300 leading-relaxed">
+            Most projects blend a few of these. Tell us the goal — we scope the right team.
+          </p>
           <a
             href="/contact"
-            class="group inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 py-3 sm:py-3.5 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white text-sm sm:text-base font-semibold rounded-xl shadow-lg shadow-slate-900/20 hover:shadow-xl hover:shadow-slate-900/30 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97]"
+            class="relative mt-5 inline-flex items-center gap-2 text-sm font-semibold text-orange-400"
           >
-            Let's Talk About Your Project
-            <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            Talk to an engineer
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How We Work Section -->
-  <HowWeWork />
-
-  <!-- Website vs Web Application Educational Section
-  <WebsiteVsWebApp /> -->
-
-  <!-- Transition gradient from light to dark -->
-
-  <!-- Why Nearshore Section -->
-  <section class="py-16 sm:py-20 lg:py-24 bg-slate-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-cyan-500/30 rounded-full mb-6">
-          <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-          <span class="text-sm font-medium text-cyan-400">Why businesses choose Codebrand</span>
+  <!-- ============================================================= -->
+  <!-- ACT 5 · PROCESS — durations + per-step deliverables           -->
+  <!-- ============================================================= -->
+  <section class="relative bg-slate-950 font-poppins py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <div class="absolute inset-0 hero-grid opacity-40 pointer-events-none" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12 sm:mb-16">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-cyan-500/30 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
+          How we work
         </span>
-        <h2 class="fade-up text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-          The Nearshore Advantage —<br class="hidden sm:block" />
-          <span class="text-orange-400">Quality Without the Overhead</span>
+        <h2 data-anim="heading" class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+          From kickoff to launch, <span class="text-orange-400">on the clock.</span>
         </h2>
-        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
-          US agencies charge $150–$300/hr. Offshore teams create timezone and communication headaches. We're the third option: a dedicated, CST-aligned team with zero compromise on quality.
+        <p class="mt-4 text-lg text-slate-400 leading-relaxed">
+          A demo every week means no surprises at the end — only progress you have already seen.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        <!-- Card 1 -->
-        <div class="fade-up bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
-          <div class="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-2">Same Timezone. Real-Time Collaboration.</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">CST-aligned hours mean you're not waiting overnight for answers. Daily standups, Slack access, and meetings that fit your schedule.</p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="fade-up bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-orange-500/40 transition-colors duration-300 md:border-orange-500/20">
-          <div class="w-12 h-12 bg-orange-500/10 border border-orange-500/20 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-2">40–60% Less Than US Agency Rates</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">The same React, TypeScript, and Figma skills — without the San Francisco overhead. Your budget goes further without sacrificing results.</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="fade-up bg-slate-900 border border-slate-800 rounded-2xl p-6 lg:p-8 hover:border-cyan-500/40 transition-colors duration-300">
-          <div class="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-            </svg>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-2">50+ Reviews. Zero Offshore Surprises.</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Fluent English communication, US business practices, and a proven track record with clients across Austin, Miami, New York, and beyond.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <BannerSecond
-    subtitle="Ready to get started?"
-    title="Get a Custom Quote in 24 Hours"
-    description="Tell us about your project and we'll come back with a clear plan, timeline, and price — no vague estimates, no hidden fees. Most projects start within a week of approval."
-    imgUrl="/photos/bannercodebrand.webp"
-  />
-
-  <PartnershipBanner />
-  <Ourteam />
-  <Pricing />
-
-  <!-- Contact Form Section -->
-  <section id="contact" class="relative bg-slate-950 font-poppins py-16 sm:py-20 lg:py-28 overflow-hidden">
-    <!-- Orbs -->
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <div class="absolute w-72 lg:w-80 h-72 lg:h-80 bg-cyan-500/10 rounded-full blur-3xl -top-32 right-1/4 motion-safe:animate-pulse"></div>
-      <div class="absolute w-64 h-64 bg-orange-500/8 rounded-full blur-3xl bottom-0 left-10 motion-safe:animate-pulse" style="animation-delay:1s;"></div>
-    </div>
-
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-
-        <!-- LEFT: Copy + Info -->
-        <div class="lg:col-span-2 lg:sticky lg:top-28 lg:self-start">
-          <!-- Badge -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-cyan-500/30 mb-6">
-            <span class="relative flex h-2 w-2">
-              <span class="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {steps.map((st) => (
+          <div
+            data-anim="fade"
+            data-anim-group="process"
+            data-stagger="0.1"
+            class="relative flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-cyan-500/40 transition-colors duration-500"
+          >
+            <div class="flex items-center justify-between">
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                <Icon name={st.icon} class="w-5 h-5" />
+              </span>
+              <span class="text-sm font-bold text-slate-700 tabular-nums">{st.n}</span>
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-white">{st.title}</h3>
+            <span class="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-orange-400">
+              <Icon name="clock" class="w-3.5 h-3.5" />
+              {st.dur}
             </span>
-            <span class="text-xs text-slate-300 font-medium">We respond immediately</span>
-          </div>
-
-          <h2 class="fade-up text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug mb-3">
-            Tell Us About<br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">Your Project</span>
-          </h2>
-          <p class="text-sm text-slate-300 leading-relaxed mb-8 max-w-sm">
-            Free consultation, no strings attached. We'll respond within 24 hours with a clear plan and honest pricing.
-          </p>
-
-          <!-- Contact info -->
-          <div class="space-y-3 mb-8">
-            <a href="mailto:info@codebrand.es" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-orange-400 transition-colors">
-              <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              info@codebrand.es
-            </a>
-            <div class="flex items-center gap-2.5 text-sm text-slate-500">
-              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Mon–Fri 9AM–6PM CST &middot; Sat 10AM–2PM CST
-            </div>
-            <div class="flex items-center gap-2.5 text-sm text-slate-500">
-              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Typical first response: under 2 hours
-            </div>
-          </div>
-
-          <!-- Testimonial -->
-          <div class="border-l-2 border-slate-800 pl-4">
-            <div class="flex gap-0.5 mb-2">
-              {[1,2,3,4,5].map(() => (
-                <svg class="w-3 h-3 text-orange-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <ul class="mt-4 space-y-2">
+              {st.items.map((it) => (
+                <li class="flex items-start gap-2 text-sm text-slate-300">
+                  <Icon name="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  {it}
+                </li>
               ))}
-            </div>
-            <p class="text-xs text-slate-500 leading-relaxed italic mb-2">
-              "Delivered in 10 days. Quality exceeded expectations. Communication was excellent."
-            </p>
-            <p class="text-xs text-slate-600 font-medium">Michael R. <span class="text-slate-700 font-normal">&middot; Austin, TX</span></p>
+            </ul>
           </div>
-        </div>
-
-        <!-- RIGHT: Form card -->
-        <div class="lg:col-span-3">
-          <contact-form data-endpoint="/api/contact">
-            <form action="/api/contact" method="POST" aria-label="Contact form" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
-
-              <!-- Honeypot -->
-              <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
-                <label for="home-website">Leave empty</label>
-                <input type="text" name="honey" id="home-website" tabindex="-1" autocomplete="new-password" />
-              </div>
-
-              <div class="space-y-4">
-                <!-- Row: Name + Email -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label for="home-name" class="home-form-label">Name *</label>
-                    <input id="home-name" name="name" type="text" required aria-required="true" autocomplete="name"
-                      placeholder="John Doe" class="home-form-input"
-                      maxlength="60" minlength="2"
-                      pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+"
-                      title="Only letters, spaces, hyphens and apostrophes" />
-                  </div>
-                  <div>
-                    <label for="home-email" class="home-form-label">Email *</label>
-                    <input id="home-email" name="email" type="email" required aria-required="true" autocomplete="email"
-                      placeholder="john@company.com" class="home-form-input" maxlength="254" />
-                  </div>
-                </div>
-
-                <!-- Row: Phone + Industry -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label for="home-phone" class="home-form-label">Phone <span class="text-slate-400 font-normal">(optional)</span></label>
-                    <input id="home-phone" name="phone" type="tel" autocomplete="tel"
-                      placeholder="+1 (555) 000-0000" class="home-form-input"
-                      maxlength="20" minlength="7" pattern="[\d\s\-\+\(\)]+" />
-                  </div>
-                  <div>
-                    <label for="home-industry" class="home-form-label">Industry *</label>
-                    <div class="relative">
-                      <select id="home-industry" name="industry" required aria-required="true" class="home-form-input appearance-none pr-8">
-                        <option value="" disabled selected>Select</option>
-                        {industries.map((ind) => <option value={ind}>{ind}</option>)}
-                      </select>
-                      <svg class="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Subject -->
-                <div>
-                  <label for="home-subject" class="home-form-label">Subject *</label>
-                  <input id="home-subject" name="subject" type="text" required aria-required="true"
-                    placeholder="How can we help?" class="home-form-input"
-                    maxlength="100" minlength="3"
-                    pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?']+" />
-                </div>
-
-                <!-- Message -->
-                <div>
-                  <label for="home-message" class="home-form-label">Message *</label>
-                  <textarea id="home-message" name="message" rows="3" required aria-required="true"
-                    placeholder="Project details, goals, timeline..."
-                    class="home-form-input resize-none"
-                    maxlength="2000" minlength="10"></textarea>
-                </div>
-
-                <!-- Services -->
-                <div>
-                  <label class="home-form-label">Services <span class="text-slate-400 font-normal">(optional)</span></label>
-                  <div class="flex flex-wrap gap-1.5">
-                    {services.map((s) => (
-                      <label class="cursor-pointer inline-block px-2.5 py-1 text-xs rounded-full border border-slate-200 text-slate-500 bg-slate-50/80 transition-all duration-300 select-none has-[:checked]:bg-orange-50 has-[:checked]:border-orange-300 has-[:checked]:text-orange-600 has-[:checked]:font-medium hover:border-slate-300 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-orange-500">
-                        <input type="checkbox" name="services" value={s} class="sr-only" />
-                        {s}
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <!-- Terms -->
-                <label class="flex items-start gap-2 cursor-pointer">
-                  <input type="checkbox" name="terms" required aria-required="true"
-                    class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
-                  <span class="text-xs text-slate-400 leading-relaxed">
-                    I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Terms</a>
-                    and <a href="/privacy" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Privacy Policy</a>.
-                  </span>
-                </label>
-
-                <!-- Submit -->
-                <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
-                  <button type="submit"
-                    class="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-semibold py-3.5 px-8 rounded-2xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/30 hover:-translate-y-px active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-y-0">
-                    <span>Get Free Consultation</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                  </button>
-                  <span class="flex items-center gap-1 text-[11px] text-slate-400">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                    Secure &middot; Never shared
-                  </span>
-                </div>
-
-                <!-- Response -->
-                <p data-response class="text-xs font-medium hidden rounded-lg px-3 py-2"></p>
-              </div>
-            </form>
-          </contact-form>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
 
-  <DesignRushSection />
+  <!-- ============================================================= -->
+  <!-- ACT 6 · PRINCIPLES — typographic manifesto                    -->
+  <!-- ============================================================= -->
+  <section class="relative bg-white font-poppins py-20 sm:py-24 lg:py-32">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200/70 text-[11px] font-semibold uppercase tracking-[0.18em] text-orange-600 mb-10">
+        How we think
+      </span>
+      <div class="space-y-8 sm:space-y-10">
+        {principles.map((pr, i) => (
+          <div data-anim="fade" data-anim-group="principles" data-stagger="0.08" class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 border-b border-slate-100 pb-8 sm:pb-10">
+            <span class="text-sm font-bold text-slate-300 tabular-nums shrink-0 sm:w-16">0{i + 1}</span>
+            <div>
+              <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                {pr.lead}
+              </h3>
+              <p class="mt-3 text-base sm:text-lg text-slate-500 max-w-2xl leading-relaxed">{pr.sub}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
+  <!-- ============================================================= -->
+  <!-- ACT 7 · PRICING — hourly rates + interactive TeamQuoter        -->
+  <!-- ============================================================= -->
+  <section id="pricing" class="relative bg-slate-50 font-poppins py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12 sm:mb-14">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+          Transparent pricing
+        </span>
+        <h2 data-anim="heading" class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+          Rates on the table. <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">No sales call needed.</span>
+        </h2>
+        <p class="mt-4 text-lg text-slate-600 leading-relaxed">
+          Hourly, senior-led, no monthly lock-in. Build a team below and see your price instantly.
+        </p>
+      </div>
+
+      <!-- Rate cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-8 sm:mb-10">
+        {rates.map((r) => (
+          <div class={`relative flex flex-col rounded-2xl border p-6 sm:p-7 transition-all duration-500 ${r.featured ? "border-orange-300 bg-white shadow-xl shadow-orange-500/5 sm:-translate-y-2" : "border-slate-200 bg-white"}`}>
+            {r.featured && (
+              <span class="absolute top-4 right-4 rounded-full bg-orange-500 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">Most requested</span>
+            )}
+            <span class={`flex items-center justify-center w-11 h-11 rounded-xl border ${r.featured ? "bg-orange-500 border-orange-500 text-white" : "bg-orange-50 border-orange-100 text-orange-600"}`}>
+              <Icon name={r.icon} class="w-5 h-5" />
+            </span>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">{r.role}</h3>
+            <div class="mt-1 flex items-baseline gap-1">
+              <span class="text-4xl font-bold tracking-tight text-slate-900">{r.price}</span>
+              <span class="text-sm font-semibold text-slate-400">/ hour</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">{r.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Interactive quoter — the killer vs static price cards -->
+      <TeamQuoter client:visible />
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- ACT 8 · TEAM — real faces, real profiles                      -->
+  <!-- ============================================================= -->
+  <section class="bg-white font-poppins pt-20 sm:pt-24 lg:pt-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200/70 text-[11px] font-semibold uppercase tracking-[0.18em] text-orange-600">
+        The team
+      </span>
+      <h2 data-anim="heading" class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+        Real people. <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">Real profiles.</span>
+      </h2>
+      <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        No stock photos, no anonymous pool of contractors. The engineers who build your project have names, faces, and profiles you can read.
+      </p>
+    </div>
+    <Ourteam />
+  </section>
+
+  <!-- Featured-on credibility strip -->
+  <TrustBadges />
+
+  <!-- ============================================================= -->
+  <!-- ACT 9 · FAQ + FINAL CTA                                        -->
+  <!-- ============================================================= -->
   <Faq />
 
+  <section class="relative bg-slate-950 font-poppins py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <div class="hero-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute -top-40 left-1/3 w-[34rem] h-[34rem] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 data-anim="heading" class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+        Let's build the thing <span class="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">that ships.</span>
+      </h2>
+      <p class="mt-5 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Tell us the goal. You get a clear plan, an honest quote, and a first response in under two hours — Monday to Friday, US Central time.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5">
+        <a
+          href="/contact"
+          class="group inline-flex items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm sm:text-base font-semibold shadow-lg shadow-orange-500/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
+        >
+          Start your project
+          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-slate-900/70 border border-slate-700 hover:border-cyan-500/50 text-slate-200 text-sm sm:text-base font-semibold transition-colors duration-300"
+        >
+          <Icon name="message-circle" class="w-4 h-4 text-cyan-400" />
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <p class="mt-6 text-xs text-slate-500">
+        Currently onboarding new projects · San Pedro Sula, Honduras 🇭🇳 · Serving the US, LATAM & EU
+      </p>
+    </div>
+  </section>
 </Layout>
 
-<script>
-  class ContactForm extends HTMLElement {
-    connectedCallback() {
-      const endpoint = this.dataset.endpoint!;
-      const form = this.querySelector<HTMLFormElement>("form");
-      const responseEl = this.querySelector<HTMLParagraphElement>("[data-response]");
-      const submitBtn = this.querySelector<HTMLButtonElement>('button[type="submit"]');
-
-      if (!form || !responseEl || !submitBtn) return;
-      const originalContent = Array.from(submitBtn.childNodes).map(n => n.cloneNode(true));
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const fd = new FormData(form);
-        const email = fd.get("email") as string;
-
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          responseEl.textContent = "Please enter a valid email address.";
-          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
-          responseEl.classList.remove("hidden");
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.setAttribute("aria-busy", "true");
-        submitBtn.textContent = '';
-        const spinner = document.createElement('span');
-        spinner.className = 'inline-flex items-center gap-2';
-        spinner.innerHTML = `<svg class="w-4 h-4 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...`;
-        submitBtn.appendChild(spinner);
-
-        try {
-          const res = await fetch(endpoint, { method: "POST", body: fd });
-          if (res.ok) { window.location.href = "/thank-you"; return; }
-          let errorMsg = "Something went wrong. Please try again.";
-          try {
-            const json = await res.json();
-            if (json.error) errorMsg = json.error;
-          } catch { /* response wasn't JSON, use default */ }
-          responseEl.textContent = errorMsg;
-          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
-        } catch {
-          responseEl.textContent = "Network error. Check your connection and try again.";
-          responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
-        } finally {
-          responseEl.classList.remove("hidden");
-          submitBtn.disabled = false;
-          submitBtn.setAttribute("aria-busy", "false");
-          submitBtn.textContent = '';
-          originalContent.forEach(n => submitBtn.appendChild(n));
-        }
-      });
-    }
-  }
-  if (!customElements.get("contact-form")) {
-    customElements.define("contact-form", ContactForm);
-  }
-</script>
-
 <style>
-  contact-form {
-    display: block;
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 65% at 50% 0%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 65% at 50% 0%, #000 40%, transparent 100%);
   }
-  .home-form-label {
-    display: block;
-    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #64748b;
-    margin-bottom: 0.375rem;
-    letter-spacing: 0.01em;
-  }
-  .home-form-input {
-    width: 100%;
-    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    font-size: 0.8125rem;
-    color: #1e293b;
-    background-color: #fafbfc;
-    transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
-    outline: none;
-  }
-  select.home-form-input {
-    padding-right: 2rem;
-  }
-  .home-form-input:hover { border-color: #cbd5e1; background-color: #fff; }
-  .home-form-input:focus { border-color: #f97316; background-color: #fff; box-shadow: 0 0 0 2px rgba(249,115,22,0.08); }
-  .home-form-input:focus-visible { outline: none; --tw-ring-shadow: none; box-shadow: 0 0 0 2px rgba(249,115,22,0.15); border-color: #f97316; }
-  .home-form-input::placeholder { color: #64748b; }
 </style>
