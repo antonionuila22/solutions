@@ -437,7 +437,7 @@ export const TRUST_STATS = [
 /** Marca / contacto para la landing. */
 export const BRAND = {
   name: "Codebrand",
-  whatsappUrl: "https://wa.me/50487380714",
+  whatsappUrl: "https://api.whatsapp.com/send/?phone=50487380714",
   phone: "+504 8738-0714",
   email: "info@codebrand.es",
 };

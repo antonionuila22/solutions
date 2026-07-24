@@ -823,7 +823,7 @@ export default function ServiceWizard({
               <p className="text-center text-sm text-white/55">
                 ¿Prefieres hablar? Llámanos o escríbenos al {BRAND.phone} por{" "}
                 <a
-                  href={BRAND.whatsappUrl}
+                  href={BRAND.whatsappUrl + "&type=phone_number&app_absent=0"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-teal-300 underline underline-offset-2 hover:text-teal-200"

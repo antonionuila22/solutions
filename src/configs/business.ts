@@ -24,7 +24,7 @@ export const BUSINESS_INFO = {
     phone: "+504 8738-0714",
     phoneRaw: "+50487380714",
     whatsapp: "50487380714",
-    whatsappUrl: "https://wa.me/50487380714",
+    whatsappUrl: "https://api.whatsapp.com/send/?phone=50487380714&type=phone_number&app_absent=0",
   },
 
   // Honduras Market Contact
@@ -33,7 +33,7 @@ export const BUSINESS_INFO = {
     phone: "+504 8738-0714",
     phoneRaw: "+50487380714",
     whatsapp: "50487380714",
-    whatsappUrl: "https://wa.me/50487380714",
+    whatsappUrl: "https://api.whatsapp.com/send/?phone=50487380714&type=phone_number&app_absent=0",
   },
 
   // Physical Address (Headquarters)

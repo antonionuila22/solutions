@@ -110,7 +110,7 @@ const personSchema = {
 
           <div class="flex flex-wrap gap-4">
             <a
-              href={`https://wa.me/${BUSINESS_INFO.us.whatsapp}?text=Hola%20Ramon,%20quiero%20hablar%20sobre%20un%20proyecto`}
+              href={`https://api.whatsapp.com/send/?phone=${BUSINESS_INFO.us.whatsapp}&text=Hola%20Ramon,%20quiero%20hablar%20sobre%20un%20proyecto&type=phone_number&app_absent=0`}
               class="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
@@ -297,7 +297,7 @@ const personSchema = {
           </div>
           <div class="flex flex-wrap gap-4 pt-2">
             <a
-              href={`https://wa.me/${BUSINESS_INFO.us.whatsapp}?text=Hola%20Ramon,%20me%20gustaria%20hablar%20sobre%20un%20proyecto`}
+              href={`https://api.whatsapp.com/send/?phone=${BUSINESS_INFO.us.whatsapp}&text=Hola%20Ramon,%20me%20gustaria%20hablar%20sobre%20un%20proyecto&type=phone_number&app_absent=0`}
               class="btn-white"
               target="_blank"
               rel="noopener noreferrer"

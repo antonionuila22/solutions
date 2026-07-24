@@ -1556,7 +1556,7 @@ const getIcon = (name: string) => {
     <!-- WhatsApp -->
     <a
       id="whatsapp-link"
-      href="https://wa.me/50487380714?text=Hola%2C%20me%20interesa%20la%20landing%20page%20WordPress%20de%20%24450"
+      href="https://api.whatsapp.com/send/?phone=50487380714&text=Hola%2C%20me%20interesa%20la%20landing%20page%20WordPress%20de%20%24450&type=phone_number&app_absent=0"
       target="_blank"
       rel="noopener noreferrer"
       class="whatsapp-btn"
@@ -5110,7 +5110,7 @@ const getIcon = (name: string) => {
     const whatsappLink = document.getElementById('whatsapp-link');
     if (whatsappLink) {
       const message = encodeURIComponent(whatsappMessages[currentLang]);
-      whatsappLink.href = `https://wa.me/50487380714?text=${message}`;
+      whatsappLink.href = `https://api.whatsapp.com/send/?phone=50487380714&text=${message}&type=phone_number&app_absent=0`;
     }
   }
 

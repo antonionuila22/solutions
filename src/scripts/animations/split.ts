@@ -27,6 +27,31 @@ export function splitText(el: HTMLElement, mode: "words" | "chars"): SplitResult
   const words: HTMLElement[] = [];
   const chars: HTMLElement[] = [];
 
+  /**
+   * True when the element paints its own background clipped to its glyphs
+   * (Tailwind's `bg-clip-text`, usually with `text-transparent`). Such elements
+   * must never be split: the background belongs to the element itself, so the
+   * glyphs cannot be moved out of it. Checked via class/inline style — no
+   * getComputedStyle, keeping this a pure DOM-write pass with no forced reflow.
+   */
+  const hasTextClippedBackground = (node: HTMLElement) =>
+    node.classList.contains("bg-clip-text") ||
+    node.style.backgroundClip === "text" ||
+    node.style.webkitBackgroundClip === "text";
+
+  /** Wrap a whole element (kept intact) in a word mask so it animates as one unit. */
+  const buildUnit = (source: HTMLElement, parent: Node) => {
+    const mask = document.createElement("span");
+    mask.className = "anim-word";
+    mask.setAttribute("aria-hidden", "true");
+    const inner = document.createElement("span");
+    inner.className = "anim-word-inner";
+    inner.appendChild(source.cloneNode(true));
+    mask.appendChild(inner);
+    parent.appendChild(mask);
+    words.push(inner);
+  };
+
   const buildWord = (text: string, parent: Node) => {
     const mask = document.createElement("span");
     mask.className = "anim-word";
@@ -69,6 +94,14 @@ export function splitText(el: HTMLElement, mode: "words" | "chars"): SplitResult
         const elNode = node as HTMLElement;
         if (elNode.tagName === "BR" || elNode.childNodes.length === 0) {
           dest.appendChild(elNode.cloneNode(true));
+        } else if (hasTextClippedBackground(elNode)) {
+          // Gradient text (`bg-clip-text text-transparent`): the background is
+          // painted on THIS element and clipped to its own glyphs. Recursing
+          // would move those glyphs into transformed child spans while the
+          // background stayed behind — the text renders fully invisible.
+          // So animate the element as ONE unit: background and glyphs travel
+          // together inside a single mask.
+          buildUnit(elNode, dest);
         } else {
           const shell = elNode.cloneNode(false) as HTMLElement;
           process(elNode, shell);
