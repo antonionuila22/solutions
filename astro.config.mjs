@@ -25,6 +25,7 @@ const NON_CANONICAL_DUPLICATES = new Set([
   '/branding',                         // → /services/branding
   '/web-design',                       // → /ux-ui-design-agency
   '/ecommerce-development-agency',     // → /e-commerce
+  '/services/ux-ui',                   // → /ux-ui-design-agency
 ]);
 const isNonCanonicalDuplicate = (page) => {
   try {
