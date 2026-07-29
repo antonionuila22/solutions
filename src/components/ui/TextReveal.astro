@@ -1,0 +1,155 @@
+---
+/**
+ * TextReveal — aparición de texto palabra a palabra al entrar en viewport.
+ * Pattern adapted from ReactBits SplitText (MIT + Commons Clause) — versión
+ * ligera: las palabras se separan en el SERVIDOR (frontmatter); el cliente
+ * solo lleva un IntersectionObserver que añade una clase.
+ *
+ * Props:
+ *  - text: string        Texto plano a revelar (REQUERIDO — ver limitación abajo).
+ *  - as?: string          Etiqueta del contenedor (default "p"; "h2", "h3"...).
+ *  - stagger?: number     ms de retardo entre palabras (default 45).
+ *  - duration?: number    ms de la transición por palabra (default 600).
+ *  - threshold?: number   Umbral del IntersectionObserver, 0–1 (default 0.15).
+ *  - class?: string       Clases de tipografía/color del consumidor.
+ *
+ * Uso:
+ *  <TextReveal as="h2" class="text-4xl font-bold text-white"
+ *    text="Software a la medida para tu negocio" />
+ *
+ * ── LIMITACIÓN: SIN TEXTO DEGRADADO ─────────────────────────────────────────
+ * Este componente NO soporta bg-clip-text / text-transparent. Lección de
+ * src/scripts/animations/split.ts (hasTextClippedBackground): un background
+ * clipeado a glifos pertenece al ELEMENTO; al mover los glifos a spans
+ * transformados, el fondo se queda atrás y el texto se vuelve invisible.
+ * Aquí el split es server-side y NO podemos detectar las clases del consumidor
+ * de forma fiable, así que la regla es: no pases bg-clip-text en `class`.
+ * Para titulares con degradado usa el motor GSAP del sitio (data-anim), que sí
+ * maneja ese caso animando el elemento como una unidad.
+ *
+ * Accesibilidad / robustez:
+ *  - aria-label con el texto completo en el contenedor; los spans de palabra
+ *    llevan aria-hidden (mismo esquema que split.ts).
+ *  - reduced-motion → texto visible desde el inicio, sin transiciones.
+ *  - Sin JS (noscript) → texto visible (override en <noscript><style>).
+ *  - Idempotente ante View Transitions: data-tr-init + astro:page-load.
+ *  - Solo transform + opacity; el observer se desconecta tras revelar (once).
+ */
+interface Props {
+  text: string;
+  as?: string;
+  stagger?: number;
+  duration?: number;
+  threshold?: number;
+  class?: string;
+}
+
+const {
+  text,
+  as = "p",
+  stagger = 45,
+  duration = 600,
+  threshold = 0.15,
+  class: className,
+} = Astro.props;
+
+const Tag = as;
+const words = text.split(/\s+/).filter(Boolean);
+const cls = ["ui-text-reveal", className].filter(Boolean).join(" ");
+---
+
+<Tag
+  class={cls}
+  data-ui-reveal
+  data-tr-threshold={String(threshold)}
+  aria-label={text}
+  style={`--ui-tr-stagger:${stagger}ms; --ui-tr-duration:${duration}ms;`}
+>
+  {words.map((word, i) => (
+    <>
+      <span class="ui-tr-word" aria-hidden="true" style={`--i:${i}`}><span class="ui-tr-inner">{word}</span></span>
+      {" "}
+    </>
+  ))}
+</Tag>
+
+<noscript>
+  {/* is:inline: debe quedarse DENTRO del noscript, sin hoisting ni scoping. */}
+  <style is:inline>
+    .ui-tr-inner {
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  </style>
+</noscript>
+
+<style>
+  .ui-tr-word {
+    /* Máscara: recorta la palabra mientras sube desde abajo. */
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .ui-tr-inner {
+    display: inline-block;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ui-tr-inner {
+      transition:
+        transform var(--ui-tr-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1),
+        opacity var(--ui-tr-duration, 600ms) ease;
+      transition-delay: calc(var(--i) * var(--ui-tr-stagger, 45ms));
+    }
+
+    .ui-text-reveal:not(.is-inview) .ui-tr-inner {
+      transform: translateY(110%);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  function initTextReveal() {
+    const els = document.querySelectorAll("[data-ui-reveal]:not([data-tr-init])");
+    if (!els.length) return;
+
+    const reveal = (el: Element) => el.classList.add("is-inview");
+
+    // Sin observer o con reduced-motion: mostrar de inmediato (el CSS ya
+    // mantiene visible bajo reduced-motion; la clase lo hace explícito).
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      els.forEach((el) => {
+        el.setAttribute("data-tr-init", "");
+        reveal(el);
+      });
+      return;
+    }
+
+    els.forEach((node) => {
+      const el = node as HTMLElement;
+      el.setAttribute("data-tr-init", "");
+      const threshold = parseFloat(el.dataset.trThreshold || "0.15");
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              reveal(entry.target);
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold, rootMargin: "0px 0px -8% 0px" }
+      );
+      io.observe(el);
+    });
+  }
+
+  initTextReveal();
+  // ClientRouter: el módulo corre una sola vez; re-escanear tras cada navegación.
+  document.addEventListener("astro:page-load", initTextReveal);
+</script>

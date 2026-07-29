@@ -1,20 +1,22 @@
 ---
+/**
+ * /blog — editorial index.
+ *
+ * Design direction adapted from the MagicUI blog template (MIT): large
+ * editorial typography, one big featured post, a clean grid, lots of air.
+ * Recolored to the site palette (monochrome slate + #f48200 accent).
+ * SEO shell is untouched: same <title>, meta description, H1 and slugs.
+ */
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Button from "../../components/Button.astro";
-import Icon from "../../components/icons/Icon.astro";
+import PostCard from "../../components/blog/PostCard.astro";
+import CategoryFilter from "../../components/blog/CategoryFilter.astro";
+import { slugifyCategory, readingMinutes, formatPostDate } from "../../lib/blog";
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 
-const slugifyCategory = (s: string): string =>
-  s
-    .toLowerCase()
-    .replace(/[\/\s&]+/g, "-")
-    .replace(/[^a-z0-9-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-
-// Build category counts for the "Explore by Category" section
+// Category links for the filter row — every category that has a route.
 const categoryCounts = new Map<string, { name: string; count: number }>();
 for (const post of allPosts) {
   for (const cat of post.data.categories ?? []) {
@@ -28,57 +30,42 @@ for (const post of allPosts) {
   }
 }
 
-const topCategories = Array.from(categoryCounts.entries())
+const allCategories = Array.from(categoryCounts.entries())
   .map(([slug, { name, count }]) => ({ slug, name, count }))
-  .sort((a, b) => b.count - a.count)
-  .slice(0, 4);
-
-const categoryIcon: Record<string, string> = {
-  "web-development": "code",
-  "web-design": "palette",
-  design: "palette",
-  "ux-ui": "palette",
-  marketing: "trending-up",
-  seo: "search",
-  technology: "rocket",
-  ai: "bot",
-  guides: "book-open",
-  tutorials: "book-open",
-  tips: "lightbulb",
-  comparisons: "scale",
-  "business-strategy": "bar-chart",
-  codebrand: "building",
-  nearshore: "globe",
-  partnerships: "handshake",
-};
+  .sort((a, b) => b.count - a.count);
 
 // Sort posts by date (newest first)
 const posts = allPosts.sort((a, b) => {
-  // Handle both Date objects and date strings
-  const dateA = a.data.date instanceof Date
-    ? a.data.date.getTime()
-    : a.data.date
-      ? new Date(a.data.date).getTime()
-      : 0;
-  const dateB = b.data.date instanceof Date
-    ? b.data.date.getTime()
-    : b.data.date
-      ? new Date(b.data.date).getTime()
-      : 0;
-
-  // Sort newest first
+  const dateA =
+    a.data.date instanceof Date
+      ? a.data.date.getTime()
+      : a.data.date
+        ? new Date(a.data.date).getTime()
+        : 0;
+  const dateB =
+    b.data.date instanceof Date
+      ? b.data.date.getTime()
+      : b.data.date
+        ? new Date(b.data.date).getTime()
+        : 0;
   return dateB - dateA;
 });
 
-// Get featured post (most recent)
+// Featured post (most recent) + the rest
 const featuredPost = posts[0];
 const regularPosts = posts.slice(1);
 
-// Calculate stats
-const totalReadTime = posts.reduce(
-  (acc, post) => acc + (post.data.readtime || 5),
-  0
-);
+const featuredMinutes = featuredPost
+  ? readingMinutes(featuredPost.body, featuredPost.data.readtime)
+  : 0;
+const featuredDate = featuredPost
+  ? formatPostDate(featuredPost.data.date, {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    })
+  : "";
+const featuredCategory = featuredPost?.data.categories?.[0];
 ---
 
 <Layout
@@ -87,152 +74,98 @@ const totalReadTime = posts.reduce(
   keywords="web development blog, digital marketing blog, design blog, SEO tips, business growth strategies, web design articles, digital agency blog, marketing insights, development tutorials, UX design best practices, coding tips, digital trends, technology blog, agency insights"
   image="/photos/bannercodebrand.webp"
 >
-  <!-- Hero Section -->
-  <section
-    class="relative flex items-center justify-center flex-col bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden pt-28 sm:pt-24 lg:pt-20"
-  >
-    <!-- Background decoration -->
-    <div class="absolute inset-0 opacity-30">
-      <div
-        class="absolute top-20 left-10 w-72 h-72 bg-orange-400/20 rounded-full blur-3xl"
+  <!-- Editorial header -->
+  <section class="bg-white pt-32 pb-12 sm:pt-40 sm:pb-14">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500"
       >
-      </div>
-      <div
-        class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl"
-      >
-      </div>
-    </div>
+        Knowledge Hub
+      </p>
 
-    <div
-      class="container relative px-4 py-20 lg:py-28 flex items-center justify-center w-full"
-    >
-      <article
-        class="flex w-full text-center gap-6 items-center justify-center flex-col max-w-5xl"
-      >
-        <span
-          class="text-orange-400 font-semibold text-lg md:text-xl uppercase tracking-wide animate-fade-in"
-        >
-          Knowledge Hub
-        </span>
+      <h1 class="text-hero mt-5 text-slate-900">Codebrand Blog</h1>
 
-        <h1
-          class="text-cyan-900 font-bold text-4xl lg:text-7xl md:text-6xl sm:text-5xl leading-tight animate-fade-in"
-        >
-          Codebrand Blog
-        </h1>
+      <p class="text-lead mt-6 max-w-2xl text-slate-600">
+        Expert insights on web development, digital marketing, design trends,
+        and business growth strategies. Learn from our experience building
+        digital solutions for 500+ clients.
+      </p>
 
-        <p
-          class="text-lg md:text-xl text-slate-700 max-w-3xl leading-relaxed animate-fade-in"
-        >
-          Expert insights on web development, digital marketing, design trends,
-          and business growth strategies. Learn from our experience building
-          digital solutions for 500+ clients.
-        </p>
-      </article>
+      {
+        allCategories.length > 0 && (
+          <div class="mt-10">
+            <CategoryFilter categories={allCategories} />
+          </div>
+        )
+      }
     </div>
   </section>
 
-  <!-- Featured Post -->
+  <!-- Featured post -->
   {
     featuredPost && (
-      <section class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="flex items-center gap-3 mb-8">
-            <span class="text-orange-400 font-semibold text-xl uppercase">
-              Featured Article
-            </span>
-            <div class="h-px flex-1 bg-gradient-to-r from-orange-400 to-transparent" />
-          </div>
-
-          <article class="grid lg:grid-cols-2 gap-10 bg-gradient-to-br from-slate-50 to-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 group">
+      <section class="bg-white pb-16 sm:pb-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <article class="group grid gap-8 border-t border-slate-200 pt-10 sm:pt-12 lg:grid-cols-2 lg:items-center lg:gap-14">
             <a
               href={`/blog/${featuredPost.id}`}
-              class="block relative h-full min-h-[400px] lg:min-h-[500px] overflow-hidden"
+              class="block overflow-hidden rounded-2xl bg-slate-100"
+              aria-hidden="true"
+              tabindex="-1"
             >
               {featuredPost.data.img && (
-                <>
+                <div class="aspect-[16/10] overflow-hidden">
                   <img
                     src={featuredPost.data.img}
                     alt={featuredPost.data.imageAlt || featuredPost.data.title}
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    width="960"
+                    height="600"
+                    class="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03]"
                     loading="eager"
                     decoding="async"
                     fetchpriority="high"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  <div class="absolute top-6 left-6">
-                    <span class="bg-orange-400 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                      Latest Post
-                    </span>
-                  </div>
-                </>
+                </div>
               )}
             </a>
 
-            <div class="p-8 lg:p-12 flex flex-col justify-center">
-              <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                <span class="flex items-center gap-2">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  {featuredPost.data.date?.toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </span>
-                <span class="flex items-center gap-2">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  {featuredPost.data.readtime || 5} min read
-                </span>
-              </div>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-orange-700">
+                Latest article{featuredCategory && ` — ${featuredCategory}`}
+              </p>
 
-              <h2 class="text-3xl lg:text-4xl font-bold text-cyan-900 mb-4 leading-tight group-hover:text-orange-400 transition-colors">
-                <a href={`/blog/${featuredPost.id}`}>
+              <h2 class="text-display-2 mt-4 text-slate-900">
+                <a
+                  href={`/blog/${featuredPost.id}`}
+                  class="transition-colors group-hover:text-orange-600"
+                >
                   {featuredPost.data.title}
                 </a>
               </h2>
 
-              <p class="text-slate-700 text-lg leading-relaxed mb-6 line-clamp-4">
+              <p class="mt-5 line-clamp-4 leading-relaxed text-slate-600">
                 {featuredPost.data.description}
               </p>
 
-              {featuredPost.data.author && (
-                <div class="flex items-center gap-3 mb-6">
-                  <div class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
-                    {featuredPost.data.author.charAt(0)}
-                  </div>
-                  <div>
-                    <div class="font-semibold text-slate-900">
-                      {featuredPost.data.author}
-                    </div>
-                    <div class="text-sm text-slate-500">Author</div>
-                  </div>
-                </div>
-              )}
+              <div class="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-sm text-slate-500">
+                {featuredPost.data.author && (
+                  <span class="font-medium text-slate-700">
+                    By {featuredPost.data.author}
+                  </span>
+                )}
+                {featuredPost.data.author && featuredDate && (
+                  <span aria-hidden="true">&middot;</span>
+                )}
+                {featuredDate && <span>{featuredDate}</span>}
+                <span aria-hidden="true">&middot;</span>
+                <span>{featuredMinutes} min read</span>
+              </div>
 
               <a
                 href={`/blog/${featuredPost.id}`}
-                class="inline-flex items-center gap-2 text-orange-400 font-bold text-lg group-hover:gap-4 transition-all duration-300"
+                class="mt-8 inline-flex items-center border-b-2 border-orange-500 pb-1 font-semibold text-slate-900 transition-colors hover:text-orange-600"
               >
-                Read Full Article
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                Read the article
               </a>
             </div>
           </article>
@@ -241,220 +174,37 @@ const totalReadTime = posts.reduce(
     )
   }
 
-  <!-- All Posts Grid -->
-  <section class="bg-gradient-to-b from-white to-slate-50 py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-center gap-3 mb-12">
-        <span class="text-orange-400 font-semibold text-xl uppercase"
-          >All Articles</span
-        >
-        <div
-          class="h-px flex-1 bg-gradient-to-r from-orange-400 to-transparent"
-        >
-        </div>
-      </div>
+  <!-- All posts grid -->
+  <section class="border-t border-slate-200 bg-slate-50 py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500"
+      >
+        All articles
+      </p>
+      <h2 class="text-display-2 mt-4 text-slate-900">
+        Everything we have written
+      </h2>
 
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {
-          regularPosts.map((post) => {
-            const { data } = post;
-            const {
-              title,
-              description,
-              img,
-              imageAlt,
-              date,
-              readtime,
-              author,
-            } = data;
-
-            return (
-              <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-300 group overflow-hidden flex flex-col">
-                <a href={`/blog/${post.id}`} class="block">
-                  {img && (
-                    <div class="overflow-hidden relative h-56">
-                      <img
-                        src={img}
-                        alt={imageAlt || title}
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        loading="lazy"
-                        decoding="async"
-                        width="400"
-                        height="250"
-                      />
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  )}
-
-                  <div class="p-6 flex flex-col gap-3 flex-1">
-                    <div class="flex items-center gap-3 text-xs text-slate-500">
-                      <span class="flex items-center gap-1">
-                        <svg
-                          class="w-3.5 h-3.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                        {date?.toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "numeric",
-                          year: "numeric",
-                        })}
-                      </span>
-                      <span>•</span>
-                      <span class="flex items-center gap-1">
-                        <svg
-                          class="w-3.5 h-3.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                        {readtime || 5} min
-                      </span>
-                    </div>
-
-                    <h3 class="text-xl font-bold text-cyan-900 group-hover:text-orange-400 transition-colors leading-tight line-clamp-2">
-                      {title}
-                    </h3>
-
-                    <p class="text-sm text-slate-600 leading-relaxed line-clamp-3 flex-1">
-                      {description}
-                    </p>
-
-                    {author && (
-                      <div class="flex items-center gap-2 pt-3 border-t border-slate-100">
-                        <div class="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-white text-xs font-bold">
-                          {author.charAt(0)}
-                        </div>
-                        <span class="text-xs text-slate-600 font-medium">
-                          {author}
-                        </span>
-                      </div>
-                    )}
-
-                    <div class="flex items-center justify-between pt-3">
-                      <span class="text-sm font-semibold text-orange-400 group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-1">
-                        Read more
-                        <svg
-                          class="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </article>
-            );
-          })
-        }
-      </div>
-    </div>
-  </section>
-  <!-- Topics We Cover -->
-  <section class="bg-white py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <header class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-orange-400 font-semibold text-xl uppercase"
-          >Topics We Cover</span
-        >
-        <h2 class="text-4xl font-bold text-cyan-900 leading-tight mt-2">
-          Explore by Category
-        </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Deep dives into the subjects that matter most for your digital
-          success.
-        </p>
-      </header>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {
-          topCategories.map(({ slug, name, count }) => (
-            <a
-              href={`/blog/category/${slug}`}
-              class="group p-6 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div class="mb-3 flex justify-center"><Icon name={categoryIcon[slug] ?? "file-text"} class="w-10 h-10 text-orange-500" /></div>
-              <h3 class="font-bold text-cyan-900 group-hover:text-orange-400 transition-colors">
-                {name}
-              </h3>
-              <p class="text-sm text-slate-600 mt-2">
-                {count} {count === 1 ? "article" : "articles"}
-              </p>
-            </a>
-          ))
-        }
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {regularPosts.map((post) => <PostCard post={post} />)}
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="bg-gradient-to-b from-slate-50 to-white py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-cyan-900 mb-6">
+  <!-- CTA -->
+  <section class="bg-white py-20 sm:py-24">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-display-2 text-slate-900">
         Ready to Transform Your Digital Presence?
       </h2>
-      <p class="text-xl text-slate-700 mb-8 max-w-2xl mx-auto">
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-slate-600">
         Stop reading and start building. Let's create something amazing
         together.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <Button text="Start Your Project" href="/contact" />
       </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
-  }
-
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .line-clamp-4 {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>

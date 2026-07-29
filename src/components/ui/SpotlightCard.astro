@@ -1,0 +1,119 @@
+---
+/**
+ * SpotlightCard — tarjeta cuyo fondo sigue el cursor con un halo radial.
+ * Pattern adapted from ReactBits SpotlightCard (MIT + Commons Clause) —
+ * reimplementado: JS vanilla mínimo que setea --ui-spot-x/--ui-spot-y;
+ * todo el pintado es CSS (pseudo-elemento con radial-gradient).
+ *
+ * Props:
+ *  - as?: string      Etiqueta del contenedor (default "div"; "article", "li"...).
+ *  - color?: string   Color del halo (default "rgba(244, 130, 0, 0.12)").
+ *  - radius?: string  Radio del halo, longitud CSS (default "280px").
+ *  - class?: string   Clases extra (borde, fondo, padding los pone el consumidor).
+ *
+ * Uso:
+ *  <SpotlightCard class="rounded-2xl border border-slate-800 bg-slate-900 p-8">
+ *    ...contenido...
+ *  </SpotlightCard>
+ *
+ * Comportamiento:
+ *  - UN listener pointermove por tarjeta, registrado SOLO dentro de
+ *    matchMedia("(hover: hover) and (pointer: fine)"). En táctil/hover grueso
+ *    no se registra nada y la tarjeta es 100% estática (el ::before ni existe,
+ *    está gateado por la misma media query en CSS).
+ *  - El rect se cachea en pointerenter para no forzar layout en cada move.
+ *  - reduced-motion: el halo aparece sin transición (posición = feedback
+ *    directo del puntero, no es animación autónoma).
+ *  - Coste JS: ~0.3 KB compartidos por todas las instancias de la página.
+ */
+interface Props {
+  as?: string;
+  color?: string;
+  radius?: string;
+  class?: string;
+}
+
+const {
+  as = "div",
+  color = "rgba(244, 130, 0, 0.12)",
+  radius = "280px",
+  class: className,
+} = Astro.props;
+
+const Tag = as;
+const cls = ["ui-spotlight", className].filter(Boolean).join(" ");
+---
+
+<Tag
+  class={cls}
+  data-ui-spotlight
+  style={`--ui-spot-color:${color}; --ui-spot-r:${radius};`}
+>
+  <slot />
+</Tag>
+
+<style>
+  .ui-spotlight {
+    position: relative;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ui-spotlight::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(
+        var(--ui-spot-r, 280px) circle at var(--ui-spot-x, 50%) var(--ui-spot-y, 50%),
+        var(--ui-spot-color, rgba(244, 130, 0, 0.12)),
+        transparent 70%
+      );
+      opacity: 0;
+    }
+
+    .ui-spotlight:hover::before {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .ui-spotlight::before {
+        transition: opacity 0.35s ease;
+      }
+    }
+  }
+</style>
+
+<script>
+  function initSpotlights() {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    document
+      .querySelectorAll("[data-ui-spotlight]:not([data-spot-init])")
+      .forEach((node) => {
+        const card = node as HTMLElement;
+        card.setAttribute("data-spot-init", "");
+
+        let rect: DOMRect | null = null;
+
+        card.addEventListener("pointerenter", () => {
+          rect = card.getBoundingClientRect();
+        });
+
+        // Scrolling under a stationary pointer shifts the card; drop the
+        // cached rect so the next pointermove re-measures.
+        window.addEventListener("scroll", () => { rect = null; }, { passive: true });
+
+        card.addEventListener("pointermove", (e) => {
+          if (!rect) rect = card.getBoundingClientRect();
+          card.style.setProperty("--ui-spot-x", `${e.clientX - rect.left}px`);
+          card.style.setProperty("--ui-spot-y", `${e.clientY - rect.top}px`);
+        });
+      });
+  }
+
+  initSpotlights();
+  // ClientRouter: el módulo corre una sola vez; re-escanear tras cada navegación.
+  document.addEventListener("astro:page-load", initSpotlights);
+</script>

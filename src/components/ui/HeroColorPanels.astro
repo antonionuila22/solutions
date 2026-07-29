@@ -1,0 +1,110 @@
+---
+/**
+ * HeroColorPanels — paneles verticales que entran en secuencia detrás del
+ * contenido de un hero. CSS puro, 0 JS.
+ * Pattern adapted from cult-ui hero color panels (MIT) — recoloreado a la
+ * paleta del sitio: gama slate-950/900 con UN panel de acento #f48200.
+ *
+ * Props:
+ *  - panels?: number       Número de paneles, 3–8 (default 5).
+ *  - accentIndex?: number  Índice (0-based) del panel naranja (default panels-2).
+ *  - class?: string        Clases extra para el contenedor (altura/padding las
+ *                          pone el consumidor: p.ej. "min-h-[70vh] flex items-center").
+ *
+ * Uso — el slot es el contenido del hero, queda por encima del fondo:
+ *  <HeroColorPanels class="min-h-[70vh]">
+ *    <div class="max-w-7xl mx-auto px-4 py-24">
+ *      <h1 class="text-white ...">...</h1>
+ *    </div>
+ *  </HeroColorPanels>
+ *
+ * Comportamiento:
+ *  - Los paneles suben (translateY 101% → 0) con animation-delay escalonado.
+ *    Solo transform + opacity. El contenedor ya es slate-950, así que durante
+ *    la entrada nunca hay flash claro debajo.
+ *  - prefers-reduced-motion: reduce → paneles ya colocados, sin animación.
+ *  - El fondo lleva aria-hidden="true": es decorativo puro.
+ *  - OJO CONTRASTE: el resultado es un fondo oscuro, PERO el panel de acento
+ *    #f48200 por sí solo NO alcanza AA con texto blanco (2.61:1). Por eso el
+ *    componente pinta un scrim oscuro (gradiente slate-950) entre los paneles
+ *    y el contenido, activado por defecto. No lo desactives (scrim={false})
+ *    salvo que el contenido no se superponga nunca con el panel naranja.
+ */
+interface Props {
+  panels?: number;
+  accentIndex?: number;
+  /** Dark legibility gradient between panels and content. Keep it on: the
+   *  accent panel alone fails AA with white text (2.61:1). */
+  scrim?: boolean;
+  class?: string;
+}
+
+const { panels = 5, accentIndex, scrim = true, class: className } = Astro.props;
+
+const count = Math.max(3, Math.min(8, panels));
+const accent = Math.max(0, Math.min(count - 1, accentIndex ?? count - 2));
+
+// Alternancia slate-950 / slate-900 con un único panel de acento naranja.
+const colors = Array.from({ length: count }, (_, i) =>
+  i === accent ? "#f48200" : i % 2 === 0 ? "#020617" : "#0f172a"
+);
+---
+
+<div class:list={["ui-hero-panels", className]}>
+  <div class="ui-hero-panels__bg" aria-hidden="true" style={`--n:${count};`}>
+    {colors.map((color, i) => (
+      <span class="ui-hero-panels__panel" style={`--i:${i}; background-color:${color};`}></span>
+    ))}
+  </div>
+  {scrim && (
+    <div
+      class="ui-hero-panels__scrim pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/15 to-slate-950/55"
+      aria-hidden="true"
+    >
+    </div>
+  )}
+  <div class="ui-hero-panels__content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .ui-hero-panels {
+    position: relative;
+    overflow: hidden;
+    /* Base oscura: mientras los paneles entran no se ve nada claro debajo. */
+    background-color: #020617;
+  }
+
+  .ui-hero-panels__bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--n, 5), 1fr);
+  }
+
+  .ui-hero-panels__panel {
+    display: block;
+  }
+
+  .ui-hero-panels__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ui-hero-panels__panel {
+      transform: translateY(101%);
+      opacity: 0;
+      animation: ui-panel-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: calc(var(--i) * 110ms);
+    }
+  }
+
+  @keyframes ui-panel-rise {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

@@ -1,0 +1,45 @@
+---
+/**
+ * CategoryFilter — clickable category filter row for the blog shell.
+ *
+ * Links to the existing /blog/category/[slug] routes (no client-side
+ * filtering, no JS). Rounded chips are legitimate here because they are
+ * interactive filters, not decorative eyebrows.
+ */
+import type { CategoryLink } from "../../lib/blog";
+
+interface Props {
+  categories: CategoryLink[];
+  /** Slug of the active category. Omit on /blog (→ "All articles" active). */
+  current?: string;
+}
+
+const { categories, current } = Astro.props;
+
+const baseChip =
+  "inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-colors";
+const idleChip =
+  "border border-slate-200 text-slate-600 hover:border-slate-400 hover:text-slate-900";
+const activeChip = "bg-slate-900 text-white";
+---
+
+<nav aria-label="Blog categories" class="flex flex-wrap items-center gap-2">
+  <a
+    href="/blog"
+    class:list={[baseChip, current ? idleChip : activeChip]}
+    aria-current={current ? undefined : "page"}
+  >
+    All articles
+  </a>
+  {
+    categories.map(({ slug, name }) => (
+      <a
+        href={`/blog/category/${slug}`}
+        class:list={[baseChip, current === slug ? activeChip : idleChip]}
+        aria-current={current === slug ? "page" : undefined}
+      >
+        {name}
+      </a>
+    ))
+  }
+</nav>

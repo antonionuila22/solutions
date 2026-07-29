@@ -1,10 +1,22 @@
 ---
+/**
+ * /blog/[id] — post template (shell only).
+ *
+ * Editorial redesign adapted from the MagicUI blog template (MIT): centered
+ * header, framed hero image, ~70ch reading column, server-rendered table of
+ * contents, reading progress bar. Recolored to slate + #f48200.
+ *
+ * SEO surface is intentionally untouched: <title>, meta description, H1 text,
+ * slugs, canonical, both JSON-LD blocks and the markdown heading structure
+ * are exactly what they were before the redesign.
+ */
 export const prerender = true;
-import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedPosts from "../../components/RelatedPosts.astro";
+import ShinyButton from "../../components/ui/ShinyButton.astro";
+import { readingMinutes, slugifyCategory } from "../../lib/blog";
 import {
   createArticleSchema,
   createBreadcrumbSchema,
@@ -31,36 +43,32 @@ const {
   author,
   categories,
   tags,
+  hideToc,
 } = data;
 
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 
 // Calculate word count for SEO
 const wordCount = body ? body.split(/\s+/).filter(Boolean).length : 0;
 
-// Formato de fecha legible
-let formattedDate = "";
+// Reading time shown in the shell — computed server-side at 220 wpm.
+const readMinutes = readingMinutes(body, readtime);
 
-if (date instanceof Date && !isNaN(date.getTime())) {
-  formattedDate = date.toLocaleDateString("es-ES", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-} else if (typeof date === "string") {
-  const dateObj = new Date(date);
-  if (!isNaN(dateObj.getTime())) {
-    formattedDate = dateObj.toLocaleDateString("es-ES", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  }
-} else {
-  formattedDate = "Fecha no válida";
-}
+// Table of contents — server-generated from the post's own headings (h2/h3).
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const showToc = !hideToc && toc.length >= 3;
+
+// Human-readable date for the meta row.
+const dateObj =
+  date instanceof Date ? date : typeof date === "string" ? new Date(date) : null;
+const formattedDate =
+  dateObj && !isNaN(dateObj.getTime())
+    ? dateObj.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : "";
 
 // SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
 const rawTitle = `${title} | Codebrand Blog`;
@@ -147,103 +155,401 @@ const breadcrumbData = createBreadcrumbSchema([
     set:html={JSON.stringify(breadcrumbData)}
   />
 
-  <article class="font-poppins text-black">
-    <!-- Hero Section -->
-    <section class="relative w-full">
-      <!-- Imagen de fondo sin opacidad -->
-      {
-        img && (
-          <img
-            src={`${img}`}
-            alt={imageAlt || title}
-            class="absolute inset-0 w-full h-full object-cover object-center z-0"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
-        )
-      }
+  <!-- Reading progress (transform-only; painted by the script below) -->
+  <div
+    id="blog-progress"
+    class="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-[#f48200] motion-safe:transition-transform motion-safe:duration-100 motion-safe:ease-linear"
+    style="transform: scaleX(0)"
+    aria-hidden="true"
+  >
+  </div>
 
-      <!-- Degradado más suave -->
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-white/100 via-white/80 to-white z-10"
-      >
+  <article class="bg-white">
+    <!-- Editorial header -->
+    <header class="pt-28 sm:pt-32 lg:pt-36">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumbs brings its own inner px — cancel ours so edges align -->
+        <div class="-mx-4 sm:-mx-6 lg:-mx-8">
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: "/" },
+              { name: "Blog", href: "/blog" },
+              { name: title, href: "" },
+            ]}
+            variant="transparent"
+          />
+        </div>
       </div>
 
-      <!-- Contenido centrado -->
-      <div
-        class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-30 text-center space-y-6"
-      >
-        <span
-          class="text-sm font-semibold uppercase tracking-widest text-orange-500"
-        >
-          Blog
-        </span>
+      <div class="mx-auto mt-10 max-w-[52rem] px-4 text-center sm:px-6">
+        {
+          categories && categories.length > 0 ? (
+            <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-orange-700">
+              <a
+                href={`/blog/category/${slugifyCategory(categories[0])}`}
+                class="transition-colors hover:text-orange-800"
+              >
+                {categories[0]}
+              </a>
+            </p>
+          ) : (
+            <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+              Blog
+            </p>
+          )
+        }
 
-        <h1 class="text-4xl font-bold text-slate-900 leading-tight">
+        <h1
+          class="mt-5 text-3xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem]"
+        >
           {title}
         </h1>
 
-        <div class="text-sm text-slate-600 flex flex-wrap justify-center gap-2">
-          {author && <span>Por {author}</span>}
-          {formattedDate && <span>{formattedDate}</span>}
-          {readtime && <span>· {readtime} min de lectura</span>}
-        </div>
-
         {
           description && (
-            <p class="text-base text-slate-700 max-w-2xl mx-auto">
+            <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               {description}
             </p>
           )
         }
-      </div>
-    </section>
 
-    <Breadcrumbs
-      items={[
-        { name: "Home", href: "/" },
-        { name: "Blog", href: "/blog" },
-        { name: title, href: "" }
-      ]}
-      variant="transparent"
-      class="bg-slate-50 border-y border-slate-100"
-    />
-
-    <!-- Contenido principal -->
-    <section class="max-w-3xl mx-auto">
-      <div class="markdown-content">
-        <Content />
+        <div
+          class="mt-7 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-sm text-slate-500"
+        >
+          {author && <span class="font-medium text-slate-700">By {author}</span>}
+          {author && formattedDate && <span aria-hidden="true">&middot;</span>}
+          {formattedDate && <time datetime={isoDate}>{formattedDate}</time>}
+          <span aria-hidden="true">&middot;</span>
+          <span>{readMinutes} min read</span>
+        </div>
       </div>
-    </section>
+
+      {
+        img && (
+          <div class="mx-auto mt-10 max-w-5xl px-4 sm:mt-12 sm:px-6 lg:px-8">
+            <div class="aspect-[16/9] overflow-hidden rounded-2xl bg-slate-100">
+              <img
+                src={img}
+                alt={imageAlt || title}
+                width="1600"
+                height="900"
+                class="h-full w-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        )
+      }
+    </header>
+
+    <!-- Reading column + table of contents -->
+    <div class="py-12 sm:py-16">
+      <div
+        class:list={[
+          "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8",
+          showToc &&
+            "lg:grid lg:grid-cols-[minmax(0,70ch)_15rem] lg:items-start lg:justify-center lg:gap-16 xl:gap-24",
+        ]}
+      >
+        <div class="mx-auto w-full max-w-[70ch]">
+          {
+            showToc && (
+              <details
+                class="mb-10 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 lg:hidden"
+              >
+                <summary class="cursor-pointer select-none text-sm font-semibold text-slate-900">
+                  Table of contents
+                </summary>
+                <ul class="mt-4 space-y-2.5 border-l border-slate-200 text-sm">
+                  {toc.map((h) => (
+                    <li>
+                      <a
+                        href={`#${h.slug}`}
+                        class:list={[
+                          "block text-slate-600 transition-colors hover:text-orange-700",
+                          h.depth === 3 ? "pl-8" : "pl-4",
+                        ]}
+                      >
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )
+          }
+
+          <div class="blog-prose">
+            <Content />
+          </div>
+        </div>
+
+        {
+          showToc && (
+            <aside class="hidden lg:block">
+              <nav
+                class="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-2"
+                aria-label="Table of contents"
+              >
+                <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                  On this page
+                </p>
+                <ul class="mt-4 space-y-2.5 border-l border-slate-200 text-sm">
+                  {toc.map((h) => (
+                    <li>
+                      <a
+                        href={`#${h.slug}`}
+                        class:list={[
+                          "block leading-snug text-slate-600 transition-colors hover:text-orange-700",
+                          h.depth === 3 ? "pl-8" : "pl-4",
+                        ]}
+                      >
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </aside>
+          )
+        }
+      </div>
+    </div>
 
     <RelatedPosts
       currentId={post.id}
       posts={blog}
       categories={categories}
       tags={tags}
-      limit={4}
+      limit={3}
     />
 
     <!-- CTA -->
-    <section
-      class="bg-orange-50 rounded-2xl mx-4 sm:mx-6 lg:mx-auto max-w-5xl p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-inner mb-20"
-    >
-      <div class="space-y-2 text-center md:text-left">
-        <h2 class="text-2xl font-bold text-orange-700">
-          Do you want to read more articles?
-        </h2>
-        <p class="text-slate-700">
-          Visit our blog to explore more content on web development, design, and
-          digital marketing.
-        </p>
-      </div>
-      <a
-        href="/blog"
-        class="bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-700 transition"
+    <section class="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
+      <div
+        class="flex flex-col items-start justify-between gap-8 rounded-2xl bg-slate-950 p-8 sm:p-12 md:flex-row md:items-center"
       >
-        Read More Articles
-      </a>
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-white">
+            Do you want to read more articles?
+          </h2>
+          <p class="mt-3 max-w-xl leading-relaxed text-slate-400">
+            Visit our blog to explore more content on web development, design,
+            and digital marketing.
+          </p>
+        </div>
+        <ShinyButton href="/blog">Read More Articles</ShinyButton>
+      </div>
     </section>
   </article>
 </Layout>
+
+<script>
+  // Reading progress bar — rAF-throttled scroll listener, transform-only.
+  // Module runs once per session (ClientRouter); re-grabs the bar per page.
+  let bar: HTMLElement | null = null;
+  let ticking = false;
+
+  const paint = () => {
+    ticking = false;
+    if (!bar) return;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+    bar.style.transform = `scaleX(${progress})`;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(paint);
+    }
+  };
+
+  const init = () => {
+    bar = document.getElementById("blog-progress");
+    paint();
+  };
+
+  init();
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll, { passive: true });
+  document.addEventListener("astro:page-load", init);
+</script>
+
+<style is:global>
+  /* ── blog-prose — reading column typography (blog shell only) ─────────
+     Scoped under .blog-prose so the shared .markdown-content styles used by
+     other collections stay untouched. Palette: slate + #f48200 accent. */
+
+  .blog-prose {
+    font-size: 1.0625rem;
+    line-height: 1.85;
+    color: #334155; /* slate-700 */
+  }
+
+  .blog-prose > :first-child {
+    margin-top: 0;
+  }
+
+  /* Headings keep the ids Astro generates — anchor offset for the fixed nav */
+  .blog-prose h1,
+  .blog-prose h2,
+  .blog-prose h3,
+  .blog-prose h4 {
+    scroll-margin-top: 6.5rem;
+    color: #0f172a; /* slate-900 */
+    letter-spacing: -0.015em;
+  }
+
+  .blog-prose h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 3.5rem 0 1.25rem;
+  }
+
+  .blog-prose h2 {
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 3.25rem 0 1.25rem;
+  }
+
+  .blog-prose h3 {
+    font-size: 1.3125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 2.5rem 0 1rem;
+  }
+
+  .blog-prose h4 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .blog-prose p {
+    margin: 1.5rem 0;
+  }
+
+  .blog-prose strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .blog-prose a {
+    color: #c2410c; /* orange-700 — AA on white */
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgb(244 130 0 / 0.4);
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .blog-prose a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .blog-prose ul,
+  .blog-prose ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .blog-prose ul {
+    list-style: disc;
+  }
+
+  .blog-prose ol {
+    list-style: decimal;
+  }
+
+  .blog-prose li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+  }
+
+  .blog-prose li::marker {
+    color: #f48200;
+  }
+
+  .blog-prose blockquote {
+    margin: 2.5rem 0;
+    padding: 0.25rem 0 0.25rem 1.5rem;
+    border-left: 2px solid #f48200;
+    font-style: italic;
+    font-size: 1.125rem;
+    color: #475569; /* slate-600 */
+  }
+
+  .blog-prose blockquote p {
+    margin: 0.75rem 0;
+  }
+
+  .blog-prose code {
+    background: #f1f5f9; /* slate-100 */
+    color: #0f172a;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.875em;
+    padding: 0.15em 0.4em;
+    border-radius: 0.375rem;
+  }
+
+  .blog-prose pre {
+    margin: 2rem 0;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0; /* slate-200 */
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .blog-prose pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+
+  .blog-prose img {
+    display: block;
+    margin: 2.5rem auto;
+    border-radius: 0.75rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .blog-prose hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 3rem 0;
+  }
+
+  .blog-prose table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    border-collapse: collapse;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .blog-prose th,
+  .blog-prose td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .blog-prose th {
+    background: #f8fafc; /* slate-50 */
+    color: #0f172a;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+</style>

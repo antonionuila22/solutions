@@ -1,0 +1,103 @@
+---
+/**
+ * BorderBeam — haz luminoso que recorre el perímetro de una tarjeta. CSS puro, 0 JS.
+ * Pattern adapted from MagicUI BorderBeam (MIT) — reimplementado: en vez de
+ * @property + offset-path, un conic-gradient que ROTA por transform dentro de
+ * un anillo enmascarado (mask-composite). Solo transform → compositor.
+ *
+ * Props:
+ *  - thickness?: number  Grosor del borde en px (default 1.5).
+ *  - duration?: number   Segundos por vuelta (default 6).
+ *  - class?: string      Clases extra.
+ *
+ * Uso — colocar DENTRO de la tarjeta; la tarjeta necesita position:relative y
+ * su propio border-radius (el beam lo hereda con border-radius:inherit):
+ *  <article class="relative rounded-2xl border border-slate-800 ...">
+ *    <BorderBeam />
+ *    ...contenido...
+ *  </article>
+ *
+ * Fallbacks:
+ *  - Navegador sin mask-composite → el beam NO se renderiza (display:none);
+ *    queda el borde normal de la tarjeta. Nunca pinta el gradiente sin máscara.
+ *  - prefers-reduced-motion: reduce → sin rotación; anillo naranja tenue estático.
+ *  - Cobertura garantizada hasta proporciones de tarjeta ~2.5:1; en tarjetas más
+ *    extremas pueden asomar esquinas sin beam en ciertos ángulos.
+ */
+interface Props {
+  thickness?: number;
+  duration?: number;
+  class?: string;
+}
+
+const { thickness = 1.5, duration = 6, class: className } = Astro.props;
+---
+
+<span
+  class:list={["ui-border-beam", className]}
+  style={`--ui-beam-w:${thickness}px; --ui-beam-dur:${duration}s;`}
+  aria-hidden="true"
+>
+  <span class="ui-border-beam__spin"></span>
+</span>
+
+<style>
+  /* Oculto por defecto: si el mask-composite no existe, el conic-gradient
+     cubriría TODA la tarjeta. Solo se muestra cuando hay soporte. */
+  .ui-border-beam {
+    display: none;
+  }
+
+  @supports ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+    .ui-border-beam {
+      display: block;
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: var(--ui-beam-w, 1.5px);
+      pointer-events: none;
+      overflow: hidden;
+      /* Anillo: máscara del content-box restada a la máscara completa. */
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+  }
+
+  .ui-border-beam__spin {
+    position: absolute;
+    inset: -100%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg 280deg,
+      rgba(244, 130, 0, 0.4) 320deg,
+      #f48200 350deg,
+      rgba(244, 130, 0, 0) 360deg
+    );
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ui-border-beam__spin {
+      animation: ui-beam-rotate var(--ui-beam-dur, 6s) linear infinite;
+      will-change: transform;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Fallback estático: anillo naranja tenue uniforme, sin movimiento. */
+    .ui-border-beam__spin {
+      background: rgba(244, 130, 0, 0.35);
+    }
+  }
+
+  @keyframes ui-beam-rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+</style>

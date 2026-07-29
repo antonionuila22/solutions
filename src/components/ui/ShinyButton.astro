@@ -1,0 +1,135 @@
+---
+/**
+ * ShinyButton — CTA con brillo diagonal que cruza el botón en hover. CSS puro, 0 JS.
+ * Pattern común a MagicUI ShinyButton / ReactBits ShinyText / cult-ui (MIT) —
+ * reimplementado como barrido de un linear-gradient animado solo con transform.
+ *
+ * Props:
+ *  - href?: string                  Si se pasa, renderiza <a>; si no, <button>.
+ *  - type?: "button" | "submit"     Solo para <button> (default "button").
+ *  - variant?: "primary" | "outline"  primary = naranja sólido; outline = borde slate
+ *                                     para fondos claros (default "primary").
+ *  - class?: string                 Clases extra.
+ *
+ * Uso:
+ *  <ShinyButton href="/contact">Hablemos de tu proyecto</ShinyButton>
+ *  <ShinyButton variant="outline" href="/services">Ver servicios</ShinyButton>
+ *
+ * ── Aplicarlo a un CTA EXISTENTE sin reescribirlo ──────────────────────────
+ * El bloque .ui-shine de abajo es is:global: en cuanto una página renderiza al
+ * menos un <ShinyButton>, cualquier elemento de esa página con class="ui-shine"
+ * recibe el barrido (la clase ya aporta position:relative + overflow:hidden).
+ *   <a class="... ui-shine" href="...">CTA existente</a>
+ * Si la página NO usa ShinyButton, copia el bloque marcado "UTILIDAD .ui-shine"
+ * a un <style is:global> del componente propio — son ~20 líneas autocontenidas.
+ *
+ * Accesibilidad/perf:
+ *  - El barrido solo corre bajo (hover:hover) and (pointer:fine) y
+ *    (prefers-reduced-motion: no-preference). En táctil o reduced-motion el
+ *    botón es estático (los estados hover de color sí se mantienen).
+ *  - Solo transform + opacity; una pasada por entrada de hover, sin loops.
+ */
+interface Props {
+  href?: string;
+  type?: "button" | "submit";
+  variant?: "primary" | "outline";
+  class?: string;
+}
+
+const { href, type = "button", variant = "primary", class: className } = Astro.props;
+
+const cls = ["ui-shiny-btn", `ui-shiny-btn--${variant}`, "ui-shine", className]
+  .filter(Boolean)
+  .join(" ");
+---
+
+{
+  href ? (
+    <a href={href} class={cls}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={cls}>
+      <slot />
+    </button>
+  )
+}
+
+<style>
+  .ui-shiny-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .ui-shiny-btn--primary {
+    background-color: #f48200;
+    color: #fff;
+    border: 1px solid transparent;
+  }
+
+  .ui-shiny-btn--primary:hover {
+    background-color: #d97400;
+  }
+
+  .ui-shiny-btn--outline {
+    background-color: transparent;
+    color: #0f172a; /* slate-900: para fondos claros */
+    border: 1px solid #cbd5e1; /* slate-300 */
+  }
+
+  .ui-shiny-btn--outline:hover {
+    border-color: #f48200;
+    color: #f48200;
+  }
+</style>
+
+<style is:global>
+  /* ── UTILIDAD .ui-shine (copiable a otros componentes) ─────────────────── */
+  .ui-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ui-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .ui-shine:hover::after {
+      animation: ui-shine-sweep 0.7s ease;
+    }
+  }
+
+  @keyframes ui-shine-sweep {
+    from {
+      transform: translateX(-120%);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(120%);
+      opacity: 1;
+    }
+  }
+  /* ── fin UTILIDAD .ui-shine ────────────────────────────────────────────── */
+</style>

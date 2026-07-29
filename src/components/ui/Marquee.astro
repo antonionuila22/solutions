@@ -1,0 +1,123 @@
+---
+/**
+ * Marquee — banda de desplazamiento horizontal infinito. CSS puro, 0 JS.
+ * Pattern adapted from MagicUI Marquee (MIT) — reimplementado en Astro/CSS,
+ * sin código React de origen.
+ *
+ * Props:
+ *  - direction?: "left" | "right"  Sentido del desplazamiento (default "left").
+ *  - speed?: number                Segundos por vuelta completa (default 40).
+ *  - gap?: string                  Separación entre items, longitud CSS (default "1rem").
+ *  - pauseOnHover?: boolean        Pausa la animación al hacer hover (default true).
+ *  - fade?: boolean                Desvanece los bordes laterales con mask-image (default false).
+ *  - class?: string                Clases extra para el contenedor externo.
+ *
+ * Uso:
+ *  <Marquee speed={30} fade>
+ *    <span class="text-slate-400">Item A</span>
+ *    <span class="text-slate-400">Item B</span>
+ *  </Marquee>
+ *
+ * Notas:
+ *  - El contenido del slot se duplica en el SERVIDOR (la copia lleva
+ *    aria-hidden="true") para lograr el loop sin JS.
+ *  - Solo se anima transform (compositor); cero layout thrash.
+ *  - prefers-reduced-motion: reduce → sin animación y la copia duplicada se
+ *    oculta; queda una fila estática recortada por overflow.
+ *  - El slot debe tener items suficientes para llenar el ancho del contenedor;
+ *    si el contenido es más estrecho, se verá hueco durante el loop.
+ *  - El home ya tiene su propio marquee (TechMarquee.astro). Esta es la
+ *    primitiva genérica para usos nuevos — no sustituye a aquel.
+ */
+interface Props {
+  direction?: "left" | "right";
+  speed?: number;
+  gap?: string;
+  pauseOnHover?: boolean;
+  fade?: boolean;
+  class?: string;
+}
+
+const {
+  direction = "left",
+  speed = 40,
+  gap = "1rem",
+  pauseOnHover = true,
+  fade = false,
+  class: className,
+} = Astro.props;
+
+const content = await Astro.slots.render("default");
+---
+
+<div
+  class:list={[
+    "ui-marquee",
+    { "ui-marquee--fade": fade, "ui-marquee--pause": pauseOnHover },
+    className,
+  ]}
+  style={`--ui-marquee-duration:${speed}s; --ui-marquee-gap:${gap};`}
+>
+  <div class:list={["ui-marquee__track", { "ui-marquee__track--reverse": direction === "right" }]}>
+    <div class="ui-marquee__group" set:html={content} />
+    <div class="ui-marquee__group" aria-hidden="true" set:html={content} />
+  </div>
+</div>
+
+<style>
+  .ui-marquee {
+    overflow: hidden;
+  }
+
+  .ui-marquee--fade {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  .ui-marquee__track {
+    display: flex;
+    width: max-content;
+  }
+
+  .ui-marquee__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-width: max-content;
+    gap: var(--ui-marquee-gap, 1rem);
+    /* El hueco de cierre del loop: cada mitad mide exactamente lo mismo,
+       así translate3d(-50%) empalma sin salto. */
+    padding-right: var(--ui-marquee-gap, 1rem);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ui-marquee__track {
+      animation: ui-marquee-scroll var(--ui-marquee-duration, 40s) linear infinite;
+      will-change: transform;
+    }
+
+    .ui-marquee__track--reverse {
+      animation-direction: reverse;
+    }
+
+    .ui-marquee--pause:hover .ui-marquee__track {
+      animation-play-state: paused;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Fila estática: la copia decorativa sobra. */
+    .ui-marquee__group[aria-hidden="true"] {
+      display: none;
+    }
+  }
+
+  @keyframes ui-marquee-scroll {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+</style>

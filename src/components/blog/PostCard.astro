@@ -1,0 +1,88 @@
+---
+/**
+ * PostCard — editorial blog card (index grid, category pages, related posts).
+ *
+ * Design direction adapted from the MagicUI blog template (MIT) — clean card,
+ * clear hierarchy, lots of air — recolored to the site palette (slate +
+ * #f48200). The cursor-following halo comes from the SpotlightCard primitive
+ * (pattern: ReactBits SpotlightCard, MIT + Commons Clause), which is already
+ * gated to fine pointers and static on touch / reduced motion.
+ *
+ * Reading time is computed server-side from the markdown body (220 wpm) —
+ * no client JS in this component.
+ */
+import type { CollectionEntry } from "astro:content";
+import SpotlightCard from "../ui/SpotlightCard.astro";
+import { readingMinutes, formatPostDate } from "../../lib/blog";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  /** Above-the-fold cards can opt into eager loading. Default lazy. */
+  eager?: boolean;
+}
+
+const { post, eager = false } = Astro.props;
+const { title, description, img, imageAlt, date, readtime, categories } =
+  post.data;
+
+const minutes = readingMinutes(post.body, readtime);
+const dateLabel = formatPostDate(date);
+const category = categories?.[0];
+---
+
+<SpotlightCard
+  as="article"
+  color="rgba(244, 130, 0, 0.07)"
+  radius="320px"
+  class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:border-slate-300 hover:shadow-lg"
+>
+  <a href={`/blog/${post.id}`} class="flex h-full flex-col">
+    {
+      img && (
+        <div class="aspect-[16/9] overflow-hidden bg-slate-100">
+          <img
+            src={img}
+            alt={imageAlt || title}
+            width="640"
+            height="360"
+            class="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.03]"
+            loading={eager ? "eager" : "lazy"}
+            decoding="async"
+          />
+        </div>
+      )
+    }
+
+    <div class="flex grow flex-col gap-3 p-6">
+      {
+        category && (
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-orange-700">
+            {category}
+          </p>
+        )
+      }
+
+      <h3
+        class="line-clamp-2 text-lg font-bold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-orange-600"
+      >
+        {title}
+      </h3>
+
+      {
+        description && (
+          <p class="line-clamp-3 text-sm leading-relaxed text-slate-500">
+            {description}
+          </p>
+        )
+      }
+
+      <div
+        class="mt-auto flex items-center gap-2 border-t border-slate-100 pt-4 text-xs text-slate-500"
+      >
+        {dateLabel && <span>{dateLabel}</span>}
+        {dateLabel && <span aria-hidden="true">&middot;</span>}
+        <span>{minutes} min read</span>
+      </div>
+    </div>
+  </a>
+</SpotlightCard>
