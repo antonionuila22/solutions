@@ -9,6 +9,7 @@ import IndustryHero from "../../components/IndustryHero.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -72,7 +73,19 @@ const healthcareFaqs = [
   {
     question: "What about ongoing maintenance and support?",
     answer: "Healthcare software needs ongoing care to stay secure and compliant. We offer monthly support plans that cover security updates, compliance monitoring, and bug fixes. Critical systems also get 24/7 emergency support."
-  }
+  },
+  {
+    question: "How much does custom healthcare software development cost?",
+    answer: "We bill custom development by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Most clinical builds mix seniorities, with a senior engineer or architect owning the compliance-sensitive parts and mid-level developers handling the rest. You get transparent time reporting each period, so you can start with one module, see the real cost of that scope, and decide what to build next before committing to more."
+  },
+  {
+    question: "Should we replace our current systems or build around them?",
+    answer: "Usually build around them. Most practices already have an EHR, a clearinghouse, and a scheduling tool that work well enough, and ripping them out creates risk with no clinical benefit. We far more often build the missing layer, such as an intake flow, a portal, a reporting view, or an interface engine, and connect it over HL7, FHIR, or vendor APIs. We only recommend replacing a system when it actively blocks a workflow you need and the vendor cannot open it up."
+  },
+  {
+    question: "Who owns the code for the healthcare software you build?",
+    answer: "You do, completely. The code, repositories, database schemas, and documentation are yours from the first commit, and we build directly in your own repositories and infrastructure so there is no proprietary platform to escape later. We sign an NDA before detailed discussions and a Business Associate Agreement before any work that touches PHI, and access to your environments stays under your control and is revocable at any time."
+  },
 ];
 
 const faqSchema = createFAQSchema(healthcareFaqs);
@@ -84,7 +97,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 
 // Hero stats
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "HIPAA", label: "Compliant" },
   { value: "24/7", label: "Online Scheduling" },
   { value: "100%", label: "Custom-Built" }
@@ -92,7 +105,7 @@ const stats = [
 
 // Intro highlights
 const introHighlights = [
-  { value: "5.0★", label: "Google Reviews", gradient: "from-teal-500 to-teal-500", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "5.0", label: "50 Google reviews", gradient: "from-teal-500 to-teal-500", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
   { value: "8+ yrs", label: "Development Experience", gradient: "from-blue-500 to-blue-500", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
   { value: "EHR", label: "System Integrations", gradient: "from-orange-500 to-orange-500", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" },
   { value: "24/7", label: "Critical Support", gradient: "from-cyan-500 to-blue-500", iconPath: "M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" }
@@ -214,6 +227,49 @@ const challenges = [
     solution: "HIPAA-compliant design with encryption, audit trails, BAAs, regular security audits, and staff training."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "EMR / EHR Platform",
+    description: "The clinical chart your providers live in all day, shaped around your specialty's workflow instead of a generic template you have to work around.",
+    capabilities: ["Specialty-specific note templates", "ICD-10 and CPT coding support", "Orders, results, and medication reconciliation", "Role-based access with full PHI audit trail"],
+    icon: "hospital"
+  },
+  {
+    name: "Patient Portal & Digital Intake",
+    description: "Registration, consent, and history collected before the visit, so the front desk stops re-keying clipboards and patients arrive already checked in.",
+    capabilities: ["Online registration and e-consent", "Insurance card capture and eligibility check", "Secure provider messaging", "Statement viewing and online payment"],
+    icon: "users"
+  },
+  {
+    name: "Telemedicine & Remote Monitoring",
+    description: "Video visits launched from inside the chart, plus device readings flowing back between appointments for chronic care and post-discharge programs.",
+    capabilities: ["In-chart video consultations", "Virtual waiting room and provider queue", "Wearable and home-device data intake", "Care-plan thresholds and alerting"],
+    icon: "video"
+  },
+  {
+    name: "Scheduling, Recall & Reminders",
+    description: "Multi-provider, multi-location scheduling with the recall logic that brings preventive and chronic-care patients back on schedule.",
+    capabilities: ["Provider, room, and equipment availability rules", "Automated SMS and email reminders", "Waitlist and cancellation backfill", "Recall campaigns by condition or procedure"],
+    icon: "calendar"
+  },
+  {
+    name: "Revenue Cycle: Eligibility, Billing & Claims",
+    description: "Charge capture through claim submission and denial follow-up, wired to your clearinghouse so nothing sits unbilled in a spreadsheet.",
+    capabilities: ["Real-time eligibility verification", "837 claim and 835 remittance handling", "Denial worklists and appeal tracking", "Patient statements and payment plans"],
+    icon: "credit-card"
+  },
+  {
+    name: "HL7 / FHIR Interface Engine",
+    description: "The plumbing between your systems: lab orders out, results in, imaging and pharmacy messages routed and mapped without anyone retyping them.",
+    capabilities: ["HL7 v2 and FHIR R4 interfaces", "Lab order and result routing", "DICOM / PACS study linking", "Message monitoring, alerting, and replay"],
+    icon: "flask"
+  },
+];
+
+const softwareIndustry = "healthcare providers";
+const softwareLead = "A website brings patients in. What runs the practice once they arrive is software. These are the clinical and administrative systems we build, extend, and connect for clinics, specialty practices, and hospital departments.";
 ---
 
 <Layout
@@ -266,6 +322,12 @@ const challenges = [
     subtitle="HIPAA-compliant technology designed to improve patient care and practice efficiency"
     services={services}
     accentGradient="from-blue-500 to-cyan-500"
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

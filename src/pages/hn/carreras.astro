@@ -1,0 +1,450 @@
+---
+export const prerender = true;
+/**
+ * Carreras / Empleos — Honduras (español)
+ * Keywords: empleos de programador san pedro sula, trabajo desarrollador honduras,
+ * empleos de tecnologia honduras, vacantes desarrollador san pedro sula
+ *
+ * ── CONTRATO DE HONESTIDAD DE ESTA PÁGINA ──────────────────────────────────
+ * Esta página la leen candidatos reales que van a tomar una decisión de vida.
+ * Aquí solo se afirma (a) lo que es prestación de ley en Honduras, o (b) lo que
+ * es verificable en el resto de este sitio. Sin cifras, sin testimonios, sin
+ * beneficios sin confirmar.
+ *
+ * TODO(usuario): confirmar si ofrecemos lo siguiente para poder publicarlo.
+ * Todo lo de abajo está DELIBERADAMENTE fuera de la página hasta que se confirme:
+ *   - Seguro médico privado
+ *   - Modalidad de trabajo: remoto / híbrido / presencial
+ *   - Horario flexible
+ *   - Bonos por encima del décimo tercer y décimo cuarto mes de ley
+ *   - Presupuesto de formación / certificaciones / conferencias
+ *   - Equipo proporcionado (laptop, monitor, estipendio de internet)
+ *   - Número de empleados o tamaño del equipo
+ *   - Testimonios de empleados, nombres, fotos de oficina
+ *   - El proceso de selección real (etapas, prueba técnica, quién entrevista)
+ *   - Rangos salariales por rol
+ *   - Si contratamos perfiles junior / trainee, y si se exige título universitario
+ *   - Días de vacaciones POR ENCIMA del mínimo legal
+ * Cuando estén confirmados, escríbanse como afirmaciones simples: sin cifras que
+ * no se puedan demostrar.
+ */
+
+import HnLayout from "../../layouts/HnLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
+import Icon from "../../components/icons/Icon.astro";
+import { createFAQSchema } from "../../utils/schema";
+
+const title = "Empleos de Programador en San Pedro Sula | Trabajo en Codebrand";
+const description =
+  "Trabajo de desarrollador en Honduras: producto real para clientes de EE.UU. y Europa, horario diurno y contrato formal con todas las prestaciones de ley. Envía tu CV.";
+const keywords =
+  "empleos de programador san pedro sula, trabajo desarrollador honduras, empleos de tecnologia honduras, vacantes desarrollador san pedro sula, trabajo de programador honduras, empleo react honduras, trabajo node js honduras, empleos qa honduras, trabajo diseñador ux ui honduras";
+
+const canonical = "https://www.codebrand.us/hn/carreras";
+
+// Canales de aplicación. El formato de la URL de WhatsApp es fijo en todo el
+// sitio: siempre la forma api.whatsapp.com/send/, nunca la forma corta.
+const waText =
+  "Hola Codebrand, me interesa trabajar con ustedes. Quisiera enviar mi CV.";
+const whatsappUrl = `https://api.whatsapp.com/send/?phone=50487380714&text=${encodeURIComponent(waText)}&type=phone_number&app_absent=0`;
+
+const mailSubject = "Aplicación — Codebrand";
+const mailBody =
+  "Hola Codebrand,\n\nPuesto al que aplico:\nEnlace a mi trabajo (GitHub / portafolio / sitio en línea):\nLo que quiero construir:\n\n(CV adjunto)\n";
+const mailUrl = `mailto:info@codebrand.es?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+const datos = [
+  { label: "Dónde estamos", value: "San Pedro Sula, Honduras" },
+  { label: "Horario de trabajo", value: "Hora central de EE.UU. (UTC−6)" },
+  { label: "Idiomas del trabajo", value: "Español e inglés" },
+];
+
+const trabajo = [
+  {
+    title: "Producto real, no una cola de tickets",
+    desc: "Trabajas sobre software del que depende el negocio de un cliente: plataformas web, sistemas internos, comercio electrónico, aplicaciones a la medida. Y te quedas en el mismo producto el tiempo suficiente para entender por qué está construido así, en lugar de atender una cola anónima que nunca termina.",
+  },
+  {
+    title: "Horario diurno, no turno de madrugada",
+    desc: "San Pedro Sula está en la hora central de Estados Unidos (UTC−6), la misma que la mayoría de nuestros clientes. Coincidir con su jornada significa que aquí también se trabaja de día: no hay rotaciones de turno nocturno como en buena parte del sector de call centers y BPO de la ciudad.",
+  },
+  {
+    title: "Inglés que se usa de verdad",
+    desc: "Vas a hablar con clientes, escribirles y revisar trabajo en inglés. Aquí no es una línea en una descripción de puesto: es el idioma de trabajo con la gente para la que construyes, lo que también significa que tu inglés mejora usándolo y no estudiándolo aparte.",
+  },
+  {
+    title: "Un stack que puedes revisar antes de aplicar",
+    desc: "React, Next.js, Astro, Node.js, Python, TypeScript, Tailwind, PostgreSQL. No tienes que creernos: es el mismo stack que aparece en todo este sitio, y esta página está hecha con él. Si quieres saber qué escribirías, lee nuestras páginas de servicios antes de escribirnos.",
+  },
+  {
+    title: "Empresa hondureña que exporta el trabajo",
+    desc: "Codebrand está en San Pedro Sula y vende a clientes de Estados Unidos y Europa. Ese es el modelo completo: la ingeniería se hace aquí y se factura afuera, que es justamente lo que hace posible trabajo serio desde Honduras.",
+  },
+];
+
+const roles = [
+  {
+    icon: "code",
+    title: "Desarrollador Frontend",
+    stack: "React · Next.js · Astro · TypeScript · Tailwind",
+    desc: "Interfaces para productos de clientes y sitios web. Lo que ves en este sitio es el tipo de trabajo.",
+  },
+  {
+    icon: "server",
+    title: "Desarrollador Backend",
+    stack: "Node.js · APIs · PostgreSQL",
+    desc: "APIs, modelos de datos e integraciones detrás de los sistemas con los que nuestros clientes operan.",
+  },
+  {
+    icon: "cpu",
+    title: "Desarrollador Python",
+    stack: "Python · automatización · integraciones",
+    desc: "Automatización, integración entre sistemas y todo el backend que no es una interfaz web.",
+  },
+  {
+    icon: "shield-check",
+    title: "QA",
+    stack: "Pruebas manuales y automatizadas",
+    desc: "Planes de prueba, regresión y revisión de releases sobre productos que llegan directo a los clientes de nuestros clientes.",
+  },
+  {
+    icon: "palette",
+    title: "Diseñador UX / UI",
+    stack: "Figma · sistemas de diseño · entrega a desarrollo",
+    desc: "Interfaces de producto y web: desde la estructura y los flujos hasta las pantallas finales que se construyen.",
+  },
+  {
+    icon: "compass",
+    title: "Project Manager",
+    stack: "Entregas · comunicación con el cliente",
+    desc: "Sprints, prioridades y comunicación directa con clientes en el extranjero, en inglés, por escrito y en llamadas.",
+  },
+];
+
+const prestaciones = [
+  "Afiliación al IHSS (seguro social)",
+  "Aportación al RAP",
+  "Décimo tercer mes (aguinaldo)",
+  "Décimo cuarto mes",
+  "Vacaciones remuneradas",
+  "Séptimo día y días feriados de ley",
+];
+
+const pasos = [
+  {
+    title: "Envía tu CV",
+    desc: "En PDF está bien. En español o en inglés, cualquiera de los dos: no lo traduzcas para nosotros si el inglés no es tu fuerte.",
+  },
+  {
+    title: "Comparte tu trabajo",
+    desc: "GitHub, un portafolio, un sitio en línea, un repositorio del que estés orgulloso. Para QA y project management, cuéntanos qué entregaste y cómo lo gestionaste en lugar de mandar código.",
+  },
+  {
+    title: "Dinos qué quieres construir",
+    desc: "Un párrafo. En qué te gustaría trabajar y en qué preferirías no trabajar. Filtra más rápido que una carta de presentación, para ti y para nosotros.",
+  },
+];
+
+const faqs = [
+  {
+    question: "¿Tienen vacantes abiertas en este momento?",
+    answer:
+      "No publicamos una lista de vacantes en esta página, así que no vamos a decirte que hay un puesto abierto cuando no lo podemos garantizar. Lo que sí podemos decirte es de qué perfiles está hecho nuestro trabajo: React, Next.js y Astro en el frontend, Node.js y Python en el backend, QA, diseño UX/UI y project management. Envía tu CV para alguno de esos y recibirás una respuesta directa sobre si hay algo abierto ahora o si te dejamos en consideración.",
+  },
+  {
+    question: "¿Cómo es el proceso de selección?",
+    answer:
+      "No hemos publicado las etapas en esta página, y preferimos no describir un proceso que después no coincida con lo que realmente vivas. Pide las etapas en el mismo mensaje con el que envías tu CV y te las damos por escrito antes de que inviertas tiempo en una prueba o una entrevista. Cualquier empresa debería poder decirte los pasos por adelantado, y tú tienes derecho a preguntarlo.",
+  },
+  {
+    question: "¿El trabajo es remoto, híbrido o presencial?",
+    answer:
+      "No hemos publicado una política de modalidad de trabajo y no vamos a insinuar una en una página desde la que podrías tomar una decisión. Pregúntalo directamente antes de avanzar. Esta es exactamente la clase de condición que cualquier empleador debe decirte por escrito, y que nunca deberías deducir de una página de empleos, incluida esta.",
+  },
+  {
+    question: "¿Qué nivel de inglés necesito?",
+    answer:
+      "El inglés es el idioma de trabajo con nuestros clientes de Estados Unidos: llamadas, actualizaciones escritas y revisiones. No pedimos ningún certificado. El nivel práctico es poder sostener una conversación de trabajo y escribir un mensaje que el cliente pueda entender y accionar. Si tu inglés todavía está mejorando, dilo con honestidad en tu aplicación, porque de todas formas se va a notar en la primera llamada.",
+  },
+  {
+    question: "¿Qué debo enviar en mi aplicación?",
+    answer:
+      "Un CV en PDF, en español o en inglés. Un enlace a trabajo que podamos ver de verdad: GitHub, un portafolio, un sitio en línea. Y un párrafo sobre lo que quieres construir. Para QA y project management, cuéntanos qué entregaste y cómo lo llevaste en lugar de enviar código. Con eso basta para una primera conversación.",
+  },
+  {
+    question: "¿Qué incluye el contrato de trabajo?",
+    answer:
+      "Un contrato formal en Honduras incluye afiliación al IHSS (seguro social), aportación al RAP, décimo tercer y décimo cuarto mes, vacaciones remuneradas, y séptimo día más los días feriados de ley. Son prestaciones de ley, no beneficios extra: lo decimos porque en el mercado tech hondureño es común la contratación informal o por honorarios sin ninguna de ellas. Cualquier cosa más allá de eso no está en esta página, y conviene que la preguntes en lugar de asumirla.",
+  },
+  {
+    question: "¿Dónde están ubicados y en qué horario trabaja el equipo?",
+    answer:
+      "En San Pedro Sula, Honduras. La ciudad está en la hora central de Estados Unidos (UTC−6), la misma que la mayoría de nuestros clientes, así que el trabajo coincide con la jornada laboral estadounidense y ocurre en horario diurno aquí, no en turno de madrugada.",
+  },
+  {
+    question: "¿Contratan desarrolladores junior?",
+    answer:
+      "Nuestro trabajo con clientes se entrega a nivel mid, senior y lead, que es la forma de casi todo lo que tomamos. Si en un momento dado estamos abriendo perfiles más junior no es algo que publiquemos aquí, así que pregúntalo en tu aplicación en lugar de adivinarlo desde una página. Si la respuesta es no en ese momento, te lo decimos claro.",
+  },
+];
+
+const faqSchema = createFAQSchema(faqs);
+---
+
+<HnLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride={canonical}
+  breadcrumbNames={{ hn: "Honduras", carreras: "Carreras" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-slate-950 pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pb-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Carreras</p>
+      <h1 class="text-hero mt-6 max-w-4xl text-white">
+        Empleos de programador en San Pedro Sula
+      </h1>
+      <p class="text-lead mt-8 max-w-2xl text-slate-400">
+        Codebrand es un equipo de software en San Pedro Sula que construye
+        productos para empresas de Estados Unidos y Europa. Esta página dice lo
+        que podemos afirmar con honestidad sobre trabajar aquí, y se detiene
+        justo donde se detiene nuestra certeza.
+      </p>
+
+      <div class="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[#f48200] px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:bg-[#d97400]"
+        >
+          <Icon name="message-circle" class="h-5 w-5" />
+          Escribir por WhatsApp
+        </a>
+        <a
+          href={mailUrl}
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-white/50"
+        >
+          <Icon name="mail" class="h-5 w-5" />
+          Enviar mi CV
+        </a>
+      </div>
+
+      <dl class="mt-16 grid gap-8 border-t border-white/10 pt-10 sm:grid-cols-3">
+        {datos.map((dato) => (
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{dato.label}</dt>
+            <dd class="mt-2 text-lg font-medium text-white tabular-nums">{dato.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <p class="mt-10 text-sm text-slate-400">
+        <span lang="en">
+          Do you prefer this page in English?{" "}
+          <a href="/careers" class="font-medium text-slate-300 underline underline-offset-4 transition-colors duration-300 hover:text-[#f48200]">Careers at Codebrand</a>
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Inicio", href: "/hn/" },
+      { name: "Carreras", href: "" },
+    ]}
+    variant="transparent"
+    class="border-b border-slate-200"
+  />
+
+  <!-- Cómo es el trabajo -->
+  <section class="bg-white py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Cómo es el trabajo</p>
+      <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900">
+        Producto real para clientes de afuera, en horario diurno
+      </h2>
+
+      <div class="mt-14 border-t border-slate-200">
+        {trabajo.map((item, i) => (
+          <article class="group grid gap-3 border-b border-slate-200 py-8 sm:grid-cols-[4.5rem_1fr] sm:gap-10 sm:py-10">
+            <span class="text-sm font-semibold tabular-nums tracking-[0.18em] text-slate-500 sm:pt-1.5">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h3 class="text-xl font-semibold text-slate-900 transition-transform duration-300 ease-out-quart group-hover:translate-x-1 sm:text-2xl">
+                {item.title}
+              </h3>
+              <p class="mt-3 max-w-2xl leading-relaxed text-slate-600">{item.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Perfiles que contratamos -->
+  <section class="bg-slate-50 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Perfiles que contratamos</p>
+      <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900">
+        De qué está hecho nuestro trabajo
+      </h2>
+      <p class="mt-6 max-w-2xl leading-relaxed text-slate-600">
+        No manejamos un tablero de vacantes en esta página y no vamos a
+        inventarlo. Estos son los perfiles con los que realmente se construye el
+        trabajo de nuestros clientes. Si el tuyo está en la lista, envía tu CV y
+        recibirás una respuesta directa sobre qué hay abierto.
+      </p>
+
+      <div class="mt-14 divide-y divide-slate-200 border-y border-slate-200">
+        {roles.map((role) => (
+          <article class="group flex gap-5 py-7 sm:gap-8 sm:py-8">
+            <Icon name={role.icon} class="mt-1 h-7 w-7 flex-shrink-0 text-slate-500 transition-colors duration-300 group-hover:text-[#f48200]" />
+            <div>
+              <h3 class="text-xl font-semibold text-slate-900">{role.title}</h3>
+              <p class="mt-1.5 text-sm font-medium tracking-wide text-slate-500">{role.stack}</p>
+              <p class="mt-3 max-w-2xl leading-relaxed text-slate-600">{role.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Condiciones de contratación -->
+  <section class="bg-slate-950 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Condiciones de contratación</p>
+          <h2 class="text-display-2 mt-5 text-white">
+            Contrato formal, con todas las prestaciones de ley
+          </h2>
+          <p class="mt-8 leading-relaxed text-slate-400">
+            En el mercado tech hondureño buena parte de la contratación es
+            informal, o va por honorarios sin ninguna prestación. Nosotros
+            contratamos con contrato formal. Eso es cumplimiento de la ley, no
+            generosidad, pero vale decirlo con claridad: es la diferencia entre
+            estar afiliado al seguro social y no estarlo.
+          </p>
+          <p class="mt-6 border-l-2 border-[#f48200] pl-6 leading-relaxed text-slate-300">
+            Si un beneficio no aparece en esta página, no asumas que existe.
+            Preferimos publicar una página más corta que dejar que aceptes una
+            oferta por algo que insinuamos. Pregúntanoslo directo y te
+            respondemos por escrito.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+            Prestaciones de ley en Honduras
+          </h3>
+          <ul class="mt-8 divide-y divide-white/10 border-y border-white/10">
+            {prestaciones.map((item) => (
+              <li class="flex items-center gap-4 py-4">
+                <Icon name="check" class="h-5 w-5 flex-shrink-0 text-[#f48200]" />
+                <span class="text-lg text-white">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-8 text-sm leading-relaxed text-slate-400">
+            Todo lo de arriba es una prestación de ley para cualquier empleado
+            con contrato formal en Honduras. Lo listamos porque la contratación
+            informal es común en este mercado, no porque sean extras.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo aplicar -->
+  <section class="bg-white py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Cómo aplicar</p>
+      <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900">Tres cosas, un solo mensaje</h2>
+
+      <div class="mt-14 border-t border-slate-200">
+        {pasos.map((paso, i) => (
+          <div class="grid gap-3 border-b border-slate-200 py-8 sm:grid-cols-[4.5rem_1fr] sm:gap-10">
+            <span class="text-sm font-semibold tabular-nums tracking-[0.18em] text-slate-500 sm:pt-1.5">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h3 class="text-xl font-semibold text-slate-900">{paso.title}</h3>
+              <p class="mt-3 max-w-2xl leading-relaxed text-slate-600">{paso.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:bg-slate-800"
+        >
+          <Icon name="message-circle" class="h-5 w-5" />
+          WhatsApp
+        </a>
+        <a
+          href={mailUrl}
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-8 py-4 font-semibold text-slate-900 transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-slate-900"
+        >
+          <Icon name="mail" class="h-5 w-5" />
+          info@codebrand.es
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section class="bg-slate-50 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Lo que preguntan los candidatos</p>
+      <h2 class="text-display-2 mt-5 mb-12 text-slate-900">Antes de escribirnos</h2>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="bg-slate-950 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-display-2 max-w-2xl text-white">Envíanos tu CV</h2>
+      <p class="text-lead mt-6 max-w-2xl text-slate-400">
+        Las aplicaciones llegan a info@codebrand.es. Si prefieres preguntar algo
+        antes de enviar nada, WhatsApp también sirve: preferimos responder una
+        pregunta a que te quedes adivinando.
+      </p>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[#f48200] px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:bg-[#d97400]"
+        >
+          <Icon name="message-circle" class="h-5 w-5" />
+          Escribir por WhatsApp
+        </a>
+        <a
+          href={mailUrl}
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-white/50"
+        >
+          <Icon name="mail" class="h-5 w-5" />
+          Enviar mi CV
+        </a>
+      </div>
+      <p class="mt-12 text-sm text-slate-400">
+        <span lang="en">
+          This page also exists in English:{" "}
+          <a href="/careers" class="font-medium text-slate-300 underline underline-offset-4 transition-colors duration-300 hover:text-[#f48200]">Software development jobs in Honduras</a>
+        </span>
+      </p>
+    </div>
+  </section>
+</HnLayout>

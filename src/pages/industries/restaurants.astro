@@ -6,6 +6,7 @@ import IndustryHero from "../../components/IndustryHero.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
 import IndustryChallenges from "../../components/IndustryChallenges.astro";
@@ -74,7 +75,19 @@ const restaurantFaqs = [
   {
     question: "Do you offer table reservation systems?",
     answer: "Yes. We build custom reservation systems or integrate with OpenTable, Resy, and other platforms. Features include table management, waitlist handling, automated confirmations, and no-show tracking."
-  }
+  },
+  {
+    question: "How much does custom restaurant software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Restaurant groups usually start with the single system where the off-the-shelf tool costs them the most, commonly ordering commissions or inventory variance, and expand from there. Hourly billing keeps the scope honest: you fund one module, put it in service, and decide on the next one with real numbers from your own operation."
+  },
+  {
+    question: "Can custom software work with the POS and delivery apps we already run?",
+    answer: "Yes. Very few operators need to replace everything at once, so we usually build around what is already installed. We integrate with POS platforms and delivery marketplaces through their official APIs to sync menus, push orders, and pull sales data, then build the missing piece on top, whether that is inventory, dispatch, loyalty, or a group-level reporting layer across locations."
+  },
+  {
+    question: "Who owns the software, and what happens when we open more locations?",
+    answer: "You own the code, the data, and the repositories from day one, which matters most when you scale: adding a location is a configuration change in your own system, not a new per-terminal license negotiation. Because we build multi-location structure in from the start, menus, pricing, and reporting can be managed per site or centrally, and you are never charged again for software you already paid to build."
+  },
 ];
 
 const faqSchema = createFAQSchema(restaurantFaqs);
@@ -85,7 +98,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "Online", label: "Ordering" },
   { value: "0%", label: "Commission Fees" },
   { value: "100%", label: "Custom-Built" }
@@ -100,8 +113,8 @@ const introParagraphs = [
 
 const introHighlights = [
   {
-    value: "5.0★",
-    label: "Google Reviews",
+    value: "5.0",
+    label: "50 Google reviews",
     gradient: "from-teal-500 to-teal-600",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
@@ -235,6 +248,49 @@ const whyChooseReasons = [
     description: "Restaurant-specific support team that understands your business. Fast response times during peak hours when you need help most."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "Point of Sale (POS)",
+    description: "The terminal your staff touch a thousand times a night, built for how your service actually flows: counter, table, bar tabs, or all three at once.",
+    capabilities: ["Table, tab, and counter service modes", "Modifiers, combos, and course firing", "Split checks, tips, and shift reporting", "Offline mode that syncs when the network returns"],
+    icon: "credit-card"
+  },
+  {
+    name: "Kitchen Display System (KDS)",
+    description: "Tickets routed to the right station in the right order, with timers that make it obvious which table is falling behind before the guest notices.",
+    capabilities: ["Station routing and course pacing", "Ticket timers and bump-bar workflow", "All-day counts by item", "Expo and runner screens"],
+    icon: "monitor"
+  },
+  {
+    name: "Inventory & Recipe Costing",
+    description: "Plate cost tied to live supplier pricing, and depletion tied to what actually rang through the POS, so you see the variance instead of guessing at it.",
+    capabilities: ["Recipe and sub-recipe costing", "Theoretical vs actual usage variance", "Par levels and purchase order generation", "Supplier price change tracking"],
+    icon: "package"
+  },
+  {
+    name: "Online Ordering & Direct Delivery",
+    description: "Your own ordering channel, where the guest data and the margin stay with you instead of with a marketplace.",
+    capabilities: ["Menu, modifier, and availability sync with the POS", "Scheduled and future orders", "Order throttling during peak service", "Curbside, pickup, and dine-in ordering"],
+    icon: "shopping-cart"
+  },
+  {
+    name: "Delivery Dispatch & Driver Tracking",
+    description: "Assign, batch, and follow your own drivers, with the guest seeing a real arrival window rather than a fixed promise nobody can keep.",
+    capabilities: ["Driver assignment and route batching", "Live driver location and guest tracking link", "Delivery zone and fee rules", "Proof of delivery and exception handling"],
+    icon: "truck"
+  },
+  {
+    name: "Loyalty & Guest CRM",
+    description: "One guest profile across dine-in, pickup, and delivery, so a regular is recognized no matter which channel they came through.",
+    capabilities: ["Points, visits, and tiered rewards", "Order history across all channels", "Targeted offers and win-back campaigns", "Gift cards and stored value"],
+    icon: "heart"
+  },
+];
+
+const softwareIndustry = "restaurants";
+const softwareLead = "A menu page does not run service. The POS, the kitchen screen, and the inventory count do. These are the operational systems we build, extend, and connect for restaurant groups and multi-location operators.";
 ---
 
 <Layout
@@ -284,6 +340,12 @@ const whyChooseReasons = [
     subtitle="Everything you need to take your restaurant digital and increase revenue"
     services={services}
     accentGradient="from-orange-500 to-orange-500"
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

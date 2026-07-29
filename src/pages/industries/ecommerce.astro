@@ -9,6 +9,7 @@ import IndustryHero from "../../components/IndustryHero.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -74,7 +75,19 @@ const ecommerceFaqs = [
   {
     question: "Can you help increase my store's conversion rate?",
     answer: "Yes. We build stores optimized for conversions from day one, including streamlined checkout, trust badges, and mobile optimization. We also offer conversion rate optimization (CRO) services with A/B testing and analytics to continuously improve your sales."
-  }
+  },
+  {
+    question: "How much does custom e-commerce software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Back-office work is usually phased, so most merchants fund the integration or module causing the most manual work first, measure what it saves, and then decide on the next one. Hourly billing with transparent time reporting means the scope can shift as you learn, without renegotiating a fixed contract every time priorities change."
+  },
+  {
+    question: "We already use Shopify or WooCommerce. Do we have to replace it?",
+    answer: "No, and you usually should not. The storefront platform is rarely the problem once a store is growing. The gap is normally between the storefront and the ERP, the warehouse, or the wholesale side of the business. We build that layer, whether it is an integration service, an order management system, a B2B portal, or a quoting tool, and connect it through official APIs and webhooks so your existing platform keeps doing what it already does well."
+  },
+  {
+    question: "Who owns the integrations and custom modules you build?",
+    answer: "You own all of it: source code, repositories, integration logic, and documentation, hosted in your own infrastructure. That matters most for integrations, because the mapping between your storefront, ERP, and marketplaces is genuinely valuable business logic. If you ever change agencies or bring development in-house, the work transfers with the repository and there is no per-connector licence to keep paying."
+  },
 ];
 
 // Generate FAQ schema
@@ -89,7 +102,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 
 // Stats for hero
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "Stripe +", label: "PayPal Checkout" },
   { value: "Mobile", label: "Conversion-Optimized" },
   { value: "100%", label: "Custom-Built" }
@@ -98,8 +111,8 @@ const stats = [
 // Intro highlights
 const introHighlights = [
   {
-    value: "5.0★",
-    label: "Google Reviews",
+    value: "5.0",
+    label: "50 Google reviews",
     gradient: "from-teal-500 to-teal-500",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
@@ -233,6 +246,49 @@ const challenges = [
     solution: "Multiple payment gateways, digital wallets (Apple Pay, Google Pay), buy now pay later, and international support."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "ERP & Accounting Integration",
+    description: "A dependable bridge between the storefront and the system of record, so orders, invoices, and stock movements post themselves instead of being exported by hand.",
+    capabilities: ["Order, invoice, and credit-note sync", "Product and price list mapping", "Customer and tax code alignment", "Failed-sync alerting and safe replay"],
+    icon: "plug"
+  },
+  {
+    name: "Multichannel Inventory & Order Management",
+    description: "One stock figure across every channel and warehouse, with allocation rules that decide where an order should actually ship from.",
+    capabilities: ["Real-time stock across channels and locations", "Allocation, backorder, and safety-stock rules", "Purchase orders and inbound receiving", "Kits, bundles, and serialized items"],
+    icon: "package"
+  },
+  {
+    name: "B2B Pricing & Customer Portal",
+    description: "Contract pricing, credit terms, and reordering for wholesale accounts, in a portal built for a buyer placing their fortieth order, not a first-time shopper.",
+    capabilities: ["Account-specific price lists and tiers", "Credit limits and net payment terms", "Fast reorder from order history", "Multi-user accounts with approval rules"],
+    icon: "dollar-sign"
+  },
+  {
+    name: "Quote & RFQ System",
+    description: "Structured quoting for orders too large or too configurable to check out normally, with the approved quote turning straight into an order.",
+    capabilities: ["Quote request capture and routing", "Margin guardrails and approval thresholds", "Quote versioning and expiry", "One-click conversion to a live order"],
+    icon: "file-text"
+  },
+  {
+    name: "Marketplace Listing Sync",
+    description: "Listings, pricing, and stock kept in step across the marketplaces you sell on, with orders landing back in the same queue as your own.",
+    capabilities: ["Listing creation and attribute mapping", "Price and stock push per channel", "Marketplace order ingestion", "Per-channel margin and fee reporting"],
+    icon: "globe"
+  },
+  {
+    name: "Fulfillment, Shipping & Returns (RMA)",
+    description: "Pick, pack, and label without retyping addresses, and a returns flow that gives the customer a label while giving you the reason data.",
+    capabilities: ["Pick lists, packing, and label generation", "Carrier rate shopping and tracking updates", "Customer-initiated RMA with reason codes", "Restock, refund, and exchange workflows"],
+    icon: "truck"
+  },
+];
+
+const softwareIndustry = "e-commerce operations";
+const softwareLead = "Once a store passes a certain volume, the bottleneck stops being the storefront and becomes everything behind it: stock, pricing, quotes, and returns. These are the back-office systems we build, extend, and connect.";
 ---
 
 <Layout
@@ -285,6 +341,12 @@ const challenges = [
     subtitle="Comprehensive solutions designed to help you sell more, serve better, and scale faster"
     services={services}
     accentGradient="from-teal-500 to-teal-500"
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

@@ -1,6 +1,6 @@
 ---
 title: Laboratory Equipment B2B Platform
-description: Custom WooCommerce platform with 7,900+ products, CRM integration, and quote system built from scratch for a laboratory equipment distributor.
+description: Custom WooCommerce B2B platform for a laboratory equipment distributor - 7,900+ products across 6 categories, quote-only checkout and a custom CRM plugin.
 author: Codebrand Team
 img: /photos/projects/Laboratory.avif
 category: Web Development
@@ -14,49 +14,81 @@ tags:
 client: Laboratory & Tech
 date: 2024-08-15
 featured: true
-link: https://laboratory.codebrand.es/
+# TODO(link): https://laboratory.codebrand.es/ ya no resuelve (NXDOMAIN, verificado 2026-07-24).
+#   Pedirle al cliente la URL de producción actual y restaurar el campo `link:` aquí.
+#   Mientras tanto queda comentado para no publicar un CTA "View Live Project" roto.
 results:
   metric1: 7,900+ products uploaded
-  metric2: Custom CRM plugin built
-  metric3: Full API integration
+  metric2: 6 product categories
+  metric3: 1 custom CRM plugin, built from scratch
+resultsLabel: Scope delivered
+resultsNote: >-
+  These figures describe the platform we built in 2024, not outcomes we
+  measured. The URL we had on file no longer resolves (checked 24 July 2026),
+  so the scope above comes from our delivery record rather than from a live page.
+# TODO(URL viva) — pedir la URL de producción actual de Laboratory & Tech. Sin ella este caso
+#   no tiene prueba pública y el stack de abajo tampoco se puede verificar desde fuera.
+# TODO(métricas de negocio) — pedirle a Laboratory & Tech para cerrar el caso:
+#   1) quote requests recibidos por mes a través de la plataforma, y desde qué fecha
+#   2) tiempo promedio de respuesta a una cotización antes vs. después de la sincronización con el CRM
+#   3) horas/semana que el equipo dedicaba a copiar datos al CRM manualmente antes del plugin
+#   4) número de SKUs vivos hoy (para actualizar el 7,900+) y número de países facturados
+#   5) confirmar el nombre del CRM con el que integró el plugin (hoy se publica sin nombrarlo)
+#   Sin esos números NO se publica ningún % de aumento de ventas o de leads.
+draft: false
 ---
 
-## The Problem
+## Context
 
-Laboratory & Tech is a laboratory and industrial equipment distributor serving Latin America and the US. They needed more than a standard e-commerce site—they needed a B2B platform where clients could request quotes instead of buying directly.
+Laboratory & Tech distributes laboratory and industrial equipment from its Florida base to clients across Latin America and the United States. Their catalogue runs into the thousands of SKUs, from consumables to instruments.
 
-Their challenge: they had thousands of products, an existing CRM they couldn't replace, and needed a way to manage quotes, extract data, and sync everything automatically. Off-the-shelf solutions couldn't handle this complexity.
+In their market almost nothing sells at a listed price. A buyer specifies, asks for a quote, and the quote gets negotiated — often against a purchase order, a tender, or an institutional budget. The sale is a conversation, not a checkout.
 
-## The Solution
+## The challenge
 
-We built a custom WooCommerce platform from the ground up, transforming it from a traditional store into a B2B quotation system.
+Standard e-commerce assumes a cart and a card. B2B laboratory equipment assumes neither, and that mismatch was the whole problem.
 
-**What we built:**
+Three business constraints made the off-the-shelf route impossible:
 
-- Custom WooCommerce setup converted into a quote request system (no checkout)
-- Custom WordPress plugin built from scratch to integrate with their existing CRM
-- Webhooks to extract and sync data automatically between platforms
-- Custom API for seamless communication between systems
-- Complete UX/UI design for complex B2B navigation
-- Full product architecture and categorization system
+- **The catalogue had to be browsable, not just searchable.** Thousands of products are useless if a buyer cannot narrow down to the right family of equipment in a few clicks.
+- **The CRM was not up for replacement.** Their sales process already lived there. Any platform we built had to bend around it, not the other way round.
+- **Every enquiry was being re-typed by hand.** A quote request arriving by web form and then copied into the CRM is a delay, and a delay in a quote is a lost deal.
 
-**What we managed:**
+## How we worked
 
-- Uploaded and organized **7,900+ products** across 6 categories
-- Multilingual support for international markets
-- Mobile-optimized experience for a catalog-heavy site
-- Performance optimization for fast loading despite massive inventory
+**1. Catalogue architecture first.** Before touching code we defined the product taxonomy: six top-level categories and the attribute structure underneath them, so the catalogue could grow without a rebuild.
 
-**Tech stack:** WooCommerce, WordPress, Custom PHP Plugin, REST API, Webhooks, CRM Integration
+**2. WooCommerce, stripped of its checkout.** We kept WooCommerce for its product model and admin, and replaced the buy flow with a quote request flow. No cart, no payment, no prices forced into public view.
 
-## The Result
+**3. A custom plugin built from scratch.** Their CRM had no ready-made WooCommerce connector, so we wrote one in PHP — mapping products, contacts and quote requests between both systems.
 
-Laboratory & Tech now has a fully operational B2B platform that:
+**4. Automated sync via webhooks and REST API.** A quote request submitted on the site lands in the CRM without anyone re-typing it. That removed the manual step that was costing response time.
 
-- Handles 7,900+ products with fast search and navigation
-- Automatically syncs quote requests with their CRM
-- Eliminates manual data entry through webhook automation
-- Serves clients across Latin America and the US from their Florida base
-- Scales as they add more products and expand to new markets
+**5. Data load and localisation.** We uploaded and organised 7,900+ products across the six categories, with multilingual content for the international markets they serve.
 
-This project required full-stack thinking: from UX research to API architecture to ongoing data management. It's the kind of platform that grows with the business.
+**6. Performance tuning.** Search, filtering and navigation were optimised for a catalogue of that size, and the whole experience was built to work on mobile for buyers browsing away from a desk.
+
+## What we built
+
+- **7,900+ products** loaded, categorised and searchable on the platform.
+- **6 product categories** structured with an attribute model that absorbs new SKUs without restructuring.
+- **Quote requests sync into the existing CRM** through the custom plugin, webhooks and REST API — no manual data entry between systems.
+- **Zero checkout, by design**: the platform captures specifications and routes them to a salesperson, matching how the business actually closes.
+- **Multilingual catalogue** serving Latin America and the United States from one installation.
+
+This is scope, not outcome. Laboratory & Tech has not shared quote volume, response time or sales figures with us, so none are published here.
+
+## Tech stack
+
+WooCommerce, WordPress, custom PHP plugin, REST API, webhooks, CRM integration, multilingual setup.
+
+## What we delivered
+
+- WooCommerce installation converted into a B2B quote request system
+- Custom WordPress plugin, written from scratch, connecting the store to their existing CRM
+- Webhook and REST API layer for automatic two-way data sync
+- Full product taxonomy across 6 categories, plus attribute structure
+- 7,900+ products uploaded, categorised and localised
+- UX/UI design for complex B2B catalogue navigation
+- Multilingual configuration for international markets
+- Performance optimisation for a catalogue-heavy, mobile-accessed site

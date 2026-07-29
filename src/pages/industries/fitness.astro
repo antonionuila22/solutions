@@ -9,6 +9,7 @@ import RelatedServices from "../../components/RelatedServices.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -74,7 +75,19 @@ const fitnessFaqs = [
   {
     question: "Do you build fitness apps?",
     answer: "Yes. We develop custom fitness apps for iOS and Android including workout tracking, video workouts, nutrition logging, and coach communication. Perfect for gyms, personal trainers, and fitness influencers."
-  }
+  },
+  {
+    question: "How much does custom fitness software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Studios usually start with whichever system costs them the most in per-member fees or manual admin, commonly billing or class booking, and expand from there. Hourly billing with transparent time reporting means you fund one module at a time and size the next one using what the first one actually taught you about your operation."
+  },
+  {
+    question: "We already pay for Mindbody or a similar platform. Is building worth it?",
+    answer: "It depends on your size and how much the platform charges per member or per transaction. Below a certain scale, an off-the-shelf platform is the right answer and we will say so. Above it, per-member pricing starts to punish growth, and owning your billing, booking, and member data becomes worth the build. We can also integrate first, extending your current platform through its API, and only replace pieces where the economics or the workflow genuinely justify it."
+  },
+  {
+    question: "Who owns the member data and the software you build?",
+    answer: "You do, and for gyms this is the whole point. The code, the database, and the member records live in your infrastructure and belong to you, so growing from one location to five is a deployment decision rather than a five-fold increase in per-member fees. You are also free to export, migrate, or extend anything at any time, and the work transfers with the repository if you change development partners."
+  },
 ];
 
 const faqSchema = createFAQSchema(fitnessFaqs);
@@ -86,7 +99,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 
 // Stats for hero — honest, capability-based (no fabricated client counts/outcomes)
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "24/7", label: "Online Booking" },
   { value: "iOS + Android", label: "Member Apps" },
   { value: "100%", label: "Custom-Built" }
@@ -95,8 +108,8 @@ const stats = [
 // Intro highlights — verifiable agency facts + real integration capability
 const introHighlights = [
   {
-    value: "5.0★",
-    label: "Google Reviews",
+    value: "5.0",
+    label: "50 Google reviews",
     gradient: "from-teal-500 to-teal-600",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
@@ -230,6 +243,49 @@ const challenges = [
     solution: "Gamification, progress tracking, achievement badges, leaderboards, challenges, and social features that make fitness fun and create accountability."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "Membership Management & Recurring Billing",
+    description: "Plans, contracts, freezes, and failed payments handled as first-class cases rather than manual exceptions someone works through each month.",
+    capabilities: ["Plan, contract, and commitment term rules", "Recurring billing with dunning and retries", "Freezes, upgrades, downgrades, and proration", "Family, corporate, and multi-site memberships"],
+    icon: "credit-card"
+  },
+  {
+    name: "Class Scheduling & Booking",
+    description: "Capacity-aware booking across instructors and rooms, with waitlists and late-cancel rules that protect the schedule instead of relying on goodwill.",
+    capabilities: ["Instructor, room, and equipment capacity", "Waitlist with automatic promotion", "Late cancel and no-show policies", "Class packs, credits, and drop-in payment"],
+    icon: "calendar"
+  },
+  {
+    name: "Access Control & Check-In",
+    description: "Entry tied to membership status in real time, so an expired or frozen account cannot walk through the door unnoticed.",
+    capabilities: ["QR, fob, and mobile credential check-in", "Real-time entitlement validation at the door", "24/7 access windows and door scheduling", "Visit history and occupancy reporting"],
+    icon: "key"
+  },
+  {
+    name: "Member Progress & Workout Tracking",
+    description: "Programs, logged sessions, and measurements in one member record, so progress is visible to both the member and the coach who wrote the plan.",
+    capabilities: ["Program and workout template builder", "Session logging with loads and reps", "Body measurement and assessment history", "Goal tracking with coach commentary"],
+    icon: "trending-up"
+  },
+  {
+    name: "Coach & Trainer App",
+    description: "The tool the coach actually uses on the floor: today's clients, their programs, and a way to adjust a plan without going back to a desk.",
+    capabilities: ["Daily client roster and session notes", "Program assignment and in-session edits", "Client messaging and check-ins", "Coach payroll and session count reporting"],
+    icon: "smartphone"
+  },
+  {
+    name: "Retention & Churn Analytics",
+    description: "Visit frequency, plan tenure, and payment failures turned into an at-risk list your team can act on while the member is still a member.",
+    capabilities: ["Attendance drop-off and at-risk flags", "Cohort retention by plan and join month", "Automated win-back and check-in campaigns", "Cancellation reason capture and reporting"],
+    icon: "users"
+  },
+];
+
+const softwareIndustry = "gyms and fitness studios";
+const softwareLead = "Sign-ups are the easy part. Billing that does not fail, classes that fill, and members who stay are what the business runs on. These are the operational systems we build, extend, and connect for gyms, studios, and coaching businesses.";
 ---
 
 <Layout
@@ -283,6 +339,12 @@ const challenges = [
     subtitle="Comprehensive fitness technology solutions designed to grow memberships and increase retention"
     services={services}
     accentGradient="from-teal-500 to-teal-500"
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

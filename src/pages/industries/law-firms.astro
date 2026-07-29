@@ -10,6 +10,7 @@ import IndustryHero from "../../components/IndustryHero.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -75,7 +76,19 @@ const lawFirmFaqs = [
   {
     question: "Can clients schedule consultations online?",
     answer: "Yes. We build online booking systems where potential clients can see your availability and book consultations. Features include conflict checking, automatic reminders, and calendar sync with your practice management software."
-  }
+  },
+  {
+    question: "How much does custom legal software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Firms usually start with the single system causing the most partner pain, most often docketing or time capture, and expand once it is in daily use. Hourly billing means you see exactly what each module costs, and you can pause, resize, or reprioritize the roadmap between phases without renegotiating a fixed-scope contract."
+  },
+  {
+    question: "Can you build around the practice management software we already use?",
+    answer: "Yes, and that is usually the right call. If Clio, MyCase, PracticePanther, or NetDocuments already holds your matters and documents, we build the missing layer on top rather than replacing what works. That might be an automated document assembly workflow, a client portal, a conflicts index across legacy files, or reporting your current tool cannot produce. We integrate through official APIs and keep your existing system as the record of truth."
+  },
+  {
+    question: "Who owns the software and how do you handle confidentiality?",
+    answer: "You own 100% of the code, repositories, and documentation from the first commit, and everything is built in your own infrastructure so there is nothing to migrate away from later. We sign your NDA and engagement terms before detailed discussions, work under least-privilege access to any system holding client data, and prefer to develop against anonymized or synthetic records rather than live client files."
+  },
 ];
 
 const faqSchema = createFAQSchema(lawFirmFaqs);
@@ -86,7 +99,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "Secure", label: "Client Intake" },
   { value: "Confidential", label: "Case Portals" },
   { value: "100%", label: "Custom-Built" }
@@ -96,8 +109,8 @@ const accentGradient = "from-blue-500 to-blue-500";
 
 const introHighlights = [
   {
-    value: "5.0★",
-    label: "Google Reviews",
+    value: "5.0",
+    label: "50 Google reviews",
     gradient: "from-teal-500 to-teal-600",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
@@ -271,6 +284,49 @@ const challenges = [
     solution: "Legal CRM with automatic lead capture, instant notifications, follow-up reminders, and intake management to convert more consultations into paying clients."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "Case & Matter Management System",
+    description: "One file per matter that actually holds everything: parties, pleadings, correspondence, tasks, and the running chronology your team keeps rebuilding by hand.",
+    capabilities: ["Matter intake and file opening workflow", "Party, contact, and related-matter linking", "Task assignment with responsible attorney", "Practice-area specific matter templates"],
+    icon: "folder"
+  },
+  {
+    name: "Document Assembly & Automation",
+    description: "Engagement letters, pleadings, contracts, and closing sets generated from clause libraries and matter data, so nobody drafts from last month's file again.",
+    capabilities: ["Clause and template libraries", "Matter data merged into documents", "Version history and redline comparison", "Approval routing before release"],
+    icon: "file-text"
+  },
+  {
+    name: "Secure Client Portal",
+    description: "A place to share documents, status, and invoices with clients that is not an email attachment, with access scoped to the matter.",
+    capabilities: ["Per-matter document sharing", "Client messaging with an audit record", "Status and next-step visibility", "Invoice viewing and online payment"],
+    icon: "lock"
+  },
+  {
+    name: "Time, Billing & Trust Accounting",
+    description: "Capture time where the work happens, then get from time entries to a compliant invoice without a week of pre-bill cleanup.",
+    capabilities: ["Timers, mobile entry, and passive capture", "UTBMS/LEDES task and activity codes", "Pre-bill review and write-down workflow", "IOLTA trust ledgers with three-way reconciliation"],
+    icon: "clock"
+  },
+  {
+    name: "Conflict of Interest Checking",
+    description: "A searchable index of every party, adverse party, and related entity your firm has ever touched, checked before you open the matter rather than after.",
+    capabilities: ["Name and entity fuzzy matching", "Adverse and related-party graphs", "Documented clearance and waiver records", "Ethical wall enforcement on matter access"],
+    icon: "search"
+  },
+  {
+    name: "Docketing & Deadline Calendaring",
+    description: "Court rules turned into calculated dates, with cascading deadlines that recompute when a trigger date moves instead of quietly going stale.",
+    capabilities: ["Rules-based date calculation", "Cascading and dependent deadlines", "Tiered reminders and escalation", "Court, attorney, and staff calendar sync"],
+    icon: "calendar"
+  },
+];
+
+const softwareIndustry = "law firms";
+const softwareLead = "Most of a firm's real friction is not the website. It is the matter file, the billable hour, and the deadline nobody wants to miss. These are the practice systems we build, extend, and connect.";
 ---
 
 <Layout
@@ -320,6 +376,12 @@ const challenges = [
     subtitle="Legal technology solutions built for the unique demands of modern law practices"
     services={services}
     accentGradient={accentGradient}
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

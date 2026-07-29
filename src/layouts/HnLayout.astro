@@ -14,6 +14,7 @@ import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
 let {
   title,
   description,
+  keywords,
   image,
   article,
   noindex,
@@ -61,6 +62,7 @@ const enMap: Record<string, string> = {
   "/hn/seo-honduras": "/services/seo",
   "/hn/equipo-de-desarrollo-dedicado-honduras": "/dedicated-development-team",
   "/hn/desarrollo-de-software-honduras": "/custom-software-development",
+  "/hn/carreras": "/careers",
 };
 const currentPath = Astro.url?.pathname?.replace(/\/$/, "") || "";
 const normalizedPath = currentPath === "/hn" ? "/hn/" : currentPath;
@@ -104,6 +106,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
     <meta name="author" content="Codebrand Honduras" />
     <meta name="publisher" content="Codebrand" />
 

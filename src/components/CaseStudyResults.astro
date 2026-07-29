@@ -1,0 +1,104 @@
+---
+/**
+ * CaseStudyResults — the hard-numbers block that closes a case study.
+ *
+ * Reads the `results` object from the projects collection (metric1/2/3) and
+ * renders each entry as a large figure + caption. A metric string that starts
+ * with a number ("7,900+ products uploaded", "0 → 50 daily visitors",
+ * "27 años de experiencia") is split into figure and caption automatically.
+ * A metric with no leading number falls back to a single statement line, so a
+ * qualitative deliverable never renders as a broken figure.
+ *
+ * Usage:
+ *   <CaseStudyResults results={project.data.results} class="mt-8" />
+ */
+interface Props {
+  results?: {
+    metric1?: string;
+    metric2?: string;
+    metric3?: string;
+  };
+  /**
+   * Overline text. Small-caps, no pill, no background.
+   * Defaults to "Results", which is only honest when the figures are outcomes
+   * we produced. Client credentials or scope must pass their own label
+   * ("Datos publicados del cliente", "Scope delivered", …), in the language of
+   * the case study. Fed from `resultsLabel` in the projects collection.
+   */
+  label?: string;
+  /**
+   * Provenance note rendered under the figures: who measured them, when, and
+   * what they are not. Fed from `resultsNote` in the projects collection.
+   */
+  note?: string;
+  class?: string;
+}
+
+const { results, label = "Results", note, class: className = "" } = Astro.props;
+
+const raw = [results?.metric1, results?.metric2, results?.metric3]
+  .map((value) => (typeof value === "string" ? value.trim() : ""))
+  .filter((value) => value.length > 0);
+
+// Leading figure: optional sign, digits with , or . separators, optional %,
+// optionally a range ("0 → 50", "10 a 20"), optional trailing +.
+const FIGURE = /^([+~≈<>]?\d[\d.,]*\s*%?(?:\s*(?:→|->|–|—|to|a)\s*[+~]?\d[\d.,]*\s*%?)?\+?)\s*(.*)$/;
+
+const metrics = raw.map((text) => {
+  const match = text.match(FIGURE);
+  if (!match) return { figure: null, caption: text };
+  const figure = match[1].replace(/\s+/g, " ").replace(/[.,]+$/, "").trim();
+  const caption = (match[2] || "").trim();
+  if (!caption) return { figure: null, caption: text };
+  return { figure, caption };
+});
+
+const columns =
+  metrics.length === 1 ? "sm:grid-cols-1" : metrics.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3";
+
+// A "Results" heading over three qualitative statements is exactly the kind of
+// soft proof this block exists to replace. Render only when at least one entry
+// carries a real figure; otherwise show nothing.
+const hasFigure = metrics.some((metric) => metric.figure !== null);
+---
+
+{
+  hasFigure && (
+    <section
+      class={`rounded-2xl border border-slate-200 bg-white p-6 md:p-10 ${className}`}
+      aria-label={label}
+    >
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        {label}
+      </p>
+
+      <div class={`mt-8 grid gap-8 ${columns} sm:gap-10`}>
+        {metrics.map((metric) => (
+          <div>
+            <span class="block h-px w-8 bg-orange-500" aria-hidden="true" />
+            {metric.figure ? (
+              <>
+                <p class="mt-5 text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 tabular-nums">
+                  {metric.figure}
+                </p>
+                <p class="mt-2 text-sm leading-snug text-slate-500">
+                  {metric.caption}
+                </p>
+              </>
+            ) : (
+              <p class="mt-5 text-xl md:text-2xl font-semibold leading-snug tracking-tight text-slate-900">
+                {metric.caption}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {note && (
+        <p class="mt-10 border-t border-slate-200 pt-5 text-xs leading-relaxed text-slate-500">
+          {note}
+        </p>
+      )}
+    </section>
+  )
+}

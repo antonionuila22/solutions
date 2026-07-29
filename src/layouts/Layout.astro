@@ -22,7 +22,13 @@ let {
   breadcrumbNames,
   canonicalOverride,
   keywords,
+  lang,
 } = Astro.props;
+
+// Document language. Defaults to en-US; pages whose body is in Spanish (e.g. a
+// case study about a Spanish-market client) must pass lang="es" so the language
+// signal matches the content Google actually reads.
+const documentLang = lang || "en-US";
 
 // Valores por defecto mejorados
 title =
@@ -93,6 +99,7 @@ const hnMap: Record<string, string> = {
   "/services/seo": "/hn/seo-honduras",
   "/dedicated-development-team": "/hn/equipo-de-desarrollo-dedicado-honduras",
   "/custom-software-development": "/hn/desarrollo-de-software-honduras",
+  "/careers": "/hn/carreras",
 };
 // Normalize away the trailing slash so the lookup matches whether the prerendered
 // pathname arrives as "/web-development" or "/web-development/".
@@ -104,7 +111,7 @@ const hnHref = hnEquivalent
 ---
 
 <!doctype html>
-<html lang="en-US">
+<html lang={documentLang}>
   <head>
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />

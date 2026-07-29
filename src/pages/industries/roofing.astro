@@ -9,6 +9,7 @@ import RelatedServices from "../../components/RelatedServices.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -75,7 +76,19 @@ const roofingFaqs = [
   {
     question: "How fast can you launch a roofing website?",
     answer: "A professional roofing website launches in 4-6 weeks. Sites with estimate tools or booking systems take 8-12 weeks. Full custom job management platforms take 16-24 weeks depending on scope and integrations."
-  }
+  },
+  {
+    question: "How much does custom roofing software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Roofers usually start with the step where jobs leak margin, most often estimating or supplement tracking, and extend from there. Hourly billing with transparent time reporting means you can fund one module per phase, put it in front of your crews and sales reps, and let what you learn shape the next phase instead of specifying everything up front."
+  },
+  {
+    question: "Can custom software work with JobNimbus, AccuLynx, or the tools we already use?",
+    answer: "Yes, and that is usually the better starting point. If your team already lives in JobNimbus, AccuLynx, or CompanyCam, replacing it creates change management you do not need. We build the missing piece instead, such as claim and supplement tracking, material reconciliation, or a homeowner portal, and connect it through supported APIs so jobs, photos, and documents stay in sync with the tool your crews already open every morning."
+  },
+  {
+    question: "Who owns the software, and can we keep using it as we grow?",
+    answer: "You own the code, the database, and the documentation from the first commit, hosted in your own infrastructure. Adding crews, territories, or a second office is a configuration change in software you already own, not a bigger monthly per-user bill. If you ever change development partners or hire in-house, everything transfers with the repository, and there is no vendor holding your job history hostage."
+  },
 ];
 
 const faqSchema = createFAQSchema(roofingFaqs);
@@ -86,7 +99,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "Instant", label: "Roof Estimates" },
   { value: "Local", label: "SEO Optimized" },
   { value: "100%", label: "Custom-Built" }
@@ -95,7 +108,7 @@ const stats = [
 const accentGradient = "from-red-500 to-orange-500";
 
 const introHighlights = [
-  { value: "5.0★", label: "Google Reviews", gradient: "from-teal-500 to-teal-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "5.0", label: "50 Google reviews", gradient: "from-teal-500 to-teal-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
   { value: "8+ yrs", label: "Development Experience", gradient: "from-blue-500 to-blue-600", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
   { value: "Estimate", label: "& Booking Tools", gradient: "from-orange-500 to-orange-600", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" }
 ];
@@ -211,6 +224,49 @@ const challenges = [
     solution: "A unified CRM and field app that connects your website, crews, and office—one place for every lead, photo, estimate, and job."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "Estimating & Aerial Measurement",
+    description: "Measurements, materials, and labor turned into a priced proposal on the same visit, using your real unit costs rather than a rule of thumb.",
+    capabilities: ["Aerial measurement report import", "Material and labor unit cost libraries", "Waste factor, pitch, and complexity adjustments", "Good-better-best proposal options"],
+    icon: "ruler"
+  },
+  {
+    name: "Inspection Scheduling & Route Planning",
+    description: "Inspections booked against real availability and grouped by geography, so a sales rep is not crossing the county twice in one day.",
+    capabilities: ["Territory and rep availability rules", "Route grouping by neighborhood", "Automated reminders and confirmations", "Inspection findings captured with photos"],
+    icon: "calendar"
+  },
+  {
+    name: "Insurance Claim & Supplement Management",
+    description: "The claim file kept in one place, from scope and adjuster meeting through supplements and approval, with the documentation the carrier will ask for.",
+    capabilities: ["Claim file with carrier, adjuster, and policy details", "Scope and supplement tracking with status", "Photo and damage documentation packages", "Deductible, ACV, and RCV tracking"],
+    icon: "shield"
+  },
+  {
+    name: "Crew Dispatch & Job Board",
+    description: "Who is on which roof today, what they need, and what changed, without the morning phone tree.",
+    capabilities: ["Crew assignment and daily job board", "Weather-driven rescheduling", "Mobile job packets and site notes", "Completion photos and sign-off capture"],
+    icon: "truck"
+  },
+  {
+    name: "Material Ordering & Delivery Tracking",
+    description: "Orders placed against the approved scope and tracked to the delivery date, so material lands the day the crew does.",
+    capabilities: ["Order generation from the approved estimate", "Supplier pricing and purchase order tracking", "Delivery date coordination with crew schedule", "Job-level material cost reconciliation"],
+    icon: "package"
+  },
+  {
+    name: "Homeowner Project Portal",
+    description: "Somewhere the homeowner can see status, photos, and paperwork themselves, which usually replaces most of the status phone calls.",
+    capabilities: ["Project timeline and current status", "Photo updates from the crew", "Contract, permit, and warranty documents", "Invoice viewing and online payment"],
+    icon: "home"
+  },
+];
+
+const softwareIndustry = "roofing contractors";
+const softwareLead = "Leads are only the front door. The estimate, the claim, and the crew schedule decide whether the job is profitable. These are the operational systems we build, extend, and connect for roofing contractors.";
 ---
 
 <Layout
@@ -264,6 +320,12 @@ const challenges = [
     subtitle="Websites, tools, and software engineered to capture roofing leads and turn them into booked jobs"
     services={services}
     accentGradient={accentGradient}
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

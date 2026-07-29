@@ -9,6 +9,7 @@ import IndustryHero from "../../components/IndustryHero.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -18,7 +19,7 @@ import IndustryCTA from "../../components/IndustryCTA.astro";
 import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
 
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "24/7", label: "Lead Capture" },
   { value: "Live", label: "Inventory Sync" },
   { value: "100%", label: "Custom-Built" }
@@ -108,7 +109,19 @@ const automotiveFaqs = [
   {
     question: "Do you provide automotive CRM solutions?",
     answer: "Yes. We integrate with automotive CRMs like VinSolutions, DealerSocket, and Elead. Website leads automatically sync to your CRM with full tracking and follow-up automation."
-  }
+  },
+  {
+    question: "How much does custom automotive software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Dealers and shops typically start with the one process that is still running on paper or a spreadsheet, often digital inspections or service scheduling, and expand once the staff are using it daily. Hourly billing with transparent time reporting means you fund a module, prove it in the shop, and decide on the next one with real numbers."
+  },
+  {
+    question: "Do we have to replace our DMS to get custom software?",
+    answer: "No, and we would advise against it in most cases. A DMS migration is disruptive and rarely fixes the specific problem you set out to solve. We far more often build alongside it: a scheduling system that respects real bay capacity, a digital inspection tool, a parts view, or a reporting layer that finally shows service and sales together. Integration goes through your DMS vendor's supported data channels, so the DMS stays the system of record."
+  },
+  {
+    question: "Who owns the software you build for our dealership?",
+    answer: "You do. Source code, repositories, database, and documentation are yours from the first commit and live in your own infrastructure, so there is no per-store licence that grows every time you add a rooftop. If you later expand to another location, you are deploying software you already own rather than negotiating a new seat count, and the work transfers cleanly if you ever change development partners."
+  },
 ];
 
 const faqSchema = createFAQSchema(automotiveFaqs);
@@ -121,7 +134,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 const accentGradient = "from-cyan-500 to-blue-500";
 
 const introHighlights = [
-  { value: "5.0★", label: "Google Reviews", gradient: "from-teal-500 to-teal-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "5.0", label: "50 Google reviews", gradient: "from-teal-500 to-teal-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
   { value: "8+ yrs", label: "Development Experience", gradient: "from-blue-500 to-blue-600", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
   { value: "DMS", label: "Dealer System Integrations", gradient: "from-orange-500 to-orange-600", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" }
 ];
@@ -237,6 +250,49 @@ const challenges = [
     solution: "24/7 online service scheduling with automated reminders, service history tracking, and bay optimization to maximize revenue and customer convenience."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "Repair Order & Shop Management",
+    description: "The repair order from write-up to invoice, with technician time, parts, and approvals attached to it instead of scattered across paper and phone calls.",
+    capabilities: ["Write-up, estimate, and customer authorization", "Technician time clocking against each job", "Labor operation catalog and pricing matrices", "Bay and technician load scheduling"],
+    icon: "wrench"
+  },
+  {
+    name: "Parts Inventory & Ordering",
+    description: "Live parts availability tied to the jobs waiting on them, so the front counter knows what is on the shelf, what is on order, and what is holding up a bay.",
+    capabilities: ["Bin locations and multi-branch stock", "Supplier catalogs and reorder points", "Parts reserved against open repair orders", "Core charges, returns, and obsolescence reporting"],
+    icon: "package"
+  },
+  {
+    name: "Dealer Management System Modules",
+    description: "Targeted modules that fill the gaps your DMS leaves, built to sit alongside it rather than force a risky platform migration.",
+    capabilities: ["Deal desking and F&I worksheets", "Vehicle inventory, aging, and reconditioning", "Trade appraisal capture", "DMS data sync and reporting layer"],
+    icon: "car"
+  },
+  {
+    name: "Service Appointment Scheduling",
+    description: "Booking that respects real shop capacity, matching the job type to available technician skill and bay time rather than dropping everything into one calendar.",
+    capabilities: ["Capacity by bay, skill, and job duration", "Online and advisor-side booking", "Automated reminders and confirmations", "Loaner and shuttle coordination"],
+    icon: "calendar"
+  },
+  {
+    name: "Vehicle History & Digital Inspection",
+    description: "A permanent record per VIN, with multi-point inspections captured as photos and video the customer can actually see before approving work.",
+    capabilities: ["VIN-level service and repair history", "Photo and video digital inspections", "Declined work tracking for follow-up", "Warranty and recall flagging"],
+    icon: "file-text"
+  },
+  {
+    name: "Sales & Service Lead Follow-Up",
+    description: "Every inbound lead and every declined repair captured in one place with an owner and a next action, instead of dying in a voicemail box.",
+    capabilities: ["Lead routing by source and department", "Automated follow-up sequences", "Declined-service win-back campaigns", "Attribution from first touch to closed deal"],
+    icon: "target"
+  },
+];
+
+const softwareIndustry = "dealerships and service shops";
+const softwareLead = "The website sells the appointment. The repair order, the parts bin, and the follow-up call decide whether the customer comes back. These are the operational systems we build, extend, and connect for dealers and independent shops.";
 ---
 
 <Layout
@@ -290,6 +346,12 @@ const challenges = [
     subtitle="Comprehensive automotive technology solutions designed to drive sales and streamline operations"
     services={services}
     accentGradient={accentGradient}
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

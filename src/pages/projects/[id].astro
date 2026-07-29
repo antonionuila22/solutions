@@ -6,6 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Button from "../../components/Button.astro";
 import RelatedProjects from "../../components/RelatedProjects.astro";
+import CaseStudyResults from "../../components/CaseStudyResults.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects", ({ data }) => !data.draft);
@@ -23,6 +24,12 @@ if (!project) {
 }
 
 const { Content } = await render(project);
+
+// `img` may be an absolute URL, a root-relative path or a bare path. Prefixing
+// a "/" onto an absolute URL produced a broken <img src="/https://…">, so match
+// the handling already used by RelatedProjects.astro.
+const rawImg = project.data.img;
+const heroImg = rawImg.startsWith("http") || rawImg.startsWith("/") ? rawImg : `/${rawImg}`;
 
 // Format date
 const formattedDate = new Intl.DateTimeFormat("en-US", {
@@ -46,6 +53,7 @@ const seoDescription = project.data.description.length > 160
   keywords={project.data.tags.join(", ")}
   image={project.data.img}
   article={true}
+  lang={project.data.lang}
 >
   <!-- Hero Section -->
   <article class="relative bg-white border-b border-slate-100">
@@ -175,7 +183,7 @@ const seoDescription = project.data.description.length > 160
         <div class="relative">
           <div class="relative rounded-2xl overflow-hidden shadow-xl border-2 border-slate-200 bg-white">
             <img
-              src={project.data.img.startsWith("/") ? project.data.img : `/${project.data.img}`}
+              src={heroImg}
               alt={project.data.title}
               class="w-full h-auto object-contain max-h-[500px]"
               loading="eager"
@@ -212,85 +220,21 @@ const seoDescription = project.data.description.length > 160
               <Content />
             </div>
           </div>
+
+          <!-- Hard numbers close the narrative. `label` says what the figures
+               actually are, `note` says who measured them: never publish a
+               number under "Results" that we did not produce. -->
+          <CaseStudyResults
+            results={project.data.results}
+            label={project.data.resultsLabel}
+            note={project.data.resultsNote}
+            class="mt-8"
+          />
         </div>
 
         <!-- Sidebar -->
         <div class="lg:col-span-1">
           <div class="sticky top-24 space-y-8">
-            <!-- Results Card -->
-            {
-              project.data.results && (
-                <div class="bg-cyan-900 rounded-2xl p-6 text-white shadow-xl border-2 border-cyan-700">
-                  <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                    <svg
-                      class="w-6 h-6"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-                    </svg>
-                    Key Results
-                  </h3>
-                  <div class="space-y-4">
-                    {project.data.results.metric1 && (
-                      <div class="flex items-start gap-3">
-                        <svg
-                          class="w-5 h-5 text-orange-400 mt-1 flex-shrink-0"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                        <p class="text-sm leading-relaxed">
-                          {project.data.results.metric1}
-                        </p>
-                      </div>
-                    )}
-                    {project.data.results.metric2 && (
-                      <div class="flex items-start gap-3">
-                        <svg
-                          class="w-5 h-5 text-orange-400 mt-1 flex-shrink-0"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                        <p class="text-sm leading-relaxed">
-                          {project.data.results.metric2}
-                        </p>
-                      </div>
-                    )}
-                    {project.data.results.metric3 && (
-                      <div class="flex items-start gap-3">
-                        <svg
-                          class="w-5 h-5 text-orange-400 mt-1 flex-shrink-0"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                        <p class="text-sm leading-relaxed">
-                          {project.data.results.metric3}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )
-            }
-
             <!-- Project Info Card -->
             <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
               <h3 class="text-lg font-bold text-cyan-900 mb-4">

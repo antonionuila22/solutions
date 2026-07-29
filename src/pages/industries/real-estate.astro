@@ -10,6 +10,7 @@ import IndustryHero from "../../components/IndustryHero.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -75,7 +76,19 @@ const realEstateFaqs = [
   {
     question: "Do you provide CRM integration for lead management?",
     answer: "Yes. We integrate with popular real estate CRMs like Follow Up Boss, kvCORE, and Salesforce. Leads from your website are automatically captured and synced to your CRM for follow-up."
-  }
+  },
+  {
+    question: "How much does custom real estate software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Most brokerages start with one system, commonly commission tracking or an owner portal, because those are where spreadsheets break first. Hourly billing with transparent time reporting lets you fund a module, put it in front of agents, and use what you learn to size the next one instead of committing the whole roadmap up front."
+  },
+  {
+    question: "Can custom software work with our existing CRM and MLS feed?",
+    answer: "Yes. If kvCORE, Follow Up Boss, or Salesforce already holds your contacts, we normally leave it as the system of record and build what it cannot do: commission splits, owner reporting, lease management, or a cross-system view for leadership. MLS data is handled through the RESO Web API or RETS feed your board provides, respecting their display and attribution rules, so the listing side stays compliant."
+  },
+  {
+    question: "Who owns the software, and what happens if agents leave?",
+    answer: "You own the code, the database, and the documentation, hosted in your own infrastructure. That is exactly why brokerages build rather than rent: the contact history, deal records, and commission logic stay with the brokerage rather than inside a per-seat tool an agent takes with them. Access is role-based and revocable, so offboarding an agent is a permissions change, not a data recovery project."
+  },
 ];
 
 const faqSchema = createFAQSchema(realEstateFaqs);
@@ -86,7 +99,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "IDX", label: "MLS Listings" },
   { value: "24/7", label: "Lead Capture" },
   { value: "100%", label: "Custom-Built" }
@@ -96,8 +109,8 @@ const accentGradient = "from-amber-500 to-orange-500";
 
 const introHighlights = [
   {
-    value: "5.0★",
-    label: "Google Reviews",
+    value: "5.0",
+    label: "50 Google reviews",
     gradient: "from-teal-500 to-teal-600",
     iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
   },
@@ -271,6 +284,49 @@ const challenges = [
     solution: "Comprehensive local SEO with location-specific pages, schema markup, and optimized property descriptions for local search dominance."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "Real Estate CRM & Lead Routing",
+    description: "Leads captured, scored, and assigned in seconds rather than sitting in a shared inbox, with the follow-up cadence built into the system instead of into someone's memory.",
+    capabilities: ["Round-robin and rules-based lead assignment", "Automated follow-up sequences by lead source", "Buyer and seller pipeline stages", "Call, text, and email logged to the contact"],
+    icon: "users"
+  },
+  {
+    name: "MLS / IDX Listing Sync",
+    description: "Listing data pulled, normalized, and refreshed on schedule, with the field mapping and compliance rules your MLS actually requires.",
+    capabilities: ["Scheduled RETS/RESO Web API ingestion", "Field mapping and photo handling", "Status change and price drop detection", "Display and attribution compliance rules"],
+    icon: "refresh"
+  },
+  {
+    name: "Owner & Investor Portal",
+    description: "A place owners can check performance themselves, which is usually cheaper than the monthly statement email thread it replaces.",
+    capabilities: ["Per-property income and expense statements", "Maintenance request visibility", "Document and lease archive", "Distribution and payout history"],
+    icon: "home"
+  },
+  {
+    name: "Lease & Tenant Management",
+    description: "The full lease lifecycle, from application and screening through renewal, with rent, arrears, and maintenance tracked against the unit.",
+    capabilities: ["Application, screening, and approval workflow", "Rent roll, arrears, and late fee rules", "Renewal and expiry alerts", "Maintenance tickets with vendor assignment"],
+    icon: "key"
+  },
+  {
+    name: "Virtual Tour & Media Manager",
+    description: "One media library per property, so photos, floor plans, and tours are versioned and published consistently instead of living in a photographer's Dropbox.",
+    capabilities: ["Photo, floor plan, and tour asset library", "3D tour and video embedding", "Watermarking and rights tracking", "Bulk publishing across channels"],
+    icon: "camera"
+  },
+  {
+    name: "Commission & Split Tracking",
+    description: "Deal economics calculated where the deal lives, so agents can see what they earned and back office is not rebuilding splits in a spreadsheet.",
+    capabilities: ["Agent split plans and caps", "Referral and team split handling", "Pending vs closed commission pipeline", "Brokerage payout and statement reports"],
+    icon: "bar-chart"
+  },
+];
+
+const softwareIndustry = "real estate teams";
+const softwareLead = "Listings bring the lead in. What decides whether it closes is the follow-up system, the owner reporting, and the commission math. These are the operational systems we build, extend, and connect for brokerages and property managers.";
 ---
 
 <Layout
@@ -320,6 +376,12 @@ const challenges = [
     subtitle="Everything you need to showcase properties, capture leads, and grow your real estate business"
     services={services}
     accentGradient={accentGradient}
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

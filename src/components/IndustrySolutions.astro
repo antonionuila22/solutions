@@ -1,0 +1,117 @@
+---
+/**
+ * IndustrySolutions — editorial list of the named software systems we build for
+ * one vertical. Additive section for the /industries/* pages: it exists so a
+ * visitor sees the actual system they run their business on ("Kitchen Display
+ * System", "Loan Origination", "Job Costing") instead of the generic phrase
+ * "custom software".
+ *
+ * Deliberately a list, not a card grid: wide rows, hairline rules, one idea per
+ * row. Monochrome slate + #f48200 accent, no pill labels, no emoji.
+ *
+ * Usage:
+ *   <IndustrySolutions
+ *     industry="restaurants"
+ *     lead="..."
+ *     solutions={[{ name, description, capabilities: [], icon }]}
+ *   />
+ */
+import Icon from "./icons/Icon.astro";
+
+interface SolutionItem {
+  /** System name the way the industry itself says it. */
+  name: string;
+  /** One or two sentences. What it does, not what it promises. */
+  description: string;
+  /** Compact capability list — 4 items reads best. */
+  capabilities: string[];
+  /** Icon name from components/icons/Icon.astro (verify it exists). */
+  icon: string;
+}
+
+interface Props {
+  /** Goes inside the H2: "Custom software we build for {industry}". */
+  industry: string;
+  /** Optional lead paragraph under the H2. */
+  lead?: string;
+  solutions: SolutionItem[];
+}
+
+const { industry, lead, solutions } = Astro.props;
+---
+
+<section id="custom-software" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#f48200] mb-5">
+        Custom Software Development
+      </p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+        Custom software we build for {industry}
+      </h2>
+      {lead && (
+        <p class="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed">{lead}</p>
+      )}
+    </header>
+
+    <ol class="mt-14 sm:mt-16">
+      {solutions.map((solution, index) => (
+        <li class="group border-t border-slate-200 py-10 sm:py-12">
+          <div class="sm:grid sm:grid-cols-12 sm:gap-10">
+            <div class="sm:col-span-3 flex items-center gap-4 mb-6 sm:mb-0 sm:block">
+              <span class="block text-sm font-semibold tabular-nums text-slate-500 group-hover:text-[#f48200] transition-colors duration-300">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <Icon
+                name={solution.icon}
+                class="w-8 h-8 text-slate-500 sm:mt-5 group-hover:text-slate-900 transition-colors duration-300"
+              />
+            </div>
+
+            <div class="sm:col-span-9">
+              <h3 class="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight">
+                {solution.name}
+              </h3>
+              <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+                {solution.description}
+              </p>
+              <ul class="mt-6 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                {solution.capabilities.map((capability) => (
+                  <li class="flex items-start gap-3 text-sm text-slate-500">
+                    <span
+                      class="mt-2.5 h-px w-4 flex-shrink-0 bg-slate-300 group-hover:bg-[#f48200] transition-colors duration-300"
+                      aria-hidden="true"
+                    ></span>
+                    <span>{capability}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <p class="mt-6 border-t border-slate-200 pt-10 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+      Every system on this page is built by our own engineers and billed by the hour —
+      Mid developer $45/hr, Senior developer $65/hr, Lead/Architect $95/hr — and you own
+      the source code from the first commit. Size the budget with the{" "}
+      <a
+        href="/nearshore-cost-calculator"
+        class="text-slate-900 font-semibold underline decoration-[#f48200] decoration-2 underline-offset-4 hover:text-[#f48200] transition-colors duration-300"
+        >nearshore cost calculator</a
+      >, staff it with a{" "}
+      <a
+        href="/dedicated-development-team"
+        class="text-slate-900 font-semibold underline decoration-[#f48200] decoration-2 underline-offset-4 hover:text-[#f48200] transition-colors duration-300"
+        >dedicated development team</a
+      >, or start from our{" "}
+      <a
+        href="/custom-crm-development"
+        class="text-slate-900 font-semibold underline decoration-[#f48200] decoration-2 underline-offset-4 hover:text-[#f48200] transition-colors duration-300"
+        >custom CRM development</a
+      >{" "}
+      practice.
+    </p>
+  </div>
+</section>

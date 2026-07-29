@@ -9,6 +9,7 @@ import RelatedServices from "../../components/RelatedServices.astro";
 import IndustryIntro from "../../components/IndustryIntro.astro";
 import IndustryServices from "../../components/IndustryServices.astro";
 import IndustryProcess from "../../components/IndustryProcess.astro";
+import IndustrySolutions from "../../components/IndustrySolutions.astro";
 import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
 import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
 import IndustryTechStack from "../../components/IndustryTechStack.astro";
@@ -75,7 +76,19 @@ const constructionFaqs = [
   {
     question: "Do you offer bid management solutions?",
     answer: "Yes. Our bid management systems include RFP tracking, subcontractor databases, cost estimation tools, and proposal generation. Streamline your bidding process and win more projects."
-  }
+  },
+  {
+    question: "How much does custom construction software development cost?",
+    answer: "We bill by the hour and by role: Mid developer $45/hr, Senior developer $65/hr, and Lead/Architect $95/hr. Contractors usually start with the process bleeding the most money, most often job costing or field reporting, then expand once crews are using it. Hourly billing with transparent time reporting means you can fund one module per phase and let what you learn on the first one shape the scope of the next, rather than committing to the whole platform up front."
+  },
+  {
+    question: "Can custom software work alongside Procore or the accounting system we use?",
+    answer: "Yes, and that is normally the smarter route. If Procore, Sage, Foundation, or QuickBooks already runs part of your business, we build the missing layer rather than replacing what works, and connect it through supported APIs so cost codes, budgets, and commitments stay aligned. The most common gaps we fill are field capture, equipment tracking, and reporting that spans project management and accounting, which those systems rarely do together."
+  },
+  {
+    question: "Who owns the software, and can we use it across all our jobs?",
+    answer: "You own the source code, the database, and the documentation from the first commit, hosted in your own infrastructure. Because it is yours, there is no per-project or per-user licence that grows as you take on more work: a new job or a new crew is a record in your own system, not a billing event. If you ever bring development in-house or change partners, everything transfers with the repository."
+  },
 ];
 
 const faqSchema = createFAQSchema(constructionFaqs);
@@ -86,7 +99,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
 ]);
 
 const stats = [
-  { value: "5.0★", label: "Google Rating" },
+  { value: "5.0", label: "50 Google reviews" },
   { value: "Online", label: "Instant Estimates" },
   { value: "Gallery", label: "Project Showcases" },
   { value: "100%", label: "Custom-Built" }
@@ -95,7 +108,7 @@ const stats = [
 const accentGradient = "from-amber-500 to-amber-500";
 
 const introHighlights = [
-  { value: "5.0★", label: "Google Reviews", gradient: "from-teal-500 to-teal-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+  { value: "5.0", label: "50 Google reviews", gradient: "from-teal-500 to-teal-600", iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
   { value: "8+ yrs", label: "Development Experience", gradient: "from-blue-500 to-blue-600", iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" },
   { value: "Bid", label: "& Quote Tools", gradient: "from-orange-500 to-orange-600", iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" }
 ];
@@ -211,6 +224,49 @@ const challenges = [
     solution: "Custom integrations and unified platforms that connect all your existing tools or replace them entirely."
   }
 ];
+
+// Named software systems we build for this vertical (additive section)
+const softwareSolutions = [
+  {
+    name: "Estimating & Bid Management",
+    description: "Takeoff through submitted proposal in one place, with historical unit costs so the next bid starts from what the last job actually cost, not from memory.",
+    capabilities: ["Assembly and unit cost libraries", "Labor, material, and equipment breakdowns", "Subcontractor bid solicitation and leveling", "Proposal generation with markup and contingency"],
+    icon: "clipboard"
+  },
+  {
+    name: "Project Controls & Progress Tracking",
+    description: "Schedule, submittals, RFIs, and change orders tracked against the contract so the paper trail exists before anyone disputes it.",
+    capabilities: ["Schedule and milestone tracking", "RFI and submittal logs with response times", "Change order pricing and approval routing", "Percent-complete and progress billing support"],
+    icon: "building"
+  },
+  {
+    name: "Job Costing & Budget Control",
+    description: "Committed cost versus actual versus budget, per cost code, updated as the job runs rather than discovered at closeout.",
+    capabilities: ["Cost code structure and budget baselines", "Committed costs from POs and subcontracts", "Labor burden and equipment rate allocation", "Cost-to-complete and margin forecasting"],
+    icon: "dollar-sign"
+  },
+  {
+    name: "Subcontractor & Compliance Management",
+    description: "A single record per sub covering scope, insurance, lien waivers, and payment status, so nobody is on site with an expired certificate.",
+    capabilities: ["Prequalification and scope of work records", "Insurance certificate and expiry tracking", "Lien waiver collection by pay application", "Subcontract payment and retainage tracking"],
+    icon: "handshake"
+  },
+  {
+    name: "Field Daily Reports & Time Capture",
+    description: "Crews log hours, quantities, weather, and photos from the site on a phone, so the office has the day's record without chasing anyone for it.",
+    capabilities: ["Mobile daily reports with photos", "Crew time capture against cost codes", "Quantity installed and production tracking", "Offline capture that syncs when signal returns"],
+    icon: "smartphone"
+  },
+  {
+    name: "Equipment & Fleet Management",
+    description: "Where every machine is, which job it is billed to, and when it is due for service, tracked as an asset rather than a phone call to the yard.",
+    capabilities: ["Equipment location and assignment by job", "Internal rental rates and cost allocation", "Preventive maintenance scheduling", "Utilization and idle time reporting"],
+    icon: "truck"
+  },
+];
+
+const softwareIndustry = "construction companies";
+const softwareLead = "Jobs are not lost on the website. They are lost in the estimate, the change order, and the daily report nobody filed. These are the operational systems we build, extend, and connect for general contractors and specialty trades.";
 ---
 
 <Layout
@@ -264,6 +320,12 @@ const challenges = [
     subtitle="Comprehensive digital solutions tailored to meet the unique demands of the construction industry"
     services={services}
     accentGradient={accentGradient}
+  />
+
+  <IndustrySolutions
+    industry={softwareIndustry}
+    lead={softwareLead}
+    solutions={softwareSolutions}
   />
 
   <IndustryProcess

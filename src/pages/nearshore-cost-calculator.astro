@@ -1,0 +1,668 @@
+---
+export const prerender = true;
+/**
+ * Nearshore Development Cost Calculator — free public tool.
+ * Keywords: nearshore development cost calculator, nearshore software development cost,
+ * cost of hiring a developer, in-house vs nearshore cost, offshore vs nearshore rates.
+ *
+ * Built as a link magnet: transparent methodology, editable assumptions, honest downsides,
+ * and a copyable citation block. The React island is client:only, so every word that needs
+ * to be crawled lives in this file — never move prose into the component.
+ *
+ * DATA POLICY: the only figures stated as fact are Codebrand's own rates ($45/$65/$95 per
+ * hour). Everything else is either sourced to a named public dataset with its reference
+ * period, or labelled a round estimate — and always editable by the visitor.
+ */
+
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
+import NearshoreCostCalculator from "../components/NearshoreCostCalculator";
+import { createFAQSchema } from "../utils/schema";
+import { BUSINESS_INFO } from "../configs/business";
+
+const pageUrl = "https://www.codebrand.us/nearshore-cost-calculator";
+
+const title = "Nearshore Development Cost Calculator | Codebrand";
+const description =
+  "Free calculator: compare the real cost of a US in-house developer, a US contractor, a nearshore team in Honduras and an agency in Poland. Every assumption is editable.";
+const keywords =
+  "nearshore development cost calculator, nearshore software development cost, cost of hiring a software developer, in-house vs nearshore cost, offshore development rates, developer cost calculator, staff augmentation cost, true cost of an employee";
+
+// WhatsApp — mandatory format, never wa.me.
+const waMessage =
+  "Hi Codebrand — I used your nearshore cost calculator and I'd like to talk about staffing a team.";
+const waUrl = `https://api.whatsapp.com/send/?phone=${BUSINESS_INFO.us.whatsapp}&text=${encodeURIComponent(waMessage)}&type=phone_number&app_absent=0`;
+
+// Schema.org — the tool itself. No ratings or review counts: we have none to report.
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Nearshore Development Cost Calculator",
+  url: pageUrl,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Any modern web browser",
+  browserRequirements: "Requires JavaScript",
+  description:
+    "A free calculator that compares the total cost of four ways to staff software engineers: a US in-house employee, a US contractor or staffing agency, a nearshore team in Honduras, and an agency in Poland. All cost assumptions are editable by the user.",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  publisher: {
+    "@type": "Organization",
+    name: BUSINESS_INFO.name,
+    url: BUSINESS_INFO.baseUrl,
+    logo: BUSINESS_INFO.logoUrl,
+  },
+};
+
+const faqs = [
+  {
+    question: "How much does it cost to hire a nearshore developer?",
+    answer:
+      "Codebrand bills nearshore engineers hourly: $45/hr for a mid developer, $65/hr for a senior developer, and $95/hr for a lead or architect. Those are our published rates, not estimates. A senior working a full 40-hour week is therefore $2,600 for that week, and you pay only for hours actually worked — no retainer, no benefits load, no severance exposure. Rates elsewhere in Latin America vary widely by country and by whether you are buying from an agency or contracting an individual directly.",
+  },
+  {
+    question: "Is nearshore development actually cheaper than hiring in-house?",
+    answer:
+      "Usually, but by less than most vendor marketing claims. The honest comparison is not salary against hourly rate — it is fully loaded cost against hourly rate. Once you add employer burden, overhead and the fact that a salaried employee does not deliver 2,080 billable hours a year, this calculator's default assumptions put a US in-house developer at roughly $84 to $126 an hour of real engineering time, depending on seniority. Against that, our rates of $45, $65 and $95 work out to savings of about 46%, 35% and 24% respectively. Those are outputs of our defaults, not market observations — change the inputs and the savings change with them.",
+  },
+  {
+    question: "What is the real cost of a US software developer including benefits?",
+    answer:
+      "Three things sit on top of base salary. First, employer burden: payroll taxes, health insurance, retirement contributions, paid leave and supplemental pay. The BLS Employer Costs for Employee Compensation series put benefits at 30.1% of total compensation for private-industry workers in March 2026, which is roughly 43% on top of wages. Second, overhead: equipment, software licences, facilities, HR administration and recruiting. Third, unproductive paid time. The calculator lets you set all three.",
+  },
+  {
+    question: "What is the difference between nearshore and offshore?",
+    answer:
+      "Nearshore means a country close to your own with substantial working-hour overlap. For a US company that is Latin America — Codebrand works from San Pedro Sula, Honduras, on US Central Time, so the overlap is a full working day. Offshore means a distant time zone: Eastern Europe is 6–9 hours ahead of the US, and South and Southeast Asia further still. Offshore rates can be lower, but you trade same-day review cycles for overnight handoffs, which slows anything that needs conversation.",
+  },
+  {
+    question: "Why compare Honduras with Poland rather than with India?",
+    answer:
+      "Because Poland is the realistic alternative for the buyer this calculator is written for. Companies weighing a nearshore team in Latin America against an offshore option are usually comparing engineering cultures with similar seniority and English levels, and Central and Eastern Europe is the most common competitor in that bracket. Lower-cost offshore markets exist and their published rates are genuinely lower — but the comparison then turns on time-zone overlap and communication overhead more than on price, which a cost calculator cannot honestly model.",
+  },
+  {
+    question: "Are the numbers in this calculator a quote?",
+    answer:
+      "No. Only Codebrand's hourly rates are firm. The default US salary, employer burden, overhead, contractor rate and Poland rate are market estimates you can and should overwrite with your own figures. Nothing on this page is an offer, and a real engagement is scoped and priced after we understand your product. If you want an actual quote, send us the configuration from the calculator by WhatsApp or email and we will price it properly.",
+  },
+  {
+    question: "What costs does this calculator deliberately leave out?",
+    answer:
+      "Several, and they matter. It does not model management time on your side, onboarding and ramp-up, contractor turnover, currency and payment fees, legal and compliance work, or the cost of a hire that does not work out. It also does not model the value of speed — shipping a quarter earlier is often worth more than the entire rate difference. Treat the output as a budgeting floor for the labour line, not as total cost of ownership.",
+  },
+  {
+    question: "How many productive hours does a full-time developer really deliver?",
+    answer:
+      "A full-time year is 2,080 paid hours, but nobody delivers 2,080 hours of engineering. Subtract paid leave, public holidays and sick days and you are near 1,880. The calculator defaults to that figure because it is simple arithmetic you can verify. If you want a stricter number you can subtract meetings, interviews and internal work as well — set the field lower and every in-house figure on the page adjusts.",
+  },
+  {
+    question: "When is hiring in-house still the better decision?",
+    answer:
+      "When the work is your core product differentiator and you want the knowledge to compound inside your company permanently. When you need someone physically present, or holding regulated responsibilities that a vendor cannot hold. When the role is genuinely permanent and full-time for years, so recruiting cost amortises away. And when your engineering organisation is strong enough that management capacity, not budget, is the real constraint. Cost is one input to that decision and rarely the deciding one.",
+  },
+  {
+    question: "Can I cite or link to this calculator?",
+    answer:
+      "Yes, freely, and you do not need to ask. There is a citation block on this page with a ready-made attribution line and an HTML snippet you can copy. If you publish an analysis that uses different assumptions from ours we would genuinely like to see it — write to info@codebrand.es and we will look at whether our defaults should change.",
+  },
+];
+
+const faqSchema = createFAQSchema(faqs);
+
+const modelSummary = [
+  {
+    icon: "briefcase",
+    name: "US in-house employee",
+    line: "Base salary, plus employer burden, plus overhead, divided by the hours an employee actually delivers.",
+  },
+  {
+    icon: "clock",
+    name: "US contractor or staffing agency",
+    line: "A straight hourly rate with no benefits or overhead on your books — and a markup you rarely get to see.",
+  },
+  {
+    icon: "map-pin",
+    name: "Nearshore Honduras (Codebrand)",
+    line: "$45, $65 or $95 an hour by seniority, on US Central Time, billed only for hours worked.",
+  },
+  {
+    icon: "globe",
+    name: "Eastern Europe (Poland)",
+    line: "An offshore agency rate at a comparable seniority, 6–9 hours ahead of US working hours.",
+  },
+];
+
+const notSaved = [
+  {
+    title: "Management still costs you",
+    body: "Somebody has to write tickets, review work and make decisions. Outsourcing the typing does not outsource the thinking, and a team you manage badly is expensive at any rate.",
+  },
+  {
+    title: "Onboarding is not free",
+    body: "Any new engineer, local or remote, spends weeks becoming useful. Short engagements pay that cost proportionally more often, which is why very short contracts rarely save what the arithmetic promises.",
+  },
+  {
+    title: "Quality is not a function of price",
+    body: "There are excellent and terrible engineers at every rate in every country. A cheap hourly rate applied to the wrong person is the most expensive option on this page.",
+  },
+  {
+    title: "Turnover resets the meter",
+    body: "Every replacement re-pays onboarding and loses context. Ask any vendor what their retention on client teams looks like — the answer tells you more about your real cost than the rate card does.",
+  },
+];
+
+const citationText =
+  "Codebrand, Nearshore Development Cost Calculator, https://www.codebrand.us/nearshore-cost-calculator";
+const citationHtml =
+  '<a href="https://www.codebrand.us/nearshore-cost-calculator">Nearshore Development Cost Calculator</a> by Codebrand';
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride={pageUrl}
+  breadcrumbNames={{ "nearshore-cost-calculator": "Nearshore Cost Calculator" }}
+>
+  <!-- Breadcrumb schema is emitted by Layout from the canonical URL + breadcrumbNames. -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <section class="relative bg-slate-950 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-28 lg:pb-24 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
+        Free tool · No sign-up
+      </p>
+      <h1
+        class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight text-white"
+      >
+        Nearshore Development<br class="hidden sm:block" />
+        <span class="text-[#f48200]">Cost Calculator</span>
+      </h1>
+      <p class="mt-7 max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-300">
+        Compare what a software engineer really costs four different ways: hired in-house in the
+        United States, contracted through a US staffing agency, hired nearshore in Honduras, or
+        contracted offshore in Poland.
+      </p>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-400">
+        Every assumption is yours to change. We cannot honestly tell you what your payroll costs,
+        so we do not pretend to — we give you defaults anchored to public data, show our working,
+        and let you overwrite all of it. The only fixed numbers on this page are our own rates.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a
+          href="#calculator"
+          class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#f48200] px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d97400]"
+        >
+          Run the numbers
+        </a>
+        <a
+          href="#methodology"
+          class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 px-8 py-4 font-semibold text-white transition-colors duration-300 hover:border-white/40"
+        >
+          Read the methodology
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Nearshore Cost Calculator", href: "" },
+    ]}
+    variant="transparent"
+    class="bg-slate-900 border-y border-slate-800"
+  />
+
+  <!-- ── Calculator ───────────────────────────────────────────────────── -->
+  <section id="calculator" class="bg-white py-16 sm:py-20 lg:py-24 font-poppins scroll-mt-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <NearshoreCostCalculator client:only="react" />
+
+      <noscript>
+        <div class="rounded-3xl border border-slate-200 bg-slate-50 p-7 sm:p-9">
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
+            The calculator needs JavaScript
+          </h2>
+          <p class="mt-4 leading-relaxed text-slate-600">
+            The interactive comparison runs in your browser — nothing is sent to us. If you would
+            rather do the arithmetic yourself, here is everything it uses. Codebrand's rates are
+            $45 an hour for a mid developer, $65 for a senior, and $95 for a lead or architect. A
+            US in-house engineer costs (base salary × (1 + employer burden) + annual overhead) ÷
+            productive hours per year. Our documented defaults are a $133,000 senior salary, a 30%
+            burden, $15,000 of annual overhead and 1,880 productive hours — sourced in the
+            methodology below.
+          </p>
+        </div>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ── What the four models mean ────────────────────────────────────── -->
+  <section class="bg-slate-50 py-16 sm:py-20 lg:py-24 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        The four models
+      </p>
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900" data-anim="heading">
+        What each column actually means
+      </h2>
+      <p class="mt-6 text-lg leading-relaxed text-slate-600">
+        A salary and an hourly rate are not comparable numbers. One is an annual commitment that
+        carries taxes, benefits, equipment and idle time; the other is a price per hour of work
+        delivered. The calculator converts everything to the same unit — dollars per hour of
+        engineering you actually receive — so the comparison means something.
+      </p>
+
+      <ul class="mt-12 divide-y divide-slate-200 border-t border-slate-200">
+        {
+          modelSummary.map((m) => (
+            <li class="flex gap-5 py-7">
+              <span class="mt-0.5 shrink-0">
+                <Icon name={m.icon} class="w-6 h-6 text-[#f48200]" />
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">{m.name}</h3>
+                <p class="mt-2 leading-relaxed text-slate-600">{m.line}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-12 rounded-2xl border border-slate-200 bg-white p-7">
+        <h3 class="text-lg font-semibold text-slate-900">The formula, in full</h3>
+        <p class="mt-4 leading-relaxed text-slate-600">
+          In-house cost per hour = (base salary × (1 + employer burden) + annual overhead) ÷
+          productive hours per year. The other three models are simply their hourly rate. Total
+          cost for the engagement = cost per hour × developers × hours per week × (months × 52 ÷
+          12). Nothing is hidden and nothing is weighted in our favour — you can reproduce every
+          figure with a pocket calculator.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Methodology ──────────────────────────────────────────────────── -->
+  <section id="methodology" class="bg-white py-16 sm:py-20 lg:py-24 font-poppins scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        Methodology &amp; assumptions
+      </p>
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900" data-anim="heading">
+        Where every default comes from
+      </h2>
+      <p class="mt-6 text-lg leading-relaxed text-slate-600">
+        We are a nearshore vendor. You should read our cost comparison with that in mind, which is
+        exactly why every input is editable and every default is documented below. Where a public
+        dataset exists we name it and give its reference period. Where none exists, we say so and
+        use a round number instead of a precise-looking one.
+      </p>
+
+      <div class="mt-14 space-y-12">
+        <div>
+          <h3 class="text-xl font-semibold text-slate-900">US base salary — anchored to BLS</h3>
+          <p class="mt-4 leading-relaxed text-slate-600">
+            The US Bureau of Labor Statistics Occupational Employment and Wage Statistics survey
+            reported a median annual wage of $133,080 for software developers (SOC 15-1252) in May
+            2024, with the 10th percentile at $79,850 and the 90th at $211,450. We default the
+            senior figure to the median, rounded to $133,000, and place mid ($110,000) and lead
+            ($170,000) at round points between the median and the tails. Those two are positions on
+            a published distribution, not survey data about job titles — BLS does not publish by
+            seniority. Source:{" "}
+            <a
+              href="https://www.bls.gov/oes/current/oes151252.htm"
+              rel="noopener nofollow"
+              target="_blank"
+              class="font-medium text-slate-900 underline underline-offset-4 hover:text-[#f48200]"
+              >BLS OEWS, Software Developers</a
+            >.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-slate-900">Employer burden — default 30%</h3>
+          <p class="mt-4 leading-relaxed text-slate-600">
+            The BLS Employer Costs for Employee Compensation release for March 2026 put private
+            industry total compensation at $46.60 per hour worked, of which wages and salaries were
+            $32.60 (69.9%) and benefits $14.01 (30.1%). Expressed the way this calculator needs it
+            — as a percentage added on top of wages — that is roughly 43%. We default to 30%
+            instead, deliberately understating the in-house figure so the savings we show are
+            conservative. If you want the full BLS-implied load, type 43 into the field. Source:{" "}
+            <a
+              href="https://www.bls.gov/news.release/ecec.nr0.htm"
+              rel="noopener nofollow"
+              target="_blank"
+              class="font-medium text-slate-900 underline underline-offset-4 hover:text-[#f48200]"
+              >BLS Employer Costs for Employee Compensation</a
+            >.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-slate-900">Overhead — a round $15,000 a year</h3>
+          <p class="mt-4 leading-relaxed text-slate-600">
+            This is an estimate, not a measurement. It is meant to cover a workstation, software
+            licences and tooling seats, a share of facilities, HR and payroll administration, and
+            recruiting amortised over the hire's tenure. Recruiting alone is not trivial: SHRM's
+            benchmarking work put the average cost-per-hire at $4,129 (FY2015 data, published
+            2016). If your team is fully remote and you would rather not count overhead at all, set
+            the field to zero and the comparison still works.
+            Reference:{" "}
+            <a
+              href="https://www.shrm.org/topics-tools/news/shrm-benchmarking-report-4129-average-cost-per-hire"
+              rel="noopener nofollow"
+              target="_blank"
+              class="font-medium text-slate-900 underline underline-offset-4 hover:text-[#f48200]"
+              >SHRM benchmarking report on cost-per-hire</a
+            >.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-slate-900">Productive hours — 1,880 a year</h3>
+          <p class="mt-4 leading-relaxed text-slate-600">
+            52 weeks at 40 hours is 2,080 paid hours. Subtract 15 days of paid leave and 10 public
+            holidays — 25 days, or 200 hours — and 1,880 remain. That is arithmetic, not a
+            statistic, and you can verify it in one line. It is also generous to the in-house
+            model: it counts every remaining hour as productive engineering, which no honest
+            engineering manager believes. Lower the number if you want to account for meetings,
+            interviews and internal work.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-slate-900">
+            US contractor rate — round estimates, no source
+          </h3>
+          <p class="mt-4 leading-relaxed text-slate-600">
+            There is no authoritative public dataset for what US staffing agencies bill, because
+            rates are negotiated privately and vary enormously by market and by how much of the
+            markup the agency keeps. We default to $80, $110 and $150 an hour by seniority as round
+            placeholders and label them exactly that. If you have a real quote in your inbox, use
+            it — this is the field where your own number is most likely to beat ours.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-slate-900">
+            Poland rate — round estimates from vendor rate cards
+          </h3>
+          <p class="mt-4 leading-relaxed text-slate-600">
+            The same problem, worse. Published Eastern European rates come almost entirely from
+            agencies publishing their own price lists, which have an obvious incentive. Rather than
+            cite a competitor's marketing as though it were data, we default to $50, $70 and $95 an
+            hour by seniority and call them estimates. They are in the right neighbourhood for
+            agency-billed work at these seniority levels; they are not a benchmark, and any real
+            quote you hold should replace them.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-900 bg-slate-900 p-7 text-slate-300">
+          <div class="flex items-start gap-4">
+            <span class="mt-0.5 shrink-0"><Icon name="alert-triangle" class="w-6 h-6 text-[#f48200]" /></span>
+            <div>
+              <h3 class="text-lg font-semibold text-white">The one thing we do assert</h3>
+              <p class="mt-3 leading-relaxed">
+                Codebrand's hourly rates — $45 for a mid developer, $65 for a senior, $95 for a
+                lead or architect — are our published prices and are fixed in the calculator. Every
+                other figure on this page is either sourced above or labelled an estimate. If you
+                find an error in our arithmetic or a better public source for any default, tell us
+                at info@codebrand.es and we will change it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why the gap exists ───────────────────────────────────────────── -->
+  <section class="bg-slate-50 py-16 sm:py-20 lg:py-24 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        The arbitrage
+      </p>
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900" data-anim="heading">
+        Why the price gap exists at all
+      </h2>
+      <div class="mt-8 space-y-6 text-lg leading-relaxed text-slate-600">
+        <p>
+          A senior engineer in San Pedro Sula and a senior engineer in Austin write the same
+          TypeScript. The rate differs because software salaries are set by local labour markets
+          and local costs of living, not by the market value of the software produced. Housing,
+          healthcare, transport and taxation in Honduras cost a fraction of what they cost in a US
+          metropolitan area, so a compensation package that is genuinely competitive locally
+          converts into a lower dollar rate for you. That gap is structural, and it has been
+          narrowing slowly for a decade as remote work globalised demand.
+        </p>
+        <p>
+          The second half of the gap is overhead you stop carrying. When you contract hours you do
+          not pay payroll taxes, health insurance, retirement matching, paid leave, recruiting fees,
+          equipment or severance — and you do not carry the risk of paying a salary during a
+          quarter when the roadmap stalls. At this calculator's defaults, a senior on $133,000 with
+          a 30% burden and $15,000 of overhead costs $99.95 for each of 1,880 productive hours, and
+          $29.20 of that hour is load rather than wages. Our senior rate is $65, so the whole gap is
+          $34.95 an hour and the load you stop carrying is $29.20 of it. The share moves with
+          seniority: at lead level, where our $95 rate sits slightly above what the salary alone
+          works out to per hour, the load you shed is the entire saving.
+        </p>
+        <p>
+          What makes nearshore different from offshore is not price, it is the clock. Honduras runs
+          on US Central Time, so a question asked at 10am in Chicago is answered at 10am, not
+          tomorrow. Eastern European teams are typically 6–9 hours ahead of US working hours, which
+          is workable with discipline but turns every clarification into a day of latency. Over a
+          long engagement that latency has a real cost, and it does not appear on any rate card —
+          which is precisely why a calculator can never settle the decision on its own. Our{" "}
+          <a
+            href="/dedicated-development-team"
+            class="font-medium text-slate-900 underline underline-offset-4 hover:text-[#f48200]"
+            >dedicated development team</a
+          >{" "}
+          model is built around that overlap.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What you don't save ──────────────────────────────────────────── -->
+  <section class="bg-white py-16 sm:py-20 lg:py-24 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        The honest part
+      </p>
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900" data-anim="heading">
+        What you do not save
+      </h2>
+      <p class="mt-6 text-lg leading-relaxed text-slate-600">
+        A cost calculator makes a decision look like arithmetic. It is not. Four costs survive the
+        switch to nearshore completely intact, and any vendor who tells you otherwise is selling
+        rather than advising.
+      </p>
+
+      <ul class="mt-12 divide-y divide-slate-200 border-y border-slate-200">
+        {
+          notSaved.map((n) => (
+            <li class="py-7">
+              <h3 class="text-lg font-semibold text-slate-900">{n.title}</h3>
+              <p class="mt-2 leading-relaxed text-slate-600">{n.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2 class="mt-20 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900" data-anim="heading">
+        When in-house is still the right call
+      </h2>
+      <div class="mt-6 space-y-6 text-lg leading-relaxed text-slate-600">
+        <p>
+          If the software is the company — the thing customers actually buy, the thing your
+          valuation rests on — there is a strong argument for owning that knowledge permanently and
+          in-house, whatever it costs. Deep product intuition compounds over years, and it compounds
+          best inside people who are not going anywhere. No hourly saving compensates for losing that.
+        </p>
+        <p>
+          The same applies when a role carries responsibilities a vendor cannot hold: regulated
+          sign-off, security clearance, physical presence, or accountability that has to sit with an
+          employee. And it applies when your binding constraint is management attention rather than
+          budget — adding engineers you have no capacity to direct makes delivery slower, not
+          faster, and it does so at every price point.
+        </p>
+        <p>
+          Where nearshore genuinely wins is the middle ground: real, ongoing engineering demand that
+          does not justify permanent headcount, or a roadmap that needs to move faster than your
+          hiring pipeline can deliver. That is the case for{" "}
+          <a
+            href="/hire-remote-developers"
+            class="font-medium text-slate-900 underline underline-offset-4 hover:text-[#f48200]"
+            >hiring remote developers</a
+          >{" "}
+          into a team you already run, or for a scoped internal build such as{" "}
+          <a
+            href="/custom-crm-development"
+            class="font-medium text-slate-900 underline underline-offset-4 hover:text-[#f48200]"
+            >custom CRM development</a
+          >{" "}
+          that will never be your core product but has to exist and has to be good.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cite this calculator ─────────────────────────────────────────── -->
+  <section id="cite" class="bg-slate-50 py-16 sm:py-20 lg:py-24 font-poppins scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        Reuse
+      </p>
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900" data-anim="heading">
+        Cite this calculator
+      </h2>
+      <p class="mt-6 text-lg leading-relaxed text-slate-600">
+        Free to use, free to quote, no permission needed. If you are writing about outsourcing
+        costs, teaching a course, or building a budget deck, take the attribution line below. Tell
+        your readers what assumptions you used — the numbers are only meaningful alongside them.
+      </p>
+
+      <div class="mt-10 space-y-4">
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Attribution line
+          </p>
+          <p id="cite-text" class="mt-3 break-words font-mono text-sm leading-relaxed text-slate-700">
+            {citationText}
+          </p>
+          <button
+            type="button"
+            data-copy-target="cite-text"
+            class="mt-5 rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors duration-300 hover:border-slate-400 hover:bg-slate-50"
+          >
+            <span data-copy-label>Copy citation</span>
+          </button>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            HTML snippet
+          </p>
+          <p id="cite-html" class="mt-3 break-all font-mono text-sm leading-relaxed text-slate-700">
+            {citationHtml}
+          </p>
+          <button
+            type="button"
+            data-copy-target="cite-html"
+            class="mt-5 rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors duration-300 hover:border-slate-400 hover:bg-slate-50"
+          >
+            <span data-copy-label>Copy HTML</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="mt-8 text-sm leading-relaxed text-slate-500">
+        Found a mistake, or have a better public source for one of our defaults? Write to
+        info@codebrand.es. We would rather be corrected than quoted wrongly.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+  <section class="bg-white py-16 sm:py-20 lg:py-24 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        Questions
+      </p>
+      <h2 class="mt-4 mb-12 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900" data-anim="heading">
+        Nearshore cost, answered
+      </h2>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- ── CTA ──────────────────────────────────────────────────────────── -->
+  <section class="bg-slate-950 py-16 sm:py-20 lg:py-24 font-poppins">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white" data-anim="heading">
+        Want the real number for your roadmap?
+      </h2>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+        Send us the configuration you landed on and we will price it properly — scoped to your
+        stack, your timeline and the seniority the work actually needs. No forms, no sales
+        sequence: a conversation with the people who would do the work.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#f48200] px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d97400]"
+        >
+          <Icon name="message-circle" class="w-5 h-5" />
+          Message us on WhatsApp
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 px-8 py-4 font-semibold text-white transition-colors duration-300 hover:border-white/40"
+        >
+          Contact page
+        </a>
+      </div>
+      <p class="mt-10 text-sm leading-relaxed text-slate-400">
+        Related reading:{" "}
+        <a href="/dedicated-development-team" class="text-slate-300 underline underline-offset-4 hover:text-[#f48200]">dedicated development team</a>,{" "}
+        <a href="/hire-remote-developers" class="text-slate-300 underline underline-offset-4 hover:text-[#f48200]">hire remote developers</a>,{" "}
+        <a href="/custom-crm-development" class="text-slate-300 underline underline-offset-4 hover:text-[#f48200]">custom CRM development</a>.
+      </p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      if (window.__cbCopyBound) return;
+      window.__cbCopyBound = true;
+      document.addEventListener("click", function (event) {
+        var target = event.target;
+        if (!(target instanceof Element)) return;
+        var button = target.closest("[data-copy-target]");
+        if (!button) return;
+        var source = document.getElementById(button.getAttribute("data-copy-target"));
+        if (!source || !navigator.clipboard || !navigator.clipboard.writeText) return;
+        navigator.clipboard
+          .writeText((source.textContent || "").trim())
+          .then(function () {
+            var label = button.querySelector("[data-copy-label]") || button;
+            var previous = label.textContent;
+            label.textContent = "Copied";
+            setTimeout(function () {
+              label.textContent = previous;
+            }, 2000);
+          })
+          .catch(function () {});
+      });
+    })();
+  </script>
+</Layout>

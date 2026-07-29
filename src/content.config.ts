@@ -76,6 +76,19 @@ const projects = defineCollection({
             metric2: z.string().optional(),
             metric3: z.string().optional(),
         }).optional(),
+        // Overline shown above the figures. Defaults to "Results" in the
+        // component, which is only truthful when the figures really are
+        // outcomes we produced. Client credentials, scope or deliverables must
+        // override it ("Datos publicados del cliente", "Scope delivered", …).
+        // Write it in the language of the case study file.
+        resultsLabel: z.string().optional(),
+        // Provenance line rendered under the figures: who measured them, when,
+        // and what they are not. Required in practice for any number we did not
+        // measure ourselves.
+        resultsNote: z.string().optional(),
+        // BCP-47 document language. Only set it when the case body is NOT in
+        // English (e.g. "es"), so <html lang> matches the text Google reads.
+        lang: z.string().optional(),
         draft: z.boolean().default(false),
     }),
 });

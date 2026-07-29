@@ -1,0 +1,450 @@
+---
+export const prerender = true;
+/**
+ * Careers — English
+ * Keywords: software development jobs Honduras, developer jobs Honduras,
+ * software engineer jobs San Pedro Sula, nearshore developer careers Honduras
+ *
+ * ── HONESTY CONTRACT FOR THIS PAGE ─────────────────────────────────────────
+ * Candidates make life decisions from this page. Nothing is claimed here unless
+ * it is either (a) Honduran labour law, or (b) verifiable elsewhere on this site.
+ * No headcount, no employee testimonials, no perks we have not confirmed.
+ *
+ * TODO(usuario): confirmar si ofrecemos lo siguiente para poder publicarlo.
+ * Todo lo de abajo está DELIBERADAMENTE fuera de la página hasta que se confirme:
+ *   - Seguro médico privado
+ *   - Modalidad de trabajo: remoto / híbrido / presencial
+ *   - Horario flexible
+ *   - Bonos por encima del décimo tercer y décimo cuarto mes de ley
+ *   - Presupuesto de formación / certificaciones / conferencias
+ *   - Equipo proporcionado (laptop, monitor, estipendio de internet)
+ *   - Número de empleados o tamaño del equipo
+ *   - Testimonios de empleados, nombres, fotos de oficina
+ *   - El proceso de selección real (etapas, prueba técnica, quién entrevista)
+ *   - Rangos salariales por rol
+ *   - Si contratamos perfiles junior / trainee, y si se exige título universitario
+ *   - Días de vacaciones POR ENCIMA del mínimo legal
+ * Cuando estén confirmados, escríbanse como afirmaciones simples: sin cifras que
+ * no se puedan demostrar.
+ */
+
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import FaqAccordion from "../components/FaqAccordion.astro";
+import Icon from "../components/icons/Icon.astro";
+import { createFAQSchema } from "../utils/schema";
+
+const title = "Software Development Jobs in Honduras | Careers at Codebrand";
+const description =
+  "Software development jobs in Honduras: product work for US and European clients, a daytime US Central schedule, and a formal contract with every statutory benefit. Send your CV.";
+const keywords =
+  "software development jobs Honduras, developer jobs Honduras, software engineer jobs San Pedro Sula, programming jobs Honduras, React developer jobs Honduras, Node.js jobs Honduras, QA jobs Honduras, UX UI designer jobs Honduras, careers Codebrand";
+
+const canonical = "https://www.codebrand.us/careers";
+
+// Application channels. WhatsApp URL format is fixed site-wide: always the
+// api.whatsapp.com/send/ form, never the shortened link form.
+const waText =
+  "Hi Codebrand, I'm interested in working with you. I'd like to send my CV.";
+const whatsappUrl = `https://api.whatsapp.com/send/?phone=50487380714&text=${encodeURIComponent(waText)}&type=phone_number&app_absent=0`;
+
+const mailSubject = "Application — Codebrand";
+const mailBody =
+  "Hi Codebrand,\n\nRole I'm applying for:\nLink to my work (GitHub / portfolio / live site):\nWhat I want to build:\n\n(CV attached)\n";
+const mailUrl = `mailto:info@codebrand.es?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+const facts = [
+  { label: "Based in", value: "San Pedro Sula, Honduras" },
+  { label: "Working clock", value: "US Central Time (UTC−6)" },
+  { label: "Languages at work", value: "Spanish and English" },
+];
+
+const work = [
+  {
+    title: "Real products, not a ticket queue",
+    desc: "You work on software that a client's business runs on — web platforms, internal systems, e-commerce, custom applications — and you stay on it long enough to know why it is built the way it is. The same product over months, with context, instead of an anonymous queue you never see the end of.",
+  },
+  {
+    title: "A daytime schedule",
+    desc: "San Pedro Sula runs on US Central Time (UTC−6), the same clock as most of our clients. Overlapping their business day means the work happens during the day here too — not on the overnight shift rotations that much of this city's outsourcing sector runs on.",
+  },
+  {
+    title: "English you actually use",
+    desc: "You will talk to clients, write to them, and review work in English. It is not a line on a job description here: it is the working language with the people you build for, which also means your English gets better by using it rather than by studying it on the side.",
+  },
+  {
+    title: "A stack you can inspect before you apply",
+    desc: "React, Next.js, Astro, Node.js, Python, TypeScript, Tailwind, PostgreSQL. You do not have to take our word for it — it is the same stack described across this site, and this page is built with it. If you want to know what you would be writing, read our service pages before you write to us.",
+  },
+  {
+    title: "A Honduran company exporting the work",
+    desc: "Codebrand is based in San Pedro Sula and sells to clients in the United States and Europe. That is the whole business model: the engineering happens here and is billed abroad, which is what makes serious rates and serious work possible from Honduras.",
+  },
+];
+
+const roles = [
+  {
+    icon: "code",
+    title: "Frontend Engineer",
+    stack: "React · Next.js · Astro · TypeScript · Tailwind",
+    desc: "Interfaces for client products and marketing sites — the work you can see on this site is the work.",
+  },
+  {
+    icon: "server",
+    title: "Backend Engineer",
+    stack: "Node.js · APIs · PostgreSQL",
+    desc: "APIs, data models, and integrations behind the products our clients run their operations on.",
+  },
+  {
+    icon: "cpu",
+    title: "Python Engineer",
+    stack: "Python · automation · integrations",
+    desc: "Automation, integrations between systems, and the backend work that is not a web front end.",
+  },
+  {
+    icon: "shield-check",
+    title: "QA",
+    stack: "Manual and automated testing",
+    desc: "Test plans, regression, and release checks on products that go straight to a client's customers.",
+  },
+  {
+    icon: "palette",
+    title: "UX / UI Designer",
+    stack: "Figma · design systems · handoff",
+    desc: "Product and web interfaces, from structure and flows to the final screens the engineers build.",
+  },
+  {
+    icon: "compass",
+    title: "Project Manager",
+    stack: "Delivery · client communication",
+    desc: "Sprints, priorities, and direct communication with clients abroad — in English, in writing and on calls.",
+  },
+];
+
+const legalBenefits = [
+  "IHSS affiliation (social security)",
+  "RAP contribution",
+  "Thirteenth-month pay (aguinaldo)",
+  "Fourteenth-month pay",
+  "Paid vacation",
+  "Seventh day and statutory holidays",
+];
+
+const applySteps = [
+  {
+    title: "Send your CV",
+    desc: "PDF is fine. Spanish or English, both work — do not translate it for us if English is not where you are strongest.",
+  },
+  {
+    title: "Link your work",
+    desc: "GitHub, a portfolio, a live site, a repository you are proud of. For QA and project management, describe what you shipped and how you ran it instead of sending code.",
+  },
+  {
+    title: "Tell us what you want to build",
+    desc: "One paragraph. What you want to work on, and what you would rather not. It is a faster filter for both of us than a cover letter.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Do you have open positions right now?",
+    answer:
+      "We do not publish a live vacancy list on this page, so we will not tell you a role is open when we cannot guarantee it. What we can tell you is which profiles our work is made of: React, Next.js and Astro on the front end, Node.js and Python on the back end, QA, UX/UI design, and project management. Send your CV for one of those and you will get a straight answer about whether something is open now or whether we should keep it on file.",
+  },
+  {
+    question: "What does your selection process look like?",
+    answer:
+      "We have not published the steps on this page, and we would rather not describe a process that might not match what you actually go through. Ask for the steps in the same message you attach your CV to, and you will get them in writing before you invest time in a test or an interview. Any employer should be able to tell you the stages up front, and you are entitled to ask.",
+  },
+  {
+    question: "Is the work remote, hybrid, or on-site?",
+    answer:
+      "We have not published a work-arrangement policy, and we are not going to imply one on a page you might make a decision from. Ask directly before you go any further. This is exactly the kind of term that should be stated to you in writing by any employer, never inferred from a careers page — including this one.",
+  },
+  {
+    question: "What level of English do I need?",
+    answer:
+      "English is the working language with our clients in the United States: calls, written updates, and reviews. There is no certificate we ask you to hold. The practical bar is being able to hold a working conversation and write a message a client can act on. If your English is still improving, say so honestly in your application, because it will show up on the first client call either way.",
+  },
+  {
+    question: "What should I send with my application?",
+    answer:
+      "A CV in PDF, in Spanish or English. A link to work we can actually look at — GitHub, a portfolio, a live site. And one paragraph about what you want to build. For QA and project management roles, tell us what you shipped and how you ran it rather than sending code. That is enough for a first conversation.",
+  },
+  {
+    question: "What does the employment contract include?",
+    answer:
+      "A formal employment contract in Honduras carries affiliation to the IHSS (social security), the RAP contribution, thirteenth and fourteenth month pay, paid vacation, and the seventh day plus statutory holidays. Those are legal entitlements rather than perks — we state them because informal hiring without any of them is common in this market. Anything beyond that is not listed on this page, and you should ask about it directly instead of assuming.",
+  },
+  {
+    question: "Where are you located and what hours does the team work?",
+    answer:
+      "San Pedro Sula, Honduras. The city runs on US Central Time (UTC−6), the same clock as most of our clients, so the work overlaps with the United States business day and happens during normal daytime hours here rather than on an overnight shift.",
+  },
+  {
+    question: "Do you hire junior developers?",
+    answer:
+      "Our client work is delivered at mid, senior, and lead level, which is the shape of most of what we take on. Whether we are taking on more junior profiles at a given moment is not something we publish here, so ask in your application instead of guessing from a page. If the answer is no at that moment, we will say so plainly.",
+  },
+];
+
+const faqSchema = createFAQSchema(faqs);
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalOverride={canonical}
+  breadcrumbNames={{ careers: "Careers" }}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-slate-950 pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pb-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Careers</p>
+      <h1 class="text-hero mt-6 max-w-4xl text-white">
+        Software development jobs in Honduras
+      </h1>
+      <p class="text-lead mt-8 max-w-2xl text-slate-400">
+        Codebrand is a software team in San Pedro Sula building products for
+        companies in the United States and Europe. This page says what we can
+        state honestly about working here — and it stops exactly where our
+        certainty stops.
+      </p>
+
+      <div class="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          href={mailUrl}
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[#f48200] px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:bg-[#d97400]"
+        >
+          <Icon name="mail" class="h-5 w-5" />
+          Send your CV
+        </a>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-white/50"
+        >
+          <Icon name="message-circle" class="h-5 w-5" />
+          Ask on WhatsApp
+        </a>
+      </div>
+
+      <dl class="mt-16 grid gap-8 border-t border-white/10 pt-10 sm:grid-cols-3">
+        {facts.map((fact) => (
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{fact.label}</dt>
+            <dd class="mt-2 text-lg font-medium text-white tabular-nums">{fact.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <p class="mt-10 text-sm text-slate-400">
+        <span lang="es">
+          ¿Prefieres leer esta página en español?{" "}
+          <a href="/hn/carreras" class="font-medium text-slate-300 underline underline-offset-4 transition-colors duration-300 hover:text-[#f48200]">Ver la versión en español</a>
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <Breadcrumbs
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Careers", href: "" },
+    ]}
+    variant="transparent"
+    class="border-b border-slate-200"
+  />
+
+  <!-- What the work is -->
+  <section class="bg-white py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">What the work is</p>
+      <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900">
+        Product work for clients abroad, on a daytime schedule
+      </h2>
+
+      <div class="mt-14 border-t border-slate-200">
+        {work.map((item, i) => (
+          <article class="group grid gap-3 border-b border-slate-200 py-8 sm:grid-cols-[4.5rem_1fr] sm:gap-10 sm:py-10">
+            <span class="text-sm font-semibold tabular-nums tracking-[0.18em] text-slate-500 sm:pt-1.5">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h3 class="text-xl font-semibold text-slate-900 transition-transform duration-300 ease-out-quart group-hover:translate-x-1 sm:text-2xl">
+                {item.title}
+              </h3>
+              <p class="mt-3 max-w-2xl leading-relaxed text-slate-600">{item.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Roles we hire for -->
+  <section class="bg-slate-50 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Roles we hire for</p>
+      <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900">
+        The profiles our work is made of
+      </h2>
+      <p class="mt-6 max-w-2xl leading-relaxed text-slate-600">
+        We do not run a live vacancy board here, and we are not going to invent
+        one. These are the roles our client work is actually built from. If yours
+        is on the list, send your CV and you will get a straight answer about
+        what is open.
+      </p>
+
+      <div class="mt-14 divide-y divide-slate-200 border-y border-slate-200">
+        {roles.map((role) => (
+          <article class="group flex gap-5 py-7 sm:gap-8 sm:py-8">
+            <Icon name={role.icon} class="mt-1 h-7 w-7 flex-shrink-0 text-slate-500 transition-colors duration-300 group-hover:text-[#f48200]" />
+            <div>
+              <h3 class="text-xl font-semibold text-slate-900">{role.title}</h3>
+              <p class="mt-1.5 text-sm font-medium tracking-wide text-slate-500">{role.stack}</p>
+              <p class="mt-3 max-w-2xl leading-relaxed text-slate-600">{role.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Employment terms -->
+  <section class="bg-slate-950 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Employment terms</p>
+          <h2 class="text-display-2 mt-5 text-white">
+            A formal contract, with every benefit the law requires
+          </h2>
+          <p class="mt-8 leading-relaxed text-slate-400">
+            In the Honduran tech market a lot of hiring is informal, or invoiced
+            as professional fees with no benefits attached at all. We hire on
+            formal employment contracts. That is legal compliance, not
+            generosity — but it is worth stating plainly, because it is the
+            difference between being affiliated to social security and not being
+            affiliated at all.
+          </p>
+          <p class="mt-6 border-l-2 border-[#f48200] pl-6 leading-relaxed text-slate-300">
+            If a benefit is not on this page, do not assume it exists. We would
+            rather publish a shorter page than let you accept an offer based on
+            something we implied. Ask us directly and you will get a straight
+            answer in writing.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+            Statutory entitlements in Honduras
+          </h3>
+          <ul class="mt-8 divide-y divide-white/10 border-y border-white/10">
+            {legalBenefits.map((benefit) => (
+              <li class="flex items-center gap-4 py-4">
+                <Icon name="check" class="h-5 w-5 flex-shrink-0 text-[#f48200]" />
+                <span class="text-lg text-white">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-8 text-sm leading-relaxed text-slate-400">
+            Every item above is a legal entitlement for a formally contracted
+            employee in Honduras. We list them because informal hiring is common
+            in this market, not because they are extras.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to apply -->
+  <section class="bg-white py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">How to apply</p>
+      <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900">Three things, one message</h2>
+
+      <div class="mt-14 border-t border-slate-200">
+        {applySteps.map((step, i) => (
+          <div class="grid gap-3 border-b border-slate-200 py-8 sm:grid-cols-[4.5rem_1fr] sm:gap-10">
+            <span class="text-sm font-semibold tabular-nums tracking-[0.18em] text-slate-500 sm:pt-1.5">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h3 class="text-xl font-semibold text-slate-900">{step.title}</h3>
+              <p class="mt-3 max-w-2xl leading-relaxed text-slate-600">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          href={mailUrl}
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:bg-slate-800"
+        >
+          <Icon name="mail" class="h-5 w-5" />
+          info@codebrand.es
+        </a>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-8 py-4 font-semibold text-slate-900 transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-slate-900"
+        >
+          <Icon name="message-circle" class="h-5 w-5" />
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Questions candidates ask</p>
+      <h2 class="text-display-2 mt-5 mb-12 text-slate-900">Before you write to us</h2>
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="bg-slate-950 py-20 sm:py-28 lg:py-32">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-display-2 max-w-2xl text-white">Send us your CV</h2>
+      <p class="text-lead mt-6 max-w-2xl text-slate-400">
+        Applications go to info@codebrand.es. If you would rather ask something
+        before sending anything, WhatsApp works too — and we would rather answer
+        a question than have you guess.
+      </p>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          href={mailUrl}
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[#f48200] px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:bg-[#d97400]"
+        >
+          <Icon name="mail" class="h-5 w-5" />
+          Send your CV
+        </a>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-8 py-4 font-semibold text-white transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-white/50"
+        >
+          <Icon name="message-circle" class="h-5 w-5" />
+          Ask on WhatsApp
+        </a>
+      </div>
+      <p class="mt-12 text-sm text-slate-400">
+        <span lang="es">
+          Esta página también existe en español:{" "}
+          <a href="/hn/carreras" class="font-medium text-slate-300 underline underline-offset-4 transition-colors duration-300 hover:text-[#f48200]">Carreras en Codebrand</a>
+        </span>
+      </p>
+    </div>
+  </section>
+</Layout>
