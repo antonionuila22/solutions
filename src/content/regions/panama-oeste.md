@@ -61,7 +61,7 @@ regionalStats:
 
 faqs:
   - question: "¿Por qué elegir Codebrand para mi negocio en Panamá Oeste?"
-    answer: "Somos un equipo bilingüe basado en Honduras con la misma zona horaria que Panamá. Ofrecemos desarrollo web a la medida y a precios accesibles, con comunicación fluida y calificación 5.0★ en Google."
+    answer: "Somos un equipo bilingüe basado en Honduras con la misma zona horaria que Panamá. Ofrecemos desarrollo web a la medida y a precios accesibles, con comunicación fluida y calificación 5.0 con 50 opiniones en Google."
   - question: "¿Trabajan con pequeñas y medianas empresas?"
     answer: "Sí. Gran parte de los negocios de Panamá Oeste son pymes en crecimiento. Creamos sitios web y landing pages efectivas y accesibles para captar clientes locales."
   - question: "¿Cuánto cuesta un sitio web?"

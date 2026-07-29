@@ -24,7 +24,7 @@ longDescription: |
 
   <p>Para las empresas industriales, comercializadoras y de servicios del Atlántico, construimos <strong>sitios web corporativos</strong>, <strong>tiendas en línea (e-commerce)</strong>, <strong>aplicaciones web a la medida</strong> y <strong>landing pages</strong> optimizadas para conversión. Todo con diseño profesional, buen rendimiento y SEO orientado al mercado colombiano.</p>
 
-  <p>Ya sea que su negocio esté en <strong>Barranquilla</strong>, <strong>Soledad</strong>, <strong>Malambo</strong> o en cualquier municipio del departamento, le ayudamos a digitalizar su operación con tecnología moderna y acompañamiento en español. Contamos con <strong>5.0★ en Google</strong> que respaldan nuestro trabajo.</p>
+  <p>Ya sea que su negocio esté en <strong>Barranquilla</strong>, <strong>Soledad</strong>, <strong>Malambo</strong> o en cualquier municipio del departamento, le ayudamos a digitalizar su operación con tecnología moderna y acompañamiento en español. Contamos con <strong>5.0 con 50 opiniones en Google</strong> que respaldan nuestro trabajo.</p>
 
 industries:
   - name: "Logística Portuaria"
@@ -55,7 +55,7 @@ regionalStats:
 
 faqs:
   - question: "¿Por qué elegir Codebrand para mi empresa en el Atlántico?"
-    answer: "Somos un equipo bilingüe que entiende Latinoamérica, trabajamos en zona horaria cercana (Honduras CST = Colombia COT) y ofrecemos desarrollo web a la medida a precios accesibles, con 5.0★ en Google."
+    answer: "Somos un equipo bilingüe que entiende Latinoamérica, trabajamos en zona horaria cercana (Honduras CST = Colombia COT) y ofrecemos desarrollo web a la medida a precios accesibles, con 5.0 y 50 opiniones en Google."
   - question: "¿Qué servicios de desarrollo web ofrecen?"
     answer: "Creamos sitios web corporativos, tiendas en línea (e-commerce), aplicaciones web a la medida y landing pages, con diseño profesional y SEO."
   - question: "¿Cuánto cuesta un sitio web?"

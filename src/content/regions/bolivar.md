@@ -24,7 +24,7 @@ longDescription: |
 
   <p>Para el sector turístico de Cartagena construimos <strong>sitios web bilingües</strong> con motores de reservas para hoteles, tours y experiencias; y para la industria y el comercio desarrollamos <strong>sitios corporativos</strong>, <strong>tiendas en línea (e-commerce)</strong> y <strong>aplicaciones web a la medida</strong>. Todo con diseño profesional, buen rendimiento y SEO.</p>
 
-  <p>Ya sea que su negocio esté en el <strong>Centro Histórico</strong>, en <strong>Bocagrande</strong>, en la zona de <strong>Mamonal</strong> o en cualquier municipio del departamento, le ayudamos a crecer en el mundo digital con acompañamiento en español. Contamos con <strong>5.0★ en Google</strong> que respaldan nuestro trabajo.</p>
+  <p>Ya sea que su negocio esté en el <strong>Centro Histórico</strong>, en <strong>Bocagrande</strong>, en la zona de <strong>Mamonal</strong> o en cualquier municipio del departamento, le ayudamos a crecer en el mundo digital con acompañamiento en español. Contamos con <strong>5.0 con 50 opiniones en Google</strong> que respaldan nuestro trabajo.</p>
 
 industries:
   - name: "Turismo Histórico"
@@ -55,7 +55,7 @@ regionalStats:
 
 faqs:
   - question: "¿Por qué elegir Codebrand para mi negocio en Cartagena?"
-    answer: "Somos un equipo bilingüe que entiende Latinoamérica, trabajamos en zona horaria cercana (Honduras CST = Colombia COT) y creamos desarrollo web a la medida a precios accesibles, con 5.0★ en Google."
+    answer: "Somos un equipo bilingüe que entiende Latinoamérica, trabajamos en zona horaria cercana (Honduras CST = Colombia COT) y creamos desarrollo web a la medida a precios accesibles, con 5.0 y 50 opiniones en Google."
   - question: "¿Crean sitios web para hoteles y turismo?"
     answer: "Sí. Desarrollamos sitios web bilingües (español/inglés) con sistemas de reservas para hoteles, tours y experiencias turísticas en Cartagena."
   - question: "¿Cuánto cuesta un sitio web?"

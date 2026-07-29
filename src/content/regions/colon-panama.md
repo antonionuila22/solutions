@@ -63,7 +63,7 @@ faqs:
   - question: "¿Desarrollan sitios web para empresas de la Zona Libre de Colón?"
     answer: "Sí. Creamos catálogos digitales y tiendas en línea bilingües que ayudan a importadores y mayoristas de la Zona Libre a conectar con compradores en toda América Latina y el Caribe."
   - question: "¿Por qué elegir Codebrand para mi negocio en Colón?"
-    answer: "Somos un equipo bilingüe basado en Honduras con la misma zona horaria que Panamá. Ofrecemos desarrollo web a la medida y a precios accesibles, con comunicación fluida en su mismo horario y calificación 5.0★ en Google."
+    answer: "Somos un equipo bilingüe basado en Honduras con la misma zona horaria que Panamá. Ofrecemos desarrollo web a la medida y a precios accesibles, con comunicación fluida en su mismo horario y calificación 5.0 con 50 opiniones en Google."
   - question: "¿Cuánto cuesta un sitio web?"
     answer: "Cada proyecto es distinto. Preparamos una cotización personalizada según el alcance, ya sea un sitio corporativo, una tienda en línea o una plataforma logística."
   - question: "¿Trabajan con operadores logísticos y portuarios?"

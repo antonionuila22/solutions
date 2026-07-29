@@ -428,7 +428,7 @@ export const PROCESS_STEPS = [
 
 /** Métricas de confianza para la barra de prueba social. */
 export const TRUST_STATS = [
-  { value: "5.0", label: "en Google Reviews" },
+  { value: "5.0", label: "50 opiniones en Google" },
   { value: "50+", label: "Proyectos entregados" },
   { value: "100%", label: "Satisfacción" },
   { value: "24/7", label: "Acompañamiento" },

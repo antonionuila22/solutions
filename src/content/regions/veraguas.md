@@ -63,7 +63,7 @@ faqs:
   - question: "¿Desarrollan sitios web bilingües para turismo?"
     answer: "Sí. Santa Catalina y Coiba reciben surfistas y buzos de todo el mundo. Creamos sitios bilingües con reservas en línea para hostales, escuelas de surf y operadores de buceo."
   - question: "¿Por qué elegir Codebrand para mi negocio en Veraguas?"
-    answer: "Somos un equipo bilingüe basado en Honduras con la misma zona horaria que Panamá. Ofrecemos desarrollo web a la medida y a precios accesibles, con comunicación fluida y calificación 5.0★ en Google."
+    answer: "Somos un equipo bilingüe basado en Honduras con la misma zona horaria que Panamá. Ofrecemos desarrollo web a la medida y a precios accesibles, con comunicación fluida y calificación 5.0 con 50 opiniones en Google."
   - question: "¿Cuánto cuesta un sitio web?"
     answer: "Cada proyecto es distinto. Preparamos una cotización personalizada según el alcance, ya sea un sitio turístico con reservas, un catálogo agropecuario o un sitio corporativo."
   - question: "¿Trabajan con productores agrícolas y ganaderos?"
