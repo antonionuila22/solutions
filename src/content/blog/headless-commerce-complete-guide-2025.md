@@ -1,5 +1,6 @@
 ---
 title: "Headless Commerce: Transformando E-commerce"
+lang: es
 description: "Guía completa sobre Headless Commerce. Descubre qué es, cómo funciona, cuándo implementarlo y por qué las marcas más exitosas están migrando a esta arquitectura. Casos reales, costos y estrategia de implementación."
 author: "Ramon Nuila"
 readtime: 12

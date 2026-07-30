@@ -6,11 +6,47 @@ import TeamQuoter from "../components/TeamQuoter";
 import Ourteam from "@/components/Ourteam.astro";
 import Faq from "../components/Faq.astro";
 import TechMarquee from "../components/TechMarquee.astro";
-import Testimonial from "../components/Testimonial.astro";
+import ReviewsCarousel from "../components/islands/ReviewsCarousel";
 import TrustBadges from "../components/TrustBadges.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 import PartnershipBanner from "../components/PartnershipBanner.astro";
 import DesignRushSection from "../components/DesignRushSection.astro";
+
+// Real Google reviews — single source of truth for BOTH the JSON-LD schema
+// below and the ReviewsCarousel island in the social-proof section.
+// Texts are verbatim; do not edit.
+const googleReviews = [
+  {
+    name: "Cesar Franco",
+    body: "¡ESTA GENTE SI SABE LO QUE YO QUIERO! ¡EXCELENTE TRABAJO! Me hicieron un trabajo súper profesional y creativo para mi diseño en la página web.",
+    date: "2024-11-15",
+  },
+  {
+    name: "Serling Topete",
+    body: "Contratamos a Codebrand para que nos hiciera nuestra página web desde cero y el resultado ha sido asombroso. No solo diseñan la página, sino que se involucran en todo el proceso.",
+    date: "2024-10-20",
+  },
+  {
+    name: "Tepeu Guerrero",
+    body: "Muy sorprendido con su trabajo, hicieron una página web para mi lavandería por solo $600. Por su calidad y precio los recomiendo al 100.",
+    date: "2024-09-10",
+  },
+  {
+    name: "Elvin Amador",
+    body: "Excelente experiencia con Codebrand. Destacan por su profesionalismo, creatividad y atención al detalle. Los recomiendo totalmente.",
+    date: "2024-08-15",
+  },
+  {
+    name: "Luis Rios",
+    body: "Buen servicio, el equipo brinda excelente atención al cliente. Muy recomendable si necesitas un experto que maneje tu sitio web.",
+    date: "2024-07-22",
+  },
+  {
+    name: "Cindy Serrano",
+    body: "Gracias, estoy en México y me dieron un excelente servicio.",
+    date: "2024-09-20",
+  },
+];
 
 // Review Schema for Google rich snippets - real Google reviews
 const reviewsSchema = {
@@ -19,50 +55,13 @@ const reviewsSchema = {
   "@id": "https://www.codebrand.us/#organization",
   "name": "Codebrand",
   "url": "https://www.codebrand.us",
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Cesar Franco" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "¡ESTA GENTE SI SABE LO QUE YO QUIERO! ¡EXCELENTE TRABAJO! Me hicieron un trabajo súper profesional y creativo para mi diseño en la página web.",
-      "datePublished": "2024-11-15"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Serling Topete" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Contratamos a Codebrand para que nos hiciera nuestra página web desde cero y el resultado ha sido asombroso. No solo diseñan la página, sino que se involucran en todo el proceso.",
-      "datePublished": "2024-10-20"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Tepeu Guerrero" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Muy sorprendido con su trabajo, hicieron una página web para mi lavandería por solo $600. Por su calidad y precio los recomiendo al 100.",
-      "datePublished": "2024-09-10"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Elvin Amador" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Excelente experiencia con Codebrand. Destacan por su profesionalismo, creatividad y atención al detalle. Los recomiendo totalmente.",
-      "datePublished": "2024-08-15"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Luis Rios" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Buen servicio, el equipo brinda excelente atención al cliente. Muy recomendable si necesitas un experto que maneje tu sitio web.",
-      "datePublished": "2024-07-22"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Cindy Serrano" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Gracias, estoy en México y me dieron un excelente servicio.",
-      "datePublished": "2024-09-20"
-    }
-  ],
+  "review": googleReviews.map((r) => ({
+    "@type": "Review",
+    "author": { "@type": "Person", "name": r.name },
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "reviewBody": r.body,
+    "datePublished": r.date,
+  })),
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -527,7 +526,12 @@ const whatsappUrl =
         Fifty verified Google reviews, rated 5.0 — web development, e-commerce, branding and UX/UI design projects delivered for clients across the US, Honduras and LATAM.
       </p>
     </div>
-    <Testimonial />
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ReviewsCarousel
+        client:visible
+        reviews={googleReviews.map(({ name, body }) => ({ name, body }))}
+      />
+    </div>
   </section>
 
   <!-- ============================================================= -->

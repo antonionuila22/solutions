@@ -1,5 +1,6 @@
 ---
 title: "Cómo Crear una Página Web para tu Empresa en Honduras: Guía Completa 2026"
+lang: es
 description: "Descubre cómo las empresas en Honduras pueden crear páginas web efectivas: opciones, procesos, beneficios y por qué Codebrand es el socio ideal para tu proyecto digital."
 author: "Ramon Nuila"
 readtime: 15

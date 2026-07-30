@@ -1,5 +1,6 @@
 ---
 title: "¿Cuánto cuesta una página web en Honduras? Precios reales 2026"
+lang: es
 description: "Precios reales de una página web en Honduras en 2026: rangos por tipo de proyecto, qué encarece el presupuesto y cómo evitar que te cobren de más."
 author: "Ramon Nuila"
 readtime: 13

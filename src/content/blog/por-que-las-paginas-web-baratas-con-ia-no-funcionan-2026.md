@@ -1,5 +1,6 @@
 ---
 title: "Por Qué las Páginas Web Baratas Hechas con IA No Venden (y Qué sí Funciona en 2026)"
+lang: es
 description: "Te prometen tu página web 'lista en 1 día' por $100. Te explicamos por qué esas webs hechas con IA sin criterio no generan ventas ni confianza, y cómo se construye una que sí funciona."
 author: "Ramon Nuila"
 readtime: 12

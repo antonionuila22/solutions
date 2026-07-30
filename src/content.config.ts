@@ -21,6 +21,9 @@ const blog = defineCollection({
         tags: z.array(z.string()).optional(),
         complexity: z.number().default(1),
         hideToc: z.boolean().default(false),
+        // BCP-47 document language. Only set when the post body is NOT in
+        // English (e.g. "es") so the blog shell and <html lang> match the text.
+        lang: z.string().optional(),
         draft: z.boolean().default(false),
     }),
 });

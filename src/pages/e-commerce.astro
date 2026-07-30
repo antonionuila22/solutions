@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Whyus from "../components/whyus.astro";
 import Faq from "../components/Faq.astro";
 import CardService from "../components/CardService.astro";
-import Button from "../components/Button.astro";
+import BorderBeam from "../components/ui/BorderBeam.astro";
 import Testimonial from "../components/Testimonial.astro";
 import RelatedServices from "../components/RelatedServices.astro";
 import PageHero from "../components/PageHero.astro";
@@ -147,6 +147,7 @@ const serviceSchema = createServicePageSchema({
             data-parallax-speed="0.2"
             data-parallax-range="44"
           >
+            <BorderBeam duration={8} />
             <div class="space-y-4">
               <div
                 class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-[1.03] transition-transform duration-300"
@@ -598,7 +599,21 @@ const serviceSchema = createServicePageSchema({
         >.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim="fade" data-delay="0.15">
-        <Button text="Start Selling Online" href="/contact" />
+        <!-- Same visual as the shared Button component, inlined here (page-local)
+             so the .ui-shine sweep can be applied without touching the shared
+             component. Keep classes in sync with src/components/Button.astro. -->
+        <a
+          href="/contact"
+          class="ui-shine inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold
+   py-3.5 px-8 rounded-2xl shadow-lg shadow-orange-500/25
+   hover:from-orange-400 hover:to-orange-500 hover:shadow-xl hover:shadow-orange-500/40 hover:brightness-105
+   transition-[transform,box-shadow,filter] duration-200 ease-out will-change-transform
+   transform hover:scale-[1.03] hover:-translate-y-0.5
+   active:scale-[0.97] active:translate-y-0 active:duration-75
+   border-none text-sm lg:text-lg"
+        >
+          Start Selling Online
+        </a>
         <a
           href="#services"
           data-magnetic
@@ -617,3 +632,45 @@ const serviceSchema = createServicePageSchema({
   <!-- FAQ Section -->
   <Faq />
 </Layout>
+
+<style is:global>
+  /* ── UTILIDAD .ui-shine (copiada de src/components/ui/ShinyButton.astro,
+     que autoriza copiar este bloque cuando la página no usa el componente) ── */
+  .ui-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ui-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .ui-shine:hover::after {
+      animation: ui-shine-sweep 0.7s ease;
+    }
+  }
+
+  @keyframes ui-shine-sweep {
+    from {
+      transform: translateX(-120%);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(120%);
+      opacity: 1;
+    }
+  }
+  /* ── fin UTILIDAD .ui-shine ────────────────────────────────────────────── */
+</style>

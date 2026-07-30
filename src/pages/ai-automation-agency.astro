@@ -10,6 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import { createServicePageSchema } from "../utils/schema";
 import Icon from "../components/icons/Icon.astro";
+import BorderBeam from "../components/ui/BorderBeam.astro";
 
 const title = "AI Automation Agency | Codebrand";
 const description =
@@ -192,7 +193,7 @@ const stack = [
           you already use. Built to save real hours — not to demo well.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.4" class="ui-shine inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
             Automate a Workflow
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
           </a>
@@ -241,7 +242,8 @@ const stack = [
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (
-          <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+          <div class="relative bg-white rounded-2xl shadow-lg p-6 border border-slate-200 hover:-translate-y-1 transition-all duration-300">
+            {s.title === "AI Agents & Assistants" && <BorderBeam duration={8} />}
             <div class="mb-4"><Icon name={s.icon} class="w-9 h-9 text-orange-500" /></div>
             <h3 class="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
             <p class="text-slate-600">{s.desc}</p>
@@ -292,3 +294,45 @@ const stack = [
     </div>
   </section>
 </Layout>
+
+<style is:global>
+  /* ── UTILIDAD .ui-shine (copiada de src/components/ui/ShinyButton.astro,
+     que autoriza copiar este bloque cuando la página no usa el componente) ── */
+  .ui-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ui-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .ui-shine:hover::after {
+      animation: ui-shine-sweep 0.7s ease;
+    }
+  }
+
+  @keyframes ui-shine-sweep {
+    from {
+      transform: translateX(-120%);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(120%);
+      opacity: 1;
+    }
+  }
+  /* ── fin UTILIDAD .ui-shine ────────────────────────────────────────────── */
+</style>

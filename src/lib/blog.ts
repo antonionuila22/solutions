@@ -44,9 +44,60 @@ export function formatPostDate(
     month: "short",
     day: "numeric",
     year: "numeric",
-  }
+  },
+  locale: string = "en-US"
 ): string {
   if (!date) return "";
   const d = date instanceof Date ? date : new Date(date);
-  return isNaN(d.getTime()) ? "" : d.toLocaleDateString("en-US", options);
+  return isNaN(d.getTime()) ? "" : d.toLocaleDateString(locale, options);
+}
+
+/* ── Blog shell i18n ──────────────────────────────────────────────────────
+ * The shell (meta rows, ToC, related posts, closing CTA) renders around every
+ * post; posts with frontmatter `lang: es` get the Spanish strings, everything
+ * else keeps the original English. Post CONTENT is never touched — only the
+ * chrome around it. One dictionary here instead of ternaries in templates. */
+
+/** Shell strings, keyed per language. Both shapes must stay identical. */
+const SHELL_STRINGS = {
+  en: {
+    /** Meta row: "By {author}" */
+    by: "By",
+    /** Meta row / card: "{n} min read" (n interpolated by the template) */
+    minRead: "min read",
+    tocSummary: "Table of contents",
+    tocAside: "On this page",
+    relatedOverline: "Keep reading",
+    relatedTitle: "Related Articles",
+    ctaTitle: "Do you want to read more articles?",
+    ctaBody:
+      "Visit our blog to explore more content on web development, design, and digital marketing.",
+    ctaButton: "Read More Articles",
+    breadcrumbHome: "Home",
+  },
+  es: {
+    by: "Por",
+    minRead: "min de lectura",
+    tocSummary: "Contenido",
+    tocAside: "En esta página",
+    relatedOverline: "Sigue leyendo",
+    relatedTitle: "Artículos relacionados",
+    ctaTitle: "¿Quieres leer más artículos?",
+    ctaBody:
+      "Visita nuestro blog para explorar más contenido sobre desarrollo web, diseño y marketing digital.",
+    ctaButton: "Leer más artículos",
+    breadcrumbHome: "Inicio",
+  },
+} as const;
+
+export type BlogShellStrings = (typeof SHELL_STRINGS)["en" | "es"];
+
+/** Shell strings for a post's frontmatter `lang`. Anything but "es" → English. */
+export function shellStrings(lang?: string): BlogShellStrings {
+  return lang === "es" ? SHELL_STRINGS.es : SHELL_STRINGS.en;
+}
+
+/** Intl locale for a post's frontmatter `lang` ("es" → es-HN, else en-US). */
+export function postLocale(lang?: string): string {
+  return lang === "es" ? "es-HN" : "en-US";
 }

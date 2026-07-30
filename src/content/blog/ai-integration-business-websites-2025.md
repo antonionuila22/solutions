@@ -1,5 +1,6 @@
 ---
 title: "Integrar IA en Tu Sitio Web: Guía Práctica"
+lang: es
 description: "Aprende a implementar inteligencia artificial en tu sitio web de forma práctica. Chatbots, personalización, búsqueda inteligente, generación de contenido y más. Costos reales, herramientas y casos de éxito."
 author: "Ramon Nuila"
 readtime: 13

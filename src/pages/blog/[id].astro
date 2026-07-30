@@ -16,7 +16,12 @@ import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedPosts from "../../components/RelatedPosts.astro";
 import ShinyButton from "../../components/ui/ShinyButton.astro";
-import { readingMinutes, slugifyCategory } from "../../lib/blog";
+import {
+  readingMinutes,
+  slugifyCategory,
+  shellStrings,
+  postLocale,
+} from "../../lib/blog";
 import {
   createArticleSchema,
   createBreadcrumbSchema,
@@ -44,9 +49,16 @@ const {
   categories,
   tags,
   hideToc,
+  lang,
 } = data;
 
 const { Content, headings } = await render(post);
+
+// Shell language: posts with `lang: es` get the Spanish chrome (meta row, ToC,
+// related posts, CTA) and es-HN dates; everything else keeps English/en-US.
+// SEO surface (title, description, slugs, schemas) is language-agnostic here.
+const t = shellStrings(lang);
+const locale = postLocale(lang);
 
 // Calculate word count for SEO
 const wordCount = body ? body.split(/\s+/).filter(Boolean).length : 0;
@@ -63,7 +75,7 @@ const dateObj =
   date instanceof Date ? date : typeof date === "string" ? new Date(date) : null;
 const formattedDate =
   dateObj && !isNaN(dateObj.getTime())
-    ? dateObj.toLocaleDateString("en-US", {
+    ? dateObj.toLocaleDateString(locale, {
         year: "numeric",
         month: "long",
         day: "numeric",
@@ -141,6 +153,7 @@ const breadcrumbData = createBreadcrumbSchema([
   publishedTime={date}
   tags={tags}
   categories={categories}
+  lang={lang === "es" ? "es" : undefined}
 >
   <!-- Article Structured Data -->
   <script
@@ -172,7 +185,7 @@ const breadcrumbData = createBreadcrumbSchema([
         <div class="-mx-4 sm:-mx-6 lg:-mx-8">
           <Breadcrumbs
             items={[
-              { name: "Home", href: "/" },
+              { name: t.breadcrumbHome, href: "/" },
               { name: "Blog", href: "/blog" },
               { name: title, href: "" },
             ]}
@@ -216,11 +229,17 @@ const breadcrumbData = createBreadcrumbSchema([
         <div
           class="mt-7 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-sm text-slate-500"
         >
-          {author && <span class="font-medium text-slate-700">By {author}</span>}
+          {
+            author && (
+              <span class="font-medium text-slate-700">
+                {t.by} {author}
+              </span>
+            )
+          }
           {author && formattedDate && <span aria-hidden="true">&middot;</span>}
           {formattedDate && <time datetime={isoDate}>{formattedDate}</time>}
           <span aria-hidden="true">&middot;</span>
-          <span>{readMinutes} min read</span>
+          <span>{readMinutes} {t.minRead}</span>
         </div>
       </div>
 
@@ -260,7 +279,7 @@ const breadcrumbData = createBreadcrumbSchema([
                 class="mb-10 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 lg:hidden"
               >
                 <summary class="cursor-pointer select-none text-sm font-semibold text-slate-900">
-                  Table of contents
+                  {t.tocSummary}
                 </summary>
                 <ul class="mt-4 space-y-2.5 border-l border-slate-200 text-sm">
                   {toc.map((h) => (
@@ -291,10 +310,10 @@ const breadcrumbData = createBreadcrumbSchema([
             <aside class="hidden lg:block">
               <nav
                 class="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-2"
-                aria-label="Table of contents"
+                aria-label={t.tocSummary}
               >
                 <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                  On this page
+                  {t.tocAside}
                 </p>
                 <ul class="mt-4 space-y-2.5 border-l border-slate-200 text-sm">
                   {toc.map((h) => (
@@ -324,6 +343,7 @@ const breadcrumbData = createBreadcrumbSchema([
       categories={categories}
       tags={tags}
       limit={3}
+      lang={lang}
     />
 
     <!-- CTA -->
@@ -333,14 +353,13 @@ const breadcrumbData = createBreadcrumbSchema([
       >
         <div>
           <h2 class="text-2xl font-bold tracking-tight text-white">
-            Do you want to read more articles?
+            {t.ctaTitle}
           </h2>
           <p class="mt-3 max-w-xl leading-relaxed text-slate-400">
-            Visit our blog to explore more content on web development, design,
-            and digital marketing.
+            {t.ctaBody}
           </p>
         </div>
-        <ShinyButton href="/blog">Read More Articles</ShinyButton>
+        <ShinyButton href="/blog">{t.ctaButton}</ShinyButton>
       </div>
     </section>
   </article>

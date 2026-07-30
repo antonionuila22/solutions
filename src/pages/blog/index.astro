@@ -12,7 +12,13 @@ import { getCollection } from "astro:content";
 import Button from "../../components/Button.astro";
 import PostCard from "../../components/blog/PostCard.astro";
 import CategoryFilter from "../../components/blog/CategoryFilter.astro";
-import { slugifyCategory, readingMinutes, formatPostDate } from "../../lib/blog";
+import {
+  slugifyCategory,
+  readingMinutes,
+  formatPostDate,
+  shellStrings,
+  postLocale,
+} from "../../lib/blog";
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 
@@ -58,12 +64,19 @@ const regularPosts = posts.slice(1);
 const featuredMinutes = featuredPost
   ? readingMinutes(featuredPost.body, featuredPost.data.readtime)
   : 0;
+// The featured meta line follows the LINKED post's own language (same rule as
+// PostCard): a Spanish featured post keeps its Spanish meta on the EN index.
+const featuredT = shellStrings(featuredPost?.data.lang);
 const featuredDate = featuredPost
-  ? formatPostDate(featuredPost.data.date, {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    })
+  ? formatPostDate(
+      featuredPost.data.date,
+      {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      },
+      postLocale(featuredPost.data.lang)
+    )
   : "";
 const featuredCategory = featuredPost?.data.categories?.[0];
 ---
@@ -150,7 +163,7 @@ const featuredCategory = featuredPost?.data.categories?.[0];
               <div class="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-sm text-slate-500">
                 {featuredPost.data.author && (
                   <span class="font-medium text-slate-700">
-                    By {featuredPost.data.author}
+                    {featuredT.by} {featuredPost.data.author}
                   </span>
                 )}
                 {featuredPost.data.author && featuredDate && (
@@ -158,7 +171,7 @@ const featuredCategory = featuredPost?.data.categories?.[0];
                 )}
                 {featuredDate && <span>{featuredDate}</span>}
                 <span aria-hidden="true">&middot;</span>
-                <span>{featuredMinutes} min read</span>
+                <span>{featuredMinutes} {featuredT.minRead}</span>
               </div>
 
               <a

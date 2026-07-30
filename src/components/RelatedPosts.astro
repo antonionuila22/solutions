@@ -7,6 +7,7 @@
  */
 import type { CollectionEntry } from "astro:content";
 import PostCard from "./blog/PostCard.astro";
+import { shellStrings } from "../lib/blog";
 
 interface Props {
   currentId: string;
@@ -14,9 +15,20 @@ interface Props {
   categories?: string[];
   tags?: string[];
   limit?: number;
+  /** Language of the CURRENT post's shell ("es" → Spanish heading). */
+  lang?: string;
 }
 
-const { currentId, posts, categories = [], tags = [], limit = 3 } = Astro.props;
+const {
+  currentId,
+  posts,
+  categories = [],
+  tags = [],
+  limit = 3,
+  lang,
+} = Astro.props;
+
+const t = shellStrings(lang);
 
 const currentCategories = new Set(categories);
 const currentTags = new Set(tags);
@@ -56,9 +68,9 @@ const related = topRelated.length === limit
     <section class="border-t border-slate-200 bg-slate-50 py-16 sm:py-20">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-          Keep reading
+          {t.relatedOverline}
         </p>
-        <h2 class="text-display-2 mt-4 text-slate-900">Related Articles</h2>
+        <h2 class="text-display-2 mt-4 text-slate-900">{t.relatedTitle}</h2>
 
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((p) => (

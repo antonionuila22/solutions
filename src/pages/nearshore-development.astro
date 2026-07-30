@@ -10,6 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 import TeamQuoter from "../components/TeamQuoter";
+import BorderBeam from "../components/ui/BorderBeam.astro";
 
 // SEO
 const title = "Nearshore Software Development Company | Codebrand";
@@ -293,7 +294,7 @@ const technologies = [
             href="/contact"
             data-magnetic
             data-magnetic-strength="0.3"
-            class="group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1"
+            class="ui-shine group inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-1"
           >
             Get Started
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -536,6 +537,7 @@ const technologies = [
               ? "bg-slate-900 text-white shadow-2xl scale-105 z-10"
               : "bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl"
           ]}>
+            {plan.highlighted && <BorderBeam duration={8} />}
             {plan.highlighted && (
               <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
                 Most Popular
@@ -690,3 +692,45 @@ const technologies = [
     </div>
   </section>
 </Layout>
+
+<style is:global>
+  /* ── UTILIDAD .ui-shine (copiada de src/components/ui/ShinyButton.astro,
+     que autoriza copiar este bloque cuando la página no usa el componente) ── */
+  .ui-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ui-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .ui-shine:hover::after {
+      animation: ui-shine-sweep 0.7s ease;
+    }
+  }
+
+  @keyframes ui-shine-sweep {
+    from {
+      transform: translateX(-120%);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(120%);
+      opacity: 1;
+    }
+  }
+  /* ── fin UTILIDAD .ui-shine ────────────────────────────────────────────── */
+</style>

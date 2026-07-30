@@ -8,6 +8,7 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
+import BorderBeam from "../components/ui/BorderBeam.astro";
 
 const title = "Hire React Developers | Senior React Dev Agency | Codebrand";
 const description = "Hire senior React developers for custom apps, Next.js, and React Native. US timezone, bilingual team, 60% lower cost than US agencies. Free quote in 24h.";
@@ -197,7 +198,7 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
           React, Next.js, React Native. US timezone.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+          <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="ui-shine inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
             Hire React Devs
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
           </a>
@@ -208,7 +209,8 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-anim="fade" data-anim-trigger="load" data-delay="0.2">
           {stats.map((stat) => (
-            <div class="text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+            <div class="relative text-center p-6 bg-white/5 border border-white/10 rounded-2xl">
+              {stat.label === "50 Google reviews" && <BorderBeam duration={8} />}
               <div class="text-3xl sm:text-4xl font-bold text-orange-500">{stat.value}</div>
               <div class="text-slate-400 text-sm mt-2">{stat.label}</div>
             </div>
@@ -456,3 +458,45 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
     </div>
   </section>
 </Layout>
+
+<style is:global>
+  /* ── UTILIDAD .ui-shine (copiada de src/components/ui/ShinyButton.astro,
+     que autoriza copiar este bloque cuando la página no usa el componente) ── */
+  .ui-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ui-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .ui-shine:hover::after {
+      animation: ui-shine-sweep 0.7s ease;
+    }
+  }
+
+  @keyframes ui-shine-sweep {
+    from {
+      transform: translateX(-120%);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(120%);
+      opacity: 1;
+    }
+  }
+  /* ── fin UTILIDAD .ui-shine ────────────────────────────────────────────── */
+</style>

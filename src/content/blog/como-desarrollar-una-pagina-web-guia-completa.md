@@ -1,5 +1,6 @@
 ---
 title: "Cómo Desarrollar una Página Web 2026: Guía Completa para Principiantes y Profesionales"
+lang: es
 description: "Aprende a desarrollar una página web desde cero: elementos esenciales, número recomendado de secciones, plataformas ideales y cómo Codebrand puede ayudarte a crear un sitio web profesional que impulse tu negocio."
 author: "Ramon Nuila"
 readtime: 14

@@ -1,5 +1,6 @@
 ---
 title: "Empresas de desarrollo web en Honduras: cómo elegir (2026)"
+lang: es
 description: "Guía honesta para elegir empresa de desarrollo web en Honduras: criterios de evaluación, preguntas clave, señales de alerta y agencia vs freelancer."
 author: "Ramon Nuila"
 readtime: 14

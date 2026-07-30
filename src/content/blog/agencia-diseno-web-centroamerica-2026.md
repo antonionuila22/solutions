@@ -1,5 +1,6 @@
 ---
 title: "Agencia de diseño web en Centroamérica: guía 2026"
+lang: es
 description: "Cómo contratar una agencia de diseño web en Centroamérica: contexto de mercado en Honduras, Guatemala, El Salvador, Costa Rica y Panamá en 2026."
 author: "Ramon Nuila"
 readtime: 14

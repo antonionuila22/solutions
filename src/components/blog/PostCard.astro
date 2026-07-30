@@ -13,7 +13,12 @@
  */
 import type { CollectionEntry } from "astro:content";
 import SpotlightCard from "../ui/SpotlightCard.astro";
-import { readingMinutes, formatPostDate } from "../../lib/blog";
+import {
+  readingMinutes,
+  formatPostDate,
+  shellStrings,
+  postLocale,
+} from "../../lib/blog";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -22,11 +27,14 @@ interface Props {
 }
 
 const { post, eager = false } = Astro.props;
-const { title, description, img, imageAlt, date, readtime, categories } =
+const { title, description, img, imageAlt, date, readtime, categories, lang } =
   post.data;
 
 const minutes = readingMinutes(post.body, readtime);
-const dateLabel = formatPostDate(date);
+// Meta line follows the LINKED post's own language (a Spanish card keeps its
+// Spanish meta even inside an English grid — it matches what the click opens).
+const t = shellStrings(lang);
+const dateLabel = formatPostDate(date, undefined, postLocale(lang));
 const category = categories?.[0];
 ---
 
@@ -81,7 +89,7 @@ const category = categories?.[0];
       >
         {dateLabel && <span>{dateLabel}</span>}
         {dateLabel && <span aria-hidden="true">&middot;</span>}
-        <span>{minutes} min read</span>
+        <span>{minutes} {t.minRead}</span>
       </div>
     </div>
   </a>

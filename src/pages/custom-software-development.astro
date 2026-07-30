@@ -9,6 +9,7 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
+import OrbitingStack from "../components/islands/OrbitingStack";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Custom Software Development | Codebrand";
@@ -222,10 +223,15 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4" data-anim="heading">
         Our Development <span class="text-orange-500">Stack</span>
       </h2>
-      <div class="flex flex-wrap justify-center gap-3 mt-10" data-anim="fade" data-delay="0.1">
+      <!-- Mobile: the static badge list. Desktop (md+): the orbital diagram
+           island; client:media keeps mobile from ever loading its JS. -->
+      <div class="flex flex-wrap justify-center gap-3 mt-10 md:hidden" data-anim="fade" data-delay="0.1">
         {stack.map((t) => (
           <span class="px-4 py-2 rounded-full border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium hover:border-orange-300 hover:text-orange-600 transition-all duration-300">{t}</span>
         ))}
+      </div>
+      <div class="hidden md:block mt-10">
+        <OrbitingStack client:media="(min-width: 768px)" stack={stack} />
       </div>
     </div>
   </section>
