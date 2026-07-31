@@ -22,7 +22,8 @@ const HOURS = [10, 20, 30, 40];
 // Confetti on the WhatsApp handoff — it opens a new tab, so the burst is
 // visible on this page. canvas-confetti is imported on first click only;
 // disableForReducedMotion honors the site's motion rules.
-const fireConfetti = (e: React.MouseEvent<HTMLAnchorElement>) => {
+const preloadConfetti = () => { import("canvas-confetti"); };
+const fireConfetti = (e: React.PointerEvent<HTMLAnchorElement>) => {
   const el = e.currentTarget;
   import("canvas-confetti").then(({ default: confetti }) => {
     const r = el.getBoundingClientRect();
@@ -176,7 +177,8 @@ export default function TeamQuoter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-disabled={t.devs === 0}
-              onClick={fireConfetti}
+              onPointerDown={fireConfetti}
+              onMouseEnter={preloadConfetti}
               className={
                 "block w-full py-3.5 text-center font-bold rounded-2xl transition-all duration-300 " +
                 (t.devs === 0

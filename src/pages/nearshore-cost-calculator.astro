@@ -20,6 +20,7 @@ import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 import NearshoreCostCalculator from "../components/NearshoreCostCalculator";
 import { createFAQSchema } from "../utils/schema";
+import ConfettiFx from "../components/ConfettiFx.astro";
 import { BUSINESS_INFO } from "../configs/business";
 
 const pageUrl = "https://www.codebrand.us/nearshore-cost-calculator";
@@ -559,6 +560,7 @@ const citationHtml =
           </p>
           <button
             type="button"
+            data-confetti
             data-copy-target="cite-text"
             class="mt-5 rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors duration-300 hover:border-slate-400 hover:bg-slate-50"
           >
@@ -575,6 +577,7 @@ const citationHtml =
           </p>
           <button
             type="button"
+            data-confetti
             data-copy-target="cite-html"
             class="mt-5 rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors duration-300 hover:border-slate-400 hover:bg-slate-50"
           >
@@ -665,4 +668,5 @@ const citationHtml =
       });
     })();
   </script>
+  <ConfettiFx />
 </Layout>

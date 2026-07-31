@@ -62,13 +62,27 @@
     }, 250);
   };
 
+  // Fire on pointerdown, not click: WhatsApp CTAs open a new tab and the
+  // browser switches to it almost immediately — pointerdown buys the burst
+  // a ~200-400ms head start so it's actually seen. The library is preloaded
+  // on first hover/focus so the dynamic import is never in that window.
+  let lastPointerBurst = 0;
   const init = () => {
     const doc = document.documentElement;
     if (!doc.hasAttribute("data-confetti-init")) {
       doc.setAttribute("data-confetti-init", "");
+      const target = (e: Event) =>
+        (e.target as HTMLElement | null)?.closest<HTMLElement>("[data-confetti]") ?? null;
+      document.addEventListener("pointerover", (e) => { if (target(e)) load(); }, { passive: true });
+      document.addEventListener("focusin", (e) => { if (target(e)) load(); });
+      document.addEventListener("pointerdown", (e) => {
+        const el = target(e);
+        if (el) { lastPointerBurst = Date.now(); clickBurst(el); }
+      }, { passive: true });
+      // Keyboard activation (Enter/Space) never emits pointerdown.
       document.addEventListener("click", (e) => {
-        const el = (e.target as HTMLElement | null)?.closest<HTMLElement>("[data-confetti]");
-        if (el) clickBurst(el);
+        const el = target(e);
+        if (el && Date.now() - lastPointerBurst > 600) clickBurst(el);
       });
     }
     if (document.querySelector("[data-confetti-burst]")) pageBurst();
