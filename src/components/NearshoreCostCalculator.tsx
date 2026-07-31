@@ -78,8 +78,12 @@ const usd2 = (n: number) =>
 // Confetti on the WhatsApp handoff — it opens a new tab, so the burst is
 // visible on this page. canvas-confetti is imported on first click only;
 // disableForReducedMotion honors the site's motion rules.
-const preloadConfetti = () => { import("canvas-confetti"); };
-const fireConfetti = (e: React.PointerEvent<HTMLAnchorElement>) => {
+let lastConfetti = 0;
+const CONFETTI_COOLDOWN = 1600;
+const fireConfetti = (e: React.PointerEvent<HTMLAnchorElement> | React.MouseEvent<HTMLAnchorElement>) => {
+  const now = Date.now();
+  if (now - lastConfetti < CONFETTI_COOLDOWN) return;
+  lastConfetti = now;
   const el = e.currentTarget;
   import("canvas-confetti").then(({ default: confetti }) => {
     const r = el.getBoundingClientRect();
@@ -620,8 +624,8 @@ export default function NearshoreCostCalculator() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 rounded-2xl bg-[#f48200] px-6 py-4 text-center font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d97400]"
+              onMouseEnter={fireConfetti}
               onPointerDown={fireConfetti}
-              onMouseEnter={preloadConfetti}
             >
               Discuss this on WhatsApp
             </a>

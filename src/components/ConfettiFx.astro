@@ -62,27 +62,31 @@
     }, 250);
   };
 
-  // Fire on pointerdown, not click: WhatsApp CTAs open a new tab and the
-  // browser switches to it almost immediately — pointerdown buys the burst
-  // a ~200-400ms head start so it's actually seen. The library is preloaded
-  // on first hover/focus so the dynamic import is never in that window.
-  let lastPointerBurst = 0;
+  // Fire on HOVER (user decision): the burst plays while the pointer rests on
+  // the button, before any navigation can steal the tab. pointerover also
+  // fires as part of a tap on touch devices, and focusin covers keyboard.
+  // A per-element cooldown stops it machine-gunning on wiggly cursors.
+  const lastBurst = new WeakMap<HTMLElement, number>();
+  const COOLDOWN = 1600;
+  const tryBurst = (el: HTMLElement) => {
+    const now = Date.now();
+    if (now - (lastBurst.get(el) ?? 0) < COOLDOWN) return;
+    lastBurst.set(el, now);
+    clickBurst(el);
+  };
   const init = () => {
     const doc = document.documentElement;
     if (!doc.hasAttribute("data-confetti-init")) {
       doc.setAttribute("data-confetti-init", "");
       const target = (e: Event) =>
         (e.target as HTMLElement | null)?.closest<HTMLElement>("[data-confetti]") ?? null;
-      document.addEventListener("pointerover", (e) => { if (target(e)) load(); }, { passive: true });
-      document.addEventListener("focusin", (e) => { if (target(e)) load(); });
-      document.addEventListener("pointerdown", (e) => {
+      document.addEventListener("pointerover", (e) => {
         const el = target(e);
-        if (el) { lastPointerBurst = Date.now(); clickBurst(el); }
+        if (el) tryBurst(el);
       }, { passive: true });
-      // Keyboard activation (Enter/Space) never emits pointerdown.
-      document.addEventListener("click", (e) => {
+      document.addEventListener("focusin", (e) => {
         const el = target(e);
-        if (el && Date.now() - lastPointerBurst > 600) clickBurst(el);
+        if (el) tryBurst(el);
       });
     }
     if (document.querySelector("[data-confetti-burst]")) pageBurst();
