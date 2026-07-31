@@ -18,6 +18,30 @@ const ROLES: Role[] = [
 
 const HOURS = [10, 20, 30, 40];
 
+
+// Confetti on the WhatsApp handoff — it opens a new tab, so the burst is
+// visible on this page. canvas-confetti is imported on first click only;
+// disableForReducedMotion honors the site's motion rules.
+const fireConfetti = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const el = e.currentTarget;
+  import("canvas-confetti").then(({ default: confetti }) => {
+    const r = el.getBoundingClientRect();
+    confetti({
+      particleCount: 60,
+      spread: 70,
+      startVelocity: 28,
+      scalar: 0.9,
+      ticks: 120,
+      colors: ["#f48200", "#fbbf24", "#ffffff", "#94a3b8"],
+      origin: {
+        x: (r.left + r.width / 2) / window.innerWidth,
+        y: (r.top + r.height / 2) / window.innerHeight,
+      },
+      disableForReducedMotion: true,
+    });
+  });
+};
+
 export default function TeamQuoter() {
   const [counts, setCounts] = useState<Record<Role["key"], number>>({ mid: 1, senior: 1, lead: 0 });
   const [hours, setHours] = useState(40);
@@ -152,6 +176,7 @@ export default function TeamQuoter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-disabled={t.devs === 0}
+              onClick={fireConfetti}
               className={
                 "block w-full py-3.5 text-center font-bold rounded-2xl transition-all duration-300 " +
                 (t.devs === 0

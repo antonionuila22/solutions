@@ -7,6 +7,36 @@ import Ourteam from "@/components/Ourteam.astro";
 import Faq from "../components/Faq.astro";
 import TechMarquee from "../components/TechMarquee.astro";
 import ReviewsCarousel from "../components/islands/ReviewsCarousel";
+import OrbitingStack from "../components/islands/OrbitingStack";
+import ConfettiFx from "../components/ConfettiFx.astro";
+
+// ── Full toolset for the orbital diagram (desktop only). Every entry is a
+// technology already claimed elsewhere on this site (marquee, pillars, service
+// pages). Logos: svgl.app brand set (svgl-*.svg); AWS/WooCommerce keep their
+// pre-existing assets (not available on svgl).
+const orbitTech = [
+  { label: "React", icon: "/icons/svgl-react.svg" },
+  { label: "Next.js", icon: "/icons/svgl-nextjs.svg" },
+  { label: "Astro", icon: "/icons/svgl-astro.svg" },
+  { label: "TypeScript", icon: "/icons/svgl-typescript.svg" },
+  { label: "Node.js", icon: "/icons/svgl-nodejs.svg" },
+  { label: "Python", icon: "/icons/svgl-python.svg" },
+  { label: "Tailwind", icon: "/icons/svgl-tailwindcss.svg" },
+  { label: "PostgreSQL", icon: "/icons/svgl-postgresql.svg" },
+  { label: "MongoDB", icon: "/icons/svgl-mongodb.svg" },
+  { label: "Supabase", icon: "/icons/svgl-supabase.svg" },
+  { label: "GraphQL", icon: "/icons/svgl-graphql.svg" },
+  { label: "AWS", icon: "/icons/aws-svgrepo-com.svg" },
+  { label: "Docker", icon: "/icons/svgl-docker.svg" },
+  { label: "Git", icon: "/icons/svgl-git.svg" },
+  { label: "Figma", icon: "/icons/svgl-figma.svg" },
+  { label: "Shopify", icon: "/icons/svgl-shopify.svg" },
+  { label: "WooCommerce", icon: "/icons/woocommerce.svg" },
+  { label: "WordPress", icon: "/icons/svgl-wordpress.svg" },
+  { label: "Stripe", icon: "/icons/svgl-stripe.svg" },
+  { label: "Netlify", icon: "/icons/svgl-netlify.svg" },
+  { label: "Flutter", icon: "/icons/svgl-flutter.svg" },
+];
 import TrustBadges from "../components/TrustBadges.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 import PartnershipBanner from "../components/PartnershipBanner.astro";
@@ -561,7 +591,7 @@ const whatsappUrl =
             data-anim="fade"
             data-anim-group="pillars"
             data-stagger="0.06"
-            class="group grid grid-cols-1 sm:grid-cols-12 gap-x-8 gap-y-3 items-baseline border-b border-slate-200 py-8 sm:py-10 transition-colors duration-300 hover:bg-white"
+            class="group grid grid-cols-1 sm:grid-cols-12 gap-x-8 gap-y-3 items-baseline border-b border-slate-200 py-8 sm:py-10 px-5 sm:px-6 -mx-5 sm:-mx-6 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-slate-900/5"
           >
             <div class="sm:col-span-5 flex items-center gap-4">
               <span class="text-sm font-bold text-slate-300 tabular-nums group-hover:text-orange-500 transition-colors">{s.n}</span>
@@ -632,6 +662,58 @@ const whatsappUrl =
         or price the whole scope yourself with the{" "}
         <a href="/quoter" class="font-semibold text-orange-600 hover:text-orange-700 transition-colors">project quoter →</a>
       </p>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- ACT 4b2 · SOFTWARE COMPANY — orbital toolset + positioning     -->
+  <!-- ============================================================= -->
+  <section class="relative bg-slate-950 font-poppins py-24 sm:py-32 lg:py-40 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-orange-400">
+            Software Company
+          </p>
+          <h2 class="mt-5 text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+            More than websites — a software development company.
+          </h2>
+          <p class="mt-8 max-w-xl text-lg text-slate-300 leading-relaxed">
+            Websites are where most clients meet us. What keeps them here is the rest:{" "}
+            <a href="/custom-software-development" class="font-semibold text-white underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-400 transition-colors">custom software</a>,{" "}
+            <a href="/custom-crm-development" class="font-semibold text-white underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-400 transition-colors">CRMs built to your pipeline</a>, internal
+            tools, integrations and e-commerce systems — engineered by the same
+            senior team, on US Central Time.
+          </p>
+          <p class="mt-6 max-w-xl text-slate-400 leading-relaxed">
+            Billed by the hour ($45–$95), delivered in weekly sprints, and you
+            own 100% of the code. If you need the whole squad, there is a{" "}
+            <a href="/dedicated-development-team" class="font-semibold text-slate-200 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-400 transition-colors">dedicated development team</a>{" "}
+            for that.
+          </p>
+        </div>
+
+        <!-- Orbit: desktop only (client:media never hydrates below md; lazy
+             imgs inside the hidden wrapper are never fetched on phones). -->
+        <div class="hidden md:block">
+          <OrbitingStack
+            client:media="(min-width: 768px)"
+            items={orbitTech}
+            theme="dark"
+            coreLogo="/iconcodebrand.svg"
+            idlePrompt=""
+          />
+        </div>
+        <!-- Mobile: compact static strip of the same toolset, no JS -->
+        <ul class="md:hidden flex flex-wrap gap-2.5" aria-label="Our development stack">
+          {orbitTech.map((t) => (
+            <li class="flex items-center gap-2 rounded-full border border-white/15 bg-white px-3 py-1.5">
+              <img src={t.icon} alt="" width="16" height="16" loading="lazy" class="h-4 w-4" />
+              <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-slate-700">{t.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -937,11 +1019,13 @@ const whatsappUrl =
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          data-confetti
           class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-slate-900/70 border border-slate-700 hover:border-orange-500/50 hover:-translate-y-0.5 text-slate-200 text-sm sm:text-base font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
         >
           <Icon name="message-circle" class="w-4 h-4 text-orange-400" />
           Chat on WhatsApp
         </a>
+        <ConfettiFx />
       </div>
 
       <p class="mt-8 text-xs text-slate-500">

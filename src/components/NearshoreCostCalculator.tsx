@@ -74,6 +74,30 @@ const usd0 = (n: number) =>
 const usd2 = (n: number) =>
   n.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+
+// Confetti on the WhatsApp handoff — it opens a new tab, so the burst is
+// visible on this page. canvas-confetti is imported on first click only;
+// disableForReducedMotion honors the site's motion rules.
+const fireConfetti = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const el = e.currentTarget;
+  import("canvas-confetti").then(({ default: confetti }) => {
+    const r = el.getBoundingClientRect();
+    confetti({
+      particleCount: 60,
+      spread: 70,
+      startVelocity: 28,
+      scalar: 0.9,
+      ticks: 120,
+      colors: ["#f48200", "#fbbf24", "#ffffff", "#94a3b8"],
+      origin: {
+        x: (r.left + r.width / 2) / window.innerWidth,
+        y: (r.top + r.height / 2) / window.innerHeight,
+      },
+      disableForReducedMotion: true,
+    });
+  });
+};
+
 export default function NearshoreCostCalculator() {
   const [level, setLevel] = useState<Level>("senior");
   const [devs, setDevs] = useState(3);
@@ -595,6 +619,7 @@ export default function NearshoreCostCalculator() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 rounded-2xl bg-[#f48200] px-6 py-4 text-center font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d97400]"
+              onClick={fireConfetti}
             >
               Discuss this on WhatsApp
             </a>
