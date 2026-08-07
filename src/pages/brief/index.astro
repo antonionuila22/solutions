@@ -1,0 +1,14 @@
+---
+export const prerender = false;
+
+import BriefLayout from "../../layouts/BriefLayout.astro";
+import StartScreen from "../../features/brief/components/StartScreen";
+
+// Permite prellenar la organización desde el enlace que se envía al cliente:
+// /brief?org=Cámara%20de%20Comercio%20e%20Industrias%20de%20Cortés
+const org = (Astro.url.searchParams.get("org") ?? "").slice(0, 120);
+---
+
+<BriefLayout title="Formulario de descubrimiento | Codebrand">
+  <StartScreen defaultOrganization={org} client:load />
+</BriefLayout>

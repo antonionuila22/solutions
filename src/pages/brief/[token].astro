@@ -1,0 +1,73 @@
+---
+export const prerender = false;
+
+import BriefLayout from "../../layouts/BriefLayout.astro";
+import BriefForm from "../../features/brief/components/BriefForm";
+import { getByToken } from "../../features/brief/services/brief-store";
+
+const { token } = Astro.params;
+
+// Un token inválido no revela nada: mismo mensaje para "no existe" y para
+// "está mal escrito". La carga se hace en el servidor para que el formulario
+// abra ya con las respuestas puestas, sin un salto de contenido vacío.
+let response = null;
+let failure: "notfound" | "unavailable" | null = null;
+
+if (!token || token.length < 20 || token.length > 64) {
+  failure = "notfound";
+} else {
+  try {
+    response = await getByToken(token);
+    if (!response) failure = "notfound";
+    // Un brief enviado ya no renderiza NINGUNA respuesta: directo a gracias.
+    else if (response.status === "completed") return Astro.redirect("/brief/gracias");
+  } catch (err) {
+    console.error(
+      "[brief] No se pudo leer la respuesta:",
+      err instanceof Error ? err.message : "error desconocido"
+    );
+    failure = "unavailable";
+  }
+}
+---
+
+{
+  response ? (
+    <BriefLayout title={`Brief de descubrimiento — ${response.organization} | Codebrand`}>
+      <BriefForm
+        client:load
+        token={response.token}
+        organization={response.organization}
+        initialAnswers={response.answers ?? {}}
+      />
+    </BriefLayout>
+  ) : (
+    <BriefLayout title="Enlace no disponible | Codebrand">
+      <main class="flex min-h-dvh items-center justify-center px-5">
+        <div class="w-full max-w-md text-center">
+          <img
+            src="/iconcodebrand.svg"
+            alt="Codebrand"
+            width="40"
+            height="40"
+            class="mx-auto h-10 w-10"
+          />
+          <h1 class="mt-6 text-2xl font-bold tracking-tight text-slate-900">
+            {failure === "unavailable" ? "El formulario no está disponible" : "Este enlace no existe"}
+          </h1>
+          <p class="mt-3 text-pretty leading-relaxed text-slate-600">
+            {failure === "unavailable"
+              ? "Hubo un problema al cargar el formulario. Vuelve a intentarlo en unos minutos; el avance guardado no se pierde."
+              : "El enlace está incompleto o ya no es válido. Pide uno nuevo al equipo de Codebrand y retomamos desde donde ibas."}
+          </p>
+          <a
+            href="/brief"
+            class="mt-8 inline-flex rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-white"
+          >
+            Abrir un formulario nuevo
+          </a>
+        </div>
+      </main>
+    </BriefLayout>
+  )
+}

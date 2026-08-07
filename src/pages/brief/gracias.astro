@@ -1,0 +1,44 @@
+---
+export const prerender = false;
+
+import BriefLayout from "../../layouts/BriefLayout.astro";
+
+/**
+ * Página de gracias del brief. Es una URL propia (no una pantalla dentro de la
+ * isla) a propósito: tras el envío se REDIRIGE aquí, así el enlace con token
+ * deja de mostrar cualquier respuesta y recargar o compartir la página de
+ * gracias no expone nada. Deliberadamente no recibe ni muestra ningún dato.
+ */
+---
+
+<BriefLayout title="Brief recibido | Codebrand">
+  <main class="flex min-h-dvh items-center justify-center px-5">
+    <div class="w-full max-w-xl text-center">
+      <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-orange-500">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="m5 13 4.5 4.5L19 7"
+            stroke="white"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </span>
+      <h1 class="mt-6 text-3xl font-bold tracking-tight text-slate-900">Brief recibido, gracias</h1>
+      <p class="mt-3 text-pretty leading-relaxed text-slate-600">
+        Las respuestas ya están con el equipo de Codebrand. Las revisamos y volvemos con el
+        alcance, el plan de trabajo y la propuesta económica. Si hace falta aclarar algo,
+        escribimos al correo que dejaste en el formulario.
+      </p>
+      <p class="mt-6 text-sm text-slate-500">
+        Las respuestas quedaron fijadas y el enlace ya no admite cambios.
+      </p>
+      <a
+        href="/"
+        class="mt-8 inline-flex rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-white"
+      >
+        Ir a codebrand.us
+      </a>
+    </div>
+  </main>
+</BriefLayout>

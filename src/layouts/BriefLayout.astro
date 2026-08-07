@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+
+/**
+ * Layout del brief. Deliberadamente sin Navbar, Footer, widget de WhatsApp ni
+ * ClientRouter: el formulario es una herramienta de una tarea, y cualquier
+ * enlace de salida en pantalla es una invitación a abandonarlo a la mitad.
+ *
+ * Siempre noindex — un brief con un token en la URL no es contenido del sitio.
+ */
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Formulario de descubrimiento de Codebrand." } = Astro.props;
+
+// Las páginas del brief llevan respuestas de clientes: prohibido que una CDN o
+// un proxy compartido las cachee y se las sirva a otra persona.
+Astro.response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+Astro.response.headers.set("X-Content-Type-Options", "nosniff");
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    {/* El token de la URL es la credencial: no debe viajar en el Referer. */}
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" type="image/svg+xml" href="/iconcodebrand.svg" />
+    <link
+      rel="preload"
+      href="/fonts/Poppins-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Poppins-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body class="min-h-dvh bg-[#fbfaf9] font-sans text-slate-900 antialiased">
+    <slot />
+  </body>
+</html>

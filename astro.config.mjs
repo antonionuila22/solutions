@@ -104,7 +104,10 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/blog/category/') && !isNonCanonicalDuplicate(page) && !isLongtailGeoUrl(page),
+      // /brief es una herramienta privada con token en la URL, no contenido del
+      // sitio: va noindex y fuera del sitemap. La ruta dinámica /brief/[token]
+      // ya queda excluida sola, pero el índice /brief tiene pathname estático.
+      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/blog/category/') && !page.includes('/brief') && !isNonCanonicalDuplicate(page) && !isLongtailGeoUrl(page),
       changefreq: 'weekly',
       priority: 0.7,
       serialize: (item) => {
