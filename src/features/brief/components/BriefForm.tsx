@@ -72,6 +72,14 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
   const pending = useRef<AnswerMap>({});
   const timer = useRef<number | null>(null);
 
+  // Espejo SÍNCRONO de answers. Los campos de opción única avanzan con
+  // setTimeout(onAdvance, 220), y ese timeout captura el goNext del render en
+  // que se hizo clic — cuyo `answers` NO incluye el clic. Validar contra ese
+  // estado viejo mostraba "indispensable" en el primer clic de toda pregunta
+  // obligatoria. La navegación lee siempre este ref, que onChange actualiza en
+  // el acto, así que nunca ve un estado anterior al último cambio.
+  const answersRef = useRef<AnswerMap>(initialAnswers);
+
   // ── Autoguardado ──────────────────────────────────────────────────────────
   const flush = useCallback(async () => {
     if (timer.current !== null) {
@@ -114,7 +122,8 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
 
   const onChange = useCallback(
     (value: AnswerValue) => {
-      setAnswers((prev) => ({ ...prev, [question.id]: value }));
+      answersRef.current = { ...answersRef.current, [question.id]: value };
+      setAnswers(answersRef.current);
       setError(null);
       queueSave(question.id, value);
     },
@@ -133,15 +142,16 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
   );
 
   const goNext = useCallback(() => {
+    const current = answersRef.current;
     if (isAnswerable(question)) {
-      const result = validateAnswer(question, answers[question.id]);
+      const result = validateAnswer(question, current[question.id]);
       if (!result.ok) {
         setError(result.message ?? "Revisa esta respuesta.");
         return;
       }
     }
     // El conjunto visible pudo cambiar con la última respuesta: se recalcula.
-    const list = getVisibleQuestions(answers);
+    const list = getVisibleQuestions(current);
     const at = list.findIndex((q) => q.id === question.id);
     const next = list[at + 1];
     if (!next) {
@@ -151,21 +161,20 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
       return;
     }
     goTo(next.id, 1);
-  }, [answers, question, goTo, flush]);
+  }, [question, goTo, flush]);
 
   const goBack = useCallback(() => {
+    const list = getVisibleQuestions(answersRef.current);
     if (phase === "summary") {
       setDirection(-1);
       setPhase("questions");
-      const list = getVisibleQuestions(answers);
       setCurrentId(list[list.length - 1].id);
       return;
     }
-    const list = getVisibleQuestions(answers);
     const at = list.findIndex((q) => q.id === question.id);
     const prev = list[at - 1];
     if (prev) goTo(prev.id, -1);
-  }, [answers, phase, question.id, goTo]);
+  }, [phase, question.id, goTo]);
 
   const editFromSummary = useCallback(
     (id: string) => {
