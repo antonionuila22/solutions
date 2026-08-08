@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { actions } from "astro:actions";
-import { TOTAL_MINUTES } from "../config/blocks";
 import { inputClass } from "./field-contract";
 
 /**
@@ -131,14 +130,6 @@ export default function StartScreen({ defaultOrganization = "" }: { defaultOrgan
           </button>
         </motion.div>
 
-        <motion.ul
-          {...fade(0.32)}
-          className="mx-auto mt-8 grid max-w-md gap-2 text-sm text-slate-500"
-        >
-          <li>Unos {TOTAL_MINUTES} minutos, una pregunta por pantalla.</li>
-          <li>El avance se guarda solo: se puede cerrar y retomar cuando sea.</li>
-          <li>Se puede completar entre varias personas compartiendo el mismo enlace.</li>
-        </motion.ul>
       </div>
     </main>
   );
