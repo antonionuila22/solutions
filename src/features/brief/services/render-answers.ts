@@ -112,11 +112,12 @@ export function renderBriefMarkdown(response: BriefResponse): string {
     "es-HN",
     { year: "numeric", month: "long", day: "numeric" }
   );
+  // Sin datos de contacto en cabecera: el bloque de contacto se eliminó del
+  // formulario (el enlace se envía a un contacto ya conocido). El responsable
+  // del proyecto aparece en el Bloque H de las respuestas.
   const head = [
     `# Brief de descubrimiento — ${response.organization}`,
     "",
-    `- **Completado por:** ${response.contact_name ?? "No indicado"}`,
-    `- **Correo:** ${response.contact_email ?? "No indicado"}`,
     `- **Fecha:** ${fecha}`,
     `- **Avance:** ${response.progress}%`,
     "",
@@ -144,9 +145,7 @@ export function renderBriefHtml(response: BriefResponse): string {
   const parts: string[] = [
     `<div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#0f172a;max-width:680px">`,
     `<h1 style="font-size:20px;margin:0 0 4px">Brief de descubrimiento — ${esc(response.organization)}</h1>`,
-    `<p style="margin:0 0 16px;color:#475569;font-size:14px">`,
-    `${esc(response.contact_name ?? "Sin nombre")} · ${esc(response.contact_email ?? "sin correo")} · avance ${response.progress}%`,
-    `</p>`,
+    `<p style="margin:0 0 16px;color:#475569;font-size:14px">Avance ${response.progress}%</p>`,
   ];
   for (const block of toBlocks(response.answers)) {
     parts.push(

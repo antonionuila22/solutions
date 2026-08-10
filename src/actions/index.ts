@@ -34,15 +34,6 @@ const TOKEN = z.string().trim().min(20).max(64);
 /** Índice id → pregunta, construido una vez por proceso. */
 const BY_ID = new Map(QUESTIONS.filter(isAnswerable).map((q) => [q.id, q]));
 
-const contactFromAnswers = (answers: AnswerMap) => {
-  const name = answers["p-nombre"];
-  const email = answers["p-correo"];
-  return {
-    name: typeof name === "string" && name.trim() ? name.trim().slice(0, 200) : undefined,
-    email: typeof email === "string" && email.trim() ? email.trim().slice(0, 200) : undefined,
-  };
-};
-
 async function notifySubmission(token: string): Promise<void> {
   const to = process.env.CONTACT_RECIPIENT_EMAIL || import.meta.env.CONTACT_RECIPIENT_EMAIL;
   const apiKey = process.env.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
@@ -132,7 +123,9 @@ export const server = {
         const progress = computeProgress(merged);
 
         try {
-          const row = await saveAnswers(token, clean, progress, contactFromAnswers(merged));
+          // Sin bloque de contacto ya no hay nombre/correo que sincronizar:
+          // el contacto del cliente lo tenemos desde antes de enviar el enlace.
+          const row = await saveAnswers(token, clean, progress);
           return { progress: row.progress, savedAt: row.updated_at };
         } catch (err) {
           // Una respuesta ya enviada es un conflicto de estado, no un fallo del

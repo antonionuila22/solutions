@@ -13,7 +13,9 @@ import type { z } from "zod";
  * — Zod único, jsonb, token, showIf — se conserva íntegra.
  */
 
-export const BLOCK_IDS = ["P", "A", "B", "C", "D", "E", "F", "G", "H", "I", "Z"] as const;
+// Sin bloque de contacto: el brief se envía a un cliente cuyo contacto ya
+// tenemos — pedírselo de nuevo era fricción sin información.
+export const BLOCK_IDS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "Z"] as const;
 export type BlockId = (typeof BLOCK_IDS)[number];
 
 /** Valor de una respuesta según el tipo de pregunta que la produjo. */

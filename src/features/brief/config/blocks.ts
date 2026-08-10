@@ -1,15 +1,15 @@
 import type { BlockDefinition } from "../types";
 
 /**
- * Bloques del brief: P (contacto) + A–I del documento + Z (cierre).
+ * Bloques del brief: A–I del documento + Z (cierre). El bloque de contacto se
+ * eliminó: el brief se envía a un cliente cuyo contacto ya tenemos, y volver a
+ * pedirlo era fricción sin información nueva.
  * Los tiempos estimados alimentan la pantalla statement que abre cada bloque.
  *
- * Suman exactamente TOTAL_MINUTES = 45, la cifra que el documento promete
- * ("Tiempo estimado de llenado: 45 minutos"). Si se reparte distinto, que siga
- * sumando 45 — la invariante de abajo falla el build si no.
+ * Suman exactamente TOTAL_MINUTES (los 45 del documento menos los 2 del
+ * contacto eliminado). La invariante de abajo falla el build si se descuadran.
  */
 export const BLOCKS: readonly BlockDefinition[] = [
-  { id: "P", title: "Datos de quien completa el formulario", shortLabel: "Contacto", estimatedMinutes: 2 },
   { id: "A", title: "Negocio y organización", shortLabel: "Organización", estimatedMinutes: 6 },
   { id: "B", title: "Audiencia", shortLabel: "Audiencia", estimatedMinutes: 4 },
   { id: "C", title: "Contenido", shortLabel: "Contenido", estimatedMinutes: 4 },
@@ -22,13 +22,13 @@ export const BLOCKS: readonly BlockDefinition[] = [
   { id: "Z", title: "Comentarios y envío", shortLabel: "Cierre", estimatedMinutes: 1 },
 ] as const;
 
-/** Cifra literal del documento. La portada la muestra tal cual. */
-export const TOTAL_MINUTES = 45;
+/** Estimación total del formulario (nadie la muestra hoy; ancla los bloques). */
+export const TOTAL_MINUTES = 43;
 
 const sum = BLOCKS.reduce((n, b) => n + b.estimatedMinutes, 0);
 if (sum !== TOTAL_MINUTES) {
   throw new Error(
-    `blocks.ts: los minutos por bloque suman ${sum} y la portada promete ${TOTAL_MINUTES}.`
+    `blocks.ts: los minutos por bloque suman ${sum} y TOTAL_MINUTES dice ${TOTAL_MINUTES}.`
   );
 }
 

@@ -47,7 +47,6 @@ const requiredText = z
   .trim()
   .min(1, "Esta respuesta es indispensable para poder cotizar.");
 const optionalText = z.string().trim().optional().or(z.literal(""));
-const requiredEmail = z.email("Escribe un correo válido.");
 
 const LEVEL_VALUES = PRIORITY_LEVELS.map((l) => l.value) as [string, ...string[]];
 
@@ -99,7 +98,7 @@ const statement = (
   type: "statement",
   title,
   hint,
-  // Los minutos salen de blocks.ts, donde se garantiza que sumen 45.
+  // Los minutos salen de blocks.ts, donde la invariante los mantiene cuadrados.
   estimatedMinutes: getBlock(block).estimatedMinutes,
   ctaLabel: "Continuar",
 });
@@ -203,30 +202,15 @@ const incluyeRedes = (a: AnswerMap) => a["i-incluye-redes"] === YES;
 
 // ── Preguntas ────────────────────────────────────────────────────────────────
 export const QUESTIONS: readonly Question[] = [
-  // ═══ Portada y datos de contacto ═══
+  // ═══ Bloque A · Negocio y organización ═══
+  // Sin bloque de contacto: el enlace se envía a un cliente cuyo contacto ya
+  // tenemos. La bienvenida general sustituye al intro de bloque.
   statement(
-    "p-intro",
-    "P",
+    "a-intro",
+    "A",
     "Formulario de descubrimiento",
     "Con estas respuestas definimos el alcance, el plan de trabajo y la inversión del proyecto. Casi todo se responde eligiendo una opción. Si algo no aplica o todavía no se sabe, elige «no lo sabemos» o «por definir»: es preferible a dejarlo en blanco. Se puede completar entre varias personas — comparte el enlace y el avance se guarda solo."
   ),
-  shortQ("p-nombre", "P", "Nombre completo", { required: true }),
-  shortQ("p-cargo", "P", "Cargo", { required: true }),
-  {
-    id: "p-correo",
-    block: "P",
-    type: "email",
-    title: "Correo electrónico",
-    required: true,
-    schema: requiredEmail,
-  },
-  shortQ("p-telefono", "P", "Teléfono o WhatsApp", { placeholder: "+504 0000 0000" }),
-  shortQ("p-otras-personas", "P", "Otras personas que aportaron respuestas", {
-    hint: "Opcional. Nombres separados por coma.",
-  }),
-
-  // ═══ Bloque A · Negocio y organización ═══
-  statement("a-intro", "A", "Bloque A. Negocio y organización"),
   ...withOther(
     choice(
       "a-0-tipo-organizacion",
@@ -994,13 +978,10 @@ if (new Set(ids).size !== ids.length) {
  * exactamente cuál cambió.
  *
  * Son los 16 asteriscos del documento (P17 aporta dos: gate y pasarela), más
- * la matriz de módulos (define alcance y costo), los tres datos de contacto y
- * el gate del Bloque I.
+ * la matriz de módulos (define alcance y costo) y el gate del Bloque I. Los
+ * datos de contacto ya no se piden: el enlace se envía a un contacto conocido.
  */
 const REQUIRED_IDS: readonly string[] = [
-  "p-nombre",
-  "p-cargo",
-  "p-correo",
   "a-1-objetivo",
   "a-2-base-actual",
   "b-9-tareas",
