@@ -42,7 +42,10 @@ function linesFor(q: AnswerableQuestion, value: AnswerValue | undefined): string
     case "singleChoice":
       return [labelOf(q.options, String(value))];
     case "multiChoice":
-      return (value as string[]).map((v) => labelOf(q.options, v));
+      // En modo ordenado el índice es la prioridad que eligió el cliente.
+      return (value as string[]).map((v, i) =>
+        q.ordered ? `${i + 1}. ${labelOf(q.options, v)}` : labelOf(q.options, v)
+      );
     case "ratingScale":
       return [`${value} de ${q.max}`];
     case "priorityMatrix": {
@@ -65,7 +68,7 @@ function linesFor(q: AnswerableQuestion, value: AnswerValue | undefined): string
           const e = map[item.id];
           const disp = labelOf(q.availabilityOptions, e.disponible);
           const resp = e.responsable?.trim();
-          return `${item.label} — ${disp}${resp ? ` · responsable: ${resp}` : ""}`;
+          return `${item.label}: ${disp}${resp ? ` · responsable: ${resp}` : ""}`;
         });
     }
     case "repeater": {
@@ -116,7 +119,7 @@ export function renderBriefMarkdown(response: BriefResponse): string {
   // formulario (el enlace se envía a un contacto ya conocido). El responsable
   // del proyecto aparece en el Bloque H de las respuestas.
   const head = [
-    `# Brief de descubrimiento — ${response.organization}`,
+    `# Formulario de arranque, ${response.organization}`,
     "",
     `- **Fecha:** ${fecha}`,
     `- **Avance:** ${response.progress}%`,
@@ -144,7 +147,7 @@ const esc = (s: string): string =>
 export function renderBriefHtml(response: BriefResponse): string {
   const parts: string[] = [
     `<div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#0f172a;max-width:680px">`,
-    `<h1 style="font-size:20px;margin:0 0 4px">Brief de descubrimiento — ${esc(response.organization)}</h1>`,
+    `<h1 style="font-size:20px;margin:0 0 4px">Formulario de arranque: ${esc(response.organization)}</h1>`,
     `<p style="margin:0 0 16px;color:#475569;font-size:14px">Avance ${response.progress}%</p>`,
   ];
   for (const block of toBlocks(response.answers)) {

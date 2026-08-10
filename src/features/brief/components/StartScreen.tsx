@@ -67,9 +67,9 @@ export default function StartScreen({ defaultOrganization = "" }: { defaultOrgan
           {...fade(0.16)}
           className="mx-auto mt-4 max-w-lg text-pretty text-[17px] leading-relaxed text-slate-600"
         >
-          Con estas respuestas definimos el alcance, el plan de trabajo y la inversión del proyecto.
-          Casi todo se responde eligiendo una opción; si algo aún no se sabe, elige «no lo sabemos»
-          o «por definir» — es preferible a dejarlo en blanco.
+          Son 10 preguntas y toma menos de 10 minutos. No preguntamos nada que ya sabemos de
+          ustedes. El avance se guarda solo y se puede completar entre varias personas
+          compartiendo el mismo enlace.
         </motion.p>
 
         <motion.div {...fade(0.24)} className="mx-auto mt-9 max-w-sm text-left">

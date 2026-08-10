@@ -13,9 +13,10 @@ import type { z } from "zod";
  * — Zod único, jsonb, token, showIf — se conserva íntegra.
  */
 
-// Sin bloque de contacto: el brief se envía a un cliente cuyo contacto ya
-// tenemos — pedírselo de nuevo era fricción sin información.
-export const BLOCK_IDS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "Z"] as const;
+// Un solo bloque: el formulario de arranque son 10 pantallas directas, sin
+// bloque de contacto (el enlace se envía a un cliente cuyo contacto ya
+// tenemos) y sin la estructura A a I del documento original.
+export const BLOCK_IDS = ["A"] as const;
 export type BlockId = (typeof BLOCK_IDS)[number];
 
 /** Valor de una respuesta según el tipo de pregunta que la produjo. */
@@ -88,6 +89,9 @@ export interface MultiChoiceQuestion extends QuestionBase {
   options: readonly ChoiceOption[];
   minSelected?: number;
   maxSelected?: number;
+  /** Conserva el ORDEN de los clics y lo muestra como prioridad (1, 2, 3…).
+   *  Sin esta bandera, la selección se normaliza al orden del catálogo. */
+  ordered?: boolean;
 }
 
 export interface PriorityMatrixQuestion extends QuestionBase {

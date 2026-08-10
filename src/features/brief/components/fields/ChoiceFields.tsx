@@ -87,10 +87,15 @@ export function MultiChoiceField({
       return;
     }
     if (atMax) return;
-    // Se conserva el orden de las opciones, no el de los clics: el resumen y
-    // el correo se leen igual sin importar cómo se marcaron.
     const next = [...current, v];
-    onChange(question.options.filter((o) => next.includes(o.value)).map((o) => o.value));
+    // Con `ordered`, el orden de los clics ES la respuesta (prioridad 1, 2, 3…).
+    // Sin la bandera se normaliza al orden del catálogo, para que el resumen y
+    // el correo se lean igual sin importar cómo se marcaron.
+    onChange(
+      question.ordered
+        ? next
+        : question.options.filter((o) => next.includes(o.value)).map((o) => o.value)
+    );
   };
 
   useOptionHotkeys(question.options.length, (i) => toggle(question.options[i].value));
@@ -99,28 +104,33 @@ export function MultiChoiceField({
     <div role="group" aria-labelledby={labelledBy} className="grid gap-2.5">
       {question.options.map((opt, i) => {
         const selected = current.includes(opt.value);
+        // En modo ordenado, la casilla muestra la PRIORIDAD (1, 2, 3…) en vez
+        // de la letra de atajo: el número es la respuesta que se está dando.
+        const rank = question.ordered && selected ? current.indexOf(opt.value) + 1 : null;
         return (
           <button
             key={opt.value}
             type="button"
             role="checkbox"
             aria-checked={selected}
-            aria-label={opt.label}
+            aria-label={rank !== null ? `${opt.label}, prioridad ${rank}` : opt.label}
             disabled={!selected && atMax}
             data-choice-key={optionKey(i)}
             className={`${choiceClass(selected)} disabled:cursor-not-allowed disabled:opacity-50`}
             onClick={() => toggle(opt.value)}
           >
             <span className={keyCapClass(selected)} aria-hidden="true">
-              {optionKey(i)}
+              {rank ?? optionKey(i)}
             </span>
             <span>{opt.label}</span>
           </button>
         );
       })}
       {question.maxSelected !== undefined && (
-        <p className="text-xs text-slate-500">
-          Máximo {question.maxSelected} · seleccionadas {current.length}
+        <p className="text-xs text-slate-500" aria-live="polite">
+          {question.ordered
+            ? `Marcadas en orden de importancia: ${current.length} de ${question.maxSelected}. Para corregir, desmarca y vuelve a marcar.`
+            : `Máximo ${question.maxSelected} · seleccionadas ${current.length}`}
         </p>
       )}
     </div>

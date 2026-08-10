@@ -34,7 +34,7 @@ export function SummaryScreen({
         Último paso
       </p>
       <h2 className="text-balance text-center text-2xl font-bold tracking-tight text-slate-900 sm:text-[2rem]">
-        Revisa el brief antes de enviarlo
+        Revisen las respuestas antes de enviarlas
       </h2>
       <p className="mx-auto mt-3 max-w-xl text-pretty text-center text-[15px] leading-relaxed text-slate-500">
         Al enviarlo, las respuestas quedan fijadas y llegan al equipo de Codebrand. Después de eso
@@ -44,7 +44,7 @@ export function SummaryScreen({
       {missing.length > 0 && (
         <div className="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-4">
           <p className="text-sm font-semibold text-orange-900">
-            Faltan {missing.length} {missing.length === 1 ? "respuesta" : "respuestas"} indispensables
+            Faltan {missing.length} {missing.length === 1 ? "respuesta obligatoria" : "respuestas obligatorias"}
           </p>
           <ul className="mt-2 grid gap-1.5">
             {missing.map((q) => (
@@ -105,7 +105,7 @@ export function SummaryScreen({
                           "mt-1.5 text-sm " + (falta ? "text-orange-700" : "text-slate-400")
                         }
                       >
-                        {falta ? "Indispensable — sin responder." : "Sin responder."}
+                        {falta ? "Obligatoria, sin responder." : "Sin responder."}
                       </p>
                     )}
                   </li>
@@ -129,7 +129,7 @@ export function SummaryScreen({
           disabled={submitting}
           className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/30 disabled:opacity-60"
         >
-          {submitting ? "Enviando…" : `Enviar el brief de ${organization}`}
+          {submitting ? "Enviando…" : `Enviar las respuestas de ${organization}`}
         </button>
         <p className="text-xs text-slate-400">Recibirás confirmación en pantalla al enviarlo.</p>
       </div>

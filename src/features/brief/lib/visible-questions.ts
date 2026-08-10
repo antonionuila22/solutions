@@ -83,9 +83,9 @@ export function validateAnswer(
     return {
       ok: false,
       message:
-        q.type === "priorityMatrix"
-          ? "Asigna un nivel a los 17 módulos: esta tabla define el alcance y el costo."
-          : "Esta respuesta es indispensable para poder cotizar.",
+        q.type === "multiChoice" && (q.minSelected ?? 0) > 1
+          ? `Son ${q.minSelected}. Si todo importa, nada importa.`
+          : "Esta respuesta es necesaria para avanzar.",
     };
   }
   if (!answered) return OK; // opcional y vacía

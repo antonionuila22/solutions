@@ -58,6 +58,11 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
   // La posición se guarda por ID, no por índice: responder "no" a una
   // condicional borra preguntas del array y un índice apuntaría a otra.
   const [currentId, setCurrentId] = useState<string>(() => {
+    // Brief sin ninguna respuesta: abrir en la bienvenida (el statement).
+    // Con avance: retomar en la primera pregunta sin responder, sin re-pasar
+    // por pantallas informativas.
+    const alguna = visible.some((q) => isAnswerable(q) && isAnswered(q, initialAnswers[q.id]));
+    if (!alguna) return visible[0].id;
     const first = visible.find((q) => isAnswerable(q) && !isAnswered(q, initialAnswers[q.id]));
     return (first ?? visible[0]).id;
   });
@@ -253,7 +258,13 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
     <div className="flex min-h-dvh flex-col bg-[#fbfaf9]">
       <ProgressHeader
         progress={progress}
-        blockLabel={phase === "summary" ? "Revisión final" : `${blockNumber}. ${block.shortLabel}`}
+        blockLabel={
+          phase === "summary"
+            ? "Revisión final"
+            : BLOCKS.length > 1
+              ? `${blockNumber}. ${block.shortLabel}`
+              : block.shortLabel
+        }
         saveState={saveState}
         canGoBack={phase === "summary" || index > 0}
         onBack={goBack}
@@ -335,7 +346,9 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
                   </>
                 ) : (
                   <p className="text-center text-sm text-slate-500">
-                    Bloque {blockNumber} de {BLOCKS.length} · unos {block.estimatedMinutes} minutos
+                    {BLOCKS.length > 1
+                      ? `Bloque ${blockNumber} de ${BLOCKS.length} · unos ${block.estimatedMinutes} minutos`
+                      : `Toma menos de ${block.estimatedMinutes + 2} minutos`}
                   </p>
                 )}
               </div>
