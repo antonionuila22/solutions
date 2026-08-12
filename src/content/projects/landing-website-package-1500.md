@@ -14,7 +14,7 @@ tags:
   - Premium Package
 date: 2024-10-16
 featured: true
-link: /landing/website-1500
+link: /landing/website-1500/
 results:
   metric1: Complete website solution
   metric2: Professional design included

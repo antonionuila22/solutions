@@ -4,31 +4,35 @@ import { BUSINESS_INFO } from "../configs/business";
 const year = new Date().getFullYear();
 
 const services = [
-  { label: "Web Development", href: "/services/web-development" },
-  { label: "UX/UI Design", href: "/ux-ui-design-agency" },
-  { label: "E-commerce", href: "/e-commerce" },
-  { label: "SEO Services", href: "/services/seo" },
-  { label: "Branding", href: "/services/branding" },
-  { label: "Digital Marketing", href: "/digital-marketing" },
-  { label: "Landing Pages", href: "/landing-pages" },
+  { label: "Web Development", href: "/services/web-development/" },
+  { label: "UX/UI Design", href: "/ux-ui-design-agency/" },
+  { label: "E-commerce", href: "/e-commerce/" },
+  { label: "SEO Services", href: "/services/seo/" },
+  { label: "Branding", href: "/services/branding/" },
+  { label: "Digital Marketing", href: "/digital-marketing/" },
+  { label: "Landing Pages", href: "/landing-pages/" },
 ];
 
 const solutions = [
-  { label: "Custom Software", href: "/custom-software-development" },
-  { label: "AI Automation", href: "/ai-automation-agency" },
-  { label: "Astro Development", href: "/astro-development-agency" },
-  { label: "React Development", href: "/react-development-agency" },
-  { label: "Nearshore Teams", href: "/nearshore-development" },
-  { label: "Hire Developers", href: "/hire-remote-developers" },
+  { label: "Custom Software", href: "/custom-software-development/" },
+  { label: "AI Automation", href: "/ai-automation-agency/" },
+  { label: "Astro Development", href: "/astro-development-agency/" },
+  { label: "React Development", href: "/react-development-agency/" },
+  { label: "Nearshore Teams", href: "/nearshore-development/" },
+  { label: "Hire Developers", href: "/hire-remote-developers/" },
 ];
 
 const company = [
-  { label: "About Us", href: "/history" },
-  { label: "Our Team", href: "/team" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Pricing & Quote", href: "/quoter" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/history/" },
+  { label: "Our Team", href: "/team/" },
+  { label: "Projects", href: "/projects/" },
+  { label: "Blog", href: "/blog/" },
+  // /books y /products no se enlazaban desde ninguna parte del sitio: estaban
+  // en el sitemap pero sin un solo enlace interno entrante.
+  { label: "Books", href: "/books/" },
+  { label: "Services Catalog", href: "/products/" },
+  { label: "Pricing & Quote", href: "/quoter/" },
+  { label: "Contact", href: "/contact/" },
 ];
 
 const socials = [
@@ -59,11 +63,11 @@ const socials = [
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300">
+          <a href="/contact/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300">
             Start a Project
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </a>
-          <a href="/quoter" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/15 hover:border-white/30 hover:bg-white/5 text-white font-semibold rounded-xl transition-all duration-300">
+          <a href="/quoter/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/15 hover:border-white/30 hover:bg-white/5 text-white font-semibold rounded-xl transition-all duration-300">
             Get a Quote
           </a>
         </div>
@@ -177,9 +181,9 @@ const socials = [
     <div class="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <p>&copy; {year} <span class="text-slate-300 font-semibold">Codebrand</span>. All rights reserved. Made with <span class="text-orange-400">♥</span> in Honduras.</p>
       <ul class="flex items-center gap-5">
-        <li><a href="/terms" class="hover:text-orange-400 transition-colors">Terms</a></li>
-        <li><a href="/privacy" class="hover:text-orange-400 transition-colors">Privacy</a></li>
-        <li><a href="/contact" class="hover:text-orange-400 transition-colors">Contact</a></li>
+        <li><a href="/terms/" class="hover:text-orange-400 transition-colors">Terms</a></li>
+        <li><a href="/privacy/" class="hover:text-orange-400 transition-colors">Privacy</a></li>
+        <li><a href="/contact/" class="hover:text-orange-400 transition-colors">Contact</a></li>
       </ul>
     </div>
   </div>

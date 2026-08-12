@@ -16,7 +16,7 @@ const projects = allProjects
     category: project.data.category,
     image: project.data.img,
     tags: project.data.tags,
-    link: `/projects/${project.id}`,
+    link: `/projects/${project.id}/`,
     featured: project.data.featured || false,
   }));
 
@@ -167,7 +167,7 @@ const categories = ["All", ...allCategories.sort()];
         <div
           class="flex flex-wrap justify-center gap-3 md:gap-4 pt-6 md:pt-8 animate-slide-up delay-100 px-4"
         >
-          <Button text="Start Your Project" href="/contact" />
+          <Button text="Start Your Project" href="/contact/" />
           <a
             href="#projects"
             class="px-6 md:px-8 py-3 border-2 border-cyan-900 text-cyan-900 rounded-full font-bold hover:bg-cyan-900 hover:text-white transition-all duration-300 text-sm lg:text-lg"
@@ -398,7 +398,7 @@ const categories = ["All", ...allCategories.sort()];
       <!-- CTA Buttons -->
       <div class="flex flex-wrap justify-center gap-3 md:gap-4 px-4">
         <a
-          href="/contact"
+          href="/contact/"
           class="group inline-flex items-center gap-3 bg-orange-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm lg:text-lg"
         >
           <span>Get Started Now</span>
@@ -416,7 +416,7 @@ const categories = ["All", ...allCategories.sort()];
           </svg>
         </a>
         <a
-          href="/services"
+          href="/services/"
           class="px-6 md:px-8 py-3 md:py-4 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-cyan-900 transition-all duration-300 text-sm lg:text-lg"
         >
           View Services

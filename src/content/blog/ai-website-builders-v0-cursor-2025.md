@@ -447,11 +447,11 @@ AI website builders have transformed what's possible in 2025. You can go from id
 
 But "deployed prototype" isn't "successful business website." The gap between them includes SEO optimization, security hardening, accessibility compliance, performance tuning, and ongoing maintenance—all areas where AI still falls short.
 
-Use AI builders to move faster. Use professionals — a proven [custom software development](/custom-software-development) team — to move right.
+Use AI builders to move faster. Use professionals — a proven [custom software development](/custom-software-development/) team — to move right.
 
 ---
 
-*Curious how we combine AI tools with professional expertise? [Contact us](/contact) to discuss your project.*
+*Curious how we combine AI tools with professional expertise? [Contact us](/contact/) to discuss your project.*
 
 ---
 

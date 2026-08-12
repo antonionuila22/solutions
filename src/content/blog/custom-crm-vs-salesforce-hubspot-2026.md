@@ -126,9 +126,9 @@ The answer flips when one or more of these become true:
 - **Data ownership or compliance demands it.** Some industries and data-residency requirements are far simpler to satisfy on infrastructure you control.
 - **The CRM drives the product, not just the back office.** If customer-facing features depend on the CRM's data and logic, off-the-shelf constraints become product constraints.
 
-These aren't reasons to build a CRM for the sake of it. They're signals that the off-the-shelf tax — in fees, in workarounds, in lost velocity — has grown larger than the cost of owning the right thing. That trade-off is the whole subject of our piece on [why your business needs custom software](/blog/why-your-business-needs-custom-software-2026).
+These aren't reasons to build a CRM for the sake of it. They're signals that the off-the-shelf tax — in fees, in workarounds, in lost velocity — has grown larger than the cost of owning the right thing. That trade-off is the whole subject of our piece on [why your business needs custom software](/blog/why-your-business-needs-custom-software-2026/).
 
-We go deeper on scoping, phasing, and ownership on our [custom CRM development](/custom-crm-development) page, and on the broader build decision on our [custom software development](/custom-software-development) overview.
+We go deeper on scoping, phasing, and ownership on our [custom CRM development](/custom-crm-development/) page, and on the broader build decision on our [custom software development](/custom-software-development/) overview.
 
 ---
 

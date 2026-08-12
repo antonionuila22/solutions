@@ -3,6 +3,7 @@ export const prerender = true;
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { buildPageTitle } from "../../lib/seo/page-title";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Button from "../../components/Button.astro";
 import RelatedProjects from "../../components/RelatedProjects.astro";
@@ -39,9 +40,10 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
 }).format(project.data.date);
 
 // SEO — keep title ≤ 70 chars and description ≤ 160 chars
-const rawTitle = `${project.data.title} | Projects - Codebrand`;
-const seoTitle = rawTitle.length > 70 ? `${project.data.title} | Codebrand` : rawTitle;
-const seoTitleFinal = seoTitle.length > 70 ? project.data.title : seoTitle;
+const seoTitleFinal = buildPageTitle(project.data.title, {
+  seoTitle: project.data.seoTitle,
+  suffix: "Proyectos Codebrand",
+});
 const seoDescription = project.data.description.length > 160
   ? project.data.description.slice(0, 157).trimEnd() + "…"
   : project.data.description;
@@ -201,7 +203,7 @@ const seoDescription = project.data.description.length > 160
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Projects", href: "/projects" },
+      { name: "Projects", href: "/projects/" },
       { name: project.data.title, href: "" }
     ]}
     variant="transparent"
@@ -279,7 +281,7 @@ const seoDescription = project.data.description.length > 160
                 Let's discuss how we can help your business achieve success like
                 this project.
               </p>
-              <Button text="Start Your Project" href="/contact" />
+              <Button text="Start Your Project" href="/contact/" />
             </div>
           </div>
         </div>
@@ -300,13 +302,13 @@ const seoDescription = project.data.description.length > 160
     <div class="max-w-7xl mx-auto text-center">
       <div class="flex flex-wrap justify-center gap-4">
         <a
-          href="/projects"
+          href="/projects/"
           class="px-6 md:px-8 py-3 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm md:text-base"
         >
           View All Projects
         </a>
         <a
-          href="/contact"
+          href="/contact/"
           class="px-6 md:px-8 py-3 border-2 border-cyan-900 text-cyan-900 rounded-full font-bold hover:bg-cyan-900 hover:text-white transition-all duration-300 text-sm md:text-base"
         >
           Start Your Project

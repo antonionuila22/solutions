@@ -22,7 +22,7 @@ Most bad outsourcing relationships were losable before the contract was signed. 
 
 This is a checklist for slowing that conversation down. It is written for the person who has to make the call and live with it — a founder, a head of product, an engineering manager adding capacity. None of it requires you to be a senior engineer. It does require you to ask specific questions and to notice when the answers get slippery.
 
-If you are still deciding whether nearshore is even the right model, start with our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025) and come back here once you have a shortlist.
+If you are still deciding whether nearshore is even the right model, start with our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025/) and come back here once you have a shortlist.
 
 ---
 
@@ -32,7 +32,7 @@ Vetting fails when you do not know what "good" looks like for your situation. A 
 
 Write down, in one page, the answers to these:
 
-- **What kind of engagement is this?** A fixed-scope project, staff augmentation into your existing team, or a [dedicated development team](/dedicated-development-team) that owns a product area? The vetting emphasis shifts for each — projects reward process discipline, augmentation rewards individual seniority, dedicated teams reward retention and ownership.
+- **What kind of engagement is this?** A fixed-scope project, staff augmentation into your existing team, or a [dedicated development team](/dedicated-development-team/) that owns a product area? The vetting emphasis shifts for each — projects reward process discipline, augmentation rewards individual seniority, dedicated teams reward retention and ownership.
 - **Who evaluates the work on your side?** If nobody in-house can read a pull request, you need a partner who is unusually strong on communication and demos, and you need references who were in your exact position.
 - **What is your real timezone constraint?** "We do standups at 9:30 Central" is a constraint. "We prefer overlap" is not. Be specific now so you can test it later.
 
@@ -180,7 +180,7 @@ Bring this to every partner conversation and score each item.
 
 A partner who clears most of this list is worth a trial. One who stumbles on the code sample, the references, or the IP clause is worth walking away from — cheaply, now, before it becomes expensive later.
 
-If you want to see how a nearshore partner should answer these, that is exactly the conversation we like to have — whether you are scoping a project or standing up a [dedicated development team](/dedicated-development-team). And if you are still weighing nearshore against other models, our [nearshore development](/nearshore-development) overview lays out the tradeoffs without the sales gloss.
+If you want to see how a nearshore partner should answer these, that is exactly the conversation we like to have — whether you are scoping a project or standing up a [dedicated development team](/dedicated-development-team/). And if you are still weighing nearshore against other models, our [nearshore development](/nearshore-development/) overview lays out the tradeoffs without the sales gloss.
 
 ---
 

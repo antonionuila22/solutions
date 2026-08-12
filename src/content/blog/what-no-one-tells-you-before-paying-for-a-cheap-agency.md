@@ -46,7 +46,7 @@ In a world where **personalization increases engagement by 80%** (source: Epsilo
 
 **The hidden cost**: Wasted ad spend, missed growth opportunities, and months of ineffective marketing that could have been invested in strategies that actually work.
 
-Looking for custom, strategic marketing that's built for your specific business? [Our digital marketing services](/digital-marketing) create personalized strategies that actually drive measurable results.
+Looking for custom, strategic marketing that's built for your specific business? [Our digital marketing services](/digital-marketing/) create personalized strategies that actually drive measurable results.
 
 ---
 
@@ -76,7 +76,7 @@ According to [HubSpot's State of Marketing Report](https://www.hubspot.com/state
 
 An agency should be a **strategic partner**, not a black box. If you can't have a real conversation with your agency, you don't have an agency—you have a vendor.
 
-Want an agency that actually responds, strategizes with you, and cares about your success? [Let's talk](/contact)—we pride ourselves on being accessible, responsive, and genuinely invested in our clients' growth.
+Want an agency that actually responds, strategizes with you, and cares about your success? [Let's talk](/contact/)—we pride ourselves on being accessible, responsive, and genuinely invested in our clients' growth.
 
 ---
 
@@ -109,7 +109,7 @@ Design isn't just about aesthetics—it's about **functionality, user experience
 
 **The hidden cost**: Lost sales, lost credibility, and the eventual need to completely rebuild everything—which costs 3-5x more than doing it right the first time.
 
-Ready to invest in design that actually performs? [Our web design team](/web-design) creates websites and brands that look stunning AND convert visitors into customers.
+Ready to invest in design that actually performs? [Our web design team](/web-design/) creates websites and brands that look stunning AND convert visitors into customers.
 
 ---
 
@@ -143,7 +143,7 @@ Professional agencies invest in:
 
 **The hidden cost**: Months of wasted ad spend, no insights gained, and a business that stays stagnant when it should be growing.
 
-Want marketing strategies backed by real data and continuous optimization? [Our digital marketing team](/digital-marketing) builds data-driven campaigns that deliver measurable ROI.
+Want marketing strategies backed by real data and continuous optimization? [Our digital marketing team](/digital-marketing/) builds data-driven campaigns that deliver measurable ROI.
 
 ---
 
@@ -181,7 +181,7 @@ If they hesitate or give vague answers, **run**.
 
 **The hidden cost**: Losing everything you've built and having to start completely over with a new agency.
 
-With [our web development services](/web-development), we set up everything under your ownership from day one. Your domain, your website, your accounts, your data—**you own it all**. We're here to build your assets, not hold them hostage.
+With [our web development services](/web-development/), we set up everything under your ownership from day one. Your domain, your website, your accounts, your data—**you own it all**. We're here to build your assets, not hold them hostage.
 
 ---
 
@@ -216,7 +216,7 @@ Not on how many posts they published.
 
 **The hidden cost**: Paying for busywork that generates no business value.
 
-Ready to work with an agency that's obsessed with **your results, not their deliverables**? [Let's talk strategy](/contact) and focus on what actually moves your business forward.
+Ready to work with an agency that's obsessed with **your results, not their deliverables**? [Let's talk strategy](/contact/) and focus on what actually moves your business forward.
 
 ---
 
@@ -248,7 +248,7 @@ Specialized agencies (or those with specialized team members) deliver dramatical
 
 **The hidden cost**: Mediocre results, missed opportunities, and wondering why "marketing isn't working" when the real problem is lack of expertise.
 
-Our team includes specialists in [web design](/web-design), [development](/web-development), [branding](/branding), [SEO](/seo), and [paid advertising](/digital-marketing)—each person focused on what they do best, working together strategically.
+Our team includes specialists in [web design](/web-design/), [development](/web-development/), [branding](/branding/), [SEO](/seo/), and [paid advertising](/digital-marketing/)—each person focused on what they do best, working together strategically.
 
 ---
 
@@ -354,11 +354,11 @@ We've helped hundreds of businesses recover from bad agency experiences—and ev
 
 **Don't make the costly mistake of going cheap. Make the smart investment in quality.**
 
-👉 **[Schedule a free strategy consultation](/contact)** and let's discuss your goals, challenges, and how we can help you achieve real results.
+👉 **[Schedule a free strategy consultation](/contact/)** and let's discuss your goals, challenges, and how we can help you achieve real results.
 
-👉 **[See our case studies](/projects)** of businesses we've helped grow through strategic, effective marketing.
+👉 **[See our case studies](/projects/)** of businesses we've helped grow through strategic, effective marketing.
 
-👉 **[Explore our web design](/web-design)** and [development services](/web-development) to find the right solution for your business.
+👉 **[Explore our web design](/web-design/)** and [development services](/web-development/) to find the right solution for your business.
 
 **Your business deserves better than cheap. It deserves effective.**
 

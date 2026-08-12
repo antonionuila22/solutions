@@ -1,5 +1,6 @@
 ---
 title: "Cursor vs GitHub Copilot vs Claude: La Batalla de las Herramientas de Código con IA (2025)"
+seoTitle: "Cursor vs Copilot vs Claude: comparativa 2025 | Codebrand"
 lang: es
 description: "Comparativa exhaustiva de las mejores herramientas de programación con IA. Analizamos Cursor, GitHub Copilot, Claude, Codeium y más. Benchmarks reales, precios, y cuál elegir según tu caso de uso."
 author: "Ramon Nuila"
@@ -335,10 +336,10 @@ Ofrecemos:
 
 **¿Listo para llevar tu desarrollo al siguiente nivel?**
 
-👉 **[Agenda una consulta](/contact)** para discutir cómo AI puede acelerar tu equipo.
+👉 **[Agenda una consulta](/contact/)** para discutir cómo AI puede acelerar tu equipo.
 
-👉 **[Conoce nuestros servicios de desarrollo](/web-development)** con tecnología de vanguardia.
+👉 **[Conoce nuestros servicios de desarrollo](/web-development/)** con tecnología de vanguardia.
 
-👉 **[Ve nuestros proyectos](/projects)** construidos con las mejores prácticas de la industria.
+👉 **[Ve nuestros proyectos](/projects/)** construidos con las mejores prácticas de la industria.
 
 **El futuro del desarrollo ya llegó. ¿Estás aprovechándolo?**

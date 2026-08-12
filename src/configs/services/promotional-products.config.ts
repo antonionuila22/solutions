@@ -51,7 +51,7 @@ export const promotionalProductsConfig: ServicePageConfig = {
     description:
       "Custom promotional products and branded merchandise that extend your brand reach. From apparel to tech accessories, we print and engrave your vision on anything.",
     ctaPrimary: "Get Custom Quote",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View Products",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -267,7 +267,7 @@ export const promotionalProductsConfig: ServicePageConfig = {
     description:
       "Let's create custom promotional products that extend your brand reach and leave lasting impressions. Get your free quote today.",
     ctaPrimary: "Get Custom Quote",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
   },

@@ -1,5 +1,6 @@
 ---
 title: "Pagos en Latinoamérica: La Guía Definitiva Para Vender Online en LATAM (2025)"
+seoTitle: "Pagos online en LATAM 2025: guía para vender | Codebrand"
 lang: es
 description: "Todo lo que necesitas saber sobre procesamiento de pagos en Latinoamérica. Métodos locales, pasarelas, regulaciones y estrategias para maximizar conversiones en México, Colombia, Argentina, Brasil y más."
 author: "Ramon Nuila"
@@ -345,10 +346,10 @@ Tenemos experiencia implementando soluciones de pago para empresas de USA y Euro
 
 **¿Listo para conquistar LATAM?**
 
-👉 **[Agenda una consulta gratuita](/contact)** para discutir tu estrategia de pagos.
+👉 **[Agenda una consulta gratuita](/contact/)** para discutir tu estrategia de pagos.
 
-👉 **[Conoce nuestros servicios de e-commerce](/web-development)** con integración de pagos locales.
+👉 **[Conoce nuestros servicios de e-commerce](/web-development/)** con integración de pagos locales.
 
-👉 **[Ve cómo ayudamos a otros negocios](/projects)** a crecer en Latinoamérica.
+👉 **[Ve cómo ayudamos a otros negocios](/projects/)** a crecer en Latinoamérica.
 
 **El momento de entrar a LATAM es ahora. No dejes que los pagos sean tu obstáculo.**

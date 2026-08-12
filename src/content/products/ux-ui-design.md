@@ -1,5 +1,6 @@
 ---
 title: Professional UX/UI Website Design in Figma – Modern & Efficient Prototypes
+seoTitle: "UX and UI Design in Figma | Codebrand"
 img: /photos/uxservice.webp
 readtime: 5
 price: $530/page

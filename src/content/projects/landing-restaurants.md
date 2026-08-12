@@ -13,7 +13,7 @@ tags:
   - Reservations
 date: 2024-10-25
 featured: false
-link: /landing/template-restaurants
+link: /landing/template-restaurants/
 ---
 
 ## Project Overview

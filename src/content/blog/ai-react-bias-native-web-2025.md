@@ -275,7 +275,7 @@ When AI suggests a framework, ask: "Do I actually need React for this? What's th
 
 ## When You Actually Need React
 
-React isn't the enemy. It's a powerful tool for specific use cases, and when your product genuinely needs it, working with a specialized [React development agency](/react-development-agency) pays off:
+React isn't the enemy. It's a powerful tool for specific use cases, and when your product genuinely needs it, working with a specialized [React development agency](/react-development-agency/) pays off:
 
 ### Use React When:
 
@@ -393,8 +393,8 @@ Our approach delivers:
 
 **Ready to build a website that doesn't carry unnecessary framework baggage?**
 
-[Contact us for a free consultation](/contact) and let's discuss the right approach for your project.
+[Contact us for a free consultation](/contact/) and let's discuss the right approach for your project.
 
 ---
 
-*Have questions about choosing the right technology stack? [Reach out to our team](/contact)—we're happy to help you make the right decision.*
+*Have questions about choosing the right technology stack? [Reach out to our team](/contact/)—we're happy to help you make the right decision.*

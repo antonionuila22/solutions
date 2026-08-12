@@ -26,7 +26,7 @@ Great design isn't about making things pretty—it's about making things work. T
 
 After designing hundreds of websites and applications, we've distilled the principles that consistently create exceptional user experiences. This guide covers everything from foundational concepts to advanced techniques you can apply immediately.
 
-> **Looking for professional UI/UX design?** Explore our [web design services](/web-design) for conversion-focused design that follows these principles.
+> **Looking for professional UI/UX design?** Explore our [web design services](/web-design/) for conversion-focused design that follows these principles.
 
 ---
 
@@ -903,8 +903,8 @@ At **Codebrand**, every project starts with these principles. We don't just desi
 
 **Ready to transform your user experience?**
 
-[Contact us for a free consultation](/contact) and let's discuss how great design can grow your business.
+[Contact us for a free consultation](/contact/) and let's discuss how great design can grow your business.
 
 ---
 
-*Have questions about UI/UX design? [Reach out to our team](/contact)—we love talking design.*
+*Have questions about UI/UX design? [Reach out to our team](/contact/)—we love talking design.*

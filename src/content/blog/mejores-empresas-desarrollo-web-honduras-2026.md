@@ -129,7 +129,7 @@ Ninguna capa es superior a las otras: son mercados distintos. El error caro es c
 
 San Pedro Sula concentra buena parte de la actividad por ser el centro industrial y comercial del país, mientras Tegucigalpa tiene mayor peso en proyectos institucionales y de gobierno.
 
-Para transparencia: Codebrand es una de esas empresas. Operamos desde San Pedro Sula desde 2020 y hacemos [desarrollo web en Honduras](/hn/desarrollo-web-honduras) para clientes locales y de Estados Unidos. Lo decimos una vez y seguimos con la guía, porque el objetivo de este artículo es que sepás evaluar a cualquiera, incluidos nosotros, con los mismos criterios.
+Para transparencia: Codebrand es una de esas empresas. Operamos desde San Pedro Sula desde 2020 y hacemos [desarrollo web en Honduras](/hn/desarrollo-web-honduras/) para clientes locales y de Estados Unidos. Lo decimos una vez y seguimos con la guía, porque el objetivo de este artículo es que sepás evaluar a cualquiera, incluidos nosotros, con los mismos criterios.
 
 ### Preguntas frecuentes
 
@@ -137,7 +137,7 @@ Para transparencia: Codebrand es una de esas empresas. Operamos desde San Pedro 
 No existe una respuesta universal, y desconfiá de quien te la dé. La mejor empresa para tu caso es la que ha resuelto problemas parecidos al tuyo, tiene referencias verificables, y cuyo proceso y precio calzan con tu proyecto. Evaluá tres con los criterios de esta guía.
 
 **¿Cómo sé si una agencia realmente sabe de SEO?**
-Revisá si su propio sitio aparece en búsquedas relevantes, pedí un ejemplo de un cliente cuyo tráfico orgánico haya crecido y cómo lo midieron, y desconfiá de cualquiera que hable de posiciones garantizadas. Si el tráfico de búsqueda es central para tu negocio, tratá el [SEO en Honduras](/hn/seo-honduras) como una línea explícita del proyecto y no como un extra.
+Revisá si su propio sitio aparece en búsquedas relevantes, pedí un ejemplo de un cliente cuyo tráfico orgánico haya crecido y cómo lo midieron, y desconfiá de cualquiera que hable de posiciones garantizadas. Si el tráfico de búsqueda es central para tu negocio, tratá el [SEO en Honduras](/hn/seo-honduras/) como una línea explícita del proyecto y no como un extra.
 
 **¿Es mejor contratar una empresa local o una del extranjero?**
 Una empresa local entiende el mercado, el idioma, los métodos de pago locales y está en tu zona horaria. Una del extranjero puede tener especialización que aquí no encontrás. Para la mayoría de proyectos hondureños, local es la opción sensata; para tecnología muy específica, puede valer la pena buscar afuera.
@@ -149,6 +149,6 @@ Tres o cuatro. Menos no te da comparación; más vuelve imposible evaluar bien c
 Recuperá primero el control del dominio y del hosting: sin eso, cualquier proveedor nuevo está atado de manos. Después conseguí acceso al código y a la base de datos. Es una situación común y recuperable, pero cuesta tiempo, y es exactamente lo que se evita exigiendo propiedad por escrito desde el día uno.
 
 **¿Y si mi proyecto es una tienda en línea o un sistema interno?**
-Cambian los criterios. Para e-commerce pesan la experiencia con pasarelas de pago, manejo de inventario y logística; conviene evaluar proveedores con casos reales de [tienda en línea en Honduras](/hn/tienda-online-honduras). Para sistemas internos pesa la ingeniería, la documentación y la capacidad de mantener el producto por años.
+Cambian los criterios. Para e-commerce pesan la experiencia con pasarelas de pago, manejo de inventario y logística; conviene evaluar proveedores con casos reales de [tienda en línea en Honduras](/hn/tienda-online-honduras/). Para sistemas internos pesa la ingeniería, la documentación y la capacidad de mantener el producto por años.
 
-Si querés una segunda opinión sobre propuestas que ya tenés sobre la mesa, [contactanos](/contact). Podemos revisar los alcances y decirte qué preguntas faltan, aunque al final elijás a otro proveedor.
+Si querés una segunda opinión sobre propuestas que ya tenés sobre la mesa, [contactanos](/contact/). Podemos revisar los alcances y decirte qué preguntas faltan, aunque al final elijás a otro proveedor.

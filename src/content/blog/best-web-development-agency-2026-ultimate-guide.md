@@ -138,7 +138,7 @@ After working with hundreds of businesses and analyzing why some agency relation
 - Similar projects to yours
 - Live websites you can test
 
-**Codebrand's approach:** We've completed successful projects across industries including healthcare, real estate, e-commerce, and SaaS. [View our portfolio →](https://www.codebrand.us/projects)
+**Codebrand's approach:** We've completed successful projects across industries including healthcare, real estate, e-commerce, and SaaS. [View our portfolio →](https://www.codebrand.us/projects/)
 
 ### 5. Development Process & Methodology
 
@@ -329,7 +329,7 @@ Learn from others' mistakes. Avoid agencies that exhibit these behaviors:
 
 <h2 id="nearshore-winning">Why Nearshore Development Is Winning in 2026</h2>
 
-The data is clear: a [nearshore development company](/nearshore-development) has emerged as the optimal choice for US businesses.
+The data is clear: a [nearshore development company](/nearshore-development/) has emerged as the optimal choice for US businesses.
 
 ### Market Trends
 
@@ -492,7 +492,7 @@ We build high-performance online stores using modern headless architecture:
 
 ### Healthcare & Professional Services
 
-Through [custom software development](/custom-software-development), we create secure, compliant portals for service-based businesses:
+Through [custom software development](/custom-software-development/), we create secure, compliant portals for service-based businesses:
 - **Technology:** Custom React applications with secure authentication
 - **Focus:** Patient/client portals, appointment booking, document management
 - **Compliance:** HIPAA-aware architecture for healthcare clients
@@ -504,7 +504,7 @@ We help startups compete with compelling marketing sites:
 - **Focus:** Lead generation, demo booking, content marketing integration
 - **Results:** Search visibility and qualified lead generation
 
-[View our full portfolio →](https://www.codebrand.us/projects)
+[View our full portfolio →](https://www.codebrand.us/projects/)
 
 ---
 
@@ -521,7 +521,7 @@ No pitch, no pressure. We'll discuss:
 - Budget expectations
 - Whether we're the right fit
 
-[**Schedule Your Free Consultation →**](https://www.codebrand.us/contact)
+[**Schedule Your Free Consultation →**](https://www.codebrand.us/contact/)
 
 ### Step 2: Proposal & Quote (48 hours)
 
@@ -624,13 +624,13 @@ We're not the right fit for everyone—and we're okay with that. But if you're a
 
 ## Ready to Get Started?
 
-**[Schedule Your Free 30-Minute Consultation →](https://www.codebrand.us/contact)**
+**[Schedule Your Free 30-Minute Consultation →](https://www.codebrand.us/contact/)**
 
 No pressure. No pitch. Just an honest conversation about your goals and whether we can help achieve them.
 
 Or reach out directly:
 - **Email:** info@codebrand.es
-- **Website:** [codebrand.us/contact](https://www.codebrand.us/contact)
+- **Website:** [codebrand.us/contact](https://www.codebrand.us/contact/)
 
 ---
 
@@ -639,6 +639,6 @@ Or reach out directly:
 ---
 
 **Explore More:**
-- [Our Services](https://www.codebrand.us/services)
-- [View Our Portfolio](https://www.codebrand.us/projects)
-- [Contact Us](https://www.codebrand.us/contact)
+- [Our Services](https://www.codebrand.us/services/)
+- [View Our Portfolio](https://www.codebrand.us/projects/)
+- [Contact Us](https://www.codebrand.us/contact/)

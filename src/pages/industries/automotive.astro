@@ -40,7 +40,7 @@ const serviceSchema = {
   "serviceType": "Automotive Website Development",
   "name": "Car Dealership Website Design & Automotive Software Solutions",
   "description": description,
-  "url": "https://www.codebrand.us/industries/automotive",
+  "url": "https://www.codebrand.us/industries/automotive/",
   "image": "https://www.codebrand.us/photos/bannercodebrand.webp",
   "provider": {
     "@type": "Organization",
@@ -127,8 +127,8 @@ const automotiveFaqs = [
 const faqSchema = createFAQSchema(automotiveFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Automotive", url: "https://www.codebrand.us/industries/automotive" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Automotive", url: "https://www.codebrand.us/industries/automotive/" }
 ]);
 
 const accentGradient = "from-cyan-500 to-blue-500";
@@ -321,7 +321,7 @@ const softwareLead = "The website sells the appointment. The repair order, the p
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Automotive", href: "" }
     ]}
     variant="transparent"

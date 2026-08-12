@@ -38,7 +38,7 @@ const serviceSchema = {
   "serviceType": "Content Creator Website Development",
   "name": "Content Creator Website Design | Influencer Sites",
   "description": description,
-  "url": "https://www.codebrand.us/industries/content-creators",
+  "url": "https://www.codebrand.us/industries/content-creators/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -100,8 +100,8 @@ const creatorFaqs = [
 const faqSchema = createFAQSchema(creatorFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Content Creators", url: "https://www.codebrand.us/industries/content-creators" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Content Creators", url: "https://www.codebrand.us/industries/content-creators/" }
 ]);
 
 const accentGradient = "from-orange-500 to-orange-500";
@@ -294,7 +294,7 @@ const softwareLead = "Once a channel becomes a business, the work stops being th
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Content Creators", href: "" }
     ]}
     variant="transparent"

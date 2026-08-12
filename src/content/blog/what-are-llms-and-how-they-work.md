@@ -139,7 +139,7 @@ LLMs aren't just for tech companies. Here's how businesses across industries are
 
 **Example**: A small e-commerce business uses an LLM-powered chatbot to answer shipping questions, process returns, and recommend products—reducing support emails by 60%.
 
-Want AI-powered customer experiences for your business? [Our digital solutions](/digital-marketing) include chatbot integration and automation.
+Want AI-powered customer experiences for your business? [Our digital solutions](/digital-marketing/) include chatbot integration and automation.
 
 ---
 
@@ -162,7 +162,7 @@ Want AI-powered customer experiences for your business? [Our digital solutions](
 
 **Example**: A marketing agency uses LLMs to draft client blog posts, social media captions, and email sequences—cutting content production time by 70%.
 
-Need help creating consistent, high-quality content? [Our content marketing services](/digital-marketing) combine AI efficiency with human creativity.
+Need help creating consistent, high-quality content? [Our content marketing services](/digital-marketing/) combine AI efficiency with human creativity.
 
 ---
 
@@ -202,7 +202,7 @@ Need help creating consistent, high-quality content? [Our content marketing serv
 
 **Example**: A startup uses an LLM to generate boilerplate code, write documentation, and debug issues—shipping features 40% faster.
 
-Need [custom software](/custom-software-development) or automation? [Our web development team](/web-development) leverages AI to build solutions faster and more efficiently.
+Need [custom software](/custom-software-development/) or automation? [Our web development team](/web-development/) leverages AI to build solutions faster and more efficiently.
 
 ---
 
@@ -456,10 +456,10 @@ Whether you need content creation, customer service automation, or custom AI sol
 🤖 **Strategy Consulting**: How to integrate AI into your business effectively
 🤖 **Custom Solutions**: Tailored AI implementations for your specific needs
 
-👉 **[Schedule a free AI strategy consultation](/contact)** and discover how AI can transform your business.
+👉 **[Schedule a free AI strategy consultation](/contact/)** and discover how AI can transform your business.
 
-👉 **[View our AI implementation case studies](/projects)** to see real results.
+👉 **[View our AI implementation case studies](/projects/)** to see real results.
 
-👉 **[Explore our digital services](/digital-marketing)** powered by cutting-edge AI.
+👉 **[Explore our digital services](/digital-marketing/)** powered by cutting-edge AI.
 
 **The AI revolution isn't coming—it's here. Don't get left behind.**

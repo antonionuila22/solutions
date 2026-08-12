@@ -1,5 +1,6 @@
 ---
 title: Professional Video Editing – Visual Content That Captures and Connects
+seoTitle: "Video Editing Services | Codebrand"
 img: /photos/videoedition.webp
 readtime: 5
 price: From $370

@@ -26,7 +26,7 @@ Website security isn't optional—it's essential. In 2026, cyberattacks are more
 
 This guide covers everything you need to protect your website, from fundamental practices to advanced security measures. Whether you're building a simple blog or a complex e-commerce platform, these principles apply.
 
-> **Need a secure website?** Our [web development services](/web-development) include security best practices built into every project.
+> **Need a secure website?** Our [web development services](/web-development/) include security best practices built into every project.
 
 ---
 
@@ -802,8 +802,8 @@ At **Codebrand**, security is built into every project from day one. We don't bo
 
 **Worried about your website's security?**
 
-[Contact us for a free security consultation](/contact) and let's ensure your website is protected.
+[Contact us for a free security consultation](/contact/) and let's ensure your website is protected.
 
 ---
 
-*Have questions about website security? [Reach out to our team](/contact)—we're here to help you stay secure.*
+*Have questions about website security? [Reach out to our team](/contact/)—we're here to help you stay secure.*

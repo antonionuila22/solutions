@@ -1049,7 +1049,7 @@ security:
 
 ## How Codebrand Builds APIs
 
-At **Codebrand**, we apply these best practices to every API we build as part of our [custom software development](/custom-software-development) work. Our clients get APIs that are easy to use, well-documented, and built to scale.
+At **Codebrand**, we apply these best practices to every API we build as part of our [custom software development](/custom-software-development/) work. Our clients get APIs that are easy to use, well-documented, and built to scale.
 
 ### Our API Development Services
 
@@ -1068,8 +1068,8 @@ At **Codebrand**, we apply these best practices to every API we build as part of
 
 **Need a professional API for your project?**
 
-[Contact us for a free consultation](/contact) and let's discuss how we can build an API developers will love.
+[Contact us for a free consultation](/contact/) and let's discuss how we can build an API developers will love.
 
 ---
 
-*Have questions about API design? [Reach out to our team](/contact)—we're passionate about building great APIs.*
+*Have questions about API design? [Reach out to our team](/contact/)—we're passionate about building great APIs.*

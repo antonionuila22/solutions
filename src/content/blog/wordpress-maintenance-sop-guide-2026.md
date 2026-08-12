@@ -590,4 +590,4 @@ The key is consistency. Update your plugins weekly. Publish content regularly. B
 
 Your website is a business asset. Treat it like one.
 
-**Need help with something beyond basic maintenance?** [Contact our team](/contact) — we specialize in WordPress development, performance optimization, and custom solutions that grow with your business.
+**Need help with something beyond basic maintenance?** [Contact our team](/contact/) — we specialize in WordPress development, performance optimization, and custom solutions that grow with your business.

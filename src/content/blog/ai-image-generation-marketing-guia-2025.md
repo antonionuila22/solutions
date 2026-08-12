@@ -449,10 +449,10 @@ En Code Brand, combinamos tecnología de vanguardia con diseño profesional. Usa
 
 **¿Quieres elevar tu contenido visual?**
 
-👉 **[Agenda una consulta](/contact)** para discutir tu estrategia de contenido.
+👉 **[Agenda una consulta](/contact/)** para discutir tu estrategia de contenido.
 
-👉 **[Conoce nuestros servicios de branding](/branding)** que incluyen creación de assets visuales.
+👉 **[Conoce nuestros servicios de branding](/branding/)** que incluyen creación de assets visuales.
 
-👉 **[Ve nuestros proyectos](/projects)** para ver ejemplos de trabajo visual.
+👉 **[Ve nuestros proyectos](/projects/)** para ver ejemplos de trabajo visual.
 
 **El contenido visual diferencia a las marcas mediocres de las memorables. ¿En cuál quieres estar?**

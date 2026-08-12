@@ -25,85 +25,85 @@ const { currentService, title = "Related Services", subtitle = "Explore More Sol
 // Define all services with their relationships
 const allServices: Record<string, Service[]> = {
   "web-development": [
-    { title: "UX/UI Design", description: "Create intuitive interfaces that convert visitors into customers with user-centered design.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
-    { title: "SEO Services", description: "Boost your search rankings and drive organic traffic with expert optimization.", href: "/seo", icon: "/icons/seo.webp" },
-    { title: "E-commerce Development", description: "Build powerful online stores that maximize sales and customer experience.", href: "/e-commerce", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+    { title: "UX/UI Design", description: "Create intuitive interfaces that convert visitors into customers with user-centered design.", href: "/web-design/", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "SEO Services", description: "Boost your search rankings and drive organic traffic with expert optimization.", href: "/seo/", icon: "/icons/seo.webp" },
+    { title: "E-commerce Development", description: "Build powerful online stores that maximize sales and customer experience.", href: "/e-commerce/", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
   ],
   "web-design": [
-    { title: "Web Development", description: "Transform your designs into fast, scalable websites with modern technologies.", href: "/web-development", icon: "/icons/sitio-web.webp" },
-    { title: "Branding", description: "Build a cohesive brand identity that resonates with your target audience.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
-    { title: "Landing Pages", description: "High-converting landing pages designed to maximize your campaign ROI.", href: "/landing-pages", icon: "/icons/login-page-svgrepo-com.svg" },
+    { title: "Web Development", description: "Transform your designs into fast, scalable websites with modern technologies.", href: "/web-development/", icon: "/icons/sitio-web.webp" },
+    { title: "Branding", description: "Build a cohesive brand identity that resonates with your target audience.", href: "/branding/", icon: "/icons/diseno-grafico.webp" },
+    { title: "Landing Pages", description: "High-converting landing pages designed to maximize your campaign ROI.", href: "/landing-pages/", icon: "/icons/login-page-svgrepo-com.svg" },
   ],
   "branding": [
-    { title: "Web Design", description: "Bring your brand to life with stunning, user-focused web designs.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
-    { title: "Web Development", description: "Build a professional website that reflects your brand identity.", href: "/web-development", icon: "/icons/sitio-web.webp" },
-    { title: "Social Media Design", description: "Consistent brand presence across all your social media platforms.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
+    { title: "Web Design", description: "Bring your brand to life with stunning, user-focused web designs.", href: "/web-design/", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Web Development", description: "Build a professional website that reflects your brand identity.", href: "/web-development/", icon: "/icons/sitio-web.webp" },
+    { title: "Social Media Design", description: "Consistent brand presence across all your social media platforms.", href: "/services/social-media/", icon: "/icons/redes-sociales.webp" },
   ],
   "seo": [
-    { title: "Web Development", description: "SEO-optimized websites built for speed and search engine visibility.", href: "/web-development", icon: "/icons/sitio-web.webp" },
-    { title: "Digital Marketing", description: "Comprehensive marketing strategies to amplify your online presence.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
-    { title: "Landing Pages", description: "Conversion-optimized pages that turn traffic into leads.", href: "/landing-pages", icon: "/icons/login-page-svgrepo-com.svg" },
+    { title: "Web Development", description: "SEO-optimized websites built for speed and search engine visibility.", href: "/web-development/", icon: "/icons/sitio-web.webp" },
+    { title: "Digital Marketing", description: "Comprehensive marketing strategies to amplify your online presence.", href: "/digital-marketing/", icon: "/icons/horn-marketing-trumpet-svgrepo-com.svg" },
+    { title: "Landing Pages", description: "Conversion-optimized pages that turn traffic into leads.", href: "/landing-pages/", icon: "/icons/login-page-svgrepo-com.svg" },
   ],
   "digital-marketing": [
-    { title: "SEO Services", description: "Dominate search results with expert optimization strategies.", href: "/seo", icon: "/icons/seo.webp" },
-    { title: "Social Media Design", description: "Eye-catching graphics that boost engagement on all platforms.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
-    { title: "Landing Pages", description: "High-converting pages for your marketing campaigns.", href: "/landing-pages", icon: "/icons/login-page-svgrepo-com.svg" },
+    { title: "SEO Services", description: "Dominate search results with expert optimization strategies.", href: "/seo/", icon: "/icons/seo.webp" },
+    { title: "Social Media Design", description: "Eye-catching graphics that boost engagement on all platforms.", href: "/services/social-media/", icon: "/icons/redes-sociales.webp" },
+    { title: "Landing Pages", description: "High-converting pages for your marketing campaigns.", href: "/landing-pages/", icon: "/icons/login-page-svgrepo-com.svg" },
   ],
   "e-commerce": [
-    { title: "Web Development", description: "Custom web solutions to scale your online business.", href: "/web-development", icon: "/icons/sitio-web.webp" },
-    { title: "UX/UI Design", description: "Optimize your store's user experience for higher conversions.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
-    { title: "SEO Services", description: "Drive organic traffic to your products with e-commerce SEO.", href: "/seo", icon: "/icons/seo.webp" },
+    { title: "Web Development", description: "Custom web solutions to scale your online business.", href: "/web-development/", icon: "/icons/sitio-web.webp" },
+    { title: "UX/UI Design", description: "Optimize your store's user experience for higher conversions.", href: "/web-design/", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "SEO Services", description: "Drive organic traffic to your products with e-commerce SEO.", href: "/seo/", icon: "/icons/seo.webp" },
   ],
   "landing-pages": [
-    { title: "Digital Marketing", description: "Maximize your landing page ROI with integrated marketing.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
-    { title: "Web Design", description: "Beautiful designs that capture attention and convert.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
-    { title: "SEO Services", description: "Optimize your pages for search visibility and conversions.", href: "/seo", icon: "/icons/seo.webp" },
+    { title: "Digital Marketing", description: "Maximize your landing page ROI with integrated marketing.", href: "/digital-marketing/", icon: "/icons/horn-marketing-trumpet-svgrepo-com.svg" },
+    { title: "Web Design", description: "Beautiful designs that capture attention and convert.", href: "/web-design/", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "SEO Services", description: "Optimize your pages for search visibility and conversions.", href: "/seo/", icon: "/icons/seo.webp" },
   ],
   "outsourcing-design": [
-    { title: "Outsourcing Development", description: "White-label development services for agencies.", href: "/outsourcing-development", icon: "/icons/sitio-web.webp" },
-    { title: "Branding Services", description: "Complete brand identity solutions for your clients.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
-    { title: "Web Design", description: "Professional UI/UX design for any project.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Outsourcing Development", description: "White-label development services for agencies.", href: "/outsourcing-development/", icon: "/icons/sitio-web.webp" },
+    { title: "Branding Services", description: "Complete brand identity solutions for your clients.", href: "/branding/", icon: "/icons/diseno-grafico.webp" },
+    { title: "Web Design", description: "Professional UI/UX design for any project.", href: "/web-design/", icon: "/icons/interfaz-de-usuario.webp" },
   ],
   "outsourcing-development": [
-    { title: "Outsourcing Design", description: "White-label design services for agencies.", href: "/outsourcing-design", icon: "/icons/interfaz-de-usuario.webp" },
-    { title: "Web Development", description: "Full-stack development for complex projects.", href: "/web-development", icon: "/icons/sitio-web.webp" },
-    { title: "E-commerce Development", description: "Custom e-commerce solutions for your clients.", href: "/e-commerce", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+    { title: "Outsourcing Design", description: "White-label design services for agencies.", href: "/outsourcing-design/", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Web Development", description: "Full-stack development for complex projects.", href: "/web-development/", icon: "/icons/sitio-web.webp" },
+    { title: "E-commerce Development", description: "Custom e-commerce solutions for your clients.", href: "/e-commerce/", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
   ],
   // NEW: Animation services
   "animation": [
-    { title: "Video Production", description: "Professional video content to complement your animations.", href: "/services/video-production", icon: "/icons/animacion.webp" },
-    { title: "3D Rendering", description: "Photorealistic 3D visuals for products and architecture.", href: "/services/3d-rendering", icon: "/icons/modelo-3d.webp" },
-    { title: "Branding", description: "Animated logo reveals and brand motion graphics.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
+    { title: "Video Production", description: "Professional video content to complement your animations.", href: "/services/video-production/", icon: "/icons/animacion.webp" },
+    { title: "3D Rendering", description: "Photorealistic 3D visuals for products and architecture.", href: "/services/3d-rendering/", icon: "/icons/modelo-3d.webp" },
+    { title: "Branding", description: "Animated logo reveals and brand motion graphics.", href: "/branding/", icon: "/icons/diseno-grafico.webp" },
   ],
   // NEW: Video Production services
   "video-production": [
-    { title: "Animation Services", description: "2D and 3D animation to enhance your video content.", href: "/services/animation", icon: "/icons/animacion.webp" },
-    { title: "Social Media Design", description: "Video content optimized for social platforms.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
-    { title: "Digital Marketing", description: "Video marketing strategies that drive engagement.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
+    { title: "Animation Services", description: "2D and 3D animation to enhance your video content.", href: "/services/animation/", icon: "/icons/animacion.webp" },
+    { title: "Social Media Design", description: "Video content optimized for social platforms.", href: "/services/social-media/", icon: "/icons/redes-sociales.webp" },
+    { title: "Digital Marketing", description: "Video marketing strategies that drive engagement.", href: "/digital-marketing/", icon: "/icons/horn-marketing-trumpet-svgrepo-com.svg" },
   ],
   // NEW: 3D Rendering services
   "3d-rendering": [
-    { title: "Animation Services", description: "Bring your 3D models to life with animation.", href: "/services/animation", icon: "/icons/animacion.webp" },
-    { title: "Web Design", description: "Showcase 3D visuals in stunning web experiences.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
-    { title: "Video Production", description: "Incorporate 3D renders into professional videos.", href: "/services/video-production", icon: "/icons/animacion.webp" },
+    { title: "Animation Services", description: "Bring your 3D models to life with animation.", href: "/services/animation/", icon: "/icons/animacion.webp" },
+    { title: "Web Design", description: "Showcase 3D visuals in stunning web experiences.", href: "/web-design/", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Video Production", description: "Incorporate 3D renders into professional videos.", href: "/services/video-production/", icon: "/icons/animacion.webp" },
   ],
   // NEW: Social Media services
   "social-media": [
-    { title: "Branding", description: "Consistent brand identity across all social channels.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
-    { title: "Digital Marketing", description: "Comprehensive social media marketing strategies.", href: "/digital-marketing", icon: "/icons/marketing-advertising-svgrepo-com.svg" },
-    { title: "Video Production", description: "Engaging video content for social platforms.", href: "/services/video-production", icon: "/icons/animacion.webp" },
+    { title: "Branding", description: "Consistent brand identity across all social channels.", href: "/branding/", icon: "/icons/diseno-grafico.webp" },
+    { title: "Digital Marketing", description: "Comprehensive social media marketing strategies.", href: "/digital-marketing/", icon: "/icons/horn-marketing-trumpet-svgrepo-com.svg" },
+    { title: "Video Production", description: "Engaging video content for social platforms.", href: "/services/video-production/", icon: "/icons/animacion.webp" },
   ],
   // NEW: UX/UI services
   "ux-ui": [
-    { title: "Web Development", description: "Transform your UI designs into functional websites.", href: "/web-development", icon: "/icons/sitio-web.webp" },
-    { title: "Branding", description: "Create cohesive brand experiences across digital touchpoints.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
-    { title: "E-commerce Design", description: "User-focused e-commerce experiences that convert.", href: "/e-commerce", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
+    { title: "Web Development", description: "Transform your UI designs into functional websites.", href: "/web-development/", icon: "/icons/sitio-web.webp" },
+    { title: "Branding", description: "Create cohesive brand experiences across digital touchpoints.", href: "/branding/", icon: "/icons/diseno-grafico.webp" },
+    { title: "E-commerce Design", description: "User-focused e-commerce experiences that convert.", href: "/e-commerce/", icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg" },
   ],
   // NEW: Promotional Products
   "promotional-products": [
-    { title: "Branding", description: "Extend your brand identity to physical products.", href: "/branding", icon: "/icons/diseno-grafico.webp" },
-    { title: "Web Design", description: "Showcase your products with stunning web design.", href: "/web-design", icon: "/icons/interfaz-de-usuario.webp" },
-    { title: "Social Media Design", description: "Promote your products across social channels.", href: "/services/social-media", icon: "/icons/redes-sociales.webp" },
+    { title: "Branding", description: "Extend your brand identity to physical products.", href: "/branding/", icon: "/icons/diseno-grafico.webp" },
+    { title: "Web Design", description: "Showcase your products with stunning web design.", href: "/web-design/", icon: "/icons/interfaz-de-usuario.webp" },
+    { title: "Social Media Design", description: "Promote your products across social channels.", href: "/services/social-media/", icon: "/icons/redes-sociales.webp" },
   ],
 };
 

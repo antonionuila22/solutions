@@ -25,7 +25,7 @@ Here's what actually happens: You buy a $50/month tool. Then you spend hours ada
 
 **The $50 tool ends up costing $5,000/month in hidden expenses.**
 
-Let's talk about when [custom software](/custom-software-development) makes sense—and when it doesn't.
+Let's talk about when [custom software](/custom-software-development/) makes sense—and when it doesn't.
 
 ---
 
@@ -47,7 +47,7 @@ A logistics company we worked with used standard shipping software. The problem?
 
 The generic software couldn't implement it. They were using spreadsheets alongside their "modern" software—the worst of both worlds.
 
-[We built them a custom solution →](/services/web-development) that integrated their algorithm. Result: 23% fuel savings, automated dispatching, and happy drivers.
+[We built them a custom solution →](/services/web-development/) that integrated their algorithm. Result: 23% fuel savings, automated dispatching, and happy drivers.
 
 ---
 
@@ -89,7 +89,7 @@ Every workaround has a cost:
 
 Generic software can't capture your unique value propositions. When a customer has a special request, can your system handle it?
 
-**An e-commerce client** was losing custom orders because their platform couldn't handle configurable products. Building a [custom solution](/services/web-development) increased revenue by 34%.
+**An e-commerce client** was losing custom orders because their platform couldn't handle configurable products. Building a [custom solution](/services/web-development/) increased revenue by 34%.
 
 ### Hidden Cost #3: Integration Nightmares
 
@@ -135,7 +135,7 @@ What works for 10 employees often breaks at 50. Generic solutions hit walls that
 - Segment
 - Lifecycle stage
 
-[See how UX design improves business outcomes →](/services/ux-ui)
+[See how UX design improves business outcomes →](/services/ux-ui/)
 
 ### Problem: Reporting
 
@@ -160,8 +160,8 @@ Before writing any code, we learn:
 ### Step 2: Design the Right Solution
 
 Sometimes the answer is custom software. Sometimes it's:
-- A better website ([web development](/services/web-development))
-- Improved user experience ([UX/UI design](/services/ux-ui))
+- A better website ([web development](/services/web-development/))
+- Improved user experience ([UX/UI design](/services/ux-ui/))
 - Automation of existing tools
 - Integration between systems
 
@@ -195,7 +195,7 @@ Software only works if people use it. We focus on:
 
 **Result:** Average order value increased 34%, cart abandonment decreased 28%
 
-[Learn about our e-commerce solutions →](/services/web-development)
+[Learn about our e-commerce solutions →](/services/web-development/)
 
 ### Professional Services: 15 Hours/Week Saved
 
@@ -264,11 +264,11 @@ Most of our clients see **positive ROI within 12-18 months**, with benefits cont
 
 Custom software is part of a larger digital strategy. It works best when combined with:
 
-**Strong Branding:** Your software should reflect your brand. [Explore our branding services →](/services/branding)
+**Strong Branding:** Your software should reflect your brand. [Explore our branding services →](/services/branding/)
 
-**Great UX Design:** The best logic means nothing if users can't navigate it. [See our UX/UI approach →](/services/ux-ui)
+**Great UX Design:** The best logic means nothing if users can't navigate it. [See our UX/UI approach →](/services/ux-ui/)
 
-**SEO Strategy:** If it's customer-facing, it needs to be findable. [Learn about our SEO services →](/services/seo)
+**SEO Strategy:** If it's customer-facing, it needs to be findable. [Learn about our SEO services →](/services/seo/)
 
 **Quality Content:** Software needs content—help text, emails, notifications. Good writing matters.
 
@@ -282,7 +282,7 @@ Ready to explore whether custom software makes sense for your business?
 
 15-minute conversation about your challenges. No sales pitch, just honest assessment.
 
-[Schedule a call →](/contact)
+[Schedule a call →](/contact/)
 
 ### Option 2: Process Audit
 
@@ -304,4 +304,4 @@ Small, focused project to demonstrate value before larger investment.
 
 Your business is unique. Your software should be too.
 
-[Let's talk about your needs →](/contact)
+[Let's talk about your needs →](/contact/)

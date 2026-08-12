@@ -619,8 +619,8 @@ Choosing the right platform is just the beginning. We can help you:
 
 **Not sure which platform is right for your project?**
 
-[Contact us for a free consultation](/contact) and let's find the perfect hosting solution for your needs.
+[Contact us for a free consultation](/contact/) and let's find the perfect hosting solution for your needs.
 
 ---
 
-*Need help choosing or migrating between platforms? [Reach out to our team](/contact)—we've deployed on all three and know the trade-offs.*
+*Need help choosing or migrating between platforms? [Reach out to our team](/contact/)—we've deployed on all three and know the trade-offs.*

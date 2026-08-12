@@ -8,7 +8,7 @@ interface StickyCTAProps {
 
 export default function StickyCTA({
   text = "Get Free Quote",
-  href = "/contact",
+  href = "/contact/",
   showAfterScroll = 600,
 }: StickyCTAProps) {
   const [isVisible, setIsVisible] = useState(false);

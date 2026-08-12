@@ -32,7 +32,7 @@ const serviceSchema = {
   "serviceType": "Construction Software Development",
   "name": "Construction Software & Contractor Website Development",
   "description": description,
-  "url": "https://www.codebrand.us/industries/construction",
+  "url": "https://www.codebrand.us/industries/construction/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -94,8 +94,8 @@ const constructionFaqs = [
 const faqSchema = createFAQSchema(constructionFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Construction", url: "https://www.codebrand.us/industries/construction" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Construction", url: "https://www.codebrand.us/industries/construction/" }
 ]);
 
 const stats = [
@@ -295,7 +295,7 @@ const softwareLead = "Jobs are not lost on the website. They are lost in the est
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Construction", href: "" }
     ]}
     variant="transparent"

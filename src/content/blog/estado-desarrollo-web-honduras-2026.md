@@ -1,5 +1,6 @@
 ---
 title: "Estado del Desarrollo Web en Honduras 2026: El Salto hacia la Hiper-Personalización"
+seoTitle: "Desarrollo web en Honduras 2026: estado del sector"
 lang: es
 description: "Análisis completo del desarrollo web en Honduras 2026: agencias clave, SEO local, tendencias de demanda y costos de proyectos corporativos vs e-commerce."
 author: "Ramon Nuila"

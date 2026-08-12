@@ -20,7 +20,7 @@ tags:
 
 Google's algorithm updates in 2025 have been relentless. If your traffic dropped and you're not sure why, you're not alone—and this guide will help you understand what happened and what to do about it.
 
-> **Need help recovering from algorithm updates?** Our [SEO services](/seo) help businesses adapt and thrive after Google updates.
+> **Need help recovering from algorithm updates?** Our [SEO services](/seo/) help businesses adapt and thrive after Google updates.
 
 ---
 
@@ -107,7 +107,7 @@ Google's Helpful Content update continues to evolve:
 - Desktop-only optimizations are increasingly irrelevant
 - Mobile experience determines rankings
 
-> **Is your website mobile-optimized?** Our [web development services](/web-development) ensure your site meets Google's Core Web Vitals standards.
+> **Is your website mobile-optimized?** Our [web development services](/web-development/) ensure your site meets Google's Core Web Vitals standards.
 
 ---
 
@@ -350,12 +350,12 @@ If your traffic dropped, it's a signal to improve, not to find new tricks. The t
 
 ---
 
-*Need help recovering from algorithm updates or building a sustainable SEO strategy? [Contact us](/contact) for a free SEO audit.*
+*Need help recovering from algorithm updates or building a sustainable SEO strategy? [Contact us](/contact/) for a free SEO audit.*
 
 **Our SEO services include:**
-- [Technical SEO Audits](/seo)
-- [Content Strategy & Optimization](/digital-marketing)
-- [Core Web Vitals Optimization](/web-development)
+- [Technical SEO Audits](/seo/)
+- [Content Strategy & Optimization](/digital-marketing/)
+- [Core Web Vitals Optimization](/web-development/)
 
 ---
 

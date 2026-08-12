@@ -53,7 +53,7 @@ export interface ServicePageSchemaConfig {
   name: string;
   /** Service description for SEO */
   description: string;
-  /** Full URL of the service page (e.g., "https://www.codebrand.us/branding") */
+  /** Full URL of the service page (e.g., "https://www.codebrand.us/branding/") */
   url: string;
   /** Full URL of the service image */
   image: string;
@@ -76,7 +76,7 @@ export interface ServicePageSchemaConfig {
  *   serviceType: "Branding Services",
  *   name: "Professional Branding & Logo Design Services",
  *   description: "Build a powerful brand...",
- *   url: "https://www.codebrand.us/branding",
+ *   url: "https://www.codebrand.us/branding/",
  *   image: "https://www.codebrand.us/photos/Branding.webp",
  *   catalogName: "Branding Services",
  *   catalogItems: [
@@ -283,8 +283,8 @@ export interface BreadcrumbItem {
  * @example
  * const breadcrumbs = createBreadcrumbSchema([
  *   { name: "Home", url: "https://www.codebrand.us" },
- *   { name: "Services", url: "https://www.codebrand.us/services" },
- *   { name: "Web Development", url: "https://www.codebrand.us/services/web-development" }
+ *   { name: "Services", url: "https://www.codebrand.us/services/" },
+ *   { name: "Web Development", url: "https://www.codebrand.us/services/web-development/" }
  * ]);
  */
 export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
@@ -310,7 +310,7 @@ export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
  *
  * @example
  * const breadcrumbs = createBreadcrumbSchemaFromUrl(
- *   "https://www.codebrand.us/services/web-development",
+ *   "https://www.codebrand.us/services/web-development/",
  *   "https://www.codebrand.us",
  *   { "web-development": "Web Development", "services": "Services" }
  * );
@@ -323,8 +323,10 @@ export function createBreadcrumbSchemaFromUrl(
   const url = new URL(currentUrl);
   const pathSegments = url.pathname.split("/").filter(Boolean);
 
+  // Las URLs llevan barra final para que coincidan con la canónica de cada
+  // página. Sin ella, cada breadcrumb apunta a una URL que responde 301.
   const items: BreadcrumbItem[] = [
-    { name: "Home", url: baseUrl },
+    { name: "Home", url: `${baseUrl}/` },
   ];
 
   let accumulatedPath = "";
@@ -339,7 +341,7 @@ export function createBreadcrumbSchemaFromUrl(
 
     items.push({
       name: displayName,
-      url: `${baseUrl}${accumulatedPath}`,
+      url: `${baseUrl}${accumulatedPath}/`,
     });
   }
 
@@ -420,7 +422,7 @@ export interface ArticleSchemaOptions {
  *   datePublished: "2025-01-15T10:00:00Z",
  *   dateModified: "2025-01-20T14:30:00Z",
  *   author: "John Doe",
- *   url: "https://www.codebrand.us/blog/web-development-best-practices",
+ *   url: "https://www.codebrand.us/blog/web-development-best-practices/",
  *   keywords: ["web development", "best practices", "2025"],
  *   wordCount: 2500,
  *   readingTime: 10
@@ -458,7 +460,7 @@ export function createArticleSchema(options: ArticleSchemaOptions) {
     author: {
       "@type": "Person",
       name: author || "Codebrand Team",
-      url: authorUrl || "https://www.codebrand.us/team",
+      url: authorUrl || "https://www.codebrand.us/team/",
     },
     publisher: {
       "@type": "Organization",

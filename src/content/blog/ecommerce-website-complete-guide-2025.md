@@ -23,7 +23,7 @@ E-commerce sales are projected to reach $6.3 trillion globally in 2025. Whether 
 
 We've built over 100 e-commerce websites across different platforms. This is what actually works.
 
-> **Ready to launch your online store?** Check out our [e-commerce development services](/e-commerce) for custom solutions.
+> **Ready to launch your online store?** Check out our [e-commerce development services](/e-commerce/) for custom solutions.
 
 ---
 
@@ -146,7 +146,7 @@ We've built over 100 e-commerce websites across different platforms. This is wha
 - Hosting: $50-500/month
 - Maintenance: $500-2,000/month
 
-> **Need custom e-commerce development?** Our team specializes in [custom web applications](/web-development) and [online stores](/e-commerce).
+> **Need custom e-commerce development?** Our team specializes in [custom web applications](/web-development/) and [online stores](/e-commerce/).
 
 ---
 
@@ -339,7 +339,7 @@ homepage
 - Featured products
 - FAQ section
 
-> **Struggling with e-commerce SEO?** Our [SEO services](/seo) can help your products rank higher in search results.
+> **Struggling with e-commerce SEO?** Our [SEO services](/seo/) can help your products rank higher in search results.
 
 ---
 
@@ -433,7 +433,7 @@ homepage
 - Avoid popups
 - Easy zoom on images
 
-> **Need conversion-focused design?** Our [UX/UI design services](/web-design) help create e-commerce experiences that convert.
+> **Need conversion-focused design?** Our [UX/UI design services](/web-design/) help create e-commerce experiences that convert.
 
 ---
 
@@ -667,4 +667,4 @@ Start simple, measure everything, and iterate based on data. The most successful
 
 ---
 
-*Ready to build your e-commerce website? [Contact Codebrand](/contact) for a free consultation and custom quote.*
+*Ready to build your e-commerce website? [Contact Codebrand](/contact/) for a free consultation and custom quote.*

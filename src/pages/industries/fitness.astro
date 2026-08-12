@@ -31,7 +31,7 @@ const serviceSchema = {
   "serviceType": "Fitness Website Development",
   "name": "Gym & Fitness Website Design | Studio Solutions",
   "description": description,
-  "url": "https://www.codebrand.us/industries/fitness",
+  "url": "https://www.codebrand.us/industries/fitness/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -93,8 +93,8 @@ const fitnessFaqs = [
 const faqSchema = createFAQSchema(fitnessFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Fitness", url: "https://www.codebrand.us/industries/fitness" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Fitness", url: "https://www.codebrand.us/industries/fitness/" }
 ]);
 
 // Stats for hero — honest, capability-based (no fabricated client counts/outcomes)
@@ -314,7 +314,7 @@ const softwareLead = "Sign-ups are the easy part. Billing that does not fail, cl
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Fitness", href: "" }
     ]}
     variant="dark"

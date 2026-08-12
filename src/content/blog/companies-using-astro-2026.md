@@ -579,8 +579,8 @@ At **Codebrand**, we've been building with Astro since its early versions. We ca
 
 **Ready to explore Astro for your organization?**
 
-[Contact us for a free consultation](/contact) and let's discuss how Astro can transform your web presence.
+[Contact us for a free consultation](/contact/) and let's discuss how Astro can transform your web presence.
 
 ---
 
-*Considering Astro for your next project? [Reach out to our team](/contact)—we've helped dozens of companies make the switch.*
+*Considering Astro for your next project? [Reach out to our team](/contact/)—we've helped dozens of companies make the switch.*

@@ -309,10 +309,10 @@ En Code Brand, hemos implementado soluciones headless para marcas de todos los t
 
 **¿Quieres saber si headless commerce es la solución para tu negocio?**
 
-👉 **[Agenda una consulta gratuita](/contact)** y analizaremos tu caso específico.
+👉 **[Agenda una consulta gratuita](/contact/)** y analizaremos tu caso específico.
 
-👉 **[Conoce nuestros servicios de desarrollo e-commerce](/web-development)** con arquitecturas modernas.
+👉 **[Conoce nuestros servicios de desarrollo e-commerce](/web-development/)** con arquitecturas modernas.
 
-👉 **[Ve nuestros proyectos](/projects)** para ver resultados reales.
+👉 **[Ve nuestros proyectos](/projects/)** para ver resultados reales.
 
 **Tu competencia ya está explorando headless. La pregunta es: ¿vas a liderar o a seguir?**

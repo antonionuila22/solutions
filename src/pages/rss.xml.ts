@@ -34,7 +34,7 @@ export async function GET(context: APIContext) {
       <image>
         <url>https://www.codebrand.us/favicon.svg</url>
         <title>Codebrand Blog</title>
-        <link>https://www.codebrand.us/blog</link>
+        <link>https://www.codebrand.us/blog/</link>
       </image>
     `,
     xmlns: {

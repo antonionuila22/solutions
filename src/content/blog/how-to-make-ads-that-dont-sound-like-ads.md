@@ -20,7 +20,7 @@ But here's the opportunity hidden in that problem: **The ads people DO remember 
 
 The best advertising doesn't interrupt—it contributes. It doesn't push—it pulls. It doesn't shout—it whispers something interesting.
 
-In this comprehensive guide, you'll learn how to create ads that people actually want to see, engage with, and share—the kind of advertising that builds trust instead of burning it. These principles apply whether you're promoting services, building your [brand](/branding), or driving traffic to [landing pages](/landing-pages).
+In this comprehensive guide, you'll learn how to create ads that people actually want to see, engage with, and share—the kind of advertising that builds trust instead of burning it. These principles apply whether you're promoting services, building your [brand](/branding/), or driving traffic to [landing pages](/landing-pages/).
 
 ---
 
@@ -96,7 +96,7 @@ Let's break down exactly how to create these.
 **Example in action:**
 Instead of "We sell project management software," tell the story: "Meet James. He used to spend 3 hours every Monday morning chasing down status updates from his team. Now? His entire team updates their progress in real-time, and he gets those 3 hours back."
 
-This storytelling approach is also powerful on [landing pages](/blog/landing-pages-that-convert-vs-those-that-dont) where you need to convert visitors quickly.
+This storytelling approach is also powerful on [landing pages](/blog/landing-pages-that-convert-vs-those-that-dont/) where you need to convert visitors quickly.
 
 ---
 
@@ -125,7 +125,7 @@ This storytelling approach is also powerful on [landing pages](/blog/landing-pag
 **Example:**
 "Look, we get it. You're tired of software that promises everything and delivers nothing. We built this tool because we had the same frustration. It does one thing really well instead of doing ten things poorly. Give it a try. If you hate it, just let us know."
 
-Need help creating copy that actually sounds human? [Our content marketing services](/digital-marketing) specialize in conversational, conversion-focused messaging that connects with your audience.
+Need help creating copy that actually sounds human? [Our content marketing services](/digital-marketing/) specialize in conversational, conversion-focused messaging that connects with your audience.
 
 ---
 
@@ -158,7 +158,7 @@ For every feature, ask: **"So what? Why does the customer care?"**
 After: That same work happens automatically in the background
 How: Our automation handles the boring stuff while you focus on strategy"
 
-This benefit-focused approach is essential for all marketing, from ads to [web design](/web-design) and beyond.
+This benefit-focused approach is essential for all marketing, from ads to [web design](/web-design/) and beyond.
 
 ---
 
@@ -198,7 +198,7 @@ This benefit-focused approach is essential for all marketing, from ads to [web d
 6. **Logos of recognizable clients** (if you have them):
    - "Trusted by [Brand], [Brand], and [Brand]"
 
-**Pro tip**: Make testimonials feel natural by including minor imperfections—pauses, "um," conversational language. Polish makes it feel fake. These same testimonials work great on your website—learn more about [what makes landing pages convert](/blog/landing-pages-that-convert-vs-those-that-dont).
+**Pro tip**: Make testimonials feel natural by including minor imperfections—pauses, "um," conversational language. Polish makes it feel fake. These same testimonials work great on your website—learn more about [what makes landing pages convert](/blog/landing-pages-that-convert-vs-those-that-dont/).
 
 ---
 
@@ -226,9 +226,9 @@ Give 80% value, make 20% offer.
 1. Teach something genuinely useful (3-5 tips, how-to, insight)
 2. At the end: "Want more tips like this? Follow us" or "If you need help implementing this, we can help"
 
-**Why this works**: You've already provided value BEFORE asking for anything. The reciprocity principle kicks in—people want to return the favor. This same principle applies to [SEO content](/seo)—helpful content builds trust and rankings.
+**Why this works**: You've already provided value BEFORE asking for anything. The reciprocity principle kicks in—people want to return the favor. This same principle applies to [SEO content](/seo/)—helpful content builds trust and rankings.
 
-Want to create educational content that positions you as the expert? [Our content strategy services](/digital-marketing) help you build authority that converts.
+Want to create educational content that positions you as the expert? [Our content strategy services](/digital-marketing/) help you build authority that converts.
 
 ---
 
@@ -251,7 +251,7 @@ Want to create educational content that positions you as the expert? [Our conten
 - Unboxing videos
 - Real customer success stories
 
-**Example**: GoPro built an entire marketing strategy around customer adventure videos. Their ads ARE their customers' content. This authentic approach is also key to effective [branding](/branding).
+**Example**: GoPro built an entire marketing strategy around customer adventure videos. Their ads ARE their customers' content. This authentic approach is also key to effective [branding](/branding/).
 
 ---
 
@@ -308,7 +308,7 @@ Want to create educational content that positions you as the expert? [Our conten
 
 **The key**: Make content people would consume even if it WASN'T an ad.
 
-**Example**: Red Bull doesn't make ads about energy drinks—they create extreme sports content. Their "ads" are events and videos people actually want to watch. This content-first approach also drives [digital marketing](/digital-marketing) success.
+**Example**: Red Bull doesn't make ads about energy drinks—they create extreme sports content. Their "ads" are events and videos people actually want to watch. This content-first approach also drives [digital marketing](/digital-marketing/) success.
 
 ---
 
@@ -372,9 +372,9 @@ Make it easy to say yes by removing friction and risk.
 - "Download our free guide. No email required"
 - "Just looking? Save this for later"
 
-These same CTA principles apply to your website's design. Learn more about [design mistakes that hurt conversions](/blog/5-design-mistakes-that-make-your-website-look-cheap).
+These same CTA principles apply to your website's design. Learn more about [design mistakes that hurt conversions](/blog/5-design-mistakes-that-make-your-website-look-cheap/).
 
-Ready to create ads that actually resonate? [Our digital marketing team](/digital-marketing) creates campaigns that people engage with—not ignore.
+Ready to create ads that actually resonate? [Our digital marketing team](/digital-marketing/) creates campaigns that people engage with—not ignore.
 
 ---
 
@@ -480,10 +480,10 @@ Creating advertising that feels like valuable content requires strategy, psychol
 🎯 **Multi-platform management**: Facebook, Instagram, LinkedIn, Google, TikTok
 🎯 **Analytics & reporting**: Know exactly what's working
 
-👉 **[Schedule a free marketing consultation](/contact)** and let's create ads that people actually enjoy seeing.
+👉 **[Schedule a free marketing consultation](/contact/)** and let's create ads that people actually enjoy seeing.
 
-👉 **[See our ad campaigns](/projects)** that generated engagement rates 3-5x industry averages.
+👉 **[See our ad campaigns](/projects/)** that generated engagement rates 3-5x industry averages.
 
-👉 **[Explore our digital marketing services](/digital-marketing)** to learn how we help brands cut through the noise.
+👉 **[Explore our digital marketing services](/digital-marketing/)** to learn how we help brands cut through the noise.
 
 **Stop annoying people. Start connecting with them.**

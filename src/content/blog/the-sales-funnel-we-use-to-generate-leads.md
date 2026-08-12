@@ -110,7 +110,7 @@ Our blog post "SEO Checklist for Small Businesses" ranks on Google, bringing 500
 - Pages per session
 - Time on site
 
-Want to drive qualified traffic to your business? [Our digital marketing services](/digital-marketing) focus on attracting prospects who are actually ready to buy.
+Want to drive qualified traffic to your business? [Our digital marketing services](/digital-marketing/) focus on attracting prospects who are actually ready to buy.
 
 ---
 
@@ -179,7 +179,7 @@ Our "Free Website Audit" landing page converts at 32% (industry average is 2-5%)
 - Lead source (which channels convert best)
 - Lead quality score
 
-Need high-converting landing pages? [Our web design team](/web-design) builds pages optimized for maximum lead capture.
+Need high-converting landing pages? [Our web design team](/web-design/) builds pages optimized for maximum lead capture.
 
 ---
 
@@ -260,7 +260,7 @@ By day 21, they've received massive value, learned about our expertise, seen pro
 - Lead-to-opportunity conversion rate
 - Time to conversion
 
-Want automated nurture sequences that actually convert? [Our marketing automation setup](/digital-marketing) keeps leads engaged until they're ready to buy.
+Want automated nurture sequences that actually convert? [Our marketing automation setup](/digital-marketing/) keeps leads engaged until they're ready to buy.
 
 ---
 
@@ -350,7 +350,7 @@ After nurturing, we invite leads to a "Free Website Strategy Call." On the call:
 - Customer acquisition cost (CAC)
 - Average customer lifetime value (LTV)
 
-Ready to turn leads into customers? [Our sales funnel optimization services](/digital-marketing) help you convert at every stage.
+Ready to turn leads into customers? [Our sales funnel optimization services](/digital-marketing/) help you convert at every stage.
 
 ---
 
@@ -528,10 +528,10 @@ You don't have to figure this out alone. We've built (and optimized) hundreds of
 
 **Stop losing leads to disorganized processes. Start converting consistently.**
 
-👉 **[Schedule a free funnel consultation](/contact)** and we'll map out exactly how to generate more qualified leads for your business.
+👉 **[Schedule a free funnel consultation](/contact/)** and we'll map out exactly how to generate more qualified leads for your business.
 
-👉 **[See our case studies](/projects)** of funnels we've built that generated 3-10x ROI.
+👉 **[See our case studies](/projects/)** of funnels we've built that generated 3-10x ROI.
 
-👉 **[Explore our digital marketing services](/digital-marketing)** to learn how we can build and manage your entire sales funnel.
+👉 **[Explore our digital marketing services](/digital-marketing/)** to learn how we can build and manage your entire sales funnel.
 
 **Your funnel is either working for you or against you. Let's make it work FOR you.**

@@ -617,7 +617,7 @@ Embedded replicas also need a writable, persistent filesystem. Most serverless r
 
 Budget your time for the type system, not the data transfer. SQLite has no native boolean, no native date/time type, no `ENUM`, and no sequences. Drizzle papers over most of that with `integer({ mode: "boolean" })` and text timestamps, but every raw query, every reporting job, and every downstream integration written against the old schema needs revisiting. `UUID` columns become `TEXT`. Foreign key enforcement must be switched on explicitly. Anything relying on CTEs with `RETURNING`, window-function edge cases, or Postgres collations should be tested rather than assumed.
 
-Cutting over a live production database is where this stops being a weekend project. If you would rather not learn these lessons on your own users, this is precisely the kind of work our [custom software development](/custom-software-development) team handles, and our [nearshore development](/nearshore-development) model keeps engineers in US Central hours so the migration window lands inside a normal business day instead of at 3 a.m.
+Cutting over a live production database is where this stops being a weekend project. If you would rather not learn these lessons on your own users, this is precisely the kind of work our [custom software development](/custom-software-development/) team handles, and our [nearshore development](/nearshore-development/) model keeps engineers in US Central hours so the migration window lands inside a normal business day instead of at 3 a.m.
 
 ---
 
@@ -772,4 +772,4 @@ Whether you're migrating to Turso or building on it from scratch, the work usual
 
 ## Need help building this?
 
-If the edge-versus-primary tradeoffs above sound like decisions you'd rather make with someone who has already made them, that's what we do. Codebrand has been building production software from San Pedro Sula since 2020—including the CRM we run our own business on—and we work US Central hours as a [nearshore development](/nearshore-development) team, so you get real overlap instead of overnight ticket ping-pong. Tell us what you're building and we'll tell you honestly whether Turso is the right database for it: [get in touch](/contact).
+If the edge-versus-primary tradeoffs above sound like decisions you'd rather make with someone who has already made them, that's what we do. Codebrand has been building production software from San Pedro Sula since 2020—including the CRM we run our own business on—and we work US Central hours as a [nearshore development](/nearshore-development/) team, so you get real overlap instead of overnight ticket ping-pong. Tell us what you're building and we'll tell you honestly whether Turso is the right database for it: [get in touch](/contact/).

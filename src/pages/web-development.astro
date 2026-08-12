@@ -82,7 +82,7 @@ const serviceSchema = createServicePageSchema({
   serviceType: "Web Development Services",
   name: "Professional Web Development & Custom Website Design",
   description: description,
-  url: "https://www.codebrand.us/web-development",
+  url: "https://www.codebrand.us/web-development/",
   image: "https://www.codebrand.us/photos/webservice.webp",
   catalogName: "Web Development Services",
   catalogItems: [
@@ -106,7 +106,7 @@ const serviceSchema = createServicePageSchema({
 });
 ---
 
-<Layout title={title} description={description} keywords={keywords} image={image} canonicalOverride="https://www.codebrand.us/services/web-development">
+<Layout title={title} description={description} keywords={keywords} image={image} canonicalOverride="https://www.codebrand.us/services/web-development/">
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
   <!-- Hero Section -->
@@ -120,7 +120,7 @@ const serviceSchema = createServicePageSchema({
       { value: "8+", label: "Years Experience", counterTo: 8, suffix: "+", color: "cyan" },
       { value: "100%", label: "Custom-Built", color: "orange" },
     ]}
-    ctaPrimary={{ text: "Start Your Project", href: "/contact" }}
+    ctaPrimary={{ text: "Start Your Project", href: "/contact/" }}
     ctaSecondary={{ text: "View Our Services", href: "#services" }}
   />
 
@@ -138,7 +138,7 @@ const serviceSchema = createServicePageSchema({
           <div class="prose prose-lg text-slate-700 space-y-4" data-anim="fade" data-delay="0.1">
             <p>
               In today's digital-first world, your website is often the first
-              interaction potential customers have with your <a href="/branding" class="text-cyan-600 hover:text-cyan-700 font-semibold">brand</a>. It needs to
+              interaction potential customers have with your <a href="/branding/" class="text-cyan-600 hover:text-cyan-700 font-semibold">brand</a>. It needs to
               make a lasting impression while delivering exceptional
               functionality and performance. At Codebrand, we specialize in
               creating custom web solutions that don't just look beautiful—they
@@ -149,10 +149,10 @@ const serviceSchema = createServicePageSchema({
               Our web development services combine technical excellence with
               creative design to build fast, secure, and scalable websites.
               Whether you need a simple business website, a complex web
-              application, or a full-featured <a href="/e-commerce" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce platform</a>, our team of
+              application, or a full-featured <a href="/e-commerce/" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce platform</a>, our team of
               experienced developers uses modern frameworks and best practices
               to deliver solutions that exceed expectations. We focus on
-              performance optimization, mobile responsiveness, <a href="/seo" class="text-cyan-600 hover:text-cyan-700 font-semibold">SEO</a> architecture,
+              performance optimization, mobile responsiveness, <a href="/seo/" class="text-cyan-600 hover:text-cyan-700 font-semibold">SEO</a> architecture,
               and conversion-focused design.
             </p>
             <p>
@@ -160,7 +160,7 @@ const serviceSchema = createServicePageSchema({
               That's why we take a consultative approach to web development,
               working closely with you to understand your requirements, target
               audience, and business objectives. From startups launching their
-              first <a href="/landing-pages" class="text-cyan-600 hover:text-cyan-700 font-semibold">landing page</a> to enterprises modernizing legacy systems, we have
+              first <a href="/landing-pages/" class="text-cyan-600 hover:text-cyan-700 font-semibold">landing page</a> to enterprises modernizing legacy systems, we have
               the expertise and experience to deliver outstanding results that
               scale with your business growth.
             </p>
@@ -168,7 +168,7 @@ const serviceSchema = createServicePageSchema({
               Our development process emphasizes collaboration, transparency,
               and quality. We use agile methodologies that allow for regular
               feedback and iterations, ensuring the final product aligns
-              perfectly with your vision. Combined with our <a href="/web-design" class="text-cyan-600 hover:text-cyan-700 font-semibold">web design</a> expertise, we deliver websites that are both beautiful and functional. With a focus on clean code, security
+              perfectly with your vision. Combined with our <a href="/web-design/" class="text-cyan-600 hover:text-cyan-700 font-semibold">web design</a> expertise, we deliver websites that are both beautiful and functional. With a focus on clean code, security
               best practices, and maintainability, we build websites that stand
               the test of time while remaining flexible enough to evolve with
               your changing needs.
@@ -276,63 +276,63 @@ const serviceSchema = createServicePageSchema({
           icon="/icons/login-page-svgrepo-com.svg"
           title="Custom Website Development"
           description="Build unique, feature-rich websites tailored to your exact specifications. We develop from scratch using modern frameworks and best practices, ensuring your site stands out while maintaining superior performance and functionality."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
 
         <CardService
           icon="/icons/responsive-svgrepo-com.svg"
           title="Responsive & Mobile-First Design"
           description="Create seamless experiences across all devices with our mobile-first development approach. Your website will deliver pixel-perfect designs on smartphones, tablets, and desktops, ensuring maximum reach and engagement."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
 
         <CardService
           icon="/icons/website-program-svgrepo-com.svg"
           title="Performance Optimization"
           description="Achieve lightning-fast load times with our performance-focused development. We implement code splitting, lazy loading, image optimization, and caching strategies that improve SEO rankings and user satisfaction."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
 
         <CardService
           icon="/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg"
           title="E-commerce Development"
           description="Launch powerful online stores that drive sales and customer loyalty. We build secure, scalable e-commerce platforms with integrated payment gateways, inventory management, and conversion-optimized checkout experiences."
-          learnMoreUrl="/e-commerce"
+          learnMoreUrl="/e-commerce/"
         />
 
         <CardService
           icon="/icons/website-seo-promotion-svgrepo-com.svg"
           title="Web Application Development"
           description="Transform complex business processes into intuitive web applications. From customer portals to SaaS platforms and CRM systems, we create robust applications that scale with your growing business needs."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
 
         <CardService
           icon="/icons/platform-program-svgrepo-com.svg"
           title="Progressive Web Apps"
           description="Deliver app-like experiences through the web with progressive web applications. PWAs work offline, send push notifications, load instantly, and provide native-app functionality without app store requirements."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
 
         <CardService
           icon="/icons/mobile-phone-app-svgrepo-com.svg"
           title="CMS Development & Integration"
           description="Empower your team to manage content independently with custom content management systems. We develop headless CMS solutions and integrate platforms like Contentful, Sanity, or WordPress for full content control."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
 
         <CardService
           icon="/icons/host-website-se-svgrepo-com.svg"
           title="API Development & Integration"
           description="Connect your website to external services and internal systems with custom API development. We create RESTful and GraphQL APIs, integrate third-party services, and build microservices architectures."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
 
         <CardService
           icon="/icons/data-graphics-analysis-svgrepo-com.svg"
           title="Website Migration & Modernization"
           description="Upgrade legacy websites to modern platforms without losing SEO value or data. We handle complex migrations, redesigns, and platform transitions while preserving your search rankings and business continuity."
-          learnMoreUrl="/contact"
+          learnMoreUrl="/contact/"
         />
       </div>
     </div>
@@ -469,7 +469,7 @@ const serviceSchema = createServicePageSchema({
             Design & Architecture
           </h3>
           <p class="text-slate-700">
-            Our designers create beautiful mockups with expert <a href="/services/ux-ui" class="text-cyan-600 hover:text-cyan-700 font-semibold">UX/UI design</a> while our architects plan the
+            Our designers create beautiful mockups with expert <a href="/services/ux-ui/" class="text-cyan-600 hover:text-cyan-700 font-semibold">UX/UI design</a> while our architects plan the
             technical infrastructure for optimal performance and scalability.
           </p>
         </div>
@@ -621,7 +621,7 @@ const serviceSchema = createServicePageSchema({
       </div>
 
       <div class="text-center mt-12">
-        <a href="/projects" class="inline-flex items-center gap-2 px-8 py-4 bg-cyan-900 hover:bg-cyan-800 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
+        <a href="/projects/" class="inline-flex items-center gap-2 px-8 py-4 bg-cyan-900 hover:bg-cyan-800 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View All Projects
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -642,12 +642,12 @@ const serviceSchema = createServicePageSchema({
       <p class="text-xl text-slate-200 mb-8" data-anim="fade" data-delay="0.1">
         Let's transform your vision into a powerful web presence. Our expert
         team is ready to bring your ideas to life with cutting-edge web
-        development solutions that integrate seamlessly with your <a href="/digital-marketing" class="text-cyan-400 hover:text-cyan-300 font-semibold">digital marketing</a> strategy.
+        development solutions that integrate seamlessly with your <a href="/digital-marketing/" class="text-cyan-400 hover:text-cyan-300 font-semibold">digital marketing</a> strategy.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim="fade" data-delay="0.18">
-        <Button text="Get Free Consultation" href="/contact" />
+        <Button text="Get Free Consultation" href="/contact/" />
         <a
-          href="/projects"
+          href="/projects/"
           data-magnetic
           data-magnetic-strength="0.3"
           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300"

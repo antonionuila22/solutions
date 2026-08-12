@@ -13,7 +13,7 @@ tags:
   - Personal Brand
 date: 2024-10-20
 featured: true
-link: /landing/template-content-creators
+link: /landing/template-content-creators/
 ---
 
 ## Project Overview

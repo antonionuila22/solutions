@@ -23,7 +23,7 @@ tags:
 
 It's the first question every business owner asks—and the hardest to answer directly. The truthful answer is: it depends. But that's not helpful when you're trying to budget.
 
-This guide provides real pricing data based on 200+ [custom software development](/custom-software-development) projects we've analyzed, giving you concrete numbers and the factors that influence them. By the end, you'll understand exactly what drives costs and how to budget accurately for your project.
+This guide provides real pricing data based on 200+ [custom software development](/custom-software-development/) projects we've analyzed, giving you concrete numbers and the factors that influence them. By the end, you'll understand exactly what drives costs and how to budget accurately for your project.
 
 ---
 
@@ -310,7 +310,7 @@ While offshore rates look attractive, consider:
 
 ### The Nearshore Advantage
 
-[Nearshore development](/nearshore-development) (Latin America for US companies) offers a middle ground:
+[Nearshore development](/nearshore-development/) (Latin America for US companies) offers a middle ground:
 
 - **60% cost savings** vs. US agencies
 - **Same timezone** for real-time collaboration
@@ -504,4 +504,4 @@ At Codebrand, we provide detailed, transparent quotes based on your specific nee
 
 **Ready to discuss your project?** Get a free consultation and detailed quote. We'll help you understand your options and budget accurately.
 
-[Get Your Free Quote →](/contact)
+[Get Your Free Quote →](/contact/)

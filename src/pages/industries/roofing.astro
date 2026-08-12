@@ -32,7 +32,7 @@ const serviceSchema = {
   "serviceType": "Roofing Software & Website Development",
   "name": "Roofing Company Websites & Software Development",
   "description": description,
-  "url": "https://www.codebrand.us/industries/roofing",
+  "url": "https://www.codebrand.us/industries/roofing/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -94,8 +94,8 @@ const roofingFaqs = [
 const faqSchema = createFAQSchema(roofingFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Roofing", url: "https://www.codebrand.us/industries/roofing" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Roofing", url: "https://www.codebrand.us/industries/roofing/" }
 ]);
 
 const stats = [
@@ -295,7 +295,7 @@ const softwareLead = "Leads are only the front door. The estimate, the claim, an
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Roofing", href: "" }
     ]}
     variant="transparent"

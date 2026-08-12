@@ -51,7 +51,7 @@ export const uxUiConfig: ServicePageConfig = {
     description:
       "Research-driven UX/UI design that creates intuitive, beautiful interfaces. We transform complex problems into simple, elegant solutions that delight users and drive business results.",
     ctaPrimary: "Start Your Design Project",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View Our Process",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -267,7 +267,7 @@ export const uxUiConfig: ServicePageConfig = {
     description:
       "Let's create intuitive, beautiful designs that users love and that drive real business results. Get your free UX audit and start improving your digital products today.",
     ctaPrimary: "Get Free UX Audit",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
   },

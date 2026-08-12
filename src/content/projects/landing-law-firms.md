@@ -13,7 +13,7 @@ tags:
   - Professional Services
 date: 2024-10-05
 featured: false
-link: /landing/template-law-firms
+link: /landing/template-law-firms/
 ---
 
 ## Project Overview

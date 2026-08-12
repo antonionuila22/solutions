@@ -114,7 +114,7 @@ const getCityCount = (regionSlug: string) => {
         <Breadcrumbs
             items={[
                 { name: "Home", href: "/" },
-                { name: "Service Areas", href: "/countryareas" },
+                { name: "Service Areas", href: "/countryareas/" },
                 { name: name, href: "" }
             ]}
             variant="transparent"
@@ -147,7 +147,7 @@ const getCityCount = (regionSlug: string) => {
                             const cityCount = getCityCount(regionItem.id);
                             return (
                                 <a
-                                    href={`/regions/${regionItem.id}`}
+                                    href={`/regions/${regionItem.id}/`}
                                     class="group bg-white p-5 rounded-xl shadow-sm hover:shadow-lg border border-slate-100 hover:border-orange-300 transition-all duration-300"
                                 >
                                     <div class="flex items-center justify-between mb-2">
@@ -171,7 +171,7 @@ const getCityCount = (regionSlug: string) => {
 
                     <div class="text-center mt-8">
                         <a
-                            href="/regions"
+                            href="/regions/"
                             class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
                         >
                             View All Regions
@@ -202,7 +202,7 @@ const getCityCount = (regionSlug: string) => {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {featuredCities.map((city) => (
                         <a
-                            href={`/locations/${city.id}`}
+                            href={`/locations/${city.id}/`}
                             class="group bg-gradient-to-br from-white to-cyan-50 p-6 rounded-2xl shadow-md hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300"
                         >
                             <div class="flex items-start justify-between mb-3">
@@ -242,7 +242,7 @@ const getCityCount = (regionSlug: string) => {
 
                 <div class="text-center mt-8">
                     <a
-                        href="/locations"
+                        href="/locations/"
                         class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-900 hover:bg-cyan-800 text-white rounded-xl font-semibold transition-colors"
                     >
                         View All {countryCities.length} Cities
@@ -285,7 +285,7 @@ const getCityCount = (regionSlug: string) => {
                                 return (
                                     <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
                                         <a
-                                            href={`/countryareas/${id}`}
+                                            href={`/countryareas/${id}/`}
                                             class="block h-full"
                                             aria-label={`Ver información de ${title}`}
                                         >
@@ -353,7 +353,7 @@ const getCityCount = (regionSlug: string) => {
                 </p>
             </div>
             <a
-                href="/countryareas"
+                href="/countryareas/"
                 class="bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-700 transition"
             >
                 Ver todos los países

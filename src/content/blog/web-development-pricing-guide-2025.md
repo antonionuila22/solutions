@@ -28,7 +28,7 @@ This guide provides transparent pricing data for web development services in 202
 
 **Our goal:** Help you budget accurately and avoid overpaying—even if you don't hire us.
 
-> **Looking for professional web development?** Check out our [web development services](/web-development) for transparent pricing and quality results.
+> **Looking for professional web development?** Check out our [web development services](/web-development/) for transparent pricing and quality results.
 
 ---
 
@@ -112,7 +112,7 @@ This guide provides transparent pricing data for web development services in 202
 
 **Pricing:** $50,000-$200,000+ depending on complexity
 
-> **Need a website?** [Contact our team](/web-development) for a free quote on your project.
+> **Need a website?** [Contact our team](/web-development/) for a free quote on your project.
 
 ---
 
@@ -159,7 +159,7 @@ This guide provides transparent pricing data for web development services in 202
 
 **Pricing:** $50,000-$200,000+
 
-> **Starting an online store?** Explore our [e-commerce development services](/e-commerce) for cost-effective solutions.
+> **Starting an online store?** Explore our [e-commerce development services](/e-commerce/) for cost-effective solutions.
 
 ---
 
@@ -223,7 +223,7 @@ This guide provides transparent pricing data for web development services in 202
 - Nearshore Agency: $3,500-$10,000
 - Offshore/Freelancer: $2,000-$6,000
 
-> **Need high-converting landing pages?** Check out our [landing page services](/landing-pages) starting at $800.
+> **Need high-converting landing pages?** Check out our [landing page services](/landing-pages/) starting at $800.
 
 ---
 
@@ -293,7 +293,7 @@ When projects are billed hourly, here's what to expect:
 | Content Strategy | $1,500-$5,000 |
 | Link Building Campaign | $2,000-$10,000 |
 
-> **Need SEO services?** Our [SEO experts](/seo) can help improve your search rankings starting at $500/month.
+> **Need SEO services?** Our [SEO experts](/seo/) can help improve your search rankings starting at $500/month.
 
 ### PPC Management
 
@@ -336,7 +336,7 @@ When projects are billed hourly, here's what to expect:
 | Design system | $10,000-$50,000 |
 | User research | $5,000-$25,000 |
 
-> **Looking for professional design?** Explore our [UX/UI design services](/web-design) and [branding packages](/branding).
+> **Looking for professional design?** Explore our [UX/UI design services](/web-design/) and [branding packages](/branding/).
 
 ---
 
@@ -401,7 +401,7 @@ When projects are billed hourly, here's what to expect:
 ### Best Value Strategies
 
 **For tight budgets:**
-- Consider [nearshore agencies](/nearshore-development) (same quality, lower cost)
+- Consider [nearshore agencies](/nearshore-development/) (same quality, lower cost)
 - Start with MVP, expand later
 - Use proven platforms (Shopify, WordPress) instead of custom
 - Prioritize features ruthlessly
@@ -471,4 +471,4 @@ Remember: **The cheapest option is rarely the best value.** Consider total cost 
 
 *Prices in this guide reflect 2025 market rates and are updated quarterly based on industry data. Your actual costs may vary based on specific requirements.*
 
-*Need a quote for your project? [Contact us](/contact) for transparent pricing with no surprises.*
+*Need a quote for your project? [Contact us](/contact/) for transparent pricing with no surprises.*

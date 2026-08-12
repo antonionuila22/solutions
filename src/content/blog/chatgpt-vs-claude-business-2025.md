@@ -410,7 +410,7 @@ The AI that works best is the one that fits your specific needs. Try both free t
 
 ---
 
-*Want to learn how to integrate AI tools into your business workflow? [Contact us](/contact) for a consultation.*
+*Want to learn how to integrate AI tools into your business workflow? [Contact us](/contact/) for a consultation.*
 
 ---
 

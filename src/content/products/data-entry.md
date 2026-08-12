@@ -1,5 +1,6 @@
 ---
 title: Professional Data Entry Service – Accuracy, Speed, and Security
+seoTitle: "Data Entry Services: Accurate and Secure | Codebrand"
 img: /photos/dataentry.webp
 readtime: 5
 price: From $6/product
@@ -27,7 +28,7 @@ We charge per product, not per hour or month. That means you only pay for what g
 | **Standard** | **$10/product** | We research and source images, write adapted descriptions, and organize categories. | 50 products |
 | **Premium** | **$15/product** | Full SEO optimization: meta title, meta description, alt tags, keyword-rich content, and structured data. | 50 products |
 
-> Need more than 500 products? [Contact us](/contact) for a custom volume quote.
+> Need more than 500 products? [Contact us](/contact/) for a custom volume quote.
 
 ---
 

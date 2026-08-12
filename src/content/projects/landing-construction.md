@@ -12,7 +12,7 @@ tags:
   - Lead Generation
 date: 2024-10-12
 featured: false
-link: /landing/template-construction
+link: /landing/template-construction/
 ---
 
 ## Project Overview

@@ -733,7 +733,7 @@ If you're building a new team from scratch, evaluate both:
 
 ## How Codebrand Can Help
 
-At **Codebrand**, our [React development team](/react-development-agency) has experience with both React Native and Flutter. We help clients choose the right technology and build exceptional mobile applications.
+At **Codebrand**, our [React development team](/react-development-agency/) has experience with both React Native and Flutter. We help clients choose the right technology and build exceptional mobile applications.
 
 ### Our Mobile Development Services
 
@@ -752,8 +752,8 @@ At **Codebrand**, our [React development team](/react-development-agency) has ex
 
 **Ready to build your mobile app?**
 
-[Contact us for a free consultation](/contact) and let's discuss the best approach for your project.
+[Contact us for a free consultation](/contact/) and let's discuss the best approach for your project.
 
 ---
 
-*Have questions about mobile development? [Reach out to our team](/contact)—we're happy to help you make the right technology choice.*
+*Have questions about mobile development? [Reach out to our team](/contact/)—we're happy to help you make the right technology choice.*

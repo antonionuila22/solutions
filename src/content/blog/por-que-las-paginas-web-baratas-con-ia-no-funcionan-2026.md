@@ -1,5 +1,6 @@
 ---
 title: "Por Qué las Páginas Web Baratas Hechas con IA No Venden (y Qué sí Funciona en 2026)"
+seoTitle: "Páginas web baratas con IA: por qué no venden en 2026"
 lang: es
 description: "Te prometen tu página web 'lista en 1 día' por $100. Te explicamos por qué esas webs hechas con IA sin criterio no generan ventas ni confianza, y cómo se construye una que sí funciona."
 author: "Ramon Nuila"
@@ -165,7 +166,7 @@ No te pedimos que confíes en promesas. Te mostramos quiénes somos:
 
 Usamos las herramientas más modernas, **IA incluida**, porque nos hacen mejores y más rápidos. Pero cada decisión la toma alguien que entiende tu negocio y se hace responsable del resultado. Esa es toda la diferencia.
 
-¿Quieres ver cómo se ve el trabajo hecho con criterio? [Mira nuestros proyectos](/projects). ¿Listo para una web que de verdad trabaje para ti? Conoce [nuestro desarrollo web a la medida](/web-development) y [diseño UX/UI](/web-design), o pide una [cotización real y honesta](/quoter), sin promesas mágicas de "1 día".
+¿Quieres ver cómo se ve el trabajo hecho con criterio? [Mira nuestros proyectos](/projects/). ¿Listo para una web que de verdad trabaje para ti? Conoce [nuestro desarrollo web a la medida](/web-development/) y [diseño UX/UI](/web-design/), o pide una [cotización real y honesta](/quoter/), sin promesas mágicas de "1 día".
 
 ---
 
@@ -177,4 +178,4 @@ Todo tiene su proceso. Las cosas que valen, valen porque alguien con criterio se
 
 Tu negocio merece más que barato. Merece algo que **funcione**.
 
-👉 **[Hablemos de tu proyecto](/contact)** y construyamos algo que de verdad te traiga clientes.
+👉 **[Hablemos de tu proyecto](/contact/)** y construyamos algo que de verdad te traiga clientes.

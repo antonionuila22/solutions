@@ -1,5 +1,6 @@
 ---
 title: "Why Contractors Can't Scale: The Marketing Gap Killing Construction Companies in 2026"
+seoTitle: "Contractor Marketing Guide 2026 for Construction Firms"
 description: "Data-driven analysis of why 83% of construction businesses fail within 20 years. Learn how digital marketing, SEO, AI, and UX are transforming contractor growth — backed by real industry statistics from McKinsey, BLS, and BrightLocal."
 author: "Ramon Nuila"
 readtime: 18
@@ -372,10 +373,10 @@ We've seen what works. We've built the systems. And we know that construction co
 
 **Ready to find out where your business stands?**
 
-[Get your free digital analysis →](/contact)
+[Get your free digital analysis →](/contact/)
 
 We'll audit your current online presence, identify the biggest gaps, and give you a clear roadmap for growth — at no cost and with no obligation.
 
 Your competitors are already making this move. The only question is whether you'll lead or follow.
 
-[Schedule your free analysis today →](/contact)
+[Schedule your free analysis today →](/contact/)

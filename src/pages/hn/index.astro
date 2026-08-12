@@ -20,7 +20,7 @@ const reviewsSchema = {
   "@type": "Organization",
   "@id": "https://www.codebrand.us/#organization",
   "name": "Codebrand",
-  "url": "https://www.codebrand.us/hn",
+  "url": "https://www.codebrand.us/hn/",
   "review": [
     {
       "@type": "Review",
@@ -98,8 +98,8 @@ const services = [
       { value: "&lt; 24h", label: "Tiempo de Respuesta", color: "cyan" },
       { value: "5.0", label: "50 opiniones en Google", color: "orange" },
     ],
-    ctaPrimary: { text: "Solicitar Cotización Gratis", href: "/contact" },
-    ctaSecondary: { text: "Ver Nuestro Trabajo", href: "/projects" },
+    ctaPrimary: { text: "Solicitar Cotización Gratis", href: "/contact/" },
+    ctaSecondary: { text: "Ver Nuestro Trabajo", href: "/projects/" },
     techLabel: "Tecnologías que Usamos",
   }} />
 
@@ -177,7 +177,7 @@ const services = [
     flagLabel: "Honduras → El Mundo",
     title: "Desarrollo Web de Clase Mundial",
     titleHighlight: "Hecho en Honduras",
-    subtitle: 'Somos una agencia hondureña con estándares internacionales. Creamos <a href="/services/web-development" class="text-cyan-500 hover:text-cyan-600 font-semibold">sitios web y aplicaciones</a> con la misma calidad que agencias de EE.UU., pero con la ventaja de ser tu equipo local.',
+    subtitle: 'Somos una agencia hondureña con estándares internacionales. Creamos <a href="/services/web-development/" class="text-cyan-500 hover:text-cyan-600 font-semibold">sitios web y aplicaciones</a> con la misma calidad que agencias de EE.UU., pero con la ventaja de ser tu equipo local.',
     stats: [
       { value: "5+", title: "Años de Experiencia", description: "Más de 50 proyectos entregados a clientes en Honduras, EE.UU. y Latinoamérica." },
       { value: "100%", title: "Calidad de Exportación", description: "Usamos las mismas tecnologías y estándares que las mejores agencias del mundo." },
@@ -265,7 +265,7 @@ const services = [
           icon="/icons/interfaz-de-usuario.webp"
           title="Diseño UX/UI"
           description="Interfaces intuitivas que convierten visitantes en clientes. Diseño centrado en el usuario que mantiene a la gente enganchada."
-          learnMoreUrl="/services/ux-ui"
+          learnMoreUrl="/services/ux-ui/"
         />
         <CardService
           icon="/icons/diseno-grafico.webp"
@@ -328,7 +328,7 @@ const services = [
       </div>
 
       <div class="text-center mt-8 sm:mt-10">
-        <a href="/services" class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors duration-300">
+        <a href="/services/" class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors duration-300">
           Ver Todos los Servicios
           <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -339,7 +339,7 @@ const services = [
       <div class="text-center mt-10 sm:mt-14 lg:mt-16 px-2 sm:px-0">
         <div class="inline-flex flex-col items-center gap-3 sm:gap-4 p-5 sm:p-6 md:p-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-lg">
           <p class="text-sm sm:text-base text-slate-700 font-medium">¿Necesitas algo específico?</p>
-          <a href="/contact" class="group inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 py-3 sm:py-3.5 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white text-sm sm:text-base font-semibold rounded-xl shadow-lg shadow-slate-900/20 hover:shadow-xl hover:shadow-slate-900/30 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97]">
+          <a href="/contact/" class="group inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 py-3 sm:py-3.5 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white text-sm sm:text-base font-semibold rounded-xl shadow-lg shadow-slate-900/20 hover:shadow-xl hover:shadow-slate-900/30 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97]">
             Hablemos de Tu Proyecto
             <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -370,7 +370,7 @@ const services = [
           </p>
           <p class="text-lg text-slate-600 leading-relaxed">
             Ese estándar no es una promesa de venta: nuestro propio sitio obtiene 100/100 en móvil en Google Lighthouse, y esa es la vara con la que medimos cada entrega. Si quieres el detalle completo de alcances y planes, está en nuestra página de
-            <a href="/hn/desarrollo-web-honduras" class="text-orange-600 hover:text-orange-700 font-semibold underline underline-offset-2">desarrollo web en Honduras</a>.
+            <a href="/hn/desarrollo-web-honduras/" class="text-orange-600 hover:text-orange-700 font-semibold underline underline-offset-2">desarrollo web en Honduras</a>.
           </p>
         </div>
 
@@ -520,9 +520,9 @@ const services = [
           </p>
           <p class="text-lg text-slate-300 leading-relaxed">
             El pago también es local: aceptamos transferencia a bancos hondureños, tarjeta, efectivo o PayPal, sin obligarte a mover dinero al extranjero. Y si prefieres sentarte a revisar el proyecto en persona, podemos vernos en
-            <a href="/locations/san-pedro-sula" class="text-orange-400 hover:text-orange-300 font-semibold underline underline-offset-2">San Pedro Sula</a>
+            <a href="/locations/san-pedro-sula/" class="text-orange-400 hover:text-orange-300 font-semibold underline underline-offset-2">San Pedro Sula</a>
             o en
-            <a href="/locations/tegucigalpa" class="text-orange-400 hover:text-orange-300 font-semibold underline underline-offset-2">Tegucigalpa</a>.
+            <a href="/locations/tegucigalpa/" class="text-orange-400 hover:text-orange-300 font-semibold underline underline-offset-2">Tegucigalpa</a>.
             Trabajamos igualmente con empresas de La Ceiba, Choloma, El Progreso y el resto del país de forma remota.
           </p>
           <p class="text-lg text-slate-300 leading-relaxed">
@@ -534,49 +534,49 @@ const services = [
           <h3 class="text-xl sm:text-2xl font-bold text-white mb-6">Servicios de desarrollo web en Honduras por especialidad</h3>
           <ul class="divide-y divide-slate-800 border-t border-slate-800">
             <li class="py-4">
-              <a href="/hn/desarrollo-web-honduras" class="group block">
+              <a href="/hn/desarrollo-web-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Desarrollo y diseño web para empresas</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Páginas web a la medida, con diseño aprobado en Figma y SEO técnico incluido.</span>
               </a>
             </li>
             <li class="py-4">
-              <a href="/hn/sitios-web-empresas-honduras" class="group block">
+              <a href="/hn/sitios-web-empresas-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Sitios web para empresas</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Presencia corporativa con blog, integraciones y contenido editable por tu equipo.</span>
               </a>
             </li>
             <li class="py-4">
-              <a href="/hn/tienda-online-honduras" class="group block">
+              <a href="/hn/tienda-online-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Tiendas online y e-commerce</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Catálogo, carrito, inventario y pagos en línea configurados para vender en Honduras.</span>
               </a>
             </li>
             <li class="py-4">
-              <a href="/hn/seo-honduras" class="group block">
+              <a href="/hn/seo-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Posicionamiento SEO en Honduras</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Auditoría técnica, correcciones on-page y contenido para aparecer cuando te buscan.</span>
               </a>
             </li>
             <li class="py-4">
-              <a href="/hn/desarrollo-de-software-honduras" class="group block">
+              <a href="/hn/desarrollo-de-software-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Desarrollo de software a la medida</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Sistemas que automatizan procesos que hoy resuelves con hojas de cálculo.</span>
               </a>
             </li>
             <li class="py-4">
-              <a href="/hn/desarrollo-de-crm-honduras" class="group block">
+              <a href="/hn/desarrollo-de-crm-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Desarrollo de CRM</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Gestión de clientes y ventas. Usamos un CRM propio en producción, no teoría.</span>
               </a>
             </li>
             <li class="py-4">
-              <a href="/hn/sistemas-empresariales-honduras" class="group block">
+              <a href="/hn/sistemas-empresariales-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Sistemas empresariales</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Facturación, inventario y portales internos integrados con lo que ya usas.</span>
               </a>
             </li>
             <li class="py-4">
-              <a href="/hn/equipo-de-desarrollo-dedicado-honduras" class="group block">
+              <a href="/hn/equipo-de-desarrollo-dedicado-honduras/" class="group block">
                 <span class="block text-white font-semibold group-hover:text-orange-400 transition-colors">Equipo de desarrollo dedicado</span>
                 <span class="block text-slate-400 text-sm leading-relaxed mt-1">Desarrolladores asignados a tu empresa por mes, con sprints y entregas semanales.</span>
               </a>
@@ -740,8 +740,8 @@ const services = [
                   <input type="checkbox" name="terms" required aria-required="true"
                     class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-orange-500 focus:ring-orange-500 cursor-pointer" />
                   <span class="text-xs text-slate-400 leading-relaxed">
-                    Acepto los <a href="/terms" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Términos</a>
-                    y la <a href="/privacy" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Política de Privacidad</a>.
+                    Acepto los <a href="/terms/" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Términos</a>
+                    y la <a href="/privacy/" target="_blank" rel="noopener noreferrer" class="text-orange-500 hover:text-orange-600 underline underline-offset-2">Política de Privacidad</a>.
                   </span>
                 </label>
 
@@ -773,7 +773,7 @@ const services = [
     badge: "Preguntas Frecuentes",
     title: "Preguntas Frecuentes sobre",
     titleHighlight: "Desarrollo Web en Honduras",
-    subtitle: 'Todo lo que necesitas saber sobre trabajar con nosotros. ¿No encuentras tu respuesta? <a href="/contact" class="text-cyan-600 hover:underline font-medium">Contáctanos</a>.',
+    subtitle: 'Todo lo que necesitas saber sobre trabajar con nosotros. ¿No encuentras tu respuesta? <a href="/contact/" class="text-cyan-600 hover:underline font-medium">Contáctanos</a>.',
     faqs: [
       {
         question: "¿Cuánto cuesta un sitio web con Codebrand?",

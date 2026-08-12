@@ -1,5 +1,6 @@
 ---
 title: "SEO Checklist for Small Businesses Without a Technical Team"
+seoTitle: "SEO Checklist for Small Business Owners | Codebrand"
 description: "Practical SEO doesn't have to be complicated. This comprehensive checklist helps small business owners and contractors improve their Google visibility and generate more business opportunities—no technical team required."
 author: "Ramon Nuila"
 readtime: 11
@@ -18,7 +19,7 @@ Here's the good news: **You don't need a technical team or expensive agency to i
 
 According to [BrightEdge Research](https://www.brightedge.com/), **68% of online experiences begin with a search engine**, and **53% of all website traffic comes from organic search**. For small businesses, that means **showing up on Google isn't optional—it's essential for survival and growth**.
 
-But here's what most SEO agencies won't tell you: **The basics matter more than the advanced tactics.** Getting the fundamentals right will deliver 80% of the results with 20% of the effort. And when combined with effective [web development](/web-development) practices, your site becomes a powerful lead generation machine.
+But here's what most SEO agencies won't tell you: **The basics matter more than the advanced tactics.** Getting the fundamentals right will deliver 80% of the results with 20% of the effort. And when combined with effective [web development](/web-development/) practices, your site becomes a powerful lead generation machine.
 
 In this practical guide, I'll walk you through a simple but effective SEO checklist you can implement yourself—without coding skills, without expensive tools, and without hiring an agency. These are proven tactics that work for local contractors, service businesses, and small companies ready to get found by customers actively searching for what they offer.
 
@@ -77,7 +78,7 @@ Ready to get started? Let's dive in.
 - "licensed plumber near me"
 - "24/7 plumbing services [neighborhood]"
 
-Need help identifying the right keywords for your business? [Our SEO services](/seo) include comprehensive keyword research tailored to your local market and competition.
+Need help identifying the right keywords for your business? [Our SEO services](/seo/) include comprehensive keyword research tailored to your local market and competition.
 
 ---
 
@@ -110,7 +111,7 @@ Every page on your website needs two critical elements that Google (and users) s
 **Where to edit these:**
 - Most website platforms (WordPress, Squarespace, Webflow) have fields for page titles and meta descriptions
 - In WordPress, use plugins like Yoast SEO or Rank Math
-- If you can't find it, ask your [web development](/web-development) team or [contact us](/contact) for help
+- If you can't find it, ask your [web development](/web-development/) team or [contact us](/contact/) for help
 
 ---
 
@@ -152,7 +153,7 @@ Use [Google PageSpeed Insights](https://pagespeed.web.dev/) and aim for:
 4. **Enable caching**: Most platforms have caching plugins or settings
 5. **Use a CDN**: Services like Cloudflare (free plan available) speed up global delivery
 
-**Can't figure it out?** This is exactly where most business owners get stuck. [Our web development team](/web-development) can optimize your site speed—usually seeing 2-3x improvements in load times. Fast websites don't just rank better—they convert better too. Learn more about [how good web design impacts conversions](/blog/5-design-mistakes-that-make-your-website-look-cheap).
+**Can't figure it out?** This is exactly where most business owners get stuck. [Our web development team](/web-development/) can optimize your site speed—usually seeing 2-3x improvements in load times. Fast websites don't just rank better—they convert better too. Learn more about [how good web design impacts conversions](/blog/5-design-mistakes-that-make-your-website-look-cheap/).
 
 ---
 
@@ -197,7 +198,7 @@ Many small business websites show their services but **don't tell visitors what 
 - Include CTAs multiple times on each page
 - Make phone numbers click-to-call on mobile
 
-**Example**: A roofing contractor should have "Request Free Roof Inspection" buttons on every service page, not just a generic "Contact Us." For more on creating effective CTAs that convert, check out our guide on [landing pages that convert](/blog/landing-pages-that-convert-vs-those-that-dont).
+**Example**: A roofing contractor should have "Request Free Roof Inspection" buttons on every service page, not just a generic "Contact Us." For more on creating effective CTAs that convert, check out our guide on [landing pages that convert](/blog/landing-pages-that-convert-vs-those-that-dont/).
 
 ---
 
@@ -228,7 +229,7 @@ If you only do ONE thing from this checklist, **make it this one.**
 
 **Why it matters**: A fully optimized Google Business Profile can rank you in the "Local 3-Pack"—the three businesses shown with map listings at the top of local searches. **These get 44% of all clicks** (Moz).
 
-Want help setting up and optimizing your Google Business Profile? [Our local SEO services](/seo) include complete profile optimization and ongoing management.
+Want help setting up and optimizing your Google Business Profile? [Our local SEO services](/seo/) include complete profile optimization and ongoing management.
 
 ---
 
@@ -292,7 +293,7 @@ You don't need a huge blog. You just need **content that answers the questions y
 
 **How often to publish**: Even **one quality article per month** makes a difference. Consistency beats volume.
 
-Need help creating SEO-optimized content that actually ranks? [Our SEO services](/seo) include keyword-targeted blog posts and service pages that drive traffic and conversions.
+Need help creating SEO-optimized content that actually ranks? [Our SEO services](/seo/) include keyword-targeted blog posts and service pages that drive traffic and conversions.
 
 ---
 
@@ -313,7 +314,7 @@ Need help creating SEO-optimized content that actually ranks? [Our SEO services]
 
 **Why it matters**: We've seen businesses lose thousands in revenue because form submissions weren't being delivered or stored properly.
 
-Need a reliable contact form that actually works? [Our web development services](/web-development) include professional form setup with database backup and reliable email delivery.
+Need a reliable contact form that actually works? [Our web development services](/web-development/) include professional form setup with database backup and reliable email delivery.
 
 ---
 
@@ -429,10 +430,10 @@ While this checklist will get you started, **professional SEO delivers faster, b
 
 **Stop being invisible on Google. Start capturing customers who are actively searching for your services.**
 
-👉 **[Schedule a free SEO consultation](/contact)** and we'll analyze your current visibility and show you exactly what's holding you back.
+👉 **[Schedule a free SEO consultation](/contact/)** and we'll analyze your current visibility and show you exactly what's holding you back.
 
-👉 **[See our SEO case studies](/projects)** of local businesses we've helped dominate their markets.
+👉 **[See our SEO case studies](/projects/)** of local businesses we've helped dominate their markets.
 
-👉 **[Explore our SEO services](/seo)** to learn how we can help your business get found, chosen, and grow.
+👉 **[Explore our SEO services](/seo/)** to learn how we can help your business get found, chosen, and grow.
 
 **Your competitors are showing up on Google. Shouldn't you be there too?**

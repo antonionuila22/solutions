@@ -84,7 +84,7 @@ Before comparing nearshore to offshore, it's worth anchoring against the option 
 | Management & overhead allocation | $10,000–20,000 |
 | **Fully-loaded total** | **~$200,000+/yr** |
 
-A fully-loaded US senior lands north of $200,000 a year — roughly $100/hr just to *employ*, before you account for the weeks lost to hiring, the ramp-up before productivity, and the risk if the hire doesn't work out. That's the real baseline a nearshore [dedicated development team](/dedicated-development-team) or augmented developer is competing against, not the base-salary number.
+A fully-loaded US senior lands north of $200,000 a year — roughly $100/hr just to *employ*, before you account for the weeks lost to hiring, the ramp-up before productivity, and the risk if the hire doesn't work out. That's the real baseline a nearshore [dedicated development team](/dedicated-development-team/) or augmented developer is competing against, not the base-salary number.
 
 ---
 
@@ -111,10 +111,10 @@ The pattern: nearshore LATAM sits in a sweet spot — roughly half of onshore, w
 
 Nearshore is the strongest total-cost choice when:
 
-- **Real-time collaboration matters.** Evolving scope, frequent clarifications, or tight product-engineering coordination all benefit enormously from same-day, same-timezone communication. This is where the timezone-driven hidden costs of offshore hurt most — and where [nearshore development](/nearshore-development) neutralizes them.
+- **Real-time collaboration matters.** Evolving scope, frequent clarifications, or tight product-engineering coordination all benefit enormously from same-day, same-timezone communication. This is where the timezone-driven hidden costs of offshore hurt most — and where [nearshore development](/nearshore-development/) neutralizes them.
 - **You want meaningful savings without a quality cliff.** 40–60% off onshore rates, with senior engineers who work in your hours and speak fluent English, is a materially different proposition than the cheapest offshore tier.
 - **You can't justify a full US in-house hire.** For work that doesn't need a permanent employee, nearshore avoids the $200k+ commitment, the hiring lag, and the risk — while still giving you people you collaborate with in real time.
-- **You need to scale flexibly.** Adding or trimming capacity through a nearshore partner is faster and lower-risk than hiring or laying off employees, whether via [staff augmentation](/hire-remote-developers) or a dedicated team.
+- **You need to scale flexibly.** Adding or trimming capacity through a nearshore partner is faster and lower-risk than hiring or laying off employees, whether via [staff augmentation](/hire-remote-developers/) or a dedicated team.
 
 ---
 
@@ -160,7 +160,7 @@ To make TCO concrete, here's a simplified three-month feature build (~1,000 engi
 
 *Effective total folds in your internal management hours and delay cost; figures are illustrative, not a quote.
 
-The takeaway isn't that offshore always ends up as expensive as nearshore — sometimes it's still cheaper in raw dollars. It's that the *gap* between the $28 rate and the $65 rate is far smaller in practice than it looks on paper, while nearshore delivers it with dramatically less of your own time consumed. Against onshore, nearshore's total-cost advantage is decisive. For a broader model-by-model breakdown, see our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025).
+The takeaway isn't that offshore always ends up as expensive as nearshore — sometimes it's still cheaper in raw dollars. It's that the *gap* between the $28 rate and the $65 rate is far smaller in practice than it looks on paper, while nearshore delivers it with dramatically less of your own time consumed. Against onshore, nearshore's total-cost advantage is decisive. For a broader model-by-model breakdown, see our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025/).
 
 ---
 
@@ -201,4 +201,4 @@ When regulation mandates onshore staff, when nobody internal can evaluate the wo
 
 The rate is the cheapest thing to compare and the least informative. Real cost lives in rework, communication drag, management time, and delay — and those terms, not the hourly number, decide which option is actually cheapest. Measured that way, nearshore wins for most US companies that need genuine collaboration: roughly half of onshore cost, minimal hidden overhead, and none of the $200k in-house commitment.
 
-Run your own TCO on the five steps above. If you'd like help modeling it for a specific project, [start with a free consultation](/contact).
+Run your own TCO on the five steps above. If you'd like help modeling it for a specific project, [start with a free consultation](/contact/).

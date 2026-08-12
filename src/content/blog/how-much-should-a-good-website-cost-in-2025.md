@@ -94,7 +94,7 @@ Let's cut through the confusion with real, current pricing for different website
 
 **Pro tip**: Ask to see previous work and references before hiring.
 
-Looking for reliable, professional template customization? [Our web design services](/web-design) include quality template setups with full support—starting at $1,200.
+Looking for reliable, professional template customization? [Our web design services](/web-design/) include quality template setups with full support—starting at $1,200.
 
 ---
 
@@ -128,7 +128,7 @@ Looking for reliable, professional template customization? [Our web design servi
 
 **ROI consideration**: A well-designed $5,000 website that converts 5% of traffic vs. a $500 template that converts 1% means the expensive site **pays for itself** if it generates just 100 leads per year at $50 value each.
 
-Ready to invest in a professional website that actually converts? [Our web development team](/web-development) builds custom sites starting at $3,500—with conversion optimization built in.
+Ready to invest in a professional website that actually converts? [Our web development team](/web-development/) builds custom sites starting at $3,500—with conversion optimization built in.
 
 ---
 
@@ -186,7 +186,7 @@ Ready to invest in a professional website that actually converts? [Our web devel
 - Subscription services
 - Wholesale operations
 
-Need a high-converting e-commerce store? [Our e-commerce development services](/e-commerce) create custom online stores optimized for sales—starting at $5,000.
+Need a high-converting e-commerce store? [Our e-commerce development services](/e-commerce/) create custom online stores optimized for sales—starting at $5,000.
 
 ---
 
@@ -362,7 +362,7 @@ Watch out for these warning signs:
 | **Shopify** | $3,000-25,000 | E-commerce | ⚠️ Partial | ⭐⭐⭐ Moderate |
 | **Custom Code** | $10,000-100,000+ | Unique needs, web apps | ✅ Full | ⭐⭐⭐⭐⭐ Unlimited |
 
-Need help choosing the right platform for your needs? [Our web development consultation](/contact) is free—we'll recommend the best solution for your business and budget.
+Need help choosing the right platform for your needs? [Our web development consultation](/contact/) is free—we'll recommend the best solution for your business and budget.
 
 ---
 
@@ -468,10 +468,10 @@ At our agency, we build websites that aren't just beautiful—they're strategic 
 - 90 days of post-launch support
 - Full ownership of all assets
 
-👉 **[Schedule a free website consultation](/contact)** and get a custom quote based on your actual needs—not a one-size-fits-all estimate.
+👉 **[Schedule a free website consultation](/contact/)** and get a custom quote based on your actual needs—not a one-size-fits-all estimate.
 
-👉 **[View our portfolio](/projects)** to see websites we've built across different industries and budgets.
+👉 **[View our portfolio](/projects/)** to see websites we've built across different industries and budgets.
 
-👉 **[Explore our web development services](/web-development)** to learn more about our process and approach.
+👉 **[Explore our web development services](/web-development/)** to learn more about our process and approach.
 
 **Your website is too important to leave to chance. Let's build something that actually works.**

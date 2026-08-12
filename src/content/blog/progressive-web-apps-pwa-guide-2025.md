@@ -560,4 +560,4 @@ If you're considering a PWA, start with a clear analysis of what capabilities yo
 
 ---
 
-*Ready to explore whether a PWA is right for your business? [Contact us](/contact) for a free consultation and technical assessment.*
+*Ready to explore whether a PWA is right for your business? [Contact us](/contact/) for a free consultation and technical assessment.*

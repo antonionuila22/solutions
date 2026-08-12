@@ -51,7 +51,7 @@ export const animationConfig: ServicePageConfig = {
     description:
       "Professional 2D and 3D animation that transforms concepts into captivating visual stories. From motion graphics to character animation, we create animations that engage and inspire.",
     ctaPrimary: "Start Your Animation Project",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "Explore Animation Services",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -267,7 +267,7 @@ export const animationConfig: ServicePageConfig = {
     description:
       "Let's create stunning animations that bring your ideas to life, engage your audience, and make your brand unforgettable. Start your animation project today.",
     ctaPrimary: "Get Started Now",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
   },

@@ -14,7 +14,7 @@ tags:
   - HIPAA
 date: 2024-10-10
 featured: false
-link: /landing/template-healthcare
+link: /landing/template-healthcare/
 ---
 
 ## Project Overview

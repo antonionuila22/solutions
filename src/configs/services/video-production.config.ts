@@ -55,7 +55,7 @@ export const videoProductionConfig: ServicePageConfig = {
     description:
       "Professional video production and editing that tells your story, engages audiences, and drives results. From concept to final cut, we create video content that stands out.",
     ctaPrimary: "Start Your Project",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View Our Work",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -271,7 +271,7 @@ export const videoProductionConfig: ServicePageConfig = {
     description:
       "Let's bring your vision to life with professional video production that engages audiences and drives results. Get your free consultation today.",
     ctaPrimary: "Get Free Consultation",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
   },

@@ -32,7 +32,7 @@ This guide defines both models precisely, gives you a decision framework based o
 
 Staff augmentation means you rent individual engineers who plug into *your* team, work under *your* management, and follow *your* processes. You own the roadmap, the sprint planning, the code review standards, and the day-to-day direction. The augmented developers are, functionally, temporary members of your existing org chart.
 
-The vendor's job in staff augmentation is narrow: source qualified people, handle their employment and payroll, and swap them out if the fit is wrong. Everything about *what gets built and how* stays with you. This is the model behind most [staff augmentation and remote developer](/hire-remote-developers) engagements — you're adding capacity and specific skills, not outsourcing decisions.
+The vendor's job in staff augmentation is narrow: source qualified people, handle their employment and payroll, and swap them out if the fit is wrong. Everything about *what gets built and how* stays with you. This is the model behind most [staff augmentation and remote developer](/hire-remote-developers/) engagements — you're adding capacity and specific skills, not outsourcing decisions.
 
 **You provide:** product direction, technical leadership, backlog, tooling, and process.
 **The vendor provides:** vetted engineers who slot into that structure.
@@ -41,7 +41,7 @@ The vendor's job in staff augmentation is narrow: source qualified people, handl
 
 A dedicated development team is a self-contained unit — typically developers plus a QA engineer and a project manager or tech lead — that works exclusively on your product but manages *itself*. You set goals and priorities at the product level; the team figures out how to execute them.
 
-Here the vendor owns delivery mechanics: standups, estimation, code review, QA, and internal coordination. You interact primarily with a single point of contact (usually the PM or lead), review demos, and approve direction. A well-run [dedicated development team](/dedicated-development-team) behaves like an internal squad you didn't have to recruit, onboard, or manage from scratch.
+Here the vendor owns delivery mechanics: standups, estimation, code review, QA, and internal coordination. You interact primarily with a single point of contact (usually the PM or lead), review demos, and approve direction. A well-run [dedicated development team](/dedicated-development-team/) behaves like an internal squad you didn't have to recruit, onboard, or manage from scratch.
 
 **You provide:** product vision, priorities, and approvals.
 **The vendor provides:** a managed, cross-functional team that owns execution.
@@ -102,7 +102,7 @@ If you have unused management capacity, augmentation is cheaper in true total co
 
 ## Cost Comparison
 
-Rates vary by region and seniority. Using Codebrand's [nearshore development](/nearshore-development) rates (Mid $45/hr, Senior $65/hr, Lead $95/hr) as a concrete reference, here's how the two models tend to price out for a comparable amount of engineering throughput.
+Rates vary by region and seniority. Using Codebrand's [nearshore development](/nearshore-development/) rates (Mid $45/hr, Senior $65/hr, Lead $95/hr) as a concrete reference, here's how the two models tend to price out for a comparable amount of engineering throughput.
 
 ### Staff Augmentation: Two Senior Developers
 
@@ -137,7 +137,7 @@ The dedicated team invoices more, but that number *includes* the management and 
 | Nearshore (Codebrand) | $45–95/hr | Mid / Senior / Lead |
 | Poland (to Western clients) | $55–100/hr | Strong talent, larger timezone gap for US |
 
-The point isn't that one region wins. It's that both engagement models are dramatically cheaper than US in-house or onshore agencies, and the choice between augmentation and a dedicated team should turn on *fit*, not headline rate. For a deeper regional breakdown, see our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025).
+The point isn't that one region wins. It's that both engagement models are dramatically cheaper than US in-house or onshore agencies, and the choice between augmentation and a dedicated team should turn on *fit*, not headline rate. For a deeper regional breakdown, see our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025/).
 
 ---
 
@@ -229,4 +229,4 @@ Honest self-assessment of your internal management capacity. Companies that matc
 
 Staff augmentation and dedicated teams aren't competitors — they're answers to different questions. Augmentation amplifies leadership you already have. A dedicated team supplies leadership you don't. Score yourself honestly on team maturity, PM capacity, engagement duration, and budget structure, and the right model usually becomes obvious.
 
-If you're weighing these options for a nearshore engagement and want to talk through which fits your situation, [start with a free consultation](/contact).
+If you're weighing these options for a nearshore engagement and want to talk through which fits your situation, [start with a free consultation](/contact/).

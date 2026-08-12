@@ -73,9 +73,9 @@ const seoKeywords = [
 // Breadcrumb schema
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: baseUrl },
-  { name: "Locations", url: `${baseUrl}/countryareas` },
-  { name: country?.data.name || "Country", url: `${baseUrl}/countryareas/${region.data.country}` },
-  { name: name, url: `${baseUrl}/regions/${region.id}` },
+  { name: "Locations", url: `${baseUrl}/countryareas/` },
+  { name: country?.data.name || "Country", url: `${baseUrl}/countryareas/${region.data.country}/` },
+  { name: name, url: `${baseUrl}/regions/${region.id}/` },
 ]);
 
 // ItemList schema for cities
@@ -89,7 +89,7 @@ const citiesListSchema = {
     "@type": "ListItem",
     "position": index + 1,
     "name": `Web Development ${city.data.city}, ${code}`,
-    "url": `${baseUrl}/locations/${city.id}`,
+    "url": `${baseUrl}/locations/${city.id}/`,
   })),
 };
 
@@ -133,8 +133,8 @@ const faqSchema = faqs && faqs.length > 0 ? {
       { value: "8+", label: "Years Experience", counterTo: 8, suffix: "+", color: "cyan" },
       { value: "100%", label: "Custom-Built", color: "orange" },
     ]}
-    ctaPrimary={{ text: "Get Free Quote", href: "/contact" }}
-    ctaSecondary={{ text: "View Our Work", href: "/projects" }}
+    ctaPrimary={{ text: "Get Free Quote", href: "/contact/" }}
+    ctaSecondary={{ text: "View Our Work", href: "/projects/" }}
   >
     {(population || capital || timezone) && (
       <div class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-400">
@@ -163,8 +163,8 @@ const faqSchema = faqs && faqs.length > 0 ? {
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Service Areas", href: "/countryareas" },
-      { name: country?.data.name || "Country", href: `/countryareas/${region.data.country}` },
+      { name: "Service Areas", href: "/countryareas/" },
+      { name: country?.data.name || "Country", href: `/countryareas/${region.data.country}/` },
       { name: name, href: "" }
     ]}
     variant="transparent"
@@ -276,7 +276,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-anim="fade">
           {sortedCities.map((city) => (
             <a
-              href={`/locations/${city.id}`}
+              href={`/locations/${city.id}/`}
               class="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300 transform hover:-translate-y-1"
             >
               <div class="flex items-start justify-between mb-3">
@@ -405,10 +405,10 @@ const faqSchema = faqs && faqs.length > 0 ? {
         Get a free consultation and detailed project quote. No commitment required.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim="fade" data-delay="0.18">
-        <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
+        <a href="/contact/" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           Get Free Quote
         </a>
-        <a href="/projects" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
+        <a href="/projects/" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View Our Work
         </a>
       </div>

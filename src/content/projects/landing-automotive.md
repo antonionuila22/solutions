@@ -12,7 +12,7 @@ tags:
   - Responsive Design
 date: 2024-10-15
 featured: false
-link: /landing/template-automotive
+link: /landing/template-automotive/
 ---
 
 ## Project Overview

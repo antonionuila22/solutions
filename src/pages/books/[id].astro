@@ -3,6 +3,7 @@ export const prerender = true;
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { buildPageTitle } from "../../lib/seo/page-title";
 
 export async function getStaticPaths() {
   const posts = await getCollection("books"); // ← aquí es donde corregimos
@@ -21,7 +22,7 @@ const { Content } = await render(post);
 
 // SEO optimization
 const baseUrl = "https://www.codebrand.us";
-const seoTitle = `${title} | Codebrand Books`;
+const seoTitle = buildPageTitle(title, { seoTitle: data.seoTitle, suffix: "Codebrand Books" });
 const seoDescription = description || `Read ${title} by ${author || 'Codebrand'}. Discover insights on web development, design, and digital marketing.`;
 const seoKeywords = `${title.toLowerCase()}, ${author ? author.toLowerCase() : ''}, codebrand books, web development books, digital marketing books, design books`;
 const absoluteImage = img ? `${baseUrl}/${img}` : `${baseUrl}/photos/bannercodebrand.webp`;
@@ -36,7 +37,7 @@ const bookSchema = {
   "name": title,
   "description": description,
   "image": absoluteImage,
-  "url": `${baseUrl}/books/${post.id}`,
+  "url": `${baseUrl}/books/${post.id}/`,
   "author": author ? {
     "@type": "Person",
     "name": author

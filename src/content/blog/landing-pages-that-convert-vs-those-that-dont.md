@@ -20,7 +20,7 @@ What makes the difference? It's not magic, and it's not luck. High-converting la
 
 In this comprehensive analysis, we'll dissect what high-performing landing pages have in common and what mistakes repeatedly sink poor-performing pages. We'll compare structure, design, copywriting, and user experience—giving you clear criteria to improve your own pages and dramatically increase your conversion rates.
 
-Whether you're running paid ads, email campaigns, or organic traffic through [SEO](/seo), your landing page is where conversions happen or die. Let's make sure yours falls in the first category.
+Whether you're running paid ads, email campaigns, or organic traffic through [SEO](/seo/), your landing page is where conversions happen or die. Let's make sure yours falls in the first category.
 
 ## What Does "Convert" Actually Mean?
 
@@ -65,7 +65,7 @@ See the difference? The first tells you exactly what you get and who it's for. T
 
 **Pro tip**: Read your headline to someone unfamiliar with your business. If they can't immediately explain what you're offering and why they'd want it, rewrite it.
 
-Need help crafting a compelling value proposition that converts? [Our content marketing services](/digital-marketing) specialize in creating headlines that grab attention and drive action.
+Need help crafting a compelling value proposition that converts? [Our content marketing services](/digital-marketing/) specialize in creating headlines that grab attention and drive action.
 
 ---
 
@@ -89,9 +89,9 @@ For every feature you mention, ask yourself: **"So what? Why does the customer c
 - Feature: "Mobile-responsive design"
 - Benefit: "Your customers can browse and buy from their phones without frustration—capturing sales you'd otherwise lose"
 
-**Remember**: People don't buy features. They buy outcomes, solutions, and transformations. This principle applies whether you're selling products, services, or building your [brand identity](/branding).
+**Remember**: People don't buy features. They buy outcomes, solutions, and transformations. This principle applies whether you're selling products, services, or building your [brand identity](/branding/).
 
-Want to transform your landing page copy from boring features to compelling benefits? [Our landing page services](/landing-pages) include comprehensive audits and optimization.
+Want to transform your landing page copy from boring features to compelling benefits? [Our landing page services](/landing-pages/) include comprehensive audits and optimization.
 
 ---
 
@@ -159,7 +159,7 @@ According to Nielsen, **92% of consumers trust recommendations from real people*
 - "SSL Secure Checkout"
 - Industry certifications or awards
 
-Looking to collect and showcase powerful testimonials? [Our branding services](/branding) help you create compelling case studies that convert skeptics into customers.
+Looking to collect and showcase powerful testimonials? [Our branding services](/branding/) help you create compelling case studies that convert skeptics into customers.
 
 ---
 
@@ -188,9 +188,9 @@ And since **60%+ of traffic now comes from mobile devices**, if your landing pag
 - **Simple forms**: Minimize typing on mobile
 - **Fast, distraction-free**: Remove anything non-essential
 
-**Pro tip**: Test your landing page on actual mobile devices (iPhone, Android), not just desktop simulators. The experience is often different. For more on avoiding common design issues, read our guide on [design mistakes that make websites look cheap](/blog/5-design-mistakes-that-make-your-website-look-cheap).
+**Pro tip**: Test your landing page on actual mobile devices (iPhone, Android), not just desktop simulators. The experience is often different. For more on avoiding common design issues, read our guide on [design mistakes that make websites look cheap](/blog/5-design-mistakes-that-make-your-website-look-cheap/).
 
-Need a blazing-fast, mobile-optimized landing page? [Our web development team](/web-development) builds high-performance pages that load in under 2 seconds.
+Need a blazing-fast, mobile-optimized landing page? [Our web development team](/web-development/) builds high-performance pages that load in under 2 seconds.
 
 ---
 
@@ -211,7 +211,7 @@ High-converting landing pages use **relevant, professional images or videos** th
 - Low-quality or pixelated images
 - Too many competing visuals
 
-**Video tips**: If using video, make it short (60-90 seconds), start with a hook, and include captions (80% watch without sound). Learn more about creating [ads that don't sound like ads](/blog/how-to-make-ads-that-dont-sound-like-ads) to maximize engagement.
+**Video tips**: If using video, make it short (60-90 seconds), start with a hook, and include captions (80% watch without sound). Learn more about creating [ads that don't sound like ads](/blog/how-to-make-ads-that-dont-sound-like-ads/) to maximize engagement.
 
 ---
 
@@ -237,7 +237,7 @@ Cluttered pages overwhelm visitors. Clean pages with generous white space, clear
 
 **Contrast**: Make CTAs pop with contrasting colors
 
-Our [landing page design services](/landing-pages) include conversion-focused design that balances aesthetics with psychology to maximize results. Combined with our [web design](/web-design) expertise, we create pages that both look great and convert.
+Our [landing page design services](/landing-pages/) include conversion-focused design that balances aesthetics with psychology to maximize results. Combined with our [web design](/web-design/) expertise, we create pages that both look great and convert.
 
 ---
 
@@ -263,7 +263,7 @@ Asking for name, email, phone, address, company size, job title, annual revenue,
 
 ### 3. Outdated or Confusing Design
 
-If your page looks like it's from 2012, it affects trust perception. Design matters—it's not just aesthetics, it's **credibility**. Check out our detailed post on [design mistakes that make your website look cheap](/blog/5-design-mistakes-that-make-your-website-look-cheap) for a comprehensive breakdown.
+If your page looks like it's from 2012, it affects trust perception. Design matters—it's not just aesthetics, it's **credibility**. Check out our detailed post on [design mistakes that make your website look cheap](/blog/5-design-mistakes-that-make-your-website-look-cheap/) for a comprehensive breakdown.
 
 **Common design mistakes:**
 - Poor color contrast making text hard to read
@@ -272,7 +272,7 @@ If your page looks like it's from 2012, it affects trust perception. Design matt
 - Misaligned elements
 - Inconsistent styling
 
-**Fix**: Modern, clean design with strong contrast and professional aesthetics through proper [web design](/web-design).
+**Fix**: Modern, clean design with strong contrast and professional aesthetics through proper [web design](/web-design/).
 
 ---
 
@@ -379,11 +379,11 @@ We've built hundreds of landing pages for clients across industries—from SaaS 
 
 **Stop losing leads to poorly designed landing pages.**
 
-👉 **[Schedule a free landing page audit](/contact)** and we'll analyze your current page and show you exactly what's holding back your conversions.
+👉 **[Schedule a free landing page audit](/contact/)** and we'll analyze your current page and show you exactly what's holding back your conversions.
 
-👉 **[See our portfolio](/projects)** of high-converting landing pages we've built for clients.
+👉 **[See our portfolio](/projects/)** of high-converting landing pages we've built for clients.
 
-👉 **[Explore our landing page services](/landing-pages)** and packages designed for businesses serious about growth.
+👉 **[Explore our landing page services](/landing-pages/)** and packages designed for businesses serious about growth.
 
 **Every visitor is a potential customer. Make sure your landing page treats them that way.**
 

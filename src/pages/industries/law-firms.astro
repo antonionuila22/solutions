@@ -32,7 +32,7 @@ const serviceSchema = {
   "serviceType": "Legal Website Development",
   "name": "Law Firm Website Design & Legal Practice Management Software",
   "description": description,
-  "url": "https://www.codebrand.us/industries/law-firms",
+  "url": "https://www.codebrand.us/industries/law-firms/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -94,8 +94,8 @@ const lawFirmFaqs = [
 const faqSchema = createFAQSchema(lawFirmFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Law Firms", url: "https://www.codebrand.us/industries/law-firms" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Law Firms", url: "https://www.codebrand.us/industries/law-firms/" }
 ]);
 
 const stats = [
@@ -355,7 +355,7 @@ const softwareLead = "Most of a firm's real friction is not the website. It is t
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Law Firms", href: "" }
     ]}
     variant="transparent"

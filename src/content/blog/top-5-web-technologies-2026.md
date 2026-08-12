@@ -686,8 +686,8 @@ We help businesses leverage these technologies through:
 
 **Ready to build with modern technology?**
 
-[Contact us for a free consultation](/contact) and let's discuss how these technologies can transform your web presence.
+[Contact us for a free consultation](/contact/) and let's discuss how these technologies can transform your web presence.
 
 ---
 
-*Want to learn more about any of these technologies? [Reach out to our team](/contact)—we're happy to share our experience.*
+*Want to learn more about any of these technologies? [Reach out to our team](/contact/)—we're happy to share our experience.*

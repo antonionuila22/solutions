@@ -3,7 +3,7 @@ title: "Learn Astro.js - Complete Beginner's Guide"
 description: "Master Astro.js from the ground up. Learn why Astro is the fastest framework for content-driven websites and how to build lightning-fast web applications."
 author: "Ramon Nuila"
 readtime: 25
-img: ./photos/learnastro.webp
+img: /photos/learnastro.webp
 imageAlt: "Astro.js Framework Guide"
 date: '2025-01-15'
 ---
@@ -1141,7 +1141,7 @@ Congratulations! You now have a solid foundation in Astro.js. Here's what to exp
 
 You now have everything you need to build lightning-fast websites with Astro. The best way to learn is by building!
 
-**Need help building your next project?** [Our web development team](/web-development) specializes in Astro.js and can help you create high-performance websites that convert.
+**Need help building your next project?** [Our web development team](/web-development/) specializes in Astro.js and can help you create high-performance websites that convert.
 
 ---
 

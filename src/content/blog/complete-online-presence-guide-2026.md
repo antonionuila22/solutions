@@ -47,7 +47,7 @@ Your website is the only online property you truly own. Social platforms change 
 - No clear call-to-action
 - Slow loading times
 
-[See how we approach web development →](/services/web-development)
+[See how we approach web development →](/services/web-development/)
 
 **Key elements:**
 - Clear value proposition above the fold
@@ -73,7 +73,7 @@ Your brand is more than a logo. It's the consistent visual and verbal identity t
 
 Consistent brand presentation increases revenue by **23%** on average. When everything looks and sounds like "you," trust builds faster.
 
-[Explore our branding services →](/services/branding)
+[Explore our branding services →](/services/branding/)
 
 ### 3. Search Presence: Being Found
 
@@ -94,7 +94,7 @@ If you're not on page one of Google, you might as well not exist. **75% of users
 - Ensure mobile-friendly design
 - Fix broken links
 
-[Learn about our SEO services →](/services/seo)
+[Learn about our SEO services →](/services/seo/)
 
 ### 4. Social Media: Where Conversations Happen
 
@@ -114,7 +114,7 @@ Social media isn't about being everywhere—it's about being **where your custom
 - 80% value (educate, entertain, inspire)
 - 20% promotion (offers, CTAs)
 
-[See our social media approach →](/services/social-media)
+[See our social media approach →](/services/social-media/)
 
 ### 5. Content: The Engine That Drives Everything
 
@@ -160,7 +160,7 @@ Content is what makes all the other pillars work:
 - Content population
 - Testing and launch
 
-[Start with a solid foundation →](/services/web-development)
+[Start with a solid foundation →](/services/web-development/)
 
 ### Phase 2: Visibility (Month 3-4)
 
@@ -175,7 +175,7 @@ Content is what makes all the other pillars work:
 - Content calendar creation
 - Community building begins
 
-[Boost your visibility →](/services/seo)
+[Boost your visibility →](/services/seo/)
 
 ### Phase 3: Growth (Month 5+)
 
@@ -249,19 +249,19 @@ Online presence isn't a project—it's an ongoing process. Websites need updates
 
 Building a complete online presence requires multiple skills working together:
 
-**Web Development:** Fast, beautiful, conversion-focused websites. [Learn more →](/services/web-development)
+**Web Development:** Fast, beautiful, conversion-focused websites. [Learn more →](/services/web-development/)
 
-**UX/UI Design:** User experiences that guide visitors to action. [Explore UX →](/services/ux-ui)
+**UX/UI Design:** User experiences that guide visitors to action. [Explore UX →](/services/ux-ui/)
 
-**Branding:** Visual identity that makes you memorable. [See branding →](/services/branding)
+**Branding:** Visual identity that makes you memorable. [See branding →](/services/branding/)
 
-**SEO:** Being found when customers search. [Discover SEO →](/services/seo)
+**SEO:** Being found when customers search. [Discover SEO →](/services/seo/)
 
-**Social Media:** Engaging your audience where they are. [Social media services →](/services/social-media)
+**Social Media:** Engaging your audience where they are. [Social media services →](/services/social-media/)
 
-**Video Production:** Content that captures attention. [Video services →](/services/video-production)
+**Video Production:** Content that captures attention. [Video services →](/services/video-production/)
 
-**Animation:** Motion graphics that explain and engage. [Animation services →](/services/animation)
+**Animation:** Motion graphics that explain and engage. [Animation services →](/services/animation/)
 
 Most agencies specialize in one area. We bring everything together into a cohesive strategy.
 
@@ -323,16 +323,16 @@ Whether you need a complete digital transformation or help with specific areas, 
 
 **Our services:**
 
-- [Web Development](/services/web-development) — Your digital foundation
-- [UX/UI Design](/services/ux-ui) — User experiences that convert
-- [Branding](/services/branding) — Visual identity that stands out
-- [SEO](/services/seo) — Being found in search
-- [Social Media](/services/social-media) — Engaging your audience
-- [Video Production](/services/video-production) — Content that captures attention
-- [3D Rendering](/services/3d-rendering) — Visualizations that impress
-- [Animation](/services/animation) — Motion that explains
+- [Web Development](/services/web-development/) — Your digital foundation
+- [UX/UI Design](/services/ux-ui/) — User experiences that convert
+- [Branding](/services/branding/) — Visual identity that stands out
+- [SEO](/services/seo/) — Being found in search
+- [Social Media](/services/social-media/) — Engaging your audience
+- [Video Production](/services/video-production/) — Content that captures attention
+- [3D Rendering](/services/3d-rendering/) — Visualizations that impress
+- [Animation](/services/animation/) — Motion that explains
 
-[Let's discuss your online presence →](/contact)
+[Let's discuss your online presence →](/contact/)
 
 ---
 

@@ -23,7 +23,7 @@ Most digital marketing advice is written for companies with six-figure marketing
 
 We've helped hundreds of small businesses—from local contractors to e-commerce startups—build effective digital marketing strategies on real-world budgets. This is the playbook we use.
 
-> **Looking for expert digital marketing help?** Explore our [digital marketing services](/digital-marketing) for strategies that deliver results.
+> **Looking for expert digital marketing help?** Explore our [digital marketing services](/digital-marketing/) for strategies that deliver results.
 
 ---
 
@@ -73,7 +73,7 @@ Everything in digital marketing leads back to your website. If your website does
 - [ ] About page with team photos
 - [ ] FAQ section addressing common objections
 
-> **Need a conversion-optimized website?** Our [web development services](/web-development) include all these essentials built-in.
+> **Need a conversion-optimized website?** Our [web development services](/web-development/) include all these essentials built-in.
 
 ### Google Business Profile (Critical for Local)
 
@@ -157,7 +157,7 @@ Build local citations (business listings):
 - Respond to all reviews
 - Never buy fake reviews
 
-> **Struggling with SEO?** Our [SEO services](/seo) help small businesses rank higher and get more traffic.
+> **Struggling with SEO?** Our [SEO services](/seo/) help small businesses rank higher and get more traffic.
 
 **4. Content SEO (Ongoing)**
 
@@ -590,10 +590,10 @@ Start with the fundamentals, track your results, and build from there. Your bigg
 
 ---
 
-*Need help implementing your digital marketing strategy? [Contact Codebrand](/contact) for a free consultation and custom plan.*
+*Need help implementing your digital marketing strategy? [Contact Codebrand](/contact/) for a free consultation and custom plan.*
 
 **Explore our services:**
-- [Web Development](/web-development) - Build a website that converts
-- [SEO Services](/seo) - Get found on Google
-- [Digital Marketing](/digital-marketing) - Full-service marketing support
-- [Landing Pages](/landing-pages) - High-converting campaign pages
+- [Web Development](/web-development/) - Build a website that converts
+- [SEO Services](/seo/) - Get found on Google
+- [Digital Marketing](/digital-marketing/) - Full-service marketing support
+- [Landing Pages](/landing-pages/) - High-converting campaign pages

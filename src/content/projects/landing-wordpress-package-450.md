@@ -14,7 +14,7 @@ tags:
   - Affordable Website
 date: 2024-10-14
 featured: false
-link: /landing/wordpress-450
+link: /landing/wordpress-450/
 results:
   metric1: Affordable $450 starting price
   metric2: WordPress powered and flexible

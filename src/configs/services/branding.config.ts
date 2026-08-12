@@ -17,7 +17,7 @@ export const brandingConfig: ServicePageConfig = {
     keywords:
       "branding, logo design, brand identity, visual identity, brand strategy, rebranding, brand guidelines, logo creation, corporate identity, brand design, brand development, brand positioning, brand messaging, brand personality, brand naming, brand collateral, business stationery, brand refresh, brand architecture, brand equity, trademark design, monogram design, wordmark design, symbol design, branding agency, brand identity design, professional branding services",
     image: "/photos/bannercodebrand.webp",
-    canonicalUrl: "https://www.codebrand.us/branding", // Points to main page to avoid duplicate content
+    canonicalUrl: "https://www.codebrand.us/branding/", // Points to main page to avoid duplicate content
   },
 
   // Schema.org Structured Data
@@ -53,7 +53,7 @@ export const brandingConfig: ServicePageConfig = {
     description:
       "Strategic branding that goes beyond aesthetics. We create visual identities that capture your essence, resonate with your audience, and stand the test of time.",
     ctaPrimary: "Start Your Brand Journey",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "Explore Our Services",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -269,7 +269,7 @@ export const brandingConfig: ServicePageConfig = {
     description:
       "Let's create a brand identity that captures your vision, resonates with your audience, and stands out in the marketplace. Start your brand journey today.",
     ctaPrimary: "Get Started Now",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
   },

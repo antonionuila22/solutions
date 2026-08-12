@@ -51,7 +51,7 @@ const scored = posts
 
 // Take top scored matches; if fewer than limit, pad with most recent unrelated posts.
 const topRelated = scored.slice(0, limit).map((s) => s.post);
-const related = topRelated.length === limit
+const padded = topRelated.length === limit
   ? topRelated
   : [
       ...topRelated,
@@ -61,6 +61,23 @@ const related = topRelated.length === limit
         .slice(0, limit - topRelated.length)
         .map((s) => s.post),
     ];
+
+// Un puesto reservado a la rotación. La puntuación de arriba premia a los
+// posts recientes y muy etiquetados, así que los antiguos o de categoría rara
+// no salían nunca y se quedaban con un solo enlace interno entrante, el del
+// índice del blog. Recorriendo la lista ordenada por id, cada post apunta al
+// siguiente: como es un ciclo sobre todos, ninguno queda sin enlace.
+const ordered = posts.filter((p) => !p.data.draft).sort((a, b) => a.id.localeCompare(b.id));
+const currentIndex = ordered.findIndex((p) => p.id === currentId);
+const successor =
+  currentIndex >= 0 && ordered.length > 1
+    ? ordered[(currentIndex + 1) % ordered.length]
+    : undefined;
+
+const related =
+  successor && !padded.some((p) => p.id === successor.id)
+    ? [...padded.slice(0, Math.max(0, limit - 1)), successor]
+    : padded;
 ---
 
 {

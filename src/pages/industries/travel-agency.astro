@@ -32,7 +32,7 @@ const serviceSchema = {
   "serviceType": "Travel Agency Website Development",
   "name": "Travel Agency Website Design & Tourism Software Solutions",
   "description": description,
-  "url": "https://www.codebrand.us/industries/travel-agency",
+  "url": "https://www.codebrand.us/industries/travel-agency/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -94,8 +94,8 @@ const travelFaqs = [
 const faqSchema = createFAQSchema(travelFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Travel Agency", url: "https://www.codebrand.us/industries/travel-agency" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Travel Agency", url: "https://www.codebrand.us/industries/travel-agency/" }
 ]);
 
 const stats = [
@@ -295,7 +295,7 @@ const softwareLead = "The trip is sold long before it is taken, and everything b
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Travel Agency", href: "" }
     ]}
     variant="transparent"

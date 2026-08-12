@@ -25,7 +25,7 @@ const activeChip = "bg-slate-900 text-white";
 
 <nav aria-label="Blog categories" class="flex flex-wrap items-center gap-2">
   <a
-    href="/blog"
+    href="/blog/"
     class:list={[baseChip, current ? idleChip : activeChip]}
     aria-current={current ? undefined : "page"}
   >
@@ -34,7 +34,7 @@ const activeChip = "bg-slate-900 text-white";
   {
     categories.map(({ slug, name }) => (
       <a
-        href={`/blog/category/${slug}`}
+        href={`/blog/category/${slug}/`}
         class:list={[baseChip, current === slug ? activeChip : idleChip]}
         aria-current={current === slug ? "page" : undefined}
       >

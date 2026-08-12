@@ -1,5 +1,6 @@
 ---
 title: "¿Cuánto cuesta una página web en Honduras? Precios reales 2026"
+seoTitle: "Precio de una página web en Honduras 2026 | Codebrand"
 lang: es
 description: "Precios reales de una página web en Honduras en 2026: rangos por tipo de proyecto, qué encarece el presupuesto y cómo evitar que te cobren de más."
 author: "Ramon Nuila"
@@ -43,13 +44,13 @@ Inicio, servicios, sobre nosotros, casos, blog y contacto. Es el formato más co
 
 **$5,000 – $12,000**
 
-Cuando el sitio tiene 20 o más páginas, versión en inglés y español, blog con estrategia de contenido, integraciones con CRM o formularios que alimentan un proceso de ventas real. Aquí ya no estás comprando una página web: estás comprando un canal de captación. Este es el terreno del [desarrollo web en Honduras](/hn/desarrollo-web-honduras) para empresas que exportan servicios o venden a corporativos.
+Cuando el sitio tiene 20 o más páginas, versión en inglés y español, blog con estrategia de contenido, integraciones con CRM o formularios que alimentan un proceso de ventas real. Aquí ya no estás comprando una página web: estás comprando un canal de captación. Este es el terreno del [desarrollo web en Honduras](/hn/desarrollo-web-honduras/) para empresas que exportan servicios o venden a corporativos.
 
 #### Tienda en línea
 
 **$3,000 – $15,000+**
 
-El rango es amplio porque un e-commerce con 30 productos y pago contra entrega no tiene nada que ver con uno de 3,000 SKUs, inventario sincronizado y pasarela de pago integrada. Los factores que más pesan: cantidad de productos, variantes (talla, color), métodos de pago, cálculo de envíos y si hay que conectarlo a un sistema contable existente. Si vas por este camino, la [tienda en línea en Honduras](/hn/tienda-online-honduras) merece su propio análisis antes de pedir presupuestos.
+El rango es amplio porque un e-commerce con 30 productos y pago contra entrega no tiene nada que ver con uno de 3,000 SKUs, inventario sincronizado y pasarela de pago integrada. Los factores que más pesan: cantidad de productos, variantes (talla, color), métodos de pago, cálculo de envíos y si hay que conectarlo a un sistema contable existente. Si vas por este camino, la [tienda en línea en Honduras](/hn/tienda-online-honduras/) merece su propio análisis antes de pedir presupuestos.
 
 #### Sistema o aplicación web a la medida
 
@@ -83,7 +84,7 @@ Un sitio bilingüe no cuesta el doble, pero sí cuesta entre 30% y 50% más: hay
 
 #### SEO desde el inicio
 
-Un sitio que sale bien construido (estructura semántica, velocidad, títulos y descripciones trabajados, datos estructurados) cuesta un poco más al inicio y muchísimo menos después. Arreglar SEO en un sitio mal hecho es casi siempre más caro que hacerlo bien la primera vez. Si el tráfico orgánico es parte del plan, conviene tratar el [SEO en Honduras](/hn/seo-honduras) como parte del alcance, no como un extra opcional.
+Un sitio que sale bien construido (estructura semántica, velocidad, títulos y descripciones trabajados, datos estructurados) cuesta un poco más al inicio y muchísimo menos después. Arreglar SEO en un sitio mal hecho es casi siempre más caro que hacerlo bien la primera vez. Si el tráfico orgánico es parte del plan, conviene tratar el [SEO en Honduras](/hn/seo-honduras/) como parte del alcance, no como un extra opcional.
 
 #### Quién construye el sitio y a qué tarifa
 
@@ -175,6 +176,6 @@ Da igual mientras el contrato fije la moneda y el tipo de cambio de referencia. 
 Si tu sitio genera ingresos o leads, sí. Un sitio sin actualizaciones de seguridad, sin monitoreo y sin cambios de contenido pierde posiciones y se vuelve vulnerable. Si es un sitio informativo estático, el mantenimiento puede ser mínimo.
 
 **¿Y si necesito algo más que una página web?**
-Cuando lo que buscás es automatizar procesos, integrar sistemas o construir una herramienta interna, ya no estás en el terreno de un sitio web sino de [desarrollo de software en Honduras](/hn/desarrollo-de-software-honduras), con otra forma de cotizar y otro tipo de equipo.
+Cuando lo que buscás es automatizar procesos, integrar sistemas o construir una herramienta interna, ya no estás en el terreno de un sitio web sino de [desarrollo de software en Honduras](/hn/desarrollo-de-software-honduras/), con otra forma de cotizar y otro tipo de equipo.
 
-Si tenés un proyecto definido y querés un rango honesto antes de comprometerte con nadie, [escribinos](/contact) con el alcance que tenés en mente y te decimos en qué rango cae y qué preguntas deberías hacerle a cualquier proveedor, incluidos nosotros.
+Si tenés un proyecto definido y querés un rango honesto antes de comprometerte con nadie, [escribinos](/contact/) con el alcance que tenés en mente y te decimos en qué rango cae y qué preguntas deberías hacerle a cualquier proveedor, incluidos nosotros.

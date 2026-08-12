@@ -33,7 +33,7 @@ Cada mercado tiene un carácter propio. Estas son las diferencias que importan a
 
 #### Honduras
 
-Base de talento técnico con costos operativos bajos y horario central de Estados Unidos, lo que la volvió una plaza natural para trabajo nearshore. San Pedro Sula concentra la actividad comercial e industrial y buena parte de las empresas de desarrollo; Tegucigalpa tiene más peso en proyectos institucionales. Es un mercado donde se consigue trabajo de nivel internacional a tarifas regionales, y donde el reto del comprador local es distinguir entre estudios serios y proveedores de plantillas. Si tu proyecto está anclado aquí, conviene revisar cómo se estructura el [desarrollo web en Honduras](/hn/desarrollo-web-honduras) antes de pedir cotizaciones.
+Base de talento técnico con costos operativos bajos y horario central de Estados Unidos, lo que la volvió una plaza natural para trabajo nearshore. San Pedro Sula concentra la actividad comercial e industrial y buena parte de las empresas de desarrollo; Tegucigalpa tiene más peso en proyectos institucionales. Es un mercado donde se consigue trabajo de nivel internacional a tarifas regionales, y donde el reto del comprador local es distinguir entre estudios serios y proveedores de plantillas. Si tu proyecto está anclado aquí, conviene revisar cómo se estructura el [desarrollo web en Honduras](/hn/desarrollo-web-honduras/) antes de pedir cotizaciones.
 
 #### Guatemala
 
@@ -107,7 +107,7 @@ Cuatro cosas se repiten en los briefs de la región y conviene tenerlas en el ra
 
 **WhatsApp como canal principal.** En gran parte de la región el formulario de contacto es secundario y la conversación real ocurre en WhatsApp. Un sitio que no lo integra bien está enviando a sus visitantes a un camino que nadie usa.
 
-**Comercio electrónico con realidad local.** Pago contra entrega, transferencias bancarias, pasarelas regionales y logística de última milla. Un e-commerce diseñado con supuestos de Estados Unidos falla aquí. Es la diferencia entre una plantilla y una [tienda en línea en Honduras](/hn/tienda-online-honduras) pensada para el comportamiento real del comprador.
+**Comercio electrónico con realidad local.** Pago contra entrega, transferencias bancarias, pasarelas regionales y logística de última milla. Un e-commerce diseñado con supuestos de Estados Unidos falla aquí. Es la diferencia entre una plantilla y una [tienda en línea en Honduras](/hn/tienda-online-honduras/) pensada para el comportamiento real del comprador.
 
 **SEO local en español.** Las búsquedas se hacen en español y con intención geográfica. Un sitio traducido del inglés, sin estructura de contenido pensada para esas búsquedas, no aparece.
 
@@ -129,6 +129,6 @@ Transferencia internacional es lo habitual para montos de proyecto. Definí desd
 Acordá por escrito los tiempos de respuesta antes de firmar: cuánto tarda una respuesta ante una caída del sitio, ante un error funcional y ante un cambio de contenido. Un proveedor serio tiene esos números; uno que improvisa no.
 
 **¿Y si mi proyecto no es un sitio web sino un sistema?**
-Cambia el perfil de proveedor. Un estudio de diseño no construye una plataforma con integraciones y usuarios concurrentes; para eso necesitás una empresa de ingeniería, y conviene revisar cómo se aborda el [desarrollo de software en Honduras](/hn/desarrollo-de-software-honduras) y en la región antes de contratar.
+Cambia el perfil de proveedor. Un estudio de diseño no construye una plataforma con integraciones y usuarios concurrentes; para eso necesitás una empresa de ingeniería, y conviene revisar cómo se aborda el [desarrollo de software en Honduras](/hn/desarrollo-de-software-honduras/) y en la región antes de contratar.
 
-Si estás evaluando proveedores en varios países y querés una conversación concreta sobre alcance, plazos y rango de inversión, [escribinos](/contact). Trabajamos desde San Pedro Sula con clientes en Centroamérica y Estados Unidos, en horario central, y podemos decirte con franqueza si tu proyecto encaja con nosotros o con otro perfil de agencia.
+Si estás evaluando proveedores en varios países y querés una conversación concreta sobre alcance, plazos y rango de inversión, [escribinos](/contact/). Trabajamos desde San Pedro Sula con clientes en Centroamérica y Estados Unidos, en horario central, y podemos decirte con franqueza si tu proyecto encaja con nosotros o con otro perfil de agencia.

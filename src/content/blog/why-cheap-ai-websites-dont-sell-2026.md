@@ -1,5 +1,6 @@
 ---
 title: "Why Cheap AI Websites Don't Sell — and What Actually Does in 2026"
+seoTitle: "Why Cheap AI Websites Don't Sell in 2026 | Codebrand"
 description: "They promise your website 'built by AI in a day' for $99. Here's why those sites don't generate sales or trust, why 'done in a day' is a red flag, and what a website that actually works takes to build."
 author: "Ramon Nuila"
 readtime: 12
@@ -160,11 +161,11 @@ We don't ask you to trust promises. We show you who we are:
 - **Building since 2020**, with 8+ years of founder experience in the craft.
 - **A team of specialists** (design, development, strategy) — not one person doing everything in a rush.
 - **Fully custom.** No recycled templates. Your business isn't generic; your website shouldn't be either.
-- **[Nearshore from Honduras](/nearshore-development)**, fully bilingual, just a couple of hours' time difference from your customers in the US.
+- **[Nearshore from Honduras](/nearshore-development/)**, fully bilingual, just a couple of hours' time difference from your customers in the US.
 
 We use the most modern tools available, **AI included**, because they make us better and faster. But every decision is made by someone who understands your business and owns the result. That's the entire difference.
 
-Want to see what work built with judgment looks like? [See our projects](/projects). Ready for a website that actually works for you? Explore our [custom web development](/web-development) and [UX/UI design](/web-design), or request a [real, honest quote](/quoter) — no magical "one day" promises.
+Want to see what work built with judgment looks like? [See our projects](/projects/). Ready for a website that actually works for you? Explore our [custom web development](/web-development/) and [UX/UI design](/web-design/), or request a [real, honest quote](/quoter/) — no magical "one day" promises.
 
 ---
 
@@ -176,4 +177,4 @@ Everything has a process. The things that are worth it are worth it because some
 
 Your business deserves more than cheap. It deserves something that **works.**
 
-👉 **[Let's talk about your project](/contact)** and build something that actually brings you customers.
+👉 **[Let's talk about your project](/contact/)** and build something that actually brings you customers.

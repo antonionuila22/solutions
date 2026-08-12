@@ -22,7 +22,7 @@ If you are choosing between Latin America and Eastern Europe for nearshore devel
 
 The honest answer is that it mostly comes down to where you are. A company in Austin and a company in Amsterdam should reach different conclusions from the same facts, and any comparison that declares one region universally superior is selling something. This one will not. Below is a fair look at rates, timezones, English, talent-pool pressure, and culture, followed by a framework that resolves the decision based on your location and needs.
 
-If you are earlier in the process and still weighing nearshore against offshore in general, our [nearshore vs offshore guide](/blog/nearshore-vs-offshore-development-complete-guide-2025) covers that groundwork.
+If you are earlier in the process and still weighing nearshore against offshore in general, our [nearshore vs offshore guide](/blog/nearshore-vs-offshore-development-complete-guide-2025/) covers that groundwork.
 
 ---
 
@@ -73,7 +73,7 @@ Both regions are strong here, and both have variance you should test rather than
 
 **Latin America** has closed much of the perceived gap, especially in the tech sector where English is a professional requirement and much of the workforce has spent years on US-facing teams. Proficiency varies by country and by individual more than in Eastern Europe, so it is worth verifying per person — but the top of the LATAM talent pool communicates every bit as clearly as its Eastern European counterpart.
 
-The practical point for either region: do not rely on reputation. A short written exchange and one call during a sales process tells you more about a specific team than any regional average. We cover how to run that test in our [nearshore vetting checklist](/blog/how-to-vet-nearshore-development-partner-2026).
+The practical point for either region: do not rely on reputation. A short written exchange and one call during a sales process tells you more about a specific team than any regional average. We cover how to run that test in our [nearshore vetting checklist](/blog/how-to-vet-nearshore-development-partner-2026/).
 
 ---
 
@@ -85,7 +85,7 @@ Eastern Europe, and Poland especially, has been a favored nearshore destination 
 
 Latin America's tech talent pool has been growing quickly and drawing heavy US demand, particularly since remote work normalized US companies hiring across the hemisphere. The pool is deep in the major hubs and still expanding, though the strongest senior engineers are, unsurprisingly, in demand everywhere.
 
-Neither region is "untapped" — that framing is a myth in 2026. Both are competitive markets for senior talent. The relevant question is not "where is talent cheap and idle" but "which partner in either region can actually attract and *retain* strong engineers," which is a partner-level question more than a regional one, and one a [dedicated development team](/nearshore-development) model is specifically designed to answer through retention and continuity.
+Neither region is "untapped" — that framing is a myth in 2026. Both are competitive markets for senior talent. The relevant question is not "where is talent cheap and idle" but "which partner in either region can actually attract and *retain* strong engineers," which is a partner-level question more than a regional one, and one a [dedicated development team](/nearshore-development/) model is specifically designed to answer through retention and continuity.
 
 ---
 
@@ -126,7 +126,7 @@ A few honest caveats layered on top of the table:
 
 For larger or globally distributed companies, the most sophisticated answer is not either/or. A team in LATAM covering the American workday and a team in Eastern Europe covering the European one gives you genuine extended coverage without asking anyone to work through the night. This only works with enough scale to justify two relationships and disciplined handoffs between them, but when it fits, it turns the timezone tradeoff into a timezone advantage.
 
-If you are exploring the European side of that equation, our overviews of [nearshore development in Poland](/nearshore-development-poland) and [nearshore development across Europe](/nearshore-development-europe) go deeper on those markets specifically. For the Americas side and how the two fit together, [nearshore development](/nearshore-development) lays out the model.
+If you are exploring the European side of that equation, our overviews of [nearshore development in Poland](/nearshore-development-poland/) and [nearshore development across Europe](/nearshore-development-europe/) go deeper on those markets specifically. For the Americas side and how the two fit together, [nearshore development](/nearshore-development/) lays out the model.
 
 ---
 

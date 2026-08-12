@@ -302,9 +302,9 @@ Our process ensures consistent excellence:
 | E-commerce Design | From $5,000 |
 | Design System | From $10,000 |
 
-**How we do it:** A Honduras-based [nearshore development team](/nearshore-development) delivering US-quality work. Same timezone (CST), native English, premium standards—40-60% lower cost than US agencies.
+**How we do it:** A Honduras-based [nearshore development team](/nearshore-development/) delivering US-quality work. Same timezone (CST), native English, premium standards—40-60% lower cost than US agencies.
 
-[Get your custom quote →](https://www.codebrand.us/contact)
+[Get your custom quote →](https://www.codebrand.us/contact/)
 
 ---
 
@@ -508,12 +508,12 @@ You've seen what separates the best from the rest. **Codebrand delivers:**
 
 ### Your Next Steps
 
-1. **[Contact us](https://www.codebrand.us/contact)** for a free consultation
+1. **[Contact us](https://www.codebrand.us/contact/)** for a free consultation
 2. **Tell us about your project** and goals
 3. **Receive a detailed proposal** within 48 hours
 4. **Start your transformation**
 
-**[Get Your Free Web Design Consultation →](https://www.codebrand.us/contact)**
+**[Get Your Free Web Design Consultation →](https://www.codebrand.us/contact/)**
 
 **Call us:** +504 8738-0714
 

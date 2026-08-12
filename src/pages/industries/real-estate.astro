@@ -32,7 +32,7 @@ const serviceSchema = {
   "serviceType": "Real Estate Software Development",
   "name": "Real Estate Software Development & Property Listing Websites",
   "description": description,
-  "url": "https://www.codebrand.us/industries/real-estate",
+  "url": "https://www.codebrand.us/industries/real-estate/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -94,8 +94,8 @@ const realEstateFaqs = [
 const faqSchema = createFAQSchema(realEstateFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Real Estate", url: "https://www.codebrand.us/industries/real-estate" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Real Estate", url: "https://www.codebrand.us/industries/real-estate/" }
 ]);
 
 const stats = [
@@ -355,7 +355,7 @@ const softwareLead = "Listings bring the lead in. What decides whether it closes
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Real Estate", href: "" }
     ]}
     variant="transparent"

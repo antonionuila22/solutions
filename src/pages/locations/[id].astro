@@ -15,13 +15,40 @@ import { testimonials } from "../../data/testimonials";
 export async function getStaticPaths() {
   const locations = await getCollection("locations", ({ data }) => !data.draft);
 
+  // Ciudades que sí van al sitemap. Las de cola larga quedan fuera a propósito,
+  // así que tampoco reciben enlaces desde aquí.
+  const hubs = locations
+    .filter((entry) => isLocationHub(entry.id))
+    .sort((a, b) => a.id.localeCompare(b.id));
+
+  // La rueda gira dentro de cada país. Si girara sobre la lista completa,
+  // una página de Kansas City acabaría ofreciendo La Ceiba, que es cierto
+  // pero se lee como un error.
+  const byCountry = new Map<string, typeof hubs>();
+  for (const entry of hubs) {
+    const key = entry.data.country;
+    byCountry.set(key, [...(byCountry.get(key) ?? []), entry]);
+  }
+
   return locations.map((location) => ({
     params: { id: location.id },
-    props: { location },
+    props: {
+      location,
+      // Cada ciudad enlaza a las tres siguientes de su país. Varias solo
+      // tenían el enlace del índice /locations.
+      otherCities: (() => {
+        const pool = byCountry.get(location.data.country) ?? [];
+        const index = pool.findIndex((entry) => entry.id === location.id);
+        if (index < 0 || pool.length < 2) return [];
+        return [1, 2, 3]
+          .filter((offset) => offset < pool.length)
+          .map((offset) => pool[(index + offset) % pool.length]);
+      })(),
+    },
   }));
 }
 
-const { location } = Astro.props;
+const { location, otherCities = [] } = Astro.props;
 const { data } = location;
 const {
   title,
@@ -93,14 +120,14 @@ const rotatedProject = pickRotated(realProjects, 1, accentHash)[0];
 // Prefer an explicit per-city case study; otherwise use a real project (honest,
 // not claimed to be local).
 const caseStudy = localCaseStudy
-  ? { ...localCaseStudy, href: "/projects" }
+  ? { ...localCaseStudy, href: "/projects/" }
   : rotatedProject
     ? {
         title: rotatedProject.data.title,
         summary: rotatedProject.data.description,
         metric: rotatedProject.data.results?.metric1,
         metricLabel: rotatedProject.data.client ? `Client: ${rotatedProject.data.client}` : undefined,
-        href: `/projects/${rotatedProject.id}`,
+        href: `/projects/${rotatedProject.id}/`,
       }
     : null;
 
@@ -132,9 +159,9 @@ const whyCards = (whyChooseUs && whyChooseUs.length)
 const serviceCards = (localServices && localServices.length)
   ? localServices
   : [
-      { title: "Custom Web Development", description: `Tailored web apps built with React, Next.js, or Astro—scalable, fast, and designed for ${city} businesses.`, href: "/web-development" },
-      { title: "E-commerce Development", description: "Full-featured online stores with Shopify, WooCommerce, or custom platforms.", href: "/e-commerce" },
-      { title: "Web Design & UI/UX", description: `Conversion-focused designs that represent your ${city} brand professionally.`, href: "/web-design" },
+      { title: "Custom Web Development", description: `Tailored web apps built with React, Next.js, or Astro—scalable, fast, and designed for ${city} businesses.`, href: "/web-development/" },
+      { title: "E-commerce Development", description: "Full-featured online stores with Shopify, WooCommerce, or custom platforms.", href: "/e-commerce/" },
+      { title: "Web Design & UI/UX", description: `Conversion-focused designs that represent your ${city} brand professionally.`, href: "/web-design/" },
     ];
 
 // SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
@@ -189,7 +216,7 @@ const structuredData = {
     }
   },
   "description": description,
-  "url": `${baseUrl}/locations/${location.id}`,
+  "url": `${baseUrl}/locations/${location.id}/`,
   "image": absoluteImage
 };
 
@@ -240,7 +267,7 @@ const faqSchema = faqs?.length ? {
       { value: "8+", label: "Years Experience", counterTo: 8, suffix: "+", color: "cyan" },
       { value: "100%", label: "Custom-Built", color: "orange" },
     ]}
-    ctaPrimary={{ text: "Get Free Quote", href: "/contact" }}
+    ctaPrimary={{ text: "Get Free Quote", href: "/contact/" }}
     ctaSecondary={{ text: "Why Choose Us", href: "#why-codebrand" }}
   />
 
@@ -396,7 +423,7 @@ const faqSchema = faqs?.length ? {
           <div class="bg-white p-8 rounded-2xl shadow-lg">
             <h3 class="text-2xl font-bold text-cyan-900 mb-4">{svc.title}</h3>
             <p class="text-slate-700 mb-6">{svc.description}</p>
-            <a href={svc.href || "/contact"} class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2">
+            <a href={svc.href || "/contact/"} class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2">
               Learn More
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -489,13 +516,13 @@ const faqSchema = faqs?.length ? {
         Get a free consultation and detailed project quote. No commitment required.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim="fade" data-delay="0.18">
-        <a href="/contact" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+        <a href="/contact/" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
           Get Free Quote
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
-        <a href="/projects" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
+        <a href="/projects/" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View Our Work
         </a>
       </div>
@@ -520,6 +547,34 @@ const faqSchema = faqs?.length ? {
               </span>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Other cities — internal linking between location hubs -->
+  {otherCities.length > 0 && (
+    <section class="py-12 bg-white font-poppins" aria-labelledby="other-cities">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2
+            id="other-cities"
+            class="text-display-2 font-bold text-cyan-900 mb-6"
+          >
+            We also work in these cities
+          </h2>
+          <ul class="flex flex-wrap justify-center gap-3 list-none p-0">
+            {otherCities.map((entry) => (
+              <li>
+                <a
+                  href={`/locations/${entry.id}/`}
+                  class="inline-block px-4 py-2 bg-slate-50 rounded-full text-slate-700 border border-slate-200 transition-colors hover:border-cyan-300 hover:text-cyan-900"
+                >
+                  {entry.data.city || entry.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

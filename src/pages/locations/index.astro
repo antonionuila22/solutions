@@ -49,7 +49,7 @@ const baseUrl = "https://www.codebrand.us";
 // Breadcrumb schema
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: baseUrl },
-  { name: "Locations", url: `${baseUrl}/locations` },
+  { name: "Locations", url: `${baseUrl}/locations/` },
 ]);
 
 // ItemList schema for SEO
@@ -63,7 +63,7 @@ const itemListSchema = {
     "@type": "ListItem",
     "position": index + 1,
     "name": `Web Development ${location.data.city}, ${location.data.stateCode}`,
-    "url": `${baseUrl}/locations/${location.id}`,
+    "url": `${baseUrl}/locations/${location.id}/`,
   })),
 };
 ---
@@ -120,7 +120,7 @@ const itemListSchema = {
         return (
           <div class="mb-16">
             <div class="flex items-center gap-4 mb-8">
-              <a href={`/countryareas/${countrySlug}`} class="flex items-center gap-3 group">
+              <a href={`/countryareas/${countrySlug}/`} class="flex items-center gap-3 group">
                 <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-orange-100 transition-colors">
                   <span class="text-cyan-800 font-bold group-hover:text-orange-600">{country?.data.code}</span>
                 </div>
@@ -135,7 +135,7 @@ const itemListSchema = {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {countryLocations.map((location) => (
           <a
-            href={`/locations/${location.id}`}
+            href={`/locations/${location.id}/`}
             class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300 transform hover:-translate-y-1"
           >
             <div class="flex items-start justify-between mb-4">
@@ -259,13 +259,13 @@ const itemListSchema = {
         We serve businesses across all 50 states. Contact us for a free consultation regardless of your location.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+        <a href="/contact/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
           Get Free Quote
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
-        <a href="/projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
+        <a href="/projects/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View Our Work
         </a>
       </div>

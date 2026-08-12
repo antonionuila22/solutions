@@ -1,5 +1,6 @@
 ---
 title: ESABEP — Sitio Web para Empresa de Perforación de Pozos en Honduras
+seoTitle: "ESABEP: sitio web para perforación de pozos | Codebrand"
 description: Sitio web corporativo para ESABEP, perforadora de pozos en San Pedro Sula, Honduras. Tres áreas de servicio explicadas y solicitud de cotización en línea.
 author: Codebrand Team
 img: photos/projects/esabep-Construccion-Pozos.avif

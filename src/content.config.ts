@@ -8,6 +8,10 @@ const searchable = z.object({
     author: z.string().optional(),
     readtime: z.number().optional(),
     description: z.string(),
+    // Título para la etiqueta <title>. Existe para que no sea idéntico al <h1>
+    // y quepa en los 70 caracteres que muestra Google. Si falta, las plantillas
+    // lo derivan del title. Ver src/lib/seo/page-title.ts.
+    seoTitle: z.string().optional(),
 });
 
 // Blog

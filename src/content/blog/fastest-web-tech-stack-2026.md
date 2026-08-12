@@ -1,5 +1,6 @@
 ---
 title: "The Fastest Web Tech Stack in 2026: Build Lightning-Fast Websites"
+seoTitle: "Fastest Web Tech Stack 2026: Astro, Edge and Core Vitals"
 description: "Discover the fastest web development stack for 2026. Learn how to combine Astro, Turso, Tailwind, and edge hosting for sub-second page loads and 100 Lighthouse scores."
 author: "Ramon Nuila"
 readtime: 20
@@ -694,8 +695,8 @@ Every project built with this stack includes:
 
 **Ready to build the fastest website in your industry?**
 
-[Contact us for a free consultation](/contact) and let's discuss how this stack can transform your web presence.
+[Contact us for a free consultation](/contact/) and let's discuss how this stack can transform your web presence.
 
 ---
 
-*Want to learn more about building fast websites? [Reach out to our team](/contact)—we're passionate about performance.*
+*Want to learn more about building fast websites? [Reach out to our team](/contact/)—we're passionate about performance.*

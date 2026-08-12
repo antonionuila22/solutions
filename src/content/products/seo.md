@@ -1,5 +1,6 @@
 ---
 title: Professional SEO Optimization – Improve Visibility and Drive Organic Traffic
+seoTitle: "SEO Optimization Services | Codebrand"
 img: /photos/seo.webp
 readtime: 5
 price: From $370

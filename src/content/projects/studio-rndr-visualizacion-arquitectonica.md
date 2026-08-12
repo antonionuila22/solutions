@@ -1,5 +1,6 @@
 ---
 title: Studio RNDR — Landing de Alta Gama para un Estudio de Visualización Arquitectónica
+seoTitle: "Studio RNDR: landing para visualización 3D | Codebrand"
 description: Studio RNDR no tenía sitio web. Construimos su landing en Astro — 45 renders en AVIF, 10.7 KB de HTML por la red, CLS 0 y 100/100 en SEO técnico. La historia completa del proceso y de cuánto cuesta un sitio así.
 author: Codebrand Team
 img: /photos/projects/studiorndr.jpg

@@ -12,7 +12,7 @@ tags:
   - Shopping
 date: 2024-10-08
 featured: false
-link: /landing/template-ecommerce
+link: /landing/template-ecommerce/
 ---
 
 ## Project Overview

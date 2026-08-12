@@ -1,5 +1,6 @@
 ---
 title: Online Store Development – Scalable, Visual, and High-Converting E-commerce
+seoTitle: "Online Store Development Services | Codebrand"
 img: /photos/diseñoweb.webp
 readtime: 7
 price: From $1,800

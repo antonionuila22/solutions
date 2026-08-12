@@ -451,7 +451,7 @@ Don't wait for a lawsuit to take action.
 
 ---
 
-*Need help making your website accessible? [Contact us](/contact) for an accessibility audit and remediation plan.*
+*Need help making your website accessible? [Contact us](/contact/) for an accessibility audit and remediation plan.*
 
 ---
 

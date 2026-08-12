@@ -95,7 +95,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 
 **What it is:** Complex, interactive applications that run in the browser—dashboards, portals, SaaS products.
 
-**Best for:** Businesses needing [custom software development](/custom-software-development), internal tools, or customer portals.
+**Best for:** Businesses needing [custom software development](/custom-software-development/), internal tools, or customer portals.
 
 **What Codebrand delivers:**
 - Full-stack development
@@ -290,7 +290,7 @@ Understanding pricing helps you budget appropriately and identify red flags.
 
 ### Codebrand Pricing Philosophy
 
-We believe in **premium quality at accessible prices**. Our [nearshore development](/nearshore-development) model (based in Honduras, same timezone as US) allows us to deliver work that rivals top US agencies at 40-60% lower cost.
+We believe in **premium quality at accessible prices**. Our [nearshore development](/nearshore-development/) model (based in Honduras, same timezone as US) allows us to deliver work that rivals top US agencies at 40-60% lower cost.
 
 **Codebrand starting prices:**
 - Landing Pages: From $1,500
@@ -298,7 +298,7 @@ We believe in **premium quality at accessible prices**. Our [nearshore developme
 - E-commerce: From $5,000
 - Web Applications: From $10,000
 
-*Every project is unique. [Contact us for a custom quote →](https://www.codebrand.us/contact)*
+*Every project is unique. [Contact us for a custom quote →](https://www.codebrand.us/contact/)*
 
 ---
 
@@ -463,7 +463,7 @@ We recommend and set up hosting on platforms like Vercel, Netlify, or AWS. You o
 
 ### How do I get started?
 
-1. [Contact us](https://www.codebrand.us/contact) for a free consultation
+1. [Contact us](https://www.codebrand.us/contact/) for a free consultation
 2. We'll discuss your project and goals
 3. You'll receive a detailed proposal within 48 hours
 4. Upon approval, we begin immediately
@@ -480,7 +480,7 @@ You've read the definitive guide. Now it's time to take action.
 - Build the custom web application you need
 - Establish your brand online
 
-**[Get Your Free Consultation →](https://www.codebrand.us/contact)**
+**[Get Your Free Consultation →](https://www.codebrand.us/contact/)**
 
 Or call us directly: **+504 8738-0714**
 

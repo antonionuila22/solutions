@@ -224,7 +224,7 @@ Let's compare your options honestly.
 
 ### 1. The Perfect Middle Ground
 
-Codebrand occupies the sweet spot of [nearshore development](/nearshore-development):
+Codebrand occupies the sweet spot of [nearshore development](/nearshore-development/):
 
 - **Quality of top US agencies** - Premium design, modern technology, professional processes
 - **Cost efficiency of nearshore** - Honduras location reduces overhead, savings passed to you
@@ -315,7 +315,7 @@ We stand behind our work:
 
 ### Step 1: Free Consultation
 
-[Contact us](https://www.codebrand.us/contact) to schedule a call. We'll discuss:
+[Contact us](https://www.codebrand.us/contact/) to schedule a call. We'll discuss:
 - Your business and goals
 - Current challenges
 - What you're looking for
@@ -355,7 +355,7 @@ Upon approval:
 
 **500+ successful projects. 4.9/5 client rating. Premium quality. Smart pricing.**
 
-**[Get Your Free Consultation →](https://www.codebrand.us/contact)**
+**[Get Your Free Consultation →](https://www.codebrand.us/contact/)**
 
 **Call us:** +504 8738-0714
 **Email:** info@codebrand.es

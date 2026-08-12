@@ -26,13 +26,13 @@ According to [Deloitte's Global Outsourcing Survey](https://www2.deloitte.com/),
 
 In this comprehensive guide, we'll explore everything you need to know about nearshore software development, with a focus on why Honduras is emerging as a top destination for US companies.
 
-> **Looking for nearshore development?** Explore our [outsourcing development](/outsourcing-development) and [outsourcing design](/outsourcing-design) services.
+> **Looking for nearshore development?** Explore our [outsourcing development](/outsourcing-development/) and [outsourcing design](/outsourcing-design/) services.
 
 ---
 
 ## What is Nearshore Software Development?
 
-**Nearshore software development** is the practice of outsourcing software development to companies in nearby countries—typically within the same or adjacent timezones. For US businesses, this means partnering with a [nearshore development team](/nearshore-development) in Latin America, particularly countries like Honduras, Mexico, Costa Rica, and Colombia.
+**Nearshore software development** is the practice of outsourcing software development to companies in nearby countries—typically within the same or adjacent timezones. For US businesses, this means partnering with a [nearshore development team](/nearshore-development/) in Latin America, particularly countries like Honduras, Mexico, Costa Rica, and Colombia.
 
 ### Nearshore vs. Offshore vs. Onshore: The Key Differences
 
@@ -64,7 +64,7 @@ Honduras offers some of the **lowest development costs in Central America** whil
 
 Compare this to US onshore agency rates of **$135-250/hour** for a senior of equivalent experience—and roughly $200k+/year in fully-loaded cost for a US senior on staff.
 
-**Real Example**: A typical e-commerce website that costs $15,000 in the US can be built for a fraction of that in Honduras—same quality, major savings. If you need ongoing capacity rather than a fixed project, a [dedicated development team](/dedicated-development-team) gives you the same rates with a persistent squad. Check out our [web development services](/web-development) and [e-commerce development](/e-commerce) for competitive nearshore pricing.
+**Real Example**: A typical e-commerce website that costs $15,000 in the US can be built for a fraction of that in Honduras—same quality, major savings. If you need ongoing capacity rather than a fixed project, a [dedicated development team](/dedicated-development-team/) gives you the same rates with a persistent squad. Check out our [web development services](/web-development/) and [e-commerce development](/e-commerce/) for competitive nearshore pricing.
 
 ### 2. **Perfect Timezone Alignment**
 
@@ -159,7 +159,7 @@ Let's look at actual project costs:
 
 ## How to Choose the Right Nearshore Development Partner
 
-Whether you want to [hire remote developers](/hire-remote-developers) for a single role or build out a full team, not all nearshore companies are created equal. Here's your checklist:
+Whether you want to [hire remote developers](/hire-remote-developers/) for a single role or build out a full team, not all nearshore companies are created equal. Here's your checklist:
 
 ### ✅ **1. Verify Technical Expertise**
 
@@ -360,7 +360,7 @@ As Honduras's leading software development agency, **Codebrand** specializes in 
 
 Ready to explore how nearshore development in Honduras can transform your business?
 
-**[Get a Free Consultation →](/contact)**
+**[Get a Free Consultation →](/contact/)**
 
 We'll provide:
 
@@ -392,4 +392,4 @@ A: Yes. Reputable companies sign NDAs, follow international security standards, 
 
 ---
 
-**Ready to reduce your development costs by 60%?** [Contact Codebrand today](/contact) for a free consultation and detailed quote.
+**Ready to reduce your development costs by 60%?** [Contact Codebrand today](/contact/) for a free consultation and detailed quote.

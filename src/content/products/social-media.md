@@ -36,7 +36,7 @@ At **Codebrand**, we turn your digital communication strategy into a steady stre
 | **Social Media 30** | 30 designs | 1 per day | From $380/month |
 | **Social Media 60** | 60 designs | 2 per day | From $580/month |
 
-> Need a custom volume or ad-specific creatives? [Contact us](/contact) for a tailored quote.
+> Need a custom volume or ad-specific creatives? [Contact us](/contact/) for a tailored quote.
 
 ---
 

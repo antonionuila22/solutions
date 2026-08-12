@@ -1,5 +1,6 @@
 ---
 title: Full Stack Web Development – Modern, Scalable & Custom-Built Websites
+seoTitle: "Full Stack Web Development Services | Codebrand"
 img: /photos/webservice.webp
 readtime: 6
 price: From $650/page

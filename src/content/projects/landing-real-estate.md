@@ -12,7 +12,7 @@ tags:
   - Lead Generation
 date: 2024-10-22
 featured: true
-link: /landing/template-real-estate
+link: /landing/template-real-estate/
 ---
 
 ## Project Overview

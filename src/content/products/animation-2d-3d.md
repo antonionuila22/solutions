@@ -1,5 +1,6 @@
 ---
 title: Professional 2D & 3D Animation – Motion Graphics and Animated Illustration
+seoTitle: "2D and 3D Animation Services | Codebrand"
 img: /photos/animacion2d.webp
 readtime: 6
 price: From $370

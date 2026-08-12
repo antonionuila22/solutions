@@ -1,5 +1,6 @@
 ---
 title: "AI in Web Development 2025: The Revolution Is Here (And What It Means for Your Business)"
+seoTitle: "AI in Web Development 2025: What It Means for Business"
 description: "How AI is transforming web development in 2025. From code generation to autonomous site builders, learn what developers already know and how businesses can leverage AI without losing quality."
 author: "Ramon Nuila"
 readtime: 16
@@ -295,13 +296,13 @@ We've integrated AI into our workflow while maintaining quality:
 
 AI in web development isn't hype—it's here, and it's changing everything. The businesses that win will be those that embrace AI thoughtfully: leveraging its speed while maintaining human oversight for quality.
 
-Whether you're building a simple landing page or a complex web application through [custom software development](/custom-software-development), understanding how AI fits into the development process helps you make better decisions, set realistic expectations, and ultimately get a better product.
+Whether you're building a simple landing page or a complex web application through [custom software development](/custom-software-development/), understanding how AI fits into the development process helps you make better decisions, set realistic expectations, and ultimately get a better product.
 
 The question isn't whether to use AI—it's how to use it wisely.
 
 ---
 
-*Want to discuss how AI can accelerate your web project while maintaining quality? [Contact us](/contact) for a free consultation.*
+*Want to discuss how AI can accelerate your web project while maintaining quality? [Contact us](/contact/) for a free consultation.*
 
 ---
 

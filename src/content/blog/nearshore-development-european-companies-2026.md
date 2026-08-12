@@ -51,7 +51,7 @@ For a company with a committed roadmap, that lag is the actual cost. Every month
 
 Nearshore does not magically produce cheaper geniuses. What it does is widen the pool. Instead of competing for the same few hundred available seniors in your city, you draw from regions where strong engineers are plentiful, less contested, and reachable in a week or two rather than a quarter. The rate difference is real, but the speed-to-team difference is often what closes the deal.
 
-For a fuller breakdown of the model itself — how nearshore differs from offshore, and where the hidden costs hide — our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025) covers the trade-offs in detail.
+For a fuller breakdown of the model itself — how nearshore differs from offshore, and where the hidden costs hide — our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025/) covers the trade-offs in detail.
 
 ---
 
@@ -115,7 +115,7 @@ A four-hour daily overlap sounds thin until you design around it. The teams that
 
 This is the same rhythm distributed engineering teams have used for years. It rewards written communication and clear tickets, and it punishes teams that rely on constant tap-on-the-shoulder coordination. If your organization already works async, LATAM is a genuinely good fit. If it lives in meetings, Eastern Europe's full overlap will feel more natural.
 
-We lay out the European-specific version of this model on our [nearshore development for Europe](/nearshore-development-europe) page, including how we structure the overlap for different EU time zones.
+We lay out the European-specific version of this model on our [nearshore development for Europe](/nearshore-development-europe/) page, including how we structure the overlap for different EU time zones.
 
 ---
 
@@ -169,7 +169,7 @@ The gap widens with team size. A four-person team — say two seniors, one mid, 
 
 That is roughly a **40-45% reduction** against a Western European agency for comparable seniority — plus a team that is assembled in weeks rather than a hiring quarter. The savings are real, but the speed is often what matters more.
 
-For country-specific breakdowns, we've written detailed pages for the two markets where the local-rate gap is largest: [nearshore development in Switzerland](/nearshore-development-switzerland) and [nearshore development in the Netherlands](/nearshore-development-netherlands).
+For country-specific breakdowns, we've written detailed pages for the two markets where the local-rate gap is largest: [nearshore development in Switzerland](/nearshore-development-switzerland/) and [nearshore development in the Netherlands](/nearshore-development-netherlands/).
 
 ---
 

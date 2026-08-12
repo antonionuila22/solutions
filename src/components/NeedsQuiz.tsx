@@ -262,7 +262,7 @@ export default function NeedsQuiz() {
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="/contact"
+              href="/contact/"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors duration-300"
             >
               Get a Free Quote
@@ -281,7 +281,7 @@ export default function NeedsQuiz() {
               </svg>
             </a>
             <a
-              href="/quoter"
+              href="/quoter/"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-xl transition-colors duration-300"
             >
               <svg

@@ -41,7 +41,7 @@ const baseUrl = "https://www.codebrand.us";
 
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: baseUrl },
-  { name: "Regions", url: `${baseUrl}/regions` },
+  { name: "Regions", url: `${baseUrl}/regions/` },
 ]);
 ---
 
@@ -96,7 +96,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
         return (
           <div class="mb-16">
             <div class="flex items-center gap-4 mb-8">
-              <a href={`/countryareas/${countrySlug}`} class="flex items-center gap-3 group">
+              <a href={`/countryareas/${countrySlug}/`} class="flex items-center gap-3 group">
                 <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-orange-100 transition-colors">
                   <span class="text-cyan-800 font-bold group-hover:text-orange-600">{country?.data.code}</span>
                 </div>
@@ -112,7 +112,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
                 const cityCount = getCityCount(region.id);
                 return (
                   <a
-                    href={`/regions/${region.id}`}
+                    href={`/regions/${region.id}/`}
                     class="group bg-white p-6 rounded-xl shadow-md hover:shadow-lg border border-cyan-100 hover:border-orange-300 transition-all duration-300"
                   >
                     <div class="flex items-center justify-between mb-3">
@@ -156,7 +156,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
       <p class="text-xl text-cyan-100 mb-8">
         We serve clients worldwide. Contact us for services in any location.
       </p>
-      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg transition-all">
+      <a href="/contact/" class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg transition-all">
         Get Free Quote
       </a>
     </div>

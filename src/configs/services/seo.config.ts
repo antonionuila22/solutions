@@ -16,7 +16,7 @@ export const seoConfig: ServicePageConfig = {
     keywords:
       "SEO services, search engine optimization, technical SEO, keyword research, on-page SEO, link building, local SEO, SEO audit, content strategy, SEO consulting, Google rankings, organic traffic, SEO company, SEO optimization, SEO marketing, search engine marketing, SEO agency, professional SEO services, SEO expert, website SEO, SEO specialist, SEO packages, monthly SEO services",
     image: "/photos/bannercodebrand.webp",
-    canonicalUrl: "https://www.codebrand.us/seo", // Points to main page to avoid duplicate content
+    canonicalUrl: "https://www.codebrand.us/seo/", // Points to main page to avoid duplicate content
   },
 
   // Schema.org Structured Data
@@ -52,7 +52,7 @@ export const seoConfig: ServicePageConfig = {
     description:
       "Professional SEO services that increase visibility, drive organic traffic, and boost conversions. Data-driven strategies backed by proven results.",
     ctaPrimary: "Get Free SEO Audit",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View Services",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -268,7 +268,7 @@ export const seoConfig: ServicePageConfig = {
     description:
       "Let's boost your organic traffic and improve your search rankings with proven SEO strategies. Get your free SEO audit and start climbing the search results today.",
     ctaPrimary: "Get Free SEO Audit",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
   },

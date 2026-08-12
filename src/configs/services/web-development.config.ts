@@ -16,7 +16,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
     keywords:
       "web development, website design, custom web applications, responsive web design, e-commerce development, mobile-friendly websites, SEO web development, progressive web apps, front-end development, back-end development, website development services, professional web design, custom website development, web application development, React development, Next.js development, full stack development, website redesign, web development company, modern web development, scalable web solutions, web development agency",
     image: "/photos/bannercodebrand.webp",
-    canonicalUrl: "https://www.codebrand.us/web-development", // Points to main page to avoid duplicate content
+    canonicalUrl: "https://www.codebrand.us/web-development/", // Points to main page to avoid duplicate content
   },
 
   // Schema.org Structured Data
@@ -53,7 +53,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
     description:
       "Transform your ideas into powerful digital experiences. We build fast, scalable, and SEO-optimized websites that drive business growth and deliver exceptional user experiences.",
     ctaPrimary: "Start Your Project",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View Services",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -76,63 +76,63 @@ export const webDevelopmentConfig: ServicePageConfig = {
         title: "Custom Website Development",
         description:
           "Tailored web solutions built from scratch to match your unique business requirements. We use modern frameworks and technologies to create scalable, maintainable websites.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/responsive-svgrepo-com.svg",
         title: "Responsive Web Design",
         description:
           "Mobile-first designs that provide seamless experiences across all devices. Your website will look stunning on desktops, tablets, and smartphones.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/website-program-svgrepo-com.svg",
         title: "SEO-Optimized Development",
         description:
           "Built with search engines in mind. We implement technical SEO best practices, fast loading speeds, and clean code structure to improve your rankings.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/ecommerce-website-commerce-and-shopping-2-svgrepo-com.svg",
         title: "E-commerce Solutions",
         description:
           "Complete online store development with secure payment gateways, inventory management, and user-friendly shopping experiences that increase conversions.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/website-seo-promotion-svgrepo-com.svg",
         title: "Web Applications",
         description:
           "Complex web applications with advanced functionality. From customer portals to SaaS platforms, we build robust solutions that scale with your business.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/platform-program-svgrepo-com.svg",
         title: "Progressive Web Apps (PWA)",
         description:
           "App-like experiences delivered through the web. PWAs work offline, load instantly, and provide engaging user experiences without app store downloads.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/mobile-phone-app-svgrepo-com.svg",
         title: "Website Maintenance & Support",
         description:
           "Ongoing maintenance, updates, and technical support to keep your website secure, fast, and up-to-date with the latest technologies.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/host-website-se-svgrepo-com.svg",
         title: "API Development & Integration",
         description:
           "Custom API development and third-party integrations to connect your website with other tools, services, and platforms seamlessly.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
       {
         icon: "/icons/data-graphics-analysis-svgrepo-com.svg",
         title: "Website Migration & Redesign",
         description:
           "Modernize your existing website with a complete redesign or migrate to a new platform while preserving your SEO rankings and data.",
-        learnMoreUrl: "/contact",
+        learnMoreUrl: "/contact/",
       },
     ],
   },
@@ -275,7 +275,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
     description:
       "Let's transform your vision into a powerful web presence. Our expert team is ready to bring your ideas to life with cutting-edge web development solutions.",
     ctaPrimary: "Get Free Consultation",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "Email Us",
     ctaSecondaryUrl: "mailto:info@codebrand.es",
     features: "Fast turnaround times · Quality guaranteed · Dedicated support",

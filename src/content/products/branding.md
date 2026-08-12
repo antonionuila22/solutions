@@ -1,5 +1,6 @@
 ---
 title: Professional Graphic Design & Branding – Unique and Memorable Visual Identities
+seoTitle: "Graphic Design and Branding Services | Codebrand"
 img: /photos/diseñobranding.webp
 readtime: 5
 price: From $450

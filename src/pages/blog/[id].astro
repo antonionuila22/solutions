@@ -13,6 +13,7 @@
 export const prerender = true;
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { buildPageTitle } from "../../lib/seo/page-title";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedPosts from "../../components/RelatedPosts.astro";
 import ShinyButton from "../../components/ui/ShinyButton.astro";
@@ -83,8 +84,10 @@ const formattedDate =
     : "";
 
 // SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
-const rawTitle = `${title} | Codebrand Blog`;
-const seoTitle = rawTitle.length > 70 ? title : rawTitle;
+const seoTitle = buildPageTitle(title, {
+  seoTitle: data.seoTitle,
+  suffix: "Codebrand Blog",
+});
 const rawDesc =
   description ||
   `Read about ${title} on Codebrand's blog. ${author ? `Written by ${author}.` : ""} ${readtime ? `${readtime} min read.` : ""}`;
@@ -118,7 +121,7 @@ const isoDate =
       : new Date().toISOString();
 
 // Article URL
-const articleUrl = `${baseUrl}/blog/${post.id}`;
+const articleUrl = `${baseUrl}/blog/${post.id}/`;
 
 // Enhanced Structured Data using schema utility
 const structuredData = createArticleSchema({
@@ -138,7 +141,7 @@ const structuredData = createArticleSchema({
 // Breadcrumb schema for blog post
 const breadcrumbData = createBreadcrumbSchema([
   { name: "Home", url: baseUrl },
-  { name: "Blog", url: `${baseUrl}/blog` },
+  { name: "Blog", url: `${baseUrl}/blog/` },
   { name: title, url: articleUrl },
 ]);
 ---
@@ -186,7 +189,7 @@ const breadcrumbData = createBreadcrumbSchema([
           <Breadcrumbs
             items={[
               { name: t.breadcrumbHome, href: "/" },
-              { name: "Blog", href: "/blog" },
+              { name: "Blog", href: "/blog/" },
               { name: title, href: "" },
             ]}
             variant="transparent"
@@ -199,7 +202,7 @@ const breadcrumbData = createBreadcrumbSchema([
           categories && categories.length > 0 ? (
             <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-orange-700">
               <a
-                href={`/blog/category/${slugifyCategory(categories[0])}`}
+                href={`/blog/category/${slugifyCategory(categories[0])}/`}
                 class="transition-colors hover:text-orange-800"
               >
                 {categories[0]}
@@ -359,7 +362,7 @@ const breadcrumbData = createBreadcrumbSchema([
             {t.ctaBody}
           </p>
         </div>
-        <ShinyButton href="/blog">{t.ctaButton}</ShinyButton>
+        <ShinyButton href="/blog/">{t.ctaButton}</ShinyButton>
       </div>
     </section>
   </article>

@@ -13,7 +13,7 @@ tags:
   - Health
 date: 2024-10-18
 featured: true
-link: /landing/template-fitness
+link: /landing/template-fitness/
 ---
 
 ## Project Overview

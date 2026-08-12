@@ -51,7 +51,7 @@ export const renderingConfig: ServicePageConfig = {
     description:
       "Professional 3D rendering services that bring your architectural projects and products to life. Photorealistic visualizations that impress clients and accelerate sales.",
     ctaPrimary: "Request a Quote",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View Services",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -240,7 +240,7 @@ export const renderingConfig: ServicePageConfig = {
     description:
       "Let's transform your blueprints, sketches, or concepts into photorealistic 3D visualizations that impress clients and accelerate sales. Get your custom quote today.",
     ctaPrimary: "Request a Quote",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
     features: "Fast turnaround | Unlimited revisions | Photorealistic quality",

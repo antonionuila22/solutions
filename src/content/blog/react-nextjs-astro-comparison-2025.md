@@ -669,7 +669,7 @@ Two rows tend to decide it on their own. If organic search is how you get custom
 
 **The honest 2026 default:** if a page's job is to be found and read, use Astro. If its job is to be used while logged in, use Next.js. Standalone React is now a deliberately narrow choice—internal tools, embedded widgets, and screens living inside an existing application shell.
 
-Most real projects are not one of these, though. They are a marketing site in Astro and a product in Next.js sharing one design system, which is the split we build most often—that's the thinking behind how we scope [web development](/services/web-development). When the product half needs more hands, our [React development agency](/react-development-agency) staffs engineers through the same [nearshore development](/nearshore-development) model, working US Central hours out of San Pedro Sula.
+Most real projects are not one of these, though. They are a marketing site in Astro and a product in Next.js sharing one design system, which is the split we build most often—that's the thinking behind how we scope [web development](/services/web-development/). When the product half needs more hands, our [React development agency](/react-development-agency/) staffs engineers through the same [nearshore development](/nearshore-development/) model, working US Central hours out of San Pedro Sula.
 
 ---
 
@@ -734,4 +734,4 @@ The good news: all three are excellent choices backed by strong communities. You
 
 ## Need help building this?
 
-Framework choice is cheap to argue about and expensive to get wrong on a real deadline. Codebrand has been shipping production work from San Pedro Sula, Honduras since 2020—16+ documented projects, including the CRM we run our own business on—and this site itself is Astro, scoring 100/100 on mobile Lighthouse, which is the easiest kind of proof to verify. If you want a second opinion on your stack, or engineers who can start on it, [tell us what you're building](/contact) and we'll give you a straight answer about which of these three we'd pick and why.
+Framework choice is cheap to argue about and expensive to get wrong on a real deadline. Codebrand has been shipping production work from San Pedro Sula, Honduras since 2020—16+ documented projects, including the CRM we run our own business on—and this site itself is Astro, scoring 100/100 on mobile Lighthouse, which is the easiest kind of proof to verify. If you want a second opinion on your stack, or engineers who can start on it, [tell us what you're building](/contact/) and we'll give you a straight answer about which of these three we'd pick and why.

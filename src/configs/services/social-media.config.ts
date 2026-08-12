@@ -59,7 +59,7 @@ export const socialMediaConfig: ServicePageConfig = {
     description:
       "Professional social media design that makes your brand stand out. Custom graphics, templates, and visual content that capture attention and maintain brand consistency across all platforms.",
     ctaPrimary: "Get Design Quote",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View Packages",
     ctaSecondaryUrl: "#services",
     stats: [
@@ -275,7 +275,7 @@ export const socialMediaConfig: ServicePageConfig = {
     description:
       "Let's build a thriving social media presence that engages your audience and drives real business results. Get your custom social media strategy today.",
     ctaPrimary: "Get Free Strategy Session",
-    ctaPrimaryUrl: "/contact",
+    ctaPrimaryUrl: "/contact/",
     ctaSecondary: "View All Services",
     ctaSecondaryUrl: "/services",
   },

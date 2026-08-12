@@ -750,7 +750,7 @@ export default function ServiceWizard({
                   <span className="text-sm text-white/70">
                     Acepto los{" "}
                     <a
-                      href="/terms"
+                      href="/terms/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-medium text-orange-300 underline underline-offset-2 hover:text-orange-200"
@@ -759,7 +759,7 @@ export default function ServiceWizard({
                     </a>{" "}
                     y la{" "}
                     <a
-                      href="/privacy"
+                      href="/privacy/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-medium text-orange-300 underline underline-offset-2 hover:text-orange-200"

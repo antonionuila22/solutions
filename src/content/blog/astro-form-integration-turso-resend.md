@@ -628,7 +628,7 @@ This Astro + Turso + Resend stack gives you:
 
 ## Need Help Building This?
 
-Building custom forms and integrations takes time and technical expertise. If you'd rather focus on your business while our [custom software development](/custom-software-development) experts handle the technical details, we're here to help.
+Building custom forms and integrations takes time and technical expertise. If you'd rather focus on your business while our [custom software development](/custom-software-development/) experts handle the technical details, we're here to help.
 
 **Our Web Development Services Include:**
 
@@ -645,10 +645,10 @@ Building custom forms and integrations takes time and technical expertise. If yo
 - Secure (industry best practices)
 - Maintainable (clean code, good documentation)
 
-👉 **[Schedule a free development consultation](/contact)** and let's discuss your project
+👉 **[Schedule a free development consultation](/contact/)** and let's discuss your project
 
-👉 **[View our portfolio](/projects)** of custom web applications we've built
+👉 **[View our portfolio](/projects/)** of custom web applications we've built
 
-👉 **[Explore our web development services](/web-development)** for more details
+👉 **[Explore our web development services](/web-development/)** for more details
 
 **Your website deserves modern technology. Let's build it right.**

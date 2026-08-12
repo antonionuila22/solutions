@@ -33,7 +33,7 @@ const defaults: ValuePropConfig = {
   flagLabel: "Honduras → United States",
   title: "Premium Web Development",
   titleHighlight: "at 60% Lower Cost",
-  subtitle: 'Why pay $25,000+ for <a href="/services/web-development" class="text-cyan-500 hover:text-cyan-600 font-semibold">web development</a> in the US when you can get the same professional quality from our certified team in Honduras for a fraction of the cost?',
+  subtitle: 'Why pay $25,000+ for <a href="/services/web-development/" class="text-cyan-500 hover:text-cyan-600 font-semibold">web development</a> in the US when you can get the same professional quality from our certified team in Honduras for a fraction of the cost?',
   stats: [
     { value: "60%", title: "Cost Savings", description: "Save thousands compared to US agency rates while maintaining the same professional quality standards." },
     { value: "100%", title: "Same Quality", description: "Our certified professionals deliver the exact same quality as US agencies. Same standards, better prices." },
@@ -256,7 +256,7 @@ const c = { ...defaults, ...Astro.props.config };
     <!-- CTA -->
     <div class="text-center mt-16 cta-section">
       <a
-        href="/contact"
+        href="/contact/"
         class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-bold text-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transform hover:-translate-y-1 transition-all duration-300"
       >
         {c.ctaText}

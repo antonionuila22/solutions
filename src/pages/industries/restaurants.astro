@@ -31,7 +31,7 @@ const serviceSchema = {
   "serviceType": "Restaurant Website Development",
   "name": "Restaurant Website Design & Online Ordering Systems",
   "description": description,
-  "url": "https://www.codebrand.us/industries/restaurants",
+  "url": "https://www.codebrand.us/industries/restaurants/",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -93,8 +93,8 @@ const restaurantFaqs = [
 const faqSchema = createFAQSchema(restaurantFaqs);
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries" },
-  { name: "Restaurants", url: "https://www.codebrand.us/industries/restaurants" }
+  { name: "Industries", url: "https://www.codebrand.us/industries/" },
+  { name: "Restaurants", url: "https://www.codebrand.us/industries/restaurants/" }
 ]);
 
 const stats = [
@@ -319,7 +319,7 @@ const softwareLead = "A menu page does not run service. The POS, the kitchen scr
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
-      { name: "Industries", href: "/industries" },
+      { name: "Industries", href: "/industries/" },
       { name: "Restaurants", href: "" }
     ]}
     variant="dark"

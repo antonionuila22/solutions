@@ -1,5 +1,6 @@
 ---
 title: "Cómo Crear una Página Web para tu Empresa en Honduras: Guía Completa 2026"
+seoTitle: "Crear página web para empresa en Honduras 2026 | Codebrand"
 lang: es
 description: "Descubre cómo las empresas en Honduras pueden crear páginas web efectivas: opciones, procesos, beneficios y por qué Codebrand es el socio ideal para tu proyecto digital."
 author: "Ramon Nuila"
@@ -175,7 +176,7 @@ Los costos varían significativamente según la complejidad y la opción elegida
 
 ### Por Qué Elegir Codebrand para tu Página Web en Honduras
 
-En Codebrand, somos expertos en [desarrollo de software a la medida](/custom-software-development), páginas web, UX/UI y soluciones digitales completas para empresas hondureñas. Nuestra experiencia local nos permite entender las necesidades específicas del mercado hondureño.
+En Codebrand, somos expertos en [desarrollo de software a la medida](/custom-software-development/), páginas web, UX/UI y soluciones digitales completas para empresas hondureñas. Nuestra experiencia local nos permite entender las necesidades específicas del mercado hondureño.
 
 #### Nuestros Servicios Especializados
 

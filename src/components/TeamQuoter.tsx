@@ -193,7 +193,7 @@ export default function TeamQuoter() {
               Request this quote
             </a>
             <a
-              href="/contact"
+              href="/contact/"
               className="block w-full py-3.5 text-center font-semibold rounded-2xl border border-white/15 text-white hover:bg-white/5 transition-colors"
             >
               Talk to us first

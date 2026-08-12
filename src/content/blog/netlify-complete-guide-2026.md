@@ -803,8 +803,8 @@ Whether you're migrating to Netlify or building a new project, we can help you:
 
 **Ready to modernize your web infrastructure?**
 
-[Contact us for a free consultation](/contact) and let's discuss how Netlify can transform your web presence.
+[Contact us for a free consultation](/contact/) and let's discuss how Netlify can transform your web presence.
 
 ---
 
-*Need help deploying to Netlify? [Reach out to our team](/contact)—we've deployed hundreds of sites and know every optimization trick.*
+*Need help deploying to Netlify? [Reach out to our team](/contact/)—we've deployed hundreds of sites and know every optimization trick.*

@@ -191,7 +191,7 @@ With so many themes and plugins, quality varies dramatically. Bad choices can le
 
 **Bottom line**: WordPress offers unmatched flexibility and power, but requires more involvement (or budget for professional help).
 
-Need expert help building or managing your WordPress site? [Our web development team](/web-development) specializes in creating high-performance WordPress websites that scale with your business.
+Need expert help building or managing your WordPress site? [Our web development team](/web-development/) specializes in creating high-performance WordPress websites that scale with your business.
 
 ---
 
@@ -262,7 +262,7 @@ Webflow's e-commerce is powerful but not as feature-rich as WooCommerce for comp
 
 **Bottom line**: Webflow is perfect for designers and businesses that want custom design control without the complexity of traditional development.
 
-Want a custom Webflow site that perfectly represents your brand? [Our web design team](/web-design) creates stunning, high-performing Webflow websites tailored to your business.
+Want a custom Webflow site that perfectly represents your brand? [Our web design team](/web-design/) creates stunning, high-performing Webflow websites tailored to your business.
 
 ---
 
@@ -322,7 +322,7 @@ Still not sure which platform is right for you? Answer these questions:
 
 **Why**: Scalability, extensive payment options, inventory management, unlimited products, powerful marketing integrations.
 
-Need help building a high-converting e-commerce store? [Our e-commerce development services](/e-commerce) create custom online stores that drive sales.
+Need help building a high-converting e-commerce store? [Our e-commerce development services](/e-commerce/) create custom online stores that drive sales.
 
 ### Case 3: SaaS Startup Marketing Site
 
@@ -336,7 +336,7 @@ Need help building a high-converting e-commerce store? [Our e-commerce developme
 
 **Why**: Superior blogging features, SEO capabilities, monetization options (ads, affiliates, memberships), audience growth tools.
 
-Want to create a content strategy that actually drives traffic? [Our SEO services](/seo) help you build authority and attract your ideal audience organically.
+Want to create a content strategy that actually drives traffic? [Our SEO services](/seo/) help you build authority and attract your ideal audience organically.
 
 ---
 
@@ -352,7 +352,7 @@ Want to create a content strategy that actually drives traffic? [Our SEO service
 
 **Pro tip**: Choose wisely from the start based on your 3-5 year vision, not just immediate needs.
 
-If you're considering migrating platforms or starting fresh, [our web development team](/web-development) can handle the entire process—from strategy to launch.
+If you're considering migrating platforms or starting fresh, [our web development team](/web-development/) can handle the entire process—from strategy to launch.
 
 ---
 
@@ -405,10 +405,10 @@ Whether you choose Squarespace, WordPress, or Webflow, our team has deep experti
 
 **Don't build your website on guesswork. Build it on expertise.**
 
-👉 **[Schedule a free website consultation](/contact)** and we'll help you choose the right platform and strategy for your business.
+👉 **[Schedule a free website consultation](/contact/)** and we'll help you choose the right platform and strategy for your business.
 
-👉 **[View our web design portfolio](/projects)** to see examples of beautiful, high-performing sites we've built on all three platforms.
+👉 **[View our web design portfolio](/projects/)** to see examples of beautiful, high-performing sites we've built on all three platforms.
 
-👉 **[Explore our web development services](/web-development)** to learn how we can help you launch or rebuild your website.
+👉 **[Explore our web development services](/web-development/)** to learn how we can help you launch or rebuild your website.
 
 **Your website is too important to settle for "good enough." Let's build something exceptional.**
