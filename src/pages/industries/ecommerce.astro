@@ -2,55 +2,191 @@
 export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import Whyus from "../../components/whyus.astro";
 import TrustBadges from "../../components/TrustBadges.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
-import IndustryHero from "../../components/IndustryHero.astro";
-import IndustryIntro from "../../components/IndustryIntro.astro";
-import IndustryServices from "../../components/IndustryServices.astro";
-import IndustryProcess from "../../components/IndustryProcess.astro";
-import IndustrySolutions from "../../components/IndustrySolutions.astro";
-import IndustryWhyChoose from "../../components/IndustryWhyChoose.astro";
-import IndustryTestimonials from "../../components/IndustryTestimonials.astro";
-import IndustryTechStack from "../../components/IndustryTechStack.astro";
-import IndustryChallenges from "../../components/IndustryChallenges.astro";
-import IndustryFAQ from "../../components/IndustryFAQ.astro";
-import IndustryCTA from "../../components/IndustryCTA.astro";
-import { createFAQSchema, createBreadcrumbSchema } from "../../utils/schema";
+import EcomHero from "../../components/ecommerce/EcomHero.astro";
+import EcomLeaks from "../../components/ecommerce/EcomLeaks.astro";
+import EcomPlatforms from "../../components/ecommerce/EcomPlatforms.astro";
+import EcomIncluded from "../../components/ecommerce/EcomIncluded.astro";
+import EcomIntegrations from "../../components/ecommerce/EcomIntegrations.astro";
+import EcomSeo from "../../components/ecommerce/EcomSeo.astro";
+import EcomProcess from "../../components/ecommerce/EcomProcess.astro";
+import EcomProof from "../../components/ecommerce/EcomProof.astro";
+import EcomSoftware from "../../components/ecommerce/EcomSoftware.astro";
+import EcomFAQ from "../../components/ecommerce/EcomFAQ.astro";
+import EcomCTA from "../../components/ecommerce/EcomCTA.astro";
+import StorefrontDemo from "../../components/ecommerce/islands/StorefrontDemo";
+import RevenueCalculator from "../../components/ecommerce/islands/RevenueCalculator";
+import PlatformPicker from "../../components/ecommerce/islands/PlatformPicker";
+import { createFAQSchema } from "../../utils/schema";
 
-const title = "E-commerce Industry Solutions | Codebrand";
+/**
+ * /industries/ecommerce
+ *
+ * Primary keyword: "ecommerce website design". The service page /e-commerce/
+ * owns "e-commerce development", so this page argues the design-and-conversion
+ * angle and reinforces it with Shopify, WooCommerce, headless, checkout and
+ * ecommerce SEO. Three React islands carry the interactive parts: a working
+ * demo store above the fold, a revenue calculator, and a platform picker.
+ * FAQ prices are the published ones and are kept word for word.
+ */
+
+const title = "Ecommerce Website Design That Sells | Codebrand";
 const description =
-  "Custom e-commerce solutions for online retailers: optimized checkout, payment integrations, inventory management, and conversion design. Get a free quote.";
+  "Ecommerce website design for US online stores: fast product pages, a checkout that converts, and SEO that ranks. Shopify, WooCommerce or headless.";
 const keywords =
-  "e-commerce development, online store development, shopping cart software, e-commerce platform, Shopify development, WooCommerce development, custom e-commerce, payment gateway integration, online retail platform, e-commerce website design, product catalog management";
-const image = "/photos/bannercodebrand.webp";
+  "ecommerce website design, ecommerce web design, online store design, ecommerce website designer, Shopify website design, WooCommerce development, headless ecommerce, custom ecommerce website, ecommerce checkout optimization, ecommerce SEO, ecommerce conversion rate optimization, ecommerce web design agency USA";
+const pageUrl = "https://www.codebrand.us/industries/ecommerce/";
+const socialImage = "/photos/bannercodebrand.webp";
 
+// ── Structured data ──────────────────────────────────────────────────────────
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "E-commerce Development",
-  "name": "E-commerce Development & Online Store Solutions",
+  "serviceType": "Ecommerce Website Design and Development",
+  "name": "Ecommerce Website Design",
   "description": description,
-  "url": "https://www.codebrand.us/industries/ecommerce/",
+  "url": pageUrl,
+  "mainEntityOfPage": pageUrl,
+  "image": `https://www.codebrand.us${socialImage}`,
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
-    "url": "https://www.codebrand.us",
+    "url": "https://www.codebrand.us/",
     "logo": "https://www.codebrand.us/iconcodebrand.svg"
   },
   "areaServed": { "@type": "Country", "name": "United States" },
+  "audience": { "@type": "BusinessAudience", "audienceType": "Online stores and direct-to-consumer brands" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "E-commerce Solutions",
+    "name": "Ecommerce website services",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom E-commerce Stores", "description": "Shopify, WooCommerce, and custom online stores" }},
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Payment Integration", "description": "Secure payment gateway integration" }},
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inventory Management", "description": "Product catalog and inventory systems" }}
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shopify store design", "description": "Custom Shopify themes and stores designed for conversion" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WooCommerce development", "description": "WooCommerce stores your team can edit, built for speed" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Headless ecommerce with Astro and Next", "description": "Custom storefronts on top of Shopify or WooCommerce for speed and search" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ecommerce conversion rate optimization", "description": "Checkout, product page and cart improvements measured with real orders" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ecommerce SEO", "description": "Category and product pages structured to rank, with product schema and clean faceted navigation" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Store migration", "description": "Platform migrations with URL maps and redirects so rankings survive" }}
     ]
   }
 };
 
-// FAQ data for e-commerce industry
+// ── Hero ─────────────────────────────────────────────────────────────────────
+const heroProof = [
+  { value: "5.0", label: "Google rating, 50 reviews" },
+  { value: "6 to 10", label: "weeks to launch a store" },
+  { value: "90 days", label: "post-launch support included" },
+  { value: "3", label: "platforms, one honest recommendation" },
+];
+
+// ── Leaks ────────────────────────────────────────────────────────────────────
+const leaks = [
+  { title: "Product pages that load slowly on a phone", body: "Most store traffic is mobile and impatient. A page that takes seconds to show the price and the buy button has already lost the shopper who came from an ad they paid for." },
+  { title: "A checkout that asks for an account first", body: "Forced registration is the fastest way to turn a full cart into an abandoned one. Guest checkout, express pay and three screens at most." },
+  { title: "Site search that returns nothing", body: "A shopper who types shows intent. If search cannot handle a typo, a synonym or a size, that intent walks to a competitor with better search." },
+  { title: "Product pages that do not answer the question", body: "Will it fit, when does it arrive, what if I return it. If the answer is not next to the buy button, the shopper leaves to find it and does not come back." },
+  { title: "No proof at the moment of doubt", body: "Reviews with photos, a visible returns policy, real delivery dates. Doubt happens at the cart, so the proof has to live there too." },
+  { title: "Nobody captures the visitor who is not ready", body: "Most first visits do not buy. Back-in-stock alerts, a cart reminder and one honest email capture are what turn that visit into a second one." },
+];
+
+// ── Platforms ────────────────────────────────────────────────────────────────
+const platforms = [
+  {
+    name: "Shopify",
+    tagline: "The fastest path to a store that takes money.",
+    pros: ["Checkout, taxes, fraud and hosting handled for you", "Stays up during a sale or a viral post", "Deep app ecosystem for reviews, email, subscriptions"],
+    cons: ["Monthly fee plus a transaction cut", "Deep customization hits platform limits", "B2B pricing and quoting get awkward"],
+    pick: "you sell standard retail, want to launch in weeks and would rather pay a fee than manage a server.",
+  },
+  {
+    name: "WooCommerce",
+    tagline: "Your store, on hosting you control.",
+    pros: ["No platform fee, no transaction cut", "Your team edits everything in WordPress", "Extensions for wholesale, bundles, subscriptions"],
+    cons: ["Speed and security are ongoing work", "More moving parts to keep updated", "Needs solid hosting to stay fast"],
+    pick: "your team publishes constantly, you want the lowest running cost, or you need wholesale rules a plugin can cover.",
+  },
+  {
+    name: "Headless with Astro or Next",
+    tagline: "A custom storefront on top of the platform you already run.",
+    pros: ["Product pages that render in milliseconds", "Search and speed scores Google rewards", "Business rules as code: B2B pricing, quotes, ERP"],
+    cons: ["Highest build cost of the three", "Changes to structure need a developer", "Overkill for a small catalog"],
+    pick: "you have a large catalog, live on organic search, or your pricing and ordering rules are the business.",
+  },
+];
+
+// ── Included ─────────────────────────────────────────────────────────────────
+const included = [
+  { title: "Product page built for the buy button", note: "Price, variants, stock, delivery date and returns policy visible without scrolling. Photos that zoom and load fast." },
+  { title: "Category pages that rank and filter", note: "Filters shoppers use, structured so Google indexes the category and not ten thousand filter combinations." },
+  { title: "Site search that forgives", note: "Typos, synonyms, sizes and SKUs. Results in under a second, with a zero-results page that still sells." },
+  { title: "Checkout in three screens or fewer", note: "Guest checkout, address autocomplete, Apple Pay, Google Pay and PayPal, the total visible the whole time." },
+  { title: "A cart that grows the order honestly", note: "Free-shipping progress bar, one relevant add-on, no dark patterns. The demo above is the pattern." },
+  { title: "Reviews with photos and sources", note: "Collected after delivery, shown with the reviewer's name and where the review came from." },
+  { title: "Shipping and returns, answered up front", note: "Real delivery estimates by zip code and a returns page a shopper can read in thirty seconds." },
+  { title: "Email and SMS capture that earns its place", note: "Back-in-stock, abandoned cart and one welcome offer. Connected to Klaviyo, Mailchimp or whichever you use." },
+  { title: "Taxes and shipping rates configured", note: "Sales tax by state, carrier rates or flat rules, and the edge cases tested before launch." },
+  { title: "Product schema and a Google Shopping feed", note: "Price, availability and reviews in the search results, and a clean feed for Shopping and Meta catalogs." },
+  { title: "Analytics that records purchases", note: "GA4 ecommerce events, add to cart, checkout steps and purchases, checked against real orders." },
+  { title: "Fast at launch, measured on a phone", note: "Core Web Vitals in the green on launch day, tested over cellular, not on office fiber." },
+];
+
+// ── Integrations ─────────────────────────────────────────────────────────────
+const integrations = [
+  { name: "Payments", items: ["Stripe", "PayPal", "Apple Pay", "Google Pay", "Square", "Authorize.net", "Affirm", "Klarna"] },
+  { name: "Shipping", items: ["ShipStation", "EasyPost", "UPS", "FedEx", "USPS", "Shippo"] },
+  { name: "Tax and accounting", items: ["TaxJar", "Avalara", "QuickBooks", "NetSuite"] },
+  { name: "Email and SMS", items: ["Klaviyo", "Mailchimp", "Postscript", "Attentive"] },
+  { name: "Reviews", items: ["Judge.me", "Yotpo", "Okendo", "Google reviews"] },
+  { name: "Marketplaces and ads", items: ["Amazon", "Google Shopping", "Meta catalog", "TikTok Shop"] },
+  { name: "Inventory and POS", items: ["Square POS", "Shopify POS", "Cin7", "Custom ERP"] },
+  { name: "Support", items: ["Gorgias", "Zendesk", "Intercom", "WhatsApp"] },
+];
+
+// ── Ecommerce SEO ────────────────────────────────────────────────────────────
+const seoItems = [
+  { title: "Category pages as landing pages", body: "The category is what ranks for the money terms. Each one gets real copy, a clear H1, internal links and a URL that does not change when a filter is applied." },
+  { title: "Product schema Google actually shows", body: "Price, availability, ratings and shipping in the result itself. Kept in sync with stock so Google never shows a price you no longer charge." },
+  { title: "Faceted navigation without index bloat", body: "Filters for shoppers, canonicals and noindex rules for crawlers. Ten thousand filter URLs do not become ten thousand thin pages." },
+  { title: "Core Web Vitals in the green", body: "Images sized and lazy-loaded, scripts deferred, no layout shift when the price loads. Speed is a ranking factor and a conversion factor at the same time." },
+  { title: "Migrations that keep the rankings", body: "A full URL map before anything moves, redirects tested, and rankings tracked through the switch. Nobody should lose page one to a replatform." },
+  { title: "Content that feeds the products", body: "Buying guides and comparisons that answer the search, linking to the categories and products they mention. Traffic that arrives ready to compare." },
+];
+
+// ── Process ──────────────────────────────────────────────────────────────────
+const processSteps = [
+  { when: "Week 0", title: "Store audit and a written plan", body: "We look at your current store on a phone, the checkout, your analytics and the competitors ranking for your categories. You get a short plan with a price." },
+  { when: "Weeks 1 to 3", title: "Design in Figma, approved before we build", body: "Home, category, product and checkout, designed on your brand with your real products. You approve the screens before any code is written." },
+  { when: "Weeks 3 to 7", title: "Build and integrations", body: "The store is built page by page and connected to payments, shipping, tax, email and whatever runs your back office. Every integration is tested with real orders." },
+  { when: "Weeks 7 to 9", title: "Products, content and QA", body: "Catalog loaded, search tuned, schema validated, analytics checked against test purchases. Then a full pass on real phones over cellular." },
+  { when: "Week 10, then 90 days", title: "Launch and support", body: "We launch outside your busiest days, keep the old store reachable until orders flow, and stay on for ninety days of support included." },
+];
+
+// ── Proof ────────────────────────────────────────────────────────────────────
+const proofFacts = [
+  { value: "7,900+", label: "products loaded" },
+  { value: "6", label: "product categories" },
+  { value: "1", label: "custom CRM plugin" },
+];
+const proofWork = [
+  "WooCommerce B2B platform with quote-only checkout instead of card payments",
+  "7,900+ products structured across six categories with attribute filters",
+  "Custom CRM plugin so quote requests land in the sales pipeline automatically",
+  "Built to be run by the client's team after handover",
+];
+
+// ── Software (secondary) ─────────────────────────────────────────────────────
+const softwareSystems = [
+  { name: "ERP and accounting integration", description: "A dependable bridge between the storefront and the system of record, so orders, invoices and stock movements post themselves instead of being exported by hand.", capabilities: ["Order, invoice and credit-note sync", "Product and price list mapping", "Customer and tax code alignment", "Failed-sync alerting and safe replay"] },
+  { name: "Multichannel inventory and orders", description: "One stock figure across every channel and warehouse, with allocation rules that decide where an order should actually ship from.", capabilities: ["Real-time stock across channels and locations", "Allocation, backorder and safety-stock rules", "Purchase orders and inbound receiving", "Kits, bundles and serialized items"] },
+  { name: "B2B pricing and customer portal", description: "Contract pricing, credit terms and reordering for wholesale accounts, in a portal built for a buyer placing their fortieth order.", capabilities: ["Account-specific price lists and tiers", "Credit limits and net payment terms", "Fast reorder from order history", "Multi-user accounts with approval rules"] },
+  { name: "Quote and RFQ system", description: "Structured quoting for orders too large or too configurable to check out normally, with the approved quote turning straight into an order.", capabilities: ["Quote request capture and routing", "Margin guardrails and approval thresholds", "Quote versioning and expiry", "One-click conversion to a live order"] },
+  { name: "Marketplace listing sync", description: "Listings, pricing and stock kept in step across the marketplaces you sell on, with orders landing back in the same queue as your own.", capabilities: ["Listing creation and attribute mapping", "Price and stock push per channel", "Marketplace order ingestion", "Per-channel margin and fee reporting"] },
+  { name: "Fulfillment, shipping and returns", description: "Pick, pack and label without retyping addresses, and a returns flow that gives the customer a label while giving you the reason data.", capabilities: ["Pick lists, packing and label generation", "Carrier rate shopping and tracking updates", "Customer-initiated returns with reason codes", "Restock, refund and exchange workflows"] },
+];
+
+// ── FAQ ──────────────────────────────────────────────────────────────────────
+// The first nine answers carry the published prices and timelines and are kept
+// word for word. The rest are the questions store owners ask on the call.
 const ecommerceFaqs = [
   {
     question: "How much does an e-commerce website cost?",
@@ -88,313 +224,154 @@ const ecommerceFaqs = [
     question: "Who owns the integrations and custom modules you build?",
     answer: "You own all of it: source code, repositories, integration logic, and documentation, hosted in your own infrastructure. That matters most for integrations, because the mapping between your storefront, ERP, and marketplaces is genuinely valuable business logic. If you ever change agencies or bring development in-house, the work transfers with the repository and there is no per-connector licence to keep paying."
   },
+  {
+    question: "Will my store be fast on mobile?",
+    answer: "Yes, and we test it the way your customers experience it: on a real phone over cellular data, not on a desktop over office wifi. Core Web Vitals are in the green at launch on every page type, and we keep measuring after launch because a slow store is a store that stops selling."
+  },
+  {
+    question: "Can you migrate my store to a new platform without losing Google rankings?",
+    answer: "Yes. Before anything moves we map every existing URL to its new one, set up the redirects, carry over titles, descriptions and product schema, and track rankings through the switch. The goal of a migration is that Google barely notices, and the sales certainly do not."
+  },
+  {
+    question: "Do you build B2B or wholesale stores?",
+    answer: "Yes. Account-specific pricing, net payment terms, quote requests instead of card checkout, and fast reordering for buyers who place the same order every month. We have built B2B catalogs with thousands of products on WooCommerce and as custom headless storefronts."
+  },
+  {
+    question: "Can you connect my store to Amazon, Google Shopping and Meta?",
+    answer: "Yes. We set up the product feeds for Google Shopping and Meta catalogs, and for Amazon we sync listings, prices and stock so a sale on one channel updates the others. Orders from every channel land in the same queue."
+  },
+  {
+    question: "Will I be able to manage products and content myself?",
+    answer: "On Shopify and WooCommerce, yes: products, prices, stock, pages and promotions are yours to edit, and training is included at launch. On a headless build, the catalog still lives in the platform your team already knows; only the storefront code is ours to maintain."
+  },
 ];
 
-// Generate FAQ schema
 const faqSchema = createFAQSchema(ecommerceFaqs);
-
-// Breadcrumb schema
-const breadcrumbSchema = createBreadcrumbSchema([
-  { name: "Home", url: "https://www.codebrand.us" },
-  { name: "Industries", url: "https://www.codebrand.us/industries/" },
-  { name: "E-commerce", url: "https://www.codebrand.us/industries/ecommerce/" }
-]);
-
-// Stats for hero
-const stats = [
-  { value: "5.0", label: "50 Google reviews" },
-  { value: "Stripe +", label: "PayPal Checkout" },
-  { value: "Mobile", label: "Conversion-Optimized" },
-  { value: "100%", label: "Custom-Built" }
-];
-
-// Intro highlights
-const introHighlights = [
-  {
-    value: "5.0",
-    label: "50 Google reviews",
-    gradient: "from-teal-500 to-teal-500",
-    iconPath: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-  },
-  {
-    value: "8+ yrs",
-    label: "Development Experience",
-    gradient: "from-blue-500 to-blue-500",
-    iconPath: "M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
-  },
-  {
-    value: "Shopify +",
-    label: "Custom Storefronts",
-    gradient: "from-orange-500 to-orange-500",
-    iconPath: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-  }
-];
-
-// Services data
-const services = [
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>`,
-    title: "Custom E-commerce Development",
-    description: "Build a unique online store tailored to your brand and products. From headless commerce to fully custom platforms.",
-    features: ["Custom product catalogs", "Advanced filtering and search", "Mobile-first responsive design"]
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>`,
-    title: "Payment Gateway Integration",
-    description: "Accept payments seamlessly with secure integration of multiple payment gateways and digital wallets.",
-    features: ["Stripe, PayPal, Square integration", "PCI-DSS compliant security", "Multi-currency support"]
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>`,
-    title: "Inventory Management",
-    description: "Keep track of stock levels, automate reordering, and sync inventory across multiple sales channels.",
-    features: ["Real-time stock tracking", "Multi-location warehouse support", "Low stock alerts"]
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`,
-    title: "Conversion Rate Optimization",
-    description: "Maximize sales with data-driven optimization strategies and A/B testing to turn browsers into buyers.",
-    features: ["Streamlined checkout process", "Cart abandonment recovery", "Personalized recommendations"]
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>`,
-    title: "Multi-Channel Integration",
-    description: "Sell everywhere your customers are. Integrate with Amazon, eBay, and social commerce platforms.",
-    features: ["Marketplace integrations", "Facebook/Instagram Shopping", "Centralized order management"]
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>`,
-    title: "Mobile Commerce Apps",
-    description: "Reach customers on their favorite devices with cross-platform mobile apps built with Expo React Native.",
-    features: ["iOS & Android apps", "Push notification campaigns", "Seamless mobile payments"]
-  }
-];
-
-// Process steps
-const processSteps = [
-  { title: "Catalog & Platform Audit", description: "We map your product catalog, SKU variants, and collections, then decide whether Shopify, WooCommerce, or a custom headless storefront best fits your margins and volume. We review your current checkout funnel, shipping rules, and tax setup to find where orders are leaking." },
-  { title: "Storefront UX & Product Pages", description: "We design product detail pages, collection filters, and a frictionless cart-to-checkout flow that work mobile-first, since most store traffic is on phones. Layouts are built around clear product imagery, trust badges, and a guest checkout path to reduce cart abandonment." },
-  { title: "Payments & Integration Build", description: "We connect Stripe, PayPal, and Apple Pay / Google Pay checkout, then wire your store to inventory, ERP, and shipping carriers so stock and orders stay in sync. Every payment path is PCI-DSS compliant, and we set up product feeds for Google Shopping and Meta where relevant." },
-  { title: "QA, PCI & Storefront Launch", description: "We test the full purchase journey across devices and browsers, including discount codes, tax calculation, and abandoned-cart recovery emails. After verifying SSL, payment security, and live transactions in test mode, we migrate the catalog and launch with redirects in place to protect SEO." },
-  { title: "Conversion Tracking & Optimization", description: "Post-launch we configure GA4 e-commerce events, Meta Pixel, and conversion tracking so you can see exactly where buyers drop off. We run A/B tests on product pages and checkout, monitor Core Web Vitals, and refine the funnel to lift conversion over time." }
-];
-
-// Why choose us reasons
-const whyChooseReasons = [
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>`,
-    title: "E-commerce Specialists",
-    description: "We live and breathe e-commerce. We build specifically for online stores and e-commerce brands, and we know exactly what drives sales."
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>`,
-    title: "Lightning-Fast Performance",
-    description: "Every second counts in e-commerce. We optimize Core Web Vitals and page speed so your store loads fast, improving SEO and conversions."
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>`,
-    title: "Bank-Level Security",
-    description: "PCI-DSS compliant infrastructure, SSL encryption, and regular security audits protect your business."
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path></svg>`,
-    title: "Infinite Scalability",
-    description: "Built to handle traffic spikes during sales and holidays. Our infrastructure scales automatically."
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path></svg>`,
-    title: "Data-Driven Decisions",
-    description: "Comprehensive analytics help you understand customer behavior and make informed decisions."
-  },
-  {
-    icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path></svg>`,
-    title: "Built for ROI",
-    description: "We build stores around conversion-focused checkout, analytics, and A/B testing so your investment is geared toward driving real sales."
-  }
-];
-
-// Technologies
-const technologies = [
-  { name: "Shopify", icon: "shopping-cart" },
-  { name: "React", icon: "atom" },
-  { name: "Node.js", icon: "server" },
-  { name: "Stripe", icon: "credit-card" },
-  { name: "AWS", icon: "cloud" },
-  { name: "Security", icon: "shield-check" }
-];
-
-// Challenges
-const challenges = [
-  {
-    problem: "High Cart Abandonment",
-    description: "Complicated checkout, unexpected fees, or slow loading times cause 70% of shoppers to abandon their carts.",
-    solution: "Streamlined one-page checkout, guest checkout options, transparent pricing, and abandoned cart recovery emails."
-  },
-  {
-    problem: "Poor Mobile Experience",
-    description: "Over 60% of e-commerce traffic comes from mobile, but many stores offer clunky mobile experiences.",
-    solution: "Mobile-first design, touch-optimized interfaces, and progressive web app features for app-like experiences."
-  },
-  {
-    problem: "Inventory Mismanagement",
-    description: "Selling out-of-stock items or losing track of inventory across multiple channels damages reputation.",
-    solution: "Real-time inventory tracking, automated stock updates, and multi-channel synchronization."
-  },
-  {
-    problem: "Limited Payment Options",
-    description: "Not accepting customers' preferred payment methods leads to lost sales at checkout.",
-    solution: "Multiple payment gateways, digital wallets (Apple Pay, Google Pay), buy now pay later, and international support."
-  }
-];
-
-// Named software systems we build for this vertical (additive section)
-const softwareSolutions = [
-  {
-    name: "ERP & Accounting Integration",
-    description: "A dependable bridge between the storefront and the system of record, so orders, invoices, and stock movements post themselves instead of being exported by hand.",
-    capabilities: ["Order, invoice, and credit-note sync", "Product and price list mapping", "Customer and tax code alignment", "Failed-sync alerting and safe replay"],
-    icon: "plug"
-  },
-  {
-    name: "Multichannel Inventory & Order Management",
-    description: "One stock figure across every channel and warehouse, with allocation rules that decide where an order should actually ship from.",
-    capabilities: ["Real-time stock across channels and locations", "Allocation, backorder, and safety-stock rules", "Purchase orders and inbound receiving", "Kits, bundles, and serialized items"],
-    icon: "package"
-  },
-  {
-    name: "B2B Pricing & Customer Portal",
-    description: "Contract pricing, credit terms, and reordering for wholesale accounts, in a portal built for a buyer placing their fortieth order, not a first-time shopper.",
-    capabilities: ["Account-specific price lists and tiers", "Credit limits and net payment terms", "Fast reorder from order history", "Multi-user accounts with approval rules"],
-    icon: "dollar-sign"
-  },
-  {
-    name: "Quote & RFQ System",
-    description: "Structured quoting for orders too large or too configurable to check out normally, with the approved quote turning straight into an order.",
-    capabilities: ["Quote request capture and routing", "Margin guardrails and approval thresholds", "Quote versioning and expiry", "One-click conversion to a live order"],
-    icon: "file-text"
-  },
-  {
-    name: "Marketplace Listing Sync",
-    description: "Listings, pricing, and stock kept in step across the marketplaces you sell on, with orders landing back in the same queue as your own.",
-    capabilities: ["Listing creation and attribute mapping", "Price and stock push per channel", "Marketplace order ingestion", "Per-channel margin and fee reporting"],
-    icon: "globe"
-  },
-  {
-    name: "Fulfillment, Shipping & Returns (RMA)",
-    description: "Pick, pack, and label without retyping addresses, and a returns flow that gives the customer a label while giving you the reason data.",
-    capabilities: ["Pick lists, packing, and label generation", "Carrier rate shopping and tracking updates", "Customer-initiated RMA with reason codes", "Restock, refund, and exchange workflows"],
-    icon: "truck"
-  },
-];
-
-const softwareIndustry = "e-commerce operations";
-const softwareLead = "Once a store passes a certain volume, the bottleneck stops being the storefront and becomes everything behind it: stock, pricing, quotes, and returns. These are the back-office systems we build, extend, and connect.";
 ---
 
 <Layout
   title={title}
   description={description}
   keywords={keywords}
-  image={image}
+  image={socialImage}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <IndustryHero
-    badgeText="E-Commerce Technology Solutions"
-    headingTop="Scale Your"
-    headingBottom="Online Store"
-    subtitle="High-converting e-commerce solutions with shopping cart optimization, payment integrations, inventory management, and conversion-optimized design to maximize online sales."
-    stats={stats}
-    accentGradient="from-teal-400 via-teal-400 to-cyan-400"
-    buttonGradient="from-teal-500 to-teal-500"
-    buttonHoverGradient="hover:from-teal-600 hover:to-teal-600"
-    buttonShadow="shadow-teal-500/25"
-    buttonHoverShadow="hover:shadow-teal-500/40"
-  />
+  <EcomHero
+    eyebrow="Ecommerce website design · United States"
+    heading="Ecommerce website design built to turn visitors into orders"
+    subtitle="We design and build online stores for US brands: product pages that load in under a second on a phone, a checkout that does not lose people, and the structure that puts your categories on page one. Shopify, WooCommerce or headless with Astro and Next, whichever your store actually needs."
+    primaryHref="/contact/"
+    primaryText="Get a free store audit"
+    secondaryHref="#demo"
+    secondaryText="Try the demo store"
+    stageCaption="A working store, right here: add products, watch the shipping bar, run the checkout. This is the pattern every store we build follows."
+    proof={heroProof}
+  >
+    <StorefrontDemo client:load />
+  </EcomHero>
 
   <Breadcrumbs
     items={[
       { name: "Home", href: "/" },
       { name: "Industries", href: "/industries/" },
-      { name: "E-commerce", href: "" }
+      { name: "Ecommerce", href: "" }
     ]}
-    variant="dark"
-    class="bg-slate-900 border-y border-slate-800"
+    variant="light"
   />
 
-  <TrustBadges />
+  <EcomLeaks
+    eyebrow="Where stores leak revenue"
+    heading="Six places an online store loses the sale, and what we build instead"
+    intro="Traffic is expensive. Most stores do not have a traffic problem; they have a leak between the click and the order. These are the six we find most often, and below them, what a leak is worth to you in your own numbers."
+    leaks={leaks}
+  >
+    <RevenueCalculator client:visible />
+  </EcomLeaks>
 
-  <IndustryIntro
-    title="E-commerce Excellence in the Digital Age"
-    paragraphs={[
-      "The e-commerce landscape is more competitive than ever. Success requires more than just putting products online. At CodeBrand, we understand the unique challenges online retailers face—from optimizing conversion rates to providing seamless checkout experiences.",
-      "We specialize in creating high-performance e-commerce platforms, custom shopping experiences, and integrated solutions that drive sales and delight customers."
-    ]}
-    highlights={introHighlights}
+  <EcomPlatforms
+    eyebrow="Shopify, WooCommerce or headless"
+    heading="The platform decision, with the catch of each one"
+    intro="There is no best platform, only the right one for a catalog, a team and a budget. We build on all three, so the recommendation is not a sales pitch for the one we happen to know."
+    platforms={platforms}
+  >
+    <PlatformPicker client:visible />
+  </EcomPlatforms>
+
+  <EcomIncluded
+    eyebrow="Included"
+    heading="Every store we build ships with these"
+    intro="Not add-ons, not a premium tier. This is the baseline for an online store that has to sell, and it is in every quote we send."
+    items={included}
   />
 
-  <IndustryServices
-    title="Specialized E-commerce"
-    titleAccent="Services"
-    subtitle="Comprehensive solutions designed to help you sell more, serve better, and scale faster"
-    services={services}
-    accentGradient="from-teal-500 to-teal-500"
+  <EcomIntegrations
+    eyebrow="Integrations"
+    heading="Connected to the tools your store already runs on"
+    intro="Payments, shipping, tax, email, reviews and the marketplaces you sell on. The store is the front door; these are the rooms behind it."
+    groups={integrations}
   />
 
-  <IndustrySolutions
-    industry={softwareIndustry}
-    lead={softwareLead}
-    solutions={softwareSolutions}
+  <EcomSeo
+    eyebrow="Ecommerce SEO"
+    heading="Built to rank for the categories your customers search"
+    intro="Ecommerce SEO is mostly structure: what ranks is the category page, what converts is the product page, and what breaks both is a thousand filter URLs Google should never have seen. We build the structure in, not on top."
+    items={seoItems}
   />
 
-  <IndustryProcess
-    title="Our E-commerce Development"
-    titleAccent="Process"
-    subtitle="A proven methodology that delivers high-converting online stores on time and within budget"
+  <EcomProcess
+    eyebrow="How it works"
+    heading="From audit to launch in six to ten weeks"
+    intro="A fixed sequence with a fixed price. You approve the design before we build, every integration is tested with real orders, and support runs ninety days past launch."
     steps={processSteps}
-    accentGradient="from-teal-500 to-teal-500"
   />
 
-  <IndustryWhyChoose
-    title="Why E-commerce Brands"
-    titleAccent="Choose CodeBrand"
-    subtitle="We combine technical excellence with e-commerce expertise to deliver stores that sell"
-    reasons={whyChooseReasons}
-    accentGradient="from-teal-500 to-teal-500"
+  <EcomProof
+    eyebrow="Proof"
+    heading="A 7,900-product B2B catalog with quote-only checkout"
+    summary="A laboratory equipment distributor needed a catalog their sales team could quote from, not a cart that takes cards. We built it on WooCommerce with a quote flow instead of checkout and a custom plugin that pushes every request into their CRM."
+    facts={proofFacts}
+    factsNote="Scope figures from our delivery record for a platform built in 2024. They describe what was built, not sales or lead outcomes, which we do not publish for this project."
+    work={proofWork}
+    caseHref="/projects/laboratory-equipment-platform/"
+    caseText="Read the case study"
+    rating="5.0"
+    reviewCount="50"
+    reviewsUrl="https://g.page/r/codebrand/review"
+    ratingBody="Every review from a client we shipped for. Read them the way your customers read yours."
   />
 
-  <IndustryTestimonials />
+  <TrustBadges title="Also rated on" />
 
-  <IndustryTechStack
-    title="Built with"
-    titleAccent="Best-in-Class Technology"
-    subtitle="We use proven platforms and modern frameworks to deliver fast, secure, and scalable stores"
-    technologies={technologies}
+  <EcomSoftware
+    eyebrow="Beyond the storefront"
+    heading="When the store is fine and the back office is the bottleneck"
+    intro="Past a certain volume the storefront stops being the problem and everything behind it becomes one: stock, pricing, quotes, returns. These are the systems we build, extend and connect."
+    systems={softwareSystems}
+    ctaHref="/custom-software-development/"
+    ctaText="See custom software"
   />
 
-  <IndustryChallenges
-    title="Common E-commerce"
-    titleAccent="Challenges We Solve"
-    subtitle="Turn obstacles into opportunities with our proven solutions"
-    challenges={challenges}
-  />
-
-  <IndustryFAQ
-    title="E-commerce"
-    titleAccent="FAQ"
-    subtitle="Common questions about our e-commerce development services"
+  <EcomFAQ
+    eyebrow="FAQ"
+    heading="Questions store owners ask us"
     faqs={ecommerceFaqs}
   />
 
-  <IndustryCTA
-    title="Ready to Boost Your Online Sales?"
-    subtitle="Let's discuss how a high-performance e-commerce platform can increase your conversions and scale your business."
-    ctaGradient="from-teal-600 via-teal-600 to-cyan-600"
+  <EcomCTA
+    heading="Get a free audit of your online store"
+    body="Send us the URL. Within two business days you get back where the store is losing orders and what we would fix first, with a price. No slides, no pressure."
+    checks={[
+      "Speed of your product and category pages on a phone over cellular",
+      "Every step of your checkout, counted and timed",
+      "Whether your product pages answer size, delivery and returns",
+      "Category SEO, product schema and what Google is indexing",
+      "Whether your analytics actually records purchases",
+    ]}
+    primaryHref="/contact/"
+    primaryText="Request the free audit"
   />
 
-  <Whyus />
-
-  <RelatedServices currentService="web-development" />
+  <RelatedServices currentService="e-commerce" />
 </Layout>

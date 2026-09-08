@@ -1,0 +1,28 @@
+---
+interface Group { name: string; items: string[]; }
+interface Props { eyebrow: string; heading: string; intro: string; groups: Group[]; }
+const { eyebrow, heading, intro, groups } = Astro.props;
+---
+
+<section id="integrations" class="bg-white py-20 font-poppins sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700">{eyebrow}</p>
+      <h2 class="text-display-2 text-slate-900" style="text-wrap: balance;">{heading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-600">{intro}</p>
+    </div>
+    <dl class="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+      {groups.map((g) => (
+        <div>
+          <dt class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">{g.name}</dt>
+          <dd class="mt-2 flex flex-wrap gap-1.5">
+            {g.items.map((i) => (
+              <span class="rounded-md border border-slate-200 bg-[#fbfaf9] px-2.5 py-1 text-sm font-medium text-slate-800">{i}</span>
+            ))}
+          </dd>
+        </div>
+      ))}
+    </dl>
+    <p class="mt-8 text-sm text-slate-500">Connected through official APIs and webhooks. If it is not on the list, ask: most tools with an API take one to two days to wire in.</p>
+  </div>
+</section>

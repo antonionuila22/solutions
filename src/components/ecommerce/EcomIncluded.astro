@@ -1,0 +1,44 @@
+---
+interface Item { title: string; note: string; }
+interface Props { eyebrow: string; heading: string; intro: string; items: Item[]; }
+const { eyebrow, heading, intro, items } = Astro.props;
+const half = Math.ceil(items.length / 2);
+const cols = [items.slice(0, half), items.slice(half)];
+---
+
+<section id="included" class="bg-[#fbfaf9] py-20 font-poppins sm:py-24 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700">{eyebrow}</p>
+        <h2 class="text-display-2 text-slate-900" style="text-wrap: balance;">{heading}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-600">{intro}</p>
+      </div>
+      <!-- Receipt: two columns of items with dotted leaders -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 lg:col-span-8">
+        <div class="flex items-center justify-between border-b border-dashed border-slate-300 pb-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+          <span>Item</span><span>Status</span>
+        </div>
+        <div class="grid gap-x-10 md:grid-cols-2">
+          {cols.map((col) => (
+            <ul>
+              {col.map((it) => (
+                <li class="border-b border-dotted border-slate-300 py-3.5">
+                  <div class="flex items-baseline justify-between gap-4">
+                    <span class="text-sm font-semibold text-slate-900">{it.title}</span>
+                    <span class="flex-none text-[11px] font-bold uppercase tracking-wider text-emerald-700">Included</span>
+                  </div>
+                  <p class="mt-1 text-sm leading-relaxed text-slate-600">{it.note}</p>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
+        <div class="mt-4 flex items-center justify-between pt-2 text-sm">
+          <span class="font-semibold text-slate-900">Add-ons on top of this</span>
+          <span class="font-bold text-slate-900" style="font-variant-numeric: tabular-nums;">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+interface Item { title: string; body: string; }
+interface Props { eyebrow: string; heading: string; intro: string; items: Item[]; }
+const { eyebrow, heading, intro, items } = Astro.props;
+---
+
+<section id="seo" class="bg-[#fbfaf9] py-20 font-poppins sm:py-24 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700">{eyebrow}</p>
+      <h2 class="text-display-2 text-slate-900" style="text-wrap: balance;">{heading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-600">{intro}</p>
+    </div>
+    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {items.map((it) => (
+        <div class="rounded-2xl border border-slate-200 bg-white p-6">
+          <h3 class="text-base font-bold text-slate-900">{it.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{it.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

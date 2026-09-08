@@ -1,0 +1,52 @@
+---
+/**
+ * Compact proof block. Scope figures come from our delivery record and say
+ * so; no outcome metrics are claimed.
+ */
+interface Fact { value: string; label: string; }
+interface Props {
+  eyebrow: string; heading: string; summary: string; facts: Fact[]; factsNote: string;
+  work: string[]; caseHref: string; caseText: string;
+  rating: string; reviewCount: string; reviewsUrl: string; ratingBody: string;
+}
+const { eyebrow, heading, summary, facts, factsNote, work, caseHref, caseText, rating, reviewCount, reviewsUrl, ratingBody } = Astro.props;
+---
+
+<section id="proof" class="bg-[#fbfaf9] py-20 font-poppins sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-6 lg:grid-cols-12">
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 lg:col-span-8">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700">{eyebrow}</p>
+        <h2 class="text-2xl font-extrabold text-slate-900 sm:text-3xl" style="text-wrap: balance;">{heading}</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">{summary}</p>
+        <dl class="mt-6 grid grid-cols-3 divide-x divide-dotted divide-slate-300 rounded-xl border border-slate-200">
+          {facts.map((f) => (
+            <div class="px-4 py-4">
+              <dd class="text-2xl font-extrabold text-slate-900" style="font-variant-numeric: tabular-nums;">{f.value}</dd>
+              <dt class="mt-0.5 text-[11px] uppercase tracking-wider text-slate-500">{f.label}</dt>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-2 text-xs text-slate-500">{factsNote}</p>
+        <ul class="mt-5 grid gap-2 sm:grid-cols-2">
+          {work.map((w) => (
+            <li class="flex gap-2 text-sm text-slate-700">
+              <svg class="mt-0.5 h-4 w-4 flex-none text-cyan-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>{w}
+            </li>
+          ))}
+        </ul>
+        <a href={caseHref} class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-900">
+          {caseText}
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </article>
+
+      <a href={reviewsUrl} target="_blank" rel="noopener noreferrer" class="flex flex-col justify-center rounded-2xl border border-slate-200 bg-white p-6 text-center transition hover:border-cyan-600 sm:p-8 lg:col-span-4">
+        <p class="text-6xl font-extrabold text-slate-900" style="font-variant-numeric: tabular-nums;">{rating}</p>
+        <p class="mt-1 text-xl tracking-tight text-orange-500" aria-hidden="true">★★★★★</p>
+        <p class="mt-1 text-sm font-semibold text-slate-700">{reviewCount} Google reviews</p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-500">{ratingBody}</p>
+      </a>
+    </div>
+  </div>
+</section>

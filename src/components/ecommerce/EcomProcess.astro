@@ -1,0 +1,28 @@
+---
+interface Step { title: string; when: string; body: string; }
+interface Props { eyebrow: string; heading: string; intro: string; steps: Step[]; }
+const { eyebrow, heading, intro, steps } = Astro.props;
+---
+
+<section id="process" class="bg-white py-20 font-poppins sm:py-24 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700">{eyebrow}</p>
+        <h2 class="text-display-2 text-slate-900" style="text-wrap: balance;">{heading}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-600">{intro}</p>
+      </div>
+      <!-- Vertical timeline with week markers -->
+      <ol class="relative border-l-2 border-cyan-200 lg:col-span-8">
+        {steps.map((s, i) => (
+          <li class="relative pb-9 pl-8 last:pb-0">
+            <span class="absolute -left-[11px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-700 text-[10px] font-extrabold text-white ring-4 ring-white" style="font-variant-numeric: tabular-nums;">{i + 1}</span>
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-cyan-700">{s.when}</p>
+            <h3 class="mt-1 text-lg font-bold text-slate-900">{s.title}</h3>
+            <p class="mt-1.5 max-w-2xl leading-relaxed text-slate-600">{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

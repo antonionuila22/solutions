@@ -1,0 +1,31 @@
+---
+interface Leak { title: string; body: string; }
+interface Props { eyebrow: string; heading: string; intro: string; leaks: Leak[]; }
+const { eyebrow, heading, intro, leaks } = Astro.props;
+---
+
+<section id="leaks" class="relative bg-[#0b1f2a] py-20 font-poppins text-white sm:py-24 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">{eyebrow}</p>
+      <h2 class="text-display-2 text-white" style="text-wrap: balance;">{heading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-300">{intro}</p>
+    </div>
+
+    <ol class="mt-12 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+      {leaks.map((l) => (
+        <li class="border-t border-white/10 pt-5">
+          <h3 class="text-base font-bold text-white">{l.title}</h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-slate-300">{l.body}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="mt-14">
+      <slot />
+    </div>
+  </div>
+
+  <!-- Torn receipt edge into the next section -->
+  <div class="absolute inset-x-0 -bottom-px h-4 bg-white" style="background-image: linear-gradient(-45deg, #0b1f2a 8px, transparent 0), linear-gradient(45deg, #0b1f2a 8px, transparent 0); background-size: 16px 16px; background-position: 0 0;" aria-hidden="true"></div>
+</section>
