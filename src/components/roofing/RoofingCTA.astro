@@ -1,0 +1,54 @@
+---
+import { BUSINESS_INFO } from "../../configs/business";
+
+interface Props {
+  heading: string;
+  body: string;
+  bullets: string[];
+  primaryHref: string;
+  primaryText: string;
+}
+const { heading, body, bullets, primaryHref, primaryText } = Astro.props;
+const { phone, phoneRaw, whatsappUrl } = BUSINESS_INFO.us;
+---
+
+<section id="cta" class="relative overflow-hidden bg-[#101518] py-20 font-poppins text-white sm:py-24">
+  <div class="absolute inset-x-0 top-0 h-10 bg-[#fbfaf9]" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);" aria-hidden="true"></div>
+  <div class="absolute -bottom-40 -right-40 h-[32rem] w-[32rem] rounded-full bg-orange-500/10 blur-3xl" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-7">
+        <h2 class="text-display-2 text-white" style="text-wrap: balance;">{heading}</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300">{body}</p>
+        <ul class="mt-6 space-y-2">
+          {bullets.map((b) => (
+            <li class="flex gap-3 text-slate-200">
+              <svg class="mt-1 h-5 w-5 flex-none text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+          <a href={primaryHref} class="flex w-full items-center justify-center gap-3 rounded-xl bg-brand px-6 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/25 transition hover:bg-brand-strong">
+            {primaryText}
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <div class="mt-4 grid grid-cols-2 gap-3">
+            <a href={`tel:${phoneRaw}`} class="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Call
+            </a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.83 14.07c-.24.68-1.42 1.3-1.95 1.38-.5.07-1.13.1-1.83-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.37-.14-.19-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <p class="mt-4 text-center text-xs text-slate-400">{phone} · Mon to Fri, 8am to 6pm CT</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+interface Step {
+  title: string;
+  duration: string;
+  body: string;
+}
+
+interface Props {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  steps: Step[];
+}
+
+const { eyebrow, heading, intro, steps } = Astro.props;
+---
+
+<section id="process" class="bg-white py-20 font-poppins sm:py-24 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-orange-600">{eyebrow}</p>
+      <h2 class="text-display-2 text-slate-900" style="text-wrap: balance;">{heading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-600">{intro}</p>
+    </div>
+
+    <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+      {steps.map((s, i) => (
+        <li class="relative rounded-2xl border border-slate-200 bg-[#fbfaf9] p-6">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-extrabold text-brand" style="font-variant-numeric: tabular-nums;">{String(i + 1).padStart(2, "0")}</span>
+            <span class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-slate-600 ring-1 ring-slate-200">{s.duration}</span>
+          </div>
+          <h3 class="mt-4 text-base font-bold text-slate-900">{s.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{s.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

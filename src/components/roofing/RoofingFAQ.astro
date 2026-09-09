@@ -1,0 +1,21 @@
+---
+import FaqAccordion from "../FaqAccordion.astro";
+
+interface FAQItem { question: string; answer: string; }
+interface Props {
+  eyebrow: string;
+  heading: string;
+  faqs: FAQItem[];
+}
+const { eyebrow, heading, faqs } = Astro.props;
+---
+
+<section id="faq" class="bg-[#fbfaf9] py-20 font-poppins sm:py-24 lg:py-28">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-orange-600">{eyebrow}</p>
+    <h2 class="text-display-2 text-slate-900" style="text-wrap: balance;">{heading}</h2>
+    <div class="mt-10">
+      <FaqAccordion faqs={faqs} theme="light" />
+    </div>
+  </div>
+</section>

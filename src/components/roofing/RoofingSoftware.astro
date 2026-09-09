@@ -1,0 +1,52 @@
+---
+interface System {
+  name: string;
+  description: string;
+  capabilities: string[];
+}
+
+interface Props {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  systems: System[];
+  ctaHref: string;
+  ctaText: string;
+}
+
+const { eyebrow, heading, intro, systems, ctaHref, ctaText } = Astro.props;
+---
+
+<section id="software" class="bg-[#101518] py-20 font-poppins text-white sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-3xl">
+        <p class="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-orange-400">
+          <span class="h-px w-6 bg-orange-400"></span>{eyebrow}
+        </p>
+        <h2 class="text-display-2 text-white" style="text-wrap: balance;">{heading}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-300">{intro}</p>
+      </div>
+      <a href={ctaHref} class="inline-flex flex-none items-center gap-2 self-start rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10 lg:self-auto">
+        {ctaText}
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+
+    <ul class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {systems.map((s) => (
+        <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h3 class="text-base font-bold text-white">{s.name}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-300">{s.description}</p>
+          <ul class="mt-4 space-y-1.5">
+            {s.capabilities.map((c) => (
+              <li class="flex gap-2 text-sm text-slate-400">
+                <span class="mt-2 h-1 w-1 flex-none rounded-full bg-orange-400"></span>{c}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

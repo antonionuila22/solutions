@@ -1,0 +1,38 @@
+---
+interface Item {
+  title: string;
+  description: string;
+  icon: string; // inline SVG path (24x24 outline)
+}
+
+interface Props {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  items: Item[];
+}
+
+const { eyebrow, heading, intro, items } = Astro.props;
+---
+
+<section id="included" class="bg-white py-20 font-poppins sm:py-24 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-orange-600">{eyebrow}</p>
+      <h2 class="text-display-2 text-slate-900" style="text-wrap: balance;">{heading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-600">{intro}</p>
+    </div>
+
+    <ul class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((item) => (
+        <li class="bg-white p-6 transition-colors hover:bg-orange-50/40">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#101518] text-white">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d={item.icon}/></svg>
+          </div>
+          <h3 class="mt-4 text-base font-bold text-slate-900">{item.title}</h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{item.description}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
