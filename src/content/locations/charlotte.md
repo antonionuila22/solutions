@@ -68,7 +68,6 @@ marketHighlights:
 
 localStats:
   techCompanies: "3,500+"
-  averageProjectCost: "$12,000-50,000"
   businessGrowth: "+12% YoY"
 
 whyChooseUs:
@@ -99,7 +98,7 @@ faqs:
   - question: "How do Charlotte clients typically work with your team?"
     answer: "Most Charlotte clients do a kickoff video call, then daily Slack communication with weekly video syncs. Because we're just 1 hour off from Eastern Time, collaboration is natural and seamless. We use project management tools for clear visibility into progress."
   - question: "How much does a website cost for a Charlotte business?"
-    answer: "Most Charlotte projects fall between $12,000 and $50,000 depending on scope—a corporate marketing site sits at the lower end, while a fintech platform or custom SaaS product lands higher. Because our nearshore model runs roughly 60% below comparable Uptown and coastal agencies, that budget buys more design and engineering than you'd get locally, with full code ownership included."
+    answer: "We don't publish fixed prices. Every Charlotte proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Charlotte agency, and you own the code at the end."
   - question: "Do you build with a modern tech stack that our Charlotte tech team can maintain?"
     answer: "Yes. We build on React, Next.js, Astro, and Node.js—the same tools Charlotte's fintech and South End startup teams already use. Since you own the entire codebase with no proprietary lock-in, your in-house developers or any local Charlotte agency can pick it up and extend it without friction."
   - question: "Can you work with businesses across the greater Charlotte metro, like Ballantyne, SouthPark, or Lake Norman?"

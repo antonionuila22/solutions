@@ -1,0 +1,171 @@
+---
+/**
+ * BudgetModel — replaces the old price cards / Pricing block.
+ *
+ * Codebrand works from fixed client budgets. There are no published prices:
+ * the client brings a budget, we propose the resources that fit it (a website,
+ * a store, an application, or N developers with a given stack) and close a
+ * fixed price for that scope. This section explains the model and sends the
+ * visitor to the proposal request at /quoter/.
+ *
+ * Config-driven like the other home components so /hn/ can override every
+ * string in Spanish.
+ */
+import Icon from "./icons/Icon.astro";
+
+type Card = { icon: string; title: string; desc: string };
+
+interface BudgetModelConfig {
+  eyebrow: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  cards: Card[];
+  stepsTitle: string;
+  steps: string[];
+  ctaText: string;
+  ctaHref: string;
+  ctaNote: string;
+  theme: "light" | "dark";
+}
+
+interface Props {
+  config?: Partial<BudgetModelConfig>;
+  id?: string;
+}
+
+const defaults: BudgetModelConfig = {
+  eyebrow: "How we scope a project",
+  title: "Your budget sets the scope.",
+  titleHighlight: "We fit the team to it.",
+  subtitle:
+    "We don't publish price lists. You tell us what you need and the budget you have; we come back with a fixed-price proposal that says exactly which resources go into it and what you get.",
+  cards: [
+    {
+      icon: "globe",
+      title: "A website or online store",
+      desc: "Design in Figma, a fast build in Astro, Next.js or WordPress, technical SEO and launch. The number of pages and integrations is sized to your budget.",
+    },
+    {
+      icon: "layers",
+      title: "A web application or custom software",
+      desc: "CRMs, internal tools, portals and integrations, delivered in phases so the first version ships inside the budget and grows from there.",
+    },
+    {
+      icon: "users",
+      title: "Developers with a specific stack",
+      desc: "One senior React developer for three months, or a full squad with a project manager. You choose the stack, the seniority and the duration; we staff it.",
+    },
+  ],
+  stepsTitle: "How it works",
+  steps: [
+    "You tell us what you want to build and the budget you have in mind.",
+    "We propose the resources that fit it: roles, seniority, hours and timeline.",
+    "You approve a fixed price for that scope. No hourly surprises, no hidden fees.",
+    "We build in weekly sprints and you own 100% of the code from the first commit.",
+  ],
+  ctaText: "Request a proposal",
+  ctaHref: "/quoter/",
+  ctaNote: "Fixed-price proposal within 24 business hours.",
+  theme: "light",
+};
+
+const c: BudgetModelConfig = { ...defaults, ...Astro.props.config };
+const dark = c.theme === "dark";
+const sectionId = Astro.props.id ?? "budget-model";
+---
+
+<section
+  id={sectionId}
+  class:list={[
+    "relative font-poppins py-24 sm:py-32 lg:py-40 overflow-hidden",
+    dark ? "bg-slate-950" : "bg-slate-50",
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-14 sm:mb-16">
+      <p class:list={["text-xs font-semibold uppercase tracking-[0.2em]", dark ? "text-orange-400" : "text-slate-400"]}>
+        {c.eyebrow}
+      </p>
+      <h2
+        data-anim="heading"
+        class:list={[
+          "mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]",
+          dark ? "text-white" : "text-slate-900",
+        ]}
+      >
+        {c.title}{" "}
+        <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">{c.titleHighlight}</span>
+      </h2>
+      <p class:list={["mt-5 text-lg leading-relaxed", dark ? "text-slate-300" : "text-slate-500"]}>
+        {c.subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+      {c.cards.map((card, i) => (
+        <div
+          class:list={[
+            "relative flex flex-col rounded-2xl border p-7 transition-all duration-500 hover:-translate-y-1",
+            dark
+              ? "border-white/10 bg-white/5 hover:border-white/20"
+              : i === 1
+                ? "border-orange-300 bg-white shadow-xl shadow-orange-500/5"
+                : "border-slate-200 bg-white hover:border-slate-300",
+          ]}
+        >
+          <span
+            class:list={[
+              "flex items-center justify-center w-11 h-11 rounded-xl border",
+              i === 1 ? "bg-orange-500 border-orange-500 text-white" : dark ? "bg-white/10 border-white/10 text-orange-300" : "bg-white border-slate-200 text-slate-500",
+            ]}
+          >
+            <Icon name={card.icon} class="w-5 h-5" />
+          </span>
+          <h3 class:list={["mt-5 text-lg font-bold", dark ? "text-white" : "text-slate-900"]}>{card.title}</h3>
+          <p class:list={["mt-3 text-sm leading-relaxed", dark ? "text-slate-400" : "text-slate-500"]}>{card.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div
+      class:list={[
+        "mt-14 sm:mt-16 grid gap-10 lg:grid-cols-12 lg:items-center border-t pt-12 sm:pt-14",
+        dark ? "border-white/10" : "border-slate-200",
+      ]}
+    >
+      <div class="lg:col-span-7">
+        <p class:list={["text-xs font-semibold uppercase tracking-[0.2em]", dark ? "text-orange-400" : "text-slate-400"]}>
+          {c.stepsTitle}
+        </p>
+        <ol class="mt-6 space-y-4">
+          {c.steps.map((step, i) => (
+            <li class="flex items-start gap-4">
+              <span
+                class:list={[
+                  "mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold tabular-nums",
+                  dark ? "bg-white/10 text-orange-300" : "bg-slate-900 text-white",
+                ]}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span class:list={["leading-relaxed", dark ? "text-slate-300" : "text-slate-600"]}>{step}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="lg:col-span-5 flex flex-col items-start lg:items-end gap-3">
+        <a
+          href={c.ctaHref}
+          class="group inline-flex items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm sm:text-base font-semibold shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2"
+        >
+          {c.ctaText}
+          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">
+            <Icon name="check" class="w-4 h-4 text-white" />
+          </span>
+        </a>
+        <p class:list={["text-sm", dark ? "text-slate-400" : "text-slate-500"]}>{c.ctaNote}</p>
+      </div>
+    </div>
+  </div>
+</section>

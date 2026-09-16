@@ -6,6 +6,7 @@ export const prerender = true;
  */
 
 import Layout from "../layouts/Layout.astro";
+import BudgetModel from "../components/BudgetModel.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 
@@ -51,7 +52,7 @@ const faqs = [
   {
     question: "How does pricing work?",
     answer:
-      "We offer transparent hourly pricing: Standard at $65/hr (48h turnaround), Priority at $85/hr (24h turnaround with unlimited revisions and dedicated designer), and Rush at $120/hr (same-day delivery). Volume discounts are available for 20+ hours monthly. No hidden fees, no surprise charges. You only pay for actual design time.",
+      "We don't publish hourly rates. Tell us the design capacity you need, for example a dedicated designer three days a week or a fixed design sprint, and the budget you have; we propose the seniority, hours and turnaround that fit it and close a fixed price for the term. No hidden fees, no surprise charges.",
   },
   {
     question: "Is my work confidential?",
@@ -84,9 +85,9 @@ const faqs = [
 const comparison = [
   {
     aspect: "Cost",
-    inHouse: "High ($60-100k/year salary + benefits + tools)",
-    freelancer: "Variable ($30-150/hr, inconsistent)",
-    outsourcing: "Predictable ($65-120/hr, no overhead)",
+    inHouse: "High (full salary, benefits and tools)",
+    freelancer: "Variable (rates and quality vary widely)",
+    outsourcing: "Predictable (fixed price per term, no overhead)",
   },
   {
     aspect: "Availability",
@@ -186,33 +187,6 @@ const designStats = [
   { value: "100%", label: "Satisfaction" },
 ];
 
-// Pricing
-const pricingPlans = [
-  {
-    title: "Standard",
-    price: "$65",
-    period: "/hour",
-    desc: "Quality design work",
-    features: ["48h turnaround", "2 revision rounds", "Source files included", "Email support"],
-    highlighted: false,
-  },
-  {
-    title: "Priority",
-    price: "$85",
-    period: "/hour",
-    desc: "Dedicated attention",
-    features: ["24h turnaround", "Unlimited revisions", "All source files", "Slack/direct support", "Dedicated designer"],
-    highlighted: true,
-  },
-  {
-    title: "Rush",
-    price: "$120",
-    period: "/hour",
-    desc: "Need it yesterday?",
-    features: ["Same-day delivery", "12h turnaround", "Priority queue", "Direct communication", "Weekend availability"],
-    highlighted: false,
-  },
-];
 ---
 
 <Layout
@@ -507,59 +481,17 @@ const pricingPlans = [
     </div>
   </section>
 
-  <!-- ==================== PRICING ==================== -->
-  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
-          PRICING
-        </span>
-        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900">
-          Simple, <span class="text-orange-500">transparent</span>
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6" data-anim="fade">
-        {pricingPlans.map((plan) => (
-          <div class:list={[
-            "relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2",
-            plan.highlighted
-              ? "bg-slate-900 text-white shadow-2xl scale-105 z-10"
-              : "bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl"
-          ]}>
-            {plan.highlighted && (
-              <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                Most Popular
-              </span>
-            )}
-            <h3 class={plan.highlighted ? "text-2xl font-semibold mb-2 text-white" : "text-2xl font-semibold mb-2 text-slate-900"}>{plan.title}</h3>
-            <p class={plan.highlighted ? "text-sm mb-6 text-slate-300" : "text-sm mb-6 text-slate-600"}>{plan.desc}</p>
-            <div class="mb-8">
-              <span class={plan.highlighted ? "text-5xl font-bold text-white" : "text-5xl font-bold text-slate-900"}>{plan.price}</span>
-              <span class={plan.highlighted ? "text-slate-400 text-lg" : "text-slate-500 text-lg"}>{plan.period}</span>
-            </div>
-            <ul class="space-y-4 mb-8">
-              {plan.features.map((feature) => (
-                <li class="flex items-center gap-3">
-                  <Icon name="check" class={plan.highlighted ? "w-5 h-5 text-teal-400 flex-shrink-0" : "w-5 h-5 text-teal-500 flex-shrink-0"} />
-                  <span class={plan.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="/contact/"
-              class={plan.highlighted
-                ? "block w-full py-4 text-center font-bold rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg transition-all duration-300"
-                : "block w-full py-4 text-center font-bold rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300"
-              }
-            >
-              Get Started
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <BudgetModel config={{
+    eyebrow: "How we price",
+    title: "Priced from your budget.",
+    titleHighlight: "Not by the hour.",
+    subtitle: "We don't publish hourly rates. Tell us the design capacity you need and the budget you have; we propose the seniority, hours and turnaround that fit it and close a fixed price for the term.",
+    cards: [
+      { icon: "palette", title: "A design sprint", desc: "A defined deliverable, a landing page, a brand refresh or a product screen set, closed at a fixed price for the agreed scope." },
+      { icon: "users", title: "A dedicated designer", desc: "One designer embedded in your team for the days per week and the term you define, at a fixed monthly price." },
+      { icon: "layers", title: "A design system", desc: "Components, tokens and documentation your team can keep building on, sized to the budget you set." },
+    ],
+  }} />
 
   <!-- ==================== WHY CODEBRAND ==================== -->
   <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">

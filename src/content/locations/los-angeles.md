@@ -59,9 +59,6 @@ marketHighlights:
   - "Southern California draws billions in venture capital into the metro each year"
   - "UCLA, USC, and Caltech feed a deep local engineering talent pipeline"
 
-localStats:
-  averageProjectCost: "$2,500-$15,000"
-
 whyChooseUs:
   - title: "Westside Quality, Not Westside Rates"
     description: "Santa Monica and Culver City agencies price against one of the highest-cost creative markets in the country. Our Honduras nearshore model delivers the same design discipline and senior engineering at up to 60% less, so LA brands and startups keep budget for the work that actually reaches their audience."
@@ -94,7 +91,7 @@ faqs:
   - question: "Do you work with early-stage Silicon Beach startups?"
     answer: "Yes—startups are a core part of what we do. Founders in Santa Monica, Venice, and Playa Vista need to reach a credible MVP before the next raise, and our pricing makes seed capital go substantially further than a Westside agency would. We ship lean, iterate fast, and keep the codebase clean so a Silicon Beach team can scale or bring engineering in-house later without friction."
   - question: "What does an LA web project cost compared with a local agency?"
-    answer: "Most Los Angeles engagements land between $2,500 and $15,000 depending on scope, which runs up to 60% below what a Santa Monica or Culver City agency charges for comparable work. You still get senior engineering on a modern React, Next.js, Astro, or Node.js stack, Figma-faithful design, and full ownership of the code at the end—just without the Westside overhead baked into the price."
+    answer: "We don't publish fixed prices. Every Los Angeles proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Los Angeles agency, and you own the code at the end."
 
 nearbyAreas:
   - "Hollywood"

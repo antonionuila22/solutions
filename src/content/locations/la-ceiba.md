@@ -69,7 +69,7 @@ faqs:
   - question: "¿Están cerca por si necesito coordinar el proyecto en persona?"
     answer: "Somos de San Pedro Sula, a poco más de dos horas de La Ceiba por la carretera de la costa. El día a día lo llevamos por videollamada y WhatsApp, y coordinamos reuniones presenciales en San Pedro Sula cuando conviene al proyecto."
   - question: "¿Qué costo tiene un sitio web turístico para La Ceiba?"
-    answer: "Depende de las funciones: un sitio de presentación parte desde unos $400 USD y sube al agregar reservas en línea, versión bilingüe y catálogo de tours. Le damos una cotización clara en lempiras y dólares según lo que necesite su hotel o tour."
+    answer: "No publicamos precios fijos. Cada propuesta para La Ceiba se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
 
 whyChooseUs:
   - title: "Especialistas en convertir viajeros en huéspedes"
@@ -101,6 +101,4 @@ nearbyAreas:
   - "Pico Bonito"
   - "Cuero y Salado"
 
-localStats:
-  averageProjectCost: "$400-$6,000 USD"
 ---

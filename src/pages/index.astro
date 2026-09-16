@@ -2,7 +2,7 @@
 export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import Icon from "../components/icons/Icon.astro";
-import TeamQuoter from "../components/TeamQuoter";
+import BudgetModel from "../components/BudgetModel.astro";
 import Ourteam from "@/components/Ourteam.astro";
 import Faq from "../components/Faq.astro";
 import TechMarquee from "../components/TechMarquee.astro";
@@ -58,7 +58,7 @@ const googleReviews = [
   },
   {
     name: "Tepeu Guerrero",
-    body: "Muy sorprendido con su trabajo, hicieron una página web para mi lavandería por solo $600. Por su calidad y precio los recomiendo al 100.",
+    body: "Muy sorprendido con su trabajo, hicieron una página web para mi lavandería. Por su calidad y precio los recomiendo al 100.",
     date: "2024-09-10",
   },
   {
@@ -366,15 +366,8 @@ const included = [
 const principles = [
   { lead: "Source code you can read.", sub: "Clean, documented, and handed over on day one. No black boxes, no proprietary lock-in, no hostage clauses." },
   { lead: "Sprint deadlines you can trust.", sub: "Weekly sprint demos on a live staging URL — progress you can click every week, not a reveal at the end." },
-  { lead: "Developer rates you can see.", sub: "Hourly rates published up front on this page. No surprise invoices, no vague estimates, no discovery fee." },
+  { lead: "Budgets you can plan around.", sub: "A fixed price for the agreed scope, built from the budget you bring. No surprise invoices, no vague estimates, no discovery fee." },
   { lead: "SEO results you can measure.", sub: "We ship metrics, not promises — organic traffic, conversion rate, Core Web Vitals and load times, reported monthly." },
-];
-
-// ── Hourly rates — the same numbers the quoter uses ──
-const rates = [
-  { role: "Mid-Level Developer", price: "$45", desc: "Solid execution on well-defined work.", icon: "code", featured: false },
-  { role: "Senior Developer", price: "$65", desc: "Architecture, hard problems, code review.", icon: "cpu", featured: true },
-  { role: "Lead Developer & Architect", price: "$95", desc: "Technical direction and team ownership.", icon: "target", featured: false },
 ];
 
 const whatsappUrl =
@@ -407,7 +400,7 @@ const whatsappUrl =
 
       <p class="mt-8 max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed">
         Senior engineers on your timezone — websites that sell, software that ships.
-        Transparent rates from <span class="text-white font-semibold">$45/hr</span>, no agency overhead.
+        Fixed-price proposals built from <span class="text-white font-semibold">your budget</span>, no agency overhead.
       </p>
 
       <!-- Dual CTA -->
@@ -659,8 +652,8 @@ const whatsappUrl =
         <a href="/services/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">full services directory</a>,{" "}
         read how we approach{" "}
         <a href="/custom-web-development-services/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">custom web development services</a>,{" "}
-        or price the whole scope yourself with the{" "}
-        <a href="/quoter/" class="font-semibold text-orange-600 hover:text-orange-700 transition-colors">project quoter →</a>
+        or tell us your budget and get a{" "}
+        <a href="/quoter/" class="font-semibold text-orange-600 hover:text-orange-700 transition-colors">fixed-price proposal →</a>
       </p>
     </div>
   </section>
@@ -686,7 +679,7 @@ const whatsappUrl =
             senior team, on US Central Time.
           </p>
           <p class="mt-6 max-w-xl text-slate-400 leading-relaxed">
-            Billed by the hour ($45–$95), delivered in weekly sprints, and you
+            Scoped to your budget as a fixed price, delivered in weekly sprints, and you
             own 100% of the code. If you need the whole squad, there is a{" "}
             <a href="/dedicated-development-team/" class="font-semibold text-slate-200 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-400 transition-colors">dedicated development team</a>{" "}
             for that.
@@ -739,7 +732,7 @@ const whatsappUrl =
           for the internal systems a growing company outgrows its spreadsheets on. UX/UI design is not an add-on: every build starts in Figma, gets prototyped, and only then gets written.
         </p>
         <p>
-          The commercial case is simple. A US agency bills $150–$250 an hour for the same seniority we publish at $45–$95. You can{" "}
+          The commercial case is simple. You bring a budget and we propose the senior team that fits it, without US agency overhead. You can{" "}
           <a href="/hire-remote-developers/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">hire senior developers</a>{" "}
           individually, or take a full{" "}
           <a href="/nearshore-development/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">nearshore development team</a>
@@ -896,68 +889,9 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 7 · PRICING — hourly rates + interactive TeamQuoter        -->
+  <!-- ACT 7 · BUDGET MODEL — no price list, fixed price per scope   -->
   <!-- ============================================================= -->
-  <section id="pricing" class="relative bg-slate-50 font-poppins py-24 sm:py-32 lg:py-40 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-14 sm:mb-16">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Transparent pricing</p>
-        <h2 data-anim="heading" class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
-          Transparent developer rates. <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">No sales call needed.</span>
-        </h2>
-        <p class="mt-5 text-lg text-slate-500 leading-relaxed">
-          Hourly, senior-led, no monthly lock-in. Hire one developer or a full nearshore team — build it below and see your price instantly.
-        </p>
-      </div>
-
-      <!-- Rate cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-12 sm:mb-14">
-        {rates.map((r) => (
-          <div class={`relative flex flex-col rounded-2xl border p-7 transition-all duration-500 hover:-translate-y-1 ${r.featured ? "border-orange-300 bg-white shadow-xl shadow-orange-500/5 sm:-translate-y-2" : "border-slate-200 bg-white hover:border-slate-300"}`}>
-            {r.featured && (
-              <span class="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-orange-500">Most requested</span>
-            )}
-            <span class={`flex items-center justify-center w-11 h-11 rounded-xl border ${r.featured ? "bg-orange-500 border-orange-500 text-white" : "bg-white border-slate-200 text-slate-500"}`}>
-              <Icon name={r.icon} class="w-5 h-5" />
-            </span>
-            <h3 class="mt-5 text-lg font-bold text-slate-900">{r.role}</h3>
-            <div class="mt-1 flex items-baseline gap-1">
-              <span class="text-4xl font-bold tracking-tight text-slate-900">{r.price}</span>
-              <span class="text-sm font-semibold text-slate-400">/ hour</span>
-            </div>
-            <p class="mt-3 text-sm text-slate-500 leading-relaxed">{r.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      <!-- Interactive quoter — the killer vs static price cards -->
-      <TeamQuoter client:visible />
-
-      <!-- Quoter promo — instant full-scope estimate at /quoter -->
-      <div class="mt-14 sm:mt-16 grid gap-8 sm:grid-cols-12 sm:items-center border-t border-slate-200 pt-12 sm:pt-14">
-        <div class="sm:col-span-7">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Project quoter</p>
-          <h3 class="mt-4 text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 leading-tight">
-            Web development quote? <span class="text-orange-600">Get the full breakdown instantly.</span>
-          </h3>
-          <p class="mt-3 text-slate-500 leading-relaxed max-w-xl">
-            Price web, branding, SEO, video, and monthly plans in a couple of minutes — no call required.
-          </p>
-        </div>
-        <div class="sm:col-span-5 flex sm:justify-end">
-          <a
-            href="/quoter/"
-            class="group inline-flex items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-sm sm:text-base font-semibold shadow-lg shadow-slate-900/10 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50"
-          >
-            Get an instant quote
-            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <BudgetModel id="pricing" />
 
   <!-- ============================================================= -->
   <!-- STRATEGIC PARTNERSHIP — Zeed Agency banner (shared)           -->

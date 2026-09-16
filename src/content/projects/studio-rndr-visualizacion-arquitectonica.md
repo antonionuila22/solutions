@@ -32,7 +32,7 @@ resultsNote: >-
 #   1) la fecha real de entrega (hoy está puesta el 1 de julio de 2026 como aproximación)
 #   2) las horas reales facturadas y el monto real del proyecto — el desglose de la
 #      sección "Cuánto cuesta" es una ESTIMACIÓN construida con nuestras tarifas
-#      publicadas ($45/$65/$95 por hora), no la factura de Studio RNDR
+#      por horas y perfil, no la factura de Studio RNDR
 #   3) métricas de negocio, si Studio RNDR quiere compartirlas: consultas recibidas
 #      por el formulario al mes, y desde qué fecha
 ---
@@ -81,11 +81,11 @@ Y el tercero: no había contenido de partida. Ni textos, ni estructura, ni jerar
 - Cierre con llamada a la acción directa
 - Pipeline completo de 45 imágenes a AVIF, con dimensiones y carga diferida
 
-## Cuánto cuesta un sitio de esta calidad
+## Qué lleva un sitio de esta calidad
 
-La pregunta que siempre llega después de ver un sitio así es cuánto cuesta. La respuesta honesta es que no se cotiza por "una landing" — se cotiza por las horas que lleva, y conviene ver en qué se van.
+La pregunta que siempre llega después de ver un sitio así es cuánto cuesta. La respuesta honesta es que no se cotiza por "una landing": se cotiza con un precio cerrado a partir del presupuesto del cliente y de los perfiles que hacen falta, y conviene ver en qué se van esas horas.
 
-Nuestras tarifas son públicas y por hora: **$45 para un desarrollador mid, $65 para un senior y $95 para un lead o arquitecto.** Un proyecto como este se reparte aproximadamente así:
+Un proyecto como este se reparte aproximadamente así:
 
 | Fase | Horas | Perfil |
 |---|--:|---|
@@ -98,7 +98,7 @@ Nuestras tarifas son públicas y por hora: **$45 para un desarrollador mid, $65 
 | Despliegue, dominio y entrega | 4 | Senior |
 | **Total** | **100** | |
 
-A esas tarifas, un sitio de este nivel se mueve en el rango de **$6,000 a $8,000 USD**, según cuánto del trabajo lo lleve un lead y cuánta curaduría de contenido haga falta.
+El precio final depende de cuánto del trabajo lo lleve un lead y de cuánta curaduría de contenido haga falta; por eso lo cerramos como **un precio fijo a partir del presupuesto del cliente**, no como una suma de horas.
 
 Dos cosas que conviene decir sin adornos. La primera: la mayor parte de ese presupuesto **no es programar**. Casi la mitad se va en decidir qué se muestra, en qué orden y con qué jerarquía — que es exactamente lo que separa un portafolio memorable de una plantilla con fotos bonitas. La segunda: un sitio de una página bien hecho cuesta más que un sitio de diez páginas mal hecho, porque no hay dónde esconderse. Cada decisión está a la vista.
 

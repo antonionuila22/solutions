@@ -59,9 +59,6 @@ marketHighlights:
   - "The North Loop and University of Minnesota support a growing startup community"
   - "A highly educated Upper Midwest workforce sustains steady, stable business growth"
 
-localStats:
-  averageProjectCost: "$2,000-$12,000"
-
 whyChooseUs:
   - title: "Enterprise Polish, Not Coastal Pricing"
     description: "The Twin Cities' corporate density sets a high professional bar, and local and coastal agencies price accordingly. Our Honduras nearshore model delivers enterprise-grade engineering and documentation well below those rates, so a Minneapolis retailer, health group, or division stretches its budget further."
@@ -94,7 +91,7 @@ faqs:
   - question: "Can you help North Loop startups as well as large corporations?"
     answer: "Absolutely. Alongside the enterprise work, we build for the health-tech and retail-tech founders in the North Loop and around the University of Minnesota. Our cost structure means a Twin Cities startup's funding reaches further, and we ship lean, scalable MVPs with clean code, so a growing Minneapolis company can raise, expand, and bring engineering in-house later without inheriting technical debt."
   - question: "What does a Minneapolis web project cost versus a local agency?"
-    answer: "Most Minneapolis engagements land between $2,000 and $12,000 depending on whether you need a corporate site, a retail storefront, or a secure healthcare portal—well below what Twin Cities and coastal agencies charge for comparable work. You still get senior engineering on a modern React, Next.js, Astro, or Node.js stack, enterprise-grade documentation, and full ownership of the code at the end."
+    answer: "We don't publish fixed prices. Every Minneapolis proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Minneapolis agency, and you own the code at the end."
 
 nearbyAreas:
   - "Downtown Minneapolis"

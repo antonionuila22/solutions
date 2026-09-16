@@ -33,7 +33,7 @@ Each has real pros and cons, whether you [hire remote developers](/hire-remote-d
 
 | Factor | Freelancer | Big Agency | Boutique Agency (Codebrand) |
 |--------|-----------|------------|---------------------------|
-| **Cost** | $500-$5,000 | $15,000-$100,000+ | $2,500-$25,000 |
+| **Cost** | $500-$5,000 | $15,000-$100,000+ | Fixed price per project |
 | **Timeline** | 2-8 weeks | 8-24 weeks | 4-12 weeks |
 | **Team size** | 1 person | 10-50+ people | 3-10 people |
 | **Communication** | Direct | Account managers | Direct with builders |
@@ -240,7 +240,7 @@ We're not the cheapest option. We're the **best value** option for businesses th
 
 ### Choose a Boutique Agency if:
 
-- Your budget is $2,500-$25,000
+- You have a defined budget and want it scoped honestly
 - You want quality without enterprise pricing
 - You value direct communication with builders
 - You need both design and development

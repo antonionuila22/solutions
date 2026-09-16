@@ -67,7 +67,7 @@ faqs:
   - question: "¿Trabajan también con caficultores de El Paraíso?"
     answer: "Sí. Desarrollamos sitios para fincas y exportadores de café de altura de las montañas de El Paraíso, con la historia del origen, perfiles de taza y contacto para compradores de café de especialidad en el exterior."
   - question: "¿Cuánto cuesta un sitio de marca para una fábrica de Danlí?"
-    answer: "Un sitio premium bilingüe para una marca de puros danlidense suele partir desde unos $1,500 USD según fotografía, número de vitolas y funciones; un sitio informativo más sencillo parte desde $500 USD. Definimos alcance y presupuesto cerrados antes de empezar."
+    answer: "No publicamos precios fijos. Cada propuesta para Danlí se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "Estamos en Danlí, ¿cómo trabajamos con ustedes desde SPS?"
     answer: "Todo el proyecto se lleva por videollamada, WhatsApp y correo, sin que usted viaje. Cuando conviene, coordinamos una reunión presencial en San Pedro Sula o Tegucigalpa. Atender clientes del oriente de forma remota es parte habitual de nuestro trabajo."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Frontera con Nicaragua"
   - "Oriente de Honduras"
 
-localStats:
-  averageProjectCost: "$500-$7,000 USD"
 ---

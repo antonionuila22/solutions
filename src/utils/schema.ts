@@ -36,11 +36,11 @@ const ORGANIZATION_DATA = {
 /**
  * Default offer structure for all services
  */
+// No price on purpose: Codebrand publishes no prices. Every engagement is a
+// fixed-price proposal built from the client's budget.
 const DEFAULT_OFFER = {
   "@type": "Offer",
   availability: "https://schema.org/InStock",
-  price: "0",
-  priceCurrency: "USD",
 } as const;
 
 /**

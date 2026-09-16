@@ -82,7 +82,6 @@ whyChooseUs:
 
 localStats:
   techCompanies: "7,000+"
-  averageProjectCost: "$15,000-60,000"
   businessGrowth: "+15% YoY"
 
 faqs:

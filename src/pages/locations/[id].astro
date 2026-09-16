@@ -337,7 +337,7 @@ const faqSchema = faqs?.length ? {
   )}
 
   <!-- Local Stats Section -->
-  {localStats && (localStats.techCompanies || localStats.averageProjectCost || localStats.businessGrowth) && (
+  {localStats && (localStats.techCompanies || localStats.businessGrowth) && (
     <section class="py-12 bg-white font-poppins border-b border-slate-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center" data-anim="fade">
@@ -345,12 +345,6 @@ const faqSchema = faqs?.length ? {
             <div>
               <div class="text-4xl font-bold text-orange-500 mb-2">{localStats.techCompanies}</div>
               <div class="text-slate-600">Tech Companies in {city}</div>
-            </div>
-          )}
-          {localStats.averageProjectCost && (
-            <div>
-              <div class="text-4xl font-bold text-orange-500 mb-2">{localStats.averageProjectCost}</div>
-              <div class="text-slate-600">Avg. Local Agency Cost</div>
             </div>
           )}
           {localStats.businessGrowth && (

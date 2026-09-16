@@ -9,15 +9,12 @@ interface ValuePropConfig {
   stats: { value: string; title: string; description: string }[];
   benefitsTitle: string;
   benefits: { title: string; description: string }[];
-  priceComparison: {
-    competitorLabel: string;
-    competitorPrice: string;
-    competitorNote: string;
-    ourLabel: string;
-    ourPrice: string;
-    ourNote: string;
-    savingsAmount: string;
-    savingsPercent: string;
+  budget: {
+    title: string;
+    subtitle: string;
+    steps: { title: string; description: string }[];
+    ctaText: string;
+    ctaHref: string;
   };
   ctaText: string;
   ctaSubtext: string;
@@ -33,7 +30,7 @@ const defaults: ValuePropConfig = {
   flagLabel: "Honduras → United States",
   title: "Premium Web Development",
   titleHighlight: "at 60% Lower Cost",
-  subtitle: 'Why pay $25,000+ for <a href="/services/web-development/" class="text-cyan-500 hover:text-cyan-600 font-semibold">web development</a> in the US when you can get the same professional quality from our certified team in Honduras for a fraction of the cost?',
+  subtitle: 'Why pay US agency overhead for <a href="/services/web-development/" class="text-cyan-500 hover:text-cyan-600 font-semibold">web development</a> when you can get the same professional quality from our certified team in Honduras, scoped to the budget you already have?',
   stats: [
     { value: "60%", title: "Cost Savings", description: "Save thousands compared to US agency rates while maintaining the same professional quality standards." },
     { value: "100%", title: "Same Quality", description: "Our certified professionals deliver the exact same quality as US agencies. Same standards, better prices." },
@@ -47,15 +44,16 @@ const defaults: ValuePropConfig = {
     { title: "Bilingual Communication", description: "Fluent English-speaking team ensures clear communication throughout your project lifecycle." },
     { title: "Proven Track Record", description: "50+ successful projects delivered to international clients across various industries." },
   ],
-  priceComparison: {
-    competitorLabel: "US Agency",
-    competitorPrice: "$25,000",
-    competitorNote: "Average US market rate for custom websites",
-    ourLabel: "Codebrand",
-    ourPrice: "$10,000",
-    ourNote: "Top quality, Honduras pricing",
-    savingsAmount: "$15,000+",
-    savingsPercent: "60% cost reduction",
+  budget: {
+    title: "Priced from your budget",
+    subtitle: "No price list. A fixed price for the scope that fits.",
+    steps: [
+      { title: "You set the budget", description: "Tell us what you need and the budget you have in mind, total or per month." },
+      { title: "We size the resources", description: "A website, a store, an application, or developers with your stack: roles, seniority and timeline that fit the number." },
+      { title: "You approve a fixed price", description: "One price for the agreed scope, no hourly surprises, and you own 100% of the code." },
+    ],
+    ctaText: "Request a proposal",
+    ctaHref: "/quoter/",
   },
   ctaText: "Get Your Free Quote Today",
   ctaSubtext: "Join 50+ US businesses saving thousands on quality web development",
@@ -147,7 +145,7 @@ const c = { ...defaults, ...Astro.props.config };
         </div>
       </div>
 
-      <!-- Price Comparison -->
+      <!-- Budget model (replaces the old price comparison card) -->
       <div class="lg:col-span-2 price-comparison">
         <div class="sticky top-8">
           <div
@@ -155,99 +153,36 @@ const c = { ...defaults, ...Astro.props.config };
           >
             <div class="text-center mb-8">
               <h3 class="text-2xl font-semibold text-slate-900 mb-2">
-                Price Comparison
+                {c.budget.title}
               </h3>
               <p class="text-sm text-slate-600">
-                Professional Website Development
+                {c.budget.subtitle}
               </p>
             </div>
 
-            <div class="space-y-5">
-              <div
-                class="bg-white rounded-xl p-6 border-2 border-slate-200 shadow-sm"
-              >
-                <div class="flex items-center justify-between mb-3">
+            <ol class="space-y-4">
+              {c.budget.steps.map((step, i) => (
+                <li class="flex items-start gap-4 bg-white rounded-xl p-5 border-2 border-slate-200 shadow-sm">
+                  <span class="flex-shrink-0 w-9 h-9 rounded-full bg-cyan-900 text-white text-sm font-bold flex items-center justify-center tabular-nums">
+                    {i + 1}
+                  </span>
                   <div>
-                    <p class="text-sm text-slate-500 mb-1">{c.priceComparison.competitorLabel}</p>
-                    <p class="text-3xl font-bold text-slate-900">
-                      {c.priceComparison.competitorPrice}<span class="text-lg text-slate-500">+</span>
-                    </p>
+                    <p class="font-semibold text-slate-900">{step.title}</p>
+                    <p class="text-sm text-slate-600 leading-relaxed mt-1">{step.description}</p>
                   </div>
-                  <div
-                    class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full"
-                  >
-                    <svg
-                      class="w-6 h-6 text-red-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                  </div>
-                </div>
-                <p class="text-xs text-slate-500">
-                  {c.priceComparison.competitorNote}
-                </p>
-              </div>
+                </li>
+              ))}
+            </ol>
 
-              <div class="relative">
-                <div
-                  class="absolute inset-0 flex items-center"
-                  aria-hidden="true"
-                >
-                  <div class="w-full border-t border-slate-300"></div>
-                </div>
-                <div class="relative flex justify-center">
-                  <span
-                    class="px-3 bg-slate-50 text-sm font-semibold text-slate-700"
-                    >VS</span
-                  >
-                </div>
-              </div>
-
-              <div
-                class="bg-cyan-900 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300"
-              >
-                <div class="flex items-center justify-between mb-3">
-                  <div>
-                    <p class="text-sm text-cyan-100 mb-1">{c.priceComparison.ourLabel}</p>
-                    <p class="text-3xl font-bold text-white">{c.priceComparison.ourPrice}</p>
-                  </div>
-                  <div
-                    class="flex items-center justify-center w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm"
-                  >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                </div>
-                <p class="text-xs text-cyan-100">
-                  {c.priceComparison.ourNote}
-                </p>
-              </div>
-
-              <div
-                class="bg-gradient-to-r from-teal-50 to-teal-50 rounded-xl p-6 border-2 border-teal-200"
-              >
-                <div class="text-center">
-                  <p class="text-sm text-slate-600 mb-2">You Save</p>
-                  <p class="text-4xl font-bold text-teal-600 mb-1">{c.priceComparison.savingsAmount}</p>
-                  <p class="text-xs text-slate-500">{c.priceComparison.savingsPercent}</p>
-                </div>
-              </div>
-            </div>
+            <a
+              href={c.budget.ctaHref}
+              class="mt-6 flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-cyan-900 hover:bg-cyan-800 text-white font-semibold transition-colors duration-300"
+            >
+              {c.budget.ctaText}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>

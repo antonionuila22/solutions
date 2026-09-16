@@ -67,7 +67,7 @@ faqs:
   - question: "¿Sirve un sitio web si nuestros clientes ya nos conocen?"
     answer: "Sí. En Choloma la competencia por contratos es global; un sitio corporativo profesional refuerza su credibilidad cuando una marca lo compara con plantas de otros países, y le da presencia en Google para que nuevos compradores lo encuentren sin intermediarios."
   - question: "¿Cuánto cuesta un portal corporativo para una empresa de Choloma?"
-    answer: "Un sitio corporativo bilingüe para una maquila o proveedor industrial de Choloma suele partir desde unos $1,500 USD según secciones e idiomas. Le entregamos un presupuesto cerrado tras entender sus capacidades y a qué compradores quiere llegar."
+    answer: "No publicamos precios fijos. Cada propuesta para Choloma se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿El sitio queda a nombre de la empresa?"
     answer: "Sí. Le entregamos el dominio, el código y los accesos a nombre de su empresa cholomeña, sin dependencia obligatoria de nosotros, y con la opción de un plan de mantenimiento y soporte en su mismo horario."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "El Progreso"
   - "Santa Cruz de Yojoa"
 
-localStats:
-  averageProjectCost: "$1,500-$8,000 USD"
 ---

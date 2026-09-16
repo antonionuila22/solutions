@@ -57,9 +57,6 @@ marketHighlights:
   - "A central location and the Rickenbacker intermodal hub make Columbus a logistics crossroads"
   - "Operating costs well below coastal metros make nearshore development an easy value case for local firms"
 
-localStats:
-  averageProjectCost: "$2,000-$10,000"
-
 whyChooseUs:
   - title: "40-60% Below a Short North Agency"
     description: "Downtown and Short North studios carry Columbus overhead. Our nearshore Honduras model delivers comparable senior engineering for roughly half, which fits the practical, value-minded way Columbus firms buy."

@@ -63,9 +63,6 @@ marketHighlights:
   - "The University of Kansas Health System anchors a strong regional healthcare sector"
   - "A low cost of living helps retain engineering and startup talent in the region"
 
-localStats:
-  averageProjectCost: "$10,000-45,000"
-
 whyChooseUs:
   - title: "Identical Central Timezone"
     description: "Kansas City and Honduras share Central Time with zero offset, so our developers are online for your whole business day. A question from a Crossroads or Overland Park office at 11 a.m. gets a same-hour answer—not the next morning like an offshore team half a world away."
@@ -94,7 +91,7 @@ faqs:
   - question: "Do you work with logistics and freight companies?"
     answer: "Yes. Kansas City is one of the nation's most important rail and freight hubs, and we build the tracking tools, customer portals, and distribution platforms logistics companies rely on—built to integrate with the systems they already operate and to stay reliable as volumes grow."
   - question: "What does web development cost compared with a Kansas City agency?"
-    answer: "Our nearshore model typically runs about 40-60% below a comparable Kansas City agency, with most projects in the $10,000-$45,000 range depending on scope. You get senior engineering on a modern React, Next.js, Astro, or Node.js stack, without the overhead a KC agency prices into its rates."
+    answer: "We don't publish fixed prices. Every Kansas City proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Kansas City agency, and you own the code at the end."
   - question: "Do we own the code you build for us?"
     answer: "Completely. Every Kansas City engagement ships with full source-code ownership and no vendor lock-in. We hand over a documented repository your internal team or any other developer can pick up and maintain, so your business is never tied to us to keep its site running or evolving."
 

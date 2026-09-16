@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Tepeu Guerrero",
     username: "Google",
-    body: "Muy sorprendido con su trabajo, hicieron una página web para mi lavandería por solo $600. Había cotizado otros lugares y los precios eran exorbitantes. Por su calidad y precio los recomiendo al 100.",
+    body: "Muy sorprendido con su trabajo, hicieron una página web para mi lavandería. Había cotizado otros lugares y los precios eran exorbitantes. Por su calidad y precio los recomiendo al 100.",
     img: "",
   },
   {

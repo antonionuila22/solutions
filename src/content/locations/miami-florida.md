@@ -59,9 +59,6 @@ marketHighlights:
   - "PortMiami anchors a major cross-border trade and logistics corridor"
   - "The metro's bilingual talent pool serves both English and Spanish-speaking markets"
 
-localStats:
-  averageProjectCost: "$2,000-$12,000"
-
 whyChooseUs:
   - title: "Brickell Quality, Not Brickell Rates"
     description: "Downtown Miami agencies charge premium hourly rates against a high-cost market. Our Honduras nearshore model delivers the same senior engineering and polish at up to 60% less, so a fintech, developer, or hospitality brand keeps budget for growth instead of overhead."
@@ -94,7 +91,7 @@ faqs:
   - question: "Can you work alongside our Miami-based designers or marketing team?"
     answer: "Yes. We regularly act as the engineering arm for Miami creative and marketing agencies, taking Figma or Adobe designs and turning them into fast, faithful, production-ready sites. We slot into your existing workflow and tools as a seamless extension of the local team, so a Wynwood studio or Coral Gables agency can promise clients more capability without carrying full-time developers on payroll."
   - question: "What does a Miami web project cost versus a local agency?"
-    answer: "Most Miami engagements land between $2,000 and $12,000 depending on scope, which runs up to 60% below the premium hourly rates a downtown South Florida agency charges. You still get senior engineering on a modern React, Next.js, Astro, or Node.js stack, genuinely bilingual execution, and full ownership of the code—just without the high operating overhead that inflates a Brickell or Wynwood invoice."
+    answer: "We don't publish fixed prices. Every Miami proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Miami agency, and you own the code at the end."
 
 nearbyAreas:
   - "Miami Beach"

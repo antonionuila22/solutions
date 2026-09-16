@@ -9,7 +9,7 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
-import TeamQuoter from "../components/TeamQuoter";
+import BudgetModel from "../components/BudgetModel.astro";
 import BorderBeam from "../components/ui/BorderBeam.astro";
 
 // SEO
@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     question: "How much can I save with nearshore development?",
-    answer: "Most clients save 50-60% compared to hiring US-based developers. A senior US developer costs $150,000-$200,000/year fully loaded (salary + benefits + equipment + overhead). Our nearshore rates of $45-95/hour translate to significant savings while maintaining the same quality standards. You also avoid recruitment costs, onboarding time, and the risk of a bad hire. Scale up or down as needed without long-term commitments."
+    answer: "Most clients save 50-60% compared to hiring US-based developers, and you avoid recruitment costs, onboarding time, and the risk of a bad hire. We don't publish hourly rates: you tell us the budget you have and the capacity you need, for example one senior developer for three months or a squad with a project manager, and we propose the team that fits it at a fixed price for the agreed term. Scale up or down when the term renews."
   },
   {
     question: "Is your team fluent in English?",
@@ -105,9 +105,9 @@ const comparison = [
   },
   {
     aspect: "Cost (Senior Dev)",
-    nearshore: "$45-65/hour (~$80-115k/year)",
-    offshore: "$25-45/hour (~$45-80k/year)",
-    onshore: "$100-150/hour (~$180-270k/year)"
+    nearshore: "Fixed price per term, sized to your budget, no US overhead",
+    offshore: "Lowest hourly rate, highest rework and management cost",
+    onshore: "Highest local salaries plus benefits and recruiting"
   },
   {
     aspect: "Cultural Alignment",
@@ -207,33 +207,6 @@ const showcase = [
   { title: "Mobile Apps", tag: "Mobile" }
 ];
 
-// Pricing
-const pricing = [
-  {
-    title: "Mid Developer",
-    price: "$45",
-    period: "/hour",
-    desc: "3–5 yrs · ships features on their own",
-    features: ["Solid full-stack execution", "Code reviews included", "Full source code ownership", "US timezone overlap"],
-    highlighted: false
-  },
-  {
-    title: "Senior Developer",
-    price: "$65",
-    period: "/hour",
-    desc: "6+ yrs · architecture & ownership",
-    features: ["Leads technical decisions", "Mentors the team", "Daily standups & Slack access", "US timezone overlap"],
-    highlighted: true
-  },
-  {
-    title: "Tech Lead / Architect",
-    price: "$95",
-    period: "/hour",
-    desc: "Owns delivery end to end",
-    features: ["System architecture", "Team coordination", "Roadmap & estimates", "Direct stakeholder comms"],
-    highlighted: false
-  }
-];
 
 // Technologies
 const technologies = [
@@ -348,7 +321,7 @@ const technologies = [
           Unlike <strong class="text-slate-900">offshore development</strong> (India, Philippines, Eastern Europe) where timezone differences create 12-24 hour communication delays, nearshore teams work during your business hours. You get real-time collaboration, live code reviews, and immediate responses—just like working with a local team. Learn more about <a href="/outsourcing-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">outsourcing web development</a> options.
         </p>
         <p>
-          The cost advantage is significant: <strong class="text-slate-900">save 50-60% compared to US rates</strong> while maintaining the same quality standards. You don't have to take that on faith — you can <a href="/nearshore-cost-calculator/" class="text-cyan-600 hover:text-cyan-700 font-semibold">run the numbers yourself</a> against a US in-house hire, a US contractor, and a European agency, with every assumption open to editing. Senior developers with 5+ years of experience, fluent English, and expertise in modern technologies like <a href="/react-development-agency/" class="text-cyan-600 hover:text-cyan-700 font-semibold">React</a>, Node.js, and TypeScript. Whether you need <a href="/custom-web-development-services/" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom web development</a> or <a href="/ecommerce-development-agency/" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce solutions</a>, our team delivers.
+          The cost advantage is significant: <strong class="text-slate-900">save 50-60% compared to US rates</strong> while maintaining the same quality standards. Tell us your budget and we propose the team that fits it as a <a href="/quoter/" class="text-cyan-600 hover:text-cyan-700 font-semibold">fixed-price proposal</a>, not an hourly estimate. Senior developers with 5+ years of experience, fluent English, and expertise in modern technologies like <a href="/react-development-agency/" class="text-cyan-600 hover:text-cyan-700 font-semibold">React</a>, Node.js, and TypeScript. Whether you need <a href="/custom-web-development-services/" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom web development</a> or <a href="/ecommerce-development-agency/" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce solutions</a>, our team delivers.
         </p>
         <p>
           <strong class="text-slate-900">Why companies choose nearshore:</strong> Real-time collaboration, cultural alignment, cost savings, and no timezone headaches. You get offshore prices with onshore workflow. Ready to <a href="/hire-remote-developers/" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire remote developers</a>? We're here to help.
@@ -519,65 +492,17 @@ const technologies = [
     </div>
   </section>
 
-  <!-- ==================== PRICING ==================== -->
-  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
-          PRICING
-        </span>
-        <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900">Simple, <span class="text-orange-500">transparent</span></h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6" data-anim="fade">
-        {pricing.map((plan) => (
-          <div class:list={[
-            "relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2",
-            plan.highlighted
-              ? "bg-slate-900 text-white shadow-2xl scale-105 z-10"
-              : "bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl"
-          ]}>
-            {plan.highlighted && <BorderBeam duration={8} />}
-            {plan.highlighted && (
-              <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                Most Popular
-              </span>
-            )}
-            <h3 class={plan.highlighted ? "text-2xl font-semibold mb-2 text-white" : "text-2xl font-semibold mb-2 text-slate-900"}>{plan.title}</h3>
-            <p class={plan.highlighted ? "text-sm mb-6 text-slate-300" : "text-sm mb-6 text-slate-600"}>{plan.desc}</p>
-            <div class="mb-8">
-              <span class={plan.highlighted ? "text-5xl font-bold text-white" : "text-5xl font-bold text-slate-900"}>{plan.price}</span>
-              <span class={plan.highlighted ? "text-slate-400 text-lg" : "text-slate-500 text-lg"}>{plan.period}</span>
-            </div>
-            <ul class="space-y-4 mb-8">
-              {plan.features.map((feature) => (
-                <li class="flex items-center gap-3">
-                  <svg class={plan.highlighted ? "w-5 h-5 text-teal-400 flex-shrink-0" : "w-5 h-5 text-teal-500 flex-shrink-0"} fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                  </svg>
-                  <span class={plan.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="/contact/"
-              class={plan.highlighted
-                ? "block w-full py-4 text-center font-bold rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg transition-all duration-300"
-                : "block w-full py-4 text-center font-bold rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300"
-              }
-            >
-              Get Started
-            </a>
-          </div>
-        ))}
-      </div>
-
-      <!-- Self-service team quote -->
-      <div class="mt-10" data-anim="fade">
-        <TeamQuoter client:visible />
-      </div>
-    </div>
-  </section>
+  <BudgetModel config={{
+    eyebrow: "How we price",
+    title: "Priced from your budget.",
+    titleHighlight: "Not by the hour.",
+    subtitle: "We don't publish hourly rates. Tell us the capacity you need and the budget you have; we propose the roles, seniority and hours that fit it and close a fixed price for the term.",
+    cards: [
+      { icon: "users", title: "One senior developer", desc: "A single engineer with the stack you name, embedded in your team for the term you define, at a fixed monthly price." },
+      { icon: "layers", title: "A dedicated squad", desc: "Two or more developers plus a project manager working only on your product, sized to the monthly budget you set." },
+      { icon: "target", title: "A fixed-scope build", desc: "A defined deliverable, a website, an app or an integration, closed at a fixed price for the agreed scope." },
+    ],
+  }} />
 
   <!-- ==================== TECHNOLOGIES ==================== -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">

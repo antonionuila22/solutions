@@ -97,7 +97,6 @@ Here's where 2025–2026 market rates actually sit for senior engineers, with th
 | US onshore agency | $135–250/hr | Full overlap | Native | Highest cost, no gap |
 | US in-house (loaded) | ~$100/hr equivalent | Full overlap | Native | $200k+/yr all-in, hiring risk |
 | Nearshore — LATAM | $50–90/hr | Central Time, full workday overlap | Fluent | Best cost/overlap balance for US |
-| Nearshore — Codebrand | $45–95/hr | US Central Time | Fluent | Mid $45 / Senior $65 / Lead $95 |
 | Poland / CEE | $55–100/hr | +6–8 hrs from US | Strong | Excellent talent, partial US overlap |
 | Netherlands (local agency) | €90–150/hr | +6–9 hrs from US | Native-level | Premium EU market |
 | Switzerland (local) | CHF 120–200/hr | +6–9 hrs from US | Strong | Among the most expensive |
@@ -181,7 +180,7 @@ Do this once and the "cheapest rate" almost never wins.
 ## FAQ
 
 **What does nearshore development actually cost in 2026?**
-Senior nearshore engineers bill roughly $50–90/hr (Codebrand: Mid $45, Senior $65, Lead $95). But budget by *total* cost of ownership — billed hours plus rework, management time, and delay — not by rate alone.
+Senior nearshore engineers bill roughly $50–90/hr. But budget by *total* cost of ownership — billed hours plus rework, management time, and delay — not by rate alone.
 
 **Isn't offshore always cheaper?**
 On rate, often yes. On total cost, frequently no. Once you count 30–50% rework, 24–48 hour feedback loops, and 2–3× the management time, the effective cost of deep offshore often approaches nearshore — and sometimes onshore — for anything requiring real collaboration.

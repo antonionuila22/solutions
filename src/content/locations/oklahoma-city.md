@@ -57,9 +57,6 @@ marketHighlights:
   - "The MAPS revitalization program has transformed downtown, Bricktown, and the riverfront"
   - "The metro has posted steady population and economic growth over the past decade"
 
-localStats:
-  averageProjectCost: "$8,000-40,000"
-
 whyChooseUs:
   - title: "Priced for a Value-Conscious Market"
     description: "OKC business culture rewards fair, honest pricing, and our nearshore model fits it: senior engineering at roughly 40 to 60 percent below typical U.S. agency rates, with no coastal-agency overhead baked in."
@@ -88,7 +85,7 @@ faqs:
   - question: "Can you help Oklahoma City healthcare and AgTech businesses?"
     answer: "Yes. For the providers across the Oklahoma Health Center we build patient portals and information sites with appropriate data safeguards, and for the region's agriculture and AgTech companies we build clean, functional platforms that connect them to buyers without unnecessary complexity."
   - question: "Does your pricing fit OKC's value-focused business culture?"
-    answer: "It's a strong fit. Oklahoma City businesses expect fair pricing and durable results, and our nearshore model delivers senior work at roughly 40 to 60 percent below typical U.S. agency rates. Most OKC projects land in the $8,000 to $40,000 range, so budgets stretch further without cutting quality."
+    answer: "We don't publish fixed prices. Every Oklahoma City proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Oklahoma City agency, and you own the code at the end."
   - question: "How do Oklahoma City clients typically work with your team?"
     answer: "Most start with a discovery call to define scope, then we stay in a shared Slack channel with regular video check-ins through the build. Because we share Central Time, a call can happen any time in your workday, and project tracking keeps progress visible from kickoff to launch."
 

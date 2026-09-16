@@ -57,9 +57,6 @@ marketHighlights:
   - "Audible's downtown headquarters anchors a growing, enterprise-oriented tech ecosystem"
   - "The city offers a materially lower cost of doing business than Manhattan while keeping direct access to it"
 
-localStats:
-  averageProjectCost: "$12,000-50,000"
-
 whyChooseUs:
   - title: "A Real Alternative to NYC-Metro Rates"
     description: "Newark businesses compete near Manhattan pricing without Manhattan budgets. Our nearshore model runs 40 to 60 percent under NYC-metro agencies, so insurance, logistics, and education clients get professional work without the crossing-the-river markup."
@@ -88,7 +85,7 @@ faqs:
   - question: "Can you work with Newark's universities and hospitals?"
     answer: "Yes. We build institutional and program sites for campuses like Rutgers-Newark and NJIT, and patient portals and information sites for University Hospital and nearby providers. For anything touching sensitive health data, we apply appropriate security controls and can formalize the necessary agreements."
   - question: "How do your rates compare to agencies across the river in NYC?"
-    answer: "Newark firms often shop against Manhattan-metro agencies, which price for Manhattan overhead. Our nearshore studio typically comes in 40 to 60 percent lower, with most projects in the $12,000 to $50,000 range—so you get professional, senior-level development without paying the premium built into a New York invoice."
+    answer: "We don't publish fixed prices. Every Newark proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Newark agency, and you own the code at the end."
   - question: "How do Newark clients usually run a project with your team?"
     answer: "Most begin with a discovery call to scope the work, then we keep a shared Slack channel and a regular video check-in through the build. Because we're only an hour off Eastern, scheduling is easy and feedback loops stay tight, with project tracking so you can see progress at any point."
 

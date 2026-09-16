@@ -3,8 +3,6 @@ title: Professional SEO Optimization – Improve Visibility and Drive Organic Tr
 seoTitle: "SEO Optimization Services | Codebrand"
 img: /photos/seo.webp
 readtime: 5
-price: From $370
-inStock: true
 description: Technical and strategic SEO to improve your Google rankings and grow organic traffic. We fix real problems — structure, speed, content, and indexing — not just surface-level tweaks.
 date: 2025-01-01
 author: Codebrand Team
@@ -31,13 +29,13 @@ At **Codebrand**, we offer a complete technical and strategic SEO service that i
 
 ---
 
-## Packages & Pricing
+## Packages
 
-| Package | Description | Price |
-|---------|-------------|-------|
-| **Basic SEO** | Audit + essential fixes (metadata, structure, sitemap) | $370 |
-| **Intermediate SEO** | Everything in Basic + performance optimization + 5 key pages | $570 |
-| **Advanced SEO** | All above + content strategy, internal linking, 10+ pages optimized | From $870 |
+| Package | Description |
+| --------- | ------------- |
+| **Basic SEO** | Audit + essential fixes (metadata, structure, sitemap) |
+| **Intermediate SEO** | Everything in Basic + performance optimization + 5 key pages |
+| **Advanced SEO** | All above + content strategy, internal linking, 10+ pages optimized |
 
 > Monthly SEO maintenance and ongoing optimization available upon request.
 

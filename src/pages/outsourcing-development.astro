@@ -7,6 +7,7 @@ export const prerender = true;
  */
 
 import Layout from "../layouts/Layout.astro";
+import BudgetModel from "../components/BudgetModel.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 
@@ -52,7 +53,7 @@ const faqs = [
   {
     question: "How does pricing work?",
     answer:
-      "We offer transparent hourly pricing: Standard at $45/hr (48h response time), Priority at $65/hr (24h response, dedicated developer, daily standups), and Rush at $95/hr (same-day start, emergency support). Volume discounts are available for 40+ hours monthly. No hidden fees, no surprise charges. You only pay for actual development time, and we provide detailed time tracking.",
+      "We don't publish hourly rates. Tell us the capacity you need, for example one developer for a backlog of feature work or a small team with a daily standup, and the monthly budget you have; we propose the roles, seniority and hours that fit it and close a fixed price for the term. Response times and volume terms are part of the proposal, there are no hidden fees, and you get detailed time reporting.",
   },
   {
     question: "What about code quality and testing?",
@@ -166,33 +167,6 @@ const stats = [
   { value: "8+", label: "Years Experience" },
 ];
 
-// Pricing
-const pricing = [
-  {
-    title: "Standard",
-    price: "$45",
-    period: "/hour",
-    desc: "Quality development work",
-    features: ["48h response time", "Code reviews included", "Source code ownership", "Email support"],
-    highlighted: false,
-  },
-  {
-    title: "Priority",
-    price: "$65",
-    period: "/hour",
-    desc: "Dedicated attention",
-    features: ["24h response time", "Dedicated developer", "Daily standups", "Slack/direct support", "Priority queue"],
-    highlighted: true,
-  },
-  {
-    title: "Rush",
-    price: "$95",
-    period: "/hour",
-    desc: "Urgent projects",
-    features: ["Same-day start", "12h turnaround", "Direct communication", "Weekend availability", "Emergency support"],
-    highlighted: false,
-  },
-];
 
 // Technologies
 const technologies = [
@@ -375,60 +349,17 @@ const technologies = [
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 border border-cyan-200 rounded-full text-cyan-700 text-sm font-semibold mb-6">
-          PRICING
-        </span>
-        <h2 data-anim="heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">Simple, <span class="text-orange-500">transparent</span> hourly rates</h2>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto mt-6">Pay only for actual development time, with detailed tracking. Volume discounts for 40+ hours monthly. Pricing a job for your own client? Our <a href="/nearshore-cost-calculator/" class="text-cyan-600 hover:text-cyan-700 font-semibold">cost calculator</a> totals a full engagement in this $45–$95 range and sets it against what the same work costs in-house in the US.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6" data-anim="fade">
-        {pricing.map((plan) => (
-          <div class:list={[
-            "relative rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2",
-            plan.highlighted
-              ? "bg-slate-900 text-white shadow-2xl scale-105 z-10"
-              : "bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl"
-          ]}>
-            {plan.highlighted && (
-              <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                Most Popular
-              </span>
-            )}
-            <h3 class={plan.highlighted ? "text-2xl font-semibold mb-2 text-white" : "text-2xl font-semibold mb-2 text-slate-900"}>{plan.title}</h3>
-            <p class={plan.highlighted ? "text-sm mb-6 text-slate-300" : "text-sm mb-6 text-slate-600"}>{plan.desc}</p>
-            <div class="mb-8">
-              <span class={plan.highlighted ? "text-5xl font-bold text-white" : "text-5xl font-bold text-slate-900"}>{plan.price}</span>
-              <span class={plan.highlighted ? "text-slate-400 text-lg" : "text-slate-500 text-lg"}>{plan.period}</span>
-            </div>
-            <ul class="space-y-4 mb-8">
-              {plan.features.map((feature) => (
-                <li class="flex items-center gap-3">
-                  <svg class={plan.highlighted ? "w-5 h-5 text-teal-400 flex-shrink-0" : "w-5 h-5 text-teal-500 flex-shrink-0"} fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                  </svg>
-                  <span class={plan.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="/contact/"
-              class={plan.highlighted
-                ? "block w-full py-4 text-center font-bold rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg transition-all duration-300"
-                : "block w-full py-4 text-center font-bold rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition-all duration-300"
-              }
-            >
-              Get Started
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <BudgetModel config={{
+    eyebrow: "How we price",
+    title: "Priced from your budget.",
+    titleHighlight: "Not by the hour.",
+    subtitle: "We don't publish hourly rates. Tell us the capacity you need and the budget you have; we propose the roles, seniority and hours that fit it and close a fixed price for the term.",
+    cards: [
+      { icon: "users", title: "One senior developer", desc: "A single engineer with the stack you name, embedded in your team for the term you define, at a fixed monthly price." },
+      { icon: "layers", title: "A dedicated squad", desc: "Two or more developers plus a project manager working only on your product, sized to the monthly budget you set." },
+      { icon: "target", title: "A fixed-scope build", desc: "A defined deliverable, a website, an app or an integration, closed at a fixed price for the agreed scope." },
+    ],
+  }} />
 
   <!-- Tech Stack Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">

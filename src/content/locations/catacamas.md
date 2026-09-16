@@ -67,7 +67,7 @@ faqs:
   - question: "¿Puedo actualizar el sitio yo mismo sin saber de tecnología?"
     answer: "Sí. Entregamos sitios pensados para el productor o comerciante de Catacamas: puede cambiar precios, fotos de ganado o disponibilidad de tours desde el teléfono, y si necesita ayuda le damos soporte en español por WhatsApp."
   - question: "¿Cuánto cuesta un sitio web para un negocio en Catacamas?"
-    answer: "Un sitio informativo para una finca o comercio catacamense suele ir desde unos $400 USD (alrededor de L10,000), y un catálogo o tienda en línea más completo desde $1,200 USD. Le damos un presupuesto cerrado según su proyecto antes de empezar."
+    answer: "No publicamos precios fijos. Cada propuesta para Catacamas se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Incluyen dominio, correo y mantenimiento?"
     answer: "Sí. Dejamos su dominio, correo profesional y hosting funcionando, y ofrecemos planes de mantenimiento con respaldos y actualizaciones para que su sitio en Catacamas siga rápido y seguro todo el año."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Tegucigalpa"
   - "Oriente de Honduras"
 
-localStats:
-  averageProjectCost: "$400-$3,500 USD"
 ---

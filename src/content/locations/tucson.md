@@ -65,9 +65,6 @@ marketHighlights:
   - "A bilingual, bicultural workforce serves both US and Mexican-market audiences"
   - "Arizona's no-daylight-saving clock keeps the timezone offset constant year-round"
 
-localStats:
-  averageProjectCost: "$5,000-$30,000"
-
 whyChooseUs:
   - title: "Built for Tucson Budgets"
     description: "Tucson runs on a far lower cost base than Phoenix or the coasts, and our nearshore model matches it—professional, modern web work without agency-tier overhead, so specialized firms and small businesses alike get more for their spend."
@@ -100,7 +97,7 @@ faqs:
   - question: "Do you handle healthcare projects and sensitive data in Tucson?"
     answer: "We do. Tucson's health systems, including Banner and Tucson Medical Center, need accessible websites and patient-facing tools, and for anything touching sensitive information we implement appropriate encryption, access controls, and security measures. We build for real patients—readable, navigable interfaces—rather than treating accessibility as an afterthought, and you retain full ownership of the resulting code."
   - question: "Is professional web development affordable for a Tucson small business?"
-    answer: "That is much of why our model fits Tucson so well. The metro's cost base is well below Phoenix and the coasts, and our nearshore pricing matches it, so a small business or specialized firm gets modern, professional work without agency-tier overhead. Most Tucson projects land in the $5,000 to $30,000 range depending on scope, and every one ships with full code ownership so you are never locked into a vendor."
+    answer: "We don't publish fixed prices. Every Tucson proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Tucson agency, and you own the code at the end."
 
 nearbyAreas:
   - "Downtown Tucson"

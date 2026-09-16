@@ -202,7 +202,7 @@ export const promotionalProductsConfig: ServicePageConfig = {
         title: "Restaurant Branded Merch",
         description: "Designed and produced custom merchandise line including t-shirts, mugs, and accessories that became an additional revenue stream.",
         metrics: [
-          { value: "$15K", label: "Monthly Revenue" },
+          { value: "New", label: "Revenue Stream" },
           { value: "25", label: "Product SKUs" },
           { value: "+30%", label: "Brand Exposure" },
         ],

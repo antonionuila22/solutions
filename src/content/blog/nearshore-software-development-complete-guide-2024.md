@@ -56,11 +56,7 @@ While Mexico and Costa Rica have dominated the nearshore market, **Honduras is r
 
 ### 1. **Unbeatable Cost-to-Quality Ratio**
 
-Honduras offers some of the **lowest development costs in Central America** while maintaining world-class quality standards. As of 2026, LATAM nearshore senior developers typically bill Western clients around **$50-90/hour**. Codebrand's transparent rates sit at the value end of that band:
-
-- **Mid-Level Developers**: $45/hour
-- **Senior Developers**: $65/hour
-- **Lead Developers / Architects**: $95/hour
+Honduras offers some of the **lowest development costs in Central America** while maintaining world-class quality standards. As of 2026, LATAM nearshore senior developers typically bill Western clients around **$50-90/hour**. Codebrand doesn't publish hourly rates: you bring the budget, we propose the seniority mix that fits it and close a fixed price for the term, and that cost base sits at the value end of that band.
 
 Compare this to US onshore agency rates of **$135-250/hour** for a senior of equivalent experience—and roughly $200k+/year in fully-loaded cost for a US senior on staff.
 
@@ -351,8 +347,7 @@ As Honduras's leading software development agency, **Codebrand** specializes in 
 **What We Offer**:
 
 - Competitive nearshore rates
-- Mobile app: $25,000 (vs. $60,000 in US)
-- Custom platform: $45,000 (vs. $120,000 in US)
+- Fixed-price proposals built from your budget
 
 ---
 

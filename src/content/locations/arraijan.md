@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro residencial"
   techEmployment: "80+ empresas"
-  averageProjectSize: "Desde $400 USD"
 ---

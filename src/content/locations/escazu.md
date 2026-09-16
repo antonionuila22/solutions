@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Zona premium"
   techEmployment: "500+ empresas"
-  averageProjectSize: "Desde $600 USD"
 ---

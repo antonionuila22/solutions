@@ -69,7 +69,7 @@ faqs:
   - question: "¿Podemos vernos en persona para el proyecto?"
     answer: "El día a día lo llevamos por videollamada y WhatsApp, pero cuando el proyecto lo amerita coordinamos una reunión presencial en San Pedro Sula, adonde suelen llegar clientes del occidente cuando viajan por negocios."
   - question: "¿Cuánto cuesta un sitio web para un negocio de La Esperanza?"
-    answer: "Una web de presentación parte desde unos $400 USD y sube al agregar tienda en línea, envíos y versión bilingüe. Le entregamos una cotización clara en lempiras y dólares una vez que conocemos su cooperativa, finca o negocio."
+    answer: "No publicamos precios fijos. Cada propuesta para La Esperanza se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
 
 whyChooseUs:
   - title: "Sabemos vender la autenticidad Lenca"
@@ -101,6 +101,4 @@ nearbyAreas:
   - "Occidente Honduras"
   - "Ruta Lenca"
 
-localStats:
-  averageProjectCost: "$400-$3,000 USD"
 ---

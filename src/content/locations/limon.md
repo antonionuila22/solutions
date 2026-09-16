@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro portuario"
   techEmployment: "50+ empresas"
-  averageProjectSize: "Desde $400 USD"
 ---

@@ -57,9 +57,6 @@ marketHighlights:
   - "Route 66, Old Town, and balloon-season tourism sustain steady demand for booking-driven hospitality sites"
   - "Operating costs well below coastal metros make lean, outsourced development a natural fit for local firms"
 
-localStats:
-  averageProjectCost: "$1,500-$8,000"
-
 whyChooseUs:
   - title: "Genuinely Bilingual for New Mexico"
     description: "Albuquerque's market is bicultural in a way few US cities are. Our fully bilingual English-and-Spanish team builds sites that read naturally to both audiences—no clumsy translations bolted on after launch."

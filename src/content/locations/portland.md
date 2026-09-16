@@ -57,9 +57,6 @@ marketHighlights:
   - "Portland's food, coffee, and craft-beverage scene carries real commercial and brand weight"
   - "A dense community of B Corps and sustainability-led companies calls the metro home"
 
-localStats:
-  averageProjectCost: "$5,000-$45,000"
-
 whyChooseUs:
   - title: "40-60% Below Pearl District Rates"
     description: "Portland's top creative and dev shops price for a premium market. Our nearshore Honduras model delivers the same senior engineering and design execution for 40 to 60 percent less, so a values-led brand or a bootstrapped startup keeps more of its budget for growth."
@@ -88,7 +85,7 @@ faqs:
   - question: "Can you help sustainability-focused and mission-driven Portland companies tell their story?"
     answer: "Absolutely—Portland has one of the densest communities of B Corps and values-led companies anywhere, and their sites have to do more than sell. We build experiences that communicate impact clearly, showcase supply-chain and sustainability commitments, and connect with the conscious consumers who make up so much of the local market."
   - question: "What does a Portland web project typically cost with your team?"
-    answer: "Most Portland projects run between $5,000 and $45,000 depending on scope—a design-forward marketing site for a craft brand sits toward the lower end, while a full brand e-commerce build or a SaaS MVP sits higher. Across the range, our nearshore model comes in 40 to 60 percent under a comparable Pearl District agency, with senior engineering throughout."
+    answer: "We don't publish fixed prices. Every Portland proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Portland agency, and you own the code at the end."
   - question: "Are you comfortable with the tools Portland tech teams already use?"
     answer: "Completely. We live in Slack, GitHub, and Figma every day, and we plug into whatever project-management setup your team runs. Because we're nearshore rather than offshore, the collaboration feels like an extension of your own studio—shared boards, live design reviews, and pull requests reviewed the same day, not the next."
 

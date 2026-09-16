@@ -178,7 +178,7 @@ export const webDevelopmentConfig: ServicePageConfig = {
         title: "Online Store Launch",
         description: "Built a complete e-commerce platform that generated significant revenue within the first month of launch.",
         metrics: [
-          { value: "$150K", label: "First Month" },
+          { value: "30 days", label: "To First Sales" },
           { value: "2.5s", label: "Load Time" },
           { value: "+200%", label: "Conversions" },
         ],

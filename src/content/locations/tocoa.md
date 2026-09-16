@@ -67,7 +67,7 @@ faqs:
   - question: "La conexión en la zona rural es irregular, ¿el sitio va a funcionar bien?"
     answer: "Sí. Construimos con tecnologías que cargan rápido incluso con la conectividad variable del Bajo Aguán, de modo que un cliente pueda ver su catálogo desde el celular aunque la señal no sea la mejor."
   - question: "¿Cuánto cuesta un sitio para una empresa de Tocoa?"
-    answer: "Un sitio corporativo para una empresa agroindustrial o un comercio de Tocoa suele iniciar cerca de los $450 USD, y sube según catálogos o funciones extra. Le entregamos una cotización clara después de entender su operación."
+    answer: "No publicamos precios fijos. Cada propuesta para Tocoa se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Pueden hacerme un catálogo de productos en línea?"
     answer: "Sí. Desarrollamos catálogos digitales donde una comercializadora o agropecuaria de Tocoa muestra sus productos a distribuidores de todo Honduras, con fotos, descripciones y contacto directo para cotizar."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Colón"
   - "Costa Norte"
 
-localStats:
-  averageProjectCost: "$450-$3,500 USD"
 ---

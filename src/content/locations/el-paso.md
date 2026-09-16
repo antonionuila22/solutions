@@ -63,9 +63,6 @@ marketHighlights:
   - "Nearshoring is shifting more North American production into the El Paso-Juárez corridor"
   - "Texas levies no state income tax, keeping business costs competitive"
 
-localStats:
-  averageProjectCost: "$8,000-40,000"
-
 whyChooseUs:
   - title: "Truly Bilingual, Not Just Translated"
     description: "El Paso businesses live in two languages, and so do we. Our engineers and project leads work in fluent English and Spanish, so bilingual sites, cross-border copy, and Juárez-facing content are built with native nuance—not run through a translator after the fact."
@@ -94,7 +91,7 @@ faqs:
   - question: "Can you support businesses serving Fort Bliss and the defense community?"
     answer: "Yes. We build professional websites and secure portals for the contractors, suppliers, and family-serving businesses tied to Fort Bliss. We can implement access controls and careful data handling for engagements that require a more protected footprint."
   - question: "How much does web development cost compared with an El Paso agency?"
-    answer: "Our nearshore model typically runs about 40-60% below a comparable El Paso or regional agency, with most projects landing in the $8,000-$40,000 range depending on scope. You still get senior engineering and a modern React, Next.js, Astro, or Node.js build—just without the local overhead priced into agency rates."
+    answer: "We don't publish fixed prices. Every El Paso proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable El Paso agency, and you own the code at the end."
   - question: "Do we own the code you build for our El Paso business?"
     answer: "Completely. Every engagement ships with full source-code ownership and no vendor lock-in. We hand over a documented repository that is yours to host, maintain, and extend however you choose, so your bilingual site never depends on staying tied to us."
 

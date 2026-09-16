@@ -63,9 +63,6 @@ marketHighlights:
   - "Houston is one of the most ethnically and linguistically diverse metros in the nation"
   - "Local tech employment has been growing faster than the national average"
 
-localStats:
-  averageProjectCost: "$12,000-50,000"
-
 whyChooseUs:
   - title: "Identical Central Timezone"
     description: "Houston and Honduras share Central Time with zero offset, so our developers are online for your entire business day. An urgent question from the Energy Corridor at 2 p.m. gets answered the same hour—not the next morning like an offshore shop half a world away."
@@ -96,7 +93,7 @@ faqs:
   - question: "Can you support Houston's international business community in multiple languages?"
     answer: "Yes. Houston is one of the most diverse cities in America, and our team is fully bilingual in English and Spanish. We build multilingual websites, manage content across languages, and communicate comfortably with the international partners common in Houston's trade and energy sectors."
   - question: "What does web development cost compared with a Houston agency?"
-    answer: "Our nearshore model typically runs about 40-60% below a comparable Houston agency, with most projects in the $12,000-$50,000 range depending on scope. You get senior engineering on a modern React, Next.js, Astro, or Node.js stack—without the overhead a Houston agency prices into its rates."
+    answer: "We don't publish fixed prices. Every Houston proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Houston agency, and you own the code at the end."
 
 nearbyAreas:
   - "The Galleria"

@@ -67,7 +67,7 @@ faqs:
   - question: "¿La institución queda dueña del código?"
     answer: "Sí, y esto es clave para las instituciones formales de Tegucigalpa. Entregamos el código fuente completo y documentado, sin candados ni dependencia de por vida, algo que muchas entidades de gobierno y banca exigen en sus procesos."
   - question: "¿Cuánto cuesta desarrollar un sitio en Tegucigalpa?"
-    answer: "Depende del alcance. Un sitio corporativo para una firma de servicios de la capital puede iniciar cerca de los $500 USD, mientras que un e-commerce o un sistema de gestión sube según las funciones. Le damos una cotización clara tras una consulta gratuita."
+    answer: "No publicamos precios fijos. Cada propuesta para Tegucigalpa se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Trabajan con pequeñas empresas o solo con grandes instituciones?"
     answer: "Con ambas. Atendemos desde el bufete o la clínica que empieza hasta la cooperativa consolidada de Lomas del Guijarro, con precios pensados para que una PyME capitalina también pueda tener presencia digital profesional."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Lepaterique"
   - "Distrito Central"
 
-localStats:
-  averageProjectCost: "$500-$6,000 USD"
 ---

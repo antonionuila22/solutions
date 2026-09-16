@@ -7,13 +7,14 @@ export const prerender = true;
  */
 
 import Layout from "../layouts/Layout.astro";
+import BudgetModel from "../components/BudgetModel.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Nearshore Development Netherlands | Codebrand";
 const description =
-  "Hire senior nearshore developers for your Dutch company at $65/hr — React, Next.js, Node. Reliable CET afternoon overlap, async delivery. Get a free quote.";
+  "Hire senior nearshore developers for your Dutch company at a fixed price from your budget: React, Next.js, Node. Reliable CET afternoon overlap, async delivery. Get a proposal.";
 const keywords =
   "nearshore development netherlands, hire developers netherlands, dutch software developers, react developers netherlands, senior developers netherlands, nearshore software netherlands, remote developers netherlands, next.js developers netherlands";
 
@@ -21,7 +22,7 @@ const serviceSchema = createServicePageSchema({
   serviceType: "Nearshore Software Development",
   name: "Nearshore Development for Netherlands — Senior React, Next.js & Node Engineers",
   description:
-    "Nearshore software development for Dutch companies: senior React, Next.js, and Node.js engineers at $65/hr with a reliable daily CET afternoon overlap and async-first delivery. English-fluent team, 100% client-owned code.",
+    "Nearshore software development for Dutch companies: senior React, Next.js, and Node.js engineers at a fixed price sized to your budget, with a reliable daily CET afternoon overlap and async-first delivery. English-fluent team, 100% client-owned code.",
   url: "https://www.codebrand.us/nearshore-development-netherlands/",
   image: "https://www.codebrand.us/photos/bannercodebrand.webp",
   catalogName: "Nearshore Development Services for the Netherlands",
@@ -83,7 +84,7 @@ const faqs = [
   {
     question: "Why nearshore to Honduras instead of hiring locally in the Netherlands?",
     answer:
-      "Senior developer capacity in the Netherlands is scarce and expensive — Dutch freelance and agency seniors commonly bill €90–150 per hour, and a permanent senior hire can take months to find and onboard. Our senior engineers work at $65 per hour, English at a level Dutch teams find effortless, and an async-savvy culture that matches how you already work. You get the seniority and the capacity without the local bidding war or the hiring delay.",
+      "Senior developer capacity in the Netherlands is scarce and expensive — Dutch freelance and agency seniors commonly bill €90–150 per hour, and a permanent senior hire can take months to find and onboard. Our senior engineers are priced from your budget as a fixed monthly figure, with English at a level Dutch teams find effortless, and an async-savvy culture that matches how you already work. You get the seniority and the capacity without the local bidding war or the hiring delay.",
   },
   {
     question: "Is your English good enough for a Dutch team?",
@@ -117,17 +118,12 @@ const services = [
 ];
 
 const stats = [
-  { value: "$65/hr", label: "Senior Engineers" },
+  { value: "Fixed", label: "Price per Term" },
   { value: "15–18h", label: "Daily CET Overlap" },
   { value: "5.0", label: "50 Google reviews" },
   { value: "100%", label: "Code Ownership" },
 ];
 
-const rates = [
-  { role: "Mid-level Engineer", rate: "$45/hr", desc: "Solid delivery on well-defined feature work and maintenance." },
-  { role: "Senior Engineer", rate: "$65/hr", desc: "Owns features end to end — vs. €90–150/hr for a Dutch senior." },
-  { role: "Lead / Architect", rate: "$95/hr", desc: "System design, technical direction, and mentoring for your squad." },
-];
 
 const stack = ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQL", "MongoDB", "REST / GraphQL"];
 ---
@@ -155,7 +151,7 @@ const stack = ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQ
         </h1>
         <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
           Add senior React, Next.js, and Node capacity to your Dutch product
-          team at $65/hr — with a reliable CET afternoon overlap and async delivery.
+          team at a fixed price from your budget, with a reliable CET afternoon overlap and async delivery.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <a href="/contact/" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
@@ -188,10 +184,10 @@ const stack = ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQ
           Every product leader in the Netherlands runs into the same wall: <strong class="text-slate-900">senior engineers are scarce, slow to hire, and expensive.</strong> A permanent senior developer can take months to find and onboard, and Dutch freelance or agency seniors routinely bill <strong class="text-slate-900">€90–150 per hour</strong>. When your roadmap needs more hands this quarter — not next year — the local market rarely cooperates.
         </p>
         <p>
-          Nearshore development closes that gap. Our <strong class="text-slate-900">senior engineers work at $65 per hour</strong>, roughly half of a comparable Dutch senior rate, and they can join your team in a week or two instead of a hiring cycle. This is the same model we run across the continent — see our <a href="/nearshore-development-europe/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development for Europe</a> overview and the broader <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> hub for how it works end to end.
+          Nearshore development closes that gap. Our <strong class="text-slate-900">senior engineers are priced from your budget</strong>, typically well under a comparable Dutch senior rate, and they can join your team in a week or two instead of a hiring cycle. This is the same model we run across the continent — see our <a href="/nearshore-development-europe/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development for Europe</a> overview and the broader <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> hub for how it works end to end.
         </p>
         <p>
-          The math is straightforward: a senior engineer at $65/hr over a full working month costs a fraction of the equivalent local senior, with no recruitment fee, no notice period, and no severance risk. You are buying <strong class="text-slate-900">senior output and real capacity</strong>, not a cheaper junior. If you'd rather see that worked out month by month, our <a href="/nearshore-cost-calculator/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore cost calculator</a> totals a full engagement in US dollars and shows every assumption behind the number. Want to compare the pure team-extension angle? Read how to <a href="/hire-remote-developers/" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire remote developers</a> the way funded product teams do.
+          The math is straightforward: a senior engineer at a fixed monthly price costs a fraction of the equivalent local senior, with no recruitment fee, no notice period, and no severance risk. You are buying <strong class="text-slate-900">senior output and real capacity</strong>, not a cheaper junior. If you'd rather see that worked out for your own budget, send a <a href="/quoter/" class="text-cyan-600 hover:text-cyan-700 font-semibold">proposal request</a> and we total a full engagement in euros or US dollars with every assumption behind the number. Want to compare the pure team-extension angle? Read how to <a href="/hire-remote-developers/" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire remote developers</a> the way funded product teams do.
         </p>
       </div>
     </div>
@@ -233,26 +229,17 @@ const stack = ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQ
     </div>
   </section>
 
-  <!-- Rates Section -->
-  <section id="rates" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
-          Transparent <span class="text-orange-500">Hourly Rates</span>
-        </h2>
-        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">Pay for tracked hours. No recruitment fees, no notice periods, no severance to manage.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
-        {rates.map((r) => (
-          <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200 hover:-translate-y-1 transition-all duration-300 text-center">
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">{r.role}</h3>
-            <div class="text-4xl font-bold text-orange-500 mb-4">{r.rate}</div>
-            <p class="text-slate-600">{r.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <BudgetModel id="rates" config={{
+    eyebrow: "How we price",
+    title: "Priced from your budget.",
+    titleHighlight: "Not by the hour.",
+    subtitle: "We don't publish hourly rates. Tell us the capacity you need and the budget you have; we propose the roles, seniority and hours that fit it and close a fixed price for the term.",
+    cards: [
+      { icon: "users", title: "One senior developer", desc: "A single engineer with the stack you name, embedded in your team for the term you define, at a fixed monthly price." },
+      { icon: "layers", title: "A dedicated squad", desc: "Two or more developers plus a project manager working only on your product, sized to the monthly budget you set." },
+      { icon: "target", title: "A fixed-scope build", desc: "A defined deliverable, a website, an app or an integration, closed at a fixed price for the agreed scope." },
+    ],
+  }} />
 
   <!-- Tech Stack Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">

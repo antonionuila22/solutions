@@ -12,14 +12,14 @@ import Icon from "../../components/icons/Icon.astro";
 
 // SEO
 const title = "Desarrollo Web en Honduras para Empresas | Codebrand";
-const description = "Agencia de desarrollo y diseño web en Honduras. Creamos páginas web, tiendas online y sistemas web para empresas en Tegucigalpa, San Pedro Sula y todo el país. Desde $1,500 USD.";
+const description = "Agencia de desarrollo y diseño web en Honduras. Creamos páginas web, tiendas online y sistemas web para empresas en Tegucigalpa, San Pedro Sula y todo el país. Propuesta de precio cerrado según su presupuesto.";
 const keywords = "desarrollo web honduras, diseño web honduras, páginas web honduras, sitios web honduras, agencia web honduras, páginas web para empresas honduras, crear página web honduras, diseño de páginas web tegucigalpa, desarrollo web san pedro sula, tiendas online honduras";
 
 // FAQs
 const faqs = [
   {
     question: "¿Cuánto cuesta crear una página web en Honduras?",
-    answer: "Los precios varían según la complejidad. Un sitio web básico de 5 páginas comienza en $1,500 USD. Un sitio empresarial completo con CMS, blog e integraciones ronda los $3,500 USD. Una tienda online con carrito de compras y pagos en línea parte de $2,900 USD. Ofrecemos cotizaciones personalizadas sin compromiso — contáctenos y le respondemos en menos de 24 horas."
+    answer: "No publicamos precios fijos. Cada propuesta se arma según su presupuesto y los recursos que necesita el proyecto: un sitio web informativo, un sitio empresarial con CMS, una tienda online o un sistema a la medida. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos en menos de 24 horas con una propuesta de precio cerrado que dice exactamente qué incluye."
   },
   {
     question: "¿Qué incluye el desarrollo de un sitio web?",
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: "¿Ofrecen mantenimiento después del lanzamiento?",
-    answer: "Sí. Ofrecemos planes de mantenimiento mensual que incluyen: actualizaciones de seguridad, respaldos automáticos, cambios menores de contenido, soporte técnico y monitoreo del sitio. Los planes comienzan desde $95 USD/mes."
+    answer: "Sí. Ofrecemos planes de mantenimiento mensual que incluyen: actualizaciones de seguridad, respaldos automáticos, cambios menores de contenido, soporte técnico y monitoreo del sitio. El plan se dimensiona según su presupuesto y el tamaño del sitio."
   },
   {
     question: "¿Qué formas de pago aceptan?",
@@ -95,43 +95,36 @@ const services = [
     icon: "globe",
     title: "Sitios Web Corporativos",
     desc: "Diseño exclusivo aprobado en Figma, desarrollo con código limpio y rápido, SEO técnico incluido. Sin plantillas — su marca, su identidad.",
-    price: "Desde $1,500 USD"
   },
   {
     icon: "shopping-cart",
     title: "Tiendas Online",
     desc: "E-commerce completo con catálogo, carrito, pagos en línea (PixelPay, BAC Credomatic, Stripe), inventario y panel administrativo.",
-    price: "Desde $2,900 USD"
   },
   {
     icon: "settings",
     title: "Aplicaciones Web",
     desc: "Sistemas a medida: facturación, CRM, portales de clientes, agendamiento. Automatice procesos y escale su negocio sin límites.",
-    price: "Cotización personalizada"
   },
   {
     icon: "puzzle",
     title: "Software a la Medida y CRM",
     desc: "CRM, sistemas de gestión y aplicaciones empresariales con un equipo dedicado y sprints semanales. Especialistas en CRM — tenemos el nuestro.",
-    price: "Equipo dedicado desde $11,900/mes"
   },
   {
     icon: "pencil",
     title: "Diseño UI/UX en Figma",
     desc: "Ve y aprueba cómo quedará su sitio antes de que inicie el desarrollo. Prototipos interactivos listos para entregar al equipo técnico.",
-    price: "Desde $530 USD/página"
   },
   {
     icon: "trending-up",
     title: "SEO y Google",
     desc: "Posicionamiento orgánico para que sus clientes lo encuentren primero. Auditoría técnica, correcciones on-page y estrategia de contenido.",
-    price: "Desde $370 USD"
   },
   {
     icon: "shield",
     title: "Mantenimiento Web",
     desc: "Actualizaciones, respaldos automáticos, seguridad y soporte continuo. Su sitio siempre rápido, seguro y disponible — sin preocupaciones.",
-    price: "Desde $95 USD/mes"
   }
 ];
 
@@ -729,7 +722,6 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
                 </div>
                 <h3 class="text-lg font-bold text-white mb-3">{s.title}</h3>
                 <p class="text-neutral-400 text-sm leading-relaxed mb-5">{s.desc}</p>
-                <span class="price-chip">{s.price}</span>
               </div>
             ))}
           </div>
@@ -1024,12 +1016,12 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
         <div class="max-w-6xl mx-auto">
 
           <div class="fade-up text-center mb-16">
-            <span class="section-label justify-center">Precios</span>
+            <span class="section-label justify-center">Cómo cotizamos</span>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Precios de desarrollo web<br/><span class="text-gradient">en Honduras</span>
+              Precio cerrado según su presupuesto<br/><span class="text-gradient">para desarrollo web en Honduras</span>
             </h2>
             <p class="text-neutral-400 text-lg max-w-lg mx-auto">
-              Precio fijo desde el primer día. Facilidades de pago disponibles. Cotización personalizada en 24 horas.
+              No publicamos listas de precios. Usted define el presupuesto, nosotros dimensionamos el proyecto y cerramos un precio fijo. Propuesta en 24 horas.
             </p>
           </div>
 
@@ -1041,8 +1033,8 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
               <h3 class="text-xl font-bold text-white mb-1">Sitio Web</h3>
               <p class="text-neutral-500 text-sm mb-6">Para emprendedores y negocios que necesitan presencia digital profesional.</p>
               <div class="mb-1">
-                <span class="text-5xl font-extrabold text-white tracking-tight">$1,500</span>
-                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
+                <span class="text-2xl font-extrabold text-white tracking-tight">Precio cerrado</span>
+                <span class="text-neutral-500 text-sm ml-1.5">según su presupuesto</span>
               </div>
               <p class="text-neutral-600 text-xs mb-7 flex items-center gap-1.5">
                 <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -1056,9 +1048,9 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
                   </li>
                 ))}
               </ul>
-              <a href={`${WA}&text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Web%20de%20$1,500&type=phone_number&app_absent=0`} class="btn-outline w-full justify-center" target="_blank" rel="noopener noreferrer">
+              <a href={`${WA}&text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Web&type=phone_number&app_absent=0`} class="btn-outline w-full justify-center" target="_blank" rel="noopener noreferrer">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
-                Cotizar este plan
+                Solicitar propuesta
               </a>
             </div>
 
@@ -1068,8 +1060,8 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
               <h3 class="text-xl font-bold text-white mb-1">Tienda Online</h3>
               <p class="text-neutral-500 text-sm mb-6">E-commerce completo para vender productos en línea en Honduras y el mundo.</p>
               <div class="mb-1">
-                <span class="text-5xl font-extrabold text-white tracking-tight">$2,900</span>
-                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
+                <span class="text-2xl font-extrabold text-white tracking-tight">Precio cerrado</span>
+                <span class="text-neutral-500 text-sm ml-1.5">según su presupuesto</span>
               </div>
               <p class="text-neutral-600 text-xs mb-7 flex items-center gap-1.5">
                 <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -1083,9 +1075,9 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
                   </li>
                 ))}
               </ul>
-              <a href={`${WA}&text=Hola,%20me%20interesa%20cotizar%20una%20Tienda%20Online%20de%20$2,900&type=phone_number&app_absent=0`} class="btn-outline w-full justify-center" target="_blank" rel="noopener noreferrer">
+              <a href={`${WA}&text=Hola,%20me%20interesa%20cotizar%20una%20Tienda%20Online&type=phone_number&app_absent=0`} class="btn-outline w-full justify-center" target="_blank" rel="noopener noreferrer">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
-                Cotizar este plan
+                Solicitar propuesta
               </a>
             </div>
 
@@ -1101,8 +1093,8 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
               <h3 class="text-xl font-bold text-white mb-1">Sitio Empresarial</h3>
               <p class="text-neutral-400 text-sm mb-6">Para empresas que quieren crecer, posicionarse y generar más clientes en línea.</p>
               <div class="mb-1">
-                <span class="text-5xl font-extrabold text-white tracking-tight">$3,500</span>
-                <span class="text-neutral-500 text-sm ml-1.5">USD</span>
+                <span class="text-2xl font-extrabold text-white tracking-tight">Precio cerrado</span>
+                <span class="text-neutral-500 text-sm ml-1.5">según su presupuesto</span>
               </div>
               <p class="text-neutral-500 text-xs mb-7 flex items-center gap-1.5">
                 <svg class="w-3.5 h-3.5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -1116,9 +1108,9 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
                   </li>
                 ))}
               </ul>
-              <a href={`${WA}&text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Empresarial%20de%20$3,500&type=phone_number&app_absent=0`} class="btn-primary w-full justify-center glow-ring" target="_blank" rel="noopener noreferrer">
+              <a href={`${WA}&text=Hola,%20me%20interesa%20cotizar%20un%20Sitio%20Empresarial&type=phone_number&app_absent=0`} class="btn-primary w-full justify-center glow-ring" target="_blank" rel="noopener noreferrer">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d={WA_ICON}/></svg>
-                Cotizar este plan
+                Solicitar propuesta
               </a>
             </div>
 
@@ -1128,7 +1120,7 @@ const WA_ICON = `M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.
           <div class="fade-up mt-6">
             <div class="glass rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-white/6">
               <div>
-                <p class="text-white font-semibold text-sm">¿Proyecto personalizado o fuera de estos rangos?</p>
+                <p class="text-white font-semibold text-sm">¿Proyecto personalizado o un presupuesto diferente?</p>
                 <p class="text-neutral-500 text-xs mt-0.5">Aplicaciones, sistemas empresariales, tiendas con catálogos avanzados — cotizamos sin compromiso.</p>
               </div>
               <a href={`${WA}&text=Hola,%20tengo%20un%20proyecto%20personalizado%20que%20quisiera%20cotizar&type=phone_number&app_absent=0`} class="btn-whatsapp whitespace-nowrap text-sm py-3 px-6 shrink-0" target="_blank" rel="noopener noreferrer">

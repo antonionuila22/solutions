@@ -69,7 +69,7 @@ faqs:
   - question: "¿Puedo reunirme en persona con el equipo?"
     answer: "El día a día lo llevamos por videollamada y WhatsApp, y cuando el proyecto lo amerita coordinamos una reunión presencial en San Pedro Sula, adonde suelen llegar clientes de Yoro cuando viajan por negocios."
   - question: "¿Cuánto cuesta un sitio web para un negocio de Olanchito?"
-    answer: "Una web de presentación parte desde unos $400 USD y sube según catálogo, tienda en línea y funciones. Le entregamos una cotización clara en lempiras y dólares después de conocer su finca, agroindustria o comercio."
+    answer: "No publicamos precios fijos. Cada propuesta para Olanchito se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
 
 whyChooseUs:
   - title: "Formalidad para tratar con clientes grandes"
@@ -101,6 +101,4 @@ nearbyAreas:
   - "Yoro"
   - "Costa Norte"
 
-localStats:
-  averageProjectCost: "$400-$4,000 USD"
 ---

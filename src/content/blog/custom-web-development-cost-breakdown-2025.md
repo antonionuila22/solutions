@@ -214,7 +214,7 @@ Total                  $30,000 - $150,000
 | Mobile apps | +$20-50K |
 | AI/ML features | +$15-50K |
 
-**Example**: A logistics company needed a custom fleet management application with driver apps, real-time tracking, route optimization, and client portal. We delivered an MVP in 16 weeks for $95,000, with ongoing development for additional features.
+**Example**: A logistics company needed a custom fleet management application with driver apps, real-time tracking, route optimization, and client portal. We delivered an MVP in 16 weeks on a fixed budget, with ongoing development for additional features.
 
 ### 5. Enterprise Platform ($100,000 - $500,000+)
 

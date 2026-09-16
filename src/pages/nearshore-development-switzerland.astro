@@ -7,13 +7,14 @@ export const prerender = true;
  */
 
 import Layout from "../layouts/Layout.astro";
+import BudgetModel from "../components/BudgetModel.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Nearshore Development Switzerland | Codebrand";
 const description =
-  "Swiss-grade engineering without Swiss agency rates. Senior developers at $65/hr, precise, documented, tested. English working language. Book a free call.";
+  "Swiss-grade engineering without Swiss agency rates. Senior developers at a fixed price from your budget, precise, documented, tested. English working language. Book a free call.";
 const keywords =
   "nearshore development Switzerland, software development for Swiss companies, Swiss software outsourcing, nearshore engineers Switzerland, dedicated development team, software developers Switzerland, offshore development Switzerland, software engineers for hire";
 
@@ -63,7 +64,7 @@ const faqs = [
   {
     question: "Can you invoice in CHF, EUR, or USD?",
     answer:
-      "Yes. We invoice in Swiss francs, euros, or US dollars — whichever is cleanest for your accounting. Rates are quoted per hour and billed against tracked, itemized time so every invoice reconciles line by line. We handle SEPA and international bank transfers, and our invoices include the detail your finance team needs for VAT and cost-center allocation.",
+      "Yes. We invoice in Swiss francs, euros, or US dollars — whichever is cleanest for your accounting. The price is fixed per term from your budget, and every invoice itemizes the work so it reconciles line by line. We handle SEPA and international bank transfers, and our invoices include the detail your finance team needs for VAT and cost-center allocation.",
   },
   {
     question: "How do you handle data privacy and GDPR / Swiss FADP?",
@@ -114,19 +115,14 @@ const models = [
   },
   {
     icon: "clock",
-    title: "Hourly Engagement",
-    desc: "Senior engineering billed against tracked, itemized hours — ideal for a defined scope, an audit, or augmenting your in-house team through a busy quarter. Scale up or down without renegotiating a fixed bid.",
+    title: "Fixed-Scope Engagement",
+    desc: "Senior engineering at a fixed price for a defined scope, an audit, or augmenting your in-house team through a busy quarter. Resize the team when the term renews.",
   },
 ];
 
-const rates = [
-  { role: "Mid-Level Engineer", rate: "$45", note: "Solid delivery on well-defined work." },
-  { role: "Senior Engineer", rate: "$65", note: "Owns features end to end, sets the quality bar." },
-  { role: "Lead / Architect", rate: "$95", note: "System design, technical direction, and mentoring." },
-];
 
 const stats = [
-  { value: "$65/hr", label: "Senior Engineer" },
+  { value: "Fixed", label: "Price per Term" },
   { value: "5.0", label: "50 Google reviews" },
   { value: "~15–18h", label: "CET Overlap" },
   { value: "100%", label: "Code You Own" },
@@ -158,7 +154,7 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
         </h1>
         <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
           The precision, testing, and documentation Swiss teams expect — from
-          senior engineers at $65 an hour, working in English on your stack.
+          senior engineers at a fixed price from your budget, working in English on your stack.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <a href="/contact/" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
@@ -191,7 +187,7 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
           In Switzerland, a competent agency or independent contractor bills somewhere between <strong class="text-slate-900">CHF 120 and CHF 200+ an hour</strong> — and rightly so, given local salaries and cost of living. The trouble is that the rate rarely reflects the difficulty of the work. You pay Zürich prices for a straightforward feature just as readily as for a hard one.
         </p>
         <p>
-          Codebrand offers a different arithmetic. Our <strong class="text-slate-900">senior engineers bill $65 an hour</strong> from San Pedro Sula, Honduras, where costs are lower but the standards are not. We built this business around the expectations Swiss buyers actually hold: precise scoping, disciplined testing, documentation your own team can maintain, and code that reads like it was meant to last. Lower cost is the by-product of geography — not of cutting the corners you care about. To see the arithmetic rather than read about it, our <a href="/nearshore-cost-calculator/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore cost calculator</a> works the same comparison in US dollars — salary, employer burden, overhead and contractor rate are all yours to change.
+          Codebrand offers a different arithmetic. Our <strong class="text-slate-900">senior engineers are priced from your budget as a fixed figure per term</strong> from San Pedro Sula, Honduras, where costs are lower but the standards are not. We built this business around the expectations Swiss buyers actually hold: precise scoping, disciplined testing, documentation your own team can maintain, and code that reads like it was meant to last. Lower cost is the by-product of geography — not of cutting the corners you care about. To see the arithmetic rather than read about it, send a <a href="/quoter/" class="text-cyan-600 hover:text-cyan-700 font-semibold">proposal request</a> with your budget and we reply with a fixed figure in CHF, EUR or USD.
         </p>
         <p>
           If you're weighing options across the continent, start at our <a href="/nearshore-development-europe/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development for Europe</a> hub, or read how the model works in general on our <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development</a> overview. Founded in 2020 with a 5.0-star Google rating, we're an established team — not a marketplace of strangers.
@@ -246,31 +242,17 @@ const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "PostgreSQ
     </div>
   </section>
 
-  <!-- Rates -->
-  <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
-          Transparent <span class="text-orange-500">hourly rates</span>
-        </h2>
-        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">
-          One number per role, billed against itemized time. No monthly minimums, no lock-in.
-        </p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
-        {rates.map((r) => (
-          <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200 text-center hover:-translate-y-1 transition-all duration-300">
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">{r.role}</h3>
-            <div class="text-4xl font-bold text-orange-500 mb-1">{r.rate}<span class="text-lg text-slate-400 font-medium">/hr</span></div>
-            <p class="text-slate-600 text-sm mt-3">{r.note}</p>
-          </div>
-        ))}
-      </div>
-      <p class="text-center text-slate-500 text-sm mt-8" data-anim="fade" data-delay="0.2">
-        Invoiced in CHF, EUR, or USD. Compare against CHF 120–200+ for local agency work.
-      </p>
-    </div>
-  </section>
+  <BudgetModel config={{
+    eyebrow: "How we price",
+    title: "Priced from your budget.",
+    titleHighlight: "Not by the hour.",
+    subtitle: "We don't publish hourly rates. Tell us the capacity you need and the budget you have; we propose the roles, seniority and hours that fit it and close a fixed price for the term.",
+    cards: [
+      { icon: "users", title: "One senior developer", desc: "A single engineer with the stack you name, embedded in your team for the term you define, at a fixed monthly price." },
+      { icon: "layers", title: "A dedicated squad", desc: "Two or more developers plus a project manager working only on your product, sized to the monthly budget you set." },
+      { icon: "target", title: "A fixed-scope build", desc: "A defined deliverable, a website, an app or an integration, closed at a fixed price for the agreed scope." },
+    ],
+  }} />
 
   <!-- Tech Stack -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">

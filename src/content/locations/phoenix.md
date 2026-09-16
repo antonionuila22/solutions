@@ -57,9 +57,6 @@ marketHighlights:
   - "The Scottsdale and Tempe corridor is a regional hub for insurance, wealth management, and fintech"
   - "Arizona and Honduras both skip daylight saving, so the time gap stays fixed year-round"
 
-localStats:
-  averageProjectCost: "$4,000-$40,000"
-
 whyChooseUs:
   - title: "40-60% Below Valley Agency Rates"
     description: "Scottsdale and Camelback Corridor agencies price for a booming, high-cost market. Our nearshore Honduras model delivers the same senior engineering for 40 to 60 percent less, so a homebuilder's marketing budget or a startup's seed round buys far more product."
@@ -86,7 +83,7 @@ faqs:
   - question: "How does the timezone actually work between Phoenix and Honduras?"
     answer: "It works better than almost any other US market. Arizona stays on Mountain Standard Time all year and Honduras stays on Central Standard Time all year, so the one-hour difference between us never moves. There's no spring or fall clock change to track—your business day and ours overlap almost completely, every single day of the year."
   - question: "What does a typical Phoenix web project cost through your team?"
-    answer: "Most Valley projects land between $4,000 and $40,000 depending on scope—a lead-focused site for a Chandler contractor sits near the low end, while a custom patient portal or a manufacturer's B2B platform sits higher. Whatever the scope, our Honduras-based model runs 40 to 60 percent under a comparable Scottsdale agency, and you get senior React, Next.js, and Node.js engineering rather than a templated build."
+    answer: "We don't publish fixed prices. Every Phoenix proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Phoenix agency, and you own the code at the end."
   - question: "Do you work with startups coming out of the ASU ecosystem?"
     answer: "Yes. Tempe, Chandler, and the ASU orbit produce a steady stream of founders, and our pricing is built for early-stage budgets. We help teams move from concept to a launched, investor-ready MVP quickly, then extend it as they raise—so your seed capital funds more product and a longer runway before the next round."
   - question: "Can you support financial and insurance firms in the Scottsdale corridor?"

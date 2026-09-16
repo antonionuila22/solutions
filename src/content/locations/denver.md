@@ -57,9 +57,6 @@ marketHighlights:
   - "Denver draws one of the most educated workforces in the country to the Front Range"
   - "A single metro spans aerospace, cleantech, wellness, and SaaS—an unusually diverse mix"
 
-localStats:
-  averageProjectCost: "$2,500-$14,000"
-
 whyChooseUs:
   - title: "Built for Startup Speed"
     description: "Front Range founders move fast, and so do we. We ship fundable MVPs and iterate quickly in modern React and Next.js, so Boulder and Denver startups reach launch before the runway runs thin."

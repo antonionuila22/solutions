@@ -57,9 +57,6 @@ marketHighlights:
   - "A deep base of manufacturing and engineering talent underpins the whole regional economy"
   - "Business costs well below coastal cities make nearshore development an easy value case for local firms"
 
-localStats:
-  averageProjectCost: "$2,000-$10,000"
-
 whyChooseUs:
   - title: "40-60% Below Metro Detroit Rates"
     description: "A region built on manufacturing knows how to weigh value. Our nearshore Honduras model delivers comparable senior engineering for roughly half a local agency's price—a straightforward case for cost-conscious Detroit firms."

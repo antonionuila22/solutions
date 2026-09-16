@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Capital salmonera nacional"
   techEmployment: "500+ empresas"
-  averageProjectSize: "Desde $450 USD"
 ---

@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Capital minera nacional"
   techEmployment: "800+ empresas"
-  averageProjectSize: "Desde $550 USD"
 ---

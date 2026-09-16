@@ -7,13 +7,14 @@ export const prerender = true;
  */
 
 import Layout from "../layouts/Layout.astro";
+import BudgetModel from "../components/BudgetModel.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
 
 const title = "Nearshore Development for Europe | Codebrand";
 const description =
-  "Nearshore development for European companies: senior engineers at $45–95/hr, English-fluent, daily CET overlap, GDPR-aware, EU contracts. Get a quote.";
+  "Nearshore development for European companies: senior engineers at a fixed price from your budget, English-fluent, daily CET overlap, GDPR-aware, EU contracts. Get a proposal.";
 const keywords =
   "nearshore development europe, nearshore development company europe, LATAM developers for europe, remote development team europe, GDPR-aware development, hire nearshore developers EU, nearshore vs local agency europe, english-fluent nearshore team";
 
@@ -21,7 +22,7 @@ const serviceSchema = createServicePageSchema({
   serviceType: "Nearshore Development for Europe",
   name: "Nearshore Development for European Companies",
   description:
-    "Senior nearshore engineering for companies across Western Europe — React, Next.js, Node.js, Python and PostgreSQL delivered from Latin America. Reliable daily afternoon overlap with CET, async-first workflow, English-fluent teams, EU-friendly contracts, GDPR-aware development, and full code ownership at $45–95/hr.",
+    "Senior nearshore engineering for companies across Western Europe — React, Next.js, Node.js, Python and PostgreSQL delivered from Latin America. Reliable daily afternoon overlap with CET, async-first workflow, English-fluent teams, EU-friendly contracts, GDPR-aware development, and full code ownership at a fixed price sized to your budget.",
   url: "https://www.codebrand.us/nearshore-development-europe/",
   image: "https://www.codebrand.us/photos/bannercodebrand.webp",
   catalogName: "Nearshore Development Services for Europe",
@@ -68,7 +69,7 @@ const faqs = [
   {
     question: "Can you contract and invoice in EUR?",
     answer:
-      "Yes. We work under a straightforward services agreement that covers confidentiality, IP assignment and payment terms, and we can invoice in euros against agreed hourly rates. Many European clients prefer a monthly consolidated invoice tied to logged hours per engineer. We are flexible on the paperwork your finance and legal teams need — the commercial terms are transparent and there are no per-seat licences or lock-in.",
+      "Yes. We work under a straightforward services agreement that covers confidentiality, IP assignment and payment terms, and we can invoice in euros against the agreed fixed price. Many European clients prefer a monthly consolidated invoice per engineer. We are flexible on the paperwork your finance and legal teams need — the commercial terms are transparent and there are no per-seat licences or lock-in.",
   },
   {
     question: "When are meetings, given the timezone gap?",
@@ -88,7 +89,7 @@ const faqs = [
   {
     question: "How is this different from hiring a local European agency?",
     answer:
-      "The engineering is comparable; the cost structure is not. Local agencies and senior EU freelancers typically bill from around €90 to €200 or more per hour once overhead is included. Our hourly rates run $45–95 depending on seniority, and you still get English-fluent seniors, code you fully own, and a reliable daily overlap with your afternoon. It is the same modern stack and review discipline at a materially lower blended cost.",
+      "The engineering is comparable; the cost structure is not. Local agencies and senior EU freelancers typically bill from around €90 to €200 or more per hour once overhead is included. We don't publish hourly rates: you tell us the budget and the capacity you need, we propose the seniority mix that fits it at a fixed price for the term, and you still get English-fluent seniors, code you fully own, and a reliable daily overlap with your afternoon. It is the same modern stack and review discipline at a materially lower blended cost.",
   },
   {
     question: "Which European countries do you work with?",
@@ -151,14 +152,9 @@ const countries = [
   },
 ];
 
-const rates = [
-  { level: "Mid-Level Engineer", price: "$45", note: "Feature delivery on an established codebase and stack." },
-  { level: "Senior Engineer", price: "$65", note: "Owns complex work end to end and mentors within the squad." },
-  { level: "Lead / Architect", price: "$95", note: "System design, technical direction and hard trade-offs." },
-];
 
 const stats = [
-  { value: "$45–95/hr", label: "Our Hourly Rates" },
+  { value: "Fixed", label: "Price per Term" },
   { value: "~3h", label: "Daily CET Overlap" },
   { value: "GDPR", label: "Aware Practices" },
   { value: "5.0", label: "50 Google reviews" },
@@ -197,7 +193,7 @@ const stats = [
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
           </a>
           <a href="#rates" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
-            See Hourly Rates
+            See How We Price
           </a>
         </div>
 
@@ -222,7 +218,7 @@ const stats = [
           A senior developer inside Western Europe — whether through a Zurich, Amsterdam or Munich agency, or as an independent contractor — usually bills somewhere between <strong class="text-slate-900">€90 and €200+ per hour</strong> once overhead, recruitment and margin are folded in. Those are real numbers, and they climb fast when you need two or three engineers rather than one.
         </p>
         <p>
-          Codebrand delivers the same modern stack — React, Next.js, Node.js, Python, PostgreSQL — for <strong class="text-slate-900">$45 to $95 per hour</strong> depending on seniority. We won't pretend to a false precision on savings, because your local rate varies by city and speciality, but the gap is large and consistent. You still get English-fluent seniors, pull-request review, and <strong class="text-slate-900">code you own 100%</strong>. If you want a figure rather than a claim, our <a href="/nearshore-cost-calculator/" class="text-cyan-600 hover:text-cyan-700 font-semibold">cost calculator</a> puts a nearshore team beside an in-house hire, a contractor and a Polish agency — in US dollars, with every rate editable, so you can drop in the one you actually pay. Explore the wider model on our <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development hub</a>.
+          Codebrand delivers the same modern stack (React, Next.js, Node.js, Python, PostgreSQL) at a <strong class="text-slate-900">fixed price sized to your budget</strong>, whatever seniority mix that budget needs. We won't pretend to a false precision on savings, because your local rate varies by city and speciality, but the gap is large and consistent. You still get English-fluent seniors, pull-request review, and <strong class="text-slate-900">code you own 100%</strong>. If you want a figure rather than a claim, send a <a href="/quoter/" class="text-cyan-600 hover:text-cyan-700 font-semibold">proposal request</a> with your budget and we come back with a fixed price you can set beside the local quote you already have. Explore the wider model on our <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development hub</a>.
         </p>
         <p>
           For most European buyers the decision isn't nearshore versus in-house — it's how to add senior capacity without the agency premium or a slow local hire. A <a href="/dedicated-development-team/" class="text-cyan-600 hover:text-cyan-700 font-semibold">dedicated development team</a> that plugs into your existing rituals lets you scale the roadmap up or down without long contracts, while your core team stays focused.
@@ -281,29 +277,17 @@ const stats = [
     </div>
   </section>
 
-  <!-- Hourly Rates Section -->
-  <section id="rates" class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
-          Transparent <span class="text-orange-500">hourly rates</span>
-        </h2>
-        <p class="text-lg text-slate-600" data-anim="fade" data-delay="0.1">
-          You pay for logged hours per engineer — no seat licences, no lock-in. Invoiced in EUR against agreed rates.
-        </p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
-        {rates.map((r) => (
-          <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200 text-center hover:-translate-y-1 transition-all duration-300">
-            <h3 class="text-lg font-semibold text-slate-900 mb-4">{r.level}</h3>
-            <div class="text-5xl font-bold text-orange-500 mb-1">{r.price}</div>
-            <div class="text-slate-400 text-sm mb-5">per hour</div>
-            <p class="text-slate-600 text-sm">{r.note}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <BudgetModel id="rates" config={{
+    eyebrow: "How we price",
+    title: "Priced from your budget.",
+    titleHighlight: "Not by the hour.",
+    subtitle: "We don't publish hourly rates. Tell us the capacity you need and the budget you have; we propose the roles, seniority and hours that fit it and close a fixed price for the term.",
+    cards: [
+      { icon: "users", title: "One senior developer", desc: "A single engineer with the stack you name, embedded in your team for the term you define, at a fixed monthly price." },
+      { icon: "layers", title: "A dedicated squad", desc: "Two or more developers plus a project manager working only on your product, sized to the monthly budget you set." },
+      { icon: "target", title: "A fixed-scope build", desc: "A defined deliverable, a website, an app or an integration, closed at a fixed price for the agreed scope." },
+    ],
+  }} />
 
   <!-- FAQ Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">

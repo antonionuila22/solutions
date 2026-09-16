@@ -2,8 +2,6 @@
 title: Professional Photography – Capturing Moments That Speak
 img: /photos/fotografia.webp
 readtime: 4
-price: From $330
-inStock: true
 description: Professional photography for brands, products, events, portraits, and digital content. Images that tell your story, build trust, and elevate your visual presence.
 date: 2025-01-15
 author: Codebrand Team
@@ -28,15 +26,15 @@ At **Codebrand**, we believe a powerful image can communicate, inspire, and posi
 
 ---
 
-## Session Types & Pricing
+## Session Types
 
-| Session Type | Description | Price |
-|--------------|-------------|-------|
-| **Professional Portrait** | Ideal for LinkedIn, team profiles, or personal branding | $330 |
-| **Product for E-commerce** | White background or styled shots for catalogs and online stores | From $380 |
-| **Lifestyle / Personal Brand** | Creative session for social media and brand storytelling | From $450 |
-| **Corporate Events** | Coverage of events, product launches, or corporate presentations | From $680 |
-| **Full Visual Campaign** | Art direction + photography for key campaigns or product launches | From $1,050 |
+| Session Type | Description |
+| -------------- | ------------- |
+| **Professional Portrait** | Ideal for LinkedIn, team profiles, or personal branding |
+| **Product for E-commerce** | White background or styled shots for catalogs and online stores |
+| **Lifestyle / Personal Brand** | Creative session for social media and brand storytelling |
+| **Corporate Events** | Coverage of events, product launches, or corporate presentations |
+| **Full Visual Campaign** | Art direction + photography for key campaigns or product launches |
 
 > Pricing may vary based on location, number of shots, and editing complexity.
 

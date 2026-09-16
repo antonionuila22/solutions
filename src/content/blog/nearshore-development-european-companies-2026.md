@@ -149,7 +149,7 @@ If your nearshore team touches personal data — and most engineering teams do, 
 
 ## Cost Scenarios
 
-Nominal rates are only useful in context. Here is how a single senior engineer, full-time for a year, compares across the options a European buyer actually considers. Codebrand's published rates are **Mid $45 / Senior $65 / Lead $95 per hour**.
+Nominal rates are only useful in context. Here is how a single senior engineer, full-time for a year, compares across the options a European buyer actually considers. LATAM nearshore senior rates typically sit around **$60 to $70 per hour** when billed to Western clients.
 
 Assume ~1,700 billable hours in a working year.
 
@@ -158,14 +158,14 @@ Assume ~1,700 billable hours in a working year.
 | Swiss local agency | CHF 150/hr | ~CHF 255,000 |
 | Dutch local agency | €120/hr | ~€204,000 |
 | Poland (to Western client) | €80/hr | ~€136,000 |
-| LATAM nearshore (Codebrand senior, $65/hr) | ~€60/hr | ~€102,000 |
+| LATAM nearshore (senior, ~$65/hr) | ~€60/hr | ~€102,000 |
 
 The gap widens with team size. A four-person team — say two seniors, one mid, one lead — illustrates it:
 
 | Team (2 senior + 1 mid + 1 lead, full year) | Approx. annual cost |
 |----------------------------------------------|---------------------|
 | Dutch agency equivalent (~€110/hr blended) | ~€748,000 |
-| Codebrand blended ($45/$65/$95, ~€60/hr) | ~€408,000 |
+| LATAM nearshore blended (~€60/hr) | ~€408,000 |
 
 That is roughly a **40-45% reduction** against a Western European agency for comparable seniority — plus a team that is assembled in weeks rather than a hiring quarter. The savings are real, but the speed is often what matters more.
 

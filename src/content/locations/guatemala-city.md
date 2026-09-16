@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro económico regional"
   techEmployment: "1000+ empresas tech"
-  averageProjectSize: "Desde $500 USD"
 ---

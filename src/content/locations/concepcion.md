@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Motor económico del sur"
   techEmployment: "1500+ empresas"
-  averageProjectSize: "Desde $450 USD"
 ---

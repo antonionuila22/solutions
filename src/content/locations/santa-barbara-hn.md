@@ -103,6 +103,4 @@ nearbyAreas:
   - "Occidente Honduras"
   - "Cortés"
 
-localStats:
-  averageProjectCost: "$400-$3,500"
 ---

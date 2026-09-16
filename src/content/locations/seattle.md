@@ -65,9 +65,6 @@ marketHighlights:
   - "Local cloud and platform engineers are scarce and among the best-paid anywhere"
   - "A persistent talent shortage pushes Seattle companies toward distributed engineering"
 
-localStats:
-  averageProjectCost: "$18,000-$100,000"
-
 whyChooseUs:
   - title: "Seattle Quality, 50-60% Less"
     description: "Local cloud and platform engineers command some of the highest rates in the country. Our San Pedro Sula team delivers the same AWS-and-React stack for roughly half to 60% less, turning the gap into runway or a project your roadmap couldn't otherwise reach."
@@ -100,7 +97,7 @@ faqs:
   - question: "Can you augment our existing Seattle engineering team?"
     answer: "That is one of the most common ways established Seattle companies work with us. Senior developers slot into your GitHub and Linear workflow to own a specific project or add capacity your in-house roadmap can't cover this quarter. The two-hour overlap means daily standups and real-time collaboration are natural, so we function as an extension of your team rather than a hand-off you have to manage overnight."
   - question: "How much does development cost versus a Seattle agency?"
-    answer: "Our nearshore model runs roughly 50 to 60% below comparable Seattle agencies and senior contractors, whose rates reflect a metro where cloud and platform engineers are scarce and richly paid. Most projects fall in the $18,000 to $100,000 range depending on scope. You get the same modern, cloud-native stack and full code ownership—without paying Seattle overhead or waiting months to hire against the region's talent shortage."
+    answer: "We don't publish fixed prices. Every Seattle proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Seattle agency, and you own the code at the end."
 
 nearbyAreas:
   - "Downtown Seattle"

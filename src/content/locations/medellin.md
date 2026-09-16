@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Ciudad de innovación"
   techEmployment: "3000+ empresas"
-  averageProjectSize: "Desde $450 USD"
 ---

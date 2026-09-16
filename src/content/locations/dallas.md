@@ -57,9 +57,6 @@ marketHighlights:
   - "A world-class aviation and logistics hub sustains steady B2B and tracking-platform work"
   - "A large Hispanic market makes bilingual English-and-Spanish sites a real commercial advantage"
 
-localStats:
-  averageProjectCost: "$2,500-$15,000"
-
 whyChooseUs:
   - title: "Exactly Your Central Timezone"
     description: "Honduras shares Dallas's Central Time with zero offset. A 9 AM request from Uptown is already in progress and a 4 PM fire gets handled that afternoon—closer to a local team than most local teams manage."

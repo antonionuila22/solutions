@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro económico vasco"
   techEmployment: "2500+ empresas"
-  averageProjectSize: "Desde $550 USD"
 ---

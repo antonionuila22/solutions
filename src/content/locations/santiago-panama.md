@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro comercial regional"
   techEmployment: "200+ empresas"
-  averageProjectSize: "Desde $350 USD"
 ---

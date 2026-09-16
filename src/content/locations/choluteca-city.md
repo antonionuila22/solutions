@@ -67,7 +67,7 @@ faqs:
   - question: "Estamos en Choluteca y ustedes en SPS, ¿cómo trabajamos juntos?"
     answer: "Llevamos todo el proyecto por videollamada, WhatsApp y correo, sin que usted viaje. Cuando un proyecto grande lo justifica coordinamos una reunión presencial en San Pedro Sula o Tegucigalpa. Trabajar con clientes del sur de forma remota es parte de nuestro día a día."
   - question: "¿Cuánto cuesta un sitio web para un negocio del sur?"
-    answer: "Un sitio informativo para un comercio o servicio de Choluteca parte desde unos $400 USD (alrededor de L10,000); un portal bilingüe de exportación con más secciones parte desde $1,500 USD. Definimos un presupuesto cerrado antes de comenzar."
+    answer: "No publicamos precios fijos. Cada propuesta para Choluteca se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Incluyen dominio, correo y soporte?"
     answer: "Sí. Dejamos dominio, correo profesional y hosting funcionando, y ofrecemos planes de mantenimiento con respaldos y actualizaciones para que su sitio choluteco siga rápido y disponible cuando un comprador lo busque."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Golfo de Fonseca"
   - "Sur de Honduras"
 
-localStats:
-  averageProjectCost: "$400-$6,000 USD"
 ---

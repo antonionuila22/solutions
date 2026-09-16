@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro económico europeo"
   techEmployment: "8000+ empresas tech"
-  averageProjectSize: "Desde $600 USD"
 ---

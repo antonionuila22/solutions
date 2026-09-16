@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro turístico"
   techEmployment: "60+ empresas"
-  averageProjectSize: "Desde $400 USD"
 ---

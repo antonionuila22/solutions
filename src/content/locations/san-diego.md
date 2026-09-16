@@ -57,9 +57,6 @@ marketHighlights:
   - "The San Diego-Tijuana border is one of the busiest land crossings on earth, powering cross-border trade"
   - "Tens of millions of visitors a year sustain a major tourism and hospitality economy"
 
-localStats:
-  averageProjectCost: "$5,000-$45,000"
-
 whyChooseUs:
   - title: "40-60% Below La Jolla Rates"
     description: "San Diego agency pricing reflects an expensive coastal market packed with biotech and defense money. Our nearshore Honduras model delivers the same senior engineering for 40 to 60 percent less, so a startup's seed round or a device maker's marketing budget goes considerably further."
@@ -88,7 +85,7 @@ faqs:
   - question: "How does the two-hour timezone difference with San Diego work?"
     answer: "It works to your advantage. Honduras keeps Central Standard Time, two hours ahead of Pacific, so our workday covers your entire San Diego business day. We join your morning standups, afternoon planning, and end-of-day reviews in real time over Slack, GitHub, and Figma—a completely different experience from offshore teams where a 12-hour gap turns every exchange into an overnight wait."
   - question: "What does a San Diego web project typically cost?"
-    answer: "Most San Diego projects fall between $5,000 and $45,000 depending on scope—a marketing site for a hospitality business sits toward the lower end, while an investor-ready biotech site, a secure defense portal, or a cross-border commerce platform sits higher. Across that range our nearshore model runs 40 to 60 percent under a comparable La Jolla or Downtown agency, with senior engineering throughout."
+    answer: "We don't publish fixed prices. Every San Diego proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable San Diego agency, and you own the code at the end."
   - question: "Do you work with San Diego tourism and medical-device companies too?"
     answer: "Yes to both. For the visitor economy we build mobile-first booking platforms, hotel and attraction sites, and restaurant systems tuned for the tens of millions who visit each year. For the region's medical-device innovators we build HIPAA-conscious platforms and credible corporate sites, handling sensitive data with encryption and access controls and signing Business Associate Agreements where protected health information is involved."
 

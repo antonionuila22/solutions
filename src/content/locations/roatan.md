@@ -103,6 +103,4 @@ nearbyAreas:
   - "Mahogany Bay"
   - "Dixon Cove"
 
-localStats:
-  averageProjectCost: "$800-$6,000"
 ---

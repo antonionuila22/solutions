@@ -67,7 +67,7 @@ faqs:
   - question: "¿Puedo reunirme con ustedes en persona?"
     answer: "El día a día lo manejamos por videollamada y WhatsApp, pero cuando el proyecto lo amerita coordinamos una reunión presencial en San Pedro Sula, a la que muchos clientes olanchanos llegan cuando viajan por negocios."
   - question: "¿Cuánto cuesta una página web para un negocio en Juticalpa?"
-    answer: "Un sitio para una finca o comercio de Juticalpa suele partir desde unos $400 USD y varía según catálogo, tienda en línea y funciones. Le entregamos una cotización clara en lempiras y dólares una vez que conocemos su operación."
+    answer: "No publicamos precios fijos. Cada propuesta para Juticalpa se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Ofrecen tiendas en línea para comercios de la ciudad?"
     answer: "Sí. Desarrollamos e-commerce para comercios de Juticalpa que quieren vender a clientes en todo Honduras, con catálogo, carrito y coordinación de pedidos por WhatsApp."
 
@@ -101,6 +101,4 @@ nearbyAreas:
   - "Tegucigalpa"
   - "Danlí"
 
-localStats:
-  averageProjectCost: "$400-$4,000 USD"
 ---

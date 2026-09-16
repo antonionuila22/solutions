@@ -57,9 +57,6 @@ marketHighlights:
   - "San Antonio is the seventh-largest US city and among the fastest-growing"
   - "The Alamo and River Walk draw tens of millions of visitors to a majority-Hispanic, bilingual market"
 
-localStats:
-  averageProjectCost: "$3,000-$35,000"
-
 whyChooseUs:
   - title: "The Exact Same Clock"
     description: "San Antonio and Honduras both sit on Central Time year-round, so there is no timezone gap to work around whatsoever. Message us at 10 AM and we're already at our desks; ask for a 2 PM call and we're on it. It's the most seamless collaboration a nearshore partner can offer."
@@ -88,7 +85,7 @@ faqs:
   - question: "Can you handle HIPAA-compliant projects for the South Texas Medical Center?"
     answer: "Yes. The medical center is one of the largest concentrations of healthcare in the country, and we build HIPAA-compliant patient portals, appointment systems, and research tools for hospitals, clinics, and practices in the area. We handle protected health information with encryption, role-based access, and audit logging, and we sign Business Associate Agreements when a project requires one."
   - question: "What does a San Antonio web project typically cost?"
-    answer: "Most San Antonio projects run between $3,000 and $35,000 depending on scope—a bilingual site for a River Walk restaurant sits toward the lower end, while a secure defense-sector portal or a medical-center patient tool sits higher. Across that range our nearshore model comes in 40 to 60 percent under a comparable Texas agency, with senior engineering throughout."
+    answer: "We don't publish fixed prices. Every San Antonio proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable San Antonio agency, and you own the code at the end."
   - question: "Do you work with River Walk and Alamo-area tourism businesses?"
     answer: "Absolutely. Tourism is central to San Antonio's economy, with tens of millions of visitors a year, and those businesses live or die on their online presence. We build booking platforms, attraction sites, and restaurant systems engineered for mobile visitors, fast load times, and conversion—in both English and Spanish, so you capture domestic and international guests alike."
 

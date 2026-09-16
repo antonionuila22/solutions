@@ -103,6 +103,4 @@ nearbyAreas:
   - "Santa Rita"
   - "Valle de Sula"
 
-localStats:
-  averageProjectCost: "$800-$8,000"
 ---

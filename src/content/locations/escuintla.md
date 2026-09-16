@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro agroindustrial"
   techEmployment: "60+ empresas"
-  averageProjectSize: "Desde $450 USD"
 ---

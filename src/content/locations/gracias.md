@@ -67,7 +67,7 @@ faqs:
   - question: "¿Están cerca por si necesito reunirme en persona?"
     answer: "Somos de San Pedro Sula, a pocas horas de Gracias por la carretera del occidente. Coordinamos videollamadas para el día a día y, cuando el proyecto lo amerita, agendamos una reunión presencial en San Pedro Sula."
   - question: "¿Cuánto cuesta un sitio web para un negocio turístico en Gracias?"
-    answer: "Un sitio para un hotel pequeño o un tour operador de Gracias suele partir desde unos $400 USD y sube según reservas en línea, versión bilingüe y catálogo. Le damos una cotización clara en lempiras y dólares después de conocer su negocio."
+    answer: "No publicamos precios fijos. Cada propuesta para Gracias se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Puedo actualizar el sitio yo mismo en temporada alta?"
     answer: "Sí. Entregamos sitios fáciles de administrar para que pueda cambiar precios, fotos y disponibilidad durante fechas fuertes como Semana Santa o los fines de semana largos, y ofrecemos planes de soporte si prefiere que lo hagamos nosotros."
 
@@ -101,6 +101,4 @@ nearbyAreas:
   - "Occidente Honduras"
   - "Ruta Lenca"
 
-localStats:
-  averageProjectCost: "$400-$3,000 USD"
 ---

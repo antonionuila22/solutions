@@ -3,8 +3,6 @@ title: Professional UX/UI Website Design in Figma – Modern & Efficient Prototy
 seoTitle: "UX and UI Design in Figma | Codebrand"
 img: /photos/uxservice.webp
 readtime: 5
-price: $530/page
-inStock: true
 description: Professional UX/UI design in Figma. We create modern, functional prototypes tailored to your business goals — responsive, developer-ready, and built around how your users actually think.
 date: 2025-01-01
 author: Codebrand Team
@@ -31,11 +29,9 @@ Each page is designed mobile-first, with up to 8 responsive sections, and delive
 
 ---
 
-## Pricing
+## How We Price
 
-**$530 per page**
-
-Need multiple pages? Each additional page is quoted at the same rate. If you need additional screens, complex interactions, or a full design system, we'll scope those as add-ons.
+**Priced from your budget.** Tell us how many pages or screens you need and the budget you have, and we reply with a fixed-price proposal. Complex interactions or a full design system are scoped in the same proposal.
 
 ---
 

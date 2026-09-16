@@ -149,10 +149,10 @@ Let's compare your options honestly.
 
 | Project Type | US Agency | Offshore | Freelancer | Codebrand |
 |--------------|-----------|----------|------------|-----------|
-| Landing Page | $5,000-$15,000 | $300-$800 | $1,000-$3,000 | **$1,500-$3,000** |
-| Business Site | $15,000-$40,000 | $1,000-$3,000 | $3,000-$8,000 | **$2,500-$8,000** |
-| E-commerce | $30,000-$100,000 | $3,000-$10,000 | $8,000-$20,000 | **$5,000-$20,000** |
-| Web App | $50,000-$200,000 | $10,000-$30,000 | $20,000-$50,000 | **$10,000-$50,000** |
+| Landing Page | $5,000-$15,000 | $300-$800 | $1,000-$3,000 | **Fixed price from your budget** |
+| Business Site | $15,000-$40,000 | $1,000-$3,000 | $3,000-$8,000 | **Fixed price from your budget** |
+| E-commerce | $30,000-$100,000 | $3,000-$10,000 | $8,000-$20,000 | **Fixed price from your budget** |
+| Web App | $50,000-$200,000 | $10,000-$30,000 | $20,000-$50,000 | **Fixed price from your budget** |
 
 **Winner: Codebrand** - Premium quality at fair prices.
 
@@ -284,7 +284,7 @@ We eliminate the risks of other options:
 
 ### From a Client Who Left a US Agency
 
-> "We paid $45,000 for a website from a 'top' US agency. It took 8 months and looked like a template. Codebrand rebuilt it in 6 weeks for $12,000—and the design is infinitely better. Wish we'd found them first."
+> "We paid $45,000 for a website from a 'top' US agency. It took 8 months and looked like a template. Codebrand rebuilt it in 6 weeks, and the design is infinitely better. Wish we'd found them first."
 > — **Brian T., SaaS Founder**
 
 ### From a Client Who Tried Offshore

@@ -65,9 +65,6 @@ marketHighlights:
   - "Senior local developer rates are among the highest on the planet, straining startup budgets"
   - "Fierce competition for talent pushes many SF companies toward distributed engineering teams"
 
-localStats:
-  averageProjectCost: "$20,000-$120,000"
-
 whyChooseUs:
   - title: "Bay Area Quality, 50-60% Less"
     description: "San Francisco contractor and agency rates are among the highest on earth. Our San Pedro Sula team delivers the same senior React and Node engineering for roughly half to 60% less, turning the savings into extra runway for founders and a bigger build for growth-stage teams."
@@ -100,7 +97,7 @@ faqs:
   - question: "Can you sign NDAs and protect our intellectual property?"
     answer: "Absolutely, and we treat it as table stakes in a city where the code is the company. We routinely sign NDAs and confidentiality agreements, work in secure repositories with proper access controls, and handle your IP with the same discipline your in-house engineers would. Every project also ships with full source-code ownership, so there is never a question about who controls the asset—it is always you."
   - question: "How much does development cost versus a San Francisco agency or contractor?"
-    answer: "Our nearshore model typically runs 50 to 60% below comparable San Francisco agencies and senior contractors, whose rates reflect the most expensive engineering market in the country. Most projects land in the $20,000 to $120,000 range depending on scope, and you get senior React, Next.js, and Node.js work plus full code ownership—without paying for downtown SF overhead or competing for scarce local talent."
+    answer: "We don't publish fixed prices. Every San Francisco proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable San Francisco agency, and you own the code at the end."
 
 nearbyAreas:
   - "SoMa"

@@ -57,9 +57,6 @@ marketHighlights:
   - "University City and the Navy Yard have emerged as magnets for startups and corporate campuses"
   - "The city's cost of living sits well below New York and Boston, helping it retain skilled talent"
 
-localStats:
-  averageProjectCost: "$15,000-60,000"
-
 whyChooseUs:
   - title: "Enterprise Quality Below Center City Rates"
     description: "Philadelphia's health systems, universities, and life-sciences firms expect rigorous work. We deliver it at roughly 40 to 60 percent under a Center City agency, because our nearshore cost base carries no Northeast-corridor overhead."
@@ -90,7 +87,7 @@ faqs:
   - question: "Can you integrate with the complex systems Philadelphia institutions run?"
     answer: "Yes. Philadelphia's established hospitals, universities, and enterprises tend to run intricate technology stacks—clinical systems, CRMs, ERPs, and custom back ends—and we're comfortable building web layers that integrate cleanly into those environments rather than forcing a rip-and-replace."
   - question: "What does a Philadelphia project cost versus a local agency?"
-    answer: "Our nearshore model typically runs 40 to 60 percent under a comparable Center City agency, because our cost base is far lower rather than the scope being thinner. Most Philadelphia engagements fall in the $15,000 to $60,000 range depending on complexity, and you still get senior engineering and full code ownership."
+    answer: "We don't publish fixed prices. Every Philadelphia proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Philadelphia agency, and you own the code at the end."
 
 nearbyAreas:
   - "Center City"

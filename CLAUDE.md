@@ -30,7 +30,7 @@ Defined in `src/content.config.ts`. Collections: `blog`, `books`, `products`, `c
 
 ### Component Config Pattern
 
-Home page components (Hero, CaseStudies, ValueProposition, HowWeWork, Pricing, Faq, TechMarquee, PartnershipBanner, Ourteam) accept a `config?: Partial<Config>` prop with full defaults. This enables page variants (like `/hn/`) to override all text without changing the component:
+Home page components (Hero, CaseStudies, ValueProposition, HowWeWork, BudgetModel, Faq, TechMarquee, PartnershipBanner, Ourteam) accept a `config?: Partial<Config>` prop with full defaults. This enables page variants (like `/hn/`) to override all text without changing the component:
 
 ```astro
 interface Props {
@@ -51,7 +51,7 @@ For HTML-containing text (subtitles with `<span>`, `<a>` tags), use `<Fragment s
 
 - `src/configs/business.ts` — Centralized NAP (name, address, phone) and contact info. Single source of truth for Schema.org data.
 - `src/utils/schema.ts` — Schema.org structured data generators (service, FAQ, HowTo, breadcrumb schemas). Imports from `business.ts`.
-- `src/data/` — Static data files (testimonials, quiz data, quoter pricing).
+- `src/data/` — Static data files (testimonials). The site publishes no prices: every engagement is a fixed-price proposal built from the client's budget (see `src/components/BudgetModel.astro` and `/quoter/`).
 - `src/lib/` — Utilities: HTML sanitization, form validation.
 - `src/layouts/` — Layout.astro (main), LandingLayout.astro, HnLayout.astro (Honduras).
 

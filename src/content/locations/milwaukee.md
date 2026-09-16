@@ -59,9 +59,6 @@ marketHighlights:
   - "Marquette, UW-Milwaukee, and MSOE supply a steady engineering talent pipeline"
   - "Lower operating and living costs than coastal metros support practical business growth"
 
-localStats:
-  averageProjectCost: "$1,500-$9,000"
-
 whyChooseUs:
   - title: "Fair Value, Solid Work"
     description: "Milwaukee businesses respect a straight deal and dependable execution. Our nearshore Honduras model delivers senior engineering at value rates, so a manufacturer, clinic, or brewery gets a professional site without paying for overhead that adds nothing to the result."
@@ -94,7 +91,7 @@ faqs:
   - question: "Can you help smaller Milwaukee businesses on a modest budget?"
     answer: "Absolutely. Our cost structure makes capable web development accessible to Milwaukee's smaller manufacturers, restaurants, and service firms that a coastal agency would price out of reach. We scope tightly to what you truly need, so a family-run shop or a growing local business gets a clean, effective site at a Wisconsin-friendly price rather than an inflated agency package."
   - question: "What does a Milwaukee web project usually cost?"
-    answer: "Most Milwaukee engagements land between $1,500 and $9,000 depending on whether you need a corporate site, a manufacturing B2B portal, or a brand site with online ordering. That reflects Wisconsin's value-conscious market while still giving you senior engineering on a modern stack and full ownership of the code, so you get durable work at a fair price and nothing locked away from you afterward."
+    answer: "We don't publish fixed prices. Every Milwaukee proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Milwaukee agency, and you own the code at the end."
 
 nearbyAreas:
   - "Downtown Milwaukee"

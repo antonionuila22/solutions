@@ -3,8 +3,6 @@ title: Professional Video Editing – Visual Content That Captures and Connects
 seoTitle: "Video Editing Services | Codebrand"
 img: /photos/videoedition.webp
 readtime: 5
-price: From $370
-inStock: true
 description: Professional video editing for brands, social media, product launches, and presentations. We turn your footage into polished, dynamic content that holds attention and drives results.
 date: 2025-01-15
 author: Codebrand Team
@@ -30,15 +28,15 @@ At **Codebrand**, we transform your raw clips into polished visual content with 
 
 ---
 
-## Editing Types & Pricing
+## Editing Types
 
-| Editing Type | Description | Price |
-|--------------|-------------|-------|
-| **Simple Edit** | Basic cut + music + transitions (up to 60 seconds) | $370 |
-| **Dynamic Social Media Edit** | Reels, Shorts, TikToks with visual rhythm and branding | From $450 |
-| **Narrative Editing** | Explainers, interviews, or educational videos (2–5 min) | From $600 |
-| **Full Promotional Video** | Storytelling, b-roll, animated text, brand-aligned edit | From $870 |
-| **Presentation / Pitch Video** | Business or investor video with motion design and structure | From $1,100 |
+| Editing Type | Description |
+| -------------- | ------------- |
+| **Simple Edit** | Basic cut + music + transitions (up to 60 seconds) |
+| **Dynamic Social Media Edit** | Reels, Shorts, TikToks with visual rhythm and branding |
+| **Narrative Editing** | Explainers, interviews, or educational videos (2–5 min) |
+| **Full Promotional Video** | Storytelling, b-roll, animated text, brand-aligned edit |
+| **Presentation / Pitch Video** | Business or investor video with motion design and structure |
 
 > Final pricing depends on video duration, number of deliverables, and whether additional graphic design is required.
 

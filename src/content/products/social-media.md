@@ -2,8 +2,6 @@
 title: Social Media Graphic Design – Custom Monthly Packages
 img: /photos/socialmedia.webp
 readtime: 5
-price: From $180/month
-inStock: true
 description: Monthly social media design packages built around your brand. High-performing visuals with consistent delivery, creative direction, and strategic alignment — so you never run out of content.
 date: 2025-01-25
 author: Codebrand Team
@@ -28,13 +26,13 @@ At **Codebrand**, we turn your digital communication strategy into a steady stre
 
 ---
 
-## Monthly Packages & Pricing
+## Monthly Packages
 
-| Package | Designs/Month | Delivery Rhythm | Price |
-|---------|--------------|-----------------|-------|
-| **Social Media 10** | 10 designs | 1 every 3 days | From $180/month |
-| **Social Media 30** | 30 designs | 1 per day | From $380/month |
-| **Social Media 60** | 60 designs | 2 per day | From $580/month |
+| Package | Designs/Month | Delivery Rhythm |
+| --------- | -------------- | ----------------- |
+| **Social Media 10** | 10 designs | 1 every 3 days |
+| **Social Media 30** | 30 designs | 1 per day |
+| **Social Media 60** | 60 designs | 2 per day |
 
 > Need a custom volume or ad-specific creatives? [Contact us](/contact/) for a tailored quote.
 

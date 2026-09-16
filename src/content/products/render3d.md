@@ -3,8 +3,6 @@ title: Professional 3D Renderings – Realistic Visuals for Products and Archite
 seoTitle: "3D Rendering Services for Products | Codebrand"
 img: /photos/render3d.webp
 readtime: 5
-price: From $450
-inStock: true
 description: High-end 3D rendering for products, spaces, and concepts. Hyper-realistic or stylized visuals for e-commerce, advertising, architectural presentations, and catalogs. Priced per image.
 date: 2025-01-01
 author: Codebrand Team
@@ -30,15 +28,15 @@ At **Codebrand**, we create high-end 3D renders for brands, creative studios, ar
 
 ---
 
-## Render Types & Pricing
+## Render Types
 
-| Render Type | Description | Price per Image |
-|-------------|-------------|-----------------|
-| **Basic Product Render** | White or transparent background. Ideal for e-commerce or mockups. | From $450 |
-| **Premium Product Render** | Complex materials, stylized scene, shadows, and reflections | From $640 |
-| **Technical / Industrial Render** | High-precision geometry, technical textures, cutaways or exploded views | From $700 |
-| **Architectural Interior** | Full interior scenes with furniture, lighting, and realistic atmosphere | From $870 |
-| **Architectural Exterior** | Facades, natural or urban surroundings, ambient lighting, visual depth | From $990 |
+| Render Type | Description |
+| ------------- | ------------- |
+| **Basic Product Render** | White or transparent background. Ideal for e-commerce or mockups. |
+| **Premium Product Render** | Complex materials, stylized scene, shadows, and reflections |
+| **Technical / Industrial Render** | High-precision geometry, technical textures, cutaways or exploded views |
+| **Architectural Interior** | Full interior scenes with furniture, lighting, and realistic atmosphere |
+| **Architectural Exterior** | Facades, natural or urban surroundings, ambient lighting, visual depth |
 
 > Multiple renders, color variations, or different angles can be packaged at a discounted rate. Ask about bundle pricing.
 

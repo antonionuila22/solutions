@@ -3,8 +3,6 @@ title: Professional Data Entry Service – Accuracy, Speed, and Security
 seoTitle: "Data Entry Services: Accurate and Secure | Codebrand"
 img: /photos/dataentry.webp
 readtime: 5
-price: From $6/product
-inStock: true
 description: We provide accurate and efficient data entry services tailored for e-commerce stores. Our specialized team helps you manage your catalog, update products, organize your inventory, and keep your online store up to date.
 date: 2025-03-30
 author: Codebrand Team
@@ -18,15 +16,15 @@ At **Codebrand**, we help e-commerce stores keep their product data accurate, up
 
 ---
 
-## Pricing — Per Product
+## Service Tiers
 
 We charge per product, not per hour or month. That means you only pay for what gets done, and you can scale up or down at any time.
 
-| Tier | Price per Product | What's Included | Min. Order |
-|------|------------------|-----------------|------------|
-| **Basic** | **$6/product** | Client provides images. We enter name, price, description, and categories. | 50 products |
-| **Standard** | **$10/product** | We research and source images, write adapted descriptions, and organize categories. | 50 products |
-| **Premium** | **$15/product** | Full SEO optimization: meta title, meta description, alt tags, keyword-rich content, and structured data. | 50 products |
+| Tier | What's Included | Min. Order |
+| ------ | ----------------- | ------------ |
+| **Basic** | Client provides images. We enter name, price, description, and categories. | 50 products |
+| **Standard** | We research and source images, write adapted descriptions, and organize categories. | 50 products |
+| **Premium** | Full SEO optimization: meta title, meta description, alt tags, keyword-rich content, and structured data. | 50 products |
 
 > Need more than 500 products? [Contact us](/contact/) for a custom volume quote.
 

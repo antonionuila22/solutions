@@ -82,7 +82,6 @@ marketHighlights:
 
 localStats:
   techCompanies: "3,500+"
-  averageProjectCost: "$12,000-50,000"
   businessGrowth: "+13% YoY"
 
 faqs:

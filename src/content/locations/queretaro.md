@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Hub aeronáutico nacional"
   techEmployment: "2500+ empresas"
-  averageProjectSize: "Desde $500 USD"
 ---

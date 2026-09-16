@@ -63,9 +63,6 @@ marketHighlights:
   - "Florida's business-friendly tax environment continues to attract companies"
   - "Jacksonville's cost of living runs well below South Florida metros"
 
-localStats:
-  averageProjectCost: "$10,000-45,000"
-
 whyChooseUs:
   - title: "One Hour Behind Jacksonville"
     description: "Honduras runs on Central Time, just one hour behind Jacksonville's Eastern clock, so our workday overlaps almost entirely with yours. A morning message from a Southside or Town Center office gets a prompt reply and afternoon reviews fit your schedule—no offshore overnight lag."
@@ -94,7 +91,7 @@ faqs:
   - question: "Can you support businesses serving the Navy community at Mayport and NAS Jacksonville?"
     answer: "Yes. We build professional websites and portals for the contractors and businesses serving Jacksonville's significant Navy presence, and we can implement access controls and careful data handling for engagements that call for a more protected footprint."
   - question: "What does web development cost compared with a Jacksonville agency?"
-    answer: "Our nearshore model typically runs about 40-60% below a comparable Jacksonville agency, with most projects in the $10,000-$45,000 range depending on scope. You get senior engineering on a modern React, Next.js, Astro, or Node.js stack, without the overhead a local agency prices into its rates."
+    answer: "We don't publish fixed prices. Every Jacksonville proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Jacksonville agency, and you own the code at the end."
   - question: "Do we own the code, and can our team maintain it later?"
     answer: "Yes on both. Every Jacksonville engagement ships with full source-code ownership and no vendor lock-in. We hand over a documented repository your internal team or any other developer can pick up and maintain, so your business is never tied to us to keep its site running or evolving."
 

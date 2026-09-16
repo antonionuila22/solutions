@@ -7,6 +7,7 @@ export const prerender = true;
  */
 
 import Layout from "../layouts/Layout.astro";
+import BudgetModel from "../components/BudgetModel.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 import { createServicePageSchema } from "../utils/schema";
@@ -156,14 +157,9 @@ const steps = [
   { n: "04", title: "Launch & Handoff", desc: "Data migration, training, and full code ownership. Maintenance if you want it." },
 ];
 
-const rates = [
-  { role: "Mid Developer", price: "$45", desc: "Feature work, integrations, and day-to-day CRM development." },
-  { role: "Senior Developer", price: "$65", desc: "Complex logic, data modeling, and integration architecture." },
-  { role: "Lead / Architect", price: "$95", desc: "System design, migration strategy, and technical direction." },
-];
 
 const stats = [
-  { value: "$0", label: "Per-Seat Fees" },
+  { value: "Zero", label: "Per-Seat Fees" },
   { value: "100%", label: "Code Ownership" },
   { value: "5.0", label: "50 Google reviews" },
   { value: "Own", label: "CRM We Run" },
@@ -306,26 +302,17 @@ const stats = [
     </div>
   </section>
 
-  <!-- Rates Section -->
-  <section class="py-16 sm:py-20 lg:py-28 bg-white font-poppins">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
-          Simple Hourly <span class="text-orange-500">Rates</span>
-        </h2>
-        <p class="text-lg text-slate-600">Nearshore engineering in US Central Time — senior talent without the US price tag. To see what those hours add up to over a build, <a href="/nearshore-cost-calculator/" class="text-cyan-600 hover:text-cyan-700 font-semibold">compare the real cost</a> against a US in-house developer with every assumption open to editing.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8" data-anim="fade">
-        {rates.map((rate) => (
-          <div class="bg-slate-50 rounded-2xl shadow-lg p-8 border border-slate-200 text-center hover:-translate-y-1 transition-all duration-300">
-            <h3 class="text-xl font-semibold text-slate-900 mb-2">{rate.role}</h3>
-            <div class="text-4xl font-bold text-orange-500 mb-1">{rate.price}<span class="text-lg text-slate-400 font-medium">/hr</span></div>
-            <p class="text-slate-600 mt-4">{rate.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <BudgetModel config={{
+    eyebrow: "How we price",
+    title: "Priced from your budget.",
+    titleHighlight: "Not per seat, not by the hour.",
+    subtitle: "We don't publish hourly rates. Tell us what the CRM must do and the budget you have; we propose the phases, the team and the timeline that fit it and close a fixed price for the agreed scope.",
+    cards: [
+      { icon: "target", title: "A fixed-scope CRM", desc: "Pipeline, contacts, follow-ups and the integrations you name, delivered in phases and closed at a fixed price." },
+      { icon: "users", title: "A dedicated squad", desc: "Developers plus a project manager building and improving the CRM every week, sized to the monthly budget you set." },
+      { icon: "layers", title: "Migration and rollout", desc: "Data migration, training and handoff included in the proposal, so the price covers the whole change, not just the code." },
+    ],
+  }} />
 
   <!-- FAQ Section -->
   <section class="py-16 sm:py-20 lg:py-28 bg-slate-50 font-poppins">

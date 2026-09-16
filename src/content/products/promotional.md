@@ -2,8 +2,6 @@
 title: Custom Promotional Products for Businesses
 img: /photos/promocionales.webp
 readtime: 4
-price: From $9/unit
-inStock: true
 description: Custom promotional products — shirts, mugs, tote bags, and more — with high-quality printing and embroidery. Your brand on items people actually use. Minimum 12 units per order.
 date: 2025-04-05
 author: Codebrand Team
@@ -28,16 +26,16 @@ At **Codebrand**, we turn everyday objects into brand touchpoints. From t-shirts
 
 ---
 
-## Products & Pricing
+## Products
 
-| Product | Technique | Min. Order | Price per Unit | Delivery |
-|---------|-----------|------------|----------------|----------|
-| **T-shirts** | Sublimation & DTF | 12 units | From $19/unit | 2–5 business days |
-| **Custom Mugs** | Sublimation Print | 12 units | From $12/unit | 2–5 business days |
-| **Tote Bags** | Screen Print (1–3 colors) | 12 units | From $9/unit | 3–10 business days |
-| **Special Items** | (thermoses, notebooks, mousepads, stickers) | Custom | From $120 | Based on item |
+| Product | Technique | Min. Order | Delivery |
+| --------- | ----------- | ------------ | ---------- |
+| **T-shirts** | Sublimation & DTF | 12 units | 2–5 business days |
+| **Custom Mugs** | Sublimation Print | 12 units | 2–5 business days |
+| **Tote Bags** | Screen Print (1–3 colors) | 12 units | 3–10 business days |
+| **Special Items** | (thermoses, notebooks, mousepads, stickers) | Custom | Based on item |
 
-> Prices vary based on quantity, technique, and design complexity. Volume discounts available for orders over 50 units.
+> We don't publish prices. Tell us what you need and the budget you have, and we reply with a fixed-price proposal for that scope.
 
 ---
 

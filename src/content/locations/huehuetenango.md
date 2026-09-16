@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro cafetero"
   techEmployment: "40+ empresas"
-  averageProjectSize: "Desde $400 USD"
 ---

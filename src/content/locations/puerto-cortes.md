@@ -103,6 +103,4 @@ nearbyAreas:
   - "Costa Atlántica"
   - "Frontera Guatemala"
 
-localStats:
-  averageProjectCost: "$500-$5,000"
 ---

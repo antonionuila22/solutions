@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro comercial fronterizo"
   techEmployment: "1000+ empresas"
-  averageProjectSize: "Desde $350 USD"
 ---

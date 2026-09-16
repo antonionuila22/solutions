@@ -150,7 +150,7 @@ export const renderingConfig: ServicePageConfig = {
         description: "Created photorealistic renders for a luxury condo development that sold 80% of units before construction began.",
         metrics: [
           { value: "80%", label: "Pre-Sold Units" },
-          { value: "$50M", label: "Sales Value" },
+          { value: "Photoreal", label: "Render Quality" },
           { value: "45", label: "Renders Delivered" },
         ],
         gradientFrom: "from-blue-600",
@@ -175,7 +175,7 @@ export const renderingConfig: ServicePageConfig = {
         title: "Commercial Development",
         description: "Delivered architectural visualization for a commercial plaza that helped secure investor funding.",
         metrics: [
-          { value: "$25M", label: "Funding Secured" },
+          { value: "Funded", label: "Investor Round" },
           { value: "30", label: "Exterior Views" },
           { value: "4K", label: "Resolution" },
         ],

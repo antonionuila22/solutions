@@ -63,9 +63,6 @@ marketHighlights:
   - "A homegrown SaaS scene and a large Salesforce presence drive local tech employment"
   - "Indy's lower cost of living helps retain engineering talent in the Midwest"
 
-localStats:
-  averageProjectCost: "$10,000-45,000"
-
 whyChooseUs:
   - title: "One Hour Behind Indianapolis"
     description: "Honduras runs on Central Time, just one hour behind Indy's Eastern clock, so our workday overlaps almost entirely with yours. A message from a Downtown or Carmel office gets a prompt reply and afternoon reviews slot easily into your schedule—no offshore overnight lag."
@@ -94,7 +91,7 @@ faqs:
   - question: "Do you work with logistics and distribution companies?"
     answer: "Yes. Indianapolis's crossroads geography and its airport cargo hub make logistics a core local sector, and we build the tracking tools, customer portals, and B2B platforms distribution and 3PL companies rely on—built to integrate with the systems they already operate."
   - question: "What does web development cost compared with an Indianapolis agency?"
-    answer: "Our nearshore model typically runs about 40-60% below a comparable Indianapolis agency, with most projects in the $10,000-$45,000 range depending on scope. You get senior engineering on a modern React, Next.js, Astro, or Node.js stack, without the overhead an Indy agency prices into its rates."
+    answer: "We don't publish fixed prices. Every Indianapolis proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Indianapolis agency, and you own the code at the end."
   - question: "Do we own the code you build for us?"
     answer: "Completely. Every Indianapolis engagement ships with full source-code ownership and no vendor lock-in. We hand over a documented repository your internal team or any other developer can pick up and maintain, so your business is never tied to us to keep its site running or evolving."
 

@@ -67,7 +67,7 @@ faqs:
   - question: "¿Trabajan con restaurantes y comercios del centro histórico?"
     answer: "Sí. Hacemos sitios con menús, fotos y ubicación para restaurantes comayagüenses, y catálogos o tiendas en línea para comercios que quieren atender tanto al turista como al cliente local del corredor Tegucigalpa–San Pedro Sula."
   - question: "¿Cuánto tarda y cuánto cuesta un sitio en Comayagua?"
-    answer: "Un sitio para un hotel o comercio comayagüense suele tomar de 4 a 8 semanas y parte desde unos $500 USD para un sitio informativo; con reservas y contenido bilingüe el rango sube. Entregamos un presupuesto y calendario cerrados antes de empezar."
+    answer: "No publicamos precios fijos. Cada propuesta para Comayagua se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Puedo coordinar con ustedes estando en Comayagua?"
     answer: "Sí, y con facilidad. Estamos en San Pedro Sula, sobre el mismo corredor central, así que trabajamos por videollamada y WhatsApp con reuniones presenciales posibles en SPS o Tegucigalpa cuando el proyecto lo amerita."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Tegucigalpa"
   - "San Pedro Sula"
 
-localStats:
-  averageProjectCost: "$500-$5,000 USD"
 ---

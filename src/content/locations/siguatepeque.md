@@ -63,7 +63,7 @@ faqs:
   - question: "¿Pueden reunirse en persona conmigo en Siguatepeque?"
     answer: "Sí. Estamos en San Pedro Sula, a poco más de una hora por la CA-5, así que podemos coordinar visitas cuando el proyecto lo justifique y el resto lo llevamos por videollamada y WhatsApp para avanzar rápido."
   - question: "¿Cuánto cuesta un sitio web para un negocio de Siguatepeque?"
-    answer: "Un sitio informativo para un comercio o clínica de la ciudad suele arrancar alrededor de los $450 USD, mientras que un portal educativo o un e-commerce sube según las funciones. Le damos una cotización clara tras conocer su caso."
+    answer: "No publicamos precios fijos. Cada propuesta para Siguatepeque se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿El sitio va a aparecer cuando alguien busque mi servicio en la zona?"
     answer: "Trabajamos el SEO local para búsquedas como tu rubro más Siguatepeque o Comayagua, con velocidad de carga optimizada, que es clave porque buena parte del tráfico de la zona navega desde el celular en la carretera."
   - question: "¿Ofrecen mantenimiento continuo del sitio?"
@@ -101,6 +101,4 @@ nearbyAreas:
   - "Parque Nacional Cerro Azul Meámbar"
   - "Centro Honduras"
 
-localStats:
-  averageProjectCost: "$450-$3,500 USD"
 ---

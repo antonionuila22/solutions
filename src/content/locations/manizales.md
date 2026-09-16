@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Ciudad universitaria"
   techEmployment: "800+ empresas"
-  averageProjectSize: "Desde $400 USD"
 ---

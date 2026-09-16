@@ -74,7 +74,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 - Full code ownership
 - SEO-optimized architecture
 
-**Typical investment:** $2,500 - $25,000+
+**Typical investment:** scoped from your budget as a fixed price
 
 ### 2. E-commerce Development
 
@@ -89,7 +89,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 - Multi-currency support
 - Conversion-optimized checkout
 
-**Typical investment:** $5,000 - $50,000+
+**Typical investment:** scoped from your budget as a fixed price
 
 ### 3. Web Application Development
 
@@ -104,7 +104,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 - API development
 - Real-time features
 
-**Typical investment:** $10,000 - $100,000+
+**Typical investment:** scoped from your budget as a fixed price
 
 ### 4. Landing Page Development
 
@@ -119,7 +119,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 - Fast turnaround (1-2 weeks)
 - Performance optimized
 
-**Typical investment:** $1,000 - $5,000
+**Typical investment:** scoped from your budget as a fixed price
 
 ### 5. Website Redesign & Migration
 
@@ -134,7 +134,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 - Content migration
 - Redirect mapping
 
-**Typical investment:** $3,000 - $20,000+
+**Typical investment:** scoped from your budget as a fixed price
 
 ### 6. Maintenance & Support
 
@@ -149,7 +149,7 @@ In 2026, web development has evolved far beyond simple HTML pages. Modern web de
 - Technical support
 - Monthly reporting
 
-**Typical investment:** $200 - $1,500/month
+**Typical investment:** scoped from your budget as a fixed price
 
 ---
 
@@ -292,11 +292,7 @@ Understanding pricing helps you budget appropriately and identify red flags.
 
 We believe in **premium quality at accessible prices**. Our [nearshore development](/nearshore-development/) model (based in Honduras, same timezone as US) allows us to deliver work that rivals top US agencies at 40-60% lower cost.
 
-**Codebrand starting prices:**
-- Landing Pages: From $1,500
-- Business Websites: From $2,500
-- E-commerce: From $5,000
-- Web Applications: From $10,000
+**How Codebrand prices work:** we don't publish a price list. You tell us what you need and the budget you have, and we reply with a fixed-price proposal for that scope.
 
 *Every project is unique. [Contact us for a custom quote →](https://www.codebrand.us/contact/)*
 
@@ -361,7 +357,7 @@ Don't learn these lessons the hard way. Watch for these warning signs:
 ### Codebrand's Guarantee
 
 We address every red flag:
-- ✅ Transparent pricing (starting at $2,500)
+- ✅ Fixed-price proposals built from your budget
 - ✅ Extensive portfolio with real results
 - ✅ Honest SEO expectations
 - ✅ Clear contracts and scope

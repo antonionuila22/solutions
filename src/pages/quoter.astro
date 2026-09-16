@@ -1,107 +1,155 @@
 ---
 export const prerender = true;
 /**
- * Project Quoter — the page the "Pricing" nav item points to.
- * Redesigned to the Premium Minimal Tech pattern (structure reference:
- * dedicated-development-team.astro sections, careers.astro hero grammar).
+ * Request a Proposal — the page the "Get a Proposal" nav item points to.
  *
- * Title / meta description / keywords / H1 are preserved EXACTLY from the
- * previous version — the page may have traffic.
- *
- * The <Quoter client:only="react" /> island owns all quoting logic and is
- * mounted exactly as before; everything around it is presentation only.
+ * This URL used to host the self-service project quoter. Codebrand no longer
+ * publishes prices: every engagement is scoped from the client's budget and the
+ * resources the project needs (a website, a store, an application, or N
+ * developers with a given stack). The <ProposalRequest /> island collects that
+ * and posts it to /api/contact. The URL is kept because it has inbound links.
  */
 import Layout from "../layouts/Layout.astro";
-import Quoter from "../components/Quoter";
+import ProposalRequest from "../components/ProposalRequest";
 import Icon from "../components/icons/Icon.astro";
 import HeroColorPanels from "../components/ui/HeroColorPanels.astro";
 import BorderBeam from "../components/ui/BorderBeam.astro";
-import ShinyButton from "../components/ui/ShinyButton.astro";
 
-const title = "Project Quoter | Codebrand - Get Your Custom Quote";
-const description = "Get an instant estimate for your digital project. Choose from one-time services or monthly plans. Web development, branding, SEO, video, photography, and more.";
-const keywords = "project quote, web development pricing, branding cost, digital services pricing, monthly development plans, codebrand quoter";
+const title = "Request a Proposal | Codebrand";
+const description =
+  "Tell us what you need and the budget you have. We reply with a fixed-price proposal that says which resources go into it: a website, a store, an application, or developers with your stack.";
+const keywords =
+  "request a proposal, web development proposal, software development budget, hire developers fixed price, codebrand proposal";
 
 // WhatsApp URL format is fixed site-wide: always the api.whatsapp.com/send/
 // form, never the shortened link form.
-const waText =
-  "Hi Codebrand, I used the project quoter and I'd like to talk about my estimate.";
+const waText = "Hi Codebrand, I'd like to request a proposal for my project.";
 const whatsappUrl = `https://api.whatsapp.com/send/?phone=50487380714&text=${encodeURIComponent(waText)}&type=phone_number&app_absent=0`;
 
-// Same terms as the previous version of this page — wording unchanged.
+const how = [
+  {
+    title: "You set the budget",
+    desc: "Tell us what you want to build and the budget you have in mind, total or per month. A range is fine.",
+  },
+  {
+    title: "We size the resources",
+    desc: "We propose what fits it: the roles, the seniority, the stack, the hours per week and the timeline. One senior developer for three months, or a full squad with a project manager.",
+  },
+  {
+    title: "You approve a fixed price",
+    desc: "The proposal closes a price for the agreed scope. No hourly surprises, no hidden fees, and you own 100% of the code from the first commit.",
+  },
+];
+
 const terms = [
   {
-    title: "Payment Structure",
-    desc: "50% upfront, 30% midway, 10% on delivery, 10% held 15 days as guarantee.",
+    title: "Fixed price per scope",
+    desc: "The proposal states what is included and what it costs. Changes to the scope are quoted before any work starts.",
   },
   {
-    title: "Monthly Plans",
-    desc: "6-month initial commitment. Cancellation requires 2 months written notice.",
+    title: "Payment structure",
+    desc: "50% upfront, 30% midway, 10% on delivery, 10% held 15 days as guarantee. Monthly billing for dedicated developers.",
   },
   {
-    title: "30-Day Warranty",
+    title: "Contracts by project length",
+    desc: "Dedicated developers sign for the duration defined in the proposal. Extend, scale or close the team at the end of the term.",
+  },
+  {
+    title: "30-day warranty",
     desc: "Limited warranty for bugs and errors specified in the project scope.",
   },
 ];
 ---
 
-<Layout
-  title={title}
-  description={description}
-  keywords={keywords}
->
-  <!-- Hero — HeroColorPanels as the animated backdrop -->
+<Layout title={title} description={description} keywords={keywords}>
+  <!-- Hero -->
   <HeroColorPanels panels={6} accentIndex={5}>
-    <!-- Legibility scrim now ships inside HeroColorPanels (scrim prop, on by default). -->
     <div class="relative mx-auto max-w-6xl px-4 pt-32 pb-16 sm:px-6 sm:pt-40 sm:pb-20 lg:px-8 lg:pb-24">
       <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
-        Pricing
+        Proposal
       </p>
 
       <h1 class="text-hero mt-6 max-w-3xl text-white">
-        Get Your Custom Quote
+        Tell us your budget. We propose the team that fits it.
       </h1>
 
       <p class="text-lead mt-8 max-w-2xl text-slate-300">
-        Select the services you need and get an instant estimate. Choose
-        between one-time projects or monthly development plans.
+        No price lists. You bring what you need and the budget you have; we come
+        back with a fixed-price proposal that says exactly which resources go into
+        it, whether that is a website, an online store, a web application, or one
+        or more developers with your stack.
       </p>
 
       <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-3">
         <li class="flex items-center gap-2.5 text-sm font-medium text-slate-300">
           <Icon name="check" class="h-4 w-4 flex-shrink-0 text-[#f48200]" />
-          Transparent Pricing
+          Fixed price per scope
         </li>
         <li class="flex items-center gap-2.5 text-sm font-medium text-slate-300">
           <Icon name="check" class="h-4 w-4 flex-shrink-0 text-[#f48200]" />
-          No Commitment
+          Reply within 24 business hours
+        </li>
+        <li class="flex items-center gap-2.5 text-sm font-medium text-slate-300">
+          <Icon name="check" class="h-4 w-4 flex-shrink-0 text-[#f48200]" />
+          No obligation
         </li>
       </ul>
     </div>
   </HeroColorPanels>
 
-  <!-- Quoter island — mounted exactly as before; the logic lives in React.
-       The wrapper reserves ~92% of the island's measured height (1,976px at
-       375w / 1,505px at 1280w) so client:only hydration doesn't shove the
-       sections below it — that pop-in measured CLS 0.22. -->
-  <section class="bg-white px-4 py-16 sm:px-6 sm:py-20">
-    <div class="min-h-[1800px] lg:min-h-[1400px]">
-      <Quoter client:only="react" />
+  <!-- How it works -->
+  <section class="bg-white py-20 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        How it works
+      </p>
+      <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900" data-anim="heading">
+        Three steps from budget to proposal
+      </h2>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        {how.map((item, i) => (
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+            <span class="text-sm font-semibold tabular-nums tracking-[0.18em] text-[#f48200]">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3 class="mt-4 text-xl font-semibold text-slate-900">{item.title}</h3>
+            <p class="mt-3 leading-relaxed text-slate-600">{item.desc}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- The fine print — editorial rows, same terms as before -->
-  <section class="bg-slate-50 py-20 sm:py-28">
+  <!-- The form -->
+  <section id="request" class="bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 scroll-mt-24">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+        Request a proposal
+      </p>
+      <h2 class="text-display-2 mt-5 text-slate-900" data-anim="heading">
+        What do you need, and what is the budget?
+      </h2>
+      <p class="mt-6 max-w-2xl leading-relaxed text-slate-600">
+        Four short steps. The more precise the budget and the stack, the more
+        precise the proposal.
+      </p>
+      <div class="relative mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 sm:p-10">
+        <ProposalRequest client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- The fine print -->
+  <section class="bg-white py-20 sm:py-28">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
         The fine print
       </p>
       <h2 class="text-display-2 mt-5 max-w-3xl text-slate-900" data-anim="heading">
-        The terms behind every estimate
+        The terms behind every proposal
       </h2>
       <p class="mt-6 max-w-2xl leading-relaxed text-slate-600">
-        No surprises after the number. These are the conditions every quote
-        from this page is built on.
+        No surprises after the number. These are the conditions every proposal is built on.
       </p>
 
       <div class="mt-14 border-t border-slate-200">
@@ -122,26 +170,30 @@ const terms = [
     </div>
   </section>
 
-  <!-- CTA — one highlighted card, BorderBeam as the single microdetail -->
+  <!-- CTA -->
   <section class="bg-slate-950 py-20 sm:py-28">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <div class="relative rounded-3xl border border-white/10 bg-slate-900 px-6 py-14 text-center sm:px-14">
         <BorderBeam duration={8} />
 
         <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
-          Next step
+          Prefer to talk first?
         </p>
         <h2 class="text-display-2 mt-5 text-white" data-anim="heading">
-          Turn your estimate into a proposal
+          A 30-minute call is enough to scope it
         </h2>
         <p class="mx-auto mt-6 max-w-xl leading-relaxed text-slate-400">
-          The quoter gives you a realistic starting point. Send it our way and
-          we'll come back with a scoped proposal — what's included, what it
-          costs, and what happens first.
+          If the budget is still open or the scope is fuzzy, start with a
+          conversation. We will help you decide what to build first.
         </p>
 
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <ShinyButton href="/contact/">Get a Custom Proposal</ShinyButton>
+          <a
+            href="/contact/"
+            class="ui-shine inline-flex items-center justify-center gap-2 rounded-full bg-[#f48200] px-7 py-3 font-semibold text-white transition-colors duration-300 hover:bg-orange-600"
+          >
+            Book a call
+          </a>
           <a
             href={whatsappUrl}
             target="_blank"

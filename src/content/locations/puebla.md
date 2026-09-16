@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Hub automotriz nacional"
   techEmployment: "3000+ empresas"
-  averageProjectSize: "Desde $450 USD"
 ---

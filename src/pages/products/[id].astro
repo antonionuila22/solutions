@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 const { product, related } = Astro.props;
 const { data } = product;
-const { title, description, img, readtime, author, price, inStock } = data;
+const { title, description, img, readtime, author } = data;
 
 const { Content } = await render(product);
 
@@ -32,14 +32,11 @@ const baseUrl = "https://www.codebrand.us";
 const seoTitle = buildPageTitle(title, { seoTitle: data.seoTitle });
 const rawDesc =
   description ||
-  `Discover ${title} from Codebrand. Professional digital services with ${price}. ${inStock ? "Available now" : "Contact us for availability"}.`;
+  `Discover ${title} from Codebrand. Professional digital services scoped to your budget. Request a fixed-price proposal.`;
 const seoDescription = rawDesc.length > 160
   ? rawDesc.slice(0, 157).trimEnd() + "…"
   : rawDesc;
 const seoKeywords = `${title.toLowerCase()}, codebrand services, digital services, ${title.toLowerCase()} service, professional ${title.toLowerCase()}, ${title.toLowerCase()} agency`;
-
-// Extract numeric price for schema
-const numericPrice = price ? price.replace(/[^0-9.]/g, '') : "0";
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
@@ -79,52 +76,6 @@ const productSchema = {
     "@type": "Brand",
     "name": "Codebrand"
   },
-  "offers": {
-    "@type": "Offer",
-    "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-    "price": numericPrice,
-    "priceCurrency": "USD",
-    "url": `${baseUrl}/products/${product.id}/`,
-    "seller": {
-      "@type": "Organization",
-      "name": "Codebrand"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "USD"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "US"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": "1",
-          "maxValue": "3",
-          "unitCode": "DAY"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": "0",
-          "maxValue": "0",
-          "unitCode": "DAY"
-        }
-      }
-    },
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "US",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-      "merchantReturnDays": "0",
-      "returnMethod": "https://schema.org/ReturnByMail",
-      "returnFees": "https://schema.org/FreeReturn"
-    }
-  }
 };
 ---
 
@@ -241,22 +192,13 @@ const productSchema = {
           <!-- Header del producto -->
           <div class="space-y-6">
             <!-- Badge de categoría o estado -->
-            {
-              inStock ? (
-                <span class="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 text-teal-700 text-sm font-semibold rounded-full border-2 border-teal-200">
-                  <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500" />
-                  </span>
-                  Available now
-                </span>
-              ) : (
-                <span class="inline-flex items-center gap-2 px-4 py-2 bg-red-50 text-red-700 text-sm font-semibold rounded-full border-2 border-red-200">
-                  <span class="relative flex h-2 w-2 bg-red-500 rounded-full" />
-                  Out of stock
-                </span>
-              )
-            }
+            <span class="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 text-teal-700 text-sm font-semibold rounded-full border-2 border-teal-200">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500" />
+              </span>
+              Priced from your budget
+            </span>
 
             <!-- Título principal -->
             <h1
@@ -324,14 +266,12 @@ const productSchema = {
                 <!-- Precio destacado -->
                 <div class="space-y-3">
                   <div class="flex items-baseline gap-3">
-                    <span
-                      class="text-5xl font-bold text-cyan-900"
-                    >
-                      {price}
+                    <span class="text-3xl font-bold text-cyan-900">
+                      Priced from your budget
                     </span>
                   </div>
                   <p class="text-sm text-slate-600">
-                    One-time investment to transform your business
+                    A fixed price for the agreed scope. Tell us your budget and we size the service to it.
                   </p>
                 </div>
 

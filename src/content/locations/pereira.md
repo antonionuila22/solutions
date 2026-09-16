@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro comercial cafetero"
   techEmployment: "1200+ empresas"
-  averageProjectSize: "Desde $400 USD"
 ---

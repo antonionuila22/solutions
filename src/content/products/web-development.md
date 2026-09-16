@@ -3,8 +3,6 @@ title: Full Stack Web Development – Modern, Scalable & Custom-Built Websites
 seoTitle: "Full Stack Web Development Services | Codebrand"
 img: /photos/webservice.webp
 readtime: 6
-price: From $650/page
-inStock: true
 description: Custom full stack web development with per-page pricing. Fast, SEO-optimized sites built with Astro, React, Next.js, and Strapi. No templates. No bloated builders. Just clean, performant code.
 date: 2025-01-01
 author: Codebrand Team
@@ -32,18 +30,18 @@ No templates. No page builders. No technical debt handed off to you at the end.
 
 ---
 
-## Per-Page Pricing
+## Page Types
 
 We quote **per page**, based on functionality and complexity — so you only pay for what you actually need.
 
-| Page Type | Description | Price |
-|-----------|-------------|-------|
-| **Standard Page** | Up to 8 sections, responsive design, basic form | From $650 |
-| **CMS-Editable Page** | Editable via Strapi, Sanity, or WordPress | From $650 |
-| **Page with Integrations** | API connections, dynamic forms, filters, data handling | From $820 |
-| **Advanced Page** | Custom animations, multiple integrations, React/Astro components | From $1,050 |
+| Page Type | Description |
+| ----------- | ------------- |
+| **Standard Page** | Up to 8 sections, responsive design, basic form |
+| **CMS-Editable Page** | Editable via Strapi, Sanity, or WordPress |
+| **Page with Integrations** | API connections, dynamic forms, filters, data handling |
+| **Advanced Page** | Custom animations, multiple integrations, React/Astro components |
 
-> Example: a 5-page website with standard pages starts at $3,250. Pages with CMS, backend, or custom animations are scoped based on complexity.
+> We don't publish prices. Tell us what you need and the budget you have, and we reply with a fixed-price proposal for that scope.
 
 ---
 

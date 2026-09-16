@@ -103,6 +103,4 @@ nearbyAreas:
   - "Ocotepeque"
   - "Frontera Guatemala"
 
-localStats:
-  averageProjectCost: "$500-$5,000"
 ---

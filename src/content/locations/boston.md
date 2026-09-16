@@ -57,9 +57,6 @@ marketHighlights:
   - "The Seaport has become a fast-growing second hub for enterprise software and fintech"
   - "Local agency rates of $175-$275 per hour make a nearshore partner a decisive cost advantage"
 
-localStats:
-  averageProjectCost: "$3,000-$18,000"
-
 whyChooseUs:
   - title: "Roughly Half of Boston Agency Cost"
     description: "Back Bay and Cambridge shops bill $175 to $275 an hour. Our nearshore Honduras team delivers comparable senior engineering for close to half, so runway-conscious startups and budget-watched firms get more built for less."

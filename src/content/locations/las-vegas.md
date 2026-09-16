@@ -59,9 +59,6 @@ marketHighlights:
   - "Downtown's Fremont East corridor anchors a maturing local startup and tech community"
   - "The valley's economy runs on visitor experience, making digital first impressions decisive"
 
-localStats:
-  averageProjectCost: "$2,000-$12,000"
-
 whyChooseUs:
   - title: "Strip Polish Without Strip Pricing"
     description: "Las Vegas agencies price against a premium hospitality market. Our Honduras nearshore model delivers comparable senior engineering and visual craft at roughly 60% less, so a resort, venue, or restaurant keeps more budget for the campaigns that fill rooms and seats."
@@ -94,7 +91,7 @@ faqs:
   - question: "Can you work with Downtown Las Vegas startups on a tight budget?"
     answer: "Absolutely. The Fremont East and Arts District startup community moves fast and watches runway closely, and our pricing stretches seed money considerably further than a Nevada agency would. We build lean MVPs, ship iteratively, and keep the codebase clean so a Las Vegas founder can raise, scale, and bring development in-house without inheriting a mess."
   - question: "What does a Las Vegas web project actually cost with your team?"
-    answer: "Most Las Vegas engagements land between $2,000 and $12,000 depending on whether you need a focused resort or restaurant site, a full convention platform, or a ticketing build. That runs well under local hospitality-agency rates while still delivering senior engineering on a modern React, Next.js, Astro, or Node.js stack—and you leave owning the code outright."
+    answer: "We don't publish fixed prices. Every Las Vegas proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Las Vegas agency, and you own the code at the end."
 
 nearbyAreas:
   - "The Strip"

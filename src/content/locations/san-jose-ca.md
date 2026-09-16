@@ -65,9 +65,6 @@ marketHighlights:
   - "The area has among the highest median incomes—and highest engineering rates—in the US"
   - "Intense competition for scarce local talent makes distributed engineering routine"
 
-localStats:
-  averageProjectCost: "$15,000-$90,000"
-
 whyChooseUs:
   - title: "Valley Engineering, a Fraction of the Rate"
     description: "San Jose sits in one of the most expensive engineering markets on earth. Our San Pedro Sula team delivers the same modern React and Node work at a fraction of Silicon Valley agency and contractor rates, freeing capital for your product or roadmap."
@@ -96,7 +93,7 @@ faqs:
   - question: "How does the two-hour offset with San Jose work in practice?"
     answer: "Honduras runs on Central Time, two hours ahead of Pacific, so we are well into our day when Silicon Valley starts and our afternoons cover your full core hours. A product manager in North San Jose can send requirements in the morning, review a running build after lunch, and take a late-afternoon call—all inside normal working hours on both sides. It is a world apart from an offshore team with no overlap at all."
   - question: "How do your rates compare to Silicon Valley agencies?"
-    answer: "Our nearshore model runs at a fraction of Silicon Valley agency and senior-contractor rates, which are among the highest anywhere thanks to the region's cost of living and fierce competition for talent. Most San Jose projects fall in the $15,000 to $90,000 range depending on scope. The savings let a funded startup put more into its product and an enterprise team extend its reach without adding headcount—while still getting a modern, well-built stack."
+    answer: "We don't publish fixed prices. Every San Jose proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable San Jose agency, and you own the code at the end."
   - question: "Can you protect proprietary designs and sign NDAs?"
     answer: "Absolutely. Silicon Valley runs on intellectual property, and we treat NDAs and confidentiality as standard rather than an afterthought. We work in secure repositories with proper access controls and handle proprietary product designs and code with the same care your in-house team would. Every project also ships with full source-code ownership, so there is never ambiguity about who controls the asset—it is always you."
   - question: "Do you help early-stage San Jose startups as well as big companies?"

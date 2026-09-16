@@ -3,8 +3,6 @@ title: Professional Graphic Design & Branding – Unique and Memorable Visual Id
 seoTitle: "Graphic Design and Branding Services | Codebrand"
 img: /photos/diseñobranding.webp
 readtime: 5
-price: From $450
-inStock: true
 description: Professional branding and graphic design services. We build strong, cohesive visual identities — logos, color systems, typography, brand guidelines, and visual applications — that make your business look like it means business.
 date: 2025-01-01
 author: Codebrand Team
@@ -32,13 +30,13 @@ From your primary logo to every touchpoint where your brand shows up, we make su
 
 ---
 
-## Packages & Pricing
+## Packages
 
-| Package | What You Get | Price |
-|---------|--------------|-------|
-| **Basic Visual Identity** | Logo + palette + typography + 1 visual application + brandbook | $450 |
-| **Professional Branding** | All above + 4 visual applications + identity system + logo variations | $800 |
-| **Corporate Branding** | Professional Branding + extended graphic line + stationery + templates | From $1,100 |
+| Package | What You Get |
+| --------- | -------------- |
+| **Basic Visual Identity** | Logo + palette + typography + 1 visual application + brandbook |
+| **Professional Branding** | All above + 4 visual applications + identity system + logo variations |
+| **Corporate Branding** | Professional Branding + extended graphic line + stationery + templates |
 
 > Visual applications include: business cards, email signature, social media headers, story templates, and more. Additional applications quoted separately.
 

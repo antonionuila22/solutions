@@ -3,8 +3,6 @@ title: Online Store Development – Scalable, Visual, and High-Converting E-comm
 seoTitle: "Online Store Development Services | Codebrand"
 img: /photos/diseñoweb.webp
 readtime: 7
-price: From $1,800
-inStock: true
 description: We build modern, fast, and scalable online stores using Shopify, WooCommerce, and custom tech with React, Next.js, and Stripe. Built to sell — not just look good.
 date: 2025-01-01
 author: Codebrand Team
@@ -34,14 +32,14 @@ At **Codebrand**, we build e-commerce stores that convert. Whether you're launch
 
 ---
 
-## Pricing by Store Type
+## Store Types
 
-| Store Type | Best for... | Starting Price |
-|------------|-------------|----------------|
-| **Basic Store** | Simple products, no variants, up to 10 items | From $1,800 |
-| **Intermediate Store** | Up to 50 products, variants, coupons, analytics | From $2,900 |
-| **Advanced Store** | Large catalogs, CRM/ERP integrations, blog | From $4,500 |
-| **Custom Store** | Fully tailored build, animations, global sales features | From $6,000 |
+| Store Type | Best for... |
+| ------------ | ------------- |
+| **Basic Store** | Simple products, no variants, up to 10 items |
+| **Intermediate Store** | Up to 50 products, variants, coupons, analytics |
+| **Advanced Store** | Large catalogs, CRM/ERP integrations, blog |
+| **Custom Store** | Fully tailored build, animations, global sales features |
 
 > All plans include full setup, configuration, and technical support during delivery.
 

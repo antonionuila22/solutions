@@ -2,7 +2,7 @@
 import Hero from "../../components/Hero.astro";
 import HnLayout from "../../layouts/HnLayout.astro";
 import CardService from "../../components/CardService.astro";
-import Pricing from "../../components/Pricing.astro";
+import BudgetModel from "../../components/BudgetModel.astro";
 import Faq from "../../components/Faq.astro";
 import Testimonial from "../../components/Testimonial.astro";
 import TechMarquee from "../../components/TechMarquee.astro";
@@ -138,7 +138,7 @@ const services = [
         description: "Creamos una plataforma de pedidos en línea que reemplazó apps de terceros. Cero comisiones significa que el cliente se queda con el 100% de las ganancias.",
         metrics: [
           { label: "Pedidos/Mes", value: "2,400+" },
-          { label: "Ahorro Anual", value: "$18K" },
+          { label: "Comisiones", value: "0%" },
           { label: "Tiempo de Lanzamiento", value: "3 semanas" },
         ],
         gradient: "from-orange-500 to-amber-500",
@@ -161,7 +161,7 @@ const services = [
         headline: "3x Ingresos en 6 Meses",
         description: "Rediseño completo de tienda en línea con SEO, checkout más rápido y diseño mobile-first que triplicó los ingresos mensuales.",
         metrics: [
-          { label: "Ingresos/Mes", value: "$85K+" },
+          { label: "Crecimiento de Ingresos", value: "3x" },
           { label: "Tasa de Conversión", value: "+180%" },
           { label: "Velocidad Web", value: "95/100" },
         ],
@@ -191,15 +191,16 @@ const services = [
       { title: "Comunicación Bilingüe", description: "Equipo 100% bilingüe. Si tu negocio necesita presencia en inglés y español, lo manejamos sin problema." },
       { title: "Resultados Comprobados", description: "50+ proyectos exitosos entregados a clientes locales e internacionales en diversas industrias." },
     ],
-    priceComparison: {
-      competitorLabel: "Agencia en EE.UU.",
-      competitorPrice: "$25,000",
-      competitorNote: "Precio promedio en el mercado estadounidense",
-      ourLabel: "Codebrand Honduras",
-      ourPrice: "$10,000",
-      ourNote: "Misma calidad, equipo local",
-      savingsAmount: "$15,000+",
-      savingsPercent: "60% de ahorro",
+    budget: {
+      title: "Precio según tu presupuesto",
+      subtitle: "Sin lista de precios. Un precio cerrado para el alcance que cabe.",
+      steps: [
+        { title: "Tú defines el presupuesto", description: "Cuéntanos qué necesitas y el presupuesto que tienes en mente, total o mensual." },
+        { title: "Nosotros dimensionamos los recursos", description: "Un sitio web, una tienda, un sistema o desarrolladores con tu stack: roles, seniority y calendario que caben en la cifra." },
+        { title: "Apruebas un precio cerrado", description: "Un solo precio para el alcance acordado, sin sorpresas por hora, y el código es 100% tuyo." },
+      ],
+      ctaText: "Solicitar propuesta",
+      ctaHref: "/quoter/",
     },
     ctaText: "Solicitar Cotización Gratis",
     ctaSubtext: "Más de 50 empresas confían en nosotros para su desarrollo web",
@@ -598,14 +599,26 @@ const services = [
   <PartnershipBanner />
   <Ourteam />
 
-  <Pricing config={{
-    badge: "Precios Claros y Transparentes",
-    title: "Precios de Desarrollo Web",
-    titleHighlight: "en Honduras",
-    subtitle: "Alianzas mensuales para negocios listos para construir algo grande. Sin cargos ocultos. Sin facturas sorpresa. Cancela después de tu período de compromiso.",
-    ctaTitle: "¿No sabes qué plan es el indicado?",
-    ctaSubtitle: "Agenda una llamada de consulta gratuita de 30 minutos",
-    ctaButton: "Agendar Llamada",
+  <BudgetModel config={{
+    eyebrow: "Cómo cotizamos",
+    title: "Tu presupuesto define el alcance.",
+    titleHighlight: "Nosotros ajustamos el equipo.",
+    subtitle: "No publicamos listas de precios. Nos cuentas qué necesitas y el presupuesto que tienes, y te respondemos con una propuesta de precio cerrado que dice exactamente qué recursos entran y qué recibes.",
+    cards: [
+      { icon: "globe", title: "Un sitio web o tienda online", desc: "Diseño en Figma, desarrollo rápido en Astro, Next.js o WordPress, SEO técnico y lanzamiento. La cantidad de páginas e integraciones se ajusta a tu presupuesto." },
+      { icon: "layers", title: "Un sistema o software a la medida", desc: "CRM, herramientas internas, portales e integraciones, entregados por fases para que la primera versión salga dentro del presupuesto y crezca desde ahí." },
+      { icon: "users", title: "Desarrolladores con un stack específico", desc: "Un desarrollador senior en React por tres meses, o un equipo completo con Project Manager. Tú eliges el stack, la seniority y la duración; nosotros lo conformamos." },
+    ],
+    stepsTitle: "Cómo funciona",
+    steps: [
+      "Nos cuentas qué quieres construir y el presupuesto que tienes en mente.",
+      "Te proponemos los recursos que caben: roles, seniority, horas y calendario.",
+      "Apruebas un precio cerrado para ese alcance. Sin sorpresas por hora ni cargos ocultos.",
+      "Construimos en sprints semanales y el código es 100% tuyo desde el primer commit.",
+    ],
+    ctaText: "Solicitar propuesta",
+    ctaHref: "/quoter/",
+    ctaNote: "Propuesta de precio cerrado en 24 horas hábiles.",
   }} />
 
   <!-- Formulario de Contacto -->
@@ -777,7 +790,7 @@ const services = [
     faqs: [
       {
         question: "¿Cuánto cuesta un sitio web con Codebrand?",
-        answer: "Nuestros sitios web comienzan desde $2,500 para un sitio profesional de 5 páginas. Tiendas en línea y plataformas personalizadas van desde $5,000 hasta $25,000 dependiendo de la complejidad. Damos cotizaciones detalladas después de entender tus necesidades — sin cargos ocultos.",
+        answer: "No publicamos precios fijos. Cada propuesta se arma según tu presupuesto y los recursos que necesita el proyecto: un sitio web, una tienda online, una aplicación o uno o más desarrolladores con un stack específico. Cuéntanos qué quieres construir y el presupuesto que tienes en mente, y te respondemos con una propuesta de precio cerrado que dice exactamente qué incluye. Sin cargos ocultos.",
       },
       {
         question: "¿Cuánto tiempo toma construir un sitio web?",

@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Economía turística"
   techEmployment: "500+ empresas"
-  averageProjectSize: "Desde $500 USD"
 ---

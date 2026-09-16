@@ -67,7 +67,7 @@ faqs:
   - question: "¿Ofrecen tiendas en línea para comercios de Nacaome?"
     answer: "Sí. Montamos e-commerce con catálogo y pedidos por WhatsApp para que los comercios de Nacaome vendan a clientes del sur y del resto de Honduras, no solo a quien pasa por la carretera."
   - question: "¿Cuánto cuesta una página web en Nacaome?"
-    answer: "Una web de presentación parte desde unos $400 USD y varía según catálogo, tienda en línea y funciones. Le entregamos una cotización clara en lempiras y dólares una vez que conocemos su negocio del sur."
+    answer: "No publicamos precios fijos. Cada propuesta para Nacaome se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Pueden crear catálogos digitales para mostrar productos?"
     answer: "Sí. Desarrollamos catálogos en línea para que su comercio, empacadora o salinera de Nacaome muestre productos, presentaciones y precios a clientes y distribuidores sin necesidad de un vendedor en cada visita."
 
@@ -101,6 +101,4 @@ nearbyAreas:
   - "Valle"
   - "Sur Honduras"
 
-localStats:
-  averageProjectCost: "$400-$3,500 USD"
 ---

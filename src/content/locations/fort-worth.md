@@ -63,9 +63,6 @@ marketHighlights:
   - "Fort Worth is among the fastest-growing large cities in the United States"
   - "Texas has no state income tax, reinforcing the region's value-conscious business culture"
 
-localStats:
-  averageProjectCost: "$10,000-45,000"
-
 whyChooseUs:
   - title: "Zero Timezone Offset"
     description: "Fort Worth and Honduras both run on Central Time, so there's no gap to manage. Our developers are online exactly when your Downtown or Cultural District team is, making real-time Slack and same-day video calls the norm rather than the exception."
@@ -92,7 +89,7 @@ faqs:
   - question: "Do you work with logistics companies operating around AllianceTexas?"
     answer: "Yes. North Fort Worth's inland port and BNSF rail operations make logistics a core local sector, and we build the tracking tools, customer portals, and B2B platforms distribution companies need—built to integrate cleanly with the systems they already run."
   - question: "What does web development cost versus a DFW agency?"
-    answer: "Our nearshore model typically runs about 40-60% below a comparable Fort Worth or Dallas agency, with most projects in the $10,000-$45,000 range depending on scope. You get the same modern React, Next.js, Astro, or Node.js engineering—minus the overhead a local agency bakes into its rates."
+    answer: "We don't publish fixed prices. Every Fort Worth proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Fort Worth agency, and you own the code at the end."
   - question: "Can you handle energy and oil-and-gas company websites?"
     answer: "Yes. We build corporate and investor-facing platforms for Barnett Shale operators and energy-service firms in the Fort Worth region. We understand the sector's need for professional presentation, secure data handling, and integration with operational systems."
   - question: "Do we own the code, and can our own team maintain it later?"

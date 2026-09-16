@@ -57,9 +57,6 @@ marketHighlights:
   - "UC Davis is a global leader in agricultural and veterinary research, anchored by the Aggie Square district"
   - "Intel's Folsom campus and Roseville's services cluster give the region a stable tech backbone"
 
-localStats:
-  averageProjectCost: "$3,500-$35,000"
-
 whyChooseUs:
   - title: "40-60% Below Bay Area Rates"
     description: "Many Sacramento businesses moved inland precisely to escape San Francisco pricing. Our nearshore Honduras model extends that logic to development, delivering senior engineering for 40 to 60 percent less than a coastal agency—Bay Area quality on a Sacramento budget."
@@ -88,7 +85,7 @@ faqs:
   - question: "How does the two-hour timezone difference with Sacramento work?"
     answer: "It works in your favor. Honduras keeps Central Standard Time, two hours ahead of Pacific, so our workday covers your entire Sacramento business day—we're online for your morning standups, midday planning, and afternoon reviews. Compared with offshore teams and their 12-hour gaps, questions get answered the same day instead of the next."
   - question: "What does a Sacramento web project usually cost?"
-    answer: "Most Sacramento projects land between $3,500 and $35,000 depending on scope—a professional site for a local firm or association sits toward the lower end, while a healthcare portal or an agtech platform sits higher. Across that range our nearshore model runs 40 to 60 percent under a Bay Area or coastal agency, which is the whole point for a value-focused Sacramento market."
+    answer: "We don't publish fixed prices. Every Sacramento proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Sacramento agency, and you own the code at the end."
   - question: "Do you work with the region's major healthcare systems and practices?"
     answer: "Yes. Healthcare is one of Sacramento's largest sectors, spanning systems like Sutter, UC Davis Health, Kaiser, and Dignity plus many independent practices. We build patient portals, appointment tools, and secure information systems with encryption, access controls, and audit logging, and we sign Business Associate Agreements for projects that touch protected health information."
 

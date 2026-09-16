@@ -59,9 +59,6 @@ marketHighlights:
   - "Tennessee levies no state income tax on wages, easing the cost of doing business"
   - "Beale Street and the city's blues and soul legacy sustain a durable tourism economy"
 
-localStats:
-  averageProjectCost: "$1,500-$9,000"
-
 whyChooseUs:
   - title: "Value That Fits Memphis"
     description: "Memphis business culture rewards a fair deal and dependable work over showmanship. Our nearshore Honduras model delivers senior engineering at practical rates, so a distribution firm or clinic gets a professional site without paying for overhead it does not need."
@@ -94,7 +91,7 @@ faqs:
   - question: "Can you build sites for Memphis music venues and the tourism scene?"
     answer: "Yes. Memphis's blues and soul heritage and its Beale Street draw give venues, artists, and tourism businesses a genuine story to tell online. We build event calendars, artist pages, ticket and booking links, and visitor sites that capture that character while handling the practical work of filling seats and rooms for the city's steady flow of music travelers."
   - question: "What does a Memphis web project typically cost?"
-    answer: "Most Memphis engagements land between $1,500 and $9,000 depending on whether you need a straightforward corporate site, a logistics portal, or a booking-enabled hospitality build. That reflects Tennessee's practical, value-conscious market while still giving you senior engineering on a modern stack and full ownership of the code, so there are no surprises and nothing locked away from you afterward."
+    answer: "We don't publish fixed prices. Every Memphis proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Memphis agency, and you own the code at the end."
 
 nearbyAreas:
   - "Downtown Memphis"

@@ -57,9 +57,6 @@ marketHighlights:
   - "The University of Central Florida is one of the nation's largest universities and a key talent pipeline"
   - "Central Florida's tech and digital-media sector has expanded rapidly, especially around Lake Nona and UCF"
 
-localStats:
-  averageProjectCost: "$12,000-50,000"
-
 whyChooseUs:
   - title: "Range for a Varied Economy"
     description: "Orlando asks for both consumer polish and defense-grade rigor. We move between a conversion-tuned hotel booking flow and a serious simulation-company site without losing quality on either, all on modern React and Next.js builds."

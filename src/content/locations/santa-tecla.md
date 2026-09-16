@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro de servicios"
   techEmployment: "150+ empresas"
-  averageProjectSize: "Desde $450 USD"
 ---

@@ -61,8 +61,6 @@ const products = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/products" }),
     schema: searchable.extend({
         img: z.string(),
-        price: z.string(),
-        inStock: z.boolean().default(true),
         draft: z.boolean().default(false),
     }),
 });
@@ -175,7 +173,6 @@ const locations = defineCollection({
         nearbyAreas: z.array(z.string()).optional(),
         localStats: z.object({
             techCompanies: z.string().optional(),
-            averageProjectCost: z.string().optional(),
             businessGrowth: z.string().optional(),
         }).optional(),
         // ── Differentiation fields (populated per-city to make each page unique

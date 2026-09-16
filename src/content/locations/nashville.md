@@ -59,9 +59,6 @@ marketHighlights:
   - "Recent corporate expansions, including Oracle's riverfront campus, have deepened the local tech and operations job base"
   - "Lower Broadway and the Gulch anchor a visitor economy that fills hotels, venues, and restaurants year-round"
 
-localStats:
-  averageProjectCost: "$12,000-50,000"
-
 whyChooseUs:
   - title: "Same Clock as Music City"
     description: "Based in San Pedro Sula on Central Time, we share Nashville's exact business hours. A message from Music Row or Cool Springs gets a same-day answer, and a call fits into your afternoon without any timezone math."
@@ -90,7 +87,7 @@ faqs:
   - question: "We're a Nashville marketing agency—can you be our dev team?"
     answer: "That's a common arrangement for us. Nashville has a deep bench of branding and marketing shops, and we work white-label behind them: taking your Figma files, matching your process, and delivering the build under your name so your client only ever sees your brand."
   - question: "What does a project cost versus a Middle Tennessee agency?"
-    answer: "Our nearshore model typically runs 40 to 60 percent under a comparable Nashville agency because our cost base is lower, not because the work is thinner. Most engagements land in the $12,000 to $50,000 range depending on scope, and you still get senior engineering on a modern React, Next.js, or Astro build."
+    answer: "We don't publish fixed prices. Every Nashville proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Nashville agency, and you own the code at the end."
   - question: "How do Nashville clients usually collaborate with your team?"
     answer: "Most start with a kickoff video call, then keep a running Slack channel with a weekly sync. Because we share Central Time, there's no awkward window to schedule around—we plug into your day the way an in-town partner would, with project tracking so you always see where the build stands."
 

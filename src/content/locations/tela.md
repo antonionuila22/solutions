@@ -103,6 +103,4 @@ nearbyAreas:
   - "El Porvenir"
   - "Atlántida"
 
-localStats:
-  averageProjectCost: "$450-$4,500 USD"
 ---

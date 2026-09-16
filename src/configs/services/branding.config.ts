@@ -178,7 +178,7 @@ export const brandingConfig: ServicePageConfig = {
         title: "SaaS Brand Launch",
         description: "Created a complete brand identity for a tech startup that helped them secure Series A funding and establish market presence.",
         metrics: [
-          { value: "$5M", label: "Funding Secured" },
+          { value: "Series A", label: "Funding Secured" },
           { value: "+200%", label: "Brand Recognition" },
           { value: "90%", label: "Investor Approval" },
         ],

@@ -154,7 +154,7 @@ Here is the honest 2026 rate landscape for senior engineers, so you can spot wha
 
 A senior developer billed to a Western client at $18/hour is not a bargain — it is a math problem. Either the person is not actually senior, or the margin is so thin that the partner cannot afford to retain them, which means high turnover and constant re-onboarding on *your* codebase. Churn is the hidden tax on cheap outsourcing, and you pay it in lost context, not just re-recruiting.
 
-This is why our own rates sit where they do — Mid at $45, Senior at $65, Lead at $95 per hour. They are meaningfully below US onshore, which is the point of nearshore, but they are not a race to the bottom, because a race to the bottom does not retain the engineers who make a project succeed. When you evaluate a quote, ask what the developer actually earns from it. If the answer implies churn, price the churn in.
+This is why we price from the client's budget instead of racing to the lowest hourly rate. Our cost base is meaningfully below US onshore, which is the point of nearshore, but it is not a race to the bottom, because a race to the bottom does not retain the engineers who make a project succeed. When you evaluate a quote, ask what the developer actually earns from it. If the answer implies churn, price the churn in.
 
 Cheap is a real cost. It just shows up later, as rework and lost momentum, instead of on the invoice.
 

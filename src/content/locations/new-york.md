@@ -57,9 +57,6 @@ marketHighlights:
   - "Brooklyn and Long Island City anchor a booming direct-to-consumer and creative-tech scene"
   - "The metro attracts among the highest annual venture-capital totals in the nation"
 
-localStats:
-  averageProjectCost: "$25,000-100,000"
-
 whyChooseUs:
   - title: "NYC Quality Without NYC Rates"
     description: "Manhattan shops price against $200-$400/hour local rates and citywide office rent. Our Honduras cost base removes that overhead, so a Flatiron startup or a Midtown enterprise team gets the same modern build for a fraction of the invoice."
@@ -80,7 +77,7 @@ localServices:
 
 faqs:
   - question: "Can a nearshore team really meet Manhattan agency standards?"
-    answer: "Yes, and often the comparison is closer than it looks—many NYC agencies already subcontract development, just less transparently. Our engineers use the same stack a top Manhattan shop would (React, Node.js, cloud infrastructure); what we don't carry is the $200-$400 hourly rate that Manhattan rent and salaries force onto local invoices."
+    answer: "Yes, and often the comparison is closer than it looks—many NYC agencies already subcontract development, just less transparently. Our engineers use the same stack a top Manhattan shop would (React, Node.js, cloud infrastructure); what we don't carry is the hourly rate that Manhattan rent and salaries force onto local invoices."
   - question: "How do you keep up with New York's pace and tight deadlines?"
     answer: "Being one hour behind Eastern means we're reachable across your whole day, so nothing waits overnight for a reply. We run on the same tools New York teams live in—Slack, Linear, Notion—and can spin up quickly for an urgent launch. Clients often tell us we respond faster than the local agencies they left."
   - question: "Do you build for high-traffic, enterprise-scale New York sites?"
@@ -90,7 +87,7 @@ faqs:
   - question: "How do you handle security for financial and legal projects?"
     answer: "We work to industry security practices—encrypted communications, access-controlled repositories, and signed NDAs—and are comfortable with SOC 2 expectations and PCI-DSS for payment flows. For New York's finance, legal, and healthcare clients, we treat intellectual-property and data protection as a first-order requirement, not an afterthought."
   - question: "What does a New York project typically cost with your team?"
-    answer: "Most New York engagements fall in the $25,000 to $100,000 range depending on scope and complexity—still a fraction of what an equivalent Manhattan build would invoice, because our nearshore cost base is far lower. You get senior engineering and full code ownership, priced against Honduras rather than against Midtown rent."
+    answer: "We don't publish fixed prices. Every New York proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable New York agency, and you own the code at the end."
 
 nearbyAreas:
   - "Manhattan"

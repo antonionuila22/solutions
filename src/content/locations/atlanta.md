@@ -68,7 +68,6 @@ marketHighlights:
 
 localStats:
   techCompanies: "8,000+"
-  averageProjectCost: "$15,000-60,000"
   businessGrowth: "+9% YoY"
 
 whyChooseUs:
@@ -99,7 +98,7 @@ faqs:
   - question: "How do Atlanta clients typically engage with your team?"
     answer: "Most Atlanta clients do an initial kickoff call, then daily Slack communication with weekly video syncs. Because we're just 1 hour off from Eastern Time, collaboration is natural and seamless. We use project management tools so you always have clear visibility into progress and can provide feedback in real-time."
   - question: "How much does web development cost compared to an Atlanta agency?"
-    answer: "Our nearshore model from Honduras typically runs about 60% less than a comparable Atlanta agency, which reflects the city's high-cost corporate market. Projects generally fall in the $15,000–$60,000 range depending on scope. You get senior engineering and a modern React, Next.js, Astro, or Node.js build—just without paying Midtown or Buckhead agency overhead."
+    answer: "We don't publish fixed prices. Every Atlanta proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Atlanta agency, and you own the code at the end."
   - question: "Do you build with a modern stack, and do we own the code?"
     answer: "Yes. We build with React, Next.js, Astro, and Node.js so your site is fast, SEO-friendly, and easy to extend as your Atlanta business grows. Every engagement ships with full source-code ownership and no vendor lock-in: the documented repository is handed over to you, free to host and maintain however you choose."
   - question: "Can you serve businesses across the metro Atlanta area?"

@@ -67,7 +67,7 @@ faqs:
   - question: "¿Desarrollan catálogos de productos para distribuidores?"
     answer: "Sí. Creamos catálogos digitales profesionales para que empresas y comercios de El Progreso muestren su línea de productos a clientes y distribuidores, con fotos, especificaciones y pedidos o cotizaciones por WhatsApp."
   - question: "¿Cuánto cuesta un sitio web para una empresa progreseña?"
-    answer: "Un sitio informativo para un comercio o empresa de El Progreso parte desde unos $400 USD (alrededor de L10,000); un sitio corporativo con catálogo o una tienda en línea parte desde $1,200 USD. Le entregamos un presupuesto cerrado según su proyecto antes de comenzar."
+    answer: "No publicamos precios fijos. Cada propuesta para El Progreso se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿Incluyen tienda en línea, dominio y mantenimiento?"
     answer: "Sí. Desarrollamos e-commerce para comercios de El Progreso que quieren vender en todo Honduras, dejamos dominio y correo profesional funcionando, y ofrecemos planes de mantenimiento con respaldos y actualizaciones."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Valle de Sula"
   - "Cortés"
 
-localStats:
-  averageProjectCost: "$400-$6,000 USD"
 ---

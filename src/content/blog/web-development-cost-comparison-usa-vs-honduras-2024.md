@@ -18,7 +18,7 @@ Here's what most business owners don't know: **You can get the exact same qualit
 
 Before you dismiss this as "you get what you pay for," consider this: **Honduras developers use the same technologies, follow the same best practices, and hold the same certifications** (Udemy, Platzi, AWS, Adobe) as US developers. The difference? **Lower cost of living = lower rates**, not lower quality.
 
-To put it in hourly terms for 2026: US onshore agencies bill roughly **$135-250/hour** for a senior developer, while Codebrand's transparent nearshore rates are **$45/hour (mid), $65/hour (senior), and $95/hour (lead/architect)**. If you'd rather staff individual roles than commission a whole project, you can also [hire remote developers](/hire-remote-developers/) at those same rates.
+To put it in hourly terms for 2026: US onshore agencies bill roughly **$135-250/hour** for a senior developer, while Honduras nearshore rates typically run **$45 to $95 per hour** depending on seniority, and Codebrand closes a fixed price from your budget for the agreed scope. If you'd rather staff individual roles than commission a whole project, you can also [hire remote developers](/hire-remote-developers/) at those same rates.
 
 In this comprehensive pricing guide, we'll break down **real costs** for every type of [web development](/web-development/) project—comparing USA rates with Honduras rates—so you can make an informed decision.
 
@@ -192,7 +192,7 @@ When comparing quotes, watch for these **hidden costs** in USA proposals:
 
 ### **4. Change Requests**
 - **USA agencies**: $135-250/hour for scope changes
-- **Honduras agencies** (Codebrand): $45-95/hour for scope changes depending on seniority
+- **Honduras agencies**: $45-95/hour for scope changes depending on seniority
 
 ### **5. Communication Costs**
 - **USA agencies**: Sometimes charge for project management time
@@ -271,7 +271,7 @@ Pay per milestone, not upfront. **Better cash flow**.
 ### **Example 2: SaaS Platform**
 - **Client**: Texas tech company
 - **USA Quote**: $120,000
-- **Honduras Quote** (Codebrand): $45,000
+- **Honduras Quote**: $45,000
 - **Saved**: $75,000 (63%)
 - **Used savings for**: Additional features
 

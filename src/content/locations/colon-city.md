@@ -86,5 +86,4 @@ nearbyAreas:
 localStats:
   medianIncome: "Centro de comercio"
   techEmployment: "200+ empresas"
-  averageProjectSize: "Desde $450 USD"
 ---

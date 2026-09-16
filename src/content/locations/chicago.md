@@ -68,7 +68,6 @@ marketHighlights:
 
 localStats:
   techCompanies: "5,000+"
-  averageProjectCost: "$15,000-60,000"
   businessGrowth: "+7% YoY"
 
 whyChooseUs:
@@ -99,7 +98,7 @@ faqs:
   - question: "Do you offer ongoing maintenance and support?"
     answer: "Yes. Many Chicago clients transition to monthly retainers after launch for updates, security patches, performance monitoring, and new feature development. We become a long-term technology partner, not just a one-time vendor."
   - question: "How much can a Chicago business really save with nearshore development?"
-    answer: "Our clients typically pay around 60% less than comparable downtown Chicago or coastal agency rates for the same quality of engineering. On a project that a Loop agency might quote in our local $15,000-$60,000 range, that gap often means funding two or three initiatives instead of one—without cutting corners on code standards, testing, or security."
+    answer: "We don't publish fixed prices. Every Chicago proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Chicago agency, and you own the code at the end."
   - question: "Do you understand the needs of Loop financial firms and West Loop tech companies?"
     answer: "Yes. We build secure, compliant platforms for financial and legal firms in the Loop—encryption, secure authentication, and PCI-DSS for payments—and fast, conversion-focused products for the startups and SaaS companies clustered around Fulton Market and the Merchandise Mart. We tailor the architecture to the district and industry rather than reusing a template."
   - question: "Will I own the code you build for my Chicago business?"

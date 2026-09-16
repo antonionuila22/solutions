@@ -102,7 +102,7 @@ If you have unused management capacity, augmentation is cheaper in true total co
 
 ## Cost Comparison
 
-Rates vary by region and seniority. Using Codebrand's [nearshore development](/nearshore-development/) rates (Mid $45/hr, Senior $65/hr, Lead $95/hr) as a concrete reference, here's how the two models tend to price out for a comparable amount of engineering throughput.
+Rates vary by region and seniority. Using typical LATAM [nearshore development](/nearshore-development/) rates (Mid ~$45/hr, Senior ~$65/hr, Lead ~$95/hr) as a concrete reference, here's how the two models tend to price out for a comparable amount of engineering throughput.
 
 ### Staff Augmentation: Two Senior Developers
 
@@ -134,7 +134,6 @@ The dedicated team invoices more, but that number *includes* the management and 
 | US onshore agency | $135–250/hr | Highest, full timezone overlap |
 | US in-house senior hire | ~$200k+/yr fully loaded | Salary + benefits + overhead + recruiting |
 | Nearshore (LATAM) | $50–90/hr | Central Time overlap, English fluent |
-| Nearshore (Codebrand) | $45–95/hr | Mid / Senior / Lead |
 | Poland (to Western clients) | $55–100/hr | Strong talent, larger timezone gap for US |
 
 The point isn't that one region wins. It's that both engagement models are dramatically cheaper than US in-house or onshore agencies, and the choice between augmentation and a dedicated team should turn on *fit*, not headline rate. For a deeper regional breakdown, see our [nearshore vs offshore development guide](/blog/nearshore-vs-offshore-development-complete-guide-2025/).

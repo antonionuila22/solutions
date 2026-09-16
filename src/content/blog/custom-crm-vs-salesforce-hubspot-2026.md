@@ -136,7 +136,7 @@ We go deeper on scoping, phasing, and ownership on our [custom CRM development](
 
 Vague "it depends" answers help no one, so here is an honest framing. A custom CRM is not one price — it's a function of scope, and scope is a choice you control.
 
-Using Codebrand's published rates — **Mid $45 / Senior $65 / Lead $95 per hour** — a realistic build breaks down roughly like this:
+Using typical LATAM nearshore senior rates as a reference, a realistic build breaks down roughly like this:
 
 | Scope | What it includes | Rough effort | Indicative cost |
 |-------|------------------|--------------|-----------------|

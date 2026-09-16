@@ -67,7 +67,7 @@ faqs:
   - question: "¿Qué necesita mostrar el sitio de una empresa industrial?"
     answer: "Para la industria de Villanueva enfocamos el sitio en capacidad instalada, certificaciones, líneas de producto y contacto comercial, porque un socio internacional evalúa a su proveedor por esa información antes de confiarle un contrato."
   - question: "¿Cuánto cuesta un sitio para una empresa de Villanueva?"
-    answer: "Un sitio corporativo bilingüe para una maquila o industria del valle suele iniciar cerca de los $500 USD, y varía según catálogos o funciones. Le damos una cotización clara tras conocer su operación y sus mercados de exportación."
+    answer: "No publicamos precios fijos. Cada propuesta para Villanueva se arma según su presupuesto y los recursos que necesita el proyecto: un sitio informativo, una tienda en línea, un sistema a la medida o uno o más desarrolladores con un stack específico. Cuéntenos qué quiere construir y el presupuesto que tiene en mente, y le respondemos con una propuesta de precio cerrado, en lempiras o dólares, que dice exactamente qué incluye."
   - question: "¿También hacen tiendas en línea para el comercio local?"
     answer: "Sí. Junto a la industria, el comercio de Villanueva crece rápido; para esos negocios desarrollamos e-commerce y catálogos con pagos y logística adaptados al mercado hondureño y a la clientela del Valle de Sula."
 
@@ -103,6 +103,4 @@ nearbyAreas:
   - "Puerto Cortés"
   - "Zona Industrial"
 
-localStats:
-  averageProjectCost: "$500-$5,000 USD"
 ---

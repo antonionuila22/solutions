@@ -65,9 +65,6 @@ marketHighlights:
   - "Loudoun County's data centers carry a large share of global internet traffic"
   - "Mission-driven organizations run on tight budgets that reward efficient partners"
 
-localStats:
-  averageProjectCost: "$12,000-$60,000"
-
 whyChooseUs:
   - title: "Budget-Conscious by Design"
     description: "DC-area agencies price to a federal-adjacent economy, while the associations and nonprofits that fill this market run on scrutinized budgets. Our nearshore model delivers the same professional quality for a fraction of the rate, so more of your funding goes to your mission."
@@ -100,7 +97,7 @@ faqs:
   - question: "Do you work with professional-services firms and government contractors?"
     answer: "We do, on both sides of the region. K Street law firms, consultancies, and government-affairs practices need polished corporate sites and secure client portals that project seriousness, while Northern Virginia's GovTech and cybersecurity firms in the Reston, Tysons, and Arlington corridor need credible presences and secure web applications. We build with the appropriate encryption, access controls, and professional restraint these audiences expect, and you retain full ownership of the code."
   - question: "How much does web development cost compared to a DC agency?"
-    answer: "Our nearshore model runs at a fraction of what comparable Washington-area agencies charge, since their rates reflect a high-cost federal-adjacent economy. Most DC-region projects fall in the $12,000 to $60,000 range depending on scope, whether that is an association portal, a nonprofit fundraising site, or a firm's secure client platform. You get senior engineering, real accessibility, and full code ownership—without paying for downtown DC overhead."
+    answer: "We don't publish fixed prices. Every Washington proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Washington agency, and you own the code at the end."
 
 nearbyAreas:
   - "Capitol Hill"

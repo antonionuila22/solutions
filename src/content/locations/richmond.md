@@ -57,9 +57,6 @@ marketHighlights:
   - "Cost of living sits well below the neighboring Washington, D.C. metro"
   - "Scott's Addition has become one of the country's densest craft-brewery districts"
 
-localStats:
-  averageProjectCost: "$3,500-$35,000"
-
 whyChooseUs:
   - title: "40-60% Below Virginia Agency Rates"
     description: "Richmond's corporate market supports premium agency pricing, but plenty of local businesses would rather not pay it. Our nearshore Honduras model delivers comparable senior engineering for 40 to 60 percent less, which fits the practical, value-conscious way Richmond companies spend."
@@ -88,7 +85,7 @@ faqs:
   - question: "Can you handle patient portals for VCU Health-area practices?"
     answer: "Yes. Healthcare is a major Richmond sector anchored by VCU Health, and we build patient portals, appointment systems, and information tools with careful attention to sensitive data—encryption, access controls, and audit logging—plus Business Associate Agreements when a project involves protected health information."
   - question: "What does a Richmond web project typically cost?"
-    answer: "Most Richmond projects fall between $3,500 and $35,000 depending on scope—a professional site for a local firm sits toward the lower end, while a secure financial portal or a healthcare tool sits higher. Across that range our nearshore model runs 40 to 60 percent under a comparable Virginia agency, which matches the practical, value-conscious way Richmond businesses buy."
+    answer: "We don't publish fixed prices. Every Richmond proposal is built from your budget and the resources the project needs: a marketing site, an online store, a custom web application, or one or more senior developers with a specific stack. Tell us what you want to build and the budget you have in mind, and we come back with a fixed-price proposal that lists exactly what is included. Because our team works from Honduras, that budget typically buys more senior engineering than it would at a comparable Richmond agency, and you own the code at the end."
   - question: "Do you work with the agencies and craft brands in Scott's Addition and the Fan?"
     answer: "Absolutely. Richmond's creative and craft-beverage scene has turned districts like Scott's Addition into real commercial destinations, and those businesses need sites with genuine personality. We build distinctive, design-led work for agencies, breweries, and hospitality brands—memorable to look at, fast to load, and built to convert the traffic the neighborhood generates."
 

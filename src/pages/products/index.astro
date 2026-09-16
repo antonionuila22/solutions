@@ -31,8 +31,7 @@ const products = await getCollection("products", ({ data }) => !data.draft);
                 {
                     products.map((product) => {
                         const { id, data } = product;
-                        const { title, description, img, price, inStock } =
-                            data;
+                        const { title, description, img } = data;
 
                         return (
                             <article class="bg-white rounded-2xl border border-orange-100 shadow-md hover:shadow-orange-300 transition-shadow duration-300 group overflow-hidden">
@@ -66,14 +65,10 @@ const products = await getCollection("products", ({ data }) => !data.draft);
 
                                         <div class="flex items-center justify-between text-sm mt-4 pt-4 border-t border-slate-200">
                                             <span class="text-orange-500 font-bold">
-                                                {price}
+                                                Priced from your budget
                                             </span>
-                                            <span
-                                                class={`font-medium ${inStock ? "text-teal-600" : "text-red-600"}`}
-                                            >
-                                                {inStock
-                                                    ? "Available"
-                                                    : "Sold Out"}
+                                            <span class="font-medium text-teal-600">
+                                                Fixed-price proposal
                                             </span>
                                         </div>
 

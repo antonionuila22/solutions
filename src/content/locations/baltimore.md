@@ -68,7 +68,6 @@ marketHighlights:
 
 localStats:
   techCompanies: "2,000+"
-  averageProjectCost: "$12,000-50,000"
   businessGrowth: "+6% YoY"
 
 whyChooseUs:
