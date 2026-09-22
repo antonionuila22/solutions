@@ -1,5 +1,5 @@
 ---
-title: Full Stack Web Development – Modern, Scalable & Custom-Built Websites
+title: "Full Stack Web Development: Modern, Scalable & Custom-Built Websites"
 seoTitle: "Full Stack Web Development Services | Codebrand"
 img: /photos/webservice.webp
 readtime: 6
@@ -12,7 +12,7 @@ author: Codebrand Team
 
 ### Custom websites built for performance, scalability, and growth
 
-At **Codebrand**, we build websites that combine clean design, high performance, and future-ready architecture — tailored to your business goals. We use modern technologies like **Astro, React, Next.js, and Strapi** depending on your needs, not just what's trending.
+At **Codebrand**, we build websites that combine clean design, high performance, and future-ready architecture, tailored to your business goals. We use modern technologies like **Astro, React, Next.js, and Strapi** depending on your needs, not just what's trending.
 
 No templates. No page builders. No technical debt handed off to you at the end.
 
@@ -32,7 +32,7 @@ No templates. No page builders. No technical debt handed off to you at the end.
 
 ## Page Types
 
-We quote **per page**, based on functionality and complexity — so you only pay for what you actually need.
+We quote **per page**, based on functionality and complexity, so you only pay for what you actually need.
 
 | Page Type | Description |
 | ----------- | ------------- |
@@ -57,11 +57,11 @@ We quote **per page**, based on functionality and complexity — so you only pay
 
 ## Why Work with Codebrand
 
-- Fully custom solutions — no generic templates or page builders
+- Fully custom solutions, no generic templates or page builders
 - 90+ Google PageSpeed scores on every site we build
 - SEO built into every page from day one
 - 100% responsive across desktop, tablet, and mobile
-- You own the code — no vendor lock-in, no proprietary platforms
+- You own the code, no vendor lock-in, no proprietary platforms
 - Technical support throughout and after the project
 
 ---
@@ -79,4 +79,4 @@ We quote **per page**, based on functionality and complexity — so you only pay
 
 ## Ready to quote your project?
 
-> Tell us the number of pages and what each one needs to do. We'll get back with a clear, itemized proposal — no fluff, just a real plan.
+> Tell us the number of pages and what each one needs to do. We'll get back with a clear, itemized proposal, no fluff, just a real plan.

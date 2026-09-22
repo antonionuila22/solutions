@@ -6,7 +6,7 @@ import Navbar from "../components/NavbarAstro.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 import Animations from "../components/Animations.astro";
-import { createBreadcrumbSchemaFromUrl } from "../utils/schema";
+import { createBreadcrumbSchema, createBreadcrumbSchemaFromUrl } from "../utils/schema";
 
 // Props individuales
 let {
@@ -20,6 +20,8 @@ let {
   tags,
   categories,
   breadcrumbNames,
+  breadcrumbs,
+  breadcrumbSchemaOverride,
   canonicalOverride,
   keywords,
   lang,
@@ -44,7 +46,7 @@ const ogImage = image.startsWith("http") ? image : new URL(image, Astro.site ?? 
 // Enforce the site-wide trailing-slash policy so the canonical ALWAYS matches the
 // actually-served URL (Netlify serves these static pages with a trailing slash).
 // Hardcoded canonicalOverride values were written without the slash, so the canonical
-// pointed at a URL that 301-redirects — the root cause of the "Google chose a
+// pointed at a URL that 301-redirects, the root cause of the "Google chose a
 // different canonical" reports. Normalizing here fixes every page at one point.
 const ensureTrailingSlash = (href: string): string => {
   try {
@@ -60,7 +62,7 @@ const ensureTrailingSlash = (href: string): string => {
 
 // URL dinámica y mejoras SEO (permite override para páginas duplicadas)
 // Canonical is always anchored to the configured production domain (www.codebrand.us)
-// — never the request host — and excludes query strings.
+//, never the request host, and excludes query strings.
 const canonicalUrl = ensureTrailingSlash(
   canonicalOverride ||
   new URL(Astro.url?.pathname ?? "/", Astro.site ?? "https://www.codebrand.us").href,
@@ -81,12 +83,22 @@ if (publishedTime) {
   }
 }
 
-// Generate dynamic breadcrumbs based on current URL
-const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
-  canonicalUrl,
-  "https://www.codebrand.us",
-  breadcrumbNames || {},
-);
+// BreadcrumbList: a page can pass the same items it renders visibly
+// (`breadcrumbs`), or a ready schema object (`breadcrumbSchemaOverride`).
+// Otherwise the trail is derived from the URL, with the hub segments named and
+// the leaf named after the page title instead of its slug.
+const leafSegment = new URL(canonicalUrl).pathname.split("/").filter(Boolean).at(-1);
+const cleanTitle = String(title).split(" | ")[0].trim();
+const breadcrumbSchema = breadcrumbSchemaOverride
+  ? breadcrumbSchemaOverride
+  : Array.isArray(breadcrumbs) && breadcrumbs.length
+    ? createBreadcrumbSchema(breadcrumbs.map((b: { name: string; href: string }) => ({ name: b.name, url: b.href ? b.href : canonicalUrl })))
+    : createBreadcrumbSchemaFromUrl(
+        canonicalUrl,
+        "https://www.codebrand.us",
+        { ...(leafSegment ? { [leafSegment]: cleanTitle } : {}), ...(breadcrumbNames || {}) },
+        documentLang.startsWith("es") ? "Inicio" : "Home",
+      );
 
 // hreflang: map the CANONICAL English page to its Spanish /hn/ equivalent.
 // Keys must be the self-canonical English URL so the hreflang cluster lives on the
@@ -99,6 +111,7 @@ const hnMap: Record<string, string> = {
   "/services/seo": "/hn/seo-honduras",
   "/dedicated-development-team": "/hn/equipo-de-desarrollo-dedicado-honduras",
   "/custom-software-development": "/hn/desarrollo-de-software-honduras",
+  "/custom-crm-development": "/hn/desarrollo-de-crm-honduras",
   "/careers": "/hn/carreras",
 };
 // Normalize away the trailing slash so the lookup matches whether the prerendered
@@ -145,7 +158,7 @@ const hnHref = hnEquivalent
     <!--
       hreflang: emitted ONLY when this page has a real Spanish equivalent, as a
       complete reciprocal cluster (self + alternate + x-default). Pages without an
-      alternate language carry NO hreflang at all — a self-referential en-US/x-default
+      alternate language carry NO hreflang at all, a self-referential en-US/x-default
       with no other cluster member is what Semrush flags as a conflict.
     -->
     {hnHref && (
@@ -510,7 +523,7 @@ const hnHref = hnEquivalent
       document.documentElement.classList.add('js-enabled');
       // Hide GSAP-animated elements before first paint (no flash of fully-shown
       // content). Only when JS runs AND motion is allowed AND the device has a
-      // fine pointer — the GSAP engine only loads there (see Animations.astro;
+      // fine pointer, the GSAP engine only loads there (see Animations.astro;
       // keep both conditions in sync). On touch/mobile and reduced-motion the
       // blanket never applies, so content is visible from first paint. The
       // engine adds `gsap-ready` once it has set each element's start state,
@@ -657,7 +670,7 @@ const hnHref = hnEquivalent
       setTimeout(triggerTracking,4000);
     </script>
     <noscript>
-      <img height="1" width="1" style="display:none"
+      <img height="1" width="1" style="display:none" alt=""
            src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" />
     </noscript>
   </body>

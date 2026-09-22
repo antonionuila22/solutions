@@ -5,7 +5,7 @@ type Entry = { disponible: string; responsable: string };
 
 /**
  * Checklist de accesos: por cada acceso, disponibilidad + responsable.
- * Mismo criterio que la matriz — una tarjeta por acceso, un solo marcado que
+ * Mismo criterio que la matriz, una tarjeta por acceso, un solo marcado que
  * se aplana en fila desde `lg`. El campo "responsable" solo aparece cuando la
  * disponibilidad ya está marcada: preguntar de quién es algo que todavía no se
  * sabe si existe es ruido.

@@ -1,8 +1,8 @@
 ---
 /**
- * /blog/category/[slug] — editorial category listing.
+ * /blog/category/[slug], editorial category listing.
  * Same shell language as /blog: editorial header, filter row, PostCard grid.
- * SEO surface unchanged (same title/description generation, noindex).
+ * Indexed listing page (one per category) and advertised in the sitemap.
  */
 export const prerender = true;
 import { getCollection, type CollectionEntry } from "astro:content";
@@ -62,12 +62,12 @@ const seoDescription = `Browse all ${posts.length} articles in the ${category} c
   description={seoDescription}
   keywords={`${category}, web development blog, digital marketing, codebrand, ${category.toLowerCase()} articles`}
   image="/photos/bannercodebrand.webp"
-  noindex={true}
+  breadcrumbs={[{ name: "Home", href: "/" }, { name: "Blog", href: "/blog/" }, { name: category, href: "" }]}
 >
   <!-- Editorial header -->
   <section class="bg-white pt-32 pb-12 sm:pt-40 sm:pb-14">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <!-- Breadcrumbs brings its own inner px — cancel ours so edges align -->
+      <!-- Breadcrumbs brings its own inner px, cancel ours so edges align -->
       <div class="-mx-4 sm:-mx-6 lg:-mx-8">
         <Breadcrumbs
           items={[
@@ -88,8 +88,7 @@ const seoDescription = `Browse all ${posts.length} articles in the ${category} c
       <h1 class="text-hero mt-5 text-slate-900">{category}</h1>
 
       <p class="text-lead mt-6 max-w-2xl text-slate-600">
-        {sortedPosts.length}
-        {sortedPosts.length === 1 ? "article" : "articles"} in this category.
+        {sortedPosts.length} {sortedPosts.length === 1 ? "article" : "articles"} in this category.
       </p>
 
       <div class="mt-10">

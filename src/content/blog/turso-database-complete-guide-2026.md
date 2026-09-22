@@ -1,6 +1,6 @@
 ---
 title: "Turso Database 2026: Edge SQLite Setup, Costs & Pitfalls"
-description: "Set up Turso's edge SQLite in minutes, wire up Drizzle, and learn where embedded replicas break down — plus migration notes and when to pick Postgres."
+description: "Set up Turso's edge SQLite in minutes, wire up Drizzle, and learn where embedded replicas break down, plus migration notes and when to pick Postgres."
 author: "Ramon Nuila"
 readtime: 20
 img: /photos/blog/young-serious-female-programmer-using-tablet-again-2026-01-09-01-21-14-utc.webp
@@ -24,9 +24,9 @@ tags:
 
 Traditional databases have a problem: they live in one place. Your users are everywhere. Every database query travels across the globe, adding latency that modern users won't tolerate.
 
-Turso solves this by bringing your database to the edge—replicating data across 35+ locations worldwide. The result? Database queries that complete in single-digit milliseconds, no matter where your users are.
+Turso solves this by bringing your database to the edge, replicating data across 35+ locations worldwide. The result? Database queries that complete in single-digit milliseconds, no matter where your users are.
 
-After implementing Turso in production projects, we've seen dramatic improvements in application performance. This guide shows you everything you need to know—including the parts the marketing pages skip: replication lag, the single-writer primary, and the workloads where Turso is the wrong answer.
+After implementing Turso in production projects, we've seen dramatic improvements in application performance. This guide shows you everything you need to know, including the parts the marketing pages skip: replication lag, the single-writer primary, and the workloads where Turso is the wrong answer.
 
 *Last reviewed July 2026 against the current libSQL client and Drizzle Kit releases.*
 
@@ -178,7 +178,7 @@ await db.batch([
 
 ### Using with Drizzle ORM
 
-Drizzle is our recommended ORM for Turso—type-safe, performant, and excellent developer experience.
+Drizzle is our recommended ORM for Turso, type-safe, performant, and excellent developer experience.
 
 ```bash
 npm install drizzle-orm @libsql/client
@@ -288,7 +288,7 @@ export default defineConfig({
 });
 ```
 
-Note the `dialect` key. Older tutorials still show `driver: "turso"` with a plain `satisfies Config` export—that shape was retired in Drizzle Kit and will fail on any current version. The dialect-based `defineConfig` is what you want.
+Note the `dialect` key. Older tutorials still show `driver: "turso"` with a plain `satisfies Config` export, that shape was retired in Drizzle Kit and will fail on any current version. The dialect-based `defineConfig` is what you want.
 
 **Run Migrations:**
 
@@ -303,13 +303,13 @@ npx drizzle-kit push
 npx drizzle-kit studio
 ```
 
-The old `generate:sqlite` / `push:sqlite` command pairs were removed too—if you copied them from a 2024 blog post, drop the suffix.
+The old `generate:sqlite` / `push:sqlite` command pairs were removed too, if you copied them from a 2024 blog post, drop the suffix.
 
 ---
 
 ## Embedded Replicas: Zero-Latency Reads
 
-Turso's killer feature is embedded replicas—a local SQLite file that syncs with your Turso database. Reads are instant; writes sync automatically.
+Turso's killer feature is embedded replicas, a local SQLite file that syncs with your Turso database. Reads are instant; writes sync automatically.
 
 ```typescript
 import { createClient } from "@libsql/client";
@@ -340,7 +340,7 @@ await db.sync();
 
 | Scenario | Use Remote | Use Embedded Replica |
 |----------|------------|---------------------|
-| Serverless functions | Yes | No — no persistent storage |
+| Serverless functions | Yes | No, no persistent storage |
 | Long-running servers | Yes | Yes |
 | Desktop apps | No | Yes |
 | Mobile apps | No | Yes |
@@ -351,7 +351,7 @@ await db.sync();
 
 ## Database Branching
 
-Turso lets you create database branches—perfect for testing, staging, and development.
+Turso lets you create database branches, perfect for testing, staging, and development.
 
 ```bash
 # Create a branch from production
@@ -596,13 +596,13 @@ Everything above is the happy path. Here is what production actually teaches you
 
 ### Reads go to the edge. Writes do not.
 
-Turso replicates reads globally, but exactly one primary accepts writes. A user in Sydney reading from the Sydney replica gets single-digit latency. That same user submitting a form still pays the full round trip to your primary region—so a write-heavy app with a US primary and Asian users can feel *slower*, not faster, than a single regional Postgres sitting next to its users. Put the primary where the writes are, not where your team is.
+Turso replicates reads globally, but exactly one primary accepts writes. A user in Sydney reading from the Sydney replica gets single-digit latency. That same user submitting a form still pays the full round trip to your primary region, so a write-heavy app with a US primary and Asian users can feel *slower*, not faster, than a single regional Postgres sitting next to its users. Put the primary where the writes are, not where your team is.
 
-Replication is also asynchronous. A row written to the primary is not instantly visible on every replica, so read-after-write can return stale data. If a user updates their profile and the next page load hits a lagging replica, they see the old value and file a bug. The fix is architectural: route reads that must be fresh to the primary connection, and let everything else—catalogs, listings, docs, marketing content—come from the edge.
+Replication is also asynchronous. A row written to the primary is not instantly visible on every replica, so read-after-write can return stale data. If a user updates their profile and the next page load hits a lagging replica, they see the old value and file a bug. The fix is architectural: route reads that must be fresh to the primary connection, and let everything else, catalogs, listings, docs, marketing content, come from the edge.
 
 ### Embedded replicas have a cold-start bill
 
-`db.sync()` is not free. The first sync on a fresh machine pulls the whole database down; every sync after that transfers changed frames. On a long-running server that amortizes to nothing. On a container recycled every few minutes, you pay a full bootstrap over and over—and you are billed for those reads. Sync on an interval or after known write events, never once per request.
+`db.sync()` is not free. The first sync on a fresh machine pulls the whole database down; every sync after that transfers changed frames. On a long-running server that amortizes to nothing. On a container recycled every few minutes, you pay a full bootstrap over and over, and you are billed for those reads. Sync on an interval or after known write events, never once per request.
 
 Embedded replicas also need a writable, persistent filesystem. Most serverless runtimes give you neither.
 
@@ -651,7 +651,7 @@ Cutting over a live production database is where this stops being a weekend proj
 
 ## Pricing
 
-Plan limits move more often than the API does—treat the figures below as the shape of the pricing model and confirm the current numbers on Turso's own pricing page before you build a budget around them.
+Plan limits move more often than the API does, treat the figures below as the shape of the pricing model and confirm the current numbers on Turso's own pricing page before you build a budget around them.
 
 ### Free Tier (Starter)
 
@@ -772,4 +772,4 @@ Whether you're migrating to Turso or building on it from scratch, the work usual
 
 ## Need help building this?
 
-If the edge-versus-primary tradeoffs above sound like decisions you'd rather make with someone who has already made them, that's what we do. Codebrand has been building production software from San Pedro Sula since 2020—including the CRM we run our own business on—and we work US Central hours as a [nearshore development](/nearshore-development/) team, so you get real overlap instead of overnight ticket ping-pong. Tell us what you're building and we'll tell you honestly whether Turso is the right database for it: [get in touch](/contact/).
+If the edge-versus-primary tradeoffs above sound like decisions you'd rather make with someone who has already made them, that's what we do. Codebrand has been building production software from San Pedro Sula since 2020, including the CRM we run our own business on, and we work US Central hours as a [nearshore development](/nearshore-development/) team, so you get real overlap instead of overnight ticket ping-pong. Tell us what you're building and we'll tell you honestly whether Turso is the right database for it: [get in touch](/contact/).

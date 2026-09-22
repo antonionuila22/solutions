@@ -7,7 +7,7 @@ import type { AnswerMap } from "../types";
  * Revisión previa al envío. Muestra únicamente las preguntas visibles y marca
  * las indispensables que faltan, con un atajo para saltar a cada una. El botón
  * de envío no se bloquea por diseño: el servidor vuelve a validar y devuelve
- * el motivo — un botón inerte sin explicación es peor que un error claro.
+ * el motivo, un botón inerte sin explicación es peor que un error claro.
  */
 export function SummaryScreen({
   answers,

@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 
 /**
- * ProposalRequest — the island behind /quoter/.
+ * ProposalRequest, the island behind /quoter/.
  *
  * Codebrand no longer publishes prices. Every engagement is scoped from the
  * client's budget and the resources the project needs (a website, a store, an

@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 
 /**
- * PlatformPicker — four questions, one honest recommendation. The rules are
+ * PlatformPicker, four questions, one honest recommendation. The rules are
  * the same ones we apply on the first call; the visitor gets them without
  * booking one.
  */

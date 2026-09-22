@@ -22,7 +22,7 @@ tags:
 
 ## UI/UX Design Principles: The Complete Guide for 2026
 
-Great design isn't about making things pretty—it's about making things work. The best interfaces feel invisible because they anticipate user needs and remove friction at every step.
+Great design isn't about making things pretty, it's about making things work. The best interfaces feel invisible because they anticipate user needs and remove friction at every step.
 
 After designing hundreds of websites and applications, we've distilled the principles that consistently create exceptional user experiences. This guide covers everything from foundational concepts to advanced techniques you can apply immediately.
 
@@ -575,7 +575,7 @@ function OrderConfirmation() {
 
 ### 11. Inclusive Design
 
-Design for everyone, including users with disabilities. This isn't optional—it's often legally required and always ethical.
+Design for everyone, including users with disabilities. This isn't optional, it's often legally required and always ethical.
 
 **WCAG Essentials:**
 
@@ -654,7 +654,7 @@ Design for everyone, including users with disabilities. This isn't optional—it
 
 ### 12. Responsive Design
 
-Design for all screen sizes. Mobile is no longer optional—it's often the primary device.
+Design for all screen sizes. Mobile is no longer optional, it's often the primary device.
 
 **Mobile-First Approach:**
 
@@ -874,7 +874,7 @@ Before launching, verify:
 
 ## How Codebrand Applies These Principles
 
-At **Codebrand**, every project starts with these principles. We don't just design—we create experiences that convert.
+At **Codebrand**, every project starts with these principles. We don't just design, we create experiences that convert.
 
 **Our Design Process:**
 
@@ -907,4 +907,4 @@ At **Codebrand**, every project starts with these principles. We don't just desi
 
 ---
 
-*Have questions about UI/UX design? [Reach out to our team](/contact/)—we love talking design.*
+*Have questions about UI/UX design? [Reach out to our team](/contact/), we love talking design.*

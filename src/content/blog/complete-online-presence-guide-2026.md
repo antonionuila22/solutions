@@ -21,7 +21,7 @@ tags:
 
 ## Your Online Presence Is Your First Impression
 
-**88% of consumers research online before making a purchase.** If they can't find you—or worse, find a mediocre presence—you've lost before you even knew you were competing.
+**88% of consumers research online before making a purchase.** If they can't find you, or worse, find a mediocre presence, you've lost before you even knew you were competing.
 
 A complete online presence isn't just a website. It's an ecosystem of touchpoints that work together to attract, engage, and convert your ideal customers.
 
@@ -98,7 +98,7 @@ If you're not on page one of Google, you might as well not exist. **75% of users
 
 ### 4. Social Media: Where Conversations Happen
 
-Social media isn't about being everywhere—it's about being **where your customers are.**
+Social media isn't about being everywhere, it's about being **where your customers are.**
 
 **Platform selection guide:**
 
@@ -208,7 +208,7 @@ When your website looks different from your social profiles looks different from
 
 ### 5. Set and Forget
 
-Online presence isn't a project—it's an ongoing process. Websites need updates. Content needs creation. Social needs management.
+Online presence isn't a project, it's an ongoing process. Websites need updates. Content needs creation. Social needs management.
 
 ---
 
@@ -323,14 +323,14 @@ Whether you need a complete digital transformation or help with specific areas, 
 
 **Our services:**
 
-- [Web Development](/services/web-development/) — Your digital foundation
-- [UX/UI Design](/services/ux-ui/) — User experiences that convert
-- [Branding](/services/branding/) — Visual identity that stands out
-- [SEO](/services/seo/) — Being found in search
-- [Social Media](/services/social-media/) — Engaging your audience
-- [Video Production](/services/video-production/) — Content that captures attention
-- [3D Rendering](/services/3d-rendering/) — Visualizations that impress
-- [Animation](/services/animation/) — Motion that explains
+- [Web Development](/services/web-development/), Your digital foundation
+- [UX/UI Design](/services/ux-ui/), User experiences that convert
+- [Branding](/services/branding/), Visual identity that stands out
+- [SEO](/services/seo/), Being found in search
+- [Social Media](/services/social-media/), Engaging your audience
+- [Video Production](/services/video-production/), Content that captures attention
+- [3D Rendering](/services/3d-rendering/), Visualizations that impress
+- [Animation](/services/animation/), Motion that explains
 
 [Let's discuss your online presence →](/contact/)
 
@@ -338,12 +338,12 @@ Whether you need a complete digital transformation or help with specific areas, 
 
 ## Key Takeaways
 
-1. **Online presence is an ecosystem** — website, brand, SEO, social, content working together
-2. **Consistency builds trust** — same look, feel, and voice everywhere
-3. **Mobile-first is mandatory** — most visitors are on phones
-4. **SEO is the long game** — invest early, benefit forever
-5. **Content powers everything** — the engine behind every channel
-6. **Measure what matters** — track metrics that tie to business goals
-7. **It's never "done"** — online presence requires ongoing attention
+1. **Online presence is an ecosystem**, website, brand, SEO, social, content working together
+2. **Consistency builds trust**, same look, feel, and voice everywhere
+3. **Mobile-first is mandatory**, most visitors are on phones
+4. **SEO is the long game**, invest early, benefit forever
+5. **Content powers everything**, the engine behind every channel
+6. **Measure what matters**, track metrics that tie to business goals
+7. **It's never "done"**, online presence requires ongoing attention
 
 Your business deserves to be found, trusted, and chosen. A strong online presence makes that happen.

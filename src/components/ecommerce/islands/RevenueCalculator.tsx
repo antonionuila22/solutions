@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 /**
- * RevenueCalculator — the visitor's own numbers, and what small improvements
+ * RevenueCalculator, the visitor's own numbers, and what small improvements
  * are worth in dollars. It is arithmetic, not a promise: we never claim a
  * specific uplift, we show what one would mean for this store.
  */

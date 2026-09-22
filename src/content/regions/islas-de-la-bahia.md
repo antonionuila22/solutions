@@ -1,6 +1,6 @@
 ---
 title: "Desarrollo Web en Islas de la Bahía | Codebrand Honduras"
-description: "Servicios profesionales de desarrollo web en Islas de la Bahía. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Roatán, Utila, Guanaja y todo el departamento."
+description: "Desarrollo web en Islas de la Bahía: sitios web, tiendas en línea y aplicaciones para empresas de Roatán, Utila, Guanaja y todo el departamento."
 name: "Islas de la Bahía"
 code: "IB"
 country: "honduras"
@@ -24,9 +24,9 @@ featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Islas de la Bahía—el paraíso turístico de Honduras y uno de los mejores destinos de <strong>buceo del mundo</strong>. Roatán, Utila y Guanaja atraen visitantes internacionales en busca de playas, arrecifes de coral y aventura. El turismo es la industria principal, y una <strong>presencia digital efectiva</strong> es esencial para competir.</p>
+  <p>Islas de la Bahía, el paraíso turístico de Honduras y uno de los mejores destinos de <strong>buceo del mundo</strong>. Roatán, Utila y Guanaja atraen visitantes internacionales en busca de playas, arrecifes de coral y aventura. El turismo es la industria principal, y una <strong>presencia digital efectiva</strong> es esencial para competir.</p>
 
-  <p>En Codebrand, entendemos las necesidades únicas del <strong>mercado turístico de las islas</strong>. Creamos sitios web que capturan la belleza del Caribe hondureño y convierten visitantes en reservas. Sistemas de reservas en línea, galerías optimizadas, integración con plataformas de viajes—sabemos lo que los negocios turísticos necesitan.</p>
+  <p>En Codebrand, entendemos las necesidades únicas del <strong>mercado turístico de las islas</strong>. Creamos sitios web que capturan la belleza del Caribe hondureño y convierten visitantes en reservas. Sistemas de reservas en línea, galerías optimizadas, integración con plataformas de viajes, sabemos lo que los negocios turísticos necesitan.</p>
 
   <p>Ofrecemos <strong>desarrollo web profesional</strong> desde Honduras continental, lo que significa precios competitivos sin sacrificar calidad. Comunicación en español e inglés para servir tanto al mercado local como a los turistas internacionales que son su clientela principal.</p>
 
@@ -56,8 +56,6 @@ marketHighlights:
 
 regionalStats:
   gdp: "Centro turístico principal"
-  techCompanies: "50+"
-  businessGrowth: "+8% anual"
 
 faqs:
   - question: "¿Desarrollan sitios web en inglés para turistas internacionales?"

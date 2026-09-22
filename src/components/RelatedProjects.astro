@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
+  lang?: string;
   currentId: string;
   projects: CollectionEntry<"projects">[];
   category?: string;
@@ -9,7 +10,8 @@ interface Props {
   limit?: number;
 }
 
-const { currentId, projects, category, tags = [], limit = 3 } = Astro.props;
+const { currentId, projects, category, tags = [], limit = 3, lang } = Astro.props;
+const isEs = lang === "es";
 
 const currentTags = new Set(tags);
 
@@ -46,10 +48,10 @@ const related = topRelated.length === limit
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-100">
       <div class="mb-10">
         <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-          More work
+          {isEs ? "Más trabajos" : "More work"}
         </span>
         <h2 class="text-2xl sm:text-3xl font-bold text-cyan-900 mt-2">
-          Related Projects
+          {isEs ? "Proyectos relacionados" : "Related Projects"}
         </h2>
       </div>
 
@@ -94,7 +96,7 @@ const related = topRelated.length === limit
                   <p class="text-sm text-slate-600 line-clamp-3">{description}</p>
                 )}
                 <span class="mt-auto pt-3 inline-flex items-center gap-2 text-sm font-semibold text-orange-600 group-hover:gap-3 transition-all">
-                  View case study
+                  {isEs ? "Ver caso de estudio" : "View case study"}
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>

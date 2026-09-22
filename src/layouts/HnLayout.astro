@@ -62,6 +62,7 @@ const enMap: Record<string, string> = {
   "/hn/seo-honduras": "/services/seo",
   "/hn/equipo-de-desarrollo-dedicado-honduras": "/dedicated-development-team",
   "/hn/desarrollo-de-software-honduras": "/custom-software-development",
+  "/hn/desarrollo-de-crm-honduras": "/custom-crm-development",
   "/hn/carreras": "/careers",
 };
 const currentPath = Astro.url?.pathname?.replace(/\/$/, "") || "";
@@ -88,10 +89,12 @@ if (publishedTime) {
 }
 
 // Breadcrumbs
+const hnLeaf = new URL(canonicalUrl).pathname.split("/").filter(Boolean).at(-1);
 const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
   canonicalUrl,
   "https://www.codebrand.us",
-  breadcrumbNames || {}
+  { hn: "Honduras", ...(hnLeaf && hnLeaf !== "hn" ? { [hnLeaf]: String(title).split(" | ")[0].trim() } : {}), ...(breadcrumbNames || {}) },
+  "Inicio"
 );
 ---
 
@@ -228,7 +231,10 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         "@type": "ProfessionalService",
         "@id": "https://www.codebrand.us/#organization",
         "name": "Codebrand - Agencia de Desarrollo Web Honduras",
-        "alternateName": ["Codebrand Honduras", "Codebrand HN"],
+        "alternateName": [
+                "Codebrand Honduras",
+                "Codebrand HN"
+        ],
         "url": "https://www.codebrand.us/hn/desarrollo-web-honduras/",
         "logo": "https://www.codebrand.us/iconcodebrand.svg",
         "image": "https://www.codebrand.us/photos/bannercodebrand.webp",
@@ -238,99 +244,102 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         "telephone": "+504-8738-0714",
         "foundingDate": "2020",
         "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Edificio Nuevos Horizontes",
-          "addressLocality": "San Pedro Sula",
-          "addressRegion": "Cortés",
-          "addressCountry": "HN",
-          "postalCode": "21102"
+                "@type": "PostalAddress",
+                "streetAddress": "Edificio Nuevos Horizontes",
+                "addressLocality": "San Pedro Sula",
+                "addressRegion": "Cortés",
+                "addressCountry": "HN",
+                "postalCode": "21102"
         },
         "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 15.5049,
-          "longitude": -88.0254
+                "@type": "GeoCoordinates",
+                "latitude": 15.5049,
+                "longitude": -88.0254
         },
         "areaServed": [
-          {
-            "@type": "Country",
-            "name": "Honduras"
-          },
-          {
-            "@type": "City",
-            "name": "San Pedro Sula"
-          },
-          {
-            "@type": "City",
-            "name": "San Pedro Sula"
-          }
+                {
+                        "@type": "Country",
+                        "name": "Honduras"
+                },
+                {
+                        "@type": "City",
+                        "name": "San Pedro Sula"
+                }
         ],
         "priceRange": "$$",
-        "currenciesAccepted": ["HNL", "USD"],
-        "paymentAccepted": ["Transferencia Bancaria", "Tarjeta de Crédito", "Efectivo"],
+        "currenciesAccepted": [
+                "HNL",
+                "USD"
+        ],
+        "paymentAccepted": [
+                "Transferencia Bancaria",
+                "Tarjeta de Crédito",
+                "Efectivo"
+        ],
         "openingHours": "Mo-Fr 08:00-18:00",
         "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+504-8738-0714",
-          "contactType": "Ventas",
-          "availableLanguage": ["Spanish", "English"],
-          "areaServed": "HN"
+                "@type": "ContactPoint",
+                "telephone": "+504-8738-0714",
+                "contactType": "Ventas",
+                "availableLanguage": [
+                        "Spanish",
+                        "English"
+                ],
+                "areaServed": "HN"
         },
         "sameAs": [
-          "https://www.linkedin.com/company/codebrand-es",
-          "https://x.com/Codebrand_es",
-          "https://www.facebook.com/p/Codebrand-100087321501519/",
-          "https://api.whatsapp.com/send/?phone=50487380714&type=phone_number&app_absent=0"
+                "https://www.linkedin.com/company/codebrand-es",
+                "https://x.com/Codebrand_es",
+                "https://www.facebook.com/p/Codebrand-100087321501519/",
+                "https://api.whatsapp.com/send/?phone=50487380714&type=phone_number&app_absent=0"
         ],
         "knowsAbout": [
-          "Desarrollo Web",
-          "Diseño Web",
-          "Tiendas Online",
-          "E-commerce",
-          "SEO",
-          "Marketing Digital",
-          "Aplicaciones Web",
-          "React",
-          "WordPress",
-          "Shopify"
+                "Desarrollo Web",
+                "Diseño Web",
+                "Tiendas Online",
+                "E-commerce",
+                "SEO",
+                "Marketing Digital",
+                "Aplicaciones Web",
+                "React",
+                "WordPress",
+                "Shopify"
         ],
-        "knowsLanguage": ["Spanish", "English"],
+        "knowsLanguage": [
+                "Spanish",
+                "English"
+        ],
         "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Servicios de Desarrollo Web",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Sitio Web Básico",
-                "description": "Página web profesional de 5 páginas con diseño responsive"
-              },
-              "price": "12500",
-              "priceCurrency": "HNL"
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Sitio Web Empresarial",
-                "description": "Sitio web completo con múltiples secciones y funcionalidades"
-              },
-              "price": "37500",
-              "priceCurrency": "HNL"
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Tienda Online",
-                "description": "E-commerce completo con carrito, pagos y gestión de inventario"
-              },
-              "price": "62500",
-              "priceCurrency": "HNL"
-            }
-          ]
+                "@type": "OfferCatalog",
+                "name": "Servicios de Desarrollo Web",
+                "itemListElement": [
+                        {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Sitio Web Básico",
+                                        "description": "Página web profesional de 5 páginas con diseño responsive"
+                                }
+                        },
+                        {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Sitio Web Empresarial",
+                                        "description": "Sitio web completo con múltiples secciones y funcionalidades"
+                                }
+                        },
+                        {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Tienda Online",
+                                        "description": "E-commerce completo con carrito, pagos y gestión de inventario"
+                                }
+                        }
+                ]
         }
-      }
+}
     </script>
 
     <!-- Breadcrumb Schema -->
@@ -437,7 +446,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
       setTimeout(triggerTracking,4000);
     </script>
     <noscript>
-      <img height="1" width="1" style="display:none"
+      <img height="1" width="1" style="display:none" alt=""
            src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" />
     </noscript>
   </body>

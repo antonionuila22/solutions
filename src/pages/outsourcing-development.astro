@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "How does white-label development partnership work?",
     answer:
-      "White-label partnership means we work as an invisible extension of your team. We sign NDAs, use your branding on deliverables, and can join client calls representing your company. Your clients never know we exist. We integrate with your existing workflow—using your project management tools, communication channels, and processes. Think of us as your back-office development department.",
+      "White-label partnership means we work as an invisible extension of your team. We sign NDAs, use your branding on deliverables, and can join client calls representing your company. Your clients never know we exist. We integrate with your existing workflow, using your project management tools, communication channels, and processes. Think of us as your back-office development department.",
   },
   {
     question: "What technologies and frameworks do you specialize in?",
@@ -43,12 +43,12 @@ const faqs = [
   {
     question: "How fast can you start on a new project?",
     answer:
-      "For staff augmentation, we can typically onboard developers within 1-2 weeks. For new projects, we can start immediately after a brief discovery call—usually within 2-3 business days. Rush projects can begin same-day with our Rush tier. We maintain bench capacity specifically to handle urgent client needs without delays.",
+      "For staff augmentation, we can typically onboard developers within 1-2 weeks. For new projects, we can start immediately after a brief discovery call, usually within 2-3 business days. Rush projects can begin same-day with our Rush tier. We maintain bench capacity specifically to handle urgent client needs without delays.",
   },
   {
     question: "What's your development process like?",
     answer:
-      "We follow agile methodology with 1-2 week sprints depending on project needs. Each sprint includes planning, daily standups (async or sync based on your preference), code reviews, and demos. We use Git with pull requests, automated testing, and CI/CD pipelines. You get full visibility into progress through your preferred project management tool—Jira, Linear, Asana, or others.",
+      "We follow agile methodology with 1-2 week sprints depending on project needs. Each sprint includes planning, daily standups (async or sync based on your preference), code reviews, and demos. We use Git with pull requests, automated testing, and CI/CD pipelines. You get full visibility into progress through your preferred project management tool, Jira, Linear, Asana, or others.",
   },
   {
     question: "How does pricing work?",
@@ -58,7 +58,7 @@ const faqs = [
   {
     question: "What about code quality and testing?",
     answer:
-      "Code quality is non-negotiable. Every pull request goes through peer review before merging. We write unit tests for critical functionality and integration tests for APIs. Our code follows industry best practices—TypeScript for type safety, ESLint for consistency, and Prettier for formatting. You receive clean, documented, maintainable code that your team can easily work with.",
+      "Code quality is non-negotiable. Every pull request goes through peer review before merging. We write unit tests for critical functionality and integration tests for APIs. Our code follows industry best practices, TypeScript for type safety, ESLint for consistency, and Prettier for formatting. You receive clean, documented, maintainable code that your team can easily work with.",
   },
   {
     question: "How do you handle communication across timezones?",
@@ -78,7 +78,7 @@ const faqs = [
   {
     question: "How do we get started?",
     answer:
-      "Getting started is simple: book a free 30-minute discovery call where we discuss your needs, technical requirements, and timeline. Within 24 hours, you'll receive a proposal with team recommendations and pricing. Once approved, we handle onboarding—tool access, codebase familiarization, and workflow integration. Most clients are up and running within a week.",
+      "Getting started is simple: book a free 30-minute discovery call where we discuss your needs, technical requirements, and timeline. Within 24 hours, you'll receive a proposal with team recommendations and pricing. Once approved, we handle onboarding, tool access, codebase familiarization, and workflow integration. Most clients are up and running within a week.",
   },
 ];
 
@@ -92,12 +92,12 @@ const faqSchema = {
   })),
 };
 
-// How white-label works — under your brand, NDA, managed delivery
+// How white-label works, under your brand, NDA, managed delivery
 const howItWorks = [
   {
     icon: "tag",
     title: "Built Under Your Brand",
-    desc: "Deliverables ship with your name on them. We can join client calls as your team — the work is yours to present and resell.",
+    desc: "Deliverables ship with your name on them. We can join client calls as your team, the work is yours to present and resell.",
   },
   {
     icon: "shield-check",
@@ -107,13 +107,13 @@ const howItWorks = [
   {
     icon: "compass",
     title: "Managed Delivery",
-    desc: "A project manager runs sprints, standups, and reporting inside your tools — Jira, Linear, Slack — so you don't micromanage devs.",
+    desc: "A project manager runs sprints, standups, and reporting inside your tools, Jira, Linear, Slack, so you don't micromanage devs.",
   },
 ];
 
 // Services agencies can resell
 const services = [
-  { icon: "monitor", title: "Web Applications", desc: "Full-stack apps and portals your clients need — built to scale, delivered under your brand." },
+  { icon: "monitor", title: "Web Applications", desc: "Full-stack apps and portals your clients need, built to scale, delivered under your brand." },
   { icon: "shopping-cart", title: "E-commerce & Shopify", desc: "Shopify (Liquid, Hydrogen) and headless commerce storefronts you can resell as your own." },
   { icon: "rocket", title: "Marketing & Landing Pages", desc: "Pixel-perfect campaign sites and landing pages, Figma-to-code, on your timeline." },
   { icon: "layers", title: "SaaS Platforms", desc: "Feature development and scaling for the SaaS products your clients are building." },
@@ -138,7 +138,7 @@ const processDetailed = [
   {
     num: "03",
     title: "Onboarding",
-    desc: "Quick setup process—tool access, codebase familiarization, workflow integration. We adapt to your processes, not the other way around.",
+    desc: "Quick setup process, tool access, codebase familiarization, workflow integration. We adapt to your processes, not the other way around.",
     details: ["Tool integration", "Codebase review", "Process alignment", "Communication setup"],
   },
   {
@@ -152,11 +152,11 @@ const processDetailed = [
 // Why agencies partner with us
 const whyAgencies = [
   { icon: "eye", title: "An Invisible Extension", desc: "We stay behind your brand and behind your NDA. Clients see only your team delivering great work." },
-  { icon: "star", title: "Senior Engineers", desc: "Developers who have shipped for Fortune 500s, YC startups, and agencies — brought to every project." },
+  { icon: "star", title: "Senior Engineers", desc: "Developers who have shipped for Fortune 500s, YC startups, and agencies, brought to every project." },
   { icon: "clock", title: "US Timezone Overlap", desc: "We work Central Time for real-time overlap, daily standups, and same-day reviews with North America." },
   { icon: "shield-check", title: "Peer-Reviewed Quality", desc: "Every pull request goes through code review, with TypeScript, tests, and consistent standards." },
-  { icon: "trending-up", title: "Scale On Demand", desc: "Add or reduce capacity instantly — ramp up for a big client release, ramp down between projects." },
-  { icon: "key", title: "You Own The Code", desc: "Clean, documented, maintainable code with full source ownership — no lock-in, no dependency on us." },
+  { icon: "trending-up", title: "Scale On Demand", desc: "Add or reduce capacity instantly, ramp up for a big client release, ramp down between projects." },
+  { icon: "key", title: "You Own The Code", desc: "Clean, documented, maintainable code with full source ownership, no lock-in, no dependency on us." },
 ];
 
 // Stats
@@ -206,7 +206,7 @@ const technologies = [
         </h1>
         <p class="text-xl sm:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
           We build under your brand for agencies and studios. Your clients see
-          only you — NDA-backed senior developers, US timezone.
+          only you, NDA-backed senior developers, US timezone.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <a href="/contact/" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
@@ -239,10 +239,10 @@ const technologies = [
           <strong class="text-slate-900">Codebrand is a white-label development partner for agencies, studios, and consultancies.</strong> You win the client and own the relationship; we do the engineering behind your brand. Deliverables ship with your name on them, we sign an NDA before anything sensitive changes hands, and your clients never know a partner was involved.
         </p>
         <p>
-          We become <strong class="text-slate-900">an invisible extension of your team</strong> — working inside your project management tools, your communication channels, and your processes. A project manager runs the sprints and reporting so you get predictable delivery without managing developers one at a time. Because we operate as a time-zone-aligned <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development company</a>, your team gets real-time overlap and daily collaboration.
+          We become <strong class="text-slate-900">an invisible extension of your team</strong>, working inside your project management tools, your communication channels, and your processes. A project manager runs the sprints and reporting so you get predictable delivery without managing developers one at a time. Because we operate as a time-zone-aligned <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development company</a>, your team gets real-time overlap and daily collaboration.
         </p>
         <p>
-          Every line goes through <strong class="text-slate-900">peer review</strong>, and you receive clean, documented code with <strong class="text-slate-900">full source ownership</strong> — no lock-in, no dependency on us. Start with a single pilot project to test the fit, then scale up when you're ready. No long-term contracts, no minimums, no risk.
+          Every line goes through <strong class="text-slate-900">peer review</strong>, and you receive clean, documented code with <strong class="text-slate-900">full source ownership</strong>, no lock-in, no dependency on us. Start with a single pilot project to test the fit, then scale up when you're ready. No long-term contracts, no minimums, no risk.
         </p>
       </div>
 
@@ -270,7 +270,7 @@ const technologies = [
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6" data-anim="heading">
           Services Under <span class="text-orange-500">Your Brand</span>
         </h2>
-        <p class="text-xl text-slate-600">Sell the full stack of development work to your clients — we deliver it invisibly.</p>
+        <p class="text-xl text-slate-600">Sell the full stack of development work to your clients, we deliver it invisibly.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="fade">
         {services.map((s) => (

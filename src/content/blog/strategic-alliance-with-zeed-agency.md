@@ -20,13 +20,13 @@ This partnership represents a powerful combination: Codebrand's cutting-edge web
 
 ## Who is Zeed Agency?
 
-**[Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true)** is a performance-driven digital marketing agency specializing in **service exportation**—delivering world-class marketing solutions remotely to clients across Latin America, the United States, and beyond. Their model is built for the modern digital economy: you provide the raw content, and they transform it into high-converting campaigns, stunning designs, and strategic assets that drive real business results.
+**[Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true)** is a performance-driven digital marketing agency specializing in **service exportation**, delivering world-class marketing solutions remotely to clients across Latin America, the United States, and beyond. Their model is built for the modern digital economy: you provide the raw content, and they transform it into high-converting campaigns, stunning designs, and strategic assets that drive real business results.
 
 ### Core Services
 
-**Digital 360° Performance**: Data-driven growth across Meta (Facebook & Instagram), Google Ads, and multi-channel campaigns. They leverage advanced tracking, conversion APIs, CRM integration, and continuous optimization to deliver measurable outcomes—lower acquisition costs and consistent revenue generation.
+**Digital 360° Performance**: Data-driven growth across Meta (Facebook & Instagram), Google Ads, and multi-channel campaigns. They leverage advanced tracking, conversion APIs, CRM integration, and continuous optimization to deliver measurable outcomes, lower acquisition costs and consistent revenue generation.
 
-**Creative Strategy & Digital Content**: High-impact creative that drives performance, not just aesthetics. From conceptual development to storytelling and content architecture, they craft digital-first ideas that capture attention and convert. Their work includes video editing, motion graphics, social media assets, and AI-enhanced visuals—all designed to strengthen your brand across every platform.
+**Creative Strategy & Digital Content**: High-impact creative that drives performance, not just aesthetics. From conceptual development to storytelling and content architecture, they craft digital-first ideas that capture attention and convert. Their work includes video editing, motion graphics, social media assets, and AI-enhanced visuals, all designed to strengthen your brand across every platform.
 
 **High-Ticket Lead Generation Systems**: Proven systems to attract, qualify, and convert premium clients. They design end-to-end acquisition funnels using landing pages, automation flows, WhatsApp bots, CRM integrations, and advanced audience modeling. Ideal for real estate, corporate services, medical practices, and high-value industries that require precision and consistency in their sales pipeline.
 
@@ -34,19 +34,19 @@ This partnership represents a powerful combination: Codebrand's cutting-edge web
 
 [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) operates on a **content-in, results-out** model:
 
-1. **You provide the raw material**: Videos, photos, testimonials, product shots—any content that requires on-site recording
+1. **You provide the raw material**: Videos, photos, testimonials, product shots, any content that requires on-site recording
 2. **They handle everything else remotely**: Video editing, graphic design, campaign strategy, ad creative, copywriting, funnel building, automation setup, and ongoing optimization
 3. **You get professional, conversion-focused assets**: Ready to deploy across all digital channels
 
-This model allows them to serve clients anywhere in the world while maintaining the quality and strategic depth of a full-service agency. Whether you're in Honduras, Mexico, the US, or Spain—if it can be done remotely, Zeed delivers.
+This model allows them to serve clients anywhere in the world while maintaining the quality and strategic depth of a full-service agency. Whether you're in Honduras, Mexico, the US, or Spain, if it can be done remotely, Zeed delivers.
 
 ### What Makes Zeed Agency Stand Out
 
-**Performance-First Mindset**: Every creative decision is rooted in data and conversion strategy. They don't just make things look good—they make things that sell.
+**Performance-First Mindset**: Every creative decision is rooted in data and conversion strategy. They don't just make things look good, they make things that sell.
 
 **Specialized in High-Ticket Markets**: Their expertise lies in industries where each lead matters: real estate, medical services, legal firms, corporate consulting, and premium B2B services.
 
-**Full Remote Capability**: Everything that can be executed digitally—design, editing, campaigns, automation, strategy—they handle with precision. You focus on your business; they focus on your growth.
+**Full Remote Capability**: Everything that can be executed digitally, design, editing, campaigns, automation, strategy, they handle with precision. You focus on your business; they focus on your growth.
 
 **Agile & Results-Oriented**: Fast turnaround times, clear communication, and a relentless focus on ROI. They treat your marketing budget like their own money.
 
@@ -54,31 +54,31 @@ This model allows them to serve clients anywhere in the world while maintaining 
 
 ## What This Alliance Means for You
 
-This strategic partnership isn't just about two companies working together—it's about creating a **unified, seamless experience** for clients who need both exceptional web development and world-class graphic design.
+This strategic partnership isn't just about two companies working together, it's about creating a **unified, seamless experience** for clients who need both exceptional web development and world-class graphic design.
 
 ### The Power of Integration
 
-**End-to-End Solutions**: Whether you need a complete rebrand with a new website, a digital marketing campaign with cohesive visual assets, or an e-commerce platform with stunning product photography and graphics—we've got you covered. No need to juggle multiple agencies or worry about inconsistent messaging.
+**End-to-End Solutions**: Whether you need a complete rebrand with a new website, a digital marketing campaign with cohesive visual assets, or an e-commerce platform with stunning product photography and graphics, we've got you covered. No need to juggle multiple agencies or worry about inconsistent messaging.
 
 **Consistent Brand Experience**: When your web development team and your design team are working hand-in-hand from day one, you get a consistent, cohesive brand experience across all touchpoints. Your website, marketing materials, social media assets, and print collateral will all tell the same compelling story.
 
-**Strategic Alignment**: Both Codebrand and Zeed Agency approach projects with a strategic mindset. We're not just executing tasks—we're partnering with you to understand your business objectives and creating solutions that drive real results.
+**Strategic Alignment**: Both Codebrand and Zeed Agency approach projects with a strategic mindset. We're not just executing tasks, we're partnering with you to understand your business objectives and creating solutions that drive real results.
 
 **Faster Turnaround Times**: With streamlined communication between our teams, we can move faster and more efficiently than if you were coordinating separate vendors. Less back-and-forth, fewer delays, and quicker time to market.
 
 **Cost-Effective Solutions**: Bundling web development and design services through our alliance can often be more cost-effective than hiring separate agencies. Plus, you benefit from the combined expertise without the premium price tag of large multinational agencies.
 
-**Access to Elite Talent**: You're not just getting one team—you're getting access to two pools of highly skilled professionals. Our developers, designers, consultants, and strategists all collaborate to bring your vision to life.
+**Access to Elite Talent**: You're not just getting one team, you're getting access to two pools of highly skilled professionals. Our developers, designers, consultants, and strategists all collaborate to bring your vision to life.
 
 ---
 
 ## Services We Offer Together
 
-Through this strategic alliance, we provide a complete ecosystem of digital services—combining Codebrand's technical expertise with Zeed's performance marketing mastery:
+Through this strategic alliance, we provide a complete ecosystem of digital services, combining Codebrand's technical expertise with Zeed's performance marketing mastery:
 
 ### Web Development + Performance Marketing
 
-Launch a high-converting website built by Codebrand, then drive qualified traffic with [Zeed Agency's](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) Meta and Google Ads campaigns. From landing pages to full e-commerce platforms—we build, they fill with leads.
+Launch a high-converting website built by Codebrand, then drive qualified traffic with [Zeed Agency's](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) Meta and Google Ads campaigns. From landing pages to full e-commerce platforms, we build, they fill with leads.
 
 ### Content Transformation + Campaign Execution
 
@@ -100,7 +100,7 @@ Beyond one-time projects, we offer continuous optimization: website maintenance,
 
 ## Why This Alliance Works
 
-**Shared Values**: Both Codebrand and [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) are committed to excellence, client satisfaction, and delivering measurable results. We don't just want to complete projects—we want to build long-term partnerships with our clients.
+**Shared Values**: Both Codebrand and [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) are committed to excellence, client satisfaction, and delivering measurable results. We don't just want to complete projects, we want to build long-term partnerships with our clients.
 
 **Complementary Expertise**: We each bring unique strengths to the table. Codebrand excels in web development, digital marketing, and technical solutions. [Zeed Agency](https://app.funnelup.io/v2/preview/d1XcvAs6jcOiEc3G7eUS?notrack=true) is a powerhouse in graphic design, branding, and creative strategy. Together, we cover all the bases.
 
@@ -116,7 +116,7 @@ Imagine you're a real estate developer launching a new project. In the old model
 
 **With the Codebrand-Zeed Agency alliance**, you have one unified team. Here's how it works:
 
-1. **You record**: Property walkthroughs, drone footage, client testimonials—raw content from your phone or camera
+1. **You record**: Property walkthroughs, drone footage, client testimonials, raw content from your phone or camera
 2. **Zeed transforms**: Professional video editing, motion graphics, ad creatives, social reels, and WhatsApp sequences
 3. **Codebrand builds**: High-converting landing pages, lead capture forms, CRM integrations, and tracking systems
 4. **Zeed launches**: Meta Ads campaigns, audience targeting, retargeting funnels, and continuous optimization
@@ -171,13 +171,13 @@ That's exactly what the Codebrand and [Zeed Agency](https://app.funnelup.io/v2/p
 
 By combining **15 years of proven design expertise** with **cutting-edge web development capabilities**, we're uniquely positioned to help businesses in Honduras and throughout Central America compete on the global stage.
 
-Whether you're a startup looking to establish your brand identity, a growing business ready to take your digital presence to the next level, or an established corporation seeking to refresh your image and expand your online reach—we have the experience, talent, and collaborative approach to make it happen.
+Whether you're a startup looking to establish your brand identity, a growing business ready to take your digital presence to the next level, or an established corporation seeking to refresh your image and expand your online reach, we have the experience, talent, and collaborative approach to make it happen.
 
 ---
 
 ## Let's Build Something Amazing Together
 
-This alliance represents more than just two companies working together—it's a commitment to excellence, a dedication to our clients, and a vision for the future of digital business in Central America.
+This alliance represents more than just two companies working together, it's a commitment to excellence, a dedication to our clients, and a vision for the future of digital business in Central America.
 
 We invite you to experience the difference that comes from working with industry leaders who truly understand your market, respect your budget, and are invested in your success.
 
@@ -195,4 +195,4 @@ Together, we're stronger. Together, we deliver results. Together, we'll help you
 
 ---
 
-*This strategic alliance brings together the best of both worlds: Codebrand's innovative web solutions and Zeed Agency's design mastery. If you're looking for a partner who can handle all aspects of your digital and design needs with professionalism, creativity, and strategic insight—look no further.*
+*This strategic alliance brings together the best of both worlds: Codebrand's innovative web solutions and Zeed Agency's design mastery. If you're looking for a partner who can handle all aspects of your digital and design needs with professionalism, creativity, and strategic insight, look no further.*

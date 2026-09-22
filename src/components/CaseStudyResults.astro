@@ -1,6 +1,6 @@
 ---
 /**
- * CaseStudyResults — the hard-numbers block that closes a case study.
+ * CaseStudyResults, the hard-numbers block that closes a case study.
  *
  * Reads the `results` object from the projects collection (metric1/2/3) and
  * renders each entry as a large figure + caption. A metric string that starts
@@ -42,7 +42,7 @@ const raw = [results?.metric1, results?.metric2, results?.metric3]
 
 // Leading figure: optional sign, digits with , or . separators, optional %,
 // optionally a range ("0 → 50", "10 a 20"), optional trailing +.
-const FIGURE = /^([+~≈<>]?\d[\d.,]*\s*%?(?:\s*(?:→|->|–|—|to|a)\s*[+~]?\d[\d.,]*\s*%?)?\+?)\s*(.*)$/;
+const FIGURE = /^([+~≈<>]?\d[\d.,]*\s*%?(?:\s*(?:→|->|, |, |to|a)\s*[+~]?\d[\d.,]*\s*%?)?\+?)\s*(.*)$/;
 
 const metrics = raw.map((text) => {
   const match = text.match(FIGURE);

@@ -1,6 +1,6 @@
 ---
-title: "Desarrollo Web en Valle del Cauca | Codebrand Colombia"
-description: "Servicios profesionales de desarrollo web en Valle del Cauca. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Cali y todo el departamento."
+title: "Agencia de Desarrollo Web en Valle del Cauca, Colombia"
+description: "Desarrollo web, tiendas en línea con PSE y software a la medida para empresas de Cali, Palmira, Yumbo y Buenaventura. Propuesta a precio fijo."
 name: "Valle del Cauca"
 code: "VAC"
 country: "colombia"
@@ -11,67 +11,65 @@ capital: "Cali"
 timezone: "COT"
 keywords:
   - "desarrollo web Valle del Cauca"
-  - "desarrolladores web Cali"
-  - "diseño web Valle del Cauca"
-  - "sitios web personalizados Cali"
+  - "desarrollo web Cali"
+  - "diseño web Cali"
   - "agencia web Cali"
-  - "páginas web salsa Cali"
-  - "desarrollo ecommerce Cali"
-  - "aplicaciones web startups"
-  - "desarrollo software Valle del Cauca"
-  - "transformación digital Cali"
+  - "páginas web Palmira"
+  - "diseño de páginas web Buenaventura"
+  - "tienda en línea Cali"
+  - "desarrollo de software Yumbo"
+  - "diseño web Tuluá"
+  - "agencia de desarrollo web Colombia"
 featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Valle del Cauca—hogar de <strong>Cali</strong>, la capital de la salsa y la tercera economía de Colombia. Desde <strong>agroindustria y azúcar</strong> hasta <strong>tecnología y startups</strong>, desde <strong>turismo</strong> hasta <strong>comercio</strong>, el Valle combina tradición industrial con espíritu emprendedor caleño.</p>
+  <p>El <strong>Valle del Cauca</strong> es uno de los departamentos más industrializados de Colombia y su capital, <strong>Cali</strong>, es la tercera ciudad del país y el principal centro urbano del suroccidente. La economía regional combina la agroindustria de la caña de azúcar en el valle geográfico del río Cauca, la manufactura concentrada en el corredor industrial de <strong>Yumbo</strong> y Acopi, el comercio exterior que entra y sale por <strong>Buenaventura</strong>, principal puerto colombiano sobre el Pacífico, y un sector de servicios en salud, educación y tecnología que crece alrededor de Cali. <strong>Palmira</strong>, sede del aeropuerto Alfonso Bonilla Aragón, <strong>Tuluá</strong>, <strong>Buga</strong>, <strong>Cartago</strong> y <strong>Jamundí</strong> completan un mercado regional con miles de empresas.</p>
 
-  <p>En Codebrand, ofrecemos <strong>desarrollo web nearshore desde Honduras</strong>—mismo huso horario que Colombia (Honduras CST = Colombia COT) y precios competitivos. Entendemos la energía y emprendimiento de Cali.</p>
+  <p>Las empresas vallecaucanas compiten hoy en Google antes que en la calle. Un ingenio, una clínica de alta complejidad en el sur de Cali, una constructora de Jamundí o un comercio de Chipichape, Granada o San Fernando necesitan un sitio web rápido, una ficha de Google Business Profile optimizada y formularios que lleguen directo a WhatsApp. Las tiendas en línea deben aceptar <strong>PSE, Nequi, Daviplata y tarjetas</strong> a través de pasarelas como Wompi, PayU o Mercado Pago, y los sistemas administrativos deben conectarse con la <strong>facturación electrónica de la DIAN</strong>. Nada de esto se resuelve con una plantilla genérica.</p>
 
-  <p>Para empresas caleñas que buscan <strong>desarrollo web de calidad a precios optimizados</strong>, nuestro modelo nearshore es una alternativa atractiva. Misma zona horaria, comunicación fluida en español y resultados profesionales.</p>
+  <p>Codebrand es una agencia de desarrollo web y software con sede en San Pedro Sula, Honduras, que colabora de forma remota con clientes en Colombia. Todo el equipo habla español y el horario es casi idéntico: Honduras está apenas una hora por detrás de Colombia, de modo que las videollamadas, los mensajes por WhatsApp y las demos semanales ocurren dentro de su misma jornada laboral. No publicamos precios: cada proyecto se presenta como una <strong>propuesta a precio fijo construida a partir de su presupuesto</strong>, con alcance definido y entrega del <strong>código fuente como propiedad de su empresa</strong>.</p>
 
-  <p>Ya sea que su empresa esté en <strong>el sur de Cali</strong>, <strong>el oeste</strong>, <strong>Palmira</strong> o cualquier parte del Valle, podemos ayudarle a digitalizar su negocio efectivamente.</p>
+  <p>Los proyectos que mejor encajan con el Valle del Cauca son sitios corporativos para la agroindustria y los exportadores, comercio electrónico para marcas de moda, cosmética y alimentos de Cali, portales con agendamiento para clínicas y centros de estética que reciben pacientes de otras regiones, plataformas de reservas para hoteles y escuelas de salsa que atienden a los visitantes de la Feria de Cali y el Festival Petronio Álvarez, y aplicaciones web a la medida para operadores logísticos de Buenaventura y Yumbo. Si su empresa está en cualquier municipio del departamento, podemos convertir su presencia digital en una fuente constante de clientes.</p>
 
 industries:
-  - name: "Tecnología y Startups"
-    description: "Desarrollo web para el ecosistema tech emergente de Cali."
-  - name: "Agroindustria"
-    description: "Sitios web corporativos para ingenios azucareros y agroindustria."
-  - name: "Comercio y Retail"
-    description: "Tiendas en línea para comercios del Valle."
-  - name: "Turismo y Salsa"
-    description: "Sitios web para turismo cultural y escuelas de salsa."
-  - name: "Salud"
-    description: "Sitios web para clínicas, hospitales y servicios de salud."
-  - name: "Servicios"
-    description: "Sitios web para profesionales y empresas de servicios."
+  - name: "Agroindustria de la caña"
+    description: "Sitios corporativos bilingües y portales de proveedores para ingenios, cultivadores y exportadores del valle geográfico del río Cauca."
+  - name: "Manufactura del corredor de Yumbo"
+    description: "Catálogos B2B y aplicaciones internas para plantas de alimentos, papel, farmacéutica y cosmética instaladas en Yumbo y Acopi."
+  - name: "Logística y comercio exterior"
+    description: "Plataformas de seguimiento y sitios web para agencias de aduana, transportadores y operadores ligados al puerto de Buenaventura."
+  - name: "Salud y estética"
+    description: "Sitios con agendamiento en línea para clínicas, consultorios y centros de estética de Cali que reciben pacientes de otras regiones."
+  - name: "Comercio y moda"
+    description: "Tiendas en línea con PSE, Nequi y tarjetas para marcas de ropa, calzado y belleza de Cali, Palmira y Tuluá."
+  - name: "Turismo y cultura"
+    description: "Sitios con reservas para hoteles, escuelas de salsa y operadores turísticos que trabajan alrededor de la Feria de Cali y el Petronio."
 
 marketHighlights:
-  - "Cali es la tercera ciudad más grande de Colombia"
-  - "Capital mundial de la salsa"
-  - "Centro agroindustrial con ingenios azucareros"
-  - "Ecosistema de startups en crecimiento"
-  - "Sede de la Feria de Cali"
-  - "Puerto de Buenaventura cercano"
+  - "Cali es la tercera ciudad de Colombia y el centro económico del suroccidente del país"
+  - "Buenaventura es el principal puerto colombiano sobre el océano Pacífico"
+  - "Yumbo concentra uno de los corredores industriales más importantes de Colombia"
+  - "La agroindustria de la caña de azúcar define la economía del valle geográfico del río Cauca"
+  - "Universidades como la Universidad del Valle, Icesi y la Javeriana Cali forman talento en tecnología"
+  - "La Feria de Cali y el Festival Petronio Álvarez atraen visitantes nacionales e internacionales cada año"
 
 regionalStats:
   gdp: "10%+ del PIB de Colombia"
-  techCompanies: "2,000+"
-  businessGrowth: "+5% anual"
 
 faqs:
-  - question: "¿Por qué elegir nearshore para Cali?"
-    answer: "Mismo huso horario, comunicación en español, costos competitivos. Ofrecemos desarrollo profesional a precios optimizados."
-  - question: "¿Trabajan con startups?"
-    answer: "Sí. Cali tiene un ecosistema emprendedor creciente y nuestro modelo de costos es ideal para founders."
-  - question: "¿Cómo es la comunicación?"
-    answer: "Mismo huso horario (Honduras CST = Colombia COT), español nativo. Slack, videollamadas—colaboración fluida."
-  - question: "¿Pueden desarrollar e-commerce?"
-    answer: "Sí. Desarrollamos tiendas en línea optimizadas para el mercado colombiano."
-  - question: "¿Trabajan con turismo de salsa?"
-    answer: "Sí. Creamos sitios web bilingües para escuelas de salsa, tours culturales y experiencias que atraen visitantes."
-  - question: "¿Tienen experiencia con agroindustria?"
-    answer: "Sí. Desarrollamos sitios web corporativos para empresas agroindustriales y exportadores."
+  - question: "¿Cuánto cuesta desarrollar un sitio web en Cali o en el Valle del Cauca?"
+    answer: "Codebrand no publica tarifas porque cada proyecto es distinto. En una primera videollamada conocemos su negocio y el presupuesto con el que cuenta, y a partir de ahí preparamos una propuesta a precio fijo con alcance, plazos y entregables definidos. Así una empresa de Cali, Palmira o Tuluá sabe desde el inicio cuánto invertirá y qué recibirá, sin sorpresas durante el desarrollo."
+  - question: "¿Cómo trabajan con empresas del Valle del Cauca si están en Honduras?"
+    answer: "Trabajamos de forma remota desde San Pedro Sula con un equipo que habla español. Honduras está solo una hora por detrás de Colombia, así que las reuniones por videollamada, los mensajes por WhatsApp y las demos semanales se realizan dentro de su horario laboral habitual. Usted revisa los avances cada semana y aprueba cada etapa antes de continuar."
+  - question: "¿Pueden integrar PSE, Nequi y la facturación electrónica de la DIAN en mi tienda en línea?"
+    answer: "Sí. Integramos pasarelas colombianas como Wompi, PayU o Mercado Pago para aceptar PSE, Nequi, Daviplata y tarjetas de crédito y débito. Para la facturación electrónica conectamos su tienda o sistema administrativo con un proveedor tecnológico autorizado por la DIAN, de modo que cada venta genere su documento electrónico sin trabajo manual."
+  - question: "¿Desarrollan sitios web para ingenios y empresas agroindustriales?"
+    answer: "Sí. Para la agroindustria del Valle creamos sitios corporativos en español e inglés orientados a compradores internacionales, portales de proveedores y aplicaciones internas para el seguimiento de cosecha, transporte y despachos. Atendemos empresas de Palmira, Candelaria, Florida, Buga y Tuluá que necesitan una presencia digital a la altura de su operación."
+  - question: "¿Qué necesita mi negocio para aparecer primero en búsquedas como 'diseño web Cali'?"
+    answer: "Necesita un sitio técnicamente sólido, rápido en dispositivos móviles, con páginas dedicadas a cada servicio y a cada ciudad que atiende, una ficha de Google Business Profile completa y contenido que responda las preguntas reales de sus clientes. Construimos cada proyecto con esa base de SEO desde el primer día, en lugar de agregarla al final."
+  - question: "¿El código del sitio queda como propiedad de mi empresa?"
+    answer: "Sí. Al finalizar el proyecto entregamos el código fuente completo, los accesos al hosting y al dominio y la documentación necesaria para que su equipo o cualquier otro proveedor pueda continuar el trabajo. No dependemos de plataformas cerradas ni cobramos licencias por el uso de lo que desarrollamos para usted."
 
 majorCities:
   - "Cali"

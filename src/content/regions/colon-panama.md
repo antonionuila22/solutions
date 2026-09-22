@@ -1,77 +1,75 @@
 ---
-title: "Desarrollo Web en Colón | Codebrand Panamá"
-description: "Servicios profesionales de desarrollo web en Colón. Sitios web personalizados, e-commerce y aplicaciones web para empresas en la Zona Libre y toda la provincia."
+title: "Desarrollo Web en Colón, Panamá: Zona Libre y puertos"
+description: "Sitios web, catálogos B2B y sistemas a la medida para empresas de Colón, Panamá: Zona Libre, operadores logísticos, puertos y comercios de la provincia."
 name: "Colón"
 code: "CL"
 country: "panama"
 img: "/photos/webservice.webp"
-imageAlt: "Servicios de desarrollo web en Colón Panamá"
+imageAlt: "Servicios de desarrollo web en la provincia de Colón, Panamá"
 population: "300K+"
 capital: "Colón"
 timezone: "EST"
 keywords:
-  - "desarrollo web Colón"
-  - "desarrolladores web Zona Libre"
+  - "desarrollo web Colón Panamá"
   - "diseño web Colón"
-  - "sitios web personalizados Colón Panamá"
-  - "agencia web Zona Libre de Colón"
-  - "páginas web logística y puertos"
-  - "desarrollo ecommerce Colón Panamá"
-  - "sitios web importadores y exportadores"
-  - "diseño web transbordo de contenedores"
-  - "marketing digital Atlántico Panamá"
+  - "agencia web Colón Panamá"
+  - "páginas web Zona Libre de Colón"
+  - "catálogo en línea Zona Libre"
+  - "sitios web logística Colón"
+  - "tienda en línea Colón Panamá"
+  - "desarrollo web Sabanitas"
+  - "diseño web Portobelo"
+  - "aplicaciones web Colón"
 featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Colón, capital de la provincia homónima en la costa atlántica de Panamá, es uno de los nodos logísticos más importantes del continente. Aquí opera la <strong>Zona Libre de Colón</strong>, la zona franca más grande del hemisferio occidental, junto a los puertos del Atlántico del <strong>Canal de Panamá</strong> (Manzanillo, Cristóbal y Colón Container Terminal), que mueven millones de contenedores en transbordo cada año.</p>
+  <p>La provincia de <strong>Colón</strong>, en la entrada atlántica del Canal de Panamá, vive del comercio internacional y la logística. En la ciudad de Colón opera la <strong>Zona Libre de Colón</strong>, una de las zonas francas más grandes del mundo, con un gran número de empresas dedicadas a importar y reexportar mercancía hacia América Latina y el Caribe. A su alrededor trabajan los puertos de <strong>Manzanillo</strong>, <strong>Cristóbal</strong> y Colón Container Terminal, la terminal de cruceros de Colón 2000, el ferrocarril y la autopista que conectan con la Ciudad de Panamá, y las esclusas de Gatún y Agua Clara. Sabanitas, Cativá y Puerto Pilón concentran vivienda y comercio, mientras que Portobelo, Isla Grande y la Costa Arriba viven del turismo histórico y de playa.</p>
 
-  <p>En Codebrand ofrecemos <strong>desarrollo web profesional a precios accesibles</strong> desde Honduras, país vecino con la misma zona horaria que Panamá. Somos un equipo bilingüe que entiende el comercio internacional, la logística y el ritmo de los negocios de importación y reexportación que definen a Colón.</p>
+  <p>Las empresas colonenses venden a clientes que casi nunca las visitan en persona. Un mayorista de la Zona Libre necesita un catálogo en línea en español e inglés, con acceso para clientes registrados, fichas por producto y solicitud de cotización, porque el comprador de Colombia, Ecuador o el Caribe compara desde su oficina. Un operador logístico, una agencia naviera o un corredor de aduanas necesita un sitio corporativo que explique rutas, servicios y capacidades con claridad. Y los comercios, restaurantes y servicios de la ciudad necesitan cobrar con <strong>Yappy</strong> o tarjeta y emitir factura electrónica conforme a la <strong>DGI</strong>.</p>
 
-  <p>Para las empresas de la Zona Libre creamos <strong>catálogos digitales, tiendas en línea y sitios corporativos bilingües</strong> que conectan con compradores de toda América Latina y el Caribe. Para operadores logísticos y navieros desarrollamos plataformas claras que comunican capacidades, rutas y servicios.</p>
+  <p>Codebrand trabaja con empresas de Colón de forma remota desde Honduras, un país vecino que está una hora por detrás del horario de Panamá. Nuestro equipo tiene el español como lengua materna y entiende el ritmo del comercio de reexportación. La coordinación diaria va por WhatsApp y videollamada, con una demo al final de cada semana que puede revisar desde su oficina en la Zona Libre o en Sabanitas, y al terminar, el código completo, el dominio y los datos quedan registrados a nombre de su empresa. No publicamos precios: cada proyecto se plantea como una propuesta de precio fijo elaborada a partir del presupuesto que usted nos indica, con un alcance escrito antes de empezar.</p>
 
-  <p>Ya sea que su negocio esté en la <strong>Zona Libre</strong>, en los <strong>puertos de Manzanillo y Cristóbal</strong> o en cualquier parte de la provincia, le ayudamos a construir una presencia digital sólida con desarrollo a la medida y colaboración fluida en su mismo horario.</p>
+  <p>Los proyectos que mejor encajan en la provincia son catálogos B2B y portales de clientes para empresas de la Zona Libre, sitios corporativos bilingües para operadores logísticos, navieras y agencias de aduana, sistemas internos de inventario, pedidos y facturación para distribuidores, tiendas en línea para comercios de Colón y Sabanitas, y sitios con reservas para hospedajes y tours de Portobelo e Isla Grande. Si su empresa está en cualquier distrito de Colón, podemos ayudarle a posicionarse en las búsquedas locales e internacionales y a convertir visitas en pedidos.</p>
 
 industries:
-  - name: "Zona Libre y Reexportación"
-    description: "Catálogos y tiendas en línea bilingües para importadores y mayoristas de la Zona Libre de Colón."
-  - name: "Logística y Transporte"
-    description: "Sitios web corporativos para operadores logísticos, agencias aduanales y transportistas."
-  - name: "Puertos y Navieras"
-    description: "Plataformas que comunican servicios de transbordo, rutas y capacidad de los puertos del Atlántico."
-  - name: "Comercio Mayorista"
-    description: "Tiendas en línea y catálogos digitales para distribuidores que abastecen a la región."
-  - name: "Turismo de Cruceros"
-    description: "Sitios web bilingües para tours, comercios y servicios que reciben cruceros en Colón 2000."
-  - name: "Servicios Empresariales"
-    description: "Sitios web profesionales para firmas legales, contables y de comercio internacional."
+  - name: "Zona Libre y reexportación"
+    description: "Catálogos B2B bilingües con acceso para clientes y solicitud de cotización para importadores y mayoristas de la Zona Libre de Colón."
+  - name: "Logística, aduanas y transporte"
+    description: "Sitios corporativos y portales de seguimiento para operadores logísticos, corredores de aduana, transportistas y almacenes."
+  - name: "Puertos y navieras"
+    description: "Presencia digital clara sobre rutas, servicios y capacidades para agencias navieras y proveedores de los puertos de Manzanillo, Cristóbal y Colón Container Terminal."
+  - name: "Comercio y servicios locales"
+    description: "Tiendas en línea con Yappy y sitios para comercios, clínicas, ferreterías y profesionales de Colón, Sabanitas y Cativá."
+  - name: "Turismo histórico y de playa"
+    description: "Sitios bilingües con reservas para hospedajes, tours y restaurantes de Portobelo, Isla Grande, el Fuerte San Lorenzo y Colón 2000."
+  - name: "Energía e industria"
+    description: "Sitios corporativos y portales de proveedores para empresas energéticas e industriales instaladas en la costa atlántica."
 
 marketHighlights:
-  - "Sede de la Zona Libre de Colón, la mayor zona franca del hemisferio occidental"
-  - "Puertos del Atlántico del Canal: Manzanillo, Cristóbal y Colón Container Terminal"
-  - "Principal centro de transbordo de contenedores de la región"
-  - "Entrada atlántica del Canal de Panamá"
-  - "Colón 2000 es terminal de cruceros y zona comercial"
-  - "Conexión ferroviaria y vial directa con la Ciudad de Panamá"
+  - "La Zona Libre de Colón es una de las zonas francas más grandes del mundo y el principal centro de reexportación de la región."
+  - "Manzanillo, Cristóbal y Colón Container Terminal forman el complejo portuario del Atlántico del Canal de Panamá."
+  - "Las esclusas de Gatún y Agua Clara, dentro de la provincia, marcan la entrada atlántica del Canal ampliado."
+  - "El ferrocarril transístmico y la autopista Panamá Colón conectan la provincia con la capital en un trayecto corto."
+  - "Colón 2000 recibe cruceros y concentra comercio y servicios turísticos en la ciudad."
+  - "Portobelo y el Fuerte San Lorenzo forman parte del Patrimonio de la Humanidad y sostienen el turismo histórico de la Costa Arriba."
 
 regionalStats:
   gdp: "Hub logístico y de reexportación del Atlántico"
-  techCompanies: "Ecosistema en crecimiento"
-  businessGrowth: "+4% anual"
 
 faqs:
-  - question: "¿Desarrollan sitios web para empresas de la Zona Libre de Colón?"
-    answer: "Sí. Creamos catálogos digitales y tiendas en línea bilingües que ayudan a importadores y mayoristas de la Zona Libre a conectar con compradores en toda América Latina y el Caribe."
-  - question: "¿Por qué elegir Codebrand para mi negocio en Colón?"
-    answer: "Somos un equipo bilingüe basado en Honduras con la misma zona horaria que Panamá. Ofrecemos desarrollo web a la medida y a precios accesibles, con comunicación fluida en su mismo horario y calificación 5.0 con 50 opiniones en Google."
-  - question: "¿Cuánto cuesta un sitio web?"
-    answer: "Cada proyecto es distinto. Preparamos una cotización personalizada según el alcance, ya sea un sitio corporativo, una tienda en línea o una plataforma logística."
-  - question: "¿Trabajan con operadores logísticos y portuarios?"
-    answer: "Sí. Desarrollamos sitios corporativos para operadores logísticos, agencias aduanales y navieras que necesitan comunicar rutas, servicios de transbordo y capacidad de forma clara."
-  - question: "¿Ofrecen mantenimiento después de lanzar el sitio?"
-    answer: "Sí. Ofrecemos planes de mantenimiento, actualizaciones de contenido y soporte continuo para mantener su sitio rápido y seguro."
-  - question: "¿Optimizan los sitios para aparecer en Google?"
-    answer: "Sí. Aplicamos buenas prácticas de SEO técnico y de contenido para que su empresa de comercio o logística sea más visible en búsquedas locales e internacionales."
+  - question: "¿Pueden crear un catálogo en línea para mi empresa de la Zona Libre de Colón?"
+    answer: "Sí. Desarrollamos catálogos B2B en español e inglés con fichas por producto, disponibilidad, acceso para clientes registrados y solicitud de cotización, de modo que sus compradores en Colombia, Ecuador, Centroamérica o el Caribe consulten su oferta desde su oficina. Si lo necesita, conectamos el catálogo con su sistema de inventario para que la información se mantenga actualizada sin trabajo manual."
+  - question: "¿Integran Yappy y otros medios de pago panameños?"
+    answer: "Sí. Para comercios de Colón integramos el botón de pago de Yappy, pasarelas de tarjeta que operan en Panamá como PagueloFacil o las de los bancos locales, y transferencias ACH con confirmación cuando se trata de ventas mayoristas. Configuramos el flujo de pago, las notificaciones y los reportes, y lo probamos en ambiente de pruebas antes de que su tienda empiece a cobrar."
+  - question: "¿El sistema puede emitir facturas electrónicas conforme a la DGI?"
+    answer: "Sí. Conectamos su tienda, catálogo o sistema interno con un proveedor autorizado de facturación electrónica de Panamá para que cada venta genere el comprobante que exige la Dirección General de Ingresos. Integramos con la herramienta que usted ya usa o le ayudamos a elegir una, y dejamos el proceso documentado para que su contador lo revise con tranquilidad."
+  - question: "¿Cómo trabajan con una empresa de Colón si están en Honduras?"
+    answer: "Toda la colaboración se hace a distancia: reuniones por videollamada, un grupo de WhatsApp para el seguimiento diario y avances por correo, sin que usted tenga que salir de la Zona Libre o de Sabanitas. Honduras está una hora por detrás de Panamá, así que las jornadas coinciden casi por completo. Cada semana presentamos una demo con lo que se construyó y ajustamos según sus comentarios. Al cerrar el proyecto, usted recibe el código fuente, la documentación y todos los accesos."
+  - question: "¿Cuánto cuesta un sitio web o un catálogo para una empresa en Colón?"
+    answer: "No publicamos tarifas. Usted nos comparte el presupuesto disponible y lo que necesita lograr, y nosotros preparamos una propuesta de precio fijo que describe el alcance, las etapas y las fechas de entrega. Así conoce el monto total desde el inicio y no hay cobros por horas ni cambios de precio a mitad del proyecto, algo que valoran especialmente las empresas de comercio internacional."
+  - question: "¿Pueden hacer un sitio para mi empresa logística o mi agencia naviera?"
+    answer: "Sí. Para operadores logísticos, corredores de aduana, transportistas y agencias navieras construimos sitios corporativos bilingües que explican rutas, servicios, certificaciones y capacidades, con formularios de cotización y, si aplica, portales de seguimiento de embarques para sus clientes. El objetivo es que un importador que busca proveedores en Colón encuentre su empresa y le escriba."
 
 majorCities:
   - "Colón"

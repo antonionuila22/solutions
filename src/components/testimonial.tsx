@@ -6,7 +6,7 @@ import { testimonials } from "../data/testimonials";
 const firstRow = testimonials.slice(0, testimonials.length / 2);
 const secondRow = testimonials.slice(testimonials.length / 2);
 
-// On-brand avatar backgrounds — dark enough for AA contrast with white text
+// On-brand avatar backgrounds, dark enough for AA contrast with white text
 // (the off-brand red/yellow/purple/pink palette failed WCAG with white initials).
 const avatarColors = [
   "bg-cyan-700",

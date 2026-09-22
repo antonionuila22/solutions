@@ -125,7 +125,7 @@ Después del lanzamiento seguimos. Medimos, ajustamos con datos reales y te acom
 
 ---
 
-## "Pero me salió barata" — hagamos la cuenta real
+## "Pero me salió barata": hagamos la cuenta real
 
 Entiendo la tentación. El presupuesto es real y $100 suena mucho mejor que una inversión seria. Pero hagamos la matemática completa.
 
@@ -143,12 +143,12 @@ Lo barato salió caro dos veces: en dinero y en tiempo perdido. **La opción car
 
 No necesitas ser experto. Solo haz estas preguntas antes de entregar tu dinero. Si la otra persona duda o se molesta, ya tienes tu respuesta:
 
-- **"¿Cuál es tu proceso antes de empezar a diseñar?"** — Si la respuesta no incluye entender tu negocio, corre.
-- **"¿La página será de mi propiedad? ¿Dominio y todo a mi nombre?"** — Debe ser sí, sin dudar.
-- **"¿Cómo va a aparecer en Google?"** — Si no saben explicarlo, no lo van a hacer.
-- **"¿Se ve y funciona bien en celular?"** — Pide ver ejemplos reales en un teléfono.
-- **"¿Qué pasa si necesito cambios después?"** — Debe haber un plan de soporte claro.
-- **"¿Puedo ver trabajos anteriores y hablar con esos clientes?"** — La confianza se demuestra, no se promete.
+- **"¿Cuál es tu proceso antes de empezar a diseñar?"**, Si la respuesta no incluye entender tu negocio, corre.
+- **"¿La página será de mi propiedad? ¿Dominio y todo a mi nombre?"**, Debe ser sí, sin dudar.
+- **"¿Cómo va a aparecer en Google?"**, Si no saben explicarlo, no lo van a hacer.
+- **"¿Se ve y funciona bien en celular?"**, Pide ver ejemplos reales en un teléfono.
+- **"¿Qué pasa si necesito cambios después?"**, Debe haber un plan de soporte claro.
+- **"¿Puedo ver trabajos anteriores y hablar con esos clientes?"**, La confianza se demuestra, no se promete.
 
 Una página web profesional es una **inversión** que te devuelve clientes. Una web de $100 es un **gasto** que casi siempre toca repetir.
 

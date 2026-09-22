@@ -6,7 +6,7 @@ region: Central America
 author: Ramon Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en El Salvador. Creamos soluciones digitales personalizadas para empresas salvadoreñas que buscan calidad, innovación y resultados reales.
+description: Agencia de diseño y desarrollo web en El Salvador. Sitios, tiendas online y sistemas a la medida para empresas salvadoreñas que buscan resultados.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en El Salvador
@@ -34,17 +34,17 @@ En Codebrand El Salvador, ayudamos a las empresas a construir y potenciar su pre
 
 Nuestro equipo multidisciplinario combina experiencia internacional con profundo conocimiento del mercado salvadoreño. Trabajamos con tecnología de vanguardia y una mentalidad orientada a resultados.
 
-- ✅ Entrega a tiempo
-- ✅ Soporte y comunicación continua en español
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para velocidad y motores de búsqueda
-- ✅ Precios competitivos para el mercado centroamericano
+- Entrega a tiempo
+- Soporte y comunicación continua en español
+- Diseño centrado en el usuario
+- Desarrollo optimizado para velocidad y motores de búsqueda
+- Precios competitivos para el mercado centroamericano
 
 ---
 
 ## Servimos Empresas en Todo El Salvador
 
-Desde la capital San Salvador hasta los principales departamentos del país — trabajamos con empresas de todos los tamaños e industrias:
+Desde la capital San Salvador hasta los principales departamentos del país, trabajamos con empresas de todos los tamaños e industrias:
 
 - Proveedores de servicios profesionales
 - Negocios locales y minoristas

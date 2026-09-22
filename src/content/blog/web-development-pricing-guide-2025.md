@@ -26,7 +26,7 @@ This guide provides transparent pricing data for web development services in 202
 - Direct quotes from agencies across different markets
 - Real project data from US businesses
 
-**Our goal:** Help you budget accurately and avoid overpaying—even if you don't hire us.
+**Our goal:** Help you budget accurately and avoid overpaying, even if you don't hire us.
 
 > **Looking for professional web development?** Check out our [web development services](/web-development/) for transparent pricing and quality results.
 

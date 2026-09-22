@@ -35,7 +35,7 @@ Before we dive into solutions, let's understand why this bias exists in the firs
 
 ### 1. Training Data Dominance
 
-AI models learn from the internet—and the internet is flooded with React tutorials, Stack Overflow answers, and GitHub repositories. React has been the dominant framework for years, which means:
+AI models learn from the internet, and the internet is flooded with React tutorials, Stack Overflow answers, and GitHub repositories. React has been the dominant framework for years, which means:
 
 - More React code examples exist online
 - More React questions have been answered
@@ -45,7 +45,7 @@ When an AI sees a web development problem, it reaches for the most common soluti
 
 ### 2. React Solves Everything (Inefficiently)
 
-React is a general-purpose solution. It *can* build anything—from a simple button to a complex enterprise application. AI tools don't distinguish between:
+React is a general-purpose solution. It *can* build anything, from a simple button to a complex enterprise application. AI tools don't distinguish between:
 
 - A marketing landing page (doesn't need React)
 - A blog (doesn't need React)
@@ -251,7 +251,7 @@ AI often suggests React libraries for page transitions. The browser now handles 
 
 ## The Right Way to Use AI for Web Development
 
-AI coding assistants are still valuable—you just need to guide them properly.
+AI coding assistants are still valuable, you just need to guide them properly.
 
 ### 1. Be Specific About Constraints
 
@@ -373,7 +373,7 @@ One click, server returns updated HTML, no JavaScript state management needed.
 5. **Guide your AI** by being specific about constraints and asking for alternatives
 6. **Choose the right tool** for each project instead of defaulting to React
 
-The best developers in 2025 aren't those who know React the best—they're the ones who know when *not* to use it.
+The best developers in 2025 aren't those who know React the best, they're the ones who know when *not* to use it.
 
 ---
 
@@ -397,4 +397,4 @@ Our approach delivers:
 
 ---
 
-*Have questions about choosing the right technology stack? [Reach out to our team](/contact/)—we're happy to help you make the right decision.*
+*Have questions about choosing the right technology stack? [Reach out to our team](/contact/), we're happy to help you make the right decision.*

@@ -273,7 +273,7 @@ for (const q of QUESTIONS) {
 /** Regla del cliente: nada de rayas ni guiones medios en el texto visible. */
 for (const q of QUESTIONS) {
   const visibleText = [q.title, q.hint ?? ""].join(" ");
-  if (/[—–]/.test(visibleText)) {
+  if (/[, ]/.test(visibleText)) {
     throw new Error(`questions.ts: "${q.id}" usa raya o guion medio en texto visible.`);
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: "Desarrollo Web en Francisco Morazán | Codebrand Honduras"
-description: "Servicios profesionales de desarrollo web en Francisco Morazán. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Tegucigalpa, Valle de Ángeles, Santa Lucía y todo el departamento."
+description: "Desarrollo web en Francisco Morazán: sitios web, tiendas en línea y aplicaciones para empresas de Tegucigalpa, Valle de Ángeles y Santa Lucía."
 name: "Francisco Morazán"
 code: "FM"
 country: "honduras"
@@ -24,11 +24,11 @@ featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Francisco Morazán—el departamento capital de Honduras, sede de Tegucigalpa y el centro político, económico y empresarial del país. Desde <strong>instituciones gubernamentales</strong> hasta <strong>bancos y empresas financieras</strong>, desde <strong>universidades</strong> hasta <strong>empresas de servicios</strong>, Francisco Morazán concentra la mayor actividad económica de Honduras.</p>
+  <p>Francisco Morazán, el departamento capital de Honduras, sede de Tegucigalpa y el centro político, económico y empresarial del país. Desde <strong>instituciones gubernamentales</strong> hasta <strong>bancos y empresas financieras</strong>, desde <strong>universidades</strong> hasta <strong>empresas de servicios</strong>, Francisco Morazán concentra la mayor actividad económica de Honduras.</p>
 
   <p>En Codebrand, somos <strong>hondureños desarrollando para hondureños</strong>. Nuestro equipo está basado aquí en Honduras, lo que significa comunicación directa, entendimiento cultural completo y la capacidad de reunirnos presencialmente cuando sea necesario. Conocemos el mercado local porque somos parte de él.</p>
 
-  <p>Ofrecemos <strong>desarrollo web profesional a precios competitivos</strong>. Desde sitios web corporativos hasta plataformas de e-commerce, desde aplicaciones web hasta sistemas personalizados—tenemos la experiencia técnica para ayudar a empresas de todos los tamaños a establecer una presencia digital efectiva.</p>
+  <p>Ofrecemos <strong>desarrollo web profesional a precios competitivos</strong>. Desde sitios web corporativos hasta plataformas de e-commerce, desde aplicaciones web hasta sistemas personalizados, tenemos la experiencia técnica para ayudar a empresas de todos los tamaños a establecer una presencia digital efectiva.</p>
 
   <p>Ya sea que su empresa esté en <strong>Tegucigalpa</strong>, <strong>Valle de Ángeles</strong>, <strong>Santa Lucía</strong> o cualquier parte de Francisco Morazán, podemos ayudarle a construir sitios web que generen resultados para su negocio.</p>
 
@@ -56,8 +56,6 @@ marketHighlights:
 
 regionalStats:
   gdp: "35%+ del PIB nacional"
-  techCompanies: "500+"
-  businessGrowth: "+4% anual"
 
 faqs:
   - question: "¿Por qué elegir una agencia local en Honduras?"

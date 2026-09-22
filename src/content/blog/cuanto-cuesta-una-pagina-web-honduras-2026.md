@@ -12,7 +12,6 @@ categories: ["Web Design", "Business Strategy"]
 tags: ["precio página web", "Honduras", "desarrollo web", "presupuesto"]
 ---
 
-## ¿Cuánto cuesta una página web en Honduras? Precios reales 2026
 
 Es la primera pregunta que hace todo empresario y es, casi siempre, la peor respondida. Buscás "cuánto cuesta una página web en Honduras" y encontrás desde L 3,000 hasta $25,000 para lo que parece ser exactamente lo mismo. No es que alguien esté mintiendo: es que "página web" describe cosas radicalmente distintas.
 
@@ -30,37 +29,37 @@ Los rangos siguientes reflejan lo que se cotiza en el mercado hondureño y centr
 
 #### Landing page (una sola página, un solo objetivo)
 
-**$600 – $2,000**
+**$600, $2,000**
 
 Una página, un mensaje, un formulario o un botón de WhatsApp. Sirve para una campaña específica, el lanzamiento de un producto o para validar una idea antes de invertir en algo más grande. Si te cobran menos de $500 por una landing "profesional", casi siempre es una plantilla con tu logo encima.
 
 #### Sitio corporativo (5 a 12 páginas)
 
-**$1,800 – $6,000**
+**$1,800, $6,000**
 
 Inicio, servicios, sobre nosotros, casos, blog y contacto. Es el formato más común para empresas hondureñas que quieren verse serias frente a clientes locales y del exterior. En este rango deberías recibir diseño propio (no plantilla comprada), textos revisados, SEO técnico básico y un panel para que vos mismo actualicés contenido.
 
 #### Sitio corporativo avanzado o multiidioma
 
-**$5,000 – $12,000**
+**$5,000, $12,000**
 
 Cuando el sitio tiene 20 o más páginas, versión en inglés y español, blog con estrategia de contenido, integraciones con CRM o formularios que alimentan un proceso de ventas real. Aquí ya no estás comprando una página web: estás comprando un canal de captación. Este es el terreno del [desarrollo web en Honduras](/hn/desarrollo-web-honduras/) para empresas que exportan servicios o venden a corporativos.
 
 #### Tienda en línea
 
-**$3,000 – $15,000+**
+**$3,000, $15,000+**
 
 El rango es amplio porque un e-commerce con 30 productos y pago contra entrega no tiene nada que ver con uno de 3,000 SKUs, inventario sincronizado y pasarela de pago integrada. Los factores que más pesan: cantidad de productos, variantes (talla, color), métodos de pago, cálculo de envíos y si hay que conectarlo a un sistema contable existente. Si vas por este camino, la [tienda en línea en Honduras](/hn/tienda-online-honduras/) merece su propio análisis antes de pedir presupuestos.
 
 #### Sistema o aplicación web a la medida
 
-**$10,000 – $60,000+**
+**$10,000, $60,000+**
 
 Portales de clientes, sistemas de inventario, CRMs internos, plataformas de reservas. Ya no es diseño con contenido: es software. Se cotiza por horas de ingeniería y el precio depende del alcance funcional, no del número de páginas. En este terreno el rango real solo aparece después de un levantamiento de requerimientos formal, y ese levantamiento a veces se cobra aparte.
 
 #### Rediseño de un sitio existente
 
-**$1,200 – $8,000**
+**$1,200, $8,000**
 
 Suele salir más barato que empezar de cero solo si el contenido sirve y la estructura es rescatable. Si el sitio anterior está sobre una plataforma abandonada o con textos que nadie quiere conservar, el "rediseño" es en realidad un sitio nuevo con otro nombre.
 

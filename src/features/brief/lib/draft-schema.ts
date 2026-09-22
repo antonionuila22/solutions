@@ -6,7 +6,7 @@ import type { AnswerableQuestion } from "../types";
  * terminar, 2 de 17 módulos, una fila de repetidor vacía): exigir ahí el Zod
  * definitivo rechazaría cada pulsación y se perdería el avance.
  *
- * Estas reglas no son la validación del formulario — esa es `validateAnswer`,
+ * Estas reglas no son la validación del formulario, esa es `validateAnswer`,
  * y la definitiva se aplica en el ENVÍO. Lo único que hacen es impedir que
  * llegue basura al jsonb: tipo correcto y tamaño acotado. Sin esto, la Action
  * escribiría cualquier cosa que mande un cliente manipulado.

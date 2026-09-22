@@ -1,7 +1,7 @@
 import type { z } from "zod";
 
 /**
- * Brief de descubrimiento — contratos del dominio.
+ * Brief de descubrimiento, contratos del dominio.
  *
  * Regla 1 del proyecto: el formulario es data-driven. Las preguntas viven en
  * config/questions.ts y NINGÚN componente conoce una pregunta específica.
@@ -10,7 +10,7 @@ import type { z } from "zod";
  * Adaptación a este repo (Astro, no Next): las Server Actions del prompt son
  * Astro Actions; el "server-only" de Next se garantiza con el guard de
  * lib/env.ts (lanza si se importa en el cliente). La arquitectura del prompt
- * — Zod único, jsonb, token, showIf — se conserva íntegra.
+ *, Zod único, jsonb, token, showIf, se conserva íntegra.
  */
 
 // Un solo bloque: el formulario de arranque son 10 pantallas directas, sin

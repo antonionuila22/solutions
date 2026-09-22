@@ -229,12 +229,26 @@
 # REDIRECTS (if needed)
 # ===========================================
 
-# Example: Redirect www to non-www
-# [[redirects]]
-#   from = "https://www.codebrand.us/*"
-#   to = "https://codebrand.us/:splat"
-#   status = 301
-#   force = true
+# Canonical host is https://www.codebrand.us. Netlify's automatic primary-domain
+# redirect sends http://codebrand.us through two hops (https://codebrand.us first).
+# These explicit rules collapse every apex request into a single 301 to www.
+[[redirects]]
+  from = "http://codebrand.us/*"
+  to = "https://www.codebrand.us/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://codebrand.us/*"
+  to = "https://www.codebrand.us/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.codebrand.us/*"
+  to = "https://www.codebrand.us/:splat"
+  status = 301
+  force = true
 
 # Conventional /sitemap.xml → serve the Astro-generated sitemap index as a 200
 # rewrite, so crawlers/tools that probe the default filename find it (robots.txt

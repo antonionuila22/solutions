@@ -1,6 +1,6 @@
 ---
-title: "Desarrollo Web en San José | Codebrand Costa Rica"
-description: "Servicios profesionales de desarrollo web en San José. Sitios web personalizados, e-commerce y aplicaciones web para empresas en la capital y todo el Valle Central de Costa Rica."
+title: "Diseño y Desarrollo Web en San José, Costa Rica"
+description: "Desarrollo web en San José, Costa Rica: sitios corporativos, tiendas en línea con SINPE Móvil y aplicaciones a la medida para empresas de toda la GAM."
 name: "San José"
 code: "SJ"
 country: "costa-rica"
@@ -10,69 +10,57 @@ population: "1.4M+"
 capital: "San José"
 timezone: "CST"
 keywords:
-  - "desarrollo web San José"
-  - "desarrolladores web Costa Rica"
+  - "desarrollo web San José Costa Rica"
   - "diseño web San José"
-  - "sitios web personalizados Costa Rica"
   - "agencia web Costa Rica"
-  - "páginas web empresariales San José"
-  - "desarrollo ecommerce Costa Rica"
-  - "aplicaciones web San José"
-  - "desarrollo software Costa Rica"
-  - "transformación digital ticos"
+  - "páginas web Escazú"
+  - "desarrollo web Santa Ana Costa Rica"
+  - "diseño web Curridabat"
+  - "tiendas en línea Costa Rica SINPE"
+  - "sitios web empresas San José"
+  - "aplicaciones web Costa Rica"
+  - "desarrollo software San José"
 featured: true
-
-# Contenido SEO Mejorado
 longDescription: |
-  <p>San José—el <strong>corazón empresarial y tecnológico de Costa Rica</strong>, centro del Valle Central y sede de la economía más diversificada de Centroamérica. Desde <strong>centros de servicios compartidos</strong> hasta <strong>empresas de tecnología</strong>, desde <strong>turismo</strong> hasta <strong>comercio</strong>, San José concentra el ecosistema empresarial más desarrollado de la región.</p>
-
-  <p>En Codebrand, ofrecemos <strong>desarrollo web desde Honduras</strong>—país vecino con mismo huso horario (CST) y precios aún más competitivos que el mercado costarricense. Somos centroamericanos desarrollando para centroamericanos, con entendimiento cultural y comunicación fluida.</p>
-
-  <p>Costa Rica tiene costos altos comparados con otros países de la región. Nuestro modelo nearshore ofrece la <strong>misma calidad de desarrollo</strong> que encontrarían localmente, pero a precios que optimizan su inversión tecnológica.</p>
-
-  <p>Ya sea que su empresa esté en <strong>Escazú</strong>, <strong>Santa Ana</strong>, <strong>San José Centro</strong> o cualquier parte del Valle Central, podemos ayudarle a construir presencia digital de primer nivel a costos centroamericanos competitivos.</p>
-
+  <p>San José es la capital de Costa Rica y el centro de la Gran Área Metropolitana, donde se concentra la mayor parte de las empresas y los servicios del país. El cantón central reúne la administración pública, la banca y el comercio de la Avenida Central y los barrios tradicionales; <strong>Escazú y Santa Ana</strong>, al oeste, se han convertido en el corredor corporativo con oficinas, centros comerciales y parques empresariales en zonas como San Rafael de Escazú y Lindora; Curridabat y Montes de Oca, alrededor de la Universidad de Costa Rica en San Pedro, mezclan vida universitaria, clínicas y comercio; Tibás, Moravia, Goicoechea, Desamparados y Alajuelita son cantones residenciales con un comercio de barrio muy activo.</p>
+  <p>La economía josefina descansa en los servicios: centros de servicios compartidos, empresas de tecnología, banca y seguros, salud privada, educación y comercio, además del turismo que entra y sale por la capital y del café de la zona de Los Santos, en el sur de la provincia. El consumidor costarricense está muy acostumbrado a pagar con <strong>SINPE Móvil</strong> y tarjeta, a buscar en Google desde el celular y a escribir por WhatsApp antes de comprar. Para una pyme o una empresa mediana, eso significa un sitio rápido, con contacto inmediato, y sistemas que ordenen ventas y facturación.</p>
+  <p>Codebrand trabaja con empresas de San José de forma remota desde San Pedro Sula, Honduras. Compartimos el idioma, el huso horario (UTC-6 durante todo el año) y la cultura de negocios centroamericana, así que las reuniones por videollamada y el seguimiento por WhatsApp fluyen como con un proveedor local. Trabajamos con <strong>propuestas de precio fijo</strong>: usted define el presupuesto, nosotros proponemos el alcance que cabe en él y, mientras dura el desarrollo, cada semana revisa en una demo lo que ya está funcionando. Todo lo que se construye, desde el repositorio hasta el dominio y las cuentas de servicios, se registra a nombre de su empresa y no de Codebrand.</p>
+  <p>Los proyectos que mejor encajan en la capital son sitios corporativos para empresas de servicios y firmas profesionales, tiendas en línea con SINPE Móvil, tarjeta y entrega en la GAM, portales para clínicas y centros médicos con citas en línea, plataformas para universidades y academias, y aplicaciones web a la medida integradas con la <strong>factura electrónica del Ministerio de Hacienda</strong>. Cada página se estructura para las búsquedas locales por cantón, de Escazú a Desamparados, y se optimiza para la navegación móvil.</p>
 industries:
-  - name: "Tecnología y Software"
-    description: "Aplicaciones web y plataformas para el ecosistema tech de Costa Rica."
-  - name: "Centros de Servicios"
-    description: "Sitios web corporativos para BPOs, call centers y servicios compartidos."
-  - name: "Turismo"
-    description: "Sitios web para tours, hoteles y turismo ecológico."
-  - name: "Comercio y Retail"
-    description: "Tiendas en línea para comercios y marcas costarricenses."
-  - name: "Servicios Financieros"
-    description: "Plataformas web para bancos, fintechs y servicios financieros."
-  - name: "Salud y Bienestar"
-    description: "Sitios web para clínicas, turismo médico y bienestar."
-
+  - name: "Servicios corporativos y tecnología"
+    description: "Sitios y aplicaciones web para empresas de servicios compartidos, consultoras y compañías de software instaladas en Escazú, Santa Ana y el centro."
+  - name: "Comercio y tiendas en línea"
+    description: "E-commerce con SINPE Móvil, tarjeta y entrega en la Gran Área Metropolitana para marcas y comercios de San José."
+  - name: "Salud privada"
+    description: "Portales con citas en línea y perfiles de especialistas para clínicas, consultorios dentales y laboratorios de Curridabat, Escazú y San Pedro."
+  - name: "Educación"
+    description: "Plataformas de matrícula y contenido para universidades privadas, colegios y academias de idiomas de la capital."
+  - name: "Servicios financieros y seguros"
+    description: "Sitios corporativos y cotizadores para cooperativas, agencias de seguros y empresas fintech que operan en Costa Rica."
+  - name: "Turismo y hospedaje"
+    description: "Sitios bilingües con reservas para hoteles urbanos, operadores de tours y empresas de transporte que reciben al viajero en la capital."
 marketHighlights:
-  - "Costa Rica tiene la economía más estable de Centroamérica"
-  - "Hub de centros de servicios compartidos y BPOs"
-  - "Ecosistema tech en crecimiento con startups exitosas"
-  - "Turismo ecológico reconocido mundialmente"
-  - "Alta penetración de internet y digitalización"
-  - "Educación de calidad produce talento técnico"
-
+  - "San José es la capital de Costa Rica y el centro de la Gran Área Metropolitana, donde se concentra la mayor parte de la actividad económica del país."
+  - "Escazú y Santa Ana forman el principal corredor corporativo del oeste, con oficinas, centros comerciales y parques empresariales en Lindora y San Rafael."
+  - "San Pedro de Montes de Oca alberga la sede central de la Universidad de Costa Rica y una intensa vida comercial universitaria."
+  - "El pago por SINPE Móvil y la factura electrónica obligatoria forman parte de la operación cotidiana de los negocios costarricenses."
+  - "Costa Rica es uno de los principales destinos de centros de servicios compartidos y empresas de tecnología en Centroamérica."
+  - "La zona de Los Santos, al sur de la provincia, es reconocida por su café de altura de exportación."
 regionalStats:
   gdp: "Centro económico CA"
-  techCompanies: "3,000+"
-  businessGrowth: "+5% anual"
-
 faqs:
-  - question: "¿Por qué elegir una agencia de Honduras para Costa Rica?"
-    answer: "Mismo huso horario, cultura centroamericana compartida y precios más competitivos. Ofrecemos desarrollo de calidad sin los costos elevados del mercado tico."
-  - question: "¿Cómo es la comunicación con su equipo?"
-    answer: "Estamos en el mismo huso horario (CST), hablamos español y usamos las mismas herramientas que ustedes. Slack, videollamadas, WhatsApp—colaboración fluida."
-  - question: "¿Trabajan con empresas de tecnología?"
-    answer: "Sí. Costa Rica tiene un ecosistema tech desarrollado y podemos ser una extensión de equipo para startups y empresas que necesitan escalar capacidad."
-  - question: "¿Pueden desarrollar sitios web de turismo?"
-    answer: "Sí. Creamos sitios bilingües con reservas en línea para tours, hoteles y experiencias de turismo ecológico."
-  - question: "¿Qué garantías ofrecen?"
-    answer: "Entregamos proyectos con código de calidad, documentación y soporte post-lanzamiento. Nuestro modelo depende de clientes satisfechos."
-  - question: "¿Tienen experiencia con el mercado tico?"
-    answer: "Sí. Hemos trabajado con clientes costarricenses y entendemos el mercado, la cultura empresarial y las expectativas de calidad."
-
+  - question: "¿Por qué contratar una agencia de Honduras para un negocio en San José?"
+    answer: "Porque recibe atención directa del equipo que construye su proyecto, en su mismo huso horario y en español. Codebrand trabaja de forma remota desde San Pedro Sula, Honduras, coordina por videollamada y WhatsApp y entrega una demostración funcional cada semana. Además, el modelo de precio fijo a partir de su presupuesto le da certeza sobre la inversión antes de comenzar."
+  - question: "¿Cuánto cuesta un sitio web o una tienda en línea en Costa Rica?"
+    answer: "No publicamos precios porque cada empresa tiene necesidades distintas. Cuéntenos qué monto tiene reservado para el proyecto y le devolvemos una propuesta de precio fijo que reparte esa inversión entre funcionalidades, integraciones como SINPE Móvil o la factura electrónica de Hacienda, y plazos de entrega. El monto acordado se mantiene durante todo el proyecto, sin cobros por hora ni sorpresas al final."
+  - question: "¿Integran SINPE Móvil, tarjetas y la factura electrónica de Hacienda?"
+    answer: "Sí. Integramos SINPE Móvil, pasarelas de tarjeta de los bancos costarricenses y otros medios locales, y conectamos la tienda o el sistema con proveedores de factura electrónica autorizados por el Ministerio de Hacienda para emitir comprobantes de forma automática. Así su operación cumple con la normativa desde la primera venta y sin trabajo manual."
+  - question: "¿Pueden trabajar como equipo externo de una empresa de tecnología en Escazú o Santa Ana?"
+    answer: "Sí. Muchas empresas de servicios y tecnología de la capital necesitan capacidad adicional para un producto, un panel interno o integraciones sin ampliar su planilla. Nos adaptamos a sus repositorios, tableros y reuniones de seguimiento, entregamos código documentado y coordinamos en español con su equipo. El alcance y el precio se fijan antes de empezar."
+  - question: "¿Ayudan a posicionar mi negocio en búsquedas por cantón, como Escazú o Curridabat?"
+    answer: "Sí. Estructuramos las páginas para las búsquedas que hacen los costarricenses, combinando el servicio con el cantón o el barrio, y configuramos el perfil de Google Business con la dirección y el horario correctos. Cuidamos la velocidad de carga y la versión móvil, porque la mayoría del tráfico en la GAM llega desde el celular y el usuario compara antes de contactar."
+  - question: "¿El código y las cuentas quedan a nombre de mi empresa?"
+    answer: "Sí. Dominio, hosting, repositorios y cuentas de servicios se registran a nombre de su empresa y al cierre recibe el código fuente completo con documentación. Puede continuar con Codebrand, con otro proveedor o con un equipo interno sin restricciones. Si desea mantenimiento después del lanzamiento, lo cotizamos como un servicio aparte; su sitio sigue siendo suyo con o sin ese contrato."
 majorCities:
   - "San José"
   - "Escazú"

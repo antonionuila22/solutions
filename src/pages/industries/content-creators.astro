@@ -268,7 +268,7 @@ const softwareIndustry = "content creators and media brands";
 const softwareLead = "Once a channel becomes a business, the work stops being the edit and starts being the operation: deals, deliverables, payouts, and the audience you actually own. These are the systems we build for creators running at that scale.";
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -276,7 +276,6 @@ const softwareLead = "Once a channel becomes a business, the work stops being th
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <IndustryHero
     badgeText="Creator Technology Solutions"

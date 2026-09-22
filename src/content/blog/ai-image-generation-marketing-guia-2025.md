@@ -362,7 +362,7 @@ Guarda siempre:
 
 ### Integración con Equipos de Diseño
 
-La IA no reemplaza diseñadores—los potencia. Un flujo efectivo:
+La IA no reemplaza diseñadores, los potencia. Un flujo efectivo:
 
 1. **Marketing** define la necesidad y concepto
 2. **IA** genera opciones rápidas (borrador visual)
@@ -437,7 +437,7 @@ La generación de imágenes con IA no es perfecta. Requiere práctica, iteració
 - Ignoren limitaciones y publiquen contenido defectuoso
 - Piensen que reemplaza completamente a profesionales creativos
 
-La IA es la mejor herramienta que nunca existió para crear contenido visual. Pero sigue siendo una herramienta—y las herramientas son tan buenas como quien las usa.
+La IA es la mejor herramienta que nunca existió para crear contenido visual. Pero sigue siendo una herramienta, y las herramientas son tan buenas como quien las usa.
 
 ---
 

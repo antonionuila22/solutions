@@ -180,7 +180,7 @@ React Native's new architecture removes the bridge bottleneck:
 
 ### How Flutter Works
 
-Flutter takes a completely different approach—it renders everything itself using Skia graphics engine:
+Flutter takes a completely different approach, it renders everything itself using Skia graphics engine:
 
 ```text
 ┌─────────────────────────────────────────────────┐
@@ -756,4 +756,4 @@ At **Codebrand**, our [React development team](/react-development-agency/) has e
 
 ---
 
-*Have questions about mobile development? [Reach out to our team](/contact/)—we're happy to help you make the right technology choice.*
+*Have questions about mobile development? [Reach out to our team](/contact/), we're happy to help you make the right technology choice.*

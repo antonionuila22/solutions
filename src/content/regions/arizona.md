@@ -1,6 +1,6 @@
 ---
 title: "Web Development Services in Arizona | Codebrand"
-description: "Professional web development services for Arizona businesses. Custom websites, e-commerce platforms, and web applications for Phoenix, Tucson, Scottsdale, and Mesa. Cost-effective nearshore development from Honduras with bilingual team."
+description: "Web development for Arizona businesses in Phoenix, Tucson, Scottsdale and Mesa: custom websites, e-commerce and web apps from a bilingual nearshore team."
 name: "Arizona"
 code: "AZ"
 country: "usa"
@@ -24,13 +24,13 @@ featured: true
 
 # SEO Enhanced Content
 longDescription: |
-  <p>Arizona—the Grand Canyon State, one of the fastest-growing states in America and a hub for <strong>technology, healthcare, aerospace, and tourism</strong>. From Phoenix's expanding tech sector to Tucson's research institutions, from Scottsdale's resort industry to the state's aerospace and defense presence, Arizona offers business opportunities in a pro-growth environment.</p>
+  <p>Arizona, the Grand Canyon State, one of the fastest-growing states in America and a hub for <strong>technology, healthcare, aerospace, and tourism</strong>. From Phoenix's expanding tech sector to Tucson's research institutions, from Scottsdale's resort industry to the state's aerospace and defense presence, Arizona offers business opportunities in a pro-growth environment.</p>
 
   <p>At Codebrand, we help Arizona businesses build <strong>professional, effective websites</strong> at competitive rates. Our nearshore team in Honduras brings an additional advantage: a <strong>fully bilingual team</strong> that understands the Southwest's bicultural business environment.</p>
 
   <p>Communication is easy: <strong>Honduras is just 1 hour behind Mountain Time</strong>. Note that Arizona doesn't observe daylight saving time, so the time difference remains consistent year-round. When you're working in Phoenix, Tucson, or Scottsdale, we're ready to collaborate.</p>
 
-  <p>We understand Arizona's economy. Whether you're a <strong>growing tech company in Phoenix</strong>, a <strong>healthcare organization</strong>, an <strong>aerospace contractor in Tucson</strong>, or a <strong>resort in Scottsdale</strong>—we can help you build websites that effectively serve your customers and support your business goals.</p>
+  <p>We understand Arizona's economy. Whether you're a <strong>growing tech company in Phoenix</strong>, a <strong>healthcare organization</strong>, an <strong>aerospace contractor in Tucson</strong>, or a <strong>resort in Scottsdale</strong>, we can help you build websites that effectively serve your customers and support your business goals.</p>
 
 industries:
   - name: "Technology & Software"
@@ -56,8 +56,6 @@ marketHighlights:
 
 regionalStats:
   gdp: "$440B+"
-  techCompanies: "6,000+"
-  businessGrowth: "+8% YoY"
 
 faqs:
   - question: "Can your team work in both English and Spanish?"

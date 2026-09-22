@@ -6,7 +6,7 @@ region: Central America
 author: Ramon Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en Guatemala. Creamos soluciones digitales personalizadas para empresas guatemaltecas que buscan calidad, innovación y resultados reales.
+description: Agencia de diseño y desarrollo web en Guatemala. Sitios, tiendas online y sistemas a la medida para empresas guatemaltecas que buscan resultados.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en Guatemala
@@ -34,17 +34,17 @@ En Codebrand Guatemala, ayudamos a las empresas a construir y potenciar su prese
 
 Nuestro equipo multidisciplinario combina experiencia internacional con profundo conocimiento del mercado guatemalteco. Trabajamos con tecnología de vanguardia y una mentalidad orientada a resultados.
 
-- ✅ Entrega a tiempo
-- ✅ Soporte y comunicación continua en español
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para velocidad y motores de búsqueda
-- ✅ Precios competitivos para el mercado centroamericano
+- Entrega a tiempo
+- Soporte y comunicación continua en español
+- Diseño centrado en el usuario
+- Desarrollo optimizado para velocidad y motores de búsqueda
+- Precios competitivos para el mercado centroamericano
 
 ---
 
 ## Servimos Empresas en Toda Guatemala
 
-Desde la capital hasta los principales departamentos del país — trabajamos con empresas de todos los tamaños e industrias:
+Desde la capital hasta los principales departamentos del país, trabajamos con empresas de todos los tamaños e industrias:
 
 - Proveedores de servicios profesionales
 - Negocios locales y minoristas

@@ -1,6 +1,6 @@
 ---
-title: "Desarrollo Web en Jalisco | Codebrand México"
-description: "Servicios profesionales de desarrollo web en Jalisco. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Guadalajara, Zapopan, Tlaquepaque y todo el estado."
+title: "Agencia de Desarrollo Web en Jalisco, México | Codebrand"
+description: "Desarrollo web, ecommerce y software a la medida para empresas de Jalisco: Guadalajara, Zapopan, Tlaquepaque, Puerto Vallarta y Los Altos de Jalisco."
 name: "Jalisco"
 code: "JAL"
 country: "mexico"
@@ -11,67 +11,65 @@ capital: "Guadalajara"
 timezone: "CST"
 keywords:
   - "desarrollo web Jalisco"
-  - "desarrolladores web Guadalajara"
-  - "diseño web Jalisco"
-  - "sitios web personalizados Guadalajara"
+  - "diseño web Guadalajara"
   - "agencia web Guadalajara"
-  - "páginas web Silicon Valley mexicano"
-  - "desarrollo ecommerce Jalisco"
-  - "aplicaciones web Guadalajara"
-  - "desarrollo software Jalisco"
-  - "transformación digital Guadalajara"
+  - "desarrollo web Zapopan"
+  - "diseño de páginas web Jalisco"
+  - "tienda en línea Guadalajara"
+  - "desarrollo de software Guadalajara"
+  - "diseño web Puerto Vallarta"
+  - "páginas web Tlaquepaque"
+  - "aplicaciones web Jalisco"
 featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Jalisco—el <strong>"Silicon Valley mexicano"</strong>, sede de Guadalajara y uno de los ecosistemas tecnológicos más vibrantes de América Latina. Desde <strong>desarrollo de software</strong> hasta <strong>startups</strong>, desde <strong>manufactura tecnológica</strong> hasta <strong>turismo en Vallarta</strong>, Jalisco combina innovación con cultura y tradición.</p>
+  <p><strong>Jalisco</strong> es uno de los estados con mayor peso económico de México y su capital, Guadalajara, encabeza una zona metropolitana que incluye Zapopan, Tlaquepaque, Tonalá y Tlajomulco de Zúñiga. La ciudad es conocida como el Silicon Valley mexicano por la concentración de centros de diseño de electrónica y de desarrollo de software, sobre todo en Zapopan y en el corredor industrial de El Salto, y por el talento que forman la Universidad de Guadalajara, el ITESO, el Tecnológico de Monterrey y la UAG. Expo Guadalajara y la Feria Internacional del Libro atraen negocios y visitantes cada año. Fuera de la metrópoli, Puerto Vallarta vive del turismo; Tequila, del paisaje agavero y la denominación de origen; Los Altos de Jalisco, de la avicultura, la porcicultura y los lácteos; y Tlaquepaque y Tonalá, de la artesanía y el mueble.</p>
 
-  <p>En Codebrand, ofrecemos <strong>desarrollo web nearshore desde Honduras</strong>—mismo huso horario (CST) y precios competitivos para el ecosistema tech de Guadalajara. Entendemos que la comunidad tech tapatía valora código de calidad y comunicación eficiente.</p>
+  <p>Una empresa tapatía compite en un mercado donde el consumidor compara en Google, Mercado Libre y redes antes de comprar. Un despacho en Providencia o Chapultepec, una fábrica de calzado, una joyería del centro o un restaurante en Zapopan necesita una página web rápida, con WhatsApp integrado y bien posicionada en su colonia. Quien vende en línea debe aceptar tarjeta, Mercado Pago, transferencias SPEI y pagos en efectivo en OXXO, y emitir CFDI 4.0 conforme a las reglas del SAT. Las empresas de tecnología y las startups, por su parte, buscan capacidad adicional de desarrollo sin aumentar la nómina.</p>
 
-  <p>Nuestro modelo nearshore complementa el ecosistema de Guadalajara: cuando necesita <strong>escalar capacidad de desarrollo</strong> o busca <strong>costos optimizados</strong> sin comprometer calidad, somos una extensión natural de su equipo con cultura de desarrollo similar.</p>
+  <p>Codebrand trabaja con empresas de Jalisco de forma remota desde Honduras. Compartimos huso horario con Guadalajara, así que las videollamadas caen dentro de su horario de oficina y el seguimiento por WhatsApp es en tiempo real. Nuestro equipo habla español como lengua materna, presenta una demo cada semana con el avance real y entrega el código fuente, el dominio y las cuentas a su nombre. No publicamos tarifas: partimos del presupuesto que usted define y construimos una propuesta de precio fijo con el alcance que mejor lo aprovecha, sin horas extra ni sorpresas.</p>
 
-  <p>Ya sea que su empresa esté en <strong>Zapopan</strong>, <strong>Guadalajara Centro</strong>, <strong>Tlaquepaque</strong>, <strong>Puerto Vallarta</strong> o cualquier parte de Jalisco, podemos ayudarle a construir productos digitales de clase mundial.</p>
+  <p>Los proyectos que mejor encajan en el estado son tiendas en línea para marcas de calzado, joyería, tequila, muebles y artesanía; sitios corporativos y catálogos B2B para manufactura, agroindustria y logística; plataformas de reservas para hoteles y experiencias en Puerto Vallarta, Chapala y la ruta del tequila; MVP y aplicaciones web para startups de Guadalajara; y sistemas internos para empresas que necesitan ordenar operaciones. Si su negocio está en Guadalajara, Zapopan, Tlaquepaque, Tonalá, Tlajomulco, Puerto Vallarta, Lagos de Moreno o Tepatitlán, podemos ayudarle a posicionarse y a vender más.</p>
 
 industries:
-  - name: "Tecnología y Software"
-    description: "Desarrollo web y aplicaciones para el ecosistema tech de Guadalajara."
-  - name: "Startups"
-    description: "MVPs, landing pages y plataformas para startups jaliscienses."
-  - name: "E-commerce"
-    description: "Tiendas en línea para comercios y marcas de Jalisco."
-  - name: "Turismo y Hospitalidad"
-    description: "Sitios web para hoteles, tours y servicios en Puerto Vallarta."
-  - name: "Tequila y Agave"
-    description: "Sitios web para tequileras, destilerías y turismo de agave."
-  - name: "Manufactura"
-    description: "Sitios web corporativos para el sector industrial de Jalisco."
+  - name: "Tecnología, software y startups"
+    description: "MVP, aplicaciones web y equipos de desarrollo adicionales para empresas tecnológicas y startups de Guadalajara y Zapopan."
+  - name: "Manufactura y electrónica"
+    description: "Sitios corporativos, catálogos B2B y portales de proveedores para plantas del corredor industrial de El Salto y Tlajomulco."
+  - name: "Tequila y agroindustria"
+    description: "Tiendas en línea, sitios de marca y reservas de recorridos para casas tequileras, productores de agave y agroindustrias de Los Altos."
+  - name: "Turismo en Puerto Vallarta y Chapala"
+    description: "Sitios bilingües con motor de reservas para hoteles, tours, restaurantes y rentas vacacionales en la costa y la ribera del lago."
+  - name: "Calzado, joyería y muebles"
+    description: "Ecommerce y catálogos mayoristas para fabricantes y marcas de calzado, joyería del centro de Guadalajara y mueble de Tlaquepaque y Ocotlán."
+  - name: "Salud, educación y servicios profesionales"
+    description: "Portales con citas, admisiones y pagos para hospitales, clínicas, colegios y despachos de la zona metropolitana."
 
 marketHighlights:
-  - "Guadalajara es conocida como el Silicon Valley mexicano"
-  - "Hub de desarrollo de software más grande de México"
-  - "Sede de empresas de tecnología globales (Intel, IBM, Oracle)"
-  - "Puerto Vallarta es destino turístico de clase mundial"
-  - "Tequila es denominación de origen y atractivo turístico"
-  - "Ecosistema de startups en crecimiento acelerado"
+  - "Guadalajara es conocida como el Silicon Valley mexicano por su concentración de centros de diseño de electrónica y desarrollo de software"
+  - "Zapopan y el corredor industrial de El Salto alojan operaciones de compañías tecnológicas y de manufactura de alcance global"
+  - "Expo Guadalajara es el mayor recinto de exposiciones del país y sede de la Feria Internacional del Libro"
+  - "Tequila y el paisaje agavero cuentan con denominación de origen y reconocimiento de la UNESCO"
+  - "Puerto Vallarta es uno de los principales destinos turísticos del Pacífico mexicano"
+  - "Los Altos de Jalisco destacan en producción de huevo, carne de cerdo y lácteos, y Tlaquepaque y Tonalá en artesanía"
 
 regionalStats:
   gdp: "7%+ del PIB de México"
-  techCompanies: "10,000+"
-  businessGrowth: "+8% anual"
 
 faqs:
-  - question: "¿Por qué una agencia nearshore para el ecosistema tech de Guadalajara?"
-    answer: "Ofrecemos capacidad de desarrollo adicional a costos competitivos. Para startups cuidando runway o empresas escalando, somos una extensión de equipo con mismo huso horario y cultura de desarrollo similar."
-  - question: "¿Trabajan con startups?"
-    answer: "Sí. Ayudamos a startups con MVPs, landing pages y desarrollo de producto. Nuestro modelo de costos optimizados es ideal para founders que necesitan maximizar cada peso."
-  - question: "¿Pueden desarrollar para empresas de turismo en Vallarta?"
-    answer: "Sí. Creamos sitios web bilingües con reservas en línea para hoteles, tours y servicios turísticos que quieren atraer visitantes internacionales."
-  - question: "¿Trabajan con tequileras?"
-    answer: "Sí. Desarrollamos sitios web que muestran la tradición, proceso y productos de destilerías de tequila para mercados nacionales e internacionales."
-  - question: "¿Cómo es la comunicación?"
-    answer: "Mismo huso horario (CST), comunicación en español vía Slack, videollamadas y correo. Colaboración fluida como con un equipo local."
-  - question: "¿Pueden integrarse con equipos de desarrollo existentes?"
-    answer: "Sí. Podemos trabajar como extensión de su equipo, siguiendo sus procesos, herramientas y estándares de código."
+  - question: "¿Cómo trabaja Codebrand con empresas de Guadalajara si está en Honduras?"
+    answer: "Compartimos huso horario, así que trabajamos en su mismo horario de oficina. Iniciamos con una videollamada para entender el negocio, seguimos el día a día por WhatsApp y presentamos una demo cada semana con avances reales. El código fuente, el dominio y las cuentas quedan a su nombre desde el primer día, de modo que nunca dependa de nosotros para continuar."
+  - question: "¿Cuánto cuesta una página web o una tienda en línea en Jalisco?"
+    answer: "No publicamos precios. Lo que sí hacemos es tomar el presupuesto que su empresa tapatía ya tiene autorizado, en pesos o en dólares, y convertirlo en una propuesta de precio fijo. Nos indica cuánto quiere invertir y le devolvemos un alcance concreto, con entregables y fechas, que lo aprovecha al máximo. Si más adelante quiere crecer, se acuerda una nueva fase con su propio presupuesto."
+  - question: "¿Integran Mercado Pago, OXXO, SPEI y facturación CFDI del SAT?"
+    answer: "Sí. Configuramos Mercado Pago, pasarelas de tarjeta, pagos en efectivo en OXXO y transferencias SPEI según lo que prefieran sus clientes, y conectamos la tienda con un proveedor autorizado de certificación para emitir CFDI 4.0 conforme a las reglas del SAT. La factura se genera desde la propia venta, sin capturas manuales."
+  - question: "¿Pueden sumarse como equipo de desarrollo adicional para una empresa de tecnología tapatía?"
+    answer: "Sí. Nos integramos a su repositorio, a su tablero de tareas y a sus ceremonias, seguimos sus estándares de código y revisiones, y entregamos por sprint. Es una forma de ampliar capacidad sin abrir vacantes, con un costo de proyecto acordado por adelantado. Si prefiere un módulo cerrado, lo construimos aparte y lo documentamos para su equipo."
+  - question: "¿Trabajan con casas tequileras y negocios turísticos de Puerto Vallarta?"
+    answer: "Sí. Para tequileras desarrollamos sitios de marca con tienda en línea, verificación de edad y reservas de recorridos por la destilería y el paisaje agavero. Para Puerto Vallarta, Chapala o Ajijic construimos sitios bilingües con motor de reservas y pagos internacionales, pensados para captar al visitante de Estados Unidos y Canadá directamente desde Google."
+  - question: "¿Cómo ayudan a posicionarse en Google en Guadalajara, Zapopan y otras ciudades del estado?"
+    answer: "Entregamos cada sitio con velocidad de carga, datos estructurados, ficha de Google Business Profile vinculada y páginas específicas para las colonias o municipios que le interesan, como Providencia, Andares, Tlaquepaque o Lagos de Moreno. Cuando la meta es crecer mes a mes, sumamos un plan de contenido y enlaces dimensionado con el presupuesto de su empresa tapatía, con un reporte mensual de posiciones y visitas desde Guadalajara y el resto del estado."
 
 majorCities:
   - "Guadalajara"

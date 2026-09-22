@@ -61,6 +61,8 @@ export interface ServicePageSchemaConfig {
   catalogName: string;
   /** Array of service offerings in the catalog */
   catalogItems: ServiceOffer[];
+  /** Area served; defaults to the United States. Honduras pages pass Honduras. */
+  areaServed?: { "@type": string; name: string } | { "@type": string; name: string }[];
 }
 
 /**
@@ -99,7 +101,7 @@ export function createServicePageSchema(config: ServicePageSchemaConfig) {
       url: BUSINESS_INFO.baseUrl,
       logo: BUSINESS_INFO.logoUrl,
     },
-    areaServed: {
+    areaServed: config.areaServed ?? {
       "@type": "Country",
       name: "United States",
     },
@@ -287,6 +289,12 @@ export interface BreadcrumbItem {
  *   { name: "Web Development", url: "https://www.codebrand.us/services/web-development/" }
  * ]);
  */
+/** Every breadcrumb URL must be the canonical form: absolute, https, trailing slash. */
+const canonicalCrumbUrl = (url: string): string => {
+  const abs = url.startsWith("http") ? url : `https://www.codebrand.us${url.startsWith("/") ? url : `/${url}`}`;
+  return /\.[a-z0-9]{2,5}$/i.test(abs) || abs.endsWith("/") ? abs : `${abs}/`;
+};
+
 export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
   return {
     "@context": "https://schema.org",
@@ -295,10 +303,20 @@ export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.url,
+      item: canonicalCrumbUrl(item.url),
     })),
   };
 }
+
+/** Human names for the hub segments of the site, used when a page does not pass its own trail. */
+const HUB_SEGMENT_NAMES: Record<string, string> = {
+  hn: "Honduras", countryareas: "Service Areas", locations: "Locations", regions: "Regions",
+  services: "Services", industries: "Industries", blog: "Blog", products: "Services Catalog",
+  projects: "Projects", team: "Team", books: "Books", quoter: "Request a Proposal",
+  careers: "Careers", contact: "Contact", history: "History",
+};
+/** URL segments that are not pages of their own and must not appear as crumbs. */
+const SKIPPED_SEGMENTS = new Set(["category"]);
 
 /**
  * Automatically generates breadcrumbs from a URL path
@@ -318,7 +336,8 @@ export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
 export function createBreadcrumbSchemaFromUrl(
   currentUrl: string,
   baseUrl: string = "https://www.codebrand.us",
-  customNames?: Record<string, string>
+  customNames?: Record<string, string>,
+  homeName: string = "Home"
 ) {
   const url = new URL(currentUrl);
   const pathSegments = url.pathname.split("/").filter(Boolean);
@@ -326,14 +345,15 @@ export function createBreadcrumbSchemaFromUrl(
   // Las URLs llevan barra final para que coincidan con la canónica de cada
   // página. Sin ella, cada breadcrumb apunta a una URL que responde 301.
   const items: BreadcrumbItem[] = [
-    { name: "Home", url: `${baseUrl}/` },
+    { name: homeName, url: `${baseUrl}/` },
   ];
 
   let accumulatedPath = "";
 
   for (const segment of pathSegments) {
     accumulatedPath += `/${segment}`;
-    const displayName = customNames?.[segment] ||
+    if (SKIPPED_SEGMENTS.has(segment)) continue;
+    const displayName = customNames?.[segment] || HUB_SEGMENT_NAMES[segment] ||
       segment
         .split("-")
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -406,6 +426,8 @@ export interface ArticleSchemaOptions {
   articleSection?: string;
   wordCount?: number;
   readingTime?: number;
+  /** BCP-47 language of the article body; defaults to en-US. */
+  inLanguage?: string;
 }
 
 /**
@@ -481,7 +503,7 @@ export function createArticleSchema(options: ArticleSchemaOptions) {
     ...(articleSection && { articleSection }),
     ...(wordCount && { wordCount }),
     ...(readingTime && { timeRequired: `PT${readingTime}M` }),
-    inLanguage: "en-US",
+    inLanguage: options.inLanguage ?? "en-US",
     isAccessibleForFree: true,
     copyrightHolder: {
       "@type": "Organization",
@@ -597,26 +619,46 @@ function extractStepName(stepText: string): string {
  * @param description - Location-specific description
  * @returns Complete LocalBusiness Schema.org object
  */
+/** ISO 3166-1 alpha-2 codes for the country slugs used by the geo collections. */
+const COUNTRY_CODES: Record<string, string> = {
+  usa: "US", honduras: "HN", mexico: "MX", guatemala: "GT", "el-salvador": "SV",
+  "costa-rica": "CR", panama: "PA", colombia: "CO", chile: "CL", spain: "ES",
+};
+
+/**
+ * Service-area schema for a city page. Codebrand has ONE physical address (San
+ * Pedro Sula, Honduras); the city is the area served, never the business address.
+ * Claiming a local address in every city would be misleading structured data.
+ */
 export function createLocalBusinessSchema(
   city: string,
   state: string,
   stateCode: string,
-  description: string
+  description: string,
+  options: { slug?: string; countrySlug?: string; countryName?: string; spanish?: boolean } = {}
 ) {
+  const { slug, countrySlug, countryName, spanish } = options;
+  const countryCode = countrySlug ? COUNTRY_CODES[countrySlug] : undefined;
+  const pageUrl = slug
+    ? `https://www.codebrand.us/locations/${slug}/`
+    : `https://www.codebrand.us/locations/${city.toLowerCase().replace(/\s+/g, "-")}-${stateCode.toLowerCase()}/`;
+  const label = (en: string, es: string) => (spanish ? es : en);
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: `Codebrand - Web Development ${city}`,
+    name: label(`Codebrand, Web Development in ${city}`, `Codebrand, Desarrollo Web en ${city}`),
     description,
-    url: `https://www.codebrand.us/locations/${city.toLowerCase().replace(/\s+/g, "-")}-${stateCode.toLowerCase()}`,
-    telephone: "+504-8738-0714",
-    email: "info@codebrand.es",
-    priceRange: "$$$",
+    url: pageUrl,
+    telephone: BUSINESS_INFO.us.phoneRaw,
+    email: BUSINESS_INFO.us.email,
+    priceRange: BUSINESS_INFO.priceRange,
     address: {
       "@type": "PostalAddress",
-      addressLocality: city,
-      addressRegion: state,
-      addressCountry: "US",
+      streetAddress: BUSINESS_INFO.address.street,
+      addressLocality: BUSINESS_INFO.address.city,
+      addressRegion: BUSINESS_INFO.address.region,
+      postalCode: BUSINESS_INFO.address.postalCode,
+      addressCountry: BUSINESS_INFO.address.countryCode,
     },
     areaServed: {
       "@type": "City",
@@ -624,42 +666,37 @@ export function createLocalBusinessSchema(
       containedInPlace: {
         "@type": "State",
         name: state,
+        ...(countryName || countryCode
+          ? { containedInPlace: { "@type": "Country", name: countryName ?? countryCode, ...(countryCode ? { identifier: countryCode } : {}) } }
+          : {}),
       },
-    },
-    serviceArea: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        name: city,
-      },
-      geoRadius: "50 miles",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: `Web Development Services in ${city}`,
+      name: label(`Web Development Services in ${city}`, `Servicios de Desarrollo Web en ${city}`),
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Custom Web Development",
-            description: `Professional web development services for businesses in ${city}, ${state}`,
+            name: label("Custom Web Development", "Desarrollo Web a la Medida"),
+            description: label(`Professional web development services for businesses in ${city}, ${state}`, `Servicios profesionales de desarrollo web para empresas de ${city}, ${state}`),
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "E-commerce Development",
-            description: `E-commerce solutions for ${city} businesses`,
+            name: label("E-commerce Development", "Desarrollo de Tiendas en Línea"),
+            description: label(`E-commerce solutions for ${city} businesses`, `Soluciones de comercio electrónico para negocios de ${city}`),
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "UI/UX Design",
-            description: `User experience design services in ${city}`,
+            name: label("UI/UX Design", "Diseño UX/UI"),
+            description: label(`User experience design services in ${city}`, `Servicios de diseño de experiencia de usuario en ${city}`),
           },
         },
       ],

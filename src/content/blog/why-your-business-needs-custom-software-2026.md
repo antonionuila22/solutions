@@ -25,7 +25,7 @@ Here's what actually happens: You buy a $50/month tool. Then you spend hours ada
 
 **The $50 tool ends up costing $5,000/month in hidden expenses.**
 
-Let's talk about when [custom software](/custom-software-development/) makes sense—and when it doesn't.
+Let's talk about when [custom software](/custom-software-development/) makes sense, and when it doesn't.
 
 ---
 
@@ -45,7 +45,7 @@ Business logic is the unique way your company operates. It's:
 
 A logistics company we worked with used standard shipping software. The problem? Their competitive edge was a proprietary route optimization algorithm developed over 20 years.
 
-The generic software couldn't implement it. They were using spreadsheets alongside their "modern" software—the worst of both worlds.
+The generic software couldn't implement it. They were using spreadsheets alongside their "modern" software, the worst of both worlds.
 
 [We built them a custom solution →](/services/web-development/) that integrated their algorithm. Result: 23% fuel savings, automated dispatching, and happy drivers.
 
@@ -270,7 +270,7 @@ Custom software is part of a larger digital strategy. It works best when combine
 
 **SEO Strategy:** If it's customer-facing, it needs to be findable. [Learn about our SEO services →](/services/seo/)
 
-**Quality Content:** Software needs content—help text, emails, notifications. Good writing matters.
+**Quality Content:** Software needs content, help text, emails, notifications. Good writing matters.
 
 ---
 
@@ -296,11 +296,11 @@ Small, focused project to demonstrate value before larger investment.
 
 ## Key Takeaways
 
-1. **Generic software has hidden costs** — workarounds, missed opportunities, integration problems
-2. **Business logic is your competitive advantage** — don't force it into generic boxes
-3. **Custom doesn't mean expensive** — it means appropriate
-4. **ROI matters more than cost** — focus on value created
-5. **Start with understanding** — technology comes after strategy
+1. **Generic software has hidden costs**, workarounds, missed opportunities, integration problems
+2. **Business logic is your competitive advantage**, don't force it into generic boxes
+3. **Custom doesn't mean expensive**, it means appropriate
+4. **ROI matters more than cost**, focus on value created
+5. **Start with understanding**, technology comes after strategy
 
 Your business is unique. Your software should be too.
 

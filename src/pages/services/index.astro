@@ -192,7 +192,7 @@ const benefits = [
 ];
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -201,7 +201,6 @@ const benefits = [
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(servicesSchema)} />
   <!-- Organization schema provided by Layout.astro -->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero Section -->

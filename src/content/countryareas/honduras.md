@@ -6,7 +6,7 @@ region: Central America
 author: Ramon Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en Honduras. Impulsamos soluciones digitales personalizadas para empresas en toda Centroamérica que buscan calidad, escalabilidad y resultados.
+description: Agencia de diseño y desarrollo web en Honduras. Sitios, tiendas online y sistemas a la medida para empresas de toda Centroamérica que buscan resultados.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en Honduras

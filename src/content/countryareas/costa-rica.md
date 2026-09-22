@@ -6,7 +6,7 @@ region: Central America
 author: Ramon Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en Costa Rica. Creamos soluciones digitales personalizadas para empresas costarricenses que buscan calidad, innovación y resultados reales.
+description: Agencia de diseño y desarrollo web en Costa Rica. Sitios, tiendas online y sistemas a la medida para empresas costarricenses que buscan resultados.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en Costa Rica
@@ -34,17 +34,17 @@ En Codebrand Costa Rica, ayudamos a las empresas a construir y potenciar su pres
 
 Nuestro equipo multidisciplinario combina experiencia internacional con profundo conocimiento del mercado costarricense. Trabajamos con tecnología de vanguardia y una mentalidad orientada a resultados.
 
-- ✅ Entrega a tiempo
-- ✅ Soporte y comunicación continua en español
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para velocidad y motores de búsqueda
-- ✅ Experiencia con empresas de tecnología y turismo
+- Entrega a tiempo
+- Soporte y comunicación continua en español
+- Diseño centrado en el usuario
+- Desarrollo optimizado para velocidad y motores de búsqueda
+- Experiencia con empresas de tecnología y turismo
 
 ---
 
 ## Servimos Empresas en Toda Costa Rica
 
-Desde el Gran Área Metropolitana hasta las zonas turísticas — trabajamos con empresas de todos los tamaños e industrias:
+Desde el Gran Área Metropolitana hasta las zonas turísticas, trabajamos con empresas de todos los tamaños e industrias:
 
 - Empresas de tecnología y software
 - Proveedores de servicios profesionales

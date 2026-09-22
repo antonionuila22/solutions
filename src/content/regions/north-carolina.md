@@ -1,6 +1,6 @@
 ---
 title: "Web Development Services in North Carolina | Codebrand"
-description: "Professional web development services for North Carolina businesses. Custom websites, e-commerce platforms, and web applications for Charlotte, Raleigh, Durham, and the Research Triangle. Cost-effective nearshore development from Honduras."
+description: "Web development for North Carolina businesses: custom websites, e-commerce and web apps for Charlotte, Raleigh, Durham and the Triangle, built nearshore."
 name: "North Carolina"
 code: "NC"
 country: "usa"
@@ -24,13 +24,13 @@ featured: true
 
 # SEO Enhanced Content
 longDescription: |
-  <p>North Carolina—the Tar Heel State, home to Charlotte's banking center, the Research Triangle's tech and biotech ecosystem, and one of the fastest-growing economies in the Southeast. From <strong>financial services</strong> to <strong>technology and biotechnology</strong>, from <strong>healthcare</strong> to <strong>manufacturing</strong>, North Carolina offers business opportunities across diverse sectors.</p>
+  <p>North Carolina, the Tar Heel State, is home to Charlotte's banking center, the Research Triangle's tech and biotech ecosystem, and one of the fastest-growing economies in the Southeast. From <strong>financial services</strong> to <strong>technology and biotechnology</strong>, from <strong>healthcare</strong> to <strong>manufacturing</strong>, North Carolina offers business opportunities across diverse sectors.</p>
 
   <p>At Codebrand, we help North Carolina businesses build <strong>professional, effective websites</strong> at competitive rates. Our nearshore team in Honduras offers a cost-effective alternative that aligns with North Carolina's practical business culture.</p>
 
-  <p>Communication is easy: <strong>Honduras is just 1 hour behind Eastern Time</strong>. When you're starting work in Charlotte, Raleigh, or anywhere in North Carolina, we're ready to collaborate. Real-time Slack communication, video calls during your business hours, and responsive partnership throughout your project.</p>
+  <p>Time zones stay out of the way: <strong>our office in San Pedro Sula sits one hour behind Raleigh in winter and two in summer</strong>, since Honduras does not observe daylight saving time. When you're starting work in Charlotte, Raleigh, or anywhere in North Carolina, we're ready to collaborate. Expect a Slack channel where questions are answered before your lunch break, calls set on Raleigh or Charlotte time, and the same developers on your project from kickoff to launch.</p>
 
-  <p>We understand North Carolina's economy. Whether you're a <strong>bank in Charlotte</strong>, a <strong>tech company in the Research Triangle</strong>, a <strong>biotech firm in Durham</strong>, or a <strong>healthcare organization</strong>—we can help you build websites that effectively serve your customers.</p>
+  <p>We understand North Carolina's economy. Whether you're a <strong>bank in Charlotte</strong>, a <strong>tech company in the Research Triangle</strong>, a <strong>biotech firm in Durham</strong>, or a <strong>healthcare organization</strong>, we can help you build websites that effectively serve your customers.</p>
 
 industries:
   - name: "Financial Services & Banking"
@@ -47,7 +47,7 @@ industries:
     description: "B2B portals and corporate websites for North Carolina's manufacturing sector."
 
 marketHighlights:
-  - "Charlotte is the second-largest banking center in the US after New York"
+  - "Only New York holds more banking assets than Charlotte, home to the headquarters of Bank of America and Truist"
   - "The Research Triangle is a major hub for technology and biotechnology"
   - "North Carolina is one of the fastest-growing states in the US"
   - "The state has a business-friendly environment and lower costs than the Northeast"
@@ -56,22 +56,20 @@ marketHighlights:
 
 regionalStats:
   gdp: "$650B+"
-  techCompanies: "10,000+"
-  businessGrowth: "+7% YoY"
 
 faqs:
   - question: "How does timezone alignment work with North Carolina?"
-    answer: "Honduras is on Central Standard Time, just 1 hour behind Eastern Time. This means we can collaborate during your entire business day with minimal scheduling challenges."
+    answer: "Charlotte and the Research Triangle keep Eastern Time; our developers in San Pedro Sula keep Central Standard Time all year. During the winter months that puts us one hour behind Raleigh, and from mid-March to early November the gap grows to two hours. Either way, when a bank in Uptown Charlotte opens at 9 a.m. we have already been at our desks, and we remain available through your mid-afternoon."
   - question: "Can you help Charlotte banks and financial services?"
     answer: "Yes. We can build corporate websites, client portals, and professional platforms for banking and financial services organizations. Charlotte is the second-largest banking center in the US, and we understand the industry's requirements."
   - question: "Do you work with Research Triangle tech companies?"
     answer: "Yes. The Triangle has a thriving tech ecosystem, and we can build product websites, web applications, and professional platforms for technology companies."
   - question: "What about biotech companies?"
-    answer: "Yes. We can build corporate websites, research showcases, and professional platforms for biotechnology and life sciences companies. Durham's biotech sector is significant."
+    answer: "Yes. Companies in Research Triangle Park and in downtown Durham's lab buildings need sites that explain their science to investors, partners and recruits, and that is what we build: corporate pages, pipeline overviews, publication libraries and gated partner portals. Durham's biotech sector is significant."
   - question: "Can you help North Carolina startups?"
-    answer: "Absolutely. Our cost-effective model helps founders build professional websites without overextending limited budgets."
+    answer: "Absolutely. Whether you are spinning a company out of Duke or NC State, joining a Durham accelerator or launching from a Charlotte coworking space, the constraint is usually runway. We start from the amount you can commit and return a fixed-price proposal that spells out pages, integrations and delivery dates, so the first version ships without surprise invoices. Extra features get quoted the same way when you are ready."
   - question: "How do North Carolina clients typically work with your team?"
-    answer: "Most NC clients start with a discovery call, then we communicate via Slack and video calls throughout the project. Being just 1 hour off from Eastern Time makes collaboration straightforward."
+    answer: "We begin with a discovery call and then keep the project in a shared Slack channel, with a video demo every week that shows working features instead of a slide deck. Our team in San Pedro Sula is one hour behind Charlotte and Raleigh in winter and two in summer, so a 10 a.m. call in Uptown or at Research Triangle Park falls at the start of our morning."
 
 majorCities:
   - "Charlotte"

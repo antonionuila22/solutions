@@ -31,8 +31,37 @@ const { title, name, region, code, img, description } = data;
 
 // SEO title is more descriptive than the on-page H1 to avoid title-too-short
 // and identical-title-and-H1 issues flagged by SE Ranking.
-const seoTitle = `Web Development & Digital Agency in ${name} | Codebrand`;
-const h1Heading = `${title} — Web Development in ${name}`;
+// Every country page except the US is written in Spanish.
+const isSpanish = country.id !== "usa";
+const seoTitle = isSpanish
+    ? `Agencia de Desarrollo Web y Diseño en ${name} | Codebrand`
+    : `Web Development & Digital Agency in ${name} | Codebrand`;
+const h1Heading = isSpanish ? `${title}: Desarrollo Web en ${name}` : `${title}: Web Development in ${name}`;
+const t = isSpanish
+    ? {
+          profile: "Perfil geográfico", exploreByRegion: "Explore por región",
+          regionsTitle: (isState: boolean) => `${isState ? "Estados" : "Regiones"} que atendemos en ${name}`,
+          regionsSub: (isState: boolean) => `Seleccione ${isState ? "un estado" : "una región"} para ver los servicios de desarrollo web y las ciudades de esa zona.`,
+          viewAllRegions: "Ver todas las regiones", topCities: "Ciudades principales", featuredTitle: `Ciudades destacadas en ${name}`,
+          featuredSub: "Explore los servicios de desarrollo web en nuestras ciudades más solicitadas.",
+          viewAllCities: (n: number) => `Ver las ${n} ciudades`,
+          exploreTitle: "Explore otras áreas", exploreSub: "Descubra más países y regiones donde trabajamos.",
+          ctaTitle: "¿Quiere seguir explorando?", ctaSub: "Hay muchas regiones por descubrir.", ctaButton: "Ver todos los países",
+          countryLabel: "País", codeLabel: "Código", regionLabel: "Región", cardAria: (x: string) => `Ver información de ${x}`,
+          crumbHome: "Inicio", crumbAreas: "Áreas de servicio", cityCount: (n: number) => `${n} ${n === 1 ? "ciudad" : "ciudades"}`, viewServices: "Ver servicios",
+      }
+    : {
+          profile: "Geographic profile", exploreByRegion: "Explore by Region",
+          regionsTitle: (isState: boolean) => `${isState ? "States" : "Regions"} We Serve in ${name}`,
+          regionsSub: (isState: boolean) => `Select a ${isState ? "state" : "region"} to find web development services and cities in that area.`,
+          viewAllRegions: "View All Regions", topCities: "Top Cities", featuredTitle: `Featured Cities in ${name}`,
+          featuredSub: "Explore web development services in our most popular cities.",
+          viewAllCities: (n: number) => `View All ${n} Cities`,
+          exploreTitle: "Explore other areas", exploreSub: "Discover more countries and regions where we work.",
+          ctaTitle: "Want to keep exploring?", ctaSub: "There are many regions to discover.", ctaButton: "View all countries",
+          countryLabel: "Country", codeLabel: "Code", regionLabel: "Region", cardAria: (x: string) => `See information about ${x}`,
+          crumbHome: "Home", crumbAreas: "Service Areas", cityCount: (n: number) => `${n} ${n === 1 ? "city" : "cities"}`, viewServices: "View Services",
+      };
 
 const { Content } = await render(country);
 
@@ -54,7 +83,7 @@ const getCityCount = (regionSlug: string) => {
 };
 ---
 
-<Layout title={seoTitle} description={description}>
+<Layout title={seoTitle} description={description} lang={isSpanish ? "es" : "en-US"} breadcrumbs={[{ name: t.crumbHome, href: "/" }, { name: t.crumbAreas, href: "/countryareas/" }, { name, href: "" }]}>
     <div
         class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 font-poppins space-y-20"
     >
@@ -83,7 +112,7 @@ const getCityCount = (regionSlug: string) => {
                 <span
                     class="uppercase text-sm text-orange-500 tracking-widest font-semibold"
                 >
-                    Perfil geográfico
+                    {t.profile}
                 </span>
                 <h1 class="text-4xl font-bold text-slate-900">{h1Heading}</h1>
                 <p class="text-lg text-slate-700 leading-relaxed">
@@ -94,10 +123,6 @@ const getCityCount = (regionSlug: string) => {
                     <li>
                         <strong class="text-slate-600">Nombre:</strong>
                         {name}
-                    </li>
-                    <li>
-                        <strong class="text-slate-600">Código:</strong>
-                        {code}
                     </li>
                     {
                         region && (
@@ -113,8 +138,8 @@ const getCityCount = (regionSlug: string) => {
 
         <Breadcrumbs
             items={[
-                { name: "Home", href: "/" },
-                { name: "Service Areas", href: "/countryareas/" },
+                { name: t.crumbHome, href: "/" },
+                { name: t.crumbAreas, href: "/countryareas/" },
                 { name: name, href: "" }
             ]}
             variant="transparent"
@@ -132,13 +157,13 @@ const getCityCount = (regionSlug: string) => {
                 <div class="max-w-7xl mx-auto">
                     <div class="text-center mb-12">
                         <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-                            Explore by Region
+                            {t.exploreByRegion}
                         </span>
                         <h2 class="text-3xl font-bold text-cyan-900 mt-2">
-                            {code === "EN" ? "States" : "Regions"} We Serve in {name}
+                            {t.regionsTitle(code === "EN")}
                         </h2>
                         <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-                            Select a {code === "EN" ? "state" : "region"} to find web development services and cities in that area.
+                            {t.regionsSub(code === "EN")}
                         </p>
                     </div>
 
@@ -162,7 +187,7 @@ const getCityCount = (regionSlug: string) => {
                                         {regionItem.data.name}
                                     </h3>
                                     <p class="text-xs text-slate-500 mt-1">
-                                        {cityCount} {cityCount === 1 ? 'city' : 'cities'}
+                                        {t.cityCount(cityCount)}
                                     </p>
                                 </a>
                             );
@@ -174,7 +199,7 @@ const getCityCount = (regionSlug: string) => {
                             href="/regions/"
                             class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
                         >
-                            View All Regions
+                            {t.viewAllRegions}
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
@@ -189,13 +214,13 @@ const getCityCount = (regionSlug: string) => {
             <section class="py-16">
                 <div class="text-center mb-12">
                     <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-                        Top Cities
+                        {t.topCities}
                     </span>
                     <h2 class="text-3xl font-bold text-cyan-900 mt-2">
-                        Featured Cities in {name}
+                        {t.featuredTitle}
                     </h2>
                     <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-                        Explore web development services in our most popular cities.
+                        {t.featuredSub}
                     </p>
                 </div>
 
@@ -226,12 +251,12 @@ const getCityCount = (regionSlug: string) => {
 
                             {city.data.population && (
                                 <p class="text-xs text-slate-500 mb-3">
-                                    Population: {city.data.population}
+                                    {isSpanish ? "Población" : "Population"}: {city.data.population}
                                 </p>
                             )}
 
                             <span class="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm group-hover:gap-3 transition-all">
-                                View Services
+                                {t.viewServices}
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
@@ -245,7 +270,7 @@ const getCityCount = (regionSlug: string) => {
                         href="/locations/"
                         class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-900 hover:bg-cyan-800 text-white rounded-xl font-semibold transition-colors"
                     >
-                        View All {countryCities.length} Cities
+                        {t.viewAllCities(countryCities.length)}
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
@@ -259,11 +284,10 @@ const getCityCount = (regionSlug: string) => {
             <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
                 <div class="text-center">
                     <h2 class="text-4xl font-bold text-slate-900">
-                        Explorá otras áreas
+                        {t.exploreTitle}
                     </h2>
                     <p class="mt-2 text-base text-slate-600 max-w-2xl mx-auto">
-                        Descubrí más regiones con historias, datos curiosos y
-                        cultura única.
+                        {t.exploreSub}
                     </p>
                 </div>
 
@@ -287,7 +311,7 @@ const getCityCount = (regionSlug: string) => {
                                         <a
                                             href={`/countryareas/${id}/`}
                                             class="block h-full"
-                                            aria-label={`Ver información de ${title}`}
+                                            aria-label={t.cardAria(title)}
                                         >
                                             {img && (
                                                 <div class="overflow-hidden rounded-t-2xl">
@@ -314,17 +338,13 @@ const getCityCount = (regionSlug: string) => {
 
                                                 <ul class="text-xs text-slate-500 mt-2">
                                                     <li>
-                                                        <strong>País:</strong>{" "}
+                                                        <strong>{t.countryLabel}:</strong>{" "}
                                                         {name}
-                                                    </li>
-                                                    <li>
-                                                        <strong>Código:</strong>{" "}
-                                                        {code}
                                                     </li>
                                                     {region && (
                                                         <li>
                                                             <strong>
-                                                                Región:
+                                                                {t.regionLabel}:
                                                             </strong>{" "}
                                                             {region}
                                                         </li>
@@ -346,17 +366,17 @@ const getCityCount = (regionSlug: string) => {
         >
             <div class="space-y-2">
                 <h2 class="text-2xl font-bold text-orange-700">
-                    ¿Querés seguir explorando?
+                    {t.ctaTitle}
                 </h2>
                 <p class="text-slate-700">
-                    Hay muchas regiones fascinantes por descubrir.
+                    {t.ctaSub}
                 </p>
             </div>
             <a
                 href="/countryareas/"
                 class="bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-700 transition"
             >
-                Ver todos los países
+                {t.ctaButton}
             </a>
         </section>
     </div>

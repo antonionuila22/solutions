@@ -19,7 +19,7 @@ tags:
 
 ## Website Accessibility & ADA Compliance 2025: What Every Business Must Know
 
-**2,019 ADA website lawsuits have been filed in 2025 so far.** By year-end, projections suggest nearly **5,000 lawsuits**—a 20% increase over 2024.
+**2,019 ADA website lawsuits have been filed in 2025 so far.** By year-end, projections suggest nearly **5,000 lawsuits**, a 20% increase over 2024.
 
 If your website isn't accessible, you're not just excluding potential customers. You're exposing your business to significant legal and financial risk.
 
@@ -443,7 +443,7 @@ Accessibility lawyers specifically target sites with overlays because:
 
 ## Conclusion
 
-Website accessibility isn't optional anymore. With lawsuits increasing yearly and courts consistently ruling that websites must be accessible, the question isn't whether to invest in accessibility—it's when.
+Website accessibility isn't optional anymore. With lawsuits increasing yearly and courts consistently ruling that websites must be accessible, the question isn't whether to invest in accessibility, it's when.
 
 The smart move: address accessibility now, before you receive a demand letter. The cost of proper remediation is a fraction of legal defense costs, and you'll end up with a better website that serves more customers.
 

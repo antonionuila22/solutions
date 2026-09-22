@@ -21,7 +21,7 @@ tags:
 
 "How much does custom web development cost?"
 
-It's the first question every business owner asks—and the hardest to answer directly. The truthful answer is: it depends. But that's not helpful when you're trying to budget.
+It's the first question every business owner asks, and the hardest to answer directly. The truthful answer is: it depends. But that's not helpful when you're trying to budget.
 
 This guide provides real pricing data based on 200+ [custom software development](/custom-software-development/) projects we've analyzed, giving you concrete numbers and the factors that influence them. By the end, you'll understand exactly what drives costs and how to budget accurately for your project.
 
@@ -304,7 +304,7 @@ While offshore rates look attractive, consider:
 
 **Quality variance**: Lower rates often mean junior developers. You might pay less per hour but need more hours.
 
-**Rework costs**: We frequently rescue projects from cheap offshore development. Typical rescue costs: $20,000-$50,000—often more than doing it right initially.
+**Rework costs**: We frequently rescue projects from cheap offshore development. Typical rescue costs: $20,000-$50,000, often more than doing it right initially.
 
 **Management burden**: You'll spend more time managing remote teams, reviewing code, and fixing issues.
 
@@ -326,7 +326,7 @@ This is why we operate from Central Time with English-fluent senior engineers. C
 
 ### Step 1: Define Your Project Type
 
-Use the categories above to identify where your project fits. Be honest about complexity—most people underestimate.
+Use the categories above to identify where your project fits. Be honest about complexity, most people underestimate.
 
 ### Step 2: List Your Features
 
@@ -480,7 +480,7 @@ Total                   $52,000
 
 ### What We've Learned From 200+ Projects
 
-1. **Budget realistically**: Most projects cost more than clients initially expect. This isn't vendors being greedy—it's complexity being underestimated.
+1. **Budget realistically**: Most projects cost more than clients initially expect. This isn't vendors being greedy, it's complexity being underestimated.
 
 2. **Invest in planning**: Spending $3,000-$5,000 on proper discovery and planning can save $20,000+ in development by avoiding wrong directions.
 

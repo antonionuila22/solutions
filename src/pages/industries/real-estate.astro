@@ -204,7 +204,7 @@ const processSteps = [
   },
   {
     title: "Listing & Search UX Design",
-    description: "We design property detail pages, gallery layouts, and map-based search around how buyers actually shop—filtering by school district, beds/baths, lot size, and commute. Saved-search and favorites flows, agent profile pages, and clear Fair Housing-compliant disclosures are built in from the first mockup."
+    description: "We design property detail pages, gallery layouts, and map-based search around how buyers actually shop, filtering by school district, beds/baths, lot size, and commute. Saved-search and favorites flows, agent profile pages, and clear Fair Housing-compliant disclosures are built in from the first mockup."
   },
   {
     title: "IDX Feed Integration & Build",
@@ -329,7 +329,7 @@ const softwareIndustry = "real estate teams";
 const softwareLead = "Listings bring the lead in. What decides whether it closes is the follow-up system, the owner reporting, and the commission math. These are the operational systems we build, extend, and connect for brokerages and property managers.";
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -337,7 +337,6 @@ const softwareLead = "Listings bring the lead in. What decides whether it closes
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <IndustryHero
     badgeText="Real Estate Technology Solutions"

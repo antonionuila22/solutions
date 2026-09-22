@@ -33,7 +33,7 @@ longDescription: |
   <p>Codebrand ayuda a estos negocios a proyectarse en internet con la calidad que su producto merece. Somos una agencia hondureña con base en San Pedro Sula, y desarrollamos sitios bilingües para fincas y exportadores de café, tabacaleras que quieren mostrar su marca al mundo, hoteles y tour operadores que viven del visitante internacional, y comercios que quieren vender en línea. Con tecnología moderna y contenido que cuenta bien la historia de Copán, convertimos la reputación de la región en clientes reales.</p>
 
 techScene: |
-  <p>El mercado digital de Santa Rosa de Copán está definido por audiencias que casi siempre están lejos. El café especial se vende a tostadores de Estados Unidos, Europa y Asia; los puros hechos a mano viajan a fumadores de todo el continente; y el turista que visita las Ruinas de Copán investiga y reserva su viaje por internet antes de llegar. Eso hace que una presencia en inglés, un buen relato de marca y la capacidad de vender o reservar en línea pesen mucho más que en un negocio que solo atiende al vecino. Al mismo tiempo, el comercio local del occidente empieza a mover pedidos por redes y WhatsApp. Para el negocio copaneco, el reto no es la tecnología en sí, sino contar su historia —café de origen, puros artesanales, patrimonio colonial y maya— de una forma que un comprador o un viajero al otro lado del mundo entienda y en la que confíe.</p>
+  <p>El mercado digital de Santa Rosa de Copán está definido por audiencias que casi siempre están lejos. El café especial se vende a tostadores de Estados Unidos, Europa y Asia; los puros hechos a mano viajan a fumadores de todo el continente; y el turista que visita las Ruinas de Copán investiga y reserva su viaje por internet antes de llegar. Eso hace que una presencia en inglés, un buen relato de marca y la capacidad de vender o reservar en línea pesen mucho más que en un negocio que solo atiende al vecino. Al mismo tiempo, el comercio local del occidente empieza a mover pedidos por redes y WhatsApp. Para el negocio copaneco, el reto no es la tecnología en sí, sino contar su historia, café de origen, puros artesanales, patrimonio colonial y maya, de una forma que un comprador o un viajero al otro lado del mundo entienda y en la que confíe.</p>
 
 industries:
   - name: "Café de Especialidad"
@@ -65,7 +65,7 @@ faqs:
   - question: "¿Desarrollan sitios para hoteles y tours de las Ruinas de Copán?"
     answer: "Sí. Hacemos sitios con reservas para hoteles, tour operadores y guías que reciben al visitante de las Ruinas de Copán, optimizados para el turista que planea su viaje por internet."
   - question: "¿Pueden crear una tienda para vender café en línea?"
-    answer: "Sí. Montamos tiendas de e-commerce para venta directa de café —por libra o por suscripción— a consumidores y compradores especializados, con pago en línea y control de pedidos."
+    answer: "Sí. Montamos tiendas de e-commerce para venta directa de café, por libra o por suscripción, a consumidores y compradores especializados, con pago en línea y control de pedidos."
   - question: "¿Cómo atienden a un cliente de Santa Rosa de Copán?"
     answer: "Somos una agencia hondureña en San Pedro Sula y llevamos el proyecto por videollamada, WhatsApp y correo, con facturación local en lempiras; coordinamos viajes al occidente cuando el proyecto lo justifica, como fotografiar una finca o una tabacalera."
   - question: "¿Ofrecen soporte y hosting una vez publicado el sitio?"

@@ -6,7 +6,7 @@ region: North America
 author: Ramón Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en México. Creamos soluciones digitales personalizadas para empresas que buscan calidad, innovación y resultados reales en el mercado latinoamericano.
+description: Agencia de diseño y desarrollo web en México. Sitios, tiendas online y sistemas a la medida para empresas mexicanas que buscan calidad y resultados reales.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en México
@@ -33,10 +33,10 @@ En Codebrand México ayudamos a empresas a crecer a través de soluciones digita
 
 Contamos con un equipo experto y multidisciplinario que combina experiencia internacional con conocimiento del mercado local. Trabajamos con tecnología actualizada y un enfoque claro en resultados.
 
-- ✅ Entregas puntuales
-- ✅ Soporte personalizado
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para velocidad y posicionamiento
+- Entregas puntuales
+- Soporte personalizado
+- Diseño centrado en el usuario
+- Desarrollo optimizado para velocidad y posicionamiento
 
 ---
 

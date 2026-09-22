@@ -448,7 +448,7 @@ ROI año 1: (($4,500 × 12) - ($200 × 12 + $5,000 + $500 × 12)) / ($200 × 12 
 
 ### Chatbots que Ejecutan Acciones
 
-No solo responden preguntas—hacen cosas. "Cancela mi suscripción" → el bot realmente la cancela en el sistema.
+No solo responden preguntas, hacen cosas. "Cancela mi suscripción" → el bot realmente la cancela en el sistema.
 
 ### Voz Natural
 
@@ -496,4 +496,4 @@ En Code Brand, hemos implementado chatbots para negocios de todos los tamaños. 
 
 👉 **[Ve nuestros proyectos](/projects/)** con implementaciones innovadoras.
 
-**Un buen chatbot no reemplaza la atención humana—la potencia. ¿Empezamos?**
+**Un buen chatbot no reemplaza la atención humana, la potencia. ¿Empezamos?**

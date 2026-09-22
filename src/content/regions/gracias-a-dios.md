@@ -1,6 +1,6 @@
 ---
 title: "Desarrollo Web en Gracias a Dios | Codebrand Honduras"
-description: "Servicios profesionales de desarrollo web en Gracias a Dios. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Puerto Lempira y todo el departamento."
+description: "Desarrollo web en Gracias a Dios: sitios web, tiendas en línea y aplicaciones para empresas de Puerto Lempira y todo el departamento."
 name: "Gracias a Dios"
 code: "GD"
 country: "honduras"
@@ -24,9 +24,9 @@ featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Gracias a Dios—la <strong>Mosquitia hondureña</strong>, una de las últimas fronteras vírgenes de Centroamérica. Hogar de la <strong>Reserva de la Biosfera del Río Plátano</strong> (Patrimonio de la Humanidad) y las culturas <strong>Miskita, Tawahka, Pech y Garífuna</strong>, este departamento ofrece ecoturismo único y biodiversidad incomparable.</p>
+  <p>Gracias a Dios, la <strong>Mosquitia hondureña</strong>, una de las últimas fronteras vírgenes de Centroamérica. Hogar de la <strong>Reserva de la Biosfera del Río Plátano</strong> (Patrimonio de la Humanidad) y las culturas <strong>Miskita, Tawahka, Pech y Garífuna</strong>, este departamento ofrece ecoturismo único y biodiversidad incomparable.</p>
 
-  <p>En Codebrand, somos <strong>hondureños desarrollando para hondureños</strong>. Entendemos los desafíos únicos de la Mosquitia—conectividad limitada, comunidades remotas, pero también oportunidades únicas en turismo de naturaleza y cultura que pocos lugares del mundo pueden ofrecer.</p>
+  <p>En Codebrand, somos <strong>hondureños desarrollando para hondureños</strong>. Entendemos los desafíos únicos de la Mosquitia, conectividad limitada, comunidades remotas, pero también oportunidades únicas en turismo de naturaleza y cultura que pocos lugares del mundo pueden ofrecer.</p>
 
   <p>Ofrecemos <strong>desarrollo web profesional</strong> que funciona incluso con conectividad limitada. Sitios web optimizados, rápidos y efectivos para negocios de ecoturismo, organizaciones comunitarias y servicios que quieren conectar con el mundo.</p>
 
@@ -56,8 +56,6 @@ marketHighlights:
 
 regionalStats:
   gdp: "Reserva natural"
-  techCompanies: "5+"
-  businessGrowth: "+3% anual"
 
 faqs:
   - question: "¿Pueden desarrollar sitios web que funcionen con conectividad limitada?"

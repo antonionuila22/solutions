@@ -5,11 +5,12 @@
  */
 
 import HnLayout from "../../layouts/HnLayout.astro";
+import { createServicePageSchema } from "../../utils/schema";
 import FaqAccordion from "../../components/FaqAccordion.astro";
 import Icon from "../../components/icons/Icon.astro";
 
 const title = "Sitios Web para Empresas Honduras | Codebrand";
-const description = "Diseño de sitios web profesionales para empresas en Honduras. Páginas web corporativas que generan confianza y atraen clientes. Propuesta de precio cerrado según su presupuesto.";
+const description = "Diseño de sitios web profesionales para empresas en Honduras: páginas corporativas que generan confianza y atraen clientes, con precio cerrado.";
 const keywords = "sitios web empresas honduras, paginas web empresariales honduras, diseño web corporativo honduras, paginas web profesionales honduras, web empresarial tegucigalpa, sitios web san pedro sula";
 
 const faqs = [
@@ -54,11 +55,30 @@ const industries = [
   "Hoteles", "Gimnasios", "Salones de Belleza", "Talleres Automotrices"
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })),
+};
+const serviceSchema = createServicePageSchema({
+  areaServed: { "@type": "Country", name: "Honduras" },
+  serviceType: "Diseño de Sitios Web",
+  name: "Diseño de Sitios Web para Empresas en Honduras",
+  description,
+  url: "https://www.codebrand.us/hn/sitios-web-empresas-honduras/",
+  image: "https://www.codebrand.us/photos/bannercodebrand.webp",
+  catalogName: "Sitios Web para Empresas",
+  catalogItems: [
+    { name: "Sitio Web Corporativo", description: "Sitio profesional con diseño a la medida, formulario de contacto y SEO técnico." },
+    { name: "Sitio Empresarial con CMS", description: "Sitio con gestor de contenidos, blog, integraciones y analítica para empresas en crecimiento." },
+  ],
+});
+
 const stats = [
-  { value: "500+", label: "Empresas Atendidas" },
-  { value: "98%", label: "Satisfacción" },
+  { value: "50", label: "Reseñas de 5 estrellas" },
   { value: "24h", label: "Respuesta" },
-  { value: "5+", label: "Años" }
+  { value: "100%", label: "Código suyo" },
+  { value: "HN", label: "Equipo local" }
 ];
 ---
 
@@ -68,6 +88,8 @@ const stats = [
   keywords={keywords}
   canonicalOverride="https://www.codebrand.us/hn/sitios-web-empresas-honduras/"
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <style>
     .page-bg { background: #030303; }
     .gradient-orbs { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }

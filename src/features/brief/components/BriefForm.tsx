@@ -15,7 +15,7 @@ import { SummaryScreen } from "./SummaryScreen";
 
 /**
  * Orquestador del brief: estado, navegación, autoguardado y transiciones.
- * No conoce ninguna pregunta concreta — todo sale de config/questions.ts a
+ * No conoce ninguna pregunta concreta, todo sale de config/questions.ts a
  * través del motor de lib/visible-questions.
  *
  * Contrato de guardado: el enlace se comparte y varias personas responden a la
@@ -79,7 +79,7 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
 
   // Espejo SÍNCRONO de answers. Los campos de opción única avanzan con
   // setTimeout(onAdvance, 220), y ese timeout captura el goNext del render en
-  // que se hizo clic — cuyo `answers` NO incluye el clic. Validar contra ese
+  // que se hizo clic, cuyo `answers` NO incluye el clic. Validar contra ese
   // estado viejo mostraba "indispensable" en el primer clic de toda pregunta
   // obligatoria. La navegación lee siempre este ref, que onChange actualiza en
   // el acto, así que nunca ve un estado anterior al último cambio.
@@ -209,7 +209,7 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
       setError(actionError.message);
       return;
     }
-    // replace(): el enlace con token sale del historial — "atrás" desde la
+    // replace(): el enlace con token sale del historial, "atrás" desde la
     // página de gracias no vuelve a una vista con respuestas.
     if (data) window.location.replace("/brief/gracias");
   }, [flush, token]);

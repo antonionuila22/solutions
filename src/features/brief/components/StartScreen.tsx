@@ -5,7 +5,7 @@ import { inputClass } from "./field-contract";
 
 /**
  * Portada de /brief. Abre una respuesta nueva y lleva a /brief/{token}: a
- * partir de ahí, esa URL ES el formulario — se puede compartir, cerrar y
+ * partir de ahí, esa URL ES el formulario, se puede compartir, cerrar y
  * retomar. Solo se pide la organización; el resto de datos de contacto los
  * pregunta el propio Bloque P, sin duplicar.
  */

@@ -33,7 +33,7 @@ longDescription: |
   <p>Somos una agencia hondureña con base en San Pedro Sula, así que entendemos tanto la isla como al viajero internacional que la busca. Diseñamos experiencias visuales con galerías de alta calidad, integramos motores de reserva y pasarelas de pago, y optimizamos para búsquedas en inglés como 'diving Roatan' o 'West Bay hotels'. Ya sea un resort frente al mar, un centro de buceo PADI, un tour operador o un restaurante en West End, le ayudamos a llenar su calendario todo el año.</p>
 
 techScene: |
-  <p>La economía digital de Roatán gira en torno a la reserva en línea y la reputación. A diferencia de un negocio local que atiende vecinos, aquí el cliente decide desde otro país, guiado por reseñas en TripAdvisor y Google, fotos en redes sociales y la facilidad para reservar sin escribir un correo. Por eso el terreno competitivo es la velocidad del sitio, su versión en inglés, la integración con plataformas como TripAdvisor, Booking o Cloudbeds, y una experiencia móvil impecable para quien planifica desde el sillón de su casa. La creciente comunidad de expatriados y el flujo constante de cruceros suman una segunda audiencia —bienes raíces, servicios y experiencias de un día— que también compra por internet. En Roatán, el negocio que domina su presencia digital domina la temporada.</p>
+  <p>La economía digital de Roatán gira en torno a la reserva en línea y la reputación. A diferencia de un negocio local que atiende vecinos, aquí el cliente decide desde otro país, guiado por reseñas en TripAdvisor y Google, fotos en redes sociales y la facilidad para reservar sin escribir un correo. Por eso el terreno competitivo es la velocidad del sitio, su versión en inglés, la integración con plataformas como TripAdvisor, Booking o Cloudbeds, y una experiencia móvil impecable para quien planifica desde el sillón de su casa. La creciente comunidad de expatriados y el flujo constante de cruceros suman una segunda audiencia, bienes raíces, servicios y experiencias de un día, que también compra por internet. En Roatán, el negocio que domina su presencia digital domina la temporada.</p>
 
 industries:
   - name: "Resorts y Hoteles Boutique"
@@ -69,7 +69,7 @@ faqs:
   - question: "¿Consiguen fotografía y video para el sitio?"
     answer: "En turismo la imagen lo es todo. Coordinamos fotografía y video profesional en la isla o trabajamos con su material existente para mostrar sus habitaciones, arrecifes y tours con la calidad que el viajero espera antes de reservar."
   - question: "¿Cómo trabajan con un negocio en Roatán si están en tierra firme?"
-    answer: "Somos una agencia hondureña en San Pedro Sula, a un vuelo corto de la isla. Manejamos todo el proyecto por videollamada, WhatsApp y correo, con facturación local en lempiras, y coordinamos visitas a Roatán cuando el proyecto —por ejemplo una sesión de fotos— lo requiere."
+    answer: "Somos una agencia hondureña en San Pedro Sula, a un vuelo corto de la isla. Manejamos todo el proyecto por videollamada, WhatsApp y correo, con facturación local en lempiras, y coordinamos visitas a Roatán cuando el proyecto, por ejemplo una sesión de fotos, lo requiere."
 
 whyChooseUs:
   - title: "Sitios pensados para el viajero internacional"

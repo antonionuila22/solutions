@@ -1,6 +1,6 @@
 ---
 /**
- * RelatedPosts — server-computed related articles for the blog post template.
+ * RelatedPosts, server-computed related articles for the blog post template.
  * Scoring: shared categories (1pt) + shared tags (0.5pt); newer posts win
  * ties; padded with the most recent posts when there are not enough matches.
  * Renders the shared editorial PostCard (blog shell redesign).
@@ -34,7 +34,11 @@ const currentCategories = new Set(categories);
 const currentTags = new Set(tags);
 
 // Score posts by shared categories (1pt) + shared tags (0.5pt). Newer posts win ties.
-const scored = posts
+// Keep related cards in the reader's language when enough posts exist in it.
+const wantsSpanish = lang === "es";
+const sameLanguage = posts.filter((p) => p.id !== currentId && !p.data.draft && ((p.data.lang === "es") === wantsSpanish));
+const pool = sameLanguage.length >= limit ? sameLanguage : posts;
+const scored = pool
   .filter((p) => p.id !== currentId && !p.data.draft)
   .map((p) => {
     let score = 0;
@@ -67,7 +71,7 @@ const padded = topRelated.length === limit
 // no salían nunca y se quedaban con un solo enlace interno entrante, el del
 // índice del blog. Recorriendo la lista ordenada por id, cada post apunta al
 // siguiente: como es un ciclo sobre todos, ninguno queda sin enlace.
-const ordered = posts.filter((p) => !p.data.draft).sort((a, b) => a.id.localeCompare(b.id));
+const ordered = pool.filter((p) => !p.data.draft).sort((a, b) => a.id.localeCompare(b.id));
 const currentIndex = ordered.findIndex((p) => p.id === currentId);
 const successor =
   currentIndex >= 0 && ordered.length > 1

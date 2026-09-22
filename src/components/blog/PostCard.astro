@@ -1,14 +1,14 @@
 ---
 /**
- * PostCard — editorial blog card (index grid, category pages, related posts).
+ * PostCard, editorial blog card (index grid, category pages, related posts).
  *
- * Design direction adapted from the MagicUI blog template (MIT) — clean card,
- * clear hierarchy, lots of air — recolored to the site palette (slate +
+ * Design direction adapted from the MagicUI blog template (MIT), clean card,
+ * clear hierarchy, lots of air, recolored to the site palette (slate +
  * #f48200). The cursor-following halo comes from the SpotlightCard primitive
  * (pattern: ReactBits SpotlightCard, MIT + Commons Clause), which is already
  * gated to fine pointers and static on touch / reduced motion.
  *
- * Reading time is computed server-side from the markdown body (220 wpm) —
+ * Reading time is computed server-side from the markdown body (220 wpm), 
  * no client JS in this component.
  */
 import type { CollectionEntry } from "astro:content";
@@ -32,7 +32,7 @@ const { title, description, img, imageAlt, date, readtime, categories, lang } =
 
 const minutes = readingMinutes(post.body, readtime);
 // Meta line follows the LINKED post's own language (a Spanish card keeps its
-// Spanish meta even inside an English grid — it matches what the click opens).
+// Spanish meta even inside an English grid, it matches what the click opens).
 const t = shellStrings(lang);
 const dateLabel = formatPostDate(date, undefined, postLocale(lang));
 const category = categories?.[0];

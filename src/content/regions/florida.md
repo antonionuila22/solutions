@@ -1,6 +1,6 @@
 ---
 title: "Web Development Services in Florida | Codebrand"
-description: "Professional web development services for Florida businesses. Custom websites, e-commerce platforms, and web applications for Miami, Orlando, Tampa, Jacksonville, and Fort Lauderdale. Cost-effective nearshore development from Honduras."
+description: "Web development for Florida businesses: custom websites, ecommerce and web apps for Miami, Orlando, Tampa and Jacksonville by a bilingual team in Honduras."
 name: "Florida"
 code: "FL"
 country: "usa"
@@ -24,13 +24,13 @@ featured: true
 
 # SEO Enhanced Content
 longDescription: |
-  <p>Florida—the Sunshine State, America's gateway to Latin America and a hub for <strong>tourism, healthcare, finance, and technology</strong>. From Miami's international business community to Orlando's tourism industry, from Tampa's growing tech scene to Jacksonville's logistics hub, Florida offers diverse opportunities for businesses of all sizes.</p>
+  <p>Florida is the Sunshine State, America's gateway to Latin America and a hub for <strong>tourism, healthcare, finance, and technology</strong>. From Miami's international business community to Orlando's tourism industry, from Tampa's growing tech scene to Jacksonville's logistics hub, Florida offers diverse opportunities for businesses of all sizes.</p>
 
   <p>At Codebrand, we help Florida businesses build <strong>professional, effective websites</strong> at competitive rates. Our nearshore team in Honduras offers a unique advantage for Florida: <strong>cultural and language alignment</strong>. Our bilingual team understands Florida's diverse, Latin-influenced business environment.</p>
 
-  <p>Communication is easy: <strong>Honduras is just 1 hour behind Eastern Time</strong>. When you're starting work in Miami, Orlando, Tampa, or Jacksonville, we're ready to collaborate. Real-time Slack communication, video calls during your business hours, and responsive partnership throughout your project.</p>
+  <p>Time zones line up well: <strong>our San Pedro Sula office is one hour behind Miami in winter and two hours behind in summer</strong>, because Honduras never changes its clocks. When you're starting work in Miami, Orlando, Tampa, or Jacksonville, we're ready to collaborate. Expect a shared Slack channel that gets answered while your Miami or Tampa office is open, video calls at Eastern-friendly hours, and a bilingual project lead who stays reachable from kickoff to launch.</p>
 
-  <p>We understand Florida's economy. Whether you're in <strong>hospitality and tourism</strong>, <strong>healthcare</strong>, <strong>international trade</strong>, or <strong>Florida's growing tech sector</strong>—we can help you build websites that effectively serve your diverse customer base.</p>
+  <p>We understand Florida's economy. Whether you're in <strong>hospitality and tourism</strong>, <strong>healthcare</strong>, <strong>international trade</strong>, or <strong>Florida's growing tech sector</strong>, we can help you build websites that effectively serve your diverse customer base.</p>
 
 industries:
   - name: "Tourism & Hospitality"
@@ -56,18 +56,16 @@ marketHighlights:
 
 regionalStats:
   gdp: "$1.4T+"
-  techCompanies: "15,000+"
-  businessGrowth: "+7% YoY"
 
 faqs:
   - question: "Does your team speak Spanish?"
-    answer: "Yes. Our Honduras-based team is fully bilingual in English and Spanish. This is valuable for Florida businesses that serve bilingual markets or need to communicate with Spanish-speaking audiences."
+    answer: "Yes. Every member of our San Pedro Sula team works comfortably in both English and Spanish. This is valuable for Florida businesses that serve bilingual markets or need to communicate with Spanish-speaking audiences."
   - question: "How does timezone alignment work with Florida?"
-    answer: "Honduras is on Central Standard Time, just 1 hour behind Eastern Time. This means we can collaborate during your entire business day with minimal scheduling challenges."
+    answer: "Our team works from San Pedro Sula on Central Standard Time all year, because Honduras does not observe daylight saving time. That puts us one hour behind Miami and Orlando in winter and two hours behind during the summer months. In practice the overlap is almost the whole day: we schedule stand-ups for mid-morning Eastern, keep Slack answered through your afternoon, and book video calls at hours that suit a Miami or Tampa calendar."
   - question: "Can you help tourism and hospitality businesses?"
     answer: "Yes. We can build booking platforms, hotel websites, and tourism experiences. Florida's visitor economy is significant, and we understand the need for effective digital presence in hospitality."
-  - question: "Do you work with healthcare organizations?"
-    answer: "Yes. We can build healthcare websites and patient portals. Florida has a significant healthcare and senior living sector, and we understand these organizations' requirements."
+  - question: "Do you work with Florida healthcare and senior living organizations?"
+    answer: "Yes. For clinics, hospital groups and senior living communities we build websites, patient portals and appointment request flows. Florida has a significant healthcare and senior living sector, and we understand these organizations' requirements."
   - question: "What about Miami's international business community?"
     answer: "Yes. Our bilingual team and understanding of Latin American business culture make us well-suited to work with Miami's international trade and business community."
   - question: "Can you help Florida real estate companies?"

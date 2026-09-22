@@ -25,14 +25,14 @@ resultsNote: >-
   These figures describe what we built in 2024, not outcomes we measured. The
   site's original URL no longer resolves (checked 24 July 2026), so nothing on
   this page can be verified against a live page today.
-# TODO(stack real) — el archivo original solo decía "responsive design". No sabemos qué
+# TODO(stack real): el archivo original solo decía "responsive design". No sabemos qué
 #   se usó en el build, así que la sección "Tech stack" se eliminó en lugar de inventarla.
 #   Pedirle al usuario: CMS/framework real, si el booking era un plugin o un servicio de
 #   terceros (Calendly, Acuity, etc.), y dónde estaba desplegado. Con eso se restaura.
-# TODO(URL viva) — pedir la URL actual del sitio de GMJ, si sigue en línea en otro dominio,
+# TODO(URL viva): pedir la URL actual del sitio de GMJ, si sigue en línea en otro dominio,
 #   o una captura de archive.org de la versión que entregamos. Sin una de las dos, este caso
 #   no tiene ninguna prueba pública y hay que decidir si se mantiene publicado.
-# TODO(métricas de negocio) — este es el caso con menos datos duros. Pedirle a GMJ:
+# TODO(métricas de negocio): este es el caso con menos datos duros. Pedirle a GMJ:
 #   1) consultas recibidas por el sitio al mes, y desde qué fecha
 #   2) cuántas consultas llegan de fuera de Missouri (es la tesis del caso: alcance más allá de St. Louis)
 #   3) cuántas consultas online se convirtieron en proyecto
@@ -53,7 +53,7 @@ The studio's pipeline ran entirely on local referrals, and the two constraints t
 
 First, evaluation. Interior design is bought with the eyes: a prospect wants to see finished rooms before they will consider a consultation. Every enquiry therefore started with "can you send me some photos?", and the studio answered by hand, one email at a time.
 
-Second, availability. Booking a consultation or requesting an estimate required a phone call during office hours. Anyone browsing at 10pm, or anyone outside Missouri who could not simply drop by, had no way to start a conversation — and the studio never even knew they existed.
+Second, availability. Booking a consultation or requesting an estimate required a phone call during office hours. Anyone browsing at 10pm, or anyone outside Missouri who could not simply drop by, had no way to start a conversation, and the studio never even knew they existed.
 
 ## How we worked
 
@@ -69,7 +69,7 @@ Second, availability. Booking a consultation or requesting an estimate required 
 
 - **3 portfolio categories** published and separately browsable: residential, commercial, 3D visualisation.
 - **4 design phases documented** on the site, so prospects know the process before the first conversation.
-- **2 online request channels** — consultation booking and estimate request — where previously the only route in was a phone call during office hours.
+- **2 online request channels**, consultation booking and estimate request, where previously the only route in was a phone call during office hours.
 - **A remote enquiry path**, so someone outside St. Louis could review the work, read the process and start a conversation without a call.
 
 This is the scope we delivered in September 2024. We have no traffic, enquiry or conversion data from GMJ, so there are no performance numbers here, and the site's original address no longer resolves.

@@ -155,6 +155,22 @@ const howToSchema = {
         })) : undefined
     }))
 };
+
+// Sibling service pages, linked from every V4 page so the services cluster is
+// crawlable from any entry point.
+const RELATED_SERVICES = [
+    { name: "Web Development", href: "/services/web-development/" },
+    { name: "UX/UI Design", href: "/services/ux-ui/" },
+    { name: "SEO", href: "/services/seo/" },
+    { name: "Branding", href: "/services/branding/" },
+    { name: "Social Media Design", href: "/services/social-media/" },
+    { name: "Video Production", href: "/services/video-production/" },
+    { name: "Animation", href: "/services/animation/" },
+    { name: "3D Rendering", href: "/services/3d-rendering/" },
+    { name: "Promotional Products", href: "/services/promotional-products/" },
+    { name: "All services", href: "/services/" },
+];
+const currentPath = (Astro.url?.pathname || "/").replace(/\/?$/, "/");
 ---
 
 <Layout
@@ -489,6 +505,20 @@ const howToSchema = {
                     </div>
                 ))}
             </div>
+        </div>
+    </section>
+
+    <!-- Related services: internal links between the service pages -->
+    <section class="py-12 sm:py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Related services</h2>
+            <ul class="flex flex-wrap gap-3 list-none p-0">
+                {RELATED_SERVICES.filter((item) => item.href !== currentPath).map((item) => (
+                    <li>
+                        <a href={item.href} class="inline-block px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-cyan-300 hover:text-cyan-900 transition-colors">{item.name}</a>
+                    </li>
+                ))}
+            </ul>
         </div>
     </section>
 

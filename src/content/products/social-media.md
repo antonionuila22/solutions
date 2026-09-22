@@ -1,17 +1,17 @@
 ---
-title: Social Media Graphic Design – Custom Monthly Packages
+title: "Social Media Graphic Design: Custom Monthly Packages"
 img: /photos/socialmedia.webp
 readtime: 5
-description: Monthly social media design packages built around your brand. High-performing visuals with consistent delivery, creative direction, and strategic alignment — so you never run out of content.
+description: Monthly social media design packages built around your brand. High-performing visuals with consistent delivery, creative direction, and strategic alignment, so you never run out of content.
 date: 2025-01-25
 author: Codebrand Team
 ---
 
 ## Social Media Graphic Design
 
-### Consistent, on-brand content — delivered every month without the stress
+### Consistent, on-brand content: delivered every month without the stress
 
-At **Codebrand**, we turn your digital communication strategy into a steady stream of professional visuals. Our monthly design packages include original graphics, scheduled deliveries, and ongoing creative support — so your feed always looks intentional, not improvised.
+At **Codebrand**, we turn your digital communication strategy into a steady stream of professional visuals. Our monthly design packages include original graphics, scheduled deliveries, and ongoing creative support, so your feed always looks intentional, not improvised.
 
 ---
 
@@ -40,10 +40,10 @@ At **Codebrand**, we turn your digital communication strategy into a steady stre
 
 ## How We Work
 
-1. **Creative kickoff** — We align on your visual identity, tone, and content goals.
-2. **Content calendar** — We organize delivery around your posting schedule.
-3. **Design & feedback** — We share previews and incorporate your input.
-4. **Final delivery** — Assets ready to publish, formatted per platform.
+1. **Creative kickoff**, We align on your visual identity, tone, and content goals.
+2. **Content calendar**, We organize delivery around your posting schedule.
+3. **Design & feedback**, We share previews and incorporate your input.
+4. **Final delivery**, Assets ready to publish, formatted per platform.
 
 ---
 
@@ -58,9 +58,9 @@ At **Codebrand**, we turn your digital communication strategy into a steady stre
 
 ## Why Work with Codebrand
 
-- Designs aligned with your business goals — not just pretty pictures
+- Designs aligned with your business goals, not just pretty pictures
 - Smart, on-brand creativity without constant back-and-forth
-- Reliable delivery schedule — no missed weeks, no last-minute scrambles
+- Reliable delivery schedule, no missed weeks, no last-minute scrambles
 - Close collaboration to ensure every piece performs
 - Graphic content that builds brand perception over time
 

@@ -107,14 +107,15 @@ export default defineConfig({
       // /brief es una herramienta privada con token en la URL, no contenido del
       // sitio: va noindex y fuera del sitemap. La ruta dinámica /brief/[token]
       // ya queda excluida sola, pero el índice /brief tiene pathname estático.
-      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/blog/category/') && !page.includes('/brief') && !isNonCanonicalDuplicate(page) && !isLongtailGeoUrl(page),
+      filter: (page) => !page.includes('/thank-you') && !page.includes('/404') && !page.includes('/landing/') && !page.includes('/brief') && !isNonCanonicalDuplicate(page) && !isLongtailGeoUrl(page),
       changefreq: 'weekly',
       priority: 0.7,
+      // No lastmod on purpose: a build-time timestamp on every URL is not a real
+      // modification date and search engines stop trusting it.
       serialize: (item) => {
-        const lastmod = new Date().toISOString();
         // High priority for main pages
         if (item.url === 'https://www.codebrand.us/') {
-          return { ...item, lastmod, priority: 1.0, changefreq: 'daily' };
+          return { ...item, priority: 1.0, changefreq: 'daily' };
         }
         // Service pages
         if (
@@ -127,25 +128,25 @@ export default defineConfig({
           item.url.includes('/landing-pages') ||
           item.url.includes('/copywriting')
         ) {
-          return { ...item, lastmod, priority: 0.9, changefreq: 'weekly' };
+          return { ...item, priority: 0.9, changefreq: 'weekly' };
         }
         // Location pages (cities)
         if (item.url.includes('/locations/')) {
-          return { ...item, lastmod, priority: 0.8, changefreq: 'monthly' };
+          return { ...item, priority: 0.8, changefreq: 'monthly' };
         }
         // Region pages (states/departments)
         if (item.url.includes('/regions/')) {
-          return { ...item, lastmod, priority: 0.8, changefreq: 'monthly' };
+          return { ...item, priority: 0.8, changefreq: 'monthly' };
         }
         // Blog posts
         if (item.url.includes('/blog/')) {
-          return { ...item, lastmod, priority: 0.7, changefreq: 'weekly' };
+          return { ...item, priority: 0.7, changefreq: 'weekly' };
         }
         // Projects
         if (item.url.includes('/projects/')) {
-          return { ...item, lastmod, priority: 0.6, changefreq: 'monthly' };
+          return { ...item, priority: 0.6, changefreq: 'monthly' };
         }
-        return { ...item, lastmod };
+        return item;
       },
     }),
     mdx()

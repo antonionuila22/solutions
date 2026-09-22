@@ -74,11 +74,11 @@ GitHub Copilot fue el primer producto mainstream de AI coding. Respaldado por Mi
 
 ### Cursor: El Nuevo Rey
 
-Cursor no es solo otra herramienta de AI—es **un IDE completo construido desde cero para programar con IA**. Es VS Code pero reimaginado.
+Cursor no es solo otra herramienta de AI, es **un IDE completo construido desde cero para programar con IA**. Es VS Code pero reimaginado.
 
 **Qué lo hace especial:**
 
-1. **Composer**: Puedes describir cambios complejos y Cursor los implementa en múltiples archivos. "Refactoriza la autenticación para usar JWT en lugar de sesiones"—y lo hace en 15 archivos simultáneamente.
+1. **Composer**: Puedes describir cambios complejos y Cursor los implementa en múltiples archivos. "Refactoriza la autenticación para usar JWT en lugar de sesiones", y lo hace en 15 archivos simultáneamente.
 
 2. **Contexto masivo**: Indexa todo tu codebase. Puedes preguntar "¿dónde se usa esta función?" y obtener respuestas precisas.
 
@@ -109,7 +109,7 @@ En 3 minutos tenía 12 archivos modificados correctamente, siguiendo exactamente
 
 ### Claude (Anthropic): El Mejor Para Razonamiento Complejo
 
-Claude no es un IDE ni un plugin—es un LLM que resulta ser extraordinariamente bueno para código. Especialmente Claude 3.5 Sonnet y el nuevo Claude 3.5 Opus.
+Claude no es un IDE ni un plugin, es un LLM que resulta ser extraordinariamente bueno para código. Especialmente Claude 3.5 Sonnet y el nuevo Claude 3.5 Opus.
 
 **Dónde brilla:**
 
@@ -137,7 +137,7 @@ Tenía un bug de race condition que no podía encontrar. Pegué 3 archivos relev
 
 ### Codeium: La Alternativa Gratuita Sorprendente
 
-Codeium ofrece autocompletado AI gratuito para siempre. Y no es malo—es sorprendentemente capaz.
+Codeium ofrece autocompletado AI gratuito para siempre. Y no es malo, es sorprendentemente capaz.
 
 **Qué ofrece:**
 
@@ -290,7 +290,7 @@ Lo que la AI hace mal:
 - Debugging de sistemas distribuidos
 - Código que requiere creatividad real
 
-**El programador del futuro es un "director de AI"**—sabe qué pedir, cómo verificar, y cuándo intervenir manualmente. Los que se resistan a usar estas herramientas serán menos productivos que los que las adopten.
+**El programador del futuro es un "director de AI"**, sabe qué pedir, cómo verificar, y cuándo intervenir manualmente. Los que se resistan a usar estas herramientas serán menos productivos que los que las adopten.
 
 ---
 
@@ -318,7 +318,7 @@ AI que no solo genera código sino que verifica formalmente que es correcto. Men
 
 La mejor herramienta de AI coding es la que realmente usas y te hace más productivo. Para la mayoría de desarrolladores profesionales hoy, esa herramienta es **Cursor**.
 
-Pero lo importante no es cuál elijas—es que elijas una y la domines. Los desarrolladores que integran AI efectivamente en su flujo de trabajo están produciendo más, con mejor calidad, y disfrutando más el proceso.
+Pero lo importante no es cuál elijas, es que elijas una y la domines. Los desarrolladores que integran AI efectivamente en su flujo de trabajo están produciendo más, con mejor calidad, y disfrutando más el proceso.
 
 La programación está cambiando. La pregunta no es si adaptarse, sino qué tan rápido.
 

@@ -1,18 +1,18 @@
 ---
 /**
- * ConfettiFx — site-wide confetti triggers on canvas-confetti (MIT, ~5KB gz).
- * This is the library MagicUI's Confetti component wraps; we use it directly —
+ * ConfettiFx, site-wide confetti triggers on canvas-confetti (MIT, ~5KB gz).
+ * This is the library MagicUI's Confetti component wraps; we use it directly, 
  * a click effect needs no React island.
  *
  * Usage (include this component once on any page that uses either trigger):
  *  - <element data-confetti>       → small brand-colored burst from the
  *    element on click. Meant for CTAs that DON'T navigate away (e.g. WhatsApp
  *    links opening a new tab). On navigating CTAs the page unloads before the
- *    first frame — don't bother.
+ *    first frame, don't bother.
  *  - <element data-confetti-burst> → one celebratory volley when the page
  *    loads (completion moments: /thank-you after the contact form submits).
  *
- * The library is imported dynamically on first use — zero JS cost until a
+ * The library is imported dynamically on first use, zero JS cost until a
  * click / a burst page. `disableForReducedMotion` is always on, per the
  * site's motion rules.
  */

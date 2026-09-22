@@ -14,37 +14,15 @@
 
 /**
  * Location slugs (src/content/locations/<slug>.md) to keep NOINDEXED (also excluded
- * from the sitemap). Populated 2026-07-15 after a GSC audit: the LATAM + Spain city
- * pages are thin, near-duplicate templated content (many share byte-identical FAQ
- * answers) AND they target the markets we HIRE from, not the US/Honduras markets we
- * SELL to. Noindexing them protects the domain's quality signal and concentrates crawl
- * budget on the US buyer geo + the Honduras home market (both kept indexed).
+ * from the sitemap). Emptied 2026-09-21 by decision of the owner: every city and
+ * region page is indexed and advertised in the sitemap, LATAM and Spain included.
+ * The 2026-07 exclusion existed because those pages shared templated FAQ answers;
+ * that content has been rewritten per city instead of hiding the pages.
  */
-export const EXCLUDED_LOCATIONS = new Set<string>([
-  "alajuela-city", "antigua-guatemala", "antofagasta", "apopa", "arraijan",
-  "barcelona", "barranquilla", "bilbao", "bogota", "bucaramanga", "cali",
-  "cancun", "cartagena", "cartago-city", "chitre", "coban", "colon-city",
-  "concepcion", "cucuta", "david-panama", "escazu", "escuintla", "guadalajara",
-  "guatemala-city", "heredia", "huehuetenango", "la-chorrera", "liberia-cr",
-  "limon", "madrid", "manizales", "medellin", "mejicanos", "mexico-city",
-  "mixco", "monterrey", "panama-city", "pereira", "puebla", "puerto-montt",
-  "puntarenas-city", "queretaro", "quetzaltenango", "san-jose-cr", "san-miguel-sv",
-  "san-salvador", "santa-ana-sv", "santa-tecla", "santiago-chile", "santiago-panama",
-  "sevilla", "soyapango", "temuco", "usulutan", "valencia", "valparaiso",
-  "villa-nueva", "vina-del-mar",
-]);
+export const EXCLUDED_LOCATIONS = new Set<string>([]);
 
 /** Region slugs (src/content/regions/<slug>.md) to keep NOINDEXED (non-US/non-HN — same rationale as EXCLUDED_LOCATIONS). */
-export const EXCLUDED_REGIONS = new Set<string>([
-  "alajuela", "andalucia", "antioquia", "araucania", "atlantico", "biobio",
-  "bogota-dc", "bolivar", "cartago", "cataluna", "chiriqui", "ciudad-de-mexico",
-  "colon-panama", "comunidad-de-madrid", "comunidad-valenciana", "guanacaste",
-  "guatemala-department", "heredia", "jalisco", "la-libertad", "los-lagos",
-  "nuevo-leon", "pais-vasco", "panama-oeste", "panama-provincia", "puebla",
-  "puntarenas", "queretaro", "quetzaltenango", "quintana-roo", "region-metropolitana",
-  "sacatepequez", "san-jose-cr", "san-salvador", "santa-ana-sv", "valle-del-cauca",
-  "valparaiso-region", "veraguas",
-]);
+export const EXCLUDED_REGIONS = new Set<string>([]);
 
 /** A location page is a hub (indexable) unless explicitly excluded. */
 export const isLocationHub = (slug: string): boolean => !EXCLUDED_LOCATIONS.has(slug);

@@ -1,7 +1,7 @@
 /**
  * Límite de creación de briefs por IP. Reutiliza la tabla `rate_limits` que ya
  * existe en Turso para el formulario de contacto, con un prefijo propio en la
- * columna `ip` — no se toca ni se importa contact.ts.
+ * columna `ip`, no se toca ni se importa contact.ts.
  *
  * FALLA ABIERTO a propósito: si Turso no está configurado (entorno local sin
  * credenciales) o no responde, se permite la operación. Esto solo frena

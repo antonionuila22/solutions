@@ -31,7 +31,7 @@ El problema no era el producto, ni el marketing, ni el precio. **Era el checkout
 
 Después de implementar métodos de pago locales (OXXO en México, PIX en Brasil, PSE en Colombia), sus ventas en LATAM mejoraron significativamente.
 
-**Latinoamérica no es un mercado—son 20+ mercados diferentes, cada uno con sus propias reglas de juego.** Y si no entiendes cómo paga la gente en cada país, estás dejando dinero sobre la mesa.
+**Latinoamérica no es un mercado, son 20+ mercados diferentes, cada uno con sus propias reglas de juego.** Y si no entiendes cómo paga la gente en cada país, estás dejando dinero sobre la mesa.
 
 ---
 
@@ -334,7 +334,7 @@ Latinoamérica representa una oportunidad masiva para e-commerce. Pero no es un 
 
 **La diferencia entre éxito y fracaso está en los detalles:** los métodos de pago correctos, la comunicación en el idioma local, el entendimiento de las particularidades de cada mercado.
 
-Las empresas que invierten en verdadera localización—no solo traducción—son las que capturan el crecimiento de la región.
+Las empresas que invierten en verdadera localización, no solo traducción, son las que capturan el crecimiento de la región.
 
 ---
 

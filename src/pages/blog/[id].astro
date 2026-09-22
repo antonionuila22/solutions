@@ -1,6 +1,6 @@
 ---
 /**
- * /blog/[id] — post template (shell only).
+ * /blog/[id], post template (shell only).
  *
  * Editorial redesign adapted from the MagicUI blog template (MIT): centered
  * header, framed hero image, ~70ch reading column, server-rendered table of
@@ -64,10 +64,10 @@ const locale = postLocale(lang);
 // Calculate word count for SEO
 const wordCount = body ? body.split(/\s+/).filter(Boolean).length : 0;
 
-// Reading time shown in the shell — computed server-side at 220 wpm.
+// Reading time shown in the shell, computed server-side at 220 wpm.
 const readMinutes = readingMinutes(body, readtime);
 
-// Table of contents — server-generated from the post's own headings (h2/h3).
+// Table of contents, server-generated from the post's own headings (h2/h3).
 const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 const showToc = !hideToc && toc.length >= 3;
 
@@ -83,7 +83,7 @@ const formattedDate =
       })
     : "";
 
-// SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
+// SEO optimization, keep title ≤ 70 chars and description ≤ 160 chars
 const seoTitle = buildPageTitle(title, {
   seoTitle: data.seoTitle,
   suffix: "Codebrand Blog",
@@ -92,7 +92,7 @@ const rawDesc =
   description ||
   `Read about ${title} on Codebrand's blog. ${author ? `Written by ${author}.` : ""} ${readtime ? `${readtime} min read.` : ""}`;
 const seoDescription = rawDesc.length > 160
-  ? rawDesc.slice(0, 157).trimEnd() + "…"
+  ? rawDesc.slice(0, 157).replace(/\s+\S*$/, "").trimEnd() + "…"
   : rawDesc;
 const seoKeywords = [
   title.toLowerCase(),
@@ -125,6 +125,7 @@ const articleUrl = `${baseUrl}/blog/${post.id}/`;
 
 // Enhanced Structured Data using schema utility
 const structuredData = createArticleSchema({
+  inLanguage: lang === "es" ? "es" : "en-US",
   headline: title,
   description: description || "",
   image: absoluteImage,
@@ -146,7 +147,7 @@ const breadcrumbData = createBreadcrumbSchema([
 ]);
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbData}
   title={seoTitle}
   description={seoDescription}
   keywords={seoKeywords}
@@ -165,11 +166,6 @@ const breadcrumbData = createBreadcrumbSchema([
     set:html={JSON.stringify(structuredData)}
   />
   <!-- Article Breadcrumb Schema -->
-  <script
-    type="application/ld+json"
-    is:inline
-    set:html={JSON.stringify(breadcrumbData)}
-  />
 
   <!-- Reading progress (transform-only; painted by the script below) -->
   <div
@@ -184,7 +180,7 @@ const breadcrumbData = createBreadcrumbSchema([
     <!-- Editorial header -->
     <header class="pt-28 sm:pt-32 lg:pt-36">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <!-- Breadcrumbs brings its own inner px — cancel ours so edges align -->
+        <!-- Breadcrumbs brings its own inner px, cancel ours so edges align -->
         <div class="-mx-4 sm:-mx-6 lg:-mx-8">
           <Breadcrumbs
             items={[
@@ -369,7 +365,7 @@ const breadcrumbData = createBreadcrumbSchema([
 </Layout>
 
 <script>
-  // Reading progress bar — rAF-throttled scroll listener, transform-only.
+  // Reading progress bar, rAF-throttled scroll listener, transform-only.
   // Module runs once per session (ClientRouter); re-grabs the bar per page.
   let bar: HTMLElement | null = null;
   let ticking = false;
@@ -401,7 +397,7 @@ const breadcrumbData = createBreadcrumbSchema([
 </script>
 
 <style is:global>
-  /* ── blog-prose — reading column typography (blog shell only) ─────────
+  /* ── blog-prose, reading column typography (blog shell only) ─────────
      Scoped under .blog-prose so the shared .markdown-content styles used by
      other collections stay untouched. Palette: slate + #f48200 accent. */
 
@@ -415,7 +411,7 @@ const breadcrumbData = createBreadcrumbSchema([
     margin-top: 0;
   }
 
-  /* Headings keep the ids Astro generates — anchor offset for the fixed nav */
+  /* Headings keep the ids Astro generates, anchor offset for the fixed nav */
   .blog-prose h1,
   .blog-prose h2,
   .blog-prose h3,
@@ -462,7 +458,7 @@ const breadcrumbData = createBreadcrumbSchema([
   }
 
   .blog-prose a {
-    color: #c2410c; /* orange-700 — AA on white */
+    color: #c2410c; /* orange-700, AA on white */
     font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 3px;

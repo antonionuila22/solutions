@@ -1,6 +1,6 @@
 ---
 title: "Desarrollo Web en Cortés | Codebrand Honduras"
-description: "Servicios profesionales de desarrollo web en Cortés. Sitios web personalizados, e-commerce y aplicaciones web para empresas en San Pedro Sula, Puerto Cortés, Choloma y todo el departamento."
+description: "Desarrollo web en Cortés: sitios web, tiendas en línea y aplicaciones para empresas de San Pedro Sula, Puerto Cortés, Choloma y todo el departamento."
 name: "Cortés"
 code: "CR"
 country: "honduras"
@@ -24,11 +24,11 @@ featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Cortés—el motor industrial de Honduras, sede de San Pedro Sula y el centro de <strong>manufactura, comercio e industria</strong> del país. Desde <strong>maquilas y zona libre</strong> hasta <strong>agroindustria</strong>, desde <strong>comercio</strong> hasta <strong>logística</strong>, Cortés genera una parte significativa del PIB hondureño.</p>
+  <p>Cortés, el motor industrial de Honduras, sede de San Pedro Sula y el centro de <strong>manufactura, comercio e industria</strong> del país. Desde <strong>maquilas y zona libre</strong> hasta <strong>agroindustria</strong>, desde <strong>comercio</strong> hasta <strong>logística</strong>, Cortés genera una parte significativa del PIB hondureño.</p>
 
   <p>En Codebrand, somos <strong>hondureños desarrollando para hondureños</strong>. Nuestro equipo está basado en Honduras, lo que significa comunicación directa, entendimiento del mercado local y la capacidad de trabajar en su zona horaria. Conocemos las necesidades de la industria hondureña porque somos parte del ecosistema.</p>
 
-  <p>Ofrecemos <strong>desarrollo web profesional</strong> adaptado a las necesidades del sector industrial y comercial. Desde sitios web corporativos para exportadoras hasta plataformas B2B para distribuidores, desde catálogos digitales hasta sistemas de gestión—ayudamos a empresas de Cortés a digitalizarse efectivamente.</p>
+  <p>Ofrecemos <strong>desarrollo web profesional</strong> adaptado a las necesidades del sector industrial y comercial. Desde sitios web corporativos para exportadoras hasta plataformas B2B para distribuidores, desde catálogos digitales hasta sistemas de gestión, ayudamos a empresas de Cortés a digitalizarse efectivamente.</p>
 
   <p>Ya sea que su empresa esté en <strong>San Pedro Sula</strong>, <strong>Puerto Cortés</strong>, <strong>Choloma</strong>, <strong>La Lima</strong> o cualquier parte del departamento, podemos ayudarle a construir una presencia digital que impulse su negocio.</p>
 
@@ -56,8 +56,6 @@ marketHighlights:
 
 regionalStats:
   gdp: "30%+ del PIB nacional"
-  techCompanies: "300+"
-  businessGrowth: "+5% anual"
 
 faqs:
   - question: "¿Trabajan con empresas industriales y manufactureras?"

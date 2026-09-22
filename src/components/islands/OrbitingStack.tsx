@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useAnimationFrame, useReducedMotion } from "motion/react";
 
 /**
- * OrbitingStack — desktop-only orbital diagram for the development stack.
+ * OrbitingStack, desktop-only orbital diagram for the development stack.
  * Concentric orbits (2 or 3, depending on item count) rotating slowly around
  * the Codebrand wordmark. Used on /custom-software-development (typographic
  * pills, light theme) and on the home tech section (logo silhouettes, dark
@@ -13,13 +13,13 @@ import { useAnimationFrame, useReducedMotion } from "motion/react";
  *   mobile keeps each page's static fallback and never loads this JS.
  * - Hovering or focusing an item pauses its orbit and shows its label (and
  *   blurb, when provided) in the core. Blurbs are composed strictly from copy
- *   that already exists on the consuming page — no invented metrics.
+ *   that already exists on the consuming page, no invented metrics.
  * - Icon mode renders each logo full-colour on a white disc (user decision:
  *   brand colours stay). Icons are loading="lazy" on purpose: combined with
  *   the mobile `hidden md:block` wrapper they are never fetched on phones
  *   (lazy images inside display:none never intersect).
  * - Rotation uses only CSS `rotate` (a transform), written imperatively from
- *   a single animation frame loop — React never touches it, so re-renders on
+ *   a single animation frame loop, React never touches it, so re-renders on
  *   hover can't reset the angle. Under prefers-reduced-motion the loop never
  *   runs and the layout stays static; hover labels still work.
  */
@@ -44,16 +44,16 @@ type Props = {
 };
 
 /** One-line descriptions derived from the copy already on
- *  custom-software-development.astro — FAQ "What technologies do you use?",
+ *  custom-software-development.astro, FAQ "What technologies do you use?",
  *  the What We Build cards, and the intro paragraphs. */
 const DESCRIPTIONS: Record<string, string> = {
-  React: "On the frontend — full-stack web apps, from customer portals to complex platforms.",
-  "Next.js": "On the frontend with React — modern, maintainable code you own 100%.",
-  "Node.js": "On the backend — documented, secure REST and GraphQL APIs.",
-  Python: "On the backend — integrations and automation between existing systems.",
+  React: "On the frontend, full-stack web apps, from customer portals to complex platforms.",
+  "Next.js": "On the frontend with React, modern, maintainable code you own 100%.",
+  "Node.js": "On the backend, documented, secure REST and GraphQL APIs.",
+  Python: "On the backend, integrations and automation between existing systems.",
   TypeScript: "Used throughout the stack for reliability.",
-  PostgreSQL: "For data — well-modeled, performant databases that keep your data clean.",
-  MongoDB: "For data — consistent, ready-to-scale database design.",
+  PostgreSQL: "For data, well-modeled, performant databases that keep your data clean.",
+  MongoDB: "For data, consistent, ready-to-scale database design.",
   Supabase: "Chosen when it fits the project and stays maintainable long-term.",
   "REST / GraphQL": "APIs documented, secure, and ready for your apps and partners to consume.",
 };
@@ -144,7 +144,7 @@ export default function OrbitingStack({
       angles.current[ring.ringIdx] = angle;
       const el = ringEls.current[ring.ringIdx];
       // CSS `rotate` only (composited transform); items counter-rotate to
-      // stay upright. Never set via React props — see component docblock.
+      // stay upright. Never set via React props, see component docblock.
       if (el) el.style.rotate = `${angle}deg`;
       for (const item of itemEls.current[ring.ringIdx]) {
         if (item) item.style.rotate = `${-angle}deg`;

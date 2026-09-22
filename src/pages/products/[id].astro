@@ -27,14 +27,14 @@ const { title, description, img, readtime, author } = data;
 
 const { Content } = await render(product);
 
-// SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
+// SEO optimization, keep title ≤ 70 chars and description ≤ 160 chars
 const baseUrl = "https://www.codebrand.us";
 const seoTitle = buildPageTitle(title, { seoTitle: data.seoTitle });
 const rawDesc =
   description ||
   `Discover ${title} from Codebrand. Professional digital services scoped to your budget. Request a fixed-price proposal.`;
 const seoDescription = rawDesc.length > 160
-  ? rawDesc.slice(0, 157).trimEnd() + "…"
+  ? rawDesc.slice(0, 157).replace(/\s+\S*$/, "").trimEnd() + "…"
   : rawDesc;
 const seoKeywords = `${title.toLowerCase()}, codebrand services, digital services, ${title.toLowerCase()} service, professional ${title.toLowerCase()}, ${title.toLowerCase()} agency`;
 
@@ -64,22 +64,29 @@ const breadcrumbSchema = {
   ]
 };
 
-// Product Schema for rich snippets
+// These are services, not physical products: a Service node (Product without
+// offers is reported as invalid by Search Console).
 const productSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
+  "serviceType": title,
   "name": title,
   "description": description,
   "image": img ? `${baseUrl}${img}` : `${baseUrl}/photos/bannercodebrand.webp`,
   "url": `${baseUrl}/products/${product.id}/`,
-  "brand": {
-    "@type": "Brand",
-    "name": "Codebrand"
+  "provider": {
+    "@type": "Organization",
+    "name": "Codebrand",
+    "url": "https://www.codebrand.us/"
   },
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Honduras" }
+  ],
 };
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={seoTitle}
   description={seoDescription}
   keywords={seoKeywords}
@@ -87,7 +94,6 @@ const productSchema = {
 >
   <!-- Product Schema for rich snippets -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(productSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero section con gradient de fondo -->
   <div class="relative bg-white">

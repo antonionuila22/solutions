@@ -1,6 +1,6 @@
 ---
-title: "Desarrollo Web en Panamá Provincia | Codebrand Panamá"
-description: "Servicios profesionales de desarrollo web en Panamá Provincia. Sitios web personalizados, e-commerce y aplicaciones web para empresas en la capital y toda la provincia."
+title: "Desarrollo Web en Ciudad de Panamá y Provincia | Codebrand"
+description: "Desarrollo web, comercio electrónico y aplicaciones para empresas de la provincia de Panamá: Ciudad de Panamá, Costa del Este y Tocumen. Equipo en español."
 name: "Panamá"
 code: "PA"
 country: "panama"
@@ -11,67 +11,65 @@ capital: "Ciudad de Panamá"
 timezone: "EST"
 keywords:
   - "desarrollo web Panamá"
-  - "desarrolladores web Ciudad de Panamá"
-  - "diseño web Panamá"
-  - "sitios web personalizados Panamá"
-  - "agencia web Ciudad de Panamá"
-  - "páginas web hub financiero"
-  - "desarrollo ecommerce Panamá"
-  - "aplicaciones web logística"
-  - "desarrollo software Panamá"
-  - "transformación digital Panamá"
+  - "desarrollo web Ciudad de Panamá"
+  - "diseño web Ciudad de Panamá"
+  - "agencia web Panamá"
+  - "agencia de desarrollo web en Panamá"
+  - "diseño de páginas web Costa del Este"
+  - "tienda en línea Panamá"
+  - "desarrollo de software Ciudad de Panamá"
+  - "aplicaciones web para empresas en Panamá"
+  - "diseño web San Miguelito"
 featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Panamá—el <strong>hub financiero y logístico de las Américas</strong>, sede del Canal de Panamá y centro de comercio internacional. Desde <strong>banca y finanzas</strong> hasta <strong>logística y comercio</strong>, desde <strong>multinacionales</strong> hasta <strong>turismo</strong>, Ciudad de Panamá es el puente entre dos océanos y dos continentes.</p>
+  <p>La provincia de Panamá concentra la capital del país y su mayor actividad económica. <strong>Ciudad de Panamá</strong> reúne el Centro Bancario Internacional en torno a la Calle 50, Obarrio y Marbella, torres corporativas en Costa del Este y Punta Pacífica, comercio en Albrook y Multiplaza, y turismo en el Casco Antiguo y la Cinta Costera. Ciudad del Saber, en Clayton, agrupa organismos internacionales y empresas de tecnología; el Aeropuerto Internacional de Tocumen funciona como hub aéreo de las Américas; y San Miguelito, Juan Díaz y Tocumen suman una amplia base de comercio, servicios y logística ligada al Canal y al puerto de Balboa.</p>
 
-  <p>En Codebrand, ofrecemos <strong>desarrollo web desde Honduras</strong>—país centroamericano con apenas 1 hora de diferencia horaria y precios significativamente más competitivos que el mercado panameño. Para empresas que operan en dólares pero buscan optimizar costos, somos una opción atractiva.</p>
+  <p>Las empresas de la capital compiten en un mercado dolarizado, con clientes acostumbrados a resolver todo desde el celular y con mucha relación con el exterior. Eso exige sitios que carguen rápido, versiones en inglés para clientes internacionales, pagos con Yappy, tarjetas y transferencias ACH, y cumplimiento con la facturación electrónica de la DGI a través de un proveedor autorizado. Bancos, aseguradoras, firmas legales y empresas con sede regional necesitan además áreas privadas, formularios seguros y una imagen a la altura de sus competidores internacionales.</p>
 
-  <p>Panamá tiene costos operativos elevados. Nuestro modelo nearshore ofrece <strong>desarrollo profesional</strong> a precios centroamericanos—calidad comparable a agencias locales premium sin los overhead de operar en el hub financiero.</p>
+  <p>Codebrand trabaja con empresas de la provincia de Panamá de forma remota desde Honduras. Nuestro equipo habla español y opera con solo una hora de diferencia, ya que Honduras va una hora detrás de Panamá, por lo que las reuniones caben en su jornada sin esfuerzo. Coordinamos por videollamada y WhatsApp, mostramos avances en demos semanales y entregamos el código completo al cliente. No publicamos precios: cada proyecto se presenta como una propuesta a precio fijo construida a partir del presupuesto que usted define.</p>
 
-  <p>Ya sea que su empresa esté en <strong>Punta Pacífica</strong>, <strong>Costa del Este</strong>, <strong>El Cangrejo</strong> o la <strong>Zona Libre de Colón</strong>, podemos ayudarle a construir presencia digital de primer nivel a costos optimizados.</p>
+  <p>Los proyectos que mejor encajan en la capital son sitios corporativos para bancos, aseguradoras, firmas de abogados y sedes regionales de multinacionales; portales de clientes y cotizadores para empresas logísticas, navieras y agentes de carga; tiendas en línea para distribuidores y marcas con clientes en toda la región; páginas de proyectos para promotoras de Costa del Este y Panamá Norte; y aplicaciones web para clínicas, universidades y empresas de servicios de San Miguelito, Juan Díaz y Tocumen.</p>
 
 industries:
-  - name: "Banca y Finanzas"
-    description: "Sitios web corporativos para bancos, aseguradoras y servicios financieros."
-  - name: "Logística y Comercio"
-    description: "Plataformas web para empresas de logística, navieras y comercio."
-  - name: "Multinacionales"
-    description: "Sitios web para sedes regionales de empresas internacionales."
-  - name: "Bienes Raíces"
-    description: "Sitios web para desarrolladores y agentes inmobiliarios."
-  - name: "Turismo"
-    description: "Sitios web para hoteles, tours y turismo de negocios."
-  - name: "Legal y Corporativo"
-    description: "Sitios web para firmas de abogados y servicios corporativos."
+  - name: "Banca, Seguros y Servicios Financieros"
+    description: "Sitios institucionales, portales seguros y áreas de clientes para bancos, aseguradoras y financieras del Centro Bancario Internacional."
+  - name: "Logística, Navieras y Comercio Exterior"
+    description: "Cotizadores, rastreo de envíos y portales B2B para agentes de carga, navieras y operadores que trabajan con el Canal, Balboa y Tocumen."
+  - name: "Firmas Legales y Servicios Corporativos"
+    description: "Webs profesionales bilingües y sistemas de gestión de clientes para bufetes, contadores y proveedores de servicios corporativos de Obarrio y Bella Vista."
+  - name: "Bienes Raíces y Construcción"
+    description: "Páginas de proyectos, catálogos de propiedades y CRM web para promotoras y corredores de Costa del Este, Punta Pacífica y Panamá Norte."
+  - name: "Turismo, Hoteles y Convenciones"
+    description: "Reservas en línea y sitios multilingües para hoteles, operadores turísticos y organizadores de eventos del Casco Antiguo y Amador."
+  - name: "Salud, Educación y Servicios"
+    description: "Sistemas de citas, matrículas y pagos con Yappy para clínicas, universidades, academias y empresas de servicios de San Miguelito, Juan Díaz y Tocumen."
 
 marketHighlights:
-  - "Hub financiero más importante de Latinoamérica"
-  - "Canal de Panamá es arteria del comercio mundial"
-  - "Zona Libre de Colón es la mayor de las Américas"
-  - "Sede regional de multinacionales"
-  - "Economía dolarizada y estable"
-  - "Centro de turismo de negocios y congresos"
+  - "Ciudad de Panamá alberga el Centro Bancario Internacional, uno de los principales centros financieros de América Latina."
+  - "El Canal de Panamá y el puerto de Balboa hacen de la provincia un nodo logístico clave del comercio mundial."
+  - "El Aeropuerto Internacional de Tocumen es el principal hub aéreo de conexión entre Norteamérica, Sudamérica y el Caribe."
+  - "Costa del Este y Punta Pacífica concentran torres corporativas y sedes regionales de empresas multinacionales."
+  - "Ciudad del Saber, en Clayton, reúne organismos internacionales, centros académicos y empresas de tecnología."
+  - "La economía panameña usa el dólar estadounidense como moneda de curso legal junto al balboa, lo que simplifica los pagos en línea."
 
 regionalStats:
   gdp: "Hub financiero regional"
-  techCompanies: "1,500+"
-  businessGrowth: "+5% anual"
 
 faqs:
-  - question: "¿Por qué elegir una agencia de Honduras para Panamá?"
-    answer: "Panamá tiene costos elevados. Ofrecemos desarrollo profesional a precios centroamericanos, con apenas 1 hora de diferencia horaria y comunicación fluida en español."
-  - question: "¿Trabajan con empresas financieras?"
-    answer: "Sí. Desarrollamos sitios web corporativos para bancos, aseguradoras y servicios financieros que necesitan presencia digital profesional y segura."
-  - question: "¿Cómo es la comunicación?"
-    answer: "Apenas 1 hora de diferencia (Honduras CST, Panamá EST). Slack, videollamadas, correo—colaboración fluida durante su horario laboral."
-  - question: "¿Pueden desarrollar para multinacionales?"
-    answer: "Sí. Creamos sitios web corporativos para sedes regionales que necesitan presencia digital profesional acorde a estándares internacionales."
-  - question: "¿Trabajan con empresas de logística?"
-    answer: "Sí. Desarrollamos plataformas web para empresas de logística, navieras y comercio internacional."
-  - question: "¿Qué garantías ofrecen?"
-    answer: "Entregamos proyectos con código de calidad, documentación y soporte post-lanzamiento. Nuestro modelo depende de clientes satisfechos."
+  - question: "¿Por qué contratar a Codebrand desde Ciudad de Panamá si el equipo trabaja desde Honduras?"
+    answer: "Porque trabajamos de forma remota, en español y con solo una hora de diferencia horaria, así que las reuniones se agendan dentro de su jornada laboral. Nos comunicamos por videollamada y WhatsApp, le mostramos el avance en una demo cada semana y usted trata directamente con el equipo técnico. Al final, el código y los accesos quedan a su nombre."
+  - question: "¿Integran Yappy, tarjetas y la factura electrónica de la DGI?"
+    answer: "Sí. Para tiendas en línea y sistemas de cobro integramos Yappy, tarjetas de crédito y débito y transferencias ACH mediante pasarelas que operan en Panamá. Cuando la empresa debe emitir factura electrónica, conectamos el sistema con un proveedor autorizado por la DGI para que cada venta genere su comprobante sin trabajo manual y con los datos del cliente ya registrados."
+  - question: "¿Cuánto cuesta un sitio web corporativo en Panamá?"
+    answer: "No publicamos tarifas porque cada empresa parte de necesidades distintas. Le pedimos que nos indique el presupuesto disponible y, con esa cifra, preparamos una propuesta a precio fijo que define páginas, idiomas, integraciones y plazos. Usted decide con el costo total a la vista y ese monto no cambia durante el proyecto salvo que amplíe el alcance."
+  - question: "¿Pueden construir sitios bilingües para bancos, firmas legales y multinacionales?"
+    answer: "Sí. Para empresas del Centro Bancario Internacional, bufetes de Obarrio o sedes regionales en Costa del Este diseñamos sitios en español e inglés con estructura multilingüe correcta para Google, formularios seguros, áreas privadas para clientes y contenido que refleje una imagen institucional. Trabajamos con sus lineamientos de marca y de cumplimiento para que el sitio pase las revisiones internas."
+  - question: "¿Desarrollan portales y aplicaciones para empresas logísticas?"
+    answer: "Sí. Para agentes de carga, navieras, transportistas y operadores ligados al Canal y al Aeropuerto de Tocumen construimos cotizadores en línea, rastreo de envíos, portales de clientes con documentos y facturas, y paneles internos que sustituyen hojas de cálculo. Cada aplicación se diseña a la medida de sus procesos y se entrega con el código a su nombre."
+  - question: "¿Ayudan a posicionar mi empresa en Google en Ciudad de Panamá?"
+    answer: "Sí. Cada sitio se entrega con SEO técnico: velocidad de carga, datos estructurados, páginas por servicio y por zona como Costa del Este, San Francisco o San Miguelito, y textos alineados con lo que buscan sus clientes. También le orientamos para optimizar su Google Business Profile, que determina si aparece en Maps cuando alguien busca su rubro en la capital."
 
 majorCities:
   - "Ciudad de Panamá"

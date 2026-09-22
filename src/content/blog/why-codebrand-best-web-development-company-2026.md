@@ -201,7 +201,7 @@ Our clients consistently highlight these benefits:
 ## Our Core Expertise
 
 ### UX/UI Design (Our Specialty)
-**World-class user experience and interface design.** We obsess over every pixel, every interaction, every user flow. Our designs don't just look beautiful—they convert.
+**World-class user experience and interface design.** We obsess over every pixel, every interaction, every user flow. Our designs don't just look beautiful, they convert.
 [Explore UX/UI Services →](https://www.codebrand.us/services/ux-ui/)
 
 ### Premium Web Development
@@ -209,7 +209,7 @@ Custom websites built with Astro and React for **maximum performance, SEO, and u
 [Learn more →](https://www.codebrand.us/web-development/)
 
 ### E-commerce Excellence
-Conversion-optimized online stores that sell. Shopify, custom builds, and headless commerce—all with our signature attention to UX.
+Conversion-optimized online stores that sell. Shopify, custom builds, and headless commerce, all with our signature attention to UX.
 [Learn more →](https://www.codebrand.us/e-commerce/)
 
 ### Custom Web Applications

@@ -1,6 +1,6 @@
 ---
 title: "Web Development Services in Washington | Codebrand"
-description: "Professional web development services for Washington businesses. Custom websites, e-commerce platforms, and web applications for Seattle, Bellevue, Tacoma, and Spokane. Cost-effective nearshore development from Honduras."
+description: "Web development for Washington businesses: custom websites, e-commerce and web apps for Seattle, Bellevue, Tacoma and Spokane. Nearshore team from Honduras."
 name: "Washington"
 code: "WA"
 country: "usa"
@@ -24,13 +24,13 @@ featured: true
 
 # SEO Enhanced Content
 longDescription: |
-  <p>Washington—the Evergreen State, home to some of the world's most influential technology companies and a thriving economy built on <strong>technology, aerospace, healthcare, and international trade</strong>. From Seattle's tech giants to Bellevue's enterprise software companies, from Boeing's aerospace operations to the Port of Seattle's Pacific trade, Washington represents innovation and global connectivity.</p>
+  <p>Washington, the Evergreen State, home to some of the world's most influential technology companies and a thriving economy built on <strong>technology, aerospace, healthcare, and international trade</strong>. From Seattle's tech giants to Bellevue's enterprise software companies, from Boeing's aerospace operations to the Port of Seattle's Pacific trade, Washington represents innovation and global connectivity.</p>
 
   <p>At Codebrand, we help Washington businesses build <strong>professional, effective websites</strong> at competitive rates. Our nearshore team in Honduras offers a cost-effective alternative to Seattle's premium rates, allowing businesses to invest more in their products while still getting quality web development.</p>
 
-  <p>We understand the timezone difference matters: <strong>Honduras is 2 hours ahead of Pacific Time</strong>. Our team maintains overlap with your business hours for collaboration, and we use Slack and async communication effectively—a model familiar to Washington's tech-savvy business community.</p>
+  <p>Seattle starts its day two hours after we do: <strong>our office in San Pedro Sula runs on Central Standard Time, 2 hours ahead of Pacific Time</strong>. In practice a Bellevue or Redmond team finds a first batch of work waiting each morning, we overlap live from your 8 a.m. until our late afternoon, and anything after that moves to Slack threads and recorded demos, the same distributed rhythm Puget Sound software companies already use.</p>
 
-  <p>Whether you're a <strong>tech company in Seattle</strong>, an <strong>enterprise software firm in Bellevue</strong>, an <strong>aerospace contractor</strong>, or a <strong>business leveraging Pacific trade</strong>—we can help you build websites that effectively serve your customers and support your business goals.</p>
+  <p>Whether you're a <strong>tech company in Seattle</strong>, an <strong>enterprise software firm in Bellevue</strong>, an <strong>aerospace contractor</strong>, or a <strong>business leveraging Pacific trade</strong>, we can help you build websites that effectively serve your customers and support your business goals.</p>
 
 industries:
   - name: "Technology & Software"
@@ -56,12 +56,10 @@ marketHighlights:
 
 regionalStats:
   gdp: "$700B+"
-  techCompanies: "15,000+"
-  businessGrowth: "+5% YoY"
 
 faqs:
   - question: "How do you work with Washington clients given the timezone difference?"
-    answer: "Honduras is on Central Standard Time, 2 hours ahead of Pacific Time. Our team maintains availability during your business hours, and we use Slack and async communication effectively. Many Washington tech companies already work with distributed teams."
+    answer: "Two hours separate San Pedro Sula from Seattle, and we plan around it. We schedule our core hours so that the whole Pacific morning and early afternoon are covered live, keep decisions and hand-offs in a shared Slack channel, and record every sprint demo so a Bellevue or Tacoma stakeholder can review it at 5 p.m. their time. For companies already used to distributed teams, the rhythm feels familiar from week one."
   - question: "Can you help Seattle tech companies?"
     answer: "Yes. We work with modern technologies and can build product websites, documentation sites, and web applications for Seattle's tech community."
   - question: "Do you work with aerospace companies?"

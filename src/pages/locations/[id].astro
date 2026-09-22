@@ -7,6 +7,7 @@ import Button from "../../components/Button.astro";
 import Whyus from "../../components/whyus.astro";
 import Faq from "../../components/Faq.astro";
 import PageHero from "../../components/PageHero.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createLocalBusinessSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
 import { isLocationHub } from "../../lib/seo/geo-tiers";
@@ -40,9 +41,14 @@ export async function getStaticPaths() {
         const pool = byCountry.get(location.data.country) ?? [];
         const index = pool.findIndex((entry) => entry.id === location.id);
         if (index < 0 || pool.length < 2) return [];
-        return [1, 2, 3]
+        // Same state or department first (the real neighbours), then the
+        // rotation over the rest of the country so every city gets links.
+        const sameRegion = pool.filter((entry) => entry.id !== location.id && !!location.data.region && entry.data.region === location.data.region);
+        const rotated = [1, 2, 3, 4, 5]
           .filter((offset) => offset < pool.length)
-          .map((offset) => pool[(index + offset) % pool.length]);
+          .map((offset) => pool[(index + offset) % pool.length])
+          .filter((entry) => !sameRegion.includes(entry));
+        return [...sameRegion, ...rotated].slice(0, 3);
       })(),
     },
   }));
@@ -50,6 +56,11 @@ export async function getStaticPaths() {
 
 const { location, otherCities = [] } = Astro.props;
 const { data } = location;
+
+// Parent pages for the breadcrumb trail (country and region hubs), so every city
+// links up to its cluster and crawlers reach the geo hierarchy from any page.
+const countryEntry = (await getCollection("countryareas")).find((entry) => entry.id === data.country);
+const regionEntry = data.region ? (await getCollection("regions")).find((entry) => entry.id === data.region) : undefined;
 const {
   title,
   description,
@@ -78,6 +89,77 @@ const {
   localTestimonial
 } = data;
 
+// ── Language: every location outside the US is written in Spanish. The page
+//    chrome (H1, headings, CTAs, fallbacks) must match the content language or
+//    Google reads a mixed-language page. ─────────────────────────────────────
+const isSpanish = data.country !== "usa";
+// "San Salvador, San Salvador" reads like a template glitch when city and state share a name.
+const place = city === state ? city : `${city}, ${state}`;
+const waText = encodeURIComponent(`Hola Codebrand, tengo un proyecto web en ${city} y quiero una propuesta.`);
+const whatsappUrl = `https://api.whatsapp.com/send/?phone=50487380714&text=${waText}&type=phone_number&app_absent=0`;
+const t = isSpanish
+  ? {
+      heroTitle: `Desarrollo Web Profesional en <span class="text-orange-400">${city}</span>`,
+      statReviews: "50 reseñas en Google", statFive: "Reseñas de 5 estrellas", statYears: "Años de experiencia del equipo", statCustom: "Hecho a la medida",
+      ctaPrimary: { text: "Solicitar propuesta", href: whatsappUrl },
+      ctaSecondary: { text: "Por qué elegirnos", href: "#why-codebrand" },
+      longTitle: `Servicios de desarrollo web en ${place}`,
+      industriesTitle: `Industrias que atendemos en ${city}`,
+      industriesSub: `Entendemos las necesidades digitales de los negocios de ${city}.`,
+      marketTitle: `Por qué ${city} es un buen lugar para hacer negocios digitales`,
+      statsTech: `Empresas tecnológicas en ${city}`, statsGrowth: "Crecimiento empresarial",
+      techTitle: `El ecosistema tecnológico y empresarial de ${city}`,
+      whyTitle: `Por qué las empresas de ${city} eligen Codebrand`,
+      whyIntro: `Somos una agencia de desarrollo web con base en Honduras que trabaja con empresas de ${city} en su idioma, con calidad de exportación y una propuesta de precio cerrado según su presupuesto.`,
+      servicesTitle: `Servicios de desarrollo web para empresas de ${city}`,
+      servicesSub: `Desde emprendimientos hasta empresas consolidadas: sitios web, tiendas en línea y sistemas a la medida para el mercado de ${city}.`,
+      learnMore: "Más información",
+      caseEyebrow: "Caso real de un cliente", caseLink: "Ver este proyecto", clientLabel: "Cliente",
+      reviewsTitle: "Lo que dicen nuestros clientes", reviewsSub: "Reseñas verificadas de 5 estrellas de negocios para los que hemos construido.",
+      ctaTitle: `¿Listo para iniciar su proyecto web en ${city}?`,
+      ctaSub: "Cuéntenos qué necesita y el presupuesto que tiene; le respondemos con una propuesta de precio cerrado. Sin compromiso.",
+      ctaButton: "Solicitar propuesta", ctaButtonHref: whatsappUrl, ctaWork: "Ver nuestro trabajo",
+      nearbyTitle: "También atendemos zonas cercanas", nearbySub: `Ofrecemos desarrollo web en toda el área metropolitana de ${city}.`,
+      otherCities: "También trabajamos en estas ciudades",
+      crumbHome: "Inicio", crumbAreas: "Áreas de servicio",
+      faqTitle: `Preguntas frecuentes sobre desarrollo web en ${city}`, faqSub: `Preguntas comunes de empresas de ${city} sobre nuestros servicios.`,
+    }
+  : {
+      heroTitle: `Professional Web Development in <span class="text-orange-400">${city}</span>`,
+      statReviews: "50 Google reviews", statFive: "Five-Star Reviews", statYears: "Years Team Experience", statCustom: "Custom-Built",
+      ctaPrimary: { text: "Request a Proposal", href: "/quoter/" },
+      ctaSecondary: { text: "Why Choose Us", href: "#why-codebrand" },
+      longTitle: `Web Development Services in ${place}`,
+      industriesTitle: `Industries We Serve in ${city}`,
+      industriesSub: `We understand the unique digital needs of ${city}'s diverse business landscape.`,
+      marketTitle: `Why ${city} is a Great Place for Digital Business`,
+      statsTech: `Tech Companies in ${city}`, statsGrowth: "Business Growth Rate",
+      techTitle: `The ${city} Tech & Business Scene`,
+      whyTitle: `Why ${city} Businesses Choose Codebrand`,
+      whyIntro: `We're a Honduras-based web development agency serving ${city} businesses with export-quality work at a fixed price built from your budget. Same timezone, bilingual team.`,
+      servicesTitle: `Web Development Services for ${city} Businesses`,
+      servicesSub: `From startups to established companies, we provide comprehensive web development solutions tailored to ${city}'s business landscape.`,
+      learnMore: "Learn More",
+      caseEyebrow: "Real Client Success Story", caseLink: "View this project", clientLabel: "Client",
+      reviewsTitle: "What Our Clients Say", reviewsSub: "Verified 5-star reviews from businesses we've built for.",
+      ctaTitle: `Ready to Start Your ${city} Web Development Project?`,
+      ctaSub: "Tell us what you need and the budget you have. You get a fixed-price proposal within 24 business hours. No commitment required.",
+      ctaButton: "Request a Proposal", ctaButtonHref: "/quoter/", ctaWork: "View Our Work",
+      nearbyTitle: "Also Serving Nearby Areas", nearbySub: `We provide web development services throughout the ${city} metropolitan area.`,
+      otherCities: "We also work in these cities",
+      crumbHome: "Home", crumbAreas: "Service Areas",
+      faqTitle: `Frequently Asked Questions About Web Development in ${city}`, faqSub: `Common questions from ${city} businesses about our web development services.`,
+    };
+
+// Breadcrumb trail: rendered visibly and emitted as BreadcrumbList by the Layout.
+const crumbItems = [
+  { name: t.crumbHome, href: "/" },
+  { name: t.crumbAreas, href: "/countryareas/" },
+  ...(countryEntry ? [{ name: countryEntry.data.name, href: `/countryareas/${countryEntry.id}/` }] : []),
+  ...(regionEntry ? [{ name: regionEntry.data.name, href: `/regions/${regionEntry.id}/` }] : []),
+  { name: city, href: "" },
+];
+
 // ── Regional design accent ─────────────────────────────────────────────────
 // Give pages a visual identity that varies by region/state so no two look like
 // byte-identical clones. Derived deterministically from the region or stateCode.
@@ -97,10 +179,10 @@ for (let i = 0; i < accentKey.length; i++) accentHash = (accentHash * 31 + accen
 const accent = ACCENTS[accentHash % ACCENTS.length];
 
 // Alternate the section order per city (deterministic) so the page flow itself
-// differs, not just the words — another anti-duplication signal.
+// differs, not just the words, another anti-duplication signal.
 const industriesFirst = accentHash % 2 === 0;
 
-// ── Real, honest social proof — rotated per city ────────────────────────────
+// ── Real, honest social proof, rotated per city ────────────────────────────
 // We NEVER fabricate reviews or results. We surface genuine Google reviews and
 // real delivered projects, rotated deterministically so no two city pages show
 // an identical block. They are labelled as real reviews / real work, not as local.
@@ -114,8 +196,15 @@ const pickRotated = <T,>(arr: T[], count: number, seed: number): T[] => {
 const substantialReviews = testimonials.filter((t) => t.body.length >= 70);
 const cityReviews = pickRotated(substantialReviews, 3, accentHash);
 
-const realProjects = (await getCollection("projects", ({ data }) => !data.draft))
+// Only genuine client work rotates here: the "landing-*" entries are demo
+// templates, not clients. Spanish pages prefer the case studies written in Spanish.
+const allProjects = (await getCollection("projects", ({ data, id }) => !data.draft && !id.startsWith("landing-") && id !== "ramonnuila-dev-portfolio"))
   .sort((a, b) => (a.id < b.id ? -1 : 1));
+const spanishProjects = allProjects.filter((entry) => entry.data.lang === "es");
+const englishProjects = allProjects.filter((entry) => entry.data.lang !== "es");
+const realProjects = isSpanish
+  ? (spanishProjects.length ? spanishProjects : allProjects)
+  : (englishProjects.length ? englishProjects : allProjects);
 const rotatedProject = pickRotated(realProjects, 1, accentHash)[0];
 // Prefer an explicit per-city case study; otherwise use a real project (honest,
 // not claimed to be local).
@@ -126,7 +215,7 @@ const caseStudy = localCaseStudy
         title: rotatedProject.data.title,
         summary: rotatedProject.data.description,
         metric: rotatedProject.data.results?.metric1,
-        metricLabel: rotatedProject.data.client ? `Client: ${rotatedProject.data.client}` : undefined,
+        metricLabel: rotatedProject.data.client ? `${t.clientLabel}: ${rotatedProject.data.client}` : undefined,
         href: `/projects/${rotatedProject.id}/`,
       }
     : null;
@@ -146,11 +235,20 @@ const WHY_ICONS = [
 ];
 const whyCards = (whyChooseUs && whyChooseUs.length)
   ? whyChooseUs
+  : isSpanish
+  ? [
+      { title: "Mismo idioma, sin intermediarios", description: `Hablamos con su equipo de ${city} en español, sin traducciones ni gestores de cuenta en medio.` },
+      { title: "Zona horaria compatible", description: "Trabajamos desde Honduras en horario de Centroamérica, con reuniones en su jornada laboral." },
+      { title: "Precio cerrado según su presupuesto", description: "Usted define el presupuesto; nosotros proponemos el alcance que cabe y cerramos un precio fijo." },
+      { title: "Tecnología actual", description: `React, Next.js, Astro, Node.js y TypeScript, el mismo stack que usan los mejores estudios de ${city}.` },
+      { title: "Experiencia comprobada", description: "Proyectos entregados en Estados Unidos, Honduras, España y México, con reseñas verificables." },
+      { title: "El código es suyo", description: "Propiedad total del código fuente y de las cuentas. Su sitio, su código, sin dependencia de nosotros." },
+    ]
   : [
-      { title: "60% Cost Savings", description: `Get the same quality as ${city} agencies at a fraction of the cost—without compromising quality.` },
+      { title: "60% Cost Savings", description: `Get the same quality as ${city} agencies at a fraction of the cost, without compromising quality.` },
       { title: "Same Timezone", description: `Honduras operates on CST, aligned with ${city}. Real-time collaboration, no overnight waits.` },
       { title: "Fluent English", description: "Our entire team speaks fluent English. Clear communication, no language barriers." },
-      { title: "Latest Technologies", description: `React, Next.js, Astro, Node.js, TypeScript—the same modern stack as top ${city} shops.` },
+      { title: "Latest Technologies", description: `React, Next.js, Astro, Node.js, TypeScript, the same modern stack as top ${city} shops.` },
       { title: "Proven Track Record", description: "Custom web projects delivered across the US, Honduras, Spain, and Mexico." },
       { title: "You Own Everything", description: "Complete source code ownership, no vendor lock-in. Your website, your code." },
     ];
@@ -158,19 +256,33 @@ const whyCards = (whyChooseUs && whyChooseUs.length)
 // City-specific services override the generic block when provided.
 const serviceCards = (localServices && localServices.length)
   ? localServices
+  : isSpanish
+  ? [
+      { title: "Desarrollo web a la medida", description: `Sitios y aplicaciones en React, Next.js o Astro, rápidos y escalables, pensados para empresas de ${city}.`, href: "/web-development/" },
+      { title: "Tiendas en línea", description: "Comercio electrónico completo con catálogo, carrito, pagos locales e internacionales e inventario.", href: "/e-commerce/" },
+      { title: "Diseño web y UX/UI", description: `Diseños enfocados en conversión que representan a su marca de ${city} con profesionalismo.`, href: "/web-design/" },
+    ]
   : [
-      { title: "Custom Web Development", description: `Tailored web apps built with React, Next.js, or Astro—scalable, fast, and designed for ${city} businesses.`, href: "/web-development/" },
+      { title: "Custom Web Development", description: `Tailored web apps built with React, Next.js, or Astro, scalable, fast, and designed for ${city} businesses.`, href: "/web-development/" },
       { title: "E-commerce Development", description: "Full-featured online stores with Shopify, WooCommerce, or custom platforms.", href: "/e-commerce/" },
       { title: "Web Design & UI/UX", description: `Conversion-focused designs that represent your ${city} brand professionally.`, href: "/web-design/" },
     ];
 
-// SEO optimization — keep title ≤ 70 chars and description ≤ 160 chars
+// SEO optimization, keep title ≤ 70 chars and description ≤ 160 chars
 // to satisfy Google's snippet limits and SE Ranking guidelines.
-const seoTitle = metaTitle || `Web Development in ${city}, ${stateCode} | Codebrand`;
+const seoTitle = metaTitle || (isSpanish ? `Desarrollo Web en ${city} | Codebrand` : `Web Development in ${city}, ${stateCode} | Codebrand`);
 const seoDescription = description.length > 160
-  ? description.slice(0, 157).trimEnd() + "…"
+  ? description.slice(0, 157).replace(/\s+\S*$/, "").trimEnd() + "…"
   : description;
-const seoKeywords = [
+const seoKeywords = isSpanish ? [
+  `desarrollo web ${city}`,
+  `diseño web ${city}`,
+  `agencia web ${city}`,
+  `empresa de desarrollo web ${city}`,
+  `páginas web ${city}`,
+  `desarrollo de software ${city} ${state}`,
+  ...(keywords || [])
+].join(", ") : [
   `web development ${city}`,
   `web development company ${city}`,
   `custom web development ${city}`,
@@ -188,7 +300,7 @@ const absoluteImage = img ? (img.startsWith('http') ? img : `${baseUrl}${img}`) 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Web Development",
+  "serviceType": isSpanish ? "Desarrollo Web" : "Web Development",
   "provider": {
     "@type": "Organization",
     "name": "Codebrand",
@@ -210,9 +322,10 @@ const structuredData = {
   "areaServed": {
     "@type": "City",
     "name": city,
-    "containedIn": {
+    "containedInPlace": {
       "@type": "State",
-      "name": state
+      "name": state,
+      ...(countryEntry ? { "containedInPlace": { "@type": "Country", "name": countryEntry.data.name } } : {})
     }
   },
   "description": description,
@@ -221,7 +334,12 @@ const structuredData = {
 };
 
 // LocalBusiness Schema for enhanced local SEO
-const localBusinessSchema = createLocalBusinessSchema(city, state, stateCode, description);
+const localBusinessSchema = createLocalBusinessSchema(city, state, stateCode, description, {
+  slug: location.id,
+  countrySlug: data.country,
+  countryName: countryEntry?.data.name,
+  spanish: isSpanish,
+});
 
 // FAQ Schema for SEO (only if custom FAQs exist)
 const faqSchema = faqs?.length ? {
@@ -244,6 +362,8 @@ const faqSchema = faqs?.length ? {
   keywords={seoKeywords}
   image={absoluteImage}
   noindex={!isLocationHub(location.id)}
+  lang={isSpanish ? "es" : "en-US"}
+  breadcrumbs={crumbItems}
 >
   <!-- Service Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
@@ -258,17 +378,22 @@ const faqSchema = faqs?.length ? {
 
   <!-- Hero Section -->
   <PageHero
-    eyebrow={`${city}, ${state}`}
-    title={`Professional Web Development in <span class="text-orange-400">${city}</span>`}
+    eyebrow={place}
+    title={t.heroTitle}
     subtitle={description}
     stats={[
-      { value: "5.0", label: "50 Google reviews", counterTo: 5, decimals: 1, color: "orange" },
-      { value: "50", label: "Five-Star Reviews", counterTo: 50, color: "cyan" },
-      { value: "8+", label: "Years Experience", counterTo: 8, suffix: "+", color: "cyan" },
-      { value: "100%", label: "Custom-Built", color: "orange" },
+      { value: "5.0", label: t.statReviews, counterTo: 5, decimals: 1, color: "orange" },
+      { value: "50", label: t.statFive, counterTo: 50, color: "cyan" },
+      { value: "8+", label: t.statYears, counterTo: 8, suffix: "+", color: "cyan" },
+      { value: "100%", label: t.statCustom, color: "orange" },
     ]}
-    ctaPrimary={{ text: "Get Free Quote", href: "/contact/" }}
-    ctaSecondary={{ text: "Why Choose Us", href: "#why-codebrand" }}
+    ctaPrimary={t.ctaPrimary}
+    ctaSecondary={t.ctaSecondary}
+  />
+  <Breadcrumbs
+    items={crumbItems}
+    variant="transparent"
+    class="bg-slate-50 border-y border-slate-100"
   />
 
   <!-- Extended Description Section (SEO Content) -->
@@ -277,7 +402,7 @@ const faqSchema = faqs?.length ? {
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="prose prose-lg prose-cyan max-w-none">
           <h2 class="text-display-2 font-bold text-cyan-900 mb-8 text-center" data-anim="heading">
-            Web Development Services in {city}, {state}
+            {t.longTitle}
           </h2>
           <div class="text-slate-700 leading-relaxed text-lg space-y-6" data-anim="fade" set:html={sanitizeHtml(longDescription || '')} />
         </div>
@@ -291,10 +416,10 @@ const faqSchema = faqs?.length ? {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-display-2 font-bold text-cyan-900 mb-4" data-anim="heading">
-            Industries We Serve in {city}
+            {t.industriesTitle}
           </h2>
           <p class="text-xl text-slate-600 max-w-3xl mx-auto" data-anim="fade" data-delay="0.1">
-            We understand the unique digital needs of {city}'s diverse business landscape.
+            {t.industriesSub}
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-anim="fade">
@@ -317,7 +442,7 @@ const faqSchema = faqs?.length ? {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-display-2 font-bold text-white mb-4" data-anim="heading">
-            Why {city} is a Great Place for Digital Business
+            {t.marketTitle}
           </h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" data-anim="fade">
@@ -344,13 +469,13 @@ const faqSchema = faqs?.length ? {
           {localStats.techCompanies && (
             <div>
               <div class="text-4xl font-bold text-orange-500 mb-2">{localStats.techCompanies}</div>
-              <div class="text-slate-600">Tech Companies in {city}</div>
+              <div class="text-slate-600">{t.statsTech}</div>
             </div>
           )}
           {localStats.businessGrowth && (
             <div>
               <div class="text-4xl font-bold text-orange-500 mb-2">{localStats.businessGrowth}</div>
-              <div class="text-slate-600">Business Growth Rate</div>
+              <div class="text-slate-600">{t.statsGrowth}</div>
             </div>
           )}
         </div>
@@ -364,7 +489,7 @@ const faqSchema = faqs?.length ? {
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="rounded-3xl border border-slate-100 bg-slate-50 p-8 sm:p-12">
           <h2 class="text-display-2 font-bold text-cyan-900 mb-6" data-anim="heading">
-            The {city} Tech &amp; Business Scene
+            {t.techTitle}
           </h2>
           <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed" data-anim="fade" set:html={sanitizeHtml(techScene)} />
         </div>
@@ -377,10 +502,10 @@ const faqSchema = faqs?.length ? {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-display-2 font-bold text-cyan-900 mb-6" data-anim="heading">
-          Why {city} Businesses Choose Codebrand
+          {t.whyTitle}
         </h2>
         <p class="text-xl text-slate-700 max-w-3xl mx-auto" data-anim="fade" data-delay="0.1">
-          We're a Honduras-based web development agency serving {city} businesses with premium quality at 60% less than US rates. Same timezone, bilingual team, export-quality work.
+          {t.whyIntro}
         </p>
       </div>
 
@@ -405,10 +530,10 @@ const faqSchema = faqs?.length ? {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-display-2 font-bold text-cyan-900 mb-6" data-anim="heading">
-          Web Development Services for {city} Businesses
+          {t.servicesTitle}
         </h2>
         <p class="text-xl text-slate-700 max-w-3xl mx-auto" data-anim="fade" data-delay="0.1">
-          From startups to established companies, we provide comprehensive web development solutions tailored to {city}'s business landscape.
+          {t.servicesSub}
         </p>
       </div>
 
@@ -418,7 +543,7 @@ const faqSchema = faqs?.length ? {
             <h3 class="text-2xl font-bold text-cyan-900 mb-4">{svc.title}</h3>
             <p class="text-slate-700 mb-6">{svc.description}</p>
             <a href={svc.href || "/contact/"} class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2">
-              Learn More
+              {t.learnMore}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -430,7 +555,7 @@ const faqSchema = faqs?.length ? {
   </section>
 
   <!-- Why Us Component -->
-  <Whyus />
+  {!isSpanish && <Whyus />}
 
   <!-- Real Client Success Story (a genuine delivered project, rotated per city) -->
   {caseStudy && (
@@ -439,14 +564,14 @@ const faqSchema = faqs?.length ? {
         <div class="grid md:grid-cols-3 gap-8 items-center rounded-3xl bg-white border border-slate-100 shadow-lg p-8 sm:p-12">
           <div class="md:col-span-2">
             <span class="inline-block text-xs font-bold uppercase tracking-wider text-orange-600 mb-3">
-              Real Client Success Story
+              {t.caseEyebrow}
             </span>
             <h2 class="text-2xl sm:text-3xl font-bold text-cyan-900 mb-4" data-anim="heading">
               {caseStudy.title}
             </h2>
             <p class="text-slate-700 text-lg leading-relaxed mb-5" data-anim="fade">{caseStudy.summary}</p>
             <a href={caseStudy.href} class="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-2">
-              View this project
+              {t.caseLink}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -465,16 +590,16 @@ const faqSchema = faqs?.length ? {
     </section>
   )}
 
-  <!-- Real Google reviews (genuine, rotated per city — not claimed to be local) -->
+  <!-- Real Google reviews (genuine, rotated per city, not claimed to be local) -->
   {cityReviews.length > 0 && (
     <section class="py-16 lg:py-20 bg-white font-poppins">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-display-2 font-bold text-cyan-900 mb-3" data-anim="heading">
-            What Our Clients Say
+            {t.reviewsTitle}
           </h2>
           <p class="text-slate-600" data-anim="fade" data-delay="0.1">
-            Verified 5-star reviews from businesses we've built for.
+            {t.reviewsSub}
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-anim="fade">
@@ -504,20 +629,20 @@ const faqSchema = faqs?.length ? {
   <section class={`py-16 lg:py-24 ${accent.ctaBg} font-poppins`}>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-display-2 font-bold text-white mb-6" data-anim="heading">
-        Ready to Start Your {city} Web Development Project?
+        {t.ctaTitle}
       </h2>
       <p class="text-xl text-cyan-100 mb-8" data-anim="fade" data-delay="0.1">
-        Get a free consultation and detailed project quote. No commitment required.
+        {t.ctaSub}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim="fade" data-delay="0.18">
-        <a href="/contact/" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
-          Get Free Quote
+        <a href={t.ctaButtonHref} data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+          {t.ctaButton}
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
         <a href="/projects/" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
-          View Our Work
+          {t.ctaWork}
         </a>
       </div>
     </div>
@@ -529,10 +654,10 @@ const faqSchema = faqs?.length ? {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h2 class="text-display-2 font-bold text-cyan-900 mb-4" data-anim="heading">
-            Also Serving Nearby Areas
+            {t.nearbyTitle}
           </h2>
           <p class="text-slate-600 mb-6" data-anim="fade" data-delay="0.1">
-            We provide web development services throughout the {city} metropolitan area.
+            {t.nearbySub}
           </p>
           <div class="flex flex-wrap justify-center gap-3" data-anim="fade" data-delay="0.15">
             {nearbyAreas.map((area) => (
@@ -546,7 +671,7 @@ const faqSchema = faqs?.length ? {
     </section>
   )}
 
-  <!-- Other cities — internal linking between location hubs -->
+  <!-- Other cities, internal linking between location hubs -->
   {otherCities.length > 0 && (
     <section class="py-12 bg-white font-poppins" aria-labelledby="other-cities">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -555,7 +680,7 @@ const faqSchema = faqs?.length ? {
             id="other-cities"
             class="text-display-2 font-bold text-cyan-900 mb-6"
           >
-            We also work in these cities
+            {t.otherCities}
           </h2>
           <ul class="flex flex-wrap justify-center gap-3 list-none p-0">
             {otherCities.map((entry) => (
@@ -580,10 +705,10 @@ const faqSchema = faqs?.length ? {
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-display-2 font-bold text-cyan-900 mb-4" data-anim="heading">
-            Frequently Asked Questions About Web Development in {city}
+            {t.faqTitle}
           </h2>
           <p class="text-xl text-slate-600" data-anim="fade" data-delay="0.1">
-            Common questions from {city} businesses about our web development services.
+            {t.faqSub}
           </p>
         </div>
         <div class="space-y-6" data-anim="fade">

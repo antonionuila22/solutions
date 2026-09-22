@@ -22,11 +22,11 @@ complexity: 2
 In 2026, **design is the difference** between businesses that thrive and those that struggle. Consider these facts:
 
 - **88% of users** won't return to a website after a bad experience
-- **First impressions** form in 0.05 seconds—mostly based on design
+- **First impressions** form in 0.05 seconds, mostly based on design
 - **Well-designed user interfaces** can increase conversion rates by up to 200%
 - **Every $1 invested in UX** returns $100 (10,000% ROI)
 
-Your competitors are investing in design. The question isn't whether you should—it's who you should trust to do it right.
+Your competitors are investing in design. The question isn't whether you should, it's who you should trust to do it right.
 
 **The answer: Codebrand.**
 
@@ -38,7 +38,7 @@ Let's clarify the terms that many confuse:
 
 ### UX Design (User Experience)
 
-UX design focuses on **how a product works**—the overall experience a user has when interacting with your website or application.
+UX design focuses on **how a product works**, the overall experience a user has when interacting with your website or application.
 
 **UX includes:**
 - User research and personas
@@ -52,7 +52,7 @@ UX design focuses on **how a product works**—the overall experience a user has
 
 ### UI Design (User Interface)
 
-UI design focuses on **how a product looks**—the visual elements users interact with.
+UI design focuses on **how a product looks**, the visual elements users interact with.
 
 **UI includes:**
 - Visual design and aesthetics
@@ -66,7 +66,7 @@ UI design focuses on **how a product looks**—the visual elements users interac
 
 ### The Codebrand Approach
 
-**We don't separate UX and UI**—we integrate them seamlessly. Our design philosophy:
+**We don't separate UX and UI**, we integrate them seamlessly. Our design philosophy:
 
 1. **Research first** - Understand users before designing
 2. **Function drives form** - UX decisions inform UI choices
@@ -88,9 +88,9 @@ Many agencies claim to be the best. Here's how to actually evaluate them:
 
 **Codebrand's philosophy:**
 
-> "Design isn't decoration—it's problem-solving. Every color, every button, every pixel should serve a purpose: helping users achieve their goals and businesses achieve theirs."
+> "Design isn't decoration, it's problem-solving. Every color, every button, every pixel should serve a purpose: helping users achieve their goals and businesses achieve theirs."
 
-Our process is research-driven, iterative, and collaborative. We don't design based on trends or personal preferences—we design based on data and user needs.
+Our process is research-driven, iterative, and collaborative. We don't design based on trends or personal preferences, we design based on data and user needs.
 
 ### 2. Portfolio Quality
 
@@ -172,7 +172,7 @@ Our process is research-driven, iterative, and collaborative. We don't design ba
 
 ### Visual Design & UI
 
-**What it is:** The visual layer—colors, typography, imagery, components.
+**What it is:** The visual layer, colors, typography, imagery, components.
 
 **Why it matters:** Visual design creates emotional connection and trust. It's your brand's digital expression.
 
@@ -239,7 +239,7 @@ We deliver **premium quality at accessible prices**:
 - **Full UX/UI:** From $6,000
 - **Design Systems:** From $15,000
 
-**Why we can offer this:** Our Honduras-based [nearshore development team](/nearshore-development/) delivers US-quality work at nearshore prices—same timezone, native English, premium standards.
+**Why we can offer this:** Our Honduras-based [nearshore development team](/nearshore-development/) delivers US-quality work at nearshore prices, same timezone, native English, premium standards.
 
 [Get a custom quote →](https://www.codebrand.us/contact/)
 
@@ -262,7 +262,7 @@ Reusing the same layouts and patterns for every client. **Your business is uniqu
 Can't point to conversion improvements, user satisfaction gains, or business impact. **We track results obsessively.**
 
 ### 5. Poor Communication
-Slow responses, missed deadlines, unclear processes. **Codebrand responds within 24 hours—usually same-day.**
+Slow responses, missed deadlines, unclear processes. **Codebrand responds within 24 hours, usually same-day.**
 
 ### 6. No Developer Collaboration
 Designs that look great but can't be built. **We work closely with developers (often our own) to ensure designs translate to code perfectly.**
@@ -275,7 +275,7 @@ After 500+ projects, here's what makes us different:
 
 ### 1. Design Is Our Foundation
 
-While many agencies treat design as a step in development, **design is our DNA**. We're designers first—that expertise flows into everything we do.
+While many agencies treat design as a step in development, **design is our DNA**. We're designers first, that expertise flows into everything we do.
 
 **Our design team includes:**
 - Senior UX strategists
@@ -463,7 +463,7 @@ Our nearshore model delivers exceptional value:
 
 ### What's the difference between UX and UI design?
 
-**UX (User Experience)** focuses on how the product works—the flow, structure, and functionality. **UI (User Interface)** focuses on how it looks—the visual design. Both are essential. Codebrand integrates them seamlessly.
+**UX (User Experience)** focuses on how the product works, the flow, structure, and functionality. **UI (User Interface)** focuses on how it looks, the visual design. Both are essential. Codebrand integrates them seamlessly.
 
 ### How long does a UX/UI project take?
 
@@ -480,7 +480,7 @@ Absolutely. Many clients have internal developers or work with other agencies. W
 
 ### What tools do you use?
 
-**Figma** is our primary platform—best for collaboration and developer handoff. We also use Adobe Creative Suite, various prototyping tools, and user testing platforms.
+**Figma** is our primary platform, best for collaboration and developer handoff. We also use Adobe Creative Suite, various prototyping tools, and user testing platforms.
 
 ### Can you work with our existing brand guidelines?
 
@@ -488,7 +488,7 @@ Yes, and we prefer it. Existing brand guidelines help us create cohesive designs
 
 ### What's included in your pricing?
 
-Our quotes are comprehensive—no hidden fees. Included:
+Our quotes are comprehensive, no hidden fees. Included:
 - All research activities
 - Design iterations
 - Prototypes

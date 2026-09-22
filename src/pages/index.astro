@@ -42,7 +42,7 @@ import ValueProposition from "../components/ValueProposition.astro";
 import PartnershipBanner from "../components/PartnershipBanner.astro";
 import DesignRushSection from "../components/DesignRushSection.astro";
 
-// Real Google reviews — single source of truth for BOTH the JSON-LD schema
+// Real Google reviews, single source of truth for BOTH the JSON-LD schema
 // below and the ReviewsCarousel island in the social-proof section.
 // Texts are verbatim; do not edit.
 const googleReviews = [
@@ -81,9 +81,9 @@ const googleReviews = [
 // Review Schema for Google rich snippets - real Google reviews
 const reviewsSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   "@id": "https://www.codebrand.us/#organization",
-  "name": "Codebrand",
+  "name": "Codebrand - Honduras Software Development Agency",
   "url": "https://www.codebrand.us",
   "review": googleReviews.map((r) => ({
     "@type": "Review",
@@ -101,14 +101,14 @@ const reviewsSchema = {
   }
 };
 
-// ── Selected work — real, documented client projects (see src/content/projects) ──
+// ── Selected work, real, documented client projects (see src/content/projects) ──
 const work = [
   {
     n: "01",
     name: "Laboratory & Tech",
     kw: "B2B e-commerce platform",
     industry: "B2B · Lab Equipment",
-    desc: "Custom WooCommerce platform — full catalog, CRM sync, and B2B quoting.",
+    desc: "Custom WooCommerce platform, full catalog, CRM sync, and B2B quoting.",
     metrics: ["7,900+ products", "Custom CRM plugin", "Full API integration"],
     img: "/photos/projects/Laboratory.avif",
     slug: "laboratory-equipment-platform",
@@ -155,7 +155,7 @@ const work = [
   },
 ];
 
-// ── Service pillars — each links to its real hub page ──
+// ── Service pillars, each links to its real hub page ──
 const pillars = [
   {
     n: "01",
@@ -169,7 +169,7 @@ const pillars = [
     n: "02",
     icon: "database",
     title: "Custom Software & CRM",
-    desc: "Internal tools, dashboards, and our own production CRM — built around your workflow, not a template's. Documented and handed over with the repository.",
+    desc: "Internal tools, dashboards, and our own production CRM, built around your workflow, not a template's. Documented and handed over with the repository.",
     chips: ["Node.js", "PostgreSQL", "Prisma", "APIs"],
     href: "/custom-software-development/",
   },
@@ -177,7 +177,7 @@ const pillars = [
     n: "03",
     icon: "shopping-cart",
     title: "E-commerce",
-    desc: "Storefronts that load fast and convert — catalog to checkout to fulfillment. Shopify, WooCommerce or headless, with payments wired to your market.",
+    desc: "Storefronts that load fast and convert, catalog to checkout to fulfillment. Shopify, WooCommerce or headless, with payments wired to your market.",
     chips: ["Shopify", "WooCommerce", "Stripe", "PayPal"],
     href: "/e-commerce/",
   },
@@ -199,12 +199,12 @@ const pillars = [
   },
 ];
 
-// ── Full service list — every discipline, each linking to its real hub page ──
+// ── Full service list, every discipline, each linking to its real hub page ──
 const allServices = [
   {
     icon: "code",
     title: "Web Development",
-    desc: "Custom web development in Astro, React and Next.js — fast, accessible, SEO-ready sites that pass Core Web Vitals on mobile.",
+    desc: "Custom web development in Astro, React and Next.js, fast, accessible, SEO-ready sites that pass Core Web Vitals on mobile.",
     href: "/services/web-development/",
   },
   {
@@ -216,13 +216,13 @@ const allServices = [
   {
     icon: "database",
     title: "Custom CRM Development",
-    desc: "CRM software built to your sales pipeline — lead capture, quoting, invoicing and reporting, with no per-seat licence to renew.",
+    desc: "CRM software built to your sales pipeline, lead capture, quoting, invoicing and reporting, with no per-seat licence to renew.",
     href: "/custom-crm-development/",
   },
   {
     icon: "shopping-cart",
     title: "E-commerce Development",
-    desc: "Shopify, WooCommerce and headless storefronts engineered to convert — catalog, checkout, payments and fulfillment.",
+    desc: "Shopify, WooCommerce and headless storefronts engineered to convert, catalog, checkout, payments and fulfillment.",
     href: "/e-commerce/",
   },
   {
@@ -240,7 +240,7 @@ const allServices = [
   {
     icon: "search",
     title: "SEO Services",
-    desc: "Technical SEO, content strategy and local search optimization — built to earn rankings that hold, not spikes that fade.",
+    desc: "Technical SEO, content strategy and local search optimization, built to earn rankings that hold, not spikes that fade.",
     href: "/services/seo/",
   },
   {
@@ -252,7 +252,7 @@ const allServices = [
   {
     icon: "video",
     title: "Video Production",
-    desc: "Corporate video production, product films and short-form ad creative — scripted, shot and edited in house.",
+    desc: "Corporate video production, product films and short-form ad creative, scripted, shot and edited in house.",
     href: "/services/video-production/",
   },
   {
@@ -264,7 +264,7 @@ const allServices = [
   {
     icon: "box",
     title: "3D Rendering",
-    desc: "Architectural and product 3D rendering — photoreal visuals for real estate, manufacturing and construction, before anything is built.",
+    desc: "Architectural and product 3D rendering, photoreal visuals for real estate, manufacturing and construction, before anything is built.",
     href: "/services/3d-rendering/",
   },
   {
@@ -282,12 +282,12 @@ const allServices = [
   {
     icon: "handshake",
     title: "Hire Remote Developers",
-    desc: "Hire senior developers by the hour or the month — vetted React, Next.js, Node and Python engineers, ready in days.",
+    desc: "Hire senior developers by the hour or the month, vetted React, Next.js, Node and Python engineers, ready in days.",
     href: "/hire-remote-developers/",
   },
 ];
 
-// ── Industries — keyword-bearing anchors to the real industry pages ──
+// ── Industries, keyword-bearing anchors to the real industry pages ──
 const industries = [
   { label: "Healthcare web design", href: "/industries/healthcare/" },
   { label: "Law firm websites", href: "/industries/law-firms/" },
@@ -302,7 +302,7 @@ const industries = [
   { label: "Content creator websites", href: "/industries/content-creators/" },
 ];
 
-// ── How we work — real durations, real deliverables ──
+// ── How we work, real durations, real deliverables ──
 const steps = [
   {
     n: "01",
@@ -315,7 +315,7 @@ const steps = [
     n: "02",
     icon: "pencil",
     title: "UX/UI design",
-    dur: "1–2 weeks",
+    dur: "1 to 2 weeks",
     items: ["Wireframes", "UI & design system", "Clickable prototype"],
   },
   {
@@ -334,11 +334,11 @@ const steps = [
   },
 ];
 
-// ── Standard scope — what every build ships with, no upsell ──
+// ── Standard scope, what every build ships with, no upsell ──
 const included = [
   {
     title: "Core Web Vitals performance",
-    desc: "Server-rendered pages, optimized images and a Lighthouse audit on real mobile hardware before launch — not a desktop score screenshot.",
+    desc: "Server-rendered pages, optimized images and a Lighthouse audit on real mobile hardware before launch, not a desktop score screenshot.",
   },
   {
     title: "On-page and technical SEO",
@@ -354,7 +354,7 @@ const included = [
   },
   {
     title: "Analytics and conversion tracking",
-    desc: "Google Analytics, Search Console and event tracking wired to the actions that matter — forms, calls, checkouts — configured before go-live.",
+    desc: "Google Analytics, Search Console and event tracking wired to the actions that matter, forms, calls, checkouts, configured before go-live.",
   },
   {
     title: "Hosting, deploys and monitoring",
@@ -362,12 +362,12 @@ const included = [
   },
 ];
 
-// ── Principles — the manifesto answer, engineering-voiced ──
+// ── Principles, the manifesto answer, engineering-voiced ──
 const principles = [
   { lead: "Source code you can read.", sub: "Clean, documented, and handed over on day one. No black boxes, no proprietary lock-in, no hostage clauses." },
-  { lead: "Sprint deadlines you can trust.", sub: "Weekly sprint demos on a live staging URL — progress you can click every week, not a reveal at the end." },
+  { lead: "Sprint deadlines you can trust.", sub: "Weekly sprint demos on a live staging URL, progress you can click every week, not a reveal at the end." },
   { lead: "Budgets you can plan around.", sub: "A fixed price for the agreed scope, built from the budget you bring. No surprise invoices, no vague estimates, no discovery fee." },
-  { lead: "SEO results you can measure.", sub: "We ship metrics, not promises — organic traffic, conversion rate, Core Web Vitals and load times, reported monthly." },
+  { lead: "SEO results you can measure.", sub: "We ship metrics, not promises, organic traffic, conversion rate, Core Web Vitals and load times, reported monthly." },
 ];
 
 const whatsappUrl =
@@ -385,21 +385,21 @@ const whatsappUrl =
   <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewsSchema)} />
 
   <!-- ============================================================= -->
-  <!-- ACT 1 · HERO — instant, typographic, LCP is the headline text -->
+  <!-- ACT 1 · HERO, instant, typographic, LCP is the headline text -->
   <!-- ============================================================= -->
   <section class="relative overflow-hidden bg-slate-950 font-poppins">
     <div class="hero-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute -top-40 right-0 w-[38rem] h-[38rem] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-40 pb-20 sm:pb-24 lg:pb-28">
-      <!-- Headline: this is the LCP element — no animation -->
+      <!-- Headline: this is the LCP element, no animation -->
       <h1 class="max-w-4xl text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-[0.95]">
         Built in Honduras.<br />
         <span class="bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 bg-clip-text text-transparent">Shipped worldwide.</span>
       </h1>
 
       <p class="mt-8 max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed">
-        Senior engineers on your timezone — websites that sell, software that ships.
+        Senior engineers on your timezone, websites that sell, software that ships.
         Fixed-price proposals built from <span class="text-white font-semibold">your budget</span>, no agency overhead.
       </p>
 
@@ -425,24 +425,24 @@ const whatsappUrl =
       <!-- Speed-as-craft, classy one-liner -->
       <p class="mt-7 flex items-center gap-2 text-xs text-slate-500">
         <Icon name="zap" class="w-3.5 h-3.5 text-orange-400" />
-        Rendered instantly — no boot screen, no spinner. That is the whole point.
+        Rendered instantly, no boot screen, no spinner. That is the whole point.
       </p>
 
-      <!-- Proof row — bare editorial stats, animated numbers -->
+      <!-- Proof row, bare editorial stats, animated numbers -->
       <div class="mt-14 sm:mt-16 grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 border-t border-slate-800 pt-10 max-w-3xl">
         <div>
           <div class="flex items-center gap-2 text-4xl sm:text-5xl font-bold text-white tabular-nums">
             <Icon name="star" class="w-6 h-6 text-orange-400" />
-            <span data-counter="5.0" data-counter-decimals="1">0</span>
+            <span data-counter="5.0" data-counter-decimals="1">5.0</span>
           </div>
           <p class="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">Google rating</p>
         </div>
         <div>
-          <div class="text-4xl sm:text-5xl font-bold text-white tabular-nums"><span data-counter="50">0</span></div>
+          <div class="text-4xl sm:text-5xl font-bold text-white tabular-nums"><span data-counter="50">50</span></div>
           <p class="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">Verified reviews</p>
         </div>
         <div>
-          <div class="text-4xl sm:text-5xl font-bold text-white tabular-nums"><span data-counter="6" data-counter-suffix="+">0</span></div>
+          <div class="text-4xl sm:text-5xl font-bold text-white tabular-nums"><span data-counter="6" data-counter-suffix="+">6</span></div>
           <p class="mt-2 text-xs uppercase tracking-[0.16em] text-slate-500">Countries served</p>
         </div>
       </div>
@@ -450,12 +450,12 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 2 · MARQUEE — tech we build with                          -->
+  <!-- ACT 2 · MARQUEE, tech we build with                          -->
   <!-- ============================================================= -->
   <TechMarquee />
 
   <!-- ============================================================= -->
-  <!-- ACT 3 · SELECTED WORK — curated, named, verifiable            -->
+  <!-- ACT 3 · SELECTED WORK, curated, named, verifiable            -->
   <!-- ============================================================= -->
   <section id="work" class="relative bg-white font-poppins py-24 sm:py-32 lg:py-40 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -465,7 +465,7 @@ const whatsappUrl =
           Web development projects with <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">real numbers.</span>
         </h2>
         <p class="mt-5 text-lg text-slate-500 leading-relaxed">
-          A curated few — custom websites, e-commerce platforms and lead-generation sites, each with results you can verify.
+          A curated few, custom websites, e-commerce platforms and lead-generation sites, each with results you can verify.
         </p>
       </div>
 
@@ -481,7 +481,7 @@ const whatsappUrl =
             <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
               <img
                 src={p.img}
-                alt={`${p.name} — ${p.industry}`}
+                alt={`${p.name}, ${p.industry}`}
                 loading="lazy"
                 width="640"
                 height="400"
@@ -507,7 +507,7 @@ const whatsappUrl =
           </a>
         ))}
 
-        <!-- 6th cell — honest "view all" tile, not a fabricated case -->
+        <!-- 6th cell, honest "view all" tile, not a fabricated case -->
         <a
           href="/projects/"
           data-anim="fade"
@@ -515,7 +515,7 @@ const whatsappUrl =
           class="group relative flex flex-col items-start justify-center rounded-2xl border border-slate-800 bg-slate-950 text-white p-8 overflow-hidden hover:border-orange-400/60 transition-all duration-500 hover:-translate-y-1"
         >
           <div class="absolute -top-16 -right-16 w-48 h-48 bg-orange-500/15 rounded-full blur-3xl"></div>
-          <span class="relative text-6xl font-bold tracking-tight tabular-nums"><span data-counter="16" data-counter-suffix="+">0</span></span>
+          <span class="relative text-6xl font-bold tracking-tight tabular-nums"><span data-counter="16" data-counter-suffix="+">16</span></span>
           <p class="relative mt-3 text-lg font-semibold">documented projects</p>
           <p class="relative mt-1 text-sm text-slate-400">United States · Honduras · LATAM</p>
           <span class="relative mt-7 inline-flex items-center gap-2 text-sm font-semibold text-orange-400">
@@ -537,7 +537,7 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- SOCIAL PROOF — real Google reviews (schema above)             -->
+  <!-- SOCIAL PROOF, real Google reviews (schema above)             -->
   <!-- ============================================================= -->
   <section class="bg-slate-950 font-poppins py-24 sm:py-28 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14 sm:mb-16">
@@ -546,7 +546,7 @@ const whatsappUrl =
         Web development <span class="text-orange-400">client reviews</span>
       </h2>
       <p class="mt-5 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        Fifty verified Google reviews, rated 5.0 — web development, e-commerce, branding and UX/UI design projects delivered for clients across the US, Honduras and LATAM.
+        Fifty verified Google reviews, rated 5.0, web development, e-commerce, branding and UX/UI design projects delivered for clients across the US, Honduras and LATAM.
       </p>
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -558,12 +558,12 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- WHY CHOOSE US — value proposition + price comparison (shared) -->
+  <!-- WHY CHOOSE US, value proposition + price comparison (shared) -->
   <!-- ============================================================= -->
   <ValueProposition />
 
   <!-- ============================================================= -->
-  <!-- ACT 4 · SERVICES — five pillars, editorial list               -->
+  <!-- ACT 4 · SERVICES, five pillars, editorial list               -->
   <!-- ============================================================= -->
   <section class="relative bg-slate-50 font-poppins py-24 sm:py-32 lg:py-40 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -573,7 +573,7 @@ const whatsappUrl =
           Web development, software &amp; <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">design services.</span>
         </h2>
         <p class="mt-5 text-lg text-slate-500 leading-relaxed">
-          Five core disciplines, done seriously well — the stack we ship every week, at senior level.
+          Five core disciplines, done seriously well, the stack we ship every week, at senior level.
         </p>
       </div>
 
@@ -615,7 +615,7 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 4b · FULL SERVICES — every discipline, real internal links -->
+  <!-- ACT 4b · FULL SERVICES, every discipline, real internal links -->
   <!-- ============================================================= -->
   <section id="services" class="relative bg-white font-poppins py-24 sm:py-32 lg:py-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -625,7 +625,7 @@ const whatsappUrl =
           Everything your brand needs <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">to grow online.</span>
         </h2>
         <p class="mt-5 text-lg text-slate-500 leading-relaxed">
-          Web development and custom software sit at the centre. Around them, the design, video and marketing work that makes a launch land — one team, one invoice, one standard of quality.
+          Web development and custom software sit at the centre. Around them, the design, video and marketing work that makes a launch land, one team, one invoice, one standard of quality.
         </p>
       </div>
 
@@ -659,7 +659,7 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 4b2 · SOFTWARE COMPANY — orbital toolset + positioning     -->
+  <!-- ACT 4b2 · SOFTWARE COMPANY, orbital toolset + positioning     -->
   <!-- ============================================================= -->
   <section class="relative bg-slate-950 font-poppins py-24 sm:py-32 lg:py-40 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -669,13 +669,13 @@ const whatsappUrl =
             Software Company
           </p>
           <h2 class="mt-5 text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-            More than websites — a software development company.
+            More than websites, a software development company.
           </h2>
           <p class="mt-8 max-w-xl text-lg text-slate-300 leading-relaxed">
             Websites are where most clients meet us. What keeps them here is the rest:{" "}
             <a href="/custom-software-development/" class="font-semibold text-white underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-400 transition-colors">custom software</a>,{" "}
             <a href="/custom-crm-development/" class="font-semibold text-white underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-400 transition-colors">CRMs built to your pipeline</a>, internal
-            tools, integrations and e-commerce systems — engineered by the same
+            tools, integrations and e-commerce systems, engineered by the same
             senior team, on US Central Time.
           </p>
           <p class="mt-6 max-w-xl text-slate-400 leading-relaxed">
@@ -711,20 +711,20 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 4c · NEARSHORE ADVANTAGE — the SEO prose block, editorial  -->
+  <!-- ACT 4c · NEARSHORE ADVANTAGE, the SEO prose block, editorial  -->
   <!-- ============================================================= -->
   <section class="relative bg-slate-50 font-poppins py-24 sm:py-32 lg:py-40">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">The nearshore advantage</p>
       <h2 data-anim="heading" class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
-        Nearshore development agency — <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">quality without the overhead.</span>
+        Nearshore development agency, <span class="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">quality without the overhead.</span>
       </h2>
 
       <div class="mt-10 space-y-7 text-lg text-slate-600 leading-relaxed">
         <p>
           Codebrand is a{" "}
           <a href="/web-development-agency/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">web development agency</a>{" "}
-          based in San Pedro Sula, Honduras, working entirely on US Central timezone hours. That single fact changes how a project feels: your developers are online when you are, standups happen at a civil hour for both sides, and a question asked at 9am is answered before lunch — not overnight, and not next week. Our engineers are bilingual, so nothing is lost between the brief and the build.
+          based in San Pedro Sula, Honduras, working entirely on US Central timezone hours. That single fact changes how a project feels: your developers are online when you are, standups happen at a civil hour for both sides, and a question asked at 9am is answered before lunch, not overnight, and not next week. Our engineers are bilingual, so nothing is lost between the brief and the build.
         </p>
         <p>
           We build in React, Next.js and Astro, with Node, PostgreSQL and headless CMS work behind them. That covers marketing sites that have to rank, e-commerce development that has to convert, and{" "}
@@ -736,12 +736,12 @@ const whatsappUrl =
           <a href="/hire-remote-developers/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">hire senior developers</a>{" "}
           individually, or take a full{" "}
           <a href="/nearshore-development/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">nearshore development team</a>
-          — designer, engineers and a lead — embedded in your workflow on weekly sprints. No recruiter fees, no benefits overhead, no twelve-month minimum, and the code is yours from the first commit.
+, designer, engineers and a lead, embedded in your workflow on weekly sprints. No recruiter fees, no benefits overhead, no twelve-month minimum, and the code is yours from the first commit.
         </p>
         <p>
           Cheap work that never ranks is not cheap. Every site we ship leaves with technical{" "}
           <a href="/services/seo/" class="font-semibold text-slate-900 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors">SEO</a>{" "}
-          in place — clean semantic markup, structured data, fast server-rendered pages and Core Web Vitals measured on real mobile hardware, not a desktop score screenshot. That is why the case studies above quote traffic and conversions instead of adjectives.
+          in place, clean semantic markup, structured data, fast server-rendered pages and Core Web Vitals measured on real mobile hardware, not a desktop score screenshot. That is why the case studies above quote traffic and conversions instead of adjectives.
         </p>
       </div>
 
@@ -755,7 +755,7 @@ const whatsappUrl =
         <div data-anim="fade" data-anim-group="nearshore" data-stagger="0.08" class="border-t border-slate-200 pt-6">
           <h3 class="text-lg font-bold text-slate-900">Custom software development, built to spec</h3>
           <p class="mt-3 text-sm text-slate-500 leading-relaxed">
-            CRMs, dashboards, quoting tools and integrations built around how your business already works — documented, tested, and handed over with the repository, so you are never locked to us.
+            CRMs, dashboards, quoting tools and integrations built around how your business already works, documented, tested, and handed over with the repository, so you are never locked to us.
           </p>
         </div>
         <div data-anim="fade" data-anim-group="nearshore" data-stagger="0.08" class="border-t border-slate-200 pt-6">
@@ -769,7 +769,7 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 5 · PROCESS — durations + per-step deliverables           -->
+  <!-- ACT 5 · PROCESS, durations + per-step deliverables           -->
   <!-- ============================================================= -->
   <section class="relative bg-slate-950 font-poppins py-24 sm:py-32 lg:py-40 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-40 pointer-events-none" aria-hidden="true"></div>
@@ -780,7 +780,7 @@ const whatsappUrl =
           Our web development process, <span class="text-orange-400">on the clock.</span>
         </h2>
         <p class="mt-5 text-lg text-slate-400 leading-relaxed">
-          From discovery to launch in four stages, with a demo every week — no surprises at the end, only progress you have already seen and signed off.
+          From discovery to launch in four stages, with a demo every week, no surprises at the end, only progress you have already seen and signed off.
         </p>
       </div>
 
@@ -815,7 +815,7 @@ const whatsappUrl =
         ))}
       </div>
 
-      <!-- Standard scope — what ships with every web development project -->
+      <!-- Standard scope, what ships with every web development project -->
       <div class="mt-20 sm:mt-28 border-t border-slate-800 pt-14">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Standard scope</p>
         <h3 class="mt-5 max-w-3xl text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight">
@@ -835,7 +835,7 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 6 · PRINCIPLES — typographic manifesto                    -->
+  <!-- ACT 6 · PRINCIPLES, typographic manifesto                    -->
   <!-- ============================================================= -->
   <section class="relative bg-white font-poppins pt-24 sm:pt-32 lg:pt-40">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -857,7 +857,7 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 6b · INDUSTRIES — compact link list, max equity, min space -->
+  <!-- ACT 6b · INDUSTRIES, compact link list, max equity, min space -->
   <!-- ============================================================= -->
   <section class="relative bg-white font-poppins pb-24 sm:pb-32 lg:pb-40">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 pt-16 sm:pt-20">
@@ -889,17 +889,17 @@ const whatsappUrl =
   </section>
 
   <!-- ============================================================= -->
-  <!-- ACT 7 · BUDGET MODEL — no price list, fixed price per scope   -->
+  <!-- ACT 7 · BUDGET MODEL, no price list, fixed price per scope   -->
   <!-- ============================================================= -->
   <BudgetModel id="pricing" />
 
   <!-- ============================================================= -->
-  <!-- STRATEGIC PARTNERSHIP — Zeed Agency banner (shared)           -->
+  <!-- STRATEGIC PARTNERSHIP, Zeed Agency banner (shared)           -->
   <!-- ============================================================= -->
   <PartnershipBanner />
 
   <!-- ============================================================= -->
-  <!-- ACT 8 · TEAM — real faces, real profiles                      -->
+  <!-- ACT 8 · TEAM, real faces, real profiles                      -->
   <!-- ============================================================= -->
   <section class="bg-white font-poppins pt-24 sm:pt-28 lg:pt-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -918,7 +918,7 @@ const whatsappUrl =
   <TrustBadges />
 
   <!-- ============================================================= -->
-  <!-- RECOGNITION — DesignRush (shared)                             -->
+  <!-- RECOGNITION, DesignRush (shared)                             -->
   <!-- ============================================================= -->
   <DesignRushSection />
 
@@ -936,7 +936,7 @@ const whatsappUrl =
         Let's build your <span class="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">website or software.</span>
       </h2>
       <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Tell us the goal. You get a clear plan, an honest quote, and a first response in under two hours — Monday to Friday, US Central time.
+        Tell us the goal. You get a clear plan, an honest quote, and a first response in under two hours, Monday to Friday, US Central time.
       </p>
 
       <div class="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5">

@@ -25,15 +25,15 @@ const faqs = [
   },
   {
     question: "How long does a React project take from kickoff to launch?",
-    answer: "A focused React dashboard or internal tool usually ships a usable version in 4 to 6 weeks and a production launch in 8 to 12. A multi-role SaaS product with billing, permissions, and an admin backend is more often 4 to 6 months. We work in one-week sprints and put a deployed preview environment in front of you from the first sprint, so you are never waiting until the end to see progress. Timelines slip mostly for one reason — undecided product decisions — so we front-load those in discovery."
+    answer: "A focused React dashboard or internal tool usually ships a usable version in 4 to 6 weeks and a production launch in 8 to 12. A multi-role SaaS product with billing, permissions, and an admin backend is more often 4 to 6 months. We work in one-week sprints and put a deployed preview environment in front of you from the first sprint, so you are never waiting until the end to see progress. Timelines slip mostly for one reason, undecided product decisions, so we front-load those in discovery."
   },
   {
     question: "How senior are the React developers on my project?",
-    answer: "Every engineer we assign to React work has production React experience, not tutorial experience — they have shipped, maintained, and debugged real applications under load. We do not hide juniors inside a team and bill them as seniors. You see who is on the project, at what tier, and how many hours each person books. If you want to interview them before starting, we set that up."
+    answer: "Every engineer we assign to React work has production React experience, not tutorial experience, they have shipped, maintained, and debugged real applications under load. We do not hide juniors inside a team and bill them as seniors. You see who is on the project, at what tier, and how many hours each person books. If you want to interview them before starting, we set that up."
   },
   {
     question: "Can you work with our existing React codebase?",
-    answer: "Yes, and it is a large share of what we do. We start with a short read-only audit: dependency health, bundle size, render performance, state management patterns, test coverage, and the parts of the code everyone is afraid to touch. Then we work inside your conventions — your branch strategy, your linting rules, your review process — instead of imposing ours. No rewrite proposal unless the numbers genuinely justify one."
+    answer: "Yes, and it is a large share of what we do. We start with a short read-only audit: dependency health, bundle size, render performance, state management patterns, test coverage, and the parts of the code everyone is afraid to touch. Then we work inside your conventions, your branch strategy, your linting rules, your review process, instead of imposing ours. No rewrite proposal unless the numbers genuinely justify one."
   },
   {
     question: "Should we hire in-house React developers or work with an agency?",
@@ -41,27 +41,27 @@ const faqs = [
   },
   {
     question: "Who owns the code and the intellectual property?",
-    answer: "You do, completely. IP transfers to you as work is delivered, not at the end of some payment schedule. Code lives in your repository, on your GitHub or GitLab organization, from day one. Infrastructure runs on your accounts — your Vercel, Netlify, AWS, or database provider. There is no proprietary framework, no license you have to keep paying for, and nothing that makes it painful to move on from us."
+    answer: "You do, completely. IP transfers to you as work is delivered, not at the end of some payment schedule. Code lives in your repository, on your GitHub or GitLab organization, from day one. Infrastructure runs on your accounts, your Vercel, Netlify, AWS, or database provider. There is no proprietary framework, no license you have to keep paying for, and nothing that makes it painful to move on from us."
   },
   {
     question: "Do you write tests, and what does QA look like?",
-    answer: "Yes. We use Jest and React Testing Library for unit and component tests, and Playwright or Cypress for end-to-end coverage of critical paths — authentication, checkout, anything that costs money when it breaks. We test behaviour a user can observe rather than implementation details, so tests survive refactors. We do not chase a coverage percentage for its own sake; we cover the flows where a regression would actually hurt, and we run the suite in CI on every pull request."
+    answer: "Yes. We use Jest and React Testing Library for unit and component tests, and Playwright or Cypress for end-to-end coverage of critical paths, authentication, checkout, anything that costs money when it breaks. We test behaviour a user can observe rather than implementation details, so tests survive refactors. We do not chase a coverage percentage for its own sake; we cover the flows where a regression would actually hurt, and we run the suite in CI on every pull request."
   },
   {
     question: "Do you work with Next.js as well as plain React?",
-    answer: "Next.js is our default for anything public-facing. It adds server-side rendering, static generation, server components, route handlers, and image optimization on top of React, which means better SEO and faster first loads than a client-only single-page app. We use plain React with Vite when the product sits entirely behind a login and SEO is irrelevant — an internal dashboard does not need a server-rendering framework."
+    answer: "Next.js is our default for anything public-facing. It adds server-side rendering, static generation, server components, route handlers, and image optimization on top of React, which means better SEO and faster first loads than a client-only single-page app. We use plain React with Vite when the product sits entirely behind a login and SEO is irrelevant, an internal dashboard does not need a server-rendering framework."
   },
   {
     question: "Can you build mobile apps with React Native?",
-    answer: "Yes. React Native lets one team and one codebase cover iOS and Android, which typically cuts mobile development time meaningfully compared to building two native apps. It is an excellent fit for content, commerce, booking, internal field tools, and most CRUD-shaped products. We will tell you when it is the wrong call — apps built around heavy real-time graphics, deep platform-specific hardware access, or very demanding animation are often better served natively."
+    answer: "Yes. React Native lets one team and one codebase cover iOS and Android, which typically cuts mobile development time meaningfully compared to building two native apps. It is an excellent fit for content, commerce, booking, internal field tools, and most CRUD-shaped products. We will tell you when it is the wrong call, apps built around heavy real-time graphics, deep platform-specific hardware access, or very demanding animation are often better served natively."
   },
   {
     question: "How do you communicate, and what hours does your team work?",
-    answer: "We are in San Pedro Sula, Honduras, which sits in US Central Time. That is a full overlapping workday with every US timezone — your morning stand-up is our morning too, and questions get answered the same day instead of overnight. We work in your Slack or Teams channel, keep tickets in your tracker, and send a written weekly summary of what shipped, what is next, and what is blocked. The team is bilingual, English and Spanish."
+    answer: "We are in San Pedro Sula, Honduras, which sits in US Central Time. That is a full overlapping workday with every US timezone, your morning stand-up is our morning too, and questions get answered the same day instead of overnight. We work in your Slack or Teams channel, keep tickets in your tracker, and send a written weekly summary of what shipped, what is next, and what is blocked. The team is bilingual, English and Spanish."
   },
   {
     question: "Our React app is slow. Can you audit and fix it?",
-    answer: "That is a standalone engagement we run often. We profile with React DevTools and Lighthouse, then report the actual causes ranked by impact — usually oversized bundles, unmemoized context providers re-rendering half the tree, waterfall data fetching, unoptimized images, or a state library being used as a cache. You get the findings and the estimated effort per fix as a document you own, whether or not you hire us to implement them."
+    answer: "That is a standalone engagement we run often. We profile with React DevTools and Lighthouse, then report the actual causes ranked by impact, usually oversized bundles, unmemoized context providers re-rendering half the tree, waterfall data fetching, unoptimized images, or a state library being used as a cache. You get the findings and the estimated effort per fix as a document you own, whether or not you hire us to implement them."
   }
 ];
 
@@ -94,7 +94,7 @@ const stats = [
 const builds = [
   {
     title: "React single-page applications",
-    desc: "Product interfaces where the whole experience lives in the browser — filters, drag-and-drop, optimistic updates, real-time state. We structure them around a real routing layer, server-state caching with TanStack Query, and component boundaries that survive a year of feature requests instead of collapsing into one thousand-line page component."
+    desc: "Product interfaces where the whole experience lives in the browser, filters, drag-and-drop, optimistic updates, real-time state. We structure them around a real routing layer, server-state caching with TanStack Query, and component boundaries that survive a year of feature requests instead of collapsing into one thousand-line page component."
   },
   {
     title: "React dashboards and internal tools",
@@ -106,7 +106,7 @@ const builds = [
   },
   {
     title: "React customer and partner portals",
-    desc: "Logged-in areas bolted onto an existing business: order history, document access, support tickets, quotes, invoices. These almost always mean integrating with systems that were not designed to be integrated with — an ERP, a legacy SQL database, a SOAP endpoint. We build the adapter layer as carefully as the interface."
+    desc: "Logged-in areas bolted onto an existing business: order history, document access, support tickets, quotes, invoices. These almost always mean integrating with systems that were not designed to be integrated with, an ERP, a legacy SQL database, a SOAP endpoint. We build the adapter layer as carefully as the interface."
   },
   {
     title: "React Native mobile apps",
@@ -128,7 +128,7 @@ const standards = [
   {
     num: "03",
     title: "React code review on every pull request",
-    desc: "No code reaches your main branch without a second engineer reading it. Reviews check architecture and readability, not just correctness — naming, component boundaries, dependency choices, accessibility. Small pull requests, reviewed within the working day, so nothing sits in a queue for a week."
+    desc: "No code reaches your main branch without a second engineer reading it. Reviews check architecture and readability, not just correctness, naming, component boundaries, dependency choices, accessibility. Small pull requests, reviewed within the working day, so nothing sits in a queue for a week."
   },
   {
     num: "04",
@@ -143,7 +143,7 @@ const standards = [
   {
     num: "06",
     title: "React state management chosen, not defaulted",
-    desc: "Server state goes in TanStack Query. Client state goes in local state, context, or Zustand depending on how far it travels. We do not install Redux reflexively — most applications that reach for a global store actually have a data-fetching problem wearing a costume."
+    desc: "Server state goes in TanStack Query. Client state goes in local state, context, or Zustand depending on how far it travels. We do not install Redux reflexively, most applications that reach for a global store actually have a data-fetching problem wearing a costume."
   }
 ];
 
@@ -166,10 +166,10 @@ const engagement = [
 ];
 
 const timeline = [
-  { phase: "Week 0", title: "Discovery and React architecture plan", desc: "We map the product, agree on scope for version one, and choose the stack — rendering strategy, data layer, auth, hosting. You get a written architecture note and an hour estimate before anyone writes feature code." },
-  { phase: "Weeks 1–2", title: "React foundations and design system", desc: "Repository, CI, typed API client, authentication, routing, and the base component library. By the end of week two there is a deployed environment you can click through, even if it is mostly scaffolding." },
-  { phase: "Weeks 3–8", title: "React feature development in weekly sprints", desc: "The core screens get built, reviewed, tested, and shipped to preview every week. You use the product as it grows and re-prioritize the backlog each Monday based on what you actually see." },
-  { phase: "Weeks 9–10", title: "React performance and QA hardening", desc: "Bundle analysis, render profiling, image and font optimization, end-to-end test coverage on critical paths, accessibility pass, and error monitoring wired up before real users arrive." },
+  { phase: "Week 0", title: "Discovery and React architecture plan", desc: "We map the product, agree on scope for version one, and choose the stack, rendering strategy, data layer, auth, hosting. You get a written architecture note and an hour estimate before anyone writes feature code." },
+  { phase: "Weeks 1 to 2", title: "React foundations and design system", desc: "Repository, CI, typed API client, authentication, routing, and the base component library. By the end of week two there is a deployed environment you can click through, even if it is mostly scaffolding." },
+  { phase: "Weeks 3 to 8", title: "React feature development in weekly sprints", desc: "The core screens get built, reviewed, tested, and shipped to preview every week. You use the product as it grows and re-prioritize the backlog each Monday based on what you actually see." },
+  { phase: "Weeks 9 to 10", title: "React performance and QA hardening", desc: "Bundle analysis, render profiling, image and font optimization, end-to-end test coverage on critical paths, accessibility pass, and error monitoring wired up before real users arrive." },
   { phase: "Launch", title: "React deployment and handover", desc: "Production deploy on your infrastructure, environment and secrets documented, a README a new engineer can follow, and a walkthrough recording. You own the repository and every credential." }
 ];
 
@@ -226,10 +226,10 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
       <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-8">React development agency for teams that need to ship</h2>
       <div class="prose prose-lg max-w-none text-slate-700 space-y-6" data-anim="fade" data-delay="0.1">
         <p>
-          React powers some of the world's most sophisticated web applications. Getting real value out of it, though, depends on decisions that happen before the first component is written — <strong class="text-slate-900">component architecture, state boundaries, data fetching, rendering strategy, and testing</strong>. Those decisions are what separate an application that stays pleasant to extend in year three from one that everybody is quietly afraid to touch by month eight. Our <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development team</a> has been making them since 2020.
+          React powers some of the world's most sophisticated web applications. Getting real value out of it, though, depends on decisions that happen before the first component is written, <strong class="text-slate-900">component architecture, state boundaries, data fetching, rendering strategy, and testing</strong>. Those decisions are what separate an application that stays pleasant to extend in year three from one that everybody is quietly afraid to touch by month eight. Our <a href="/nearshore-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">nearshore development team</a> has been making them since 2020.
         </p>
         <p>
-          Codebrand is a React development agency based in San Pedro Sula, Honduras, working in US Central Time. Our engineers write TypeScript by default, review every pull request, and ship to a live preview environment weekly. We build new products, and we take over existing ones — including the ones that arrive with a slow bundle, a half-finished migration, and no tests. If you need the surrounding system too, our <a href="/custom-software-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom software development</a> practice covers the APIs, databases, and integrations behind the interface.
+          Codebrand is a React development agency based in San Pedro Sula, Honduras, working in US Central Time. Our engineers write TypeScript by default, review every pull request, and ship to a live preview environment weekly. We build new products, and we take over existing ones, including the ones that arrive with a slow bundle, a half-finished migration, and no tests. If you need the surrounding system too, our <a href="/custom-software-development/" class="text-cyan-600 hover:text-cyan-700 font-semibold">custom software development</a> practice covers the APIs, databases, and integrations behind the interface.
         </p>
         <p>
           You can engage us for a full build, for a <a href="/dedicated-development-team/" class="text-cyan-600 hover:text-cyan-700 font-semibold">dedicated development team</a> that works only on your roadmap, or to <a href="/hire-remote-developers/" class="text-cyan-600 hover:text-cyan-700 font-semibold">hire remote developers</a> who slot into the team you already have. Every engagement is priced from your budget as a fixed figure for the agreed scope, and you own one hundred percent of the code from the first commit. What that budget staffs is easier to judge from a <a href="/quoter/" class="text-cyan-600 hover:text-cyan-700 font-semibold">proposal request</a>, which comes back with roles, seniority and timeline rather than an hourly estimate.
@@ -267,7 +267,7 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
       <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">What we build</p>
       <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">React web application development, by project type</h2>
       <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mb-4">
-        React is one word covering five very different kinds of build. The architecture, the testing depth, and the cost of each are not comparable, so here is what we actually deliver and what changes between them. Selling online sits slightly apart and has its own page — see <a href="/ecommerce-development-agency/" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce development</a>.
+        React is one word covering five very different kinds of build. The architecture, the testing depth, and the cost of each are not comparable, so here is what we actually deliver and what changes between them. Selling online sits slightly apart and has its own page, see <a href="/ecommerce-development-agency/" class="text-cyan-600 hover:text-cyan-700 font-semibold">e-commerce development</a>.
       </p>
       <div class="divide-y divide-slate-200 border-t border-slate-200 mt-12">
         {builds.map((item) => (
@@ -329,7 +329,7 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
         <div>
           <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Astro beats React when the page is mostly content</h3>
           <p class="text-slate-600 text-lg leading-relaxed">
-            For marketing sites, documentation, blogs, and brochure-style storefronts, an Astro build ships almost no JavaScript and loads faster than a React equivalent can, with interactive React components dropped in only where they are needed. Recommending Astro on a project like that costs us billable hours and saves you money — which is exactly why you should trust the recommendation. We wrote the full comparison, with benchmarks and use cases, in <a href="/blog/react-nextjs-astro-comparison-2025/" class="text-cyan-600 hover:text-cyan-700 font-semibold">React vs Next.js vs Astro</a>, and <a href="/projects/ramonnuila-dev-portfolio/" class="text-cyan-600 hover:text-cyan-700 font-semibold">one of our own builds shows what the hybrid looks like in practice</a>: interactive components hydrating on demand, 100/100 mobile performance, a 0.9-second LCP and 10 ms of blocking time.
+            For marketing sites, documentation, blogs, and brochure-style storefronts, an Astro build ships almost no JavaScript and loads faster than a React equivalent can, with interactive React components dropped in only where they are needed. Recommending Astro on a project like that costs us billable hours and saves you money, which is exactly why you should trust the recommendation. We wrote the full comparison, with benchmarks and use cases, in <a href="/blog/react-nextjs-astro-comparison-2025/" class="text-cyan-600 hover:text-cyan-700 font-semibold">React vs Next.js vs Astro</a>, and <a href="/projects/ramonnuila-dev-portfolio/" class="text-cyan-600 hover:text-cyan-700 font-semibold">one of our own builds shows what the hybrid looks like in practice</a>: interactive components hydrating on demand, 100/100 mobile performance, a 0.9-second LCP and 10 ms of blocking time.
           </p>
         </div>
       </div>
@@ -346,13 +346,13 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
         <div>
           <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">React performance optimization for apps that got slow</h3>
           <p class="text-slate-600 text-lg leading-relaxed">
-            Slow React applications are slow for a small number of repeat reasons, and guessing at them wastes weeks. We profile first — React DevTools for render behaviour, Lighthouse and real user metrics for delivery — then fix in order of impact. The usual suspects: bundles nobody has analyzed since launch, context providers re-rendering entire trees, request waterfalls where parallel fetches belonged, lists rendering thousands of rows without virtualization, and images shipped at four times their display size. We documented one of these end to end in our <a href="/blog/react-performance-optimization-case-study-2025/" class="text-cyan-600 hover:text-cyan-700 font-semibold">React performance case study</a>.
+            Slow React applications are slow for a small number of repeat reasons, and guessing at them wastes weeks. We profile first, React DevTools for render behaviour, Lighthouse and real user metrics for delivery, then fix in order of impact. The usual suspects: bundles nobody has analyzed since launch, context providers re-rendering entire trees, request waterfalls where parallel fetches belonged, lists rendering thousands of rows without virtualization, and images shipped at four times their display size. We documented one of these end to end in our <a href="/blog/react-performance-optimization-case-study-2025/" class="text-cyan-600 hover:text-cyan-700 font-semibold">React performance case study</a>.
           </p>
         </div>
         <div>
           <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">React code audit before you commit to a rewrite</h3>
           <p class="text-slate-600 text-lg leading-relaxed">
-            A fixed-scope, read-only review of your codebase, usually a week. We report on architecture and component boundaries, state management, dependency and security health, test coverage, build and CI setup, accessibility, and the specific areas where change is risky. You get a prioritized list with effort estimates that you own outright and can hand to any team — us, your in-house engineers, or another vendor. Most audits end with a plan to fix rather than a plan to rewrite, because full rewrites fail far more often than teams expect.
+            A fixed-scope, read-only review of your codebase, usually a week. We report on architecture and component boundaries, state management, dependency and security health, test coverage, build and CI setup, accessibility, and the specific areas where change is risky. You get a prioritized list with effort estimates that you own outright and can hand to any team, us, your in-house engineers, or another vendor. Most audits end with a plan to fix rather than a plan to rewrite, because full rewrites fail far more often than teams expect.
           </p>
         </div>
         <div>
@@ -402,7 +402,7 @@ const stack = ["React 19", "Next.js 15", "TypeScript", "React Native", "TanStack
       <p class="text-xs tracking-[0.2em] uppercase text-slate-400 mb-5">Timeline</p>
       <h2 data-anim="heading" class="text-display-2 font-bold text-slate-900 mb-6">React project timeline: what a typical build looks like</h2>
       <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mb-4">
-        Below is the shape of a mid-sized React application — roughly a ten-week build. Larger products repeat the middle phase; audits and feature work compress it. What does not change is that you see deployed software every week.
+        Below is the shape of a mid-sized React application, roughly a ten-week build. Larger products repeat the middle phase; audits and feature work compress it. What does not change is that you see deployed software every week.
       </p>
       <div class="divide-y divide-slate-200 border-t border-slate-200 mt-12">
         {timeline.map((item) => (

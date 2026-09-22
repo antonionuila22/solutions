@@ -8,7 +8,7 @@ import * as memoryRepo from "./memory-repository";
  *
  * Reglas:
  *  - Producción: siempre Supabase. Si faltan las credenciales, `briefEnv()`
- *    lanza con un mensaje claro — jamás se degrada silenciosamente a memoria,
+ *    lanza con un mensaje claro, jamás se degrada silenciosamente a memoria,
  *    que perdería respuestas reales de un cliente.
  *  - `astro dev` sin credenciales: almacén en memoria, para poder desarrollar y
  *    revisar el formulario antes de tener el proyecto de Supabase creado. Se

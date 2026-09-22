@@ -4,7 +4,7 @@ import type { AnswerMap, BriefResponse } from "../types";
 /**
  * Almacén en memoria para `astro dev` sin credenciales de Supabase. Réplica
  * exacta de la API del repositorio real, incluidas sus invariantes de estado
- * (una respuesta enviada no se edita) — así lo que se prueba en local es el
+ * (una respuesta enviada no se edita), así lo que se prueba en local es el
  * mismo comportamiento que en producción, salvo la persistencia.
  *
  * NO se usa nunca en producción: brief-store.ts solo lo elige en DEV.

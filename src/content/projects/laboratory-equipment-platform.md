@@ -26,9 +26,9 @@ resultsNote: >-
   These figures describe the platform we built in 2024, not outcomes we
   measured. The URL we had on file no longer resolves (checked 24 July 2026),
   so the scope above comes from our delivery record rather than from a live page.
-# TODO(URL viva) — pedir la URL de producción actual de Laboratory & Tech. Sin ella este caso
+# TODO(URL viva): pedir la URL de producción actual de Laboratory & Tech. Sin ella este caso
 #   no tiene prueba pública y el stack de abajo tampoco se puede verificar desde fuera.
-# TODO(métricas de negocio) — pedirle a Laboratory & Tech para cerrar el caso:
+# TODO(métricas de negocio): pedirle a Laboratory & Tech para cerrar el caso:
 #   1) quote requests recibidos por mes a través de la plataforma, y desde qué fecha
 #   2) tiempo promedio de respuesta a una cotización antes vs. después de la sincronización con el CRM
 #   3) horas/semana que el equipo dedicaba a copiar datos al CRM manualmente antes del plugin
@@ -42,7 +42,7 @@ draft: false
 
 Laboratory & Tech distributes laboratory and industrial equipment from its Florida base to clients across Latin America and the United States. Their catalogue runs into the thousands of SKUs, from consumables to instruments.
 
-In their market almost nothing sells at a listed price. A buyer specifies, asks for a quote, and the quote gets negotiated — often against a purchase order, a tender, or an institutional budget. The sale is a conversation, not a checkout.
+In their market almost nothing sells at a listed price. A buyer specifies, asks for a quote, and the quote gets negotiated, often against a purchase order, a tender, or an institutional budget. The sale is a conversation, not a checkout.
 
 ## The challenge
 
@@ -60,7 +60,7 @@ Three business constraints made the off-the-shelf route impossible:
 
 **2. WooCommerce, stripped of its checkout.** We kept WooCommerce for its product model and admin, and replaced the buy flow with a quote request flow. No cart, no payment, no prices forced into public view.
 
-**3. A custom plugin built from scratch.** Their CRM had no ready-made WooCommerce connector, so we wrote one in PHP — mapping products, contacts and quote requests between both systems.
+**3. A custom plugin built from scratch.** Their CRM had no ready-made WooCommerce connector, so we wrote one in PHP, mapping products, contacts and quote requests between both systems.
 
 **4. Automated sync via webhooks and REST API.** A quote request submitted on the site lands in the CRM without anyone re-typing it. That removed the manual step that was costing response time.
 
@@ -72,7 +72,7 @@ Three business constraints made the off-the-shelf route impossible:
 
 - **7,900+ products** loaded, categorised and searchable on the platform.
 - **6 product categories** structured with an attribute model that absorbs new SKUs without restructuring.
-- **Quote requests sync into the existing CRM** through the custom plugin, webhooks and REST API — no manual data entry between systems.
+- **Quote requests sync into the existing CRM** through the custom plugin, webhooks and REST API, no manual data entry between systems.
 - **Zero checkout, by design**: the platform captures specifications and routes them to a salesperson, matching how the business actually closes.
 - **Multilingual catalogue** serving Latin America and the United States from one installation.
 

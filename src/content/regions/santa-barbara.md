@@ -1,11 +1,11 @@
 ---
 title: "Desarrollo Web en Santa Bárbara | Codebrand Honduras"
-description: "Servicios profesionales de desarrollo web en Santa Bárbara. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Santa Bárbara y todo el departamento."
+description: "Desarrollo web profesional en Santa Bárbara: sitios web personalizados, e-commerce y aplicaciones web para empresas del departamento y del Lago de Yojoa."
 name: "Santa Bárbara"
 code: "SB"
 country: "honduras"
 img: "/photos/webservice.webp"
-imageAlt: "Servicios de desarrollo web en Santa Bárbara Honduras"
+imageAlt: "Desarrollo web para fincas de café y hoteles del Lago de Yojoa en Santa Bárbara, Honduras"
 population: "400K+"
 capital: "Santa Bárbara"
 timezone: "CST"
@@ -24,11 +24,11 @@ featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Santa Bárbara—tierra de <strong>café de altura</strong>, <strong>artesanías de junco</strong> y el hermoso <strong>Lago de Yojoa</strong>. Desde producción cafetalera de calidad hasta turismo de naturaleza, Santa Bárbara combina tradición agrícola con potencial turístico en el occidente de Honduras.</p>
+  <p>Santa Bárbara, tierra de <strong>café de altura</strong>, <strong>artesanías de junco</strong> y el hermoso <strong>Lago de Yojoa</strong>. Desde producción cafetalera de calidad hasta turismo de naturaleza, Santa Bárbara combina tradición agrícola con potencial turístico en el occidente de Honduras.</p>
 
-  <p>En Codebrand, somos <strong>hondureños desarrollando para hondureños</strong>. Entendemos la economía de Santa Bárbara—el café que se exporta al mundo, las artesanías tradicionales que representan la cultura hondureña, y el turismo que atrae visitantes al Lago de Yojoa y sus alrededores.</p>
+  <p>Somos un equipo <strong>hondureño con sede en San Pedro Sula</strong>, a unas dos horas de Santa Bárbara ciudad por carretera, y conocemos la economía del departamento desde adentro: el café que sale de los beneficios de las montañas rumbo a la exportación, el junco que se teje a mano en talleres familiares de la zona y el turismo de naturaleza que llega al Lago de Yojoa y a los pueblos de su ribera.</p>
 
-  <p>Ofrecemos <strong>desarrollo web profesional</strong> adaptado a las necesidades locales. Sitios web para fincas de café, tiendas en línea para artesanos, plataformas turísticas—ayudamos a empresas de Santa Bárbara a conectar con clientes nacionales e internacionales.</p>
+  <p>Cada sitio que diseñamos para Santa Bárbara parte de lo que el departamento produce y vende: café de altura con perfil de taza, junco tejido a mano y hospedaje frente al Lago de Yojoa. Ese conocimiento se traduce en <strong>desarrollo web profesional</strong> hecho a la medida: catálogos para fincas y beneficios, tiendas en línea para artesanos y plataformas de reservas para negocios turísticos, de modo que las empresas santabarbarenses lleguen a compradores de todo Honduras y del exterior.</p>
 
   <p>Ya sea que su negocio esté en <strong>Santa Bárbara ciudad</strong>, cerca del <strong>Lago de Yojoa</strong>, en <strong>Quimistán</strong> o cualquier parte del departamento, podemos ayudarle a mostrar sus productos y servicios al mundo.</p>
 
@@ -42,9 +42,9 @@ industries:
   - name: "Comercio Local"
     description: "Tiendas en línea y catálogos digitales para comercios."
   - name: "Agricultura"
-    description: "Sitios web para productores agrícolas y cooperativas."
+    description: "Catálogos y páginas de contacto para productores agrícolas y cooperativas cafetaleras de las montañas de Santa Bárbara."
   - name: "Servicios Profesionales"
-    description: "Sitios web para profesionales y empresas de servicios."
+    description: "Presencia web para abogados, contadores, clínicas y despachos con oficina en Santa Bárbara ciudad y Quimistán."
 
 marketHighlights:
   - "Zona productora de café de altura de calidad"
@@ -56,8 +56,6 @@ marketHighlights:
 
 regionalStats:
   gdp: "Centro cafetalero occidental"
-  techCompanies: "20+"
-  businessGrowth: "+3% anual"
 
 faqs:
   - question: "¿Desarrollan sitios web para fincas de café?"
@@ -66,10 +64,10 @@ faqs:
     answer: "Sí. Desarrollamos tiendas en línea que permiten vender artesanías de junco y otros productos tradicionales a clientes en todo Honduras y el exterior."
   - question: "¿Trabajan con negocios turísticos del Lago de Yojoa?"
     answer: "Sí. Creamos sitios web para hoteles, eco-lodges, restaurantes y tour operadores con reservas en línea y galerías de fotos de la naturaleza de la zona."
-  - question: "¿Ofrecen sitios web en inglés para turistas?"
+  - question: "¿Pueden hacer en inglés el sitio de mi hotel del Lago de Yojoa?"
     answer: "Sí. Para negocios turísticos, desarrollamos sitios bilingües que pueden atraer tanto a visitantes nacionales como a turistas internacionales."
   - question: "¿Cómo trabajan con clientes en Santa Bárbara?"
-    answer: "Trabajamos de forma remota con clientes en todo Honduras. Usamos videollamadas, WhatsApp y correo para comunicarnos efectivamente."
+    answer: "Santa Bárbara está a unas dos horas por carretera de San Pedro Sula, y el Lago de Yojoa incluso más cerca, así que además de atenderle por WhatsApp y videollamada podemos reunirnos en persona cuando el proyecto lo amerite, por ejemplo para fotografiar una finca de café o un hotel a orillas del lago. El avance se revisa cada semana en una demostración funcional y los pagos se coordinan por transferencia bancaria."
   - question: "¿Pueden ayudar a cooperativas de productores?"
     answer: "Sí. Desarrollamos sitios web para cooperativas que quieren mostrar a sus miembros, productos y facilitar el contacto con compradores."
 

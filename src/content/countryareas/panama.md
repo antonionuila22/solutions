@@ -34,17 +34,17 @@ En Codebrand Panamá, ayudamos a las empresas a construir y potenciar su presenc
 
 Nuestro equipo multidisciplinario combina experiencia internacional con profundo conocimiento del mercado panameño. Trabajamos con tecnología de vanguardia y una mentalidad orientada a resultados.
 
-- ✅ Entrega a tiempo
-- ✅ Soporte y comunicación continua en español e inglés
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para velocidad y motores de búsqueda
-- ✅ Experiencia con empresas internacionales y zonas francas
+- Entrega a tiempo
+- Soporte y comunicación continua en español e inglés
+- Diseño centrado en el usuario
+- Desarrollo optimizado para velocidad y motores de búsqueda
+- Experiencia con empresas internacionales y zonas francas
 
 ---
 
 ## Servimos Empresas en Todo Panamá
 
-Desde la capital hasta las provincias — trabajamos con empresas de todos los tamaños e industrias:
+Desde la capital hasta las provincias, trabajamos con empresas de todos los tamaños e industrias:
 
 - Empresas de logística y comercio internacional
 - Servicios financieros y banca

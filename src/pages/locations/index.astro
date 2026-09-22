@@ -68,7 +68,7 @@ const itemListSchema = {
 };
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -76,7 +76,6 @@ const itemListSchema = {
   breadcrumbNames={{ "locations": "Locations" }}
 >
   <!-- Structured Data -->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(itemListSchema)} />
 
   <!-- Hero Section -->

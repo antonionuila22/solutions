@@ -29,7 +29,7 @@ This guide provides a comprehensive comparison of nearshore and offshore develop
 
 ### The Traditional Offshore Model
 
-For two decades, "outsourcing" meant sending work offshore—typically to India, Pakistan, or the Philippines. The appeal was simple: developers at $15-35/hour instead of $150-200/hour in the US. The math seemed compelling.
+For two decades, "outsourcing" meant sending work offshore, typically to India, Pakistan, or the Philippines. The appeal was simple: developers at $15-35/hour instead of $150-200/hour in the US. The math seemed compelling.
 
 But the math was incomplete.
 
@@ -265,7 +265,7 @@ Final Weeks: Polish & Launch
 
 ### Staff Augmentation
 
-**What it is**: Our developers integrate with your existing team, working under your direction — a [staff augmentation](/hire-remote-developers/) model.
+**What it is**: Our developers integrate with your existing team, working under your direction, a [staff augmentation](/hire-remote-developers/) model.
 
 **Best for**:
 - Teams that need extra capacity
@@ -500,7 +500,7 @@ Be cautious about outsourcing if:
 
 ### The Data Is Clear
 
-1. **Nearshore offers the best value** for most US companies—meaningful cost savings (40-60%) without the quality and communication problems of offshore.
+1. **Nearshore offers the best value** for most US companies, meaningful cost savings (40-60%) without the quality and communication problems of offshore.
 
 2. **Offshore savings are often illusory**. Factor in rework, management overhead, and timeline delays, and effective costs approach onshore rates.
 

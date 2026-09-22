@@ -272,7 +272,7 @@ const softwareIndustry = "healthcare providers";
 const softwareLead = "A website brings patients in. What runs the practice once they arrive is software. These are the clinical and administrative systems we build, extend, and connect for clinics, specialty practices, and hospital departments.";
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -280,7 +280,6 @@ const softwareLead = "A website brings patients in. What runs the practice once 
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <IndustryHero
     badgeText="Healthcare Technology Solutions"

@@ -1,16 +1,16 @@
 ---
 /**
- * TextReveal — aparición de texto palabra a palabra al entrar en viewport.
- * Pattern adapted from ReactBits SplitText (MIT + Commons Clause) — versión
+ * TextReveal, aparición de texto palabra a palabra al entrar en viewport.
+ * Pattern adapted from ReactBits SplitText (MIT + Commons Clause), versión
  * ligera: las palabras se separan en el SERVIDOR (frontmatter); el cliente
  * solo lleva un IntersectionObserver que añade una clase.
  *
  * Props:
- *  - text: string        Texto plano a revelar (REQUERIDO — ver limitación abajo).
+ *  - text: string        Texto plano a revelar (REQUERIDO, ver limitación abajo).
  *  - as?: string          Etiqueta del contenedor (default "p"; "h2", "h3"...).
  *  - stagger?: number     ms de retardo entre palabras (default 45).
  *  - duration?: number    ms de la transición por palabra (default 600).
- *  - threshold?: number   Umbral del IntersectionObserver, 0–1 (default 0.15).
+ *  - threshold?: number   Umbral del IntersectionObserver, 0 to 1 (default 0.15).
  *  - class?: string       Clases de tipografía/color del consumidor.
  *
  * Uso:

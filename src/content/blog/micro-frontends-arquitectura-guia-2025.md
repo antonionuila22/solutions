@@ -22,11 +22,11 @@ tags:
 
 Imagina que trabajas en una empresa con 50 desarrolladores frontend. Todos contribuyen al mismo repositorio, al mismo codebase, al mismo bundle de JavaScript. Cada deploy es un evento coordinado. Un bug en el carrito de compras puede bloquear el lanzamiento del nuevo sistema de búsqueda.
 
-Esto no es una pesadilla hipotética—es la realidad de miles de empresas con aplicaciones monolíticas que crecieron más allá de lo que la arquitectura tradicional puede manejar.
+Esto no es una pesadilla hipotética, es la realidad de miles de empresas con aplicaciones monolíticas que crecieron más allá de lo que la arquitectura tradicional puede manejar.
 
 **Los micro frontends son la solución que adoptaron Amazon, Spotify, IKEA, Zalando, y prácticamente toda empresa tech que opera a escala.**
 
-Pero—y este es un pero importante—no son para todos. Implementar micro frontends en un proyecto que no los necesita es como usar un camión de 18 ruedas para ir al supermercado.
+Pero, y este es un pero importante, no son para todos. Implementar micro frontends en un proyecto que no los necesita es como usar un camión de 18 ruedas para ir al supermercado.
 
 Este artículo te ayudará a entender qué son los micro frontends, cuándo realmente los necesitas, y cómo implementarlos si decides que son la arquitectura correcta para tu caso.
 
@@ -36,7 +36,7 @@ Este artículo te ayudará a entender qué son los micro frontends, cuándo real
 
 La idea es simple: **aplica los principios de microservicios al frontend.**
 
-En lugar de un monolito frontend que maneja todo—navegación, productos, carrito, checkout, perfil de usuario—tienes aplicaciones pequeñas e independientes, cada una responsable de una parte del producto.
+En lugar de un monolito frontend que maneja todo, navegación, productos, carrito, checkout, perfil de usuario, tienes aplicaciones pequeñas e independientes, cada una responsable de una parte del producto.
 
 ```
 Monolito Frontend:
@@ -91,7 +91,7 @@ Los micro frontends permiten escalar horizontalmente: más micro frontends = má
 
 ¿El equipo de búsqueda quiere usar React? ¿El de checkout prefiere Vue? ¿Hay un módulo legacy en Angular que funciona bien? Con micro frontends, cada equipo elige su stack.
 
-Esto también facilita migraciones graduales. No tienes que reescribir todo de jQuery a React en un big bang—puedes hacerlo componente por componente.
+Esto también facilita migraciones graduales. No tienes que reescribir todo de jQuery a React en un big bang, puedes hacerlo componente por componente.
 
 ### 4. Resiliencia
 
@@ -109,7 +109,7 @@ Desplegar una pieza pequeña es menos riesgoso que desplegar todo. Y si algo sal
 
 Un monolito = un build, un deploy, un proceso. 10 micro frontends = 10 builds, 10 deploys, 10 pipelines de CI/CD, 10 configuraciones de monitoring.
 
-**La complejidad no desaparece—se distribuye.** Y manejar sistemas distribuidos es inherentemente más difícil.
+**La complejidad no desaparece, se distribuye.** Y manejar sistemas distribuidos es inherentemente más difícil.
 
 ### 2. Experiencia de Usuario Inconsistente
 
@@ -511,9 +511,9 @@ El error más común con micro frontends es tratarlos como una decisión puramen
 
 **Los micro frontends son una respuesta arquitectónica a problemas organizacionales.**
 
-Si tienes problemas de coordinación entre equipos, si los deploys son eventos traumáticos, si la velocidad de desarrollo cayó a medida que creció el equipo—entonces sí, considera micro frontends.
+Si tienes problemas de coordinación entre equipos, si los deploys son eventos traumáticos, si la velocidad de desarrollo cayó a medida que creció el equipo, entonces sí, considera micro frontends.
 
-Si tienes un equipo pequeño, cohesivo, que trabaja bien junto y deploya sin drama—quédate con tu monolito. No hay premio por usar arquitectura compleja sin necesidad.
+Si tienes un equipo pequeño, cohesivo, que trabaja bien junto y deploya sin drama, quédate con tu monolito. No hay premio por usar arquitectura compleja sin necesidad.
 
 La mejor arquitectura es la que permite a tu organización moverse rápido sin romperse. A veces eso son micro frontends. A veces es un monolito bien estructurado.
 
@@ -523,7 +523,7 @@ La mejor arquitectura es la que permite a tu organización moverse rápido sin r
 
 Diseñar la arquitectura correcta para tu aplicación web es una de las decisiones más importantes que tomarás. Una mala elección puede costarte meses de refactoring y frustración.
 
-En Code Brand, hemos ayudado a empresas a diseñar e implementar arquitecturas frontend que escalan—ya sean monolitos bien estructurados o micro frontends cuando la situación lo requiere.
+En Code Brand, hemos ayudado a empresas a diseñar e implementar arquitecturas frontend que escalan, ya sean monolitos bien estructurados o micro frontends cuando la situación lo requiere.
 
 **¿Estás evaluando cómo escalar tu frontend?**
 

@@ -2,7 +2,7 @@
 /**
  * Mounts the GSAP + Lenis animation engine. Drop once near the end of a layout.
  * The script is processed & bundled by Astro (GSAP/Lenis tree-shaken), and runs
- * a single time — it wires into the Astro View Transition lifecycle itself.
+ * a single time, it wires into the Astro View Transition lifecycle itself.
  *
  * Animate elements purely from markup via data-attributes:
  *   data-anim="heading|fade|chars"   data-parallax   data-counter
@@ -11,7 +11,7 @@
  *
  * PERF: the engine loads via dynamic import ONLY on fine-pointer devices that
  * allow motion. On touch/mobile (and reduced-motion) the ~1.7s of GSAP + Lenis
- * parse/exec is skipped entirely — content is simply visible from first paint
+ * parse/exec is skipped entirely, content is simply visible from first paint
  * (the `gsap-anim` CSS blanket in Layout.astro is gated by the SAME media
  * queries; keep both conditions in sync).
  */
@@ -25,8 +25,8 @@
     import("../scripts/animations/index");
   } else {
     // Engine skipped (touch device or reduced motion). The only FUNCTIONAL
-    // effect is [data-counter] — its markup ships "0" and relies on JS to
-    // write the real value — so render final values immediately. Everything
+    // effect is [data-counter], its markup ships "0" and relies on JS to
+    // write the real value, so render final values immediately. Everything
     // else is decorative and simply stays static/visible.
     const fixCounters = () => {
       document.querySelectorAll("[data-counter]").forEach((el) => {

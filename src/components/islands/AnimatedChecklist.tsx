@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 /**
- * AnimatedChecklist — the "What a Dedicated Team Includes" list on
+ * AnimatedChecklist, the "What a Dedicated Team Includes" list on
  * /dedicated-development-team. Items (real page copy, passed via props) cascade
  * in with a check mark that draws itself.
  *
@@ -11,7 +11,7 @@ import { motion, useReducedMotion } from "motion/react";
  *   `animate` values), so SEO and no-JS visitors always see everything.
  * - The island mounts with client:visible, i.e. hydration happens exactly when
  *   the list enters the viewport. At that moment we conceal for one frame and
- *   release, which produces the staggered cascade — nothing ever disappears if
+ *   release, which produces the staggered cascade, nothing ever disappears if
  *   JS doesn't load, because concealment only exists after hydration.
  * - Under prefers-reduced-motion the concealment step is skipped entirely and
  *   the list simply renders static.

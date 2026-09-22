@@ -13,7 +13,7 @@ import {
  * EXACTAMENTE estas mismas funciones, así que nunca pueden discrepar sobre
  * qué preguntas están visibles ni sobre cuáles faltan.
  *
- * Invariante central: todo — progreso, validación de envío, "siguiente" — se
+ * Invariante central: todo, progreso, validación de envío, "siguiente", se
  * calcula sobre las preguntas VISIBLES según showIf, nunca sobre QUESTIONS.
  */
 
@@ -99,7 +99,7 @@ export function getBlockingQuestions(answers: AnswerMap): AnswerableQuestion[] {
   return getVisibleAnswerable(answers).filter((q) => !validateAnswer(q, answers[q.id]).ok);
 }
 
-/** 0–100 sobre preguntas visibles con respuesta. Los statement no cuentan. */
+/** 0 a 100 sobre preguntas visibles con respuesta. Los statement no cuentan. */
 export function computeProgress(answers: AnswerMap): number {
   const answerable = getVisibleAnswerable(answers);
   if (answerable.length === 0) return 0;

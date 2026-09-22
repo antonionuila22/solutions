@@ -30,10 +30,10 @@ longDescription: |
 
   <p>Codebrand nació aquí. Somos sampedranos desarrollando para sampedranos, y conocemos de cerca el ritmo de la zona industrial, el circuito comercial de la circunvalación y el ecosistema de negocios del valle. Esa raíz local es una ventaja concreta: entendemos su mercado, hablamos su idioma, podemos sentarnos con usted en su oficina y le facturamos en lempiras, sin la fricción de contratar una agencia del extranjero.</p>
 
-  <p>Desarrollamos desde sitios corporativos para exportadoras y catálogos B2B para manufactura hasta tiendas en línea para el comercio y sistemas a la medida para gestión de inventario, pedidos y clientes. Construimos con tecnología moderna —React, Next.js, Astro y Node.js— para que su plataforma sea rápida, segura y fácil de escalar conforme su empresa crece en mercados nacionales e internacionales. En una ciudad donde la competencia es fuerte, un sitio profesional y bien posicionado es la diferencia entre que lo encuentren a usted o a su competidor.</p>
+  <p>Desarrollamos desde sitios corporativos para exportadoras y catálogos B2B para manufactura hasta tiendas en línea para el comercio y sistemas a la medida para gestión de inventario, pedidos y clientes. Construimos con tecnología moderna, React, Next.js, Astro y Node.js, para que su plataforma sea rápida, segura y fácil de escalar conforme su empresa crece en mercados nacionales e internacionales. En una ciudad donde la competencia es fuerte, un sitio profesional y bien posicionado es la diferencia entre que lo encuentren a usted o a su competidor.</p>
 
 techScene: |
-  <p>San Pedro Sula se ha convertido en el polo tecnológico y de servicios más dinámico de Honduras fuera de la capital. Alrededor de parques empresariales como Altia Smart City ha crecido un fuerte sector de call centers y BPO que emplea a miles de jóvenes bilingües, y universidades como UNITEC, USAP y CEUTEC alimentan un flujo constante de talento en programación, diseño y marketing digital. Ese ecosistema —bilingüe, joven y orientado a la exportación de servicios— convive con una base industrial que cada vez demanda más software: portales B2B para maquilas, sistemas de trazabilidad para agroindustria y comercio electrónico para el retail. En el Valle de Sula, la transformación digital dejó de ser opcional y se volvió una condición para competir.</p>
+  <p>San Pedro Sula se ha convertido en el polo tecnológico y de servicios más dinámico de Honduras fuera de la capital. Alrededor de parques empresariales como Altia Smart City ha crecido un fuerte sector de call centers y BPO que emplea a miles de jóvenes bilingües, y universidades como UNITEC, USAP y CEUTEC alimentan un flujo constante de talento en programación, diseño y marketing digital. Ese ecosistema, bilingüe, joven y orientado a la exportación de servicios, convive con una base industrial que cada vez demanda más software: portales B2B para maquilas, sistemas de trazabilidad para agroindustria y comercio electrónico para el retail. En el Valle de Sula, la transformación digital dejó de ser opcional y se volvió una condición para competir.</p>
 
 industries:
   - name: "Manufactura y Maquila"
@@ -77,7 +77,7 @@ whyChooseUs:
   - title: "Facturación y soporte local"
     description: "Le facturamos en lempiras con las formalidades que su contabilidad requiere y le damos soporte en su mismo horario, por WhatsApp y en persona, sin barreras de idioma ni distancia."
   - title: "Tecnología de nivel internacional"
-    description: "Usamos el mismo stack moderno —React, Next.js, Astro, Node.js— con el que se construyen productos globales, para que su empresa sampedrana compita con plataformas rápidas, seguras y escalables."
+    description: "Usamos el mismo stack moderno, React, Next.js, Astro, Node.js, con el que se construyen productos globales, para que su empresa sampedrana compita con plataformas rápidas, seguras y escalables."
   - title: "Del sitio web al sistema completo"
     description: "Cubrimos desde la página corporativa hasta el e-commerce y los sistemas internos de gestión, así que crece con un solo socio tecnológico en lugar de coordinar varios proveedores."
 

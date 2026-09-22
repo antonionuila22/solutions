@@ -1,9 +1,9 @@
 ---
-title: Online Store Development – Scalable, Visual, and High-Converting E-commerce
+title: "Online Store Development: Scalable, Visual, and High-Converting E-commerce"
 seoTitle: "Online Store Development Services | Codebrand"
 img: /photos/diseñoweb.webp
 readtime: 7
-description: We build modern, fast, and scalable online stores using Shopify, WooCommerce, and custom tech with React, Next.js, and Stripe. Built to sell — not just look good.
+description: We build modern, fast, and scalable online stores using Shopify, WooCommerce, and custom tech with React, Next.js, and Stripe. Built to sell, not just look good.
 date: 2025-01-01
 author: Codebrand Team
 ---
@@ -58,12 +58,12 @@ At **Codebrand**, we build e-commerce stores that convert. Whether you're launch
 
 ## Why Work with Codebrand
 
-- Custom development aligned with your business model — no templates
+- Custom development aligned with your business model, no templates
 - Optimized for SEO, Core Web Vitals, and conversion
 - UX designed around e-commerce best practices
 - Scalable and secure architecture that grows with you
 - Integrations with Meta Ads, Google Shopping, Klaviyo, and more
-- Real partnership — not just a tech handoff
+- Real partnership, not just a tech handoff
 
 ---
 
@@ -79,4 +79,4 @@ At **Codebrand**, we build e-commerce stores that convert. Whether you're launch
 
 ## Ready to launch or upgrade your store?
 
-> Tell us your product volume, integrations needed, and customization goals. We'll send you a detailed proposal — no empty promises, just a clear plan.
+> Tell us your product volume, integrations needed, and customization goals. We'll send you a detailed proposal, no empty promises, just a clear plan.

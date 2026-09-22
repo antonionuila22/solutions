@@ -1,6 +1,6 @@
 ---
 title: "Desarrollo Web en Copán | Codebrand Honduras"
-description: "Servicios profesionales de desarrollo web en Copán. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Santa Rosa de Copán, Copán Ruinas y todo el departamento."
+description: "Desarrollo web en Copán, Honduras: sitios web, tiendas en línea y aplicaciones para hoteles, fincas de café y comercios de Santa Rosa y Copán Ruinas."
 name: "Copán"
 code: "CP"
 country: "honduras"
@@ -24,11 +24,11 @@ featured: true
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>Copán—tierra de historia maya, café de altura y belleza natural en el occidente de Honduras. Desde las <strong>Ruinas de Copán</strong> (Patrimonio de la Humanidad) hasta las <strong>fincas de café de especialidad</strong>, Copán combina turismo cultural, agroindustria y comercio regional en una economía diversa.</p>
+  <p>Copán es tierra de historia maya, café de altura y belleza natural en el occidente de Honduras. Desde las <strong>Ruinas de Copán</strong> (Patrimonio de la Humanidad) hasta las <strong>fincas de café de especialidad</strong>, Copán combina turismo cultural, agroindustria y comercio regional en una economía diversa.</p>
 
-  <p>En Codebrand, somos <strong>hondureños desarrollando para hondureños</strong>. Entendemos la economía de Copán—el turismo arqueológico que atrae visitantes internacionales, la industria del café que exporta al mundo, y el comercio regional que sirve al occidente del país.</p>
+  <p>Codebrand trabaja desde <strong>San Pedro Sula, a pocas horas de Santa Rosa por la CA-4</strong>, la carretera de occidente, y conoce el mercado hondureño de primera mano. Entendemos la economía de Copán: el turismo arqueológico que atrae visitantes internacionales, la industria del café que exporta al mundo, y el comercio regional que sirve al occidente del país.</p>
 
-  <p>Ofrecemos <strong>desarrollo web profesional</strong> adaptado a las necesidades locales. Sitios web bilingües para hoteles cerca de las ruinas, plataformas para exportadores de café, tiendas en línea para comercios—ayudamos a empresas de Copán a conectar con clientes locales e internacionales.</p>
+  <p>El visitante que planea su viaje a las ruinas y el tostador que busca café de altura tienen algo en común: deciden en línea, muchas veces en inglés, semanas antes de llegar. Con eso en mente diseñamos <strong>sitios web profesionales</strong> para el occidente: páginas bilingües para hoteles de Copán Ruinas, plataformas para fincas y exportadores de café, tiendas en línea para comercios de Santa Rosa. El resultado: empresas de Copán conectadas con clientes locales e internacionales.</p>
 
   <p>Ya sea que su negocio esté en <strong>Santa Rosa de Copán</strong>, <strong>Copán Ruinas</strong>, <strong>La Entrada</strong> o cualquier parte del departamento, podemos ayudarle a construir una presencia digital que impulse su crecimiento.</p>
 
@@ -56,17 +56,15 @@ marketHighlights:
 
 regionalStats:
   gdp: "Centro comercial occidental"
-  techCompanies: "50+"
-  businessGrowth: "+4% anual"
 
 faqs:
   - question: "¿Desarrollan sitios web para hoteles cerca de las Ruinas de Copán?"
     answer: "Sí. Creamos sitios web bilingües (español/inglés) con sistemas de reservas, galerías de fotos y optimización para búsquedas turísticas relacionadas con Copán y los mayas."
-  - question: "¿Pueden crear sitios web para exportadores de café?"
+  - question: "¿Pueden crear sitios web para exportadores de café de Copán?"
     answer: "Sí. Desarrollamos plataformas que muestran la historia de su finca, el proceso de producción, certificaciones y permiten a compradores internacionales contactarle profesionalmente."
   - question: "¿Trabajan con negocios pequeños en Santa Rosa?"
-    answer: "Sí. Entendemos la economía local y ofrecemos soluciones adaptadas a diferentes presupuestos. Un comercio pequeño puede tener presencia profesional en línea sin grandes inversiones."
-  - question: "¿Ofrecen sitios web en inglés para turistas?"
+    answer: "Sí. Trabajamos a partir del presupuesto que el negocio nos comparte y ajustamos el alcance a esa cifra, sin cobros por hora. En Santa Rosa de Copán, centro comercial del occidente, eso suele significar una página para la ferretería, la farmacia o la cafetería familiar con ubicación, horarios, catálogo y contacto por WhatsApp, que más adelante puede convertirse en tienda en línea o sistema de reservas cuando el negocio crezca."
+  - question: "¿Ofrecen sitios web en inglés para los turistas que visitan Copán Ruinas?"
     answer: "Sí. Para negocios turísticos en Copán Ruinas, desarrollamos sitios bilingües o en inglés para capturar el mercado de turistas internacionales que visitan las ruinas."
   - question: "¿Pueden ayudar a cooperativas de café con su presencia digital?"
     answer: "Sí. Hemos trabajado con productores agrícolas y entendemos la importancia de mostrar trazabilidad, historia y calidad del producto a compradores internacionales."

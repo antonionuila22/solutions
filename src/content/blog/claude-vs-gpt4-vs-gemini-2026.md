@@ -20,7 +20,7 @@ tags:
 
 ## The AI Choice That Matters
 
-Choosing the right AI model isn't just a technical decision—it's a business strategy decision.
+Choosing the right AI model isn't just a technical decision, it's a business strategy decision.
 
 In 2026, three major players dominate: **Claude** (Anthropic), **GPT-4** (OpenAI), and **Gemini** (Google). Each has distinct strengths, and picking the wrong one could cost you time, money, and results.
 
@@ -257,7 +257,7 @@ For most business applications, the cost differences are minimal. **Choose based
 
 ## Multi-Model Strategies
 
-The smartest businesses don't choose one—they use all three strategically:
+The smartest businesses don't choose one, they use all three strategically:
 
 **Example Architecture:**
 1. **Gemini Flash** for initial triage and classification (cheap, fast)
@@ -333,6 +333,6 @@ We can help you choose the right model and build the right solution.
 1. **Claude excels** at coding, writing, and nuanced communication
 2. **GPT-4 wins** for creative tasks and extensive integrations
 3. **Gemini dominates** large-scale processing with 1M context
-4. **Cost differences are minimal** — choose based on quality
+4. **Cost differences are minimal**, choose based on quality
 5. **Multi-model strategies** often work best
 6. **Test with your actual use case** before committing

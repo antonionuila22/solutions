@@ -24,7 +24,7 @@ tags:
 
 Every year brings new frameworks, tools, and "revolutionary" approaches to web development. Most fade into obscurity within months. A few become essential.
 
-After building 300+ projects and watching the industry evolve, we've identified the five technologies that genuinely matter in 2026—not because they're trendy, but because they solve real problems better than alternatives.
+After building 300+ projects and watching the industry evolve, we've identified the five technologies that genuinely matter in 2026, not because they're trendy, but because they solve real problems better than alternatives.
 
 ---
 
@@ -67,7 +67,7 @@ Same Site with Astro:
 
 ### How Astro Works
 
-Astro uses an "Islands Architecture"—static HTML with isolated interactive components:
+Astro uses an "Islands Architecture", static HTML with isolated interactive components:
 
 ```astro
 ---
@@ -180,7 +180,7 @@ Sites we've built with Astro consistently achieve:
 
 **What it is:** A typed superset of JavaScript that compiles to plain JavaScript.
 
-**Why it matters in 2026:** TypeScript has won. It's no longer optional for serious projects—it's expected.
+**Why it matters in 2026:** TypeScript has won. It's no longer optional for serious projects, it's expected.
 
 ### The Problem TypeScript Solves
 
@@ -294,7 +294,7 @@ users[0].email; // TypeScript knows this exists
 
 **What it is:** A utility-first CSS framework that lets you build designs directly in your HTML.
 
-**Why it matters in 2026:** Tailwind has become the default choice for modern web projects, and for good reason—it dramatically speeds up development without sacrificing customization.
+**Why it matters in 2026:** Tailwind has become the default choice for modern web projects, and for good reason, it dramatically speeds up development without sacrificing customization.
 
 ### The Problem Tailwind Solves
 
@@ -690,4 +690,4 @@ We help businesses leverage these technologies through:
 
 ---
 
-*Want to learn more about any of these technologies? [Reach out to our team](/contact/)—we're happy to share our experience.*
+*Want to learn more about any of these technologies? [Reach out to our team](/contact/), we're happy to share our experience.*

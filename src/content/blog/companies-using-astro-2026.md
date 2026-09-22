@@ -162,7 +162,7 @@ const { frontmatter } = Astro.props;
 
 **What we built:** Our own website and 50+ client projects
 
-**Why Astro:** As a web development agency, we needed a framework that could deliver exceptional results for diverse client needs—from simple landing pages to complex marketing sites.
+**Why Astro:** As a web development agency, we needed a framework that could deliver exceptional results for diverse client needs, from simple landing pages to complex marketing sites.
 
 **Our website features:**
 - Multi-language support (English/Spanish)
@@ -583,4 +583,4 @@ At **Codebrand**, we've been building with Astro since its early versions. We ca
 
 ---
 
-*Considering Astro for your next project? [Reach out to our team](/contact/)—we've helped dozens of companies make the switch.*
+*Considering Astro for your next project? [Reach out to our team](/contact/), we've helped dozens of companies make the switch.*

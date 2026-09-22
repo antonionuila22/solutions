@@ -3,7 +3,7 @@ import type { FieldProps } from "../field-contract";
 import type { PriorityMatrixQuestion } from "../../types";
 
 /**
- * Matriz de prioridades — la pantalla de mayor riesgo del formulario:
+ * Matriz de prioridades, la pantalla de mayor riesgo del formulario:
  * 17 módulos × 4 niveles. Decisiones tomadas a propósito:
  *
  *  - NUNCA una tabla con scroll horizontal. Un solo marcado responsive: en

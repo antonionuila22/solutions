@@ -33,10 +33,10 @@ En Codebrand España ayudamos a empresas a transformar su presencia digital a tr
 
 Contamos con un equipo multidisciplinario con experiencia internacional, tecnología de punta y enfoque en resultados. Cada proyecto es único, y lo tratamos como tal.
 
-- ✅ Entregas puntuales
-- ✅ Soporte constante
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para SEO y velocidad
+- Entregas puntuales
+- Soporte constante
+- Diseño centrado en el usuario
+- Desarrollo optimizado para SEO y velocidad
 
 ---
 

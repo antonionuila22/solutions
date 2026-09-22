@@ -1,6 +1,6 @@
 ---
 /**
- * /blog — editorial index.
+ * /blog, editorial index.
  *
  * Design direction adapted from the MagicUI blog template (MIT): large
  * editorial typography, one big featured post, a clean grid, lots of air.
@@ -22,7 +22,7 @@ import {
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 
-// Category links for the filter row — every category that has a route.
+// Category links for the filter row, every category that has a route.
 const categoryCounts = new Map<string, { name: string; count: number }>();
 for (const post of allPosts) {
   for (const cat of post.data.categories ?? []) {
@@ -144,7 +144,7 @@ const featuredCategory = featuredPost?.data.categories?.[0];
 
             <div>
               <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-orange-700">
-                Latest article{featuredCategory && ` — ${featuredCategory}`}
+                Latest article{featuredCategory && `, ${featuredCategory}`}
               </p>
 
               <h2 class="text-display-2 mt-4 text-slate-900">

@@ -27,7 +27,7 @@ hideToc: false
 
 You invested in a WordPress website. It looks great. It's generating leads.
 
-But now you need to **update content**, **publish blog posts**, or **create new pages**—and you're stuck waiting on a developer for every small change.
+But now you need to **update content**, **publish blog posts**, or **create new pages**, and you're stuck waiting on a developer for every small change.
 
 Sound familiar?
 
@@ -49,13 +49,13 @@ This guide is your **Standard Operating Procedure (SOP)** for managing your Word
 
 Once logged in, you'll see the WordPress Dashboard. Here's what matters:
 
-- **Posts** — Where you create and manage blog articles
-- **Pages** — Where you create and manage static pages (About, Services, Contact, etc.)
-- **Media** — Your image and file library
-- **Appearance** — Theme settings and customization
-- **Plugins** — Extensions that add functionality
-- **Users** — Manage who has access to your site
-- **Settings** — General site configuration
+- **Posts**, Where you create and manage blog articles
+- **Pages**, Where you create and manage static pages (About, Services, Contact, etc.)
+- **Media**, Your image and file library
+- **Appearance**, Theme settings and customization
+- **Plugins**, Extensions that add functionality
+- **Users**, Manage who has access to your site
+- **Settings**, General site configuration
 
 ---
 
@@ -65,8 +65,8 @@ Plugin updates are the **single most important maintenance task** you can do. Ou
 
 ### Before You Update
 
-1. **Check when the last backup was made** — Go to your backup plugin (UpdraftPlus, BlogVault, etc.) and confirm a recent backup exists
-2. **Never update all plugins at once** — Update them one at a time
+1. **Check when the last backup was made**, Go to your backup plugin (UpdraftPlus, BlogVault, etc.) and confirm a recent backup exists
+2. **Never update all plugins at once**, Update them one at a time
 
 ### Step-by-Step Plugin Update
 
@@ -84,8 +84,8 @@ Plugin updates are the **single most important maintenance task** you can do. Ou
 1. **Don't panic.** Most issues are temporary
 2. Go to **Plugins → Installed Plugins**
 3. Find the plugin you just updated
-4. Click **Deactivate** — this will disable it without deleting it
-5. Check your site again — if the issue is resolved, the plugin was the problem
+4. Click **Deactivate**, this will disable it without deleting it
+5. Check your site again, if the issue is resolved, the plugin was the problem
 6. Contact your developer or the plugin's support team for help
 7. If your site is completely broken and you can't access the dashboard, restore from your backup
 
@@ -111,28 +111,28 @@ Consistent blogging is one of the best things you can do for SEO. Here's how to 
 3. Write your content in the **block editor** (Gutenberg):
    - Press **Enter** to create a new paragraph
    - Use the **"+"** button to add different blocks (images, headings, lists, etc.)
-   - Use **Heading blocks** (H2, H3) to structure your content — this is critical for SEO
+   - Use **Heading blocks** (H2, H3) to structure your content, this is critical for SEO
 
 ### Adding Images to Your Post
 
 1. Click the **"+"** button and select **Image**
 2. Choose **Upload** to add a new image or **Media Library** to use an existing one
-3. After inserting, fill in the **Alt Text** field — describe what the image shows (important for SEO and accessibility)
+3. After inserting, fill in the **Alt Text** field, describe what the image shows (important for SEO and accessibility)
 4. Adjust the image size if needed using the block settings on the right panel
 
 ### Setting Up Your Post for SEO (Yoast / Rank Math)
 
 1. Scroll down below the editor to find the **SEO plugin section**
 2. Write a compelling **SEO Title** (60 characters max)
-3. Write a **Meta Description** (155 characters max) — this appears in Google search results
-4. Set your **Focus Keyword** — the main term you want to rank for
+3. Write a **Meta Description** (155 characters max), this appears in Google search results
+4. Set your **Focus Keyword**, the main term you want to rank for
 5. Follow the plugin's suggestions to improve your score (green = good, orange = needs work, red = fix it)
 
 ### Categories and Tags
 
 1. In the right sidebar, find **Categories**
 2. Check the relevant category (or create a new one)
-3. Add relevant **Tags** — use 3-5 tags per post
+3. Add relevant **Tags**, use 3-5 tags per post
 4. Tags should be specific keywords related to the post content
 
 ### Featured Image
@@ -161,13 +161,13 @@ Pages are for static content like "About Us," "Services," or "Contact."
 1. Go to **Pages → Add New Page**
 2. Enter the **page title**
 3. Build your content using blocks:
-   - **Paragraph** — Regular text
-   - **Heading** — Section titles (H2, H3, H4)
-   - **Image** — Photos and graphics
-   - **Columns** — Multi-column layouts
-   - **Buttons** — Call-to-action buttons
-   - **Spacer** — Add vertical spacing
-   - **Group** — Group blocks together for styling
+   - **Paragraph**, Regular text
+   - **Heading**, Section titles (H2, H3, H4)
+   - **Image**, Photos and graphics
+   - **Columns**, Multi-column layouts
+   - **Buttons**, Call-to-action buttons
+   - **Spacer**, Add vertical spacing
+   - **Group**, Group blocks together for styling
 
 4. Set the **Featured Image** in the right sidebar
 5. Under **Page Attributes**, select a **Template** if your theme offers multiple layouts
@@ -181,22 +181,22 @@ Pages are for static content like "About Us," "Services," or "Contact."
 3. Click **Edit with Elementor** (blue button)
 4. The Elementor visual builder will open
 5. Drag and drop **widgets** from the left panel:
-   - **Heading** — Titles and subtitles
-   - **Text Editor** — Rich text content
-   - **Image** — Photos
-   - **Button** — CTAs
-   - **Icon Box** — Feature highlights
-   - **Image Box** — Image with text
-   - **Spacer** — Vertical spacing
-   - **Divider** — Horizontal line separator
-   - **Google Maps** — Embedded map
-   - **Form** — Contact forms (Elementor Pro)
+   - **Heading**, Titles and subtitles
+   - **Text Editor**, Rich text content
+   - **Image**, Photos
+   - **Button**, CTAs
+   - **Icon Box**, Feature highlights
+   - **Image Box**, Image with text
+   - **Spacer**, Vertical spacing
+   - **Divider**, Horizontal line separator
+   - **Google Maps**, Embedded map
+   - **Form**, Contact forms (Elementor Pro)
 
 6. Click any element to edit it
 7. Use the three tabs in the left panel:
-   - **Content** — Change text, images, links
-   - **Style** — Colors, fonts, spacing, borders
-   - **Advanced** — Margins, padding, animations, responsive settings
+   - **Content**, Change text, images, links
+   - **Style**, Colors, fonts, spacing, borders
+   - **Advanced**, Margins, padding, animations, responsive settings
 
 8. Click the **eye icon** (Preview) to see the live result
 9. Click **Publish** or **Update**
@@ -254,9 +254,9 @@ Elementor lets you build reusable sections and widgets without code.
    - Set **Content Width** to "Full Width"
    - Set **Min Height** to 500px (or as desired)
    - Add a **Background Image** or gradient
-5. Add a **Heading** widget — your main title
-6. Add a **Text Editor** widget — your subtitle or description
-7. Add a **Button** widget — your call to action
+5. Add a **Heading** widget, your main title
+6. Add a **Text Editor** widget, your subtitle or description
+7. Add a **Button** widget, your call to action
 8. Style each element using the **Style** tab
 
 ### Building a Services Grid
@@ -302,10 +302,10 @@ Proper image management keeps your site fast and professional.
 1. Go to **Media → Add New Media File**
 2. Drag and drop files or click **Select Files**
 3. After upload, click on the image to edit its details:
-   - **Alt Text** — Describe the image (for SEO and accessibility)
-   - **Title** — Image name
-   - **Caption** — Optional text displayed below the image
-   - **Description** — Internal notes
+   - **Alt Text**, Describe the image (for SEO and accessibility)
+   - **Title**, Image name
+   - **Caption**, Optional text displayed below the image
+   - **Description**, Internal notes
 
 ### Image Best Practices
 
@@ -315,7 +315,7 @@ Proper image management keeps your site fast and professional.
 | Max file size | Under 200KB per image |
 | Dimensions | Max 1920px wide for full-width images |
 | Naming | Use descriptive filenames: `team-meeting-office.webp` not `IMG_4523.webp` |
-| Alt text | Always fill in — describe what the image shows |
+| Alt text | Always fill in, describe what the image shows |
 
 ### Optimizing Images
 
@@ -360,7 +360,7 @@ Control who has access to your WordPress site and what they can do.
 
 | Role | Can Do |
 |------|--------|
-| **Administrator** | Everything — full site control |
+| **Administrator** | Everything, full site control |
 | **Editor** | Publish/edit all posts and pages |
 | **Author** | Publish/edit their own posts only |
 | **Contributor** | Write posts but can't publish them |
@@ -394,12 +394,12 @@ Most WordPress sites use a form plugin like **WPForms**, **Contact Form 7**, or 
 2. Click **Edit** on the form you want to modify
 3. Drag and drop fields from the left panel
 4. Click any field to edit its settings:
-   - **Label** — The field name visitors see
-   - **Required** — Whether the field must be filled
-   - **Placeholder** — Example text inside the field
+   - **Label**, The field name visitors see
+   - **Required**, Whether the field must be filled
+   - **Placeholder**, Example text inside the field
 5. Click **Settings** to change:
-   - **Notification emails** — Where form submissions are sent
-   - **Confirmation message** — What users see after submitting
+   - **Notification emails**, Where form submissions are sent
+   - **Confirmation message**, What users see after submitting
 6. Click **Save**
 
 ### Embedding a Form on a Page
@@ -450,16 +450,16 @@ A slow site kills conversions. Here's how to monitor performance.
 1. Go to [PageSpeed Insights](https://pagespeed.web.dev/)
 2. Enter your website URL
 3. Review your scores:
-   - **90-100** — Excellent
-   - **50-89** — Needs improvement
-   - **0-49** — Poor, needs immediate attention
+   - **90-100**, Excellent
+   - **50-89**, Needs improvement
+   - **0-49**, Poor, needs immediate attention
 
 ### Common Speed Fixes You Can Do
 
-- **Delete unused plugins** — Go to Plugins → Installed Plugins → Delete any you don't use
-- **Optimize images** — Use your image optimization plugin
-- **Enable caching** — Make sure your caching plugin (WP Rocket, W3 Total Cache, LiteSpeed Cache) is active and configured
-- **Limit post revisions** — Ask your developer to add revision limits
+- **Delete unused plugins**, Go to Plugins → Installed Plugins → Delete any you don't use
+- **Optimize images**, Use your image optimization plugin
+- **Enable caching**, Make sure your caching plugin (WP Rocket, W3 Total Cache, LiteSpeed Cache) is active and configured
+- **Limit post revisions**, Ask your developer to add revision limits
 
 ---
 
@@ -496,7 +496,7 @@ Keeping content fresh signals to Google that your site is active.
 1. Go to **Pages → All Pages**
 2. Hover over the page and click **Edit** (block editor) or **Edit with Elementor**
 3. Make your changes
-4. Click **Update** (not Publish — Update saves changes to an already published page)
+4. Click **Update** (not Publish, Update saves changes to an already published page)
 
 ### Editing a Blog Post
 
@@ -536,7 +536,7 @@ Print this out and run through it once a month:
 **Cause:** Usually a plugin conflict or PHP error.
 
 **Fix:**
-1. Try accessing `/wp-admin` — if it works, deactivate the last plugin you updated
+1. Try accessing `/wp-admin`, if it works, deactivate the last plugin you updated
 2. If you can't access the admin, contact your developer or hosting support to disable plugins via FTP
 
 ### "Briefly Unavailable for Scheduled Maintenance"
@@ -572,13 +572,13 @@ Print this out and run through it once a month:
 
 While this guide covers the basics, some tasks should be left to professionals:
 
-- **Custom functionality** — Adding features that don't exist in plugins
-- **Theme customization** — CSS, PHP, or template changes
-- **Security incidents** — If you suspect your site was hacked
-- **Migration** — Moving your site to a new host
-- **E-commerce setup** — WooCommerce configuration and customization
-- **Performance optimization** — Server-level caching, CDN setup, database optimization
-- **API integrations** — Connecting your site to external services
+- **Custom functionality**, Adding features that don't exist in plugins
+- **Theme customization**, CSS, PHP, or template changes
+- **Security incidents**, If you suspect your site was hacked
+- **Migration**, Moving your site to a new host
+- **E-commerce setup**, WooCommerce configuration and customization
+- **Performance optimization**, Server-level caching, CDN setup, database optimization
+- **API integrations**, Connecting your site to external services
 
 ---
 
@@ -590,4 +590,4 @@ The key is consistency. Update your plugins weekly. Publish content regularly. B
 
 Your website is a business asset. Treat it like one.
 
-**Need help with something beyond basic maintenance?** [Contact our team](/contact/) — we specialize in WordPress development, performance optimization, and custom solutions that grow with your business.
+**Need help with something beyond basic maintenance?** [Contact our team](/contact/), we specialize in WordPress development, performance optimization, and custom solutions that grow with your business.

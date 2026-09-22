@@ -1,78 +1,66 @@
 ---
-title: "Desarrollo Web en San Salvador | Codebrand El Salvador"
-description: "Servicios profesionales de desarrollo web en San Salvador. Sitios web personalizados, e-commerce y aplicaciones web para empresas en la capital y todo el departamento de San Salvador."
+title: "Desarrollo Web en San Salvador, El Salvador | Codebrand"
+description: "Desarrollo web en San Salvador, El Salvador: sitios corporativos, tiendas en línea y aplicaciones web para empresas de la capital y su área metropolitana."
 name: "San Salvador"
 code: "SS"
 country: "el-salvador"
 img: "/photos/webservice.webp"
-imageAlt: "Servicios de desarrollo web en San Salvador El Salvador"
+imageAlt: "Desarrollo web para empresas del Área Metropolitana de San Salvador, El Salvador"
 population: "1.7M+"
 capital: "San Salvador"
 timezone: "CST"
 keywords:
   - "desarrollo web San Salvador"
-  - "desarrolladores web El Salvador"
   - "diseño web San Salvador"
-  - "sitios web personalizados El Salvador"
   - "agencia web El Salvador"
-  - "páginas web empresariales San Salvador"
-  - "desarrollo ecommerce El Salvador"
-  - "aplicaciones web Bitcoin"
-  - "desarrollo software El Salvador"
-  - "transformación digital El Salvador"
+  - "páginas web Santa Tecla"
+  - "desarrollo web Antiguo Cuscatlán"
+  - "diseño web Soyapango"
+  - "tiendas en línea El Salvador"
+  - "sitios web empresas San Salvador"
+  - "aplicaciones web El Salvador"
+  - "desarrollo software San Salvador"
 featured: true
-
-# Contenido SEO Mejorado
 longDescription: |
-  <p>San Salvador—la <strong>capital y centro empresarial de El Salvador</strong>, un país que lidera la adopción de <strong>Bitcoin</strong> y la transformación digital en Centroamérica. Desde <strong>tecnología y fintech</strong> hasta <strong>comercio y servicios</strong>, San Salvador es el corazón económico de una nación innovadora.</p>
-
-  <p>En Codebrand, ofrecemos <strong>desarrollo web desde Honduras</strong>—país vecino con mismo huso horario (CST) y cultura centroamericana compartida. Somos hermanos desarrollando para hermanos, con entendimiento del momento transformador que vive El Salvador.</p>
-
-  <p>Para empresas salvadoreñas que buscan <strong>digitalización a precios competitivos</strong>, nuestro modelo nearshore ofrece desarrollo profesional sin los costos de agencias locales premium. Misma cultura, misma zona horaria, mejores precios.</p>
-
-  <p>Ya sea que su empresa esté en <strong>Santa Elena</strong>, <strong>Escalón</strong>, <strong>Centro Histórico</strong> o cualquier parte del área metropolitana, podemos ayudarle a construir presencia digital que aproveche el momento de transformación del país.</p>
-
+  <p>San Salvador es la capital de El Salvador y el núcleo del Área Metropolitana, donde se concentra la mayor parte del comercio, los servicios y la industria del país. El <strong>Centro Histórico</strong>, con la Catedral Metropolitana, el Palacio Nacional y el Teatro Nacional, ha sido renovado y vuelve a atraer comercio y visitantes; la Colonia Escalón, San Benito y la Zona Rosa reúnen oficinas, restaurantes y hoteles; y el corredor de <strong>Santa Elena</strong>, en Antiguo Cuscatlán, junto con Santa Tecla, concentra sedes corporativas, centros comerciales y universidades. Soyapango e Ilopango albergan zonas francas y parques industriales; Apopa, Mejicanos, Ciudad Delgado, Cuscatancingo y Ayutuxtepeque completan un área metropolitana densa y comercial.</p>
+  <p>La economía capitalina se apoya en el comercio, los servicios financieros, los centros de contacto y servicios empresariales, la manufactura ligera y las remesas que dinamizan el consumo. El Salvador utiliza el dólar estadounidense, ha impulsado los pagos digitales y las transferencias interbancarias inmediatas, y ha adoptado la facturación electrónica mediante <strong>Documentos Tributarios Electrónicos</strong> ante el Ministerio de Hacienda. El consumidor salvadoreño busca en Google desde el celular, compara en redes sociales y escribe por WhatsApp antes de comprar, así que un sitio rápido con contacto inmediato marca la diferencia.</p>
+  <p>Codebrand trabaja con empresas de San Salvador de forma remota desde San Pedro Sula, Honduras, a pocas horas por carretera y en el mismo huso horario (UTC-6 durante todo el año). Compartimos el idioma y la cultura de negocios, coordinamos por videollamada y WhatsApp y cada semana le presentamos una demostración funcional del avance. Antes de comenzar, usted nos indica el presupuesto con el que cuenta y nosotros lo convertimos en una <strong>propuesta de precio fijo</strong> con alcance cerrado; el dominio, el hosting, el repositorio y las cuentas de servicios se registran desde el primer día a nombre de su razón social salvadoreña.</p>
+  <p>Los proyectos que mejor encajan en la capital son sitios corporativos para empresas de servicios y firmas profesionales de Escalón y Santa Elena, tiendas en línea con pago con tarjeta y transferencia y entrega en el área metropolitana, portales para clínicas y universidades, catálogos para distribuidoras e industrias de Soyapango e Ilopango, y aplicaciones web a la medida integradas con la facturación electrónica. Cada página se estructura para las búsquedas locales por municipio y colonia y se optimiza para la navegación móvil.</p>
 industries:
-  - name: "Tecnología y Fintech"
-    description: "Aplicaciones web para startups, fintech y empresas de tecnología."
-  - name: "Comercio y Retail"
-    description: "Tiendas en línea para comercios y marcas salvadoreñas."
-  - name: "Servicios Financieros"
-    description: "Plataformas web para bancos, cooperativas y servicios financieros."
-  - name: "Turismo"
-    description: "Sitios web para surf, turismo de playa y experiencias."
-  - name: "Call Centers"
-    description: "Sitios web corporativos para BPOs y centros de contacto."
-  - name: "Servicios Profesionales"
-    description: "Sitios web para consultoras, firmas legales y servicios."
-
+  - name: "Comercio y distribución"
+    description: "Tiendas en línea, catálogos mayoristas y sistemas de pedidos para comercios y distribuidoras de San Salvador y su área metropolitana."
+  - name: "Servicios financieros y fintech"
+    description: "Sitios corporativos y aplicaciones web seguras para cooperativas de ahorro, aseguradoras y empresas de pagos digitales."
+  - name: "Centros de contacto y servicios empresariales"
+    description: "Sitios institucionales y portales de reclutamiento para centros de contacto y empresas de servicios instaladas en la capital."
+  - name: "Industria y zonas francas"
+    description: "Sitios corporativos y portales de proveedores para manufactureras y empresas logísticas de Soyapango, Ilopango y Apopa."
+  - name: "Salud y educación privada"
+    description: "Portales con citas y matrícula en línea para clínicas, colegios y universidades de Santa Tecla, Antiguo Cuscatlán y San Salvador."
+  - name: "Restaurantes y hospitalidad"
+    description: "Menús digitales, reservas y pedidos en línea para restaurantes y hoteles de la Zona Rosa, la Colonia Escalón y el Centro Histórico."
 marketHighlights:
-  - "Primer país en adoptar Bitcoin como moneda de curso legal"
-  - "Transformación digital acelerada"
-  - "Inversión en infraestructura tecnológica"
-  - "Cercanía cultural y geográfica con Honduras"
-  - "Surf y turismo de playa en crecimiento"
-  - "Ecosistema de startups emergente"
-
+  - "San Salvador es la capital y el centro comercial, financiero y de servicios de El Salvador."
+  - "El Centro Histórico, con la Catedral Metropolitana, el Palacio Nacional y el Teatro Nacional, ha sido renovado y recupera actividad comercial."
+  - "El corredor de Santa Elena, en Antiguo Cuscatlán, y Santa Tecla concentran sedes corporativas, centros comerciales y universidades."
+  - "Soyapango e Ilopango albergan zonas francas y parques industriales que sostienen la manufactura del área metropolitana."
+  - "El Salvador utiliza el dólar estadounidense como moneda y ha impulsado las transferencias interbancarias inmediatas y los pagos digitales."
+  - "La capital y su área metropolitana son sede de la Universidad de El Salvador y de universidades privadas como la UCA, la Don Bosco y la Francisco Gavidia."
 regionalStats:
   gdp: "Centro económico SV"
-  techCompanies: "1,000+"
-  businessGrowth: "+5% anual"
-
 faqs:
-  - question: "¿Por qué elegir una agencia de Honduras?"
-    answer: "Somos vecinos con misma zona horaria y cultura. Ofrecemos desarrollo de calidad a precios competitivos, con comunicación fluida y entendimiento del mercado salvadoreño."
-  - question: "¿Trabajan con proyectos de fintech o Bitcoin?"
-    answer: "Sí. Desarrollamos plataformas web para empresas que aprovechan la adopción de tecnología financiera en El Salvador."
-  - question: "¿Cómo es la comunicación?"
-    answer: "Mismo huso horario (CST), español nativo, Slack, videollamadas. Colaboración tan fluida como con un equipo local."
-  - question: "¿Pueden desarrollar e-commerce?"
-    answer: "Sí. Desarrollamos tiendas en línea optimizadas para el mercado salvadoreño."
-  - question: "¿Trabajan con turismo de surf?"
-    answer: "Sí. Creamos sitios bilingües con reservas para surf camps, hoteles de playa y tours de surf."
-  - question: "¿Qué ventaja tienen sobre agencias locales?"
-    answer: "Precios más competitivos con la misma calidad. Nuestro modelo nearshore desde Honduras optimiza costos sin sacrificar resultados."
-
+  - question: "¿Por qué elegir una agencia de Honduras para un negocio en San Salvador?"
+    answer: "Porque trabaja con un equipo vecino que habla su mismo español, opera en su mismo huso horario y conoce la forma de hacer negocios en Centroamérica. Codebrand atiende desde San Pedro Sula de forma remota, con reuniones por videollamada, seguimiento por WhatsApp y una demostración funcional cada semana. El modelo de precio fijo a partir de su presupuesto le da certeza antes de comenzar."
+  - question: "¿Cuánto cuesta un sitio web en San Salvador?"
+    answer: "No publicamos tarifas porque cada proyecto en la capital es distinto. El punto de partida es el presupuesto que su empresa tiene aprobado: con esa cifra definimos qué páginas, integraciones (pasarela de tarjeta, DTE ante Hacienda, CRM) y plazos caben dentro de ella, y lo dejamos por escrito en una propuesta de precio fijo. No facturamos por hora y el monto pactado se mantiene hasta la entrega, sin cargos adicionales al final."
+  - question: "¿Integran pagos con tarjeta, transferencias y la facturación electrónica de Hacienda?"
+    answer: "Sí. Integramos las pasarelas de tarjeta de los bancos salvadoreños, pasarelas locales de pago en línea, transferencias interbancarias y cobros por enlace, y conectamos la tienda o el sistema con la emisión de Documentos Tributarios Electrónicos ante el Ministerio de Hacienda. Así cada venta genera su comprobante de forma automática y la operación queda en regla desde el primer día."
+  - question: "¿Trabajan con empresas de Santa Tecla y Antiguo Cuscatlán?"
+    answer: "Sí. Aunque pertenecen al departamento de La Libertad, Santa Tecla y Antiguo Cuscatlán forman parte del Área Metropolitana de San Salvador y concentran muchas de las sedes corporativas y universidades con las que trabajamos. Desarrollamos sitios corporativos, portales internos y tiendas en línea para empresas de Santa Elena, Merliot y el centro de Santa Tecla."
+  - question: "¿Pueden posicionar mi negocio en las búsquedas locales de San Salvador?"
+    answer: "Sí. Estructuramos cada página para las búsquedas que realizan los salvadoreños, combinando el servicio con el municipio o la colonia, y configuramos el perfil de Google Business con la dirección y el horario correctos. Cuidamos la velocidad de carga y la experiencia móvil, porque la mayoría de los usuarios de la capital navega desde el celular y decide rápido."
+  - question: "¿Quién es dueño del código y de las cuentas al finalizar?"
+    answer: "Su empresa. Registramos dominio, hosting, repositorios y cuentas de servicios a nombre de su razón social y al cierre entregamos el código fuente completo con documentación. Puede seguir con Codebrand, con otro proveedor o con personal interno sin ninguna restricción. El mantenimiento posterior es opcional y se acuerda por separado."
 majorCities:
   - "San Salvador"
   - "Santa Tecla"

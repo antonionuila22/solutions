@@ -26,7 +26,7 @@ tags:
 
 Speed is no longer optional. Google uses Core Web Vitals for ranking. Users abandon slow sites within seconds. E-commerce studies show every 100ms of latency costs revenue.
 
-After years of optimizing websites, we've identified the stack that delivers the fastest possible performance without sacrificing developer experience. This isn't theoretical—these are the exact tools we use for production sites that consistently achieve 100 Lighthouse scores.
+After years of optimizing websites, we've identified the stack that delivers the fastest possible performance without sacrificing developer experience. This isn't theoretical, these are the exact tools we use for production sites that consistently achieve 100 Lighthouse scores.
 
 ---
 
@@ -59,7 +59,7 @@ Let's break down why each component matters and how they work together.
 
 ### Why Astro is the Fastest Framework
 
-Astro ships **zero JavaScript by default**. Every other framework—React, Vue, Next.js—ships framework runtime code to the browser. Astro only sends HTML and CSS unless you explicitly add interactivity.
+Astro ships **zero JavaScript by default**. Every other framework, React, Vue, Next.js, ships framework runtime code to the browser. Astro only sends HTML and CSS unless you explicitly add interactivity.
 
 **Comparison of Initial JavaScript:**
 
@@ -699,4 +699,4 @@ Every project built with this stack includes:
 
 ---
 
-*Want to learn more about building fast websites? [Reach out to our team](/contact/)—we're passionate about performance.*
+*Want to learn more about building fast websites? [Reach out to our team](/contact/), we're passionate about performance.*

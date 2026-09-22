@@ -21,7 +21,7 @@ tags:
 
 Most digital marketing advice is written for companies with six-figure marketing budgets. This guide is different.
 
-We've helped hundreds of small businesses—from local contractors to e-commerce startups—build effective digital marketing strategies on real-world budgets. This is the playbook we use.
+We've helped hundreds of small businesses, from local contractors to e-commerce startups, build effective digital marketing strategies on real-world budgets. This is the playbook we use.
 
 > **Looking for expert digital marketing help?** Explore our [digital marketing services](/digital-marketing/) for strategies that deliver results.
 
@@ -576,7 +576,7 @@ Example for a plumber:
 
 ## Conclusion
 
-Digital marketing for small businesses isn't about having the biggest budget—it's about being strategic, consistent, and patient.
+Digital marketing for small businesses isn't about having the biggest budget, it's about being strategic, consistent, and patient.
 
 **Key takeaways:**
 1. Your website must convert before anything else matters
@@ -586,7 +586,7 @@ Digital marketing for small businesses isn't about having the biggest budget—i
 5. Measure everything, adjust constantly
 6. Give strategies 3-6 months to work
 
-Start with the fundamentals, track your results, and build from there. Your biggest advantage as a small business is agility—use it.
+Start with the fundamentals, track your results, and build from there. Your biggest advantage as a small business is agility, use it.
 
 ---
 

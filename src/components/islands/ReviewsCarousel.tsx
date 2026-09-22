@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 /**
- * ReviewsCarousel — accessible carousel for the real Google reviews on the home
+ * ReviewsCarousel, accessible carousel for the real Google reviews on the home
  * page. The review data lives in src/pages/index.astro (single source of truth
  * shared with the JSON-LD reviewsSchema) and arrives here verbatim via props.
  *

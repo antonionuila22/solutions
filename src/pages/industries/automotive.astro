@@ -28,7 +28,7 @@ const stats = [
 const title =
   "Car Dealership Website Design & Software | Codebrand";
 const description =
-  "Transform your dealership with custom automotive websites, vehicle inventory management, online showrooms, and CRM systems. Drive more sales with professional car dealer technology.";
+  "Custom automotive websites, vehicle inventory, online showrooms and CRM systems for dealerships. Professional car dealer technology that drives sales.";
 const keywords =
   "car dealership website design, automotive website development, vehicle inventory management software, car dealer CRM, automotive lead management, dealership website builder, auto dealer software, car sales website, vehicle showroom website, automotive digital marketing, online car sales platform, dealer management system, automotive e-commerce, car dealer digital solutions";
 const image = "/photos/bannercodebrand.webp";
@@ -295,7 +295,7 @@ const softwareIndustry = "dealerships and service shops";
 const softwareLead = "The website sells the appointment. The repair order, the parts bin, and the follow-up call decide whether the customer comes back. These are the operational systems we build, extend, and connect for dealers and independent shops.";
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -303,7 +303,6 @@ const softwareLead = "The website sells the appointment. The repair order, the p
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <IndustryHero
     badgeText="Automotive Technology Solutions"

@@ -293,7 +293,7 @@ const softwareIndustry = "restaurants";
 const softwareLead = "A menu page does not run service. The POS, the kitchen screen, and the inventory count do. These are the operational systems we build, extend, and connect for restaurant groups and multi-location operators.";
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -301,7 +301,6 @@ const softwareLead = "A menu page does not run service. The POS, the kitchen scr
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <IndustryHero
     badgeText="Restaurant Technology Solutions"
@@ -351,7 +350,7 @@ const softwareLead = "A menu page does not run service. The POS, the kitchen scr
   <IndustryProcess
     title="Restaurant Development"
     titleAccent="Process"
-    subtitle="From concept to launch — a streamlined process built for restaurant businesses"
+    subtitle="From concept to launch, a streamlined process built for restaurant businesses"
     steps={processSteps}
     accentGradient="from-orange-500 to-orange-500"
   />

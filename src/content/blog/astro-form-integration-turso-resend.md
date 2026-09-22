@@ -12,7 +12,7 @@ tags: ["Astro", "Turso", "Resend", "contact form", "tutorial"]
 
 ## How to Build a Professional Contact Form in Astro with Turso + Resend (Complete Guide)
 
-Contact forms are essential for any business website—but generic form plugins and third-party services come with limitations: data ownership issues, slow load times, privacy concerns, and lack of customization.
+Contact forms are essential for any business website, but generic form plugins and third-party services come with limitations: data ownership issues, slow load times, privacy concerns, and lack of customization.
 
 What if you could build a **lightning-fast, fully customized contact form** that:
 - ✅ Stores all submissions in YOUR database (you own the data)
@@ -24,7 +24,7 @@ What if you could build a **lightning-fast, fully customized contact form** that
 
 In this comprehensive guide, I'll show you exactly how to build this using **Astro** (the fastest web framework), **Turso** (serverless SQLite database), and **Resend** (modern email API).
 
-**By the end, you'll have a production-ready contact form** that's faster and more reliable than 99% of WordPress contact forms—and you'll own every part of it.
+**By the end, you'll have a production-ready contact form** that's faster and more reliable than 99% of WordPress contact forms, and you'll own every part of it.
 
 ---
 
@@ -114,7 +114,7 @@ export default defineConfig({
 });
 ```
 
-**Why SSR?** Without SSR, Astro generates static HTML files at build time—you can't handle form submissions dynamically. SSR allows serverless functions to process forms on the backend.
+**Why SSR?** Without SSR, Astro generates static HTML files at build time, you can't handle form submissions dynamically. SSR allows serverless functions to process forms on the backend.
 
 **Alternatives to Netlify**:
 - Vercel: Use `@astrojs/vercel`
@@ -158,7 +158,7 @@ turso db show contact-form-db --url
 turso db tokens create contact-form-db
 ```
 
-**Save these values**—you'll need them for environment variables.
+**Save these values**, you'll need them for environment variables.
 
 ### Create the Table
 
@@ -613,7 +613,7 @@ if (honeypot) {
 
 ## The Bottom Line: Modern Forms for Modern Websites
 
-Contact forms might seem simple, but they're critical conversion points. A slow, unreliable, or bloated form costs you leads—and leads are revenue.
+Contact forms might seem simple, but they're critical conversion points. A slow, unreliable, or bloated form costs you leads, and leads are revenue.
 
 This Astro + Turso + Resend stack gives you:
 ✅ Lightning-fast performance
@@ -622,7 +622,7 @@ This Astro + Turso + Resend stack gives you:
 ✅ Scalability without cost explosion
 ✅ Full customization freedom
 
-**It's not just a better contact form—it's a better foundation for your business.**
+**It's not just a better contact form, it's a better foundation for your business.**
 
 ---
 

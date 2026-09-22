@@ -1,11 +1,11 @@
 ---
 /**
- * PageHero — the reusable, rich, animated hero for interior pages.
+ * PageHero, the reusable, rich, animated hero for interior pages.
  *
  * Brings every page up to the home page's bar: dark slate-950 stage, masked
  * grid + parallax orbs, a word-mask headline reveal, a real animated stat strip
  * (count-ups, honest numbers only), and magnetic CTAs. All motion runs through
- * the shared GSAP engine (src/scripts/animations) via data-attributes — nothing
+ * the shared GSAP engine (src/scripts/animations) via data-attributes, nothing
  * to wire per page, and it's reduced-motion + View-Transitions safe.
  *
  *   <PageHero
@@ -62,7 +62,7 @@ const isCenter = align === "center";
     compact ? "py-24 sm:py-28 lg:py-32" : "py-28 sm:py-32 lg:py-40",
   ]}
 >
-  <!-- Top spotlight — a sense of light source from above gives the dark stage
+  <!-- Top spotlight, a sense of light source from above gives the dark stage
        depth and a premium, "lit" feel instead of a flat fill. -->
   <div
     class="absolute inset-x-0 top-0 h-[70%] pointer-events-none"
@@ -70,7 +70,7 @@ const isCenter = align === "center";
     aria-hidden="true"
   >
   </div>
-  <!-- Edge vignette — darkens the corners so content reads as the focal point. -->
+  <!-- Edge vignette, darkens the corners so content reads as the focal point. -->
   <div
     class="absolute inset-0 pointer-events-none"
     style="background:radial-gradient(ellipse 90% 75% at 50% 42%, transparent 55%, rgba(2,6,23,0.55) 100%);"

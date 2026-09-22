@@ -205,7 +205,7 @@ Hablemos de números concretos:
 
 Una tienda en Shopify Plus cuesta aproximadamente $2,300/mes solo en plataforma. Una solución headless bien implementada puede costar similar mensualmente, pero con capacidades muy superiores.
 
-**El ROI típico**: Las marcas que migran a headless ven mejoras del 20-40% en conversión. Si tu tienda genera $1M anualmente, un aumento del 25% representa $250K adicionales—más que suficiente para justificar la inversión.
+**El ROI típico**: Las marcas que migran a headless ven mejoras del 20-40% en conversión. Si tu tienda genera $1M anualmente, un aumento del 25% representa $250K adicionales, más que suficiente para justificar la inversión.
 
 ---
 
@@ -288,7 +288,7 @@ Si estás considerando migrar a headless, aquí está el camino:
 
 ## El Futuro Es Componible
 
-Headless commerce es parte de una tendencia más amplia llamada **"composable commerce"**—la idea de que tu stack de e-commerce debería ser como bloques de Lego: piezas intercambiables que puedes combinar según tus necesidades.
+Headless commerce es parte de una tendencia más amplia llamada **"composable commerce"**, la idea de que tu stack de e-commerce debería ser como bloques de Lego: piezas intercambiables que puedes combinar según tus necesidades.
 
 En los próximos años, las marcas ganadoras serán aquellas que puedan:
 
@@ -303,7 +303,7 @@ Headless commerce es el foundation que hace todo esto posible.
 
 ## ¿Listo Para Dar el Salto?
 
-Si tu tienda online está creciendo y sientes que tu plataforma actual te limita, es momento de explorar headless commerce. No es una moda—es el nuevo estándar para e-commerce serio.
+Si tu tienda online está creciendo y sientes que tu plataforma actual te limita, es momento de explorar headless commerce. No es una moda, es el nuevo estándar para e-commerce serio.
 
 En Code Brand, hemos implementado soluciones headless para marcas de todos los tamaños. Entendemos que cada negocio es diferente, y por eso ofrecemos consultoría personalizada para evaluar si headless es correcto para ti.
 

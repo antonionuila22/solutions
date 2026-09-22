@@ -22,7 +22,7 @@ Hiring the right web development agency can transform your business. Hiring the 
 
 After years of delivering projects at Codebrand and seeing both successful partnerships and failed ones (before clients came to us), we've identified exactly what separates great agency relationships from disasters.
 
-This guide will help you make the right choice—whether you hire us or not.
+This guide will help you make the right choice, whether you hire us or not.
 
 ---
 
@@ -57,7 +57,7 @@ Before contacting any agency, answer these questions:
 ## Part 2: Types of Web Development Agencies
 
 ### Full-Service Agencies
-**What they offer:** Design, development, SEO, marketing, branding—everything under one roof.
+**What they offer:** Design, development, SEO, marketing, branding, everything under one roof.
 **Best for:** Businesses wanting a single partner for all digital needs.
 **Price range:** $5,000-$100,000+
 **Examples:** SmartSites, WebFX, large marketing agencies
@@ -378,7 +378,7 @@ Finding the right web development agency takes effort, but it's worth it. A grea
 - Free you to focus on what you do best
 - Become a long-term strategic asset
 
-Whether you choose a large US agency, a specialized boutique, a [nearshore development company](/nearshore-development/) like Codebrand, or a talented freelancer—the key is finding the right fit for YOUR needs, budget, and working style.
+Whether you choose a large US agency, a specialized boutique, a [nearshore development company](/nearshore-development/) like Codebrand, or a talented freelancer, the key is finding the right fit for YOUR needs, budget, and working style.
 
 ---
 
@@ -392,7 +392,7 @@ We're a boutique digital agency focused on modern web development for growing bu
 - **Modern tech stack** (React, Next.js, Astro, WordPress)
 - **Direct communication** with the team building your project
 
-If you'd like to see if we're the right fit, [schedule a free consultation](/contact/). No pressure, no obligations—just an honest conversation about your project.
+If you'd like to see if we're the right fit, [schedule a free consultation](/contact/). No pressure, no obligations, just an honest conversation about your project.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Desarrollo Web en Atlántico | Codebrand Colombia"
-description: "Servicios profesionales de desarrollo web en Atlántico. Sitios web personalizados, e-commerce y aplicaciones web para empresas en Barranquilla y la costa caribe colombiana."
+title: "Diseño y Desarrollo Web en Atlántico, Colombia | Codebrand"
+description: "Páginas web, tiendas virtuales con PSE y Nequi y software a la medida para empresas de Barranquilla, Soledad y todo el Atlántico, a precio fijo."
 name: "Atlántico"
 code: "ATL"
 country: "colombia"
@@ -11,61 +11,65 @@ capital: "Barranquilla"
 timezone: "COT"
 keywords:
   - "desarrollo web Atlántico"
-  - "desarrolladores web Barranquilla"
-  - "diseño web Atlántico"
-  - "sitios web personalizados Barranquilla"
+  - "diseño web Barranquilla"
+  - "diseño de páginas web Barranquilla"
+  - "agencia de desarrollo web Barranquilla"
+  - "tienda virtual Barranquilla PSE"
+  - "páginas web Soledad Atlántico"
+  - "desarrollo web Puerto Colombia"
+  - "desarrollo de software Barranquilla"
+  - "diseño web zona franca Barranquilla"
+  - "aplicaciones web Barranquilla"
 featured: false
 
 # Contenido SEO Mejorado
 longDescription: |
-  <p>El <strong>Atlántico</strong>—con su capital <strong>Barranquilla</strong>, "La Puerta de Oro de Colombia"—es uno de los grandes motores económicos de la costa Caribe. Su ubicación estratégica sobre el río Magdalena y el mar Caribe lo convierte en un eje de <strong>logística portuaria</strong>, <strong>industria manufacturera</strong>, <strong>comercio</strong> y <strong>zonas francas</strong>, además de ser cuna del <strong>Carnaval de Barranquilla</strong>, Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO.</p>
+  <p>El Atlántico es el departamento más pequeño de la costa Caribe colombiana y uno de los más densos en industria y comercio. <strong>Barranquilla</strong>, su capital, creció como puerto fluvial sobre el río Magdalena y hoy combina la Sociedad Portuaria, el corredor industrial de la <strong>Vía 40</strong> y las zonas francas de la ciudad y de Galapa con un norte de oficinas, clínicas y comercio en Alto Prado, El Prado, Riomar, Buenavista y Villa Country. El Centro y Barranquillita concentran el comercio mayorista tradicional; <strong>Soledad</strong> alberga el Aeropuerto Internacional Ernesto Cortissoz y, junto con Malambo, los parques industriales metalmecánicos, químicos y de alimentos del área metropolitana; Puerto Colombia suma playas y universidad; y Sabanalarga y Baranoa son el eje agrícola del interior. El <strong>Carnaval de Barranquilla</strong>, reconocido por la UNESCO, mueve cada año hoteles, eventos y comercio.</p>
 
-  <p>En Codebrand somos un <strong>equipo bilingüe que entiende Latinoamérica</strong> y ofrecemos <strong>desarrollo web a la medida a precios accesibles</strong>. Trabajamos desde Honduras, en una zona horaria cercana a Colombia (Honduras CST = Colombia COT), lo que permite reuniones, soporte y entregas en tiempo real sin las fricciones del trabajo offshore lejano.</p>
+  <p>Una empresa barranquillera que quiere vender en internet necesita pagos por <strong>PSE, Nequi, Daviplata</strong> y tarjeta a través de pasarelas como Wompi, PayU o Mercado Pago; <strong>facturación electrónica validada ante la DIAN</strong>; y páginas que aparezcan cuando alguien busca diseño de páginas web Barranquilla, aire acondicionado en Soledad o clínica en el norte de Barranquilla. Las industrias de la Vía 40 y las zonas francas necesitan sitios bilingües para compradores de Estados Unidos y el Caribe; los hoteles y organizadores de eventos, reservas y boletería en temporada de Carnaval; y los proveedores portuarios, portales que muestren capacidad y certificaciones.</p>
 
-  <p>Para las empresas industriales, comercializadoras y de servicios del Atlántico, construimos <strong>sitios web corporativos</strong>, <strong>tiendas en línea (e-commerce)</strong>, <strong>aplicaciones web a la medida</strong> y <strong>landing pages</strong> optimizadas para conversión. Todo con diseño profesional, buen rendimiento y SEO orientado al mercado colombiano.</p>
+  <p>Codebrand trabaja con empresas del Atlántico de forma remota desde San Pedro Sula, Honduras, una ciudad industrial de la misma cuenca del Caribe. Estamos en UTC-6, <strong>una hora por detrás de Colombia</strong>, así que compartimos casi toda la jornada laboral: reuniones por videollamada, seguimiento por WhatsApp y una demostración semanal del avance en funcionamiento. Nuestro equipo habla español. Tampoco encontrará tarifas en esta página: el punto de partida es el presupuesto que su empresa barranquillera tiene disponible, y sobre esa cifra construimos una <strong>propuesta de precio fijo</strong> con un alcance cerrado por escrito. Su empresa es la titular de todo desde el arranque: el dominio .co o .com, la cuenta de hosting y el repositorio con el código, con usted como administrador y sin dependencia de nosotros.</p>
 
-  <p>Ya sea que su negocio esté en <strong>Barranquilla</strong>, <strong>Soledad</strong>, <strong>Malambo</strong> o en cualquier municipio del departamento, le ayudamos a digitalizar su operación con tecnología moderna y acompañamiento en español. Contamos con <strong>5.0 con 50 opiniones en Google</strong> que respaldan nuestro trabajo.</p>
+  <p>Los proyectos que mejor encajan con el Atlántico son sitios corporativos bilingües para industrias y operadores logísticos de la Vía 40, las zonas francas y el puerto; tiendas virtuales con PSE y Nequi para comercios del norte de la ciudad y distribuidores mayoristas del Centro; plataformas de reservas y boletería para hoteles, restaurantes y eventos del Carnaval; sitios con agenda en línea para clínicas y consultorios; y aplicaciones web a la medida que integran inventarios, facturación electrónica y despachos.</p>
 
 industries:
-  - name: "Logística Portuaria"
-    description: "Sitios web y plataformas para operadores portuarios, navieras y empresas de transporte sobre el río Magdalena y el Caribe."
-  - name: "Industria Manufacturera"
-    description: "Sitios corporativos y catálogos en línea para la industria fabril concentrada en Barranquilla y su área metropolitana."
-  - name: "Zonas Francas"
-    description: "Páginas web bilingües para empresas exportadoras instaladas en las zonas francas del Atlántico."
-  - name: "Comercio y Retail"
-    description: "Tiendas en línea (e-commerce) para comercios mayoristas y minoristas de la región Caribe."
-  - name: "Turismo y Carnaval"
-    description: "Sitios web para hoteles, eventos y experiencias culturales en torno al Carnaval de Barranquilla."
-  - name: "Servicios Profesionales"
-    description: "Sitios web para consultoras, firmas legales y empresas de servicios del departamento."
+  - name: "Logística portuaria y comercio exterior"
+    description: "Portales corporativos y herramientas de seguimiento para operadores del puerto sobre el Magdalena, agencias de aduana y transportadores de carga."
+  - name: "Industria manufacturera"
+    description: "Sitios bilingües y catálogos técnicos para plantas metalmecánicas, químicas, de plásticos y de alimentos de la Vía 40, Soledad y Malambo."
+  - name: "Zonas francas y exportadores"
+    description: "Sitios corporativos en español e inglés para empresas instaladas en las zonas francas de Barranquilla y Galapa."
+  - name: "Comercio y distribución"
+    description: "Tiendas virtuales con PSE y Nequi para comercios del norte de Barranquilla y distribuidores mayoristas del Centro y Barranquillita."
+  - name: "Salud"
+    description: "Sitios con agenda en línea para clínicas, consultorios y laboratorios del corredor de salud del norte de la ciudad."
+  - name: "Turismo, eventos y Carnaval"
+    description: "Plataformas de reservas y boletería para hoteles, restaurantes, organizadores de eventos y experiencias de Carnaval y Puerto Colombia."
 
 marketHighlights:
-  - "Barranquilla, 'La Puerta de Oro de Colombia', capital del Atlántico"
-  - "Puerto sobre el río Magdalena con salida al mar Caribe"
-  - "Fuerte industria manufacturera y logística"
-  - "Importantes zonas francas para exportación"
-  - "Carnaval de Barranquilla, Patrimonio UNESCO"
-  - "Sede de la Universidad del Norte y la Universidad del Atlántico"
+  - "Barranquilla, capital del Atlántico, es un puerto fluvial y marítimo sobre el río Magdalena con salida al Caribe por Bocas de Ceniza."
+  - "La Vía 40 y los parques industriales de Soledad y Malambo concentran la industria metalmecánica, química, plástica y de alimentos del área metropolitana."
+  - "El norte de la ciudad, con Alto Prado, El Prado, Riomar y Buenavista, reúne oficinas, clínicas, centros comerciales y hoteles."
+  - "El Aeropuerto Internacional Ernesto Cortissoz, en Soledad, conecta al departamento con el resto de Colombia y el exterior."
+  - "El Carnaval de Barranquilla es Patrimonio Cultural Inmaterial de la Humanidad y la mayor temporada comercial y hotelera del año."
+  - "La Universidad del Norte, la Universidad del Atlántico y otras instituciones forman un polo universitario entre Barranquilla y Puerto Colombia."
 
 regionalStats:
   gdp: "Una de las economías más grandes de la región Caribe"
-  techCompanies: "Ecosistema digital en crecimiento"
-  businessGrowth: "Crecimiento sostenido en comercio e industria"
 
 faqs:
-  - question: "¿Por qué elegir Codebrand para mi empresa en el Atlántico?"
-    answer: "Somos un equipo bilingüe que entiende Latinoamérica, trabajamos en zona horaria cercana (Honduras CST = Colombia COT) y ofrecemos desarrollo web a la medida a precios accesibles, con 5.0 y 50 opiniones en Google."
-  - question: "¿Qué servicios de desarrollo web ofrecen?"
-    answer: "Creamos sitios web corporativos, tiendas en línea (e-commerce), aplicaciones web a la medida y landing pages, con diseño profesional y SEO."
-  - question: "¿Cuánto cuesta un sitio web?"
-    answer: "Cada proyecto es distinto, por eso preparamos una cotización personalizada según sus necesidades, alcance y funcionalidades."
-  - question: "¿Cómo es la comunicación y la zona horaria?"
-    answer: "Trabajamos en español nativo y en horario casi idéntico al de Colombia, con reuniones por videollamada, Slack y entregas en tiempo real."
-  - question: "¿Ofrecen mantenimiento y soporte continuo?"
-    answer: "Sí. Ofrecemos mantenimiento, actualizaciones, monitoreo y soporte para mantener su sitio seguro y al día."
-  - question: "¿Optimizan los sitios para SEO?"
-    answer: "Sí. Construimos sitios rápidos y optimizados para buscadores, orientados al mercado colombiano y la región Caribe."
+  - question: "¿Cómo trabajan con una empresa de Barranquilla desde Honduras?"
+    answer: "De forma remota, con una hora de diferencia: Honduras está en UTC-6 y Colombia en UTC-5, sin cambios de horario. Hacemos reuniones por videollamada en su horario, respondemos por WhatsApp durante el día y presentamos una demostración cada semana. San Pedro Sula es también una ciudad industrial y portuaria del Caribe, así que el contexto de logística, comercio y manufactura nos resulta familiar."
+  - question: "¿Cuánto cuesta una página web o una tienda virtual en Barranquilla?"
+    answer: "No tenemos lista de precios. Le pedimos que nos indique el presupuesto disponible y con esa cifra preparamos una propuesta de precio fijo que detalla páginas, funcionalidades, integraciones y tiempos. Si el presupuesto no cubre todo lo que desea, priorizamos lo que genera clientes primero y planificamos el resto en fases posteriores, siempre con un monto cerrado por adelantado."
+  - question: "¿Integran PSE, Nequi y factura electrónica de la DIAN?"
+    answer: "Sí. Conectamos su tienda con pasarelas como Wompi, PayU, ePayco o Mercado Pago para recibir PSE, Nequi, Daviplata y tarjetas, y la enlazamos con un proveedor autorizado para emitir factura electrónica validada por la DIAN en cada pedido. También integramos cotizadores de envío con transportadoras que cubren Barranquilla, el área metropolitana y el resto del país."
+  - question: "¿Hacen sitios bilingües para industrias y zonas francas?"
+    answer: "Sí. Las empresas de la Vía 40, de las zonas francas de Barranquilla y Galapa y los proveedores del puerto suelen atender compradores en Estados Unidos, Centroamérica y el Caribe. Diseñamos sitios en español e inglés con fichas técnicas descargables, certificaciones, formularios de cotización y un panel para que su equipo actualice productos sin depender de un programador."
+  - question: "¿Pueden preparar un sitio para la temporada de Carnaval?"
+    answer: "Sí. Para hoteles, restaurantes, organizadores de eventos y palcos desarrollamos páginas con reservas, boletería en línea y pagos anticipados que soportan picos de tráfico en las semanas previas al Carnaval. Recomendamos comenzar con varios meses de anticipación para que el SEO y las campañas tengan tiempo de posicionar el sitio antes de la temporada."
+  - question: "¿Al terminar, el sitio y el código son propiedad de mi empresa en Barranquilla?"
+    answer: "Sí. El repositorio de código, el dominio, el hosting y las cuentas de pasarelas de pago se registran a nombre de su empresa desde el inicio. Entregamos documentación técnica para que cualquier desarrollador de Barranquilla pueda continuar el trabajo si lo decide. Ofrecemos mantenimiento como servicio opcional, nunca como condición para operar su sitio."
 
 majorCities:
   - "Barranquilla"

@@ -1,5 +1,5 @@
 # Welcome to Codebrand - Digital Agency
-# https://codebrand.us
+# https://www.codebrand.us
 
 User-agent: *
 Allow: /

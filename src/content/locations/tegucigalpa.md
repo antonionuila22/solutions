@@ -1,6 +1,6 @@
 ---
 title: "Sitios Web para Empresas de Tegucigalpa | Codebrand"
-metaTitle: "Tegucigalpa Web: Desarrollo y Software a Medida"
+metaTitle: "Desarrollo Web en Tegucigalpa: Sitios y Software a Medida"
 description: "Agencia hondureña de desarrollo web en Tegucigalpa. Sitios corporativos, e-commerce y sistemas para banca, gobierno y PyMEs de la capital. Cotice gratis."
 city: "Tegucigalpa"
 state: "Francisco Morazán"

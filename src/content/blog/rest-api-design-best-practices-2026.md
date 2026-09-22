@@ -24,7 +24,7 @@ tags:
 
 A well-designed API is a joy to use. A poorly designed one creates frustration, bugs, and endless support tickets. The difference often comes down to following established patterns and conventions.
 
-This guide covers everything you need to design REST APIs that developers actually enjoy working with—clear URL structures, proper HTTP methods, meaningful status codes, and robust error handling.
+This guide covers everything you need to design REST APIs that developers actually enjoy working with, clear URL structures, proper HTTP methods, meaningful status codes, and robust error handling.
 
 ---
 
@@ -120,7 +120,7 @@ GET /orders?user_id=123
 
 ### 5. Method Semantics
 
-Each HTTP method has specific semantics—use them correctly:
+Each HTTP method has specific semantics, use them correctly:
 
 | Method | Purpose | Idempotent | Safe | Request Body |
 |--------|---------|------------|------|--------------|
@@ -1072,4 +1072,4 @@ At **Codebrand**, we apply these best practices to every API we build as part of
 
 ---
 
-*Have questions about API design? [Reach out to our team](/contact/)—we're passionate about building great APIs.*
+*Have questions about API design? [Reach out to our team](/contact/), we're passionate about building great APIs.*

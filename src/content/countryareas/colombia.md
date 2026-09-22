@@ -6,7 +6,7 @@ region: South America
 author: Ramon Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en Colombia. Creamos soluciones digitales personalizadas para empresas que buscan calidad, innovación y resultados reales en toda Latinoamérica.
+description: Agencia de diseño y desarrollo web en Colombia. Sitios, tiendas online y sistemas a la medida para empresas que buscan calidad y resultados reales.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en Colombia
@@ -34,16 +34,16 @@ En Codebrand Colombia, ayudamos a las empresas a construir y potenciar su presen
 
 Nuestro equipo multidisciplinario combina experiencia global con comprensión del mercado local colombiano. Trabajamos con tecnología de vanguardia y una mentalidad orientada a resultados.
 
-- ✅ Entrega a tiempo
-- ✅ Soporte y comunicación continua
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para velocidad y motores de búsqueda
+- Entrega a tiempo
+- Soporte y comunicación continua
+- Diseño centrado en el usuario
+- Desarrollo optimizado para velocidad y motores de búsqueda
 
 ---
 
 ## Servimos Empresas en Todo Colombia
 
-Desde la capital Bogotá hasta las principales ciudades del país — trabajamos con empresas de todos los tamaños e industrias:
+Desde la capital Bogotá hasta las principales ciudades del país, trabajamos con empresas de todos los tamaños e industrias:
 
 - Proveedores de servicios profesionales
 - Negocios locales y minoristas

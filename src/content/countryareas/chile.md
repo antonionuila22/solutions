@@ -6,7 +6,7 @@ region: South America
 author: Ramón Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en Chile. Creamos soluciones digitales personalizadas para empresas que buscan calidad, innovación y resultados reales en el mercado latinoamericano.
+description: Agencia de diseño y desarrollo web en Chile. Sitios, tiendas online y sistemas a la medida para empresas que buscan calidad y resultados reales.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en Chile
@@ -33,10 +33,10 @@ En Codebrand Chile ayudamos a negocios a destacar en internet con soluciones dig
 
 Nuestro equipo combina talento local con experiencia internacional, utilizando herramientas modernas y metodologías ágiles para lograr resultados tangibles.
 
-- ✅ Entregas puntuales y procesos claros
-- ✅ Soporte cercano y continuo
-- ✅ Diseño centrado en el usuario
-- ✅ Desarrollo optimizado para velocidad y posicionamiento en Google
+- Entregas puntuales y procesos claros
+- Soporte cercano y continuo
+- Diseño centrado en el usuario
+- Desarrollo optimizado para velocidad y posicionamiento en Google
 
 ---
 

@@ -269,7 +269,7 @@ const softwareIndustry = "travel agencies and tour operators";
 const softwareLead = "The trip is sold long before it is taken, and everything between the two is operations: quotes, supplier confirmations, deposits, and documents. These are the systems we build, extend, and connect for agencies and tour operators.";
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -277,7 +277,6 @@ const softwareLead = "The trip is sold long before it is taken, and everything b
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <IndustryHero
     badgeText="Travel Technology Solutions"

@@ -19,9 +19,9 @@ tags:
 
 ## React Performance Optimization: Real Case Study with 85% Load Time Reduction
 
-Performance isn't a luxury—it's a business requirement. Every 100ms of latency costs Amazon 1% in sales. Google found that 53% of mobile users abandon sites that take longer than 3 seconds to load.
+Performance isn't a luxury, it's a business requirement. Every 100ms of latency costs Amazon 1% in sales. Google found that 53% of mobile users abandon sites that take longer than 3 seconds to load.
 
-This case study documents how we took a struggling React application from an 8.2-second load time to 1.2 seconds—an 85% improvement that transformed our client's business metrics.
+This case study documents how we took a struggling React application from an 8.2-second load time to 1.2 seconds, an 85% improvement that transformed our client's business metrics.
 
 ---
 

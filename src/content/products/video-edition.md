@@ -1,5 +1,5 @@
 ---
-title: Professional Video Editing – Visual Content That Captures and Connects
+title: "Professional Video Editing: Visual Content That Captures and Connects"
 seoTitle: "Video Editing Services | Codebrand"
 img: /photos/videoedition.webp
 readtime: 5
@@ -12,7 +12,7 @@ author: Codebrand Team
 
 ### We turn raw footage into stories worth watching
 
-At **Codebrand**, we transform your raw clips into polished visual content with rhythm, clarity, and intentional storytelling. Whether you need a punchy social media reel or a full brand video, we edit with purpose — every cut earns its place.
+At **Codebrand**, we transform your raw clips into polished visual content with rhythm, clarity, and intentional storytelling. Whether you need a punchy social media reel or a full brand video, we edit with purpose, every cut earns its place.
 
 ---
 
@@ -34,7 +34,7 @@ At **Codebrand**, we transform your raw clips into polished visual content with 
 | -------------- | ------------- |
 | **Simple Edit** | Basic cut + music + transitions (up to 60 seconds) |
 | **Dynamic Social Media Edit** | Reels, Shorts, TikToks with visual rhythm and branding |
-| **Narrative Editing** | Explainers, interviews, or educational videos (2–5 min) |
+| **Narrative Editing** | Explainers, interviews, or educational videos (2 to 5 min) |
 | **Full Promotional Video** | Storytelling, b-roll, animated text, brand-aligned edit |
 | **Presentation / Pitch Video** | Business or investor video with motion design and structure |
 
@@ -44,11 +44,11 @@ At **Codebrand**, we transform your raw clips into polished visual content with 
 
 ## How We Work
 
-1. **Brief & goals** — We align on what you want to say and to whom.
-2. **Initial edit** — We select the best footage and establish the narrative flow.
-3. **Visual design** — Style, transitions, motion graphics, and brand elements added.
-4. **Review** — First cut delivered with one round of revision included.
-5. **Final delivery** — Exported in the formats you need, ready to publish.
+1. **Brief & goals**, We align on what you want to say and to whom.
+2. **Initial edit**, We select the best footage and establish the narrative flow.
+3. **Visual design**, Style, transitions, motion graphics, and brand elements added.
+4. **Review**, First cut delivered with one round of revision included.
+5. **Final delivery**, Exported in the formats you need, ready to publish.
 
 ---
 
@@ -65,7 +65,7 @@ At **Codebrand**, we transform your raw clips into polished visual content with 
 ## Why Work with Codebrand
 
 - Editing focused on clarity, emotion, and viewer retention
-- Hook-driven content structure — especially for short-form video
+- Hook-driven content structure, especially for short-form video
 - Visual elements and motion graphics tailored to your brand
 - Strategic adaptation for each platform's native format
 - Fast turnaround without sacrificing quality
@@ -74,4 +74,4 @@ At **Codebrand**, we transform your raw clips into polished visual content with 
 
 ## Ready to level up your video content?
 
-> Send us your footage and tell us the goal. We'll handle the rest — and deliver something worth posting.
+> Send us your footage and tell us the goal. We'll handle the rest, and deliver something worth posting.

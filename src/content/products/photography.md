@@ -1,5 +1,5 @@
 ---
-title: Professional Photography – Capturing Moments That Speak
+title: "Professional Photography: Capturing Moments That Speak"
 img: /photos/fotografia.webp
 readtime: 4
 description: Professional photography for brands, products, events, portraits, and digital content. Images that tell your story, build trust, and elevate your visual presence.
@@ -42,11 +42,11 @@ At **Codebrand**, we believe a powerful image can communicate, inspire, and posi
 
 ## Our Process
 
-1. **Initial meeting** — We define your visual goals and preferred style.
-2. **Production prep** — Equipment, location, lighting, and creative planning.
-3. **Photo session** — We capture images that reflect your brand's essence.
-4. **Selection & editing** — Professional retouching of the best shots.
-5. **Final delivery** — Files ready for digital use, print, or publishing.
+1. **Initial meeting**, We define your visual goals and preferred style.
+2. **Production prep**, Equipment, location, lighting, and creative planning.
+3. **Photo session**, We capture images that reflect your brand's essence.
+4. **Selection & editing**, Professional retouching of the best shots.
+5. **Final delivery**, Files ready for digital use, print, or publishing.
 
 ---
 

@@ -21,7 +21,7 @@ import IndustryCTA from "../../components/IndustryCTA.astro";
 const title =
   "Law Firm Website Design & Legal Software | Codebrand";
 const description =
-  "Transform your law practice with custom legal technology solutions. Case management systems, client portals, document automation, and professional attorney websites designed for law firms.";
+  "Custom legal technology for law firms: case management, client portals, document automation and professional attorney websites built to win clients.";
 const keywords =
   "law firm website design, legal case management software, attorney website development, legal practice management software, law firm client portal, legal document automation, attorney CRM, law firm billing software, lawyer website design, legal tech solutions, attorney marketing website, law practice software, legal time tracking, secure client portal";
 const image = "/photos/bannercodebrand.webp";
@@ -200,7 +200,7 @@ const services = [
 const processSteps = [
   {
     title: "Practice Area & Matter Workflow Mapping",
-    description: "First, we map how your firm runs matters—from intake and conflict checks through discovery, filings, and closeout. We document your practice areas (personal injury, family, corporate, criminal defense) and find where work stalls. We also check whether you use Clio, MyCase, PracticePanther, or spreadsheets, so we know what to connect or replace."
+    description: "First, we map how your firm runs matters, from intake and conflict checks through discovery, filings, and closeout. We document your practice areas (personal injury, family, corporate, criminal defense) and find where work stalls. We also check whether you use Clio, MyCase, PracticePanther, or spreadsheets, so we know what to connect or replace."
   },
   {
     title: "Confidentiality, Conflicts & Ethics Architecture",
@@ -329,7 +329,7 @@ const softwareIndustry = "law firms";
 const softwareLead = "Most of a firm's real friction is not the website. It is the matter file, the billable hour, and the deadline nobody wants to miss. These are the practice systems we build, extend, and connect.";
 ---
 
-<Layout
+<Layout breadcrumbSchemaOverride={breadcrumbSchema}
   title={title}
   description={description}
   keywords={keywords}
@@ -337,7 +337,6 @@ const softwareLead = "Most of a firm's real friction is not the website. It is t
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
   <IndustryHero
     badgeText="Legal Technology Solutions"

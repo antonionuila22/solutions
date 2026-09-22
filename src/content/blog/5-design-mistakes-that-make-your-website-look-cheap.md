@@ -12,17 +12,17 @@ tags: ["web design", "website mistakes", "UX", "design tips", "branding"]
 
 ## 5 Design Mistakes That Make Your Website Look Cheap (And How to Fix Them)
 
-Your website is often the first impression a customer has of your brand. In today's digital-first world, that first impression happens in **less than 50 milliseconds**—the time it takes for visitors to form an opinion about your site. If it looks careless, unprofessional, or outdated, it doesn't matter how good your product or service is: you'll be losing credibility instantly.
+Your website is often the first impression a customer has of your brand. In today's digital-first world, that first impression happens in **less than 50 milliseconds**, the time it takes for visitors to form an opinion about your site. If it looks careless, unprofessional, or outdated, it doesn't matter how good your product or service is: you'll be losing credibility instantly.
 
-According to [Stanford Web Credibility Research](https://credibility.stanford.edu/), **75% of users admit to making judgments about a company's credibility based on their website's design**. That's a massive number—and it means your design is directly impacting your bottom line.
+According to [Stanford Web Credibility Research](https://credibility.stanford.edu/), **75% of users admit to making judgments about a company's credibility based on their website's design**. That's a massive number, and it means your design is directly impacting your bottom line.
 
-In this comprehensive guide, we'll walk you through the 5 most common design mistakes that make websites look cheap, unprofessional, and outdated—and more importantly, we'll show you exactly how to avoid them and create a website that builds trust, converts visitors, and represents your brand professionally. Combined with effective [web development](/web-development/) practices, your site can become a powerful business asset.
+In this comprehensive guide, we'll walk you through the 5 most common design mistakes that make websites look cheap, unprofessional, and outdated, and more importantly, we'll show you exactly how to avoid them and create a website that builds trust, converts visitors, and represents your brand professionally. Combined with effective [web development](/web-development/) practices, your site can become a powerful business asset.
 
 ## 1. Excessive Use of Bright or Poorly Matched Colors
 
 ### The Problem with Excessive Use of Bright or Poorly Matched Colors
 
-Improper use of color is one of the most visible mistakes that instantly signals an amateur website. Loud, neon colors, poorly contrasting combinations, or a meaningless rainbow of hues can make your site look like it was designed in the early 2000s. We've all seen those websites that assault your eyes with bright yellows, electric blues, and lime greens—all on the same page.
+Improper use of color is one of the most visible mistakes that instantly signals an amateur website. Loud, neon colors, poorly contrasting combinations, or a meaningless rainbow of hues can make your site look like it was designed in the early 2000s. We've all seen those websites that assault your eyes with bright yellows, electric blues, and lime greens, all on the same page.
 
 Color psychology plays a crucial role in web design. The wrong colors can:
 
@@ -34,7 +34,7 @@ Color psychology plays a crucial role in web design. The wrong colors can:
 
 ### Real-World Example
 
-Imagine landing on a financial services website with hot pink buttons, neon green headers, and orange text on a yellow background. Would you trust them with your money? Probably not. Color choices communicate professionalism—or the lack thereof.
+Imagine landing on a financial services website with hot pink buttons, neon green headers, and orange text on a yellow background. Would you trust them with your money? Probably not. Color choices communicate professionalism, or the lack thereof.
 
 ### How to Fix It
 
@@ -58,7 +58,7 @@ Need help selecting the perfect color palette for your brand? [Our branding serv
 
 ### The Problem
 
-Typography is the silent communicator of your website. Cursive fonts, overly decorative typefaces, or hard-to-read fonts—especially on mobile devices—give a sense of carelessness or lack of experience.
+Typography is the silent communicator of your website. Cursive fonts, overly decorative typefaces, or hard-to-read fonts, especially on mobile devices, give a sense of carelessness or lack of experience.
 
 Common typography mistakes include:
 
@@ -72,7 +72,7 @@ Common typography mistakes include:
 
 ### The Impact on User Experience
 
-Poor typography doesn't just look bad—it actively hurts your business:
+Poor typography doesn't just look bad, it actively hurts your business:
 
 - **Reduced readability** = visitors leave faster
 - **Increased bounce rates** = lower SEO rankings
@@ -99,11 +99,11 @@ Poor typography doesn't just look bad—it actively hurts your business:
    - Paragraph spacing: at least 1em
    - Letter spacing: slight adjustments for headers (0.02-0.05em)
 
-4. **Limit font families**: Use maximum 2-3 fonts—one for headers, one for body, and optionally one for accents
+4. **Limit font families**: Use maximum 2-3 fonts, one for headers, one for body, and optionally one for accents
 
 5. **Test readability**: Use the [Hemingway Editor](http://www.hemingwayapp.com/) to ensure your text is easy to read
 
-**Remember**: Your font choices should support your content, not compete with it. When in doubt, choose simplicity over style. Good typography is also crucial for [SEO](/seo/)—readable content keeps visitors engaged longer, which signals quality to search engines.
+**Remember**: Your font choices should support your content, not compete with it. When in doubt, choose simplicity over style. Good typography is also crucial for [SEO](/seo/), readable content keeps visitors engaged longer, which signals quality to search engines.
 
 Looking to create a typography system that's both beautiful and functional? [Our web design services](/web-design/) include comprehensive typography systems that enhance readability and reinforce your brand.
 
@@ -124,7 +124,7 @@ Cluttered websites suffer from:
 
 ### Why White Space Matters
 
-White space (or negative space) is not wasted space—it's a powerful design element that:
+White space (or negative space) is not wasted space, it's a powerful design element that:
 
 - **Increases comprehension by 20%** (according to Human Factors International)
 - **Guides the eye** to important elements
@@ -149,11 +149,11 @@ Think about luxury brands like Apple, Tesla, or high-end fashion websites. What 
    - Secondary elements → medium weight
    - Supporting details → smallest/lightest
 
-4. **Follow the F-pattern or Z-pattern**: Users scan in predictable patterns—design accordingly
+4. **Follow the F-pattern or Z-pattern**: Users scan in predictable patterns, design accordingly
 5. **Use visual dividers**: Subtle lines, color blocks, or spacing to separate sections
 6. **Embrace minimalism**: Remove elements that don't serve a clear purpose
 
-**Pro tip**: Try the "blur test"—blur your webpage and see if you can still identify the main sections and hierarchy. If everything blends together, you need more spacing and contrast. Learn more about what makes [landing pages convert](/blog/landing-pages-that-convert-vs-those-that-dont/).
+**Pro tip**: Try the "blur test", blur your webpage and see if you can still identify the main sections and hierarchy. If everything blends together, you need more spacing and contrast. Learn more about what makes [landing pages convert](/blog/landing-pages-that-convert-vs-those-that-dont/).
 
 Our [web design services](/web-design/) include comprehensive UX/UI design that creates clean, organized layouts that guide users naturally toward conversion.
 
@@ -165,7 +165,7 @@ Pixelated photos, generic stock images (especially the obviously fake ones), or 
 
 Common image mistakes include:
 
-- Using obviously staged, cheesy stock photos (you know the ones—people in suits high-fiving in a conference room)
+- Using obviously staged, cheesy stock photos (you know the ones, people in suits high-fiving in a conference room)
 - Pixelated or low-resolution images
 - Inconsistent image styles (mixing photography, illustrations, and clipart)
 - Images with different lighting or color treatments
@@ -214,7 +214,7 @@ Need help creating a consistent visual identity for your website? [Our branding 
 
 ### The Problem
 
-Designs that change drastically from one section to another—without justification—confuse the user and reduce trust. We've all experienced this: you scroll down a homepage and suddenly it feels like you've landed on a completely different website.
+Designs that change drastically from one section to another, without justification, confuse the user and reduce trust. We've all experienced this: you scroll down a homepage and suddenly it feels like you've landed on a completely different website.
 
 This happens when:
 
@@ -227,7 +227,7 @@ This happens when:
 
 ### Why Consistency Builds Trust
 
-Consistency in design creates **predictability**, and predictability creates **comfort**. When users know what to expect, they can focus on your message rather than figuring out how to navigate your site. Inconsistent design makes users work harder—and they'll simply leave rather than struggle.
+Consistency in design creates **predictability**, and predictability creates **comfort**. When users know what to expect, they can focus on your message rather than figuring out how to navigate your site. Inconsistent design makes users work harder, and they'll simply leave rather than struggle.
 
 ### How to Fix It
 
@@ -262,7 +262,7 @@ Consistency in design creates **predictability**, and predictability creates **c
 
 **Real-world impact**: Companies with strong design systems see 40% faster design-to-development time and significantly higher user satisfaction scores. This consistency also improves your [SEO performance](/seo/) by creating a better user experience.
 
-Our [web development services](/web-development/) include comprehensive design systems for every client website—ensuring that your site not only looks professional today but remains consistent as it grows and evolves.
+Our [web development services](/web-development/) include comprehensive design systems for every client website, ensuring that your site not only looks professional today but remains consistent as it grows and evolves.
 
 ---
 
@@ -270,7 +270,7 @@ Our [web development services](/web-development/) include comprehensive design s
 
 A professional design doesn't require huge budgets, but it does require **attention to detail, strategic thinking, and expertise**. Avoiding these common mistakes can make the difference between a site that builds trust and one that drives users away.
 
-Remember: your website is your digital storefront. In many cases, it's your **only** storefront. You wouldn't open a physical store with peeling paint, broken signs, and cluttered aisles—so why accept that online?
+Remember: your website is your digital storefront. In many cases, it's your **only** storefront. You wouldn't open a physical store with peeling paint, broken signs, and cluttered aisles, so why accept that online?
 
 ### The Real Cost of a Cheap-Looking Website
 
@@ -281,7 +281,7 @@ Consider these statistics:
 - **94% of first impressions** are design-related
 - Professional design can **increase conversions by 200% or more**
 
-The question isn't whether you can afford to invest in professional design—it's whether you can afford not to. For cost-conscious businesses, check out our [web development cost comparison](/blog/web-development-cost-comparison-usa-vs-honduras-2024/) to see how to get quality design at affordable rates.
+The question isn't whether you can afford to invest in professional design, it's whether you can afford not to. For cost-conscious businesses, check out our [web development cost comparison](/blog/web-development-cost-comparison-usa-vs-honduras-2024/) to see how to get quality design at affordable rates.
 
 ---
 
@@ -297,7 +297,7 @@ You don't have to settle for a website that undermines your credibility. Whether
 - Grow with your business
 - Stand out from competitors
 
-We've helped hundreds of businesses transform their digital presence—from small local businesses to growing mid-market companies. Our design process is collaborative, strategic, and focused on results, not just aesthetics.
+We've helped hundreds of businesses transform their digital presence, from small local businesses to growing mid-market companies. Our design process is collaborative, strategic, and focused on results, not just aesthetics.
 
 ### What You Get When Working With Us
 

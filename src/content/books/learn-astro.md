@@ -46,7 +46,7 @@ Astro follows a simple but powerful philosophy:
 - **Content-first**: Built specifically for content-heavy sites (blogs, marketing sites, documentation, e-commerce)
 - **Server-first**: HTML is rendered on the server, not in the browser
 - **Zero JS by default**: Only ship JavaScript when you actually need it
-- **Framework agnostic**: Use React, Vue, Svelte, or any other framework—all in the same project
+- **Framework agnostic**: Use React, Vue, Svelte, or any other framework, all in the same project
 
 ### What Makes Astro Different?
 
@@ -82,7 +82,7 @@ Unlike traditional JavaScript frameworks (React, Vue, Next.js), Astro:
 **Why developers love Astro:**
 
 ✅ **Familiar syntax**: If you know HTML, CSS, and JavaScript, you know Astro
-✅ **Use any framework**: React, Vue, Svelte, Solid—or none at all
+✅ **Use any framework**: React, Vue, Svelte, Solid, or none at all
 ✅ **TypeScript support**: Built-in TypeScript without configuration
 ✅ **Markdown & MDX**: Write content in Markdown with component support
 ✅ **Built-in features**: Image optimization, RSS feeds, sitemaps included

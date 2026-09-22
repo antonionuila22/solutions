@@ -1,5 +1,5 @@
 ---
-title: ESABEP — Sitio Web para Empresa de Perforación de Pozos en Honduras
+title: "ESABEP: Sitio Web para Empresa de Perforación de Pozos en Honduras"
 seoTitle: "ESABEP: sitio web para perforación de pozos | Codebrand"
 description: Sitio web corporativo para ESABEP, perforadora de pozos en San Pedro Sula, Honduras. Tres áreas de servicio explicadas y solicitud de cotización en línea.
 author: Codebrand Team
@@ -24,16 +24,16 @@ resultsNote: >-
   Cifras que ESABEP publica en su propia portada y que son anteriores a nuestro
   trabajo. No son resultados que hayamos producido; lo que hicimos fue ponerlas
   donde un prospecto las ve. Verificadas en esabep.com el 24 de julio de 2026.
-# TODO(historial del stack) — la versión anterior de este caso publicaba "Astro, Tailwind CSS,
+# TODO(historial del stack): la versión anterior de este caso publicaba "Astro, Tailwind CSS,
 #   sitio estático". Es FALSO: esabep.com corre WordPress 6.9.5 + Elementor 4.1.4 sobre el tema
 #   hello-elementor, con Site Kit by Google 1.178.0 (verificado por curl el 24-jul-2026, y el
 #   pie del sitio dice "Develop by Codebrand.us"). Aquí se documenta lo que corre HOY. NO se
 #   afirma ninguna migración porque no hay evidencia de ella. Preguntarle al usuario si la
 #   entrega original de feb-2025 fue este mismo WordPress o si hubo otra implementación antes.
-# TODO(dato inconsistente en el sitio del cliente) — la portada dice "Más de 27 Años"
+# TODO(dato inconsistente en el sitio del cliente): la portada dice "Más de 27 Años"
 #   y la página /servicios/ dice "Más de 25 años". Preguntarle a ESABEP cuál es la buena
 #   y unificarla en el sitio; mientras tanto aquí se usa la cifra de portada.
-# TODO(métricas de negocio) — pedirle a ESABEP para cerrar el caso con datos de resultado:
+# TODO(métricas de negocio): pedirle a ESABEP para cerrar el caso con datos de resultado:
 #   1) solicitudes de cotización recibidas por el formulario del sitio, por mes, desde feb-2025
 #   2) cuántas de esas solicitudes se convirtieron en proyecto cerrado
 #   3) ticket promedio o rango de un proyecto de perforación (para dimensionar el valor de un lead)
@@ -51,7 +51,7 @@ Su oferta se organiza en tres áreas: construcción y perforación de pozos, man
 
 ## El reto
 
-El problema no era técnico, era de acceso al mercado. Un pozo es una inversión alta y difícil de revertir: quien lo contrata —una alcaldía, una agroindustria, una constructora, un dueño de finca— quiere verificar la trayectoria del contratista antes de la primera llamada. Sin sitio web, esa trayectoria solo existía en la memoria de quienes ya habían trabajado con ellos. El negocio entero dependía del referido y del boca a boca.
+El problema no era técnico, era de acceso al mercado. Un pozo es una inversión alta y difícil de revertir: quien lo contrata, una alcaldía, una agroindustria, una constructora, un dueño de finca, quiere verificar la trayectoria del contratista antes de la primera llamada. Sin sitio web, esa trayectoria solo existía en la memoria de quienes ya habían trabajado con ellos. El negocio entero dependía del referido y del boca a boca.
 
 El segundo problema era de lenguaje. Un catálogo técnico que, para quien no es del gremio, se parece todo entre sí: un cliente que necesita una prueba de bombeo pide "una revisión del pozo". Sin una explicación clara de qué resuelve cada servicio, la primera llamada se iba en explicar el catálogo en lugar de calificar el proyecto.
 
@@ -73,7 +73,7 @@ El segundo problema era de lenguaje. Un catálogo técnico que, para quien no es
 - **3 áreas de servicio** separadas y explicadas una por una, con el detalle de qué trabajos entran en cada una.
 - **Capacidad técnica declarada en cifras**: hasta 1,500 pies de profundidad y diámetros de 6 a 20 pulgadas, un dato que califica o descalifica un proyecto sin necesidad de llamada.
 - **Canal de contacto directo**: formulario de solicitud en la portada, botón flotante de WhatsApp en todas las páginas, más teléfono y correo en el pie, donde antes no existía ninguno.
-- **Cobertura y tipos de proyecto explícitos** —residencial, agrícola e industrial—, lo que filtra consultas fuera de alcance antes de que consuman tiempo del equipo.
+- **Cobertura y tipos de proyecto explícitos**, residencial, agrícola e industrial, lo que filtra consultas fuera de alcance antes de que consuman tiempo del equipo.
 
 ## Stack técnico
 

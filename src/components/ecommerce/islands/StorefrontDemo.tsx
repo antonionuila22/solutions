@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 
 /**
- * StorefrontDemo — a working mini store: add to cart, adjust quantity, watch
+ * StorefrontDemo, a working mini store: add to cart, adjust quantity, watch
  * the free-shipping bar fill, and run a three-step checkout that ends in an
  * order confirmation. Everything is local state; nothing is sent anywhere.
  * SSR renders the products and an empty cart, so the section reads fine

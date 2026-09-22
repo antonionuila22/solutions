@@ -1,9 +1,9 @@
 ---
-title: Professional UX/UI Website Design in Figma – Modern & Efficient Prototypes
+title: "Professional UX/UI Website Design in Figma: Modern & Efficient Prototypes"
 seoTitle: "UX and UI Design in Figma | Codebrand"
 img: /photos/uxservice.webp
 readtime: 5
-description: Professional UX/UI design in Figma. We create modern, functional prototypes tailored to your business goals — responsive, developer-ready, and built around how your users actually think.
+description: Professional UX/UI design in Figma. We create modern, functional prototypes tailored to your business goals, responsive, developer-ready, and built around how your users actually think.
 date: 2025-01-01
 author: Codebrand Team
 ---
@@ -12,7 +12,7 @@ author: Codebrand Team
 
 ### A prototype your developers will actually love to build from
 
-A beautiful website that's confusing to navigate doesn't convert. At **Codebrand**, we design UX/UI prototypes in Figma that are strategically structured, visually polished, and built with development handoff in mind — so nothing gets lost between design and code.
+A beautiful website that's confusing to navigate doesn't convert. At **Codebrand**, we design UX/UI prototypes in Figma that are strategically structured, visually polished, and built with development handoff in mind, so nothing gets lost between design and code.
 
 Each page is designed mobile-first, with up to 8 responsive sections, and delivered with interactive prototype links and developer documentation.
 
@@ -20,10 +20,10 @@ Each page is designed mobile-first, with up to 8 responsive sections, and delive
 
 ## What's Included
 
-- Complete prototype design in Figma — fully branded and functional
+- Complete prototype design in Figma, fully branded and functional
 - Up to 8 sections per page (hero, features, CTA, forms, etc.)
 - Responsive versions: desktop, tablet, and mobile
-- Organized delivery by screen/page — developer-friendly structure
+- Organized delivery by screen/page, developer-friendly structure
 - Interactive prototype link for stakeholder review
 - 1 revision round included
 
@@ -58,7 +58,7 @@ Each page is designed mobile-first, with up to 8 responsive sections, and delive
 
 - We design for conversion, not just aesthetics
 - Every layout decision is backed by UX best practices
-- Figma-native workflow — compatible with any development stack
+- Figma-native workflow, compatible with any development stack
 - Fast turnaround without cutting corners on quality
 - Seamless handoff to our development team if you need it built too
 
