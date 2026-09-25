@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "spam-report": "node scripts/spam-report.js"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",

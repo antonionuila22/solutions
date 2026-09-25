@@ -21,6 +21,18 @@ const description =
 const keywords =
   "request a proposal, web development proposal, software development budget, hire developers fixed price, codebrand proposal";
 
+// reCAPTCHA v3 for the proposal form. The site key is public by design: its
+// whole job is to be rendered into the page, and Google pairs it with the
+// secret key that only /api/contact holds. Never render RECAPTCHA_SECRET_KEY
+// here or in any script.
+//
+// This page is prerendered, so the value is read at build time from the Netlify
+// environment. When it is missing we skip the script entirely and the island
+// posts without a token: the API skips verification when its own secret is
+// absent, so local development keeps working with no keys at all.
+const recaptchaSiteKey =
+  import.meta.env.RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || "";
+
 // WhatsApp URL format is fixed site-wide: always the api.whatsapp.com/send/
 // form, never the shortened link form.
 const waText = "Hi Codebrand, I'd like to request a proposal for my project.";
@@ -134,8 +146,19 @@ const terms = [
         precise the proposal.
       </p>
       <div class="relative mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 sm:p-10">
-        <ProposalRequest client:load />
+        <ProposalRequest client:load recaptchaSiteKey={recaptchaSiteKey} />
       </div>
+
+      {/* Installs window.grecaptcha for the island above. is:inline keeps Astro
+          from bundling it, which a dynamic src requires anyway. Loaded here
+          rather than site wide so only this page pays for it. */}
+      {recaptchaSiteKey && (
+        <script
+          is:inline
+          async
+          src={`https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(recaptchaSiteKey)}`}
+        ></script>
+      )}
     </div>
   </section>
 

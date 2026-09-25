@@ -1,6 +1,8 @@
 ---
 import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import { config } from "../../configs/landing/automotive.config";
+const recaptchaSiteKey =
+  import.meta.env.RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || "";
 ---
 
 <LandingPageTemplate config={config}>
@@ -556,6 +558,11 @@ import { config } from "../../configs/landing/automotive.config";
             />
               <input type="hidden" name="industry" value="Automotive" />
               <input type="hidden" name="subject" value="Landing demo: automotive" />
+              <input
+                type="hidden"
+                name="recaptchaToken"
+                data-site-key={recaptchaSiteKey}
+              />
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -644,14 +651,18 @@ import { config } from "../../configs/landing/automotive.config";
             </div>
 
             <button
-              type="button"
-              type="button"
-              type="button"
               type="submit"
               class="w-full py-5 bg-gradient-to-r from-red-600 to-red-700 text-white text-xl font-black uppercase skew-x-[-5deg] hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-xl hover:scale-[1.02]"
             >
               <span class="skew-x-[5deg] inline-block">Send Message</span>
             </button>
+            <p
+              data-form-response="true"
+              role="alert"
+              aria-live="polite"
+              class="hidden text-sm font-medium text-red-400"
+            >
+            </p>
           </form>
 
           <div class="mt-12 pt-8 border-t border-zinc-800">
@@ -683,6 +694,120 @@ import { config } from "../../configs/landing/automotive.config";
       </div>
     </section>
   </div>
+
+  {
+    recaptchaSiteKey && (
+      <script
+        is:inline
+        async
+        defer
+        src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+      ></script>
+    )
+  }
+
+  <script is:inline>
+    (function () {
+      var forms = document.querySelectorAll('form[action="/api/contact"]');
+      if (!forms.length) return;
+
+      function waitForRecaptcha(siteKey) {
+        return new Promise(function (resolve) {
+          if (!siteKey) {
+            resolve(false);
+            return;
+          }
+          var waited = 0;
+          function check() {
+            if (window.grecaptcha && window.grecaptcha.execute) {
+              resolve(true);
+              return;
+            }
+            if (waited >= 5000) {
+              resolve(false);
+              return;
+            }
+            waited += 100;
+            setTimeout(check, 100);
+          }
+          check();
+        });
+      }
+
+      function getToken(siteKey) {
+        return waitForRecaptcha(siteKey).then(function (ready) {
+          if (!ready) return "";
+          return new Promise(function (resolve) {
+            window.grecaptcha.ready(function () {
+              window.grecaptcha
+                .execute(siteKey, { action: "contact" })
+                .then(function (token) {
+                  resolve(token || "");
+                })
+                .catch(function () {
+                  resolve("");
+                });
+            });
+          });
+        });
+      }
+
+      forms.forEach(function (form) {
+        var tokenField = form.querySelector('input[name="recaptchaToken"]');
+        var siteKey = (tokenField && tokenField.dataset.siteKey) || "";
+        var responseEl = form.querySelector("[data-form-response]");
+        var submitBtn = form.querySelector('button[type="submit"]');
+
+        function showError(message) {
+          if (!responseEl) return;
+          responseEl.textContent = message;
+          responseEl.classList.remove("hidden");
+        }
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+          if (responseEl) {
+            responseEl.textContent = "";
+            responseEl.classList.add("hidden");
+          }
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.setAttribute("aria-busy", "true");
+          }
+
+          try {
+            var token = await getToken(siteKey);
+            if (tokenField) tokenField.value = token;
+            var payload = new FormData(form);
+            if (!token) payload.delete("recaptchaToken");
+            var res = await fetch(form.getAttribute("action"), {
+              method: "POST",
+              body: payload,
+            });
+            if (res.ok) {
+              window.location.href = "/thank-you/";
+              return;
+            }
+            var message = "Something went wrong. Please try again.";
+            try {
+              var json = await res.json();
+              if (json && json.error) message = json.error;
+            } catch (err) {
+              /* the response was not JSON, keep the default message */
+            }
+            showError(message);
+          } catch (err) {
+            showError("Network error. Check your connection and try again.");
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.setAttribute("aria-busy", "false");
+            }
+          }
+        });
+      });
+    })();
+  </script>
 </LandingPageTemplate>
 
 <style>

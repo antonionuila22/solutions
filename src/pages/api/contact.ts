@@ -28,9 +28,155 @@ if (import.meta.env.DEV) {
 // Requires a table: CREATE TABLE IF NOT EXISTS rate_limits (ip TEXT NOT NULL, ts INTEGER NOT NULL);
 // The table and old entries are managed automatically below.
 const RATE_LIMIT_WINDOW_SEC = 60; // 1 minute window
-const RATE_LIMIT_MAX = 5; // Max 5 requests per window per IP
+const RATE_LIMIT_MAX = 3; // Max 3 requests per window per IP
+const RATE_LIMIT_DAY_MAX = 10; // Max 10 requests per day per IP, stops slow drip spam
+
+// reCAPTCHA v3. The keys already live in the Netlify environment. When the
+// secret is absent (local dev, or a misconfigured deploy) the check is skipped
+// rather than locking every visitor out, and the skip is logged.
+const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET_KEY || import.meta.env.RECAPTCHA_SECRET_KEY;
+const RECAPTCHA_MIN_SCORE = 0.5; // v3 returns 0.0 (bot) to 1.0 (human)
+
+// "monitor" records what the captcha thinks and blocks nobody. "enforce" blocks.
+// Monitor is the default on purpose: nobody has confirmed these keys are valid
+// and registered for codebrand.us, and a wrong key in enforce mode would turn
+// away every real customer. Read the spam report first, then flip this to
+// enforce in Netlify. No redeploy needed.
+const RECAPTCHA_MODE = (process.env.RECAPTCHA_MODE || import.meta.env.RECAPTCHA_MODE || "monitor").toLowerCase();
+
+// Error codes that mean OUR configuration is wrong, not that the visitor is a bot.
+// These must never block a customer, whatever the mode.
+const RECAPTCHA_CONFIG_ERRORS = ["invalid-input-secret", "missing-input-secret", "bad-request", "invalid-keys"];
+
+// Manual block lists, set in Netlify without a redeploy.
+// BLOCKED_IPS=1.2.3.4,5.6.7.8   BLOCKED_COUNTRIES=RU,CN
+// Leave them unset to block nothing. Use them only after the report shows a
+// repeat offender: a country block turns away real people too.
+const BLOCKED_IPS = new Set(
+    (process.env.BLOCKED_IPS || import.meta.env.BLOCKED_IPS || "")
+        .split(",").map((x: string) => x.trim()).filter(Boolean)
+);
+const BLOCKED_COUNTRIES = new Set(
+    (process.env.BLOCKED_COUNTRIES || import.meta.env.BLOCKED_COUNTRIES || "")
+        .split(",").map((x: string) => x.trim().toUpperCase()).filter(Boolean)
+);
 
 let rateLimitTableReady = false;
+let contactsColumnsReady = false;
+
+type Forensics = {
+    ip: string;
+    country: string;
+    city: string;
+    userAgent: string;
+    referer: string;
+    score: number | null;
+};
+
+/** Netlify puts the visitor's approximate location in x-nf-geo as base64 JSON. */
+function readGeo(request: Request): { country: string; city: string } {
+    const raw = request.headers.get("x-nf-geo");
+    if (!raw) {
+        return { country: request.headers.get("x-country") || "", city: "" };
+    }
+    try {
+        const geo = JSON.parse(Buffer.from(raw, "base64").toString("utf-8"));
+        const country = geo?.country?.code || geo?.country?.name || "";
+        const sub = geo?.subdivision?.code ? `/${geo.subdivision.code}` : "";
+        return { country, city: (geo?.city || "") + sub };
+    } catch {
+        return { country: request.headers.get("x-country") || "", city: "" };
+    }
+}
+
+/** Verifies a reCAPTCHA v3 token. Returns the score, or null when unavailable. */
+async function verifyRecaptcha(token: string, ip: string): Promise<{ ok: boolean; score: number | null; reason: string }> {
+    if (!RECAPTCHA_SECRET) {
+        console.warn("[Contact] RECAPTCHA_SECRET_KEY is not set, captcha check skipped");
+        return { ok: true, score: null, reason: "not-configured" };
+    }
+    if (!token) return { ok: false, score: null, reason: "missing-token" };
+    try {
+        const body = new URLSearchParams({ secret: RECAPTCHA_SECRET, response: token });
+        if (ip && ip !== "unknown") body.set("remoteip", ip);
+        const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body,
+            signal: AbortSignal.timeout(5000),
+        });
+        const data = await res.json() as { success?: boolean; score?: number; action?: string; "error-codes"?: string[] };
+        if (!data.success) {
+            const codes = data["error-codes"] || ["verify-failed"];
+            // A broken key is our problem. Let the visitor through and shout in the logs.
+            if (codes.some((c) => RECAPTCHA_CONFIG_ERRORS.includes(c))) {
+                console.error(`[Contact] reCAPTCHA IS MISCONFIGURED (${codes.join(",")}). Allowing the submission. Fix the keys in Netlify.`);
+                return { ok: true, score: null, reason: `misconfigured:${codes.join(",")}` };
+            }
+            return { ok: false, score: null, reason: codes.join(",") };
+        }
+        const score = typeof data.score === "number" ? data.score : null;
+        if (score !== null && score < RECAPTCHA_MIN_SCORE) {
+            return { ok: false, score, reason: `low-score-${score}` };
+        }
+        return { ok: true, score, reason: "ok" };
+    } catch (err) {
+        // Google unreachable: let the submission through rather than lose a lead,
+        // but record that the check did not run.
+        console.error("[Contact] reCAPTCHA verify failed:", err instanceof Error ? err.message : "Unknown");
+        return { ok: true, score: null, reason: "verify-unreachable" };
+    }
+}
+
+/** Adds the forensic columns to contacts once per cold start. Safe to re-run. */
+async function ensureContactsColumns(): Promise<void> {
+    if (contactsColumnsReady) return;
+    const columns = [
+        ["ip", "TEXT"],
+        ["country", "TEXT"],
+        ["city", "TEXT"],
+        ["user_agent", "TEXT"],
+        ["referer", "TEXT"],
+        ["recaptcha_score", "REAL"],
+    ];
+    for (const [name, type] of columns) {
+        try {
+            await turso.execute(`ALTER TABLE contacts ADD COLUMN ${name} ${type}`);
+        } catch {
+            // Column already exists. SQLite has no ADD COLUMN IF NOT EXISTS.
+        }
+    }
+    try {
+        await turso.execute(
+            `CREATE TABLE IF NOT EXISTS blocked_submissions (
+                ts TEXT NOT NULL, ip TEXT, country TEXT, city TEXT,
+                reason TEXT, user_agent TEXT, referer TEXT,
+                email TEXT, subject TEXT, snippet TEXT
+            )`
+        );
+        await turso.execute(`CREATE INDEX IF NOT EXISTS idx_blocked_ip ON blocked_submissions (ip)`);
+        await turso.execute(`CREATE INDEX IF NOT EXISTS idx_blocked_ts ON blocked_submissions (ts)`);
+    } catch (err) {
+        console.error("[Contact] Could not prepare blocked_submissions:", err instanceof Error ? err.message : "Unknown");
+    }
+    contactsColumnsReady = true;
+}
+
+/** Records a rejected submission so the owner can see who is attacking and from where. */
+async function recordBlocked(f: Forensics, reason: string, email = "", subject = "", snippet = ""): Promise<void> {
+    console.warn(`[Contact] BLOCKED ${reason} ip=${f.ip} geo=${f.country}/${f.city} ua=${f.userAgent.slice(0, 60)}`);
+    try {
+        await ensureContactsColumns();
+        await turso.execute({
+            sql: `INSERT INTO blocked_submissions (ts, ip, country, city, reason, user_agent, referer, email, subject, snippet)
+                  VALUES (datetime('now'), ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            args: [f.ip, f.country, f.city, reason, f.userAgent.slice(0, 300), f.referer.slice(0, 300),
+                   email.slice(0, 200), subject.slice(0, 200), snippet.slice(0, 500)],
+        });
+    } catch (err) {
+        console.error("[Contact] Could not log blocked submission:", err instanceof Error ? err.message : "Unknown");
+    }
+}
 
 const SECURITY_HEADERS = {
     'Content-Type': 'application/json',
@@ -59,7 +205,7 @@ async function isRateLimited(ip: string): Promise<boolean> {
 
         // Clean up expired entries for this IP and record the new request in one batch
         await turso.batch([
-            { sql: `DELETE FROM rate_limits WHERE ts < ?`, args: [windowStart] },
+            { sql: `DELETE FROM rate_limits WHERE ts < ?`, args: [nowSec - 86400] },
             { sql: `INSERT INTO rate_limits (ip, ts) VALUES (?, ?)`, args: [ip, nowSec] },
         ]);
 
@@ -70,7 +216,15 @@ async function isRateLimited(ip: string): Promise<boolean> {
         });
 
         const count = Number(result.rows[0]?.cnt ?? 0);
-        return count > RATE_LIMIT_MAX;
+        if (count > RATE_LIMIT_MAX) return true;
+
+        // Daily cap. Catches the slow drip that stays under the per-minute limit.
+        const dayStart = nowSec - 86400;
+        const daily = await turso.execute({
+            sql: `SELECT COUNT(*) AS cnt FROM rate_limits WHERE ip = ? AND ts >= ?`,
+            args: [ip, dayStart],
+        });
+        return Number(daily.rows[0]?.cnt ?? 0) > RATE_LIMIT_DAY_MAX;
     } catch (err) {
         // If the database is unavailable, allow the request (fail-open) and log
         console.error('[RateLimit] Check failed, allowing request:', err instanceof Error ? err.message : 'Unknown');
@@ -101,9 +255,34 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
             });
         }
 
+        // Who is submitting, and from where. Captured before any rejection so the
+        // owner can see the attack in blocked_submissions, not just the leads.
+        const ip = clientAddress
+            || (request.headers.get("x-nf-client-connection-ip") || "").trim()
+            || (request.headers.get("x-forwarded-for") || "").split(",")[0].trim()
+            || "unknown";
+        const geo = readGeo(request);
+        const forensics: Forensics = {
+            ip,
+            country: geo.country,
+            city: geo.city,
+            userAgent: request.headers.get("user-agent") || "",
+            referer: request.headers.get("referer") || "",
+            score: null,
+        };
+
+        // Manual block list, checked before anything expensive runs.
+        if (BLOCKED_IPS.has(ip) || (forensics.country && BLOCKED_COUNTRIES.has(forensics.country.toUpperCase()))) {
+            await recordBlocked(forensics, "blocklist");
+            return new Response(JSON.stringify({ error: "Forbidden." }), {
+                status: 403,
+                headers: SECURITY_HEADERS,
+            });
+        }
+
         // Rate limiting check
-        const ip = clientAddress || request.headers.get('x-forwarded-for') || 'unknown';
         if (await isRateLimited(ip)) {
+            await recordBlocked(forensics, "rate-limited");
             return new Response(JSON.stringify({ error: "Too many requests. Please try again later." }), {
                 status: 429,
                 headers: { ...SECURITY_HEADERS, 'Retry-After': '60' },
@@ -115,8 +294,29 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
         // Honeypot anti-spam check
         const honeypot = data.get("honey");
         if (honeypot && honeypot.toString().trim() !== "") {
-            // Silent fail for bots - don't reveal detection
+            // Silent fail for bots, the response looks identical to a success.
+            await recordBlocked(forensics, "honeypot", sanitize(data.get("email")), sanitize(data.get("subject")));
             return redirect("/thank-you", 303);
+        }
+
+        // reCAPTCHA v3
+        const captcha = await verifyRecaptcha(String(data.get("recaptchaToken") || ""), ip);
+        forensics.score = captcha.score;
+        if (!captcha.ok) {
+            // Always recorded, so the report shows what the captcha is catching.
+            await recordBlocked(
+                forensics,
+                `captcha:${captcha.reason}${RECAPTCHA_MODE === "enforce" ? "" : " (monitor, allowed)"}`,
+                sanitize(data.get("email")),
+                sanitize(data.get("subject")),
+                sanitize(data.get("message")),
+            );
+            if (RECAPTCHA_MODE === "enforce") {
+                return new Response(JSON.stringify({ error: "We could not verify this submission. Please reload the page and try again." }), {
+                    status: 403,
+                    headers: SECURITY_HEADERS,
+                });
+            }
         }
 
         // Extract and clean all fields (no HTML escaping yet)
@@ -152,14 +352,22 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
 
         // Save to database (parameterized query — safe from SQL injection)
         try {
+            await ensureContactsColumns();
             await turso.execute({
-                sql: `INSERT INTO contacts (name, email, phone, industry, subject, message, services, created_at)
-                      VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now'))`,
-                args: [name, safeEmail, safePhone, industry, subject, message, servicesString],
+                sql: `INSERT INTO contacts (name, email, phone, industry, subject, message, services, created_at,
+                                            ip, country, city, user_agent, referer, recaptcha_score)
+                      VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now'), ?, ?, ?, ?, ?, ?)`,
+                args: [name, safeEmail, safePhone, industry, subject, message, servicesString,
+                       forensics.ip, forensics.country, forensics.city,
+                       forensics.userAgent.slice(0, 300), forensics.referer.slice(0, 300), forensics.score],
             });
         } catch (dbError) {
             console.error("Database error:", dbError instanceof Error ? dbError.message : "Unknown");
         }
+
+        // Origin line for the notification email, so the owner sees at a glance
+        // where a lead came from without opening the database.
+        const originLine = `IP ${escapeHtml(forensics.ip)} | ${escapeHtml(forensics.country || "?")}${forensics.city ? " " + escapeHtml(forensics.city) : ""} | captcha ${forensics.score === null ? "n/a" : forensics.score}`;
 
         // Send email notification (escapeHtml at output time)
         try {
@@ -176,6 +384,7 @@ export const POST: APIRoute = async ({ request, redirect, clientAddress }) => {
                     subject: escapeHtml(subject),
                     message: escapeHtml(message),
                     services: escapeHtml(servicesString),
+                    origin: originLine,
                 }),
             });
         } catch (emailError) {
@@ -208,6 +417,7 @@ function generateEmailHtml(data: {
     subject: string;
     message: string;
     services: string;
+    origin?: string;
 }): string {
     return `
 <!DOCTYPE html>
@@ -261,6 +471,7 @@ function generateEmailHtml(data: {
             <p style="margin: 0; color: #9ca3af; font-size: 12px;">
                 This email was sent from the contact form at codebrand.us
             </p>
+            ${data.origin ? `<p style="margin: 8px 0 0 0; color: #9ca3af; font-size: 11px;">Origin: ${data.origin}</p>` : ""}
         </div>
     </div>
 </body>

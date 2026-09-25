@@ -15,6 +15,12 @@ import HowWeWork from "../../components/HowWeWork.astro";
 import ValueProposition from "../../components/ValueProposition.astro";
 import CaseStudies from "../../components/CaseStudies.astro";
 
+// reCAPTCHA v3 site key. Public by design, so rendering it is safe. When it is
+// missing the page still works: no script is loaded and the form posts without
+// a token, which the API tolerates while its own secret is unset.
+const recaptchaSiteKey =
+  import.meta.env.RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || "";
+
 const reviewsSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -677,7 +683,7 @@ const services = [
         </div>
 
         <div class="lg:col-span-3">
-          <contact-form data-endpoint="/api/contact">
+          <contact-form data-endpoint="/api/contact" data-recaptcha-site-key={recaptchaSiteKey}>
             <form action="/api/contact" method="POST" aria-label="Formulario de contacto" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
 
               <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
@@ -862,6 +868,10 @@ const services = [
 
 </HnLayout>
 
+{recaptchaSiteKey && (
+  <script is:inline async src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}></script>
+)}
+
 <script>
   class ContactForm extends HTMLElement {
     connectedCallback() {
@@ -871,6 +881,34 @@ const services = [
       const submitBtn = this.querySelector<HTMLButtonElement>('button[type="submit"]');
 
       if (!form || !responseEl || !submitBtn) return;
+
+      const siteKey = this.dataset.recaptchaSiteKey || "";
+
+      // Returns a reCAPTCHA v3 token, or null when the key or the script is
+      // unavailable. It never throws and never hangs, so the form keeps working.
+      const getRecaptchaToken = async (): Promise<string | null> => {
+        if (!siteKey) return null;
+        const grecaptcha = (window as any).grecaptcha;
+        if (!grecaptcha || typeof grecaptcha.ready !== "function") return null;
+        try {
+          const token = await Promise.race([
+            new Promise<unknown>((resolve, reject) => {
+              grecaptcha.ready(() => {
+                try {
+                  resolve(grecaptcha.execute(siteKey, { action: "contact" }));
+                } catch (err) {
+                  reject(err);
+                }
+              });
+            }),
+            new Promise<null>((resolve) => window.setTimeout(() => resolve(null), 8000)),
+          ]);
+          return typeof token === "string" && token ? token : null;
+        } catch {
+          return null;
+        }
+      };
+
       const originalContent = Array.from(submitBtn.childNodes).map(n => n.cloneNode(true));
 
       form.addEventListener("submit", async (e) => {
@@ -894,13 +932,21 @@ const services = [
         submitBtn.appendChild(spinner);
 
         try {
+          const recaptchaToken = await getRecaptchaToken();
+          if (recaptchaToken) fd.append("recaptchaToken", recaptchaToken);
+
           const res = await fetch(endpoint, { method: "POST", body: fd });
           if (res.ok) { window.location.href = "/thank-you"; return; }
           let errorMsg = "Algo salió mal. Por favor intenta de nuevo.";
-          try {
-            const json = await res.json();
-            if (json.error) errorMsg = json.error;
-          } catch { /* response wasn't JSON, use default */ }
+          if (res.status === 403) {
+            // The API answers in English, so we show our own Spanish message.
+            errorMsg = "No pudimos verificar el envío. Recarga la página e intenta de nuevo.";
+          } else {
+            try {
+              const json = await res.json();
+              if (json.error) errorMsg = json.error;
+            } catch { /* response wasn't JSON, use default */ }
+          }
           responseEl.textContent = errorMsg;
           responseEl.className = "text-xs font-medium text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2";
         } catch {

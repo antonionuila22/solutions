@@ -28,6 +28,16 @@ const prefillSelectedServices = prefillServicesRaw
 const prefillMessage = prefillServicesRaw
   ? `From the quote builder:\n${prefillServicesRaw}${prefillTotal ? `\n\nEstimated total: ${prefillTotal}` : ""}`
   : "";
+
+// reCAPTCHA v3. Only the SITE key is used here: it is public by design and is
+// meant to be rendered into the page. The secret key stays server side in
+// src/pages/api/contact.ts and must never appear in markup or in a script.
+// When the key is absent we skip the script and submit without a token, and the
+// server skips the check too, so local development keeps working.
+const recaptchaSiteKey =
+  import.meta.env.RECAPTCHA_SITE_KEY ||
+  (typeof process !== "undefined" ? process.env.RECAPTCHA_SITE_KEY : "") ||
+  "";
 ---
 
 <Layout
@@ -48,6 +58,10 @@ const prefillMessage = prefillServicesRaw
       "address": { "@type": "PostalAddress", "addressLocality": "San Pedro Sula", "addressRegion": "Cortés", "addressCountry": "HN" }
     }
   })} />
+
+  {recaptchaSiteKey && (
+    <script is:inline async src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}></script>
+  )}
 
   <!-- ===== MAIN: Dark split layout ===== -->
   <section class="relative bg-slate-950 font-poppins pt-28 sm:pt-32 lg:pt-24 pb-16 sm:pb-20 overflow-hidden">
@@ -111,7 +125,7 @@ const prefillMessage = prefillServicesRaw
 
         <!-- RIGHT: Form card -->
         <div class="lg:col-span-3">
-          <contact-form data-endpoint="/api/contact">
+          <contact-form data-endpoint="/api/contact" data-recaptcha-site-key={recaptchaSiteKey}>
             <form action="/api/contact" method="POST" aria-label="Contact form" class="bg-white rounded-2xl shadow-2xl shadow-black/20 p-5 sm:p-7">
 
               <!-- Honeypot -->
@@ -254,6 +268,42 @@ const prefillMessage = prefillServicesRaw
       if (!form || !responseEl || !submitBtn) return;
       const originalContent = Array.from(submitBtn.childNodes).map(n => n.cloneNode(true));
 
+      // reCAPTCHA v3: resolves with a token, or with null when the site key is
+      // missing, the script did not load, or Google takes too long. A null token
+      // means we submit without one instead of blocking a real visitor.
+      const siteKey = this.dataset.recaptchaSiteKey || "";
+      const getRecaptchaToken = (): Promise<string | null> => {
+        const grecaptcha = (window as any).grecaptcha;
+        if (!siteKey || !grecaptcha || typeof grecaptcha.ready !== "function") {
+          return Promise.resolve(null);
+        }
+        return new Promise<string | null>((resolve) => {
+          let settled = false;
+          let timer = 0;
+          const finish = (token: string | null) => {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timer);
+            resolve(token);
+          };
+          timer = window.setTimeout(() => finish(null), 8000);
+          try {
+            grecaptcha.ready(() => {
+              try {
+                grecaptcha
+                  .execute(siteKey, { action: "contact" })
+                  .then((token: string) => finish(token || null))
+                  .catch(() => finish(null));
+              } catch {
+                finish(null);
+              }
+            });
+          } catch {
+            finish(null);
+          }
+        });
+      };
+
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -277,6 +327,11 @@ const prefillMessage = prefillServicesRaw
         submitBtn.appendChild(spinner);
 
         try {
+          // Fresh token per attempt: v3 tokens are single use and expire in 2 minutes,
+          // so a retry after a 403 gets a new one.
+          const recaptchaToken = await getRecaptchaToken();
+          if (recaptchaToken) fd.set("recaptchaToken", recaptchaToken);
+
           const res = await fetch(endpoint, { method: "POST", body: fd });
           if (res.ok) { window.location.href = "/thank-you"; return; }
           let errorMsg = "Something went wrong. Please try again.";

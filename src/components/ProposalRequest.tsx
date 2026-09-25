@@ -13,6 +13,12 @@ import { useState, type FormEvent } from "react";
  * message and sent verbatim, trimmed and capped to the API's length limits.
  * URLs, email addresses and accented text have to arrive intact: the API
  * escapes at output time, so there is nothing to strip here.
+ *
+ * reCAPTCHA v3 is not bundled here. quoter.astro loads Google's api.js and
+ * passes the public site key down as the recaptchaSiteKey prop; this component
+ * asks for a token at submit time and appends it to the FormData under the key
+ * "recaptchaToken", which is what /api/contact verifies. The secret key stays
+ * on the server and never reaches this file.
  */
 
 type Need = {
@@ -46,7 +52,70 @@ const labelClass = "mb-2 block text-sm font-semibold text-slate-900";
 const chipBase =
   "cursor-pointer rounded-xl border px-4 py-3 text-left text-sm transition-all duration-300 select-none";
 
-export default function ProposalRequest() {
+/* ---------------------------------------------------------------------------
+ * reCAPTCHA v3
+ *
+ * The grecaptcha global is installed by the script tag in quoter.astro. It can
+ * legitimately be absent: no site key configured, an ad blocker, or a request
+ * that is still in flight. In every one of those cases we post without a token
+ * rather than block the visitor. The API skips verification when its own secret
+ * is missing, and when it does reject a submission it answers 403 with a
+ * message that already goes through the existing setError path, so the visitor
+ * can reload and retry.
+ * ------------------------------------------------------------------------- */
+
+type Grecaptcha = {
+  ready: (callback: () => void) => void;
+  execute: (siteKey: string, options: { action: string }) => Promise<string>;
+};
+
+declare global {
+  interface Window {
+    grecaptcha?: Grecaptcha;
+  }
+}
+
+/** Upper bound for waiting on the script, and then on the token itself. */
+const RECAPTCHA_WAIT_MS = 5000;
+
+const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+/** Polls for the grecaptcha global. Returns null if it never shows up. */
+async function waitForGrecaptcha(timeoutMs: number): Promise<Grecaptcha | null> {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (typeof window.grecaptcha?.execute === "function") return window.grecaptcha;
+    await sleep(100);
+  }
+  return null;
+}
+
+/** Resolves to a v3 token, or to "" when one cannot be obtained. Never throws. */
+async function getRecaptchaToken(siteKey: string): Promise<string> {
+  if (!siteKey || typeof window === "undefined") return "";
+  const grecaptcha = await waitForGrecaptcha(RECAPTCHA_WAIT_MS);
+  if (!grecaptcha) return "";
+  try {
+    const token = await Promise.race([
+      new Promise<string>((resolve, reject) => {
+        grecaptcha.ready(() => {
+          grecaptcha.execute(siteKey, { action: "contact" }).then(resolve, reject);
+        });
+      }),
+      sleep(RECAPTCHA_WAIT_MS).then(() => ""),
+    ]);
+    return typeof token === "string" ? token : "";
+  } catch {
+    return "";
+  }
+}
+
+interface Props {
+  /** reCAPTCHA v3 public site key. Empty means captcha is not configured. */
+  recaptchaSiteKey?: string;
+}
+
+export default function ProposalRequest({ recaptchaSiteKey = "" }: Props) {
   const [needs, setNeeds] = useState<string[]>([]);
   const [devCount, setDevCount] = useState("");
   const [seniority, setSeniority] = useState("");
@@ -116,6 +185,11 @@ export default function ProposalRequest() {
 
     setStatus("sending");
     try {
+      // Asked for while the button already reads "Sending...", so the wait for
+      // Google's token is never dead time in front of the visitor.
+      const recaptchaToken = await getRecaptchaToken(recaptchaSiteKey);
+      if (recaptchaToken) fd.set("recaptchaToken", recaptchaToken);
+
       const res = await fetch("/api/contact", { method: "POST", body: fd });
       if (res.ok) {
         window.location.href = "/thank-you/";
