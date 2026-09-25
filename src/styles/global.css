@@ -54,9 +54,14 @@
   /* Semantic brand aliases — the 6-color palette named by ROLE, for tasteful
      60/30/10 discipline. Action=brand (orange, scarce), structure=accent
      cyans + ink teal, dark surface=slate-950. Existing palette utilities
-     (orange-500, cyan-400, teal-900…) keep working; these are for new work. */
-  --color-brand: #f97316;        /* orange-500 — the single action/attention color */
-  --color-brand-strong: #ea580c; /* orange-600 */
+     (orange-500, cyan-400, teal-900…) keep working; these are for new work.
+     Brand orange is set to the darkest-passing step so that white text on
+     bg-brand clears WCAG AA: white on orange-500 was 2.89:1 (fail), white on
+     orange-700 is 5.22:1 (pass). Hover uses orange-800 at 7.37:1. The hexes
+     are the sRGB that Tailwind 4 renders its oklch orange-700/800 to, so
+     bg-brand and from-orange-700 are the same orange on screen. */
+  --color-brand: #ca3500;        /* orange-700, the single action/attention color */
+  --color-brand-strong: #9f2d00; /* orange-800, hover and pressed */
   --color-accent: #22d3ee;       /* cyan-400 — highlight / glow on dark surfaces */
   --color-accent-deep: #164e63;  /* cyan-900 — structural depth */
   --color-ink: #134e4a;          /* teal-900 — deep brand ink */
@@ -253,7 +258,7 @@ p, .text-lead, .prose p, .prose li {
 
 /* Brand native form controls (checkbox, radio, range, progress) to the action color. */
 :root {
-  accent-color: #f97316; /* orange-500 */
+  accent-color: #ca3500; /* orange-700, white checkmark on it is 5.22:1 (orange-500 was 2.89:1) */
 }
 
 /* ================================
@@ -378,9 +383,12 @@ p, .text-lead, .prose p, .prose li {
   border: 0;
 }
 
-/* Enhanced focus - visible, accessible focus indicators */
+/* Enhanced focus - visible, accessible focus indicators.
+   cyan-700 against the white ring offset is 5.28:1 and against slate-950 is
+   3.82:1, so the indicator clears the 3:1 non-text floor on light and dark
+   surfaces. cyan-500 was only 2.37:1 on white. */
 *:focus-visible {
-  @apply outline-none ring-[3px] ring-cyan-500 ring-offset-2;
+  @apply outline-none ring-[3px] ring-cyan-700 ring-offset-2;
 }
 
 /* Stronger focus for interactive elements on dark backgrounds */

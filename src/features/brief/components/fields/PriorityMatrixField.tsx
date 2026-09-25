@@ -109,9 +109,9 @@ export function PriorityMatrixField({
                       aria-checked={on}
                       className={
                         "rounded-lg border px-2 py-2 text-xs font-medium transition " +
-                        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/25 " +
+                        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-700/25 " +
                         (on
-                          ? "border-orange-500 bg-orange-500 text-white"
+                          ? "border-orange-500 bg-orange-700 text-white"
                           : "border-slate-300 bg-white text-slate-600 hover:border-slate-400 hover:bg-slate-50")
                       }
                       onClick={() => set(m.id, l.value)}

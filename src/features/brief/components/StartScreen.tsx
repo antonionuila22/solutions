@@ -113,7 +113,7 @@ export default function StartScreen({ defaultOrganization = "" }: { defaultOrgan
             type="button"
             onClick={() => void start()}
             disabled={busy}
-            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/30 disabled:opacity-60"
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-orange-700 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-700/30 disabled:opacity-60"
           >
             {busy ? "Abriendo…" : "Comenzar el brief"}
             {!busy && (

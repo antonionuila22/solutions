@@ -1,6 +1,6 @@
 ---
 title: "What No One Tells You Before Paying for a Cheap Agency"
-description: "Discover the hidden risks of hiring 'cheap' marketing agencies and why budget options often end up costing more. Warning signs, hidden costs, and how to choose wisely."
+description: "The hidden costs of hiring a cheap marketing agency: the red flags, the asset ownership traps, and the questions to ask before you sign anything."
 author: "Ramon Nuila"
 readtime: 11
 img: /photos/blog/website-value.webp
@@ -46,7 +46,7 @@ In a world where **personalization increases engagement by 80%** (source: Epsilo
 
 **The hidden cost**: Wasted ad spend, missed growth opportunities, and months of ineffective marketing that could have been invested in strategies that actually work.
 
-Looking for custom, strategic marketing that's built for your specific business? [Our digital marketing services](/digital-marketing/) create personalized strategies that actually drive measurable results.
+Looking for custom, strategic marketing that's built for your specific business? [Our digital marketing services](https://www.codebrand.us/digital-marketing/) create personalized strategies that actually drive measurable results.
 
 ---
 
@@ -76,7 +76,7 @@ According to [HubSpot's State of Marketing Report](https://www.hubspot.com/state
 
 An agency should be a **strategic partner**, not a black box. If you can't have a real conversation with your agency, you don't have an agency, you have a vendor.
 
-Want an agency that actually responds, strategizes with you, and cares about your success? [Let's talk](/contact/), we pride ourselves on being accessible, responsive, and genuinely invested in our clients' growth.
+Want an agency that actually responds, strategizes with you, and cares about your success? [Let's talk](https://www.codebrand.us/contact/), we pride ourselves on being accessible, responsive, and genuinely invested in our clients' growth.
 
 ---
 
@@ -109,7 +109,7 @@ Design isn't just about aesthetics, it's about **functionality, user experience,
 
 **The hidden cost**: Lost sales, lost credibility, and the eventual need to completely rebuild everything, which costs 3-5x more than doing it right the first time.
 
-Ready to invest in design that actually performs? [Our web design team](/web-design/) creates websites and brands that look stunning AND convert visitors into customers.
+Ready to invest in design that actually performs? [Our web design team](https://www.codebrand.us/web-design/) creates websites and brands that look stunning AND convert visitors into customers.
 
 ---
 
@@ -143,7 +143,7 @@ Professional agencies invest in:
 
 **The hidden cost**: Months of wasted ad spend, no insights gained, and a business that stays stagnant when it should be growing.
 
-Want marketing strategies backed by real data and continuous optimization? [Our digital marketing team](/digital-marketing/) builds data-driven campaigns that deliver measurable ROI.
+Want marketing strategies backed by real data and continuous optimization? [Our digital marketing team](https://www.codebrand.us/digital-marketing/) builds data-driven campaigns that deliver measurable ROI.
 
 ---
 
@@ -181,7 +181,7 @@ If they hesitate or give vague answers, **run**.
 
 **The hidden cost**: Losing everything you've built and having to start completely over with a new agency.
 
-With [our web development services](/web-development/), we set up everything under your ownership from day one. Your domain, your website, your accounts, your data, **you own it all**. We're here to build your assets, not hold them hostage.
+With [our web development services](https://www.codebrand.us/web-development/), we set up everything under your ownership from day one. Your domain, your website, your accounts, your data, **you own it all**. We're here to build your assets, not hold them hostage.
 
 ---
 
@@ -216,7 +216,7 @@ Not on how many posts they published.
 
 **The hidden cost**: Paying for busywork that generates no business value.
 
-Ready to work with an agency that's obsessed with **your results, not their deliverables**? [Let's talk strategy](/contact/) and focus on what actually moves your business forward.
+Ready to work with an agency that's obsessed with **your results, not their deliverables**? [Let's talk strategy](https://www.codebrand.us/contact/) and focus on what actually moves your business forward.
 
 ---
 
@@ -237,7 +237,7 @@ You get **mediocre results across the board** because:
 - There's no time to stay current with best practices and platform changes
 - Complex strategies get oversimplified or skipped entirely
 
-**Real example**: An agency promises "full-service digital marketing" for $800/month. One person manages social media, builds websites, writes copy, runs ads, and does SEO. How much attention can each area really get? How deep can the expertise be?
+**A common setup**: an agency promises "full-service digital marketing" for $800/month. One person manages social media, builds websites, writes copy, runs ads, and does SEO. How much attention can each area really get? How deep can the expertise be?
 
 ### The Professional Alternative:
 
@@ -248,7 +248,7 @@ Specialized agencies (or those with specialized team members) deliver dramatical
 
 **The hidden cost**: Mediocre results, missed opportunities, and wondering why "marketing isn't working" when the real problem is lack of expertise.
 
-Our team includes specialists in [web design](/web-design/), [development](/web-development/), [branding](/branding/), [SEO](/seo/), and [paid advertising](/digital-marketing/), each person focused on what they do best, working together strategically.
+Our team includes specialists in [web design](https://www.codebrand.us/web-design/), [development](https://www.codebrand.us/web-development/), [branding](https://www.codebrand.us/branding/), [SEO](https://www.codebrand.us/seo/), and [paid advertising](https://www.codebrand.us/digital-marketing/), each person focused on what they do best, working together strategically.
 
 ---
 
@@ -257,7 +257,7 @@ Our team includes specialists in [web design](/web-design/), [development](/web-
 While you might think you're saving money, a poor agency choice costs you:
 
 ### Financial Costs:
-- **Wasted monthly retainer fees** on ineffective work (often $500-$2,000/month for 6-12 months = $6,000-$24,000 wasted)
+- **Wasted monthly retainer fees** on ineffective work (often $500-$2,000/month for 6-12 months, which is $3,000-$24,000 wasted)
 - **Wasted ad spend** on poorly optimized campaigns
 - **Cost of hiring a second agency** to fix the problems
 - **Cost of rebuilding** websites, campaigns, or assets done poorly
@@ -272,7 +272,9 @@ While you might think you're saving money, a poor agency choice costs you:
 - **Frustration and stress** from unresponsive service and poor results
 - **Loss of confidence** in marketing as a growth channel
 
-**Real calculation**: A client came to us after spending $1,200/month for 8 months ($9,600 total) with a budget agency, and getting zero measurable results. They then spent $8,000 with us to rebuild their website and strategy properly. **Total cost of going cheap first: $17,600 instead of the $8,000 it would have cost to do it right from the start.**
+**Real calculation**: A client came to us after spending $1,200/month for 8 months ($9,600 total) with a budget agency, and getting zero measurable results. The proper rebuild, a new website and a strategy grounded in real research, still had to be paid for afterward, on top of the $9,600 that was already gone. **For this client, going cheap first did not lower the cost of doing it right. It only added eight wasted months and a second invoice to the total.**
+
+What that rebuild costs depends on the work itself: how many pages or screens it needs, which systems it has to connect to (payments, CRM, inventory, booking), how much of the content and photography already exists, the seniority of the team assigned to it, and how fast you need it live. That is why we publish no price list. You tell us the budget you have, we propose the scope that fits it, and you get one fixed price for that scope. [Request a proposal](https://www.codebrand.us/quoter/) and we reply within 24 business hours.
 
 The expensive option isn't the one with the higher price tag, **it's the one that fails to deliver results.**
 
@@ -341,7 +343,7 @@ You don't have to settle for cheap agencies that overpromise and underdeliver. Y
 - ✅ We have **specialized experts** across design, development, and marketing
 - ✅ We focus on **long-term partnership**, not short-term transactions
 
-We've helped hundreds of businesses recover from bad agency experiences, and even more avoid them entirely by working with us from the start.
+We've helped businesses recover from bad agency experiences, and helped others avoid them entirely by working with us from the start.
 
 ### What You Get When You Work With Us:
 
@@ -354,11 +356,11 @@ We've helped hundreds of businesses recover from bad agency experiences, and eve
 
 **Don't make the costly mistake of going cheap. Make the smart investment in quality.**
 
-👉 **[Schedule a free strategy consultation](/contact/)** and let's discuss your goals, challenges, and how we can help you achieve real results.
+👉 **[Schedule a free strategy consultation](https://www.codebrand.us/contact/)** and let's discuss your goals, challenges, and how we can help you achieve real results.
 
-👉 **[See our case studies](/projects/)** of businesses we've helped grow through strategic, effective marketing.
+👉 **[See our case studies](https://www.codebrand.us/projects/)** of businesses we've helped grow through strategic, effective marketing.
 
-👉 **[Explore our web design](/web-design/)** and [development services](/web-development/) to find the right solution for your business.
+👉 **[Explore our web design](https://www.codebrand.us/web-design/)** and [development services](https://www.codebrand.us/web-development/) to find the right solution for your business.
 
 **Your business deserves better than cheap. It deserves effective.**
 

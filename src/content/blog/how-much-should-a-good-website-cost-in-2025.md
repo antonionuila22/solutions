@@ -1,6 +1,6 @@
 ---
 title: "Website Cost in 2025: Real Pricing Breakdown"
-description: "Discover what a professional website really costs in 2025 based on business type, technology, and customization level. Complete pricing comparison, key factors, and real recommendations to make a smart investment."
+description: "What a website costs in 2025: market ranges by website type, the ongoing costs most people forget, and the factors that really drive your number."
 author: "Ramon Nuila"
 readtime: 12
 img: /photos/blog/website-value.webp
@@ -44,6 +44,8 @@ Unlike buying a car where a specific model has a set price, websites are **custo
 ## 2025 Website Pricing Breakdown by Type
 
 Let's cut through the confusion with real, current pricing for different website types:
+
+> Every range in this section is a market reference, drawn from what DIY platforms, freelancers and agencies charge across the industry. None of them is a Codebrand rate. What we charge depends on the scope we agree for the budget you bring us.
 
 ### 🟢 DIY Website Builders (Wix, Squarespace, Weebly)
 
@@ -94,7 +96,7 @@ Let's cut through the confusion with real, current pricing for different website
 
 **Pro tip**: Ask to see previous work and references before hiring.
 
-Looking for reliable, professional template customization? [Our web design services](/web-design/) include quality template setups with full support, starting at $1,200.
+Looking for reliable, professional template customization? [Our web design services](https://www.codebrand.us/web-design/) include quality template setups with full support. What moves the number here is simple: how many pages you need, how far the template gets bent toward your brand, and whether we write the content. You tell us the budget you have, we propose the scope that fits it and close a fixed price for that scope through the [quoter](https://www.codebrand.us/quoter/).
 
 ---
 
@@ -126,9 +128,9 @@ Looking for reliable, professional template customization? [Our web design servi
 - Webflow custom design
 - Custom HTML/CSS/JavaScript
 
-**ROI consideration**: A well-designed $5,000 website that converts 5% of traffic vs. a $500 template that converts 1% means the expensive site **pays for itself** if it generates just 100 leads per year at $50 value each.
+**ROI consideration**: Take a hypothetical, not a quote. A website built for $5,000 that converts 5% of traffic, against a $500 template that converts 1%, **pays for itself** if it generates just 100 leads per year at $50 value each.
 
-Ready to invest in a professional website that actually converts? [Our web development team](/web-development/) builds custom sites starting at $3,500, with conversion optimization built in.
+Ready to invest in a professional website that actually converts? [Our web development team](https://www.codebrand.us/web-development/) builds custom sites with conversion optimization built in. The cost drivers are the page count, how much of the design is custom versus systematized, the integrations (CRM, email, analytics), the copywriting, and the launch date you need to hit. Bring your budget to the [quoter](https://www.codebrand.us/quoter/) and you get a fixed-price proposal for the scope that fits it within 24 business hours.
 
 ---
 
@@ -186,7 +188,7 @@ Ready to invest in a professional website that actually converts? [Our web devel
 - Subscription services
 - Wholesale operations
 
-Need a high-converting e-commerce store? [Our e-commerce development services](/e-commerce/) create custom online stores optimized for sales, starting at $5,000.
+Need a high-converting e-commerce store? [Our e-commerce development services](https://www.codebrand.us/e-commerce/) create custom online stores optimized for sales. Catalog size, payment and shipping rules, inventory sync with your existing systems, and how much of the storefront is custom are what decide the effort. We shape the store around the budget you bring and quote one fixed price for it through the [quoter](https://www.codebrand.us/quoter/).
 
 ---
 
@@ -294,6 +296,8 @@ The sticker price isn't the whole story. Here are costs that catch people off gu
 
 Stop thinking about cost, think about **value and ROI**.
 
+> The budgets below are guidance for planning your own spend, based on market rates across the industry. They are not Codebrand rates and they are not a menu you can order from.
+
 ### If you're just testing an idea:
 **Budget**: $0-500
 **Solution**: DIY platform (Squarespace, Wix) or simple template
@@ -362,7 +366,7 @@ Watch out for these warning signs:
 | **Shopify** | $3,000-25,000 | E-commerce | ⚠️ Partial | ⭐⭐⭐ Moderate |
 | **Custom Code** | $10,000-100,000+ | Unique needs, web apps | ✅ Full | ⭐⭐⭐⭐⭐ Unlimited |
 
-Need help choosing the right platform for your needs? [Our web development consultation](/contact/) is free, we'll recommend the best solution for your business and budget.
+Need help choosing the right platform for your needs? [Our web development consultation](https://www.codebrand.us/contact/) is free, we'll recommend the best solution for your business and budget.
 
 ---
 
@@ -370,7 +374,7 @@ Need help choosing the right platform for your needs? [Our web development consu
 
 **Rule of thumb**: Your website budget should be **5-10% of your annual revenue** or **1-3% of your annual marketing budget**, whichever is higher.
 
-**For startups**: Budget $5,000-15,000 minimum for a professional presence that can compete.
+**For startups**: Budget $5,000-15,000 minimum, at market rates, for a professional presence that can compete.
 
 **For established businesses**: Budget based on expected ROI. If a $10,000 website generates 50 leads per month at $500 value each = $300,000 annual value, it's a no-brainer investment.
 
@@ -380,8 +384,8 @@ Need help choosing the right platform for your needs? [Our web development consu
 
 **Lost opportunities**:
 - 75% of consumers judge business credibility based on website design (Stanford)
-- 57% won't recommend a business with a poorly designed mobile site
-- 88% of consumers research online before buying, even from local businesses
+- Visitors who struggle with a mobile site are unlikely to recommend the business behind it
+- Most buyers research online before they spend, even when the business is local
 
 **Competitive disadvantage**:
 - Your competitors with better websites capture your potential customers
@@ -431,35 +435,37 @@ At our agency, we build websites that aren't just beautiful, they're strategic b
 ✅ Scale as your business grows
 ✅ Give you full ownership and control
 
-### Our Transparent Website Packages:
+### How We Scope Your Website
 
-🎯 **Essential Website** ($2,500-4,000)
-- Perfect for small businesses and professionals
-- 5 custom pages, mobile-responsive design
-- SEO foundation, contact forms
-- 4-week delivery
+We publish no price list, and that is deliberate. Two ten-page websites can differ enormously once one of them adds a booking system, a CRM integration and original photography. So you bring the budget you have, we propose the scope that fits it, and we close a fixed price for that scope before a single line of code is written.
 
-🎯 **Professional Website** ($5,000-10,000)
+**Typical scopes we build.** These are shapes of work, not offers with a price or a date attached. Your proposal sets the scope, the price and the schedule together.
+
+🎯 **Essential website**
+- Suits small businesses and professionals
+- A handful of custom pages with mobile-responsive design
+- SEO foundation and contact forms
+
+🎯 **Professional website**
 - For growing businesses that need to compete
-- 10+ custom pages, conversion-optimized design
+- Ten or more custom pages, conversion-optimized design
 - Full SEO setup, advanced forms, integrations
 - Content strategy included
-- 6-8 week delivery
 
-🎯 **E-commerce Website** ($8,000-25,000)
+🎯 **E-commerce website**
 - Complete online store setup
-- Product management, secure checkout
-- Inventory system, customer accounts
-- Marketing automation ready
-- 8-12 week delivery
+- Product management and secure checkout
+- Inventory system and customer accounts
+- Ready for marketing automation
 
-🎯 **Custom Web Application** (Starting at $15,000)
+🎯 **Custom web application**
 - Built specifically for your business needs
 - Custom functionality and workflows
 - User portals, dashboards, integrations
-- Timeline based on complexity
 
-**All packages include:**
+**What moves your number:** the number of pages or screens, how much of the design is custom versus systematized, the integrations you need (CRM, payments, inventory, ERP), whether we write the content, the seniority and size of the team assigned, and how fast you need to launch.
+
+**Every engagement includes:**
 - Strategy consultation
 - Mobile-first responsive design
 - Speed optimization
@@ -468,10 +474,12 @@ At our agency, we build websites that aren't just beautiful, they're strategic b
 - 90 days of post-launch support
 - Full ownership of all assets
 
-👉 **[Schedule a free website consultation](/contact/)** and get a custom quote based on your actual needs, not a one-size-fits-all estimate.
+👉 **[Tell us your budget in the quoter](https://www.codebrand.us/quoter/)** and get a fixed-price proposal for the scope that fits it, within 24 business hours.
 
-👉 **[View our portfolio](/projects/)** to see websites we've built across different industries and budgets.
+👉 **[Schedule a free website consultation](https://www.codebrand.us/contact/)** and get a custom quote based on your actual needs, not a one-size-fits-all estimate.
 
-👉 **[Explore our web development services](/web-development/)** to learn more about our process and approach.
+👉 **[View our portfolio](https://www.codebrand.us/projects/)** to see websites we've built across different industries and budgets.
+
+👉 **[Explore our web development services](https://www.codebrand.us/web-development/)** to learn more about our process and approach.
 
 **Your website is too important to leave to chance. Let's build something that actually works.**

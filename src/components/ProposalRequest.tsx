@@ -9,10 +9,10 @@ import { useState, type FormEvent } from "react";
  * that and posts it to the existing /api/contact endpoint as multipart form
  * data, so nothing in the API or the contact page had to change.
  *
- * The API validates `message` against a strict character whitelist (letters,
- * digits, spaces and , . ! ? ; : ' " ( ) - and newlines). Everything the user
- * types into the structured fields is folded into the message, so the values
- * are normalised before they are sent.
+ * Everything the user types into the structured fields is folded into the
+ * message and sent verbatim, trimmed and capped to the API's length limits.
+ * URLs, email addresses and accented text have to arrive intact: the API
+ * escapes at output time, so there is nothing to strip here.
  */
 
 type Need = {
@@ -39,18 +39,6 @@ const INDUSTRIES = [
   "Fitness", "Healthcare", "Law Firms", "Real Estate",
   "Restaurants", "Travel Agency", "Technology", "Other",
 ];
-
-/** Keep only what the API's message whitelist accepts. */
-function clean(value: string): string {
-  return value
-    .replace(/\//g, " or ")
-    .replace(/&/g, " and ")
-    .replace(/\+/g, " plus ")
-    .replace(/[$€£]/g, "")
-    .replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?;:'"()\n\r]/g, " ")
-    .replace(/[ \t]{2,}/g, " ")
-    .trim();
-}
 
 const inputClass =
   "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-300 focus:border-[#f48200] focus:outline-none focus:ring-2 focus:ring-[#f48200]/20";
@@ -95,7 +83,7 @@ export default function ProposalRequest() {
     lines.push("");
     lines.push("Project details:");
     lines.push(details || "Not provided");
-    return clean(lines.join("\n"));
+    return lines.join("\n").trim();
   };
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -117,7 +105,7 @@ export default function ProposalRequest() {
 
     const fd = new FormData();
     fd.set("honey", honey);
-    fd.set("name", clean(name).replace(/[0-9,.!?;:"()]/g, "").trim());
+    fd.set("name", name.trim());
     fd.set("email", email.trim());
     fd.set("phone", phone.trim());
     fd.set("industry", industry || "Other");
@@ -345,7 +333,7 @@ export default function ProposalRequest() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f48200] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f48200] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-800 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "sending" ? "Sending..." : "Request my proposal"}
           <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>

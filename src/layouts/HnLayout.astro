@@ -210,6 +210,7 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
 
     <!-- DNS Prefetch and Preconnect -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
 
     <!-- Preload Critical Resources -->
     <link
@@ -426,6 +427,12 @@ const breadcrumbSchema = createBreadcrumbSchemaFromUrl(
         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
         document,'script','https://connect.facebook.net/en_US/fbevents.js');
         fbq('init','823190717423799');fbq('track','PageView');
+
+        // Ahrefs Analytics
+        var s=document.createElement('script');s.async=true;
+        s.src='https://analytics.ahrefs.com/analytics.js';
+        s.setAttribute('data-key','JekMc+iUh7qv8b6i7VSQFw');
+        document.head.appendChild(s);
       }
 
       var trackingLoaded=false;

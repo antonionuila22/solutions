@@ -33,7 +33,7 @@ Cada mercado tiene un carácter propio. Estas son las diferencias que importan a
 
 #### Honduras
 
-Base de talento técnico con costos operativos bajos y horario central de Estados Unidos, lo que la volvió una plaza natural para trabajo nearshore. San Pedro Sula concentra la actividad comercial e industrial y buena parte de las empresas de desarrollo; Tegucigalpa tiene más peso en proyectos institucionales. Es un mercado donde se consigue trabajo de nivel internacional a tarifas regionales, y donde el reto del comprador local es distinguir entre estudios serios y proveedores de plantillas. Si tu proyecto está anclado aquí, conviene revisar cómo se estructura el [desarrollo web en Honduras](/hn/desarrollo-web-honduras/) antes de pedir cotizaciones.
+Base de talento técnico con costos operativos bajos y horario central de Estados Unidos, lo que la volvió una plaza natural para trabajo nearshore. San Pedro Sula concentra la actividad comercial e industrial y buena parte de las empresas de desarrollo; Tegucigalpa tiene más peso en proyectos institucionales. Es un mercado donde se consigue trabajo de nivel internacional a tarifas regionales, y donde el reto del comprador local es distinguir entre estudios serios y proveedores de plantillas. Si tu proyecto está anclado aquí, conviene revisar cómo se estructura el [desarrollo web en Honduras](https://www.codebrand.us/hn/desarrollo-web-honduras/) antes de pedir cotizaciones.
 
 #### Guatemala
 
@@ -59,7 +59,9 @@ Costos bajos y talento técnico competente, con un mercado interno pequeño y co
 
 No existe una tabla oficial, pero el patrón se repite: Costa Rica y Panamá cotizan más alto, Guatemala y El Salvador en un rango intermedio, Honduras y Nicaragua más abajo. La diferencia entre los extremos puede ser del doble para trabajo de calidad equivalente, y responde al costo de vida y a la presión de la demanda corporativa local, no a la capacidad técnica.
 
-Como referencia de tarifas por hora en proyectos de desarrollo profesional: mid $45, senior $65, lead $95. Sirven para hacer la aritmética que descarta presupuestos irreales: si una propuesta implica cientos de horas de trabajo senior y el precio total no da esas cuentas ni de lejos, o el alcance está subestimado o alguien va a recortar donde no se ve.
+Como referencia del mercado regional, las tarifas por hora en proyectos de desarrollo profesional rondan los $45 para un perfil mid, $65 para senior y $95 para lead. Son cifras de referencia del mercado, no tarifas de Codebrand, y lo que cobramos depende del alcance que se acuerde para el presupuesto de cada cliente. Sirven para hacer la aritmética que descarta presupuestos irreales: si una propuesta implica cientos de horas de trabajo senior y el precio total no da esas cuentas ni de lejos, o el alcance está subestimado o alguien va a recortar donde no se ve.
+
+Del lado de la contratación hay un cambio que conviene conocer: en lugar de publicar una lista de precios, cada vez más equipos parten del presupuesto que el cliente ya tiene y arman el alcance que cabe ahí, un sitio, una tienda en línea, una aplicación web o un número definido de desarrolladores con cierto stack y seniority, para cerrar un precio fijo por ese alcance. Así trabajamos nosotros, y podés pedir esa propuesta en el [cotizador](https://www.codebrand.us/quoter/): sale dentro de 24 horas hábiles.
 
 Un detalle práctico: en El Salvador y Panamá los contratos son en dólares por defecto. En Honduras, Guatemala, Costa Rica y Nicaragua conviene fijar por escrito la moneda del contrato y el tipo de cambio de referencia, para que nadie "reajuste" a mitad del proyecto.
 
@@ -107,7 +109,7 @@ Cuatro cosas se repiten en los briefs de la región y conviene tenerlas en el ra
 
 **WhatsApp como canal principal.** En gran parte de la región el formulario de contacto es secundario y la conversación real ocurre en WhatsApp. Un sitio que no lo integra bien está enviando a sus visitantes a un camino que nadie usa.
 
-**Comercio electrónico con realidad local.** Pago contra entrega, transferencias bancarias, pasarelas regionales y logística de última milla. Un e-commerce diseñado con supuestos de Estados Unidos falla aquí. Es la diferencia entre una plantilla y una [tienda en línea en Honduras](/hn/tienda-online-honduras/) pensada para el comportamiento real del comprador.
+**Comercio electrónico con realidad local.** Pago contra entrega, transferencias bancarias, pasarelas regionales y logística de última milla. Un e-commerce diseñado con supuestos de Estados Unidos falla aquí. Es la diferencia entre una plantilla y una [tienda en línea en Honduras](https://www.codebrand.us/hn/tienda-online-honduras/) pensada para el comportamiento real del comprador.
 
 **SEO local en español.** Las búsquedas se hacen en español y con intención geográfica. Un sitio traducido del inglés, sin estructura de contenido pensada para esas búsquedas, no aparece.
 
@@ -117,7 +119,7 @@ Cuatro cosas se repiten en los briefs de la región y conviene tenerlas en el ra
 Sí, si el proveedor tiene referencias en tu mercado, factura de una forma que tu contabilidad acepta y hay un contrato claro sobre propiedad y entregables. La cercanía geográfica dejó de ser un criterio relevante; la cercanía horaria y cultural sigue siéndolo, y en Centroamérica ambas están cubiertas.
 
 **¿Cuál es el país más barato para desarrollo web en Centroamérica?**
-Honduras y Nicaragua suelen tener las tarifas más bajas, y Costa Rica y Panamá las más altas. Pero elegir solo por precio es el error clásico: la diferencia entre un proyecto de $3,000 que funciona y uno de $1,500 que hay que rehacer no es de $1,500, es de todo el tiempo perdido.
+Honduras y Nicaragua suelen tener las tarifas más bajas, y Costa Rica y Panamá las más altas. Pero elegir solo por precio es el error clásico: lo que separa un proyecto que funciona de uno que hay que rehacer no es la diferencia de factura, es el tiempo perdido, el retrabajo y el lanzamiento que se corre meses. Compará alcance contra alcance y no cifra contra cifra: pedí que cada propuesta detalle páginas, integraciones, contenido y seniority del equipo antes de mirar el total.
 
 **¿Puedo trabajar con una agencia hondureña si mi empresa está en Panamá?**
 Es una de las combinaciones más comunes de la región. La diferencia horaria es de una hora, ambos mercados operan en horario de oficina similar y el idioma es el mismo. Lo que hay que resolver es facturación y contrato, no logística.
@@ -129,6 +131,6 @@ Transferencia internacional es lo habitual para montos de proyecto. Definí desd
 Acordá por escrito los tiempos de respuesta antes de firmar: cuánto tarda una respuesta ante una caída del sitio, ante un error funcional y ante un cambio de contenido. Un proveedor serio tiene esos números; uno que improvisa no.
 
 **¿Y si mi proyecto no es un sitio web sino un sistema?**
-Cambia el perfil de proveedor. Un estudio de diseño no construye una plataforma con integraciones y usuarios concurrentes; para eso necesitás una empresa de ingeniería, y conviene revisar cómo se aborda el [desarrollo de software en Honduras](/hn/desarrollo-de-software-honduras/) y en la región antes de contratar.
+Cambia el perfil de proveedor. Un estudio de diseño no construye una plataforma con integraciones y usuarios concurrentes; para eso necesitás una empresa de ingeniería, y conviene revisar cómo se aborda el [desarrollo de software en Honduras](https://www.codebrand.us/hn/desarrollo-de-software-honduras/) y en la región antes de contratar.
 
-Si estás evaluando proveedores en varios países y querés una conversación concreta sobre alcance, plazos y rango de inversión, [escribinos](/contact/). Trabajamos desde San Pedro Sula con clientes en Centroamérica y Estados Unidos, en horario central, y podemos decirte con franqueza si tu proyecto encaja con nosotros o con otro perfil de agencia.
+Si estás evaluando proveedores en varios países y querés una conversación concreta sobre alcance, plazos y rango de inversión, [escribinos](https://www.codebrand.us/contact/). Trabajamos desde San Pedro Sula con clientes en Centroamérica y Estados Unidos, en horario central, y podemos decirte con franqueza si tu proyecto encaja con nosotros o con otro perfil de agencia.

@@ -16,18 +16,19 @@ export const MAX_LENGTHS = {
 } as const;
 
 /**
- * Allowed characters patterns
+ * Characters that are never accepted in a free text field.
+ *
+ * Free text is validated with a denylist, not a whitelist. A whitelist rejected
+ * real people: accented industries like Construccion, inverted Spanish question
+ * marks, the curly apostrophe iOS types, and any URL or email address pasted
+ * into the message. Nothing is gained by it, because output is escaped when it
+ * is rendered (escapeHtml in the contact API) and the database write is
+ * parameterized. What is rejected here is what is actually dangerous: angle
+ * brackets, so no value can look like markup, and control characters, so no
+ * value can smuggle in a null byte or a terminal escape. Tabs, newlines and
+ * carriage returns stay allowed.
  */
-export const PATTERNS = {
-    // Names: letters, spaces, hyphens, apostrophes (for names like O'Brien, Mary-Jane)
-    name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$/,
-    // Subject: letters, numbers, spaces, common punctuation (allow most printable chars except angle brackets)
-    subject: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?'":;@#$%&*()\[\]/+=_]+$/,
-    // Message: letters, numbers, spaces, common punctuation (no code/scripts)
-    message: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s\-,.!?;:'"()\n\r]+$/,
-    // Industry: letters, spaces, hyphens
-    industry: /^[a-zA-Z\s\-&]+$/,
-} as const;
+export const UNSAFE_CHARS = /[<>\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/;
 
 /**
  * Validates an email address format with stricter regex
@@ -137,7 +138,7 @@ export function validatePhone(phone: string): boolean {
 }
 
 /**
- * Validates a name field (only letters, spaces, hyphens, apostrophes)
+ * Validates a name field (length bounds, no markup or control characters)
  */
 export function validateName(name: string): { valid: boolean; error?: string } {
     if (!name || name.trim().length === 0) {
@@ -149,8 +150,8 @@ export function validateName(name: string): { valid: boolean; error?: string } {
     if (name.length > MAX_LENGTHS.name) {
         return { valid: false, error: `Name must be ${MAX_LENGTHS.name} characters or less` };
     }
-    if (!PATTERNS.name.test(name)) {
-        return { valid: false, error: "Name can only contain letters, spaces, and hyphens" };
+    if (UNSAFE_CHARS.test(name)) {
+        return { valid: false, error: "Name cannot contain the characters < or >" };
     }
     return { valid: true };
 }
@@ -168,8 +169,8 @@ export function validateSubject(subject: string): { valid: boolean; error?: stri
     if (subject.length > MAX_LENGTHS.subject) {
         return { valid: false, error: `Subject must be ${MAX_LENGTHS.subject} characters or less` };
     }
-    if (!PATTERNS.subject.test(subject)) {
-        return { valid: false, error: "Subject contains invalid characters" };
+    if (UNSAFE_CHARS.test(subject)) {
+        return { valid: false, error: "Subject cannot contain the characters < or >" };
     }
     return { valid: true };
 }
@@ -187,8 +188,8 @@ export function validateMessage(message: string): { valid: boolean; error?: stri
     if (message.length > MAX_LENGTHS.message) {
         return { valid: false, error: `Message must be ${MAX_LENGTHS.message} characters or less` };
     }
-    if (!PATTERNS.message.test(message)) {
-        return { valid: false, error: "Message contains invalid characters. Please use only letters, numbers, and basic punctuation." };
+    if (UNSAFE_CHARS.test(message)) {
+        return { valid: false, error: "Message cannot contain the characters < or >" };
     }
     return { valid: true };
 }
@@ -203,8 +204,8 @@ export function validateIndustry(industry: string): { valid: boolean; error?: st
     if (industry.length > MAX_LENGTHS.industry) {
         return { valid: false, error: `Industry must be ${MAX_LENGTHS.industry} characters or less` };
     }
-    if (!PATTERNS.industry.test(industry)) {
-        return { valid: false, error: "Industry contains invalid characters" };
+    if (UNSAFE_CHARS.test(industry)) {
+        return { valid: false, error: "Industry cannot contain the characters < or >" };
     }
     return { valid: true };
 }
@@ -224,8 +225,8 @@ export function validateLength(value: string, maxLength: number): boolean {
 }
 
 /**
- * Validates all required contact form fields
- * Uses individual validators for strict character validation
+ * Validates all contact form fields.
+ * Name, email, industry, subject and message are required. Phone is optional.
  */
 export function validateContactForm(data: {
     name: string;
@@ -235,7 +236,7 @@ export function validateContactForm(data: {
     subject: string;
     message: string;
 }): { valid: boolean; error?: string } {
-    // Validate name (letters, spaces, hyphens, apostrophes only)
+    // Validate name
     const nameResult = validateName(data.name);
     if (!nameResult.valid) return nameResult;
 
@@ -245,19 +246,21 @@ export function validateContactForm(data: {
         return { valid: false, error: `Email must be ${MAX_LENGTHS.email} characters or less` };
     if (!validateEmail(data.email)) return { valid: false, error: "Invalid email address" };
 
-    // Validate phone
-    if (!isNotEmpty(data.phone)) return { valid: false, error: "Phone is required" };
-    if (!validatePhone(data.phone)) return { valid: false, error: "Invalid phone number" };
+    // Validate phone: optional, because the Honduras form labels it optional.
+    // When one IS supplied it still has to be a real number.
+    if (isNotEmpty(data.phone) && !validatePhone(data.phone)) {
+        return { valid: false, error: "Invalid phone number" };
+    }
 
-    // Validate industry (letters, spaces, hyphens only)
+    // Validate industry
     const industryResult = validateIndustry(data.industry);
     if (!industryResult.valid) return industryResult;
 
-    // Validate subject (letters, numbers, basic punctuation)
+    // Validate subject
     const subjectResult = validateSubject(data.subject);
     if (!subjectResult.valid) return subjectResult;
 
-    // Validate message (letters, numbers, common punctuation)
+    // Validate message
     const messageResult = validateMessage(data.message);
     if (!messageResult.valid) return messageResult;
 

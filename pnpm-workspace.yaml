@@ -10,6 +10,7 @@ allowBuilds:
 
 minimumReleaseAgeExclude:
   - resend@6.16.0
+  - astro@7.3.5
 
 # Pinned transitive versions (relocated from npm's top-level "overrides")
 # plus security patches for transitive Netlify build-tooling deps.

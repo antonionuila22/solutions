@@ -161,9 +161,9 @@ export function RatingScaleField({
               aria-checked={selected}
               className={
                 "h-12 w-12 rounded-xl border text-base font-semibold transition " +
-                "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/25 " +
+                "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-700/25 " +
                 (selected
-                  ? "border-orange-500 bg-orange-500 text-white"
+                  ? "border-orange-500 bg-orange-700 text-white"
                   : "border-slate-300 bg-white text-slate-700 hover:border-slate-400 hover:bg-slate-50")
               }
               onClick={() => {

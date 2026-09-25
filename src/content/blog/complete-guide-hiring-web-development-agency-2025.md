@@ -1,6 +1,6 @@
 ---
 title: "Guide to Hiring a Web Development Agency 2025"
-description: "Everything you need to know before hiring a web development agency. Learn how to evaluate agencies, what questions to ask, red flags to avoid, and how to ensure your project succeeds."
+description: "How to evaluate a web development agency: agency types, pricing models, the questions to ask and the red flags that should end the conversation."
 author: "Ramon Nuila"
 readtime: 18
 img: /photos/blog/developer-explaining-details-in-code-2025-01-29-08-07-23-utc.webp
@@ -90,7 +90,7 @@ Before contacting any agency, answer these questions:
 ### Nearshore Agencies
 **What they offer:** US-quality work from Latin American teams with competitive pricing.
 **Best for:** Businesses wanting quality, communication, and smart pricing without offshore issues.
-**Price range:** $2,000-$30,000
+**Price range:** Below comparable US agency rates for the same scope, set by pages, integrations and team seniority.
 **Examples:** Codebrand (Honduras), agencies in Mexico, Colombia, Argentina
 
 **Pros:**
@@ -217,7 +217,7 @@ Great agencies will:
 ### Hourly Rate
 **How it works:** Pay for actual hours worked.
 **Best for:** Ongoing work, unclear scope, maintenance.
-**Typical range:** $50-$200/hour (US), $25-$75/hour (nearshore)
+**Typical range:** $50-$200/hour for US agencies. Nearshore rates run lower and vary by market and seniority.
 
 **Pros:** Flexibility to adjust
 **Cons:** Budget uncertainty
@@ -378,7 +378,7 @@ Finding the right web development agency takes effort, but it's worth it. A grea
 - Free you to focus on what you do best
 - Become a long-term strategic asset
 
-Whether you choose a large US agency, a specialized boutique, a [nearshore development company](/nearshore-development/) like Codebrand, or a talented freelancer, the key is finding the right fit for YOUR needs, budget, and working style.
+Whether you choose a large US agency, a specialized boutique, a [nearshore development company](https://www.codebrand.us/nearshore-development/) like Codebrand, or a talented freelancer, the key is finding the right fit for YOUR needs, budget, and working style.
 
 ---
 
@@ -391,8 +391,9 @@ We're a boutique digital agency focused on modern web development for growing bu
 - **Bilingual team** fluent in English and Spanish
 - **Modern tech stack** (React, Next.js, Astro, WordPress)
 - **Direct communication** with the team building your project
+- **Budget-based proposals**: you tell us the budget, we fit the scope to it and close a fixed price
 
-If you'd like to see if we're the right fit, [schedule a free consultation](/contact/). No pressure, no obligations, just an honest conversation about your project.
+If you'd like to see if we're the right fit, [schedule a free consultation](https://www.codebrand.us/contact/) or [request a proposal](https://www.codebrand.us/quoter/), which we send within 24 business hours. No pressure, no obligations, just an honest conversation about your project.
 
 ---
 

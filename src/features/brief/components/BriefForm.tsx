@@ -357,7 +357,7 @@ export default function BriefForm({ token, organization, initialAnswers }: Props
                 <button
                   type="button"
                   onClick={goNext}
-                  className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/30"
+                  className="inline-flex items-center gap-2 rounded-xl bg-orange-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-orange-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-700/30"
                 >
                   {isStatement
                     ? (question.ctaLabel ?? "Continuar")

@@ -29,9 +29,12 @@ no siguen sus reglas.
    en `<head>`; los `<script>` de Astro son módulos diferidos. Imágenes siempre con
    `width`/`height`. Efectos de puntero gateados a
    `matchMedia("(hover: hover) and (pointer: fine)")`.
-3. **Paleta (regla E).** Monocromo slate + acento `#f48200`. Nada de arcoíris/violetas
+3. **Paleta (regla E).** Monocromo slate + acento naranja. Nada de arcoíris/violetas
    de las librerías de origen. Contraste: `text-slate-500` sobre fondo claro,
    `text-slate-400` sobre fondo oscuro (slate-400 sobre blanco falla WCAG).
+   En relleno de botón o en texto, el naranja accesible es `#ca3500`, igual que
+   `orange-700` (blanco encima: 5.22:1). `#f48200` queda solo como detalle
+   decorativo, porque con texto blanco da 2.61:1 y falla WCAG AA.
 
 ## Notas de integración
 

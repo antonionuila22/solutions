@@ -1,6 +1,6 @@
 ---
 title: "Web Development Pricing Guide 2025"
-description: "Transparent breakdown of web development costs in 2025. Compare prices for websites, e-commerce, apps, SEO, and more across US agencies, nearshore, offshore, and freelancers. Real data from industry research."
+description: "What websites, stores, apps and SEO cost in 2025 across US agencies, nearshore, offshore and freelancers. Market rates, not Codebrand prices."
 author: "Ramon Nuila"
 readtime: 22
 img: /photos/blog/website-value.webp
@@ -20,15 +20,14 @@ tags:
 
 One of the biggest challenges businesses face when planning a website project is understanding what things should cost. Prices vary wildly, and without industry knowledge, it's impossible to know if you're getting a fair deal.
 
-This guide provides transparent pricing data for web development services in 2025, based on:
-- Our experience delivering projects across various industries
+This guide collects market pricing data for web development services in 2025, based on:
 - Industry surveys from Clutch, GoodFirms, and DesignRush
 - Direct quotes from agencies across different markets
-- Real project data from US businesses
+- Project budgets reported by US businesses
 
 **Our goal:** Help you budget accurately and avoid overpaying, even if you don't hire us.
 
-> **Looking for professional web development?** Check out our [web development services](/web-development/) for transparent pricing and quality results.
+> **Looking for professional web development?** Check out our [web development services](https://www.codebrand.us/web-development/) and get a fixed price built around the budget you have.
 
 ---
 
@@ -36,12 +35,14 @@ This guide provides transparent pricing data for web development services in 202
 
 | Service | US Agency | Nearshore | Offshore | Freelancer |
 |---------|-----------|-----------|----------|------------|
-| Basic Website (5-7 pages) | $8,000-$25,000 | $3,000-$8,000 | $1,500-$4,000 | $2,000-$6,000 |
-| Business Website (10-20 pages) | $15,000-$50,000 | $6,000-$18,000 | $3,000-$10,000 | $5,000-$15,000 |
-| E-commerce (Basic) | $20,000-$60,000 | $8,000-$25,000 | $5,000-$15,000 | $8,000-$20,000 |
+| Basic Website (5-7 pages) | $8,000-$25,000 | $3,000-$8,000 | $1,500-$4,000 | $1,000-$6,000 |
+| Business Website (10-20 pages) | $15,000-$50,000 | $6,000-$18,000 | $3,000-$10,000 | $8,000-$15,000 |
+| E-commerce (Basic) | $15,000-$60,000 | $8,000-$20,000 | $5,000-$15,000 | $5,000-$15,000 |
 | E-commerce (Custom) | $50,000-$200,000 | $20,000-$60,000 | $10,000-$40,000 | $15,000-$50,000 |
 | Web Application | $50,000-$500,000+ | $20,000-$150,000 | $15,000-$100,000 | $20,000-$80,000 |
-| Landing Page | $2,000-$8,000 | $800-$2,500 | $400-$1,200 | $500-$2,000 |
+| Landing Page | $3,000-$8,000 | $800-$2,500 | $400-$1,200 | $500-$2,000 |
+
+Every figure in this guide, in this table and in the tables that follow, is a market range taken from the third party sources listed above. None of them is a Codebrand quote. Part 11 explains how we price our own work.
 
 ---
 
@@ -112,7 +113,7 @@ This guide provides transparent pricing data for web development services in 202
 
 **Pricing:** $50,000-$200,000+ depending on complexity
 
-> **Need a website?** [Contact our team](/web-development/) for a free quote on your project.
+> **Need a website?** [Contact our team](https://www.codebrand.us/web-development/) and we will scope the project to your budget.
 
 ---
 
@@ -159,7 +160,7 @@ This guide provides transparent pricing data for web development services in 202
 
 **Pricing:** $50,000-$200,000+
 
-> **Starting an online store?** Explore our [e-commerce development services](/e-commerce/) for cost-effective solutions.
+> **Starting an online store?** Explore our [e-commerce development services](https://www.codebrand.us/e-commerce/) for cost-effective solutions.
 
 ---
 
@@ -223,13 +224,13 @@ This guide provides transparent pricing data for web development services in 202
 - Nearshore Agency: $3,500-$10,000
 - Offshore/Freelancer: $2,000-$6,000
 
-> **Need high-converting landing pages?** Check out our [landing page services](/landing-pages/) starting at $800.
+> **Need high-converting landing pages?** Check out our [landing page services](https://www.codebrand.us/landing-pages/) and tell us your budget; we will fit the scope to it.
 
 ---
 
 ## Part 5: Hourly Rates by Provider Type
 
-When projects are billed hourly, here's what to expect:
+When projects are billed hourly, here is what the market charges. Codebrand does not bill by the hour, so none of these bands is a Codebrand rate; Part 11 explains how we price instead.
 
 | Role | US Agency | Nearshore | Offshore | US Freelancer |
 |------|-----------|-----------|----------|---------------|
@@ -293,7 +294,7 @@ When projects are billed hourly, here's what to expect:
 | Content Strategy | $1,500-$5,000 |
 | Link Building Campaign | $2,000-$10,000 |
 
-> **Need SEO services?** Our [SEO experts](/seo/) can help improve your search rankings starting at $500/month.
+> **Need SEO services?** Our [SEO experts](https://www.codebrand.us/seo/) can help improve your search rankings, with the monthly scope sized to the budget you set.
 
 ### PPC Management
 
@@ -336,7 +337,7 @@ When projects are billed hourly, here's what to expect:
 | Design system | $10,000-$50,000 |
 | User research | $5,000-$25,000 |
 
-> **Looking for professional design?** Explore our [UX/UI design services](/web-design/) and [branding packages](/branding/).
+> **Looking for professional design?** Explore our [UX/UI design services](https://www.codebrand.us/web-design/) and [branding packages](https://www.codebrand.us/branding/).
 
 ---
 
@@ -401,7 +402,7 @@ When projects are billed hourly, here's what to expect:
 ### Best Value Strategies
 
 **For tight budgets:**
-- Consider [nearshore agencies](/nearshore-development/) (same quality, lower cost)
+- Consider nearshore agencies in Latin America (comparable quality, lower cost base)
 - Start with MVP, expand later
 - Use proven platforms (Shopify, WordPress) instead of custom
 - Prioritize features ruthlessly
@@ -418,35 +419,44 @@ When projects are billed hourly, here's what to expect:
 
 ---
 
-## Part 11: Codebrand Pricing (For Transparency)
+## Part 11: How Codebrand Prices Work
 
-Since we wrote this guide, here's what we charge:
+Since we wrote this guide, here is how we price our own work: we publish no price list. You bring the budget you have, we propose the resources that fit it (a website, an online store, a web application, or a number of developers with a given stack and seniority) and we close a fixed price for that scope. Proposals go out within 24 business hours through our [project quoter](https://www.codebrand.us/quoter/).
 
-### Website Packages
+### What Moves the Number on a Website
 
-| Package | Price | Includes |
-|---------|-------|----------|
-| Essential | $3,600 | 5-page responsive website, basic CMS, SEO setup |
-| Growth | $12,600 | 10-page custom website, advanced CMS, integrations |
-| Enterprise | $30,000+ | Full web application, custom features, priority support |
+| Cost driver | Why it changes the price |
+|-------------|--------------------------|
+| Pages and unique layouts | Ten pages built from three layouts cost far less than ten pages designed one by one |
+| CMS depth | A simple blog is cheaper than a content model with authors, categories, related content and multiple languages |
+| Integrations | Every CRM, payment gateway, booking system or ERP connection adds design, build and testing time |
+| Content | Copywriting, photography and product data are the most common reason a budget moves after kickoff |
+| Timeline | A compressed launch date means more people working in parallel, which is what a rush premium actually pays for |
 
-### Per-Service Pricing
+### What Moves the Number on a Store or an Application
 
-| Service | Price |
-|---------|-------|
-| Landing Page | $800-$1,500 |
-| Additional Page | $350-$450 |
-| E-commerce Setup | $8,000-$20,000 |
-| Logo Design | $390-$950 |
-| Full Branding | $1,500-$3,500 |
-| Monthly SEO | $500-$1,500 |
+| Cost driver | Why it changes the price |
+|-------------|--------------------------|
+| Catalog and data | A hundred simple products is one job; a configurable catalog with variants, B2B pricing and inventory rules is another |
+| Screens and roles | Count the screens, then count the user roles that see them differently. Both multiply the work |
+| Custom logic | Checkout flows, quoting engines, permissions and reporting are where application budgets concentrate |
+| Team seniority and size | A senior developer moves faster per hour and costs more per hour, so the right mix depends on how much of the system is new |
+| Post-launch needs | Hosting, monitoring, support hours and the pace of future changes belong in the first budget, not the second |
 
-### Why Our Prices Are Lower
+### How the Proposal Works
+
+1. **Tell us the budget you have** and the outcome you need it to buy.
+2. **We map that budget to a scope:** pages, features, integrations, and the team that builds them.
+3. **You get a fixed price** for that scope within 24 business hours, with what is included and what is not written down.
+4. **If the budget does not reach the outcome,** we say so and propose the phase that does.
+
+Start with the [project quoter](https://www.codebrand.us/quoter/) and we will come back with a fixed-price proposal for your scope.
+
+### Why the Same Budget Buys More Scope With Us
 
 - Based in Honduras (lower cost of living)
 - No expensive office overhead
 - Efficient processes refined over years of experience
-- We don't overbill for senior staff time
 
 ### What We DON'T Compromise On
 
@@ -469,6 +479,6 @@ Remember: **The cheapest option is rarely the best value.** Consider total cost 
 
 ---
 
-*Prices in this guide reflect 2025 market rates and are updated quarterly based on industry data. Your actual costs may vary based on specific requirements.*
+*Prices in this guide reflect 2025 market rates from the sources listed at the top of this guide. Your actual costs may vary based on specific requirements.*
 
-*Need a quote for your project? [Contact us](/contact/) for transparent pricing with no surprises.*
+*Need a quote for your project? [Contact us](https://www.codebrand.us/contact/) and get a fixed-price proposal with no surprises.*

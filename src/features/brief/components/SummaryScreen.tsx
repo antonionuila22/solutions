@@ -127,7 +127,7 @@ export function SummaryScreen({
           type="button"
           onClick={onSubmit}
           disabled={submitting}
-          className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/30 disabled:opacity-60"
+          className="inline-flex items-center gap-2 rounded-xl bg-orange-700 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-orange-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-700/30 disabled:opacity-60"
         >
           {submitting ? "Enviando…" : `Enviar las respuestas de ${organization}`}
         </button>

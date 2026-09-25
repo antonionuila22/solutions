@@ -1,6 +1,6 @@
 ---
 title: "Custom Web Development Costs: 2025 Breakdown"
-description: "Comprehensive guide to custom web development costs in 2025. Detailed pricing breakdown by project type, region, and complexity. Real data from 200+ projects to help you budget accurately."
+description: "Market ranges for custom web development in 2025 by project type, region and complexity, plus how to budget and compare vendor quotes."
 author: "Ramon Nuila"
 readtime: 18
 img: /photos/blog/webcosthn.avif
@@ -17,13 +17,13 @@ tags:
   - Agency Pricing
 ---
 
-## Custom Web Development Cost Breakdown 2025: Real Pricing Data & What to Expect
+## Custom Web Development Cost Breakdown 2025: Market Ranges & What to Expect
 
 "How much does custom web development cost?"
 
 It's the first question every business owner asks, and the hardest to answer directly. The truthful answer is: it depends. But that's not helpful when you're trying to budget.
 
-This guide provides real pricing data based on 200+ [custom software development](/custom-software-development/) projects we've analyzed, giving you concrete numbers and the factors that influence them. By the end, you'll understand exactly what drives costs and how to budget accurately for your project.
+This guide pulls together published agency rates, market benchmarks and the quotes buyers receive from vendors for [custom software development](https://www.codebrand.us/custom-software-development/) work, so you get concrete ranges and the factors that move them. By the end, you'll understand what drives costs and how to budget accurately for your project.
 
 ---
 
@@ -57,7 +57,7 @@ This guide aims to give you the knowledge to budget accurately and evaluate quot
 
 ## The Solution: Data-Driven Cost Understanding
 
-We've analyzed pricing data from our own projects and industry benchmarks to create this comprehensive breakdown.
+We've analyzed published agency rates, market benchmarks and the quotes our clients receive from other vendors to create this comprehensive breakdown. The ranges below are market ranges, not a Codebrand price list.
 
 ### Website Types and Typical Costs
 
@@ -75,9 +75,11 @@ Let's break down what you get at each level.
 
 ## Detailed Cost Breakdown by Project Type
 
+Every figure in this section is a market range taken from the sources above. None of it is a Codebrand quote. What we charge depends on the scope we agree for the budget you bring, which is why the tiers below describe scope rather than our price.
+
 ### 1. Basic Website ($3,000 - $10,000)
 
-**What's included:**
+**What this tier typically includes:**
 - 1-5 pages (Home, About, Services, Contact)
 - Responsive design (mobile-friendly)
 - Contact form with email notifications
@@ -86,7 +88,7 @@ Let's break down what you get at each level.
 - CMS for content updates (optional)
 - 1-2 rounds of revisions
 
-**Cost breakdown:**
+**Market cost breakdown:**
 ```
 Design                   $800 - $2,500
 Development            $1,500 - $5,000
@@ -102,11 +104,11 @@ Total                  $3,000 - $10,000
 - Personal portfolios
 - Landing pages for campaigns
 
-**Example**: A local restaurant wanted an online presence with menu, location, and reservation link. We delivered a 4-page responsive site with CMS in 3 weeks for $4,500.
+**Example**: A local restaurant wanted an online presence with menu, location, and reservation link. We delivered a 4-page responsive site with CMS in 3 weeks. The page count, the single reservation link instead of a booking engine, and the owner writing the copy are what kept the scope small.
 
 ### 2. Business Website ($10,000 - $30,000)
 
-**What's included:**
+**What this tier typically includes:**
 - 10-25 pages
 - Custom design (not templates)
 - Advanced CMS configuration
@@ -118,7 +120,7 @@ Total                  $3,000 - $10,000
 - Performance optimization
 - 3-4 rounds of revisions
 
-**Cost breakdown:**
+**Market cost breakdown:**
 ```
 Strategy & planning      $1,000 - $2,500
 Design (UI/UX)          $3,000 - $8,000
@@ -136,11 +138,11 @@ Total                 $10,000 - $30,000
 - Companies with multiple service lines
 - Organizations needing content marketing
 
-**Example**: A law firm needed a professional site showcasing 15 practice areas, attorney profiles, case studies, and a blog. We delivered a custom-designed site with full CMS in 7 weeks for $22,000.
+**Example**: A law firm needed a professional site showcasing 15 practice areas, attorney profiles, case studies, and a blog. We delivered a custom-designed site with full CMS in 7 weeks. The 15 practice area pages, the custom design, and migrating years of blog content are what moved this out of basic territory.
 
 ### 3. E-commerce Store ($15,000 - $75,000)
 
-**What's included:**
+**What this tier typically includes:**
 - Product catalog (varies by size)
 - Shopping cart and checkout
 - Payment gateway integration
@@ -152,7 +154,7 @@ Total                 $10,000 - $30,000
 - Tax handling
 - Mobile-optimized shopping experience
 
-**Cost breakdown:**
+**Market cost breakdown:**
 ```
 Strategy & planning       $2,000 - $5,000
 Design (UI/UX)           $4,000 - $15,000
@@ -174,11 +176,11 @@ Total                  $15,000 - $75,000
 | Integrations | Basic | ERP, POS, CRM, 3PL |
 | Features | Standard checkout | Subscriptions, B2B |
 
-**Example**: A fashion brand needed an online store with 500 products, Shopify Plus, custom theme, and Klaviyo integration. We delivered a high-converting store in 12 weeks for $48,000.
+**Example**: A fashion brand needed an online store with 500 products, Shopify Plus, custom theme, and Klaviyo integration. We delivered a high-converting store in 12 weeks. Catalog size, the fully custom theme instead of a stock one, and the email automation work are what drove the effort.
 
 ### 4. Web Application ($30,000 - $150,000)
 
-**What's included:**
+**What this tier typically includes:**
 - User authentication and authorization
 - Database design and implementation
 - Custom business logic
@@ -190,7 +192,7 @@ Total                  $15,000 - $75,000
 - Third-party integrations
 - Security implementation
 
-**Cost breakdown:**
+**Market cost breakdown:**
 ```
 Discovery & planning      $3,000 - $12,000
 Architecture design       $2,000 - $8,000
@@ -214,11 +216,11 @@ Total                  $30,000 - $150,000
 | Mobile apps | +$20-50K |
 | AI/ML features | +$15-50K |
 
-**Example**: A logistics company needed a custom fleet management application with driver apps, real-time tracking, route optimization, and client portal. We delivered an MVP in 16 weeks on a fixed budget, with ongoing development for additional features.
+**Example**: A logistics company needed a custom fleet management application with driver apps, real-time tracking, route optimization, and client portal. We delivered an MVP in 16 weeks, with ongoing development for additional features. The driver apps, the real-time tracking, the route optimization, and the separate client portal are what put this in web application territory.
 
 ### 5. Enterprise Platform ($100,000 - $500,000+)
 
-**What's included:**
+**What this tier typically includes:**
 - Complex multi-tenant architecture
 - Advanced security and compliance
 - Multiple integrated systems
@@ -229,7 +231,7 @@ Total                  $30,000 - $150,000
 - Training and change management
 - Ongoing support and maintenance
 
-**Cost breakdown:**
+**Market cost breakdown:**
 ```
 Discovery & strategy       $10,000 - $50,000
 Architecture & planning   $15,000 - $40,000
@@ -243,7 +245,7 @@ Training & documentation   $5,000 - $20,000
 Total                   $100,000 - $500,000+
 ```
 
-**Example**: A healthcare organization needed a patient management platform integrated with existing EHR systems, compliant with HIPAA, supporting 50+ clinics. The project spanned 14 months with a budget of $340,000.
+**Example**: A healthcare organization needed a patient management platform integrated with existing EHR systems, compliant with HIPAA, supporting 50+ clinics. The project spanned 14 months. The EHR integrations, the HIPAA compliance work, and rolling the platform out across 50+ clinics are what put it in enterprise territory.
 
 ---
 
@@ -304,21 +306,21 @@ While offshore rates look attractive, consider:
 
 **Quality variance**: Lower rates often mean junior developers. You might pay less per hour but need more hours.
 
-**Rework costs**: We frequently rescue projects from cheap offshore development. Typical rescue costs: $20,000-$50,000, often more than doing it right initially.
+**Rework costs**: We frequently rescue projects from cheap offshore development. A rescue means auditing a codebase you did not write, rebuilding the parts that cannot be saved, and paying a second time for features you already bought. It regularly costs more than doing it right the first time, and you lose the months in between.
 
 **Management burden**: You'll spend more time managing remote teams, reviewing code, and fixing issues.
 
 ### The Nearshore Advantage
 
-[Nearshore development](/nearshore-development/) (Latin America for US companies) offers a middle ground:
+[Nearshore development](https://www.codebrand.us/nearshore-development/) (Latin America for US companies) offers a middle ground:
 
-- **60% cost savings** vs. US agencies
+- **Materially lower cost** than US agency rates
 - **Same timezone** for real-time collaboration
 - **English fluency** for clear communication
 - **Cultural alignment** with US business practices
 - **Senior talent** with US company experience
 
-This is why we operate from Central Time with English-fluent senior engineers. Clients get US-quality work at significantly lower costs without the offshore headaches.
+This is why we operate from Central Time with English-fluent senior engineers. Codebrand does not sell against the hourly bands in the table above. You tell us the budget you have, we propose the scope that fits it, and we close a fixed price for that scope. Clients get US-quality work without the offshore headaches.
 
 ---
 
@@ -326,7 +328,7 @@ This is why we operate from Central Time with English-fluent senior engineers. C
 
 ### Step 1: Define Your Project Type
 
-Use the categories above to identify where your project fits. Be honest about complexity, most people underestimate.
+Use the categories above to identify where your project fits. Be honest about complexity. Most people underestimate it.
 
 ### Step 2: List Your Features
 
@@ -350,16 +352,16 @@ Always add contingency for unknowns:
 
 ### Step 4: Consider Ongoing Costs
 
-Your website isn't a one-time expense:
+Your website isn't a one-time expense. The ranges below are market ranges for ongoing work, not Codebrand retainer prices:
 
-| Ongoing Cost | Monthly Range |
-|--------------|--------------|
-| Hosting | $20 - $500+ |
+| Ongoing Cost | Typical Range |
+|--------------|---------------|
+| Hosting | $20 - $500+/month |
 | Domain | $15/year |
 | SSL | Free - $200/year |
-| Maintenance | $100 - $2,000 |
-| Updates/changes | $500 - $5,000 |
-| Security monitoring | $50 - $300 |
+| Maintenance | $100 - $2,000/month |
+| Updates/changes | $500 - $5,000/month |
+| Security monitoring | $50 - $300/month |
 
 ---
 
@@ -412,7 +414,9 @@ Ask each vendor:
 
 ---
 
-## Real Project Examples and Costs
+## Project Examples: What Drove the Scope
+
+Codebrand publishes no price list, so these examples show the shape of the work instead of a number. Use them to see where your own project would land. When you ask for a proposal today, you bring the budget you have, we propose the scope that fits it, and we close a fixed price for that scope before development starts.
 
 ### Project 1: Professional Services Website
 
@@ -420,15 +424,13 @@ Ask each vendor:
 **Need**: Modern website with blog, service pages, team bios, contact form
 **Scope**: 12 pages, custom design, CMS integration
 
-**Cost breakdown:**
+**What drove the scope:**
 ```
-Design (custom)          $4,000
-Development              $8,500
-Content migration          $800
-SEO setup                $1,200
-Training                   $500
-------------------------
-Total                   $15,000
+Custom design instead of a template
+12 pages of structured content
+CMS setup so the partners publish without us
+Content migration from the previous site
+SEO setup and one training session
 ```
 
 **Timeline**: 5 weeks
@@ -439,16 +441,13 @@ Total                   $15,000
 **Need**: Shopify store with custom theme, 200 products, Klaviyo integration
 **Scope**: Custom design, advanced filtering, email automation
 
-**Cost breakdown:**
+**What drove the scope:**
 ```
-Strategy & planning       $2,500
-Design (custom theme)    $12,000
-Development             $18,000
-Integrations             $5,000
-QA & testing             $3,500
-Launch & training        $2,000
-------------------------
-Total                   $43,000
+Custom Shopify theme, not a stock one
+200 products with variants and filtering
+Klaviyo integration and email automation
+Checkout and shipping configuration
+QA across devices, then launch and training
 ```
 
 **Timeline**: 10 weeks
@@ -459,17 +458,13 @@ Total                   $43,000
 **Need**: Project management tool MVP with team features
 **Scope**: User auth, projects, tasks, team management, basic reporting
 
-**Cost breakdown:**
+**What drove the scope:**
 ```
-Discovery                $3,000
-Architecture             $2,500
-UI/UX design            $8,000
-Frontend (React)        $15,000
-Backend (Node.js)       $18,000
-Testing                  $4,000
-Deployment               $1,500
-------------------------
-Total                   $52,000
+Discovery and architecture before any code
+Authentication, roles and team permissions
+React frontend with a custom design system
+Node.js backend, data model and API
+Reporting, testing and deployment
 ```
 
 **Timeline**: 12 weeks
@@ -478,30 +473,30 @@ Total                   $52,000
 
 ## Key Takeaways
 
-### What We've Learned From 200+ Projects
+### What Buyers Get Wrong Most Often
 
 1. **Budget realistically**: Most projects cost more than clients initially expect. This isn't vendors being greedy, it's complexity being underestimated.
 
-2. **Invest in planning**: Spending $3,000-$5,000 on proper discovery and planning can save $20,000+ in development by avoiding wrong directions.
+2. **Invest in planning**: Putting a small share of the budget into proper discovery and planning saves far more in development later, because the expensive mistake is building the wrong thing well.
 
-3. **Consider total cost of ownership**: A $20,000 site that needs constant fixes costs more than a $35,000 site built correctly.
+3. **Consider total cost of ownership**: A site bought at the bottom of the range that needs constant fixes costs more over its life than a more expensive one built correctly.
 
 4. **Match vendor to project**: Don't hire an enterprise agency for a small business site, and don't hire a freelancer for a complex platform.
 
-5. **Nearshore offers the best value**: For US companies, Latin American development provides US-quality work at 40-60% lower cost without offshore headaches.
+5. **Nearshore offers the best value**: For US companies, Latin American development provides US-quality work at a materially lower cost than US agency rates, without the offshore headaches.
 
 ---
 
-## Get a Custom Quote for Your Project
+## Get a Fixed-Price Proposal for Your Project
 
-At Codebrand, we provide detailed, transparent quotes based on your specific needs. Our quotes include:
+At Codebrand we publish no price list. You bring the budget you have, we propose the resources that fit it (a website, an online store, a web application, or a number of developers with a given stack and seniority), and we close a fixed price for that scope. Every proposal includes:
 
-- Line-item cost breakdown
-- Clear scope definition
+- Clear scope definition, with what is in and what is out
 - Realistic timeline with milestones
 - Assumptions and exclusions documented
-- Fixed-price options where appropriate
+- The resources and seniority assigned to the work
+- A fixed price for the scope we agree on
 
-**Ready to discuss your project?** Get a free consultation and detailed quote. We'll help you understand your options and budget accurately.
+**Ready to discuss your project?** Tell us what you need and the budget you have to work with. Proposals go out within 24 business hours.
 
-[Get Your Free Quote →](/contact/)
+[Get Your Fixed-Price Proposal](https://www.codebrand.us/quoter/)

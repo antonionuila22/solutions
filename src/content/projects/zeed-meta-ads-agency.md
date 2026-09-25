@@ -15,7 +15,7 @@ tags:
 client: Zeed Marketing Agency
 date: 2024-12-10
 featured: true
-link: https://zeedst.netlify.app/
+link: https://www.zeedst.com/
 results:
   metric1: 0 → 50 daily visitors in 30 days
 resultsNote: >-

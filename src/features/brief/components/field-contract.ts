@@ -22,11 +22,11 @@ export interface FieldProps<Q extends AnswerableQuestion = AnswerableQuestion> {
 export const inputClass =
   "w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-lg text-slate-900 " +
   "placeholder:text-slate-400 outline-none transition " +
-  "focus:border-orange-500 focus:ring-4 focus:ring-orange-500/15";
+  "focus:border-orange-500 focus:ring-4 focus:ring-orange-700/15";
 
 export const choiceClass = (selected: boolean) =>
   "group flex w-full items-center gap-3 rounded-xl border px-4 py-3.5 text-left text-base transition " +
-  "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-500/25 " +
+  "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-700/25 " +
   (selected
     ? "border-orange-500 bg-orange-50 text-slate-900"
     : "border-slate-300 bg-white text-slate-700 hover:border-slate-400 hover:bg-slate-50");
@@ -35,7 +35,7 @@ export const choiceClass = (selected: boolean) =>
 export const keyCapClass = (selected: boolean) =>
   "flex h-7 w-7 shrink-0 items-center justify-center rounded-md border text-xs font-semibold " +
   (selected
-    ? "border-orange-500 bg-orange-500 text-white"
+    ? "border-orange-500 bg-orange-700 text-white"
     : "border-slate-300 bg-slate-50 text-slate-500 group-hover:border-slate-400");
 
 export const cardClass = "rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 shadow-sm";

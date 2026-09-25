@@ -5,28 +5,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev          # Start dev server (localhost:4321)
-npm run build        # Production build (astro build → dist/)
-npm run preview      # Preview production build locally
-npm run optimize-images  # Run Sharp-based image optimization script
+pnpm install         # Install dependencies (pnpm only, see Package manager below)
+pnpm dev             # Start dev server (localhost:4321)
+pnpm build           # Production build (astro build → dist/)
+pnpm preview         # Preview production build locally
+pnpm optimize-images # Run Sharp-based image optimization script
+pnpm audit           # Audit dependencies (npm audit fails, there is no package-lock.json)
 ```
 
-No test suite or linter is configured. Verify changes with `npm run build`.
+No test suite, linter or type check is configured. `astro check` does not work here either, because neither `@astrojs/check` nor `typescript` is a declared dependency, so the strict `tsconfig.json` currently checks nothing. Verify changes with `pnpm build`.
 
 ## Architecture
 
-This is the **Codebrand** agency website — an Astro 7 SSR app deployed on Netlify. Site: codebrand.us. Two markets: US (English) and Honduras (Spanish, under `/hn/`).
+This is the **Codebrand** agency website — an Astro 7 SSR app deployed on Netlify. Canonical host: https://www.codebrand.us (the apex 301s to www). Two markets: US (English) and Honduras (Spanish, under `/hn/`).
 
 ### Rendering & Deployment
 
-- `output: 'server'` — all pages are SSR by default via `@astrojs/netlify`
+- `output: 'server'` via `@astrojs/netlify`, configured with `edgeMiddleware: false` (no edge functions). A route is server rendered unless it sets `export const prerender = true`. Most routes do set it (including `/`), but 28 do not and therefore run on a Netlify function on every request: `/contact`, `/404`, every `/hn/` page, every `/landing/template-*`, the `blog`, `books`, `products`, `projects`, `countryareas` and `team` index pages, `rss.xml.ts` and `api/health.ts`. Check the flag whenever you add or touch a page, because leaving it out silently takes that page off the CDN.
 - Static assets in `public/` (icons, photos, fonts); reference with absolute paths (`/icons/...`, not `./icons/...`) — relative paths break on nested routes like `/hn/`
 - CSS: TailwindCSS 4 via Vite plugin + lightningcss for minification and oklch fallbacks
 - React islands via `@astrojs/react` with `client:*` directives (used sparingly — most UI is Astro components)
 
 ### Content Collections (Astro 7 glob loaders)
 
-Defined in `src/content.config.ts`. Collections: `blog`, `books`, `products`, `countryareas`, `regions`, `projects`, `locations`. All use markdown files under `src/content/<collection>/`. Dynamic routes at `src/pages/<collection>/[id].astro`.
+Defined in `src/content.config.ts`. Collections: `blog`, `books`, `products`, `countryareas`, `regions`, `projects`, `locations`. All load `**/*.md` under `src/content/<collection>/`, so an `.mdx` file inside a collection folder is ignored even though the `@astrojs/mdx` integration is installed. Dynamic routes at `src/pages/<collection>/[id].astro`.
 
 ### Component Config Pattern
 
@@ -53,21 +55,28 @@ For HTML-containing text (subtitles with `<span>`, `<a>` tags), use `<Fragment s
 - `src/utils/schema.ts` — Schema.org structured data generators (service, FAQ, HowTo, breadcrumb schemas). Imports from `business.ts`.
 - `src/data/` — Static data files (testimonials). The site publishes no prices: every engagement is a fixed-price proposal built from the client's budget (see `src/components/BudgetModel.astro` and `/quoter/`).
 - `src/lib/` — Utilities: HTML sanitization, form validation.
-- `src/layouts/` — Layout.astro (main), LandingLayout.astro, HnLayout.astro (Honduras).
+- `src/layouts/` — Layout.astro (main), LandingLayout.astro, HnLayout.astro (Honduras), BriefLayout.astro (the `/brief/` tool).
+- `src/actions/index.ts`: Astro Actions, the only write path of the `/brief/` tool. It validates with the same Zod schemas the questions declare.
+- `src/features/brief/`: the `/brief/` tool (React island plus its own config, lib and services). It persists to Supabase, has its own notes in `src/features/brief/README.md`, and its SQL lives in `supabase/migrations/`.
 
 ### API Routes
 
 SSR endpoints under `src/pages/api/`:
-- `contact.ts` — Contact form handler. Uses Resend for email, Turso (libSQL) for rate limiting. CSRF origin checking.
-- `contactValidate.ts` — Email validation endpoint.
+- `contact.ts` — Contact form handler. Uses Resend for email and Turso (libSQL) both for IP rate limiting (`rate_limits`) and for storing submissions (`contacts`). CSRF origin checking.
 - `health.ts` — Health check.
 
-Environment variables (set in Netlify): `TURSO_AUTH_TOKEN`, `TURSO_DATABASE_URL`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `CONTACT_RECIPIENT_EMAIL`.
+Environment variables (set in Netlify): `TURSO_AUTH_TOKEN`, `TURSO_DATABASE_URL`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `CONTACT_RECIPIENT_EMAIL`, plus `BRIEF_SUPABASE_URL` and `BRIEF_SUPABASE_SERVICE_ROLE_KEY` for the `/brief/` tool.
 
 ### SEO Pages
 
 Programmatic location/region pages for local SEO across US, LATAM, and Spain. Content in `src/content/locations/` and `src/content/regions/`, rendered by `src/pages/locations/[id].astro` and `src/pages/regions/[id].astro`.
 
-### npm
+### Package manager
 
-pnpm 11 is the declared package manager (`packageManager` field). `.npmrc` sets `legacy-peer-deps=true` — required for dependency resolution, so installing with npm requires `--legacy-peer-deps`.
+pnpm only. `packageManager` pins `pnpm@11.9.0` and the repo ships `pnpm-lock.yaml` with no `package-lock.json`, so:
+
+- install with `pnpm install`
+- audit with `pnpm audit` (`npm audit` fails without a `package-lock.json`)
+- verify with `pnpm build`
+
+`.npmrc` is intentionally empty: it does not set `legacy-peer-deps` and nothing here needs it.
