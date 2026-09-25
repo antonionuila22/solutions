@@ -43,11 +43,11 @@ const c = { ...defaults, ...Astro.props.config };
 
 For HTML-containing text (subtitles with `<span>`, `<a>` tags), use `<Fragment set:html={c.subtitle} />`.
 
-### Service Pages — Two Template Systems
+### Service Pages
 
-1. **ServicePageTemplate.astro** — Original template importing from `src/components/service-sections/` (HeroSection, ServicesGrid, BenefitsSection, ProcessSection, etc.). Used by older service pages via configs in `src/configs/services/*.config.ts`.
+One template: **ServicePageTemplateV4.astro**. The nine service pages under `src/pages/services/` use it and define their data inline (see `src/pages/services/web-development.astro`). The tenth file there, `index.astro`, is the services listing and uses no template.
 
-2. **ServicePageTemplateV4.astro** — Newer template. Service pages under `src/pages/services/` define data inline and pass it directly (see `src/pages/services/web-development.astro`).
+An older system (`ServicePageTemplate.astro`, `src/components/service-sections/` and nine configs in `src/configs/services/`) was deleted in September 2026 because no page imported it.
 
 ### Key Directories
 
