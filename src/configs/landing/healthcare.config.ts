@@ -1,8 +1,7 @@
 import type { LandingPageConfig } from "../../components/LandingPageTemplate.astro";
 
 export const config: LandingPageConfig = {
-  pageTitle:
-    "PrimeCare Medical Center | Compassionate Healthcare in Boston",
+  pageTitle: "PrimeCare Medical Center | Healthcare in Boston",
   pageDescription:
     "Comprehensive primary care and specialty services in Boston. Board-certified physicians, same-day appointments, and patient-centered care.",
   pageKeywords:

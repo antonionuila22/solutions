@@ -10,7 +10,8 @@
     "optimize-images": "node scripts/optimize-images.js",
     "spam-report": "node scripts/spam-report.js",
     "postbuild": "node scripts/seo-check.mjs",
-    "seo-check": "node scripts/seo-check.mjs --warn"
+    "seo-check": "node scripts/seo-check.mjs --warn",
+    "seo-check:live": "node scripts/seo-check.mjs --live --warn"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",

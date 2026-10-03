@@ -148,7 +148,12 @@ const localBusinessSchema = {
     <ClientRouter />
   </head>
   <body class="font-poppins">
-    <slot />
+    <!-- The landing pages had no main landmark at all, so assistive technology
+         had nothing to jump to and the document had no identified primary
+         region. Every other layout here wraps its slot the same way. -->
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
 
     <!-- Deferred Analytics - loaded after main content -->
     <script is:inline>
@@ -179,7 +184,7 @@ const localBusinessSchema = {
         document.body.appendChild(ahrefsScript);
       }
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=823190717423799&ev=PageView&noscript=1" /></noscript>
 
     <!-- Service Worker Registration -->
     <script is:inline>

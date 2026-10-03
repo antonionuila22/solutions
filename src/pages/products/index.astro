@@ -27,6 +27,10 @@ const products = await getCollection("products", ({ data }) => !data.draft);
 
     <section class="bg-gradient-to-b from-white to-slate-50 py-20">
         <div class="max-w-7xl mx-auto px-6">
+            <!-- The cards render an h3, so without this the outline jumps
+                 straight from the page h1 to h3. -->
+            <h2 class="sr-only">Products and services</h2>
+
             <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                 {
                     products.map((product) => {

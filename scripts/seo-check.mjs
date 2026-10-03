@@ -9,6 +9,13 @@
  * Usage:
  *   node scripts/seo-check.mjs            # fails the build on any error
  *   node scripts/seo-check.mjs --warn     # report only, always exit 0
+ *   node scripts/seo-check.mjs --live     # fetch the deployed site instead
+ *
+ * The default mode reads dist/, which is fast and runs on every build, but it
+ * can only see prerendered pages. This project renders 28 routes on demand, so
+ * they leave no file behind and the build mode is blind to them. That blind
+ * spot hid 15 real defects until a live crawl found them, including ten landing
+ * pages with no <main> at all. Run --live against the deploy to cover those.
  *
  * It parses the built HTML in dist/ with regular expressions rather than a DOM
  * library, deliberately: the checks are structural and local, the input is our
@@ -170,7 +177,12 @@ function checkPage(file, html, pages) {
     }
   }
 
-  if (!/<link[^>]*rel="canonical"/i.test(html)) err(page, "missing-canonical", "no canonical tag");
+  // A page that tells robots not to index it does not need to nominate a
+  // canonical, and the /brief/ tool is deliberately noindex, nofollow.
+  const noindex = /<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(html);
+  if (!noindex && !/<link[^>]*rel="canonical"/i.test(html)) {
+    err(page, "missing-canonical", "no canonical tag");
+  }
 
   // ── Structured data ───────────────────────────────────────────────────────
   const seenIds = new Map();
@@ -241,6 +253,71 @@ function checkHreflang(parsed) {
   }
 }
 
+// ── Live mode ────────────────────────────────────────────────────────────────
+const LIVE = process.argv.includes("--live");
+const BASE =
+  (process.argv.find((a) => a.startsWith("--base=")) || "").split("=")[1] ||
+  "https://www.codebrand.us";
+
+/** Routes this project renders on demand, read from src/pages so the list cannot drift. */
+function serverRenderedRoutes() {
+  const routes = [];
+  if (!existsSync(PAGES_DIR)) return routes;
+  const visit = (dir) => {
+    for (const name of readdirSync(dir)) {
+      const full = join(dir, name);
+      if (statSync(full).isDirectory()) {
+        visit(full);
+        continue;
+      }
+      if (!name.endsWith(".astro")) continue;
+      const source = readFileSync(full, "utf8");
+      if (/export\s+const\s+prerender\s*=\s*true/.test(source)) continue;
+      const route =
+        "/" +
+        relative(PAGES_DIR, full)
+          .split(sep)
+          .join("/")
+          .replace(/\.astro$/, "")
+          .replace(/(^|\/)index$/, "$1");
+      if (route.includes("[")) continue; // needs a real param, skipped
+      if (route === "/404") continue; // answering 404 is this route's job
+      routes.push(route.endsWith("/") ? route : route + "/");
+    }
+  };
+  visit(PAGES_DIR);
+  return routes;
+}
+
+async function runLive() {
+  const routes = serverRenderedRoutes();
+  console.log(`seo-check --live: fetching ${routes.length} server rendered routes from ${BASE}`);
+  const fetched = [];
+  for (const route of routes) {
+    try {
+      const res = await fetch(BASE + route, { headers: { "User-Agent": "codebrand-seo-check" } });
+      if (!res.ok) {
+        warn(route, "live-fetch-failed", `HTTP ${res.status}`);
+        continue;
+      }
+      const html = await res.text();
+      fetched.push(checkPageLive(route, html));
+    } catch (e) {
+      warn(route, "live-fetch-failed", String(e.message).slice(0, 60));
+    }
+  }
+  checkHreflang(fetched);
+  return fetched.length;
+}
+
+/** Same rules as the build mode, minus the internal link check, which needs the full route set. */
+function checkPageLive(route, html) {
+  // pages is already populated with the build's routes plus src/pages, so the
+  // internal link rule stays meaningful here.
+  const { page } = checkPage(join(DIST, route, "index.html"), html, pages);
+  return { page: route, html };
+}
+
 // ── Run ──────────────────────────────────────────────────────────────────────
 if (!existsSync(DIST)) {
   console.error(`seo-check: ${DIST}/ not found. Run the build first.`);
@@ -294,12 +371,18 @@ function knownRoutes() {
 
 const pages = knownRoutes();
 
-const parsed = [];
-for (const file of files) {
-  const html = readFileSync(file, "utf8");
-  parsed.push(checkPage(file, html, pages));
+let scanned;
+if (LIVE) {
+  scanned = await runLive();
+} else {
+  const parsed = [];
+  for (const file of files) {
+    const html = readFileSync(file, "utf8");
+    parsed.push(checkPage(file, html, pages));
+  }
+  checkHreflang(parsed);
+  scanned = files.length;
 }
-checkHreflang(parsed);
 
 const group = (list) => {
   const by = new Map();
@@ -320,7 +403,7 @@ const report = (label, list, limit) => {
   }
 };
 
-console.log(`seo-check: scanned ${files.length} built pages`);
+console.log(`seo-check: scanned ${scanned} ${LIVE ? "live server rendered" : "built"} pages`);
 report("WARNINGS", warnings, 3);
 report("ERRORS", errors, 8);
 
