@@ -216,6 +216,72 @@ function checkPage(file, html, pages) {
   return { page, html };
 }
 
+// ── Published prices ─────────────────────────────────────────────────────────
+/**
+ * This site publishes no Codebrand prices. Every engagement is a fixed-price
+ * proposal built from the client's budget, so a figure in our own voice
+ * contradicts the whole commercial model and the answer it sits next to.
+ *
+ * The rule only looks at pages that speak as Codebrand. It deliberately skips
+ * /landing/template-*, which are demo sites for fictional businesses whose own
+ * product prices are the point, and blog posts, where market and competitor
+ * figures are legitimate reporting. What it catches is our own service pages
+ * naming what we charge.
+ */
+const PRICE_IN_OUR_VOICE = [
+  // A vague figure is still a figure, and this is the phrasing that shipped.
+  /\ba few thousand dollars\b/i,
+  // "our services start at $X", "we charge $X"
+  /\b(?:our|we)\b[^.]{0,80}\b(?:start(?:s|ing)? at|priced? at|charge|cost)\b[^.]{0,24}\$\s?\d/i,
+];
+
+/**
+ * The arithmetic leak, which is subtler and worth its own rule.
+ *
+ * Quoting a local market rate is legitimate reporting and the nearshore pages
+ * depend on it. But a market rate sitting beside a percentage saving publishes
+ * our price by subtraction: "$200 per hour locally" plus "60% less with us"
+ * tells the reader we charge $80. Either figure alone is fine; together they
+ * are a price list.
+ */
+const MARKET_RATE = /\$\s?[\d,]+(?:\s*(?:-|–|to)\s*\$?\s?[\d,]+)?\s*(?:per\s+hour|\/\s?(?:hr|hour))/gi;
+const SAVING_CLAIM = /\b(?:\d{2}\s?%|\d{2}\s*(?:to|-)\s*\d{2}\s?%)\s*(?:less|cheaper|lower|menos)\b|\bsave\s+\d{2}\s?%/i;
+
+function checkPrices(parsed) {
+  for (const { page, html } of parsed) {
+    if (page.startsWith("/landing/template-")) continue; // fictional demo businesses
+    if (page.startsWith("/blog/")) continue; // market reporting, not our price
+    // Visible copy AND structured data. A price inside a FAQPage answer is
+    // published just as surely as one in the body: Google reads the schema and
+    // can surface that answer directly. Testing this rule is what exposed the
+    // gap, since the first copy of every FAQ answer lives in the JSON-LD.
+    const jsonLd = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)]
+      .map((m) => m[1])
+      .join(" ");
+    const text = (withoutInertRegions(html) + " " + jsonLd)
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&(amp|#38);/g, "&")
+      .replace(/\\u0024/g, "$")
+      .replace(/\s+/g, " ");
+    for (const pattern of PRICE_IN_OUR_VOICE) {
+      const m = text.match(pattern);
+      if (m) {
+        const at = text.indexOf(m[0]);
+        err(page, "published-price", `"${text.slice(Math.max(0, at - 50), at + m[0].length + 50).trim()}"`);
+        break;
+      }
+    }
+
+    for (const m of text.matchAll(MARKET_RATE)) {
+      const window = text.slice(Math.max(0, m.index - 300), m.index + m[0].length + 300);
+      if (SAVING_CLAIM.test(window)) {
+        err(page, "price-by-subtraction", `"${m[0]}" sits beside a saving percentage, which publishes our rate`);
+        break;
+      }
+    }
+  }
+}
+
 // ── NAP consistency ──────────────────────────────────────────────────────────
 /**
  * The published postal address must match src/configs/business.ts.
@@ -434,6 +500,7 @@ if (LIVE) {
   }
   checkHreflang(parsed);
   checkAddress(parsed);
+  checkPrices(parsed);
   scanned = files.length;
 }
 

@@ -387,7 +387,7 @@ export interface FAQItem {
  * const faqSchema = createFAQSchema([
  *   {
  *     question: "How much does web development cost?",
- *     answer: "Our web development services start at $2,500..."
+ *     answer: "We don't publish fixed prices. Every proposal is built from your budget..."
  *   },
  *   {
  *     question: "How long does it take to build a website?",
