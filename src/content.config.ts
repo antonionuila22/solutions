@@ -2,6 +2,16 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+// Root-relative asset path. A value without the leading slash resolves against
+// the current route, so `photos/x.avif` on /projects/ silently becomes
+// /projects/photos/x.avif and 404s. One such value shipped undetected until an
+// SEO crawl found it, so the schema rejects it now instead of the crawler.
+const assetPath = z
+    .string()
+    .refine((value) => value.startsWith("/") || /^https?:\/\//.test(value), {
+        message: "img must start with / (root relative) or with http(s)://",
+    });
+
 // Reusable base schema
 const searchable = z.object({
     title: z.string(),
@@ -19,7 +29,7 @@ const blog = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
     schema: searchable.extend({
         date: z.date().optional(),
-        img: z.string().optional(),
+        img: assetPath.optional(),
         imageAlt: z.string().default("image"),
         categories: z.array(z.string()).optional(),
         tags: z.array(z.string()).optional(),
@@ -36,7 +46,7 @@ const blog = defineCollection({
 const books = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/books" }),
     schema: searchable.extend({
-        img: z.string(),
+        img: assetPath,
         date: z.string(),
         draft: z.boolean().default(false),
     }),
@@ -47,7 +57,7 @@ const countryareas = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/countryareas" }),
     schema: z.object({
         title: z.string(),
-        img: z.string().optional(),
+        img: assetPath.optional(),
         description: z.string(),
         name: z.string(),
         code: z.string(),
@@ -60,7 +70,7 @@ const countryareas = defineCollection({
 const products = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/products" }),
     schema: searchable.extend({
-        img: z.string(),
+        img: assetPath,
         draft: z.boolean().default(false),
     }),
 });
@@ -69,7 +79,7 @@ const products = defineCollection({
 const projects = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
     schema: searchable.extend({
-        img: z.string(),
+        img: assetPath,
         category: z.string(),
         tags: z.array(z.string()),
         client: z.string().optional(),
@@ -119,7 +129,7 @@ const regions = defineCollection({
         name: z.string(),
         code: z.string(),
         country: z.string(),
-        img: z.string().optional(),
+        img: assetPath.optional(),
         imageAlt: z.string().optional(),
         population: z.string().optional(),
         capital: z.string().optional(),
@@ -154,7 +164,7 @@ const locations = defineCollection({
         stateCode: z.string(),
         country: z.string(),
         region: z.string().optional(),
-        img: z.string(),
+        img: assetPath,
         imageAlt: z.string(),
         population: z.string().optional(),
         timezone: z.string().optional(),
