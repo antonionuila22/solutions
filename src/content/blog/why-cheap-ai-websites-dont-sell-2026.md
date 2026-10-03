@@ -165,7 +165,7 @@ We don't ask you to trust promises. We show you who we are:
 
 We use the most modern tools available, **AI included**, because they make us better and faster. But every decision is made by someone who understands your business and owns the result. That's the entire difference.
 
-Want to see what work built with judgment looks like? [See our projects](/projects/). Ready for a website that actually works for you? Explore our [custom web development](/web-development/) and [UX/UI design](/web-design/), or request a [real, honest quote](/quoter/), no magical "one day" promises.
+Want to see what work built with judgment looks like? [See our projects](/projects/). Ready for a website that actually works for you? Explore our [custom web development](/services/web-development/) and [UX/UI design](/web-design/), or request a [real, honest quote](/quoter/), no magical "one day" promises.
 
 ---
 

@@ -348,7 +348,7 @@ Tenemos experiencia implementando soluciones de pago para empresas de USA y Euro
 
 👉 **[Agenda una consulta gratuita](/contact/)** para discutir tu estrategia de pagos.
 
-👉 **[Conoce nuestros servicios de e-commerce](/web-development/)** con integración de pagos locales.
+👉 **[Conoce nuestros servicios de e-commerce](/services/web-development/)** con integración de pagos locales.
 
 👉 **[Ve cómo ayudamos a otros negocios](/projects/)** a crecer en Latinoamérica.
 

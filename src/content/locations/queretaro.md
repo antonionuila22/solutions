@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Portales corporativos para la industria de Querétaro"
     description: "Sitios bilingües con capacidades y certificaciones para proveedores aeroespaciales y automotrices de El Marqués y los parques industriales."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea para productos de Querétaro"
     description: "E-commerce con Mercado Pago, OXXO y SPEI para bodegas, queserías, marcas y comercios queretanos que venden a todo México."
     href: "/e-commerce/"

@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para empresas de San Salvador"
     description: "Desarrollo de sitios rápidos, bilingües cuando se requiere y bien posicionados para firmas de la Escalón, San Benito y el Centro Histórico."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con pagos salvadoreños"
     description: "Comercio electrónico con Wompi, Pagadito, Transfer365 y entregas en el área metropolitana de San Salvador."
     href: "/e-commerce/"

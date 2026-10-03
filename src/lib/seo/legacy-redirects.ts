@@ -2,6 +2,12 @@
 // Old /locations/{city}-{stateCode} slugs -> current /locations/{slug}/ (trailing slash = canonical),
 // plus renamed service pages and the moved HN store page. Wired into astro.config.mjs `redirects`.
 export const LEGACY_REDIRECTS: Record<string, string> = {
+  // Duplicate service pages folded into their canonical /services/ equivalent.
+  // Each one carried a canonicalOverride pointing here already; the unique
+  // content was merged into the destination first, in the same commit, because
+  // the legacy page was the richer of the two in every case we checked.
+  "/web-development": "/services/web-development/",
+
   // Cannibalization consolidation: intent fully covered by the nearshore hub
   "/outsource-web-development": "/nearshore-development/",
   "/services/social-media-design": "/services/social-media/",

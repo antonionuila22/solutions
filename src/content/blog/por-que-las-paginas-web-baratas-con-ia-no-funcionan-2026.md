@@ -166,7 +166,7 @@ No te pedimos que confíes en promesas. Te mostramos quiénes somos:
 
 Usamos las herramientas más modernas, **IA incluida**, porque nos hacen mejores y más rápidos. Pero cada decisión la toma alguien que entiende tu negocio y se hace responsable del resultado. Esa es toda la diferencia.
 
-¿Quieres ver cómo se ve el trabajo hecho con criterio? [Mira nuestros proyectos](/projects/). ¿Listo para una web que de verdad trabaje para ti? Conoce [nuestro desarrollo web a la medida](/web-development/) y [diseño UX/UI](/web-design/), o pide una [cotización real y honesta](/quoter/), sin promesas mágicas de "1 día".
+¿Quieres ver cómo se ve el trabajo hecho con criterio? [Mira nuestros proyectos](/projects/). ¿Listo para una web que de verdad trabaje para ti? Conoce [nuestro desarrollo web a la medida](/services/web-development/) y [diseño UX/UI](/web-design/), o pide una [cotización real y honesta](/quoter/), sin promesas mágicas de "1 día".
 
 ---
 

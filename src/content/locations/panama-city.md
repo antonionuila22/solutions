@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web corporativos para el área bancaria"
     description: "Portales institucionales para bancos, aseguradoras, bufetes y consultoras con oficinas en Obarrio, Calle 50 y Costa del Este."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con Yappy para Panamá"
     description: "E-commerce con Yappy, tarjetas y ACH para distribuidores y marcas que venden desde Ciudad de Panamá al resto del país."
     href: "/e-commerce/"

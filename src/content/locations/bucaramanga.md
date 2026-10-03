@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio corporativo para empresas de Bucaramanga"
     description: "Páginas rápidas y posicionadas para constructoras, clínicas y empresas de servicios de Cabecera, Cañaveral y el área metropolitana."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda virtual para calzado y confección de Santander"
     description: "Catálogo mayorista y detal con PSE, Nequi, transportadoras y facturación DIAN para fabricantes de Bucaramanga."
     href: "/e-commerce/"

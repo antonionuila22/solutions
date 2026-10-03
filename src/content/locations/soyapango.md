@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para la industria de Soyapango"
     description: "Portales bilingües con capacidades, certificaciones y catálogo para fábricas y distribuidoras del Bulevar del Ejército."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con pagos de El Salvador"
     description: "Comercio electrónico con pasarelas locales y entrega por colonias para comercios, farmacias y restaurantes de Soyapango."
     href: "/e-commerce/"

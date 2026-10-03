@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio web profesional en Chitré"
     description: "Sitio rápido y optimizado para móvil que posiciona su negocio de Chitré en Google y convierte las visitas en llamadas y mensajes de WhatsApp."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea con Yappy para Azuero"
     description: "Comercio electrónico con pagos panameños, envíos a Herrera y Los Santos e inventario conectado, pensado para comercios de Chitré que quieren vender a todo el país."
     href: "/e-commerce/"

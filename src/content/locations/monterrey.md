@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Desarrollo web corporativo en Monterrey"
     description: "Sitios institucionales y portales industriales bilingües para empresas del área metropolitana de Monterrey."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea para el mercado regiomontano"
     description: "E-commerce con Mercado Pago, OXXO y SPEI para marcas y distribuidores que venden desde Monterrey a todo México."
     href: "/e-commerce/"

@@ -93,7 +93,7 @@ localServices:
     href: "/e-commerce/"
   - title: "Catálogo B2B para fábricas de calzado y cerámica de Cúcuta"
     description: "Vitrina mayorista con acceso por distribuidor, fichas de producto y pedidos en línea para la industria del calzado, la marroquinería y la cerámica de Norte de Santander."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Posicionamiento SEO local en Cúcuta"
     description: "Optimización para que su negocio aparezca cuando alguien busca sus servicios en Cúcuta, Villa del Rosario o Los Patios, con ficha de Google y contenido local."
     href: "/services/seo/"

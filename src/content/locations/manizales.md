@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para empresas de Manizales"
     description: "Páginas corporativas rápidas y bien posicionadas para universidades, exportadores y servicios profesionales de Manizales."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas virtuales con PSE y Nequi"
     description: "Comercio electrónico para tostadores de café, marcas y comercios de Manizales que quieren vender a toda Colombia."
     href: "/e-commerce/"

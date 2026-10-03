@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio corporativo para industria del Valle"
     description: "Portales bilingües con catálogo y certificaciones para manufactureras y exportadoras del corredor Cali-Yumbo."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda virtual para marcas de Cali"
     description: "Comercio electrónico con PSE, Nequi, transportadoras y facturación DIAN para moda, alimentos y cosmética caleña."
     href: "/e-commerce/"

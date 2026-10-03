@@ -146,7 +146,7 @@ We've built over 100 e-commerce websites across different platforms. This is wha
 - Hosting: $50-500/month
 - Maintenance: $500-2,000/month
 
-> **Need custom e-commerce development?** Our team specializes in [custom web applications](/web-development/) and [online stores](/e-commerce/).
+> **Need custom e-commerce development?** Our team specializes in [custom web applications](/services/web-development/) and [online stores](/e-commerce/).
 
 ---
 

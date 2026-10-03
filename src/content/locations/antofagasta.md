@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para proveedores mineros"
     description: "Portales con certificaciones, servicios y contacto comercial directo para contratistas e ingenierías de Antofagasta y La Negra."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas online con Webpay y boleta electrónica"
     description: "Comercio electrónico para ferreterías industriales, distribuidoras y comercios de Antofagasta con despacho por comuna y SII integrado."
     href: "/e-commerce/"

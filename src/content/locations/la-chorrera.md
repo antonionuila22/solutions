@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para empresas de Panamá Oeste"
     description: "Sitios corporativos para constructoras, clínicas y colegios que atienden a las nuevas urbanizaciones de La Chorrera y Arraiján."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con Yappy"
     description: "E-commerce con Yappy, tarjetas y facturación electrónica para ferreterías, farmacias y comercios del centro de La Chorrera."
     href: "/e-commerce/"

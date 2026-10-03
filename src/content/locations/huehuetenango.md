@@ -89,7 +89,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios de origen para café de Huehuetenango"
     description: "Presencia web bilingüe para fincas, beneficios y cooperativas de los Cuchumatanes que venden a tostadores internacionales."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea para el occidente"
     description: "E-commerce con pagos locales y FEL de la SAT para ferreterías, agroservicios y comercios de la cabecera de Huehuetenango."
     href: "/e-commerce/"

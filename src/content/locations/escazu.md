@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio corporativo bilingüe para firmas de Escazú"
     description: "Página en español e inglés para bufetes, consultoras, firmas contables y clínicas de Guachipelín y San Rafael de Escazú, con formularios y agenda en línea."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea con SINPE Móvil para comercios de Escazú"
     description: "Comercio electrónico con SINPE Móvil, tarjetas, factura electrónica de Hacienda y entregas en la Gran Área Metropolitana, pensado para boutiques y tiendas gourmet de Escazú."
     href: "/e-commerce/"

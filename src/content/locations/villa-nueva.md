@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio corporativo para la industria de Villa Nueva"
     description: "Portal bilingüe con capacidades, certificaciones y contacto comercial para maquilas y fábricas del corredor de la Carretera al Pacífico."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea con pagos locales y FEL"
     description: "Comercio electrónico para distribuidoras, ferreterías y comercios de Villa Nueva con cobro con tarjeta guatemalteca y factura electrónica de la SAT."
     href: "/e-commerce/"

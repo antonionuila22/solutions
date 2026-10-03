@@ -649,6 +649,6 @@ Building custom forms and integrations takes time and technical expertise. If yo
 
 👉 **[View our portfolio](/projects/)** of custom web applications we've built
 
-👉 **[Explore our web development services](/web-development/)** for more details
+👉 **[Explore our web development services](/services/web-development/)** for more details
 
 **Your website deserves modern technology. Let's build it right.**

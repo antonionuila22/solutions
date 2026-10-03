@@ -492,7 +492,7 @@ En Code Brand, hemos implementado chatbots para negocios de todos los tamaños. 
 
 👉 **[Agenda una consulta gratuita](/contact/)** para evaluar tu caso.
 
-👉 **[Conoce nuestros servicios de desarrollo web](/web-development/)** con integración de IA.
+👉 **[Conoce nuestros servicios de desarrollo web](/services/web-development/)** con integración de IA.
 
 👉 **[Ve nuestros proyectos](/projects/)** con implementaciones innovadoras.
 

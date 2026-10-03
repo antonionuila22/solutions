@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio web bilingüe para negocios de David y Boquete"
     description: "Página en español e inglés, rápida en móvil y optimizada para las búsquedas de Chiriquí, con contacto directo por WhatsApp y formularios que llegan a su equipo."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea con Yappy para comercios de Chiriquí"
     description: "Comercio electrónico con Yappy, tarjetas y ACH, factura electrónica DGI y envíos a toda la provincia y a la capital, pensado para comercios y productores de David."
     href: "/e-commerce/"

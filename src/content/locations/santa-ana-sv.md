@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para cafetaleros y exportadores de Santa Ana"
     description: "Portales bilingües con trazabilidad, perfiles de taza y contacto para compradores, pensados para fincas y beneficios del occidente."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea para comercios del occidente"
     description: "Comercio electrónico con pasarelas salvadoreñas, cobro en dólares y entregas en Santa Ana, Chalchuapa y Metapán."
     href: "/e-commerce/"

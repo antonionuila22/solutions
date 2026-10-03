@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios con reservas para hoteles de Guanacaste"
     description: "Presencia web bilingüe con motor de reservas para hoteles, villas y tour operadores de Liberia, Papagayo y Playas del Coco."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea para Liberia"
     description: "E-commerce con SINPE Móvil, tarjetas y factura electrónica para comercios, tiendas de surf y productores del centro de Liberia."
     href: "/e-commerce/"

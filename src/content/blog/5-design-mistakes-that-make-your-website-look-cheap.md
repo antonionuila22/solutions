@@ -16,7 +16,7 @@ Your website is often the first impression a customer has of your brand. In toda
 
 According to [Stanford Web Credibility Research](https://credibility.stanford.edu/), **75% of users admit to making judgments about a company's credibility based on their website's design**. That's a massive number, and it means your design is directly impacting your bottom line.
 
-In this comprehensive guide, we'll walk you through the 5 most common design mistakes that make websites look cheap, unprofessional, and outdated, and more importantly, we'll show you exactly how to avoid them and create a website that builds trust, converts visitors, and represents your brand professionally. Combined with effective [web development](/web-development/) practices, your site can become a powerful business asset.
+In this comprehensive guide, we'll walk you through the 5 most common design mistakes that make websites look cheap, unprofessional, and outdated, and more importantly, we'll show you exactly how to avoid them and create a website that builds trust, converts visitors, and represents your brand professionally. Combined with effective [web development](/services/web-development/) practices, your site can become a powerful business asset.
 
 ## 1. Excessive Use of Bright or Poorly Matched Colors
 
@@ -206,7 +206,7 @@ Visual coherence means all your images work together to tell a consistent brand 
 
 5. **Add meaningful alt text**: Helps SEO and accessibility
 
-**Investment tip**: Professional photography or custom illustrations may seem expensive upfront, but they pay for themselves in increased credibility and conversions. We've seen conversion rate increases of 30-40% simply from upgrading from stock photos to custom brand photography. And remember, professional [web development](/web-development/) ensures your images load fast and look great on all devices.
+**Investment tip**: Professional photography or custom illustrations may seem expensive upfront, but they pay for themselves in increased credibility and conversions. We've seen conversion rate increases of 30-40% simply from upgrading from stock photos to custom brand photography. And remember, professional [web development](/services/web-development/) ensures your images load fast and look great on all devices.
 
 Need help creating a consistent visual identity for your website? [Our branding team](/branding/) can help with everything from photography direction to custom illustrations that truly represent your brand.
 
@@ -262,7 +262,7 @@ Consistency in design creates **predictability**, and predictability creates **c
 
 **Real-world impact**: Companies with strong design systems see 40% faster design-to-development time and significantly higher user satisfaction scores. This consistency also improves your [SEO performance](/seo/) by creating a better user experience.
 
-Our [web development services](/web-development/) include comprehensive design systems for every client website, ensuring that your site not only looks professional today but remains consistent as it grows and evolves.
+Our [web development services](/services/web-development/) include comprehensive design systems for every client website, ensuring that your site not only looks professional today but remains consistent as it grows and evolves.
 
 ---
 

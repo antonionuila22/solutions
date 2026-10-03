@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para empresas heredianas"
     description: "Sitios corporativos bilingües para consultoras, ingenierías y proveedores de las zonas francas de Heredia y Belén."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con SINPE Móvil"
     description: "E-commerce con SINPE Móvil, tarjetas y factura electrónica para comercios, cafés y viveros de Heredia."
     href: "/e-commerce/"

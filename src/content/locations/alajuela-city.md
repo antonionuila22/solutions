@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para la zona franca y la logística"
     description: "Portales bilingües con catálogo de capacidades y formularios comerciales para proveedores del Coyol y agencias de carga de Alajuela."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con SINPE Móvil"
     description: "Comercio electrónico con pasarelas costarricenses, inventario y facturación electrónica para comercios de Alajuela y su cantón."
     href: "/e-commerce/"

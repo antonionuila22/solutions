@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio corporativo para empresas de Cartago"
     description: "Páginas bilingües y rápidas para proveedores de zona franca, manufactureras y empresas de servicios del cantón central y La Unión."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea con SINPE Móvil"
     description: "Comercio electrónico con SINPE Móvil, tarjetas y factura electrónica de Hacienda para comercios y productores de Cartago."
     href: "/e-commerce/"

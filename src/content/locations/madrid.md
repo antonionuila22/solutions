@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Webs corporativas para empresas de Madrid"
     description: "Sitios rápidos y conformes al RGPD para despachos, clínicas y consultoras de Madrid capital y su área metropolitana."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas online con Bizum y Redsys"
     description: "Comercio electrónico para marcas y comercios de Madrid que quieren vender en toda España con los pagos que sus clientes ya usan."
     href: "/e-commerce/"

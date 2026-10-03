@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para empresas de CDMX"
     description: "Páginas rápidas y sobrias para despachos, consultoras y desarrolladoras de Reforma, Polanco y Santa Fe en Ciudad de México."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con Mercado Pago y OXXO"
     description: "Comercio electrónico para marcas y mayoristas de Ciudad de México que venden a toda la República."
     href: "/e-commerce/"

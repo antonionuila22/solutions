@@ -107,7 +107,7 @@ Google's Helpful Content update continues to evolve:
 - Desktop-only optimizations are increasingly irrelevant
 - Mobile experience determines rankings
 
-> **Is your website mobile-optimized?** Our [web development services](/web-development/) ensure your site meets Google's Core Web Vitals standards.
+> **Is your website mobile-optimized?** Our [web development services](/services/web-development/) ensure your site meets Google's Core Web Vitals standards.
 
 ---
 
@@ -355,7 +355,7 @@ If your traffic dropped, it's a signal to improve, not to find new tricks. The t
 **Our SEO services include:**
 - [Technical SEO Audits](/seo/)
 - [Content Strategy & Optimization](/digital-marketing/)
-- [Core Web Vitals Optimization](/web-development/)
+- [Core Web Vitals Optimization](/services/web-development/)
 
 ---
 

@@ -190,7 +190,7 @@ And since **60%+ of traffic now comes from mobile devices**, if your landing pag
 
 **Pro tip**: Test your landing page on actual mobile devices (iPhone, Android), not just desktop simulators. The experience is often different. For more on avoiding common design issues, read our guide on [design mistakes that make websites look cheap](/blog/5-design-mistakes-that-make-your-website-look-cheap/).
 
-Need a blazing-fast, mobile-optimized landing page? [Our web development team](/web-development/) builds high-performance pages that load in under 2 seconds.
+Need a blazing-fast, mobile-optimized landing page? [Our web development team](/services/web-development/) builds high-performance pages that load in under 2 seconds.
 
 ---
 

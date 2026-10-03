@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para empresas de Santiago"
     description: "Páginas rápidas y optimizadas para búsquedas locales, con mapa, horarios y WhatsApp, pensadas para comercios y servicios de Santiago de Veraguas."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con Yappy y envíos en Veraguas"
     description: "Comercio electrónico con los pagos que se usan en Panamá y zonas de entrega por corregimiento para vender desde Santiago a toda la provincia."
     href: "/e-commerce/"

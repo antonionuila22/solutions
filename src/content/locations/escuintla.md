@@ -89,7 +89,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para exportadores"
     description: "Presencia web bilingüe para ingenios, extractoras y empresas logísticas de Escuintla que negocian con compradores internacionales."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea para la costa sur"
     description: "E-commerce con pagos locales y FEL de la SAT para ferreterías, agroservicios y distribuidoras de Escuintla y Puerto San José."
     href: "/e-commerce/"

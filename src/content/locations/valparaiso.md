@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para negocios de Valparaíso"
     description: "Páginas rápidas y optimizadas para búsquedas locales, con mapa, horarios y WhatsApp, para comercios, estudios y servicios del Almendral y los cerros."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas online con Webpay desde Valparaíso"
     description: "Comercio electrónico con retiro en local, despacho en la Quinta Región y envíos a todo Chile para tiendas de diseño y productos porteños."
     href: "/e-commerce/"

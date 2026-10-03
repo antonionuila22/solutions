@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para empresas tapatías"
     description: "Sitios corporativos y de captación para despachos, clínicas y constructoras de Providencia, Zapopan y Puerta de Hierro."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con pagos mexicanos"
     description: "E-commerce con Mercado Pago, OXXO y SPEI para marcas de moda, tequila y comercio de Guadalajara."
     href: "/e-commerce/"

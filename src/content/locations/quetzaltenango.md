@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para colegios y escuelas de español de Xela"
     description: "Portales institucionales y bilingües con admisiones, reservas y pagos para instituciones educativas de Quetzaltenango."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea para textiles y comercios de Quetzaltenango"
     description: "Catálogos y tiendas con pasarelas guatemaltecas y envíos nacionales para talleres de Salcajá, Cantel y comercios de la ciudad."
     href: "/e-commerce/"

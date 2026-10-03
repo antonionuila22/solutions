@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web corporativos en Medellín"
     description: "Páginas rápidas y optimizadas para constructoras, clínicas, firmas y servicios profesionales de El Poblado y Laureles en Medellín."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas virtuales para moda y retail"
     description: "Comercio electrónico con PSE, Nequi y transportadoras para marcas de Itagüí, Sabaneta y el Centro de Medellín."
     href: "/e-commerce/"

@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web con reservas para el turismo de Puntarenas"
     description: "Páginas en español e inglés con motor de reservas para hoteles, cabinas y operadores de tours del Golfo de Nicoya."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea con SINPE Móvil"
     description: "E-commerce con SINPE Móvil y tarjetas para pescaderías, comercios y marcas de productos del mar de Puntarenas."
     href: "/e-commerce/"

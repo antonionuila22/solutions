@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios con reservas para hoteles de Viña"
     description: "Sitios bilingües con motor de reservas y pago en línea para hoteles, apart hoteles y arriendos turísticos de Reñaca, Concón y el borde costero de Viña del Mar."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea con Webpay y boleta SII"
     description: "Comercio electrónico para tiendas del Plan, la Avenida Libertad y comercios de Viña del Mar que quieren vender durante todo el año y no solo en verano."
     href: "/e-commerce/"

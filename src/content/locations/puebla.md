@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para la industria de Puebla"
     description: "Portales bilingües con capacidades y certificaciones para proveedores automotrices y fabricantes de Cuautlancingo y FINSA."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea para productos poblanos"
     description: "E-commerce con Mercado Pago, OXXO y SPEI para Talavera, gastronomía típica, moda y comercios de Puebla que venden a todo México."
     href: "/e-commerce/"

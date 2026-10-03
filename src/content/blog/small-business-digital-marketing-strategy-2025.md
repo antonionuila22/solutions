@@ -73,7 +73,7 @@ Everything in digital marketing leads back to your website. If your website does
 - [ ] About page with team photos
 - [ ] FAQ section addressing common objections
 
-> **Need a conversion-optimized website?** Our [web development services](/web-development/) include all these essentials built-in.
+> **Need a conversion-optimized website?** Our [web development services](/services/web-development/) include all these essentials built-in.
 
 ### Google Business Profile (Critical for Local)
 
@@ -593,7 +593,7 @@ Start with the fundamentals, track your results, and build from there. Your bigg
 *Need help implementing your digital marketing strategy? [Contact Codebrand](/contact/) for a free consultation and custom plan.*
 
 **Explore our services:**
-- [Web Development](/web-development/) - Build a website that converts
+- [Web Development](/services/web-development/) - Build a website that converts
 - [SEO Services](/seo/) - Get found on Google
 - [Digital Marketing](/digital-marketing/) - Full-service marketing support
 - [Landing Pages](/landing-pages/) - High-converting campaign pages

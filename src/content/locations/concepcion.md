@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio corporativo para proveedores industriales del Biobío"
     description: "Página con fichas técnicas, certificaciones y cotizador para empresas que abastecen a la industria forestal, portuaria y petroquímica del Gran Concepción."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda online con Webpay para comercios de Concepción"
     description: "Comercio electrónico con Webpay, Mercado Pago, boleta electrónica del SII y despacho por courier a todo Chile, pensado para tiendas y emprendimientos de Concepción."
     href: "/e-commerce/"

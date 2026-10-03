@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para pymes de Temuco"
     description: "Páginas rápidas y optimizadas para búsquedas locales, con mapa, horarios y WhatsApp, para comercios, estudios y clínicas de Temuco."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas online con Webpay para La Araucanía"
     description: "Comercio electrónico con despacho por comuna y envíos a todo Chile para productores y comercios de Temuco."
     href: "/e-commerce/"

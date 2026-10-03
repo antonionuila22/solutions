@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para negocios de Usulután"
     description: "Páginas optimizadas para búsquedas locales, con mapa, horarios y WhatsApp, pensadas para comercios, clínicas y agroservicios de la ciudad."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea para café y productos del oriente"
     description: "Comercio electrónico con pagos de El Salvador y envíos nacionales e internacionales para cooperativas y marcas de Usulután."
     href: "/e-commerce/"

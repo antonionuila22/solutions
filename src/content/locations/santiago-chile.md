@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para empresas de Santiago"
     description: "Diseño y desarrollo de sitios rápidos y bien posicionados para consultoras, clínicas y empresas de servicios de Las Condes, Providencia y Vitacura."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con Webpay y Mercado Pago"
     description: "Comercio electrónico con pasarelas chilenas, boleta electrónica del SII y despacho por comuna para marcas de la Región Metropolitana."
     href: "/e-commerce/"

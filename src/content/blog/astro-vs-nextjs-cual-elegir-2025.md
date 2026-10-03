@@ -433,7 +433,7 @@ En Codebrand, hemos construido proyectos con ambos frameworks, y como [agencia d
 
  **[Agenda una consulta gratuita](/contact/)** para discutir tu proyecto.
 
- **[Conoce nuestros servicios de desarrollo web](/web-development/)** con tecnología moderna.
+ **[Conoce nuestros servicios de desarrollo web](/services/web-development/)** con tecnología moderna.
 
  **[Ve nuestros proyectos](/projects/)** construidos con Astro, Next.js y más.
 

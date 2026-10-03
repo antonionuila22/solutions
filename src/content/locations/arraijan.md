@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para constructoras e inmobiliarias de Arraiján"
     description: "Catálogos de proyectos, fichas de vivienda y formularios de preventa para promotoras que urbanizan Panamá Oeste."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con Yappy"
     description: "Comercio electrónico con Yappy, tarjetas y entrega a domicilio para comercios de Arraiján que quieren vender a todo Panamá."
     href: "/e-commerce/"

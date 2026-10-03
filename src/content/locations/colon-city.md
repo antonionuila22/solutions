@@ -93,7 +93,7 @@ localServices:
     href: "/e-commerce/"
   - title: "Sitio corporativo para logística y servicios portuarios"
     description: "Página con cotizador, seguimiento y contacto para freight forwarders, agencias navieras y depósitos aduaneros de Colón."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Sistema de inventario y pedidos para bodegas de Colón"
     description: "Software a la medida para controlar existencias, pedidos y despachos entre la Zona Libre, los puertos y sus clientes en la región."
     href: "/custom-software-development/"

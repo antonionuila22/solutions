@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio con reservas directas para hoteles de Cancún"
     description: "Web multilingüe con motor de reservas, pagos internacionales y sincronización con su channel manager para hoteles de la Zona Hotelera y la Riviera Maya."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Plataforma de tours y experiencias"
     description: "Sistema de reservas con calendario, disponibilidad, varias monedas y CFDI para operadores de tours y traslados en Cancún."
     href: "/custom-software-development/"

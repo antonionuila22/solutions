@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Portales corporativos para la acuicultura"
     description: "Sitios bilingües con servicios, certificaciones y contacto comercial para proveedores del salmón en Puerto Montt y Chinquihue."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda online con Webpay para Los Lagos"
     description: "E-commerce con Webpay y Mercado Pago para productores, comercios y marcas de Puerto Montt que venden a todo Chile."
     href: "/e-commerce/"

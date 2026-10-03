@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para empresas de la GAM"
     description: "Diseño y desarrollo de sitios rápidos y bien posicionados para consultoras, clínicas y empresas de servicios de San José, Escazú y Santa Ana."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas en línea con SINPE Móvil y tarjetas"
     description: "Comercio electrónico con pagos costarricenses, comprobantes electrónicos y envíos dentro del Valle Central para comercios de San José."
     href: "/e-commerce/"

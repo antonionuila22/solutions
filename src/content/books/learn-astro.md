@@ -1141,7 +1141,7 @@ Congratulations! You now have a solid foundation in Astro.js. Here's what to exp
 
 You now have everything you need to build lightning-fast websites with Astro. The best way to learn is by building!
 
-**Need help building your next project?** [Our web development team](/web-development/) specializes in Astro.js and can help you create high-performance websites that convert.
+**Need help building your next project?** [Our web development team](/services/web-development/) specializes in Astro.js and can help you create high-performance websites that convert.
 
 ---
 

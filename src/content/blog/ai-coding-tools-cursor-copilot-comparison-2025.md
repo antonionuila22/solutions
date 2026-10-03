@@ -338,7 +338,7 @@ Ofrecemos:
 
 👉 **[Agenda una consulta](/contact/)** para discutir cómo AI puede acelerar tu equipo.
 
-👉 **[Conoce nuestros servicios de desarrollo](/web-development/)** con tecnología de vanguardia.
+👉 **[Conoce nuestros servicios de desarrollo](/services/web-development/)** con tecnología de vanguardia.
 
 👉 **[Ve nuestros proyectos](/projects/)** construidos con las mejores prácticas de la industria.
 

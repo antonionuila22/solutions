@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio bilingüe con reservas para hoteles de Cartagena"
     description: "Web en español e inglés con motor de reservas, pagos internacionales y Registro Nacional de Turismo para hoteles del Centro Histórico y Bocagrande."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Plataforma de tours y experiencias en el Caribe"
     description: "Sistema de reservas con calendario, pago anticipado y facturación DIAN para operadores de lanchas y tours desde Cartagena."
     href: "/custom-software-development/"

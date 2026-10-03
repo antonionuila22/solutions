@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Web corporativa para industria de Bizkaia"
     description: "Sitios bilingües con catálogo técnico y certificaciones para fabricantes e ingenierías de Bilbao y su área metropolitana."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda online con Bizum para comercios de Bilbao"
     description: "Comercio electrónico con TPV virtual de Redsys, Bizum y envíos a toda España para tiendas del Casco Viejo, Indautxu y el Ensanche."
     href: "/e-commerce/"

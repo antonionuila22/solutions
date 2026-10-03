@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio web bilingüe para fincas y exportadores de Cobán"
     description: "Página en español e inglés con origen, perfil de taza, certificaciones y contacto directo para compradores de café y cardamomo de Alta Verapaz."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda en línea para productos de las Verapaces"
     description: "Comercio electrónico con pagos guatemaltecos, FEL y envíos nacionales para vender té, chocolate, artesanía o café tostado desde Cobán."
     href: "/e-commerce/"

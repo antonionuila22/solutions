@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para la industria de Barranquilla"
     description: "Portales bilingües con fichas técnicas, certificaciones y contacto comercial para empresas de la Vía 40 y la Zona Franca."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas virtuales con PSE y Nequi"
     description: "Comercio electrónico con pasarelas colombianas, facturación DIAN y envíos a toda la costa para comercios del norte de Barranquilla."
     href: "/e-commerce/"

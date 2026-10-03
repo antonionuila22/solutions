@@ -529,7 +529,7 @@ En Code Brand, hemos ayudado a empresas a diseñar e implementar arquitecturas f
 
 👉 **[Agenda una consulta](/contact/)** para discutir tu arquitectura.
 
-👉 **[Conoce nuestros servicios de desarrollo](/web-development/)** para proyectos de cualquier escala.
+👉 **[Conoce nuestros servicios de desarrollo](/services/web-development/)** para proyectos de cualquier escala.
 
 👉 **[Ve nuestros proyectos](/projects/)** con arquitecturas modernas.
 

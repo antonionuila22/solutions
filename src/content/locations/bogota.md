@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitio corporativo para empresas de Bogotá"
     description: "Páginas rápidas y bien posicionadas para firmas, consultoras y clínicas de Chapinero, Usaquén y el Centro Internacional."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tienda virtual con PSE y Nequi"
     description: "Comercio electrónico con pasarelas colombianas, transportadoras y facturación DIAN para marcas que despachan desde Bogotá a todo el país."
     href: "/e-commerce/"

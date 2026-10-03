@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios corporativos para la capital"
     description: "Presencia web profesional para bufetes, aseguradoras, constructoras y colegios de las zonas 10, 14 y 15 de Ciudad de Guatemala."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "E-commerce con FEL integrada"
     description: "Tiendas en línea con pagos con tarjeta, transferencias y Factura Electrónica en Línea para comercios de Ciudad de Guatemala."
     href: "/e-commerce/"

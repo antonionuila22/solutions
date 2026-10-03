@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Webs corporativas multilingües para Barcelona"
     description: "Sitios en castellano, catalán e inglés orientados a captación por Google para despachos, clínicas y empresas del Eixample y Sarrià."
-    href: "/web-development/"
+    href: "/services/web-development/"
   - title: "Tiendas online con Bizum y Redsys"
     description: "Comercio electrónico con pagos españoles, envíos a toda España y facturación integrada para comercios de Gràcia, el Born y el 22@."
     href: "/e-commerce/"

@@ -412,7 +412,7 @@ En Code Brand, ayudamos a negocios a integrar inteligencia artificial de forma p
 
 👉 **[Agenda una consulta gratuita](/contact/)** para evaluar tu caso.
 
-👉 **[Conoce nuestros servicios de desarrollo web](/web-development/)** con tecnología de vanguardia.
+👉 **[Conoce nuestros servicios de desarrollo web](/services/web-development/)** con tecnología de vanguardia.
 
 👉 **[Ve nuestros casos de éxito](/projects/)** implementando soluciones innovadoras.
 

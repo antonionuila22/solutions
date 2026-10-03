@@ -191,7 +191,7 @@ With so many themes and plugins, quality varies dramatically. Bad choices can le
 
 **Bottom line**: WordPress offers unmatched flexibility and power, but requires more involvement (or budget for professional help).
 
-Need expert help building or managing your WordPress site? [Our web development team](/web-development/) specializes in creating high-performance WordPress websites that scale with your business.
+Need expert help building or managing your WordPress site? [Our web development team](/services/web-development/) specializes in creating high-performance WordPress websites that scale with your business.
 
 ---
 
@@ -352,7 +352,7 @@ Want to create a content strategy that actually drives traffic? [Our SEO service
 
 **Pro tip**: Choose wisely from the start based on your 3-5 year vision, not just immediate needs.
 
-If you're considering migrating platforms or starting fresh, [our web development team](/web-development/) can handle the entire process, from strategy to launch.
+If you're considering migrating platforms or starting fresh, [our web development team](/services/web-development/) can handle the entire process, from strategy to launch.
 
 ---
 
@@ -409,6 +409,6 @@ Whether you choose Squarespace, WordPress, or Webflow, our team has deep experti
 
 👉 **[View our web design portfolio](/projects/)** to see examples of beautiful, high-performing sites we've built on all three platforms.
 
-👉 **[Explore our web development services](/web-development/)** to learn how we can help you launch or rebuild your website.
+👉 **[Explore our web development services](/services/web-development/)** to learn how we can help you launch or rebuild your website.
 
 **Your website is too important to settle for "good enough." Let's build something exceptional.**
