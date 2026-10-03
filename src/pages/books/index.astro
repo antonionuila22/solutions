@@ -148,8 +148,11 @@ const categories = [
                   <div class="relative overflow-hidden">
                     <img
                       loading="lazy"
-                      src={`/${img}`}
+                      decoding="async"
+                      src={img}
                       alt={`Book cover: ${title}`}
+                      width="400"
+                      height="256"
                       class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div class="absolute top-4 right-4">
