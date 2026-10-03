@@ -33,9 +33,12 @@ const { title, name, region, code, img, description } = data;
 // and identical-title-and-H1 issues flagged by SE Ranking.
 // Every country page except the US is written in Spanish.
 const isSpanish = country.id !== "usa";
+// Kept short enough that the longest country name in the collection still
+// lands under 60 characters, which is where Google truncates. The previous
+// wording pushed El Salvador and United States past it.
 const seoTitle = isSpanish
-    ? `Agencia de Desarrollo Web y Diseño en ${name} | Codebrand`
-    : `Web Development & Digital Agency in ${name} | Codebrand`;
+    ? `Agencia de Desarrollo Web en ${name} | Codebrand`
+    : `Web Development Agency in ${name} | Codebrand`;
 const h1Heading = isSpanish ? `${title}: Desarrollo Web en ${name}` : `${title}: Web Development in ${name}`;
 const t = isSpanish
     ? {

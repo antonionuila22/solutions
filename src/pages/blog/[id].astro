@@ -86,7 +86,10 @@ const formattedDate =
 // SEO optimization, keep title ≤ 70 chars and description ≤ 160 chars
 const seoTitle = buildPageTitle(title, {
   seoTitle: data.seoTitle,
-  suffix: "Codebrand Blog",
+  // "Codebrand" rather than "Codebrand Blog": the shorter suffix buys five
+  // characters of headline on every post, and /blog/ is already obvious from
+  // the URL and the breadcrumb.
+  suffix: "Codebrand",
 });
 const rawDesc =
   description ||

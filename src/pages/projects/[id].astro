@@ -43,7 +43,9 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
 // SEO, keep title ≤ 70 chars and description ≤ 160 chars
 const seoTitleFinal = buildPageTitle(project.data.title, {
   seoTitle: project.data.seoTitle,
-  suffix: "Proyectos Codebrand",
+  // Was "Proyectos Codebrand", a Spanish suffix on pages whose bodies are
+  // mostly English, and 9 characters longer than the brand alone.
+  suffix: "Codebrand",
 });
 const seoDescription = project.data.description.length > 160
   ? project.data.description.slice(0, 157).replace(/\s+\S*$/, "").trimEnd() + "…"

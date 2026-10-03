@@ -22,7 +22,11 @@
  * respeta sin tocarlo.
  */
 
-export const MAX_TITLE_LENGTH = 70;
+// 60, not 70. Google's title column is about 580px wide, which is roughly 60
+// characters, and everything past it is replaced by an ellipsis in the result.
+// A title that gets cut there loses exactly the words placed last, which on
+// this site is the brand.
+export const MAX_TITLE_LENGTH = 60;
 
 const BRAND = "Codebrand";
 
@@ -42,7 +46,9 @@ function trimToWords(text: string, limit: number): string {
   const lastSpace = cut.lastIndexOf(" ");
   // Si la primera palabra ya no cabe, no hay boundary que respetar.
   const base = lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
-  return base.replace(/[\s,.;:|·]+$/, "");
+  // "&" and "-" matter here too: trimming mid-phrase used to leave titles
+  // ending in a dangling conjunction, e.g. "Edge SQLite Setup, Costs &".
+  return base.replace(/[\s,.;:|·&\-–—/+]+$/, "");
 }
 
 export function buildPageTitle(title: string, options: PageTitleOptions = {}): string {

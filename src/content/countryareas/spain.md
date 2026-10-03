@@ -6,7 +6,7 @@ region: Europe
 author: Ramon Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en España. Creamos soluciones digitales personalizadas para empresas que buscan calidad, innovación y resultados reales en Europa.
+description: Agencia de diseño y desarrollo web en España. Creamos sitios y plataformas a medida para empresas que buscan calidad y resultados medibles.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en España

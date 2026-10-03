@@ -6,7 +6,7 @@ region: Central America
 author: Ramon Nuila
 img: /photos/teamcode.webp
 readtime: 5
-description: Agencia de diseño y desarrollo web en Panamá. Creamos soluciones digitales personalizadas para empresas panameñas que buscan calidad, innovación y resultados reales.
+description: Agencia de diseño y desarrollo web en Panamá. Creamos sitios y plataformas a medida para empresas panameñas que buscan calidad y resultados medibles.
 ---
 
 ## Agencia de Diseño y Desarrollo Web en Panamá
