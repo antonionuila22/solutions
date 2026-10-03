@@ -37,12 +37,20 @@ export const BUSINESS_INFO = {
   },
 
   // Physical Address (Headquarters)
+  // Confirmed by the owner on 2026-10-03. The postal code read 21102 here and in
+  // two layouts holding their own copy; it is 50200.
+  //
+  // Those two layouts still hold literal copies, and have to: their JSON-LD is
+  // emitted with is:inline, which Astro passes through verbatim without
+  // evaluating expressions, so the values cannot be read from here. scripts/
+  // seo-check.mjs asserts that what every page publishes matches this object,
+  // which is what actually stops the three copies drifting apart again.
   address: {
     street: "Edificio Nuevos Horizontes",
     city: "San Pedro Sula",
     region: "Cortés",
     regionCode: "CR",
-    postalCode: "21102",
+    postalCode: "50200",
     country: "Honduras",
     countryCode: "HN",
   },

@@ -216,6 +216,58 @@ function checkPage(file, html, pages) {
   return { page, html };
 }
 
+// ── NAP consistency ──────────────────────────────────────────────────────────
+/**
+ * The published postal address must match src/configs/business.ts.
+ *
+ * Two layouts emit their organization schema with is:inline, which Astro passes
+ * through verbatim, so those blocks cannot read the shared config and hold
+ * literal copies instead. Three copies of an address drift: the postal code was
+ * already wrong in all three when the owner confirmed it. This rule is what
+ * keeps them in step, since the import cannot.
+ */
+function checkAddress(parsed) {
+  const source = readFileSync(join("src", "configs", "business.ts"), "utf8");
+  const field = (name) => (source.match(new RegExp(`${name}:\\s*"([^"]*)"`)) || [])[1];
+  const expected = {
+    streetAddress: field("street"),
+    addressLocality: field("city"),
+    addressRegion: field("region"),
+    postalCode: field("postalCode"),
+    addressCountry: field("countryCode"),
+  };
+  if (!expected.postalCode) return; // config shape changed; say nothing rather than guess
+
+  for (const { page, html } of parsed) {
+    for (const m of html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+      let parsedJson;
+      try {
+        parsedJson = JSON.parse(m[1]);
+      } catch {
+        continue; // already reported as jsonld-invalid
+      }
+      const stack = [parsedJson];
+      while (stack.length) {
+        const node = stack.pop();
+        if (!node || typeof node !== "object") continue;
+        if (Array.isArray(node)) {
+          stack.push(...node);
+          continue;
+        }
+        if (node["@type"] === "PostalAddress") {
+          for (const [key, want] of Object.entries(expected)) {
+            const got = node[key];
+            if (got !== undefined && got !== want) {
+              err(page, "address-mismatch", `${key} is "${got}", business.ts says "${want}"`);
+            }
+          }
+        }
+        stack.push(...Object.values(node));
+      }
+    }
+  }
+}
+
 // ── hreflang reciprocity, which needs every page before it can be judged ─────
 function checkHreflang(parsed) {
   const map = new Map();
@@ -381,6 +433,7 @@ if (LIVE) {
     parsed.push(checkPage(file, html, pages));
   }
   checkHreflang(parsed);
+  checkAddress(parsed);
   scanned = files.length;
 }
 
