@@ -42,9 +42,14 @@ import ValueProposition from "../components/ValueProposition.astro";
 import PartnershipBanner from "../components/PartnershipBanner.astro";
 import DesignRushSection from "../components/DesignRushSection.astro";
 
-// Real Google reviews, single source of truth for BOTH the JSON-LD schema
-// below and the ReviewsCarousel island in the social-proof section.
-// Texts are verbatim; do not edit.
+// ── Google reviews ──
+// Verbatim; do not edit. These power the visible ReviewsCarousel island in the
+// social-proof section, and nothing else. They are deliberately NOT
+// emitted as Review/AggregateRating structured data: Google does not show
+// review rich results for reviews an organization publishes about itself
+// (self-serving reviews), and a second node reusing @id #organization made the
+// home page fail structured data validation because it carried no address.
+// The single canonical organization node lives in src/layouts/Layout.astro.
 const googleReviews = [
   {
     name: "Cesar Franco",
@@ -79,27 +84,6 @@ const googleReviews = [
 ];
 
 // Review Schema for Google rich snippets - real Google reviews
-const reviewsSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://www.codebrand.us/#organization",
-  "name": "Codebrand - Honduras Software Development Agency",
-  "url": "https://www.codebrand.us",
-  "review": googleReviews.map((r) => ({
-    "@type": "Review",
-    "author": { "@type": "Person", "name": r.name },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": r.body,
-    "datePublished": r.date,
-  })),
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "50",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-};
 
 // ── Selected work. Real, documented projects (see src/content/projects). Entry 01,
 // Hazzlo, is our own product, not client work: the case study says so in its first
@@ -394,7 +378,6 @@ const whatsappUrl =
   image="/photos/bannercodebrand.webp"
 >
   <!-- Reviews Schema for Google rich snippets -->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewsSchema)} />
 
   <!-- ============================================================= -->
   <!-- ACT 1 · HERO, instant, typographic, LCP is the headline text -->

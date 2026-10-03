@@ -21,58 +21,6 @@ import CaseStudies from "../../components/CaseStudies.astro";
 const recaptchaSiteKey =
   import.meta.env.RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || "";
 
-const reviewsSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.codebrand.us/#organization",
-  "name": "Codebrand",
-  "url": "https://www.codebrand.us/hn/",
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Astrid Euceda" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Code Brand ofrece un excelente servicio en el desarrollo técnico y creativo. Lograron cumplir con mis necesidades entregando un resultado mejor de lo esperado.",
-      "datePublished": "2024-08-15"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Nelson Nuñez" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Excelente Servicio, Eficaz y Responsables.",
-      "datePublished": "2024-10-05"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Jose Castro Urquia" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Lo mejor de lo mejor..",
-      "datePublished": "2024-11-12"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Virginia Denisse Alfaro Reyes" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Excelente trabajo creando sitios webs",
-      "datePublished": "2024-07-10"
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Mayelin Canelas" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Excelente !!",
-      "datePublished": "2024-06-28"
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "50",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-};
-
 const industries = [
   "Automotriz", "Construcción", "Creadores de Contenido", "E-commerce",
   "Fitness", "Salud", "Bufetes de Abogados", "Bienes Raíces",
@@ -91,7 +39,6 @@ const services = [
   description="Agencia de desarrollo web hondureña. Creamos sitios web, apps y tiendas en línea con calidad internacional, en React y Next.js. Consulta gratis."
   image="/photos/bannercodebrand.webp"
 >
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewsSchema)} />
 
   <Hero config={{
     badge: "Calidad Internacional · Desde Honduras",
