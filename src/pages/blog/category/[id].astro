@@ -100,6 +100,10 @@ const seoDescription = `Browse all ${posts.length} articles in the ${category} c
   <!-- Posts grid -->
   <section class="border-t border-slate-200 bg-slate-50 py-16 sm:py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <!-- PostCard renders an h3, so this section needs its own h2 or the
+           outline jumps straight from the page h1 to h3. -->
+      <h2 class="sr-only">Articles in {category}</h2>
+
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {sortedPosts.map((post) => <PostCard post={post} />)}
       </div>
