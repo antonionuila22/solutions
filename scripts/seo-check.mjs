@@ -216,6 +216,88 @@ function checkPage(file, html, pages) {
   return { page, html };
 }
 
+// ── NAP in static files ──────────────────────────────────────────────────────
+/**
+ * The name, address and phone published in public/ must match business.ts.
+ *
+ * checkAddress above reads the built HTML, which is why it could not catch
+ * this: public/llms.txt is copied to the output verbatim and never passes
+ * through a template. When the owner corrected the postal code, the schema and
+ * both layouts were updated and that file kept publishing the old one to every
+ * AI assistant that reads it. A second copy, public/llm.txt, kept it for longer
+ * still, because nothing linked to it and nobody looked.
+ *
+ * So this rule reads the files themselves. It only inspects values that are
+ * unambiguously ours: a postal code written next to the country or the street,
+ * an @codebrand address, a +504 number. A market statistic that happens to look
+ * like a phone number is not matched, because the patterns are anchored to our
+ * own strings rather than to shapes.
+ */
+function checkStaticNap() {
+  const source = readFileSync(join("src", "configs", "business.ts"), "utf8");
+  const field = (name) => (source.match(new RegExp(`${name}:\\s*"([^"]*)"`)) || [])[1];
+  const expected = {
+    postalCode: field("postalCode"),
+    city: field("city"),
+    street: field("street"),
+    email: field("email"),
+    phone: field("phone"),
+    founded: field("foundingDate"),
+  };
+  if (!expected.postalCode || !expected.email) return;
+
+  const dir = "public";
+  if (!existsSync(dir)) return;
+  const files = readdirSync(dir).filter((f) => /\.(txt|json|md)$/.test(f));
+
+  for (const name of files) {
+    const path = join(dir, name);
+    const text = readFileSync(path, "utf8");
+    const page = `/${name}`;
+
+    // A postal code written right after the country or the city is ours.
+    for (const m of text.matchAll(/(?:Honduras|Cort[eé]s)[, ]+(\d{4,6})\b/gi)) {
+      if (m[1] !== expected.postalCode) {
+        err(page, "static-nap-mismatch", `postal code ${m[1]}, business.ts says ${expected.postalCode}`);
+        break;
+      }
+    }
+    for (const m of text.matchAll(new RegExp(`${expected.street.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[^\\n]{0,80}?(\\d{4,6})\\b`, "gi"))) {
+      if (m[1] !== expected.postalCode) {
+        err(page, "static-nap-mismatch", `postal code ${m[1]} beside the street, business.ts says ${expected.postalCode}`);
+        break;
+      }
+    }
+
+    // Any address on our own domain must be the one address we publish.
+    for (const m of text.matchAll(/[\w.+-]+@codebrand\.[a-z.]+/gi)) {
+      if (m[0].toLowerCase() !== expected.email.toLowerCase()) {
+        err(page, "static-nap-mismatch", `email ${m[0]}, business.ts says ${expected.email}`);
+        break;
+      }
+    }
+
+    // Honduran numbers, in either of the two spellings we publish.
+    const digitsOf = (v) => v.replace(/\D/g, "");
+    // [\d -] rather than [\d\s-]: \s matches a newline, so the greedy form ran
+    // past the end of the line and swallowed the first digit of the next one,
+    // reporting a correct number as wrong.
+    for (const m of text.matchAll(/\+504[\d -]{7,12}/g)) {
+      if (digitsOf(m[0]) !== digitsOf(expected.phone)) {
+        err(page, "static-nap-mismatch", `phone ${m[0].trim()}, business.ts says ${expected.phone}`);
+        break;
+      }
+    }
+
+    for (const m of text.matchAll(/\b[Ff]ounded in (\d{4})\b/g)) {
+      if (m[1] !== expected.founded) {
+        err(page, "static-nap-mismatch", `founded in ${m[1]}, business.ts says ${expected.founded}`);
+        break;
+      }
+    }
+  }
+}
+
 // ── Published prices ─────────────────────────────────────────────────────────
 /**
  * This site publishes no Codebrand prices. Every engagement is a fixed-price
@@ -542,6 +624,7 @@ if (LIVE) {
   checkAddress(parsed);
   checkPrices(parsed);
   checkTenure(parsed);
+  checkStaticNap();
   scanned = files.length;
 }
 

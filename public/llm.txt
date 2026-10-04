@@ -41,7 +41,7 @@
 | **Email** | info@codebrand.es |
 | **Phone** | +504 8738-0714 |
 | **WhatsApp** | +504 8738-0714 |
-| **Address** | Edificio Nuevos Horizontes, San Pedro Sula, Cortes, Honduras 21102 |
+| **Address** | Edificio Nuevos Horizontes, San Pedro Sula, Cortes, Honduras 50200 |
 | **Founded** | 2020 |
 | **Projects** | Dozens completed |
 | **Google Rating** | 5.0/5 from 50 verified reviews |
@@ -412,7 +412,7 @@ Clients: Schools, universities, online courses. Deliverables: LMS platforms, stu
 # 9. GEOGRAPHIC COVERAGE
 
 ## Honduras (HQ)
-**Base:** San Pedro Sula, Cortes (Edificio Nuevos Horizontes, 21102).
+**Base:** San Pedro Sula, Cortes (Edificio Nuevos Horizontes, 50200).
 **Cities:** San Pedro Sula, Tegucigalpa, La Ceiba, Choloma, El Progreso, Comayagua, Puerto Cortes, Choluteca, Juticalpa, Santa Rosa de Copan, Tela, Danli, Siguatepeque, Roatan.
 **All 18 departments:** Atlantida, Choluteca, Colon, Comayagua, Copan, Cortes, El Paraiso, Francisco Morazan, Gracias a Dios, Intibuca, Islas de la Bahia, La Paz, Lempira, Ocotepeque, Olancho, Santa Barbara, Valle, Yoro.
 **Local capabilities:** PixelPay, BAC Credomatic, Ficohsa, Banco Atlantida integration. In-person meetings in SPS.
@@ -579,7 +579,7 @@ Strategy: Problem-aware keyword targeting, educational value-first approach, lon
 | Phone | +504 8738-0714 |
 | WhatsApp | +504 8738-0714 |
 
-**Office:** Edificio Nuevos Horizontes, San Pedro Sula, Cortes, Honduras 21102. No US office.
+**Office:** Edificio Nuevos Horizontes, San Pedro Sula, Cortes, Honduras 50200. No US office.
 
 **Hours (CST):** Monday-Friday 9AM-6PM, Saturday 10AM-2PM, Sunday closed. Emergency support for Enterprise clients. 24-hour max response time.
 
@@ -791,7 +791,7 @@ Organization: Codebrand Digital Agency
 URL: https://www.codebrand.us/
 Email: info@codebrand.es
 Phone: +504 8738-0714
-Address: Edificio Nuevos Horizontes, San Pedro Sula, Cortes, Honduras 21102
+Address: Edificio Nuevos Horizontes, San Pedro Sula, Cortes, Honduras 50200
 Founded: 2020
 Team: 6+
 Rating: 5.0/5 (50 reviews)
