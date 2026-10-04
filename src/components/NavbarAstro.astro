@@ -157,10 +157,10 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
                         <li role="none">
                           <a
                             href={sub.link}
-                            class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/70 transition-all duration-300"
+                            class="nav-menu-item"
                             role="menuitem"
                           >
-                            <span class="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <span class="nav-item-dot" />
                             {sub.name}
                           </a>
                         </li>
@@ -262,10 +262,10 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
                           {group.items.map((subItem) => (
                             <a
                               href={subItem.link}
-                              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all"
+                              class="nav-menu-item-mobile"
                               role="menuitem"
                             >
-                              <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-300" />
+                              <span class="nav-item-bullet" />
                               {subItem.name}
                             </a>
                           ))}

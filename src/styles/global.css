@@ -286,6 +286,47 @@ p, .text-lead, .prose p, .prose li {
   }
 }
 
+
+/* ================================
+   NAVIGATION, repeated class strings
+   ================================
+   These four strings were the heaviest in the built site: all four appear on
+   every page and repeat up to 42 times each, because the mega menu renders one
+   link per service, per market and per industry, twice over for desktop and
+   mobile. Together they accounted for 7.9 MB of the 15.8 MB that class
+   attributes occupied across the build.
+
+   This is the ONLY place @apply is used for repetition. It pays here because
+   the same string repeats dozens of times within a single document, which is
+   what the browser has to download each time. Applying it to classes that
+   appear once per page would trade Tailwind's readability for nothing.
+
+   The declarations are copied verbatim from the markup they replace, variants
+   included. A dropped variant would still build and still pass every HTML
+   check, and would only show up as a few pixels of drift at one breakpoint, so
+   they are written out rather than tidied. */
+@layer components {
+  /* Mega menu item, desktop. */
+  .nav-menu-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/70 transition-all duration-300;
+  }
+
+  /* Mega menu item, mobile panel. Smaller padding and type below the sm breakpoint. */
+  .nav-menu-item-mobile {
+    @apply flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm text-slate-600 hover:text-cyan-600 hover:bg-cyan-50/50 transition-all;
+  }
+
+  /* The dot that fades in beside a desktop menu item on hover. */
+  .nav-item-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity;
+  }
+
+  /* The static bullet beside a mobile menu item. */
+  .nav-item-bullet {
+    @apply w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-300;
+  }
+}
+
 /* ================================
    MARKDOWN CONTENT
    ================================ */
