@@ -1,0 +1,37 @@
+---
+/**
+ * SpriteIcon, a reference to a symbol in /icons.svg.
+ *
+ * Usage:  <SpriteIcon name="star" class="w-4 h-4 text-yellow-400" />
+ *
+ * Use this ONLY for shapes repeated many times per page or across the site.
+ * Three of them (star, chevron-down, arrow-right) accounted for 5.1 MB of the
+ * 8.9 MB of inline SVG the site was shipping, because a five star rating writes
+ * the same path five times and a reviews block writes it hundreds of times.
+ *
+ * Every other icon stays inline. For a shape that appears once on a page, an
+ * external reference trades bytes for a request and loses.
+ *
+ * Sibling component Icon.astro stays inline on purpose: its whole set accounts
+ * for 2% of the SVG weight, so routing it through the sprite would add a
+ * network dependency to buy almost nothing.
+ *
+ * Colour still comes from the class, because each symbol keeps
+ * fill="currentColor" or stroke="currentColor".
+ */
+interface Props {
+  name: "star" | "chevron-down" | "chevron-right" | "arrow-right";
+  class?: string;
+  /** Accessible label. Omit for decorative icons, which is nearly always. */
+  label?: string;
+}
+
+const { name, class: className = "w-5 h-5", label } = Astro.props;
+---
+
+<svg
+  class={className}
+  aria-hidden={label ? undefined : "true"}
+  aria-label={label}
+  role={label ? "img" : undefined}
+><use href={`/icons.svg#${name}`} /></svg>

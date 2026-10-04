@@ -1,6 +1,7 @@
 ---
 import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import { config } from "../../configs/landing/fitness.config";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 const recaptchaSiteKey =
   import.meta.env.RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || "";
 ---
@@ -213,18 +214,7 @@ const recaptchaSiteKey =
                 class="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-black rounded-lg font-bold hover:bg-green-400 transition-all shadow-lg shadow-green-500/50 hover:shadow-green-400/50"
               >
                 Start Free Trial
-                <svg
-                  class="ml-2 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
+                <SpriteIcon name="arrow-right" class="ml-2 w-5 h-5" />
               </a>
               <a
                 href="#classes"

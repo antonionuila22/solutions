@@ -1,4 +1,5 @@
 ---
+import SpriteIcon from "./icons/SpriteIcon.astro";
 /** Team member type definition */
 type Member = {
   name: string;
@@ -177,9 +178,7 @@ const iconColor = (i: number) => (i % 2 === 0 ? "text-orange-400 group-hover:tex
                 aria-label={`View ${m.name}'s profile`}
               >
                 View Profile
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-                </svg>
+                <SpriteIcon name="chevron-right" class="w-4 h-4" />
               </a>
             )}
           </div>

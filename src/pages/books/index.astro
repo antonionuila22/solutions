@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Button from "../../components/Button.astro";
 import Icon from "../../components/icons/Icon.astro";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
 const books = await getCollection("books");
 
@@ -185,9 +186,7 @@ const categories = [
                       </span>
                       <span class="text-sm font-semibold text-orange-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                         Read more
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
+                        <SpriteIcon name="chevron-right" class="w-4 h-4" />
                       </span>
                     </div>
                   </div>

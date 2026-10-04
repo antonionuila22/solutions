@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
 // Get all collections (exclude drafts)
 const locations = await getCollection("locations", ({ data }) => !data.draft);
@@ -179,9 +180,7 @@ const itemListSchema = {
 
             <span class="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-3 transition-all">
               View Services
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
+              <SpriteIcon name="chevron-right" class="w-4 h-4" />
             </span>
           </a>
               ))}
@@ -260,9 +259,7 @@ const itemListSchema = {
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-700 hover:bg-orange-800 text-white rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
           Get Free Quote
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
+          <SpriteIcon name="arrow-right" class="w-5 h-5" />
         </a>
         <a href="/projects/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-cyan-900 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300">
           View Our Work

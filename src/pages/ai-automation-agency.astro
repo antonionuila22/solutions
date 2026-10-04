@@ -11,6 +11,7 @@ import FaqAccordion from "../components/FaqAccordion.astro";
 import { createServicePageSchema } from "../utils/schema";
 import Icon from "../components/icons/Icon.astro";
 import BorderBeam from "../components/ui/BorderBeam.astro";
+import SpriteIcon from "../components/icons/SpriteIcon.astro";
 
 const title = "AI Automation Agency | Codebrand";
 const description =
@@ -195,7 +196,7 @@ const stack = [
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <a href="/contact/" data-magnetic data-magnetic-strength="0.4" class="ui-shine inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-700 to-orange-800 hover:from-orange-800 hover:to-orange-900 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
             Automate a Workflow
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            <SpriteIcon name="arrow-right" class="w-5 h-5" />
           </a>
           <a href="#services" data-magnetic data-magnetic-strength="0.3" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 hover:border-white/40 text-white rounded-2xl font-semibold text-lg transition-all duration-300">
             What We Automate
@@ -289,7 +290,7 @@ const stack = [
       <p class="text-xl text-slate-300 mb-10" data-anim="fade" data-delay="0.1">Tell us the repetitive task. We'll tell you if AI can take it off your plate, free consultation.</p>
       <a href="/contact/" data-magnetic data-magnetic-strength="0.4" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-orange-700 to-orange-800 hover:from-orange-800 hover:to-orange-900 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
         Get Started
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+        <SpriteIcon name="arrow-right" class="w-5 h-5" />
       </a>
     </div>
   </section>

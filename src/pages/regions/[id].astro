@@ -9,6 +9,7 @@ import { createBreadcrumbSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
 import { isRegionHub } from "../../lib/seo/geo-tiers";
 import { TEAM_YEARS_LABEL } from "../../configs/business";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
 export async function getStaticPaths() {
   const regions = await getCollection("regions", ({ data }) => !data.draft);
@@ -371,9 +372,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
 
               <span class="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm group-hover:gap-3 transition-all">
                 {t.viewServices}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
+                <SpriteIcon name="chevron-right" class="w-4 h-4" />
               </span>
             </a>
           ))}

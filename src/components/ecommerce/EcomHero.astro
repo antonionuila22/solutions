@@ -1,4 +1,5 @@
 ---
+import SpriteIcon from "../icons/SpriteIcon.astro";
 /**
  * Ecommerce hero. Centered headline on the light ground, then the working
  * demo store as the stage (passed through the slot as a React island), then a
@@ -35,7 +36,7 @@ const { eyebrow, heading, subtitle, primaryHref, primaryText, secondaryHref, sec
       <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
         <a href={primaryHref} class="group inline-flex items-center justify-center gap-3 rounded-xl bg-brand px-7 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/20 transition hover:bg-brand-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">
           {primaryText}
-          <svg class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          <SpriteIcon name="arrow-right" class="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </a>
         <a href={secondaryHref} class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-7 py-4 text-base font-semibold text-slate-800 transition hover:border-cyan-600 hover:text-cyan-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600">
           {secondaryText}

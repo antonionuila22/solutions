@@ -4,6 +4,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
 // 1. Generamos las rutas estáticas basadas en los slugs de cada país
 export async function getStaticPaths() {
@@ -203,9 +204,7 @@ const getCityCount = (regionSlug: string) => {
                             class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
                         >
                             {t.viewAllRegions}
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
+                            <SpriteIcon name="chevron-right" class="w-4 h-4" />
                         </a>
                     </div>
                 </div>
@@ -260,9 +259,7 @@ const getCityCount = (regionSlug: string) => {
 
                             <span class="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm group-hover:gap-3 transition-all">
                                 {t.viewServices}
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                                <SpriteIcon name="chevron-right" class="w-4 h-4" />
                             </span>
                         </a>
                     ))}
@@ -274,9 +271,7 @@ const getCityCount = (regionSlug: string) => {
                         class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-900 hover:bg-cyan-800 text-white rounded-xl font-semibold transition-colors"
                     >
                         {t.viewAllCities(countryCities.length)}
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
+                        <SpriteIcon name="chevron-right" class="w-4 h-4" />
                     </a>
                 </div>
             </section>

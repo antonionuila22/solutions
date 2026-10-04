@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Button from "../../components/Button.astro";
 import PartnershipBanner from "../../components/PartnershipBanner.astro";
 import { getCollection } from "astro:content";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
 // Get all projects from the collection (exclude drafts)
 const allProjects = await getCollection("projects", ({ data }) => !data.draft);
@@ -275,19 +276,7 @@ const categories = ["All", ...allCategories.sort()];
                   class="inline-flex items-center gap-2 text-orange-500 font-bold text-sm hover:gap-4 transition-all duration-300 group/link"
                 >
                   <span>View Project</span>
-                  <svg
-                    class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <SpriteIcon name="arrow-right" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
 
@@ -402,18 +391,7 @@ const categories = ["All", ...allCategories.sort()];
           class="group inline-flex items-center gap-3 bg-orange-700 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-orange-800 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm lg:text-lg"
         >
           <span>Get Started Now</span>
-          <svg
-            class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
+          <SpriteIcon name="arrow-right" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
         </a>
         <a
           href="/services/"

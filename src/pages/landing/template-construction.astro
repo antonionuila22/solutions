@@ -2,6 +2,7 @@
 import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import Logo from "../../components/logo.astro";
 import { config } from "../../configs/landing/construction.config";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 const recaptchaSiteKey =
   import.meta.env.RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || "";
 ---
@@ -93,18 +94,7 @@ const recaptchaSiteKey =
               href="#contact"
             >
               Get Free Quote
-              <svg
-                class="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="3"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-              </svg>
+              <SpriteIcon name="arrow-right" class="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </a>
             <a
               class="inline-flex items-center px-10 py-5 bg-transparent border-4 border-white text-white text-xl font-black clip-corner hover:bg-white hover:text-black transition-all duration-300 uppercase"

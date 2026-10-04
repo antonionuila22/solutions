@@ -1,6 +1,7 @@
 ---
 import LandingPageTemplate from "../../components/LandingPageTemplate.astro";
 import { config } from "../../configs/landing/automotive.config";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 const recaptchaSiteKey =
   import.meta.env.RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || "";
 ---
@@ -85,18 +86,7 @@ const recaptchaSiteKey =
             >
               <span class="skew-x-[5deg] flex items-center gap-3 uppercase">
                 View Inventory
-                <svg
-                  class="w-6 h-6 group-hover:translate-x-2 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
+                <SpriteIcon name="arrow-right" class="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </span>
             </a>
             <a
@@ -329,18 +319,7 @@ const recaptchaSiteKey =
             class="inline-flex items-center px-10 py-4 bg-white text-black font-black uppercase text-lg hover:bg-gray-200 transition-colors"
           >
             View Full Inventory
-            <svg
-              class="ml-3 w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
+            <SpriteIcon name="arrow-right" class="ml-3 w-6 h-6" />
           </a>
         </div>
       </div>

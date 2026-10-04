@@ -3,6 +3,7 @@ export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { YEARS_IN_BUSINESS_LABEL } from "../../configs/business";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
 // Featured industries (larger cards with images)
 const featuredIndustries = [
@@ -221,18 +222,14 @@ const benefits = [
             class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transform hover:-translate-y-1 transition-all duration-300"
           >
             Start Your Project
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
+            <SpriteIcon name="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#industries"
             class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-xl text-white rounded-2xl font-bold text-lg border border-white/10 hover:border-white/20 transition-all duration-300"
           >
             Explore Industries
-            <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <SpriteIcon name="chevron-down" class="w-5 h-5 animate-bounce" />
           </a>
         </div>
 
@@ -285,9 +282,7 @@ const benefits = [
       <!-- Section Header -->
       <div class="text-center mb-16 lg:mb-20">
         <span class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/10 to-amber-500/10 border border-orange-500/20 rounded-full text-orange-400 text-sm font-semibold mb-6">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-          </svg>
+          <SpriteIcon name="star" class="w-4 h-4" />
           FEATURED INDUSTRIES
         </span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -479,9 +474,7 @@ const benefits = [
             <p class="text-slate-400 mb-6">Specialized solutions, modern technology, and a partner that understands the way your sector actually works.</p>
             <a href="/projects/" class="inline-flex items-center gap-2 text-orange-400 font-semibold hover:text-orange-300 transition-colors">
               See our work
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
+              <SpriteIcon name="chevron-right" class="w-4 h-4" />
             </a>
           </div>
 
@@ -538,9 +531,7 @@ const benefits = [
           class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-orange-600 rounded-2xl font-bold text-lg hover:bg-orange-50 transform hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-orange-900/20"
         >
           Let's Talk About Your Project
-          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
+          <SpriteIcon name="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </a>
         <a
           href="/services/"

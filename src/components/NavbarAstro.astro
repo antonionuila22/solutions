@@ -1,5 +1,6 @@
 ---
 import Logo from "./logo.astro";
+import SpriteIcon from "./icons/SpriteIcon.astro";
 
 interface SubItem {
   name: string;
@@ -131,20 +132,7 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
             >
               <span class="text-sm font-medium">{item.name}</span>
               {item.hasDropdown && (
-                <svg
-                  class="w-3.5 h-3.5 opacity-50 transition-transform duration-300 group-hover:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M19 9l-7 7-7-7"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <SpriteIcon name="chevron-down" class="w-3.5 h-3.5 opacity-50 transition-transform duration-300 group-hover:rotate-180" />
               )}
             </a>
 
@@ -195,20 +183,7 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
         aria-label="Contact us for a free consultation"
       >
         Talk to us
-        <svg
-          class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
+        <SpriteIcon name="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
       </a>
     </div>
 
@@ -270,20 +245,7 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
                     aria-controls={`mobile-submenu-${index}`}
                   >
                     <span class="font-medium text-sm sm:text-base">{item.name}</span>
-                    <svg
-                      class="w-4 h-4 opacity-50 transition-transform duration-300 dropdown-arrow"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M19 9l-7 7-7-7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                    <SpriteIcon name="chevron-down" class="w-4 h-4 opacity-50 transition-transform duration-300 dropdown-arrow" />
                   </button>
                   <div
                     id={`mobile-submenu-${index}`}
@@ -334,20 +296,7 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
           aria-label="Contact us for a free consultation"
         >
           Talk to us
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
+          <SpriteIcon name="arrow-right" class="w-4 h-4" />
         </a>
       </div>
     </div>

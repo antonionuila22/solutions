@@ -1,5 +1,6 @@
 ---
 import { BUSINESS_INFO } from "../../configs/business";
+import SpriteIcon from "../icons/SpriteIcon.astro";
 interface Props { heading: string; body: string; checks: string[]; primaryHref: string; primaryText: string; }
 const { heading, body, checks, primaryHref, primaryText } = Astro.props;
 const { phone, phoneRaw, whatsappUrl } = BUSINESS_INFO.us;
@@ -15,7 +16,7 @@ const { phone, phoneRaw, whatsappUrl } = BUSINESS_INFO.us;
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a href={primaryHref} class="inline-flex items-center justify-center gap-3 rounded-xl bg-brand px-7 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/20 transition hover:bg-brand-strong">
             {primaryText}
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            <SpriteIcon name="arrow-right" class="h-5 w-5" />
           </a>
           <a href={`tel:${phoneRaw}`} class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-5 py-4 text-sm font-semibold text-white hover:bg-white/10">Call {phone}</a>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-5 py-4 text-sm font-semibold text-white hover:bg-white/10">WhatsApp</a>

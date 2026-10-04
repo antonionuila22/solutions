@@ -1,4 +1,5 @@
 ---
+import SpriteIcon from "../icons/SpriteIcon.astro";
 interface System {
   name: string;
   description: string;
@@ -29,7 +30,7 @@ const { eyebrow, heading, intro, systems, ctaHref, ctaText } = Astro.props;
       </div>
       <a href={ctaHref} class="inline-flex flex-none items-center gap-2 self-start rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10 lg:self-auto">
         {ctaText}
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        <SpriteIcon name="arrow-right" class="h-4 w-4" />
       </a>
     </div>
 

@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
+import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
 // Get all regions and locations (exclude drafts)
 const regions = await getCollection("regions", ({ data }) => !data.draft);
@@ -132,9 +133,7 @@ const breadcrumbSchema = createBreadcrumbSchema([
                     </p>
                     <span class="inline-flex items-center gap-1 text-orange-600 text-sm font-medium">
                       View Region
-                      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
+                      <SpriteIcon name="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </a>
                 );

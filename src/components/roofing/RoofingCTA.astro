@@ -1,5 +1,6 @@
 ---
 import { BUSINESS_INFO } from "../../configs/business";
+import SpriteIcon from "../icons/SpriteIcon.astro";
 
 interface Props {
   heading: string;
@@ -34,7 +35,7 @@ const { phone, phoneRaw, whatsappUrl } = BUSINESS_INFO.us;
         <div class="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
           <a href={primaryHref} class="flex w-full items-center justify-center gap-3 rounded-xl bg-brand px-6 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/25 transition hover:bg-brand-strong">
             {primaryText}
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            <SpriteIcon name="arrow-right" class="h-5 w-5" />
           </a>
           <div class="mt-4 grid grid-cols-2 gap-3">
             <a href={`tel:${phoneRaw}`} class="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
