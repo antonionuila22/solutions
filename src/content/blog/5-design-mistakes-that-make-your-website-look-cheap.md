@@ -52,7 +52,7 @@ Imagine landing on a financial services website with hot pink buttons, neon gree
 
 **Pro tip**: Look at websites in your industry that you respect and analyze their color choices. You'll notice most professional sites stick to 2-3 colors maximum, with one dominant color and strategic accent colors for CTAs. This is especially important for [landing pages](/landing-pages/) where clarity drives conversions.
 
-Need help selecting the perfect color palette for your brand? [Our branding services](/branding/) specialize in creating cohesive, professional color schemes that convert.
+Need help selecting the perfect color palette for your brand? [Our branding services](/services/branding/) specialize in creating cohesive, professional color schemes that convert.
 
 ## 2. Poorly Legible or Outdated Typography
 
@@ -103,7 +103,7 @@ Poor typography doesn't just look bad, it actively hurts your business:
 
 5. **Test readability**: Use the [Hemingway Editor](http://www.hemingwayapp.com/) to ensure your text is easy to read
 
-**Remember**: Your font choices should support your content, not compete with it. When in doubt, choose simplicity over style. Good typography is also crucial for [SEO](/seo/), readable content keeps visitors engaged longer, which signals quality to search engines.
+**Remember**: Your font choices should support your content, not compete with it. When in doubt, choose simplicity over style. Good typography is also crucial for [SEO](/services/seo/), readable content keeps visitors engaged longer, which signals quality to search engines.
 
 Looking to create a typography system that's both beautiful and functional? [Our web design services](/web-design/) include comprehensive typography systems that enhance readability and reinforce your brand.
 
@@ -208,7 +208,7 @@ Visual coherence means all your images work together to tell a consistent brand 
 
 **Investment tip**: Professional photography or custom illustrations may seem expensive upfront, but they pay for themselves in increased credibility and conversions. We've seen conversion rate increases of 30-40% simply from upgrading from stock photos to custom brand photography. And remember, professional [web development](/services/web-development/) ensures your images load fast and look great on all devices.
 
-Need help creating a consistent visual identity for your website? [Our branding team](/branding/) can help with everything from photography direction to custom illustrations that truly represent your brand.
+Need help creating a consistent visual identity for your website? [Our branding team](/services/branding/) can help with everything from photography direction to custom illustrations that truly represent your brand.
 
 ## 5. Lack of Consistency Between Sections
 
@@ -260,7 +260,7 @@ Consistency in design creates **predictability**, and predictability creates **c
 - Sketch
 - InVision DSM
 
-**Real-world impact**: Companies with strong design systems see 40% faster design-to-development time and significantly higher user satisfaction scores. This consistency also improves your [SEO performance](/seo/) by creating a better user experience.
+**Real-world impact**: Companies with strong design systems see 40% faster design-to-development time and significantly higher user satisfaction scores. This consistency also improves your [SEO performance](/services/seo/) by creating a better user experience.
 
 Our [web development services](/services/web-development/) include comprehensive design systems for every client website, ensuring that your site not only looks professional today but remains consistent as it grows and evolves.
 

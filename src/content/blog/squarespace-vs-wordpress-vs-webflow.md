@@ -336,7 +336,7 @@ Need help building a high-converting e-commerce store? [Our e-commerce developme
 
 **Why**: Superior blogging features, SEO capabilities, monetization options (ads, affiliates, memberships), audience growth tools.
 
-Want to create a content strategy that actually drives traffic? [Our SEO services](/seo/) help you build authority and attract your ideal audience organically.
+Want to create a content strategy that actually drives traffic? [Our SEO services](/services/seo/) help you build authority and attract your ideal audience organically.
 
 ---
 

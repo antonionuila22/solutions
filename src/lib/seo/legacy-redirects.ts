@@ -9,6 +9,8 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/web-development": "/services/web-development/",
   "/custom-web-development-services": "/services/web-development/",
   "/web-development-agency": "/services/web-development/",
+  "/seo": "/services/seo/",
+  "/branding": "/services/branding/",
 
   // Cannibalization consolidation: intent fully covered by the nearshore hub
   "/outsource-web-development": "/nearshore-development/",

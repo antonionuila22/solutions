@@ -339,7 +339,7 @@ homepage
 - Featured products
 - FAQ section
 
-> **Struggling with e-commerce SEO?** Our [SEO services](/seo/) can help your products rank higher in search results.
+> **Struggling with e-commerce SEO?** Our [SEO services](/services/seo/) can help your products rank higher in search results.
 
 ---
 

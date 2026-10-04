@@ -451,7 +451,7 @@ En Code Brand, combinamos tecnología de vanguardia con diseño profesional. Usa
 
 👉 **[Agenda una consulta](/contact/)** para discutir tu estrategia de contenido.
 
-👉 **[Conoce nuestros servicios de branding](/branding/)** que incluyen creación de assets visuales.
+👉 **[Conoce nuestros servicios de branding](/services/branding/)** que incluyen creación de assets visuales.
 
 👉 **[Ve nuestros proyectos](/projects/)** para ver ejemplos de trabajo visual.
 

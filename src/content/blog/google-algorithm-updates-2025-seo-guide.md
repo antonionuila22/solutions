@@ -20,7 +20,7 @@ tags:
 
 Google's algorithm updates in 2025 have been relentless. If your traffic dropped and you're not sure why, you're not alone, and this guide will help you understand what happened and what to do about it.
 
-> **Need help recovering from algorithm updates?** Our [SEO services](/seo/) help businesses adapt and thrive after Google updates.
+> **Need help recovering from algorithm updates?** Our [SEO services](/services/seo/) help businesses adapt and thrive after Google updates.
 
 ---
 
@@ -353,7 +353,7 @@ If your traffic dropped, it's a signal to improve, not to find new tricks. The t
 *Need help recovering from algorithm updates or building a sustainable SEO strategy? [Contact us](/contact/) for a free SEO audit.*
 
 **Our SEO services include:**
-- [Technical SEO Audits](/seo/)
+- [Technical SEO Audits](/services/seo/)
 - [Content Strategy & Optimization](/digital-marketing/)
 - [Core Web Vitals Optimization](/services/web-development/)
 

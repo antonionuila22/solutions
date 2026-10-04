@@ -20,7 +20,7 @@ What makes the difference? It's not magic, and it's not luck. High-converting la
 
 In this comprehensive analysis, we'll dissect what high-performing landing pages have in common and what mistakes repeatedly sink poor-performing pages. We'll compare structure, design, copywriting, and user experience, giving you clear criteria to improve your own pages and dramatically increase your conversion rates.
 
-Whether you're running paid ads, email campaigns, or organic traffic through [SEO](/seo/), your landing page is where conversions happen or die. Let's make sure yours falls in the first category.
+Whether you're running paid ads, email campaigns, or organic traffic through [SEO](/services/seo/), your landing page is where conversions happen or die. Let's make sure yours falls in the first category.
 
 ## What Does "Convert" Actually Mean?
 
@@ -89,7 +89,7 @@ For every feature you mention, ask yourself: **"So what? Why does the customer c
 - Feature: "Mobile-responsive design"
 - Benefit: "Your customers can browse and buy from their phones without frustration, capturing sales you'd otherwise lose"
 
-**Remember**: People don't buy features. They buy outcomes, solutions, and transformations. This principle applies whether you're selling products, services, or building your [brand identity](/branding/).
+**Remember**: People don't buy features. They buy outcomes, solutions, and transformations. This principle applies whether you're selling products, services, or building your [brand identity](/services/branding/).
 
 Want to transform your landing page copy from boring features to compelling benefits? [Our landing page services](/landing-pages/) include comprehensive audits and optimization.
 
@@ -159,7 +159,7 @@ According to Nielsen, **92% of consumers trust recommendations from real people*
 - "SSL Secure Checkout"
 - Industry certifications or awards
 
-Looking to collect and showcase powerful testimonials? [Our branding services](/branding/) help you create compelling case studies that convert skeptics into customers.
+Looking to collect and showcase powerful testimonials? [Our branding services](/services/branding/) help you create compelling case studies that convert skeptics into customers.
 
 ---
 

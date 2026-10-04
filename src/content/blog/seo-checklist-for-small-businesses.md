@@ -78,7 +78,7 @@ Ready to get started? Let's dive in.
 - "licensed plumber near me"
 - "24/7 plumbing services [neighborhood]"
 
-Need help identifying the right keywords for your business? [Our SEO services](/seo/) include comprehensive keyword research tailored to your local market and competition.
+Need help identifying the right keywords for your business? [Our SEO services](/services/seo/) include comprehensive keyword research tailored to your local market and competition.
 
 ---
 
@@ -229,7 +229,7 @@ If you only do ONE thing from this checklist, **make it this one.**
 
 **Why it matters**: A fully optimized Google Business Profile can rank you in the "Local 3-Pack", the three businesses shown with map listings at the top of local searches. **These get 44% of all clicks** (Moz).
 
-Want help setting up and optimizing your Google Business Profile? [Our local SEO services](/seo/) include complete profile optimization and ongoing management.
+Want help setting up and optimizing your Google Business Profile? [Our local SEO services](/services/seo/) include complete profile optimization and ongoing management.
 
 ---
 
@@ -293,7 +293,7 @@ You don't need a huge blog. You just need **content that answers the questions y
 
 **How often to publish**: Even **one quality article per month** makes a difference. Consistency beats volume.
 
-Need help creating SEO-optimized content that actually ranks? [Our SEO services](/seo/) include keyword-targeted blog posts and service pages that drive traffic and conversions.
+Need help creating SEO-optimized content that actually ranks? [Our SEO services](/services/seo/) include keyword-targeted blog posts and service pages that drive traffic and conversions.
 
 ---
 
@@ -434,6 +434,6 @@ While this checklist will get you started, **professional SEO delivers faster, b
 
 👉 **[See our SEO case studies](/projects/)** of local businesses we've helped dominate their markets.
 
-👉 **[Explore our SEO services](/seo/)** to learn how we can help your business get found, chosen, and grow.
+👉 **[Explore our SEO services](/services/seo/)** to learn how we can help your business get found, chosen, and grow.
 
 **Your competitors are showing up on Google. Shouldn't you be there too?**

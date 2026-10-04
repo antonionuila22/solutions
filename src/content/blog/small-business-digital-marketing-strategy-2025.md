@@ -157,7 +157,7 @@ Build local citations (business listings):
 - Respond to all reviews
 - Never buy fake reviews
 
-> **Struggling with SEO?** Our [SEO services](/seo/) help small businesses rank higher and get more traffic.
+> **Struggling with SEO?** Our [SEO services](/services/seo/) help small businesses rank higher and get more traffic.
 
 **4. Content SEO (Ongoing)**
 
@@ -594,6 +594,6 @@ Start with the fundamentals, track your results, and build from there. Your bigg
 
 **Explore our services:**
 - [Web Development](/services/web-development/) - Build a website that converts
-- [SEO Services](/seo/) - Get found on Google
+- [SEO Services](/services/seo/) - Get found on Google
 - [Digital Marketing](/digital-marketing/) - Full-service marketing support
 - [Landing Pages](/landing-pages/) - High-converting campaign pages

@@ -20,7 +20,7 @@ But here's the opportunity hidden in that problem: **The ads people DO remember 
 
 The best advertising doesn't interrupt, it contributes. It doesn't push, it pulls. It doesn't shout, it whispers something interesting.
 
-In this comprehensive guide, you'll learn how to create ads that people actually want to see, engage with, and share, the kind of advertising that builds trust instead of burning it. These principles apply whether you're promoting services, building your [brand](/branding/), or driving traffic to [landing pages](/landing-pages/).
+In this comprehensive guide, you'll learn how to create ads that people actually want to see, engage with, and share, the kind of advertising that builds trust instead of burning it. These principles apply whether you're promoting services, building your [brand](/services/branding/), or driving traffic to [landing pages](/landing-pages/).
 
 ---
 
@@ -226,7 +226,7 @@ Give 80% value, make 20% offer.
 1. Teach something genuinely useful (3-5 tips, how-to, insight)
 2. At the end: "Want more tips like this? Follow us" or "If you need help implementing this, we can help"
 
-**Why this works**: You've already provided value BEFORE asking for anything. The reciprocity principle kicks in, people want to return the favor. This same principle applies to [SEO content](/seo/), helpful content builds trust and rankings.
+**Why this works**: You've already provided value BEFORE asking for anything. The reciprocity principle kicks in, people want to return the favor. This same principle applies to [SEO content](/services/seo/), helpful content builds trust and rankings.
 
 Want to create educational content that positions you as the expert? [Our content strategy services](/digital-marketing/) help you build authority that converts.
 
@@ -251,7 +251,7 @@ Want to create educational content that positions you as the expert? [Our conten
 - Unboxing videos
 - Real customer success stories
 
-**Example**: GoPro built an entire marketing strategy around customer adventure videos. Their ads ARE their customers' content. This authentic approach is also key to effective [branding](/branding/).
+**Example**: GoPro built an entire marketing strategy around customer adventure videos. Their ads ARE their customers' content. This authentic approach is also key to effective [branding](/services/branding/).
 
 ---
 
