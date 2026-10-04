@@ -158,7 +158,7 @@ For every feature, ask: **"So what? Why does the customer care?"**
 After: That same work happens automatically in the background
 How: Our automation handles the boring stuff while you focus on strategy"
 
-This benefit-focused approach is essential for all marketing, from ads to [web design](/web-design/) and beyond.
+This benefit-focused approach is essential for all marketing, from ads to [web design](/ux-ui-design-agency/) and beyond.
 
 ---
 

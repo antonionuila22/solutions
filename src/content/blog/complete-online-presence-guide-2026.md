@@ -251,7 +251,7 @@ Building a complete online presence requires multiple skills working together:
 
 **Web Development:** Fast, beautiful, conversion-focused websites. [Learn more →](/services/web-development/)
 
-**UX/UI Design:** User experiences that guide visitors to action. [Explore UX →](/services/ux-ui/)
+**UX/UI Design:** User experiences that guide visitors to action. [Explore UX →](/ux-ui-design-agency/)
 
 **Branding:** Visual identity that makes you memorable. [See branding →](/services/branding/)
 
@@ -324,7 +324,7 @@ Whether you need a complete digital transformation or help with specific areas, 
 **Our services:**
 
 - [Web Development](/services/web-development/), Your digital foundation
-- [UX/UI Design](/services/ux-ui/), User experiences that convert
+- [UX/UI Design](/ux-ui-design-agency/), User experiences that convert
 - [Branding](/services/branding/), Visual identity that stands out
 - [SEO](/services/seo/), Being found in search
 - [Social Media](/services/social-media/), Engaging your audience

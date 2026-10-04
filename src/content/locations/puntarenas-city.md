@@ -96,7 +96,7 @@ localServices:
     href: "/e-commerce/"
   - title: "Diseño web para negocios del Paseo de los Turistas"
     description: "Páginas rápidas y optimizadas para búsquedas locales, pensadas para restaurantes, sodas y servicios de Puntarenas."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
 
 nearbyAreas:
   - "Jacó"

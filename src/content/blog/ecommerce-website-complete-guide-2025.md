@@ -433,7 +433,7 @@ homepage
 - Avoid popups
 - Easy zoom on images
 
-> **Need conversion-focused design?** Our [UX/UI design services](/web-design/) help create e-commerce experiences that convert.
+> **Need conversion-focused design?** Our [UX/UI design services](/ux-ui-design-agency/) help create e-commerce experiences that convert.
 
 ---
 

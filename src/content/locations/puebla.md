@@ -96,7 +96,7 @@ localServices:
     href: "/e-commerce/"
   - title: "Diseño web para negocios de Angelópolis y el Centro"
     description: "Páginas rápidas y optimizadas para búsquedas locales, pensadas para clínicas, restaurantes, colegios y despachos de Puebla."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
 
 nearbyAreas:
   - "Centro Histórico"

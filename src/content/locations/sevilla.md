@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Diseño web para empresas de Sevilla"
     description: "Webs corporativas rápidas y optimizadas para búsquedas locales, pensadas para despachos, clínicas e ingenierías de Nervión, Cartuja y el centro."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas online con Bizum y Redsys"
     description: "Comercio electrónico para comercios y productores sevillanos que venden aceite, moda o artesanía a toda España."
     href: "/e-commerce/"

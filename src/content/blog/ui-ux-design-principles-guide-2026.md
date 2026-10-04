@@ -26,7 +26,7 @@ Great design isn't about making things pretty, it's about making things work. Th
 
 After designing hundreds of websites and applications, we've distilled the principles that consistently create exceptional user experiences. This guide covers everything from foundational concepts to advanced techniques you can apply immediately.
 
-> **Looking for professional UI/UX design?** Explore our [web design services](/web-design/) for conversion-focused design that follows these principles.
+> **Looking for professional UI/UX design?** Explore our [web design services](/ux-ui-design-agency/) for conversion-focused design that follows these principles.
 
 ---
 

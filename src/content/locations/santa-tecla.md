@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Diseño web para negocios de Santa Tecla"
     description: "Sitios rápidos y bien posicionados para restaurantes, clínicas, colegios y comercios de Merliot, el Paseo El Carmen y la Panamericana."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas en línea para Merliot y La Libertad"
     description: "Comercio electrónico con pasarelas salvadoreñas, cobro en dólares y entregas en Santa Tecla y el área metropolitana."
     href: "/e-commerce/"

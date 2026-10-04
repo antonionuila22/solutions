@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para negocios de Mejicanos"
     description: "Páginas rápidas con ficha de Google Maps y contacto por WhatsApp para clínicas, colegios y comercios de Mejicanos y el norte de San Salvador."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas en línea con pago en dólares"
     description: "Comercio electrónico con tarjetas y entrega local para ferreterías, farmacias y tiendas de Mejicanos."
     href: "/e-commerce/"

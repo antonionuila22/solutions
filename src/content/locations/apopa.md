@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Páginas web para negocios de Apopa"
     description: "Sitios rápidos con Google Maps, WhatsApp y fichas de servicios para talleres, clínicas, colegios y comercios de Apopa."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas en línea con pagos en dólares"
     description: "Catálogos y tiendas con cotización por WhatsApp, tarjeta y entrega local para ferreterías y distribuidoras de la Troncal del Norte."
     href: "/e-commerce/"

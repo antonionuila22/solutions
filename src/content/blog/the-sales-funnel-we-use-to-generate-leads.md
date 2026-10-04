@@ -179,7 +179,7 @@ Our "Free Website Audit" landing page converts at 32% (industry average is 2-5%)
 - Lead source (which channels convert best)
 - Lead quality score
 
-Need high-converting landing pages? [Our web design team](/web-design/) builds pages optimized for maximum lead capture.
+Need high-converting landing pages? [Our web design team](/ux-ui-design-agency/) builds pages optimized for maximum lead capture.
 
 ---
 

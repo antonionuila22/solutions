@@ -237,7 +237,7 @@ Cluttered pages overwhelm visitors. Clean pages with generous white space, clear
 
 **Contrast**: Make CTAs pop with contrasting colors
 
-Our [landing page design services](/landing-pages/) include conversion-focused design that balances aesthetics with psychology to maximize results. Combined with our [web design](/web-design/) expertise, we create pages that both look great and convert.
+Our [landing page design services](/landing-pages/) include conversion-focused design that balances aesthetics with psychology to maximize results. Combined with our [web design](/ux-ui-design-agency/) expertise, we create pages that both look great and convert.
 
 ---
 
@@ -272,7 +272,7 @@ If your page looks like it's from 2012, it affects trust perception. Design matt
 - Misaligned elements
 - Inconsistent styling
 
-**Fix**: Modern, clean design with strong contrast and professional aesthetics through proper [web design](/web-design/).
+**Fix**: Modern, clean design with strong contrast and professional aesthetics through proper [web design](/ux-ui-design-agency/).
 
 ---
 

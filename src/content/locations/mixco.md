@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para negocios de Mixco"
     description: "Páginas rápidas con ficha de Google Maps y contacto por WhatsApp para colegios, clínicas y comercios de San Cristóbal y El Naranjo en Mixco."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas en línea con pago con tarjeta"
     description: "Comercio electrónico con pasarelas guatemaltecas y entrega en el área metropolitana para comercios de la Calzada Roosevelt en Mixco."
     href: "/e-commerce/"

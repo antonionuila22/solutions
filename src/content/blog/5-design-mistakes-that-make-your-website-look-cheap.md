@@ -105,7 +105,7 @@ Poor typography doesn't just look bad, it actively hurts your business:
 
 **Remember**: Your font choices should support your content, not compete with it. When in doubt, choose simplicity over style. Good typography is also crucial for [SEO](/services/seo/), readable content keeps visitors engaged longer, which signals quality to search engines.
 
-Looking to create a typography system that's both beautiful and functional? [Our web design services](/web-design/) include comprehensive typography systems that enhance readability and reinforce your brand.
+Looking to create a typography system that's both beautiful and functional? [Our web design services](/ux-ui-design-agency/) include comprehensive typography systems that enhance readability and reinforce your brand.
 
 ## 3. Poor Visual Structure and Clutter
 
@@ -155,7 +155,7 @@ Think about luxury brands like Apple, Tesla, or high-end fashion websites. What 
 
 **Pro tip**: Try the "blur test", blur your webpage and see if you can still identify the main sections and hierarchy. If everything blends together, you need more spacing and contrast. Learn more about what makes [landing pages convert](/blog/landing-pages-that-convert-vs-those-that-dont/).
 
-Our [web design services](/web-design/) include comprehensive UX/UI design that creates clean, organized layouts that guide users naturally toward conversion.
+Our [web design services](/ux-ui-design-agency/) include comprehensive UX/UI design that creates clean, organized layouts that guide users naturally toward conversion.
 
 ## 4. Low-Quality Images or Lack of Visual Coherence
 
@@ -314,6 +314,6 @@ Don't let a cheap-looking website hold your business back any longer.
 
 👉 **[View our portfolio](/projects/)** to see examples of websites we've transformed from amateur to professional.
 
-👉 **[Explore our web design services](/web-design/)** to learn more about our process and packages.
+👉 **[Explore our web design services](/ux-ui-design-agency/)** to learn more about our process and packages.
 
 **Your website should be your best salesperson, not your biggest liability.** Let's fix that together.

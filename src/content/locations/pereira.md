@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Diseño web para negocios de Pereira"
     description: "Sitios rápidos y optimizados para búsquedas locales, pensados para comercios, clínicas y servicios de Pereira y Dosquebradas."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tienda virtual con PSE y Nequi"
     description: "E-commerce con pasarelas colombianas para almacenes y distribuidores que venden desde Pereira a todo el país."
     href: "/e-commerce/"

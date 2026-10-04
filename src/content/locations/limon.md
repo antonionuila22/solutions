@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para turismo del Caribe Sur"
     description: "Páginas bilingües con reservas directas para hoteles, cabinas y tours de Limón, Cahuita y Puerto Viejo."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas en línea con SINPE Móvil"
     description: "Comercio electrónico para negocios de Limón con pagos por tarjeta y SINPE Móvil y facturación electrónica de Hacienda."
     href: "/e-commerce/"

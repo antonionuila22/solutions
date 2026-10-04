@@ -135,7 +135,7 @@ What works for 10 employees often breaks at 50. Generic solutions hit walls that
 - Segment
 - Lifecycle stage
 
-[See how UX design improves business outcomes →](/services/ux-ui/)
+[See how UX design improves business outcomes →](/ux-ui-design-agency/)
 
 ### Problem: Reporting
 
@@ -161,7 +161,7 @@ Before writing any code, we learn:
 
 Sometimes the answer is custom software. Sometimes it's:
 - A better website ([web development](/services/web-development/))
-- Improved user experience ([UX/UI design](/services/ux-ui/))
+- Improved user experience ([UX/UI design](/ux-ui-design-agency/))
 - Automation of existing tools
 - Integration between systems
 
@@ -266,7 +266,7 @@ Custom software is part of a larger digital strategy. It works best when combine
 
 **Strong Branding:** Your software should reflect your brand. [Explore our branding services →](/services/branding/)
 
-**Great UX Design:** The best logic means nothing if users can't navigate it. [See our UX/UI approach →](/services/ux-ui/)
+**Great UX Design:** The best logic means nothing if users can't navigate it. [See our UX/UI approach →](/ux-ui-design-agency/)
 
 **SEO Strategy:** If it's customer-facing, it needs to be findable. [Learn about our SEO services →](/services/seo/)
 

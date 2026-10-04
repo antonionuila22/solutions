@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Diseño web para empresas de Valencia"
     description: "Webs corporativas rápidas y optimizadas para búsquedas locales, para despachos, clínicas e industrias de Valencia y su área metropolitana."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas online con Bizum para Valencia"
     description: "Comercio electrónico para marcas de moda, cerámica y productos de la huerta valenciana que venden a toda España y Europa."
     href: "/e-commerce/"

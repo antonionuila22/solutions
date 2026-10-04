@@ -11,11 +11,14 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/web-development-agency": "/services/web-development/",
   "/seo": "/services/seo/",
   "/branding": "/services/branding/",
+  "/web-design": "/ux-ui-design-agency/",
+  "/services/ux-ui": "/ux-ui-design-agency/",
+  "/ecommerce-development-agency": "/e-commerce/",
 
   // Cannibalization consolidation: intent fully covered by the nearshore hub
   "/outsource-web-development": "/nearshore-development/",
   "/services/social-media-design": "/services/social-media/",
-  "/services/ux-ui-design": "/services/ux-ui/",
+  "/services/ux-ui-design": "/ux-ui-design-agency/",
   "/tienda-online-honduras": "/hn/tienda-online-honduras/",
   // Removed with the move to budget-based proposals (no published prices)
   "/nearshore-cost-calculator": "/quoter/",

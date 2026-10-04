@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios web para negocios de San Miguel"
     description: "Diseño de páginas rápidas y bien posicionadas para comercios, clínicas y empresas de servicios del oriente salvadoreño."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas en línea para el oriente salvadoreño"
     description: "Comercio electrónico con pasarelas salvadoreñas, cobro en dólares desde Estados Unidos y entregas en San Miguel y municipios vecinos."
     href: "/e-commerce/"

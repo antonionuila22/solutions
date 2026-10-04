@@ -90,7 +90,7 @@ whyChooseUs:
 localServices:
   - title: "Sitios bilingües con reservas para hoteles de Antigua"
     description: "Motores de reservas directas, galerías rápidas y pago anticipado para hoteles boutique y posadas del casco histórico de Antigua Guatemala."
-    href: "/web-design/"
+    href: "/ux-ui-design-agency/"
   - title: "Tiendas en línea para café, textiles y artesanía"
     description: "Comercio electrónico con envíos internacionales, pagos con tarjeta y FEL para productores y talleres de Antigua y Sacatepéquez."
     href: "/e-commerce/"
