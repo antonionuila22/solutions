@@ -6,7 +6,7 @@ readtime: 11
 img: /photos/blog/socialmedia.webp
 imageAlt: "Visual diagram of a digital sales funnel showing stages and conversion tools"
 date: 2025-03-28
-categories: ["Marketing", "Business Strategy"]
+categories: ["Digital Marketing", "Business Strategy"]
 tags: ["sales funnel", "lead generation", "marketing", "conversion", "business strategy"]
 ---
 

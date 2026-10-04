@@ -8,7 +8,7 @@ imageAlt: "AI agent autonomous system managing business workflows"
 date: 2026-01-14
 categories:
   - Technology
-  - Business
+  - Business Strategy
   - AI
 tags:
   - AI agents

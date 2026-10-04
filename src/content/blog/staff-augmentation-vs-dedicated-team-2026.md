@@ -7,7 +7,7 @@ img: /photos/blog/colleagues-discussing-image-on-laptop-in-team-2025-09-10-00-01
 imageAlt: "Colleagues discussing a project on a laptop while comparing team engagement models"
 date: 2026-07-14
 categories:
-  - Business
+  - Business Strategy
   - Outsourcing
 tags:
   - Staff Augmentation

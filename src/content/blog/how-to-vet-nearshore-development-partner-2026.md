@@ -7,7 +7,7 @@ img: /photos/blog/colleagues-discussing-image-on-laptop-in-team-2025-09-10-00-01
 imageAlt: "Team reviewing a nearshore development partner's code and process together"
 date: 2026-07-16
 categories:
-  - Business
+  - Business Strategy
   - Outsourcing
 tags:
   - Nearshore Development

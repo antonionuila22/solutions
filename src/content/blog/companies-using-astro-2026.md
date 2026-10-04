@@ -10,7 +10,7 @@ draft: false
 categories:
   - Web Development
   - Technology
-  - Case Studies
+  - Codebrand
 tags:
   - Astro
   - companies using Astro

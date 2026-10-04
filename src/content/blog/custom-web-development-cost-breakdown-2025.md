@@ -8,7 +8,7 @@ imageAlt: "Web development cost breakdown with calculator and pricing chart"
 date: 2025-01-29
 categories:
   - Web Development
-  - Business
+  - Business Strategy
 tags:
   - Web Development Cost
   - Website Pricing

@@ -11,7 +11,6 @@ draft: false
 categories:
   - Web Development
   - Technology
-  - Performance
 tags:
   - web performance
   - tech stack

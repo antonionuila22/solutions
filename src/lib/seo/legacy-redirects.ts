@@ -15,6 +15,34 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/services/ux-ui": "/ux-ui-design-agency/",
   "/ecommerce-development-agency": "/e-commerce/",
 
+  // Blog taxonomy consolidation: 34 categories for 78 posts, 20 of them with
+  // two posts or fewer, collapsed to 10. Every merged post already sat in the
+  // destination category, so these redirects move URLs, not content.
+  "/blog/category/backend": "/blog/category/technology/",
+  "/blog/category/business": "/blog/category/business-strategy/",
+  "/blog/category/case-studies": "/blog/category/codebrand/",
+  "/blog/category/comparisons": "/blog/category/guides/",
+  "/blog/category/databases": "/blog/category/technology/",
+  "/blog/category/design": "/blog/category/web-design/",
+  "/blog/category/digital-strategy": "/blog/category/business-strategy/",
+  "/blog/category/healthcare": "/blog/category/digital-marketing/",
+  "/blog/category/hosting": "/blog/category/technology/",
+  "/blog/category/legal": "/blog/category/web-development/",
+  "/blog/category/marketing": "/blog/category/digital-marketing/",
+  "/blog/category/mobile-development": "/blog/category/technology/",
+  "/blog/category/nearshore": "/blog/category/outsourcing/",
+  "/blog/category/partnerships": "/blog/category/codebrand/",
+  "/blog/category/performance": "/blog/category/technology/",
+  "/blog/category/pricing": "/blog/category/business-strategy/",
+  "/blog/category/security": "/blog/category/technology/",
+  "/blog/category/seo": "/blog/category/digital-marketing/",
+  "/blog/category/software-development": "/blog/category/technology/",
+  "/blog/category/tips": "/blog/category/guides/",
+  "/blog/category/tutorials": "/blog/category/guides/",
+  "/blog/category/ux": "/blog/category/web-design/",
+  "/blog/category/ux-ui": "/blog/category/web-design/",
+  "/blog/category/wordpress": "/blog/category/technology/",
+
   // Cannibalization consolidation: intent fully covered by the nearshore hub
   "/outsource-web-development": "/nearshore-development/",
   "/services/social-media-design": "/services/social-media/",

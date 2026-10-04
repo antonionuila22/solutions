@@ -8,8 +8,7 @@ imageAlt: "Business owner managing their WordPress website on a laptop"
 date: 2026-02-09
 categories:
   - Technology
-  - Business
-  - WordPress
+  - Business Strategy
 tags:
   - WordPress
   - website maintenance

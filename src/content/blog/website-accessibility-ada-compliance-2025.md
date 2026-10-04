@@ -8,7 +8,6 @@ imageAlt: "Website accessibility and ADA compliance illustration"
 date: 2025-12-02
 categories:
   - Web Development
-  - Legal
 tags:
   - accessibility
   - ADA compliance

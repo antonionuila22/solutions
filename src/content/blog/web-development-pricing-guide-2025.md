@@ -8,7 +8,7 @@ imageAlt: "Web development pricing comparison chart"
 date: 2025-12-01
 categories:
   - Web Development
-  - Pricing
+  - Business Strategy
 tags:
   - pricing guide
   - web development costs

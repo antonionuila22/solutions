@@ -7,7 +7,7 @@ img: /photos/blog/team-of-developers-talking-in-office-analyzing-co-2026-01-08-0
 imageAlt: "Team collaborating on nearshore software development project"
 date: 2025-01-29
 categories:
-  - Business
+  - Business Strategy
   - Outsourcing
 tags:
   - Nearshore Development

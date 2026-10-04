@@ -7,7 +7,7 @@ img: /photos/blog/website-value.webp
 imageAlt: "Analyzing the true total cost of nearshore software development"
 date: 2026-07-15
 categories:
-  - Business
+  - Business Strategy
   - Outsourcing
 tags:
   - Nearshore Development

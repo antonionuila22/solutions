@@ -7,7 +7,7 @@ readtime: 11
 img: /photos/blog/pymes-seo.webp
 imageAlt: "SEO checklist for small businesses and contractors"
 date: 2024-03-28
-categories: ["SEO", "Business Strategy"]
+categories: ["Digital Marketing", "Business Strategy"]
 tags: ["SEO", "small business", "checklist", "Google", "digital marketing"]
 ---
 

@@ -10,7 +10,6 @@ draft: false
 categories:
   - Web Development
   - Technology
-  - Backend
 tags:
   - REST API
   - API design

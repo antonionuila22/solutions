@@ -7,7 +7,7 @@ img: /photos/blog/team-of-app-developers-looking-at-coding-algorithm-2025-02-17-
 imageAlt: "Distributed development teams comparing nearshore options across regions"
 date: 2026-07-17
 categories:
-  - Business
+  - Business Strategy
   - Outsourcing
 tags:
   - Nearshore Development

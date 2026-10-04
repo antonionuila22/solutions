@@ -9,7 +9,7 @@ date: 2025-12-15
 draft: false
 categories:
   - Web Development
-  - Security
+  - Technology
 tags:
   - website security
   - cybersecurity

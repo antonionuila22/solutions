@@ -6,7 +6,7 @@ readtime: 16
 img: /photos/blog/teamcode.webp
 imageAlt: "Top software development companies in Honduras serving US clients"
 date: 2025-11-19
-categories: ["Web Development", "Nearshore"]
+categories: ["Web Development", "Outsourcing"]
 tags: ["Honduras", "software development", "nearshore", "outsourcing", "agency rankings"]
 ---
 

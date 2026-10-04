@@ -6,7 +6,7 @@ readtime: 12
 img: /photos/blog/diseñoweb.webp
 imageAlt: "Comparison between Squarespace, WordPress and Webflow for building a website"
 date: 2024-03-28
-categories: ["Web Development", "Comparisons"]
+categories: ["Web Development", "Guides"]
 tags: ["Squarespace", "WordPress", "Webflow", "CMS", "website builder"]
 ---
 

@@ -8,7 +8,7 @@ readtime: 12
 img: /photos/blog/estado-desarrollo-web-honduras-2026.webp
 imageAlt: "Desarrollo web Honduras 2026"
 date: 2026-03-20
-categories: ["Web Design", "Tips"]
+categories: ["Web Design", "Guides"]
 tags: ["Honduras", "desarrollo web", "2026", "SEO", "ecommerce"]
 ---
 

@@ -6,7 +6,7 @@ readtime: 10
 img: /photos/blog/uxservice.webp
 imageAlt: "Visual comparison of two landing pages with different conversion rates"
 date: 2024-03-28
-categories: ["Marketing", "Web Design"]
+categories: ["Digital Marketing", "Web Design"]
 tags: ["landing pages", "conversion", "CRO", "web design", "lead generation"]
 ---
 

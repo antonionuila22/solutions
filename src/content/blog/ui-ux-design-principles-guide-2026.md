@@ -9,8 +9,7 @@ date: 2025-12-15
 draft: false
 categories:
   - Web Development
-  - Design
-  - UX
+  - Web Design
 tags:
   - UI design
   - UX design

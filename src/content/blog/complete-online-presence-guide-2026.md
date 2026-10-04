@@ -7,9 +7,8 @@ img: /photos/blog/web-designers-are-reviewing-the-layouts-of-a-mobil-2026-01-07-
 imageAlt: "Business professional analyzing online presence strategy"
 date: 2026-01-12
 categories:
-  - Business
-  - Marketing
-  - Digital Strategy
+  - Business Strategy
+  - Digital Marketing
 tags:
   - online presence
   - digital marketing

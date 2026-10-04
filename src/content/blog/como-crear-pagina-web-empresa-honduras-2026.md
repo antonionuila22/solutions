@@ -8,7 +8,7 @@ readtime: 15
 img: /photos/blog/crear-pagina-web-honduras-2026.webp
 imageAlt: "Guía para crear página web en Honduras 2026"
 date: 2026-03-20
-categories: ["Web Design", "Tips"]
+categories: ["Web Design", "Guides"]
 tags: ["web design", "Honduras", "empresas", "página web", "UX/UI", "desarrollo web"]
 ---
 

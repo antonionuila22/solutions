@@ -6,7 +6,7 @@ readtime: 12
 img: /photos/blog/astro-form-turso.webp
 imageAlt: "Astro form with database storage and email delivery"
 date: 2024-03-28
-categories: ["Web Development", "Tutorials"]
+categories: ["Web Development", "Guides"]
 tags: ["Astro", "Turso", "Resend", "contact form", "tutorial"]
 ---
 

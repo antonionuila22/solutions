@@ -8,7 +8,7 @@ imageAlt: "AI automation dashboard showing automated business workflows"
 date: 2026-01-14
 categories:
   - Technology
-  - Business
+  - Business Strategy
 tags:
   - AI
   - automation

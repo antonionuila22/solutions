@@ -6,7 +6,7 @@ readtime: 12
 img: /photos/blog/team-of-app-developers-looking-at-coding-algorithm-2025-02-17-08-38-57-utc.avif
 imageAlt: "Honduras software developers working on modern tech projects"
 date: 2025-11-17
-categories: ["Web Development", "Nearshore"]
+categories: ["Web Development", "Outsourcing"]
 tags: ["Honduras", "software developers", "nearshore", "US companies", "cost savings"]
 ---
 

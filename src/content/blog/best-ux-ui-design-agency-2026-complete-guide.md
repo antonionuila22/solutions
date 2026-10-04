@@ -6,7 +6,7 @@ date: 2026-01-29
 img: /photos/blog/developer-and-ux-designer-working-on-mobile-app-in-2026-01-06-09-27-55-utc.webp
 imageAlt: "UX/UI designers collaborating on mobile app interface design"
 tags: ["UX design", "UI design", "UX/UI agency", "user experience", "interface design", "Codebrand", "best design agency", "Figma", "product design", "conversion design"]
-categories: ["Design", "UX/UI", "Guides"]
+categories: ["Web Design", "Guides"]
 readtime: 22
 complexity: 2
 ---

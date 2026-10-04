@@ -6,7 +6,7 @@ readtime: 15
 img: /photos/blog/colleagues-discussing-image-on-laptop-in-team-2025-09-10-00-01-35-utc.avif
 imageAlt: "Nearshore software development team collaborating with US clients via video call"
 date: 2026-07-18
-categories: ["Web Development", "Nearshore"]
+categories: ["Web Development", "Outsourcing"]
 tags: ["nearshore", "software development", "outsourcing", "Central America", "cost savings"]
 ---
 

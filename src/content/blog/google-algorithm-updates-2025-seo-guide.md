@@ -7,7 +7,6 @@ img: /photos/blog/seo.webp
 imageAlt: "Google search algorithm and SEO strategy visualization"
 date: 2025-12-02
 categories:
-  - SEO
   - Digital Marketing
 tags:
   - Google algorithm

@@ -6,7 +6,7 @@ readtime: 14
 img: /photos/blog/webcosthn.avif
 imageAlt: "Chart of USA web development agency market rates by project type"
 date: 2026-07-19
-categories: ["Web Development", "Nearshore"]
+categories: ["Web Development", "Outsourcing"]
 tags: ["web development cost", "USA vs Honduras", "pricing", "nearshore", "outsourcing"]
 ---
 

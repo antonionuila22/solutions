@@ -6,7 +6,7 @@ readtime: 8
 img: /photos/blog/partnership-zeed.avif
 imageAlt: "Zeed Agency and Codebrand Strategic Alliance"
 date: 2025-10-26
-categories: ["Codebrand", "Partnerships"]
+categories: ["Codebrand"]
 tags: ["Codebrand", "Zeed Agency", "partnership", "graphic design", "consulting"]
 ---
 

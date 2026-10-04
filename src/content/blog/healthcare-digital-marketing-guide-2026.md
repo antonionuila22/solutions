@@ -8,10 +8,9 @@ img: /photos/blog/close-up-of-hand-typing-on-tablet-with-digital-dna-2026-01-11-
 imageAlt: "Modern healthcare practice digital marketing dashboard showing patient acquisition metrics"
 date: 2026-05-06
 categories:
-  - Marketing
-  - Business
+  - Digital Marketing
+  - Business Strategy
   - AI
-  - Healthcare
 tags:
   - healthcare marketing
   - medical practice SEO

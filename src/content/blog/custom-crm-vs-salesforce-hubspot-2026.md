@@ -7,8 +7,8 @@ img: /photos/blog/at-office-2026-01-08-23-48-55-utc.webp
 imageAlt: "Sales and operations team reviewing CRM options on office screens"
 date: 2026-07-19
 categories:
-  - Business
-  - Software Development
+  - Business Strategy
+  - Technology
 tags:
   - Custom CRM
   - Salesforce

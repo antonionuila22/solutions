@@ -7,7 +7,7 @@ img: /photos/blog/asian-business-meet-sustainable-practices-focusin-2026-01-07-0
 imageAlt: "Custom software development team planning business solution"
 date: 2026-01-13
 categories:
-  - Business
+  - Business Strategy
   - Technology
 tags:
   - custom software

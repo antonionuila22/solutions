@@ -8,7 +8,6 @@ imageAlt: "React Native vs Flutter mobile development comparison"
 date: 2025-12-15
 draft: false
 categories:
-  - Mobile Development
   - Technology
 tags:
   - React Native

@@ -8,7 +8,7 @@ readtime: 14
 img: /photos/blog/web-development-guide.webp
 imageAlt: "Guía completa para desarrollar una página web profesional"
 date: 2026-03-20
-categories: ["Web Design", "Tips"]
+categories: ["Web Design", "Guides"]
 tags: ["web design", "website mistakes", "UX", "design tips", "branding"]
 ---
 

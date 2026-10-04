@@ -7,7 +7,7 @@ img: /photos/blog/colleagues-discussing-image-on-laptop-in-team-2025-09-10-00-01
 imageAlt: "European team collaborating with nearshore developers over a shared laptop"
 date: 2026-07-18
 categories:
-  - Business
+  - Business Strategy
   - Outsourcing
 tags:
   - Nearshore Development

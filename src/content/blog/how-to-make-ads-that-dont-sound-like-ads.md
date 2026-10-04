@@ -6,7 +6,7 @@ readtime: 10
 img: /photos/blog/ads.webp
 imageAlt: "Marketing strategy showing how to create ads that feel like organic content"
 date: 2025-03-28
-categories: ["Marketing", "Tips"]
+categories: ["Digital Marketing", "Guides"]
 tags: ["advertising", "content marketing", "copywriting", "storytelling", "social media"]
 ---
 

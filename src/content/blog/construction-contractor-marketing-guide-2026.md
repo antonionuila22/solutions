@@ -8,8 +8,8 @@ img: /photos/blog/contractors-marketing.avif
 imageAlt: "Digital marketing strategy dashboard for construction and contractor businesses"
 date: 2026-05-06
 categories:
-  - Marketing
-  - Business
+  - Digital Marketing
+  - Business Strategy
   - AI
 tags:
   - construction marketing

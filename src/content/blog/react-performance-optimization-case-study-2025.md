@@ -8,7 +8,7 @@ imageAlt: "React performance optimization showing Core Web Vitals improvement"
 date: 2025-01-29
 categories:
   - Web Development
-  - Performance
+  - Technology
 tags:
   - React
   - Performance Optimization

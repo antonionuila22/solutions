@@ -10,7 +10,6 @@ draft: false
 categories:
   - Web Development
   - Technology
-  - Hosting
 tags:
   - Netlify
   - web hosting
