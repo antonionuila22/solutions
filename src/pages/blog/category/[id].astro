@@ -11,6 +11,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import PostCard from "../../../components/blog/PostCard.astro";
 import CategoryFilter from "../../../components/blog/CategoryFilter.astro";
 import { slugifyCategory, type CategoryLink } from "../../../lib/blog";
+import { introParagraphs, categoryDescription } from "../../../lib/blog-categories";
 
 type BlogPost = CollectionEntry<"blog">;
 
@@ -54,7 +55,14 @@ const sortedPosts = posts.sort((a, b) => {
 });
 
 const seoTitle = `${category} Articles | Codebrand Blog`;
-const seoDescription = `Browse all ${posts.length} articles in the ${category} category. Expert insights on web development, design, and digital marketing from the Codebrand team.`;
+// Hand written per category where we have one. The old template produced ten
+// descriptions that differed only by the category name, which is precisely the
+// thin-content problem this page had.
+const seoDescription = categoryDescription(
+  slug,
+  `Browse all ${posts.length} articles in the ${category} category. Expert insights on web development, design, and digital marketing from the Codebrand team.`,
+);
+const intro = introParagraphs(slug);
 ---
 
 <Layout
@@ -90,6 +98,14 @@ const seoDescription = `Browse all ${posts.length} articles in the ${category} c
       <p class="text-lead mt-6 max-w-2xl text-slate-600">
         {sortedPosts.length} {sortedPosts.length === 1 ? "article" : "articles"} in this category.
       </p>
+
+      {intro.length > 0 && (
+        <div class="mt-6 max-w-3xl space-y-4">
+          {intro.map((paragraph) => (
+            <p class="text-slate-600 leading-relaxed">{paragraph}</p>
+          ))}
+        </div>
+      )}
 
       <div class="mt-10">
         <CategoryFilter categories={allCategories} current={slug} />
