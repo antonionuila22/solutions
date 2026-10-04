@@ -195,15 +195,21 @@
     X-DNS-Prefetch-Control = "on"
 
 # ===========================================
-# PRECONNECT & PRELOAD for external resources
+# PRECONNECT for external resources
 # ===========================================
+# The two Google Fonts origins were removed on 2026-10-03. This site has never
+# loaded a Google font: Poppins is self hosted and preloaded from /fonts/, and
+# neither origin appears anywhere in the source. Every page was paying a DNS
+# lookup and a TLS handshake to two hosts it never contacts, which Lighthouse
+# flags on a throttled connection and which crowds out the hints that matter.
+#
+# Keep this list under four entries, and only for origins the page really
+# requests. Tag Manager stays because the page does load it.
 
 [[headers]]
   for = "/"
   [headers.values]
     Link = '''
-      <https://fonts.googleapis.com>; rel=preconnect,
-      <https://fonts.gstatic.com>; rel=preconnect; crossorigin,
       <https://www.googletagmanager.com>; rel=preconnect
     '''
 

@@ -105,7 +105,7 @@ export default function ReviewsCarousel({ reviews }: Props) {
           const active = i === index;
           const restingX = active ? 0 : i < index ? -28 : 28;
           return (
-            <motion.figure
+            <motion.div
               key={i}
               role="group"
               aria-roledescription="slide"
@@ -139,7 +139,7 @@ export default function ReviewsCarousel({ reviews }: Props) {
                 ></span>
                 <span className="text-sm text-slate-400">Google review</span>
               </figcaption>
-            </motion.figure>
+            </motion.div>
           );
         })}
       </div>

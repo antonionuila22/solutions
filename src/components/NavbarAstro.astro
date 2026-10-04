@@ -230,9 +230,10 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
     aria-label="Mobile navigation menu"
   >
     <div
+      role="none"
       class="mobile-menu-glass rounded-xl sm:rounded-2xl px-3 sm:px-4 py-4 sm:py-5 shadow-xl shadow-slate-200/50"
     >
-      <div class="flex flex-col gap-1">
+      <div role="none" class="flex flex-col gap-1">
         {
           menuItems.map((item, index) => (
             <div role="none">
@@ -241,6 +242,8 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
                   <button
                     type="button"
                     class="mobile-dropdown-btn w-full flex justify-between items-center px-3 sm:px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xl text-slate-700 hover:bg-slate-50 transition-colors"
+                    role="menuitem"
+                    aria-haspopup="true"
                     aria-expanded="false"
                     aria-controls={`mobile-submenu-${index}`}
                   >
