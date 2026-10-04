@@ -235,9 +235,26 @@
 # REDIRECTS (if needed)
 # ===========================================
 
-# Canonical host is https://www.codebrand.us. Netlify's automatic primary-domain
-# redirect sends http://codebrand.us through two hops (https://codebrand.us first).
-# These explicit rules collapse every apex request into a single 301 to www.
+# Canonical host is https://www.codebrand.us.
+#
+# These rules do NOT collapse http://codebrand.us into one hop, despite what
+# this comment used to claim. Measured 2026-10-04: http://codebrand.us still
+# takes two, because Netlify applies its own HTTPS upgrade at the edge before
+# any rule declared here, so the request reaches https://codebrand.us and only
+# then matches the apex-to-www rule below. force = true does not change the
+# order. Lighthouse bills that first hop at roughly 250 ms on a throttled
+# connection, and it is the single largest item in its performance report.
+#
+# The fix is not a redirect rule, it is HSTS preloading: a browser that knows
+# the domain is HTTPS-only never makes the http request at all. The header is
+# already correct on both the apex and www, and hstspreload.org reports the
+# domain eligible with zero errors and zero warnings, but it has never been
+# submitted, so no browser ships the entry. Submitting is the owner's call:
+# preloading is hard to reverse, removal takes months, and includeSubDomains
+# commits every future subdomain to HTTPS.
+#
+# The rules below are still correct and still needed. They are what turns
+# https://codebrand.us into www in one hop.
 # /llm.txt was a second, unlinked company profile that drifted out of date:
 # "Last updated: February 2026", a stack described as Astro 5 while the site
 # runs Astro 7, and the old postal code until yesterday. Two documents of 42 and
