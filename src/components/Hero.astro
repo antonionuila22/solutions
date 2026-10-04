@@ -1,4 +1,5 @@
 ---
+import { YEARS_IN_BUSINESS_LABEL } from "../configs/business";
 interface HeroConfig {
   badge: string;
   headline: string;
@@ -20,7 +21,7 @@ const defaults: HeroConfig = {
   headlineHighlight: "Without the US Agency Price Tag.",
   subheadline: 'We build <span class="text-white font-semibold">fast, scalable websites and apps</span> for US businesses, with the same quality you\'d expect from a top US agency, at a fixed price built around your budget. CST-aligned team. No language barriers. No offshore delays.',
   stats: [
-    { value: "8+", label: "Years Experience", color: "cyan" },
+    { value: YEARS_IN_BUSINESS_LABEL, label: "Years Experience", color: "cyan" },
     { value: "50", label: "5-Star Reviews", color: "orange" },
     { value: "< 24h", label: "First Response", color: "cyan" },
     { value: "5.0", label: "50 Google reviews", color: "orange" },

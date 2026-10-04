@@ -9,6 +9,7 @@ import Layout from "../layouts/Layout.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
 import BorderBeam from "../components/ui/BorderBeam.astro";
+import { TEAM_YEARS_LABEL } from "../configs/business";
 
 const title = "Hire Remote Developers | Staff Augmentation | Codebrand";
 const description = "Hire vetted senior developers who join your team. US timezone, fluent English, fixed price from your budget. Staff augmentation that scales.";
@@ -68,7 +69,7 @@ const roles = [
 const stats = [
   { value: "50+", label: "Active Developers" },
   { value: "1-2", label: "Weeks to Start" },
-  { value: "5+", label: "Years Avg Experience" },
+  { value: TEAM_YEARS_LABEL, label: "Years Avg Experience" },
   { value: "CST", label: "Timezone" }
 ];
 ---

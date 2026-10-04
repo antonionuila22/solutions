@@ -116,4 +116,30 @@ export const BUSINESS_INFO = {
 // Type exports for TypeScript
 export type BusinessInfo = typeof BUSINESS_INFO;
 export type ContactInfo = typeof BUSINESS_INFO.us;
+
+/**
+ * Years the company has been operating, counted from foundingDate.
+ *
+ * Derived rather than written down because the site used to state this three
+ * different ways at once: "8+" on six pages, "5+" on two more, and
+ * foundingDate 2020 in the organization schema, which is the one the owner
+ * confirmed. A hardcoded figure is wrong the moment a year passes; this one is
+ * recomputed on every build.
+ */
+export function yearsInBusiness(now: Date = new Date()): number {
+    return now.getFullYear() - Number(BUSINESS_INFO.foundingDate);
+}
+
+/**
+ * Years of development experience the people carry, which is NOT the company's
+ * age and is deliberately a separate constant. Confirmed by the owner on
+ * 2026-10-03: the collaborators each bring more than twenty years, against a
+ * company founded in 2020. The team stat used to publish "8+", understating it
+ * by more than half.
+ */
+export const TEAM_YEARS_LABEL = "20+";
+
+/** The same figure as a stat-block value, e.g. "6+". */
+export const YEARS_IN_BUSINESS_LABEL = `${yearsInBusiness()}+`;
+
 export type AddressInfo = typeof BUSINESS_INFO.address;

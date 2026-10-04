@@ -8,6 +8,7 @@ import PageHero from "../../components/PageHero.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
 import { isRegionHub } from "../../lib/seo/geo-tiers";
+import { TEAM_YEARS_LABEL } from "../../configs/business";
 
 export async function getStaticPaths() {
   const regions = await getCollection("regions", ({ data }) => !data.draft);
@@ -192,7 +193,7 @@ const faqSchema = faqs && faqs.length > 0 ? {
     stats={[
       { value: "5.0", label: t.statReviews, counterTo: 5, decimals: 1, color: "orange" },
       { value: "50", label: t.statFive, counterTo: 50, color: "cyan" },
-      { value: "8+", label: t.statYears, counterTo: 8, suffix: "+", color: "cyan" },
+      { value: TEAM_YEARS_LABEL, label: t.statYears, counterTo: 20, suffix: "+", color: "cyan" },
       { value: "100%", label: t.statCustom, color: "orange" },
     ]}
     ctaPrimary={t.ctaPrimary}

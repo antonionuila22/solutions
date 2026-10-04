@@ -10,6 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import BudgetModel from "../components/BudgetModel.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import Icon from "../components/icons/Icon.astro";
+import { YEARS_IN_BUSINESS_LABEL } from "../configs/business";
 
 // SEO
 const title =
@@ -164,7 +165,7 @@ const stats = [
   { value: "5.0", label: "50 Google reviews" },
   { value: "24h", label: "Avg. Response Time" },
   { value: "50", label: "Five-Star Reviews" },
-  { value: "8+", label: "Years Experience" },
+  { value: YEARS_IN_BUSINESS_LABEL, label: "Years Experience" },
 ];
 
 

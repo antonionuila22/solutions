@@ -282,6 +282,46 @@ function checkPrices(parsed) {
   }
 }
 
+// ── Company tenure ───────────────────────────────────────────────────────────
+/**
+ * A company-level "N+ Years Experience" stat must agree with foundingDate.
+ *
+ * The site used to publish three different answers at once: "8+" on six pages,
+ * "5+" on two more, and foundingDate 2020 in the organization schema, which the
+ * owner confirmed is the right one. Any hardcoded figure here is also wrong the
+ * moment a year turns over, so the pages derive it now and this rule makes sure
+ * they keep doing so.
+ *
+ * Claims about PEOPLE are a different fact and are left alone: "Years Team
+ * Experience" and "Years Avg Experience" describe careers that predate the
+ * company, so they are legitimately larger.
+ */
+function checkTenure(parsed) {
+  const source = readFileSync(join("src", "configs", "business.ts"), "utf8");
+  const founded = Number((source.match(/foundingDate:\s*"(\d{4})"/) || [])[1]);
+  if (!founded) return;
+  const expected = new Date().getFullYear() - founded;
+
+  for (const { page, html } of parsed) {
+    const text = withoutInertRegions(html)
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ");
+    for (const m of text.matchAll(/(\d+)\s*\+?\s*(?:Years|Años de)\s+Experience/gi)) {
+      // Only the company's own age is checked. A sentence about the people,
+      // "senior developers with 5+ years experience", is a different and
+      // legitimately larger fact: careers predate the company that hired them.
+      const before = text.slice(Math.max(0, m.index - 60), m.index);
+      const ABOUT_PEOPLE =
+        /\b(Team|Avg|Average|Equipo|Promedio|developers?|engineers?|designers?|specialists?|senior|desarrolladores|ingenieros)\b/i;
+      if (ABOUT_PEOPLE.test(m[0] + before)) continue;
+      if (Number(m[1]) !== expected) {
+        err(page, "tenure-mismatch", `says ${m[1]} years, foundingDate ${founded} means ${expected}`);
+        break;
+      }
+    }
+  }
+}
+
 // ── NAP consistency ──────────────────────────────────────────────────────────
 /**
  * The published postal address must match src/configs/business.ts.
@@ -501,6 +541,7 @@ if (LIVE) {
   checkHreflang(parsed);
   checkAddress(parsed);
   checkPrices(parsed);
+  checkTenure(parsed);
   scanned = files.length;
 }
 
