@@ -235,25 +235,34 @@
 # REDIRECTS (if needed)
 # ===========================================
 
-# Canonical host is https://www.codebrand.us.
+# Canonical host is https://www.codebrand.us, and the whole site agrees: all
+# 411 sitemap URLs, every rel=canonical and both robots.txt Sitemap lines point
+# at www. Nothing points at the apex.
 #
-# These rules do NOT collapse http://codebrand.us into one hop, despite what
-# this comment used to claim. Measured 2026-10-04: http://codebrand.us still
-# takes two, because Netlify applies its own HTTPS upgrade at the edge before
-# any rule declared here, so the request reaches https://codebrand.us and only
-# then matches the apex-to-www rule below. force = true does not change the
-# order. Lighthouse bills that first hop at roughly 250 ms on a throttled
-# connection, and it is the single largest item in its performance report.
+# One correction to an earlier version of this comment, which overstated the
+# problem. These rules do not collapse http://codebrand.us into a single hop:
+# Netlify applies its own HTTPS upgrade at the edge before any rule declared
+# here, so the request reaches https://codebrand.us first and only then matches
+# the apex-to-www rule below, and force = true does not reorder that. Measured
+# 2026-10-04 at 1.29 s against 0.81 s for www.
 #
-# The fix is not a redirect rule, it is HSTS preloading: a browser that knows
-# the domain is HTTPS-only never makes the http request at all. The header is
-# already correct on both the apex and www, and hstspreload.org reports the
-# domain eligible with zero errors and zero warnings, but it has never been
-# submitted, so no browser ships the entry. Submitting is the owner's call:
-# preloading is hard to reverse, removal takes months, and includeSubDomains
-# commits every future subdomain to HTTPS.
+# But that cost reaches almost nobody. It is paid only by someone typing the
+# bare domain by hand. Search results, links and ads all arrive at www already.
+# A Lighthouse run pointed at the apex reports it as the largest item in the
+# report, which is a measurement artifact of testing a non-canonical URL rather
+# than a cost real visitors pay. Run Lighthouse against
+# https://www.codebrand.us/ and the item disappears without changing anything.
 #
-# The rules below are still correct and still needed. They are what turns
+# If it is ever worth closing, the fix is not a redirect rule but HSTS
+# preloading, since a browser that already knows the domain is HTTPS-only never
+# makes the http request. The header is correct on both hosts and
+# hstspreload.org reports the domain eligible with zero errors. Note that the
+# submission is always for the registrable domain, codebrand.us, never for
+# www: includeSubDomains is what covers www. It is the owner's call and not an
+# urgent one: preloading is hard to reverse, removal takes months, and
+# includeSubDomains commits every future subdomain to HTTPS.
+#
+# The rules below are correct and needed. They are what turns
 # https://codebrand.us into www in one hop.
 # /llm.txt was a second, unlinked company profile that drifted out of date:
 # "Last updated: February 2026", a stack described as Astro 5 while the site
