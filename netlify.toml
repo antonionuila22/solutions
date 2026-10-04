@@ -238,6 +238,18 @@
 # Canonical host is https://www.codebrand.us. Netlify's automatic primary-domain
 # redirect sends http://codebrand.us through two hops (https://codebrand.us first).
 # These explicit rules collapse every apex request into a single 301 to www.
+# /llm.txt was a second, unlinked company profile that drifted out of date:
+# "Last updated: February 2026", a stack described as Astro 5 while the site
+# runs Astro 7, and the old postal code until yesterday. Two documents of 42 and
+# 77 KB answering the same questions differently is worse for an AI assistant
+# than one, so it folds into /llms.txt, which is the file robots.txt and the
+# layout actually point at. Declared here rather than in astro.config.mjs
+# because that config maps routes, and this is a static file.
+[[redirects]]
+  from = "/llm.txt"
+  to = "/llms.txt"
+  status = 301
+
 [[redirects]]
   from = "http://codebrand.us/*"
   to = "https://www.codebrand.us/:splat"
