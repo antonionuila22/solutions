@@ -7,6 +7,8 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   // content was merged into the destination first, in the same commit, because
   // the legacy page was the richer of the two in every case we checked.
   "/web-development": "/services/web-development/",
+  "/custom-web-development-services": "/services/web-development/",
+  "/web-development-agency": "/services/web-development/",
 
   // Cannibalization consolidation: intent fully covered by the nearshore hub
   "/outsource-web-development": "/nearshore-development/",

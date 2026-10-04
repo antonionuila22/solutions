@@ -50,7 +50,7 @@ Here's the honest breakdown.
 Claude produces the most natural, human-like text. It handles complex instructions well and maintains consistency across long documents.
 
 **Coding Excellence:**
-Claude excels at understanding codebases, writing clean code, and explaining complex technical concepts. [We use Claude for our software development projects →](/custom-web-development-services/)
+Claude excels at understanding codebases, writing clean code, and explaining complex technical concepts. [We use Claude for our software development projects →](/services/web-development/)
 
 **Safety and Reliability:**
 Claude is designed to be helpful while avoiding harmful outputs. It's less likely to hallucinate and more likely to admit uncertainty.
@@ -156,7 +156,7 @@ We've tested all three extensively in real projects. Claude:
 - Explains its reasoning more clearly
 - Makes fewer breaking changes
 
-[See how we use AI in development →](/custom-web-development-services/)
+[See how we use AI in development →](/services/web-development/)
 
 ### For Customer Service
 
@@ -235,7 +235,7 @@ For most business applications, the cost differences are minimal. **Choose based
 
 **Use Claude Sonnet** for the best balance of quality and cost. It handles customer inquiries naturally and knows when to escalate.
 
-[We build AI chatbots →](/custom-web-development-services/)
+[We build AI chatbots →](/services/web-development/)
 
 ### Need Code Generation or Review?
 

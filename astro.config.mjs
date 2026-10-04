@@ -18,8 +18,6 @@ import { LEGACY_REDIRECTS } from './src/lib/seo/legacy-redirects';
 // (via canonicalOverride). They must NOT be advertised in the sitemap — we only
 // list canonical, indexable URLs. Compared by exact pathname (slash-insensitive).
 const NON_CANONICAL_DUPLICATES = new Set([
-  '/web-development-agency',           // → /services/web-development
-  '/custom-web-development-services',  // → /services/web-development
   '/seo',                              // → /services/seo
   '/branding',                         // → /services/branding
   '/web-design',                       // → /ux-ui-design-agency
