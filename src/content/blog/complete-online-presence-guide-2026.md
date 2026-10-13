@@ -248,7 +248,7 @@ Online presence isn't a project, it's an ongoing process. Websites need updates.
 
 Building a complete online presence requires multiple skills working together:
 
-**Web Development:** Fast, beautiful, conversion-focused websites. [Learn more →](/services/web-development/)
+**Web Development:** Fast, beautiful, conversion-focused websites. [See what web development includes →](/services/web-development/)
 
 **UX/UI Design:** User experiences that guide visitors to action. [Explore UX →](/ux-ui-design-agency/)
 

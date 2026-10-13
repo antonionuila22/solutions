@@ -150,7 +150,7 @@ function groupByCategory(items: SubItem[]): { category: string; items: SubItem[]
                       )}
                       {group.category && (
                         <li role="none" class="px-4 pt-2 pb-1">
-                          <span class="text-xs uppercase text-slate-500 font-semibold tracking-wider">{group.category}</span>
+                          <span class="nav-group-label">{group.category}</span>
                         </li>
                       )}
                       {group.items.map((sub) => (

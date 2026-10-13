@@ -98,7 +98,7 @@ const socials = [
         <div class="flex gap-2.5">
           {socials.map((s) => (
             <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-              class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-orange-700 hover:border-orange-500 hover:text-white transition-all duration-300">
+              class="footer-social">
               <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d={s.path}/></svg>
             </a>
           ))}
@@ -112,7 +112,7 @@ const socials = [
         </h3>
         <ul class="space-y-2.5 text-sm">
           {services.map((l) => (
-            <li><a href={l.href} class="text-slate-400 hover:text-orange-400 transition-colors duration-200">{l.label}</a></li>
+            <li><a href={l.href} class="footer-link">{l.label}</a></li>
           ))}
         </ul>
       </div>
@@ -124,7 +124,7 @@ const socials = [
         </h3>
         <ul class="space-y-2.5 text-sm">
           {solutions.map((l) => (
-            <li><a href={l.href} class="text-slate-400 hover:text-orange-400 transition-colors duration-200">{l.label}</a></li>
+            <li><a href={l.href} class="footer-link">{l.label}</a></li>
           ))}
         </ul>
       </div>
@@ -136,7 +136,7 @@ const socials = [
         </h3>
         <ul class="space-y-2.5 text-sm">
           {company.map((l) => (
-            <li><a href={l.href} class="text-slate-400 hover:text-orange-400 transition-colors duration-200">{l.label}</a></li>
+            <li><a href={l.href} class="footer-link">{l.label}</a></li>
           ))}
           <li><a href="/hn/" class="inline-flex items-center gap-1.5 text-slate-400 hover:text-orange-400 transition-colors duration-200"><span aria-hidden="true">🇭🇳</span> Honduras (ES)</a></li>
         </ul>
