@@ -386,7 +386,7 @@ const faqSchema = faqs?.length ? {
                             href={`/countryareas/${id}/`}
                             class="inline-block px-4 py-2 bg-white rounded-full text-slate-700 border border-slate-200 transition-colors hover:border-orange-300 hover:text-orange-800"
                         >
-                            {other.name}
+                            {isSpanish && id === "usa" ? "Estados Unidos" : other.name}
                         </a>
                     </li>
                 ))}
