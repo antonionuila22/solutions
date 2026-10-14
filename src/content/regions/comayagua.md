@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Comayagua | Codebrand Honduras"
+title: "Desarrollo Web en el departamento de Comayagua, Honduras"
 description: "Desarrollo web en Comayagua, Honduras: sitios web, tiendas en línea y aplicaciones para empresas de Comayagua, Siguatepeque y la zona de Palmerola."
 name: "Comayagua"
 code: "CM"

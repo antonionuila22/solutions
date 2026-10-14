@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en San Miguel | Codebrand El Salvador"
+title: "Desarrollo Web en el departamento de San Miguel, El Salvador"
 description: "Diseño y desarrollo web para empresas de San Miguel, El Salvador: sitios corporativos, tiendas en línea y sistemas para toda la zona oriental."
 name: "San Miguel"
 code: "SM"

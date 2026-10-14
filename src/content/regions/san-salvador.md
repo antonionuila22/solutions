@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en San Salvador, El Salvador | Codebrand"
+title: "Desarrollo Web en el departamento de San Salvador"
 description: "Desarrollo web en San Salvador, El Salvador: sitios corporativos, tiendas en línea y aplicaciones web para empresas de la capital y su área metropolitana."
 name: "San Salvador"
 code: "SS"

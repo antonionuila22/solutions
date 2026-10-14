@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Colón | Codebrand Honduras"
+title: "Desarrollo Web en el departamento de Colón, Honduras"
 description: "Desarrollo web en Colón, Honduras: sitios web, tiendas en línea y aplicaciones para empresas de Trujillo, Tocoa y el Valle del Aguán."
 name: "Colón"
 code: "CL"

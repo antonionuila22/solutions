@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Alajuela, Costa Rica | Codebrand"
+title: "Desarrollo Web en la provincia de Alajuela, Costa Rica"
 description: "Desarrollo web para empresas de la provincia de Alajuela y su capital: sitios corporativos, tiendas en línea con SINPE Móvil y software a la medida."
 name: "Alajuela"
 code: "AL"

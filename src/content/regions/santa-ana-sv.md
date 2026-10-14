@@ -1,5 +1,5 @@
 ---
-title: "Agencia de Diseño Web en Santa Ana, El Salvador"
+title: "Desarrollo Web en el departamento de Santa Ana, El Salvador"
 description: "Diseño y desarrollo web en Santa Ana, El Salvador: sitios, tiendas en línea y aplicaciones para comercios, cafetaleros e industrias del occidente del país."
 name: "Santa Ana"
 code: "SA"

@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Escuintla, Guatemala | Codebrand"
+title: "Desarrollo Web en el departamento de Escuintla, Guatemala"
 description: "Sitios corporativos, tiendas en línea con FEL y software a la medida para empresas de Escuintla, Puerto San José y Santa Lucía Cotzumalguapa. Precio fijo."
 name: "Escuintla"
 code: "ES"

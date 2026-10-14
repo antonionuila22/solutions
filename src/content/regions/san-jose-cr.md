@@ -1,5 +1,5 @@
 ---
-title: "Diseño y Desarrollo Web en San José, Costa Rica"
+title: "Desarrollo Web en la provincia de San José, Costa Rica"
 description: "Desarrollo web en San José, Costa Rica: sitios corporativos, tiendas en línea con SINPE Móvil y aplicaciones a la medida para empresas de toda la GAM."
 name: "San José"
 code: "SJ"

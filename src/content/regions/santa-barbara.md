@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Santa Bárbara | Codebrand Honduras"
+title: "Desarrollo Web en el departamento de Santa Bárbara, Honduras"
 description: "Desarrollo web profesional en Santa Bárbara: sitios web personalizados, e-commerce y aplicaciones web para empresas del departamento y del Lago de Yojoa."
 name: "Santa Bárbara"
 code: "SB"

@@ -1,5 +1,5 @@
 ---
-title: "Web Development Services in Washington | Codebrand"
+title: "Web Development in Washington State | Codebrand"
 description: "Web development for Washington businesses: custom websites, e-commerce and web apps for Seattle, Bellevue, Tacoma and Spokane. Nearshore team from Honduras."
 name: "Washington"
 code: "WA"

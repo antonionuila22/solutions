@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Colón, Panamá: Zona Libre y puertos"
+title: "Desarrollo Web en la provincia de Colón, Panamá"
 description: "Sitios web, catálogos B2B y sistemas a la medida para empresas de Colón, Panamá: Zona Libre, operadores logísticos, puertos y comercios de la provincia."
 name: "Colón"
 code: "CL"

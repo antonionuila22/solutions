@@ -11,6 +11,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createLocalBusinessSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
 import { isLocationHub } from "../../lib/seo/geo-tiers";
+import { placeKey } from "../../lib/seo/geo-names";
 import { testimonials } from "../../data/testimonials";
 import { TEAM_YEARS_LABEL } from "../../configs/business";
 import SpriteIcon from "../../components/icons/SpriteIcon.astro";
@@ -33,10 +34,20 @@ export async function getStaticPaths() {
     byCountry.set(key, [...(byCountry.get(key) ?? []), entry]);
   }
 
+  // Two cities can share a name across countries: Santiago in Chile and in
+  // Panama, San José in Costa Rica and San Jose in California. Their H1 then
+  // has to say which one it is.
+  const cityNameCount = new Map<string, number>();
+  for (const entry of locations) {
+    const key = placeKey(entry.data.city);
+    cityNameCount.set(key, (cityNameCount.get(key) ?? 0) + 1);
+  }
+
   return locations.map((location) => ({
     params: { id: location.id },
     props: {
       location,
+      sharedCityName: (cityNameCount.get(placeKey(location.data.city)) ?? 0) > 1,
       // Cada ciudad enlaza a las tres siguientes de su país. Varias solo
       // tenían el enlace del índice /locations.
       otherCities: (() => {
@@ -56,7 +67,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { location, otherCities = [] } = Astro.props;
+const { location, otherCities = [], sharedCityName = false } = Astro.props;
 const { data } = location;
 
 // Parent pages for the breadcrumb trail (country and region hubs), so every city
@@ -97,11 +108,18 @@ const {
 const isSpanish = data.country !== "usa";
 // "San Salvador, San Salvador" reads like a template glitch when city and state share a name.
 const place = city === state ? city : `${city}, ${state}`;
+// The H1 names the country, or the state in the US, only when another city
+// page has the same name.
+const heroPlace = !sharedCityName
+  ? city
+  : data.country === "usa"
+    ? `${city}, ${state}`
+    : `${city}, ${countryEntry?.data.name ?? state}`;
 const waText = encodeURIComponent(`Hola Codebrand, tengo un proyecto web en ${city} y quiero una propuesta.`);
 const whatsappUrl = `https://api.whatsapp.com/send/?phone=50487380714&text=${waText}&type=phone_number&app_absent=0`;
 const t = isSpanish
   ? {
-      heroTitle: `Desarrollo Web Profesional en <span class="text-orange-400">${city}</span>`,
+      heroTitle: `Desarrollo Web Profesional en <span class="text-orange-400">${heroPlace}</span>`,
       statReviews: "50 reseñas en Google", statFive: "Reseñas de 5 estrellas", statYears: "Años de experiencia del equipo", statCustom: "Hecho a la medida",
       ctaPrimary: { text: "Solicitar propuesta", href: whatsappUrl },
       ctaSecondary: { text: "Por qué elegirnos", href: "#why-codebrand" },
@@ -127,7 +145,7 @@ const t = isSpanish
       faqTitle: `Preguntas frecuentes sobre desarrollo web en ${city}`, faqSub: `Preguntas comunes de empresas de ${city} sobre nuestros servicios.`,
     }
   : {
-      heroTitle: `Professional Web Development in <span class="text-orange-400">${city}</span>`,
+      heroTitle: `Professional Web Development in <span class="text-orange-400">${heroPlace}</span>`,
       statReviews: "50 Google reviews", statFive: "Five-Star Reviews", statYears: "Years Team Experience", statCustom: "Custom-Built",
       ctaPrimary: { text: "Request a Proposal", href: "/quoter/" },
       ctaSecondary: { text: "Why Choose Us", href: "#why-codebrand" },

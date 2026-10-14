@@ -2,7 +2,7 @@
 title: "Custom Websites for Washington DC Organizations"
 metaTitle: "Washington DC Web Development | Associations"
 description: "Nearshore web development for DC associations, nonprofits, and professional-services firms. Credible, budget-fit sites one hour behind Eastern. Get a quote."
-city: "Washington"
+city: "Washington DC"
 state: "District of Columbia"
 stateCode: "DC"
 country: "usa"

@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Puntarenas, Costa Rica | Codebrand"
+title: "Desarrollo Web en la provincia de Puntarenas, Costa Rica"
 description: "Sitios web con reservas, tiendas en línea y aplicaciones para hoteles, tours y comercios de Puntarenas, Jacó, Quepos y Monteverde. Equipo en español."
 name: "Puntarenas"
 code: "PU"

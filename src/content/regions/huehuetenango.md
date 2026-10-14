@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Huehuetenango | Codebrand Guatemala"
+title: "Desarrollo Web en el departamento de Huehuetenango"
 description: "Sitios web, tiendas en línea con FEL y software a la medida para empresas de Huehuetenango, Chiantla, La Mesilla y los Cuchumatanes. Precio fijo."
 name: "Huehuetenango"
 code: "HU"

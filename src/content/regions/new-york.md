@@ -1,5 +1,5 @@
 ---
-title: "Web Development Services in New York | Codebrand"
+title: "Web Development in New York State | Codebrand"
 description: "Web development for New York businesses: custom websites, e-commerce and enterprise apps for NYC, Brooklyn, Long Island and Upstate, built nearshore."
 name: "New York"
 code: "NY"

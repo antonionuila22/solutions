@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Ciudad de Panamá y Provincia | Codebrand"
+title: "Desarrollo Web en la provincia de Panamá | Codebrand"
 description: "Desarrollo web, comercio electrónico y aplicaciones para empresas de la provincia de Panamá: Ciudad de Panamá, Costa del Este y Tocumen. Equipo en español."
 name: "Panamá"
 code: "PA"

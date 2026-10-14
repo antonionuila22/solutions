@@ -1,5 +1,5 @@
 ---
-title: "Diseño Web y Software en Heredia, Costa Rica | Codebrand"
+title: "Desarrollo Web en la provincia de Heredia, Costa Rica"
 description: "Diseño web, ecommerce y aplicaciones para empresas de Heredia: Heredia centro, Belén, Santo Domingo, Barva y proveedores de las zonas francas de Costa Rica."
 name: "Heredia"
 code: "HE"

@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Antofagasta y Calama, Chile | Codebrand"
+title: "Desarrollo Web en la Región de Antofagasta, Chile"
 description: "Sitios corporativos, portales para proveedores mineros y tiendas con Webpay para empresas de Antofagasta, Calama y Mejillones. Propuestas a precio fijo."
 name: "Antofagasta"
 code: "AN"

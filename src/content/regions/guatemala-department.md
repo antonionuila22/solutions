@@ -1,5 +1,5 @@
 ---
-title: "Diseño y Desarrollo Web en Guatemala | Codebrand Guatemala"
+title: "Desarrollo Web en el departamento de Guatemala | Codebrand"
 description: "Desarrollo web para empresas del departamento de Guatemala: Ciudad de Guatemala, Mixco y Villa Nueva. Sitios corporativos, ecommerce y sistemas a la medida."
 name: "Guatemala"
 code: "GUA"

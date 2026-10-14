@@ -493,6 +493,61 @@ function checkHreflang(parsed) {
   }
 }
 
+// ── Geo pages that answer the same search ────────────────────────────────────
+/**
+ * Two geo pages whose H1 names the same place compete for one search, and
+ * Google tends to show neither with confidence.
+ *
+ * Twenty four region pages shared a name with a city page and both had this:
+ * the city said "Desarrollo Web Profesional en Choluteca" and the department
+ * "Desarrollo Web en Choluteca". One adjective apart is not a different
+ * intent. So the comparison drops the words every geo H1 shares and keeps the
+ * ones that name the place. Two pages left with the same words are naming the
+ * same place. Titles are compared whole, since they are written by hand.
+ */
+const GEO_FILLER = new Set([
+  "desarrollo", "web", "profesional", "agencia", "diseno", "en", "de", "del", "la", "el", "y",
+  "development", "professional", "agency", "design", "services", "in", "the", "and", "codebrand",
+]);
+
+function checkGeoHeadings(parsed) {
+  const groups = { h1: new Map(), title: new Map() };
+  const add = (kind, key, page) => {
+    if (!key) return;
+    const map = groups[kind];
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(page);
+  };
+  const plain = (s) =>
+    decodeEntities(stripTags(s))
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
+  for (const { page, html } of parsed) {
+    if (!/^\/(locations|regions|countryareas)\/[^/]+\/$/.test(page)) continue;
+    if (/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(html)) continue;
+
+    const h1 = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
+    if (h1) {
+      const words = plain(h1[1]).split(/[^a-z0-9]+/).filter((w) => w && !GEO_FILLER.has(w));
+      add("h1", [...new Set(words)].sort().join(" "), page);
+    }
+    const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (title) add("title", plain(title[1]).replace(/\s+/g, " ").trim(), page);
+  }
+
+  for (const [kind, map] of Object.entries(groups)) {
+    for (const [key, pagesWithKey] of map) {
+      if (pagesWithKey.length < 2) continue;
+      for (const page of pagesWithKey) {
+        const others = pagesWithKey.filter((p) => p !== page).join(", ");
+        err(page, `geo-${kind}-collision`, `names the same place as ${others} ("${key}")`);
+      }
+    }
+  }
+}
+
 // ── Live mode ────────────────────────────────────────────────────────────────
 const LIVE = process.argv.includes("--live");
 const BASE =
@@ -621,6 +676,7 @@ if (LIVE) {
     parsed.push(checkPage(file, html, pages));
   }
   checkHreflang(parsed);
+  checkGeoHeadings(parsed);
   checkAddress(parsed);
   checkPrices(parsed);
   checkTenure(parsed);

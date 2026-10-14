@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Quetzaltenango, Guatemala | Codebrand"
+title: "Desarrollo Web en el departamento de Quetzaltenango"
 description: "Agencia de desarrollo web para Quetzaltenango y el occidente de Guatemala: sitios, tiendas en línea y aplicaciones a la medida para negocios de Xela."
 name: "Quetzaltenango"
 code: "QUE"

@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo de Sitios Web en Querétaro, México | Codebrand"
+title: "Desarrollo Web en el estado de Querétaro, México"
 description: "Desarrollo web, tiendas en línea y aplicaciones para empresas de Querétaro: Santiago de Querétaro, Juriquilla y San Juan del Río. Equipo en español."
 name: "Querétaro"
 code: "QRO"

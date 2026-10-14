@@ -1,5 +1,5 @@
 ---
-title: "Diseño y Desarrollo Web en Puebla, México | Codebrand"
+title: "Desarrollo Web en el estado de Puebla, México"
 description: "Sitios web, tiendas en línea y aplicaciones para empresas de Puebla: ciudad de Puebla, Cholula, Angelópolis y Tehuacán. Equipo en español y precio fijo."
 name: "Puebla"
 code: "PUE"

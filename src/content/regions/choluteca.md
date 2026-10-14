@@ -1,5 +1,5 @@
 ---
-title: "Desarrollo Web en Choluteca | Codebrand Honduras"
+title: "Desarrollo Web en el departamento de Choluteca, Honduras"
 description: "Desarrollo web en Choluteca: sitios corporativos, tiendas en línea y aplicaciones para camaroneras, exportadoras y comercios de la zona sur de Honduras."
 name: "Choluteca"
 code: "CH"

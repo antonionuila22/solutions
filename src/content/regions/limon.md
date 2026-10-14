@@ -1,5 +1,5 @@
 ---
-title: "Diseño y Desarrollo Web en Limón | Codebrand Costa Rica"
+title: "Desarrollo Web en la provincia de Limón, Costa Rica"
 description: "Sitios bilingües, tiendas en línea con SINPE Móvil y software a la medida para empresas de Limón, Guápiles y Puerto Viejo de Talamanca. Precio fijo."
 name: "Limón"
 code: "LI"

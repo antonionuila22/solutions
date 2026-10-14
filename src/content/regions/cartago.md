@@ -1,5 +1,5 @@
 ---
-title: "Agencia de Desarrollo Web en Cartago, Costa Rica"
+title: "Desarrollo Web en la provincia de Cartago, Costa Rica"
 description: "Sitios web, tiendas en línea y sistemas a la medida para empresas de la provincia de Cartago, Costa Rica: desde Cartago centro hasta Turrialba y La Unión."
 name: "Cartago"
 code: "CA"

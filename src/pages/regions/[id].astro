@@ -8,6 +8,7 @@ import PageHero from "../../components/PageHero.astro";
 import { createBreadcrumbSchema } from "../../utils/schema";
 import { sanitizeHtml } from "../../lib/sanitize-html";
 import { isRegionHub } from "../../lib/seo/geo-tiers";
+import { collidingRegionIds, placeKey, regionHeading } from "../../lib/seo/geo-names";
 import { TEAM_YEARS_LABEL } from "../../configs/business";
 import SpriteIcon from "../../components/icons/SpriteIcon.astro";
 
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
   const regions = await getCollection("regions", ({ data }) => !data.draft);
   const locations = await getCollection("locations", ({ data }) => !data.draft);
   const countries = await getCollection("countryareas", ({ data }) => !data.draft);
+  const colliding = collidingRegionIds(regions, locations, countries);
 
   return regions.map((region) => {
     // Get cities in this region
@@ -24,12 +26,17 @@ export async function getStaticPaths() {
 
     return {
       params: { id: region.id },
-      props: { region, cities: regionCities, country },
+      props: {
+        region,
+        cities: regionCities,
+        country,
+        heading: regionHeading(region.id, region.data.name, region.data.country, colliding.has(region.id)),
+      },
     };
   });
 }
 
-const { region, cities, country } = Astro.props;
+const { region, cities, country, heading } = Astro.props;
 const { data } = region;
 const {
   title,
@@ -64,7 +71,7 @@ const whatsappUrl = `https://api.whatsapp.com/send/?phone=50487380714&text=${waT
 const t = isSpanish
   ? {
       eyebrow: (n: number) => `${code} · ${n} ${n === 1 ? "ciudad atendida" : "ciudades atendidas"}`,
-      heroTitle: `Desarrollo Web en <span class="text-orange-400">${name}</span>`,
+      heroTitle: `Desarrollo Web en ${heading.before}<span class="text-orange-400">${heading.name}</span>${heading.after}`,
       statReviews: "50 reseñas en Google", statFive: "Reseñas de 5 estrellas", statYears: "Años de experiencia del equipo", statCustom: "Hecho a la medida",
       ctaPrimary: { text: "Solicitar propuesta", href: whatsappUrl }, ctaSecondary: { text: "Ver nuestro trabajo", href: "/projects/" },
       population: "Población", capital: "Capital", timezone: "Zona horaria",
@@ -72,6 +79,7 @@ const t = isSpanish
       industriesTitle: `Industrias que atendemos en ${name}`, industriesSub: `Desarrollo web especializado para los sectores económicos clave de ${name}.`,
       marketTitle: `Aspectos clave del mercado de ${name}`, statsTitle: "Datos regionales", gdp: "PIB regional", techCompanies: "Empresas tecnológicas", growth: "Crecimiento empresarial",
       citiesTitle: `Ciudades que atendemos en ${name}`, citiesSub: "Seleccione su ciudad para ver servicios de desarrollo web e información local.",
+      placesTitle: (others: boolean) => `${others ? "Otras localidades" : "Localidades"} que atendemos en ${name}`,
       featured: "Destacada", populationShort: "Población", viewServices: "Ver servicios",
       whyTitle: `Por qué las empresas de ${name} eligen Codebrand`, whySub: "Desarrollo nearshore con todas las ventajas de un equipo local.",
       why1Title: "Precio cerrado según su presupuesto", why1: `Usted define el presupuesto y nosotros proponemos el alcance que cabe, con un precio fijo por escrito.`,
@@ -85,7 +93,7 @@ const t = isSpanish
     }
   : {
       eyebrow: (n: number) => `${code} · ${n} ${n === 1 ? "City" : "Cities"} Served`,
-      heroTitle: `Web Development in <span class="text-orange-400">${name}</span>`,
+      heroTitle: `Web Development in ${heading.before}<span class="text-orange-400">${heading.name}</span>${heading.after}`,
       statReviews: "50 Google reviews", statFive: "Five-Star Reviews", statYears: "Years Team Experience", statCustom: "Custom-Built",
       ctaPrimary: { text: "Request a Proposal", href: "/quoter/" }, ctaSecondary: { text: "View Our Work", href: "/projects/" },
       population: "Population", capital: "Capital", timezone: "Timezone",
@@ -93,6 +101,7 @@ const t = isSpanish
       industriesTitle: `Industries We Serve in ${name}`, industriesSub: `Specialized web development for ${name}'s key economic sectors.`,
       marketTitle: `${name} Market Highlights`, statsTitle: "Regional Statistics", gdp: "State GDP", techCompanies: "Tech Companies", growth: "Business Growth",
       citiesTitle: `Cities We Serve in ${name}`, citiesSub: "Select your city for localized web development services and information.",
+      placesTitle: (others: boolean) => `${others ? "Other communities" : "Communities"} we serve in ${name}`,
       featured: "Featured", populationShort: "Population", viewServices: "View Services",
       whyTitle: `Why ${name} Businesses Choose Codebrand`, whySub: "Nearshore development with all the benefits of a local team.",
       why1Title: "Fixed Price From Your Budget", why1: `You set the budget and we propose the scope that fits it, with a fixed price in writing.`,
@@ -111,6 +120,11 @@ const sortedCities = cities.sort((a, b) => {
   if (!a.data.featured && b.data.featured) return 1;
   return a.data.city.localeCompare(b.data.city);
 });
+
+// The places this region lists in majorCities that do not already have a city
+// page in the grid above. The list was in every region file and never rendered.
+const cityKeys = new Set(cities.map((c) => placeKey(c.data.city)));
+const otherPlaces = (majorCities ?? []).filter((place) => !cityKeys.has(placeKey(place)));
 
 // SEO, keep title ≤ 70 chars and description ≤ 160 chars
 const baseUrl = "https://www.codebrand.us";
@@ -377,6 +391,22 @@ const faqSchema = faqs && faqs.length > 0 ? {
             </a>
           ))}
         </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Other places in the region without a page of their own -->
+  {otherPlaces.length > 0 && (
+    <section class="py-12 bg-white font-poppins border-t border-slate-100" aria-labelledby="region-places">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 id="region-places" class="text-display-2 font-bold text-cyan-900 mb-6" data-anim="heading">
+          {t.placesTitle(cities.length > 0)}
+        </h2>
+        <ul class="flex flex-wrap justify-center gap-3 list-none p-0" data-anim="fade" data-delay="0.15">
+          {otherPlaces.map((place) => (
+            <li class="px-4 py-2 bg-slate-50 rounded-full text-slate-700 border border-slate-200">{place}</li>
+          ))}
+        </ul>
       </div>
     </section>
   )}
