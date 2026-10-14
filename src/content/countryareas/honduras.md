@@ -1,60 +1,56 @@
 ---
-title: Codebrand Honduras
+title: "Desarrollo web en Honduras"
+seoTitle: "Desarrollo Web en los 18 Departamentos de Honduras"
+heading: "Desarrollo web en cada departamento de Honduras"
 name: Honduras
 code: HN
 region: Central America
-author: Ramon Nuila
 img: /photos/teamcode.webp
-readtime: 5
-description: Agencia de diseño y desarrollo web en Honduras. Sitios, tiendas online y sistemas a la medida para empresas de toda Centroamérica que buscan resultados.
+description: "Agencia de desarrollo web con oficina en San Pedro Sula. Sitios, tiendas en línea y sistemas para empresas de los 18 departamentos de Honduras."
+faqs:
+  - question: "¿Tienen oficina en Honduras?"
+    answer: "Sí. Nuestra única oficina está en San Pedro Sula, en el Edificio Nuevos Horizontes. Con empresas de otras ciudades trabajamos a distancia, con reuniones por videollamada en horario de oficina y demostraciones semanales del avance."
+  - question: "¿El sitio puede emitir facturas conforme al SAR?"
+    answer: "Sí. Conectamos su tienda o su sistema de ventas con la facturación para que cada documento salga con el CAI vigente y un correlativo dentro del rango autorizado. Si ya usa un sistema contable, lo integramos en lugar de reemplazarlo."
+  - question: "¿Qué formas de pago puede aceptar una tienda en línea hondureña?"
+    answer: "Tarjetas de crédito y débito por medio de una pasarela, transferencias bancarias y Tigo Money. Antes de elegir revisamos con usted las comisiones, los tiempos de liquidación y el banco con el que ya trabaja."
+  - question: "¿Cuánto cuesta un sitio web en Honduras?"
+    answer: "No publicamos precios porque cada proyecto es distinto. Usted nos comparte el presupuesto que tiene y le respondemos con una propuesta de precio cerrado, con el alcance que cabe en esa cifra."
+  - question: "¿Trabajan con empresas fuera de San Pedro Sula y Tegucigalpa?"
+    answer: "Sí. Trabajamos con empresas de cualquier departamento, desde Islas de la Bahía hasta Gracias a Dios, y cada uno tiene su propia página en este sitio. La distancia no cambia el proceso: propuesta por escrito, avances semanales y entrega con todos los accesos a nombre de su empresa."
 ---
 
-## Agencia de Diseño y Desarrollo Web en Honduras
+## Una agencia hondureña, con oficina en San Pedro Sula
 
-**Codebrand Honduras** es la sede centroamericana de nuestra agencia digital, especializada en la creación de soluciones tecnológicas modernas para marcas que buscan destacarse en el entorno digital.
+Codebrand es una agencia de desarrollo web fundada en 2020, con oficina en San Pedro Sula. Para una empresa hondureña eso significa algo concreto: el mismo horario, el mismo idioma, facturación local y la posibilidad de reunirse en persona cuando el proyecto lo pide. Con clientes de Tegucigalpa, La Ceiba o Choluteca trabajamos a distancia, con videollamadas y demostraciones semanales del avance.
 
-Desde **Honduras**, trabajamos con empresas locales y regionales, ofreciendo servicios de alto nivel que combinan diseño estratégico, desarrollo web escalable y posicionamiento digital efectivo.
+Esta página reúne lo que hacemos en todo el país, departamento por departamento. Si busca el detalle de nuestros servicios para el mercado hondureño, la página principal es [desarrollo web en Honduras](/hn/desarrollo-web-honduras/). También tenemos páginas dedicadas a [tiendas en línea en Honduras](/hn/tienda-online-honduras/) y a [software a la medida en Honduras](/hn/desarrollo-de-software-honduras/).
 
----
+## Lo que necesita un sitio web que vende en Honduras
 
-## ¿Qué ofrecemos?
+- **Facturación conforme al SAR.** Si el sitio o el sistema emite facturas, tiene que respetar el régimen de facturación: CAI vigente, rango autorizado y correlativos en orden. Lo dejamos integrado para que nadie transcriba ventas a mano al final del día.
+- **Cobros que el cliente hondureño sí usa.** Tarjeta por medio de una pasarela, transferencia bancaria y Tigo Money. La pasarela se elige según comisiones, tiempos de liquidación y su banco.
+- **Lempiras y dólares.** Muchos negocios cotizan en lempiras para el mercado local y en dólares para el exportador o el turista. El sitio puede mostrar las dos monedas.
+- **WhatsApp como canal de venta.** Buena parte de las consultas en Honduras termina en WhatsApp. Conectamos formularios y catálogo con su número para que ninguna se pierda.
+- **Velocidad con datos móviles.** La mayoría de sus visitantes llega desde el teléfono, muchas veces con señal débil fuera de las ciudades grandes. Construimos sitios ligeros que cargan rápido en esas condiciones.
 
-Nuestra agencia brinda una gama completa de servicios digitales diseñados para crecer con tu negocio:
+## Sectores con los que trabajamos en Honduras
 
-- Diseño UX/UI profesional y centrado en el usuario
-- Desarrollo web Full Stack (WordPress, Webflow, React, Astro, etc.)
-- Comercio electrónico (eCommerce) personalizado
-- Servicios de SEO técnico y estratégico
-- Branding y diseño gráfico profesional
+El país no tiene una sola economía, y un sitio pensado para la capital no le sirve igual a una cooperativa cafetalera de occidente.
 
----
+- **Industria y logística en el Valle de Sula.** Maquila, manufactura y empresas que despachan por [Puerto Cortés](/locations/puerto-cortes/), con sede en [San Pedro Sula](/locations/san-pedro-sula/), [Choloma](/locations/choloma/) o [Villanueva](/locations/villanueva-hn/).
+- **Servicios y comercio en la capital.** Despachos, clínicas, universidades y distribuidores de [Tegucigalpa](/locations/tegucigalpa/) y del resto de [Francisco Morazán](/regions/francisco-morazan/).
+- **Turismo en el Caribe.** Hoteles, centros de buceo y tours de [Roatán](/locations/roatan/), [La Ceiba](/locations/la-ceiba/) y [Tela](/locations/tela/), que venden a visitantes que reservan en inglés.
+- **Café de altura.** Fincas, beneficios y cooperativas de [Copán](/regions/copan/), [Santa Bárbara](/regions/santa-barbara/), [La Paz](/regions/la-paz/) e [Intibucá](/regions/intibuca/) que necesitan mostrar origen y trazabilidad a compradores de fuera.
+- **Exportación desde el sur.** Camaroneras y agroexportadoras del [departamento de Choluteca](/regions/choluteca/) y de [Valle](/regions/valle/), en el Golfo de Fonseca.
+- **Agroindustria y comercio del oriente.** Empresas de [Tocoa](/locations/tocoa/), [Juticalpa](/locations/juticalpa/), [Catacamas](/locations/catacamas/) y [Danlí](/locations/danli/).
 
-## ¿Por qué trabajar con Codebrand Honduras?
+## Proyectos que hicimos en Honduras
 
-Somos un equipo apasionado por la innovación y los resultados. Entendemos el mercado centroamericano y adaptamos cada solución a las necesidades específicas de cada cliente.
+- [ESABEP](/projects/esabep-construccion-pozos/), perforadora de pozos de San Pedro Sula: sitio corporativo con sus tres áreas de servicio y solicitud de cotización en línea.
+- [Studio RNDR](/projects/studio-rndr-visualizacion-arquitectonica/), estudio de visualización arquitectónica que trabaja en Honduras y Guatemala: no tenía sitio web y hoy presenta su portafolio en una landing propia.
+- [Hazzlo](/projects/hazzlo-services-marketplace/), nuestro propio marketplace para contratar empresas y técnicos verificados en Honduras.
 
-- 🌎 Alcance regional
-- 🧩 Tecnología flexible y escalable
-- 🎯 Resultados medibles
-- 🤝 Atención personalizada
+## Cómo trabajamos
 
----
-
-## Impulsamos negocios en toda Centroamérica
-
-Nuestros servicios están disponibles para empresas en:
-
-- Honduras
-- Guatemala
-- El Salvador
-- Nicaragua
-- Costa Rica
-- Panamá
-
-Ya sea que estés lanzando tu primer sitio web o rediseñando una plataforma existente, **Codebrand Honduras** es tu aliado estratégico en el mundo digital.
-
----
-
-### ¿Estás listo para transformar tu presencia online?
-
-Hablemos y llevemos tu proyecto al siguiente nivel con Codebrand.
+Usted nos dice qué necesita y cuánto puede invertir. Nosotros proponemos el alcance que cabe en ese presupuesto, con un precio fijo por escrito. Durante el proyecto ve el avance en demostraciones semanales, y al terminar el código, el dominio y los accesos quedan a nombre de su empresa.

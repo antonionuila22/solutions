@@ -397,7 +397,8 @@ p, .text-lead, .prose p, .prose li {
 }
 
 .markdown-content a {
-  @apply text-orange-500 font-medium underline hover:text-orange-600 hover:no-underline transition-colors text-sm;
+  /* orange-500 on white is 2.8:1, under the 4.5:1 that body-size text needs. */
+  @apply text-orange-700 font-medium underline hover:text-orange-800 hover:no-underline transition-colors text-sm;
 }
 
 .markdown-content img {

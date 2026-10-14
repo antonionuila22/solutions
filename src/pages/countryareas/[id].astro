@@ -5,6 +5,7 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import SpriteIcon from "../../components/icons/SpriteIcon.astro";
+import { createCountryServiceSchema } from "../../utils/schema";
 
 // 1. Generamos las rutas estáticas basadas en los slugs de cada país
 export async function getStaticPaths() {
@@ -28,7 +29,7 @@ export async function getStaticPaths() {
 // 2. Props del archivo .md para ese país
 const { country, countries, regions: countryRegions, cities: countryCities } = Astro.props;
 const { data } = country;
-const { title, name, region, code, img, description } = data;
+const { name, code, img, description, faqs, seoTitle: seoTitleOverride, heading } = data;
 
 // SEO title is more descriptive than the on-page H1 to avoid title-too-short
 // and identical-title-and-H1 issues flagged by SE Ranking.
@@ -37,34 +38,51 @@ const isSpanish = country.id !== "usa";
 // Kept short enough that the longest country name in the collection still
 // lands under 60 characters, which is where Google truncates. The previous
 // wording pushed El Salvador and United States past it.
-const seoTitle = isSpanish
+const seoTitle = seoTitleOverride ?? (isSpanish
     ? `Agencia de Desarrollo Web en ${name} | Codebrand`
-    : `Web Development Agency in ${name} | Codebrand`;
-const h1Heading = isSpanish ? `${title}: Desarrollo Web en ${name}` : `${title}: Web Development in ${name}`;
+    : `Web Development Agency in the ${name} | Codebrand`);
+// The H1 used to read "Codebrand Guatemala: Desarrollo Web en Guatemala",
+// which suggested an office in each country. There is one office, in San
+// Pedro Sula, and the copy now says so.
+const h1Heading = heading ?? (isSpanish
+    ? `Desarrollo web para empresas de ${name}`
+    : `Web development for businesses across the ${name}`);
+const waText = encodeURIComponent(`Hola Codebrand, tengo un proyecto web en ${name} y quiero una propuesta.`);
+const whatsappUrl = `https://api.whatsapp.com/send/?phone=50487380714&text=${waText}&type=phone_number&app_absent=0`;
 const t = isSpanish
     ? {
-          profile: "Perfil geográfico", exploreByRegion: "Explore por región",
+          profile: "Área de servicio", imageAlt: "Ilustración en pixel art del equipo de Codebrand",
+          ctaPrimary: { text: "Solicitar propuesta", href: whatsappUrl }, ctaCities: "Ver ciudades",
+          exploreByRegion: "Explore por región",
           regionsTitle: (isState: boolean) => `${isState ? "Estados" : "Regiones"} que atendemos en ${name}`,
           regionsSub: (isState: boolean) => `Seleccione ${isState ? "un estado" : "una región"} para ver los servicios de desarrollo web y las ciudades de esa zona.`,
           viewAllRegions: "Ver todas las regiones", topCities: "Ciudades principales", featuredTitle: `Ciudades destacadas en ${name}`,
-          featuredSub: "Explore los servicios de desarrollo web en nuestras ciudades más solicitadas.",
-          viewAllCities: (n: number) => `Ver las ${n} ciudades`,
-          exploreTitle: "Explore otras áreas", exploreSub: "Descubra más países y regiones donde trabajamos.",
-          ctaTitle: "¿Quiere seguir explorando?", ctaSub: "Hay muchas regiones por descubrir.", ctaButton: "Ver todos los países",
-          countryLabel: "País", codeLabel: "Código", regionLabel: "Región", cardAria: (x: string) => `Ver información de ${x}`,
+          featuredSub: "Cada ciudad tiene su propia página con los sectores, pagos y preguntas de su mercado.",
+          allCitiesTitle: `Todas las ciudades que atendemos en ${name}`,
+          faqTitle: `Preguntas frecuentes sobre desarrollo web en ${name}`,
+          ctaTitle: `¿Tiene un proyecto web en ${name}?`,
+          ctaSub: "Cuéntenos qué necesita y el presupuesto que tiene. Le respondemos con una propuesta de precio cerrado, sin compromiso.",
+          ctaButton: "Solicitar propuesta", ctaHref: whatsappUrl,
+          otherCountries: "También trabajamos en", allCountries: "Ver todas las áreas de servicio",
           crumbHome: "Inicio", crumbAreas: "Áreas de servicio", cityCount: (n: number) => `${n} ${n === 1 ? "ciudad" : "ciudades"}`, viewServices: "Ver servicios",
+          populationShort: "Población",
       }
     : {
-          profile: "Geographic profile", exploreByRegion: "Explore by Region",
-          regionsTitle: (isState: boolean) => `${isState ? "States" : "Regions"} We Serve in ${name}`,
+          profile: "Service area", imageAlt: "Pixel art illustration of the Codebrand team",
+          ctaPrimary: { text: "Request a Proposal", href: "/quoter/" }, ctaCities: "See cities",
+          exploreByRegion: "Explore by Region",
+          regionsTitle: (isState: boolean) => `${isState ? "States" : "Regions"} We Serve in the ${name}`,
           regionsSub: (isState: boolean) => `Select a ${isState ? "state" : "region"} to find web development services and cities in that area.`,
-          viewAllRegions: "View All Regions", topCities: "Top Cities", featuredTitle: `Featured Cities in ${name}`,
-          featuredSub: "Explore web development services in our most popular cities.",
-          viewAllCities: (n: number) => `View All ${n} Cities`,
-          exploreTitle: "Explore other areas", exploreSub: "Discover more countries and regions where we work.",
-          ctaTitle: "Want to keep exploring?", ctaSub: "There are many regions to discover.", ctaButton: "View all countries",
-          countryLabel: "Country", codeLabel: "Code", regionLabel: "Region", cardAria: (x: string) => `See information about ${x}`,
+          viewAllRegions: "View All Regions", topCities: "Top Cities", featuredTitle: `Featured Cities in the ${name}`,
+          featuredSub: "Each city has its own page with the industries, payments and questions of its market.",
+          allCitiesTitle: `Every city we serve in the ${name}`,
+          faqTitle: `Web development in the ${name}: common questions`,
+          ctaTitle: "Have a web project in mind?",
+          ctaSub: "Tell us what you need and the budget you have. You get a fixed-price proposal within 24 business hours. No commitment required.",
+          ctaButton: "Request a Proposal", ctaHref: "/quoter/",
+          otherCountries: "We also work in", allCountries: "See every service area",
           crumbHome: "Home", crumbAreas: "Service Areas", cityCount: (n: number) => `${n} ${n === 1 ? "city" : "cities"}`, viewServices: "View Services",
+          populationShort: "Population",
       };
 
 const { Content } = await render(country);
@@ -81,13 +99,38 @@ const featuredCities = countryCities
     .sort((a, b) => a.data.city.localeCompare(b.data.city))
     .slice(0, 6);
 
+// Every city of the country, so each city page is one click from its hub. The
+// old button sent visitors to /locations/, which lists all countries at once.
+const allCities = [...countryCities].sort((a, b) => a.data.city.localeCompare(b.data.city, isSpanish ? "es" : "en"));
+
 // Count cities per region
 const getCityCount = (regionSlug: string) => {
     return countryCities.filter(loc => loc.data.region === regionSlug).length;
 };
+
+// Other countries as plain links. These used to be six cards that each
+// repeated another country's description, which made up much of the text the
+// ten country pages had in common.
+const otherCountries = countries
+    .filter(({ id }) => id !== country.id)
+    .sort((a, b) => a.data.name.localeCompare(b.data.name, "es"));
+
+const serviceSchema = createCountryServiceSchema(country.id, name, description, { spanish: isSpanish });
+const faqSchema = faqs?.length ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+    })),
+} : null;
 ---
 
 <Layout title={seoTitle} description={description} lang={isSpanish ? "es" : "en-US"} breadcrumbs={[{ name: t.crumbHome, href: "/" }, { name: t.crumbAreas, href: "/countryareas/" }, { name, href: "" }]}>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+    {faqSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />}
+
     <div
         class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 font-poppins space-y-20"
     >
@@ -101,7 +144,7 @@ const getCityCount = (regionSlug: string) => {
             >
                 <img
                     src={`${img}`}
-                    alt={name}
+                    alt={t.imageAlt}
                     class="w-full object-cover max-h-96"
                     loading="eager"
                     decoding="async"
@@ -114,7 +157,7 @@ const getCityCount = (regionSlug: string) => {
             <!-- Texto -->
             <div class="md:col-span-2 space-y-5">
                 <span
-                    class="uppercase text-sm text-orange-500 tracking-widest font-semibold"
+                    class="uppercase text-sm text-orange-700 tracking-widest font-semibold"
                 >
                     {t.profile}
                 </span>
@@ -122,21 +165,23 @@ const getCityCount = (regionSlug: string) => {
                 <p class="text-lg text-slate-700 leading-relaxed">
                     {description}
                 </p>
-
-                <ul class="text-base text-slate-800 space-y-1 pt-2">
-                    <li>
-                        <strong class="text-slate-600">Nombre:</strong>
-                        {name}
-                    </li>
-                    {
-                        region && (
-                            <li>
-                                <strong class="text-slate-600">Región:</strong>{" "}
-                                {region}
-                            </li>
-                        )
-                    }
-                </ul>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <a
+                        href={t.ctaPrimary.href}
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-orange-700 hover:bg-orange-800 text-white rounded-xl font-semibold transition-colors"
+                    >
+                        {t.ctaPrimary.text}
+                        <SpriteIcon name="arrow-right" class="w-4 h-4" />
+                    </a>
+                    {allCities.length > 0 && (
+                        <a
+                            href="#ciudades"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-slate-50 text-cyan-900 border border-slate-200 rounded-xl font-semibold transition-colors"
+                        >
+                            {t.ctaCities}
+                        </a>
+                    )}
+                </div>
             </div>
         </header>
 
@@ -160,7 +205,7 @@ const getCityCount = (regionSlug: string) => {
             <section class="bg-gradient-to-b from-white to-slate-50 py-16 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto">
                     <div class="text-center mb-12">
-                        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
+                        <span class="text-orange-700 font-semibold text-sm uppercase tracking-wider">
                             {t.exploreByRegion}
                         </span>
                         <h2 class="text-3xl font-bold text-cyan-900 mt-2">
@@ -180,17 +225,17 @@ const getCityCount = (regionSlug: string) => {
                                     class="group bg-white p-5 rounded-xl shadow-sm hover:shadow-lg border border-slate-100 hover:border-orange-300 transition-all duration-300"
                                 >
                                     <div class="flex items-center justify-between mb-2">
-                                        <span class="text-xl font-bold text-cyan-600 group-hover:text-orange-500 transition-colors">
+                                        <span class="text-xl font-bold text-cyan-700 group-hover:text-orange-700 transition-colors">
                                             {regionItem.data.code}
                                         </span>
                                         {regionItem.data.featured && (
                                             <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
                                         )}
                                     </div>
-                                    <h3 class="text-base font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
+                                    <h3 class="text-base font-semibold text-slate-900 group-hover:text-orange-700 transition-colors">
                                         {regionItem.data.name}
                                     </h3>
-                                    <p class="text-xs text-slate-500 mt-1">
+                                    <p class="text-xs text-slate-600 mt-1">
                                         {t.cityCount(cityCount)}
                                     </p>
                                 </a>
@@ -201,7 +246,7 @@ const getCityCount = (regionSlug: string) => {
                     <div class="text-center mt-8">
                         <a
                             href="/regions/"
-                            class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
+                            class="inline-flex items-center gap-2 text-orange-700 hover:text-orange-800 font-semibold"
                         >
                             {t.viewAllRegions}
                             <SpriteIcon name="chevron-right" class="w-4 h-4" />
@@ -211,159 +256,112 @@ const getCityCount = (regionSlug: string) => {
             </section>
         )}
 
-        <!-- Featured Cities Section -->
-        {featuredCities.length > 0 && (
-            <section class="py-16">
-                <div class="text-center mb-12">
-                    <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-                        {t.topCities}
-                    </span>
-                    <h2 class="text-3xl font-bold text-cyan-900 mt-2">
-                        {t.featuredTitle}
-                    </h2>
-                    <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-                        {t.featuredSub}
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {featuredCities.map((city) => (
-                        <a
-                            href={`/locations/${city.id}/`}
-                            class="group bg-gradient-to-br from-white to-cyan-50 p-6 rounded-2xl shadow-md hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300"
-                        >
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center group-hover:from-orange-500 group-hover:to-orange-600 transition-all">
-                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                                <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">
-                                    {city.data.stateCode}
-                                </span>
-                            </div>
-
-                            <h3 class="text-xl font-bold text-cyan-900 mb-2 group-hover:text-orange-600 transition-colors">
-                                {city.data.city}
-                            </h3>
-
-                            <p class="text-slate-600 text-sm mb-3 line-clamp-2">
-                                {city.data.description}
-                            </p>
-
-                            {city.data.population && (
-                                <p class="text-xs text-slate-500 mb-3">
-                                    {isSpanish ? "Población" : "Population"}: {city.data.population}
-                                </p>
-                            )}
-
-                            <span class="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm group-hover:gap-3 transition-all">
-                                {t.viewServices}
-                                <SpriteIcon name="chevron-right" class="w-4 h-4" />
+        <!-- Cities -->
+        {allCities.length > 0 && (
+            <section id="ciudades" class="py-16 scroll-mt-24">
+                {featuredCities.length > 0 && (
+                    <>
+                        <div class="text-center mb-12">
+                            <span class="text-orange-700 font-semibold text-sm uppercase tracking-wider">
+                                {t.topCities}
                             </span>
-                        </a>
-                    ))}
-                </div>
+                            <h2 class="text-3xl font-bold text-cyan-900 mt-2">
+                                {t.featuredTitle}
+                            </h2>
+                            <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
+                                {t.featuredSub}
+                            </p>
+                        </div>
 
-                <div class="text-center mt-8">
-                    <a
-                        href="/locations/"
-                        class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-900 hover:bg-cyan-800 text-white rounded-xl font-semibold transition-colors"
-                    >
-                        {t.viewAllCities(countryCities.length)}
-                        <SpriteIcon name="chevron-right" class="w-4 h-4" />
-                    </a>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {featuredCities.map((city) => (
+                                <a
+                                    href={`/locations/${city.id}/`}
+                                    class="group bg-gradient-to-br from-white to-cyan-50 p-6 rounded-2xl shadow-md hover:shadow-xl border border-cyan-100 hover:border-orange-300 transition-all duration-300"
+                                >
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center group-hover:from-orange-500 group-hover:to-orange-600 transition-all duration-300">
+                                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-semibold rounded-full">
+                                            {city.data.stateCode}
+                                        </span>
+                                    </div>
+
+                                    <h3 class="text-xl font-bold text-cyan-900 mb-2 group-hover:text-orange-700 transition-colors">
+                                        {city.data.city}
+                                    </h3>
+
+                                    <p class="text-slate-600 text-sm mb-3 line-clamp-2">
+                                        {city.data.description}
+                                    </p>
+
+                                    {city.data.population && (
+                                        <p class="text-xs text-slate-600 mb-3">
+                                            {t.populationShort}: {city.data.population}
+                                        </p>
+                                    )}
+
+                                    <span class="inline-flex items-center gap-2 text-orange-700 font-semibold text-sm group-hover:gap-3 transition-all">
+                                        {t.viewServices}
+                                        <SpriteIcon name="chevron-right" class="w-4 h-4" />
+                                    </span>
+                                </a>
+                            ))}
+                        </div>
+                    </>
+                )}
+
+                <div class="mt-12 text-center">
+                    {featuredCities.length > 0 ? (
+                        <h3 class="text-xl font-bold text-cyan-900 mb-6">{t.allCitiesTitle}</h3>
+                    ) : (
+                        <h2 class="text-3xl font-bold text-cyan-900 mb-6">{t.allCitiesTitle}</h2>
+                    )}
+                    <ul class="flex flex-wrap justify-center gap-3 list-none p-0">
+                        {allCities.map((city) => (
+                            <li>
+                                <a
+                                    href={`/locations/${city.id}/`}
+                                    class="inline-block px-4 py-2 bg-slate-50 rounded-full text-slate-700 border border-slate-200 transition-colors hover:border-cyan-300 hover:text-cyan-900"
+                                >
+                                    {city.data.city}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </section>
         )}
 
-        <!-- Recomendaciones dinámicas -->
-        <section class="bg-white py-20 font-poppins w-full">
-            <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div class="text-center">
-                    <h2 class="text-4xl font-bold text-slate-900">
-                        {t.exploreTitle}
-                    </h2>
-                    <p class="mt-2 text-base text-slate-600 max-w-2xl mx-auto">
-                        {t.exploreSub}
-                    </p>
+        <!-- FAQ -->
+        {faqs && faqs.length > 0 && (
+            <section class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-cyan-900 text-center mb-10">{t.faqTitle}</h2>
+                <div class="space-y-4">
+                    {faqs.map((faq) => (
+                        <details class="group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+                            <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-cyan-900 hover:bg-slate-100 transition-colors">
+                                <span class="pr-4">{faq.question}</span>
+                                <SpriteIcon name="chevron-down" class="w-5 h-5 text-cyan-700 transform group-open:rotate-180 transition-transform flex-shrink-0" />
+                            </summary>
+                            <div class="px-6 pb-6 text-slate-700 leading-relaxed">
+                                {faq.answer}
+                            </div>
+                        </details>
+                    ))}
                 </div>
-
-                <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                    {
-                        countries
-                            .filter(({ id }) => id !== Astro.params.id)
-                            .slice(0, 6)
-                            .map(({ id, data }) => {
-                                const {
-                                    title,
-                                    name,
-                                    code,
-                                    region,
-                                    description,
-                                    img,
-                                } = data;
-
-                                return (
-                                    <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                                        <a
-                                            href={`/countryareas/${id}/`}
-                                            class="block h-full"
-                                            aria-label={t.cardAria(title)}
-                                        >
-                                            {img && (
-                                                <div class="overflow-hidden rounded-t-2xl">
-                                                    <img
-                                                        src={`${img}`}
-                                                        alt={name}
-                                                        class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                        width="600"
-                                                        height="400"
-                                                    />
-                                                </div>
-                                            )}
-
-                                            <div class="p-5 flex flex-col gap-2 h-full">
-                                                <h3 class="text-lg font-semibold text-cyan-900 group-hover:text-orange-500 transition-colors">
-                                                    {title}
-                                                </h3>
-
-                                                <p class="text-sm text-slate-700 mt-1 line-clamp-3">
-                                                    {description}
-                                                </p>
-
-                                                <ul class="text-xs text-slate-500 mt-2">
-                                                    <li>
-                                                        <strong>{t.countryLabel}:</strong>{" "}
-                                                        {name}
-                                                    </li>
-                                                    {region && (
-                                                        <li>
-                                                            <strong>
-                                                                {t.regionLabel}:
-                                                            </strong>{" "}
-                                                            {region}
-                                                        </li>
-                                                    )}
-                                                </ul>
-                                            </div>
-                                        </a>
-                                    </article>
-                                );
-                            })
-                    }
-                </div>
-            </div>
-        </section>
+            </section>
+        )}
 
         <!-- CTA final -->
         <section
-            class="bg-orange-50 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-inner mt-20"
+            class="bg-orange-50 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-inner"
         >
             <div class="space-y-2">
-                <h2 class="text-2xl font-bold text-orange-700">
+                <h2 class="text-2xl font-bold text-orange-800">
                     {t.ctaTitle}
                 </h2>
                 <p class="text-slate-700">
@@ -371,11 +369,32 @@ const getCityCount = (regionSlug: string) => {
                 </p>
             </div>
             <a
-                href="/countryareas/"
-                class="bg-orange-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-700 transition"
+                href={t.ctaHref}
+                class="shrink-0 bg-orange-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-800 transition"
             >
                 {t.ctaButton}
             </a>
         </section>
+
+        <!-- Other countries -->
+        <nav aria-labelledby="other-countries" class="text-center">
+            <h2 id="other-countries" class="text-2xl font-bold text-slate-900 mb-6">{t.otherCountries}</h2>
+            <ul class="flex flex-wrap justify-center gap-3 list-none p-0">
+                {otherCountries.map(({ id, data: other }) => (
+                    <li>
+                        <a
+                            href={`/countryareas/${id}/`}
+                            class="inline-block px-4 py-2 bg-white rounded-full text-slate-700 border border-slate-200 transition-colors hover:border-orange-300 hover:text-orange-800"
+                        >
+                            {other.name}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+            <a href="/countryareas/" class="inline-flex items-center gap-2 mt-6 text-orange-700 hover:text-orange-800 font-semibold">
+                {t.allCountries}
+                <SpriteIcon name="chevron-right" class="w-4 h-4" />
+            </a>
+        </nav>
     </div>
 </Layout>

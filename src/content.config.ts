@@ -52,6 +52,12 @@ const books = defineCollection({
     }),
 });
 
+// Shared by the country, region and location collections.
+const faqItemSchema = z.object({
+    question: z.string(),
+    answer: z.string(),
+});
+
 // Country Areas
 const countryareas = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/countryareas" }),
@@ -62,6 +68,11 @@ const countryareas = defineCollection({
         name: z.string(),
         code: z.string(),
         region: z.string().optional(),
+        /** Overrides the generated <title>, e.g. where a /hn/ page already owns the country search. */
+        seoTitle: z.string().optional(),
+        /** Overrides the generated H1. */
+        heading: z.string().optional(),
+        faqs: z.array(faqItemSchema).optional(),
         draft: z.boolean().default(false),
     }),
 });
@@ -109,11 +120,6 @@ const projects = defineCollection({
 });
 
 // FAQ Item schema for locations
-const faqItemSchema = z.object({
-    question: z.string(),
-    answer: z.string(),
-});
-
 // Local industry schema
 const industrySchema = z.object({
     name: z.string(),

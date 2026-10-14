@@ -626,6 +626,57 @@ const COUNTRY_CODES: Record<string, string> = {
 };
 
 /**
+ * Service-area schema for a country page, the same shape as the city one below
+ * one level up: the country is the area served, and the address stays the one
+ * office in San Pedro Sula.
+ */
+export function createCountryServiceSchema(
+  countrySlug: string,
+  countryName: string,
+  description: string,
+  options: { spanish?: boolean } = {}
+) {
+  const label = (en: string, es: string) => (options.spanish ? es : en);
+  const code = COUNTRY_CODES[countrySlug];
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: label(`Codebrand, Web Development in the ${countryName}`, `Codebrand, Desarrollo Web en ${countryName}`),
+    description,
+    url: `https://www.codebrand.us/countryareas/${countrySlug}/`,
+    telephone: BUSINESS_INFO.us.phoneRaw,
+    email: BUSINESS_INFO.us.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: BUSINESS_INFO.address.street,
+      addressLocality: BUSINESS_INFO.address.city,
+      addressRegion: BUSINESS_INFO.address.region,
+      postalCode: BUSINESS_INFO.address.postalCode,
+      addressCountry: BUSINESS_INFO.address.countryCode,
+    },
+    areaServed: { "@type": "Country", name: countryName, ...(code ? { identifier: code } : {}) },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: label(`Web Development Services in the ${countryName}`, `Servicios de Desarrollo Web en ${countryName}`),
+      itemListElement: [
+        [label("Custom Web Development", "Desarrollo Web a la Medida"), "/services/web-development/"],
+        [label("E-commerce Development", "Desarrollo de Tiendas en Línea"), "/e-commerce/"],
+        [label("UI/UX Design", "Diseño UX/UI"), "/ux-ui-design-agency/"],
+        [label("Custom Software Development", "Software a la Medida"), "/custom-software-development/"],
+      ].map(([name, path]) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name, url: `https://www.codebrand.us${path}` },
+      })),
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/codebrand-es",
+      "https://x.com/Codebrand_es",
+      "https://www.facebook.com/p/Codebrand-100087321501519/",
+    ],
+  };
+}
+
+/**
  * Service-area schema for a city page. Codebrand has ONE physical address (San
  * Pedro Sula, Honduras); the city is the area served, never the business address.
  * Claiming a local address in every city would be misleading structured data.
