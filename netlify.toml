@@ -276,6 +276,110 @@
   to = "/llms.txt"
   status = 301
 
+# Links copied out of markdown on other sites keep the closing parenthesis,
+# "[post](https://codebrand.us/blog/slug/))", and Search Console reported
+# /blog/vercel-vs-netlify-vs-cloudflare-2026/)) as a 404. A placeholder only
+# matches a whole path segment, so this catches the stray parentheses after a
+# trailing slash, which is how every URL on the site ends, for pages one and
+# two levels deep. A URL without the slash ("slug))") cannot be matched here
+# and needs its own rule.
+[[redirects]]
+  from = "/:section/:page/))"
+  to = "/:section/:page/"
+  status = 301
+
+[[redirects]]
+  from = "/:section/:page/)"
+  to = "/:section/:page/"
+  status = 301
+
+[[redirects]]
+  from = "/:page/))"
+  to = "/:page/"
+  status = 301
+
+[[redirects]]
+  from = "/:page/)"
+  to = "/:page/"
+  status = 301
+
+# The 2025 /servicios/ pages linked to "contact" without a leading slash, so
+# every one of them sent crawlers to /servicios/<page>/contact. They kept that
+# link after moving to /services/.
+[[redirects]]
+  from = "/servicios/contact"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/servicios/:page/contact"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/services/contact"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/services/:page/contact"
+  to = "/contact/"
+  status = 301
+
+# Historic URLs with a file extension or a trailing dot, kept here rather than
+# in legacy-redirects.ts because they are not route shaped: raw source paths
+# that old posts linked to by mistake, and two links that swallowed the full
+# stop after them.
+[[redirects]]
+  from = "/llms-full.txt"
+  to = "/llms.txt"
+  status = 301
+
+[[redirects]]
+  from = "/contact."
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/nearshore-cost-calculator."
+  to = "/quoter/"
+  status = 301
+
+[[redirects]]
+  from = "/countryareas/index.astro"
+  to = "/countryareas/"
+  status = 301
+
+[[redirects]]
+  from = "/products/index.astro"
+  to = "/products/"
+  status = 301
+
+[[redirects]]
+  from = "/src/content/blog/5-design-mistakes-that-make-your-website-look-cheap.md"
+  to = "/blog/5-design-mistakes-that-make-your-website-look-cheap/"
+  status = 301
+
+[[redirects]]
+  from = "/src/content/blog/how-much-should-a-good-website-cost-in-2025.md"
+  to = "/blog/how-much-should-a-good-website-cost-in-2025/"
+  status = 301
+
+[[redirects]]
+  from = "/src/content/blog/how-to-make-ads-that-dont-sound-like-ads.md"
+  to = "/blog/how-to-make-ads-that-dont-sound-like-ads/"
+  status = 301
+
+[[redirects]]
+  from = "/src/content/blog/landing-pages-that-convert-vs-those-that-dont.md"
+  to = "/blog/landing-pages-that-convert-vs-those-that-dont/"
+  status = 301
+
+[[redirects]]
+  from = "/src/content/blog/web-development-cost-comparison-usa-vs-honduras-2024.md"
+  to = "/blog/web-development-cost-comparison-usa-vs-honduras-2024/"
+  status = 301
+
 [[redirects]]
   from = "http://codebrand.us/*"
   to = "https://www.codebrand.us/:splat"

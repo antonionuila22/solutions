@@ -175,4 +175,92 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/locations/villa-nueva-gu": "/locations/villa-nueva/",
   "/locations/villanueva-cr": "/locations/villanueva-hn/",
   "/locations/viña-del-mar-va": "/locations/vina-del-mar/",
+
+  // Historic URLs that 404ed: every path the site published since 2025, found
+  // from file names, renames and old links in git history, each checked live
+  // before it was added (old path 404, target 200). Search Console reported two
+  // of them, both from links on other sites: a truncated blog slug and one with
+  // "))" glued on (the parentheses are handled by a pattern in netlify.toml).
+  // Targets were chosen by what the old page was about, not by git's rename
+  // pairing: the /servicios/ pages were byte-identical banners, so git matched
+  // animacion to 3d-rendering at random.
+  // blog: Spanish file names that were later renamed, plus posts that never shipped
+  "/blog/claude-vs-gpt4-vs-gemin": "/blog/claude-vs-gpt4-vs-gemini-2026/",
+  "/blog/5-errores-de-diseño-que-hacen-que-tu-web-se-vea-barata": "/blog/5-design-mistakes-that-make-your-website-look-cheap/",
+  "/blog/astro-formulario-turso-resend": "/blog/astro-form-integration-turso-resend/",
+  "/blog/checklist-de-seo-para-pymes": "/blog/seo-checklist-for-small-businesses/",
+  "/blog/cuánto-debería-costar-un-buen-sitio-web-en-2025": "/blog/cuanto-cuesta-una-pagina-web-honduras-2026/",
+  "/blog/cómo-hacer-anuncios-que-no-suenen-a-anuncios": "/blog/how-to-make-ads-that-dont-sound-like-ads/",
+  "/blog/el-embudo-de-ventas-que-usamos-para-generar-leads": "/blog/the-sales-funnel-we-use-to-generate-leads/",
+  "/blog/lo-que-nadie-te-dice-antes-de-pagar-por-una-agencia-barata": "/blog/what-no-one-tells-you-before-paying-for-a-cheap-agency/",
+  "/blog/landings-que-convierten-vs-las-que-no": "/blog/landing-pages-that-convert-vs-those-that-dont/",
+  "/blog/llm-blog-nail-your-marketing": "/blog/what-are-llms-and-how-they-work/",
+  "/blog/llm-que-son-como-funciona": "/blog/what-are-llms-and-how-they-work/",
+  "/blog/astro-moderno": "/blog/astro-vs-nextjs-cual-elegir-2025/",
+  "/blog/early": "/blog/",
+  "/blog/pagina-web-de-alto-rendimiento": "/blog/construction-contractor-marketing-guide-2026/",
+  "/blog/que-es-el-core-vitals": "/blog/fastest-web-tech-stack-2026/",
+  "/blog/category": "/blog/",
+  "/blogs": "/blog/",
+  // books, first published under /libros/
+  "/books/aprende-astro": "/books/learn-astro/",
+  "/books/aprende-seo": "/blog/seo-checklist-for-small-businesses/",
+  "/books/aprende-tailwindcss": "/blog/top-5-web-technologies-2026/",
+  "/libros": "/books/",
+  "/libros/aprende-astro": "/books/learn-astro/",
+  "/libros/aprende-seo": "/blog/seo-checklist-for-small-businesses/",
+  "/libros/aprende-tailwindcss": "/blog/top-5-web-technologies-2026/",
+  // products renamed from Spanish slugs
+  "/products/animacion-2d-3d": "/products/animation-2d-3d/",
+  "/products/desarrollo-web": "/products/web-development/",
+  "/products/diseño-branding": "/products/branding/",
+  "/products/diseño-ux-ui": "/products/ux-ui-design/",
+  "/products/ecommerce": "/products/e-commerce/",
+  "/products/fotografia": "/products/photography/",
+  "/products/promocionales": "/products/promotional/",
+  // placeholder case studies with fictional clients, live for two days in Oct 2025
+  "/projects/3d-architectural-visualization": "/services/3d-rendering/",
+  "/projects/animated-explainer-video-saas": "/services/animation/",
+  "/projects/brand-identity-tech-startup": "/services/branding/",
+  "/projects/corporate-website-law-firm": "/industries/law-firms/",
+  "/projects/e-commerce-platform": "/e-commerce/",
+  "/projects/social-media-campaign-restaurant": "/digital-marketing/",
+  // countries
+  "/countryareas/españa": "/countryareas/spain/",
+  "/paises": "/countryareas/",
+  // services: /servicios/* (Apr-May 2025), then Spanish stubs under /services/
+  "/servicios": "/services/",
+  "/servicios/animacion": "/services/animation/",
+  "/servicios/branding": "/services/branding/",
+  "/servicios/desarrollo-web": "/hn/desarrollo-web-honduras/",
+  "/servicios/edicion-video": "/services/video-production/",
+  "/servicios/promocionales": "/services/promotional-products/",
+  "/servicios/renderizado": "/services/3d-rendering/",
+  "/servicios/seo": "/hn/seo-honduras/",
+  "/servicios/social-media": "/services/social-media/",
+  "/servicios/ux-ui": "/ux-ui-design-agency/",
+  "/servicios/web-apps": "/hn/desarrollo-web-honduras/",
+  "/services/animacion": "/services/animation/",
+  "/services/desarrollo-web": "/hn/desarrollo-web-honduras/",
+  "/services/edicion-video": "/services/video-production/",
+  "/services/promocionales": "/services/promotional-products/",
+  "/services/renderizado": "/services/3d-rendering/",
+  "/services/ai-integration": "/ai-automation-agency/",
+  "/services/software-development": "/custom-software-development/",
+  "/services/ecommerce": "/e-commerce/",
+  "/services/e-commerce": "/e-commerce/",
+  "/services/web-design": "/ux-ui-design-agency/",
+  "/services/mobile-apps": "/react-development-agency/",
+  // site pages
+  "/about": "/history/",
+  "/contacto": "/contact/",
+  "/contact-netlify": "/contact/",
+  "/equipo": "/team/",
+  "/historia-de-codebrand": "/history/",
+  "/privacidad": "/privacy/",
+  "/privacy-policy": "/privacy/",
+  "/terminos": "/terms/",
+  "/resources": "/books/",
+  "/landing": "/landing-pages/",
+  "/landing/social-media-plans": "/digital-marketing/",
 };
